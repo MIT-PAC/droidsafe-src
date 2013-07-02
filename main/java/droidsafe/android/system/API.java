@@ -229,11 +229,11 @@ public class API {
                 logger.info("Found api modeled method: {}\n", method);
                 //try to get the active method body for any modeled method and make sure it exists
                 if (method.isConcrete()) {
+                    method.retrieveActiveBody();
                     if (!method.hasActiveBody()) {
                         logger.error("Modeled api method has no active body: {}", method);
                         System.exit(1);
                     }
-                    method.retrieveActiveBody();
                 }
 
                 if (classification == Classification.SAFE) {
