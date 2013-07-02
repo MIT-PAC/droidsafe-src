@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.R;
 import android.content.ClipData;
@@ -498,7 +498,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public  TextView(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -508,7 +508,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         this(context, attrs, com.android.internal.R.attr.textViewStyle);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -546,41 +546,41 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             appearance = theme.obtainStyledAttributes(
                     ap, com.android.internal.R.styleable.TextAppearance);
-        } //End block
+        } 
         {
             int n = appearance.getIndexCount();
             {
                 int i = 0;
                 {
                     int attr = appearance.getIndex(i);
-                    //Begin case com.android.internal.R.styleable.TextAppearance_textColorHighlight 
+                    
                     textColorHighlight = appearance.getColor(attr, textColorHighlight);
-                    //End case com.android.internal.R.styleable.TextAppearance_textColorHighlight 
-                    //Begin case com.android.internal.R.styleable.TextAppearance_textColor 
+                    
+                    
                     textColor = appearance.getColorStateList(attr);
-                    //End case com.android.internal.R.styleable.TextAppearance_textColor 
-                    //Begin case com.android.internal.R.styleable.TextAppearance_textColorHint 
+                    
+                    
                     textColorHint = appearance.getColorStateList(attr);
-                    //End case com.android.internal.R.styleable.TextAppearance_textColorHint 
-                    //Begin case com.android.internal.R.styleable.TextAppearance_textColorLink 
+                    
+                    
                     textColorLink = appearance.getColorStateList(attr);
-                    //End case com.android.internal.R.styleable.TextAppearance_textColorLink 
-                    //Begin case com.android.internal.R.styleable.TextAppearance_textSize 
+                    
+                    
                     textSize = appearance.getDimensionPixelSize(attr, textSize);
-                    //End case com.android.internal.R.styleable.TextAppearance_textSize 
-                    //Begin case com.android.internal.R.styleable.TextAppearance_typeface 
+                    
+                    
                     typefaceIndex = appearance.getInt(attr, -1);
-                    //End case com.android.internal.R.styleable.TextAppearance_typeface 
-                    //Begin case com.android.internal.R.styleable.TextAppearance_textStyle 
+                    
+                    
                     styleIndex = appearance.getInt(attr, -1);
-                    //End case com.android.internal.R.styleable.TextAppearance_textStyle 
-                    //Begin case com.android.internal.R.styleable.TextAppearance_textAllCaps 
+                    
+                    
                     allCaps = appearance.getBoolean(attr, false);
-                    //End case com.android.internal.R.styleable.TextAppearance_textAllCaps 
-                } //End block
-            } //End collapsed parenthetic
+                    
+                } 
+            } 
             appearance.recycle();
-        } //End block
+        } 
         boolean editable = getDefaultEditable();
         CharSequence inputMethod = null;
         int numeric = 0;
@@ -615,257 +615,257 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             int i = 0;
             {
                 int attr = a.getIndex(i);
-                //Begin case com.android.internal.R.styleable.TextView_editable 
+                
                 editable = a.getBoolean(attr, editable);
-                //End case com.android.internal.R.styleable.TextView_editable 
-                //Begin case com.android.internal.R.styleable.TextView_inputMethod 
+                
+                
                 inputMethod = a.getText(attr);
-                //End case com.android.internal.R.styleable.TextView_inputMethod 
-                //Begin case com.android.internal.R.styleable.TextView_numeric 
+                
+                
                 numeric = a.getInt(attr, numeric);
-                //End case com.android.internal.R.styleable.TextView_numeric 
-                //Begin case com.android.internal.R.styleable.TextView_digits 
+                
+                
                 digits = a.getText(attr);
-                //End case com.android.internal.R.styleable.TextView_digits 
-                //Begin case com.android.internal.R.styleable.TextView_phoneNumber 
+                
+                
                 phone = a.getBoolean(attr, phone);
-                //End case com.android.internal.R.styleable.TextView_phoneNumber 
-                //Begin case com.android.internal.R.styleable.TextView_autoText 
+                
+                
                 autotext = a.getBoolean(attr, autotext);
-                //End case com.android.internal.R.styleable.TextView_autoText 
-                //Begin case com.android.internal.R.styleable.TextView_capitalize 
+                
+                
                 autocap = a.getInt(attr, autocap);
-                //End case com.android.internal.R.styleable.TextView_capitalize 
-                //Begin case com.android.internal.R.styleable.TextView_bufferType 
+                
+                
                 buffertype = a.getInt(attr, buffertype);
-                //End case com.android.internal.R.styleable.TextView_bufferType 
-                //Begin case com.android.internal.R.styleable.TextView_selectAllOnFocus 
+                
+                
                 selectallonfocus = a.getBoolean(attr, selectallonfocus);
-                //End case com.android.internal.R.styleable.TextView_selectAllOnFocus 
-                //Begin case com.android.internal.R.styleable.TextView_autoLink 
+                
+                
                 mAutoLinkMask = a.getInt(attr, 0);
-                //End case com.android.internal.R.styleable.TextView_autoLink 
-                //Begin case com.android.internal.R.styleable.TextView_linksClickable 
+                
+                
                 mLinksClickable = a.getBoolean(attr, true);
-                //End case com.android.internal.R.styleable.TextView_linksClickable 
-                //Begin case com.android.internal.R.styleable.TextView_drawableLeft 
+                
+                
                 drawableLeft = a.getDrawable(attr);
-                //End case com.android.internal.R.styleable.TextView_drawableLeft 
-                //Begin case com.android.internal.R.styleable.TextView_drawableTop 
+                
+                
                 drawableTop = a.getDrawable(attr);
-                //End case com.android.internal.R.styleable.TextView_drawableTop 
-                //Begin case com.android.internal.R.styleable.TextView_drawableRight 
+                
+                
                 drawableRight = a.getDrawable(attr);
-                //End case com.android.internal.R.styleable.TextView_drawableRight 
-                //Begin case com.android.internal.R.styleable.TextView_drawableBottom 
+                
+                
                 drawableBottom = a.getDrawable(attr);
-                //End case com.android.internal.R.styleable.TextView_drawableBottom 
-                //Begin case com.android.internal.R.styleable.TextView_drawableStart 
+                
+                
                 drawableStart = a.getDrawable(attr);
-                //End case com.android.internal.R.styleable.TextView_drawableStart 
-                //Begin case com.android.internal.R.styleable.TextView_drawableEnd 
+                
+                
                 drawableEnd = a.getDrawable(attr);
-                //End case com.android.internal.R.styleable.TextView_drawableEnd 
-                //Begin case com.android.internal.R.styleable.TextView_drawablePadding 
+                
+                
                 drawablePadding = a.getDimensionPixelSize(attr, drawablePadding);
-                //End case com.android.internal.R.styleable.TextView_drawablePadding 
-                //Begin case com.android.internal.R.styleable.TextView_maxLines 
+                
+                
                 setMaxLines(a.getInt(attr, -1));
-                //End case com.android.internal.R.styleable.TextView_maxLines 
-                //Begin case com.android.internal.R.styleable.TextView_maxHeight 
+                
+                
                 setMaxHeight(a.getDimensionPixelSize(attr, -1));
-                //End case com.android.internal.R.styleable.TextView_maxHeight 
-                //Begin case com.android.internal.R.styleable.TextView_lines 
+                
+                
                 setLines(a.getInt(attr, -1));
-                //End case com.android.internal.R.styleable.TextView_lines 
-                //Begin case com.android.internal.R.styleable.TextView_height 
+                
+                
                 setHeight(a.getDimensionPixelSize(attr, -1));
-                //End case com.android.internal.R.styleable.TextView_height 
-                //Begin case com.android.internal.R.styleable.TextView_minLines 
+                
+                
                 setMinLines(a.getInt(attr, -1));
-                //End case com.android.internal.R.styleable.TextView_minLines 
-                //Begin case com.android.internal.R.styleable.TextView_minHeight 
+                
+                
                 setMinHeight(a.getDimensionPixelSize(attr, -1));
-                //End case com.android.internal.R.styleable.TextView_minHeight 
-                //Begin case com.android.internal.R.styleable.TextView_maxEms 
+                
+                
                 setMaxEms(a.getInt(attr, -1));
-                //End case com.android.internal.R.styleable.TextView_maxEms 
-                //Begin case com.android.internal.R.styleable.TextView_maxWidth 
+                
+                
                 setMaxWidth(a.getDimensionPixelSize(attr, -1));
-                //End case com.android.internal.R.styleable.TextView_maxWidth 
-                //Begin case com.android.internal.R.styleable.TextView_ems 
+                
+                
                 setEms(a.getInt(attr, -1));
-                //End case com.android.internal.R.styleable.TextView_ems 
-                //Begin case com.android.internal.R.styleable.TextView_width 
+                
+                
                 setWidth(a.getDimensionPixelSize(attr, -1));
-                //End case com.android.internal.R.styleable.TextView_width 
-                //Begin case com.android.internal.R.styleable.TextView_minEms 
+                
+                
                 setMinEms(a.getInt(attr, -1));
-                //End case com.android.internal.R.styleable.TextView_minEms 
-                //Begin case com.android.internal.R.styleable.TextView_minWidth 
+                
+                
                 setMinWidth(a.getDimensionPixelSize(attr, -1));
-                //End case com.android.internal.R.styleable.TextView_minWidth 
-                //Begin case com.android.internal.R.styleable.TextView_gravity 
+                
+                
                 setGravity(a.getInt(attr, -1));
-                //End case com.android.internal.R.styleable.TextView_gravity 
-                //Begin case com.android.internal.R.styleable.TextView_hint 
+                
+                
                 hint = a.getText(attr);
-                //End case com.android.internal.R.styleable.TextView_hint 
-                //Begin case com.android.internal.R.styleable.TextView_text 
+                
+                
                 text = a.getText(attr);
-                //End case com.android.internal.R.styleable.TextView_text 
-                //Begin case com.android.internal.R.styleable.TextView_scrollHorizontally 
+                
+                
                 {
                     boolean var45591D90FC7AE21A8CB6FE28079E45A9_507589217 = (a.getBoolean(attr, false));
                     {
                         setHorizontallyScrolling(true);
-                    } //End block
-                } //End collapsed parenthetic
-                //End case com.android.internal.R.styleable.TextView_scrollHorizontally 
-                //Begin case com.android.internal.R.styleable.TextView_singleLine 
+                    } 
+                } 
+                
+                
                 singleLine = a.getBoolean(attr, singleLine);
-                //End case com.android.internal.R.styleable.TextView_singleLine 
-                //Begin case com.android.internal.R.styleable.TextView_ellipsize 
+                
+                
                 ellipsize = a.getInt(attr, ellipsize);
-                //End case com.android.internal.R.styleable.TextView_ellipsize 
-                //Begin case com.android.internal.R.styleable.TextView_marqueeRepeatLimit 
+                
+                
                 setMarqueeRepeatLimit(a.getInt(attr, mMarqueeRepeatLimit));
-                //End case com.android.internal.R.styleable.TextView_marqueeRepeatLimit 
-                //Begin case com.android.internal.R.styleable.TextView_includeFontPadding 
+                
+                
                 {
                     boolean varE83A5B5DD6F1EFE4CE2BCD602A46684B_1419697129 = (!a.getBoolean(attr, true));
                     {
                         setIncludeFontPadding(false);
-                    } //End block
-                } //End collapsed parenthetic
-                //End case com.android.internal.R.styleable.TextView_includeFontPadding 
-                //Begin case com.android.internal.R.styleable.TextView_cursorVisible 
+                    } 
+                } 
+                
+                
                 {
                     boolean varE83A5B5DD6F1EFE4CE2BCD602A46684B_1460584338 = (!a.getBoolean(attr, true));
                     {
                         setCursorVisible(false);
-                    } //End block
-                } //End collapsed parenthetic
-                //End case com.android.internal.R.styleable.TextView_cursorVisible 
-                //Begin case com.android.internal.R.styleable.TextView_maxLength 
+                    } 
+                } 
+                
+                
                 maxlength = a.getInt(attr, -1);
-                //End case com.android.internal.R.styleable.TextView_maxLength 
-                //Begin case com.android.internal.R.styleable.TextView_textScaleX 
+                
+                
                 setTextScaleX(a.getFloat(attr, 1.0f));
-                //End case com.android.internal.R.styleable.TextView_textScaleX 
-                //Begin case com.android.internal.R.styleable.TextView_freezesText 
+                
+                
                 mFreezesText = a.getBoolean(attr, false);
-                //End case com.android.internal.R.styleable.TextView_freezesText 
-                //Begin case com.android.internal.R.styleable.TextView_shadowColor 
+                
+                
                 shadowcolor = a.getInt(attr, 0);
-                //End case com.android.internal.R.styleable.TextView_shadowColor 
-                //Begin case com.android.internal.R.styleable.TextView_shadowDx 
+                
+                
                 dx = a.getFloat(attr, 0);
-                //End case com.android.internal.R.styleable.TextView_shadowDx 
-                //Begin case com.android.internal.R.styleable.TextView_shadowDy 
+                
+                
                 dy = a.getFloat(attr, 0);
-                //End case com.android.internal.R.styleable.TextView_shadowDy 
-                //Begin case com.android.internal.R.styleable.TextView_shadowRadius 
+                
+                
                 r = a.getFloat(attr, 0);
-                //End case com.android.internal.R.styleable.TextView_shadowRadius 
-                //Begin case com.android.internal.R.styleable.TextView_enabled 
+                
+                
                 setEnabled(a.getBoolean(attr, isEnabled()));
-                //End case com.android.internal.R.styleable.TextView_enabled 
-                //Begin case com.android.internal.R.styleable.TextView_textColorHighlight 
+                
+                
                 textColorHighlight = a.getColor(attr, textColorHighlight);
-                //End case com.android.internal.R.styleable.TextView_textColorHighlight 
-                //Begin case com.android.internal.R.styleable.TextView_textColor 
+                
+                
                 textColor = a.getColorStateList(attr);
-                //End case com.android.internal.R.styleable.TextView_textColor 
-                //Begin case com.android.internal.R.styleable.TextView_textColorHint 
+                
+                
                 textColorHint = a.getColorStateList(attr);
-                //End case com.android.internal.R.styleable.TextView_textColorHint 
-                //Begin case com.android.internal.R.styleable.TextView_textColorLink 
+                
+                
                 textColorLink = a.getColorStateList(attr);
-                //End case com.android.internal.R.styleable.TextView_textColorLink 
-                //Begin case com.android.internal.R.styleable.TextView_textSize 
+                
+                
                 textSize = a.getDimensionPixelSize(attr, textSize);
-                //End case com.android.internal.R.styleable.TextView_textSize 
-                //Begin case com.android.internal.R.styleable.TextView_typeface 
+                
+                
                 typefaceIndex = a.getInt(attr, typefaceIndex);
-                //End case com.android.internal.R.styleable.TextView_typeface 
-                //Begin case com.android.internal.R.styleable.TextView_textStyle 
+                
+                
                 styleIndex = a.getInt(attr, styleIndex);
-                //End case com.android.internal.R.styleable.TextView_textStyle 
-                //Begin case com.android.internal.R.styleable.TextView_password 
+                
+                
                 password = a.getBoolean(attr, password);
-                //End case com.android.internal.R.styleable.TextView_password 
-                //Begin case com.android.internal.R.styleable.TextView_lineSpacingExtra 
+                
+                
                 mSpacingAdd = a.getDimensionPixelSize(attr, (int) mSpacingAdd);
-                //End case com.android.internal.R.styleable.TextView_lineSpacingExtra 
-                //Begin case com.android.internal.R.styleable.TextView_lineSpacingMultiplier 
+                
+                
                 mSpacingMult = a.getFloat(attr, mSpacingMult);
-                //End case com.android.internal.R.styleable.TextView_lineSpacingMultiplier 
-                //Begin case com.android.internal.R.styleable.TextView_inputType 
+                
+                
                 inputType = a.getInt(attr, mInputType);
-                //End case com.android.internal.R.styleable.TextView_inputType 
-                //Begin case com.android.internal.R.styleable.TextView_imeOptions 
+                
+                
                 {
                     mInputContentType = new InputContentType();
-                } //End block
-                //End case com.android.internal.R.styleable.TextView_imeOptions 
-                //Begin case com.android.internal.R.styleable.TextView_imeOptions 
+                } 
+                
+                
                 mInputContentType.imeOptions = a.getInt(attr,
                         mInputContentType.imeOptions);
-                //End case com.android.internal.R.styleable.TextView_imeOptions 
-                //Begin case com.android.internal.R.styleable.TextView_imeActionLabel 
+                
+                
                 {
                     mInputContentType = new InputContentType();
-                } //End block
-                //End case com.android.internal.R.styleable.TextView_imeActionLabel 
-                //Begin case com.android.internal.R.styleable.TextView_imeActionLabel 
+                } 
+                
+                
                 mInputContentType.imeActionLabel = a.getText(attr);
-                //End case com.android.internal.R.styleable.TextView_imeActionLabel 
-                //Begin case com.android.internal.R.styleable.TextView_imeActionId 
+                
+                
                 {
                     mInputContentType = new InputContentType();
-                } //End block
-                //End case com.android.internal.R.styleable.TextView_imeActionId 
-                //Begin case com.android.internal.R.styleable.TextView_imeActionId 
+                } 
+                
+                
                 mInputContentType.imeActionId = a.getInt(attr,
                         mInputContentType.imeActionId);
-                //End case com.android.internal.R.styleable.TextView_imeActionId 
-                //Begin case com.android.internal.R.styleable.TextView_privateImeOptions 
+                
+                
                 setPrivateImeOptions(a.getString(attr));
-                //End case com.android.internal.R.styleable.TextView_privateImeOptions 
-                //Begin case com.android.internal.R.styleable.TextView_editorExtras 
+                
+                
                 try 
                 {
                     setInputExtras(a.getResourceId(attr, 0));
-                } //End block
+                } 
                 catch (XmlPullParserException e)
                 { }
                 catch (IOException e)
                 { }
-                //End case com.android.internal.R.styleable.TextView_editorExtras 
-                //Begin case com.android.internal.R.styleable.TextView_textCursorDrawable 
+                
+                
                 mCursorDrawableRes = a.getResourceId(attr, 0);
-                //End case com.android.internal.R.styleable.TextView_textCursorDrawable 
-                //Begin case com.android.internal.R.styleable.TextView_textSelectHandleLeft 
+                
+                
                 mTextSelectHandleLeftRes = a.getResourceId(attr, 0);
-                //End case com.android.internal.R.styleable.TextView_textSelectHandleLeft 
-                //Begin case com.android.internal.R.styleable.TextView_textSelectHandleRight 
+                
+                
                 mTextSelectHandleRightRes = a.getResourceId(attr, 0);
-                //End case com.android.internal.R.styleable.TextView_textSelectHandleRight 
-                //Begin case com.android.internal.R.styleable.TextView_textSelectHandle 
+                
+                
                 mTextSelectHandleRes = a.getResourceId(attr, 0);
-                //End case com.android.internal.R.styleable.TextView_textSelectHandle 
-                //Begin case com.android.internal.R.styleable.TextView_textEditSuggestionItemLayout 
+                
+                
                 mTextEditSuggestionItemLayout = a.getResourceId(attr, 0);
-                //End case com.android.internal.R.styleable.TextView_textEditSuggestionItemLayout 
-                //Begin case com.android.internal.R.styleable.TextView_textIsSelectable 
+                
+                
                 mTextIsSelectable = a.getBoolean(attr, false);
-                //End case com.android.internal.R.styleable.TextView_textIsSelectable 
-                //Begin case com.android.internal.R.styleable.TextView_textAllCaps 
+                
+                
                 allCaps = a.getBoolean(attr, false);
-                //End case com.android.internal.R.styleable.TextView_textAllCaps 
-            } //End block
-        } //End collapsed parenthetic
+                
+            } 
+        } 
         a.recycle();
         BufferType bufferType = BufferType.EDITABLE;
         final int variation = inputType & (EditorInfo.TYPE_MASK_CLASS | EditorInfo.TYPE_MASK_VARIATION);
@@ -880,129 +880,129 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             try 
             {
                 c = Class.forName(inputMethod.toString());
-            } //End block
+            } 
             catch (ClassNotFoundException ex)
             {
             	throw new RuntimeException(ex);
-            } //End block
+            } 
             try 
             {
                 mInput = (KeyListener) c.newInstance();
-            } //End block
+            } 
             catch (InstantiationException ex)
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(ex);
-            } //End block
+            } 
             catch (IllegalAccessException ex)
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(ex);
-            } //End block
+            } 
             try 
             {
                 mInputType = inputType != EditorInfo.TYPE_NULL
                         ? inputType
                         : mInput.getInputType();
-            } //End block
+            } 
             catch (IncompatibleClassChangeError e)
             {
                 mInputType = EditorInfo.TYPE_CLASS_TEXT;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mInput = DigitsKeyListener.getInstance(digits.toString());
             mInputType = inputType != EditorInfo.TYPE_NULL
                     ? inputType : EditorInfo.TYPE_CLASS_TEXT;
-        } //End block
+        } 
         {
             setInputType(inputType, true);
             singleLine = !isMultilineInputType(inputType);
-        } //End block
+        } 
         {
             mInput = DialerKeyListener.getInstance();
             mInputType = inputType = EditorInfo.TYPE_CLASS_PHONE;
-        } //End block
+        } 
         {
             mInput = DigitsKeyListener.getInstance((numeric & SIGNED) != 0,
                                                    (numeric & DECIMAL) != 0);
             inputType = EditorInfo.TYPE_CLASS_NUMBER;
             {
                 inputType |= EditorInfo.TYPE_NUMBER_FLAG_SIGNED;
-            } //End block
+            } 
             {
                 inputType |= EditorInfo.TYPE_NUMBER_FLAG_DECIMAL;
-            } //End block
+            } 
             mInputType = inputType;
-        } //End block
+        } 
         {
             TextKeyListener.Capitalize cap;
             inputType = EditorInfo.TYPE_CLASS_TEXT;
-            //Begin case 1 
+            
             cap = TextKeyListener.Capitalize.SENTENCES;
-            //End case 1 
-            //Begin case 1 
+            
+            
             inputType |= EditorInfo.TYPE_TEXT_FLAG_CAP_SENTENCES;
-            //End case 1 
-            //Begin case 2 
+            
+            
             cap = TextKeyListener.Capitalize.WORDS;
-            //End case 2 
-            //Begin case 2 
+            
+            
             inputType |= EditorInfo.TYPE_TEXT_FLAG_CAP_WORDS;
-            //End case 2 
-            //Begin case 3 
+            
+            
             cap = TextKeyListener.Capitalize.CHARACTERS;
-            //End case 3 
-            //Begin case 3 
+            
+            
             inputType |= EditorInfo.TYPE_TEXT_FLAG_CAP_CHARACTERS;
-            //End case 3 
-            //Begin case default 
+            
+            
             cap = TextKeyListener.Capitalize.NONE;
-            //End case default 
+            
             mInput = TextKeyListener.getInstance(autotext, cap);
             mInputType = inputType;
-        } //End block
+        } 
         {
             mInputType = EditorInfo.TYPE_NULL;
             mInput = null;
             bufferType = BufferType.SPANNABLE;
             setFocusableInTouchMode(true);
             setMovementMethod(ArrowKeyMovementMethod.getInstance());
-        } //End block
+        } 
         {
             mInput = TextKeyListener.getInstance();
             mInputType = EditorInfo.TYPE_CLASS_TEXT;
-        } //End block
+        } 
         {
             mInput = null;
-            //Begin case 0 
+            
             bufferType = BufferType.NORMAL;
-            //End case 0 
-            //Begin case 1 
+            
+            
             bufferType = BufferType.SPANNABLE;
-            //End case 1 
-            //Begin case 2 
+            
+            
             bufferType = BufferType.EDITABLE;
-            //End case 2 
-        } //End block
+            
+        } 
         {
             {
                 mInputType = (mInputType & ~(EditorInfo.TYPE_MASK_VARIATION))
                         | EditorInfo.TYPE_TEXT_VARIATION_PASSWORD;
-            } //End block
+            } 
             {
                 mInputType = (mInputType & ~(EditorInfo.TYPE_MASK_VARIATION))
                         | EditorInfo.TYPE_TEXT_VARIATION_WEB_PASSWORD;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 mInputType = (mInputType & ~(EditorInfo.TYPE_MASK_VARIATION))
                         | EditorInfo.TYPE_NUMBER_VARIATION_PASSWORD;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mSelectAllOnFocus = true;
             bufferType = BufferType.SPANNABLE;
-        } //End block
+        } 
         setCompoundDrawablesWithIntrinsicBounds(
             drawableLeft, drawableTop, drawableRight, drawableBottom);
         setRelativeDrawablesIfNeeded(drawableStart, drawableEnd);
@@ -1011,59 +1011,59 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         applySingleLine(singleLine, singleLine, singleLine);
         {
             ellipsize = 3;
-        } //End block
-        //Begin case 1 
+        } 
+        
         setEllipsize(TextUtils.TruncateAt.START);
-        //End case 1 
-        //Begin case 2 
+        
+        
         setEllipsize(TextUtils.TruncateAt.MIDDLE);
-        //End case 2 
-        //Begin case 3 
+        
+        
         setEllipsize(TextUtils.TruncateAt.END);
-        //End case 3 
-        //Begin case 4 
+        
+        
         {
             boolean var8F0ACED8C99F3716300411BE9198A3C2_1649076457 = (ViewConfiguration.get(context).isFadingMarqueeEnabled());
             {
                 setHorizontalFadingEdgeEnabled(true);
                 mMarqueeFadeMode = MARQUEE_FADE_NORMAL;
-            } //End block
+            } 
             {
                 setHorizontalFadingEdgeEnabled(false);
                 mMarqueeFadeMode = MARQUEE_FADE_SWITCH_SHOW_ELLIPSIS;
-            } //End block
-        } //End collapsed parenthetic
-        //End case 4 
-        //Begin case 4 
+            } 
+        } 
+        
+        
         setEllipsize(TextUtils.TruncateAt.MARQUEE);
-        //End case 4 
+        
         setTextColor(textColor != null ? textColor : ColorStateList.valueOf(0xFF000000));
         setHintTextColor(textColorHint);
         setLinkTextColor(textColorLink);
         {
             setHighlightColor(textColorHighlight);
-        } //End block
+        } 
         setRawTextSize(textSize);
         {
             setTransformationMethod(new AllCapsTransformationMethod(getContext()));
-        } //End block
+        } 
         {
             setTransformationMethod(PasswordTransformationMethod.getInstance());
             typefaceIndex = MONOSPACE;
-        } //End block
+        } 
         {
             typefaceIndex = MONOSPACE;
-        } //End block
+        } 
         setTypefaceByIndex(typefaceIndex, styleIndex);
         {
             setShadowLayer(r, dx, dy, shadowcolor);
-        } //End block
+        } 
         {
             setFilters(new InputFilter[] { new InputFilter.LengthFilter(maxlength) });
-        } //End block
+        } 
         {
             setFilters(NO_FILTERS);
-        } //End block
+        } 
         setText(text, bufferType);
         setHint(hint);
         a = context.obtainStyledAttributes(attrs,
@@ -1077,17 +1077,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             int i = 0;
             {
                 int attr = a.getIndex(i);
-                //Begin case com.android.internal.R.styleable.View_focusable 
+                
                 focusable = a.getBoolean(attr, focusable);
-                //End case com.android.internal.R.styleable.View_focusable 
-                //Begin case com.android.internal.R.styleable.View_clickable 
+                
+                
                 clickable = a.getBoolean(attr, clickable);
-                //End case com.android.internal.R.styleable.View_clickable 
-                //Begin case com.android.internal.R.styleable.View_longClickable 
+                
+                
                 longClickable = a.getBoolean(attr, longClickable);
-                //End case com.android.internal.R.styleable.View_longClickable 
-            } //End block
-        } //End collapsed parenthetic
+                
+            } 
+        } 
         a.recycle();
         setFocusable(focusable);
         setClickable(clickable);
@@ -1099,40 +1099,40 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.737 -0400", hash_original_method = "C60E18AF77ADDBBD7F15C48D3326353D", hash_generated_method = "B23AF4FB463A5E047993231DDD0BBC29")
     private void setTypefaceByIndex(int typefaceIndex, int styleIndex) {
         Typeface tf = null;
-        //Begin case SANS 
+        
         tf = Typeface.SANS_SERIF;
-        //End case SANS 
-        //Begin case SERIF 
+        
+        
         tf = Typeface.SERIF;
-        //End case SERIF 
-        //Begin case MONOSPACE 
+        
+        
         tf = Typeface.MONOSPACE;
-        //End case MONOSPACE 
+        
         setTypeface(tf, styleIndex);
         addTaint(typefaceIndex);
         addTaint(styleIndex);
-        // ---------- Original Method ----------
-        //Typeface tf = null;
-        //switch (typefaceIndex) {
-            //case SANS:
-                //tf = Typeface.SANS_SERIF;
-                //break;
-            //case SERIF:
-                //tf = Typeface.SERIF;
-                //break;
-            //case MONOSPACE:
-                //tf = Typeface.MONOSPACE;
-                //break;
-        //}
-        //setTypeface(tf, styleIndex);
+        
+        
+        
+            
+                
+                
+            
+                
+                
+            
+                
+                
+        
+        
     }
 
     
@@ -1143,7 +1143,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             Drawables dr = mDrawables;
             {
                 mDrawables = dr = new Drawables();
-            } //End block
+            } 
             final Rect compoundRect = dr.mCompoundRect;
             int[] state = getDrawableState();
             {
@@ -1154,10 +1154,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 dr.mDrawableStart = start;
                 dr.mDrawableSizeStart = compoundRect.width();
                 dr.mDrawableHeightStart = compoundRect.height();
-            } //End block
+            } 
             {
                 dr.mDrawableSizeStart = dr.mDrawableHeightStart = 0;
-            } //End block
+            } 
             {
                 end.setBounds(0, 0, end.getIntrinsicWidth(), end.getIntrinsicHeight());
                 end.setState(state);
@@ -1166,15 +1166,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 dr.mDrawableEnd = end;
                 dr.mDrawableSizeEnd = compoundRect.width();
                 dr.mDrawableHeightEnd = compoundRect.height();
-            } //End block
+            } 
             {
                 dr.mDrawableSizeEnd = dr.mDrawableHeightEnd = 0;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(start.getTaint());
         addTaint(end.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1183,41 +1183,41 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public void setEnabled(boolean enabled) {
         {
             boolean var7DA8DB0EDBF2B3C1E618EFC1F33534DC_1615402423 = (enabled == isEnabled());
-        } //End collapsed parenthetic
+        } 
         {
             InputMethodManager imm = InputMethodManager.peekInstance();
             {
                 boolean var4937F8F03F6BF371ED8AD64A66FE25A6_1668704019 = (imm != null && imm.isActive(this));
                 {
                     imm.hideSoftInputFromWindow(getWindowToken(), 0);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         super.setEnabled(enabled);
         prepareCursorControllers();
         {
             InputMethodManager imm = InputMethodManager.peekInstance();
             imm.restartInput(this);
-        } //End block
+        } 
         makeBlink();
         addTaint(enabled);
-        // ---------- Original Method ----------
-        //if (enabled == isEnabled()) {
-            //return;
-        //}
-        //if (!enabled) {
-            //InputMethodManager imm = InputMethodManager.peekInstance();
-            //if (imm != null && imm.isActive(this)) {
-                //imm.hideSoftInputFromWindow(getWindowToken(), 0);
-            //}
-        //}
-        //super.setEnabled(enabled);
-        //prepareCursorControllers();
-        //if (enabled) {
-            //InputMethodManager imm = InputMethodManager.peekInstance();
-            //if (imm != null) imm.restartInput(this);
-        //}
-        //makeBlink();
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -1226,10 +1226,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             {
                 tf = Typeface.defaultFromStyle(style);
-            } //End block
+            } 
             {
                 tf = Typeface.create(tf, style);
-            } //End block
+            } 
             setTypeface(tf);
             int typefaceStyle;
             typefaceStyle = tf.getStyle();
@@ -1237,31 +1237,31 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             int need = style & ~typefaceStyle;
             mTextPaint.setFakeBoldText((need & Typeface.BOLD) != 0);
             mTextPaint.setTextSkewX((need & Typeface.ITALIC) != 0 ? -0.25f : 0);
-        } //End block
+        } 
         {
             mTextPaint.setFakeBoldText(false);
             mTextPaint.setTextSkewX(0);
             setTypeface(tf);
-        } //End block
+        } 
         addTaint(tf.getTaint());
         addTaint(style);
-        // ---------- Original Method ----------
-        //if (style > 0) {
-            //if (tf == null) {
-                //tf = Typeface.defaultFromStyle(style);
-            //} else {
-                //tf = Typeface.create(tf, style);
-            //}
-            //setTypeface(tf);
-            //int typefaceStyle = tf != null ? tf.getStyle() : 0;
-            //int need = style & ~typefaceStyle;
-            //mTextPaint.setFakeBoldText((need & Typeface.BOLD) != 0);
-            //mTextPaint.setTextSkewX((need & Typeface.ITALIC) != 0 ? -0.25f : 0);
-        //} else {
-            //mTextPaint.setFakeBoldText(false);
-            //mTextPaint.setTextSkewX(0);
-            //setTypeface(tf);
-        //}
+        
+        
+            
+                
+            
+                
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+        
     }
 
     
@@ -1269,31 +1269,31 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     protected boolean getDefaultEditable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_389707921 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_389707921;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.739 -0400", hash_original_method = "BBE0A92ADC5D9278A97962CE8941F1CB", hash_generated_method = "E479E572B3F7384E6AE6870AE86EE673")
     protected MovementMethod getDefaultMovementMethod() {
-        MovementMethod varB4EAC82CA7396A68D541C85D26508E83_473892731 = null; //Variable for return #1
+        MovementMethod varB4EAC82CA7396A68D541C85D26508E83_473892731 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_473892731 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_473892731.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_473892731.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_473892731;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.740 -0400", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "65551D95088DD3F4272ACEE13D0E1476")
     @ViewDebug.CapturedViewProperty
     public CharSequence getText() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1072372900 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1072372900 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1072372900 = mText;
-        varB4EAC82CA7396A68D541C85D26508E83_1072372900.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1072372900.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1072372900;
-        // ---------- Original Method ----------
-        //return mText;
+        
+        
     }
 
     
@@ -1302,19 +1302,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int var32A6F8CD5764B26A2339FAB65BD4098F_124622242 = (mText.length());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2110507742 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2110507742;
-        // ---------- Original Method ----------
-        //return mText.length();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.741 -0400", hash_original_method = "7ED3A36B3A9686857AF495D746EF7144", hash_generated_method = "6107DD98D0183747DB8A91C9D76C4FD0")
     public Editable getEditableText() {
-        Editable varB4EAC82CA7396A68D541C85D26508E83_869382698 = null; //Variable for return #1
+        Editable varB4EAC82CA7396A68D541C85D26508E83_869382698 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_869382698 = (mText instanceof Editable) ? (Editable)mText : null;
-        varB4EAC82CA7396A68D541C85D26508E83_869382698.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_869382698.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_869382698;
-        // ---------- Original Method ----------
-        //return (mText instanceof Editable) ? (Editable)mText : null;
+        
+        
     }
 
     
@@ -1323,30 +1323,30 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int var20B277202414C5A1CC77B4034C64DAD9_317498095 = (FastMath.round(mTextPaint.getFontMetricsInt(null) * mSpacingMult + mSpacingAdd));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_63496067 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_63496067;
-        // ---------- Original Method ----------
-        //return FastMath.round(mTextPaint.getFontMetricsInt(null) * mSpacingMult + mSpacingAdd);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.742 -0400", hash_original_method = "AA853122D8F66FE025B9AF375421C379", hash_generated_method = "315945C9B6C87B17DD73B401DD665A47")
     public final Layout getLayout() {
-        Layout varB4EAC82CA7396A68D541C85D26508E83_677837599 = null; //Variable for return #1
+        Layout varB4EAC82CA7396A68D541C85D26508E83_677837599 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_677837599 = mLayout;
-        varB4EAC82CA7396A68D541C85D26508E83_677837599.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_677837599.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_677837599;
-        // ---------- Original Method ----------
-        //return mLayout;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.742 -0400", hash_original_method = "16C14256413AD7EC2C071FEF64E5C315", hash_generated_method = "93565CC45E4ABBB14AF1E2F3F9CA2F5E")
     public final KeyListener getKeyListener() {
-        KeyListener varB4EAC82CA7396A68D541C85D26508E83_300839855 = null; //Variable for return #1
+        KeyListener varB4EAC82CA7396A68D541C85D26508E83_300839855 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_300839855 = mInput;
-        varB4EAC82CA7396A68D541C85D26508E83_300839855.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_300839855.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_300839855;
-        // ---------- Original Method ----------
-        //return mInput;
+        
+        
     }
 
     
@@ -1358,34 +1358,34 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             try 
             {
                 mInputType = mInput.getInputType();
-            } //End block
+            } 
             catch (IncompatibleClassChangeError e)
             {
                 mInputType = EditorInfo.TYPE_CLASS_TEXT;
-            } //End block
+            } 
             setInputTypeSingleLine(mSingleLine);
-        } //End block
+        } 
         {
             mInputType = EditorInfo.TYPE_NULL;
-        } //End block
+        } 
         InputMethodManager imm = InputMethodManager.peekInstance();
         imm.restartInput(this);
         addTaint(input.getTaint());
-        // ---------- Original Method ----------
-        //setKeyListenerOnly(input);
-        //fixFocusableAndClickableSettings();
-        //if (input != null) {
-            //try {
-                //mInputType = mInput.getInputType();
-            //} catch (IncompatibleClassChangeError e) {
-                //mInputType = EditorInfo.TYPE_CLASS_TEXT;
-            //}
-            //setInputTypeSingleLine(mSingleLine);
-        //} else {
-            //mInputType = EditorInfo.TYPE_NULL;
-        //}
-        //InputMethodManager imm = InputMethodManager.peekInstance();
-        //if (imm != null) imm.restartInput(this);
+        
+        
+        
+        
+            
+                
+            
+                
+            
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -1394,22 +1394,22 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         mInput = input;
         setText(mText);
         setFilters((Editable) mText, mFilters);
-        // ---------- Original Method ----------
-        //mInput = input;
-        //if (mInput != null && !(mText instanceof Editable))
-            //setText(mText);
-        //setFilters((Editable) mText, mFilters);
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.746 -0400", hash_original_method = "48923BC0AD13C4CAAF5FC92105497B11", hash_generated_method = "230F4EA74CD66097F9AC051482C0F3DD")
     public final MovementMethod getMovementMethod() {
-        MovementMethod varB4EAC82CA7396A68D541C85D26508E83_758587290 = null; //Variable for return #1
+        MovementMethod varB4EAC82CA7396A68D541C85D26508E83_758587290 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_758587290 = mMovement;
-        varB4EAC82CA7396A68D541C85D26508E83_758587290.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_758587290.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_758587290;
-        // ---------- Original Method ----------
-        //return mMovement;
+        
+        
     }
 
     
@@ -1419,12 +1419,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         setText(mText);
         fixFocusableAndClickableSettings();
         prepareCursorControllers();
-        // ---------- Original Method ----------
-        //mMovement = movement;
-        //if (mMovement != null && !(mText instanceof Spannable))
-            //setText(mText);
-        //fixFocusableAndClickableSettings();
-        //prepareCursorControllers();
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -1434,33 +1434,33 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             setFocusable(true);
             setClickable(true);
             setLongClickable(true);
-        } //End block
+        } 
         {
             setFocusable(false);
             setClickable(false);
             setLongClickable(false);
-        } //End block
-        // ---------- Original Method ----------
-        //if ((mMovement != null) || mInput != null) {
-            //setFocusable(true);
-            //setClickable(true);
-            //setLongClickable(true);
-        //} else {
-            //setFocusable(false);
-            //setClickable(false);
-            //setLongClickable(false);
-        //}
+        } 
+        
+        
+            
+            
+            
+        
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.748 -0400", hash_original_method = "2CDC6DDF1029E76D6DBEC0602C28EC15", hash_generated_method = "ACF258F1647A95847EA6E98FE4A57AF8")
     public final TransformationMethod getTransformationMethod() {
-        TransformationMethod varB4EAC82CA7396A68D541C85D26508E83_1261338782 = null; //Variable for return #1
+        TransformationMethod varB4EAC82CA7396A68D541C85D26508E83_1261338782 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1261338782 = mTransformation;
-        varB4EAC82CA7396A68D541C85D26508E83_1261338782.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1261338782.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1261338782;
-        // ---------- Original Method ----------
-        //return mTransformation;
+        
+        
     }
 
     
@@ -1469,36 +1469,36 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             {
                 ((Spannable) mText).removeSpan(mTransformation);
-            } //End block
-        } //End block
+            } 
+        } 
         mTransformation = method;
         {
             TransformationMethod2 method2 = (TransformationMethod2) method;
             mAllowTransformationLengthChange = !mTextIsSelectable && !(mText instanceof Editable);
             method2.setLengthChangesAllowed(mAllowTransformationLengthChange);
-        } //End block
+        } 
         {
             mAllowTransformationLengthChange = false;
-        } //End block
+        } 
         setText(mText);
-        // ---------- Original Method ----------
-        //if (method == mTransformation) {
-            //return;
-        //}
-        //if (mTransformation != null) {
-            //if (mText instanceof Spannable) {
-                //((Spannable) mText).removeSpan(mTransformation);
-            //}
-        //}
-        //mTransformation = method;
-        //if (method instanceof TransformationMethod2) {
-            //TransformationMethod2 method2 = (TransformationMethod2) method;
-            //mAllowTransformationLengthChange = !mTextIsSelectable && !(mText instanceof Editable);
-            //method2.setLengthChangesAllowed(mAllowTransformationLengthChange);
-        //} else {
-            //mAllowTransformationLengthChange = false;
-        //}
-        //setText(mText);
+        
+        
+            
+        
+        
+            
+                
+            
+        
+        
+        
+            
+            
+            
+        
+            
+        
+        
     }
 
     
@@ -1507,13 +1507,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         final Drawables dr = mDrawables;
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1858181979 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1858181979;
-        // ---------- Original Method ----------
-        //final Drawables dr = mDrawables;
-        //if (dr == null || dr.mDrawableTop == null) {
-            //return mPaddingTop;
-        //} else {
-            //return mPaddingTop + dr.mDrawablePadding + dr.mDrawableSizeTop;
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1522,13 +1522,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         final Drawables dr = mDrawables;
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1975016950 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1975016950;
-        // ---------- Original Method ----------
-        //final Drawables dr = mDrawables;
-        //if (dr == null || dr.mDrawableBottom == null) {
-            //return mPaddingBottom;
-        //} else {
-            //return mPaddingBottom + dr.mDrawablePadding + dr.mDrawableSizeBottom;
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1537,13 +1537,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         final Drawables dr = mDrawables;
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_149635182 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_149635182;
-        // ---------- Original Method ----------
-        //final Drawables dr = mDrawables;
-        //if (dr == null || dr.mDrawableLeft == null) {
-            //return mPaddingLeft;
-        //} else {
-            //return mPaddingLeft + dr.mDrawablePadding + dr.mDrawableSizeLeft;
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1552,13 +1552,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         final Drawables dr = mDrawables;
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1924101959 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1924101959;
-        // ---------- Original Method ----------
-        //final Drawables dr = mDrawables;
-        //if (dr == null || dr.mDrawableRight == null) {
-            //return mPaddingRight;
-        //} else {
-            //return mPaddingRight + dr.mDrawablePadding + dr.mDrawableSizeRight;
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1567,24 +1567,24 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         resolveDrawables();
         {
             Object varAFC6EB2C684D509A17B3A4EFF5D9CB9D_1882576112 = (getResolvedLayoutDirection());
-            //Begin case default LAYOUT_DIRECTION_LTR 
+            
             int var781EBC093D28721525521D7AA075C977_1494896881 = (getCompoundPaddingLeft());
-            //End case default LAYOUT_DIRECTION_LTR 
-            //Begin case LAYOUT_DIRECTION_RTL 
+            
+            
             int var8A1D5A6585B3402DA0435C7A847F7E9A_1604468581 = (getCompoundPaddingRight());
-            //End case LAYOUT_DIRECTION_RTL 
-        } //End collapsed parenthetic
+            
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1062103430 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1062103430;
-        // ---------- Original Method ----------
-        //resolveDrawables();
-        //switch(getResolvedLayoutDirection()) {
-            //default:
-            //case LAYOUT_DIRECTION_LTR:
-                //return getCompoundPaddingLeft();
-            //case LAYOUT_DIRECTION_RTL:
-                //return getCompoundPaddingRight();
-        //}
+        
+        
+        
+            
+            
+                
+            
+                
+        
     }
 
     
@@ -1593,24 +1593,24 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         resolveDrawables();
         {
             Object varAFC6EB2C684D509A17B3A4EFF5D9CB9D_293331693 = (getResolvedLayoutDirection());
-            //Begin case default LAYOUT_DIRECTION_LTR 
+            
             int var8A1D5A6585B3402DA0435C7A847F7E9A_1128644886 = (getCompoundPaddingRight());
-            //End case default LAYOUT_DIRECTION_LTR 
-            //Begin case LAYOUT_DIRECTION_RTL 
+            
+            
             int var781EBC093D28721525521D7AA075C977_799619281 = (getCompoundPaddingLeft());
-            //End case LAYOUT_DIRECTION_RTL 
-        } //End collapsed parenthetic
+            
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2031116819 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2031116819;
-        // ---------- Original Method ----------
-        //resolveDrawables();
-        //switch(getResolvedLayoutDirection()) {
-            //default:
-            //case LAYOUT_DIRECTION_LTR:
-                //return getCompoundPaddingRight();
-            //case LAYOUT_DIRECTION_RTL:
-                //return getCompoundPaddingLeft();
-        //}
+        
+        
+        
+            
+            
+                
+            
+                
+        
     }
 
     
@@ -1618,13 +1618,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public int getExtendedPaddingTop() {
         {
             int var616A12A33C5C9277AD7C0C5C89BD69B5_144760619 = (getCompoundPaddingTop());
-        } //End block
+        } 
         {
             boolean var907B1900A80A700A44CB9B3E7CFA8547_136586649 = (mLayout.getLineCount() <= mMaximum);
             {
                 int varDAC50BDCD5E1A4A87E580425D0AB90D1_658710620 = (getCompoundPaddingTop());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int top = getCompoundPaddingTop();
         int bottom = getCompoundPaddingBottom();
         int viewht = getHeight() - top - bottom;
@@ -1632,28 +1632,28 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         final int gravity = mGravity & Gravity.VERTICAL_GRAVITY_MASK;
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_114709113 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_114709113;
-        // ---------- Original Method ----------
-        //if (mMaxMode != LINES) {
-            //return getCompoundPaddingTop();
-        //}
-        //if (mLayout.getLineCount() <= mMaximum) {
-            //return getCompoundPaddingTop();
-        //}
-        //int top = getCompoundPaddingTop();
-        //int bottom = getCompoundPaddingBottom();
-        //int viewht = getHeight() - top - bottom;
-        //int layoutht = mLayout.getLineTop(mMaximum);
-        //if (layoutht >= viewht) {
-            //return top;
-        //}
-        //final int gravity = mGravity & Gravity.VERTICAL_GRAVITY_MASK;
-        //if (gravity == Gravity.TOP) {
-            //return top;
-        //} else if (gravity == Gravity.BOTTOM) {
-            //return top + viewht - layoutht;
-        //} else { 
-            //return top + (viewht - layoutht) / 2;
-        //}
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -1661,13 +1661,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public int getExtendedPaddingBottom() {
         {
             int varB616C533FD1413DFA57A8B3E4A355326_1934376813 = (getCompoundPaddingBottom());
-        } //End block
+        } 
         {
             boolean var907B1900A80A700A44CB9B3E7CFA8547_2001609133 = (mLayout.getLineCount() <= mMaximum);
             {
                 int varF7C5B922A73A10EEE346A45E2A7B3E82_1639849181 = (getCompoundPaddingBottom());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int top = getCompoundPaddingTop();
         int bottom = getCompoundPaddingBottom();
         int viewht = getHeight() - top - bottom;
@@ -1675,28 +1675,28 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         final int gravity = mGravity & Gravity.VERTICAL_GRAVITY_MASK;
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_153250059 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_153250059;
-        // ---------- Original Method ----------
-        //if (mMaxMode != LINES) {
-            //return getCompoundPaddingBottom();
-        //}
-        //if (mLayout.getLineCount() <= mMaximum) {
-            //return getCompoundPaddingBottom();
-        //}
-        //int top = getCompoundPaddingTop();
-        //int bottom = getCompoundPaddingBottom();
-        //int viewht = getHeight() - top - bottom;
-        //int layoutht = mLayout.getLineTop(mMaximum);
-        //if (layoutht >= viewht) {
-            //return bottom;
-        //}
-        //final int gravity = mGravity & Gravity.VERTICAL_GRAVITY_MASK;
-        //if (gravity == Gravity.TOP) {
-            //return bottom + viewht - layoutht;
-        //} else if (gravity == Gravity.BOTTOM) {
-            //return bottom;
-        //} else { 
-            //return bottom + (viewht - layoutht) / 2;
-        //}
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -1705,8 +1705,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int var34500B372695C1C0BF8F0AECDF252C98_1372828842 = (getCompoundPaddingLeft());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_549471472 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_549471472;
-        // ---------- Original Method ----------
-        //return getCompoundPaddingLeft();
+        
+        
     }
 
     
@@ -1715,8 +1715,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int var9B702A81BD3510988CA34C6D5C5CC2BB_1838894462 = (getCompoundPaddingRight());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_77948165 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_77948165;
-        // ---------- Original Method ----------
-        //return getCompoundPaddingRight();
+        
+        
     }
 
     
@@ -1725,8 +1725,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int var7D7F8C48280E1131C487BF0950634EDB_1996129450 = (getCompoundPaddingStart());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_137912702 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_137912702;
-        // ---------- Original Method ----------
-        //return getCompoundPaddingStart();
+        
+        
     }
 
     
@@ -1735,8 +1735,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int varF719AD7587A07158D4596514D0584E08_1451146949 = (getCompoundPaddingEnd());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1964856715 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1964856715;
-        // ---------- Original Method ----------
-        //return getCompoundPaddingEnd();
+        
+        
     }
 
     
@@ -1745,8 +1745,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int varCBA1A1AACA4E5447F7B59F1AEE81650D_1960966129 = (getExtendedPaddingTop() + getVerticalOffset(true));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1716387672 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1716387672;
-        // ---------- Original Method ----------
-        //return getExtendedPaddingTop() + getVerticalOffset(true);
+        
+        
     }
 
     
@@ -1755,8 +1755,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int var8B593715CC9C8A177070B563C501DACE_222789898 = (getExtendedPaddingBottom() + getBottomVerticalOffset(true));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2081429014 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2081429014;
-        // ---------- Original Method ----------
-        //return getExtendedPaddingBottom() + getBottomVerticalOffset(true);
+        
+        
     }
 
     
@@ -1770,7 +1770,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             {
                 {
                     mDrawables = null;
-                } //End block
+                } 
                 {
                     dr.mDrawableLeft.setCallback(null);
                     dr.mDrawableLeft = null;
@@ -1784,28 +1784,28 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     dr.mDrawableSizeRight = dr.mDrawableHeightRight = 0;
                     dr.mDrawableSizeTop = dr.mDrawableWidthTop = 0;
                     dr.mDrawableSizeBottom = dr.mDrawableWidthBottom = 0;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             {
                 mDrawables = dr = new Drawables();
-            } //End block
+            } 
             {
                 dr.mDrawableLeft.setCallback(null);
-            } //End block
+            } 
             dr.mDrawableLeft = left;
             {
                 dr.mDrawableTop.setCallback(null);
-            } //End block
+            } 
             dr.mDrawableTop = top;
             {
                 dr.mDrawableRight.setCallback(null);
-            } //End block
+            } 
             dr.mDrawableRight = right;
             {
                 dr.mDrawableBottom.setCallback(null);
-            } //End block
+            } 
             dr.mDrawableBottom = bottom;
             final Rect compoundRect = dr.mCompoundRect;
             int[] state;
@@ -1816,49 +1816,49 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 left.setCallback(this);
                 dr.mDrawableSizeLeft = compoundRect.width();
                 dr.mDrawableHeightLeft = compoundRect.height();
-            } //End block
+            } 
             {
                 dr.mDrawableSizeLeft = dr.mDrawableHeightLeft = 0;
-            } //End block
+            } 
             {
                 right.setState(state);
                 right.copyBounds(compoundRect);
                 right.setCallback(this);
                 dr.mDrawableSizeRight = compoundRect.width();
                 dr.mDrawableHeightRight = compoundRect.height();
-            } //End block
+            } 
             {
                 dr.mDrawableSizeRight = dr.mDrawableHeightRight = 0;
-            } //End block
+            } 
             {
                 top.setState(state);
                 top.copyBounds(compoundRect);
                 top.setCallback(this);
                 dr.mDrawableSizeTop = compoundRect.height();
                 dr.mDrawableWidthTop = compoundRect.width();
-            } //End block
+            } 
             {
                 dr.mDrawableSizeTop = dr.mDrawableWidthTop = 0;
-            } //End block
+            } 
             {
                 bottom.setState(state);
                 bottom.copyBounds(compoundRect);
                 bottom.setCallback(this);
                 dr.mDrawableSizeBottom = compoundRect.height();
                 dr.mDrawableWidthBottom = compoundRect.width();
-            } //End block
+            } 
             {
                 dr.mDrawableSizeBottom = dr.mDrawableWidthBottom = 0;
-            } //End block
-        } //End block
+            } 
+        } 
         invalidate();
         requestLayout();
         addTaint(left.getTaint());
         addTaint(top.getTaint());
         addTaint(right.getTaint());
         addTaint(bottom.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1873,12 +1873,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         addTaint(top);
         addTaint(right);
         addTaint(bottom);
-        // ---------- Original Method ----------
-        //final Resources resources = getContext().getResources();
-        //setCompoundDrawablesWithIntrinsicBounds(left != 0 ? resources.getDrawable(left) : null,
-                //top != 0 ? resources.getDrawable(top) : null,
-                //right != 0 ? resources.getDrawable(right) : null,
-                //bottom != 0 ? resources.getDrawable(bottom) : null);
+        
+        
+        
+                
+                
+                
     }
 
     
@@ -1887,35 +1887,35 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             Drawable right, Drawable bottom) {
         {
             left.setBounds(0, 0, left.getIntrinsicWidth(), left.getIntrinsicHeight());
-        } //End block
+        } 
         {
             right.setBounds(0, 0, right.getIntrinsicWidth(), right.getIntrinsicHeight());
-        } //End block
+        } 
         {
             top.setBounds(0, 0, top.getIntrinsicWidth(), top.getIntrinsicHeight());
-        } //End block
+        } 
         {
             bottom.setBounds(0, 0, bottom.getIntrinsicWidth(), bottom.getIntrinsicHeight());
-        } //End block
+        } 
         setCompoundDrawables(left, top, right, bottom);
         addTaint(left.getTaint());
         addTaint(top.getTaint());
         addTaint(right.getTaint());
         addTaint(bottom.getTaint());
-        // ---------- Original Method ----------
-        //if (left != null) {
-            //left.setBounds(0, 0, left.getIntrinsicWidth(), left.getIntrinsicHeight());
-        //}
-        //if (right != null) {
-            //right.setBounds(0, 0, right.getIntrinsicWidth(), right.getIntrinsicHeight());
-        //}
-        //if (top != null) {
-            //top.setBounds(0, 0, top.getIntrinsicWidth(), top.getIntrinsicHeight());
-        //}
-        //if (bottom != null) {
-            //bottom.setBounds(0, 0, bottom.getIntrinsicWidth(), bottom.getIntrinsicHeight());
-        //}
-        //setCompoundDrawables(left, top, right, bottom);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -1929,7 +1929,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             {
                 {
                     mDrawables = null;
-                } //End block
+                } 
                 {
                     dr.mDrawableStart.setCallback(null);
                     dr.mDrawableStart = null;
@@ -1943,28 +1943,28 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     dr.mDrawableSizeEnd = dr.mDrawableHeightEnd = 0;
                     dr.mDrawableSizeTop = dr.mDrawableWidthTop = 0;
                     dr.mDrawableSizeBottom = dr.mDrawableWidthBottom = 0;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             {
                 mDrawables = dr = new Drawables();
-            } //End block
+            } 
             {
                 dr.mDrawableStart.setCallback(null);
-            } //End block
+            } 
             dr.mDrawableStart = start;
             {
                 dr.mDrawableTop.setCallback(null);
-            } //End block
+            } 
             dr.mDrawableTop = top;
             {
                 dr.mDrawableEnd.setCallback(null);
-            } //End block
+            } 
             dr.mDrawableEnd = end;
             {
                 dr.mDrawableBottom.setCallback(null);
-            } //End block
+            } 
             dr.mDrawableBottom = bottom;
             final Rect compoundRect = dr.mCompoundRect;
             int[] state;
@@ -1975,41 +1975,41 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 start.setCallback(this);
                 dr.mDrawableSizeStart = compoundRect.width();
                 dr.mDrawableHeightStart = compoundRect.height();
-            } //End block
+            } 
             {
                 dr.mDrawableSizeStart = dr.mDrawableHeightStart = 0;
-            } //End block
+            } 
             {
                 end.setState(state);
                 end.copyBounds(compoundRect);
                 end.setCallback(this);
                 dr.mDrawableSizeEnd = compoundRect.width();
                 dr.mDrawableHeightEnd = compoundRect.height();
-            } //End block
+            } 
             {
                 dr.mDrawableSizeEnd = dr.mDrawableHeightEnd = 0;
-            } //End block
+            } 
             {
                 top.setState(state);
                 top.copyBounds(compoundRect);
                 top.setCallback(this);
                 dr.mDrawableSizeTop = compoundRect.height();
                 dr.mDrawableWidthTop = compoundRect.width();
-            } //End block
+            } 
             {
                 dr.mDrawableSizeTop = dr.mDrawableWidthTop = 0;
-            } //End block
+            } 
             {
                 bottom.setState(state);
                 bottom.copyBounds(compoundRect);
                 bottom.setCallback(this);
                 dr.mDrawableSizeBottom = compoundRect.height();
                 dr.mDrawableWidthBottom = compoundRect.width();
-            } //End block
+            } 
             {
                 dr.mDrawableSizeBottom = dr.mDrawableWidthBottom = 0;
-            } //End block
-        } //End block
+            } 
+        } 
         resolveDrawables();
         invalidate();
         requestLayout();
@@ -2017,8 +2017,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         addTaint(top.getTaint());
         addTaint(end.getTaint());
         addTaint(bottom.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2036,14 +2036,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         addTaint(top);
         addTaint(end);
         addTaint(bottom);
-        // ---------- Original Method ----------
-        //resetResolvedDrawables();
-        //final Resources resources = getContext().getResources();
-        //setCompoundDrawablesRelativeWithIntrinsicBounds(
-                //start != 0 ? resources.getDrawable(start) : null,
-                //top != 0 ? resources.getDrawable(top) : null,
-                //end != 0 ? resources.getDrawable(end) : null,
-                //bottom != 0 ? resources.getDrawable(bottom) : null);
+        
+        
+        
+        
+                
+                
+                
+                
     }
 
     
@@ -2053,108 +2053,108 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         resetResolvedDrawables();
         {
             start.setBounds(0, 0, start.getIntrinsicWidth(), start.getIntrinsicHeight());
-        } //End block
+        } 
         {
             end.setBounds(0, 0, end.getIntrinsicWidth(), end.getIntrinsicHeight());
-        } //End block
+        } 
         {
             top.setBounds(0, 0, top.getIntrinsicWidth(), top.getIntrinsicHeight());
-        } //End block
+        } 
         {
             bottom.setBounds(0, 0, bottom.getIntrinsicWidth(), bottom.getIntrinsicHeight());
-        } //End block
+        } 
         setCompoundDrawablesRelative(start, top, end, bottom);
         addTaint(start.getTaint());
         addTaint(top.getTaint());
         addTaint(end.getTaint());
         addTaint(bottom.getTaint());
-        // ---------- Original Method ----------
-        //resetResolvedDrawables();
-        //if (start != null) {
-            //start.setBounds(0, 0, start.getIntrinsicWidth(), start.getIntrinsicHeight());
-        //}
-        //if (end != null) {
-            //end.setBounds(0, 0, end.getIntrinsicWidth(), end.getIntrinsicHeight());
-        //}
-        //if (top != null) {
-            //top.setBounds(0, 0, top.getIntrinsicWidth(), top.getIntrinsicHeight());
-        //}
-        //if (bottom != null) {
-            //bottom.setBounds(0, 0, bottom.getIntrinsicWidth(), bottom.getIntrinsicHeight());
-        //}
-        //setCompoundDrawablesRelative(start, top, end, bottom);
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.761 -0400", hash_original_method = "06FDA6F654D58A3BC65C29C47124F71A", hash_generated_method = "5EBE399BEC8CC9FF5D0955D2DCBF32E9")
     public Drawable[] getCompoundDrawables() {
-        Drawable[] varB4EAC82CA7396A68D541C85D26508E83_569638552 = null; //Variable for return #1
-        Drawable[] varB4EAC82CA7396A68D541C85D26508E83_786425571 = null; //Variable for return #2
+        Drawable[] varB4EAC82CA7396A68D541C85D26508E83_569638552 = null; 
+        Drawable[] varB4EAC82CA7396A68D541C85D26508E83_786425571 = null; 
         final Drawables dr = mDrawables;
         {
             varB4EAC82CA7396A68D541C85D26508E83_569638552 = new Drawable[] {
                 dr.mDrawableLeft, dr.mDrawableTop, dr.mDrawableRight, dr.mDrawableBottom
             };
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_786425571 = new Drawable[] { null, null, null, null };
-        } //End block
-        Drawable[] varA7E53CE21691AB073D9660D615818899_26225717; //Final return value
+        } 
+        Drawable[] varA7E53CE21691AB073D9660D615818899_26225717; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_26225717 = varB4EAC82CA7396A68D541C85D26508E83_569638552;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_26225717 = varB4EAC82CA7396A68D541C85D26508E83_786425571;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_26225717.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_26225717.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_26225717;
-        // ---------- Original Method ----------
-        //final Drawables dr = mDrawables;
-        //if (dr != null) {
-            //return new Drawable[] {
-                //dr.mDrawableLeft, dr.mDrawableTop, dr.mDrawableRight, dr.mDrawableBottom
-            //};
-        //} else {
-            //return new Drawable[] { null, null, null, null };
-        //}
+        
+        
+        
+            
+                
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.762 -0400", hash_original_method = "7D536599368FF7E7773D59B2D0C7C092", hash_generated_method = "F0FA16DDF0EFA2D5971B19596CD8994B")
     public Drawable[] getCompoundDrawablesRelative() {
-        Drawable[] varB4EAC82CA7396A68D541C85D26508E83_272495733 = null; //Variable for return #1
-        Drawable[] varB4EAC82CA7396A68D541C85D26508E83_995259918 = null; //Variable for return #2
+        Drawable[] varB4EAC82CA7396A68D541C85D26508E83_272495733 = null; 
+        Drawable[] varB4EAC82CA7396A68D541C85D26508E83_995259918 = null; 
         final Drawables dr = mDrawables;
         {
             varB4EAC82CA7396A68D541C85D26508E83_272495733 = new Drawable[] {
                 dr.mDrawableStart, dr.mDrawableTop, dr.mDrawableEnd, dr.mDrawableBottom
             };
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_995259918 = new Drawable[] { null, null, null, null };
-        } //End block
-        Drawable[] varA7E53CE21691AB073D9660D615818899_709659229; //Final return value
+        } 
+        Drawable[] varA7E53CE21691AB073D9660D615818899_709659229; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_709659229 = varB4EAC82CA7396A68D541C85D26508E83_272495733;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_709659229 = varB4EAC82CA7396A68D541C85D26508E83_995259918;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_709659229.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_709659229.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_709659229;
-        // ---------- Original Method ----------
-        //final Drawables dr = mDrawables;
-        //if (dr != null) {
-            //return new Drawable[] {
-                //dr.mDrawableStart, dr.mDrawableTop, dr.mDrawableEnd, dr.mDrawableBottom
-            //};
-        //} else {
-            //return new Drawable[] { null, null, null, null };
-        //}
+        
+        
+        
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -2164,31 +2164,31 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             {
                 dr.mDrawablePadding = pad;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 mDrawables = dr = new Drawables();
-            } //End block
+            } 
             dr.mDrawablePadding = pad;
-        } //End block
+        } 
         invalidate();
         requestLayout();
         addTaint(pad);
-        // ---------- Original Method ----------
-        //Drawables dr = mDrawables;
-        //if (pad == 0) {
-            //if (dr != null) {
-                //dr.mDrawablePadding = pad;
-            //}
-        //} else {
-            //if (dr == null) {
-                //mDrawables = dr = new Drawables();
-            //}
-            //dr.mDrawablePadding = pad;
-        //}
-        //invalidate();
-        //requestLayout();
+        
+        
+        
+            
+                
+            
+        
+            
+                
+            
+            
+        
+        
+        
     }
 
     
@@ -2197,9 +2197,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         final Drawables dr = mDrawables;
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1512863395 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1512863395;
-        // ---------- Original Method ----------
-        //final Drawables dr = mDrawables;
-        //return dr != null ? dr.mDrawablePadding : 0;
+        
+        
+        
     }
 
     
@@ -2208,22 +2208,22 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public void setPadding(int left, int top, int right, int bottom) {
         {
             nullLayouts();
-        } //End block
+        } 
         super.setPadding(left, top, right, bottom);
         invalidate();
         addTaint(left);
         addTaint(top);
         addTaint(right);
         addTaint(bottom);
-        // ---------- Original Method ----------
-        //if (left != mPaddingLeft ||
-            //right != mPaddingRight ||
-            //top != mPaddingTop ||
-            //bottom != mPaddingBottom) {
-            //nullLayouts();
-        //}
-        //super.setPadding(left, top, right, bottom);
-        //invalidate();
+        
+        
+            
+            
+            
+            
+        
+        
+        
     }
 
     
@@ -2231,8 +2231,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public final int getAutoLinkMask() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_143247611 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_143247611;
-        // ---------- Original Method ----------
-        //return mAutoLinkMask;
+        
+        
     }
 
     
@@ -2246,27 +2246,27 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         color = appearance.getColor(com.android.internal.R.styleable.TextAppearance_textColorHighlight, 0);
         {
             setHighlightColor(color);
-        } //End block
+        } 
         colors = appearance.getColorStateList(com.android.internal.R.styleable.
                                               TextAppearance_textColor);
         {
             setTextColor(colors);
-        } //End block
+        } 
         ts = appearance.getDimensionPixelSize(com.android.internal.R.styleable.
                                               TextAppearance_textSize, 0);
         {
             setRawTextSize(ts);
-        } //End block
+        } 
         colors = appearance.getColorStateList(com.android.internal.R.styleable.
                                               TextAppearance_textColorHint);
         {
             setHintTextColor(colors);
-        } //End block
+        } 
         colors = appearance.getColorStateList(com.android.internal.R.styleable.
                                               TextAppearance_textColorLink);
         {
             setLinkTextColor(colors);
-        } //End block
+        } 
         int typefaceIndex;
         int styleIndex;
         typefaceIndex = appearance.getInt(com.android.internal.R.styleable.
@@ -2279,13 +2279,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 false));
             {
                 setTransformationMethod(new AllCapsTransformationMethod(getContext()));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         appearance.recycle();
         addTaint(context.getTaint());
         addTaint(resid);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2294,8 +2294,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         float var0C1431BDAC3C89F7C02E56A482F7EB06_1316028326 = (mTextPaint.getTextSize());
         float var546ADE640B6EDFBC8A086EF31347E768_1642148023 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1642148023;
-        // ---------- Original Method ----------
-        //return mTextPaint.getTextSize();
+        
+        
     }
 
     
@@ -2304,8 +2304,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public void setTextSize(float size) {
         setTextSize(TypedValue.COMPLEX_UNIT_SP, size);
         addTaint(size);
-        // ---------- Original Method ----------
-        //setTextSize(TypedValue.COMPLEX_UNIT_SP, size);
+        
+        
     }
 
     
@@ -2319,15 +2319,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             unit, size, r.getDisplayMetrics()));
         addTaint(unit);
         addTaint(size);
-        // ---------- Original Method ----------
-        //Context c = getContext();
-        //Resources r;
-        //if (c == null)
-            //r = Resources.getSystem();
-        //else
-            //r = c.getResources();
-        //setRawTextSize(TypedValue.applyDimension(
-            //unit, size, r.getDisplayMetrics()));
+        
+        
+        
+        
+            
+        
+            
+        
+            
     }
 
     
@@ -2341,19 +2341,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     nullLayouts();
                     requestLayout();
                     invalidate();
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(size);
-        // ---------- Original Method ----------
-        //if (size != mTextPaint.getTextSize()) {
-            //mTextPaint.setTextSize(size);
-            //if (mLayout != null) {
-                //nullLayouts();
-                //requestLayout();
-                //invalidate();
-            //}
-        //}
+        
+        
+            
+            
+                
+                
+                
+            
+        
     }
 
     
@@ -2362,8 +2362,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         float var4A490DCBBE6DC7C04831F39DE35D9E8E_1125452088 = (mTextPaint.getTextScaleX());
         float var546ADE640B6EDFBC8A086EF31347E768_1449229028 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1449229028;
-        // ---------- Original Method ----------
-        //return mTextPaint.getTextScaleX();
+        
+        
     }
 
     
@@ -2379,20 +2379,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     nullLayouts();
                     requestLayout();
                     invalidate();
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(size);
-        // ---------- Original Method ----------
-        //if (size != mTextPaint.getTextScaleX()) {
-            //mUserSetTextScaleX = true;
-            //mTextPaint.setTextScaleX(size);
-            //if (mLayout != null) {
-                //nullLayouts();
-                //requestLayout();
-                //invalidate();
-            //}
-        //}
+        
+        
+            
+            
+            
+                
+                
+                
+            
+        
     }
 
     
@@ -2406,30 +2406,30 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     nullLayouts();
                     requestLayout();
                     invalidate();
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(tf.getTaint());
-        // ---------- Original Method ----------
-        //if (mTextPaint.getTypeface() != tf) {
-            //mTextPaint.setTypeface(tf);
-            //if (mLayout != null) {
-                //nullLayouts();
-                //requestLayout();
-                //invalidate();
-            //}
-        //}
+        
+        
+            
+            
+                
+                
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.769 -0400", hash_original_method = "6FFDE601A24D081BE5F9A52F7BB654E9", hash_generated_method = "4B581C7474C4CE038DD791003C5C071D")
     public Typeface getTypeface() {
-        Typeface varB4EAC82CA7396A68D541C85D26508E83_1502946134 = null; //Variable for return #1
+        Typeface varB4EAC82CA7396A68D541C85D26508E83_1502946134 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1502946134 = mTextPaint.getTypeface();
-        varB4EAC82CA7396A68D541C85D26508E83_1502946134.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1502946134.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1502946134;
-        // ---------- Original Method ----------
-        //return mTextPaint.getTypeface();
+        
+        
     }
 
     
@@ -2438,9 +2438,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public void setTextColor(int color) {
         mTextColor = ColorStateList.valueOf(color);
         updateTextColors();
-        // ---------- Original Method ----------
-        //mTextColor = ColorStateList.valueOf(color);
-        //updateTextColors();
+        
+        
+        
     }
 
     
@@ -2448,26 +2448,26 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public void setTextColor(ColorStateList colors) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         mTextColor = colors;
         updateTextColors();
-        // ---------- Original Method ----------
-        //if (colors == null) {
-            //throw new NullPointerException();
-        //}
-        //mTextColor = colors;
-        //updateTextColors();
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.770 -0400", hash_original_method = "E9708E6780595497A0F38B1A3DFD4921", hash_generated_method = "72479F6F9F9257CEE40A63BB69B0BE41")
     public final ColorStateList getTextColors() {
-        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_365811992 = null; //Variable for return #1
+        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_365811992 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_365811992 = mTextColor;
-        varB4EAC82CA7396A68D541C85D26508E83_365811992.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_365811992.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_365811992;
-        // ---------- Original Method ----------
-        //return mTextColor;
+        
+        
     }
 
     
@@ -2475,8 +2475,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public final int getCurrentTextColor() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1930808016 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1930808016;
-        // ---------- Original Method ----------
-        //return mCurTextColor;
+        
+        
     }
 
     
@@ -2486,12 +2486,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             mHighlightColor = color;
             invalidate();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mHighlightColor != color) {
-            //mHighlightColor = color;
-            //invalidate();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -2503,23 +2503,23 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         mShadowDy = dy;
         invalidate();
         addTaint(color);
-        // ---------- Original Method ----------
-        //mTextPaint.setShadowLayer(radius, dx, dy, color);
-        //mShadowRadius = radius;
-        //mShadowDx = dx;
-        //mShadowDy = dy;
-        //invalidate();
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.772 -0400", hash_original_method = "5B4E8CD3DF4A8D21F89EBB7BF27B30F6", hash_generated_method = "9006F0CF73221D63C593F7F1ED3359AE")
     public TextPaint getPaint() {
-        TextPaint varB4EAC82CA7396A68D541C85D26508E83_1685474097 = null; //Variable for return #1
+        TextPaint varB4EAC82CA7396A68D541C85D26508E83_1685474097 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1685474097 = mTextPaint;
-        varB4EAC82CA7396A68D541C85D26508E83_1685474097.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1685474097.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1685474097;
-        // ---------- Original Method ----------
-        //return mTextPaint;
+        
+        
     }
 
     
@@ -2527,8 +2527,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     @android.view.RemotableViewMethod
     public final void setAutoLinkMask(int mask) {
         mAutoLinkMask = mask;
-        // ---------- Original Method ----------
-        //mAutoLinkMask = mask;
+        
+        
     }
 
     
@@ -2536,8 +2536,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     @android.view.RemotableViewMethod
     public final void setLinksClickable(boolean whether) {
         mLinksClickable = whether;
-        // ---------- Original Method ----------
-        //mLinksClickable = whether;
+        
+        
     }
 
     
@@ -2545,8 +2545,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public final boolean getLinksClickable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_218900172 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_218900172;
-        // ---------- Original Method ----------
-        //return mLinksClickable;
+        
+        
     }
 
     
@@ -2554,8 +2554,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     @android.view.RemotableViewMethod
     public final void setSoftInputShownOnFocus(boolean show) {
         mSoftInputShownOnFocus = show;
-        // ---------- Original Method ----------
-        //mSoftInputShownOnFocus = show;
+        
+        
     }
 
     
@@ -2563,38 +2563,38 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public final boolean getSoftInputShownOnFocus() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_370260261 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_370260261;
-        // ---------- Original Method ----------
-        //return mSoftInputShownOnFocus;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.774 -0400", hash_original_method = "7722BA5204257A1CDED1550384208856", hash_generated_method = "967AA57CEF485C9080305ABBC4D394AC")
     public URLSpan[] getUrls() {
-        URLSpan[] varB4EAC82CA7396A68D541C85D26508E83_1759443921 = null; //Variable for return #1
-        URLSpan[] varB4EAC82CA7396A68D541C85D26508E83_539881045 = null; //Variable for return #2
+        URLSpan[] varB4EAC82CA7396A68D541C85D26508E83_1759443921 = null; 
+        URLSpan[] varB4EAC82CA7396A68D541C85D26508E83_539881045 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1759443921 = ((Spanned) mText).getSpans(0, mText.length(), URLSpan.class);
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_539881045 = new URLSpan[0];
-        } //End block
-        URLSpan[] varA7E53CE21691AB073D9660D615818899_389569463; //Final return value
+        } 
+        URLSpan[] varA7E53CE21691AB073D9660D615818899_389569463; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_389569463 = varB4EAC82CA7396A68D541C85D26508E83_1759443921;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_389569463 = varB4EAC82CA7396A68D541C85D26508E83_539881045;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_389569463.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_389569463.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_389569463;
-        // ---------- Original Method ----------
-        //if (mText instanceof Spanned) {
-            //return ((Spanned) mText).getSpans(0, mText.length(), URLSpan.class);
-        //} else {
-            //return new URLSpan[0];
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -2603,9 +2603,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public final void setHintTextColor(int color) {
         mHintTextColor = ColorStateList.valueOf(color);
         updateTextColors();
-        // ---------- Original Method ----------
-        //mHintTextColor = ColorStateList.valueOf(color);
-        //updateTextColors();
+        
+        
+        
     }
 
     
@@ -2613,20 +2613,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public final void setHintTextColor(ColorStateList colors) {
         mHintTextColor = colors;
         updateTextColors();
-        // ---------- Original Method ----------
-        //mHintTextColor = colors;
-        //updateTextColors();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.777 -0400", hash_original_method = "475EC0453C7F74E6A779EAD7F8319059", hash_generated_method = "33914903DBB96F4881D8153510C62A57")
     public final ColorStateList getHintTextColors() {
-        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_42014262 = null; //Variable for return #1
+        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_42014262 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_42014262 = mHintTextColor;
-        varB4EAC82CA7396A68D541C85D26508E83_42014262.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_42014262.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_42014262;
-        // ---------- Original Method ----------
-        //return mHintTextColor;
+        
+        
     }
 
     
@@ -2634,8 +2634,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public final int getCurrentHintTextColor() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_919557837 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_919557837;
-        // ---------- Original Method ----------
-        //return mHintTextColor != null ? mCurHintTextColor : mCurTextColor;
+        
+        
     }
 
     
@@ -2644,9 +2644,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public final void setLinkTextColor(int color) {
         mLinkTextColor = ColorStateList.valueOf(color);
         updateTextColors();
-        // ---------- Original Method ----------
-        //mLinkTextColor = ColorStateList.valueOf(color);
-        //updateTextColors();
+        
+        
+        
     }
 
     
@@ -2654,20 +2654,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public final void setLinkTextColor(ColorStateList colors) {
         mLinkTextColor = colors;
         updateTextColors();
-        // ---------- Original Method ----------
-        //mLinkTextColor = colors;
-        //updateTextColors();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.778 -0400", hash_original_method = "3A49B90BEACC4CBB32A44A5B9C48739C", hash_generated_method = "A86B2E82619F0FD460897AA590DAB748")
     public final ColorStateList getLinkTextColors() {
-        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_14129340 = null; //Variable for return #1
+        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_14129340 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_14129340 = mLinkTextColor;
-        varB4EAC82CA7396A68D541C85D26508E83_14129340.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_14129340.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_14129340;
-        // ---------- Original Method ----------
-        //return mLinkTextColor;
+        
+        
     }
 
     
@@ -2675,18 +2675,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public void setGravity(int gravity) {
         {
             gravity |= Gravity.START;
-        } //End block
+        } 
         {
             gravity |= Gravity.TOP;
-        } //End block
+        } 
         boolean newLayout = false;
         {
             newLayout = true;
-        } //End block
+        } 
         {
             invalidate();
             mLayoutAlignment = null;
-        } //End block
+        } 
         mGravity = gravity;
         {
             int want = mLayout.getWidth();
@@ -2696,9 +2696,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             makeNewLayout(want, hintWant, UNKNOWN_BORING, UNKNOWN_BORING,
                           mRight - mLeft - getCompoundPaddingLeft() -
                           getCompoundPaddingRight(), true);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -2706,8 +2706,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public int getGravity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1825845206 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1825845206;
-        // ---------- Original Method ----------
-        //return mGravity;
+        
+        
     }
 
     
@@ -2716,8 +2716,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int var1FCED777482D649D2D08ED31F26C7C02_669829627 = (mTextPaint.getFlags());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_520188308 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_520188308;
-        // ---------- Original Method ----------
-        //return mTextPaint.getFlags();
+        
+        
     }
 
     
@@ -2732,19 +2732,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     nullLayouts();
                     requestLayout();
                     invalidate();
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(flags);
-        // ---------- Original Method ----------
-        //if (mTextPaint.getFlags() != flags) {
-            //mTextPaint.setFlags(flags);
-            //if (mLayout != null) {
-                //nullLayouts();
-                //requestLayout();
-                //invalidate();
-            //}
-        //}
+        
+        
+            
+            
+                
+                
+                
+            
+        
     }
 
     
@@ -2756,17 +2756,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 nullLayouts();
                 requestLayout();
                 invalidate();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mHorizontallyScrolling != whether) {
-            //mHorizontallyScrolling = whether;
-            //if (mLayout != null) {
-                //nullLayouts();
-                //requestLayout();
-                //invalidate();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+                
+                
+            
+        
     }
 
     
@@ -2774,8 +2774,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public boolean getHorizontallyScrolling() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_111910316 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_111910316;
-        // ---------- Original Method ----------
-        //return mHorizontallyScrolling;
+        
+        
     }
 
     
@@ -2786,11 +2786,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         mMinMode = LINES;
         requestLayout();
         invalidate();
-        // ---------- Original Method ----------
-        //mMinimum = minlines;
-        //mMinMode = LINES;
-        //requestLayout();
-        //invalidate();
+        
+        
+        
+        
+        
     }
 
     
@@ -2801,11 +2801,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         mMinMode = PIXELS;
         requestLayout();
         invalidate();
-        // ---------- Original Method ----------
-        //mMinimum = minHeight;
-        //mMinMode = PIXELS;
-        //requestLayout();
-        //invalidate();
+        
+        
+        
+        
+        
     }
 
     
@@ -2816,11 +2816,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         mMaxMode = LINES;
         requestLayout();
         invalidate();
-        // ---------- Original Method ----------
-        //mMaximum = maxlines;
-        //mMaxMode = LINES;
-        //requestLayout();
-        //invalidate();
+        
+        
+        
+        
+        
     }
 
     
@@ -2831,11 +2831,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         mMaxMode = PIXELS;
         requestLayout();
         invalidate();
-        // ---------- Original Method ----------
-        //mMaximum = maxHeight;
-        //mMaxMode = PIXELS;
-        //requestLayout();
-        //invalidate();
+        
+        
+        
+        
+        
     }
 
     
@@ -2846,11 +2846,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         mMaxMode = mMinMode = LINES;
         requestLayout();
         invalidate();
-        // ---------- Original Method ----------
-        //mMaximum = mMinimum = lines;
-        //mMaxMode = mMinMode = LINES;
-        //requestLayout();
-        //invalidate();
+        
+        
+        
+        
+        
     }
 
     
@@ -2861,11 +2861,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         mMaxMode = mMinMode = PIXELS;
         requestLayout();
         invalidate();
-        // ---------- Original Method ----------
-        //mMaximum = mMinimum = pixels;
-        //mMaxMode = mMinMode = PIXELS;
-        //requestLayout();
-        //invalidate();
+        
+        
+        
+        
+        
     }
 
     
@@ -2876,11 +2876,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         mMinWidthMode = EMS;
         requestLayout();
         invalidate();
-        // ---------- Original Method ----------
-        //mMinWidth = minems;
-        //mMinWidthMode = EMS;
-        //requestLayout();
-        //invalidate();
+        
+        
+        
+        
+        
     }
 
     
@@ -2891,11 +2891,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         mMinWidthMode = PIXELS;
         requestLayout();
         invalidate();
-        // ---------- Original Method ----------
-        //mMinWidth = minpixels;
-        //mMinWidthMode = PIXELS;
-        //requestLayout();
-        //invalidate();
+        
+        
+        
+        
+        
     }
 
     
@@ -2906,11 +2906,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         mMaxWidthMode = EMS;
         requestLayout();
         invalidate();
-        // ---------- Original Method ----------
-        //mMaxWidth = maxems;
-        //mMaxWidthMode = EMS;
-        //requestLayout();
-        //invalidate();
+        
+        
+        
+        
+        
     }
 
     
@@ -2921,11 +2921,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         mMaxWidthMode = PIXELS;
         requestLayout();
         invalidate();
-        // ---------- Original Method ----------
-        //mMaxWidth = maxpixels;
-        //mMaxWidthMode = PIXELS;
-        //requestLayout();
-        //invalidate();
+        
+        
+        
+        
+        
     }
 
     
@@ -2936,11 +2936,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         mMaxWidthMode = mMinWidthMode = EMS;
         requestLayout();
         invalidate();
-        // ---------- Original Method ----------
-        //mMaxWidth = mMinWidth = ems;
-        //mMaxWidthMode = mMinWidthMode = EMS;
-        //requestLayout();
-        //invalidate();
+        
+        
+        
+        
+        
     }
 
     
@@ -2951,11 +2951,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         mMaxWidthMode = mMinWidthMode = PIXELS;
         requestLayout();
         invalidate();
-        // ---------- Original Method ----------
-        //mMaxWidth = mMinWidth = pixels;
-        //mMaxWidthMode = mMinWidthMode = PIXELS;
-        //requestLayout();
-        //invalidate();
+        
+        
+        
+        
+        
     }
 
     
@@ -2968,18 +2968,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 nullLayouts();
                 requestLayout();
                 invalidate();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mSpacingAdd != add || mSpacingMult != mult) {
-            //mSpacingAdd = add;
-            //mSpacingMult = mult;
-            //if (mLayout != null) {
-                //nullLayouts();
-                //requestLayout();
-                //invalidate();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+            
+                
+                
+                
+            
+        
     }
 
     
@@ -2987,8 +2987,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public final void append(CharSequence text) {
         append(text, 0, text.length());
         addTaint(text.getTaint());
-        // ---------- Original Method ----------
-        //append(text, 0, text.length());
+        
+        
     }
 
     
@@ -2996,16 +2996,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public void append(CharSequence text, int start, int end) {
         {
             setText(mText, BufferType.EDITABLE);
-        } //End block
+        } 
         ((Editable) mText).append(text, start, end);
         addTaint(text.getTaint());
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
-        //if (!(mText instanceof Editable)) {
-            //setText(mText, BufferType.EDITABLE);
-        //}
-        //((Editable) mText).append(text, start, end);
+        
+        
+            
+        
+        
     }
 
     
@@ -3016,14 +3016,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             mCurTextColor = color;
             inval = true;
-        } //End block
+        } 
         {
             color = mLinkTextColor.getColorForState(getDrawableState(), 0);
             {
                 mTextPaint.linkColor = color;
                 inval = true;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             color = mHintTextColor.getColorForState(getDrawableState(), 0);
             {
@@ -3031,36 +3031,36 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 {
                     mCurHintTextColor = color;
                     inval = true;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             invalidate();
-        } //End block
-        // ---------- Original Method ----------
-        //boolean inval = false;
-        //int color = mTextColor.getColorForState(getDrawableState(), 0);
-        //if (color != mCurTextColor) {
-            //mCurTextColor = color;
-            //inval = true;
-        //}
-        //if (mLinkTextColor != null) {
-            //color = mLinkTextColor.getColorForState(getDrawableState(), 0);
-            //if (color != mTextPaint.linkColor) {
-                //mTextPaint.linkColor = color;
-                //inval = true;
-            //}
-        //}
-        //if (mHintTextColor != null) {
-            //color = mHintTextColor.getColorForState(getDrawableState(), 0);
-            //if (color != mCurHintTextColor && mText.length() == 0) {
-                //mCurHintTextColor = color;
-                //inval = true;
-            //}
-        //}
-        //if (inval) {
-            //invalidate();
-        //}
+        } 
+        
+        
+        
+        
+            
+            
+        
+        
+            
+            
+                
+                
+            
+        
+        
+            
+            
+                
+                
+            
+        
+        
+            
+        
     }
 
     
@@ -3074,8 +3074,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 || (mLinkTextColor != null && mLinkTextColor.isStateful()));
             {
                 updateTextColors();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final Drawables dr = mDrawables;
         {
             int[] state = getDrawableState();
@@ -3083,50 +3083,50 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 boolean varACD1486C54959F8A8C53C39EC3474E1F_14265555 = (dr.mDrawableTop != null && dr.mDrawableTop.isStateful());
                 {
                     dr.mDrawableTop.setState(state);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var75A7C8EBF3DB0CE7B23F457B9BBE81BE_103654102 = (dr.mDrawableBottom != null && dr.mDrawableBottom.isStateful());
                 {
                     dr.mDrawableBottom.setState(state);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var351650CF2FFB93A328E0FCD6DD1DB2A5_1808092875 = (dr.mDrawableLeft != null && dr.mDrawableLeft.isStateful());
                 {
                     dr.mDrawableLeft.setState(state);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean varD9BDE0148E482F4604F5C34A36FCFF7F_1327187123 = (dr.mDrawableRight != null && dr.mDrawableRight.isStateful());
                 {
                     dr.mDrawableRight.setState(state);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var324017722E1CA9DC15695D4422A8ADEC_1161755228 = (dr.mDrawableStart != null && dr.mDrawableStart.isStateful());
                 {
                     dr.mDrawableStart.setState(state);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var6C06DB7410AEA6854519536D78FF530C_1870714517 = (dr.mDrawableEnd != null && dr.mDrawableEnd.isStateful());
                 {
                     dr.mDrawableEnd.setState(state);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.799 -0400", hash_original_method = "AF2C3EA4891B79A54157B80D9A5CB454", hash_generated_method = "0E8A5E6314015E3C8699B271700BB8F0")
     @Override
     public Parcelable onSaveInstanceState() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        Parcelable varB4EAC82CA7396A68D541C85D26508E83_1213889727 = null; //Variable for return #1
-        Parcelable varB4EAC82CA7396A68D541C85D26508E83_169760115 = null; //Variable for return #2
+        
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_1213889727 = null; 
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_169760115 = null; 
         Parcelable superState = super.onSaveInstanceState();
         boolean save = mFreezesText;
         int start = 0;
@@ -3136,8 +3136,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             end = getSelectionEnd();
             {
                 save = true;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             SavedState ss = new SavedState(superState);
             ss.selStart = start;
@@ -3148,38 +3148,38 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     ChangeWatcher cw = sp.getSpans(0, sp.length(), ChangeWatcher.class)[0];
                     {
                         sp.removeSpan(cw);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 removeMisspelledSpans(sp);
                 sp.removeSpan(mSuggestionRangeSpan);
                 ss.text = sp;
-            } //End block
+            } 
             {
                 ss.text = mText.toString();
-            } //End block
+            } 
             {
                 boolean var7B30392DD0636DC4945382169DDF5396_1517982801 = (isFocused() && start >= 0 && end >= 0);
                 {
                     ss.frozenWithFocus = true;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             ss.error = mError;
             varB4EAC82CA7396A68D541C85D26508E83_1213889727 = ss;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_169760115 = superState;
-        Parcelable varA7E53CE21691AB073D9660D615818899_1910279464; //Final return value
+        Parcelable varA7E53CE21691AB073D9660D615818899_1910279464; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1910279464 = varB4EAC82CA7396A68D541C85D26508E83_1213889727;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1910279464 = varB4EAC82CA7396A68D541C85D26508E83_169760115;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1910279464.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1910279464.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1910279464;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3193,35 +3193,35 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 int flags = suggestionSpans[i].getFlags();
                 {
                     spannable.removeSpan(suggestionSpans[i]);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(spannable.getTaint());
-        // ---------- Original Method ----------
-        //SuggestionSpan[] suggestionSpans = spannable.getSpans(0, spannable.length(),
-                //SuggestionSpan.class);
-        //for (int i = 0; i < suggestionSpans.length; i++) {
-            //int flags = suggestionSpans[i].getFlags();
-            //if ((flags & SuggestionSpan.FLAG_EASY_CORRECT) != 0
-                    //&& (flags & SuggestionSpan.FLAG_MISSPELLED) != 0) {
-                //spannable.removeSpan(suggestionSpans[i]);
-            //}
-        //}
+        
+        
+                
+        
+            
+            
+                    
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.801 -0400", hash_original_method = "F50E2D5CE86BF5E6A61BC8360971F12F", hash_generated_method = "6917D5BBEC1C178515A477B0C9A71EDF")
     @Override
     public void onRestoreInstanceState(Parcelable state) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             super.onRestoreInstanceState(state);
-        } //End block
+        } 
         SavedState ss = (SavedState)state;
         super.onRestoreInstanceState(ss.getSuperState());
         {
             setText(ss.text);
-        } //End block
+        } 
         {
             {
                 int len = mText.length();
@@ -3229,31 +3229,31 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     String restored = "";
                     {
                         restored = "(restored) ";
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     Selection.setSelection((Spannable) mText, ss.selStart,
                                            ss.selEnd);
                     {
                         mFrozenWithFocus = true;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             final CharSequence error = ss.error;
             post(new Runnable() {                
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.801 -0400", hash_original_method = "6D4719BAECED3DD83F9692F93AFBC954", hash_generated_method = "28C54C47F8D5EF53BCA9BB85B0F3683C")
                 public void run() {
                     setError(error);
-                    // ---------- Original Method ----------
-                    //setError(error);
+                    
+                    
                 }
 });
-        } //End block
+        } 
         addTaint(state.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3261,8 +3261,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     @android.view.RemotableViewMethod
     public void setFreezesText(boolean freezesText) {
         mFreezesText = freezesText;
-        // ---------- Original Method ----------
-        //mFreezesText = freezesText;
+        
+        
     }
 
     
@@ -3270,8 +3270,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public boolean getFreezesText() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1729123066 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1729123066;
-        // ---------- Original Method ----------
-        //return mFreezesText;
+        
+        
     }
 
     
@@ -3279,9 +3279,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public final void setEditableFactory(Editable.Factory factory) {
         mEditableFactory = factory;
         setText(mText);
-        // ---------- Original Method ----------
-        //mEditableFactory = factory;
-        //setText(mText);
+        
+        
+        
     }
 
     
@@ -3289,9 +3289,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public final void setSpannableFactory(Spannable.Factory factory) {
         mSpannableFactory = factory;
         setText(mText);
-        // ---------- Original Method ----------
-        //mSpannableFactory = factory;
-        //setText(mText);
+        
+        
+        
     }
 
     
@@ -3300,8 +3300,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public final void setText(CharSequence text) {
         setText(text, mBufferType);
         addTaint(text.getTaint());
-        // ---------- Original Method ----------
-        //setText(text, mBufferType);
+        
+        
     }
 
     
@@ -3310,8 +3310,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public final void setTextKeepState(CharSequence text) {
         setTextKeepState(text, mBufferType);
         addTaint(text.getTaint());
-        // ---------- Original Method ----------
-        //setTextKeepState(text, mBufferType);
+        
+        
     }
 
     
@@ -3320,14 +3320,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         setText(text, type, true, 0);
         {
             mCharWrapper.mChars = null;
-        } //End block
+        } 
         addTaint(text.getTaint());
         addTaint(type.getTaint());
-        // ---------- Original Method ----------
-        //setText(text, type, true, 0);
-        //if (mCharWrapper != null) {
-            //mCharWrapper.mChars = null;
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -3336,13 +3336,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                          boolean notifyBefore, int oldlen) {
         {
             text = "";
-        } //End block
+        } 
         {
             boolean var39C938BA181442FDC10CD6D971F0DA0A_339978387 = (!isSuggestionsEnabled());
             {
                 text = removeSuggestionSpans(text);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mTextPaint.setTextScaleX(1.0f);
         {
             boolean var61457476FF8B912C20F73CBD6BFFF2E9_607052004 = (text instanceof Spanned &&
@@ -3353,15 +3353,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     {
                         setHorizontalFadingEdgeEnabled(true);
                         mMarqueeFadeMode = MARQUEE_FADE_NORMAL;
-                    } //End block
+                    } 
                     {
                         setHorizontalFadingEdgeEnabled(false);
                         mMarqueeFadeMode = MARQUEE_FADE_SWITCH_SHOW_ELLIPSIS;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 setEllipsize(TextUtils.TruncateAt.MARQUEE);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int n = mFilters.length;
         {
             int i = 0;
@@ -3370,46 +3370,46 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                                                   EMPTY_SPANNED, 0, 0);
                 {
                     text = out;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             {
                 oldlen = mText.length();
                 sendBeforeTextChanged(mText, 0, oldlen, text.length());
-            } //End block
+            } 
             {
                 sendBeforeTextChanged("", 0, 0, text.length());
-            } //End block
-        } //End block
+            } 
+        } 
         boolean needEditableForNotification = false;
         {
             boolean var1E59861D1519785A5B1D3AA4CF100E2E_1073839615 = (mListeners != null && mListeners.size() != 0);
             {
                 needEditableForNotification = true;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             Editable t = mEditableFactory.newEditable(text);
             text = t;
             setFilters(t, mFilters);
             InputMethodManager imm = InputMethodManager.peekInstance();
             imm.restartInput(this);
-        } //End block
+        } 
         {
             text = mSpannableFactory.newSpannable(text);
-        } //End block
+        } 
         {
             text = TextUtils.stringOrSpannedString(text);
-        } //End block
+        } 
         {
             Spannable s2;
             {
                 s2 = (Spannable) text;
-            } //End block
+            } 
             {
                 s2 = mSpannableFactory.newSpannable(text);
-            } //End block
+            } 
             {
                 boolean var97F4E593FAFDDCB3DADB34B707ECC3A4_1538408955 = (Linkify.addLinks(s2, mAutoLinkMask));
                 {
@@ -3420,19 +3420,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         boolean var397E1740E7A0A45470AA95146AAA2DB6_1446307811 = (mLinksClickable && !textCanBeSelected());
                         {
                             setMovementMethod(LinkMovementMethod.getInstance());
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         mBufferType = type;
         mText = text;
         {
             mTransformed = text;
-        } //End block
+        } 
         {
             mTransformed = mTransformation.getTransformation(text, this);
-        } //End block
+        } 
         final int textLength = text.length();
         {
             Spannable sp = (Spannable) text;
@@ -3441,34 +3441,34 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             {
                 int i = 0;
                 sp.removeSpan(watchers[i]);
-            } //End collapsed parenthetic
+            } 
             mChangeWatcher = new ChangeWatcher();
             sp.setSpan(mChangeWatcher, 0, textLength, Spanned.SPAN_INCLUSIVE_INCLUSIVE |
                        (PRIORITY << Spanned.SPAN_PRIORITY_SHIFT));
             {
                 sp.setSpan(mInput, 0, textLength, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
-            } //End block
+            } 
             {
                 sp.setSpan(mTransformation, 0, textLength, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
-            } //End block
+            } 
             {
                 mMovement.initialize(this, (Spannable) text);
                 mSelectionMoved = false;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             checkForRelayout();
-        } //End block
+        } 
         sendOnTextChanged(text, 0, oldlen, textLength);
         onTextChanged(text, 0, oldlen, textLength);
         {
             sendAfterTextChanged((Editable) text);
-        } //End block
+        } 
         prepareCursorControllers();
         addTaint(notifyBefore);
         addTaint(oldlen);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3477,38 +3477,38 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int oldlen = 0;
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(start + ", " + len);
-        } //End block
+        } 
         {
             oldlen = mText.length();
             sendBeforeTextChanged(mText, 0, oldlen, len);
-        } //End block
+        } 
         {
             sendBeforeTextChanged("", 0, 0, len);
-        } //End block
+        } 
         {
             mCharWrapper = new CharWrapper(text, start, len);
-        } //End block
+        } 
         {
             mCharWrapper.set(text, start, len);
-        } //End block
+        } 
         setText(mCharWrapper, mBufferType, false, oldlen);
-        // ---------- Original Method ----------
-        //int oldlen = 0;
-        //if (start < 0 || len < 0 || start + len > text.length) {
-            //throw new IndexOutOfBoundsException(start + ", " + len);
-        //}
-        //if (mText != null) {
-            //oldlen = mText.length();
-            //sendBeforeTextChanged(mText, 0, oldlen, len);
-        //} else {
-            //sendBeforeTextChanged("", 0, 0, len);
-        //}
-        //if (mCharWrapper == null) {
-            //mCharWrapper = new CharWrapper(text, start, len);
-        //} else {
-            //mCharWrapper.set(text, start, len);
-        //}
-        //setText(mCharWrapper, mBufferType, false, oldlen);
+        
+        
+        
+            
+        
+        
+            
+            
+        
+            
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -3523,22 +3523,22 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 Selection.setSelection((Spannable) mText,
                                        Math.max(0, Math.min(start, len)),
                                        Math.max(0, Math.min(end, len)));
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(text.getTaint());
         addTaint(type.getTaint());
-        // ---------- Original Method ----------
-        //int start = getSelectionStart();
-        //int end = getSelectionEnd();
-        //int len = text.length();
-        //setText(text, type);
-        //if (start >= 0 || end >= 0) {
-            //if (mText instanceof Spannable) {
-                //Selection.setSelection((Spannable) mText,
-                                       //Math.max(0, Math.min(start, len)),
-                                       //Math.max(0, Math.min(end, len)));
-            //}
-        //}
+        
+        
+        
+        
+        
+        
+            
+                
+                                       
+                                       
+            
+        
     }
 
     
@@ -3547,8 +3547,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public final void setText(int resid) {
         setText(getContext().getResources().getText(resid));
         addTaint(resid);
-        // ---------- Original Method ----------
-        //setText(getContext().getResources().getText(resid));
+        
+        
     }
 
     
@@ -3557,8 +3557,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         setText(getContext().getResources().getText(resid), type);
         addTaint(resid);
         addTaint(type.getTaint());
-        // ---------- Original Method ----------
-        //setText(getContext().getResources().getText(resid), type);
+        
+        
     }
 
     
@@ -3568,21 +3568,21 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         mHint = TextUtils.stringOrSpannedString(hint);
         {
             checkForRelayout();
-        } //End block
+        } 
         {
             boolean varC3772D22FF7A469D7982AA256079D67D_1811504036 = (mText.length() == 0);
             {
                 invalidate();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //mHint = TextUtils.stringOrSpannedString(hint);
-        //if (mLayout != null) {
-            //checkForRelayout();
-        //}
-        //if (mText.length() == 0) {
-            //invalidate();
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -3591,20 +3591,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public final void setHint(int resid) {
         setHint(getContext().getResources().getText(resid));
         addTaint(resid);
-        // ---------- Original Method ----------
-        //setHint(getContext().getResources().getText(resid));
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.810 -0400", hash_original_method = "B545FCA8809064A694F5A37F99B0BBF1", hash_generated_method = "CA22255A5AC2A26E169A0407391C1C18")
     @ViewDebug.CapturedViewProperty
     public CharSequence getHint() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1617646930 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1617646930 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1617646930 = mHint;
-        varB4EAC82CA7396A68D541C85D26508E83_1617646930.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1617646930.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1617646930;
-        // ---------- Original Method ----------
-        //return mHint;
+        
+        
     }
 
     
@@ -3625,40 +3625,40 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             setTransformationMethod(PasswordTransformationMethod.getInstance());
             setTypefaceByIndex(MONOSPACE, 0);
-        } //End block
+        } 
         {
             {
                 boolean var8E3893E4544969EB4AD418651F643506_1847481315 = (mTransformation == PasswordTransformationMethod.getInstance());
                 {
                     forceUpdate = true;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             setTypefaceByIndex(MONOSPACE, 0);
-        } //End block
+        } 
         {
             setTypefaceByIndex(-1, -1);
             {
                 boolean var8E3893E4544969EB4AD418651F643506_292349507 = (mTransformation == PasswordTransformationMethod.getInstance());
                 {
                     forceUpdate = true;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         boolean singleLine = !isMultilineInputType(type);
         {
             applySingleLine(singleLine, !isPassword, true);
-        } //End block
+        } 
         {
             boolean var39C938BA181442FDC10CD6D971F0DA0A_1587238660 = (!isSuggestionsEnabled());
             {
                 mText = removeSuggestionSpans(mText);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         InputMethodManager imm = InputMethodManager.peekInstance();
         imm.restartInput(this);
         addTaint(type);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3666,8 +3666,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private boolean hasPasswordTransformationMethod() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_223341163 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_223341163;
-        // ---------- Original Method ----------
-        //return mTransformation instanceof PasswordTransformationMethod;
+        
+        
     }
 
     
@@ -3694,8 +3694,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.813 -0400", hash_original_method = "5561319FE52E5BCF6B9F27794140DEB3", hash_generated_method = "9597CC79B00C6F9A01B8A8F839246F14")
     public void setRawInputType(int type) {
         mInputType = type;
-        // ---------- Original Method ----------
-        //mInputType = type;
+        
+        
     }
 
     
@@ -3708,49 +3708,49 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             TextKeyListener.Capitalize cap;
             {
                 cap = TextKeyListener.Capitalize.CHARACTERS;
-            } //End block
+            } 
             {
                 cap = TextKeyListener.Capitalize.WORDS;
-            } //End block
+            } 
             {
                 cap = TextKeyListener.Capitalize.SENTENCES;
-            } //End block
+            } 
             {
                 cap = TextKeyListener.Capitalize.NONE;
-            } //End block
+            } 
             input = TextKeyListener.getInstance(autotext, cap);
-        } //End block
+        } 
         {
             input = DigitsKeyListener.getInstance(
                     (type & EditorInfo.TYPE_NUMBER_FLAG_SIGNED) != 0,
                     (type & EditorInfo.TYPE_NUMBER_FLAG_DECIMAL) != 0);
-        } //End block
+        } 
         {
-            //Begin case EditorInfo.TYPE_DATETIME_VARIATION_DATE 
+            
             input = DateKeyListener.getInstance();
-            //End case EditorInfo.TYPE_DATETIME_VARIATION_DATE 
-            //Begin case EditorInfo.TYPE_DATETIME_VARIATION_TIME 
+            
+            
             input = TimeKeyListener.getInstance();
-            //End case EditorInfo.TYPE_DATETIME_VARIATION_TIME 
-            //Begin case default 
+            
+            
             input = DateTimeKeyListener.getInstance();
-            //End case default 
-        } //End block
+            
+        } 
         {
             input = DialerKeyListener.getInstance();
-        } //End block
+        } 
         {
             input = TextKeyListener.getInstance();
-        } //End block
+        } 
         setRawInputType(type);
         mInput = input;
         {
             setKeyListenerOnly(input);
-        } //End block
+        } 
         addTaint(type);
         addTaint(direct);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3758,8 +3758,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public int getInputType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_808895152 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_808895152;
-        // ---------- Original Method ----------
-        //return mInputType;
+        
+        
     }
 
     
@@ -3767,13 +3767,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public void setImeOptions(int imeOptions) {
         {
             mInputContentType = new InputContentType();
-        } //End block
+        } 
         mInputContentType.imeOptions = imeOptions;
-        // ---------- Original Method ----------
-        //if (mInputContentType == null) {
-            //mInputContentType = new InputContentType();
-        //}
-        //mInputContentType.imeOptions = imeOptions;
+        
+        
+            
+        
+        
     }
 
     
@@ -3781,9 +3781,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public int getImeOptions() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_936227499 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_936227499;
-        // ---------- Original Method ----------
-        //return mInputContentType != null
-                //? mInputContentType.imeOptions : EditorInfo.IME_NULL;
+        
+        
+                
     }
 
     
@@ -3791,28 +3791,28 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public void setImeActionLabel(CharSequence label, int actionId) {
         {
             mInputContentType = new InputContentType();
-        } //End block
+        } 
         mInputContentType.imeActionLabel = label;
         mInputContentType.imeActionId = actionId;
-        // ---------- Original Method ----------
-        //if (mInputContentType == null) {
-            //mInputContentType = new InputContentType();
-        //}
-        //mInputContentType.imeActionLabel = label;
-        //mInputContentType.imeActionId = actionId;
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.816 -0400", hash_original_method = "A4E3D8286D59E9D4715BBC467F3D8808", hash_generated_method = "3E4AC8E95C4D3ABE8632BE442C094679")
     public CharSequence getImeActionLabel() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1291689235 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1291689235 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1291689235 = mInputContentType != null
                 ? mInputContentType.imeActionLabel : null;
-        varB4EAC82CA7396A68D541C85D26508E83_1291689235.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1291689235.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1291689235;
-        // ---------- Original Method ----------
-        //return mInputContentType != null
-                //? mInputContentType.imeActionLabel : null;
+        
+        
+                
     }
 
     
@@ -3820,9 +3820,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public int getImeActionId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_674692415 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_674692415;
-        // ---------- Original Method ----------
-        //return mInputContentType != null
-                //? mInputContentType.imeActionId : 0;
+        
+        
+                
     }
 
     
@@ -3830,27 +3830,27 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public void setOnEditorActionListener(OnEditorActionListener l) {
         {
             mInputContentType = new InputContentType();
-        } //End block
+        } 
         mInputContentType.onEditorActionListener = l;
-        // ---------- Original Method ----------
-        //if (mInputContentType == null) {
-            //mInputContentType = new InputContentType();
-        //}
-        //mInputContentType.onEditorActionListener = l;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.819 -0400", hash_original_method = "0518018E7AD402CBF7FDAFFEA66C2B57", hash_generated_method = "D21C7E3ED045AF1F4081FB16ABB80660")
     public void onEditorAction(int actionCode) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         final InputContentType ict = mInputContentType;
         {
             {
                 {
                     boolean varC6096D11527A2336F0603C550DF9620B_1293067837 = (ict.onEditorActionListener.onEditorAction(this,
                         actionCode, null));
-                } //End collapsed parenthetic
-            } //End block
+                } 
+            } 
             {
                 View v = focusSearch(FOCUS_FORWARD);
                 {
@@ -3859,10 +3859,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         {
                             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("focus search returned a view " +
                                 "that wasn't able to take focus!");
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             {
                 View v = focusSearch(FOCUS_BACKWARD);
                 {
@@ -3871,20 +3871,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         {
                             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("focus search returned a view " +
                                 "that wasn't able to take focus!");
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             {
                 InputMethodManager imm = InputMethodManager.peekInstance();
                 {
                     boolean var4FA09E363AF255ACFA7DE6A3A2C1C773_1446445399 = (imm != null && imm.isActive(this));
                     {
                         imm.hideSoftInputFromWindow(getWindowToken(), 0);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         Handler h = getHandler();
         {
             long eventTime = SystemClock.uptimeMillis();
@@ -3900,10 +3900,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     KeyCharacterMap.VIRTUAL_KEYBOARD, 0,
                     KeyEvent.FLAG_SOFT_KEYBOARD | KeyEvent.FLAG_KEEP_TOUCH_MODE
                     | KeyEvent.FLAG_EDITOR_ACTION)));
-        } //End block
+        } 
         addTaint(actionCode);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3911,22 +3911,22 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public void setPrivateImeOptions(String type) {
         mInputContentType = new InputContentType();
         mInputContentType.privateImeOptions = type;
-        // ---------- Original Method ----------
-        //if (mInputContentType == null) mInputContentType = new InputContentType();
-        //mInputContentType.privateImeOptions = type;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.820 -0400", hash_original_method = "92B56934BB38E74A857D4D87A23CFEBD", hash_generated_method = "6462CE46C52E56F0AF7623CE8DBEA5AD")
     public String getPrivateImeOptions() {
-        String varB4EAC82CA7396A68D541C85D26508E83_781772815 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_781772815 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_781772815 = mInputContentType != null
                 ? mInputContentType.privateImeOptions : null;
-        varB4EAC82CA7396A68D541C85D26508E83_781772815.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_781772815.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_781772815;
-        // ---------- Original Method ----------
-        //return mInputContentType != null
-                //? mInputContentType.privateImeOptions : null;
+        
+        
+                
     }
 
     
@@ -3937,64 +3937,64 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         mInputContentType.extras = new Bundle();
         getResources().parseBundleExtras(parser, mInputContentType.extras);
         addTaint(xmlResId);
-        // ---------- Original Method ----------
-        //XmlResourceParser parser = getResources().getXml(xmlResId);
-        //if (mInputContentType == null) mInputContentType = new InputContentType();
-        //mInputContentType.extras = new Bundle();
-        //getResources().parseBundleExtras(parser, mInputContentType.extras);
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.822 -0400", hash_original_method = "3CCBAE1ACA56EC727CC56362E5EC99DC", hash_generated_method = "59EA5B8B3BFBE83D7AF79202F83E5C7E")
     public Bundle getInputExtras(boolean create) {
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_1395570042 = null; //Variable for return #1
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_713174063 = null; //Variable for return #2
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_506010705 = null; //Variable for return #3
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_1395570042 = null; 
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_713174063 = null; 
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_506010705 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1395570042 = null;
             mInputContentType = new InputContentType();
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_713174063 = null;
             mInputContentType.extras = new Bundle();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_506010705 = mInputContentType.extras;
         addTaint(create);
-        Bundle varA7E53CE21691AB073D9660D615818899_2126623334; //Final return value
+        Bundle varA7E53CE21691AB073D9660D615818899_2126623334; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2126623334 = varB4EAC82CA7396A68D541C85D26508E83_1395570042;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_2126623334 = varB4EAC82CA7396A68D541C85D26508E83_713174063;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2126623334 = varB4EAC82CA7396A68D541C85D26508E83_506010705;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2126623334.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2126623334.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2126623334;
-        // ---------- Original Method ----------
-        //if (mInputContentType == null) {
-            //if (!create) return null;
-            //mInputContentType = new InputContentType();
-        //}
-        //if (mInputContentType.extras == null) {
-            //if (!create) return null;
-            //mInputContentType.extras = new Bundle();
-        //}
-        //return mInputContentType.extras;
+        
+        
+            
+            
+        
+        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.823 -0400", hash_original_method = "9A980CBEBB946A11C624D95D8D1017B2", hash_generated_method = "70F3D0A08EB64A4B41B81787B77DC130")
     public CharSequence getError() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1329859507 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1329859507 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1329859507 = mError;
-        varB4EAC82CA7396A68D541C85D26508E83_1329859507.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1329859507.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1329859507;
-        // ---------- Original Method ----------
-        //return mError;
+        
+        
     }
 
     
@@ -4003,23 +4003,23 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public void setError(CharSequence error) {
         {
             setError(null, null);
-        } //End block
+        } 
         {
             Drawable dr = getContext().getResources().
                 getDrawable(com.android.internal.R.drawable.indicator_input_error);
             dr.setBounds(0, 0, dr.getIntrinsicWidth(), dr.getIntrinsicHeight());
             setError(error, dr);
-        } //End block
+        } 
         addTaint(error.getTaint());
-        // ---------- Original Method ----------
-        //if (error == null) {
-            //setError(null, null);
-        //} else {
-            //Drawable dr = getContext().getResources().
-                //getDrawable(com.android.internal.R.drawable.indicator_input_error);
-            //dr.setBounds(0, 0, dr.getIntrinsicWidth(), dr.getIntrinsicHeight());
-            //setError(error, dr);
-        //}
+        
+        
+            
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -4032,41 +4032,41 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             {
                 Object var9F1D8BFC1663434C04073ED5C9ABAE03_698989545 = (getResolvedLayoutDirection());
-                //Begin case default LAYOUT_DIRECTION_LTR 
+                
                 setCompoundDrawables(dr.mDrawableLeft, dr.mDrawableTop, icon,
                             dr.mDrawableBottom);
-                //End case default LAYOUT_DIRECTION_LTR 
-                //Begin case LAYOUT_DIRECTION_RTL 
+                
+                
                 setCompoundDrawables(icon, dr.mDrawableTop, dr.mDrawableRight,
                             dr.mDrawableBottom);
-                //End case LAYOUT_DIRECTION_RTL 
-            } //End collapsed parenthetic
-        } //End block
+                
+            } 
+        } 
         {
             setCompoundDrawables(null, null, icon, null);
-        } //End block
+        } 
         {
             {
                 {
                     boolean var4EAD5BA12B52AD8D73AFD9224AD88B47_1806828085 = (mPopup.isShowing());
                     {
                         mPopup.dismiss();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 mPopup = null;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 boolean var98C1250B21329AE579A768A5FB60FE48_1564777293 = (isFocused());
                 {
                     showError();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(icon.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4076,8 +4076,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             boolean varFF25C8C36D549896D247167EFDFCA86E_181116565 = (getWindowToken() == null);
             {
                 mShowErrorAfterAttach = true;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             LayoutInflater inflater = LayoutInflater.from(getContext());
             final TextView err = (TextView) inflater.inflate(
@@ -4086,14 +4086,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             mPopup = new ErrorPopup(err, (int) (200 * scale + 0.5f), (int) (50 * scale + 0.5f));
             mPopup.setFocusable(false);
             mPopup.setInputMethodMode(PopupWindow.INPUT_METHOD_NEEDED);
-        } //End block
+        } 
         TextView tv = (TextView) mPopup.getContentView();
         chooseSize(mPopup, mError, tv);
         tv.setText(mError);
         mPopup.showAsDropDown(this, getErrorX(), getErrorY());
         mPopup.fixDirection(mPopup.isAboveAnchor());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4102,14 +4102,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         final float scale = getResources().getDisplayMetrics().density;
         final Drawables dr = mDrawables;
         int var5CC39021D81A29A88ABF707530C095B6_365042307 = (getWidth() - mPopup.getWidth() - getPaddingRight() -
-                (dr != null ? dr.mDrawableSizeRight : 0) / 2 + (int) (25 * scale + 0.5f)); //DSFIXME:  CODE0008: Nested ternary operator in expression
+                (dr != null ? dr.mDrawableSizeRight : 0) / 2 + (int) (25 * scale + 0.5f)); 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_924108398 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_924108398;
-        // ---------- Original Method ----------
-        //final float scale = getResources().getDisplayMetrics().density;
-        //final Drawables dr = mDrawables;
-        //return getWidth() - mPopup.getWidth() - getPaddingRight() -
-                //(dr != null ? dr.mDrawableSizeRight : 0) / 2 + (int) (25 * scale + 0.5f);
+        
+        
+        
+        
+                
     }
 
     
@@ -4119,21 +4119,21 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int vspace = mBottom - mTop - getCompoundPaddingBottom() - compoundPaddingTop;
         final Drawables dr = mDrawables;
         int icontop = compoundPaddingTop +
-                (vspace - (dr != null ? dr.mDrawableHeightRight : 0)) / 2;//DSFIXME:  CODE0008: Nested ternary operator in expression
+                (vspace - (dr != null ? dr.mDrawableHeightRight : 0)) / 2;
         final float scale = getResources().getDisplayMetrics().density;
         int var003746F0616F92D98A8FCB729FE8B13B_1115538163 = (icontop + (dr != null ? dr.mDrawableHeightRight : 0) - getHeight() -
-                (int) (2 * scale + 0.5f)); //DSFIXME:  CODE0008: Nested ternary operator in expression
+                (int) (2 * scale + 0.5f)); 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_672219759 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_672219759;
-        // ---------- Original Method ----------
-        //final int compoundPaddingTop = getCompoundPaddingTop();
-        //int vspace = mBottom - mTop - getCompoundPaddingBottom() - compoundPaddingTop;
-        //final Drawables dr = mDrawables;
-        //int icontop = compoundPaddingTop +
-                //(vspace - (dr != null ? dr.mDrawableHeightRight : 0)) / 2;
-        //final float scale = getResources().getDisplayMetrics().density;
-        //return icontop + (dr != null ? dr.mDrawableHeightRight : 0) - getHeight() -
-                //(int) (2 * scale + 0.5f);
+        
+        
+        
+        
+        
+                
+        
+        
+                
     }
 
     
@@ -4144,17 +4144,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 boolean var064AFD47A2F0375BD3A49E11623DCB44_1597762771 = (mPopup.isShowing());
                 {
                     mPopup.dismiss();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         mShowErrorAfterAttach = false;
-        // ---------- Original Method ----------
-        //if (mPopup != null) {
-            //if (mPopup.isShowing()) {
-                //mPopup.dismiss();
-            //}
-        //}
-        //mShowErrorAfterAttach = false;
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -4172,26 +4172,26 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             boolean var042843EFDE50DED9CF686A63F696B025_1568903264 = (i < l.getLineCount());
             {
                 max = Math.max(max, l.getLineWidth(i));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         pop.setWidth(wid + (int) Math.ceil(max));
         pop.setHeight(ht + l.getHeight());
         addTaint(pop.getTaint());
         addTaint(text.getTaint());
         addTaint(tv.getTaint());
-        // ---------- Original Method ----------
-        //int wid = tv.getPaddingLeft() + tv.getPaddingRight();
-        //int ht = tv.getPaddingTop() + tv.getPaddingBottom();
-        //int defaultWidthInPixels = getResources().getDimensionPixelSize(
-                //com.android.internal.R.dimen.textview_error_popup_default_width);
-        //Layout l = new StaticLayout(text, tv.getPaint(), defaultWidthInPixels,
-                                    //Layout.Alignment.ALIGN_NORMAL, 1, 0, true);
-        //float max = 0;
-        //for (int i = 0; i < l.getLineCount(); i++) {
-            //max = Math.max(max, l.getLineWidth(i));
-        //}
-        //pop.setWidth(wid + (int) Math.ceil(max));
-        //pop.setHeight(ht + l.getHeight());
+        
+        
+        
+        
+                
+        
+                                    
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -4204,7 +4204,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             chooseSize(mPopup, mError, tv);
             mPopup.update(this, getErrorX(), getErrorY(),
                           mPopup.getWidth(), mPopup.getHeight());
-        } //End block
+        } 
         restartMarqueeIfNeeded();
         addTaint(l);
         addTaint(t);
@@ -4212,16 +4212,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         addTaint(b);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1637027318 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1637027318;
-        // ---------- Original Method ----------
-        //boolean result = super.setFrame(l, t, r, b);
-        //if (mPopup != null) {
-            //TextView tv = (TextView) mPopup.getContentView();
-            //chooseSize(mPopup, mError, tv);
-            //mPopup.update(this, getErrorX(), getErrorY(),
-                          //mPopup.getWidth(), mPopup.getHeight());
-        //}
-        //restartMarqueeIfNeeded();
-        //return result;
+        
+        
+        
+            
+            
+            
+                          
+        
+        
+        
     }
 
     
@@ -4230,12 +4230,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             mRestartMarquee = false;
             startMarquee();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mRestartMarquee && mEllipsize == TextUtils.TruncateAt.MARQUEE) {
-            //mRestartMarquee = false;
-            //startMarquee();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -4243,19 +4243,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public void setFilters(InputFilter[] filters) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
+        } 
         mFilters = filters;
         {
             setFilters((Editable) mText, filters);
-        } //End block
-        // ---------- Original Method ----------
-        //if (filters == null) {
-            //throw new IllegalArgumentException();
-        //}
-        //mFilters = filters;
-        //if (mText instanceof Editable) {
-            //setFilters((Editable) mText, filters);
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -4266,32 +4266,32 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             System.arraycopy(filters, 0, nf, 0, filters.length);
             nf[filters.length] = (InputFilter) mInput;
             e.setFilters(nf);
-        } //End block
+        } 
         {
             e.setFilters(filters);
-        } //End block
+        } 
         addTaint(e.getTaint());
         addTaint(filters[0].getTaint());
-        // ---------- Original Method ----------
-        //if (mInput instanceof InputFilter) {
-            //InputFilter[] nf = new InputFilter[filters.length + 1];
-            //System.arraycopy(filters, 0, nf, 0, filters.length);
-            //nf[filters.length] = (InputFilter) mInput;
-            //e.setFilters(nf);
-        //} else {
-            //e.setFilters(filters);
-        //}
+        
+        
+            
+            
+            
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.830 -0400", hash_original_method = "E0010D0DD1DD8F03E408AEE972028B3D", hash_generated_method = "EE60CCA11F19C08C55ABDC0CAD84E49E")
     public InputFilter[] getFilters() {
-        InputFilter[] varB4EAC82CA7396A68D541C85D26508E83_582983187 = null; //Variable for return #1
+        InputFilter[] varB4EAC82CA7396A68D541C85D26508E83_582983187 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_582983187 = mFilters;
-        varB4EAC82CA7396A68D541C85D26508E83_582983187.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_582983187.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_582983187;
-        // ---------- Original Method ----------
-        //return mFilters;
+        
+        
     }
 
     
@@ -4304,29 +4304,29 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             boolean varD5DF217776FEC14CA244AC2CD8EE62D0_598267875 = (!forceNormal && mText.length() == 0 && mHintLayout != null);
             {
                 l = mHintLayout;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             int boxht;
             {
                 boxht = getMeasuredHeight() - getCompoundPaddingTop() -
                         getCompoundPaddingBottom();
-            } //End block
+            } 
             {
                 boxht = getMeasuredHeight() - getExtendedPaddingTop() -
                         getExtendedPaddingBottom();
-            } //End block
+            } 
             int textht = l.getHeight();
             {
                 voffset = boxht - textht;
                 voffset = (boxht - textht) >> 1;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(forceNormal);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_433562733 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_433562733;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4339,29 +4339,29 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             boolean varD5DF217776FEC14CA244AC2CD8EE62D0_1853857834 = (!forceNormal && mText.length() == 0 && mHintLayout != null);
             {
                 l = mHintLayout;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             int boxht;
             {
                 boxht = getMeasuredHeight() - getCompoundPaddingTop() -
                         getCompoundPaddingBottom();
-            } //End block
+            } 
             {
                 boxht = getMeasuredHeight() - getExtendedPaddingTop() -
                         getExtendedPaddingBottom();
-            } //End block
+            } 
             int textht = l.getHeight();
             {
                 voffset = boxht - textht;
                 voffset = (boxht - textht) >> 1;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(forceNormal);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_657076067 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_657076067;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4369,7 +4369,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private void invalidateCursorPath() {
         {
             invalidateCursor();
-        } //End block
+        } 
         {
             final int horizontalPadding = getCompoundPaddingLeft();
             final int verticalPadding = getExtendedPaddingTop() + getVerticalOffset(true);
@@ -4378,15 +4378,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     float thick = FloatMath.ceil(mTextPaint.getStrokeWidth());
                     {
                         thick = 1.0f;
-                    } //End block
+                    } 
                     thick /= 2.0f;
                     mHighlightPath.computeBounds(sTempRect, false);
                     invalidate((int) FloatMath.floor(horizontalPadding + sTempRect.left - thick),
                             (int) FloatMath.floor(verticalPadding + sTempRect.top - thick),
                             (int) FloatMath.ceil(horizontalPadding + sTempRect.right + thick),
                             (int) FloatMath.ceil(verticalPadding + sTempRect.bottom + thick));
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 {
                     int i = 0;
@@ -4394,12 +4394,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         Rect bounds = mCursorDrawable[i].getBounds();
                         invalidate(bounds.left + horizontalPadding, bounds.top + verticalPadding,
                             bounds.right + horizontalPadding, bounds.bottom + verticalPadding);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                    } 
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -4407,9 +4407,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private void invalidateCursor() {
         int where = getSelectionEnd();
         invalidateCursor(where, where, where);
-        // ---------- Original Method ----------
-        //int where = getSelectionEnd();
-        //invalidateCursor(where, where, where);
+        
+        
+        
     }
 
     
@@ -4419,16 +4419,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             int start = Math.min(Math.min(a, b), c);
             int end = Math.max(Math.max(a, b), c);
             invalidateRegion(start, end, true );
-        } //End block
+        } 
         addTaint(a);
         addTaint(b);
         addTaint(c);
-        // ---------- Original Method ----------
-        //if (a >= 0 || b >= 0 || c >= 0) {
-            //int start = Math.min(Math.min(a, b), c);
-            //int end = Math.max(Math.max(a, b), c);
-            //invalidateRegion(start, end, true );
-        //}
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -4436,13 +4436,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
      void invalidateRegion(int start, int end, boolean invalidateCursor) {
         {
             invalidate();
-        } //End block
+        } 
         {
             int lineStart = mLayout.getLineForOffset(start);
             int top = mLayout.getLineTop(lineStart);
             {
                 top -= mLayout.getLineDescent(lineStart - 1);
-            } //End block
+            } 
             int lineEnd;
             lineEnd = lineStart;
             lineEnd = mLayout.getLineForOffset(end);
@@ -4454,9 +4454,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         Rect bounds = mCursorDrawable[i].getBounds();
                         top = Math.min(top, bounds.top);
                         bottom = Math.max(bottom, bounds.bottom);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             final int compoundPaddingLeft = getCompoundPaddingLeft();
             final int verticalPadding = getExtendedPaddingTop() + getVerticalOffset(true);
             int left;
@@ -4466,19 +4466,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 right = (int) (mLayout.getPrimaryHorizontal(end) + 1.0);
                 left += compoundPaddingLeft;
                 right += compoundPaddingLeft;
-            } //End block
+            } 
             {
                 left = compoundPaddingLeft;
                 right = getWidth() - getCompoundPaddingRight();
-            } //End block
+            } 
             invalidate(mScrollX + left, verticalPadding + top,
                         mScrollX + right, verticalPadding + bottom);
-        } //End block
+        } 
         addTaint(start);
         addTaint(end);
         addTaint(invalidateCursor);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4488,27 +4488,27 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             observer.addOnPreDrawListener(this);
             mPreDrawState = PREDRAW_PENDING;
-        } //End block
+        } 
         {
             mPreDrawState = PREDRAW_PENDING;
-        } //End block
-        // ---------- Original Method ----------
-        //final ViewTreeObserver observer = getViewTreeObserver();
-        //if (mPreDrawState == PREDRAW_NOT_REGISTERED) {
-            //observer.addOnPreDrawListener(this);
-            //mPreDrawState = PREDRAW_PENDING;
-        //} else if (mPreDrawState == PREDRAW_DONE) {
-            //mPreDrawState = PREDRAW_PENDING;
-        //}
+        } 
+        
+        
+        
+            
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.834 -0400", hash_original_method = "7ED99206FCCA4C828A375B5616572C0F", hash_generated_method = "878E913D0188499A1973059CA508F9A8")
     public boolean onPreDraw() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             assumeLayout();
-        } //End block
+        } 
         boolean changed = false;
         {
             int curs = getSelectionEnd();
@@ -4517,104 +4517,104 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     mSelectionModifierCursorController.isSelectionStartDragged());
                 {
                     curs = getSelectionStart();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 curs = mText.length();
-            } //End block
+            } 
             {
                 changed = bringPointIntoView(curs);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             changed = bringTextIntoView();
-        } //End block
+        } 
         {
             startSelectionActionMode();
             mCreatedWithASelection = false;
-        } //End block
+        } 
         {
             boolean varA5CB988193F65A0949A8B845CF954A56_1474149684 = (this instanceof ExtractEditText && hasSelection());
             {
                 startSelectionActionMode();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mPreDrawState = PREDRAW_DONE;
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_131467412 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_131467412;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.835 -0400", hash_original_method = "37A00D47E5792B2A68D22343089CAC73", hash_generated_method = "2437E694BF2234494CC76E37DF7D4940")
     @Override
     protected void onAttachedToWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onAttachedToWindow();
         mTemporaryDetach = false;
         {
             showError();
             mShowErrorAfterAttach = false;
-        } //End block
+        } 
         final ViewTreeObserver observer = getViewTreeObserver();
         {
             observer.addOnTouchModeChangeListener(mInsertionPointCursorController);
-        } //End block
+        } 
         {
             observer.addOnTouchModeChangeListener(mSelectionModifierCursorController);
-        } //End block
+        } 
         resolveDrawables();
         updateSpellCheckSpans(0, mText.length(), true );
-        // ---------- Original Method ----------
-        //super.onAttachedToWindow();
-        //mTemporaryDetach = false;
-        //if (mShowErrorAfterAttach) {
-            //showError();
-            //mShowErrorAfterAttach = false;
-        //}
-        //final ViewTreeObserver observer = getViewTreeObserver();
-        //if (mInsertionPointCursorController != null) {
-            //observer.addOnTouchModeChangeListener(mInsertionPointCursorController);
-        //}
-        //if (mSelectionModifierCursorController != null) {
-            //observer.addOnTouchModeChangeListener(mSelectionModifierCursorController);
-        //}
-        //resolveDrawables();
-        //updateSpellCheckSpans(0, mText.length(), true );
+        
+        
+        
+        
+            
+            
+        
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.836 -0400", hash_original_method = "16099E9CBA4D38D7973AB46B58716911", hash_generated_method = "A581D17CC5707A5AEDD2DDD6E3D75B9D")
     @Override
     protected void onDetachedFromWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onDetachedFromWindow();
         final ViewTreeObserver observer = getViewTreeObserver();
         {
             observer.removeOnPreDrawListener(this);
             mPreDrawState = PREDRAW_NOT_REGISTERED;
-        } //End block
+        } 
         {
             hideError();
-        } //End block
+        } 
         {
             mBlink.removeCallbacks(mBlink);
-        } //End block
+        } 
         {
             mInsertionPointCursorController.onDetached();
-        } //End block
+        } 
         {
             mSelectionModifierCursorController.onDetached();
-        } //End block
+        } 
         hideControllers();
         resetResolvedDrawables();
         {
             mSpellChecker.closeSession();
             mSpellChecker = null;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -4623,8 +4623,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     protected boolean isPaddingOffsetRequired() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1030441881 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1030441881;
-        // ---------- Original Method ----------
-        //return mShadowRadius != 0 || mDrawables != null;
+        
+        
     }
 
     
@@ -4635,9 +4635,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 (int) Math.min(0, mShadowDx - mShadowRadius));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_490714607 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_490714607;
-        // ---------- Original Method ----------
-        //return getCompoundPaddingLeft() - mPaddingLeft +
-                //(int) Math.min(0, mShadowDx - mShadowRadius);
+        
+        
+                
     }
 
     
@@ -4647,8 +4647,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int var0ED6224353BB97F3F21905FBACD93DCB_1158926266 = ((int) Math.min(0, mShadowDy - mShadowRadius));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2056400560 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2056400560;
-        // ---------- Original Method ----------
-        //return (int) Math.min(0, mShadowDy - mShadowRadius);
+        
+        
     }
 
     
@@ -4658,8 +4658,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int varB10121B4D3A3118F0C573D58A81C1C32_1807191898 = ((int) Math.max(0, mShadowDy + mShadowRadius));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1635297266 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1635297266;
-        // ---------- Original Method ----------
-        //return (int) Math.max(0, mShadowDy + mShadowRadius);
+        
+        
     }
 
     
@@ -4670,9 +4670,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 (int) Math.max(0, mShadowDx + mShadowRadius));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1431467051 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1431467051;
-        // ---------- Original Method ----------
-        //return -(getCompoundPaddingRight() - mPaddingRight) +
-                //(int) Math.max(0, mShadowDx + mShadowRadius);
+        
+        
+                
     }
 
     
@@ -4683,14 +4683,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         addTaint(who.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_814245254 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_814245254;
-        // ---------- Original Method ----------
-        //final boolean verified = super.verifyDrawable(who);
-        //if (!verified && mDrawables != null) {
-            //return who == mDrawables.mDrawableLeft || who == mDrawables.mDrawableTop ||
-                    //who == mDrawables.mDrawableRight || who == mDrawables.mDrawableBottom ||
-                    //who == mDrawables.mDrawableStart || who == mDrawables.mDrawableEnd;
-        //}
-        //return verified;
+        
+        
+        
+            
+                    
+                    
+        
+        
     }
 
     
@@ -4701,25 +4701,25 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             {
                 mDrawables.mDrawableLeft.jumpToCurrentState();
-            } //End block
+            } 
             {
                 mDrawables.mDrawableTop.jumpToCurrentState();
-            } //End block
+            } 
             {
                 mDrawables.mDrawableRight.jumpToCurrentState();
-            } //End block
+            } 
             {
                 mDrawables.mDrawableBottom.jumpToCurrentState();
-            } //End block
+            } 
             {
                 mDrawables.mDrawableStart.jumpToCurrentState();
-            } //End block
+            } 
             {
                 mDrawables.mDrawableEnd.jumpToCurrentState();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -4740,36 +4740,36 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         final int vspace = mBottom - mTop - compoundPaddingBottom - compoundPaddingTop;
                         scrollX += mPaddingLeft;
                         scrollY += compoundPaddingTop + (vspace - drawables.mDrawableHeightLeft) / 2;
-                    } //End block
+                    } 
                     {
                         final int compoundPaddingTop = getCompoundPaddingTop();
                         final int compoundPaddingBottom = getCompoundPaddingBottom();
                         final int vspace = mBottom - mTop - compoundPaddingBottom - compoundPaddingTop;
                         scrollX += (mRight - mLeft - mPaddingRight - drawables.mDrawableSizeRight);
                         scrollY += compoundPaddingTop + (vspace - drawables.mDrawableHeightRight) / 2;
-                    } //End block
+                    } 
                     {
                         final int compoundPaddingLeft = getCompoundPaddingLeft();
                         final int compoundPaddingRight = getCompoundPaddingRight();
                         final int hspace = mRight - mLeft - compoundPaddingRight - compoundPaddingLeft;
                         scrollX += compoundPaddingLeft + (hspace - drawables.mDrawableWidthTop) / 2;
                         scrollY += mPaddingTop;
-                    } //End block
+                    } 
                     {
                         final int compoundPaddingLeft = getCompoundPaddingLeft();
                         final int compoundPaddingRight = getCompoundPaddingRight();
                         final int hspace = mRight - mLeft - compoundPaddingRight - compoundPaddingLeft;
                         scrollX += compoundPaddingLeft + (hspace - drawables.mDrawableWidthBottom) / 2;
                         scrollY += (mBottom - mTop - mPaddingBottom - drawables.mDrawableSizeBottom);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 invalidate(dirty.left + scrollX, dirty.top + scrollY,
                     dirty.right + scrollX, dirty.bottom + scrollY);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(drawable.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4780,30 +4780,30 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             final Drawables drawables = mDrawables;
             {
                 int var9F1D8BFC1663434C04073ED5C9ABAE03_1193863617 = (getResolvedLayoutDirection());
-            } //End block
-        } //End block
+            } 
+        } 
         int varC2F7741B418937D0E08C7C868777F70A_642255054 = (super.getResolvedLayoutDirection(who));
         addTaint(who.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_930224492 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_930224492;
-        // ---------- Original Method ----------
-        //if (who == null) return View.LAYOUT_DIRECTION_LTR;
-        //if (mDrawables != null) {
-            //final Drawables drawables = mDrawables;
-            //if (who == drawables.mDrawableLeft || who == drawables.mDrawableRight ||
-                //who == drawables.mDrawableTop || who == drawables.mDrawableBottom ||
-                //who == drawables.mDrawableStart || who == drawables.mDrawableEnd) {
-                //return getResolvedLayoutDirection();
-            //}
-        //}
-        //return super.getResolvedLayoutDirection(who);
+        
+        
+        
+            
+            
+                
+                
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.842 -0400", hash_original_method = "361EEEB4229AF287B326C983EB9B20B0", hash_generated_method = "931F93E7567F5A020523CF23B074EC46")
     @Override
     protected boolean onSetAlpha(int alpha) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean varF9737FBB3FA84CB9364E87D929DD087B_286684770 = (getBackground() == null);
             {
@@ -4816,28 +4816,28 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     dr.mDrawableBottom.mutate().setAlpha(alpha);
                     dr.mDrawableStart.mutate().setAlpha(alpha);
                     dr.mDrawableEnd.mutate().setAlpha(alpha);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         mCurrentAlpha = 255;
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_940590451 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_940590451;
-        // ---------- Original Method ----------
-        //if (getBackground() == null) {
-            //mCurrentAlpha = alpha;
-            //final Drawables dr = mDrawables;
-            //if (dr != null) {
-                //if (dr.mDrawableLeft != null) dr.mDrawableLeft.mutate().setAlpha(alpha);
-                //if (dr.mDrawableTop != null) dr.mDrawableTop.mutate().setAlpha(alpha);
-                //if (dr.mDrawableRight != null) dr.mDrawableRight.mutate().setAlpha(alpha);
-                //if (dr.mDrawableBottom != null) dr.mDrawableBottom.mutate().setAlpha(alpha);
-                //if (dr.mDrawableStart != null) dr.mDrawableStart.mutate().setAlpha(alpha);
-                //if (dr.mDrawableEnd != null) dr.mDrawableEnd.mutate().setAlpha(alpha);
-            //}
-            //return true;
-        //}
-        //mCurrentAlpha = 255;
-        //return false;
+        
+        
+            
+            
+            
+                
+                
+                
+                
+                
+                
+            
+            
+        
+        
+        
     }
 
     
@@ -4845,8 +4845,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public boolean isTextSelectable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_541304323 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_541304323;
-        // ---------- Original Method ----------
-        //return mTextIsSelectable;
+        
+        
     }
 
     
@@ -4860,31 +4860,31 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         setMovementMethod(selectable ? ArrowKeyMovementMethod.getInstance() : null);
         setText(getText(), selectable ? BufferType.SPANNABLE : BufferType.NORMAL);
         prepareCursorControllers();
-        // ---------- Original Method ----------
-        //if (mTextIsSelectable == selectable) return;
-        //mTextIsSelectable = selectable;
-        //setFocusableInTouchMode(selectable);
-        //setFocusable(selectable);
-        //setClickable(selectable);
-        //setLongClickable(selectable);
-        //setMovementMethod(selectable ? ArrowKeyMovementMethod.getInstance() : null);
-        //setText(getText(), selectable ? BufferType.SPANNABLE : BufferType.NORMAL);
-        //prepareCursorControllers();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.843 -0400", hash_original_method = "E327CCF4B590DA515951F33B48F8FD2D", hash_generated_method = "457281434D51259C5B5F0172CD32B644")
     @Override
     protected int[] onCreateDrawableState(int extraSpace) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         int[] drawableState;
         {
             drawableState = super.onCreateDrawableState(extraSpace);
-        } //End block
+        } 
         {
             drawableState = super.onCreateDrawableState(extraSpace + 1);
             mergeDrawableStates(drawableState, MULTILINE_STATE_SET);
-        } //End block
+        } 
         {
             final int length = drawableState.length;
             {
@@ -4894,27 +4894,27 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         final int[] nonPressedState = new int[length - 1];
                         System.arraycopy(drawableState, 0, nonPressedState, 0, i);
                         System.arraycopy(drawableState, i + 1, nonPressedState, i, length - i - 1);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(extraSpace);
         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_2111806130 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_2111806130;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.845 -0400", hash_original_method = "FA11BA597CA3990806012CD62CCA6F49", hash_generated_method = "43B018629F6527BCA776741101908884")
     @Override
     protected void onDraw(Canvas canvas) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             final ViewTreeObserver observer = getViewTreeObserver();
             observer.removeOnPreDrawListener(this);
             mPreDrawState = PREDRAW_NOT_REGISTERED;
-        } //End block
+        } 
         restartMarqueeIfNeeded();
         super.onDraw(canvas);
         final int compoundPaddingLeft = getCompoundPaddingLeft();
@@ -4938,21 +4938,21 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                                  (vspace - dr.mDrawableHeightLeft) / 2);
                 dr.mDrawableLeft.draw(canvas);
                 canvas.restore();
-            } //End block
+            } 
             {
                 canvas.save();
                 canvas.translate(scrollX + right - left - mPaddingRight - dr.mDrawableSizeRight,
                          scrollY + compoundPaddingTop + (vspace - dr.mDrawableHeightRight) / 2);
                 dr.mDrawableRight.draw(canvas);
                 canvas.restore();
-            } //End block
+            } 
             {
                 canvas.save();
                 canvas.translate(scrollX + compoundPaddingLeft + (hspace - dr.mDrawableWidthTop) / 2,
                         scrollY + mPaddingTop);
                 dr.mDrawableTop.draw(canvas);
                 canvas.restore();
-            } //End block
+            } 
             {
                 canvas.save();
                 canvas.translate(scrollX + compoundPaddingLeft +
@@ -4960,12 +4960,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                          scrollY + bottom - top - mPaddingBottom - dr.mDrawableSizeBottom);
                 dr.mDrawableBottom.draw(canvas);
                 canvas.restore();
-            } //End block
-        } //End block
+            } 
+        } 
         int color = mCurTextColor;
         {
             assumeLayout();
-        } //End block
+        } 
         Layout layout = mLayout;
         int cursorcolor = color;
         {
@@ -4973,14 +4973,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             {
                 {
                     color = mCurHintTextColor;
-                } //End block
+                } 
                 layout = mHintLayout;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mTextPaint.setColor(color);
         {
             mTextPaint.setAlpha((mCurrentAlpha * Color.alpha(color)) / 255);
-        } //End block
+        } 
         mTextPaint.drawableState = getDrawableState();
         canvas.save();
         int extendedPaddingTop = getExtendedPaddingTop();
@@ -4994,7 +4994,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             clipRight += Math.max(0, mShadowDx + mShadowRadius);
             clipTop += Math.min(0, mShadowDy - mShadowRadius);
             clipBottom += Math.max(0, mShadowDy + mShadowRadius);
-        } //End block
+        } 
         canvas.clipRect(clipLeft, clipTop, clipRight, clipBottom);
         int voffsetText = 0;
         int voffsetCursor = 0;
@@ -5002,9 +5002,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             {
                 voffsetText = getVerticalOffset(false);
                 voffsetCursor = getVerticalOffset(true);
-            } //End block
+            } 
             canvas.translate(compoundPaddingLeft, extendedPaddingTop + voffsetText);
-        } //End block
+        } 
         final int layoutDirection = getResolvedLayoutDirection();
         final int absoluteGravity = Gravity.getAbsoluteGravity(mGravity, layoutDirection);
         {
@@ -5014,15 +5014,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 {
                     canvas.translate(mLayout.getLineRight(0) - (mRight - mLeft -
                         getCompoundPaddingLeft() - getCompoundPaddingRight()), 0.0f);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var2C1AA9C80F2908423E5F4CFC350F7281_37337768 = (mMarquee != null && mMarquee.isRunning());
                 {
                     canvas.translate(-mMarquee.mScroll, 0.0f);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         Path highlight = null;
         int selStart = -1;
         int selEnd = -1;
@@ -5044,18 +5044,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                                     mLayout.getCursorPath(selStart, mHighlightPath, mText);
                                     updateCursorsPositions();
                                     mHighlightPathBogus = false;
-                                } //End block
+                                } 
                                 mHighlightPaint.setColor(cursorcolor);
                                 {
                                     mHighlightPaint.setAlpha(
                                     (mCurrentAlpha * Color.alpha(cursorcolor)) / 255);
-                                } //End block
+                                } 
                                 mHighlightPaint.setStyle(Paint.Style.STROKE);
                                 highlight = mHighlightPath;
                                 drawCursor = mCursorCount > 0;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     {
                         boolean varD2470F8649BF231BDB682780036CA3E1_1935859751 = (textCanBeSelected());
                         {
@@ -5063,19 +5063,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                                 mHighlightPath.reset();
                                 mLayout.getSelectionPath(selStart, selEnd, mHighlightPath);
                                 mHighlightPathBogus = false;
-                            } //End block
+                            } 
                             mHighlightPaint.setColor(mHighlightColor);
                             {
                                 mHighlightPaint.setAlpha(
                                 (mCurrentAlpha * Color.alpha(mHighlightColor)) / 255);
-                            } //End block
+                            } 
                             mHighlightPaint.setStyle(Paint.Style.FILL);
                             highlight = mHighlightPath;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         final InputMethodState ims = mInputMethodState;
         final int cursorOffsetVertical = voffsetCursor - voffsetText;
         {
@@ -5087,7 +5087,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         boolean reported = false;
                         {
                             reported = reportExtractedText();
-                        } //End block
+                        } 
                         {
                             int candStart = -1;
                             int candEnd = -1;
@@ -5095,11 +5095,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                                 Spannable sp = (Spannable)mText;
                                 candStart = EditableInputConnection.getComposingSpanStart(sp);
                                 candEnd = EditableInputConnection.getComposingSpanEnd(sp);
-                            } //End block
+                            } 
                             imm.updateSelection(this, selStart, selEnd, candStart, candEnd);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 {
                     boolean varDFBBC9A1B31B7114329F69A82B5D3704_1930932247 = (imm.isWatchingCursor(this) && highlight != null);
                     {
@@ -5115,29 +5115,29 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         imm.updateCursor(this,
                             ims.mCursorRectInWindow.left, ims.mCursorRectInWindow.top,
                             ims.mCursorRectInWindow.right, ims.mCursorRectInWindow.bottom);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             mCorrectionHighlighter.draw(canvas, cursorOffsetVertical);
-        } //End block
+        } 
         {
             drawCursor(canvas, cursorOffsetVertical);
             highlight = null;
-        } //End block
+        } 
         layout.draw(canvas, highlight, mHighlightPaint, cursorOffsetVertical);
         {
             boolean var6C9C7A2601C4C103D29484E050BD6314_708269125 = (mMarquee != null && mMarquee.shouldDrawGhost());
             {
                 canvas.translate((int) mMarquee.getGhostOffset(), 0.0f);
                 layout.draw(canvas, highlight, mHighlightPaint, cursorOffsetVertical);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         canvas.restore();
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -5145,7 +5145,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private void updateCursorsPositions() {
         {
             mCursorCount = 0;
-        } //End block
+        } 
         final int offset = getSelectionStart();
         final int line = mLayout.getLineForOffset(offset);
         final int top = mLayout.getLineTop(line);
@@ -5154,29 +5154,29 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int middle = bottom;
         {
             middle = (top + bottom) >> 1;
-        } //End block
+        } 
         updateCursorPosition(0, top, middle, mLayout.getPrimaryHorizontal(offset));
         {
             updateCursorPosition(1, middle, bottom, mLayout.getSecondaryHorizontal(offset));
-        } //End block
-        // ---------- Original Method ----------
-        //if (mCursorDrawableRes == 0) {
-            //mCursorCount = 0;
-            //return; 
-        //}
-        //final int offset = getSelectionStart();
-        //final int line = mLayout.getLineForOffset(offset);
-        //final int top = mLayout.getLineTop(line);
-        //final int bottom = mLayout.getLineTop(line + 1);
-        //mCursorCount = mLayout.isLevelBoundary(offset) ? 2 : 1;
-        //int middle = bottom;
-        //if (mCursorCount == 2) {
-            //middle = (top + bottom) >> 1;
-        //}
-        //updateCursorPosition(0, top, middle, mLayout.getPrimaryHorizontal(offset));
-        //if (mCursorCount == 2) {
-            //updateCursorPosition(1, middle, bottom, mLayout.getSecondaryHorizontal(offset));
-        //}
+        } 
+        
+        
+            
+            
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -5193,16 +5193,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         addTaint(top);
         addTaint(bottom);
         addTaint(horizontal);
-        // ---------- Original Method ----------
-        //if (mCursorDrawable[cursorIndex] == null)
-            //mCursorDrawable[cursorIndex] = mContext.getResources().getDrawable(mCursorDrawableRes);
-        //if (mTempRect == null) mTempRect = new Rect();
-        //mCursorDrawable[cursorIndex].getPadding(mTempRect);
-        //final int width = mCursorDrawable[cursorIndex].getIntrinsicWidth();
-        //horizontal = Math.max(0.5f, horizontal - 0.5f);
-        //final int left = (int) (horizontal) - mTempRect.left;
-        //mCursorDrawable[cursorIndex].setBounds(left, top - mTempRect.top, left + width,
-                //bottom + mTempRect.bottom);
+        
+        
+            
+        
+        
+        
+        
+        
+        
+                
     }
 
     
@@ -5214,18 +5214,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             int i = 0;
             {
                 mCursorDrawable[i].draw(canvas);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         canvas.translate(0, -cursorOffsetVertical);
         addTaint(canvas.getTaint());
         addTaint(cursorOffsetVertical);
-        // ---------- Original Method ----------
-        //final boolean translate = cursorOffsetVertical != 0;
-        //if (translate) canvas.translate(0, cursorOffsetVertical);
-        //for (int i = 0; i < mCursorCount; i++) {
-            //mCursorDrawable[i].draw(canvas);
-        //}
-        //if (translate) canvas.translate(0, -cursorOffsetVertical);
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -5234,11 +5234,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public void getFocusedRect(Rect r) {
         {
             super.getFocusedRect(r);
-        } //End block
+        } 
         int selEnd = getSelectionEnd();
         {
             super.getFocusedRect(r);
-        } //End block
+        } 
         int selStart = getSelectionStart();
         {
             int line = mLayout.getLineForOffset(selEnd);
@@ -5246,7 +5246,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             r.bottom = mLayout.getLineBottom(line);
             r.left = (int) mLayout.getPrimaryHorizontal(selEnd) - 2;
             r.right = r.left + 4;
-        } //End block
+        } 
         {
             int lineStart = mLayout.getLineForOffset(selStart);
             int lineEnd = mLayout.getLineForOffset(selEnd);
@@ -5255,30 +5255,30 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             {
                 r.left = (int) mLayout.getPrimaryHorizontal(selStart);
                 r.right = (int) mLayout.getPrimaryHorizontal(selEnd);
-            } //End block
+            } 
             {
                 mHighlightPath = new Path();
                 {
                     mHighlightPath.reset();
                     mLayout.getSelectionPath(selStart, selEnd, mHighlightPath);
                     mHighlightPathBogus = false;
-                } //End block
+                } 
                 {
                     mHighlightPath.computeBounds(sTempRect, true);
                     r.left = (int)sTempRect.left-1;
                     r.right = (int)sTempRect.right+1;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         int paddingLeft = getCompoundPaddingLeft();
         int paddingTop = getExtendedPaddingTop();
         {
             paddingTop += getVerticalOffset(false);
-        } //End block
+        } 
         r.offset(paddingLeft, paddingTop);
         addTaint(r.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -5286,11 +5286,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public int getLineCount() {
         {
             Object varD975483664E4A2ABD3BE6A7FE00BEAE4_1577164224 = (mLayout.getLineCount());
-        } //End flattened ternary
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1101347013 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1101347013;
-        // ---------- Original Method ----------
-        //return mLayout != null ? mLayout.getLineCount() : 0;
+        
+        
     }
 
     
@@ -5299,40 +5299,40 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             {
                 bounds.set(0, 0, 0, 0);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             int baseline = mLayout.getLineBounds(line, bounds);
             int voffset = getExtendedPaddingTop();
             {
                 voffset += getVerticalOffset(true);
-            } //End block
+            } 
             {
                 bounds.offset(getCompoundPaddingLeft(), voffset);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(line);
         addTaint(bounds.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1429952016 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1429952016;
-        // ---------- Original Method ----------
-        //if (mLayout == null) {
-            //if (bounds != null) {
-                //bounds.set(0, 0, 0, 0);
-            //}
-            //return 0;
-        //}
-        //else {
-            //int baseline = mLayout.getLineBounds(line, bounds);
-            //int voffset = getExtendedPaddingTop();
-            //if ((mGravity & Gravity.VERTICAL_GRAVITY_MASK) != Gravity.TOP) {
-                //voffset += getVerticalOffset(true);
-            //}
-            //if (bounds != null) {
-                //bounds.offset(getCompoundPaddingLeft(), voffset);
-            //}
-            //return baseline + voffset;
-        //}
+        
+        
+            
+                
+            
+            
+        
+        
+            
+            
+            
+                
+            
+            
+                
+            
+            
+        
     }
 
     
@@ -5341,23 +5341,23 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public int getBaseline() {
         {
             int varEC5F70FA49520212A319ACA653FC0209_1168566614 = (super.getBaseline());
-        } //End block
+        } 
         int voffset = 0;
         {
             voffset = getVerticalOffset(true);
-        } //End block
+        } 
         int varB40014DBFC3B8DB0A96D34443E0FBB7F_714085090 = (getExtendedPaddingTop() + voffset + mLayout.getLineBaseline(0));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1988410658 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1988410658;
-        // ---------- Original Method ----------
-        //if (mLayout == null) {
-            //return super.getBaseline();
-        //}
-        //int voffset = 0;
-        //if ((mGravity & Gravity.VERTICAL_GRAVITY_MASK) != Gravity.TOP) {
-            //voffset = getVerticalOffset(true);
-        //}
-        //return getExtendedPaddingTop() + voffset + mLayout.getLineBaseline(0);
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -5367,20 +5367,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int voffset = 0;
         {
             voffset = getVerticalOffset(true);
-        } //End block
+        } 
         voffset += getTopPaddingOffset();
         int var96B16999098121B80A3E9BC63992503B_325630184 = (getExtendedPaddingTop() + voffset);
         addTaint(offsetRequired);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_121525500 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_121525500;
-        // ---------- Original Method ----------
-        //if (mLayout == null) return 0;
-        //int voffset = 0;
-        //if ((mGravity & Gravity.VERTICAL_GRAVITY_MASK) != Gravity.TOP) {
-            //voffset = getVerticalOffset(true);
-        //}
-        //if (offsetRequired) voffset += getTopPaddingOffset();
-        //return getExtendedPaddingTop() + voffset;
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -5389,19 +5389,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     protected int getFadeHeight(boolean offsetRequired) {
         {
             Object var1822177AD24E1DAE2984AAF8E0B02DF5_1344644306 = (mLayout.getHeight());
-        } //End flattened ternary
+        } 
         addTaint(offsetRequired);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_482870991 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_482870991;
-        // ---------- Original Method ----------
-        //return mLayout != null ? mLayout.getHeight() : 0;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.854 -0400", hash_original_method = "D780B8C0D740C935BBFD0FE1FAA345B5", hash_generated_method = "628BB83769D25D705236236E06FA1D8B")
     @Override
     public boolean onKeyPreIme(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean isInSelectionMode = mSelectionActionMode != null;
             {
@@ -5411,91 +5411,91 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         KeyEvent.DispatcherState state = getKeyDispatcherState();
                         {
                             state.startTracking(event, this);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         boolean varA6D964A9D1A4D1D485BD8D60F2BFCDEE_104005150 = (event.getAction() == KeyEvent.ACTION_UP);
                         {
                             KeyEvent.DispatcherState state = getKeyDispatcherState();
                             {
                                 state.handleUpEvent(event);
-                            } //End block
+                            } 
                             {
                                 boolean varBE09C907F92D135687297C67489D82A5_1606116483 = (event.isTracking() && !event.isCanceled());
                                 {
                                     {
                                         stopSelectionActionMode();
-                                    } //End block
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         boolean var84A59BF21652B099F795A333EE25717D_1760338493 = (super.onKeyPreIme(keyCode, event));
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1503422338 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1503422338;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.854 -0400", hash_original_method = "34FB4F2A2A6D04958B0CB574357346B4", hash_generated_method = "87EBE54FF5E50EC57B33E2E2FB67270A")
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         int which = doKeyDown(keyCode, event, null);
         {
             boolean varF37828D47239888646D0D534C127ED8C_146695944 = (super.onKeyDown(keyCode, event));
-        } //End block
+        } 
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1593915397 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1593915397;
-        // ---------- Original Method ----------
-        //int which = doKeyDown(keyCode, event, null);
-        //if (which == 0) {
-            //return super.onKeyDown(keyCode, event);
-        //}
-        //return true;
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.854 -0400", hash_original_method = "29E1D0F837CE3120BC9F0CF834D8CD7B", hash_generated_method = "40541023E51748CF5074B5F2270147AD")
     @Override
     public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         KeyEvent down = KeyEvent.changeAction(event, KeyEvent.ACTION_DOWN);
         int which = doKeyDown(keyCode, down, event);
         {
             boolean varDC1E2957B5A61BDC225D3800F9D03961_101612801 = (super.onKeyMultiple(keyCode, repeatCount, event));
-        } //End block
+        } 
         KeyEvent up = KeyEvent.changeAction(event, KeyEvent.ACTION_UP);
         {
             mInput.onKeyUp(this, (Editable)mText, keyCode, up);
             {
                 mInput.onKeyDown(this, (Editable)mText, keyCode, down);
                 mInput.onKeyUp(this, (Editable)mText, keyCode, up);
-            } //End block
+            } 
             hideErrorIfUnchanged();
-        } //End block
+        } 
         {
             mMovement.onKeyUp(this, (Spannable)mText, keyCode, up);
             {
                 mMovement.onKeyDown(this, (Spannable)mText, keyCode, down);
                 mMovement.onKeyUp(this, (Spannable)mText, keyCode, up);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(keyCode);
         addTaint(repeatCount);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1532946531 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1532946531;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -5503,24 +5503,24 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private boolean shouldAdvanceFocusOnEnter() {
         {
             int variation = mInputType & EditorInfo.TYPE_MASK_VARIATION;
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1371047454 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1371047454;
-        // ---------- Original Method ----------
-        //if (mInput == null) {
-            //return false;
-        //}
-        //if (mSingleLine) {
-            //return true;
-        //}
-        //if ((mInputType & EditorInfo.TYPE_MASK_CLASS) == EditorInfo.TYPE_CLASS_TEXT) {
-            //int variation = mInputType & EditorInfo.TYPE_MASK_VARIATION;
-            //if (variation == EditorInfo.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
-                    //|| variation == EditorInfo.TYPE_TEXT_VARIATION_EMAIL_SUBJECT) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+            
+                    
+                
+            
+        
+        
     }
 
     
@@ -5529,21 +5529,21 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             {
                 int variation = mInputType & EditorInfo.TYPE_MASK_VARIATION;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1717227652 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1717227652;
-        // ---------- Original Method ----------
-        //if (mInput != null && !mSingleLine) {
-            //if ((mInputType & EditorInfo.TYPE_MASK_CLASS) == EditorInfo.TYPE_CLASS_TEXT) {
-                //int variation = mInputType & EditorInfo.TYPE_MASK_VARIATION;
-                //if (variation == EditorInfo.TYPE_TEXT_FLAG_IME_MULTI_LINE
-                        //|| variation == EditorInfo.TYPE_TEXT_FLAG_MULTI_LINE) {
-                    //return false;
-                //}
-            //}
-        //}
-        //return true;
+        
+        
+            
+                
+                
+                        
+                    
+                
+            
+        
+        
     }
 
     
@@ -5551,8 +5551,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private int doKeyDown(int keyCode, KeyEvent event, KeyEvent otherEvent) {
         {
             boolean varC378F7D9F83769944CF2ACC662A4EAE3_821817356 = (!isEnabled());
-        } //End collapsed parenthetic
-        //Begin case KeyEvent.KEYCODE_ENTER 
+        } 
+        
         {
             boolean var6A2352E2C5239DCC8C3CFCEB22E8E32E_1226757667 = (event.hasNoModifiers());
             {
@@ -5563,46 +5563,46 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                                 this, EditorInfo.IME_NULL, event));
                         {
                             mInputContentType.enterDown = true;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     boolean var05FC5A78E345546917334D934F323222_943092242 = ((event.getFlags() & KeyEvent.FLAG_EDITOR_ACTION) != 0
                             || shouldAdvanceFocusOnEnter());
                     {
                         {
                             boolean var272B07794F8FB9CA178BF9284513CEF1_526668697 = (hasOnClickListeners());
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
-        //End case KeyEvent.KEYCODE_ENTER 
-        //Begin case KeyEvent.KEYCODE_DPAD_CENTER 
+                        } 
+                    } 
+                } 
+            } 
+        } 
+        
+        
         {
             boolean var6A2352E2C5239DCC8C3CFCEB22E8E32E_325893416 = (event.hasNoModifiers());
             {
                 {
                     boolean varB57504F668DBD47828E53D1AA62D2476_2093047953 = (shouldAdvanceFocusOnEnter());
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
-        //End case KeyEvent.KEYCODE_DPAD_CENTER 
-        //Begin case KeyEvent.KEYCODE_TAB 
+                } 
+            } 
+        } 
+        
+        
         {
             boolean var41B4248114FD3FFF5603132EE2379F75_100842076 = (event.hasNoModifiers() || event.hasModifiers(KeyEvent.META_SHIFT_ON));
             {
                 {
                     boolean var4CB07B26821EBD1E83E544AE45714F5A_1519882874 = (shouldAdvanceFocusOnTab());
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
-        //End case KeyEvent.KEYCODE_TAB 
-        //Begin case KeyEvent.KEYCODE_BACK 
+                } 
+            } 
+        } 
+        
+        
         {
             stopSelectionActionMode();
-        } //End block
-        //End case KeyEvent.KEYCODE_BACK 
+        } 
+        
         {
             resetErrorChangedFlag();
             boolean doDown = true;
@@ -5613,21 +5613,21 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     final boolean handled = mInput.onKeyOther(this, (Editable) mText, otherEvent);
                     hideErrorIfUnchanged();
                     doDown = false;
-                } //End block
+                } 
                 catch (AbstractMethodError e)
                 { }
                 finally 
                 {
                     endBatchEdit();
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 beginBatchEdit();
                 final boolean handled = mInput.onKeyDown(this, (Editable) mText, keyCode, event);
                 endBatchEdit();
                 hideErrorIfUnchanged();
-            } //End block
-        } //End block
+            } 
+        } 
         {
             boolean doDown = true;
             {
@@ -5636,31 +5636,31 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     boolean handled = mMovement.onKeyOther(this, (Spannable) mText,
                             otherEvent);
                     doDown = false;
-                } //End block
+                } 
                 catch (AbstractMethodError e)
                 { }
-            } //End block
+            } 
             {
                 {
                     boolean var899D769AE8C1CEA63FDF2F946CDD9B0C_1903395083 = (mMovement.onKeyDown(this, (Spannable)mText, keyCode, event));
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         addTaint(keyCode);
         addTaint(event.getTaint());
         addTaint(otherEvent.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1604816654 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1604816654;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.856 -0400", hash_original_method = "7246AB9167FB26EEC2DE7F4C0B385BF5", hash_generated_method = "942D510B431E2EA8FDD86A5C3DFCBA19")
     public void resetErrorChangedFlag() {
         mErrorWasChanged = false;
-        // ---------- Original Method ----------
-        //mErrorWasChanged = false;
+        
+        
     }
 
     
@@ -5668,25 +5668,25 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public void hideErrorIfUnchanged() {
         {
             setError(null, null);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mError != null && !mErrorWasChanged) {
-            //setError(null, null);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.858 -0400", hash_original_method = "5424E0BE647EA73439DA25EAE2FC3B50", hash_generated_method = "A0B2A6A60FAD690FB2D41529596E9C8C")
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean varC378F7D9F83769944CF2ACC662A4EAE3_38867289 = (!isEnabled());
             {
                 boolean var22F2FED66C108E4B3C1571CD2DEF9BD7_1240969206 = (super.onKeyUp(keyCode, event));
-            } //End block
-        } //End collapsed parenthetic
-        //Begin case KeyEvent.KEYCODE_DPAD_CENTER 
+            } 
+        } 
+        
         {
             boolean var6A2352E2C5239DCC8C3CFCEB22E8E32E_825471950 = (event.hasNoModifiers());
             {
@@ -5701,18 +5701,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                                 viewClicked(imm);
                                 {
                                     imm.showSoftInput(this, 0);
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
-        //End case KeyEvent.KEYCODE_DPAD_CENTER 
-        //Begin case KeyEvent.KEYCODE_DPAD_CENTER 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
+        
+        
         boolean varEDD771EBF66425AD21882AB08CD0EE48_2027748398 = (super.onKeyUp(keyCode, event));
-        //End case KeyEvent.KEYCODE_DPAD_CENTER 
-        //Begin case KeyEvent.KEYCODE_ENTER 
+        
+        
         {
             boolean var6A2352E2C5239DCC8C3CFCEB22E8E32E_726321342 = (event.hasNoModifiers());
             {
@@ -5721,8 +5721,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     {
                         boolean varFB4D8364BD486E8AC15C78086C055D0E_1554539342 = (mInputContentType.onEditorActionListener.onEditorAction(
                                 this, EditorInfo.IME_NULL, event));
-                    } //End collapsed parenthetic
-                } //End block
+                    } 
+                } 
                 {
                     boolean var05FC5A78E345546917334D934F323222_583802804 = ((event.getFlags() & KeyEvent.FLAG_EDITOR_ACTION) != 0
                             || shouldAdvanceFocusOnEnter());
@@ -5738,10 +5738,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                                             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                                             "focus search returned a view " +
                                             "that wasn't able to take focus!");
-                                        } //End block
-                                    } //End collapsed parenthetic
+                                        } 
+                                    } 
                                     super.onKeyUp(keyCode, event);
-                                } //End block
+                                } 
                                 {
                                     boolean var28FD9F71D61E7F2DAF140411AD18D69B_1936994452 = ((event.getFlags()
                                     & KeyEvent.FLAG_EDITOR_ACTION) != 0);
@@ -5751,57 +5751,57 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                                             boolean var18AFA631B94FB215076105938165749C_73139429 = (imm != null && imm.isActive(this));
                                             {
                                                 imm.hideSoftInputFromWindow(getWindowToken(), 0);
-                                            } //End block
-                                        } //End collapsed parenthetic
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                                            } 
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 boolean var22F2FED66C108E4B3C1571CD2DEF9BD7_954042613 = (super.onKeyUp(keyCode, event));
-            } //End block
-        } //End collapsed parenthetic
-        //End case KeyEvent.KEYCODE_ENTER 
+            } 
+        } 
+        
         {
             boolean var952AD4616936F2C47880365DAADE02E9_473469248 = (mInput.onKeyUp(this, (Editable) mText, keyCode, event));
-        } //End collapsed parenthetic
+        } 
         {
             boolean varDA972FE6CE2955659F74CF0FCCBDD027_1033536408 = (mMovement.onKeyUp(this, (Spannable) mText, keyCode, event));
-        } //End collapsed parenthetic
+        } 
         boolean varEDD771EBF66425AD21882AB08CD0EE48_1569547135 = (super.onKeyUp(keyCode, event));
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_799445319 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_799445319;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.858 -0400", hash_original_method = "71F7C8422E0B6AB59261F7E112139F7A", hash_generated_method = "13EF467FC87438F7F787AE25D4FB1D65")
     @Override
     public boolean onCheckIsTextEditor() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_428680113 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_428680113;
-        // ---------- Original Method ----------
-        //return mInputType != EditorInfo.TYPE_NULL;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.861 -0400", hash_original_method = "B65AC544FAB392A4E417298C2021FD9E", hash_generated_method = "C192CF938BC224845E304090111D2A0F")
     @Override
     public InputConnection onCreateInputConnection(EditorInfo outAttrs) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        InputConnection varB4EAC82CA7396A68D541C85D26508E83_2008578197 = null; //Variable for return #1
-        InputConnection varB4EAC82CA7396A68D541C85D26508E83_822491744 = null; //Variable for return #2
+        
+        InputConnection varB4EAC82CA7396A68D541C85D26508E83_2008578197 = null; 
+        InputConnection varB4EAC82CA7396A68D541C85D26508E83_822491744 = null; 
         {
             boolean var14E748864EBD1D56528D6630F011C9F4_977522113 = (onCheckIsTextEditor() && isEnabled());
             {
                 {
                     mInputMethodState = new InputMethodState();
-                } //End block
+                } 
                 outAttrs.inputType = mInputType;
                 {
                     outAttrs.imeOptions = mInputContentType.imeOptions;
@@ -5809,42 +5809,42 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     outAttrs.actionLabel = mInputContentType.imeActionLabel;
                     outAttrs.actionId = mInputContentType.imeActionId;
                     outAttrs.extras = mInputContentType.extras;
-                } //End block
+                } 
                 {
                     outAttrs.imeOptions = EditorInfo.IME_NULL;
-                } //End block
+                } 
                 {
                     boolean var4A83C13B10866AEA8D3AB0257DD13346_383739270 = (focusSearch(FOCUS_DOWN) != null);
                     {
                         outAttrs.imeOptions |= EditorInfo.IME_FLAG_NAVIGATE_NEXT;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean varD336D5944BC7007368BBB4D990F0F8EA_1603818865 = (focusSearch(FOCUS_UP) != null);
                     {
                         outAttrs.imeOptions |= EditorInfo.IME_FLAG_NAVIGATE_PREVIOUS;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     {
                         outAttrs.imeOptions |= EditorInfo.IME_ACTION_NEXT;
-                    } //End block
+                    } 
                     {
                         outAttrs.imeOptions |= EditorInfo.IME_ACTION_DONE;
-                    } //End block
+                    } 
                     {
                         boolean var46380488EEE32CF6F78CFB4D43E28058_1914585061 = (!shouldAdvanceFocusOnEnter());
                         {
                             outAttrs.imeOptions |= EditorInfo.IME_FLAG_NO_ENTER_ACTION;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     boolean var6CF4D9D9DC3252829459B4AC99D1E1CE_527645052 = (isMultilineInputType(outAttrs.inputType));
                     {
                         outAttrs.imeOptions |= EditorInfo.IME_FLAG_NO_ENTER_ACTION;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 outAttrs.hintText = mHint;
                 {
                     InputConnection ic = new EditableInputConnection(this);
@@ -5852,24 +5852,24 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     outAttrs.initialSelEnd = getSelectionEnd();
                     outAttrs.initialCapsMode = ic.getCursorCapsMode(mInputType);
                     varB4EAC82CA7396A68D541C85D26508E83_2008578197 = ic;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_822491744 = null;
         addTaint(outAttrs.getTaint());
-        InputConnection varA7E53CE21691AB073D9660D615818899_1314541430; //Final return value
+        InputConnection varA7E53CE21691AB073D9660D615818899_1314541430; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1314541430 = varB4EAC82CA7396A68D541C85D26508E83_2008578197;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1314541430 = varB4EAC82CA7396A68D541C85D26508E83_822491744;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1314541430.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1314541430.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1314541430;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -5882,9 +5882,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         addTaint(outText.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1906695223 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1906695223;
-        // ---------- Original Method ----------
-        //return extractTextInternal(request, EXTRACT_UNKNOWN, EXTRACT_UNKNOWN,
-                //EXTRACT_UNKNOWN, outText);
+        
+        
+                
     }
 
     
@@ -5900,7 +5900,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     outText.partialStartOffset = outText.partialEndOffset = -1;
                     partialStartOffset = 0;
                     partialEndOffset = N;
-                } //End block
+                } 
                 {
                     partialEndOffset += delta;
                     {
@@ -5913,51 +5913,51 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                             partialStartOffset = j;
                             j = spanned.getSpanEnd(spans[i]);
                             partialEndOffset = j;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     outText.partialStartOffset = partialStartOffset;
                     outText.partialEndOffset = partialEndOffset - delta;
                     {
                         partialStartOffset = N;
-                    } //End block
+                    } 
                     {
                         partialStartOffset = 0;
-                    } //End block
+                    } 
                     {
                         partialEndOffset = N;
-                    } //End block
+                    } 
                     {
                         partialEndOffset = 0;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     outText.text = content.subSequence(partialStartOffset,
                             partialEndOffset);
-                } //End block
+                } 
                 {
                     outText.text = TextUtils.substring(content, partialStartOffset,
                             partialEndOffset);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 outText.partialStartOffset = 0;
                 outText.partialEndOffset = 0;
                 outText.text = "";
-            } //End block
+            } 
             outText.flags = 0;
             {
                 boolean varA35D3A020D07691CB25122C024188410_287669659 = (MetaKeyKeyListener.getMetaState(mText, MetaKeyKeyListener.META_SELECTING) != 0);
                 {
                     outText.flags |= ExtractedText.FLAG_SELECTING;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 outText.flags |= ExtractedText.FLAG_SINGLE_LINE;
-            } //End block
+            } 
             outText.startOffset = 0;
             outText.selectionStart = getSelectionStart();
             outText.selectionEnd = getSelectionEnd();
-        } //End block
+        } 
         addTaint(request.getTaint());
         addTaint(partialStartOffset);
         addTaint(partialEndOffset);
@@ -5965,8 +5965,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         addTaint(outText.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_938523536 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_938523536;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -5984,7 +5984,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     {
                         {
                             ims.mChangedStart = EXTRACT_NOTHING;
-                        } //End block
+                        } 
                         {
                             boolean varF32A83F45BD97D2740B78BFB41050619_758706828 = (extractTextInternal(req, ims.mChangedStart, ims.mChangedEnd,
                                 ims.mChangedDelta, ims.mTmpExtracted));
@@ -5995,16 +5995,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                                 ims.mChangedEnd = EXTRACT_UNKNOWN;
                                 ims.mChangedDelta = 0;
                                 ims.mContentChanged = false;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1046438055 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1046438055;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -6024,11 +6024,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             {
                 setText(text.text, TextView.BufferType.EDITABLE);
-            } //End block
+            } 
             {
                 removeParcelableSpans(content, 0, content.length());
                 content.replace(0, content.length(), text.text);
-            } //End block
+            } 
             {
                 final int N = content.length();
                 int start = text.partialStartOffset;
@@ -6037,8 +6037,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 end = N;
                 removeParcelableSpans(content, start, end);
                 content.replace(start, end, text.text);
-            } //End block
-        } //End block
+            } 
+        } 
         Spannable sp = (Spannable)getText();
         final int N = sp.length();
         int start = text.selectionStart;
@@ -6050,13 +6050,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         Selection.setSelection(sp, start, end);
         {
             MetaKeyKeyListener.startSelecting(this, sp);
-        } //End block
+        } 
         {
             MetaKeyKeyListener.stopSelecting(this, sp);
-        } //End block
+        } 
         addTaint(text.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -6064,42 +6064,42 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public void setExtracting(ExtractedTextRequest req) {
         {
             mInputMethodState.mExtracting = req;
-        } //End block
+        } 
         hideControllers();
-        // ---------- Original Method ----------
-        //if (mInputMethodState != null) {
-            //mInputMethodState.mExtracting = req;
-        //}
-        //hideControllers();
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.866 -0400", hash_original_method = "00B2156ECAED706F16E8F8EE554C74A0", hash_generated_method = "3BEC66028E7D4A026DFA204DCCC868C4")
     public void onCommitCompletion(CompletionInfo text) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(text.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.867 -0400", hash_original_method = "F0F3377304175B47C81480C4E8ACCA98", hash_generated_method = "6E98934F145CEAE563A6ADFAF440E386")
     public void onCommitCorrection(CorrectionInfo info) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             mCorrectionHighlighter = new CorrectionHighlighter();
-        } //End block
+        } 
         {
             mCorrectionHighlighter.invalidate(false);
-        } //End block
+        } 
         mCorrectionHighlighter.highlight(info);
         addTaint(info.getTaint());
-        // ---------- Original Method ----------
-        //if (mCorrectionHighlighter == null) {
-            //mCorrectionHighlighter = new CorrectionHighlighter();
-        //} else {
-            //mCorrectionHighlighter.invalidate(false);
-        //}
-        //mCorrectionHighlighter.highlight(info);
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -6115,34 +6115,34 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 {
                     ims.mChangedStart = 0;
                     ims.mChangedEnd = mText.length();
-                } //End block
+                } 
                 {
                     ims.mChangedStart = EXTRACT_UNKNOWN;
                     ims.mChangedEnd = EXTRACT_UNKNOWN;
                     ims.mContentChanged = false;
-                } //End block
+                } 
                 onBeginBatchEdit();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //mInBatchEditControllers = true;
-        //final InputMethodState ims = mInputMethodState;
-        //if (ims != null) {
-            //int nesting = ++ims.mBatchEditNesting;
-            //if (nesting == 1) {
-                //ims.mCursorChanged = false;
-                //ims.mChangedDelta = 0;
-                //if (ims.mContentChanged) {
-                    //ims.mChangedStart = 0;
-                    //ims.mChangedEnd = mText.length();
-                //} else {
-                    //ims.mChangedStart = EXTRACT_UNKNOWN;
-                    //ims.mChangedEnd = EXTRACT_UNKNOWN;
-                    //ims.mContentChanged = false;
-                //}
-                //onBeginBatchEdit();
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+            
+                
+                
+                
+                    
+                    
+                
+                    
+                    
+                    
+                
+                
+            
+        
     }
 
     
@@ -6154,17 +6154,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             int nesting = --ims.mBatchEditNesting;
             {
                 finishBatchEdit(ims);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //mInBatchEditControllers = false;
-        //final InputMethodState ims = mInputMethodState;
-        //if (ims != null) {
-            //int nesting = --ims.mBatchEditNesting;
-            //if (nesting == 0) {
-                //finishBatchEdit(ims);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -6174,13 +6174,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             ims.mBatchEditNesting = 0;
             finishBatchEdit(ims);
-        } //End block
-        // ---------- Original Method ----------
-        //final InputMethodState ims = mInputMethodState;
-        //if (ims != null && ims.mBatchEditNesting != 0) {
-            //ims.mBatchEditNesting = 0;
-            //finishBatchEdit(ims);
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -6190,19 +6190,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             updateAfterEdit();
             reportExtractedText();
-        } //End block
+        } 
         {
             invalidateCursor();
-        } //End block
+        } 
         addTaint(ims.getTaint());
-        // ---------- Original Method ----------
-        //onEndBatchEdit();
-        //if (ims.mContentChanged || ims.mSelectionModeChanged) {
-            //updateAfterEdit();
-            //reportExtractedText();
-        //} else if (ims.mCursorChanged) {
-            //invalidateCursor();
-        //}
+        
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -6212,51 +6212,51 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int curs = getSelectionStart();
         {
             registerForPreDraw();
-        } //End block
+        } 
         {
             mHighlightPathBogus = true;
             makeBlink();
             bringPointIntoView(curs);
-        } //End block
+        } 
         checkForResize();
-        // ---------- Original Method ----------
-        //invalidate();
-        //int curs = getSelectionStart();
-        //if (curs >= 0 || (mGravity & Gravity.VERTICAL_GRAVITY_MASK) == Gravity.BOTTOM) {
-            //registerForPreDraw();
-        //}
-        //if (curs >= 0) {
-            //mHighlightPathBogus = true;
-            //makeBlink();
-            //bringPointIntoView(curs);
-        //}
-        //checkForResize();
+        
+        
+        
+        
+            
+        
+        
+            
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.869 -0400", hash_original_method = "77FDC1BC2641DD2E3C25361410AF5DB0", hash_generated_method = "BC5277DD7D56968D2F4723F142BD5C12")
     public void onBeginBatchEdit() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.870 -0400", hash_original_method = "52249F36F9A17EF1D72281B7699502C1", hash_generated_method = "47AA9BDFFBC119BCE27C341493B00781")
     public void onEndBatchEdit() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.870 -0400", hash_original_method = "4EBA5E538796A46420814B4C84FDA4F7", hash_generated_method = "845637231797048248C7AD78C063F76D")
     public boolean onPrivateIMECommand(String action, Bundle data) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(action.getTaint());
         addTaint(data.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_393724764 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_393724764;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -6264,21 +6264,21 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private void nullLayouts() {
         {
             mSavedLayout = (BoringLayout) mLayout;
-        } //End block
+        } 
         {
             mSavedHintLayout = (BoringLayout) mHintLayout;
-        } //End block
+        } 
         mSavedMarqueeModeLayout = mLayout = mHintLayout = null;
         prepareCursorControllers();
-        // ---------- Original Method ----------
-        //if (mLayout instanceof BoringLayout && mSavedLayout == null) {
-            //mSavedLayout = (BoringLayout) mLayout;
-        //}
-        //if (mHintLayout instanceof BoringLayout && mSavedHintLayout == null) {
-            //mSavedHintLayout = (BoringLayout) mHintLayout;
-        //}
-        //mSavedMarqueeModeLayout = mLayout = mHintLayout = null;
-        //prepareCursorControllers();
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -6287,24 +6287,24 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int width = mRight - mLeft - getCompoundPaddingLeft() - getCompoundPaddingRight();
         {
             width = 0;
-        } //End block
+        } 
         int physicalWidth = width;
         {
             width = VERY_WIDE;
-        } //End block
+        } 
         makeNewLayout(width, physicalWidth, UNKNOWN_BORING, UNKNOWN_BORING,
                       physicalWidth, false);
-        // ---------- Original Method ----------
-        //int width = mRight - mLeft - getCompoundPaddingLeft() - getCompoundPaddingRight();
-        //if (width < 1) {
-            //width = 0;
-        //}
-        //int physicalWidth = width;
-        //if (mHorizontallyScrolling) {
-            //width = VERY_WIDE;
-        //}
-        //makeNewLayout(width, physicalWidth, UNKNOWN_BORING, UNKNOWN_BORING,
-                      //physicalWidth, false);
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+                      
     }
 
     
@@ -6314,70 +6314,70 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         super.resetResolvedLayoutDirection();
         {
             mLayoutAlignment = null;
-        } //End block
-        // ---------- Original Method ----------
-        //super.resetResolvedLayoutDirection();
-        //if (mLayoutAlignment != null &&
-                //(mTextAlign == TextAlign.VIEW_START ||
-                //mTextAlign == TextAlign.VIEW_END)) {
-            //mLayoutAlignment = null;
-        //}
+        } 
+        
+        
+        
+                
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.873 -0400", hash_original_method = "C784F6D37EB77044D77D743FABD50125", hash_generated_method = "0DB98CD1DAD1BA434195FBB494CDE9CC")
     private Layout.Alignment getLayoutAlignment() {
-        Layout.Alignment varB4EAC82CA7396A68D541C85D26508E83_621640795 = null; //Variable for return #1
+        Layout.Alignment varB4EAC82CA7396A68D541C85D26508E83_621640795 = null; 
         {
             Layout.Alignment alignment;
             TextAlign textAlign = mTextAlign;
-            //Begin case INHERIT GRAVITY 
-            //Begin case Gravity.START 
+            
+            
             alignment = Layout.Alignment.ALIGN_NORMAL;
-            //End case Gravity.START 
-            //Begin case Gravity.END 
+            
+            
             alignment = Layout.Alignment.ALIGN_OPPOSITE;
-            //End case Gravity.END 
-            //Begin case Gravity.LEFT 
+            
+            
             alignment = Layout.Alignment.ALIGN_LEFT;
-            //End case Gravity.LEFT 
-            //Begin case Gravity.RIGHT 
+            
+            
             alignment = Layout.Alignment.ALIGN_RIGHT;
-            //End case Gravity.RIGHT 
-            //Begin case Gravity.CENTER_HORIZONTAL 
+            
+            
             alignment = Layout.Alignment.ALIGN_CENTER;
-            //End case Gravity.CENTER_HORIZONTAL 
-            //Begin case default 
+            
+            
             alignment = Layout.Alignment.ALIGN_NORMAL;
-            //End case default 
-            //End case INHERIT GRAVITY 
-            //Begin case TEXT_START 
+            
+            
+            
             alignment = Layout.Alignment.ALIGN_NORMAL;
-            //End case TEXT_START 
-            //Begin case TEXT_END 
+            
+            
             alignment = Layout.Alignment.ALIGN_OPPOSITE;
-            //End case TEXT_END 
-            //Begin case CENTER 
+            
+            
             alignment = Layout.Alignment.ALIGN_CENTER;
-            //End case CENTER 
-            //Begin case VIEW_START 
+            
+            
             alignment = (getResolvedLayoutDirection() == LAYOUT_DIRECTION_RTL) ?
                             Layout.Alignment.ALIGN_RIGHT : Layout.Alignment.ALIGN_LEFT;
-            //End case VIEW_START 
-            //Begin case VIEW_END 
+            
+            
             alignment = (getResolvedLayoutDirection() == LAYOUT_DIRECTION_RTL) ?
                             Layout.Alignment.ALIGN_LEFT : Layout.Alignment.ALIGN_RIGHT;
-            //End case VIEW_END 
-            //Begin case default 
+            
+            
             alignment = Layout.Alignment.ALIGN_NORMAL;
-            //End case default 
+            
             mLayoutAlignment = alignment;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_621640795 = mLayoutAlignment;
-        varB4EAC82CA7396A68D541C85D26508E83_621640795.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_621640795.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_621640795;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -6392,10 +6392,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         mHighlightPathBogus = true;
         {
             wantWidth = 0;
-        } //End block
+        } 
         {
             hintWidth = 0;
-        } //End block
+        } 
         Layout.Alignment alignment = getLayoutAlignment();
         boolean shouldEllipsize = mEllipsize != null && mInput == null;
         final boolean switchEllipsize = mEllipsize == TruncateAt.MARQUEE &&
@@ -6403,10 +6403,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         TruncateAt effectiveEllipsize = mEllipsize;
         {
             effectiveEllipsize = TruncateAt.END_SMALL;
-        } //End block
+        } 
         {
             resolveTextDirection();
-        } //End block
+        } 
         mLayout = makeSingleLayout(wantWidth, boring, ellipsisWidth, alignment, shouldEllipsize,
                 effectiveEllipsize, effectiveEllipsize == mEllipsize);
         {
@@ -6415,7 +6415,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             oppositeEllipsize = TruncateAt.MARQUEE;
             mSavedMarqueeModeLayout = makeSingleLayout(wantWidth, boring, ellipsisWidth, alignment,
                     shouldEllipsize, oppositeEllipsize, effectiveEllipsize != mEllipsize);
-        } //End block
+        } 
         shouldEllipsize = mEllipsize != null;
         mHintLayout = null;
         {
@@ -6425,8 +6425,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                                                    mHintBoring);
                 {
                     mHintBoring = hintBoring;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 {
                     {
@@ -6434,14 +6434,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                                 replaceOrMake(mHint, mTextPaint,
                                 hintWidth, alignment, mSpacingMult, mSpacingAdd,
                                 hintBoring, mIncludePad);
-                    } //End block
+                    } 
                     {
                         mHintLayout = BoringLayout.make(mHint, mTextPaint,
                                 hintWidth, alignment, mSpacingMult, mSpacingAdd,
                                 hintBoring, mIncludePad);
-                    } //End block
+                    } 
                     mSavedHintLayout = (BoringLayout) mHintLayout;
-                } //End block
+                } 
                 {
                     {
                         mHintLayout = mSavedHintLayout.
@@ -6449,43 +6449,43 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                                 hintWidth, alignment, mSpacingMult, mSpacingAdd,
                                 hintBoring, mIncludePad, mEllipsize,
                                 ellipsisWidth);
-                    } //End block
+                    } 
                     {
                         mHintLayout = BoringLayout.make(mHint, mTextPaint,
                                 hintWidth, alignment, mSpacingMult, mSpacingAdd,
                                 hintBoring, mIncludePad, mEllipsize,
                                 ellipsisWidth);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     mHintLayout = new StaticLayout(mHint,
                                 0, mHint.length(),
                                 mTextPaint, hintWidth, alignment, mTextDir, mSpacingMult,
                                 mSpacingAdd, mIncludePad, mEllipsize,
                                 ellipsisWidth, mMaxMode == LINES ? mMaximum : Integer.MAX_VALUE);
-                } //End block
+                } 
                 {
                     mHintLayout = new StaticLayout(mHint, mTextPaint,
                             hintWidth, alignment, mTextDir, mSpacingMult, mSpacingAdd,
                             mIncludePad);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 mHintLayout = new StaticLayout(mHint,
                             0, mHint.length(),
                             mTextPaint, hintWidth, alignment, mTextDir, mSpacingMult,
                             mSpacingAdd, mIncludePad, mEllipsize,
                             ellipsisWidth, mMaxMode == LINES ? mMaximum : Integer.MAX_VALUE);
-            } //End block
+            } 
             {
                 mHintLayout = new StaticLayout(mHint, mTextPaint,
                         hintWidth, alignment, mTextDir, mSpacingMult, mSpacingAdd,
                         mIncludePad);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             registerForPreDraw();
-        } //End block
+        } 
         {
             {
                 boolean var74FA680CFF3550946DD695F927344B4C_1311400318 = (!compressText(ellipsisWidth));
@@ -6493,17 +6493,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     final int height = mLayoutParams.height;
                     {
                         startMarquee();
-                    } //End block
+                    } 
                     {
                         mRestartMarquee = true;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         prepareCursorControllers();
         addTaint(bringIntoView);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -6511,77 +6511,77 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private Layout makeSingleLayout(int wantWidth, BoringLayout.Metrics boring, int ellipsisWidth,
             Layout.Alignment alignment, boolean shouldEllipsize, TruncateAt effectiveEllipsize,
             boolean useSaved) {
-        Layout varB4EAC82CA7396A68D541C85D26508E83_1066738109 = null; //Variable for return #1
+        Layout varB4EAC82CA7396A68D541C85D26508E83_1066738109 = null; 
         Layout result = null;
         {
             result = new DynamicLayout(mText, mTransformed, mTextPaint, wantWidth,
                     alignment, mTextDir, mSpacingMult,
                     mSpacingAdd, mIncludePad, mInput == null ? effectiveEllipsize : null,
                             ellipsisWidth);
-        } //End block
+        } 
         {
             {
                 boring = BoringLayout.isBoring(mTransformed, mTextPaint, mTextDir, mBoring);
                 {
                     mBoring = boring;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 {
                     {
                         result = mSavedLayout.replaceOrMake(mTransformed, mTextPaint,
                                 wantWidth, alignment, mSpacingMult, mSpacingAdd,
                                 boring, mIncludePad);
-                    } //End block
+                    } 
                     {
                         result = BoringLayout.make(mTransformed, mTextPaint,
                                 wantWidth, alignment, mSpacingMult, mSpacingAdd,
                                 boring, mIncludePad);
-                    } //End block
+                    } 
                     {
                         mSavedLayout = (BoringLayout) result;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     {
                         result = mSavedLayout.replaceOrMake(mTransformed, mTextPaint,
                                 wantWidth, alignment, mSpacingMult, mSpacingAdd,
                                 boring, mIncludePad, effectiveEllipsize,
                                 ellipsisWidth);
-                    } //End block
+                    } 
                     {
                         result = BoringLayout.make(mTransformed, mTextPaint,
                                 wantWidth, alignment, mSpacingMult, mSpacingAdd,
                                 boring, mIncludePad, effectiveEllipsize,
                                 ellipsisWidth);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     result = new StaticLayout(mTransformed,
                             0, mTransformed.length(),
                             mTextPaint, wantWidth, alignment, mTextDir, mSpacingMult,
                             mSpacingAdd, mIncludePad, effectiveEllipsize,
                             ellipsisWidth, mMaxMode == LINES ? mMaximum : Integer.MAX_VALUE);
-                } //End block
+                } 
                 {
                     result = new StaticLayout(mTransformed, mTextPaint,
                             wantWidth, alignment, mTextDir, mSpacingMult, mSpacingAdd,
                             mIncludePad);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 result = new StaticLayout(mTransformed,
                         0, mTransformed.length(),
                         mTextPaint, wantWidth, alignment, mTextDir, mSpacingMult,
                         mSpacingAdd, mIncludePad, effectiveEllipsize,
                         ellipsisWidth, mMaxMode == LINES ? mMaximum : Integer.MAX_VALUE);
-            } //End block
+            } 
             {
                 result = new StaticLayout(mTransformed, mTextPaint,
                         wantWidth, alignment, mTextDir, mSpacingMult, mSpacingAdd,
                         mIncludePad);
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1066738109 = result;
         addTaint(wantWidth);
         addTaint(ellipsisWidth);
@@ -6589,10 +6589,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         addTaint(shouldEllipsize);
         addTaint(effectiveEllipsize.getTaint());
         addTaint(useSaved);
-        varB4EAC82CA7396A68D541C85D26508E83_1066738109.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1066738109.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1066738109;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -6600,7 +6600,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private boolean compressText(float width) {
         {
             boolean varBDA84146B1D9E3F7F12351B38C986FB8_250051123 = (isHardwareAccelerated());
-        } //End collapsed parenthetic
+        } 
         {
             boolean var743F2FC0D45BA571C6484FE1669492A0_1509211586 = (width > 0.0f && mLayout != null && getLineCount() == 1 && !mUserSetTextScaleX &&
                 mTextPaint.getTextScaleX() == 1.0f);
@@ -6613,33 +6613,33 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.877 -0400", hash_original_method = "13996B392673F4526875359F0F526DB3", hash_generated_method = "221C03470D8DDA191DC873FAC4B9A060")
                         public void run() {
                             requestLayout();
-                            // ---------- Original Method ----------
-                            //requestLayout();
+                            
+                            
                         }
 });
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(width);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_869138995 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_869138995;
-        // ---------- Original Method ----------
-        //if (isHardwareAccelerated()) return false;
-        //if (width > 0.0f && mLayout != null && getLineCount() == 1 && !mUserSetTextScaleX &&
-                //mTextPaint.getTextScaleX() == 1.0f) {
-            //final float textWidth = mLayout.getLineWidth(0);
-            //final float overflow = (textWidth + 1.0f - width) / width;
-            //if (overflow > 0.0f && overflow <= Marquee.MARQUEE_DELTA_MAX) {
-                //mTextPaint.setTextScaleX(1.0f - overflow - 0.005f);
-                //post(new Runnable() {
-                    //public void run() {
-                        //requestLayout();
-                    //}
-                //});
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+        
+                
+            
+            
+            
+                
+                
+                    
+                        
+                    
+                
+                
+            
+        
+        
     }
 
     
@@ -6666,24 +6666,24 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 nullLayouts();
                 requestLayout();
                 invalidate();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mIncludePad != includepad) {
-            //mIncludePad = includepad;
-            //if (mLayout != null) {
-                //nullLayouts();
-                //requestLayout();
-                //invalidate();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+                
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.881 -0400", hash_original_method = "CC856997CB919A81C5DE847B897CC56B", hash_generated_method = "2676F0B3BEC041C1F66C41432EFDB0CC")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
         int widthSize = MeasureSpec.getSize(widthMeasureSpec);
@@ -6694,83 +6694,83 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         BoringLayout.Metrics hintBoring = UNKNOWN_BORING;
         {
             resolveTextDirection();
-        } //End block
+        } 
         int des = -1;
         boolean fromexisting = false;
         {
             width = widthSize;
-        } //End block
+        } 
         {
             {
                 des = desired(mLayout);
-            } //End block
+            } 
             {
                 boring = BoringLayout.isBoring(mTransformed, mTextPaint, mTextDir, mBoring);
                 {
                     mBoring = boring;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 fromexisting = true;
-            } //End block
+            } 
             {
                 {
                     des = (int) FloatMath.ceil(Layout.getDesiredWidth(mTransformed, mTextPaint));
-                } //End block
+                } 
                 width = des;
-            } //End block
+            } 
             {
                 width = boring.width;
-            } //End block
+            } 
             final Drawables dr = mDrawables;
             {
                 width = Math.max(width, dr.mDrawableWidthTop);
                 width = Math.max(width, dr.mDrawableWidthBottom);
-            } //End block
+            } 
             {
                 int hintDes = -1;
                 int hintWidth;
                 {
                     hintDes = desired(mHintLayout);
-                } //End block
+                } 
                 {
                     hintBoring = BoringLayout.isBoring(mHint, mTextPaint, mHintBoring);
                     {
                         mHintBoring = hintBoring;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     {
                         hintDes = (int) FloatMath.ceil(
                                 Layout.getDesiredWidth(mHint, mTextPaint));
-                    } //End block
+                    } 
                     hintWidth = hintDes;
-                } //End block
+                } 
                 {
                     hintWidth = hintBoring.width;
-                } //End block
+                } 
                 {
                     width = hintWidth;
-                } //End block
-            } //End block
+                } 
+            } 
             width += getCompoundPaddingLeft() + getCompoundPaddingRight();
             {
                 width = Math.min(width, mMaxWidth * getLineHeight());
-            } //End block
+            } 
             {
                 width = Math.min(width, mMaxWidth);
-            } //End block
+            } 
             {
                 width = Math.max(width, mMinWidth * getLineHeight());
-            } //End block
+            } 
             {
                 width = Math.max(width, mMinWidth);
-            } //End block
+            } 
             width = Math.max(width, getSuggestedMinimumWidth());
             {
                 width = Math.min(widthSize, width);
-            } //End block
-        } //End block
+            } 
+        } 
         int want = width - getCompoundPaddingLeft() - getCompoundPaddingRight();
         int unpaddedWidth = want;
         want = VERY_WIDE;
@@ -6781,7 +6781,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             makeNewLayout(want, hintWant, boring, hintBoring,
                           width - getCompoundPaddingLeft() - getCompoundPaddingRight(), false);
-        } //End block
+        } 
         {
             final boolean layoutChanged = (mLayout.getWidth() != want) ||
                     (hintWidth != hintWant) ||
@@ -6795,48 +6795,48 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             {
                 {
                     mLayout.increaseWidthTo(want);
-                } //End block
+                } 
                 {
                     makeNewLayout(want, hintWant, boring, hintBoring,
                             width - getCompoundPaddingLeft() - getCompoundPaddingRight(), false);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             height = heightSize;
             mDesiredHeightAtMeasure = -1;
-        } //End block
+        } 
         {
             int desired = getDesiredHeight();
             height = desired;
             mDesiredHeightAtMeasure = desired;
             {
                 height = Math.min(desired, heightSize);
-            } //End block
-        } //End block
+            } 
+        } 
         int unpaddedHeight = height - getCompoundPaddingTop() - getCompoundPaddingBottom();
         {
             boolean var3DB10CBFB12ED38DCBD3FB16EF151096_154713870 = (mMaxMode == LINES && mLayout.getLineCount() > mMaximum);
             {
                 unpaddedHeight = Math.min(unpaddedHeight, mLayout.getLineTop(mMaximum));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varFFED0DDEAA53977A5F429726E600A8F2_808102878 = (mMovement != null ||
             mLayout.getWidth() > unpaddedWidth ||
             mLayout.getHeight() > unpaddedHeight);
             {
                 registerForPreDraw();
-            } //End block
+            } 
             {
                 scrollTo(0, 0);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         setMeasuredDimension(width, height);
         addTaint(widthMeasureSpec);
         addTaint(heightMeasureSpec);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -6847,10 +6847,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 getDesiredHeight(mHintLayout, mEllipsize != null)));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_372489539 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_372489539;
-        // ---------- Original Method ----------
-        //return Math.max(
-                //getDesiredHeight(mLayout, true),
-                //getDesiredHeight(mHintLayout, mEllipsize != null));
+        
+        
+                
+                
     }
 
     
@@ -6863,7 +6863,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             desired = Math.max(desired, dr.mDrawableHeightLeft);
             desired = Math.max(desired, dr.mDrawableHeightRight);
-        } //End block
+        } 
         desired += pad;
         {
             {
@@ -6872,30 +6872,30 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     {
                         desired = Math.max(desired, dr.mDrawableHeightLeft);
                         desired = Math.max(desired, dr.mDrawableHeightRight);
-                    } //End block
+                    } 
                     desired += pad;
                     linecount = mMaximum;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             desired = Math.min(desired, mMaximum);
-        } //End block
+        } 
         {
             {
                 desired += getLineHeight() * (mMinimum - linecount);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             desired = Math.max(desired, mMinimum);
-        } //End block
+        } 
         desired = Math.max(desired, getSuggestedMinimumHeight());
         addTaint(layout.getTaint());
         addTaint(cap);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1038917913 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1038917913;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -6906,30 +6906,30 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             {
                 sizeChanged = true;
                 invalidate();
-            } //End block
+            } 
             {
                 int desiredHeight = getDesiredHeight();
                 {
                     boolean var76B417FEF15CB7997AEC250AB014098F_1125880982 = (desiredHeight != this.getHeight());
                     {
                         sizeChanged = true;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 {
                     int desiredHeight = getDesiredHeight();
                     {
                         sizeChanged = true;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -6952,26 +6952,26 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 {
                     {
                         invalidate();
-                    } //End block
+                    } 
                     {
                         boolean varE1571FB91561235A70F553E0D47B6412_1632711871 = (mLayout.getHeight() == oldht &&
                     (mHintLayout == null || mHintLayout.getHeight() == oldht));
                         {
                             invalidate();
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 requestLayout();
                 invalidate();
-            } //End block
+            } 
             {
                 nullLayouts();
                 requestLayout();
                 invalidate();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -6980,7 +6980,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int line = 0;
         {
             line = mLayout.getLineCount() - 1;
-        } //End block
+        } 
         Layout.Alignment a = mLayout.getParagraphAlignment(line);
         int dir = mLayout.getParagraphDirection(line);
         int hspace = mRight - mLeft - getCompoundPaddingLeft() - getCompoundPaddingRight();
@@ -6991,51 +6991,51 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             a = dir == Layout.DIR_LEFT_TO_RIGHT ? Layout.Alignment.ALIGN_LEFT :
                 Layout.Alignment.ALIGN_RIGHT;
-        } //End block
+        } 
         {
             a = dir == Layout.DIR_LEFT_TO_RIGHT ? Layout.Alignment.ALIGN_RIGHT :
                 Layout.Alignment.ALIGN_LEFT;
-        } //End block
+        } 
         {
             int left = (int) FloatMath.floor(mLayout.getLineLeft(line));
             int right = (int) FloatMath.ceil(mLayout.getLineRight(line));
             {
                 scrollx = (right + left) / 2 - hspace / 2;
-            } //End block
+            } 
             {
                 {
                     scrollx = right - hspace;
-                } //End block
+                } 
                 {
                     scrollx = left;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             int right = (int) FloatMath.ceil(mLayout.getLineRight(line));
             scrollx = right - hspace;
-        } //End block
+        } 
         {
             scrollx = (int) FloatMath.floor(mLayout.getLineLeft(line));
-        } //End block
+        } 
         {
             scrolly = 0;
-        } //End block
+        } 
         {
             {
                 scrolly = ht - vspace;
-            } //End block
+            } 
             {
                 scrolly = 0;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             scrollTo(scrollx, scrolly);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_914200457 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_914200457;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -7052,22 +7052,22 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int grav;
         {
             Object var027910B290B59420177BD30BF1DDB958_1702124589 = (mLayout.getParagraphAlignment(line));
-            //Begin case ALIGN_LEFT 
+            
             grav = 1;
-            //End case ALIGN_LEFT 
-            //Begin case ALIGN_RIGHT 
+            
+            
             grav = -1;
-            //End case ALIGN_RIGHT 
-            //Begin case ALIGN_NORMAL 
+            
+            
             grav = mLayout.getParagraphDirection(line);
-            //End case ALIGN_NORMAL 
-            //Begin case ALIGN_OPPOSITE 
+            
+            
             grav = -mLayout.getParagraphDirection(line);
-            //End case ALIGN_OPPOSITE 
-            //Begin case ALIGN_CENTER default 
+            
+            
             grav = 0;
-            //End case ALIGN_CENTER default 
-        } //End collapsed parenthetic
+            
+        } 
         int hspace = mRight - mLeft - getCompoundPaddingLeft() - getCompoundPaddingRight();
         int vspace = mBottom - mTop - getExtendedPaddingTop() - getExtendedPaddingBottom();
         int hslack = (bottom - top) / 2;
@@ -7083,48 +7083,48 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             {
                 hs = x - hslack;
-            } //End block
+            } 
             {
                 hs = x - (hspace - hslack);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             hs = left;
             hs = right - hspace;
-        } //End block
+        } 
         {
             hs = right - hspace;
             hs = left;
-        } //End block
+        } 
         {
             {
                 hs = left - (hspace - (right - left)) / 2;
-            } //End block
+            } 
             {
                 hs = right - hspace;
-            } //End block
+            } 
             {
                 hs = left;
-            } //End block
+            } 
             {
                 hs = left;
-            } //End block
+            } 
             {
                 hs = right - hspace;
-            } //End block
+            } 
             {
                 {
                     hs = x - hslack;
-                } //End block
+                } 
                 {
                     hs = x - (hspace - hslack);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             {
                 scrollTo(hs, vs);
-            } //End block
+            } 
             {
                 long duration = AnimationUtils.currentAnimationTimeMillis() - mLastScroll;
                 int dx = hs - mScrollX;
@@ -7133,20 +7133,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     mScroller.startScroll(mScrollX, mScrollY, dx, dy);
                     awakenScrollBars(mScroller.getDuration());
                     invalidate();
-                } //End block
+                } 
                 {
                     {
                         boolean varD539631976251D8AA391F3162DE97B1C_85935793 = (!mScroller.isFinished());
                         {
                             mScroller.abortAnimation();
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     scrollBy(dx, dy);
-                } //End block
+                } 
                 mLastScroll = AnimationUtils.currentAnimationTimeMillis();
-            } //End block
+            } 
             changed = true;
-        } //End block
+        } 
         {
             boolean var1C23F183BE3EEE2A8667855A22865324_1470085792 = (isFocused());
             {
@@ -7158,15 +7158,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     boolean var5DD27CBBEE9D998C97ABDC1CFDA74333_687988610 = (requestRectangleOnScreen(mTempRect));
                     {
                         changed = true;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(offset);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1241865409 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1241865409;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -7183,10 +7183,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         final int vs = mScrollY;
         {
             line = mLayout.getLineForVertical(vs+vslack+(bottom-top));
-        } //End block
+        } 
         {
             line = mLayout.getLineForVertical(vspace+vs-vslack-(bottom-top));
-        } //End block
+        } 
         final int hspace = mRight - mLeft - getCompoundPaddingLeft() - getCompoundPaddingRight();
         final int hs = mScrollX;
         final int leftChar = mLayout.getOffsetForHorizontal(line, hs);
@@ -7200,17 +7200,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int newStart = start;
         {
             newStart = lowChar;
-        } //End block
+        } 
         {
             newStart = highChar;
-        } //End block
+        } 
         {
             Selection.setSelection((Spannable)mText, newStart);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_144024829 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_144024829;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -7225,18 +7225,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     mScrollY = mScroller.getCurrY();
                     invalidateParentCaches();
                     postInvalidate();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //if (mScroller != null) {
-            //if (mScroller.computeScrollOffset()) {
-                //mScrollX = mScroller.getCurrX();
-                //mScrollY = mScroller.getCurrY();
-                //invalidateParentCaches();
-                //postInvalidate();  
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+                
+                
+                
+                
+            
+        
     }
 
     
@@ -7247,13 +7247,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             boolean var36B5761D6C0D25FD94548457569D0FDF_233900053 = (line == mLayout.getLineCount() - 1);
             r.bottom += getExtendedPaddingBottom();
-        } //End collapsed parenthetic
+        } 
         addTaint(r.getTaint());
         addTaint(line);
-        // ---------- Original Method ----------
-        //convertFromViewportToContentCoordinates(r);
-        //if (line == 0) r.top -= getExtendedPaddingTop();
-        //if (line == mLayout.getLineCount() - 1) r.bottom += getExtendedPaddingBottom();
+        
+        
+        
+        
     }
 
     
@@ -7266,13 +7266,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         r.top += verticalOffset;
         r.bottom += verticalOffset;
         addTaint(r.getTaint());
-        // ---------- Original Method ----------
-        //final int horizontalOffset = viewportToContentHorizontalOffset();
-        //r.left += horizontalOffset;
-        //r.right += horizontalOffset;
-        //final int verticalOffset = viewportToContentVerticalOffset();
-        //r.top += verticalOffset;
-        //r.bottom += verticalOffset;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -7281,8 +7281,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int var094701FAECA9F0FDE06C5A96E63AF57B_908393512 = (getCompoundPaddingLeft() - mScrollX);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_459863186 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_459863186;
-        // ---------- Original Method ----------
-        //return getCompoundPaddingLeft() - mScrollX;
+        
+        
     }
 
     
@@ -7291,15 +7291,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int offset = getExtendedPaddingTop() - mScrollY;
         {
             offset += getVerticalOffset(false);
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1673850180 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1673850180;
-        // ---------- Original Method ----------
-        //int offset = getExtendedPaddingTop() - mScrollY;
-        //if ((mGravity & Gravity.VERTICAL_GRAVITY_MASK) != Gravity.TOP) {
-            //offset += getVerticalOffset(false);
-        //}
-        //return offset;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -7316,29 +7316,29 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             {
                 output += "mLayout width=" + mLayout.getWidth()
                         + " height=" + mLayout.getHeight();
-            } //End block
-        } //End block
+            } 
+        } 
         {
             output += "mText=NULL";
-        } //End block
+        } 
         Log.d(VIEW_LOG_TAG, output);
         addTaint(depth);
-        // ---------- Original Method ----------
-        //super.debug(depth);
-        //String output = debugIndent(depth);
-        //output += "frame={" + mLeft + ", " + mTop + ", " + mRight
-                //+ ", " + mBottom + "} scroll={" + mScrollX + ", " + mScrollY
-                //+ "} ";
-        //if (mText != null) {
-            //output += "mText=\"" + mText + "\" ";
-            //if (mLayout != null) {
-                //output += "mLayout width=" + mLayout.getWidth()
-                        //+ " height=" + mLayout.getHeight();
-            //}
-        //} else {
-            //output += "mText=NULL";
-        //}
-        //Log.d(VIEW_LOG_TAG, output);
+        
+        
+        
+        
+                
+                
+        
+            
+            
+                
+                        
+            
+        
+            
+        
+        
     }
 
     
@@ -7348,8 +7348,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int varB37ACFCDE0514D1AD6E7980466D0642F_212221985 = (Selection.getSelectionStart(getText()));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_613686054 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_613686054;
-        // ---------- Original Method ----------
-        //return Selection.getSelectionStart(getText());
+        
+        
     }
 
     
@@ -7359,8 +7359,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int var62647D48C20F4425C471C6DB7EC335FA_725204927 = (Selection.getSelectionEnd(getText()));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1986837802 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1986837802;
-        // ---------- Original Method ----------
-        //return Selection.getSelectionEnd(getText());
+        
+        
     }
 
     
@@ -7370,18 +7370,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         final int selectionEnd = getSelectionEnd();
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1425193592 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1425193592;
-        // ---------- Original Method ----------
-        //final int selectionStart = getSelectionStart();
-        //final int selectionEnd = getSelectionEnd();
-        //return selectionStart >= 0 && selectionStart != selectionEnd;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.893 -0400", hash_original_method = "08C77724BEA7FD604DDC056EC8AC0A85", hash_generated_method = "3BCA6B79215B55736909B9CF7C5FC574")
     public void setSingleLine() {
         setSingleLine(true);
-        // ---------- Original Method ----------
-        //setSingleLine(true);
+        
+        
     }
 
     
@@ -7389,17 +7389,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public void setAllCaps(boolean allCaps) {
         {
             setTransformationMethod(new AllCapsTransformationMethod(getContext()));
-        } //End block
+        } 
         {
             setTransformationMethod(null);
-        } //End block
+        } 
         addTaint(allCaps);
-        // ---------- Original Method ----------
-        //if (allCaps) {
-            //setTransformationMethod(new AllCapsTransformationMethod(getContext()));
-        //} else {
-            //setTransformationMethod(null);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -7409,9 +7409,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         setInputTypeSingleLine(singleLine);
         applySingleLine(singleLine, true, true);
         addTaint(singleLine);
-        // ---------- Original Method ----------
-        //setInputTypeSingleLine(singleLine);
-        //applySingleLine(singleLine, true, true);
+        
+        
+        
     }
 
     
@@ -7420,20 +7420,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             {
                 mInputType &= ~EditorInfo.TYPE_TEXT_FLAG_MULTI_LINE;
-            } //End block
+            } 
             {
                 mInputType |= EditorInfo.TYPE_TEXT_FLAG_MULTI_LINE;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(singleLine);
-        // ---------- Original Method ----------
-        //if ((mInputType & EditorInfo.TYPE_MASK_CLASS) == EditorInfo.TYPE_CLASS_TEXT) {
-            //if (singleLine) {
-                //mInputType &= ~EditorInfo.TYPE_TEXT_FLAG_MULTI_LINE;
-            //} else {
-                //mInputType |= EditorInfo.TYPE_TEXT_FLAG_MULTI_LINE;
-            //}
-        //}
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -7446,36 +7446,36 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             setHorizontallyScrolling(true);
             {
                 setTransformationMethod(SingleLineTransformationMethod.getInstance());
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 setMaxLines(Integer.MAX_VALUE);
-            } //End block
+            } 
             setHorizontallyScrolling(false);
             {
                 setTransformationMethod(null);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(applyTransformation);
         addTaint(changeMaxLines);
-        // ---------- Original Method ----------
-        //mSingleLine = singleLine;
-        //if (singleLine) {
-            //setLines(1);
-            //setHorizontallyScrolling(true);
-            //if (applyTransformation) {
-                //setTransformationMethod(SingleLineTransformationMethod.getInstance());
-            //}
-        //} else {
-            //if (changeMaxLines) {
-                //setMaxLines(Integer.MAX_VALUE);
-            //}
-            //setHorizontallyScrolling(false);
-            //if (applyTransformation) {
-                //setTransformationMethod(null);
-            //}
-        //}
+        
+        
+        
+            
+            
+            
+                
+            
+        
+            
+                
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -7487,37 +7487,37 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 nullLayouts();
                 requestLayout();
                 invalidate();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mEllipsize != where) {
-            //mEllipsize = where;
-            //if (mLayout != null) {
-                //nullLayouts();
-                //requestLayout();
-                //invalidate();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+                
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.895 -0400", hash_original_method = "CD4BE90CF39D915FD988D1208E7FE9CE", hash_generated_method = "5F7F9C51B8B3A126669EEFC67E596872")
     public void setMarqueeRepeatLimit(int marqueeLimit) {
         mMarqueeRepeatLimit = marqueeLimit;
-        // ---------- Original Method ----------
-        //mMarqueeRepeatLimit = marqueeLimit;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.895 -0400", hash_original_method = "A6931739C39A011B325E0D6A04B5E1A4", hash_generated_method = "A9046E80C953FFE409F40C4AABF2AA53")
     @ViewDebug.ExportedProperty
     public TextUtils.TruncateAt getEllipsize() {
-        TextUtils.TruncateAt varB4EAC82CA7396A68D541C85D26508E83_1281496289 = null; //Variable for return #1
+        TextUtils.TruncateAt varB4EAC82CA7396A68D541C85D26508E83_1281496289 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1281496289 = mEllipsize;
-        varB4EAC82CA7396A68D541C85D26508E83_1281496289.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1281496289.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1281496289;
-        // ---------- Original Method ----------
-        //return mEllipsize;
+        
+        
     }
 
     
@@ -7527,12 +7527,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         mSelectAllOnFocus = selectAllOnFocus;
         {
             setText(mText, BufferType.SPANNABLE);
-        } //End block
-        // ---------- Original Method ----------
-        //mSelectAllOnFocus = selectAllOnFocus;
-        //if (selectAllOnFocus && !(mText instanceof Spannable)) {
-            //setText(mText, BufferType.SPANNABLE);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -7544,14 +7544,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             invalidate();
             makeBlink();
             prepareCursorControllers();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mCursorVisible != visible) {
-            //mCursorVisible = visible;
-            //invalidate();
-            //makeBlink();
-            //prepareCursorControllers();
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -7560,8 +7560,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         boolean var34066627433670C8BAD177AAE0AA915E_1067084429 = (mCursorVisible && isTextEditable());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2010791412 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2010791412;
-        // ---------- Original Method ----------
-        //return mCursorVisible && isTextEditable();
+        
+        
     }
 
     
@@ -7573,11 +7573,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         mSavedMarqueeModeLayout.getLineWidth(0) > width)));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2133308376 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2133308376;
-        // ---------- Original Method ----------
-        //int width = (mRight - mLeft - getCompoundPaddingLeft() - getCompoundPaddingRight());
-        //return width > 0 && (mLayout.getLineWidth(0) > width ||
-                //(mMarqueeFadeMode != MARQUEE_FADE_NORMAL && mSavedMarqueeModeLayout != null &&
-                        //mSavedMarqueeModeLayout.getLineWidth(0) > width));
+        
+        
+        
+                
+                        
     }
 
     
@@ -7585,7 +7585,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private void startMarquee() {
         {
             boolean var6ED3A362A2778E1490EC444CE7783B2B_594832274 = (compressText(getWidth() - getCompoundPaddingLeft() - getCompoundPaddingRight()));
-        } //End collapsed parenthetic
+        } 
         {
             boolean var075BA9C6A85CDA01D82AF38828D63BDE_1135072610 = ((mMarquee == null || mMarquee.isStopped()) && (isFocused() || isSelected()) &&
                 getLineCount() == 1 && canMarquee());
@@ -7598,13 +7598,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     setHorizontalFadingEdgeEnabled(true);
                     requestLayout();
                     invalidate();
-                } //End block
+                } 
                 mMarquee = new Marquee(this);
                 mMarquee.start(mMarqueeRepeatLimit);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -7614,8 +7614,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             boolean varC29061DCB050768224BF65B86692AEF9_165120395 = (mMarquee != null && !mMarquee.isStopped());
             {
                 mMarquee.stop();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             mMarqueeFadeMode = MARQUEE_FADE_SWITCH_SHOW_ELLIPSIS;
             final Layout tmp = mSavedMarqueeModeLayout;
@@ -7624,20 +7624,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             setHorizontalFadingEdgeEnabled(false);
             requestLayout();
             invalidate();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mMarquee != null && !mMarquee.isStopped()) {
-            //mMarquee.stop();
-        //}
-        //if (mMarqueeFadeMode == MARQUEE_FADE_SWITCH_SHOW_FADE) {
-            //mMarqueeFadeMode = MARQUEE_FADE_SWITCH_SHOW_ELLIPSIS;
-            //final Layout tmp = mSavedMarqueeModeLayout;
-            //mSavedMarqueeModeLayout = mLayout;
-            //mLayout = tmp;
-            //setHorizontalFadingEdgeEnabled(false);
-            //requestLayout();
-            //invalidate();
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -7646,42 +7646,42 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             {
                 startMarquee();
-            } //End block
+            } 
             {
                 stopMarquee();
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(start);
-        // ---------- Original Method ----------
-        //if (mEllipsize == TextUtils.TruncateAt.MARQUEE) {
-            //if (start) {
-                //startMarquee();
-            //} else {
-                //stopMarquee();
-            //}
-        //}
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.898 -0400", hash_original_method = "CD3A5A17C18A7E4515BB5E10EEE133D7", hash_generated_method = "5A38D7A52E63B141F65E3400877FA2F9")
     protected void onTextChanged(CharSequence text, int start, int lengthBefore, int lengthAfter) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(text.getTaint());
         addTaint(start);
         addTaint(lengthBefore);
         addTaint(lengthAfter);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.899 -0400", hash_original_method = "50DC1B812435050055FA72016E5949C2", hash_generated_method = "87189D15EBF6DC7ACC16571020058A28")
     protected void onSelectionChanged(int selStart, int selEnd) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_TEXT_SELECTION_CHANGED);
         addTaint(selStart);
         addTaint(selEnd);
-        // ---------- Original Method ----------
-        //sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_TEXT_SELECTION_CHANGED);
+        
+        
     }
 
     
@@ -7689,14 +7689,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public void addTextChangedListener(TextWatcher watcher) {
         {
             mListeners = new ArrayList<TextWatcher>();
-        } //End block
+        } 
         mListeners.add(watcher);
         addTaint(watcher.getTaint());
-        // ---------- Original Method ----------
-        //if (mListeners == null) {
-            //mListeners = new ArrayList<TextWatcher>();
-        //}
-        //mListeners.add(watcher);
+        
+        
+            
+        
+        
     }
 
     
@@ -7706,16 +7706,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             int i = mListeners.indexOf(watcher);
             {
                 mListeners.remove(i);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(watcher.getTaint());
-        // ---------- Original Method ----------
-        //if (mListeners != null) {
-            //int i = mListeners.indexOf(watcher);
-            //if (i >= 0) {
-                //mListeners.remove(i);
-            //}
-        //}
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -7728,25 +7728,25 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 int i = 0;
                 {
                     list.get(i).beforeTextChanged(text, start, before, after);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         removeIntersectingSpans(start, start + before, SpellCheckSpan.class);
         removeIntersectingSpans(start, start + before, SuggestionSpan.class);
         addTaint(text.getTaint());
         addTaint(start);
         addTaint(before);
         addTaint(after);
-        // ---------- Original Method ----------
-        //if (mListeners != null) {
-            //final ArrayList<TextWatcher> list = mListeners;
-            //final int count = list.size();
-            //for (int i = 0; i < count; i++) {
-                //list.get(i).beforeTextChanged(text, start, before, after);
-            //}
-        //}
-        //removeIntersectingSpans(start, start + before, SpellCheckSpan.class);
-        //removeIntersectingSpans(start, start + before, SuggestionSpan.class);
+        
+        
+            
+            
+            
+                
+            
+        
+        
+        
     }
 
     
@@ -7761,22 +7761,22 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 final int s = text.getSpanStart(spans[i]);
                 final int e = text.getSpanEnd(spans[i]);
                 text.removeSpan(spans[i]);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(start);
         addTaint(end);
         addTaint(type.getTaint());
-        // ---------- Original Method ----------
-        //if (!(mText instanceof Editable)) return;
-        //Editable text = (Editable) mText;
-        //T[] spans = text.getSpans(start, end, type);
-        //final int length = spans.length;
-        //for (int i = 0; i < length; i++) {
-            //final int s = text.getSpanStart(spans[i]);
-            //final int e = text.getSpanEnd(spans[i]);
-            //if (e == start || s == end) break;
-            //text.removeSpan(spans[i]);
-        //}
+        
+        
+        
+        
+        
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -7789,25 +7789,25 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 int i = 0;
                 {
                     list.get(i).onTextChanged(text, start, before, after);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         updateSpellCheckSpans(start, start + after, false);
         hideCursorControllers();
         addTaint(text.getTaint());
         addTaint(start);
         addTaint(before);
         addTaint(after);
-        // ---------- Original Method ----------
-        //if (mListeners != null) {
-            //final ArrayList<TextWatcher> list = mListeners;
-            //final int count = list.size();
-            //for (int i = 0; i < count; i++) {
-                //list.get(i).onTextChanged(text, start, before, after);
-            //}
-        //}
-        //updateSpellCheckSpans(start, start + after, false);
-        //hideCursorControllers();
+        
+        
+            
+            
+            
+                
+            
+        
+        
+        
     }
 
     
@@ -7820,18 +7820,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 int i = 0;
                 {
                     list.get(i).afterTextChanged(text);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(text.getTaint());
-        // ---------- Original Method ----------
-        //if (mListeners != null) {
-            //final ArrayList<TextWatcher> list = mListeners;
-            //final int count = list.size();
-            //for (int i = 0; i < count; i++) {
-                //list.get(i).afterTextChanged(text);
-            //}
-        //}
+        
+        
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -7840,43 +7840,43 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         final InputMethodState ims = mInputMethodState;
         {
             updateAfterEdit();
-        } //End block
+        } 
         {
             ims.mContentChanged = true;
             {
                 ims.mChangedStart = start;
                 ims.mChangedEnd = start+before;
-            } //End block
+            } 
             {
                 ims.mChangedStart = Math.min(ims.mChangedStart, start);
                 ims.mChangedEnd = Math.max(ims.mChangedEnd, start + before - ims.mChangedDelta);
-            } //End block
+            } 
             ims.mChangedDelta += after-before;
-        } //End block
+        } 
         sendOnTextChanged(buffer, start, before, after);
         onTextChanged(buffer, start, before, after);
         addTaint(buffer.getTaint());
         addTaint(start);
         addTaint(before);
         addTaint(after);
-        // ---------- Original Method ----------
-        //final InputMethodState ims = mInputMethodState;
-        //if (ims == null || ims.mBatchEditNesting == 0) {
-            //updateAfterEdit();
-        //}
-        //if (ims != null) {
-            //ims.mContentChanged = true;
-            //if (ims.mChangedStart < 0) {
-                //ims.mChangedStart = start;
-                //ims.mChangedEnd = start+before;
-            //} else {
-                //ims.mChangedStart = Math.min(ims.mChangedStart, start);
-                //ims.mChangedEnd = Math.max(ims.mChangedEnd, start + before - ims.mChangedDelta);
-            //}
-            //ims.mChangedDelta += after-before;
-        //}
-        //sendOnTextChanged(buffer, start, before, after);
-        //onTextChanged(buffer, start, before, after);
+        
+        
+        
+            
+        
+        
+            
+            
+                
+                
+            
+                
+                
+            
+            
+        
+        
+        
     }
 
     
@@ -7894,14 +7894,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 boolean varCCB6FB0842D1DC09DCB72C373334A6F6_1211499295 = (!isFocused());
                 {
                     mSelectionMoved = true;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 invalidateCursor(Selection.getSelectionStart(buf), oldStart, newStart);
                 registerForPreDraw();
                 makeBlink();
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mHighlightPathBogus = true;
             selChanged = true;
@@ -7910,37 +7910,37 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 boolean varCCB6FB0842D1DC09DCB72C373334A6F6_1303682472 = (!isFocused());
                 {
                     mSelectionMoved = true;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 int end = Selection.getSelectionEnd(buf);
                 invalidateCursor(end, oldStart, newStart);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 boolean varA8F0B10D2B3144CBC8414B61F2255511_1767443455 = ((buf.getSpanFlags(what)&Spanned.SPAN_INTERMEDIATE) == 0);
                 {
                     {
                         newSelStart = Selection.getSelectionStart(buf);
-                    } //End block
+                    } 
                     {
                         newSelEnd = Selection.getSelectionEnd(buf);
-                    } //End block
+                    } 
                     onSelectionChanged(newSelStart, newSelEnd);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             {
                 invalidate();
                 mHighlightPathBogus = true;
                 checkForResize();
-            } //End block
+            } 
             {
                 ims.mContentChanged = true;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             boolean var534517144FEFDAEF71F7C8FA756F16FC_317548702 = (MetaKeyKeyListener.isMetaTracker(buf, what));
             {
@@ -7949,57 +7949,57 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     boolean var16FFCEF6C055C210FC735BC7F134F961_1087336138 = (ims != null && MetaKeyKeyListener.isSelectingMetaTracker(buf, what));
                     {
                         ims.mSelectionModeChanged = true;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean varEFD569E843D74170ABE4EC8DA8C94C51_1621173692 = (Selection.getSelectionStart(buf) >= 0);
                     {
                         {
                             invalidateCursor();
-                        } //End block
+                        } 
                         {
                             ims.mCursorChanged = true;
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 {
                     {
                         {
                             ims.mChangedStart = oldStart;
-                        } //End block
+                        } 
                         {
                             ims.mChangedStart = oldEnd;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         {
                             ims.mChangedStart = newStart;
-                        } //End block
+                        } 
                         {
                             ims.mChangedStart = newEnd;
-                        } //End block
-                    } //End block
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     ims.mContentChanged = true;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             mSpellChecker.removeSpellCheckSpan((SpellCheckSpan) what);
-        } //End block
+        } 
         addTaint(buf.getTaint());
         addTaint(what.getTaint());
         addTaint(oldStart);
         addTaint(newStart);
         addTaint(oldEnd);
         addTaint(newEnd);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -8010,24 +8010,24 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             {
                 {
                     mSpellChecker = new SpellChecker(this);
-                } //End block
+                } 
                 {
                     mSpellChecker.spellCheck(start, end);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(start);
         addTaint(end);
         addTaint(createSpellChecker);
-        // ---------- Original Method ----------
-        //if (isTextEditable() && isSuggestionsEnabled() && !(this instanceof ExtractEditText)) {
-            //if (mSpellChecker == null && createSpellChecker) {
-                //mSpellChecker = new SpellChecker(this);
-            //}
-            //if (mSpellChecker != null) {
-                //mSpellChecker.spellCheck(start, end);
-            //}
-        //}
+        
+        
+            
+                
+            
+            
+                
+            
+        
     }
 
     
@@ -8037,46 +8037,46 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         mDispatchTemporaryDetach = true;
         super.dispatchFinishTemporaryDetach();
         mDispatchTemporaryDetach = false;
-        // ---------- Original Method ----------
-        //mDispatchTemporaryDetach = true;
-        //super.dispatchFinishTemporaryDetach();
-        //mDispatchTemporaryDetach = false;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.905 -0400", hash_original_method = "F389EC0F4785B5FE5917104FC845071C", hash_generated_method = "1A91DFB12354DC797253849F4D5C2578")
     @Override
     public void onStartTemporaryDetach() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onStartTemporaryDetach();
         mTemporaryDetach = true;
         hideControllers();
-        // ---------- Original Method ----------
-        //super.onStartTemporaryDetach();
-        //if (!mDispatchTemporaryDetach) mTemporaryDetach = true;
-        //hideControllers();
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.905 -0400", hash_original_method = "FEAF0C4CB4DA72DBC669293A29968ABE", hash_generated_method = "B710ACB4EFD7C32268C236E59191274A")
     @Override
     public void onFinishTemporaryDetach() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onFinishTemporaryDetach();
         mTemporaryDetach = false;
-        // ---------- Original Method ----------
-        //super.onFinishTemporaryDetach();
-        //if (!mDispatchTemporaryDetach) mTemporaryDetach = false;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.906 -0400", hash_original_method = "B5EB741E17FA804FF18CB2D4805829B5", hash_generated_method = "45C0C9C087D04CCDFC62808A226E7E85")
     @Override
     protected void onFocusChanged(boolean focused, int direction, Rect previouslyFocusedRect) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             super.onFocusChanged(focused, direction, previouslyFocusedRect);
-        } //End block
+        } 
         mShowCursor = SystemClock.uptimeMillis();
         ensureEndedBatchEdit();
         {
@@ -8089,58 +8089,58 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 final int lastTapPosition = getLastTapPosition();
                 {
                     Selection.setSelection((Spannable) mText, lastTapPosition);
-                } //End block
+                } 
                 {
                     mMovement.onTakeFocus(this, (Spannable) mText, direction);
-                } //End block
+                } 
                 {
                     Selection.setSelection((Spannable) mText, selStart, selEnd);
-                } //End block
+                } 
                 {
                     selectAll();
-                } //End block
+                } 
                 mTouchFocusSelected = true;
-            } //End block
+            } 
             mFrozenWithFocus = false;
             mSelectionMoved = false;
             {
                 Spannable sp = (Spannable) mText;
                 MetaKeyKeyListener.resetMetaState(sp);
-            } //End block
+            } 
             makeBlink();
             {
                 showError();
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 hideError();
-            } //End block
+            } 
             onEndBatchEdit();
             {
                 final int selStart = getSelectionStart();
                 final int selEnd = getSelectionEnd();
                 hideControllers();
                 Selection.setSelection((Spannable) mText, selStart, selEnd);
-            } //End block
+            } 
             {
                 hideControllers();
                 downgradeEasyCorrectionSpans();
-            } //End block
+            } 
             {
                 mSelectionModifierCursorController.resetTouchOffsets();
-            } //End block
-        } //End block
+            } 
+        } 
         startStopMarquee(focused);
         {
             mTransformation.onFocusChanged(this, mText, focused, direction, previouslyFocusedRect);
-        } //End block
+        } 
         super.onFocusChanged(focused, direction, previouslyFocusedRect);
         addTaint(focused);
         addTaint(direction);
         addTaint(previouslyFocusedRect.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -8153,93 +8153,93 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     boolean var164D0FD6416EC18A9D0895B7ABD638B0_273507660 = (lastTapPosition > mText.length());
                     {
                         lastTapPosition = mText.length();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_11221467 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_11221467;
-        // ---------- Original Method ----------
-        //if (mSelectionModifierCursorController != null) {
-            //int lastTapPosition = mSelectionModifierCursorController.getMinTouchOffset();
-            //if (lastTapPosition >= 0) {
-                //if (lastTapPosition > mText.length()) {
-                    //Log.e(LOG_TAG, "Invalid tap focus position (" + lastTapPosition + " vs "
-                            //+ mText.length() + ")");
-                    //lastTapPosition = mText.length();
-                //}
-                //return lastTapPosition;
-            //}
-        //}
-        //return -1;
+        
+        
+            
+            
+                
+                    
+                            
+                    
+                
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.907 -0400", hash_original_method = "52F09857D084B6A7FF7DED6ACD447E38", hash_generated_method = "BB97642A7272E99714FE1387CB53DACB")
     @Override
     public void onWindowFocusChanged(boolean hasWindowFocus) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onWindowFocusChanged(hasWindowFocus);
         {
             {
                 mBlink.uncancel();
                 makeBlink();
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 mBlink.cancel();
-            } //End block
+            } 
             onEndBatchEdit();
             {
                 mInputContentType.enterDown = false;
-            } //End block
+            } 
             hideControllers();
             {
                 mSuggestionsPopupWindow.onParentLostFocus();
-            } //End block
-        } //End block
+            } 
+        } 
         startStopMarquee(hasWindowFocus);
         addTaint(hasWindowFocus);
-        // ---------- Original Method ----------
-        //super.onWindowFocusChanged(hasWindowFocus);
-        //if (hasWindowFocus) {
-            //if (mBlink != null) {
-                //mBlink.uncancel();
-                //makeBlink();
-            //}
-        //} else {
-            //if (mBlink != null) {
-                //mBlink.cancel();
-            //}
-            //onEndBatchEdit();
-            //if (mInputContentType != null) {
-                //mInputContentType.enterDown = false;
-            //}
-            //hideControllers();
-            //if (mSuggestionsPopupWindow != null) {
-                //mSuggestionsPopupWindow.onParentLostFocus();
-            //}
-        //}
-        //startStopMarquee(hasWindowFocus);
+        
+        
+        
+            
+                
+                
+            
+        
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.907 -0400", hash_original_method = "CACE22E1BEC14AEE1A4D35946DA3AF11", hash_generated_method = "B33E6B50711E3541C69DD97200CDD908")
     @Override
     protected void onVisibilityChanged(View changedView, int visibility) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onVisibilityChanged(changedView, visibility);
         {
             hideControllers();
-        } //End block
+        } 
         addTaint(changedView.getTaint());
         addTaint(visibility);
-        // ---------- Original Method ----------
-        //super.onVisibilityChanged(changedView, visibility);
-        //if (visibility != VISIBLE) {
-            //hideControllers();
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -8247,11 +8247,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public void clearComposingText() {
         {
             BaseInputConnection.removeComposingSpans((Spannable)mText);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mText instanceof Spannable) {
-            //BaseInputConnection.removeComposingSpans((Spannable)mText);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -8263,46 +8263,46 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             {
                 startMarquee();
-            } //End block
+            } 
             {
                 stopMarquee();
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(selected);
-        // ---------- Original Method ----------
-        //boolean wasSelected = isSelected();
-        //super.setSelected(selected);
-        //if (selected != wasSelected && mEllipsize == TextUtils.TruncateAt.MARQUEE) {
-            //if (selected) {
-                //startMarquee();
-            //} else {
-                //stopMarquee();
-            //}
-        //}
+        
+        
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.909 -0400", hash_original_method = "66B01BC66F894D20F58119BE8C84CE2C", hash_generated_method = "678E7569C6F331C8157AF72788BDDA32")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         final int action = event.getActionMasked();
         {
             boolean varCA8C62D3CC4BCF9B6208820C93DA2727_736210340 = (hasSelectionController());
             {
                 getSelectionController().onTouchEvent(event);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             mLastDownPositionX = event.getX();
             mLastDownPositionY = event.getY();
             mTouchFocusSelected = false;
             mIgnoreActionUpEvent = false;
-        } //End block
+        } 
         final boolean superResult = super.onTouchEvent(event);
         {
             mDiscardNextActionUp = false;
-        } //End block
+        } 
         final boolean touchIsFinished = (action == MotionEvent.ACTION_UP) &&
                 !shouldIgnoreActionUpEvent() && isFocused();
         {
@@ -8312,15 +8312,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 boolean handled = false;
                 {
                     handled |= mMovement.onTouchEvent(this, (Spannable) mText, event);
-                } //End block
+                } 
                 {
                     ClickableSpan[] links = ((Spannable) mText).getSpans(getSelectionStart(),
                         getSelectionEnd(), ClickableSpan.class);
                     {
                         links[0].onClick(this);
                         handled = true;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     boolean varA138BB91854FD0E07817A4930DAB4E64_117892907 = (touchIsFinished && (isTextEditable() || mTextIsSelectable));
                     {
@@ -8328,7 +8328,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         viewClicked(imm);
                         {
                             handled |= imm != null && imm.showSoftInput(this, 0);
-                        } //End block
+                        } 
                         boolean selectAllGotFocus = mSelectAllOnFocus && didTouchFocusSelect();
                         hideControllers();
                         {
@@ -8336,7 +8336,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                             {
                                 {
                                     mSpellChecker.onSelectionChanged();
-                                } //End block
+                                } 
                                 {
                                     boolean var1CF112AAAC5F75383DBE7BFFD7531552_410744304 = (!extractedTextModeWillBeStarted());
                                     {
@@ -8344,27 +8344,27 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                                             boolean var60BC98927E3B58E7C5E7F75DDA71E61E_976252373 = (isCursorInsideEasyCorrectionSpan());
                                             {
                                                 showSuggestions();
-                                            } //End block
+                                            } 
                                             {
                                                 boolean varB6DE6ED2562A6539C8A95CCE9438A153_615103177 = (hasInsertionController());
                                                 {
                                                     getInsertionController().show();
-                                                } //End block
-                                            } //End collapsed parenthetic
-                                        } //End collapsed parenthetic
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End collapsed parenthetic
+                                                } 
+                                            } 
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
                         handled = true;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_216181562 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_216181562;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -8374,11 +8374,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 getSelectionEnd(), SuggestionSpan.class);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_478704259 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_478704259;
-        // ---------- Original Method ----------
-        //if (!(mText instanceof Spannable)) return false;
-        //SuggestionSpan[] suggestionSpans = ((Spannable) mText).getSpans(getSelectionStart(),
-                //getSelectionEnd(), SuggestionSpan.class);
-        //return (suggestionSpans.length > 0);
+        
+        
+        
+                
+        
     }
 
     
@@ -8392,21 +8392,21 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             {
                 {
                     boolean var2346E33123BC41A418719A614F5A6DD6_1922951533 = ((suggestionSpans[i].getFlags() & SuggestionSpan.FLAG_EASY_CORRECT) != 0);
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_720329940 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_720329940;
-        // ---------- Original Method ----------
-        //Spannable spannable = (Spannable) mText;
-        //SuggestionSpan[] suggestionSpans = spannable.getSpans(getSelectionStart(),
-                //getSelectionEnd(), SuggestionSpan.class);
-        //for (int i = 0; i < suggestionSpans.length; i++) {
-            //if ((suggestionSpans[i].getFlags() & SuggestionSpan.FLAG_EASY_CORRECT) != 0) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+        
+                
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -8423,55 +8423,55 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     {
                         flags &= ~SuggestionSpan.FLAG_EASY_CORRECT;
                         suggestionSpans[i].setFlags(flags);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //if (mText instanceof Spannable) {
-            //Spannable spannable = (Spannable) mText;
-            //SuggestionSpan[] suggestionSpans = spannable.getSpans(0,
-                    //spannable.length(), SuggestionSpan.class);
-            //for (int i = 0; i < suggestionSpans.length; i++) {
-                //int flags = suggestionSpans[i].getFlags();
-                //if ((flags & SuggestionSpan.FLAG_EASY_CORRECT) != 0
-                        //&& (flags & SuggestionSpan.FLAG_MISSPELLED) == 0) {
-                    //flags &= ~SuggestionSpan.FLAG_EASY_CORRECT;
-                    //suggestionSpans[i].setFlags(flags);
-                //}
-            //}
-        //}
+                    } 
+                } 
+            } 
+        } 
+        
+        
+            
+            
+                    
+            
+                
+                
+                        
+                    
+                    
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.912 -0400", hash_original_method = "F41FEEC7411770322E4286C20722D03F", hash_generated_method = "E1B46AE1F747D694ADBE08882099DFCC")
     @Override
     public boolean onGenericMotionEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             try 
             {
                 {
                     boolean var8B12764D2A804081F5E2F3C6ECF4057D_563198094 = (mMovement.onGenericMotionEvent(this, (Spannable) mText, event));
-                } //End collapsed parenthetic
-            } //End block
+                } 
+            } 
             catch (AbstractMethodError ex)
             { }
-        } //End block
+        } 
         boolean var32C1E3DF40BCC120C79428C7AEB27DD1_506057839 = (super.onGenericMotionEvent(event));
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1820090139 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1820090139;
-        // ---------- Original Method ----------
-        //if (mMovement != null && mText instanceof Spannable && mLayout != null) {
-            //try {
-                //if (mMovement.onGenericMotionEvent(this, (Spannable) mText, event)) {
-                    //return true;
-                //}
-            //} catch (AbstractMethodError ex) {
-            //}
-        //}
-        //return super.onGenericMotionEvent(event);
+        
+        
+            
+                
+                    
+                
+            
+            
+        
+        
     }
 
     
@@ -8483,7 +8483,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             WindowManager.LayoutParams windowParams = (WindowManager.LayoutParams) params;
             windowSupportsHandles = windowParams.type < WindowManager.LayoutParams.FIRST_SUB_WINDOW
                     || windowParams.type > WindowManager.LayoutParams.LAST_SUB_WINDOW;
-        } //End block
+        } 
         mInsertionControllerEnabled = windowSupportsHandles && isCursorVisible() && mLayout != null;
         mSelectionControllerEnabled = windowSupportsHandles && textCanBeSelected() &&
                 mLayout != null;
@@ -8492,17 +8492,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             {
                 mInsertionPointCursorController.onDetached();
                 mInsertionPointCursorController = null;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             stopSelectionActionMode();
             {
                 mSelectionModifierCursorController.onDetached();
                 mSelectionModifierCursorController = null;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -8511,8 +8511,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         boolean varE3EE8DDB74DAF8872FE53127269AB9E6_1617392403 = (mText instanceof Editable && onCheckIsTextEditor() && isEnabled());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_598342338 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_598342338;
-        // ---------- Original Method ----------
-        //return mText instanceof Editable && onCheckIsTextEditor() && isEnabled();
+        
+        
     }
 
     
@@ -8520,8 +8520,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public boolean didTouchFocusSelect() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_65279620 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_65279620;
-        // ---------- Original Method ----------
-        //return mTouchFocusSelected;
+        
+        
     }
 
     
@@ -8530,9 +8530,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public void cancelLongPress() {
         super.cancelLongPress();
         mIgnoreActionUpEvent = true;
-        // ---------- Original Method ----------
-        //super.cancelLongPress();
-        //mIgnoreActionUpEvent = true;
+        
+        
+        
     }
 
     
@@ -8540,40 +8540,40 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public boolean shouldIgnoreActionUpEvent() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1363522257 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1363522257;
-        // ---------- Original Method ----------
-        //return mIgnoreActionUpEvent;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.914 -0400", hash_original_method = "2ED59B8CED9712CD9EFEA3386ABFE955", hash_generated_method = "70FDBFE4845B02CA4AF3945F5C7FADEB")
     @Override
     public boolean onTrackballEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             {
                 boolean var8C6289BC177E1FC846FED60E961858F7_924414944 = (mMovement.onTrackballEvent(this, (Spannable) mText, event));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         boolean var52056F11E16FA151938F980C67CD97F9_1893426745 = (super.onTrackballEvent(event));
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_779885255 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_779885255;
-        // ---------- Original Method ----------
-        //if (mMovement != null && mText instanceof Spannable &&
-            //mLayout != null) {
-            //if (mMovement.onTrackballEvent(this, (Spannable) mText, event)) {
-                //return true;
-            //}
-        //}
-        //return super.onTrackballEvent(event);
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.915 -0400", hash_original_method = "9E4C5FDADE7CEAD68CF365879A643A39", hash_generated_method = "6C45AED54B369950A87890A84980C656")
     public void setScroller(Scroller s) {
         mScroller = s;
-        // ---------- Original Method ----------
-        //mScroller = s;
+        
+        
     }
 
     
@@ -8581,18 +8581,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private boolean shouldBlink() {
         {
             boolean var4ABCBE6852627F4B46FBEF2A6A4ECCCA_1808346868 = (!isFocused());
-        } //End collapsed parenthetic
+        } 
         final int start = getSelectionStart();
         final int end = getSelectionEnd();
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2107474143 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2107474143;
-        // ---------- Original Method ----------
-        //if (!isFocused()) return false;
-        //final int start = getSelectionStart();
-        //if (start < 0) return false;
-        //final int end = getSelectionEnd();
-        //if (end < 0) return false;
-        //return start == end;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -8608,24 +8608,24 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         mBlink = new Blink(this);
                         mBlink.removeCallbacks(mBlink);
                         mBlink.postAtTime(mBlink, mShowCursor + BLINK);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 mBlink.removeCallbacks(mBlink);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (isCursorVisible()) {
-            //if (shouldBlink()) {
-                //mShowCursor = SystemClock.uptimeMillis();
-                //if (mBlink == null) mBlink = new Blink(this);
-                //mBlink.removeCallbacks(mBlink);
-                //mBlink.postAtTime(mBlink, mShowCursor + BLINK);
-            //}
-        //} else {
-            //if (mBlink != null) mBlink.removeCallbacks(mBlink);
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                
+                
+                
+            
+        
+            
+        
     }
 
     
@@ -8641,28 +8641,28 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         boolean var9BA25C39B44D42503DBE86D96DDE3F89_548885254 = (marquee.shouldDrawLeftFade());
                         {
                             float varACB89E3006AD14B300166FDE2E87A6BF_717484221 = (marquee.mScroll / getHorizontalFadingEdgeLength());
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     boolean varB42567ABE2BADBC605E1B78E45085C46_474814569 = (getLineCount() == 1);
                     {
                         final int layoutDirection = getResolvedLayoutDirection();
                         final int absoluteGravity = Gravity.getAbsoluteGravity(mGravity, layoutDirection);
-                        //Begin case Gravity.RIGHT 
+                        
                         float var77CC60141975FCCCD80D9A2419BB6C1C_859084355 = ((mLayout.getLineRight(0) - (mRight - mLeft) -
                                 getCompoundPaddingLeft() - getCompoundPaddingRight() -
                                 mLayout.getLineLeft(0)) / getHorizontalFadingEdgeLength());
-                        //End case Gravity.RIGHT 
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                        
+                    } 
+                } 
+            } 
+        } 
         float var4F5C2129A9FDB4D7873C15071EC74FAF_1422774782 = (super.getLeftFadingEdgeStrength());
         float var546ADE640B6EDFBC8A086EF31347E768_664290695 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_664290695;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -8675,36 +8675,36 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 {
                     final Marquee marquee = mMarquee;
                     float var5FA73A5ADF77E0C7B666EC3867F0A8A9_833640368 = ((marquee.mMaxFadeScroll - marquee.mScroll) / getHorizontalFadingEdgeLength());
-                } //End block
+                } 
                 {
                     boolean varB42567ABE2BADBC605E1B78E45085C46_365568607 = (getLineCount() == 1);
                     {
                         final int layoutDirection = getResolvedLayoutDirection();
                         final int absoluteGravity = Gravity.getAbsoluteGravity(mGravity, layoutDirection);
-                        //Begin case Gravity.LEFT 
+                        
                         final int textWidth = (mRight - mLeft) - getCompoundPaddingLeft() -
                                 getCompoundPaddingRight();
-                        //End case Gravity.LEFT 
-                        //Begin case Gravity.LEFT 
+                        
+                        
                         final float lineWidth = mLayout.getLineWidth(0);
-                        //End case Gravity.LEFT 
-                        //Begin case Gravity.LEFT 
+                        
+                        
                         float varE0BE637D155EE291A7CF14784CC269F6_699031621 = ((lineWidth - textWidth) / getHorizontalFadingEdgeLength());
-                        //End case Gravity.LEFT 
-                        //Begin case Gravity.CENTER_HORIZONTAL Gravity.FILL_HORIZONTAL 
+                        
+                        
                         float varDB511E24CC8812A21F30B808ED92516B_125800888 = ((mLayout.getLineWidth(0) - ((mRight - mLeft) -
                                 getCompoundPaddingLeft() - getCompoundPaddingRight())) /
                                 getHorizontalFadingEdgeLength());
-                        //End case Gravity.CENTER_HORIZONTAL Gravity.FILL_HORIZONTAL 
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                        
+                    } 
+                } 
+            } 
+        } 
         float var23E074F03E79DB75514A1493E85330EB_1919134845 = (super.getRightFadingEdgeStrength());
         float var546ADE640B6EDFBC8A086EF31347E768_1014591163 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1014591163;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -8715,17 +8715,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             {
                 Object varB9E01A838DEDF048798537932C3D53D0_2086383743 = ((int) mLayout.getLineWidth(0));
                 Object var48F73E2237CC10856F86F9441A565829_1282159443 = (mLayout.getWidth());
-            } //End flattened ternary
-        } //End block
+            } 
+        } 
         int varED0C9CF0B7C065764BC0B4CBB9BD10B1_1397580320 = (super.computeHorizontalScrollRange());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1815714553 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1815714553;
-        // ---------- Original Method ----------
-        //if (mLayout != null) {
-            //return mSingleLine && (mGravity & Gravity.HORIZONTAL_GRAVITY_MASK) == Gravity.LEFT ?
-                    //(int) mLayout.getLineWidth(0) : mLayout.getWidth();
-        //}
-        //return super.computeHorizontalScrollRange();
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -8736,10 +8736,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int var06B1DFE229A17C2C5018936314B519D0_1966899193 = (super.computeVerticalScrollRange());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_913267157 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_913267157;
-        // ---------- Original Method ----------
-        //if (mLayout != null)
-            //return mLayout.getHeight();
-        //return super.computeVerticalScrollRange();
+        
+        
+            
+        
     }
 
     
@@ -8749,8 +8749,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int var3D22FDF56C8F597D4B164222BB4A2F41_895697678 = (getHeight() - getCompoundPaddingTop() - getCompoundPaddingBottom());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_959422681 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_959422681;
-        // ---------- Original Method ----------
-        //return getHeight() - getCompoundPaddingTop() - getCompoundPaddingBottom();
+        
+        
     }
 
     
@@ -8768,23 +8768,23 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     boolean var4E8F3CA643822EB3D628A081C82F102F_1417373338 = (textLowerCase.contains(searchedLowerCase));
                     {
                         outViews.add(this);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(outViews.getTaint());
         addTaint(searched.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //super.findViewsWithText(outViews, searched, flags);
-        //if (!outViews.contains(this) && (flags & FIND_VIEWS_WITH_TEXT) != 0
-                //&& !TextUtils.isEmpty(searched) && !TextUtils.isEmpty(mText)) {
-            //String searchedLowerCase = searched.toString().toLowerCase();
-            //String textLowerCase = mText.toString().toLowerCase();
-            //if (textLowerCase.contains(searchedLowerCase)) {
-                //outViews.add(this);
-            //}
-        //}
+        
+        
+        
+                
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -8823,52 +8823,52 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.920 -0400", hash_original_method = "9DEDF12E7A1F2B52484CF7C1E98D635C", hash_generated_method = "BA6C2903A6EDEF9C5BC632DD957CABBF")
     @Override
     public boolean onKeyShortcut(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         final int filteredMetaState = event.getMetaState() & ~KeyEvent.META_CTRL_MASK;
         {
             boolean varC56AADD2FE16B97F2C4A1A86C8CB9277_258271192 = (KeyEvent.metaStateHasNoModifiers(filteredMetaState));
             {
-                //Begin case KeyEvent.KEYCODE_A 
+                
                 {
                     boolean var2C54826044A6A463985C967714461581_1372417882 = (canSelectText());
                     {
                         boolean varEB35FFB1E0BAFF4B98799DF0DAE3AD9A_2069896036 = (onTextContextMenuItem(ID_SELECT_ALL));
-                    } //End block
-                } //End collapsed parenthetic
-                //End case KeyEvent.KEYCODE_A 
-                //Begin case KeyEvent.KEYCODE_X 
+                    } 
+                } 
+                
+                
                 {
                     boolean varD70E317BC144C26B73AA08B3BA3A1DF7_421651307 = (canCut());
                     {
                         boolean varF1F4885B43FDB12CD2347207BFCBE15D_1671106123 = (onTextContextMenuItem(ID_CUT));
-                    } //End block
-                } //End collapsed parenthetic
-                //End case KeyEvent.KEYCODE_X 
-                //Begin case KeyEvent.KEYCODE_C 
+                    } 
+                } 
+                
+                
                 {
                     boolean var64A51BC817B541ED78EC45FE802A582B_1591715111 = (canCopy());
                     {
                         boolean var7EC513D62717566DFF11F991DB68179B_409197256 = (onTextContextMenuItem(ID_COPY));
-                    } //End block
-                } //End collapsed parenthetic
-                //End case KeyEvent.KEYCODE_C 
-                //Begin case KeyEvent.KEYCODE_V 
+                    } 
+                } 
+                
+                
                 {
                     boolean varB590DB230E7D99BE97C8070362518C3D_1143555444 = (canPaste());
                     {
                         boolean varB380C053436C26C9F75D58F60AA0273E_1165786290 = (onTextContextMenuItem(ID_PASTE));
-                    } //End block
-                } //End collapsed parenthetic
-                //End case KeyEvent.KEYCODE_V 
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+                
+            } 
+        } 
         boolean var18CCACF7413D8761F4926498DDE0852A_594494186 = (super.onKeyShortcut(keyCode, event));
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1316342573 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1316342573;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -8877,8 +8877,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         boolean var45174109A5D4D4DED4D6B043F4737E70_782519920 = (hasSelectionController() && mText.length() != 0);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_645098013 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_645098013;
-        // ---------- Original Method ----------
-        //return hasSelectionController() && mText.length() != 0;
+        
+        
     }
 
     
@@ -8886,13 +8886,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private boolean textCanBeSelected() {
         {
             boolean var0579FE66F74E6B0CAEB7B0FFED7BF6F0_1839619537 = (mMovement == null || !mMovement.canSelectArbitrarily());
-        } //End collapsed parenthetic
+        } 
         boolean varEA838F60BF8890D30F87CAA0AEA5A5AD_1500401786 = (isTextEditable() || (mTextIsSelectable && mText instanceof Spannable && isEnabled()));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1166177882 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1166177882;
-        // ---------- Original Method ----------
-        //if (mMovement == null || !mMovement.canSelectArbitrarily()) return false;
-        //return isTextEditable() || (mTextIsSelectable && mText instanceof Spannable && isEnabled());
+        
+        
+        
     }
 
     
@@ -8900,20 +8900,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private boolean canCut() {
         {
             boolean varAFBCCFFAA18696A12B6915A938CC8475_1147989202 = (hasPasswordTransformationMethod());
-        } //End collapsed parenthetic
+        } 
         {
             boolean varDFBD28C454DECC5A34D6B1D50ACA53BA_2008479132 = (mText.length() > 0 && hasSelection() && mText instanceof Editable && mInput != null);
-        } //End collapsed parenthetic
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1267658964 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1267658964;
-        // ---------- Original Method ----------
-        //if (hasPasswordTransformationMethod()) {
-            //return false;
-        //}
-        //if (mText.length() > 0 && hasSelection() && mText instanceof Editable && mInput != null) {
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -8921,20 +8921,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private boolean canCopy() {
         {
             boolean varAFBCCFFAA18696A12B6915A938CC8475_1170011650 = (hasPasswordTransformationMethod());
-        } //End collapsed parenthetic
+        } 
         {
             boolean varCAC8FC6B32A4536E20AA1AECC8F0BAF1_639207465 = (mText.length() > 0 && hasSelection());
-        } //End collapsed parenthetic
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1977274248 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1977274248;
-        // ---------- Original Method ----------
-        //if (hasPasswordTransformationMethod()) {
-            //return false;
-        //}
-        //if (mText.length() > 0 && hasSelection()) {
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -8948,13 +8948,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 hasPrimaryClip()));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_995942708 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_995942708;
-        // ---------- Original Method ----------
-        //return (mText instanceof Editable &&
-                //mInput != null &&
-                //getSelectionStart() >= 0 &&
-                //getSelectionEnd() >= 0 &&
-                //((ClipboardManager)getContext().getSystemService(Context.CLIPBOARD_SERVICE)).
-                //hasPrimaryClip());
+        
+        
+                
+                
+                
+                
+                
     }
 
     
@@ -8979,10 +8979,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         Selection.setSelection((Spannable) mText, 0, length);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1029195633 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1029195633;
-        // ---------- Original Method ----------
-        //final int length = mText.length();
-        //Selection.setSelection((Spannable) mText, 0, length);
-        //return length > 0;
+        
+        
+        
+        
     }
 
     
@@ -8990,27 +8990,27 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private boolean selectCurrentWord() {
         {
             boolean varDED1C694F054C8DDF1A29A76C5F20F19_395835820 = (!canSelectText());
-        } //End collapsed parenthetic
+        } 
         {
             boolean varAFBCCFFAA18696A12B6915A938CC8475_818750508 = (hasPasswordTransformationMethod());
             {
                 boolean varE332F16868C9FD223E86B20517E855EF_18247662 = (selectAll());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int klass = mInputType & InputType.TYPE_MASK_CLASS;
         int variation = mInputType & InputType.TYPE_MASK_VARIATION;
         {
             boolean varA650E26BD9A4F09AA14DDEB72540C88C_1798401214 = (selectAll());
-        } //End block
+        } 
         long lastTouchOffsets = getLastTouchOffsets();
         final int minOffset = extractRangeStartFromLong(lastTouchOffsets);
         final int maxOffset = extractRangeEndFromLong(lastTouchOffsets);
         {
             boolean var7155FC6291E75A72164AEF06E53012B4_1994497993 = (minOffset < 0 || minOffset >= mText.length());
-        } //End collapsed parenthetic
+        } 
         {
             boolean var1D5071A17653318C6F5B2B7CEE876EF7_1222181035 = (maxOffset < 0 || maxOffset >= mText.length());
-        } //End collapsed parenthetic
+        } 
         int selectionStart;
         int selectionEnd;
         URLSpan[] urlSpans = ((Spanned) mText).getSpans(minOffset, maxOffset, URLSpan.class);
@@ -9018,7 +9018,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             URLSpan urlSpan = urlSpans[0];
             selectionStart = ((Spanned) mText).getSpanStart(urlSpan);
             selectionEnd = ((Spanned) mText).getSpanEnd(urlSpan);
-        } //End block
+        } 
         {
             final WordIterator wordIterator = getWordIterator();
             wordIterator.setCharSequence(mText, minOffset, maxOffset);
@@ -9028,64 +9028,64 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 long range = getCharRange(selectionStart);
                 selectionStart = extractRangeStartFromLong(range);
                 selectionEnd = extractRangeEndFromLong(range);
-            } //End block
-        } //End block
+            } 
+        } 
         Selection.setSelection((Spannable) mText, selectionStart, selectionEnd);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_599230307 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_599230307;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.925 -0400", hash_original_method = "9DCEB61D4BC0794F06560CB12151C0AA", hash_generated_method = "81CF11651C6DA971B336E1A51E9AB6E2")
     public Locale getTextServicesLocale() {
-        Locale varB4EAC82CA7396A68D541C85D26508E83_673100875 = null; //Variable for return #1
+        Locale varB4EAC82CA7396A68D541C85D26508E83_673100875 = null; 
         Locale locale = Locale.getDefault();
         final TextServicesManager textServicesManager = (TextServicesManager)
                 mContext.getSystemService(Context.TEXT_SERVICES_MANAGER_SERVICE);
         final SpellCheckerSubtype subtype = textServicesManager.getCurrentSpellCheckerSubtype(true);
         {
             locale = new Locale(subtype.getLocale());
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_673100875 = locale;
-        varB4EAC82CA7396A68D541C85D26508E83_673100875.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_673100875.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_673100875;
-        // ---------- Original Method ----------
-        //Locale locale = Locale.getDefault();
-        //final TextServicesManager textServicesManager = (TextServicesManager)
-                //mContext.getSystemService(Context.TEXT_SERVICES_MANAGER_SERVICE);
-        //final SpellCheckerSubtype subtype = textServicesManager.getCurrentSpellCheckerSubtype(true);
-        //if (subtype != null) {
-            //locale = new Locale(subtype.getLocale());
-        //}
-        //return locale;
+        
+        
+        
+                
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.926 -0400", hash_original_method = "84E4450A5BCA42ECDB6E0E833B2BF3C6", hash_generated_method = "00A6EC577A937BD6BC25376AD1589672")
      void onLocaleChanged() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mWordIterator = null;
-        // ---------- Original Method ----------
-        //mWordIterator = null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.926 -0400", hash_original_method = "D7DB0153FBA43371270FE2DB428D268F", hash_generated_method = "32EB7E5A490877AD2F2E1D94C96AF86F")
     public WordIterator getWordIterator() {
-        WordIterator varB4EAC82CA7396A68D541C85D26508E83_1295872286 = null; //Variable for return #1
+        WordIterator varB4EAC82CA7396A68D541C85D26508E83_1295872286 = null; 
         {
             mWordIterator = new WordIterator(getTextServicesLocale());
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1295872286 = mWordIterator;
-        varB4EAC82CA7396A68D541C85D26508E83_1295872286.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1295872286.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1295872286;
-        // ---------- Original Method ----------
-        //if (mWordIterator == null) {
-            //mWordIterator = new WordIterator(getTextServicesLocale());
-        //}
-        //return mWordIterator;
+        
+        
+            
+        
+        
     }
 
     
@@ -9099,12 +9099,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 boolean varD9CF44D283E0863128B66037E6BFB8CF_1846713586 = (Character.isSurrogatePair(currentChar, nextChar));
                 {
                     long varDEC17ADCE274EF4E4EA0CD9ABF597677_837050288 = (packRangeInLong(offset,  offset + 2));
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             long var4A76496E7082009E497234E69A837D4C_1298049751 = (packRangeInLong(offset,  offset + 1));
-        } //End block
+        } 
         {
             final char previousChar = mText.charAt(offset - 1);
             final char previousPreviousChar = mText.charAt(offset - 2);
@@ -9112,18 +9112,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 boolean var08ECDF9036721977163DCB5E7280D7DA_1455693219 = (Character.isSurrogatePair(previousPreviousChar, previousChar));
                 {
                     long var579E9393D23E6CD1E4A1644DEA02C196_1140066674 = (packRangeInLong(offset - 2,  offset));
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             long var7F931D32D69CE46E71E33A6E014D5A4B_1370982517 = (packRangeInLong(offset - 1,  offset));
-        } //End block
+        } 
         long var1DBEC51B3461A29B2118BF318D35E0B5_1278141565 = (packRangeInLong(offset,  offset));
         addTaint(offset);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_586110213 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_586110213;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -9135,18 +9135,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         long var6C22B70D609AA0EDBEA57BAC907EBF70_1387636094 = (packRangeInLong(minOffset, maxOffset));
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1691624252 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1691624252;
-        // ---------- Original Method ----------
-        //SelectionModifierCursorController selectionController = getSelectionController();
-        //final int minOffset = selectionController.getMinTouchOffset();
-        //final int maxOffset = selectionController.getMaxTouchOffset();
-        //return packRangeInLong(minOffset, maxOffset);
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.927 -0400", hash_original_method = "A81C1729DD6237516D7BACF34829C51D", hash_generated_method = "2073C391230915C79839FDD5E7C4D97F")
     @Override
     public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onPopulateAccessibilityEvent(event);
         final boolean isPassword = hasPasswordTransformationMethod();
         {
@@ -9155,26 +9155,26 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 boolean varE82D2DAF247906B4725B56EFEDF2A150_1656470823 = (!TextUtils.isEmpty(text));
                 {
                     event.getText().add(text);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        //super.onPopulateAccessibilityEvent(event);
-        //final boolean isPassword = hasPasswordTransformationMethod();
-        //if (!isPassword) {
-            //CharSequence text = getTextForAccessibility();
-            //if (!TextUtils.isEmpty(text)) {
-                //event.getText().add(text);
-            //}
-        //}
+        
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.928 -0400", hash_original_method = "6FC069A7F29DA435C1F4CA8AC1DF9A7A", hash_generated_method = "BA66D21A02BFA7082D202C956D875DBE")
     @Override
     public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onInitializeAccessibilityEvent(event);
         final boolean isPassword = hasPasswordTransformationMethod();
         event.setPassword(isPassword);
@@ -9184,39 +9184,39 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 event.setFromIndex(Selection.getSelectionStart(mText));
                 event.setToIndex(Selection.getSelectionEnd(mText));
                 event.setItemCount(mText.length());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        //super.onInitializeAccessibilityEvent(event);
-        //final boolean isPassword = hasPasswordTransformationMethod();
-        //event.setPassword(isPassword);
-        //if (event.getEventType() == AccessibilityEvent.TYPE_VIEW_TEXT_SELECTION_CHANGED) {
-            //event.setFromIndex(Selection.getSelectionStart(mText));
-            //event.setToIndex(Selection.getSelectionEnd(mText));
-            //event.setItemCount(mText.length());
-        //}
+        
+        
+        
+        
+        
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.928 -0400", hash_original_method = "305122B0EBB45F51524377B6AB6D9296", hash_generated_method = "68DA1F3C4D675FBD763381A26BFBDD98")
     @Override
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onInitializeAccessibilityNodeInfo(info);
         final boolean isPassword = hasPasswordTransformationMethod();
         {
             info.setText(getTextForAccessibility());
-        } //End block
+        } 
         info.setPassword(isPassword);
         addTaint(info.getTaint());
-        // ---------- Original Method ----------
-        //super.onInitializeAccessibilityNodeInfo(info);
-        //final boolean isPassword = hasPasswordTransformationMethod();
-        //if (!isPassword) {
-            //info.setText(getTextForAccessibility());
-        //}
-        //info.setPassword(isPassword);
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -9225,33 +9225,33 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public void sendAccessibilityEvent(int eventType) {
         super.sendAccessibilityEvent(eventType);
         addTaint(eventType);
-        // ---------- Original Method ----------
-        //if (eventType == AccessibilityEvent.TYPE_VIEW_SCROLLED) {
-            //return;
-        //}
-        //super.sendAccessibilityEvent(eventType);
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.929 -0400", hash_original_method = "8463B72D535FD98D84B93D99DA9D2B3A", hash_generated_method = "7B78D64EA204592FD70F62840814E153")
     private CharSequence getTextForAccessibility() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_53172356 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_53172356 = null; 
         CharSequence text = getText();
         {
             boolean var6C86A511CD0D2845B6E0259573F6A612_961815632 = (TextUtils.isEmpty(text));
             {
                 text = getHint();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_53172356 = text;
-        varB4EAC82CA7396A68D541C85D26508E83_53172356.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_53172356.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_53172356;
-        // ---------- Original Method ----------
-        //CharSequence text = getText();
-        //if (TextUtils.isEmpty(text)) {
-            //text = getHint();
-        //}
-        //return text;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -9268,14 +9268,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         addTaint(fromIndex);
         addTaint(removedCount);
         addTaint(addedCount);
-        // ---------- Original Method ----------
-        //AccessibilityEvent event =
-            //AccessibilityEvent.obtain(AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED);
-        //event.setFromIndex(fromIndex);
-        //event.setRemovedCount(removedCount);
-        //event.setAddedCount(addedCount);
-        //event.setBeforeText(beforeText);
-        //sendAccessibilityEventUnchecked(event);
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -9285,15 +9285,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         boolean var2E8BF75A8D890E760B8A4C35FF8B91BD_1597545497 = (imm != null && imm.isActive(this));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_101469279 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_101469279;
-        // ---------- Original Method ----------
-        //InputMethodManager imm = InputMethodManager.peekInstance();
-        //return imm != null && imm.isActive(this);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.930 -0400", hash_original_method = "395A8406E426F55316A0BF37153197E7", hash_generated_method = "D7172ADAB4FA17C74E502AB305DBEBBC")
     public boolean onTextContextMenuItem(int id) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         int min = 0;
         int max = mText.length();
         {
@@ -9303,47 +9303,47 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 final int selEnd = getSelectionEnd();
                 min = Math.max(0, Math.min(selStart, selEnd));
                 max = Math.max(0, Math.max(selStart, selEnd));
-            } //End block
-        } //End collapsed parenthetic
-        //Begin case ID_SELECT_ALL 
+            } 
+        } 
+        
         selectAll();
-        //End case ID_SELECT_ALL 
-        //Begin case ID_PASTE 
+        
+        
         paste(min, max);
-        //End case ID_PASTE 
-        //Begin case ID_CUT 
+        
+        
         setPrimaryClip(ClipData.newPlainText(null, getTransformedText(min, max)));
-        //End case ID_CUT 
-        //Begin case ID_CUT 
+        
+        
         deleteText_internal(min, max);
-        //End case ID_CUT 
-        //Begin case ID_CUT 
+        
+        
         stopSelectionActionMode();
-        //End case ID_CUT 
-        //Begin case ID_COPY 
+        
+        
         setPrimaryClip(ClipData.newPlainText(null, getTransformedText(min, max)));
-        //End case ID_COPY 
-        //Begin case ID_COPY 
+        
+        
         stopSelectionActionMode();
-        //End case ID_COPY 
+        
         addTaint(id);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1117125952 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1117125952;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.931 -0400", hash_original_method = "FE79E6B9FD3BC9A3AB2F6DF9CAFCD48E", hash_generated_method = "E3696A2EAF1D59BE13D00C7D2628FCFF")
     private CharSequence getTransformedText(int start, int end) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_335851579 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_335851579 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_335851579 = removeSuggestionSpans(mTransformed.subSequence(start, end));
         addTaint(start);
         addTaint(end);
-        varB4EAC82CA7396A68D541C85D26508E83_335851579.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_335851579.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_335851579;
-        // ---------- Original Method ----------
-        //return removeSuggestionSpans(mTransformed.subSequence(start, end));
+        
+        
     }
 
     
@@ -9363,7 +9363,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                             final int delta = mText.length() - originalLength;
                             min += delta;
                             max += delta;
-                        } //End block
+                        } 
                         {
                             boolean varB469BF59168A8579CE9E3A2CAF0C1642_1805797885 = (!Character.isSpaceChar(charBefore) && charBefore != '\n' &&
                         !Character.isSpaceChar(charAfter) && charAfter != '\n');
@@ -9373,10 +9373,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                                 final int delta = mText.length() - originalLength;
                                 min += delta;
                                 max += delta;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End block
+                            } 
+                        } 
+                    } 
+                } 
                 {
                     boolean varEEF1C48FC1D3D39DDF48A720B8628129_414732596 = (max < mText.length());
                     {
@@ -9386,44 +9386,44 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                             boolean varBF8E0F80E2B510B9D515C61513407B2D_392590412 = (Character.isSpaceChar(charBefore) && Character.isSpaceChar(charAfter));
                             {
                                 deleteText_internal(max, max + 1);
-                            } //End block
+                            } 
                             {
                                 boolean var59E656C6DF389BAD07A380CF8AC3667A_2056249991 = (!Character.isSpaceChar(charBefore) && charBefore != '\n' &&
                         !Character.isSpaceChar(charAfter) && charAfter != '\n');
                                 {
                                     replaceText_internal(max, max, " ");
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         long var541DF126AEC1F4495FAD956E97F187A7_2027542451 = (packRangeInLong(min, max));
         addTaint(min);
         addTaint(max);
         addTaint(paste.getTaint());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_2015246984 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_2015246984;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.934 -0400", hash_original_method = "E0F0E7304052F47B24D850362D52309F", hash_generated_method = "2919F1EE8FE451664A2882399DC76EF0")
     private DragShadowBuilder getTextThumbnailBuilder(CharSequence text) {
-        DragShadowBuilder varB4EAC82CA7396A68D541C85D26508E83_1815130084 = null; //Variable for return #1
+        DragShadowBuilder varB4EAC82CA7396A68D541C85D26508E83_1815130084 = null; 
         TextView shadowView = (TextView) inflate(mContext,
                 com.android.internal.R.layout.text_drag_thumbnail, null);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Unable to inflate text drag thumbnail");
-        } //End block
+        } 
         {
             boolean var8664184B362287947D63596A4517BCE2_895163346 = (text.length() > DRAG_SHADOW_MAX_TEXT_LENGTH);
             {
                 text = text.subSequence(0, DRAG_SHADOW_MAX_TEXT_LENGTH);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         shadowView.setText(text);
         shadowView.setTextColor(getTextColors());
         shadowView.setTextAppearance(mContext, R.styleable.Theme_textAppearanceLarge);
@@ -9436,10 +9436,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         shadowView.invalidate();
         varB4EAC82CA7396A68D541C85D26508E83_1815130084 = new DragShadowBuilder(shadowView);
         addTaint(text.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1815130084.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1815130084.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1815130084;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -9453,8 +9453,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             {
                 mDiscardNextActionUp = true;
                 handled = true;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varC22EC044E5AC4CF0B865C252AF7A9AA6_1652271040 = (!handled && !isPositionOnText(mLastDownPositionX, mLastDownPositionY) &&
                 mInsertionControllerEnabled);
@@ -9465,8 +9465,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 getInsertionController().showWithActionPopup();
                 handled = true;
                 vibrate = false;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             {
                 boolean var6D40024296296040632FE8120E16CDA8_476936234 = (touchPositionIsInSelection());
@@ -9478,28 +9478,28 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     DragLocalState localState = new DragLocalState(this, start, end);
                     startDrag(data, getTextThumbnailBuilder(selectedText), localState, 0);
                     stopSelectionActionMode();
-                } //End block
+                } 
                 {
                     getSelectionController().hide();
                     selectCurrentWord();
                     getSelectionController().show();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             handled = true;
-        } //End block
+        } 
         {
             vibrate = handled = startSelectionActionMode();
-        } //End block
+        } 
         {
             performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
-        } //End block
+        } 
         {
             mDiscardNextActionUp = true;
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1606667528 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1606667528;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -9512,45 +9512,45 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             selectionStart = selectionEnd;
             selectionEnd = tmp;
             Selection.setSelection((Spannable) mText, selectionStart, selectionEnd);
-        } //End block
+        } 
         SelectionModifierCursorController selectionController = getSelectionController();
         int minOffset = selectionController.getMinTouchOffset();
         int maxOffset = selectionController.getMaxTouchOffset();
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2000444246 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2000444246;
-        // ---------- Original Method ----------
-        //int selectionStart = getSelectionStart();
-        //int selectionEnd = getSelectionEnd();
-        //if (selectionStart == selectionEnd) {
-            //return false;
-        //}
-        //if (selectionStart > selectionEnd) {
-            //int tmp = selectionStart;
-            //selectionStart = selectionEnd;
-            //selectionEnd = tmp;
-            //Selection.setSelection((Spannable) mText, selectionStart, selectionEnd);
-        //}
-        //SelectionModifierCursorController selectionController = getSelectionController();
-        //int minOffset = selectionController.getMinTouchOffset();
-        //int maxOffset = selectionController.getMaxTouchOffset();
-        //return ((minOffset >= selectionStart) && (maxOffset < selectionEnd));
+        
+        
+        
+        
+            
+        
+        
+            
+            
+            
+            
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.936 -0400", hash_original_method = "A2BF41305999CD5C7E75DA3423749804", hash_generated_method = "E35D32096E4E2BC0F69559EBED0D8E91")
     private PositionListener getPositionListener() {
-        PositionListener varB4EAC82CA7396A68D541C85D26508E83_527597324 = null; //Variable for return #1
+        PositionListener varB4EAC82CA7396A68D541C85D26508E83_527597324 = null; 
         {
             mPositionListener = new PositionListener();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_527597324 = mPositionListener;
-        varB4EAC82CA7396A68D541C85D26508E83_527597324.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_527597324.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_527597324;
-        // ---------- Original Method ----------
-        //if (mPositionListener == null) {
-            //mPositionListener = new PositionListener();
-        //}
-        //return mPositionListener;
+        
+        
+            
+        
+        
     }
 
     
@@ -9567,35 +9567,35 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     {
                         position[0] -= view.getScrollX();
                         position[1] -= view.getScrollY();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean varCC3EA170661AE32B143B6B8CB851A271_1766977138 = (position[0] < 0 || position[1] < 0 ||
                         position[0] > view.getWidth() || position[1] > view.getHeight());
-                } //End collapsed parenthetic
+                } 
                 {
                     boolean var020714D8D65A6851489742B00823B874_1694771249 = (!view.getMatrix().isIdentity());
                     {
                         view.getMatrix().mapPoints(position);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 position[0] += view.getLeft();
                 position[1] += view.getTop();
                 final ViewParent parent = view.getParent();
                 {
                     view = (View) parent;
-                } //End block
+                } 
                 {
                     view = null;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         addTaint(positionX);
         addTaint(positionY);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1013099797 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1013099797;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -9609,74 +9609,74 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         addTaint(offset);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_603444524 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_603444524;
-        // ---------- Original Method ----------
-        //final int line = mLayout.getLineForOffset(offset);
-        //final int lineBottom = mLayout.getLineBottom(line);
-        //final int primaryHorizontal = (int) mLayout.getPrimaryHorizontal(offset);
-        //return isPositionVisible(primaryHorizontal + viewportToContentHorizontalOffset(),
-                //lineBottom + viewportToContentVerticalOffset());
+        
+        
+        
+        
+        
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.937 -0400", hash_original_method = "8567BA4CA284138DD0CB4B48B9C8C278", hash_generated_method = "0842DFBF8109A1EA35E347B5A4D41A52")
     @Override
     protected void onScrollChanged(int horiz, int vert, int oldHoriz, int oldVert) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onScrollChanged(horiz, vert, oldHoriz, oldVert);
         {
             mPositionListener.onScrollChanged();
-        } //End block
+        } 
         addTaint(horiz);
         addTaint(vert);
         addTaint(oldHoriz);
         addTaint(oldVert);
-        // ---------- Original Method ----------
-        //super.onScrollChanged(horiz, vert, oldHoriz, oldVert);
-        //if (mPositionListener != null) {
-            //mPositionListener.onScrollChanged();
-        //}
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.938 -0400", hash_original_method = "9FAF02695A10AC660CF2B5DD3EDB7DD4", hash_generated_method = "39F70B5045AB0E31DF85CF1984A623FC")
      CharSequence removeSuggestionSpans(CharSequence text) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_150370088 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_150370088 = null; 
         {
             Spannable spannable;
             {
                 spannable = (Spannable) text;
-            } //End block
+            } 
             {
                 spannable = new SpannableString(text);
                 text = spannable;
-            } //End block
+            } 
             SuggestionSpan[] spans = spannable.getSpans(0, text.length(), SuggestionSpan.class);
             {
                 int i = 0;
                 {
                     spannable.removeSpan(spans[i]);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_150370088 = text;
         addTaint(text.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_150370088.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_150370088.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_150370088;
-        // ---------- Original Method ----------
-        //if (text instanceof Spanned) {
-           //Spannable spannable;
-           //if (text instanceof Spannable) {
-               //spannable = (Spannable) text;
-           //} else {
-               //spannable = new SpannableString(text);
-               //text = spannable;
-           //}
-           //SuggestionSpan[] spans = spannable.getSpans(0, text.length(), SuggestionSpan.class);
-           //for (int i = 0; i < spans.length; i++) {
-               //spannable.removeSpan(spans[i]);
-           //}
-       //}
-        //return text;
+        
+        
+           
+           
+               
+           
+               
+               
+           
+           
+           
+               
+           
+       
+        
     }
 
     
@@ -9684,15 +9684,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
      void showSuggestions() {
         {
             mSuggestionsPopupWindow = new SuggestionsPopupWindow();
-        } //End block
+        } 
         hideControllers();
         mSuggestionsPopupWindow.show();
-        // ---------- Original Method ----------
-        //if (mSuggestionsPopupWindow == null) {
-            //mSuggestionsPopupWindow = new SuggestionsPopupWindow();
-        //}
-        //hideControllers();
-        //mSuggestionsPopupWindow.show();
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -9701,8 +9701,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         boolean var29FA41D6182C8FCF2B2C7ECDA0C38EBD_806043654 = (mSuggestionsPopupWindow != null && mSuggestionsPopupWindow.isShowing());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_75973758 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_75973758;
-        // ---------- Original Method ----------
-        //return mSuggestionsPopupWindow != null && mSuggestionsPopupWindow.isShowing();
+        
+        
     }
 
     
@@ -9711,34 +9711,34 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         final int variation = mInputType & EditorInfo.TYPE_MASK_VARIATION;
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_535731819 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_535731819;
-        // ---------- Original Method ----------
-        //if ((mInputType & InputType.TYPE_MASK_CLASS) != InputType.TYPE_CLASS_TEXT) return false;
-        //if ((mInputType & InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS) > 0) return false;
-        //final int variation = mInputType & EditorInfo.TYPE_MASK_VARIATION;
-        //return (variation == EditorInfo.TYPE_TEXT_VARIATION_NORMAL ||
-                //variation == EditorInfo.TYPE_TEXT_VARIATION_EMAIL_SUBJECT ||
-                //variation == EditorInfo.TYPE_TEXT_VARIATION_LONG_MESSAGE ||
-                //variation == EditorInfo.TYPE_TEXT_VARIATION_SHORT_MESSAGE ||
-                //variation == EditorInfo.TYPE_TEXT_VARIATION_WEB_EDIT_TEXT);
+        
+        
+        
+        
+        
+                
+                
+                
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.939 -0400", hash_original_method = "9876FACCD4EAE43EA4CB6FD414FD5E5A", hash_generated_method = "99F50FF2FBA3328523C1FCF161298BA2")
     public void setCustomSelectionActionModeCallback(ActionMode.Callback actionModeCallback) {
         mCustomSelectionActionModeCallback = actionModeCallback;
-        // ---------- Original Method ----------
-        //mCustomSelectionActionModeCallback = actionModeCallback;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.940 -0400", hash_original_method = "6671930C0B8994CBEF8AFBE835B485C8", hash_generated_method = "8FAEFDEA86291639935E979AEB9AA87F")
     public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        ActionMode.Callback varB4EAC82CA7396A68D541C85D26508E83_991621637 = null; //Variable for return #1
+        ActionMode.Callback varB4EAC82CA7396A68D541C85D26508E83_991621637 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_991621637 = mCustomSelectionActionModeCallback;
-        varB4EAC82CA7396A68D541C85D26508E83_991621637.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_991621637.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_991621637;
-        // ---------- Original Method ----------
-        //return mCustomSelectionActionModeCallback;
+        
+        
     }
 
     
@@ -9746,31 +9746,31 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private boolean startSelectionActionMode() {
         {
             boolean varDD51C7CC25E36170CF1A5B45DEEBD783_1720209577 = (!canSelectText() || !requestFocus());
-        } //End collapsed parenthetic
+        } 
         {
             boolean varD18B2E3785F2697D3F393507C051114C_1979984695 = (!hasSelection());
             {
                 {
                     boolean var2694D05A2D7BEB6A7092F61157ECE50C_952340197 = (!selectCurrentWord());
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         boolean willExtract = extractedTextModeWillBeStarted();
         {
             ActionMode.Callback actionModeCallback = new SelectionActionModeCallback();
             mSelectionActionMode = startActionMode(actionModeCallback);
-        } //End block
+        } 
         final boolean selectionStarted = mSelectionActionMode != null || willExtract;
         {
             final InputMethodManager imm = InputMethodManager.peekInstance();
             {
                 imm.showSoftInput(this, 0, null);
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1509003563 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1509003563;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -9779,15 +9779,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             final InputMethodManager imm = InputMethodManager.peekInstance();
             boolean var2F4E2C66FC57F06F55546BB121BBAB53_678043205 = (imm != null && imm.isFullscreenMode());
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_38184402 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_38184402;
-        // ---------- Original Method ----------
-        //if (!(this instanceof ExtractEditText)) {
-            //final InputMethodManager imm = InputMethodManager.peekInstance();
-            //return  imm != null && imm.isFullscreenMode();
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -9795,11 +9795,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private void stopSelectionActionMode() {
         {
             mSelectionActionMode.finish();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mSelectionActionMode != null) {
-            //mSelectionActionMode.finish();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -9822,21 +9822,21 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                             Selection.setSelection((Spannable) mText, max);
                             ((Editable) mText).replace(min, max, paste);
                             didFirst = true;
-                        } //End block
+                        } 
                         {
                             ((Editable) mText).insert(getSelectionEnd(), "\n");
                             ((Editable) mText).insert(getSelectionEnd(), paste);
-                        } //End block
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             stopSelectionActionMode();
             sLastCutOrCopyTime = 0;
-        } //End block
+        } 
         addTaint(min);
         addTaint(max);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -9847,11 +9847,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         clipboard.setPrimaryClip(clip);
         sLastCutOrCopyTime = SystemClock.uptimeMillis();
         addTaint(clip.getTaint());
-        // ---------- Original Method ----------
-        //ClipboardManager clipboard = (ClipboardManager) getContext().
-                //getSystemService(Context.CLIPBOARD_SERVICE);
-        //clipboard.setPrimaryClip(clip);
-        //sLastCutOrCopyTime = SystemClock.uptimeMillis();
+        
+        
+                
+        
+        
     }
 
     
@@ -9859,11 +9859,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private void hideInsertionPointCursorController() {
         {
             mInsertionPointCursorController.hide();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mInsertionPointCursorController != null) {
-            //mInsertionPointCursorController.hide();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -9871,9 +9871,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private void hideControllers() {
         hideCursorControllers();
         hideSpanControllers();
-        // ---------- Original Method ----------
-        //hideCursorControllers();
-        //hideSpanControllers();
+        
+        
+        
     }
 
     
@@ -9881,11 +9881,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private void hideSpanControllers() {
         {
             mChangeWatcher.hideControllers();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mChangeWatcher != null) {
-            //mChangeWatcher.hideControllers();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -9895,16 +9895,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             boolean var97060A385B2EE20942D359972C3B987E_2028161762 = (mSuggestionsPopupWindow != null && !mSuggestionsPopupWindow.isShowingUp());
             {
                 mSuggestionsPopupWindow.hide();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         hideInsertionPointCursorController();
         stopSelectionActionMode();
-        // ---------- Original Method ----------
-        //if (mSuggestionsPopupWindow != null && !mSuggestionsPopupWindow.isShowingUp()) {
-            //mSuggestionsPopupWindow.hide();
-        //}
-        //hideInsertionPointCursorController();
-        //stopSelectionActionMode();
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -9912,18 +9912,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     public int getOffsetForPosition(float x, float y) {
         {
             boolean var778B744EBE60DF815BEE98852B413FC5_339411407 = (getLayout() == null);
-        } //End collapsed parenthetic
+        } 
         final int line = getLineAtCoordinate(y);
         final int offset = getOffsetAtCoordinate(line, x);
         addTaint(x);
         addTaint(y);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_158701812 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_158701812;
-        // ---------- Original Method ----------
-        //if (getLayout() == null) return -1;
-        //final int line = getLineAtCoordinate(y);
-        //final int offset = getOffsetAtCoordinate(line, x);
-        //return offset;
+        
+        
+        
+        
+        
     }
 
     
@@ -9936,12 +9936,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         addTaint(x);
         float var546ADE640B6EDFBC8A086EF31347E768_1825073569 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1825073569;
-        // ---------- Original Method ----------
-        //x -= getTotalPaddingLeft();
-        //x = Math.max(0.0f, x);
-        //x = Math.min(getWidth() - getTotalPaddingRight() - 1, x);
-        //x += getScrollX();
-        //return x;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -9955,12 +9955,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         addTaint(y);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1909571447 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1909571447;
-        // ---------- Original Method ----------
-        //y -= getTotalPaddingTop();
-        //y = Math.max(0.0f, y);
-        //y = Math.min(getHeight() - getTotalPaddingBottom() - 1, y);
-        //y += getScrollY();
-        //return getLayout().getLineForVertical((int) y);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -9972,9 +9972,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         addTaint(x);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1289683728 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1289683728;
-        // ---------- Original Method ----------
-        //x = convertToLocalHorizontalCoordinate(x);
-        //return getLayout().getOffsetForHorizontal(line, x);
+        
+        
+        
     }
 
     
@@ -9982,73 +9982,73 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private boolean isPositionOnText(float x, float y) {
         {
             boolean var778B744EBE60DF815BEE98852B413FC5_1422451725 = (getLayout() == null);
-        } //End collapsed parenthetic
+        } 
         final int line = getLineAtCoordinate(y);
         x = convertToLocalHorizontalCoordinate(x);
         {
             boolean var59E035AC6E596093F53E603EDA382B91_1822702719 = (x < getLayout().getLineLeft(line));
-        } //End collapsed parenthetic
+        } 
         {
             boolean var04BE7C77E8AA35EC39BE529B038AF3DD_548050296 = (x > getLayout().getLineRight(line));
-        } //End collapsed parenthetic
+        } 
         addTaint(x);
         addTaint(y);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1874995969 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1874995969;
-        // ---------- Original Method ----------
-        //if (getLayout() == null) return false;
-        //final int line = getLineAtCoordinate(y);
-        //x = convertToLocalHorizontalCoordinate(x);
-        //if (x < getLayout().getLineLeft(line)) return false;
-        //if (x > getLayout().getLineRight(line)) return false;
-        //return true;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.947 -0400", hash_original_method = "282C8F5427700D40A542E64F343C6674", hash_generated_method = "DAE219CD5B42BD35504CFD3847B61F4F")
     @Override
     public boolean onDragEvent(DragEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             Object var9E1FBD251DF7E53AB77C3A31F15B2B38_751650625 = (event.getAction());
-            //Begin case DragEvent.ACTION_DRAG_STARTED 
+            
             boolean varB5182ED29788A31653E5E1546400D879_621888797 = (hasInsertionController());
-            //End case DragEvent.ACTION_DRAG_STARTED 
-            //Begin case DragEvent.ACTION_DRAG_ENTERED 
+            
+            
             TextView.this.requestFocus();
-            //End case DragEvent.ACTION_DRAG_ENTERED 
-            //Begin case DragEvent.ACTION_DRAG_LOCATION 
+            
+            
             final int offset = getOffsetForPosition(event.getX(), event.getY());
-            //End case DragEvent.ACTION_DRAG_LOCATION 
-            //Begin case DragEvent.ACTION_DRAG_LOCATION 
+            
+            
             Selection.setSelection((Spannable)mText, offset);
-            //End case DragEvent.ACTION_DRAG_LOCATION 
-            //Begin case DragEvent.ACTION_DROP 
+            
+            
             onDrop(event);
-            //End case DragEvent.ACTION_DROP 
-        } //End collapsed parenthetic
+            
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2065235160 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2065235160;
-        // ---------- Original Method ----------
-        //switch (event.getAction()) {
-            //case DragEvent.ACTION_DRAG_STARTED:
-                //return hasInsertionController();
-            //case DragEvent.ACTION_DRAG_ENTERED:
-                //TextView.this.requestFocus();
-                //return true;
-            //case DragEvent.ACTION_DRAG_LOCATION:
-                //final int offset = getOffsetForPosition(event.getX(), event.getY());
-                //Selection.setSelection((Spannable)mText, offset);
-                //return true;
-            //case DragEvent.ACTION_DROP:
-                //onDrop(event);
-                //return true;
-            //case DragEvent.ACTION_DRAG_ENDED:
-            //case DragEvent.ACTION_DRAG_EXITED:
-            //default:
-                //return true;
-        //}
+        
+        
+            
+                
+            
+                
+                
+            
+                
+                
+                
+            
+                
+                
+            
+            
+            
+                
+        
     }
 
     
@@ -10062,14 +10062,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             {
                 Item item = clipData.getItemAt(i);
                 content.append(item.coerceToText(TextView.this.mContext));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final int offset = getOffsetForPosition(event.getX(), event.getY());
         Object localState = event.getLocalState();
         DragLocalState dragLocalState = null;
         {
             dragLocalState = (DragLocalState) localState;
-        } //End block
+        } 
         boolean dragDropIntoItself = dragLocalState != null &&
                 dragLocalState.sourceTextView == this;
         final int originalLength = mText.length();
@@ -10085,7 +10085,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 final int shift = mText.length() - originalLength;
                 dragSourceStart += shift;
                 dragSourceEnd += shift;
-            } //End block
+            } 
             deleteText_internal(dragSourceStart, dragSourceEnd);
             {
                 boolean var353A6E4F7751153EED06FB844C167F01_876469028 = ((dragSourceStart == 0 ||
@@ -10098,12 +10098,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     pos = dragSourceStart - 1;
                     pos = dragSourceStart;
                     deleteText_internal(pos, pos + 1);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -10111,8 +10111,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
      boolean hasInsertionController() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_444947248 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_444947248;
-        // ---------- Original Method ----------
-        //return mInsertionControllerEnabled;
+        
+        
     }
 
     
@@ -10120,82 +10120,82 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
      boolean hasSelectionController() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_783771804 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_783771804;
-        // ---------- Original Method ----------
-        //return mSelectionControllerEnabled;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.949 -0400", hash_original_method = "02A03A91466BF03F45C3C819266A605E", hash_generated_method = "597E537B2E6196D2863DECE19E59DF33")
      InsertionPointCursorController getInsertionController() {
-        InsertionPointCursorController varB4EAC82CA7396A68D541C85D26508E83_663222952 = null; //Variable for return #1
-        InsertionPointCursorController varB4EAC82CA7396A68D541C85D26508E83_1976067970 = null; //Variable for return #2
+        InsertionPointCursorController varB4EAC82CA7396A68D541C85D26508E83_663222952 = null; 
+        InsertionPointCursorController varB4EAC82CA7396A68D541C85D26508E83_1976067970 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_663222952 = null;
-        } //End block
+        } 
         {
             mInsertionPointCursorController = new InsertionPointCursorController();
             final ViewTreeObserver observer = getViewTreeObserver();
             observer.addOnTouchModeChangeListener(mInsertionPointCursorController);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1976067970 = mInsertionPointCursorController;
-        InsertionPointCursorController varA7E53CE21691AB073D9660D615818899_2002700616; //Final return value
+        InsertionPointCursorController varA7E53CE21691AB073D9660D615818899_2002700616; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2002700616 = varB4EAC82CA7396A68D541C85D26508E83_663222952;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2002700616 = varB4EAC82CA7396A68D541C85D26508E83_1976067970;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2002700616.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2002700616.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2002700616;
-        // ---------- Original Method ----------
-        //if (!mInsertionControllerEnabled) {
-            //return null;
-        //}
-        //if (mInsertionPointCursorController == null) {
-            //mInsertionPointCursorController = new InsertionPointCursorController();
-            //final ViewTreeObserver observer = getViewTreeObserver();
-            //observer.addOnTouchModeChangeListener(mInsertionPointCursorController);
-        //}
-        //return mInsertionPointCursorController;
+        
+        
+            
+        
+        
+            
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.950 -0400", hash_original_method = "CD09732805D28B5BF513C98008463942", hash_generated_method = "C02406CD93D25E8F23FB1E6DD0A4D09E")
      SelectionModifierCursorController getSelectionController() {
-        SelectionModifierCursorController varB4EAC82CA7396A68D541C85D26508E83_1793030511 = null; //Variable for return #1
-        SelectionModifierCursorController varB4EAC82CA7396A68D541C85D26508E83_481405890 = null; //Variable for return #2
+        SelectionModifierCursorController varB4EAC82CA7396A68D541C85D26508E83_1793030511 = null; 
+        SelectionModifierCursorController varB4EAC82CA7396A68D541C85D26508E83_481405890 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1793030511 = null;
-        } //End block
+        } 
         {
             mSelectionModifierCursorController = new SelectionModifierCursorController();
             final ViewTreeObserver observer = getViewTreeObserver();
             observer.addOnTouchModeChangeListener(mSelectionModifierCursorController);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_481405890 = mSelectionModifierCursorController;
-        SelectionModifierCursorController varA7E53CE21691AB073D9660D615818899_629879746; //Final return value
+        SelectionModifierCursorController varA7E53CE21691AB073D9660D615818899_629879746; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_629879746 = varB4EAC82CA7396A68D541C85D26508E83_1793030511;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_629879746 = varB4EAC82CA7396A68D541C85D26508E83_481405890;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_629879746.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_629879746.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_629879746;
-        // ---------- Original Method ----------
-        //if (!mSelectionControllerEnabled) {
-            //return null;
-        //}
-        //if (mSelectionModifierCursorController == null) {
-            //mSelectionModifierCursorController = new SelectionModifierCursorController();
-            //final ViewTreeObserver observer = getViewTreeObserver();
-            //observer.addOnTouchModeChangeListener(mSelectionModifierCursorController);
-        //}
-        //return mSelectionModifierCursorController;
+        
+        
+            
+        
+        
+            
+            
+            
+        
+        
     }
 
     
@@ -10204,12 +10204,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         final InputMethodState ims = mInputMethodState;
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1017262808 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1017262808;
-        // ---------- Original Method ----------
-        //final InputMethodState ims = mInputMethodState;
-        //if (ims != null) {
-            //return ims.mBatchEditNesting > 0;
-        //}
-        //return mInBatchEditControllers;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -10220,26 +10220,26 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             boolean varAFBCCFFAA18696A12B6915A938CC8475_1830236980 = (hasPasswordTransformationMethod());
             {
                 mTextDir = TextDirectionHeuristics.LOCALE;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final boolean defaultIsRtl = (getResolvedLayoutDirection() == LAYOUT_DIRECTION_RTL);
         super.resolveTextDirection();
         int textDir = getResolvedTextDirection();
-        //Begin case default TEXT_DIRECTION_FIRST_STRONG 
+        
         mTextDir = (defaultIsRtl ? TextDirectionHeuristics.FIRSTSTRONG_RTL :
                         TextDirectionHeuristics.FIRSTSTRONG_LTR);
-        //End case default TEXT_DIRECTION_FIRST_STRONG 
-        //Begin case TEXT_DIRECTION_ANY_RTL 
+        
+        
         mTextDir = TextDirectionHeuristics.ANYRTL_LTR;
-        //End case TEXT_DIRECTION_ANY_RTL 
-        //Begin case TEXT_DIRECTION_LTR 
+        
+        
         mTextDir = TextDirectionHeuristics.LTR;
-        //End case TEXT_DIRECTION_LTR 
-        //Begin case TEXT_DIRECTION_RTL 
+        
+        
         mTextDir = TextDirectionHeuristics.RTL;
-        //End case TEXT_DIRECTION_RTL 
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
+        
     }
 
     
@@ -10247,50 +10247,50 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     protected void resolveDrawables() {
         {
             mResolvedDrawables = true;
-        } //End block
+        } 
         Drawables dr = mDrawables;
         {
             Object varAFC6EB2C684D509A17B3A4EFF5D9CB9D_1322885429 = (getResolvedLayoutDirection());
-            //Begin case LAYOUT_DIRECTION_RTL 
+            
             {
                 dr.mDrawableRight = dr.mDrawableStart;
                 dr.mDrawableSizeRight = dr.mDrawableSizeStart;
                 dr.mDrawableHeightRight = dr.mDrawableHeightStart;
-            } //End block
-            //End case LAYOUT_DIRECTION_RTL 
-            //Begin case LAYOUT_DIRECTION_RTL 
+            } 
+            
+            
             {
                 dr.mDrawableLeft = dr.mDrawableEnd;
                 dr.mDrawableSizeLeft = dr.mDrawableSizeEnd;
                 dr.mDrawableHeightLeft = dr.mDrawableHeightEnd;
-            } //End block
-            //End case LAYOUT_DIRECTION_RTL 
-            //Begin case LAYOUT_DIRECTION_LTR default 
+            } 
+            
+            
             {
                 dr.mDrawableLeft = dr.mDrawableStart;
                 dr.mDrawableSizeLeft = dr.mDrawableSizeStart;
                 dr.mDrawableHeightLeft = dr.mDrawableHeightStart;
-            } //End block
-            //End case LAYOUT_DIRECTION_LTR default 
-            //Begin case LAYOUT_DIRECTION_LTR default 
+            } 
+            
+            
             {
                 dr.mDrawableRight = dr.mDrawableEnd;
                 dr.mDrawableSizeRight = dr.mDrawableSizeEnd;
                 dr.mDrawableHeightRight = dr.mDrawableHeightEnd;
-            } //End block
-            //End case LAYOUT_DIRECTION_LTR default 
-        } //End collapsed parenthetic
+            } 
+            
+        } 
         mResolvedDrawables = true;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.952 -0400", hash_original_method = "18FE12CF478DF44CED567E30FAAD0C93", hash_generated_method = "39C62916D85B160D1BFEF9F52F7B861D")
     protected void resetResolvedDrawables() {
         mResolvedDrawables = false;
-        // ---------- Original Method ----------
-        //mResolvedDrawables = false;
+        
+        
     }
 
     
@@ -10298,12 +10298,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     protected void viewClicked(InputMethodManager imm) {
         {
             imm.viewClicked(this);
-        } //End block
+        } 
         addTaint(imm.getTaint());
-        // ---------- Original Method ----------
-        //if (imm != null) {
-            //imm.viewClicked(this);
-        //}
+        
+        
+            
+        
     }
 
     
@@ -10312,8 +10312,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         ((Editable) mText).delete(start, end);
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
-        //((Editable) mText).delete(start, end);
+        
+        
     }
 
     
@@ -10323,8 +10323,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         addTaint(start);
         addTaint(end);
         addTaint(text.getTaint());
-        // ---------- Original Method ----------
-        //((Editable) mText).replace(start, end, text);
+        
+        
     }
 
     
@@ -10335,8 +10335,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         addTaint(start);
         addTaint(end);
         addTaint(flags);
-        // ---------- Original Method ----------
-        //((Editable) mText).setSpan(span, start, end, flags);
+        
+        
     }
 
     
@@ -10345,8 +10345,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         Selection.setSelection(((Editable) mText), start, end);
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
-        //Selection.setSelection(((Editable) mText), start, end);
+        
+        
     }
 
     
@@ -10415,7 +10415,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.955 -0400", hash_original_method = "8748E639EC70CC7FF4A65E9B42DA91C9", hash_generated_method = "8748E639EC70CC7FF4A65E9B42DA91C9")
         public Drawables ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -10449,7 +10449,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.955 -0400", hash_original_method = "B3EB62E33A235E4F2C0FA9694799B659", hash_generated_method = "B3EB62E33A235E4F2C0FA9694799B659")
         public InputContentType ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -10498,7 +10498,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.955 -0400", hash_original_method = "60FC2021DEC54591E7EA76E02BC73921", hash_generated_method = "60FC2021DEC54591E7EA76E02BC73921")
         public InputMethodState ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -10532,7 +10532,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
           SavedState(Parcelable superState) {
             super(superState);
             addTaint(superState.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -10547,16 +10547,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 boolean var331417C59A822E59FB0B216D2F29CB47_1729258664 = (in.readInt() != 0);
                 {
                     error = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //selStart = in.readInt();
-            //selEnd = in.readInt();
-            //frozenWithFocus = (in.readInt() != 0);
-            //text = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
-            //if (in.readInt() != 0) {
-                //error = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
-            //}
+                } 
+            } 
+            
+            
+            
+            
+            
+            
+                
+            
         }
 
         
@@ -10570,49 +10570,49 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             TextUtils.writeToParcel(text, out, flags);
             {
                 out.writeInt(0);
-            } //End block
+            } 
             {
                 out.writeInt(1);
                 TextUtils.writeToParcel(error, out, flags);
-            } //End block
+            } 
             addTaint(out.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //super.writeToParcel(out, flags);
-            //out.writeInt(selStart);
-            //out.writeInt(selEnd);
-            //out.writeInt(frozenWithFocus ? 1 : 0);
-            //TextUtils.writeToParcel(text, out, flags);
-            //if (error == null) {
-                //out.writeInt(0);
-            //} else {
-                //out.writeInt(1);
-                //TextUtils.writeToParcel(error, out, flags);
-            //}
+            
+            
+            
+            
+            
+            
+            
+                
+            
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.957 -0400", hash_original_method = "B2667A033A504E8795AC5B896DD98B5F", hash_generated_method = "724D6C0C96E8C8D299FC03DA27A10236")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1178462989 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1178462989 = null; 
             String str = "TextView.SavedState{"
                     + Integer.toHexString(System.identityHashCode(this))
                     + " start=" + selStart + " end=" + selEnd;
             {
                 str += " text=" + text;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1178462989 = str + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_1178462989.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1178462989.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1178462989;
-            // ---------- Original Method ----------
-            //String str = "TextView.SavedState{"
-                    //+ Integer.toHexString(System.identityHashCode(this))
-                    //+ " start=" + selStart + " end=" + selEnd;
-            //if (text != null) {
-                //str += " text=" + text;
-            //}
-            //return str + "}";
+            
+            
+                    
+                    
+            
+                
+            
+            
         }
 
         
@@ -10649,10 +10649,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             mChars = chars;
             mStart = start;
             mLength = len;
-            // ---------- Original Method ----------
-            //mChars = chars;
-            //mStart = start;
-            //mLength = len;
+            
+            
+            
+            
         }
 
         
@@ -10661,10 +10661,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             mChars = chars;
             mStart = start;
             mLength = len;
-            // ---------- Original Method ----------
-            //mChars = chars;
-            //mStart = start;
-            //mLength = len;
+            
+            
+            
+            
         }
 
         
@@ -10672,8 +10672,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         public int length() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_373333631 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_373333631;
-            // ---------- Original Method ----------
-            //return mLength;
+            
+            
         }
 
         
@@ -10682,39 +10682,39 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             addTaint(off);
             char varA87DEB01C5F539E6BDA34829C8EF2368_2015787049 = getTaintChar();
             return varA87DEB01C5F539E6BDA34829C8EF2368_2015787049;
-            // ---------- Original Method ----------
-            //return mChars[off + mStart];
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.959 -0400", hash_original_method = "16BC7956BCD83D2479A5892A7E5C0E12", hash_generated_method = "7ECC28651FB9CEBBEBCDF949F7D6F73A")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_275842452 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_275842452 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_275842452 = new String(mChars, mStart, mLength);
-            varB4EAC82CA7396A68D541C85D26508E83_275842452.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_275842452.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_275842452;
-            // ---------- Original Method ----------
-            //return new String(mChars, mStart, mLength);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.959 -0400", hash_original_method = "BA853CED33F98EDEC6E428BC258874A3", hash_generated_method = "8CD0D0BD895FC675AEFC15CAC7977557")
         public CharSequence subSequence(int start, int end) {
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_496344271 = null; //Variable for return #1
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_496344271 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(start + ", " + end);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_496344271 = new String(mChars, start + mStart, end - start);
             addTaint(start);
             addTaint(end);
-            varB4EAC82CA7396A68D541C85D26508E83_496344271.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_496344271.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_496344271;
-            // ---------- Original Method ----------
-            //if (start < 0 || end < 0 || start > mLength || end > mLength) {
-                //throw new IndexOutOfBoundsException(start + ", " + end);
-            //}
-            //return new String(mChars, start + mStart, end - start);
+            
+            
+                
+            
+            
         }
 
         
@@ -10722,17 +10722,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         public void getChars(int start, int end, char[] buf, int off) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(start + ", " + end);
-            } //End block
+            } 
             System.arraycopy(mChars, start + mStart, buf, off, end - start);
             addTaint(start);
             addTaint(end);
             addTaint(buf[0]);
             addTaint(off);
-            // ---------- Original Method ----------
-            //if (start < 0 || end < 0 || start > mLength || end > mLength) {
-                //throw new IndexOutOfBoundsException(start + ", " + end);
-            //}
-            //System.arraycopy(mChars, start + mStart, buf, off, end - start);
+            
+            
+                
+            
+            
         }
 
         
@@ -10746,8 +10746,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             addTaint(x);
             addTaint(y);
             addTaint(p.getTaint());
-            // ---------- Original Method ----------
-            //c.drawText(mChars, start + mStart, end - start, x, y, p);
+            
+            
         }
 
         
@@ -10767,11 +10767,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             addTaint(y);
             addTaint(flags);
             addTaint(p.getTaint());
-            // ---------- Original Method ----------
-            //int count = end - start;
-            //int contextCount = contextEnd - contextStart;
-            //c.drawTextRun(mChars, start + mStart, count, contextStart + mStart,
-                    //contextCount, x, y, flags, p);
+            
+            
+            
+            
+                    
         }
 
         
@@ -10783,8 +10783,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             addTaint(p.getTaint());
             float var546ADE640B6EDFBC8A086EF31347E768_202722306 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_202722306;
-            // ---------- Original Method ----------
-            //return p.measureText(mChars, start + mStart, end - start);
+            
+            
         }
 
         
@@ -10797,8 +10797,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             addTaint(p.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_60691706 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_60691706;
-            // ---------- Original Method ----------
-            //return p.getTextWidths(mChars, start + mStart, end - start, widths);
+            
+            
         }
 
         
@@ -10821,12 +10821,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             addTaint(p.getTaint());
             float var546ADE640B6EDFBC8A086EF31347E768_497871214 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_497871214;
-            // ---------- Original Method ----------
-            //int count = end - start;
-            //int contextCount = contextEnd - contextStart;
-            //return p.getTextRunAdvances(mChars, start + mStart, count,
-                    //contextStart + mStart, contextCount, flags, advances,
-                    //advancesIndex);
+            
+            
+            
+            
+                    
+                    
         }
 
         
@@ -10850,12 +10850,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             addTaint(reserved);
             float var546ADE640B6EDFBC8A086EF31347E768_926134479 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_926134479;
-            // ---------- Original Method ----------
-            //int count = end - start;
-            //int contextCount = contextEnd - contextStart;
-            //return p.getTextRunAdvances(mChars, start + mStart, count,
-                    //contextStart + mStart, contextCount, flags, advances,
-                    //advancesIndex, reserved);
+            
+            
+            
+            
+                    
+                    
         }
 
         
@@ -10873,10 +10873,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             addTaint(p.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_114106737 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_114106737;
-            // ---------- Original Method ----------
-            //int contextCount = contextEnd - contextStart;
-            //return p.getTextRunCursor(mChars, contextStart + mStart,
-                    //contextCount, flags, offset + mStart, cursorOpt);
+            
+            
+            
+                    
         }
 
         
@@ -10907,11 +10907,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             mView.setBackgroundResource(mPopupInlineErrorBackgroundId);
             addTaint(width);
             addTaint(height);
-            // ---------- Original Method ----------
-            //mView = v;
-            //mPopupInlineErrorBackgroundId = getResourceId(mPopupInlineErrorBackgroundId,
-                    //com.android.internal.R.styleable.Theme_errorMessageBackground);
-            //mView.setBackgroundResource(mPopupInlineErrorBackgroundId);
+            
+            
+            
+                    
+            
         }
 
         
@@ -10922,25 +10922,25 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 mPopupInlineErrorAboveBackgroundId =
                     getResourceId(mPopupInlineErrorAboveBackgroundId,
                             com.android.internal.R.styleable.Theme_errorMessageAboveBackground);
-            } //End block
+            } 
             {
                 mPopupInlineErrorBackgroundId = getResourceId(mPopupInlineErrorBackgroundId,
                         com.android.internal.R.styleable.Theme_errorMessageBackground);
-            } //End block
+            } 
             mView.setBackgroundResource(above ? mPopupInlineErrorAboveBackgroundId :
                 mPopupInlineErrorBackgroundId);
-            // ---------- Original Method ----------
-            //mAbove = above;
-            //if (above) {
-                //mPopupInlineErrorAboveBackgroundId =
-                    //getResourceId(mPopupInlineErrorAboveBackgroundId,
-                            //com.android.internal.R.styleable.Theme_errorMessageAboveBackground);
-            //} else {
-                //mPopupInlineErrorBackgroundId = getResourceId(mPopupInlineErrorBackgroundId,
-                        //com.android.internal.R.styleable.Theme_errorMessageBackground);
-            //}
-            //mView.setBackgroundResource(above ? mPopupInlineErrorAboveBackgroundId :
-                //mPopupInlineErrorBackgroundId);
+            
+            
+            
+                
+                    
+                            
+            
+                
+                        
+            
+            
+                
         }
 
         
@@ -10951,19 +10951,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         R.styleable.Theme);
                 currentId = styledAttributes.getResourceId(index, 0);
                 styledAttributes.recycle();
-            } //End block
+            } 
             addTaint(currentId);
             addTaint(index);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1371312034 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1371312034;
-            // ---------- Original Method ----------
-            //if (currentId == 0) {
-                //TypedArray styledAttributes = mView.getContext().obtainStyledAttributes(
-                        //R.styleable.Theme);
-                //currentId = styledAttributes.getResourceId(index, 0);
-                //styledAttributes.recycle();
-            //}
-            //return currentId;
+            
+            
+                
+                        
+                
+                
+            
+            
         }
 
         
@@ -10974,18 +10974,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             boolean above = isAboveAnchor();
             {
                 fixDirection(above);
-            } //End block
+            } 
             addTaint(x);
             addTaint(y);
             addTaint(w);
             addTaint(h);
             addTaint(force);
-            // ---------- Original Method ----------
-            //super.update(x, y, w, h, force);
-            //boolean above = isAboveAnchor();
-            //if (above != mAbove) {
-                //fixDirection(above);
-            //}
+            
+            
+            
+            
+                
+            
         }
 
         
@@ -11014,9 +11014,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         public  CorrectionHighlighter() {
             mPaint.setCompatibilityScaling(getResources().getCompatibilityInfo().applicationScale);
             mPaint.setStyle(Paint.Style.FILL);
-            // ---------- Original Method ----------
-            //mPaint.setCompatibilityScaling(getResources().getCompatibilityInfo().applicationScale);
-            //mPaint.setStyle(Paint.Style.FILL);
+            
+            
+            
         }
 
         
@@ -11027,14 +11027,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             mFadingStartTime = SystemClock.uptimeMillis();
             {
                 stopAnimation();
-            } //End block
-            // ---------- Original Method ----------
-            //mStart = info.getOffset();
-            //mEnd = mStart + info.getNewText().length();
-            //mFadingStartTime = SystemClock.uptimeMillis();
-            //if (mStart < 0 || mEnd < 0) {
-                //stopAnimation();
-            //}
+            } 
+            
+            
+            
+            
+            
+                
+            
         }
 
         
@@ -11045,34 +11045,34 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 {
                     {
                         canvas.translate(0, cursorOffsetVertical);
-                    } //End block
+                    } 
                     canvas.drawPath(mPath, mPaint);
                     {
                         canvas.translate(0, -cursorOffsetVertical);
-                    } //End block
+                    } 
                     invalidate(true);
-                } //End block
+                } 
                 {
                     stopAnimation();
                     invalidate(false);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(canvas.getTaint());
             addTaint(cursorOffsetVertical);
-            // ---------- Original Method ----------
-            //if (updatePath() && updatePaint()) {
-                //if (cursorOffsetVertical != 0) {
-                    //canvas.translate(0, cursorOffsetVertical);
-                //}
-                //canvas.drawPath(mPath, mPaint);
-                //if (cursorOffsetVertical != 0) {
-                    //canvas.translate(0, -cursorOffsetVertical);
-                //}
-                //invalidate(true); 
-            //} else {
-                //stopAnimation();
-                //invalidate(false); 
-            //}
+            
+            
+                
+                    
+                
+                
+                
+                    
+                
+                
+            
+                
+                
+            
         }
 
         
@@ -11086,15 +11086,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             mPaint.setColor(color);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_857140333 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_857140333;
-            // ---------- Original Method ----------
-            //final long duration = SystemClock.uptimeMillis() - mFadingStartTime;
-            //if (duration > FADE_OUT_DURATION) return false;
-            //final float coef = 1.0f - (float) duration / FADE_OUT_DURATION;
-            //final int highlightColorAlpha = Color.alpha(mHighlightColor);
-            //final int color = (mHighlightColor & 0x00FFFFFF) +
-                    //((int) (highlightColorAlpha * coef) << 24);
-            //mPaint.setColor(color);
-            //return true;
+            
+            
+            
+            
+            
+            
+                    
+            
+            
         }
 
         
@@ -11108,15 +11108,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             TextView.this.mLayout.getSelectionPath(start, end, mPath);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1546915269 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1546915269;
-            // ---------- Original Method ----------
-            //final Layout layout = TextView.this.mLayout;
-            //if (layout == null) return false;
-            //final int length = mText.length();
-            //int start = Math.min(length, mStart);
-            //int end = Math.min(length, mEnd);
-            //mPath.reset();
-            //TextView.this.mLayout.getSelectionPath(start, end, mPath);
-            //return true;
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -11124,7 +11124,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         private void invalidate(boolean delayed) {
             {
                 boolean var21FA9EC81F38017B1959E255822905B7_208027512 = (TextView.this.mLayout == null);
-            } //End collapsed parenthetic
+            } 
             {
                 mPath.computeBounds(sTempRect, false);
                 int left = getCompoundPaddingLeft();
@@ -11133,36 +11133,36 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     TextView.this.postInvalidateDelayed(16, 
                             left + (int) sTempRect.left, top + (int) sTempRect.top,
                             left + (int) sTempRect.right, top + (int) sTempRect.bottom);
-                } //End block
+                } 
                 {
                     TextView.this.postInvalidate((int) sTempRect.left, (int) sTempRect.top,
                             (int) sTempRect.right, (int) sTempRect.bottom);
-                } //End block
-            } //End block
+                } 
+            } 
             addTaint(delayed);
-            // ---------- Original Method ----------
-            //if (TextView.this.mLayout == null) return;
-            //synchronized (sTempRect) {
-                //mPath.computeBounds(sTempRect, false);
-                //int left = getCompoundPaddingLeft();
-                //int top = getExtendedPaddingTop() + getVerticalOffset(true);
-                //if (delayed) {
-                    //TextView.this.postInvalidateDelayed(16, 
-                            //left + (int) sTempRect.left, top + (int) sTempRect.top,
-                            //left + (int) sTempRect.right, top + (int) sTempRect.bottom);
-                //} else {
-                    //TextView.this.postInvalidate((int) sTempRect.left, (int) sTempRect.top,
-                            //(int) sTempRect.right, (int) sTempRect.bottom);
-                //}
-            //}
+            
+            
+            
+                
+                
+                
+                
+                    
+                            
+                            
+                
+                    
+                            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.968 -0400", hash_original_method = "4BD6A36A746D13E089BD00A9CC0A6FB7", hash_generated_method = "78D02156987325E73BE90677BD5A4AF4")
         private void stopAnimation() {
             TextView.this.mCorrectionHighlighter = null;
-            // ---------- Original Method ----------
-            //TextView.this.mCorrectionHighlighter = null;
+            
+            
         }
 
         
@@ -11210,49 +11210,49 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             final float density = v.getContext().getResources().getDisplayMetrics().density;
             mScrollUnit = (MARQUEE_PIXELS_PER_SECOND * density) / MARQUEE_RESOLUTION;
             mView = new WeakReference<TextView>(v);
-            // ---------- Original Method ----------
-            //final float density = v.getContext().getResources().getDisplayMetrics().density;
-            //mScrollUnit = (MARQUEE_PIXELS_PER_SECOND * density) / MARQUEE_RESOLUTION;
-            //mView = new WeakReference<TextView>(v);
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.969 -0400", hash_original_method = "6484E5DEDF9A6D25913C9D3BAE668871", hash_generated_method = "37F63ACB636731FA8D89FC97A4833083")
         @Override
         public void handleMessage(Message msg) {
-            //Begin case MESSAGE_START 
+            
             mStatus = MARQUEE_RUNNING;
-            //End case MESSAGE_START 
-            //Begin case MESSAGE_START 
+            
+            
             tick();
-            //End case MESSAGE_START 
-            //Begin case MESSAGE_TICK 
+            
+            
             tick();
-            //End case MESSAGE_TICK 
-            //Begin case MESSAGE_RESTART 
+            
+            
             {
                 start(mRepeatLimit);
-            } //End block
-            //End case MESSAGE_RESTART 
+            } 
+            
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            //switch (msg.what) {
-                //case MESSAGE_START:
-                    //mStatus = MARQUEE_RUNNING;
-                    //tick();
-                    //break;
-                //case MESSAGE_TICK:
-                    //tick();
-                    //break;
-                //case MESSAGE_RESTART:
-                    //if (mStatus == MARQUEE_RUNNING) {
-                        //if (mRepeatLimit >= 0) {
-                            //mRepeatLimit--;
-                        //}
-                        //start(mRepeatLimit);
-                    //}
-                    //break;
-            //}
+            
+            
+                
+                    
+                    
+                    
+                
+                    
+                    
+                
+                    
+                        
+                            
+                        
+                        
+                    
+                    
+            
         }
 
         
@@ -11267,29 +11267,29 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     {
                         mScroll = mMaxScroll;
                         sendEmptyMessageDelayed(MESSAGE_RESTART, MARQUEE_RESTART_DELAY);
-                    } //End block
+                    } 
                     {
                         sendEmptyMessageDelayed(MESSAGE_TICK, MARQUEE_RESOLUTION);
-                    } //End block
+                    } 
                     textView.invalidate();
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //if (mStatus != MARQUEE_RUNNING) {
-                //return;
-            //}
-            //removeMessages(MESSAGE_TICK);
-            //final TextView textView = mView.get();
-            //if (textView != null && (textView.isFocused() || textView.isSelected())) {
-                //mScroll += mScrollUnit;
-                //if (mScroll > mMaxScroll) {
-                    //mScroll = mMaxScroll;
-                    //sendEmptyMessageDelayed(MESSAGE_RESTART, MARQUEE_RESTART_DELAY);
-                //} else {
-                    //sendEmptyMessageDelayed(MESSAGE_TICK, MARQUEE_RESOLUTION);
-                //}
-                //textView.invalidate();
-            //}
+                } 
+            } 
+            
+            
+                
+            
+            
+            
+            
+                
+                
+                    
+                    
+                
+                    
+                
+                
+            
         }
 
         
@@ -11300,12 +11300,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             removeMessages(MESSAGE_RESTART);
             removeMessages(MESSAGE_TICK);
             resetScroll();
-            // ---------- Original Method ----------
-            //mStatus = MARQUEE_STOPPED;
-            //removeMessages(MESSAGE_START);
-            //removeMessages(MESSAGE_RESTART);
-            //removeMessages(MESSAGE_TICK);
-            //resetScroll();
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -11314,10 +11314,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             mScroll = 0.0f;
             final TextView textView = mView.get();
             textView.invalidate();
-            // ---------- Original Method ----------
-            //mScroll = 0.0f;
-            //final TextView textView = mView.get();
-            //if (textView != null) textView.invalidate();
+            
+            
+            
+            
         }
 
         
@@ -11325,7 +11325,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
          void start(int repeatLimit) {
             {
                 stop();
-            } //End block
+            } 
             mRepeatLimit = repeatLimit;
             final TextView textView = mView.get();
             {
@@ -11342,9 +11342,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 mMaxFadeScroll = mGhostStart + lineWidth + lineWidth;
                 textView.invalidate();
                 sendEmptyMessageDelayed(MESSAGE_START, MARQUEE_DELAY);
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -11352,8 +11352,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
          float getGhostOffset() {
             float var546ADE640B6EDFBC8A086EF31347E768_711890163 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_711890163;
-            // ---------- Original Method ----------
-            //return mGhostOffset;
+            
+            
         }
 
         
@@ -11361,8 +11361,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
          boolean shouldDrawLeftFade() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1714212977 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1714212977;
-            // ---------- Original Method ----------
-            //return mScroll <= mFadeStop;
+            
+            
         }
 
         
@@ -11370,8 +11370,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
          boolean shouldDrawGhost() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1827075139 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1827075139;
-            // ---------- Original Method ----------
-            //return mStatus == MARQUEE_RUNNING && mScroll > mGhostStart;
+            
+            
         }
 
         
@@ -11379,8 +11379,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
          boolean isRunning() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_596888203 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_596888203;
-            // ---------- Original Method ----------
-            //return mStatus == MARQUEE_RUNNING;
+            
+            
         }
 
         
@@ -11388,8 +11388,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
          boolean isStopped() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1455245548 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1455245548;
-            // ---------- Original Method ----------
-            //return mStatus == MARQUEE_STOPPED;
+            
+            
         }
 
         
@@ -11444,7 +11444,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.974 -0400", hash_original_method = "2E07A306089CEDB8C207DEEB8EF7B36E", hash_generated_method = "2E07A306089CEDB8C207DEEB8EF7B36E")
         public EasyEditSpanController ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -11453,43 +11453,43 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             {
                 mPopupWindow.hide();
                 TextView.this.removeCallbacks(mHidePopup);
-            } //End block
+            } 
             removeSpans(mText);
             mEasyEditSpan = null;
-            // ---------- Original Method ----------
-            //if (mPopupWindow != null) {
-                //mPopupWindow.hide();
-                //TextView.this.removeCallbacks(mHidePopup);
-            //}
-            //removeSpans(mText);
-            //mEasyEditSpan = null;
+            
+            
+                
+                
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.975 -0400", hash_original_method = "400D6F397C7E694E5D2CC26E5076AFF1", hash_generated_method = "C62556D9902D9AB8E0A8FBB4E0609F4A")
         public void onTextChange(CharSequence buffer) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             adjustSpans(mText);
             {
                 boolean varF8A6C8295E7EAA2547FD83421DD5A52E_1989723117 = (getWindowVisibility() != View.VISIBLE);
-            } //End collapsed parenthetic
+            } 
             InputMethodManager imm = InputMethodManager.peekInstance();
             {
                 boolean var508564AC928822EB83F33B379556AE9E_1810688526 = (!(TextView.this instanceof ExtractEditText)
                     && imm != null && imm.isFullscreenMode());
-            } //End collapsed parenthetic
+            } 
             {
                 {
                     ((Spannable) mText).removeSpan(mEasyEditSpan);
-                } //End block
+                } 
                 mEasyEditSpan = null;
-            } //End block
+            } 
             {
                 boolean varB1ED909A9B3812E269C4F5A19320975C_62885411 = (mPopupWindow != null && mPopupWindow.isShowing());
                 {
                     mPopupWindow.hide();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 mEasyEditSpan = getSpan((Spanned) buffer);
                 {
@@ -11500,18 +11500,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                             @Override
                             public void run() {
                                 hide();
-                                // ---------- Original Method ----------
-                                //hide();
+                                
+                                
                             }
 };
-                    } //End block
+                    } 
                     mPopupWindow.show(mEasyEditSpan);
                     TextView.this.removeCallbacks(mHidePopup);
                     TextView.this.postDelayed(mHidePopup, DISPLAY_TIMEOUT_MS);
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
@@ -11525,19 +11525,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     int i = 0;
                     {
                         spannable.removeSpan(spans[i]);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             addTaint(buffer.getTaint());
-            // ---------- Original Method ----------
-            //if (buffer instanceof Spannable) {
-                //Spannable spannable = (Spannable) buffer;
-                //EasyEditSpan[] spans = spannable.getSpans(0, spannable.length(),
-                        //EasyEditSpan.class);
-                //for (int i = 0; i < spans.length - 1; i++) {
-                    //spannable.removeSpan(spans[i]);
-                //}
-            //}
+            
+            
+                
+                
+                        
+                
+                    
+                
+            
         }
 
         
@@ -11551,54 +11551,54 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     int i = 0;
                     {
                         spannable.removeSpan(spans[i]);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             addTaint(buffer.getTaint());
-            // ---------- Original Method ----------
-            //if (buffer instanceof Spannable) {
-                //Spannable spannable = (Spannable) buffer;
-                //EasyEditSpan[] spans = spannable.getSpans(0, spannable.length(),
-                        //EasyEditSpan.class);
-                //for (int i = 0; i < spans.length; i++) {
-                    //spannable.removeSpan(spans[i]);
-                //}
-            //}
+            
+            
+                
+                
+                        
+                
+                    
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.977 -0400", hash_original_method = "FD0036F1377269974D72D9C2BC2EFAA3", hash_generated_method = "F02CCF038B9E4EDB03DB5EB9E9F787A0")
         private EasyEditSpan getSpan(Spanned spanned) {
-            EasyEditSpan varB4EAC82CA7396A68D541C85D26508E83_2000609222 = null; //Variable for return #1
-            EasyEditSpan varB4EAC82CA7396A68D541C85D26508E83_1292604388 = null; //Variable for return #2
+            EasyEditSpan varB4EAC82CA7396A68D541C85D26508E83_2000609222 = null; 
+            EasyEditSpan varB4EAC82CA7396A68D541C85D26508E83_1292604388 = null; 
             EasyEditSpan[] easyEditSpans = spanned.getSpans(0, spanned.length(),
                     EasyEditSpan.class);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_2000609222 = null;
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1292604388 = easyEditSpans[0];
-            } //End block
+            } 
             addTaint(spanned.getTaint());
-            EasyEditSpan varA7E53CE21691AB073D9660D615818899_406235807; //Final return value
+            EasyEditSpan varA7E53CE21691AB073D9660D615818899_406235807; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_406235807 = varB4EAC82CA7396A68D541C85D26508E83_2000609222;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_406235807 = varB4EAC82CA7396A68D541C85D26508E83_1292604388;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_406235807.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_406235807.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_406235807;
-            // ---------- Original Method ----------
-            //EasyEditSpan[] easyEditSpans = spanned.getSpans(0, spanned.length(),
-                    //EasyEditSpan.class);
-            //if (easyEditSpans.length == 0) {
-                //return null;
-            //} else {
-                //return easyEditSpans[0];
-            //}
+            
+            
+                    
+            
+                
+            
+                
+            
         }
 
         
@@ -11620,7 +11620,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.977 -0400", hash_original_method = "8F35ACDDC3336F80EA4BC14F76358073", hash_generated_method = "8F35ACDDC3336F80EA4BC14F76358073")
         public EasyEditPopupWindow ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -11631,11 +11631,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     com.android.internal.R.attr.textSelectHandleWindowStyle);
             mPopupWindow.setInputMethodMode(PopupWindow.INPUT_METHOD_NOT_NEEDED);
             mPopupWindow.setClippingEnabled(true);
-            // ---------- Original Method ----------
-            //mPopupWindow = new PopupWindow(TextView.this.mContext, null,
-                    //com.android.internal.R.attr.textSelectHandleWindowStyle);
-            //mPopupWindow.setInputMethodMode(PopupWindow.INPUT_METHOD_NOT_NEEDED);
-            //mPopupWindow.setClippingEnabled(true);
+            
+            
+                    
+            
+            
         }
 
         
@@ -11656,8 +11656,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             mDeleteTextView.setText(com.android.internal.R.string.delete);
             mDeleteTextView.setOnClickListener(this);
             mContentView.addView(mDeleteTextView);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -11665,34 +11665,34 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         public void show(EasyEditSpan easyEditSpan) {
             mEasyEditSpan = easyEditSpan;
             super.show();
-            // ---------- Original Method ----------
-            //mEasyEditSpan = easyEditSpan;
-            //super.show();
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.978 -0400", hash_original_method = "C063208218D3B6E27F261A5578D5D2B9", hash_generated_method = "3602D49F1F67871F65EDF5323582F338")
         @Override
         public void onClick(View view) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 Editable editable = (Editable) mText;
                 int start = editable.getSpanStart(mEasyEditSpan);
                 int end = editable.getSpanEnd(mEasyEditSpan);
                 {
                     deleteText_internal(start, end);
-                } //End block
-            } //End block
+                } 
+            } 
             addTaint(view.getTaint());
-            // ---------- Original Method ----------
-            //if (view == mDeleteTextView) {
-                //Editable editable = (Editable) mText;
-                //int start = editable.getSpanStart(mEasyEditSpan);
-                //int end = editable.getSpanEnd(mEasyEditSpan);
-                //if (start >= 0 && end >= 0) {
-                    //deleteText_internal(start, end);
-                //}
-            //}
+            
+            
+                
+                
+                
+                
+                    
+                
+            
         }
 
         
@@ -11703,9 +11703,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             int var250A5466B0BCD45EA6B6F640A95FFADA_1650969763 = (editable.getSpanEnd(mEasyEditSpan));
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1926811154 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1926811154;
-            // ---------- Original Method ----------
-            //Editable editable = (Editable) mText;
-            //return editable.getSpanEnd(mEasyEditSpan);
+            
+            
+            
         }
 
         
@@ -11716,8 +11716,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             addTaint(line);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1183102153 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1183102153;
-            // ---------- Original Method ----------
-            //return mLayout.getLineBottom(line);
+            
+            
         }
 
         
@@ -11727,8 +11727,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             addTaint(positionY);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1127068075 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1127068075;
-            // ---------- Original Method ----------
-            //return positionY;
+            
+            
         }
 
         
@@ -11750,8 +11750,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.980 -0400", hash_original_method = "41973225A14E12423F2683848135C141", hash_generated_method = "ACD55DB72B049A56A0B6E74650948667")
         private  ChangeWatcher() {
             mEasyEditSpanController = new EasyEditSpanController();
-            // ---------- Original Method ----------
-            //mEasyEditSpanController = new EasyEditSpanController();
+            
+            
         }
 
         
@@ -11764,28 +11764,28 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     && !hasPasswordTransformationMethod());
                 {
                     mBeforeText = buffer.toString();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             TextView.this.sendBeforeTextChanged(buffer, start, before, after);
             addTaint(start);
             addTaint(before);
             addTaint(after);
-            // ---------- Original Method ----------
-            //if (DEBUG_EXTRACT) Log.v(LOG_TAG, "beforeTextChanged start=" + start
-                    //+ " before=" + before + " after=" + after + ": " + buffer);
-            //if (AccessibilityManager.getInstance(mContext).isEnabled()
-                    //&& !isPasswordInputType(mInputType)
-                    //&& !hasPasswordTransformationMethod()) {
-                //mBeforeText = buffer.toString();
-            //}
-            //TextView.this.sendBeforeTextChanged(buffer, start, before, after);
+            
+            
+                    
+            
+                    
+                    
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.981 -0400", hash_original_method = "94F338CF670251E301395B1B01A5E75A", hash_generated_method = "288727809B23F86CD8CE4F360236197B")
         public void onTextChanged(CharSequence buffer, int start,
                                   int before, int after) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             TextView.this.handleTextChanged(buffer, start, before, after);
             mEasyEditSpanController.onTextChange(buffer);
             {
@@ -11794,22 +11794,22 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 {
                     sendAccessibilityEventTypeViewTextChanged(mBeforeText, start, before, after);
                     mBeforeText = null;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(buffer.getTaint());
             addTaint(start);
             addTaint(before);
             addTaint(after);
-            // ---------- Original Method ----------
-            //if (DEBUG_EXTRACT) Log.v(LOG_TAG, "onTextChanged start=" + start
-                    //+ " before=" + before + " after=" + after + ": " + buffer);
-            //TextView.this.handleTextChanged(buffer, start, before, after);
-            //mEasyEditSpanController.onTextChange(buffer);
-            //if (AccessibilityManager.getInstance(mContext).isEnabled() &&
-                    //(isFocused() || isSelected() && isShown())) {
-                //sendAccessibilityEventTypeViewTextChanged(mBeforeText, start, before, after);
-                //mBeforeText = null;
-            //}
+            
+            
+                    
+            
+            
+            
+                    
+                
+                
+            
         }
 
         
@@ -11820,22 +11820,22 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 boolean varD9AAC580C15E35EE8A21660BC6977A2B_276188190 = (MetaKeyKeyListener.getMetaState(buffer, MetaKeyKeyListener.META_SELECTING) != 0);
                 {
                     MetaKeyKeyListener.stopSelecting(TextView.this, buffer);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(buffer.getTaint());
-            // ---------- Original Method ----------
-            //if (DEBUG_EXTRACT) Log.v(LOG_TAG, "afterTextChanged: " + buffer);
-            //TextView.this.sendAfterTextChanged(buffer);
-            //if (MetaKeyKeyListener.getMetaState(buffer, MetaKeyKeyListener.META_SELECTING) != 0) {
-                //MetaKeyKeyListener.stopSelecting(TextView.this, buffer);
-            //}
+            
+            
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.982 -0400", hash_original_method = "6F9EDB470C5AD5F1E23596AFEC700ED3", hash_generated_method = "B7F6FF672D019D3885D6E7BE0DED86AB")
         public void onSpanChanged(Spannable buf,
                                   Object what, int s, int e, int st, int en) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             TextView.this.spanChange(buf, what, s, st, e, en);
             addTaint(buf.getTaint());
             addTaint(what.getTaint());
@@ -11843,48 +11843,48 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             addTaint(e);
             addTaint(st);
             addTaint(en);
-            // ---------- Original Method ----------
-            //if (DEBUG_EXTRACT) Log.v(LOG_TAG, "onSpanChanged s=" + s + " e=" + e
-                    //+ " st=" + st + " en=" + en + " what=" + what + ": " + buf);
-            //TextView.this.spanChange(buf, what, s, st, e, en);
+            
+            
+                    
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.983 -0400", hash_original_method = "B2A75CCE31AAD63896365B7E450A433A", hash_generated_method = "28579E6C19D5D69D3CDB51F823A3EE03")
         public void onSpanAdded(Spannable buf, Object what, int s, int e) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             TextView.this.spanChange(buf, what, -1, s, -1, e);
             addTaint(buf.getTaint());
             addTaint(what.getTaint());
             addTaint(s);
             addTaint(e);
-            // ---------- Original Method ----------
-            //if (DEBUG_EXTRACT) Log.v(LOG_TAG, "onSpanAdded s=" + s + " e=" + e
-                    //+ " what=" + what + ": " + buf);
-            //TextView.this.spanChange(buf, what, -1, s, -1, e);
+            
+            
+                    
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.984 -0400", hash_original_method = "11DC5396F5D4F6210F8F1D677B03B553", hash_generated_method = "F5A56804D6D5F23A672E7B91E296AC47")
         public void onSpanRemoved(Spannable buf, Object what, int s, int e) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             TextView.this.spanChange(buf, what, s, -1, e, -1);
             addTaint(buf.getTaint());
             addTaint(what.getTaint());
             addTaint(s);
             addTaint(e);
-            // ---------- Original Method ----------
-            //if (DEBUG_EXTRACT) Log.v(LOG_TAG, "onSpanRemoved s=" + s + " e=" + e
-                    //+ " what=" + what + ": " + buf);
-            //TextView.this.spanChange(buf, what, s, -1, e, -1);
+            
+            
+                    
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.984 -0400", hash_original_method = "FB97DDA9E5EB9C645F7C42D5DCEE1A36", hash_generated_method = "E6D7B22DFBEA218F7C05A2FD98CE4F0E")
         private void hideControllers() {
             mEasyEditSpanController.hide();
-            // ---------- Original Method ----------
-            //mEasyEditSpanController.hide();
+            
+            
         }
 
         
@@ -11903,8 +11903,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.984 -0400", hash_original_method = "B3B341EB4735766A8EE81E50FC9FCC5D", hash_generated_method = "AC11D259FD065166E4248B5E715529DE")
         public  Blink(TextView v) {
             mView = new WeakReference<TextView>(v);
-            // ---------- Original Method ----------
-            //mView = new WeakReference<TextView>(v);
+            
+            
         }
 
         
@@ -11917,22 +11917,22 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 {
                     {
                         tv.invalidateCursorPath();
-                    } //End block
+                    } 
                     postAtTime(this, SystemClock.uptimeMillis() + BLINK);
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //if (mCancelled) {
-                //return;
-            //}
-            //removeCallbacks(Blink.this);
-            //TextView tv = mView.get();
-            //if (tv != null && tv.shouldBlink()) {
-                //if (tv.mLayout != null) {
-                    //tv.invalidateCursorPath();
-                //}
-                //postAtTime(this, SystemClock.uptimeMillis() + BLINK);
-            //}
+                } 
+            } 
+            
+            
+                
+            
+            
+            
+            
+                
+                    
+                
+                
+            
         }
 
         
@@ -11941,20 +11941,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             {
                 removeCallbacks(Blink.this);
                 mCancelled = true;
-            } //End block
-            // ---------- Original Method ----------
-            //if (!mCancelled) {
-                //removeCallbacks(Blink.this);
-                //mCancelled = true;
-            //}
+            } 
+            
+            
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.985 -0400", hash_original_method = "A06944554EAF73141DA4277B06D0E2BD", hash_generated_method = "EA43542F6DD16B86D3EB9C7A9CB5E56B")
          void uncancel() {
             mCancelled = false;
-            // ---------- Original Method ----------
-            //mCancelled = false;
+            
+            
         }
 
         
@@ -11983,10 +11983,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             this.sourceTextView = sourceTextView;
             this.start = start;
             this.end = end;
-            // ---------- Original Method ----------
-            //this.sourceTextView = sourceTextView;
-            //this.start = start;
-            //this.end = end;
+            
+            
+            
+            
         }
 
         
@@ -12023,7 +12023,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.986 -0400", hash_original_method = "7156A70387EDCE5A8031F9E196BAE1E0", hash_generated_method = "7156A70387EDCE5A8031F9E196BAE1E0")
         public PositionListener ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -12033,7 +12033,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 updatePosition();
                 ViewTreeObserver vto = TextView.this.getViewTreeObserver();
                 vto.addOnPreDrawListener(this);
-            } //End block
+            } 
             int emptySlotIndex = -1;
             {
                 int i = 0;
@@ -12041,29 +12041,29 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     TextViewPositionListener listener = mPositionListeners[i];
                     {
                         emptySlotIndex = i;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             mPositionListeners[emptySlotIndex] = positionListener;
             mCanMove[emptySlotIndex] = canMove;
-            // ---------- Original Method ----------
-            //if (mNumberOfListeners == 0) {
-                //updatePosition();
-                //ViewTreeObserver vto = TextView.this.getViewTreeObserver();
-                //vto.addOnPreDrawListener(this);
-            //}
-            //int emptySlotIndex = -1;
-            //for (int i = 0; i < MAXIMUM_NUMBER_OF_LISTENERS; i++) {
-                //TextViewPositionListener listener = mPositionListeners[i];
-                //if (listener == positionListener) {
-                    //return;
-                //} else if (emptySlotIndex < 0 && listener == null) {
-                    //emptySlotIndex = i;
-                //}
-            //}
-            //mPositionListeners[emptySlotIndex] = positionListener;
-            //mCanMove[emptySlotIndex] = canMove;
-            //mNumberOfListeners++;
+            
+            
+                
+                
+                
+            
+            
+            
+                
+                
+                    
+                
+                    
+                
+            
+            
+            
+            
         }
 
         
@@ -12074,26 +12074,26 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 {
                     {
                         mPositionListeners[i] = null;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 ViewTreeObserver vto = TextView.this.getViewTreeObserver();
                 vto.removeOnPreDrawListener(this);
-            } //End block
+            } 
             addTaint(positionListener.getTaint());
-            // ---------- Original Method ----------
-            //for (int i = 0; i < MAXIMUM_NUMBER_OF_LISTENERS; i++) {
-                //if (mPositionListeners[i] == positionListener) {
-                    //mPositionListeners[i] = null;
-                    //mNumberOfListeners--;
-                    //break;
-                //}
-            //}
-            //if (mNumberOfListeners == 0) {
-                //ViewTreeObserver vto = TextView.this.getViewTreeObserver();
-                //vto.removeOnPreDrawListener(this);
-            //}
+            
+            
+                
+                    
+                    
+                    
+                
+            
+            
+                
+                
+            
         }
 
         
@@ -12101,8 +12101,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         public int getPositionX() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_685245872 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_685245872;
-            // ---------- Original Method ----------
-            //return mPositionX;
+            
+            
         }
 
         
@@ -12110,15 +12110,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         public int getPositionY() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1937037837 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1937037837;
-            // ---------- Original Method ----------
-            //return mPositionY;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.988 -0400", hash_original_method = "4634D6360837F07AB476144D9CD27591", hash_generated_method = "DDBF1026436B61D06D0C12D62C5B7892")
         @Override
         public boolean onPreDraw() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             updatePosition();
             {
                 int i = 0;
@@ -12128,26 +12128,26 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         {
                             positionListener.updatePosition(mPositionX, mPositionY,
                                 mPositionHasChanged, mScrollHasChanged);
-                        } //End block
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             mScrollHasChanged = false;
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_605655741 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_605655741;
-            // ---------- Original Method ----------
-            //updatePosition();
-            //for (int i = 0; i < MAXIMUM_NUMBER_OF_LISTENERS; i++) {
-                //if (mPositionHasChanged || mScrollHasChanged || mCanMove[i]) {
-                    //TextViewPositionListener positionListener = mPositionListeners[i];
-                    //if (positionListener != null) {
-                        //positionListener.updatePosition(mPositionX, mPositionY,
-                                //mPositionHasChanged, mScrollHasChanged);
-                    //}
-                //}
-            //}
-            //mScrollHasChanged = false;
-            //return true;
+            
+            
+            
+                
+                    
+                    
+                        
+                                
+                    
+                
+            
+            
+            
         }
 
         
@@ -12157,20 +12157,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             mPositionHasChanged = mTempCoords[0] != mPositionX || mTempCoords[1] != mPositionY;
             mPositionX = mTempCoords[0];
             mPositionY = mTempCoords[1];
-            // ---------- Original Method ----------
-            //TextView.this.getLocationInWindow(mTempCoords);
-            //mPositionHasChanged = mTempCoords[0] != mPositionX || mTempCoords[1] != mPositionY;
-            //mPositionX = mTempCoords[0];
-            //mPositionY = mTempCoords[1];
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.989 -0400", hash_original_method = "45AFA571A6FC9FC84FC093F1FB86DABC", hash_generated_method = "85B5F4ED6EC23E44740E0F696105857A")
         public void onScrollChanged() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mScrollHasChanged = true;
-            // ---------- Original Method ----------
-            //mScrollHasChanged = true;
+            
+            
         }
 
         
@@ -12203,16 +12203,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     ViewGroup.LayoutParams.WRAP_CONTENT);
             mContentView.setLayoutParams(wrapContent);
             mPopupWindow.setContentView(mContentView);
-            // ---------- Original Method ----------
-            //createPopupWindow();
-            //mPopupWindow.setWindowLayoutType(WindowManager.LayoutParams.TYPE_APPLICATION_SUB_PANEL);
-            //mPopupWindow.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
-            //mPopupWindow.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
-            //initContentView();
-            //LayoutParams wrapContent = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
-                    //ViewGroup.LayoutParams.WRAP_CONTENT);
-            //mContentView.setLayoutParams(wrapContent);
-            //mPopupWindow.setContentView(mContentView);
+            
+            
+            
+            
+            
+            
+            
+                    
+            
+            
         }
 
         
@@ -12237,11 +12237,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             computeLocalPosition();
             final PositionListener positionListener = TextView.this.getPositionListener();
             updatePosition(positionListener.getPositionX(), positionListener.getPositionY());
-            // ---------- Original Method ----------
-            //TextView.this.getPositionListener().addSubscriber(this, false );
-            //computeLocalPosition();
-            //final PositionListener positionListener = TextView.this.getPositionListener();
-            //updatePosition(positionListener.getPositionX(), positionListener.getPositionY());
+            
+            
+            
+            
+            
         }
 
         
@@ -12253,13 +12253,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                             View.MeasureSpec.AT_MOST),
                     View.MeasureSpec.makeMeasureSpec(displayMetrics.heightPixels,
                             View.MeasureSpec.AT_MOST));
-            // ---------- Original Method ----------
-            //final DisplayMetrics displayMetrics = mContext.getResources().getDisplayMetrics();
-            //mContentView.measure(
-                    //View.MeasureSpec.makeMeasureSpec(displayMetrics.widthPixels,
-                            //View.MeasureSpec.AT_MOST),
-                    //View.MeasureSpec.makeMeasureSpec(displayMetrics.heightPixels,
-                            //View.MeasureSpec.AT_MOST));
+            
+            
+            
+                    
+                            
+                    
+                            
         }
 
         
@@ -12273,15 +12273,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             final int line = mLayout.getLineForOffset(offset);
             mPositionY = getVerticalLocalPosition(line);
             mPositionY += viewportToContentVerticalOffset();
-            // ---------- Original Method ----------
-            //measureContent();
-            //final int width = mContentView.getMeasuredWidth();
-            //final int offset = getTextOffset();
-            //mPositionX = (int) (mLayout.getPrimaryHorizontal(offset) - width / 2.0f);
-            //mPositionX += viewportToContentHorizontalOffset();
-            //final int line = mLayout.getLineForOffset(offset);
-            //mPositionY = getVerticalLocalPosition(line);
-            //mPositionY += viewportToContentVerticalOffset();
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -12298,28 +12298,28 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 boolean varC328115627DFB8318D2C3484959F5057_1712716038 = (isShowing());
                 {
                     mPopupWindow.update(positionX, positionY, -1, -1);
-                } //End block
+                } 
                 {
                     mPopupWindow.showAtLocation(TextView.this, Gravity.NO_GRAVITY,
                         positionX, positionY);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(parentPositionX);
             addTaint(parentPositionY);
-            // ---------- Original Method ----------
-            //int positionX = parentPositionX + mPositionX;
-            //int positionY = parentPositionY + mPositionY;
-            //positionY = clipVertically(positionY);
-            //final DisplayMetrics displayMetrics = mContext.getResources().getDisplayMetrics();
-            //final int width = mContentView.getMeasuredWidth();
-            //positionX = Math.min(displayMetrics.widthPixels - width, positionX);
-            //positionX = Math.max(0, positionX);
-            //if (isShowing()) {
-                //mPopupWindow.update(positionX, positionY, -1, -1);
-            //} else {
-                //mPopupWindow.showAtLocation(TextView.this, Gravity.NO_GRAVITY,
-                        //positionX, positionY);
-            //}
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+            
+                
+                        
+            
         }
 
         
@@ -12327,9 +12327,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         public void hide() {
             mPopupWindow.dismiss();
             TextView.this.getPositionListener().removeSubscriber(this);
-            // ---------- Original Method ----------
-            //mPopupWindow.dismiss();
-            //TextView.this.getPositionListener().removeSubscriber(this);
+            
+            
+            
         }
 
         
@@ -12342,22 +12342,22 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 {
                     computeLocalPosition();
                     updatePosition(parentPositionX, parentPositionY);
-                } //End block
+                } 
                 {
                     hide();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(parentPositionX);
             addTaint(parentPositionY);
             addTaint(parentPositionChanged);
             addTaint(parentScrolled);
-            // ---------- Original Method ----------
-            //if (isShowing() && isOffsetVisible(getTextOffset())) {
-                //if (parentScrolled) computeLocalPosition();
-                //updatePosition(parentPositionX, parentPositionY);
-            //} else {
-                //hide();
-            //}
+            
+            
+                
+                
+            
+                
+            
         }
 
         
@@ -12366,8 +12366,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             boolean varDAFC67E962E4584ADE09C9440ED4C8A8_1408438063 = (mPopupWindow.isShowing());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_663298840 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_663298840;
-            // ---------- Original Method ----------
-            //return mPopupWindow.isShowing();
+            
+            
         }
 
         
@@ -12403,10 +12403,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             mCursorWasVisibleBeforeSuggestions = mCursorVisible;
             mSuggestionSpanComparator = new SuggestionSpanComparator();
             mSpansLengths = new HashMap<SuggestionSpan, Integer>();
-            // ---------- Original Method ----------
-            //mCursorWasVisibleBeforeSuggestions = mCursorVisible;
-            //mSuggestionSpanComparator = new SuggestionSpanComparator();
-            //mSpansLengths = new HashMap<SuggestionSpan, Integer>();
+            
+            
+            
+            
         }
 
         
@@ -12418,12 +12418,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             mPopupWindow.setInputMethodMode(PopupWindow.INPUT_METHOD_NOT_NEEDED);
             mPopupWindow.setFocusable(true);
             mPopupWindow.setClippingEnabled(false);
-            // ---------- Original Method ----------
-            //mPopupWindow = new CustomPopupWindow(TextView.this.mContext,
-                //com.android.internal.R.attr.textSuggestionsWindowStyle);
-            //mPopupWindow.setInputMethodMode(PopupWindow.INPUT_METHOD_NOT_NEEDED);
-            //mPopupWindow.setFocusable(true);
-            //mPopupWindow.setClippingEnabled(false);
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -12440,18 +12440,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 int i = 0;
                 {
                     mSuggestionInfos[i] = new SuggestionInfo();
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //ListView listView = new ListView(TextView.this.getContext());
-            //mSuggestionsAdapter = new SuggestionAdapter();
-            //listView.setAdapter(mSuggestionsAdapter);
-            //listView.setOnItemClickListener(this);
-            //mContentView = listView;
-            //mSuggestionInfos = new SuggestionInfo[MAX_NUMBER_SUGGESTIONS + 2];
-            //for (int i = 0; i < mSuggestionInfos.length; i++) {
-                //mSuggestionInfos[i] = new SuggestionInfo();
-            //}
+                } 
+            } 
+            
+            
+            
+            
+            
+            
+            
+            
+                
+            
         }
 
         
@@ -12459,23 +12459,23 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         public boolean isShowingUp() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2075388434 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2075388434;
-            // ---------- Original Method ----------
-            //return mIsShowingUp;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.996 -0400", hash_original_method = "3914DCDC5DB3E14D1A1A163B7497EFBA", hash_generated_method = "CBD237ACC458BFEA613530AFCAFC26CB")
         public void onParentLostFocus() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mIsShowingUp = false;
-            // ---------- Original Method ----------
-            //mIsShowingUp = false;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.997 -0400", hash_original_method = "A21D81008594D05973BC33E2948715E2", hash_generated_method = "9C0B2EC454236D12FFEFE10AF48FC615")
         private SuggestionSpan[] getSuggestionSpans() {
-            SuggestionSpan[] varB4EAC82CA7396A68D541C85D26508E83_566618300 = null; //Variable for return #1
+            SuggestionSpan[] varB4EAC82CA7396A68D541C85D26508E83_566618300 = null; 
             int pos = TextView.this.getSelectionStart();
             Spannable spannable = (Spannable) TextView.this.mText;
             SuggestionSpan[] suggestionSpans = spannable.getSpans(pos, pos, SuggestionSpan.class);
@@ -12486,24 +12486,24 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     int start = spannable.getSpanStart(suggestionSpan);
                     int end = spannable.getSpanEnd(suggestionSpan);
                     mSpansLengths.put(suggestionSpan, Integer.valueOf(end - start));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             Arrays.sort(suggestionSpans, mSuggestionSpanComparator);
             varB4EAC82CA7396A68D541C85D26508E83_566618300 = suggestionSpans;
-            varB4EAC82CA7396A68D541C85D26508E83_566618300.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_566618300.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_566618300;
-            // ---------- Original Method ----------
-            //int pos = TextView.this.getSelectionStart();
-            //Spannable spannable = (Spannable) TextView.this.mText;
-            //SuggestionSpan[] suggestionSpans = spannable.getSpans(pos, pos, SuggestionSpan.class);
-            //mSpansLengths.clear();
-            //for (SuggestionSpan suggestionSpan : suggestionSpans) {
-                //int start = spannable.getSpanStart(suggestionSpan);
-                //int end = spannable.getSpanEnd(suggestionSpan);
-                //mSpansLengths.put(suggestionSpan, Integer.valueOf(end - start));
-            //}
-            //Arrays.sort(suggestionSpans, mSuggestionSpanComparator);
-            //return suggestionSpans;
+            
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            
+            
         }
 
         
@@ -12515,13 +12515,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             setCursorVisible(false);
             mIsShowingUp = true;
             super.show();
-            // ---------- Original Method ----------
-            //if (!(mText instanceof Editable)) return;
-            //updateSuggestions();
-            //mCursorWasVisibleBeforeSuggestions = mCursorVisible;
-            //setCursorVisible(false);
-            //mIsShowingUp = true;
-            //super.show();
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -12542,8 +12542,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     view.getLayoutParams().width = LayoutParams.WRAP_CONTENT;
                     view.measure(horizontalMeasure, verticalMeasure);
                     width = Math.max(width, view.getMeasuredWidth());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mContentView.measure(
                     View.MeasureSpec.makeMeasureSpec(width, View.MeasureSpec.EXACTLY),
                     verticalMeasure);
@@ -12552,10 +12552,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 mTempRect = new Rect();
                 popupBackground.getPadding(mTempRect);
                 width += mTempRect.left + mTempRect.right;
-            } //End block
+            } 
             mPopupWindow.setWidth(width);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -12565,8 +12565,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             int varBC8718B34213775E0E86386F1B689831_1749363155 = (getSelectionStart());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_179775187 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_179775187;
-            // ---------- Original Method ----------
-            //return getSelectionStart();
+            
+            
         }
 
         
@@ -12577,8 +12577,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             addTaint(line);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_578190425 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_578190425;
-            // ---------- Original Method ----------
-            //return mLayout.getLineBottom(line);
+            
+            
         }
 
         
@@ -12591,10 +12591,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             addTaint(positionY);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1643033483 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1643033483;
-            // ---------- Original Method ----------
-            //final int height = mContentView.getMeasuredHeight();
-            //final DisplayMetrics displayMetrics = mContext.getResources().getDisplayMetrics();
-            //return Math.min(positionY, displayMetrics.heightPixels - height);
+            
+            
+            
+            
         }
 
         
@@ -12602,8 +12602,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         @Override
         public void hide() {
             super.hide();
-            // ---------- Original Method ----------
-            //super.hide();
+            
+            
         }
 
         
@@ -12629,8 +12629,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         boolean var41ED7D23113F09082657F25EB9349901_371735705 = ((suggestionSpan.getFlags() & SuggestionSpan.FLAG_MISSPELLED) != 0);
                         {
                             misspelledSpan = suggestionSpan;
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     underlineColor = suggestionSpan.getUnderlineColor();
                     String[] suggestions = suggestionSpan.getSuggestions();
                     int nbSuggestions = suggestions.length;
@@ -12644,17 +12644,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                             suggestions[suggestionIndex]);
                             {
                                 spanIndex = nbSpans;
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             {
                 int i = 0;
                 {
                     highlightTextDifferences(mSuggestionInfos[i], spanUnionStart, spanUnionEnd);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 final int misspelledStart = spannable.getSpanStart(misspelledSpan);
                 final int misspelledEnd = spannable.getSpanEnd(misspelledSpan);
@@ -12666,8 +12666,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                             getContext().getString(com.android.internal.R.string.addToDictionary));
                     suggestionInfo.text.setSpan(suggestionInfo.highlightSpan, 0, 0,
                             Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                } //End block
-            } //End block
+                } 
+            } 
             SuggestionInfo suggestionInfo = mSuggestionInfos[mNumberOfSuggestions];
             suggestionInfo.suggestionSpan = null;
             suggestionInfo.suggestionIndex = DELETE_TEXT;
@@ -12678,18 +12678,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             mSuggestionRangeSpan = new SuggestionRangeSpan();
             {
                 mSuggestionRangeSpan.setBackgroundColor(mHighlightColor);
-            } //End block
+            } 
             {
                 final float BACKGROUND_TRANSPARENCY = 0.4f;
                 final int newAlpha = (int) (Color.alpha(underlineColor) * BACKGROUND_TRANSPARENCY);
                 mSuggestionRangeSpan.setBackgroundColor(
                         (underlineColor & 0x00FFFFFF) + (newAlpha << 24));
-            } //End block
+            } 
             spannable.setSpan(mSuggestionRangeSpan, spanUnionStart, spanUnionEnd,
                     Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
             mSuggestionsAdapter.notifyDataSetChanged();
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -12709,24 +12709,24 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             addTaint(suggestionInfo.getTaint());
             addTaint(unionStart);
             addTaint(unionEnd);
-            // ---------- Original Method ----------
-            //final Spannable text = (Spannable) mText;
-            //final int spanStart = text.getSpanStart(suggestionInfo.suggestionSpan);
-            //final int spanEnd = text.getSpanEnd(suggestionInfo.suggestionSpan);
-            //suggestionInfo.suggestionStart = spanStart - unionStart;
-            //suggestionInfo.suggestionEnd = suggestionInfo.suggestionStart 
-                    //+ suggestionInfo.text.length();
-            //suggestionInfo.text.setSpan(suggestionInfo.highlightSpan, 0,
-                    //suggestionInfo.text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-            //suggestionInfo.text.insert(0, mText.toString().substring(unionStart, spanStart));
-            //suggestionInfo.text.append(mText.toString().substring(spanEnd, unionEnd));
+            
+            
+            
+            
+            
+            
+                    
+            
+                    
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.005 -0400", hash_original_method = "73388536B046BC3C58C91A89E4930696", hash_generated_method = "5FCF6A41AB76E5C84A8E601BEBA2A142")
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             Editable editable = (Editable) mText;
             SuggestionInfo suggestionInfo = mSuggestionInfos[position];
             {
@@ -12740,17 +12740,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                             Character.isSpaceChar(editable.charAt(spanUnionStart - 1))));
                         {
                             spanUnionEnd = spanUnionEnd + 1;
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     deleteText_internal(spanUnionStart, spanUnionEnd);
-                } //End block
+                } 
                 hide();
-            } //End block
+            } 
             final int spanStart = editable.getSpanStart(suggestionInfo.suggestionSpan);
             final int spanEnd = editable.getSpanEnd(suggestionInfo.suggestionSpan);
             {
                 hide();
-            } //End block
+            } 
             final String originalText = mText.toString().substring(spanStart, spanEnd);
             {
                 Intent intent = new Intent(Settings.ACTION_USER_DICTIONARY_INSERT);
@@ -12760,7 +12760,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 getContext().startActivity(intent);
                 editable.removeSpan(suggestionInfo.suggestionSpan);
                 updateSpellCheckSpans(spanStart, spanEnd, false);
-            } //End block
+            } 
             {
                 SuggestionSpan[] suggestionSpans = editable.getSpans(spanStart, spanEnd,
                         SuggestionSpan.class);
@@ -12780,9 +12780,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                             suggestionSpanFlags &= ~SuggestionSpan.FLAG_MISSPELLED;
                             suggestionSpanFlags &= ~SuggestionSpan.FLAG_EASY_CORRECT;
                             suggestionSpan.setFlags(suggestionSpanFlags);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 final int suggestionStart = suggestionInfo.suggestionStart;
                 final int suggestionEnd = suggestionInfo.suggestionEnd;
                 final String suggestion = suggestionInfo.text.subSequence(
@@ -12796,9 +12796,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         {
                             imm.notifySuggestionPicked(suggestionInfo.suggestionSpan, originalText,
                                 suggestionInfo.suggestionIndex);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 String[] suggestions = suggestionInfo.suggestionSpan.getSuggestions();
                 suggestions[suggestionInfo.suggestionIndex] = originalText;
                 final int lengthDifference = suggestion.length() - (spanEnd - spanStart);
@@ -12808,19 +12808,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         {
                             setSpan_internal(suggestionSpans[i], suggestionSpansStarts[i],
                                 suggestionSpansEnds[i] + lengthDifference, suggestionSpansFlags[i]);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 final int newCursorPosition = spanEnd + lengthDifference;
                 setCursorPosition_internal(newCursorPosition, newCursorPosition);
-            } //End block
+            } 
             hide();
             addTaint(parent.getTaint());
             addTaint(view.getTaint());
             addTaint(position);
             addTaint(id);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -12831,7 +12831,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 super(context, null, defStyle);
                 addTaint(context.getTaint());
                 addTaint(defStyle);
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -12846,16 +12846,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     boolean var6A9CA976632F28E945987868EDCFC2A8_1637180176 = (hasInsertionController());
                     {
                         getInsertionController().show();
-                    } //End block
-                } //End collapsed parenthetic
-                // ---------- Original Method ----------
-                //super.dismiss();
-                //TextView.this.getPositionListener().removeSubscriber(SuggestionsPopupWindow.this);
-                //((Spannable) mText).removeSpan(mSuggestionRangeSpan);
-                //setCursorVisible(mCursorWasVisibleBeforeSuggestions);
-                //if (hasInsertionController()) {
-                    //getInsertionController().show(); 
-                //}
+                    } 
+                } 
+                
+                
+                
+                
+                
+                
+                    
+                
             }
 
             
@@ -12887,7 +12887,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.007 -0400", hash_original_method = "613563FC71224468A61688B0DDA11E74", hash_generated_method = "613563FC71224468A61688B0DDA11E74")
             public SuggestionInfo ()
             {
-                //Synthesized constructor
+                
             }
 
 
@@ -12904,7 +12904,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.007 -0400", hash_original_method = "56675D9229C135A53AD81FE91AEF2A02", hash_generated_method = "56675D9229C135A53AD81FE91AEF2A02")
             public SuggestionAdapter ()
             {
-                //Synthesized constructor
+                
             }
 
 
@@ -12913,21 +12913,21 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             public int getCount() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_521111245 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_521111245;
-                // ---------- Original Method ----------
-                //return mNumberOfSuggestions;
+                
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.008 -0400", hash_original_method = "AB9B090A0CFC1C7403BFB1F3A94BDE2B", hash_generated_method = "829DA74456D0DCF01FF6BDFDE7A3E8A7")
             @Override
             public Object getItem(int position) {
-                Object varB4EAC82CA7396A68D541C85D26508E83_460555095 = null; //Variable for return #1
+                Object varB4EAC82CA7396A68D541C85D26508E83_460555095 = null; 
                 varB4EAC82CA7396A68D541C85D26508E83_460555095 = mSuggestionInfos[position];
                 addTaint(position);
-                varB4EAC82CA7396A68D541C85D26508E83_460555095.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_460555095.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_460555095;
-                // ---------- Original Method ----------
-                //return mSuggestionInfos[position];
+                
+                
             }
 
             
@@ -12937,41 +12937,41 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 addTaint(position);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1199057398 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_1199057398;
-                // ---------- Original Method ----------
-                //return position;
+                
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.009 -0400", hash_original_method = "EB7381461F4FDD3A1934D144B2D8DE50", hash_generated_method = "B6C8B7EC9F44DF0EB4CC139ADDCA76B5")
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
-                View varB4EAC82CA7396A68D541C85D26508E83_1039722500 = null; //Variable for return #1
+                View varB4EAC82CA7396A68D541C85D26508E83_1039722500 = null; 
                 TextView textView = (TextView) convertView;
                 {
                     textView = (TextView) mInflater.inflate(mTextEditSuggestionItemLayout, parent,
                             false);
-                } //End block
+                } 
                 final SuggestionInfo suggestionInfo = mSuggestionInfos[position];
                 textView.setText(suggestionInfo.text);
                 {
                     textView.setCompoundDrawablesWithIntrinsicBounds(
                             com.android.internal.R.drawable.ic_suggestions_add, 0, 0, 0);
-                } //End block
+                } 
                 {
                     textView.setCompoundDrawablesWithIntrinsicBounds(
                             com.android.internal.R.drawable.ic_suggestions_delete, 0, 0, 0);
-                } //End block
+                } 
                 {
                     textView.setCompoundDrawables(null, null, null, null);
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_1039722500 = textView;
                 addTaint(position);
                 addTaint(convertView.getTaint());
                 addTaint(parent.getTaint());
-                varB4EAC82CA7396A68D541C85D26508E83_1039722500.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_1039722500.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_1039722500;
-                // ---------- Original Method ----------
-                // Original Method Too Long, Refer to Original Implementation
+                
+                
             }
 
             
@@ -12984,7 +12984,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.009 -0400", hash_original_method = "22EA00C20DD1AAEDCB1186FBD85A1C5E", hash_generated_method = "22EA00C20DD1AAEDCB1186FBD85A1C5E")
             public SuggestionSpanComparator ()
             {
-                //Synthesized constructor
+                
             }
 
 
@@ -12997,14 +12997,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     final boolean easy2 = (flag2 & SuggestionSpan.FLAG_EASY_CORRECT) != 0;
                     final boolean misspelled1 = (flag1 & SuggestionSpan.FLAG_MISSPELLED) != 0;
                     final boolean misspelled2 = (flag2 & SuggestionSpan.FLAG_MISSPELLED) != 0;
-                } //End block
+                } 
                 int var69AC0EE4C836195D7157808630CBE920_890597203 = (mSpansLengths.get(span1).intValue() - mSpansLengths.get(span2).intValue());
                 addTaint(span1.getTaint());
                 addTaint(span2.getTaint());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1294066150 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1294066150;
-                // ---------- Original Method ----------
-                // Original Method Too Long, Refer to Original Implementation
+                
+                
             }
 
             
@@ -13030,14 +13030,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.010 -0400", hash_original_method = "0A08C97F3CA872D86BD6FA2FC1044E6A", hash_generated_method = "0A08C97F3CA872D86BD6FA2FC1044E6A")
         public SelectionActionModeCallback ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.011 -0400", hash_original_method = "9BA90F93967180A852B2E5C718CC8322", hash_generated_method = "5D814E3E1EA8C090E30A08C890BBD617")
         @Override
         public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             TypedArray styledAttributes = mContext.obtainStyledAttributes(
                     com.android.internal.R.styleable.SelectionModeDrawables);
             boolean allowText = getContext().getResources().getBoolean(
@@ -13049,7 +13049,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             {
                 selectAllIconId = styledAttributes.getResourceId(
                         R.styleable.SelectionModeDrawables_actionModeSelectAllDrawable, 0);
-            } //End block
+            } 
             menu.add(0, ID_SELECT_ALL, 0, com.android.internal.R.string.selectAll).
                     setIcon(selectAllIconId).
                     setAlphabeticShortcut('a').
@@ -13064,8 +13064,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     setAlphabeticShortcut('x').
                     setShowAsAction(
                             MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var6AFF96D83000797E509C5DFB5D242F34_294291446 = (canCopy());
                 {
@@ -13075,8 +13075,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     setAlphabeticShortcut('c').
                     setShowAsAction(
                             MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean varE76E09F5D4A1A03C0560F618234DAA0E_1186283397 = (canPaste());
                 {
@@ -13086,92 +13086,92 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         setAlphabeticShortcut('v').
                         setShowAsAction(
                                 MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             styledAttributes.recycle();
             {
                 {
                     boolean var41AD4209F91C4824352554BD86D35AA9_312745801 = (!mCustomSelectionActionModeCallback.onCreateActionMode(mode, menu));
-                } //End collapsed parenthetic
-            } //End block
+                } 
+            } 
             {
                 boolean var7C369957434C066B84C56D449BD80D86_1239841286 = (menu.hasVisibleItems() || mode.getCustomView() != null);
                 {
                     getSelectionController().show();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(mode.getTaint());
             addTaint(menu.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_576384519 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_576384519;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.012 -0400", hash_original_method = "350C4916EAD271625C17FEEF1988576E", hash_generated_method = "49A38E8CEEC7BB6F65D5670A593484A7")
         @Override
         public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 boolean varADAB2DA7C682C9431AEBA3613F94A97B_945810196 = (mCustomSelectionActionModeCallback.onPrepareActionMode(mode, menu));
-            } //End block
+            } 
             addTaint(mode.getTaint());
             addTaint(menu.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1117795241 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1117795241;
-            // ---------- Original Method ----------
-            //if (mCustomSelectionActionModeCallback != null) {
-                //return mCustomSelectionActionModeCallback.onPrepareActionMode(mode, menu);
-            //}
-            //return true;
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.013 -0400", hash_original_method = "7EC2472DA1F2018FBE0DB5359E02217C", hash_generated_method = "4AC4ACDAE68F1938D4AE712CD0184674")
         @Override
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 boolean var6A3E1D5B368A4625952314ECA607D6A0_946015278 = (mCustomSelectionActionModeCallback != null &&
                  mCustomSelectionActionModeCallback.onActionItemClicked(mode, item));
-            } //End collapsed parenthetic
+            } 
             boolean varAAAC964C7BDBEAA3EC5B24BBD90E6008_962463047 = (onTextContextMenuItem(item.getItemId()));
             addTaint(mode.getTaint());
             addTaint(item.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_413541791 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_413541791;
-            // ---------- Original Method ----------
-            //if (mCustomSelectionActionModeCallback != null &&
-                 //mCustomSelectionActionModeCallback.onActionItemClicked(mode, item)) {
-                //return true;
-            //}
-            //return onTextContextMenuItem(item.getItemId());
+            
+            
+                 
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.014 -0400", hash_original_method = "E3DA233478038DA411461438FCA54906", hash_generated_method = "35DA069730D13C4BA80331090D96F4DF")
         @Override
         public void onDestroyActionMode(ActionMode mode) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 mCustomSelectionActionModeCallback.onDestroyActionMode(mode);
-            } //End block
+            } 
             Selection.setSelection((Spannable) mText, getSelectionEnd());
             {
                 mSelectionModifierCursorController.hide();
-            } //End block
+            } 
             mSelectionActionMode = null;
             addTaint(mode.getTaint());
-            // ---------- Original Method ----------
-            //if (mCustomSelectionActionModeCallback != null) {
-                //mCustomSelectionActionModeCallback.onDestroyActionMode(mode);
-            //}
-            //Selection.setSelection((Spannable) mText, getSelectionEnd());
-            //if (mSelectionModifierCursorController != null) {
-                //mSelectionModifierCursorController.hide();
-            //}
-            //mSelectionActionMode = null;
+            
+            
+                
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -13190,7 +13190,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.014 -0400", hash_original_method = "66BB2A1B8CD91C3CE44D6AD3A6EA951F", hash_generated_method = "66BB2A1B8CD91C3CE44D6AD3A6EA951F")
         public ActionPopupWindow ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -13200,10 +13200,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             mPopupWindow = new PopupWindow(TextView.this.mContext, null,
                     com.android.internal.R.attr.textSelectHandleWindowStyle);
             mPopupWindow.setClippingEnabled(true);
-            // ---------- Original Method ----------
-            //mPopupWindow = new PopupWindow(TextView.this.mContext, null,
-                    //com.android.internal.R.attr.textSelectHandleWindowStyle);
-            //mPopupWindow.setClippingEnabled(true);
+            
+            
+                    
+            
         }
 
         
@@ -13229,8 +13229,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             mContentView.addView(mReplaceTextView);
             mReplaceTextView.setText(com.android.internal.R.string.replace);
             mReplaceTextView.setOnClickListener(this);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -13242,44 +13242,44 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             mPasteTextView.setVisibility(canPaste ? View.VISIBLE : View.GONE);
             mReplaceTextView.setVisibility(canSuggest ? View.VISIBLE : View.GONE);
             super.show();
-            // ---------- Original Method ----------
-            //boolean canPaste = canPaste();
-            //boolean canSuggest = isSuggestionsEnabled() && isCursorInsideSuggestionSpan();
-            //mPasteTextView.setVisibility(canPaste ? View.VISIBLE : View.GONE);
-            //mReplaceTextView.setVisibility(canSuggest ? View.VISIBLE : View.GONE);
-            //if (!canPaste && !canSuggest) return;
-            //super.show();
+            
+            
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.016 -0400", hash_original_method = "35B6F06783189901121FFF5DA40FB852", hash_generated_method = "F0C2D081A4F902ADFF012E7C76BB5D4A")
         @Override
         public void onClick(View view) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 boolean var3F1B0BC67C85AC74E9CC7447E1F80F7C_18123367 = (view == mPasteTextView && canPaste());
                 {
                     onTextContextMenuItem(ID_PASTE);
                     hide();
-                } //End block
+                } 
                 {
                     final int middle = (getSelectionStart() + getSelectionEnd()) / 2;
                     stopSelectionActionMode();
                     Selection.setSelection((Spannable) mText, middle);
                     showSuggestions();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(view.getTaint());
-            // ---------- Original Method ----------
-            //if (view == mPasteTextView && canPaste()) {
-                //onTextContextMenuItem(ID_PASTE);
-                //hide();
-            //} else if (view == mReplaceTextView) {
-                //final int middle = (getSelectionStart() + getSelectionEnd()) / 2;
-                //stopSelectionActionMode();
-                //Selection.setSelection((Spannable) mText, middle);
-                //showSuggestions();
-            //}
+            
+            
+                
+                
+            
+                
+                
+                
+                
+            
         }
 
         
@@ -13289,8 +13289,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             int var3BEB3DEB1E2E3C75F7F6F972590B6F26_1621155271 = ((getSelectionStart() + getSelectionEnd()) / 2);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1126636993 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1126636993;
-            // ---------- Original Method ----------
-            //return (getSelectionStart() + getSelectionEnd()) / 2;
+            
+            
         }
 
         
@@ -13301,8 +13301,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             addTaint(line);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_448818446 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_448818446;
-            // ---------- Original Method ----------
-            //return mLayout.getLineTop(line) - mContentView.getMeasuredHeight();
+            
+            
         }
 
         
@@ -13316,20 +13316,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 positionY += mContentView.getMeasuredHeight();
                 final Drawable handle = mContext.getResources().getDrawable(mTextSelectHandleRes);
                 positionY += handle.getIntrinsicHeight();
-            } //End block
+            } 
             addTaint(positionY);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_426333832 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_426333832;
-            // ---------- Original Method ----------
-            //if (positionY < 0) {
-                //final int offset = getTextOffset();
-                //final int line = mLayout.getLineForOffset(offset);
-                //positionY += mLayout.getLineBottom(line) - mLayout.getLineTop(line);
-                //positionY += mContentView.getMeasuredHeight();
-                //final Drawable handle = mContext.getResources().getDrawable(mTextSelectHandleRes);
-                //positionY += handle.getIntrinsicHeight();
-            //}
-            //return positionY;
+            
+            
+                
+                
+                
+                
+                
+                
+            
+            
         }
 
         
@@ -13423,19 +13423,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             final int handleHeight = mDrawable.getIntrinsicHeight();
             mTouchOffsetY = -0.3f * handleHeight;
             mIdealVerticalOffset = 0.7f * handleHeight;
-            // ---------- Original Method ----------
-            //mContainer = new PopupWindow(TextView.this.mContext, null,
-                    //com.android.internal.R.attr.textSelectHandleWindowStyle);
-            //mContainer.setSplitTouchEnabled(true);
-            //mContainer.setClippingEnabled(false);
-            //mContainer.setWindowLayoutType(WindowManager.LayoutParams.TYPE_APPLICATION_SUB_PANEL);
-            //mContainer.setContentView(this);
-            //mDrawableLtr = drawableLtr;
-            //mDrawableRtl = drawableRtl;
-            //updateDrawable();
-            //final int handleHeight = mDrawable.getIntrinsicHeight();
-            //mTouchOffsetY = -0.3f * handleHeight;
-            //mIdealVerticalOffset = 0.7f * handleHeight;
+            
+            
+                    
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -13445,11 +13445,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             final boolean isRtlCharAtOffset = mLayout.isRtlCharAt(offset);
             mDrawable = isRtlCharAtOffset ? mDrawableRtl : mDrawableLtr;
             mHotspotX = getHotspotX(mDrawable, isRtlCharAtOffset);
-            // ---------- Original Method ----------
-            //final int offset = getCurrentCursorOffset();
-            //final boolean isRtlCharAtOffset = mLayout.isRtlCharAt(offset);
-            //mDrawable = isRtlCharAtOffset ? mDrawableRtl : mDrawableLtr;
-            //mHotspotX = getHotspotX(mDrawable, isRtlCharAtOffset);
+            
+            
+            
+            
+            
         }
 
         
@@ -13461,9 +13461,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             mNumberPreviousOffsets = 0;
             addPositionToTouchUpFilter(offset);
             addTaint(offset);
-            // ---------- Original Method ----------
-            //mNumberPreviousOffsets = 0;
-            //addPositionToTouchUpFilter(offset);
+            
+            
+            
         }
 
         
@@ -13472,11 +13472,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             mPreviousOffsetIndex = (mPreviousOffsetIndex + 1) % HISTORY_SIZE;
             mPreviousOffsets[mPreviousOffsetIndex] = offset;
             mPreviousOffsetsTimes[mPreviousOffsetIndex] = SystemClock.uptimeMillis();
-            // ---------- Original Method ----------
-            //mPreviousOffsetIndex = (mPreviousOffsetIndex + 1) % HISTORY_SIZE;
-            //mPreviousOffsets[mPreviousOffsetIndex] = offset;
-            //mPreviousOffsetsTimes[mPreviousOffsetIndex] = SystemClock.uptimeMillis();
-            //mNumberPreviousOffsets++;
+            
+            
+            
+            
+            
         }
 
         
@@ -13488,23 +13488,23 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             final int iMax = Math.min(mNumberPreviousOffsets, HISTORY_SIZE);
             {
                 index = (mPreviousOffsetIndex - i + HISTORY_SIZE) % HISTORY_SIZE;
-            } //End block
+            } 
             {
                 positionAtCursorOffset(mPreviousOffsets[index], false);
-            } //End block
-            // ---------- Original Method ----------
-            //final long now = SystemClock.uptimeMillis();
-            //int i = 0;
-            //int index = mPreviousOffsetIndex;
-            //final int iMax = Math.min(mNumberPreviousOffsets, HISTORY_SIZE);
-            //while (i < iMax && (now - mPreviousOffsetsTimes[index]) < TOUCH_UP_FILTER_DELAY_AFTER) {
-                //i++;
-                //index = (mPreviousOffsetIndex - i + HISTORY_SIZE) % HISTORY_SIZE;
-            //}
-            //if (i > 0 && i < iMax &&
-                    //(now - mPreviousOffsetsTimes[index]) > TOUCH_UP_FILTER_DELAY_BEFORE) {
-                //positionAtCursorOffset(mPreviousOffsets[index], false);
-            //}
+            } 
+            
+            
+            
+            
+            
+            
+                
+                
+            
+            
+                    
+                
+            
         }
 
         
@@ -13512,20 +13512,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         public boolean offsetHasBeenChanged() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1036715574 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1036715574;
-            // ---------- Original Method ----------
-            //return mNumberPreviousOffsets > 1;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.021 -0400", hash_original_method = "F1B9B11E208A14EF1A8385C794E8615A", hash_generated_method = "CF96AEC91DE3DD70D8E0E3B03CA85D93")
         @Override
         protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             setMeasuredDimension(mDrawable.getIntrinsicWidth(), mDrawable.getIntrinsicHeight());
             addTaint(widthMeasureSpec);
             addTaint(heightMeasureSpec);
-            // ---------- Original Method ----------
-            //setMeasuredDimension(mDrawable.getIntrinsicWidth(), mDrawable.getIntrinsicHeight());
+            
+            
         }
 
         
@@ -13533,17 +13533,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         public void show() {
             {
                 boolean varC328115627DFB8318D2C3484959F5057_383895153 = (isShowing());
-            } //End collapsed parenthetic
+            } 
             getPositionListener().addSubscriber(this, true );
             mPreviousOffset = -1;
             positionAtCursorOffset(getCurrentCursorOffset(), false);
             hideActionPopupWindow();
-            // ---------- Original Method ----------
-            //if (isShowing()) return;
-            //getPositionListener().addSubscriber(this, true );
-            //mPreviousOffset = -1;
-            //positionAtCursorOffset(getCurrentCursorOffset(), false);
-            //hideActionPopupWindow();
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -13552,10 +13552,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             mIsDragging = false;
             mContainer.dismiss();
             onDetached();
-            // ---------- Original Method ----------
-            //mIsDragging = false;
-            //mContainer.dismiss();
-            //onDetached();
+            
+            
+            
+            
         }
 
         
@@ -13563,9 +13563,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         public void hide() {
             dismiss();
             TextView.this.getPositionListener().removeSubscriber(this);
-            // ---------- Original Method ----------
-            //dismiss();
-            //TextView.this.getPositionListener().removeSubscriber(this);
+            
+            
+            
         }
 
         
@@ -13573,36 +13573,36 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
          void showActionPopupWindow(int delay) {
             {
                 mActionPopupWindow = new ActionPopupWindow();
-            } //End block
+            } 
             {
                 mActionPopupShower = new Runnable() {                    
                     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.024 -0400", hash_original_method = "3DEF90E085B5D89C941B0ED88F0DC7FD", hash_generated_method = "0FD34D73BCA925EC1AF406DCBE797EF5")
                     public void run() {
                         mActionPopupWindow.show();
-                        // ---------- Original Method ----------
-                        //mActionPopupWindow.show();
+                        
+                        
                     }
 };
-            } //End block
+            } 
             {
                 TextView.this.removeCallbacks(mActionPopupShower);
-            } //End block
+            } 
             TextView.this.postDelayed(mActionPopupShower, delay);
             addTaint(delay);
-            // ---------- Original Method ----------
-            //if (mActionPopupWindow == null) {
-                //mActionPopupWindow = new ActionPopupWindow();
-            //}
-            //if (mActionPopupShower == null) {
-                //mActionPopupShower = new Runnable() {
-                    //public void run() {
-                        //mActionPopupWindow.show();
-                    //}
-                //};
-            //} else {
-                //TextView.this.removeCallbacks(mActionPopupShower);
-            //}
-            //TextView.this.postDelayed(mActionPopupShower, delay);
+            
+            
+                
+            
+            
+                
+                    
+                        
+                    
+                
+            
+                
+            
+            
         }
 
         
@@ -13610,17 +13610,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         protected void hideActionPopupWindow() {
             {
                 TextView.this.removeCallbacks(mActionPopupShower);
-            } //End block
+            } 
             {
                 mActionPopupWindow.hide();
-            } //End block
-            // ---------- Original Method ----------
-            //if (mActionPopupShower != null) {
-                //TextView.this.removeCallbacks(mActionPopupShower);
-            //}
-            //if (mActionPopupWindow != null) {
-                //mActionPopupWindow.hide();
-            //}
+            } 
+            
+            
+                
+            
+            
+                
+            
         }
 
         
@@ -13629,8 +13629,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             boolean var150C3AF6C0593C2D596AE332D213A317_1066010563 = (mContainer.isShowing());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_550548625 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_550548625;
-            // ---------- Original Method ----------
-            //return mContainer.isShowing();
+            
+            
         }
 
         
@@ -13638,18 +13638,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         private boolean isVisible() {
             {
                 boolean var50BDB7CF84FD9415E39B194F38BCA676_1411774480 = (isInBatchEditMode());
-            } //End collapsed parenthetic
+            } 
             boolean varFDA4E5DACCCE5BDB1C7FF02945B0CF5E_614794789 = (TextView.this.isPositionVisible(mPositionX + mHotspotX, mPositionY));
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_711718719 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_711718719;
-            // ---------- Original Method ----------
-            //if (mIsDragging) {
-                //return true;
-            //}
-            //if (isInBatchEditMode()) {
-                //return false;
-            //}
-            //return TextView.this.isPositionVisible(mPositionX + mHotspotX, mPositionY);
+            
+            
+                
+            
+            
+                
+            
+            
         }
 
         
@@ -13666,7 +13666,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         protected void positionAtCursorOffset(int offset, boolean parentScrolled) {
             {
                 prepareCursorControllers();
-            } //End block
+            } 
             {
                 updateSelection(offset);
                 addPositionToTouchUpFilter(offset);
@@ -13677,24 +13677,24 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 mPositionY += viewportToContentVerticalOffset();
                 mPreviousOffset = offset;
                 mPositionHasChanged = true;
-            } //End block
+            } 
             addTaint(parentScrolled);
-            // ---------- Original Method ----------
-            //if (mLayout == null) {
-                //prepareCursorControllers();
-                //return;
-            //}
-            //if (offset != mPreviousOffset || parentScrolled) {
-                //updateSelection(offset);
-                //addPositionToTouchUpFilter(offset);
-                //final int line = mLayout.getLineForOffset(offset);
-                //mPositionX = (int) (mLayout.getPrimaryHorizontal(offset) - 0.5f - mHotspotX);
-                //mPositionY = mLayout.getLineBottom(line);
-                //mPositionX += viewportToContentHorizontalOffset();
-                //mPositionY += viewportToContentVerticalOffset();
-                //mPreviousOffset = offset;
-                //mPositionHasChanged = true;
-            //}
+            
+            
+                
+                
+            
+            
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            
         }
 
         
@@ -13709,9 +13709,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         mTouchToWindowOffsetY += parentPositionY - mLastParentY;
                         mLastParentX = parentPositionX;
                         mLastParentY = parentPositionY;
-                    } //End block
+                    } 
                     onHandleMoved();
-                } //End block
+                } 
                 {
                     boolean varFF8AC1520C23E15E72910D87BF05E9DD_577371601 = (isVisible());
                     {
@@ -13721,51 +13721,51 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                             boolean varAD9BB22364C576DF82257324184E3F6D_1009678071 = (isShowing());
                             {
                                 mContainer.update(positionX, positionY, -1, -1);
-                            } //End block
+                            } 
                             {
                                 mContainer.showAtLocation(TextView.this, Gravity.NO_GRAVITY,
                                 positionX, positionY);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     {
                         {
                             boolean varAD9BB22364C576DF82257324184E3F6D_416130936 = (isShowing());
                             {
                                 dismiss();
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
                 mPositionHasChanged = false;
-            } //End block
+            } 
             addTaint(parentPositionChanged);
             addTaint(parentScrolled);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.028 -0400", hash_original_method = "F8254677C35EEC48CDE0AC0DA5BFAEC5", hash_generated_method = "EE1E3C7D453F31149D17A4CF7877565A")
         @Override
         protected void onDraw(Canvas c) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mDrawable.setBounds(0, 0, mRight - mLeft, mBottom - mTop);
             mDrawable.draw(c);
             addTaint(c.getTaint());
-            // ---------- Original Method ----------
-            //mDrawable.setBounds(0, 0, mRight - mLeft, mBottom - mTop);
-            //mDrawable.draw(c);
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.029 -0400", hash_original_method = "AFDBACCAFCABC81309AB0079A4EAD49F", hash_generated_method = "4DD31CFD453ABADA2C77BD1BC9DD4F74")
         @Override
         public boolean onTouchEvent(MotionEvent ev) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 Object var373A6BAE1146FCFC2FEA12BA752DB0E2_1415380079 = (ev.getActionMasked());
-                //Begin case MotionEvent.ACTION_DOWN 
+                
                 {
                     startTouchUpFilter(getCurrentCursorOffset());
                     mTouchToWindowOffsetX = ev.getRawX() - mPositionX;
@@ -13774,9 +13774,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     mLastParentX = positionListener.getPositionX();
                     mLastParentY = positionListener.getPositionY();
                     mIsDragging = true;
-                } //End block
-                //End case MotionEvent.ACTION_DOWN 
-                //Begin case MotionEvent.ACTION_MOVE 
+                } 
+                
+                
                 {
                     final float rawX = ev.getRawX();
                     final float rawY = ev.getRawY();
@@ -13786,31 +13786,31 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     {
                         newVerticalOffset = Math.min(currentVerticalOffset, mIdealVerticalOffset);
                         newVerticalOffset = Math.max(newVerticalOffset, previousVerticalOffset);
-                    } //End block
+                    } 
                     {
                         newVerticalOffset = Math.max(currentVerticalOffset, mIdealVerticalOffset);
                         newVerticalOffset = Math.min(newVerticalOffset, previousVerticalOffset);
-                    } //End block
+                    } 
                     mTouchToWindowOffsetY = newVerticalOffset + mLastParentY;
                     final float newPosX = rawX - mTouchToWindowOffsetX + mHotspotX;
                     final float newPosY = rawY - mTouchToWindowOffsetY + mTouchOffsetY;
                     updatePosition(newPosX, newPosY);
-                } //End block
-                //End case MotionEvent.ACTION_MOVE 
-                //Begin case MotionEvent.ACTION_UP 
+                } 
+                
+                
                 filterOnTouchUp();
-                //End case MotionEvent.ACTION_UP 
-                //Begin case MotionEvent.ACTION_UP 
+                
+                
                 mIsDragging = false;
-                //End case MotionEvent.ACTION_UP 
-                //Begin case MotionEvent.ACTION_CANCEL 
+                
+                
                 mIsDragging = false;
-                //End case MotionEvent.ACTION_CANCEL 
-            } //End collapsed parenthetic
+                
+            } 
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_338050455 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_338050455;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -13818,26 +13818,26 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         public boolean isDragging() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1373683122 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1373683122;
-            // ---------- Original Method ----------
-            //return mIsDragging;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.029 -0400", hash_original_method = "5C16B6634DA5CEF817B70D10C5EDCDFD", hash_generated_method = "2D666D5FB7EA2FA5400262CA3F1C8A1F")
          void onHandleMoved() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             hideActionPopupWindow();
-            // ---------- Original Method ----------
-            //hideActionPopupWindow();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.030 -0400", hash_original_method = "0744EFF256BE5CA55B7C747C6AB06865", hash_generated_method = "07B6D1B0BEF9A03B240C16C543BA4B2F")
         public void onDetached() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             hideActionPopupWindow();
-            // ---------- Original Method ----------
-            //hideActionPopupWindow();
+            
+            
         }
 
         
@@ -13869,7 +13869,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         public  InsertionHandleView(Drawable drawable) {
             super(drawable, drawable);
             addTaint(drawable.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -13880,15 +13880,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             final long durationSinceCutOrCopy = SystemClock.uptimeMillis() - sLastCutOrCopyTime;
             {
                 showActionPopupWindow(0);
-            } //End block
+            } 
             hideAfterDelay();
-            // ---------- Original Method ----------
-            //super.show();
-            //final long durationSinceCutOrCopy = SystemClock.uptimeMillis() - sLastCutOrCopyTime;
-            //if (durationSinceCutOrCopy < RECENT_CUT_COPY_DURATION) {
-                //showActionPopupWindow(0);
-            //}
-            //hideAfterDelay();
+            
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -13896,9 +13896,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         public void showWithActionPopup() {
             show();
             showActionPopupWindow(0);
-            // ---------- Original Method ----------
-            //show();
-            //showActionPopupWindow(0);
+            
+            
+            
         }
 
         
@@ -13910,22 +13910,22 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.035 -0400", hash_original_method = "21815FA27ABEB649DED6A46E4F97905B", hash_generated_method = "2FF065C6B89057BF4ADFF6066462708E")
                     public void run() {
                         hide();
-                        // ---------- Original Method ----------
-                        //hide();
+                        
+                        
                     }
 };
-            } //End block
+            } 
             TextView.this.postDelayed(mHider, DELAY_BEFORE_HANDLE_FADES_OUT);
-            // ---------- Original Method ----------
-            //removeHiderCallback();
-            //if (mHider == null) {
-                //mHider = new Runnable() {
-                    //public void run() {
-                        //hide();
-                    //}
-                //};
-            //}
-            //TextView.this.postDelayed(mHider, DELAY_BEFORE_HANDLE_FADES_OUT);
+            
+            
+            
+                
+                    
+                        
+                    
+                
+            
+            
         }
 
         
@@ -13933,11 +13933,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         private void removeHiderCallback() {
             {
                 TextView.this.removeCallbacks(mHider);
-            } //End block
-            // ---------- Original Method ----------
-            //if (mHider != null) {
-                //TextView.this.removeCallbacks(mHider);
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
@@ -13949,25 +13949,25 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             addTaint(isRtlRun);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1294656552 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1294656552;
-            // ---------- Original Method ----------
-            //return drawable.getIntrinsicWidth() / 2;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.036 -0400", hash_original_method = "0786A2C72AD62CB255408C178910DEC1", hash_generated_method = "EADF8B4E2A93B0C691E330E47ADB7E78")
         @Override
         public boolean onTouchEvent(MotionEvent ev) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             final boolean result = super.onTouchEvent(ev);
             {
                 Object var373A6BAE1146FCFC2FEA12BA752DB0E2_184665843 = (ev.getActionMasked());
-                //Begin case MotionEvent.ACTION_DOWN 
+                
                 mDownPositionX = ev.getRawX();
-                //End case MotionEvent.ACTION_DOWN 
-                //Begin case MotionEvent.ACTION_DOWN 
+                
+                
                 mDownPositionY = ev.getRawY();
-                //End case MotionEvent.ACTION_DOWN 
-                //Begin case MotionEvent.ACTION_UP 
+                
+                
                 {
                     boolean varEEEFE49273E9B0F999D591B54BA07697_2017313592 = (!offsetHasBeenChanged());
                     {
@@ -13979,26 +13979,26 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                                 boolean var33D1446792CC339F933EE732A5EACA0F_606306758 = (mActionPopupWindow != null && mActionPopupWindow.isShowing());
                                 {
                                     mActionPopupWindow.hide();
-                                } //End block
+                                } 
                                 {
                                     showWithActionPopup();
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-                //End case MotionEvent.ACTION_UP 
-                //Begin case MotionEvent.ACTION_UP 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+                
+                
                 hideAfterDelay();
-                //End case MotionEvent.ACTION_UP 
-                //Begin case MotionEvent.ACTION_CANCEL 
+                
+                
                 hideAfterDelay();
-                //End case MotionEvent.ACTION_CANCEL 
-            } //End collapsed parenthetic
+                
+            } 
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1708010523 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1708010523;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -14008,8 +14008,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             int var3A0ADF979623B6D0242973915DBE6180_1910639111 = (TextView.this.getSelectionStart());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_406227732 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_406227732;
-            // ---------- Original Method ----------
-            //return TextView.this.getSelectionStart();
+            
+            
         }
 
         
@@ -14018,8 +14018,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         public void updateSelection(int offset) {
             Selection.setSelection((Spannable) mText, offset);
             addTaint(offset);
-            // ---------- Original Method ----------
-            //Selection.setSelection((Spannable) mText, offset);
+            
+            
         }
 
         
@@ -14029,32 +14029,32 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             positionAtCursorOffset(getOffsetForPosition(x, y), false);
             addTaint(x);
             addTaint(y);
-            // ---------- Original Method ----------
-            //positionAtCursorOffset(getOffsetForPosition(x, y), false);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.037 -0400", hash_original_method = "DF26232D8C6513289215597105F4C19A", hash_generated_method = "78394009F817C89807523E4EB6438C76")
         @Override
          void onHandleMoved() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             super.onHandleMoved();
             removeHiderCallback();
-            // ---------- Original Method ----------
-            //super.onHandleMoved();
-            //removeHiderCallback();
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.037 -0400", hash_original_method = "58D1696EBF955B571F830BA2F6EDC257", hash_generated_method = "8A539C8A229F23A70E85F98BCBADCFB1")
         @Override
         public void onDetached() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             super.onDetached();
             removeHiderCallback();
-            // ---------- Original Method ----------
-            //super.onDetached();
-            //removeHiderCallback();
+            
+            
+            
         }
 
         
@@ -14075,7 +14075,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             super(drawableLtr, drawableRtl);
             addTaint(drawableLtr.getTaint());
             addTaint(drawableRtl.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -14084,20 +14084,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         protected int getHotspotX(Drawable drawable, boolean isRtlRun) {
             {
                 int var825C3AB963C858F505D8A99BED9B8FB2_823292275 = (drawable.getIntrinsicWidth() / 4);
-            } //End block
+            } 
             {
                 int var2619A169F3B5A531F91E617BA41D1854_1269517931 = ((drawable.getIntrinsicWidth() * 3) / 4);
-            } //End block
+            } 
             addTaint(drawable.getTaint());
             addTaint(isRtlRun);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_17971217 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_17971217;
-            // ---------- Original Method ----------
-            //if (isRtlRun) {
-                //return drawable.getIntrinsicWidth() / 4;
-            //} else {
-                //return (drawable.getIntrinsicWidth() * 3) / 4;
-            //}
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -14107,8 +14107,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             int var3A0ADF979623B6D0242973915DBE6180_766457342 = (TextView.this.getSelectionStart());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1539810762 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1539810762;
-            // ---------- Original Method ----------
-            //return TextView.this.getSelectionStart();
+            
+            
         }
 
         
@@ -14118,9 +14118,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             Selection.setSelection((Spannable) mText, offset, getSelectionEnd());
             updateDrawable();
             addTaint(offset);
-            // ---------- Original Method ----------
-            //Selection.setSelection((Spannable) mText, offset, getSelectionEnd());
-            //updateDrawable();
+            
+            
+            
         }
 
         
@@ -14133,22 +14133,22 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             positionAtCursorOffset(offset, false);
             addTaint(x);
             addTaint(y);
-            // ---------- Original Method ----------
-            //int offset = getOffsetForPosition(x, y);
-            //final int selectionEnd = getSelectionEnd();
-            //if (offset >= selectionEnd) offset = Math.max(0, selectionEnd - 1);
-            //positionAtCursorOffset(offset, false);
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.039 -0400", hash_original_method = "0C631CE72876F998F945C3B67884BC26", hash_generated_method = "7B67CE105A855EA388EDC2F1D0D44C7D")
         public ActionPopupWindow getActionPopupWindow() {
-            ActionPopupWindow varB4EAC82CA7396A68D541C85D26508E83_1678911552 = null; //Variable for return #1
+            ActionPopupWindow varB4EAC82CA7396A68D541C85D26508E83_1678911552 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1678911552 = mActionPopupWindow;
-            varB4EAC82CA7396A68D541C85D26508E83_1678911552.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1678911552.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1678911552;
-            // ---------- Original Method ----------
-            //return mActionPopupWindow;
+            
+            
         }
 
         
@@ -14163,7 +14163,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             super(drawableLtr, drawableRtl);
             addTaint(drawableLtr.getTaint());
             addTaint(drawableRtl.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -14172,20 +14172,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         protected int getHotspotX(Drawable drawable, boolean isRtlRun) {
             {
                 int var2619A169F3B5A531F91E617BA41D1854_163403748 = ((drawable.getIntrinsicWidth() * 3) / 4);
-            } //End block
+            } 
             {
                 int var825C3AB963C858F505D8A99BED9B8FB2_1433805708 = (drawable.getIntrinsicWidth() / 4);
-            } //End block
+            } 
             addTaint(drawable.getTaint());
             addTaint(isRtlRun);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_547526184 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_547526184;
-            // ---------- Original Method ----------
-            //if (isRtlRun) {
-                //return (drawable.getIntrinsicWidth() * 3) / 4;
-            //} else {
-                //return drawable.getIntrinsicWidth() / 4;
-            //}
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -14195,8 +14195,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             int varA2E0C17AA3D1EB612E8CF0B487723C9B_2028397350 = (TextView.this.getSelectionEnd());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1134620416 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1134620416;
-            // ---------- Original Method ----------
-            //return TextView.this.getSelectionEnd();
+            
+            
         }
 
         
@@ -14206,9 +14206,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             Selection.setSelection((Spannable) mText, getSelectionStart(), offset);
             updateDrawable();
             addTaint(offset);
-            // ---------- Original Method ----------
-            //Selection.setSelection((Spannable) mText, getSelectionStart(), offset);
-            //updateDrawable();
+            
+            
+            
         }
 
         
@@ -14221,11 +14221,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             positionAtCursorOffset(offset, false);
             addTaint(x);
             addTaint(y);
-            // ---------- Original Method ----------
-            //int offset = getOffsetForPosition(x, y);
-            //final int selectionStart = getSelectionStart();
-            //if (offset <= selectionStart) offset = Math.min(selectionStart + 1, mText.length());
-            //positionAtCursorOffset(offset, false);
+            
+            
+            
+            
+            
         }
 
         
@@ -14233,8 +14233,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         public void setActionPopupWindow(ActionPopupWindow actionPopupWindow) {
             mActionPopupWindow = actionPopupWindow;
             addTaint(actionPopupWindow.getTaint());
-            // ---------- Original Method ----------
-            //mActionPopupWindow = actionPopupWindow;
+            
+            
         }
 
         
@@ -14250,23 +14250,23 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.042 -0400", hash_original_method = "85F6797FDF607C95B81DF68401917B00", hash_generated_method = "85F6797FDF607C95B81DF68401917B00")
         public InsertionPointCursorController ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.042 -0400", hash_original_method = "5D45AEF69914729B932C554DDDCEB4D3", hash_generated_method = "5EA31E88AA733E4213C40495380DD157")
         public void show() {
             getHandle().show();
-            // ---------- Original Method ----------
-            //getHandle().show();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.042 -0400", hash_original_method = "BEDA636D814D43341B0837622BB75D12", hash_generated_method = "16B9CF12A56CC458EBA14E68A570766E")
         public void showWithActionPopup() {
             getHandle().showWithActionPopup();
-            // ---------- Original Method ----------
-            //getHandle().showWithActionPopup();
+            
+            
         }
 
         
@@ -14274,64 +14274,64 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         public void hide() {
             {
                 mHandle.hide();
-            } //End block
-            // ---------- Original Method ----------
-            //if (mHandle != null) {
-                //mHandle.hide();
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.043 -0400", hash_original_method = "43F562659DF9586EE8DC985200A1394B", hash_generated_method = "AFA5EE836BA01E42C65DC8B7F78125A2")
         public void onTouchModeChanged(boolean isInTouchMode) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 hide();
-            } //End block
+            } 
             addTaint(isInTouchMode);
-            // ---------- Original Method ----------
-            //if (!isInTouchMode) {
-                //hide();
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.045 -0400", hash_original_method = "AFBF832B3C2DD5F3EC6366306B6BB027", hash_generated_method = "732EC10995564AEAAE615A4794CDD5F9")
         private InsertionHandleView getHandle() {
-            InsertionHandleView varB4EAC82CA7396A68D541C85D26508E83_2107317541 = null; //Variable for return #1
+            InsertionHandleView varB4EAC82CA7396A68D541C85D26508E83_2107317541 = null; 
             {
                 mSelectHandleCenter = mContext.getResources().getDrawable(
                         mTextSelectHandleRes);
-            } //End block
+            } 
             {
                 mHandle = new InsertionHandleView(mSelectHandleCenter);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_2107317541 = mHandle;
-            varB4EAC82CA7396A68D541C85D26508E83_2107317541.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2107317541.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2107317541;
-            // ---------- Original Method ----------
-            //if (mSelectHandleCenter == null) {
-                //mSelectHandleCenter = mContext.getResources().getDrawable(
-                        //mTextSelectHandleRes);
-            //}
-            //if (mHandle == null) {
-                //mHandle = new InsertionHandleView(mSelectHandleCenter);
-            //}
-            //return mHandle;
+            
+            
+                
+                        
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.074 -0400", hash_original_method = "5CA35A7F100FC077200BA56F0D1F67CB", hash_generated_method = "7637A3785397444DE06AF16DB24DA9B6")
         @Override
         public void onDetached() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             final ViewTreeObserver observer = getViewTreeObserver();
             observer.removeOnTouchModeChangeListener(this);
             mHandle.onDetached();
-            // ---------- Original Method ----------
-            //final ViewTreeObserver observer = getViewTreeObserver();
-            //observer.removeOnTouchModeChangeListener(this);
-            //if (mHandle != null) mHandle.onDetached();
+            
+            
+            
+            
         }
 
         
@@ -14365,8 +14365,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.074 -0400", hash_original_method = "7762686ED4BD194662F98430835FCC93", hash_generated_method = "996EF3777B9152A62DF6DD828F075A23")
           SelectionModifierCursorController() {
             resetTouchOffsets();
-            // ---------- Original Method ----------
-            //resetTouchOffsets();
+            
+            
         }
 
         
@@ -14374,17 +14374,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         public void show() {
             {
                 boolean var50BDB7CF84FD9415E39B194F38BCA676_1567736904 = (isInBatchEditMode());
-            } //End collapsed parenthetic
+            } 
             initDrawables();
             initHandles();
             hideInsertionPointCursorController();
-            // ---------- Original Method ----------
-            //if (isInBatchEditMode()) {
-                //return;
-            //}
-            //initDrawables();
-            //initHandles();
-            //hideInsertionPointCursorController();
+            
+            
+                
+            
+            
+            
+            
         }
 
         
@@ -14393,20 +14393,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             {
                 mSelectHandleLeft = mContext.getResources().getDrawable(
                         mTextSelectHandleLeftRes);
-            } //End block
+            } 
             {
                 mSelectHandleRight = mContext.getResources().getDrawable(
                         mTextSelectHandleRightRes);
-            } //End block
-            // ---------- Original Method ----------
-            //if (mSelectHandleLeft == null) {
-                //mSelectHandleLeft = mContext.getResources().getDrawable(
-                        //mTextSelectHandleLeftRes);
-            //}
-            //if (mSelectHandleRight == null) {
-                //mSelectHandleRight = mContext.getResources().getDrawable(
-                        //mTextSelectHandleRightRes);
-            //}
+            } 
+            
+            
+                
+                        
+            
+            
+                
+                        
+            
         }
 
         
@@ -14414,27 +14414,27 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         private void initHandles() {
             {
                 mStartHandle = new SelectionStartHandleView(mSelectHandleLeft, mSelectHandleRight);
-            } //End block
+            } 
             {
                 mEndHandle = new SelectionEndHandleView(mSelectHandleRight, mSelectHandleLeft);
-            } //End block
+            } 
             mStartHandle.show();
             mEndHandle.show();
             mStartHandle.showActionPopupWindow(DELAY_BEFORE_REPLACE_ACTION);
             mEndHandle.setActionPopupWindow(mStartHandle.getActionPopupWindow());
             hideInsertionPointCursorController();
-            // ---------- Original Method ----------
-            //if (mStartHandle == null) {
-                //mStartHandle = new SelectionStartHandleView(mSelectHandleLeft, mSelectHandleRight);
-            //}
-            //if (mEndHandle == null) {
-                //mEndHandle = new SelectionEndHandleView(mSelectHandleRight, mSelectHandleLeft);
-            //}
-            //mStartHandle.show();
-            //mEndHandle.show();
-            //mStartHandle.showActionPopupWindow(DELAY_BEFORE_REPLACE_ACTION);
-            //mEndHandle.setActionPopupWindow(mStartHandle.getActionPopupWindow());
-            //hideInsertionPointCursorController();
+            
+            
+                
+            
+            
+                
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -14442,30 +14442,30 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         public void hide() {
             mStartHandle.hide();
             mEndHandle.hide();
-            // ---------- Original Method ----------
-            //if (mStartHandle != null) mStartHandle.hide();
-            //if (mEndHandle != null) mEndHandle.hide();
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.076 -0400", hash_original_method = "4BB059019645E4258A18514D6F6D1609", hash_generated_method = "C71E26686CB605E412079ABE22B94D21")
         public void onTouchEvent(MotionEvent event) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 Object varF6D597E8558CB9D89114B4B1D82BA68F_1187943363 = (event.getActionMasked());
-                //Begin case MotionEvent.ACTION_DOWN 
+                
                 final float x = event.getX();
-                //End case MotionEvent.ACTION_DOWN 
-                //Begin case MotionEvent.ACTION_DOWN 
+                
+                
                 final float y = event.getY();
-                //End case MotionEvent.ACTION_DOWN 
-                //Begin case MotionEvent.ACTION_DOWN 
+                
+                
                 mMinTouchOffset = mMaxTouchOffset = getOffsetForPosition(x, y);
-                //End case MotionEvent.ACTION_DOWN 
-                //Begin case MotionEvent.ACTION_DOWN 
+                
+                
                 long duration = SystemClock.uptimeMillis() - mPreviousTapUpTime;
-                //End case MotionEvent.ACTION_DOWN 
-                //Begin case MotionEvent.ACTION_DOWN 
+                
+                
                 {
                     boolean varD222D501AFFB3FFBAB7C6BF5A68FBCF1_1874000201 = (duration <= ViewConfiguration.getDoubleTapTimeout() &&
                             isPositionOnText(x, y));
@@ -14476,32 +14476,32 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         {
                             startSelectionActionMode();
                             mDiscardNextActionUp = true;
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-                //End case MotionEvent.ACTION_DOWN 
-                //Begin case MotionEvent.ACTION_DOWN 
+                        } 
+                    } 
+                } 
+                
+                
                 mPreviousTapPositionX = x;
-                //End case MotionEvent.ACTION_DOWN 
-                //Begin case MotionEvent.ACTION_DOWN 
+                
+                
                 mPreviousTapPositionY = y;
-                //End case MotionEvent.ACTION_DOWN 
-                //Begin case MotionEvent.ACTION_POINTER_DOWN MotionEvent.ACTION_POINTER_UP 
+                
+                
                 {
                     boolean var4F7B392379BD182D25B1AE93077ACAB8_945655779 = (mContext.getPackageManager().hasSystemFeature(
                             PackageManager.FEATURE_TOUCHSCREEN_MULTITOUCH_DISTINCT));
                     {
                         updateMinAndMaxOffsets(event);
-                    } //End block
-                } //End collapsed parenthetic
-                //End case MotionEvent.ACTION_POINTER_DOWN MotionEvent.ACTION_POINTER_UP 
-                //Begin case MotionEvent.ACTION_UP 
+                    } 
+                } 
+                
+                
                 mPreviousTapUpTime = SystemClock.uptimeMillis();
-                //End case MotionEvent.ACTION_UP 
-            } //End collapsed parenthetic
+                
+            } 
             addTaint(event.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -14514,16 +14514,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     int offset = getOffsetForPosition(event.getX(index), event.getY(index));
                     mMinTouchOffset = offset;
                     mMaxTouchOffset = offset;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(event.getTaint());
-            // ---------- Original Method ----------
-            //int pointerCount = event.getPointerCount();
-            //for (int index = 0; index < pointerCount; index++) {
-                //int offset = getOffsetForPosition(event.getX(index), event.getY(index));
-                //if (offset < mMinTouchOffset) mMinTouchOffset = offset;
-                //if (offset > mMaxTouchOffset) mMaxTouchOffset = offset;
-            //}
+            
+            
+            
+                
+                
+                
+            
         }
 
         
@@ -14531,8 +14531,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         public int getMinTouchOffset() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1996964834 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1996964834;
-            // ---------- Original Method ----------
-            //return mMinTouchOffset;
+            
+            
         }
 
         
@@ -14540,16 +14540,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         public int getMaxTouchOffset() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_846929877 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_846929877;
-            // ---------- Original Method ----------
-            //return mMaxTouchOffset;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.078 -0400", hash_original_method = "4C87B6BF406B366B26A5C4FE4B60E794", hash_generated_method = "9EFAFC374F80667294B5FCC935B7A9C3")
         public void resetTouchOffsets() {
             mMinTouchOffset = mMaxTouchOffset = -1;
-            // ---------- Original Method ----------
-            //mMinTouchOffset = mMaxTouchOffset = -1;
+            
+            
         }
 
         
@@ -14558,38 +14558,38 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             boolean var3AC7E3EAE321C45E3F97AC24793B70E6_367896602 = (mStartHandle != null && mStartHandle.isDragging());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_715886608 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_715886608;
-            // ---------- Original Method ----------
-            //return mStartHandle != null && mStartHandle.isDragging();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.078 -0400", hash_original_method = "43F562659DF9586EE8DC985200A1394B", hash_generated_method = "AFA5EE836BA01E42C65DC8B7F78125A2")
         public void onTouchModeChanged(boolean isInTouchMode) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 hide();
-            } //End block
+            } 
             addTaint(isInTouchMode);
-            // ---------- Original Method ----------
-            //if (!isInTouchMode) {
-                //hide();
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.079 -0400", hash_original_method = "190B38DD5A1110FFE55D8237DE7DCE67", hash_generated_method = "6002FF89F7E7A23540F2EF4F37A15FC8")
         @Override
         public void onDetached() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             final ViewTreeObserver observer = getViewTreeObserver();
             observer.removeOnTouchModeChangeListener(this);
             mStartHandle.onDetached();
             mEndHandle.onDetached();
-            // ---------- Original Method ----------
-            //final ViewTreeObserver observer = getViewTreeObserver();
-            //observer.removeOnTouchModeChangeListener(this);
-            //if (mStartHandle != null) mStartHandle.onDetached();
-            //if (mEndHandle != null) mEndHandle.onDetached();
+            
+            
+            
+            
+            
         }
 
         

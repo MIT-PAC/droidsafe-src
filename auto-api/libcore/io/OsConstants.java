@@ -1,18 +1,18 @@
 package libcore.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class OsConstants {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.351 -0400", hash_original_method = "0498D6F7A9D700EE7D091D4440C7A579", hash_generated_method = "A197106530DC08E504EC74CDFEA7722E")
     private  OsConstants() {
-        // ---------- Original Method ----------
+        
     }
 
     

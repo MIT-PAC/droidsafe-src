@@ -1,11 +1,11 @@
 package org.apache.commons.io.output;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -15,7 +15,7 @@ public class NullOutputStream extends OutputStream {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.726 -0400", hash_original_method = "71D212501999CE3853E127EBBB4ABD24", hash_generated_method = "71D212501999CE3853E127EBBB4ABD24")
     public NullOutputStream ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -25,7 +25,7 @@ public class NullOutputStream extends OutputStream {
         addTaint(b[0]);
         addTaint(off);
         addTaint(len);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -33,7 +33,7 @@ public class NullOutputStream extends OutputStream {
     @Override
     public void write(int b) {
         addTaint(b);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -41,7 +41,7 @@ public class NullOutputStream extends OutputStream {
     @Override
     public void write(byte[] b) throws IOException {
         addTaint(b[0]);
-        // ---------- Original Method ----------
+        
     }
 
     

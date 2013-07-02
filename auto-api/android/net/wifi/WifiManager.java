@@ -1,11 +1,11 @@
 package android.net.wifi;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
@@ -38,44 +38,46 @@ public class WifiManager {
     public  WifiManager(IWifiManager service, Handler handler) {
         mService = service;
         mHandler = handler;
-        // ---------- Original Method ----------
-        //mService = service;
-        //mHandler = handler;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.601 -0400", hash_original_method = "7B7EDD72C806D0E7DC8642CC316AA722", hash_generated_method = "F285EE958BD480100F1EDE69C0ACAEBC")
     public List<WifiConfiguration> getConfiguredNetworks() {
-        List<WifiConfiguration> varB4EAC82CA7396A68D541C85D26508E83_1034819277 = null; //Variable for return #1
-        List<WifiConfiguration> varB4EAC82CA7396A68D541C85D26508E83_976591106 = null; //Variable for return #2
+        List<WifiConfiguration> varB4EAC82CA7396A68D541C85D26508E83_1034819277 = null; 
+        List<WifiConfiguration> varB4EAC82CA7396A68D541C85D26508E83_976591106 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1034819277 = mService.getConfiguredNetworks();
-        } //End block
+        } 
         catch (RemoteException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_976591106 = null;
-        } //End block
-        List<WifiConfiguration> varA7E53CE21691AB073D9660D615818899_1119915965; //Final return value
+        } 
+        List<WifiConfiguration> varA7E53CE21691AB073D9660D615818899_1119915965; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1119915965 = varB4EAC82CA7396A68D541C85D26508E83_1034819277;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1119915965 = varB4EAC82CA7396A68D541C85D26508E83_976591106;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1119915965.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1119915965.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1119915965;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getConfiguredNetworks();
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.601 -0400", hash_original_method = "FC0AD51F5109F6EE6B896159A6BE091E", hash_generated_method = "791F7991BDBE47061BED2E3A8747B0E7")
     public int addNetwork(WifiConfiguration config) {
         config.networkId = -1;
@@ -83,474 +85,497 @@ public class WifiManager {
         addTaint(config.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_567839406 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_567839406;
-        // ---------- Original Method ----------
-        //if (config == null) {
-            //return -1;
-        //}
-        //config.networkId = -1;
-        //return addOrUpdateNetwork(config);
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.602 -0400", hash_original_method = "BAE559B7BC959F87E1981FBD6EC47DF5", hash_generated_method = "D154301DF08FDC4F826C797F8C5CDB1A")
     public int updateNetwork(WifiConfiguration config) {
         int var841DCE22DCAD53E534BE373AED1A9F2C_1135273522 = (addOrUpdateNetwork(config));
         addTaint(config.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1095604517 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1095604517;
-        // ---------- Original Method ----------
-        //if (config == null || config.networkId < 0) {
-            //return -1;
-        //}
-        //return addOrUpdateNetwork(config);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.602 -0400", hash_original_method = "E64504FDFA81026BF4EAE79A420D3010", hash_generated_method = "D983240F3731E1FC48FD709B1D112CFC")
     private int addOrUpdateNetwork(WifiConfiguration config) {
         try 
         {
             int var29861749C3E419B96EEF8148CE5ACC73_1801825095 = (mService.addOrUpdateNetwork(config));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(config.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1383074074 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1383074074;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.addOrUpdateNetwork(config);
-        //} catch (RemoteException e) {
-            //return -1;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.603 -0400", hash_original_method = "C55861B25E581745B3C6351405363685", hash_generated_method = "35F95A4A05ED85E9CEB91E9930C878C2")
     public boolean removeNetwork(int netId) {
         try 
         {
             boolean var3969CE505792C9B2C42D9B989E5DCC6A_933724704 = (mService.removeNetwork(netId));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(netId);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_157120545 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_157120545;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.removeNetwork(netId);
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.603 -0400", hash_original_method = "A063D2F3A1A45A8B2BB20D41F98AEB1B", hash_generated_method = "0780A7D8C7BF18FC7749CCD7A35FEDAB")
     public boolean enableNetwork(int netId, boolean disableOthers) {
         try 
         {
             boolean var1D13A98DF752183E327DF71A161434AC_1428624884 = (mService.enableNetwork(netId, disableOthers));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(netId);
         addTaint(disableOthers);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_13721991 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_13721991;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.enableNetwork(netId, disableOthers);
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.604 -0400", hash_original_method = "630BE7480BA2E95DA9CEC1F52BBE219A", hash_generated_method = "1F9A24D7F498FD3617571E41470D8013")
     public boolean disableNetwork(int netId) {
         try 
         {
             boolean var507F4C1A88F04AAAAE64FCFD7F68A129_82814700 = (mService.disableNetwork(netId));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(netId);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_745217778 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_745217778;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.disableNetwork(netId);
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.604 -0400", hash_original_method = "4C2FCF871904470A4665E52D44D62875", hash_generated_method = "3B09F2EE53F1604E7AB344F33F103DCC")
     public void disableNetwork(int netId, int reason) {
         mAsyncChannel.sendMessage(CMD_DISABLE_NETWORK, netId, reason);
         addTaint(netId);
         addTaint(reason);
-        // ---------- Original Method ----------
-        //mAsyncChannel.sendMessage(CMD_DISABLE_NETWORK, netId, reason);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.604 -0400", hash_original_method = "13D7026BA6E2310038D9CCEC7D1F5CA4", hash_generated_method = "27BA03B92399184CA3B692C6478A8923")
     public boolean disconnect() {
         try 
         {
             mService.disconnect();
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1586493616 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1586493616;
-        // ---------- Original Method ----------
-        //try {
-            //mService.disconnect();
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.605 -0400", hash_original_method = "AD9DD9C3B4130EB49C99A6BF92BCA383", hash_generated_method = "824BA6020E214893E07DB26A54FE703E")
     public boolean reconnect() {
         try 
         {
             mService.reconnect();
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1730252257 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1730252257;
-        // ---------- Original Method ----------
-        //try {
-            //mService.reconnect();
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.605 -0400", hash_original_method = "4462A23EEF44DC4F050ECB7EA4566A65", hash_generated_method = "CC337F1969D028152A16CC24487420A9")
     public boolean reassociate() {
         try 
         {
             mService.reassociate();
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_260831133 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_260831133;
-        // ---------- Original Method ----------
-        //try {
-            //mService.reassociate();
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.605 -0400", hash_original_method = "44FE7083E78F583BB16CDAFA3EBE6F36", hash_generated_method = "12A4262C076DF2D451C710E2EFF7005D")
     public boolean pingSupplicant() {
         try 
         {
             boolean var108AD08E67A26C352FC5E987B3605666_2114284266 = (mService.pingSupplicant());
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_629321124 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_629321124;
-        // ---------- Original Method ----------
-        //if (mService == null)
-            //return false;
-        //try {
-            //return mService.pingSupplicant();
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.606 -0400", hash_original_method = "F8088016DD577DAE90193BD2B16E77E5", hash_generated_method = "111549C6B9C970A84C5F96708E1D8BC1")
     public boolean startScan() {
         try 
         {
             mService.startScan(false);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1962531218 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1962531218;
-        // ---------- Original Method ----------
-        //try {
-            //mService.startScan(false);
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.606 -0400", hash_original_method = "1BECDA97215EAB893F9C0F926E7877B4", hash_generated_method = "D354B6E125EE199BE9842106BC7F4DEF")
     public boolean startScanActive() {
         try 
         {
             mService.startScan(true);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_129991388 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_129991388;
-        // ---------- Original Method ----------
-        //try {
-            //mService.startScan(true);
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.607 -0400", hash_original_method = "8E854EE6D7B979BB188C54EFD6BB6717", hash_generated_method = "7663F4F715CC4EEAC5B1BE81606556AA")
     public WifiInfo getConnectionInfo() {
-        WifiInfo varB4EAC82CA7396A68D541C85D26508E83_961096253 = null; //Variable for return #1
-        WifiInfo varB4EAC82CA7396A68D541C85D26508E83_948930747 = null; //Variable for return #2
+        WifiInfo varB4EAC82CA7396A68D541C85D26508E83_961096253 = null; 
+        WifiInfo varB4EAC82CA7396A68D541C85D26508E83_948930747 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_961096253 = mService.getConnectionInfo();
-        } //End block
+        } 
         catch (RemoteException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_948930747 = null;
-        } //End block
-        WifiInfo varA7E53CE21691AB073D9660D615818899_1428910631; //Final return value
+        } 
+        WifiInfo varA7E53CE21691AB073D9660D615818899_1428910631; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1428910631 = varB4EAC82CA7396A68D541C85D26508E83_961096253;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1428910631 = varB4EAC82CA7396A68D541C85D26508E83_948930747;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1428910631.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1428910631.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1428910631;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getConnectionInfo();
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.607 -0400", hash_original_method = "ADD60A4DA3445A3E968EB713F725E5F1", hash_generated_method = "02677C930E7B88B4C1B4A4E0A219C57D")
     public List<ScanResult> getScanResults() {
-        List<ScanResult> varB4EAC82CA7396A68D541C85D26508E83_557225135 = null; //Variable for return #1
-        List<ScanResult> varB4EAC82CA7396A68D541C85D26508E83_559298518 = null; //Variable for return #2
+        List<ScanResult> varB4EAC82CA7396A68D541C85D26508E83_557225135 = null; 
+        List<ScanResult> varB4EAC82CA7396A68D541C85D26508E83_559298518 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_557225135 = mService.getScanResults();
-        } //End block
+        } 
         catch (RemoteException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_559298518 = null;
-        } //End block
-        List<ScanResult> varA7E53CE21691AB073D9660D615818899_34089413; //Final return value
+        } 
+        List<ScanResult> varA7E53CE21691AB073D9660D615818899_34089413; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_34089413 = varB4EAC82CA7396A68D541C85D26508E83_557225135;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_34089413 = varB4EAC82CA7396A68D541C85D26508E83_559298518;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_34089413.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_34089413.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_34089413;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getScanResults();
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.608 -0400", hash_original_method = "D1E32319AD181FF60DD93B5B2DB831F1", hash_generated_method = "7C2DBB6FA7A3DD4CFD3F8885646767F0")
     public boolean saveConfiguration() {
         try 
         {
             boolean var65BADDEB467659B51E5D69A7C9FA99CA_1168697877 = (mService.saveConfiguration());
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2114598697 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2114598697;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.saveConfiguration();
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.608 -0400", hash_original_method = "9549A9F9433914F9E55F5CC34183554C", hash_generated_method = "806EA1327A02B74ECCF71D196BBCF20D")
     public void setCountryCode(String country, boolean persist) {
         try 
         {
             mService.setCountryCode(country, persist);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(country.getTaint());
         addTaint(persist);
-        // ---------- Original Method ----------
-        //try {
-            //mService.setCountryCode(country, persist);
-        //} catch (RemoteException e) { }
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.608 -0400", hash_original_method = "4B6C5827C7D51FB40ECD8DD67D760E19", hash_generated_method = "9D53049E258ABC4C69A3B99255588137")
     public void setFrequencyBand(int band, boolean persist) {
         try 
         {
             mService.setFrequencyBand(band, persist);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(band);
         addTaint(persist);
-        // ---------- Original Method ----------
-        //try {
-            //mService.setFrequencyBand(band, persist);
-        //} catch (RemoteException e) { }
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.609 -0400", hash_original_method = "481BDDBC9D497285776974614BBC7D82", hash_generated_method = "CF739361C612369073F09ED45B03C6E5")
     public int getFrequencyBand() {
         try 
         {
             int varD3D26E601547C91817009BC00AFC6395_70935991 = (mService.getFrequencyBand());
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1042931242 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1042931242;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getFrequencyBand();
-        //} catch (RemoteException e) {
-            //return -1;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.609 -0400", hash_original_method = "F73D127A0D43FAD1AD9DBA6A689AC70A", hash_generated_method = "54832D1E228B4793CE1D6170238C79F7")
     public boolean isDualBandSupported() {
         try 
         {
             boolean varD0866672BC37ED549DC39FCD6F97C3E7_656470768 = (mService.isDualBandSupported());
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_25369626 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_25369626;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.isDualBandSupported();
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.610 -0400", hash_original_method = "711DEA09870DB7E049F72B7F8BEBC0A1", hash_generated_method = "BD1804EFDEB4AEB029FA876EC5F0B67B")
     public DhcpInfo getDhcpInfo() {
-        DhcpInfo varB4EAC82CA7396A68D541C85D26508E83_383701815 = null; //Variable for return #1
-        DhcpInfo varB4EAC82CA7396A68D541C85D26508E83_1819228652 = null; //Variable for return #2
+        DhcpInfo varB4EAC82CA7396A68D541C85D26508E83_383701815 = null; 
+        DhcpInfo varB4EAC82CA7396A68D541C85D26508E83_1819228652 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_383701815 = mService.getDhcpInfo();
-        } //End block
+        } 
         catch (RemoteException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1819228652 = null;
-        } //End block
-        DhcpInfo varA7E53CE21691AB073D9660D615818899_439512283; //Final return value
+        } 
+        DhcpInfo varA7E53CE21691AB073D9660D615818899_439512283; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_439512283 = varB4EAC82CA7396A68D541C85D26508E83_383701815;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_439512283 = varB4EAC82CA7396A68D541C85D26508E83_1819228652;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_439512283.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_439512283.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_439512283;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getDhcpInfo();
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.610 -0400", hash_original_method = "B9430AD639DDE3004B577A4BF40EB18B", hash_generated_method = "68CD6609F1A1EBEDFA845C691D01235F")
     public boolean setWifiEnabled(boolean enabled) {
         try 
         {
             boolean varB6FC8C8742D6B74DE1AE1DCC4A75F803_1003518044 = (mService.setWifiEnabled(enabled));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(enabled);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_352624010 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_352624010;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.setWifiEnabled(enabled);
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.610 -0400", hash_original_method = "661FA885AE58B8C5231BF7DCF436505F", hash_generated_method = "25001E18534B895DA01083A4FD296D7E")
     public int getWifiState() {
         try 
         {
             int var51177C283700A55013AE02DA22D9F373_544759856 = (mService.getWifiEnabledState());
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1448118474 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1448118474;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getWifiEnabledState();
-        //} catch (RemoteException e) {
-            //return WIFI_STATE_UNKNOWN;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.611 -0400", hash_original_method = "D7F0AFD1306EBF22F34F7E014A2C9B11", hash_generated_method = "7CD54F5ED8C51670CA677C86145A29F2")
     public boolean isWifiEnabled() {
         boolean var6712056F5B3773D738C13AB491D89222_1933076376 = (getWifiState() == WIFI_STATE_ENABLED);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_50948639 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_50948639;
-        // ---------- Original Method ----------
-        //return getWifiState() == WIFI_STATE_ENABLED;
+        
+        
     }
 
     
@@ -572,398 +597,420 @@ public class WifiManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.612 -0400", hash_original_method = "2BFE81971E8D979C3ECBD7F543427F67", hash_generated_method = "75204C671326F9552B9EA465C1368354")
     public boolean setWifiApEnabled(WifiConfiguration wifiConfig, boolean enabled) {
         try 
         {
             mService.setWifiApEnabled(wifiConfig, enabled);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(wifiConfig.getTaint());
         addTaint(enabled);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_121992435 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_121992435;
-        // ---------- Original Method ----------
-        //try {
-            //mService.setWifiApEnabled(wifiConfig, enabled);
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.612 -0400", hash_original_method = "B0BA72D208162E33734DF133F2E7F6AA", hash_generated_method = "E8FACE5659A12F9BFA695D316F8F5C07")
     public int getWifiApState() {
         try 
         {
             int var2E2FB8DE2B461FD2353125B69D9D13CD_1192207409 = (mService.getWifiApEnabledState());
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_787805917 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_787805917;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getWifiApEnabledState();
-        //} catch (RemoteException e) {
-            //return WIFI_AP_STATE_FAILED;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.613 -0400", hash_original_method = "657EB8B0A945E7FD7BA91E2539A322BE", hash_generated_method = "B75F341B669C64A9BB90E3A7A6327B12")
     public boolean isWifiApEnabled() {
         boolean var50FC8F7F80F7565EBB0DC8805641F4CB_1256032849 = (getWifiApState() == WIFI_AP_STATE_ENABLED);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_985441177 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_985441177;
-        // ---------- Original Method ----------
-        //return getWifiApState() == WIFI_AP_STATE_ENABLED;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.614 -0400", hash_original_method = "99407E6898AC76390D3E229EC6CF35C4", hash_generated_method = "EA3BF170DF6660764482991E8B1E988D")
     public WifiConfiguration getWifiApConfiguration() {
-        WifiConfiguration varB4EAC82CA7396A68D541C85D26508E83_1384309796 = null; //Variable for return #1
-        WifiConfiguration varB4EAC82CA7396A68D541C85D26508E83_1436881521 = null; //Variable for return #2
+        WifiConfiguration varB4EAC82CA7396A68D541C85D26508E83_1384309796 = null; 
+        WifiConfiguration varB4EAC82CA7396A68D541C85D26508E83_1436881521 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1384309796 = mService.getWifiApConfiguration();
-        } //End block
+        } 
         catch (RemoteException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1436881521 = null;
-        } //End block
-        WifiConfiguration varA7E53CE21691AB073D9660D615818899_1733851930; //Final return value
+        } 
+        WifiConfiguration varA7E53CE21691AB073D9660D615818899_1733851930; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1733851930 = varB4EAC82CA7396A68D541C85D26508E83_1384309796;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1733851930 = varB4EAC82CA7396A68D541C85D26508E83_1436881521;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1733851930.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1733851930.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1733851930;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getWifiApConfiguration();
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.615 -0400", hash_original_method = "32645F13A37CD40BEF3F9464116D1367", hash_generated_method = "0CAAD29AA9D1AEE0A1C00F70D97C2441")
     public boolean setWifiApConfiguration(WifiConfiguration wifiConfig) {
         try 
         {
             mService.setWifiApConfiguration(wifiConfig);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(wifiConfig.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1493703529 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1493703529;
-        // ---------- Original Method ----------
-        //try {
-            //mService.setWifiApConfiguration(wifiConfig);
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.615 -0400", hash_original_method = "F505CF72442DFA261366294723957A53", hash_generated_method = "5C289F2F83D5DB3F640B606C92F06BF2")
     public boolean startWifi() {
         try 
         {
             mService.startWifi();
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1663905163 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1663905163;
-        // ---------- Original Method ----------
-        //try {
-            //mService.startWifi();
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.616 -0400", hash_original_method = "F7F977701F133D0F59F048A53A2C698B", hash_generated_method = "F14FEC728FBFA0163876CE534B9CC179")
     public boolean stopWifi() {
         try 
         {
             mService.stopWifi();
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1743955282 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1743955282;
-        // ---------- Original Method ----------
-        //try {
-            //mService.stopWifi();
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.616 -0400", hash_original_method = "6E01C15F4CA49AC218CA465537508537", hash_generated_method = "B2357A55366FB88383E4D8012D007F0D")
     public boolean addToBlacklist(String bssid) {
         try 
         {
             mService.addToBlacklist(bssid);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(bssid.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_126920523 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_126920523;
-        // ---------- Original Method ----------
-        //try {
-            //mService.addToBlacklist(bssid);
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.617 -0400", hash_original_method = "614FAF75AF873709E1677408EE18D7B6", hash_generated_method = "C8DCDB93B34081E8A7EC34A2AA1E58C6")
     public boolean clearBlacklist() {
         try 
         {
             mService.clearBlacklist();
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_429199541 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_429199541;
-        // ---------- Original Method ----------
-        //try {
-            //mService.clearBlacklist();
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.617 -0400", hash_original_method = "F93FD4BCC6C0F6B375A42EEFE25B9408", hash_generated_method = "849CF27CED4BDAF5C05F6D9F0A8479CD")
     public void asyncConnect(Context srcContext, Handler srcHandler) {
         mAsyncChannel.connect(srcContext, srcHandler, getMessenger());
         addTaint(srcContext.getTaint());
         addTaint(srcHandler.getTaint());
-        // ---------- Original Method ----------
-        //mAsyncChannel.connect(srcContext, srcHandler, getMessenger());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.617 -0400", hash_original_method = "B69D8EEDABB0031125B40805CA5F91D8", hash_generated_method = "87015BDCB8D4C8A774F98471C2290FC6")
     public void connectNetwork(WifiConfiguration config) {
         mAsyncChannel.sendMessage(CMD_CONNECT_NETWORK, config);
         addTaint(config.getTaint());
-        // ---------- Original Method ----------
-        //if (config == null) {
-            //return;
-        //}
-        //mAsyncChannel.sendMessage(CMD_CONNECT_NETWORK, config);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.618 -0400", hash_original_method = "9464671A8FCBA7A99848867493116AAD", hash_generated_method = "4E1CD6273F947702DBF5312D54C53E67")
     public void connectNetwork(int networkId) {
         mAsyncChannel.sendMessage(CMD_CONNECT_NETWORK, networkId);
         addTaint(networkId);
-        // ---------- Original Method ----------
-        //if (networkId < 0) {
-            //return;
-        //}
-        //mAsyncChannel.sendMessage(CMD_CONNECT_NETWORK, networkId);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.618 -0400", hash_original_method = "210177ED8E63F9C12E442B1614E4B9E7", hash_generated_method = "1BC40F45892D4DC42D538964366EC0EB")
     public void saveNetwork(WifiConfiguration config) {
         mAsyncChannel.sendMessage(CMD_SAVE_NETWORK, config);
         addTaint(config.getTaint());
-        // ---------- Original Method ----------
-        //if (config == null) {
-            //return;
-        //}
-        //mAsyncChannel.sendMessage(CMD_SAVE_NETWORK, config);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.618 -0400", hash_original_method = "A04E73224B607EFF8F851CD080EF29BA", hash_generated_method = "F4F9C89D2C2EEEE4784EAC892AE91060")
     public void forgetNetwork(int netId) {
         mAsyncChannel.sendMessage(CMD_FORGET_NETWORK, netId);
         addTaint(netId);
-        // ---------- Original Method ----------
-        //if (netId < 0) {
-            //return;
-        //}
-        //mAsyncChannel.sendMessage(CMD_FORGET_NETWORK, netId);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.619 -0400", hash_original_method = "CB69F89B2E3E5728AFF3169858F2154E", hash_generated_method = "BD62A0DBEC0438565725233FA7D9F8F4")
     public void startWps(WpsInfo config) {
         mAsyncChannel.sendMessage(CMD_START_WPS, config);
         addTaint(config.getTaint());
-        // ---------- Original Method ----------
-        //if (config == null) {
-            //return;
-        //}
-        //mAsyncChannel.sendMessage(CMD_START_WPS, config);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.619 -0400", hash_original_method = "A358F8361C96DABE1A63B04B5804B3F5", hash_generated_method = "4F8A5426EFC06672A3467B48E4B0D64E")
     public Messenger getMessenger() {
-        Messenger varB4EAC82CA7396A68D541C85D26508E83_493491233 = null; //Variable for return #1
-        Messenger varB4EAC82CA7396A68D541C85D26508E83_1679973170 = null; //Variable for return #2
+        Messenger varB4EAC82CA7396A68D541C85D26508E83_493491233 = null; 
+        Messenger varB4EAC82CA7396A68D541C85D26508E83_1679973170 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_493491233 = mService.getMessenger();
-        } //End block
+        } 
         catch (RemoteException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1679973170 = null;
-        } //End block
-        Messenger varA7E53CE21691AB073D9660D615818899_1807214944; //Final return value
+        } 
+        Messenger varA7E53CE21691AB073D9660D615818899_1807214944; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1807214944 = varB4EAC82CA7396A68D541C85D26508E83_493491233;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1807214944 = varB4EAC82CA7396A68D541C85D26508E83_1679973170;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1807214944.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1807214944.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1807214944;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getMessenger();
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.620 -0400", hash_original_method = "F47F46BF01C13AECFB0A8E0A7BCA30AB", hash_generated_method = "E7384668A07DEB59ABE4C2566D695DA6")
     public String getConfigFile() {
-        String varB4EAC82CA7396A68D541C85D26508E83_237978967 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_722870152 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_237978967 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_722870152 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_237978967 = mService.getConfigFile();
-        } //End block
+        } 
         catch (RemoteException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_722870152 = null;
-        } //End block
-        String varA7E53CE21691AB073D9660D615818899_1488027471; //Final return value
+        } 
+        String varA7E53CE21691AB073D9660D615818899_1488027471; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1488027471 = varB4EAC82CA7396A68D541C85D26508E83_237978967;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1488027471 = varB4EAC82CA7396A68D541C85D26508E83_722870152;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1488027471.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1488027471.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1488027471;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getConfigFile();
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.620 -0400", hash_original_method = "77C6D00CEFBA51FBEDF42525D5CAF8B4", hash_generated_method = "26BDB73B77DF3EADF5CC57A795224BFD")
     public WifiLock createWifiLock(int lockType, String tag) {
-        WifiLock varB4EAC82CA7396A68D541C85D26508E83_533291287 = null; //Variable for return #1
+        WifiLock varB4EAC82CA7396A68D541C85D26508E83_533291287 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_533291287 = new WifiLock(lockType, tag);
         addTaint(lockType);
         addTaint(tag.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_533291287.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_533291287.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_533291287;
-        // ---------- Original Method ----------
-        //return new WifiLock(lockType, tag);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.621 -0400", hash_original_method = "F25A7BAA745FE3E1539A4ACAD2E402AC", hash_generated_method = "5004D93D172278258DF766D9B7EA4B33")
     public WifiLock createWifiLock(String tag) {
-        WifiLock varB4EAC82CA7396A68D541C85D26508E83_514556742 = null; //Variable for return #1
+        WifiLock varB4EAC82CA7396A68D541C85D26508E83_514556742 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_514556742 = new WifiLock(WIFI_MODE_FULL, tag);
         addTaint(tag.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_514556742.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_514556742.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_514556742;
-        // ---------- Original Method ----------
-        //return new WifiLock(WIFI_MODE_FULL, tag);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.621 -0400", hash_original_method = "90BF24DBA9F26B31ED84B0CABBF9287E", hash_generated_method = "A8144FD3D43D07C1B767E8F4F995C4AA")
     public MulticastLock createMulticastLock(String tag) {
-        MulticastLock varB4EAC82CA7396A68D541C85D26508E83_539010048 = null; //Variable for return #1
+        MulticastLock varB4EAC82CA7396A68D541C85D26508E83_539010048 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_539010048 = new MulticastLock(tag);
         addTaint(tag.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_539010048.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_539010048.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_539010048;
-        // ---------- Original Method ----------
-        //return new MulticastLock(tag);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.622 -0400", hash_original_method = "36EA363278EADF8446AD30BF262D8211", hash_generated_method = "CB2E0BD3020AA227E8C1C3F99FDB644D")
     public boolean isMulticastEnabled() {
         try 
         {
             boolean varF69D9C3FD34D6BAECC97870E612144C2_1796548899 = (mService.isMulticastEnabled());
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2084369019 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2084369019;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.isMulticastEnabled();
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.622 -0400", hash_original_method = "03CE776E3230E83E55C388557E1A9516", hash_generated_method = "5CB56280B375DC88B312D4ED7FABD91A")
     public boolean initializeMulticastFiltering() {
         try 
         {
             mService.initializeMulticastFiltering();
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1719032581 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1719032581;
-        // ---------- Original Method ----------
-        //try {
-            //mService.initializeMulticastFiltering();
-            //return true;
-        //} catch (RemoteException e) {
-             //return false;
-        //}
+        
+        
+            
+            
+        
+             
+        
     }
 
     
@@ -998,13 +1045,13 @@ public class WifiManager {
             mRefCount = 0;
             mRefCounted = true;
             mHeld = false;
-            // ---------- Original Method ----------
-            //mTag = tag;
-            //mLockType = lockType;
-            //mBinder = new Binder();
-            //mRefCount = 0;
-            //mRefCounted = true;
-            //mHeld = false;
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1022,17 +1069,17 @@ public class WifiManager {
                                     mService.releaseWifiLock(mBinder);
                                     if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(
                                             "Exceeded maximum number of wifi locks");
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                                } 
+                            } 
+                        } 
+                    } 
                     catch (RemoteException ignore)
                     { }
                     mHeld = true;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
@@ -1045,40 +1092,40 @@ public class WifiManager {
                         mService.releaseWifiLock(mBinder);
                         {
                             Object var1C3BCBC89D915D09A29A9D7ECF62293F_632888635 = (WifiManager.this);
-                        } //End collapsed parenthetic
-                    } //End block
+                        } 
+                    } 
                     catch (RemoteException ignore)
                     { }
                     mHeld = false;
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new RuntimeException("WifiLock under-locked " + mTag);
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (mBinder) {
-                //if (mRefCounted ? (--mRefCount == 0) : (mHeld)) {
-                    //try {
-                        //mService.releaseWifiLock(mBinder);
-                        //synchronized (WifiManager.this) {
-                            //mActiveLockCount--;
-                        //}
-                    //} catch (RemoteException ignore) {
-                    //}
-                    //mHeld = false;
-                //}
-                //if (mRefCount < 0) {
-                    //throw new RuntimeException("WifiLock under-locked " + mTag);
-                //}
-            //}
+                } 
+            } 
+            
+            
+                
+                    
+                        
+                        
+                            
+                        
+                    
+                    
+                    
+                
+                
+                    
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.626 -0400", hash_original_method = "792BAAC8BC5216CF4F7CAEC0A7A38B7F", hash_generated_method = "91B8A28629F935F303A73D2F07650B69")
         public void setReferenceCounted(boolean refCounted) {
             mRefCounted = refCounted;
-            // ---------- Original Method ----------
-            //mRefCounted = refCounted;
+            
+            
         }
 
         
@@ -1086,10 +1133,10 @@ public class WifiManager {
         public boolean isHeld() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_328827436 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_328827436;
-            // ---------- Original Method ----------
-            //synchronized (mBinder) {
-                //return mHeld;
-            //}
+            
+            
+                
+            
         }
 
         
@@ -1100,39 +1147,39 @@ public class WifiManager {
                     boolean varDCFAF0E9E34CB8562A3C2873888A5A3D_1549711482 = (ws != null && ws.size() == 0);
                     {
                         ws = null;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 boolean changed = true;
                 {
                     mWorkSource = null;
-                } //End block
+                } 
                 {
                     changed = mWorkSource != null;
                     mWorkSource = new WorkSource(ws);
-                } //End block
+                } 
                 {
                     changed = mWorkSource.diff(ws);
                     {
                         mWorkSource.set(ws);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     try 
                     {
                         mService.updateWifiLockWorkSource(mBinder, mWorkSource);
-                    } //End block
+                    } 
                     catch (RemoteException e)
                     { }
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.628 -0400", hash_original_method = "30E303CA91E967AFDBED5B1FC9CE8E64", hash_generated_method = "64CB1D2A5BC4566C6CC2414D86BB32E8")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_38032510 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_38032510 = null; 
             String s1;
             String s2;
             String s3;
@@ -1141,26 +1188,26 @@ public class WifiManager {
                 s2 = mHeld ? "held; " : "";
                 {
                     s3 = "refcounted: refcount = " + mRefCount;
-                } //End block
+                } 
                 {
                     s3 = "not refcounted";
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_38032510 = "WifiLock{ " + s1 + "; " + s2 + s3 + " }";
-            } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_38032510.addTaint(getTaint()); //Add taint from parent
+            } 
+            varB4EAC82CA7396A68D541C85D26508E83_38032510.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_38032510;
-            // ---------- Original Method ----------
-            //String s1, s2, s3;
-            //synchronized (mBinder) {
-                //s1 = Integer.toHexString(System.identityHashCode(this));
-                //s2 = mHeld ? "held; " : "";
-                //if (mRefCounted) {
-                    //s3 = "refcounted: refcount = " + mRefCount;
-                //} else {
-                    //s3 = "not refcounted";
-                //}
-                //return "WifiLock{ " + s1 + "; " + s2 + s3 + " }";
-            //}
+            
+            
+            
+                
+                
+                
+                    
+                
+                    
+                
+                
+            
         }
 
         
@@ -1175,25 +1222,25 @@ public class WifiManager {
                         mService.releaseWifiLock(mBinder);
                         {
                             Object var1C3BCBC89D915D09A29A9D7ECF62293F_2135552691 = (WifiManager.this);
-                        } //End collapsed parenthetic
-                    } //End block
+                        } 
+                    } 
                     catch (RemoteException ignore)
                     { }
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //super.finalize();
-            //synchronized (mBinder) {
-                //if (mHeld) {
-                    //try {
-                        //mService.releaseWifiLock(mBinder);
-                        //synchronized (WifiManager.this) {
-                            //mActiveLockCount--;
-                        //}
-                    //} catch (RemoteException ignore) {
-                    //}
-                //}
-            //}
+                } 
+            } 
+            
+            
+            
+                
+                    
+                        
+                        
+                            
+                        
+                    
+                    
+                
+            
         }
 
         
@@ -1225,12 +1272,12 @@ public class WifiManager {
             mRefCount = 0;
             mRefCounted = true;
             mHeld = false;
-            // ---------- Original Method ----------
-            //mTag = tag;
-            //mBinder = new Binder();
-            //mRefCount = 0;
-            //mRefCounted = true;
-            //mHeld = false;
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1248,33 +1295,33 @@ public class WifiManager {
                                     mService.releaseMulticastLock();
                                     if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(
                                         "Exceeded maximum number of wifi locks");
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                                } 
+                            } 
+                        } 
+                    } 
                     catch (RemoteException ignore)
                     { }
                     mHeld = true;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (mBinder) {
-                //if (mRefCounted ? (++mRefCount > 0) : (!mHeld)) {
-                    //try {
-                        //mService.acquireMulticastLock(mBinder, mTag);
-                        //synchronized (WifiManager.this) {
-                            //if (mActiveLockCount >= MAX_ACTIVE_LOCKS) {
-                                //mService.releaseMulticastLock();
-                                //throw new UnsupportedOperationException(
-                                        //"Exceeded maximum number of wifi locks");
-                            //}
-                            //mActiveLockCount++;
-                        //}
-                    //} catch (RemoteException ignore) {
-                    //}
-                    //mHeld = true;
-                //}
-            //}
+                } 
+            } 
+            
+            
+                
+                    
+                        
+                        
+                            
+                                
+                                
+                                        
+                            
+                            
+                        
+                    
+                    
+                    
+                
+            
         }
 
         
@@ -1287,42 +1334,42 @@ public class WifiManager {
                         mService.releaseMulticastLock();
                         {
                             Object var1C3BCBC89D915D09A29A9D7ECF62293F_1501692526 = (WifiManager.this);
-                        } //End collapsed parenthetic
-                    } //End block
+                        } 
+                    } 
                     catch (RemoteException ignore)
                     { }
                     mHeld = false;
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new RuntimeException("MulticastLock under-locked "
                             + mTag);
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (mBinder) {
-                //if (mRefCounted ? (--mRefCount == 0) : (mHeld)) {
-                    //try {
-                        //mService.releaseMulticastLock();
-                        //synchronized (WifiManager.this) {
-                            //mActiveLockCount--;
-                        //}
-                    //} catch (RemoteException ignore) {
-                    //}
-                    //mHeld = false;
-                //}
-                //if (mRefCount < 0) {
-                    //throw new RuntimeException("MulticastLock under-locked "
-                            //+ mTag);
-                //}
-            //}
+                } 
+            } 
+            
+            
+                
+                    
+                        
+                        
+                            
+                        
+                    
+                    
+                    
+                
+                
+                    
+                            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.631 -0400", hash_original_method = "792BAAC8BC5216CF4F7CAEC0A7A38B7F", hash_generated_method = "91B8A28629F935F303A73D2F07650B69")
         public void setReferenceCounted(boolean refCounted) {
             mRefCounted = refCounted;
-            // ---------- Original Method ----------
-            //mRefCounted = refCounted;
+            
+            
         }
 
         
@@ -1330,16 +1377,16 @@ public class WifiManager {
         public boolean isHeld() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1217122041 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1217122041;
-            // ---------- Original Method ----------
-            //synchronized (mBinder) {
-                //return mHeld;
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.632 -0400", hash_original_method = "98C6FF6ECD72200F1F4D177BCA8A2AA1", hash_generated_method = "6B587E81FCB9512814A17360A324A078")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_270887821 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_270887821 = null; 
             String s1;
             String s2;
             String s3;
@@ -1348,26 +1395,26 @@ public class WifiManager {
                 s2 = mHeld ? "held; " : "";
                 {
                     s3 = "refcounted: refcount = " + mRefCount;
-                } //End block
+                } 
                 {
                     s3 = "not refcounted";
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_270887821 = "MulticastLock{ " + s1 + "; " + s2 + s3 + " }";
-            } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_270887821.addTaint(getTaint()); //Add taint from parent
+            } 
+            varB4EAC82CA7396A68D541C85D26508E83_270887821.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_270887821;
-            // ---------- Original Method ----------
-            //String s1, s2, s3;
-            //synchronized (mBinder) {
-                //s1 = Integer.toHexString(System.identityHashCode(this));
-                //s2 = mHeld ? "held; " : "";
-                //if (mRefCounted) {
-                    //s3 = "refcounted: refcount = " + mRefCount;
-                //} else {
-                    //s3 = "not refcounted";
-                //}
-                //return "MulticastLock{ " + s1 + "; " + s2 + s3 + " }";
-            //}
+            
+            
+            
+                
+                
+                
+                    
+                
+                    
+                
+                
+            
         }
 
         
@@ -1377,10 +1424,10 @@ public class WifiManager {
             super.finalize();
             setReferenceCounted(false);
             release();
-            // ---------- Original Method ----------
-            //super.finalize();
-            //setReferenceCounted(false);
-            //release();
+            
+            
+            
+            
         }
 
         

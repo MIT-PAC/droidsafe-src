@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.net.http.EventHandler;
@@ -39,9 +39,9 @@ abstract class StreamLoader implements Handler.Callback {
       StreamLoader(LoadListener loadlistener) {
         mLoadListener = loadlistener;
         mContext = loadlistener.getContext();
-        // ---------- Original Method ----------
-        //mLoadListener = loadlistener;
-        //mContext = loadlistener.getContext();
+        
+        
+        
     }
 
     
@@ -56,13 +56,13 @@ abstract class StreamLoader implements Handler.Callback {
         {
             {
                 mHandler = new Handler(this);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             boolean varD651E46A84333BE14ED7DC06FB27D56B_359312853 = (!mLoadListener.isSynchronous());
             {
                 mHandler.sendEmptyMessage(MSG_STATUS);
-            } //End block
+            } 
             {
                 {
                     boolean varF501B1EE8895D7D1801560BFBD5B0223_532401723 = (setupStreamAndSendStatus());
@@ -72,102 +72,105 @@ abstract class StreamLoader implements Handler.Callback {
                         {
                             boolean var2196D987793B000A45CE9DC816F7AA78_1378856706 = (!sendData() && !mLoadListener.cancelled());
                             ;
-                        } //End collapsed parenthetic
+                        } 
                         closeStreamAndSendEndData();
                         mLoadListener.loadSynchronousMessages();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mHandler == null) {
-                //mHandler = new Handler(this);
-            //}
-        //}
-        //if (!mLoadListener.isSynchronous()) {
-            //mHandler.sendEmptyMessage(MSG_STATUS);
-        //} else {
-            //if (setupStreamAndSendStatus()) {
-                //mData = new byte[8192];
-                //sendHeaders();
-                //while (!sendData() && !mLoadListener.cancelled());
-                //closeStreamAndSendEndData();
-                //mLoadListener.loadSynchronousMessages();
-            //}
-        //}
+                    } 
+                } 
+            } 
+        } 
+        
+        
+            
+                
+            
+        
+        
+            
+        
+            
+                
+                
+                
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.579 -0400", hash_original_method = "00FB85FDD84A2FA0A52746CD7D8A6203", hash_generated_method = "059C2B827E5CEFF7AC8463E64E1C70B3")
     public boolean handleMessage(Message msg) {
         {
             boolean var27BC34C7E113EAD226D4C2800E637990_1297479347 = (mLoadListener.isSynchronous());
             {
                 if (DroidSafeAndroidRuntime.control) throw new AssertionError();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var51592F2E4BF10483FBCB8D3F978AF6EE_1446548596 = (mLoadListener.cancelled());
             {
                 closeStreamAndSendEndData();
-            } //End block
-        } //End collapsed parenthetic
-        //Begin case MSG_STATUS 
+            } 
+        } 
+        
         {
             boolean varD51F49474299435EFAFBEB409E9FC4DF_1375679494 = (setupStreamAndSendStatus());
             {
                 mData = new byte[8192];
                 mHandler.sendEmptyMessage(MSG_HEADERS);
-            } //End block
-        } //End collapsed parenthetic
-        //End case MSG_STATUS 
-        //Begin case MSG_HEADERS 
+            } 
+        } 
+        
+        
         sendHeaders();
-        //End case MSG_HEADERS 
-        //Begin case MSG_HEADERS 
+        
+        
         mHandler.sendEmptyMessage(MSG_DATA);
-        //End case MSG_HEADERS 
-        //Begin case MSG_DATA 
+        
+        
         {
             boolean var1A20D36B5DB1848297E95A16125122BA_845346007 = (sendData());
             {
                 mHandler.sendEmptyMessage(MSG_END);
-            } //End block
+            } 
             {
                 mHandler.sendEmptyMessage(MSG_DATA);
-            } //End block
-        } //End collapsed parenthetic
-        //End case MSG_DATA 
-        //Begin case MSG_END 
+            } 
+        } 
+        
+        
         closeStreamAndSendEndData();
-        //End case MSG_END 
+        
         addTaint(msg.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1886173606 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1886173606;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.580 -0400", hash_original_method = "65A84C3A774E903513B92EB5B550F331", hash_generated_method = "567377B6B77AC4C020F73606376D2DC4")
     private void sendHeaders() {
         Headers headers = new Headers();
         {
             headers.setContentLength(mContentLength);
-        } //End block
+        } 
         buildHeaders(headers);
         mLoadListener.headers(headers);
-        // ---------- Original Method ----------
-        //Headers headers = new Headers();
-        //if (mContentLength > 0) {
-            //headers.setContentLength(mContentLength);
-        //}
-        //buildHeaders(headers);
-        //mLoadListener.headers(headers);
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.580 -0400", hash_original_method = "4C4D4DF9D04A987F005277A578061144", hash_generated_method = "ED46815B202E5AD949AFA7F955E6BCC1")
     private boolean sendData() {
         {
@@ -176,50 +179,51 @@ abstract class StreamLoader implements Handler.Callback {
                 int amount = mDataStream.read(mData);
                 {
                     mLoadListener.data(mData, amount);
-                } //End block
-            } //End block
+                } 
+            } 
             catch (IOException ex)
             {
                 mLoadListener.error(EventHandler.FILE_ERROR, ex.getMessage());
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_647007435 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_647007435;
-        // ---------- Original Method ----------
-        //if (mDataStream != null) {
-            //try {
-                //int amount = mDataStream.read(mData);
-                //if (amount > 0) {
-                    //mLoadListener.data(mData, amount);
-                    //return false;
-                //}
-            //} catch (IOException ex) {
-                //mLoadListener.error(EventHandler.FILE_ERROR, ex.getMessage());
-            //}
-        //}
-        //return true;
+        
+        
+            
+                
+                
+                    
+                    
+                
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.581 -0400", hash_original_method = "1E3300194DB856434710C1AC838853B7", hash_generated_method = "A24F5F05DD5CC0F492ED74118F9075A1")
     private void closeStreamAndSendEndData() {
         {
             try 
             {
                 mDataStream.close();
-            } //End block
+            } 
             catch (IOException ex)
             { }
-        } //End block
+        } 
         mLoadListener.endData();
-        // ---------- Original Method ----------
-        //if (mDataStream != null) {
-            //try {
-                //mDataStream.close();
-            //} catch (IOException ex) {
-            //}
-        //}
-        //mLoadListener.endData();
+        
+        
+            
+                
+            
+            
+        
+        
     }
 
     

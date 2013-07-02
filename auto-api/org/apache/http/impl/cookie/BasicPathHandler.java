@@ -1,11 +1,11 @@
 package org.apache.http.impl.cookie;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.http.cookie.Cookie;
 import org.apache.http.cookie.CookieAttributeHandler;
@@ -18,7 +18,7 @@ public class BasicPathHandler implements CookieAttributeHandler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.955 -0400", hash_original_method = "D507B370C20AEA12D2B2206AC852AB3E", hash_generated_method = "44D4B69B86148693F02C8C98C15CB121")
     public  BasicPathHandler() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,24 +26,24 @@ public class BasicPathHandler implements CookieAttributeHandler {
     public void parse(final SetCookie cookie, String value) throws MalformedCookieException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie may not be null");
-        } //End block
+        } 
         {
             boolean varB0FB804512D41BBC09207BBEA20F1D18_1594675207 = (value == null || value.trim().length() == 0);
             {
                 value = "/";
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         cookie.setPath(value);
         addTaint(cookie.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //if (cookie == null) {
-            //throw new IllegalArgumentException("Cookie may not be null");
-        //}
-        //if (value == null || value.trim().length() == 0) {
-            //value = "/";
-        //}
-        //cookie.setPath(value);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -55,16 +55,16 @@ public class BasicPathHandler implements CookieAttributeHandler {
                 if (DroidSafeAndroidRuntime.control) throw new MalformedCookieException(
                 "Illegal path attribute \"" + cookie.getPath() 
                 + "\". Path of origin: \"" + origin.getPath() + "\"");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(cookie.getTaint());
         addTaint(origin.getTaint());
-        // ---------- Original Method ----------
-        //if (!match(cookie, origin)) {
-            //throw new MalformedCookieException(
-                //"Illegal path attribute \"" + cookie.getPath() 
-                //+ "\". Path of origin: \"" + origin.getPath() + "\"");
-        //}
+        
+        
+            
+                
+                
+        
     }
 
     
@@ -72,21 +72,21 @@ public class BasicPathHandler implements CookieAttributeHandler {
     public boolean match(final Cookie cookie, final CookieOrigin origin) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie origin may not be null");
-        } //End block
+        } 
         String targetpath = origin.getPath();
         String topmostPath = cookie.getPath();
         {
             topmostPath = "/";
-        } //End block
+        } 
         {
             boolean varD0DCCFA85A06A52225986A2E5479BCE0_414901456 = (topmostPath.length() > 1 && topmostPath.endsWith("/"));
             {
                 topmostPath = topmostPath.substring(0, topmostPath.length() - 1);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean match = targetpath.startsWith (topmostPath);
         {
             boolean var3F006F7454D83BE96E99B33C9094EDD2_521185379 = (match && targetpath.length() != topmostPath.length());
@@ -95,16 +95,16 @@ public class BasicPathHandler implements CookieAttributeHandler {
                     boolean var0EB4D4F54A0DC3EB5ED399DE2AC1F7DC_1065586018 = (!topmostPath.endsWith("/"));
                     {
                         match = (targetpath.charAt(topmostPath.length()) == '/');
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(cookie.getTaint());
         addTaint(origin.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_68255808 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_68255808;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

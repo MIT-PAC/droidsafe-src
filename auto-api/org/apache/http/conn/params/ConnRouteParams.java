@@ -1,11 +1,11 @@
 package org.apache.http.conn.params;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.net.InetAddress;
 import org.apache.http.HttpHost;
@@ -16,10 +16,11 @@ public class ConnRouteParams implements ConnRoutePNames {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.081 -0400", hash_original_method = "2F583F6C69B80DBD9155194B569BE764", hash_generated_method = "FFA6007C752912BAF6FA892E8F7D0248")
     private  ConnRouteParams() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static HttpHost getDefaultProxy(HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("Parameters must not be null.");
@@ -33,6 +34,7 @@ public class ConnRouteParams implements ConnRoutePNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setDefaultProxy(HttpParams params,
                                              HttpHost proxy) {
         if (params == null) {
@@ -42,6 +44,7 @@ public class ConnRouteParams implements ConnRoutePNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static HttpRoute getForcedRoute(HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("Parameters must not be null.");
@@ -55,6 +58,7 @@ public class ConnRouteParams implements ConnRoutePNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setForcedRoute(HttpParams params,
                                             HttpRoute route) {
         if (params == null) {
@@ -64,6 +68,7 @@ public class ConnRouteParams implements ConnRoutePNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static InetAddress getLocalAddress(HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("Parameters must not be null.");
@@ -74,6 +79,7 @@ public class ConnRouteParams implements ConnRoutePNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setLocalAddress(HttpParams params,
                                              InetAddress local) {
         if (params == null) {

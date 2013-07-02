@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cat;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.telephony.IccFileHandler;
 import android.graphics.Bitmap;
@@ -59,12 +59,13 @@ class IconLoader extends Handler {
         mSimFH = fh;
         mIconsCache = new HashMap<Integer, Bitmap>(50);
         addTaint(looper.getTaint());
-        // ---------- Original Method ----------
-        //mSimFH = fh;
-        //mIconsCache = new HashMap<Integer, Bitmap>(50);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static IconLoader getInstance(Handler caller, IccFileHandler fh) {
         if (sLoader != null) {
             return sLoader;
@@ -86,16 +87,16 @@ class IconLoader extends Handler {
         mCurrentRecordIndex = 0;
         mState = STATE_MULTI_ICONS;
         startLoadingIcon(recordNumbers[0]);
-        // ---------- Original Method ----------
-        //if (recordNumbers == null || recordNumbers.length == 0 || msg == null) {
-            //return;
-        //}
-        //mEndMsg = msg;
-        //mIcons = new Bitmap[recordNumbers.length];
-        //mRecordNumbers = recordNumbers;
-        //mCurrentRecordIndex = 0;
-        //mState = STATE_MULTI_ICONS;
-        //startLoadingIcon(recordNumbers[0]);
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -105,16 +106,17 @@ class IconLoader extends Handler {
         mState = STATE_SINGLE_ICON;
         startLoadingIcon(recordNumber);
         addTaint(recordNumber);
-        // ---------- Original Method ----------
-        //if (msg == null) {
-            //return;
-        //}
-        //mEndMsg = msg;
-        //mState = STATE_SINGLE_ICON;
-        //startLoadingIcon(recordNumber);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.571 -0400", hash_original_method = "CF2A7740DA96FFBF2B7742A73D5B85D3", hash_generated_method = "98097E7CEA94E78C6737FDF9A2B4538F")
     private void startLoadingIcon(int recordNumber) {
         mId = null;
@@ -126,102 +128,105 @@ class IconLoader extends Handler {
             {
                 mCurrentIcon = mIconsCache.get(recordNumber);
                 postIcon();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         readId();
-        // ---------- Original Method ----------
-        //mId = null;
-        //mIconData = null;
-        //mCurrentIcon = null;
-        //mRecordNumber = recordNumber;
-        //if (mIconsCache.containsKey(recordNumber)) {
-            //mCurrentIcon = mIconsCache.get(recordNumber);
-            //postIcon();
-            //return;
-        //}
-        //readId();
+        
+        
+        
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.572 -0400", hash_original_method = "E1BF715B9C953843C5BFB563C24D3B0D", hash_generated_method = "8CE620C914EB1090F1087FF33A90E6A7")
     @Override
     public void handleMessage(Message msg) {
         AsyncResult ar;
         try 
         {
-            //Begin case EVENT_READ_EF_IMG_RECOED_DONE 
+            
             ar = (AsyncResult) msg.obj;
-            //End case EVENT_READ_EF_IMG_RECOED_DONE 
-            //Begin case EVENT_READ_EF_IMG_RECOED_DONE 
+            
+            
             {
                 boolean var166F9F3229813452CC65C23DFD03D3DF_983871874 = (handleImageDescriptor((byte[]) ar.result));
                 {
                     readIconData();
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new Exception("Unable to parse image descriptor");
-                } //End block
-            } //End collapsed parenthetic
-            //End case EVENT_READ_EF_IMG_RECOED_DONE 
-            //Begin case EVENT_READ_ICON_DONE 
+                } 
+            } 
+            
+            
             ar = (AsyncResult) msg.obj;
-            //End case EVENT_READ_ICON_DONE 
-            //Begin case EVENT_READ_ICON_DONE 
+            
+            
             byte[] rawData = ((byte[]) ar.result);
-            //End case EVENT_READ_ICON_DONE 
-            //Begin case EVENT_READ_ICON_DONE 
+            
+            
             {
                 mCurrentIcon = parseToBnW(rawData, rawData.length);
                 mIconsCache.put(mRecordNumber, mCurrentIcon);
                 postIcon();
-            } //End block
+            } 
             {
                 mIconData = rawData;
                 readClut();
-            } //End block
-            //End case EVENT_READ_ICON_DONE 
-            //Begin case EVENT_READ_CLUT_DONE 
+            } 
+            
+            
             ar = (AsyncResult) msg.obj;
-            //End case EVENT_READ_CLUT_DONE 
-            //Begin case EVENT_READ_CLUT_DONE 
+            
+            
             byte [] clut = ((byte[]) ar.result);
-            //End case EVENT_READ_CLUT_DONE 
-            //Begin case EVENT_READ_CLUT_DONE 
+            
+            
             mCurrentIcon = parseToRGB(mIconData, mIconData.length,
                         false, clut);
-            //End case EVENT_READ_CLUT_DONE 
-            //Begin case EVENT_READ_CLUT_DONE 
+            
+            
             mIconsCache.put(mRecordNumber, mCurrentIcon);
-            //End case EVENT_READ_CLUT_DONE 
-            //Begin case EVENT_READ_CLUT_DONE 
+            
+            
             postIcon();
-            //End case EVENT_READ_CLUT_DONE 
-        } //End block
+            
+        } 
         catch (Exception e)
         {
             CatLog.d(this, "Icon load failed");
             postIcon();
-        } //End block
+        } 
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.573 -0400", hash_original_method = "57AAD79E24539ED69C4A9588C1A4DBA1", hash_generated_method = "872F39B7AA4366160BEBEDE02D000339")
     private boolean handleImageDescriptor(byte[] rawData) {
         mId = ImageDescriptor.parse(rawData, 1);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_348010813 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_348010813;
-        // ---------- Original Method ----------
-        //mId = ImageDescriptor.parse(rawData, 1);
-        //if (mId == null) {
-            //return false;
-        //}
-        //return true;
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.573 -0400", hash_original_method = "78AA98F6413EBAF06D9D3065D89FA10B", hash_generated_method = "B3A123CBAF95CDF1AAC90C96EAD2F3C8")
     private void readClut() {
         int length = mIconData[3] * CLUT_ENTRY_SIZE;
@@ -229,76 +234,80 @@ class IconLoader extends Handler {
         mSimFH.loadEFImgTransparent(mId.imageId,
                 mIconData[CLUT_LOCATION_OFFSET],
                 mIconData[CLUT_LOCATION_OFFSET + 1], length, msg);
-        // ---------- Original Method ----------
-        //int length = mIconData[3] * CLUT_ENTRY_SIZE;
-        //Message msg = this.obtainMessage(EVENT_READ_CLUT_DONE);
-        //mSimFH.loadEFImgTransparent(mId.imageId,
-                //mIconData[CLUT_LOCATION_OFFSET],
-                //mIconData[CLUT_LOCATION_OFFSET + 1], length, msg);
+        
+        
+        
+        
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.574 -0400", hash_original_method = "9B2E1F9D86B0BE7AA9984F6F6998AD1A", hash_generated_method = "AC7CDA5851E7E6263A1C72AF223F9E64")
     private void readId() {
         {
             mCurrentIcon = null;
             postIcon();
-        } //End block
+        } 
         Message msg = this.obtainMessage(EVENT_READ_EF_IMG_RECOED_DONE);
         mSimFH.loadEFImgLinearFixed(mRecordNumber, msg);
-        // ---------- Original Method ----------
-        //if (mRecordNumber < 0) {
-            //mCurrentIcon = null;
-            //postIcon();
-            //return;
-        //}
-        //Message msg = this.obtainMessage(EVENT_READ_EF_IMG_RECOED_DONE);
-        //mSimFH.loadEFImgLinearFixed(mRecordNumber, msg);
+        
+        
+            
+            
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.574 -0400", hash_original_method = "E5FF0727F4A23FBA52C74807E31F642C", hash_generated_method = "35743DA67D5D7862E0114E3AE4CC1E79")
     private void readIconData() {
         Message msg = this.obtainMessage(EVENT_READ_ICON_DONE);
         mSimFH.loadEFImgTransparent(mId.imageId, 0, 0, mId.length ,msg);
-        // ---------- Original Method ----------
-        //Message msg = this.obtainMessage(EVENT_READ_ICON_DONE);
-        //mSimFH.loadEFImgTransparent(mId.imageId, 0, 0, mId.length ,msg);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.575 -0400", hash_original_method = "2C2351D604337717A113511ACF501262", hash_generated_method = "3BBCA77ECF8B0A8BF92BF330C4F98D46")
     private void postIcon() {
         {
             mEndMsg.obj = mCurrentIcon;
             mEndMsg.sendToTarget();
-        } //End block
+        } 
         {
             mIcons[mCurrentRecordIndex++] = mCurrentIcon;
             {
                 startLoadingIcon(mRecordNumbers[mCurrentRecordIndex]);
-            } //End block
+            } 
             {
                 mEndMsg.obj = mIcons;
                 mEndMsg.sendToTarget();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mState == STATE_SINGLE_ICON) {
-            //mEndMsg.obj = mCurrentIcon;
-            //mEndMsg.sendToTarget();
-        //} else if (mState == STATE_MULTI_ICONS) {
-            //mIcons[mCurrentRecordIndex++] = mCurrentIcon;
-            //if (mCurrentRecordIndex < mRecordNumbers.length) {
-                //startLoadingIcon(mRecordNumbers[mCurrentRecordIndex]);
-            //} else {
-                //mEndMsg.obj = mIcons;
-                //mEndMsg.sendToTarget();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+        
+            
+            
+                
+            
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Bitmap parseToBnW(byte[] data, int length) {
         int valueIndex = 0;
         int width = data[valueIndex++] & 0xFF;
@@ -331,6 +340,7 @@ class IconLoader extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Bitmap parseToRGB(byte[] data, int length,
             boolean transparency, byte[] clut) {
         int valueIndex = 0;

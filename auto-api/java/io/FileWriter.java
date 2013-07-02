@@ -1,11 +1,11 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class FileWriter extends OutputStreamWriter {
@@ -14,7 +14,7 @@ public class FileWriter extends OutputStreamWriter {
     public  FileWriter(File file) throws IOException {
         super(new FileOutputStream(file));
         addTaint(file.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -23,7 +23,7 @@ public class FileWriter extends OutputStreamWriter {
         super(new FileOutputStream(file, append));
         addTaint(file.getTaint());
         addTaint(append);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -31,7 +31,7 @@ public class FileWriter extends OutputStreamWriter {
     public  FileWriter(FileDescriptor fd) {
         super(new FileOutputStream(fd));
         addTaint(fd.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -39,7 +39,7 @@ public class FileWriter extends OutputStreamWriter {
     public  FileWriter(String filename) throws IOException {
         super(new FileOutputStream(new File(filename)));
         addTaint(filename.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -48,7 +48,7 @@ public class FileWriter extends OutputStreamWriter {
         super(new FileOutputStream(filename, append));
         addTaint(filename.getTaint());
         addTaint(append);
-        // ---------- Original Method ----------
+        
     }
 
     

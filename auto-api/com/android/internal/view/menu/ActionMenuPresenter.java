@@ -1,11 +1,11 @@
 package com.android.internal.view.menu;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.view.menu.ActionMenuView.ActionMenuChildView;
 import android.content.Context;
@@ -85,10 +85,11 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         super(context, com.android.internal.R.layout.action_menu_layout,
                 com.android.internal.R.layout.action_menu_item_layout);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.933 -0400", hash_original_method = "BC9545155A7D6BD0732B2C48FEAAA115", hash_generated_method = "DD2A7FB36E1178C0183FF14F11A82027")
     @Override
     public void initForMenu(Context context, MenuBuilder menu) {
@@ -96,53 +97,54 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         final Resources res = context.getResources();
         {
             mReserveOverflow = !ViewConfiguration.get(context).hasPermanentMenuKey();
-        } //End block
+        } 
         {
             mWidthLimit = res.getDisplayMetrics().widthPixels / 2;
-        } //End block
+        } 
         {
             mMaxItems = res.getInteger(com.android.internal.R.integer.max_action_buttons);
-        } //End block
+        } 
         int width = mWidthLimit;
         {
             {
                 mOverflowButton = new OverflowMenuButton(mSystemContext);
                 final int spec = MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED);
                 mOverflowButton.measure(spec, spec);
-            } //End block
+            } 
             width -= mOverflowButton.getMeasuredWidth();
-        } //End block
+        } 
         {
             mOverflowButton = null;
-        } //End block
+        } 
         mActionItemWidthLimit = width;
         mMinCellSize = (int) (ActionMenuView.MIN_CELL_SIZE * res.getDisplayMetrics().density);
         mScrapActionButtonView = null;
         addTaint(menu.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.933 -0400", hash_original_method = "A17C8C9C29C5D048821A272E4E211244", hash_generated_method = "5102132AC300187B1AC034673FEADE8C")
     public void onConfigurationChanged(Configuration newConfig) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             mMaxItems = mContext.getResources().getInteger(
                     com.android.internal.R.integer.max_action_buttons);
             {
                 mMenu.onItemsChanged(true);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(newConfig.getTaint());
-        // ---------- Original Method ----------
-        //if (!mMaxItemsSet) {
-            //mMaxItems = mContext.getResources().getInteger(
-                    //com.android.internal.R.integer.max_action_buttons);
-            //if (mMenu != null) {
-                //mMenu.onItemsChanged(true);
-            //}
-        //}
+        
+        
+            
+                    
+            
+                
+            
+        
     }
 
     
@@ -151,10 +153,10 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         mWidthLimit = width;
         mStrictWidthLimit = strict;
         mWidthLimitSet = true;
-        // ---------- Original Method ----------
-        //mWidthLimit = width;
-        //mStrictWidthLimit = strict;
-        //mWidthLimitSet = true;
+        
+        
+        
+        
     }
 
     
@@ -162,9 +164,9 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     public void setReserveOverflow(boolean reserveOverflow) {
         mReserveOverflow = reserveOverflow;
         mReserveOverflowSet = true;
-        // ---------- Original Method ----------
-        //mReserveOverflow = reserveOverflow;
-        //mReserveOverflowSet = true;
+        
+        
+        
     }
 
     
@@ -172,51 +174,53 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     public void setItemLimit(int itemCount) {
         mMaxItems = itemCount;
         mMaxItemsSet = true;
-        // ---------- Original Method ----------
-        //mMaxItems = itemCount;
-        //mMaxItemsSet = true;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.934 -0400", hash_original_method = "28685D1CD5555D455AA1245A08028303", hash_generated_method = "DA8155DF8D4813D0B03173FE5C681E23")
     public void setExpandedActionViewsExclusive(boolean isExclusive) {
         mExpandedActionViewsExclusive = isExclusive;
-        // ---------- Original Method ----------
-        //mExpandedActionViewsExclusive = isExclusive;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.935 -0400", hash_original_method = "AD0B74E3B833D08F8481D15CB97EDB86", hash_generated_method = "57EA308F523283FD3D4C056BD5B5F4AD")
     @Override
     public MenuView getMenuView(ViewGroup root) {
-        MenuView varB4EAC82CA7396A68D541C85D26508E83_1185942394 = null; //Variable for return #1
+        MenuView varB4EAC82CA7396A68D541C85D26508E83_1185942394 = null; 
         MenuView result = super.getMenuView(root);
         ((ActionMenuView) result).setPresenter(this);
         varB4EAC82CA7396A68D541C85D26508E83_1185942394 = result;
         addTaint(root.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1185942394.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1185942394.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1185942394;
-        // ---------- Original Method ----------
-        //MenuView result = super.getMenuView(root);
-        //((ActionMenuView) result).setPresenter(this);
-        //return result;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.936 -0400", hash_original_method = "59BA3C56A8058A32CF9B2FCB0A0B5507", hash_generated_method = "34FA694DF67E7C23191DDECE04C15740")
     @Override
     public View getItemView(MenuItemImpl item, View convertView, ViewGroup parent) {
-        View varB4EAC82CA7396A68D541C85D26508E83_2041976059 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_2041976059 = null; 
         View actionView = item.getActionView();
         {
             boolean var042A2602C5874EB8C3227D44BE9ADF6F_86897841 = (actionView == null || item.hasCollapsibleActionView());
             {
                 {
                     convertView = null;
-                } //End block
+                } 
                 actionView = super.getItemView(item, convertView, parent);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         actionView.setVisibility(item.isActionViewExpanded() ? View.GONE : View.VISIBLE);
         final ActionMenuView menuParent = (ActionMenuView) parent;
         final ViewGroup.LayoutParams lp = actionView.getLayoutParams();
@@ -224,29 +228,29 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
             boolean var3F4E8E87992AC39D78E62AD5C121760F_988792660 = (!menuParent.checkLayoutParams(lp));
             {
                 actionView.setLayoutParams(menuParent.generateLayoutParams(lp));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2041976059 = actionView;
         addTaint(item.getTaint());
         addTaint(convertView.getTaint());
         addTaint(parent.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2041976059.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2041976059.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2041976059;
-        // ---------- Original Method ----------
-        //View actionView = item.getActionView();
-        //if (actionView == null || item.hasCollapsibleActionView()) {
-            //if (!(convertView instanceof ActionMenuItemView)) {
-                //convertView = null;
-            //}
-            //actionView = super.getItemView(item, convertView, parent);
-        //}
-        //actionView.setVisibility(item.isActionViewExpanded() ? View.GONE : View.VISIBLE);
-        //final ActionMenuView menuParent = (ActionMenuView) parent;
-        //final ViewGroup.LayoutParams lp = actionView.getLayoutParams();
-        //if (!menuParent.checkLayoutParams(lp)) {
-            //actionView.setLayoutParams(menuParent.generateLayoutParams(lp));
-        //}
-        //return actionView;
+        
+        
+        
+            
+                
+            
+            
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -259,14 +263,15 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         actionItemView.setItemInvoker(menuView);
         addTaint(item.getTaint());
         addTaint(itemView.getTaint());
-        // ---------- Original Method ----------
-        //itemView.initialize(item, 0);
-        //final ActionMenuView menuView = (ActionMenuView) mMenuView;
-        //ActionMenuItemView actionItemView = (ActionMenuItemView) itemView;
-        //actionItemView.setItemInvoker(menuView);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.937 -0400", hash_original_method = "CF6FF79E1183E432FB7F279F6A955298", hash_generated_method = "48870B11852FBA4EA780314C12F8D7CC")
     @Override
     public boolean shouldIncludeItem(int childIndex, MenuItemImpl item) {
@@ -275,11 +280,12 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         addTaint(item.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1288189721 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1288189721;
-        // ---------- Original Method ----------
-        //return item.isActionButton();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.938 -0400", hash_original_method = "675BFE60E67D99082131CDB4BA0667CE", hash_generated_method = "12168C682F5FFFE3036DF049F5A60313")
     @Override
     public void updateMenuView(boolean cleared) {
@@ -293,10 +299,10 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
                     final ActionProvider provider = actionItems.get(i).getActionProvider();
                     {
                         provider.setSubUiVisibilityListener(this);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         ArrayList<MenuItemImpl> nonActionItems;
         nonActionItems = mMenu.getNonActionItems();
         nonActionItems = null;
@@ -305,71 +311,73 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
             final int count = nonActionItems.size();
             {
                 hasOverflow = !nonActionItems.get(0).isActionViewExpanded();
-            } //End block
+            } 
             {
                 hasOverflow = count > 0;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 mOverflowButton = new OverflowMenuButton(mSystemContext);
-            } //End block
+            } 
             ViewGroup parent = (ViewGroup) mOverflowButton.getParent();
             {
                 {
                     parent.removeView(mOverflowButton);
-                } //End block
+                } 
                 ActionMenuView menuView = (ActionMenuView) mMenuView;
                 menuView.addView(mOverflowButton, menuView.generateOverflowButtonLayoutParams());
-            } //End block
-        } //End block
+            } 
+        } 
         {
             boolean var636A254D04624E67B4E275AE8C012F60_1079929534 = (mOverflowButton != null && mOverflowButton.getParent() == mMenuView);
             {
                 ((ViewGroup) mMenuView).removeView(mOverflowButton);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         ((ActionMenuView) mMenuView).setOverflowReserved(mReserveOverflow);
         addTaint(cleared);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.938 -0400", hash_original_method = "9D8FC445B750A9A2E8805EF185920422", hash_generated_method = "52B524D3FB846E5E307F45FD1B12326A")
     @Override
     public boolean filterLeftoverView(ViewGroup parent, int childIndex) {
         {
             boolean var2C5D3A435D4B7C5FC7DF763D994EC999_986037013 = (parent.getChildAt(childIndex) == mOverflowButton);
-        } //End collapsed parenthetic
+        } 
         boolean var7C223E5B8CEAE7D7BF100F1F8A9FA1B9_1973966938 = (super.filterLeftoverView(parent, childIndex));
         addTaint(parent.getTaint());
         addTaint(childIndex);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1663503313 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1663503313;
-        // ---------- Original Method ----------
-        //if (parent.getChildAt(childIndex) == mOverflowButton) return false;
-        //return super.filterLeftoverView(parent, childIndex);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.939 -0400", hash_original_method = "37299DBD51D21A28CE7BE5283912D693", hash_generated_method = "85DAA915A632EAED151ED7607A5D7655")
     public boolean onSubMenuSelected(SubMenuBuilder subMenu) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean var89D6F494337AE8363DF4B82D8D3CD4B2_1721211204 = (!subMenu.hasVisibleItems());
-        } //End collapsed parenthetic
+        } 
         SubMenuBuilder topSubMenu = subMenu;
         {
             boolean var3070E3EF1FB105EFCC31C47F14EB2042_265564690 = (topSubMenu.getParentMenu() != mMenu);
             {
                 topSubMenu = (SubMenuBuilder) topSubMenu.getParentMenu();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         View anchor = findViewForItem(topSubMenu.getItem());
         {
             anchor = mOverflowButton;
-        } //End block
+        } 
         mOpenSubMenuId = subMenu.getItem().getItemId();
         mActionButtonPopup = new ActionButtonSubmenu(mContext, subMenu);
         mActionButtonPopup.setAnchorView(anchor);
@@ -377,31 +385,32 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         super.onSubMenuSelected(subMenu);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1559623163 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1559623163;
-        // ---------- Original Method ----------
-        //if (!subMenu.hasVisibleItems()) return false;
-        //SubMenuBuilder topSubMenu = subMenu;
-        //while (topSubMenu.getParentMenu() != mMenu) {
-            //topSubMenu = (SubMenuBuilder) topSubMenu.getParentMenu();
-        //}
-        //View anchor = findViewForItem(topSubMenu.getItem());
-        //if (anchor == null) {
-            //if (mOverflowButton == null) return false;
-            //anchor = mOverflowButton;
-        //}
-        //mOpenSubMenuId = subMenu.getItem().getItemId();
-        //mActionButtonPopup = new ActionButtonSubmenu(mContext, subMenu);
-        //mActionButtonPopup.setAnchorView(anchor);
-        //mActionButtonPopup.show();
-        //super.onSubMenuSelected(subMenu);
-        //return true;
+        
+        
+        
+        
+            
+        
+        
+        
+            
+            
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.940 -0400", hash_original_method = "D21215C119A8C9273D02F36683639F77", hash_generated_method = "2C24B2099874E34A68E5E0777F8BD2EB")
     private View findViewForItem(MenuItem item) {
-        View varB4EAC82CA7396A68D541C85D26508E83_24930257 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_1108263106 = null; //Variable for return #2
-        View varB4EAC82CA7396A68D541C85D26508E83_847939883 = null; //Variable for return #3
+        View varB4EAC82CA7396A68D541C85D26508E83_24930257 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1108263106 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_847939883 = null; 
         final ViewGroup parent = (ViewGroup) mMenuView;
         varB4EAC82CA7396A68D541C85D26508E83_24930257 = null;
         final int count = parent.getChildCount();
@@ -414,41 +423,42 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
                     ((MenuView.ItemView) child).getItemData() == item);
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1108263106 = child;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_847939883 = null;
         addTaint(item.getTaint());
-        View varA7E53CE21691AB073D9660D615818899_134837028; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_134837028; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_134837028 = varB4EAC82CA7396A68D541C85D26508E83_24930257;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_134837028 = varB4EAC82CA7396A68D541C85D26508E83_1108263106;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_134837028 = varB4EAC82CA7396A68D541C85D26508E83_847939883;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_134837028.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_134837028.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_134837028;
-        // ---------- Original Method ----------
-        //final ViewGroup parent = (ViewGroup) mMenuView;
-        //if (parent == null) return null;
-        //final int count = parent.getChildCount();
-        //for (int i = 0; i < count; i++) {
-            //final View child = parent.getChildAt(i);
-            //if (child instanceof MenuView.ItemView &&
-                    //((MenuView.ItemView) child).getItemData() == item) {
-                //return child;
-            //}
-        //}
-        //return null;
+        
+        
+        
+        
+        
+            
+            
+                    
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.940 -0400", hash_original_method = "51D4B09F0769DB498C88D93C1DD1D610", hash_generated_method = "63726AA1D7E2FEAE9E8C3359909F3F26")
     public boolean showOverflowMenu() {
         {
@@ -459,86 +469,90 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
                 mPostedOpenRunnable = new OpenOverflowRunnable(popup);
                 ((View) mMenuView).post(mPostedOpenRunnable);
                 super.onSubMenuSelected(null);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1707084742 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1707084742;
-        // ---------- Original Method ----------
-        //if (mReserveOverflow && !isOverflowMenuShowing() && mMenu != null && mMenuView != null &&
-                //mPostedOpenRunnable == null) {
-            //OverflowPopup popup = new OverflowPopup(mContext, mMenu, mOverflowButton, true);
-            //mPostedOpenRunnable = new OpenOverflowRunnable(popup);
-            //((View) mMenuView).post(mPostedOpenRunnable);
-            //super.onSubMenuSelected(null);
-            //return true;
-        //}
-        //return false;
+        
+        
+                
+            
+            
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.941 -0400", hash_original_method = "F07D2B002CE8D32774BDF7E27A216F8A", hash_generated_method = "873B7F2E33D70D0DD59C37B786323781")
     public boolean hideOverflowMenu() {
         {
             ((View) mMenuView).removeCallbacks(mPostedOpenRunnable);
             mPostedOpenRunnable = null;
-        } //End block
+        } 
         MenuPopupHelper popup = mOverflowPopup;
         {
             popup.dismiss();
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1906480182 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1906480182;
-        // ---------- Original Method ----------
-        //if (mPostedOpenRunnable != null && mMenuView != null) {
-            //((View) mMenuView).removeCallbacks(mPostedOpenRunnable);
-            //mPostedOpenRunnable = null;
-            //return true;
-        //}
-        //MenuPopupHelper popup = mOverflowPopup;
-        //if (popup != null) {
-            //popup.dismiss();
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+            
+            
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.941 -0400", hash_original_method = "048650AFF94B01A571A17F813CE8142B", hash_generated_method = "56F3C5F6BBB3B18C936D1BA0A0D8CF51")
     public boolean dismissPopupMenus() {
         boolean result = hideOverflowMenu();
         result |= hideSubMenus();
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_912101406 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_912101406;
-        // ---------- Original Method ----------
-        //boolean result = hideOverflowMenu();
-        //result |= hideSubMenus();
-        //return result;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.941 -0400", hash_original_method = "86830002AFDFBC8C0790A0C80E395F68", hash_generated_method = "E1532A5515814EA3424E4F19209F75BB")
     public boolean hideSubMenus() {
         {
             mActionButtonPopup.dismiss();
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1968229027 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1968229027;
-        // ---------- Original Method ----------
-        //if (mActionButtonPopup != null) {
-            //mActionButtonPopup.dismiss();
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.942 -0400", hash_original_method = "EDFA99D71A654F51EBF8F88159FF0AE5", hash_generated_method = "8130FC4D8D360621F28F30FDE5EB6C4F")
     public boolean isOverflowMenuShowing() {
         boolean varDDE92196405694CCE3B775C2D317192F_1386735044 = (mOverflowPopup != null && mOverflowPopup.isShowing());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_533050540 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_533050540;
-        // ---------- Original Method ----------
-        //return mOverflowPopup != null && mOverflowPopup.isShowing();
+        
+        
     }
 
     
@@ -546,11 +560,12 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     public boolean isOverflowReserved() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1163060282 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1163060282;
-        // ---------- Original Method ----------
-        //return mReserveOverflow;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.943 -0400", hash_original_method = "3161CCF567C7C41004F1DD2E1141CBA5", hash_generated_method = "7CCA011B3EAF0A505D3E5480B2D8EBD2")
     public boolean flagActionItems() {
         final ArrayList<MenuItemImpl> visibleItems = mMenu.getVisibleItems();
@@ -573,17 +588,17 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
                         boolean varD8421CC750216F5C60B46CDFDEBDEB05_1500306511 = (item.requestsActionButton());
                         {
                             hasOverflow = true;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 {
                     boolean varBBBF1208950B60080E53B87439022606_461713856 = (mExpandedActionViewsExclusive && item.isActionViewExpanded());
                     {
                         maxActions = 0;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         maxActions -= requiredItems;
         final SparseBooleanArray seenGroups = mActionButtonGroups;
         seenGroups.clear();
@@ -593,7 +608,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
             cellsRemaining = widthLimit / mMinCellSize;
             final int cellSizeRemaining = widthLimit % mMinCellSize;
             cellSize = mMinCellSize + cellSizeRemaining / cellsRemaining;
-        } //End block
+        } 
         {
             int i = 0;
             {
@@ -604,25 +619,25 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
                         View v = getItemView(item, mScrapActionButtonView, parent);
                         {
                             mScrapActionButtonView = v;
-                        } //End block
+                        } 
                         {
                             cellsRemaining -= ActionMenuView.measureChildForCells(v,
                             cellSize, cellsRemaining, querySpec, 0);
-                        } //End block
+                        } 
                         {
                             v.measure(querySpec, querySpec);
-                        } //End block
+                        } 
                         final int measuredWidth = v.getMeasuredWidth();
                         widthLimit -= measuredWidth;
                         {
                             firstActionWidth = measuredWidth;
-                        } //End block
+                        } 
                         final int groupId = item.getGroupId();
                         {
                             seenGroups.put(groupId, true);
-                        } //End block
+                        } 
                         item.setIsActionButton(true);
-                    } //End block
+                    } 
                     {
                         boolean varD8421CC750216F5C60B46CDFDEBDEB05_886067665 = (item.requestsActionButton());
                         {
@@ -634,33 +649,33 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
                                 View v = getItemView(item, mScrapActionButtonView, parent);
                                 {
                                     mScrapActionButtonView = v;
-                                } //End block
+                                } 
                                 {
                                     final int cells = ActionMenuView.measureChildForCells(v,
                                 cellSize, cellsRemaining, querySpec, 0);
                                     cellsRemaining -= cells;
                                     {
                                         isAction = false;
-                                    } //End block
-                                } //End block
+                                    } 
+                                } 
                                 {
                                     v.measure(querySpec, querySpec);
-                                } //End block
+                                } 
                                 final int measuredWidth = v.getMeasuredWidth();
                                 widthLimit -= measuredWidth;
                                 {
                                     firstActionWidth = measuredWidth;
-                                } //End block
+                                } 
                                 {
                                     isAction &= widthLimit >= 0;
-                                } //End block
+                                } 
                                 {
                                     isAction &= widthLimit + firstActionWidth > 0;
-                                } //End block
-                            } //End block
+                                } 
+                            } 
                             {
                                 seenGroups.put(groupId, true);
-                            } //End block
+                            } 
                             {
                                 seenGroups.put(groupId, false);
                                 {
@@ -672,99 +687,103 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
                                             {
                                                 {
                                                     boolean var3845F6435C6D2EFBC5673BCA3826363D_162344842 = (areYouMyGroupie.isActionButton());
-                                                } //End collapsed parenthetic
+                                                } 
                                                 areYouMyGroupie.setIsActionButton(false);
-                                            } //End block
-                                        } //End collapsed parenthetic
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
+                                            } 
+                                        } 
+                                    } 
+                                } 
+                            } 
                             item.setIsActionButton(isAction);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_707649472 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_707649472;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.944 -0400", hash_original_method = "C8ECD6F76386581509465FBD82905343", hash_generated_method = "04D5B832D8761AB87A15C6C47BBAACC6")
     @Override
     public void onCloseMenu(MenuBuilder menu, boolean allMenusAreClosing) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         dismissPopupMenus();
         super.onCloseMenu(menu, allMenusAreClosing);
         addTaint(menu.getTaint());
         addTaint(allMenusAreClosing);
-        // ---------- Original Method ----------
-        //dismissPopupMenus();
-        //super.onCloseMenu(menu, allMenusAreClosing);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.945 -0400", hash_original_method = "06AD8BBBF679989CAE04F426A0FFC61D", hash_generated_method = "C03E4E03D11152E124851403990DB89E")
     @Override
     public Parcelable onSaveInstanceState() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        Parcelable varB4EAC82CA7396A68D541C85D26508E83_414253869 = null; //Variable for return #1
+        
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_414253869 = null; 
         SavedState state = new SavedState();
         state.openSubMenuId = mOpenSubMenuId;
         varB4EAC82CA7396A68D541C85D26508E83_414253869 = state;
-        varB4EAC82CA7396A68D541C85D26508E83_414253869.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_414253869.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_414253869;
-        // ---------- Original Method ----------
-        //SavedState state = new SavedState();
-        //state.openSubMenuId = mOpenSubMenuId;
-        //return state;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.945 -0400", hash_original_method = "56321A468C9EBB2A9C3695363B6A634B", hash_generated_method = "1E88F880CC46113D05B455EB11E36CB4")
     @Override
     public void onRestoreInstanceState(Parcelable state) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         SavedState saved = (SavedState) state;
         {
             MenuItem item = mMenu.findItem(saved.openSubMenuId);
             {
                 SubMenuBuilder subMenu = (SubMenuBuilder) item.getSubMenu();
                 onSubMenuSelected(subMenu);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(state.getTaint());
-        // ---------- Original Method ----------
-        //SavedState saved = (SavedState) state;
-        //if (saved.openSubMenuId > 0) {
-            //MenuItem item = mMenu.findItem(saved.openSubMenuId);
-            //if (item != null) {
-                //SubMenuBuilder subMenu = (SubMenuBuilder) item.getSubMenu();
-                //onSubMenuSelected(subMenu);
-            //}
-        //}
+        
+        
+        
+            
+            
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.945 -0400", hash_original_method = "E6B8634A947A629174EE0649ED3769CC", hash_generated_method = "9038CE0FD8695612220BCFDB890B51CF")
     @Override
     public void onSubUiVisibilityChanged(boolean isVisible) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             super.onSubMenuSelected(null);
-        } //End block
+        } 
         {
             mMenu.close(false);
-        } //End block
+        } 
         addTaint(isVisible);
-        // ---------- Original Method ----------
-        //if (isVisible) {
-            //super.onSubMenuSelected(null);
-        //} else {
-            //mMenu.close(false);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -775,15 +794,15 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.946 -0400", hash_original_method = "5B86CE655F475C08F177FDB52AD9ECFE", hash_generated_method = "4573F1D4704340137C4835179DE848FD")
           SavedState() {
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.947 -0400", hash_original_method = "10B6E86FE11BCC070EDA2136A91ED86D", hash_generated_method = "FC0C0D4D8A2B76282E9B2EAAF3EB5917")
           SavedState(Parcel in) {
             openSubMenuId = in.readInt();
-            // ---------- Original Method ----------
-            //openSubMenuId = in.readInt();
+            
+            
         }
 
         
@@ -792,8 +811,8 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         public int describeContents() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1426059755 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1426059755;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
@@ -803,8 +822,8 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
             dest.writeInt(openSubMenuId);
             addTaint(dest.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //dest.writeInt(openSubMenuId);
+            
+            
         }
 
         
@@ -820,12 +839,12 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
                 return new SavedState[size];
             }
         };
-        // orphaned legacy method
+        
         public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
         
-        // orphaned legacy method
+        
         public SavedState[] newArray(int size) {
                 return new SavedState[size];
             }
@@ -844,11 +863,11 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
             setVisibility(VISIBLE);
             setEnabled(true);
             addTaint(context.getTaint());
-            // ---------- Original Method ----------
-            //setClickable(true);
-            //setFocusable(true);
-            //setVisibility(VISIBLE);
-            //setEnabled(true);
+            
+            
+            
+            
+            
         }
 
         
@@ -857,18 +876,18 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         public boolean performClick() {
             {
                 boolean var6267028C3644B44519A636F6B5EF90B1_1835876230 = (super.performClick());
-            } //End collapsed parenthetic
+            } 
             playSoundEffect(SoundEffectConstants.CLICK);
             showOverflowMenu();
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1366599209 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1366599209;
-            // ---------- Original Method ----------
-            //if (super.performClick()) {
-                //return true;
-            //}
-            //playSoundEffect(SoundEffectConstants.CLICK);
-            //showOverflowMenu();
-            //return true;
+            
+            
+                
+            
+            
+            
+            
         }
 
         
@@ -876,8 +895,8 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         public boolean needsDividerBefore() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_457165050 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_457165050;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -885,8 +904,8 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         public boolean needsDividerAfter() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_402273565 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_402273565;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -905,22 +924,22 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
             addTaint(menu.getTaint());
             addTaint(anchorView.getTaint());
             addTaint(overflowOnly);
-            // ---------- Original Method ----------
-            //setCallback(mPopupPresenterCallback);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.953 -0400", hash_original_method = "F12BAE7D751DC96E6D1F67F68EBC9919", hash_generated_method = "C0B66E552A56F943AE8D17ED4BE5D635")
         @Override
         public void onDismiss() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             super.onDismiss();
             mMenu.close();
             mOverflowPopup = null;
-            // ---------- Original Method ----------
-            //super.onDismiss();
-            //mMenu.close();
-            //mOverflowPopup = null;
+            
+            
+            
+            
         }
 
         
@@ -942,8 +961,8 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
                 boolean var578FB4F95786C0DE176C492E48EDBCE4_911747506 = (!item.isActionButton());
                 {
                     setAnchorView(mOverflowButton == null ? (View) mMenuView : mOverflowButton);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             setCallback(mPopupPresenterCallback);
             boolean preserveIconSpacing = false;
             final int count = subMenu.size();
@@ -955,43 +974,43 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
                         boolean var85A149AB5F872C1FDE25CE93041B2D49_760048271 = (childItem.isVisible() && childItem.getIcon() != null);
                         {
                             preserveIconSpacing = true;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             setForceShowIcon(preserveIconSpacing);
             addTaint(context.getTaint());
-            // ---------- Original Method ----------
-            //mSubMenu = subMenu;
-            //MenuItemImpl item = (MenuItemImpl) subMenu.getItem();
-            //if (!item.isActionButton()) {
-                //setAnchorView(mOverflowButton == null ? (View) mMenuView : mOverflowButton);
-            //}
-            //setCallback(mPopupPresenterCallback);
-            //boolean preserveIconSpacing = false;
-            //final int count = subMenu.size();
-            //for (int i = 0; i < count; i++) {
-                //MenuItem childItem = subMenu.getItem(i);
-                //if (childItem.isVisible() && childItem.getIcon() != null) {
-                    //preserveIconSpacing = true;
-                    //break;
-                //}
-            //}
-            //setForceShowIcon(preserveIconSpacing);
+            
+            
+            
+            
+                
+            
+            
+            
+            
+            
+                
+                
+                    
+                    
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.954 -0400", hash_original_method = "69C0D5A7A155D8F50134B9E617767128", hash_generated_method = "351F511E80FA2706234E40E36A6C89F9")
         @Override
         public void onDismiss() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             super.onDismiss();
             mActionButtonPopup = null;
             mOpenSubMenuId = 0;
-            // ---------- Original Method ----------
-            //super.onDismiss();
-            //mActionButtonPopup = null;
-            //mOpenSubMenuId = 0;
+            
+            
+            
+            
         }
 
         
@@ -1004,38 +1023,38 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.955 -0400", hash_original_method = "094885FACF5CDEF923542BEFD4BC4936", hash_generated_method = "094885FACF5CDEF923542BEFD4BC4936")
         public PopupPresenterCallback ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.955 -0400", hash_original_method = "29547EA8801B28CE842E58C3B2A91712", hash_generated_method = "7D316FA3B5D0E1818D54C041EDD6CAEF")
         @Override
         public boolean onOpenSubMenu(MenuBuilder subMenu) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mOpenSubMenuId = ((SubMenuBuilder) subMenu).getItem().getItemId();
             addTaint(subMenu.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_956704207 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_956704207;
-            // ---------- Original Method ----------
-            //if (subMenu == null) return false;
-            //mOpenSubMenuId = ((SubMenuBuilder) subMenu).getItem().getItemId();
-            //return false;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.956 -0400", hash_original_method = "847A197D3775740590913F0AAA0D3207", hash_generated_method = "346D48DB65EC536A8B0327D580C6F3D2")
         @Override
         public void onCloseMenu(MenuBuilder menu, boolean allMenusAreClosing) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 ((SubMenuBuilder) menu).getRootMenu().close(false);
-            } //End block
+            } 
             addTaint(menu.getTaint());
             addTaint(allMenusAreClosing);
-            // ---------- Original Method ----------
-            //if (menu instanceof SubMenuBuilder) {
-                //((SubMenuBuilder) menu).getRootMenu().close(false);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -1051,8 +1070,8 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.957 -0400", hash_original_method = "599E88E0D73270F72B5C8D6A6C7D2ACA", hash_generated_method = "83EF72038C4C6F336D91E4FDD7DBA957")
         public  OpenOverflowRunnable(OverflowPopup popup) {
             mPopup = popup;
-            // ---------- Original Method ----------
-            //mPopup = popup;
+            
+            
         }
 
         
@@ -1064,16 +1083,16 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
                 boolean var3552093DD787185B5C9D0DFE6D6F1BD0_131701573 = (menuView != null && menuView.getWindowToken() != null && mPopup.tryShow());
                 {
                     mOverflowPopup = mPopup;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mPostedOpenRunnable = null;
-            // ---------- Original Method ----------
-            //mMenu.changeMenuMode();
-            //final View menuView = (View) mMenuView;
-            //if (menuView != null && menuView.getWindowToken() != null && mPopup.tryShow()) {
-                //mOverflowPopup = mPopup;
-            //}
-            //mPostedOpenRunnable = null;
+            
+            
+            
+            
+                
+            
+            
         }
 
         

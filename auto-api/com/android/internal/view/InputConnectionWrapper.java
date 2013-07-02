@@ -1,11 +1,11 @@
 package com.android.internal.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Bundle;
 import android.os.RemoteException;
@@ -26,15 +26,16 @@ public class InputConnectionWrapper implements InputConnection {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.729 -0400", hash_original_method = "200A59D07195D77203DE13B6F1D7E213", hash_generated_method = "7612BD2DCE02136E56A8BD3FD04ECE95")
     public  InputConnectionWrapper(IInputContext inputContext) {
         mIInputContext = inputContext;
-        // ---------- Original Method ----------
-        //mIInputContext = inputContext;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.730 -0400", hash_original_method = "E5D9808718D85F214F56B5C74559D92A", hash_generated_method = "992EC947807EFE9F0647BCDBC130C2BE")
     public CharSequence getTextAfterCursor(int length, int flags) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1687150562 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1662265034 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1687150562 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1662265034 = null; 
         CharSequence value = null;
         try 
         {
@@ -44,51 +45,52 @@ public class InputConnectionWrapper implements InputConnection {
                 callback.waitForResultLocked();
                 {
                     value = callback.mTextAfterCursor;
-                } //End block
-            } //End block
+                } 
+            } 
             callback.dispose();
-        } //End block
+        } 
         catch (RemoteException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1687150562 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1662265034 = value;
         addTaint(length);
         addTaint(flags);
-        CharSequence varA7E53CE21691AB073D9660D615818899_1511220388; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_1511220388; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1511220388 = varB4EAC82CA7396A68D541C85D26508E83_1687150562;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1511220388 = varB4EAC82CA7396A68D541C85D26508E83_1662265034;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1511220388.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1511220388.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1511220388;
-        // ---------- Original Method ----------
-        //CharSequence value = null;
-        //try {
-            //InputContextCallback callback = InputContextCallback.getInstance();
-            //mIInputContext.getTextAfterCursor(length, flags, callback.mSeq, callback);
-            //synchronized (callback) {
-                //callback.waitForResultLocked();
-                //if (callback.mHaveValue) {
-                    //value = callback.mTextAfterCursor;
-                //}
-            //}
-            //callback.dispose();
-        //} catch (RemoteException e) {
-            //return null;
-        //}
-        //return value;
+        
+        
+        
+            
+            
+            
+                
+                
+                    
+                
+            
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.731 -0400", hash_original_method = "161B1891DB80E123B2A48225941EF408", hash_generated_method = "F542CAFD3065AA3B588C274A10BF6632")
     public CharSequence getTextBeforeCursor(int length, int flags) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1156268136 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_722915996 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1156268136 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_722915996 = null; 
         CharSequence value = null;
         try 
         {
@@ -98,51 +100,52 @@ public class InputConnectionWrapper implements InputConnection {
                 callback.waitForResultLocked();
                 {
                     value = callback.mTextBeforeCursor;
-                } //End block
-            } //End block
+                } 
+            } 
             callback.dispose();
-        } //End block
+        } 
         catch (RemoteException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1156268136 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_722915996 = value;
         addTaint(length);
         addTaint(flags);
-        CharSequence varA7E53CE21691AB073D9660D615818899_647057738; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_647057738; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_647057738 = varB4EAC82CA7396A68D541C85D26508E83_1156268136;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_647057738 = varB4EAC82CA7396A68D541C85D26508E83_722915996;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_647057738.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_647057738.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_647057738;
-        // ---------- Original Method ----------
-        //CharSequence value = null;
-        //try {
-            //InputContextCallback callback = InputContextCallback.getInstance();
-            //mIInputContext.getTextBeforeCursor(length, flags, callback.mSeq, callback);
-            //synchronized (callback) {
-                //callback.waitForResultLocked();
-                //if (callback.mHaveValue) {
-                    //value = callback.mTextBeforeCursor;
-                //}
-            //}
-            //callback.dispose();
-        //} catch (RemoteException e) {
-            //return null;
-        //}
-        //return value;
+        
+        
+        
+            
+            
+            
+                
+                
+                    
+                
+            
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.731 -0400", hash_original_method = "07C2D6CA43F82EBF9A41822F1A0D86D8", hash_generated_method = "7486060C8595D522C4291D100CDE9983")
     public CharSequence getSelectedText(int flags) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1319779933 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1768442942 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1319779933 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1768442942 = null; 
         CharSequence value = null;
         try 
         {
@@ -152,46 +155,47 @@ public class InputConnectionWrapper implements InputConnection {
                 callback.waitForResultLocked();
                 {
                     value = callback.mSelectedText;
-                } //End block
-            } //End block
+                } 
+            } 
             callback.dispose();
-        } //End block
+        } 
         catch (RemoteException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1319779933 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1768442942 = value;
         addTaint(flags);
-        CharSequence varA7E53CE21691AB073D9660D615818899_1048644543; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_1048644543; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1048644543 = varB4EAC82CA7396A68D541C85D26508E83_1319779933;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1048644543 = varB4EAC82CA7396A68D541C85D26508E83_1768442942;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1048644543.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1048644543.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1048644543;
-        // ---------- Original Method ----------
-        //CharSequence value = null;
-        //try {
-            //InputContextCallback callback = InputContextCallback.getInstance();
-            //mIInputContext.getSelectedText(flags, callback.mSeq, callback);
-            //synchronized (callback) {
-                //callback.waitForResultLocked();
-                //if (callback.mHaveValue) {
-                    //value = callback.mSelectedText;
-                //}
-            //}
-            //callback.dispose();
-        //} catch (RemoteException e) {
-            //return null;
-        //}
-        //return value;
+        
+        
+        
+            
+            
+            
+                
+                
+                    
+                
+            
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.732 -0400", hash_original_method = "42EA416764DB4DFF051E9040CF49BB73", hash_generated_method = "041D12CB107E01ECE604CD7B4A38BC7C")
     public int getCursorCapsMode(int reqModes) {
         int value = 0;
@@ -203,38 +207,39 @@ public class InputConnectionWrapper implements InputConnection {
                 callback.waitForResultLocked();
                 {
                     value = callback.mCursorCapsMode;
-                } //End block
-            } //End block
+                } 
+            } 
             callback.dispose();
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(reqModes);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1322335439 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1322335439;
-        // ---------- Original Method ----------
-        //int value = 0;
-        //try {
-            //InputContextCallback callback = InputContextCallback.getInstance();
-            //mIInputContext.getCursorCapsMode(reqModes, callback.mSeq, callback);
-            //synchronized (callback) {
-                //callback.waitForResultLocked();
-                //if (callback.mHaveValue) {
-                    //value = callback.mCursorCapsMode;
-                //}
-            //}
-            //callback.dispose();
-        //} catch (RemoteException e) {
-            //return 0;
-        //}
-        //return value;
+        
+        
+        
+            
+            
+            
+                
+                
+                    
+                
+            
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.734 -0400", hash_original_method = "305E28329FA220003F7366DA2A6BF238", hash_generated_method = "7D6490644F9CCCF6E992E56C72520D4C")
     public ExtractedText getExtractedText(ExtractedTextRequest request, int flags) {
-        ExtractedText varB4EAC82CA7396A68D541C85D26508E83_1168002614 = null; //Variable for return #1
-        ExtractedText varB4EAC82CA7396A68D541C85D26508E83_77644165 = null; //Variable for return #2
+        ExtractedText varB4EAC82CA7396A68D541C85D26508E83_1168002614 = null; 
+        ExtractedText varB4EAC82CA7396A68D541C85D26508E83_77644165 = null; 
         ExtractedText value = null;
         try 
         {
@@ -244,383 +249,399 @@ public class InputConnectionWrapper implements InputConnection {
                 callback.waitForResultLocked();
                 {
                     value = callback.mExtractedText;
-                } //End block
-            } //End block
+                } 
+            } 
             callback.dispose();
-        } //End block
+        } 
         catch (RemoteException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1168002614 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_77644165 = value;
         addTaint(request.getTaint());
         addTaint(flags);
-        ExtractedText varA7E53CE21691AB073D9660D615818899_1677177805; //Final return value
+        ExtractedText varA7E53CE21691AB073D9660D615818899_1677177805; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1677177805 = varB4EAC82CA7396A68D541C85D26508E83_1168002614;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1677177805 = varB4EAC82CA7396A68D541C85D26508E83_77644165;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1677177805.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1677177805.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1677177805;
-        // ---------- Original Method ----------
-        //ExtractedText value = null;
-        //try {
-            //InputContextCallback callback = InputContextCallback.getInstance();
-            //mIInputContext.getExtractedText(request, flags, callback.mSeq, callback);
-            //synchronized (callback) {
-                //callback.waitForResultLocked();
-                //if (callback.mHaveValue) {
-                    //value = callback.mExtractedText;
-                //}
-            //}
-            //callback.dispose();
-        //} catch (RemoteException e) {
-            //return null;
-        //}
-        //return value;
+        
+        
+        
+            
+            
+            
+                
+                
+                    
+                
+            
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.734 -0400", hash_original_method = "E23EA90B6F67D6C242A9505D14FF1F12", hash_generated_method = "171B35F7DB2E1BDA009F29CA185DBFD7")
     public boolean commitText(CharSequence text, int newCursorPosition) {
         try 
         {
             mIInputContext.commitText(text, newCursorPosition);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(text.getTaint());
         addTaint(newCursorPosition);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_528148197 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_528148197;
-        // ---------- Original Method ----------
-        //try {
-            //mIInputContext.commitText(text, newCursorPosition);
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.735 -0400", hash_original_method = "EAB5E616D3D3B282F88520753342CC96", hash_generated_method = "58E6DE06C3E96C2F16AC8BAF562E191F")
     public boolean commitCompletion(CompletionInfo text) {
         try 
         {
             mIInputContext.commitCompletion(text);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(text.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1853997008 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1853997008;
-        // ---------- Original Method ----------
-        //try {
-            //mIInputContext.commitCompletion(text);
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.735 -0400", hash_original_method = "6923A4DC7941C069C654C30365BCACDD", hash_generated_method = "53E3E409D82A0A30D3A3D4D779AA0F5A")
     public boolean commitCorrection(CorrectionInfo correctionInfo) {
         try 
         {
             mIInputContext.commitCorrection(correctionInfo);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(correctionInfo.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_633690086 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_633690086;
-        // ---------- Original Method ----------
-        //try {
-            //mIInputContext.commitCorrection(correctionInfo);
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.735 -0400", hash_original_method = "7022EC7ED2F239685C7BD3195B6CEAE9", hash_generated_method = "4099A90EAD7BCCEB982420D2C85E15B6")
     public boolean setSelection(int start, int end) {
         try 
         {
             mIInputContext.setSelection(start, end);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(start);
         addTaint(end);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1737853590 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1737853590;
-        // ---------- Original Method ----------
-        //try {
-            //mIInputContext.setSelection(start, end);
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.736 -0400", hash_original_method = "67A8A8F86F1AE5123A01275D8828212B", hash_generated_method = "449F12141D73BE895D7B2DEAA151FF23")
     public boolean performEditorAction(int actionCode) {
         try 
         {
             mIInputContext.performEditorAction(actionCode);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(actionCode);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1997113337 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1997113337;
-        // ---------- Original Method ----------
-        //try {
-            //mIInputContext.performEditorAction(actionCode);
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.736 -0400", hash_original_method = "F7AEA38F9035D01924C8EE6C58DE4221", hash_generated_method = "FBB0176B9D95678F9F3A723578F549E0")
     public boolean performContextMenuAction(int id) {
         try 
         {
             mIInputContext.performContextMenuAction(id);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(id);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_815759296 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_815759296;
-        // ---------- Original Method ----------
-        //try {
-            //mIInputContext.performContextMenuAction(id);
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.736 -0400", hash_original_method = "D57326DB6E974535AC174E0CB4F4F72D", hash_generated_method = "AFF101473199EE2791FB1B36BF5EECC9")
     public boolean setComposingRegion(int start, int end) {
         try 
         {
             mIInputContext.setComposingRegion(start, end);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(start);
         addTaint(end);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1432962845 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1432962845;
-        // ---------- Original Method ----------
-        //try {
-            //mIInputContext.setComposingRegion(start, end);
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.737 -0400", hash_original_method = "DE2855A916E2A0C96139F9B28AC632EF", hash_generated_method = "089B8657FAA86DE734593B420C1B82AF")
     public boolean setComposingText(CharSequence text, int newCursorPosition) {
         try 
         {
             mIInputContext.setComposingText(text, newCursorPosition);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(text.getTaint());
         addTaint(newCursorPosition);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1206799278 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1206799278;
-        // ---------- Original Method ----------
-        //try {
-            //mIInputContext.setComposingText(text, newCursorPosition);
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.737 -0400", hash_original_method = "654CA187A88EAE1F2AB6640B00B6686A", hash_generated_method = "779CF0DD05F68088AEBD22FBE0389276")
     public boolean finishComposingText() {
         try 
         {
             mIInputContext.finishComposingText();
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1755291089 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1755291089;
-        // ---------- Original Method ----------
-        //try {
-            //mIInputContext.finishComposingText();
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.737 -0400", hash_original_method = "F214558E918685C9D34C6BD9CACE39BA", hash_generated_method = "E6CBD0DD3C66E455C6C71515E475B83F")
     public boolean beginBatchEdit() {
         try 
         {
             mIInputContext.beginBatchEdit();
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_554257831 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_554257831;
-        // ---------- Original Method ----------
-        //try {
-            //mIInputContext.beginBatchEdit();
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.738 -0400", hash_original_method = "FFD20A357B6026C06481613009C9A85C", hash_generated_method = "84581F0481557640B56984A69521BB5D")
     public boolean endBatchEdit() {
         try 
         {
             mIInputContext.endBatchEdit();
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_718707831 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_718707831;
-        // ---------- Original Method ----------
-        //try {
-            //mIInputContext.endBatchEdit();
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.738 -0400", hash_original_method = "BDB80433761F466B2EC1080474660009", hash_generated_method = "A268135B6B92DFA1D2DFB39F91C32506")
     public boolean sendKeyEvent(KeyEvent event) {
         try 
         {
             mIInputContext.sendKeyEvent(event);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_831996019 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_831996019;
-        // ---------- Original Method ----------
-        //try {
-            //mIInputContext.sendKeyEvent(event);
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.738 -0400", hash_original_method = "3A88C36966ABDB3053599F030E0CFC04", hash_generated_method = "5579C3AB4B14B4B990AF8A2C4B6D2CDB")
     public boolean clearMetaKeyStates(int states) {
         try 
         {
             mIInputContext.clearMetaKeyStates(states);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(states);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1237162307 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1237162307;
-        // ---------- Original Method ----------
-        //try {
-            //mIInputContext.clearMetaKeyStates(states);
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.739 -0400", hash_original_method = "A0EA155ACF6A2B88254811510DB0CC9C", hash_generated_method = "D20AC975075E8B0FDA1F5C2BA16C24C7")
     public boolean deleteSurroundingText(int leftLength, int rightLength) {
         try 
         {
             mIInputContext.deleteSurroundingText(leftLength, rightLength);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(leftLength);
         addTaint(rightLength);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_106144897 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_106144897;
-        // ---------- Original Method ----------
-        //try {
-            //mIInputContext.deleteSurroundingText(leftLength, rightLength);
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.739 -0400", hash_original_method = "F356C6E7AA9EF97C6745E94B41944104", hash_generated_method = "D6A7DDA9DA1DF2388169214358434D59")
     public boolean reportFullscreenMode(boolean enabled) {
         try 
         {
             mIInputContext.reportFullscreenMode(enabled);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(enabled);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_676271092 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_676271092;
-        // ---------- Original Method ----------
-        //try {
-            //mIInputContext.reportFullscreenMode(enabled);
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.739 -0400", hash_original_method = "C4A420F599BD094A8850BEFF4D3FF18D", hash_generated_method = "672D33D4AA5768DC7B4E4897C8389780")
     public boolean performPrivateCommand(String action, Bundle data) {
         try 
         {
             mIInputContext.performPrivateCommand(action, data);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(action.getTaint());
         addTaint(data.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_190608097 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_190608097;
-        // ---------- Original Method ----------
-        //try {
-            //mIInputContext.performPrivateCommand(action, data);
-            //return true;
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -650,7 +671,7 @@ public class InputConnectionWrapper implements InputConnection {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.739 -0400", hash_original_method = "C2F7B541292D8E4E042270C21CD2A858", hash_generated_method = "C2F7B541292D8E4E042270C21CD2A858")
         public InputContextCallback ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -678,17 +699,17 @@ public class InputConnectionWrapper implements InputConnection {
                     mTextBeforeCursor = null;
                     mExtractedText = null;
                     sInstance = this;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (InputContextCallback.class) {
-                //if (sInstance == null) {
-                    //mTextAfterCursor = null;
-                    //mTextBeforeCursor = null;
-                    //mExtractedText = null;
-                    //sInstance = this;
-                //}
-            //}
+                } 
+            } 
+            
+            
+                
+                    
+                    
+                    
+                    
+                
+            
         }
 
         
@@ -699,20 +720,20 @@ public class InputConnectionWrapper implements InputConnection {
                     mTextBeforeCursor = textBeforeCursor;
                     mHaveValue = true;
                     notifyAll();
-                } //End block
-            } //End block
+                } 
+            } 
             addTaint(seq);
-            // ---------- Original Method ----------
-            //synchronized (this) {
-                //if (seq == mSeq) {
-                    //mTextBeforeCursor = textBeforeCursor;
-                    //mHaveValue = true;
-                    //notifyAll();
-                //} else {
-                    //Log.i(TAG, "Got out-of-sequence callback " + seq + " (expected " + mSeq
-                            //+ ") in setTextBeforeCursor, ignoring.");
-                //}
-            //}
+            
+            
+                
+                    
+                    
+                    
+                
+                    
+                            
+                
+            
         }
 
         
@@ -723,20 +744,20 @@ public class InputConnectionWrapper implements InputConnection {
                     mTextAfterCursor = textAfterCursor;
                     mHaveValue = true;
                     notifyAll();
-                } //End block
-            } //End block
+                } 
+            } 
             addTaint(seq);
-            // ---------- Original Method ----------
-            //synchronized (this) {
-                //if (seq == mSeq) {
-                    //mTextAfterCursor = textAfterCursor;
-                    //mHaveValue = true;
-                    //notifyAll();
-                //} else {
-                    //Log.i(TAG, "Got out-of-sequence callback " + seq + " (expected " + mSeq
-                            //+ ") in setTextAfterCursor, ignoring.");
-                //}
-            //}
+            
+            
+                
+                    
+                    
+                    
+                
+                    
+                            
+                
+            
         }
 
         
@@ -747,20 +768,20 @@ public class InputConnectionWrapper implements InputConnection {
                     mSelectedText = selectedText;
                     mHaveValue = true;
                     notifyAll();
-                } //End block
-            } //End block
+                } 
+            } 
             addTaint(seq);
-            // ---------- Original Method ----------
-            //synchronized (this) {
-                //if (seq == mSeq) {
-                    //mSelectedText = selectedText;
-                    //mHaveValue = true;
-                    //notifyAll();
-                //} else {
-                    //Log.i(TAG, "Got out-of-sequence callback " + seq + " (expected " + mSeq
-                            //+ ") in setSelectedText, ignoring.");
-                //}
-            //}
+            
+            
+                
+                    
+                    
+                    
+                
+                    
+                            
+                
+            
         }
 
         
@@ -771,20 +792,20 @@ public class InputConnectionWrapper implements InputConnection {
                     mCursorCapsMode = capsMode;
                     mHaveValue = true;
                     notifyAll();
-                } //End block
-            } //End block
+                } 
+            } 
             addTaint(seq);
-            // ---------- Original Method ----------
-            //synchronized (this) {
-                //if (seq == mSeq) {
-                    //mCursorCapsMode = capsMode; 
-                    //mHaveValue = true;  
-                    //notifyAll();
-                //} else {
-                    //Log.i(TAG, "Got out-of-sequence callback " + seq + " (expected " + mSeq
-                            //+ ") in setCursorCapsMode, ignoring.");
-                //}
-            //}
+            
+            
+                
+                    
+                    
+                    
+                
+                    
+                            
+                
+            
         }
 
         
@@ -795,20 +816,20 @@ public class InputConnectionWrapper implements InputConnection {
                     mExtractedText = extractedText;
                     mHaveValue = true;
                     notifyAll();
-                } //End block
-            } //End block
+                } 
+            } 
             addTaint(seq);
-            // ---------- Original Method ----------
-            //synchronized (this) {
-                //if (seq == mSeq) {
-                    //mExtractedText = extractedText;
-                    //mHaveValue = true;
-                    //notifyAll();
-                //} else {
-                    //Log.i(TAG, "Got out-of-sequence callback " + seq + " (expected " + mSeq
-                            //+ ") in setExtractedText, ignoring.");
-                //}
-            //}
+            
+            
+                
+                    
+                    
+                    
+                
+                    
+                            
+                
+            
         }
 
         
@@ -821,24 +842,24 @@ public class InputConnectionWrapper implements InputConnection {
                 try 
                 {
                     wait(remainingTime);
-                } //End block
+                } 
                 catch (InterruptedException e)
                 { }
-            } //End block
-            // ---------- Original Method ----------
-            //long startTime = SystemClock.uptimeMillis();
-            //long endTime = startTime + MAX_WAIT_TIME_MILLIS;
-            //while (!mHaveValue) {
-                //long remainingTime = endTime - SystemClock.uptimeMillis();
-                //if (remainingTime <= 0) {
-                    //Log.w(TAG, "Timed out waiting on IInputContextCallback");
-                    //return;
-                //}
-                //try {
-                    //wait(remainingTime);
-                //} catch (InterruptedException e) {
-                //}
-            //}
+            } 
+            
+            
+            
+            
+                
+                
+                    
+                    
+                
+                
+                    
+                
+                
+            
         }
 
         

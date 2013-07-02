@@ -1,11 +1,11 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class PaintFlagsDrawFilter extends DrawFilter {
@@ -15,8 +15,8 @@ public class PaintFlagsDrawFilter extends DrawFilter {
         mNativeInt = nativeConstructor(clearBits, setBits);
         addTaint(clearBits);
         addTaint(setBits);
-        // ---------- Original Method ----------
-        //mNativeInt = nativeConstructor(clearBits, setBits);
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import dalvik.system.VMStack;
 import java.util.ArrayList;
@@ -67,8 +67,8 @@ public class Thread implements Runnable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.137 -0400", hash_original_method = "A2846A412942D9A4A6734B659C3C08EA", hash_generated_method = "FC648266C8623CAE59D46FDD8401EFDA")
     public  Thread() {
         create(null, null, null, 0);
-        // ---------- Original Method ----------
-        //create(null, null, null, 0);
+        
+        
     }
 
     
@@ -76,8 +76,8 @@ public class Thread implements Runnable {
     public  Thread(Runnable runnable) {
         create(null, runnable, null, 0);
         addTaint(runnable.getTaint());
-        // ---------- Original Method ----------
-        //create(null, runnable, null, 0);
+        
+        
     }
 
     
@@ -85,15 +85,15 @@ public class Thread implements Runnable {
     public  Thread(Runnable runnable, String threadName) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         create(null, runnable, threadName, 0);
         addTaint(runnable.getTaint());
         addTaint(threadName.getTaint());
-        // ---------- Original Method ----------
-        //if (threadName == null) {
-            //throw new NullPointerException();
-        //}
-        //create(null, runnable, threadName, 0);
+        
+        
+            
+        
+        
     }
 
     
@@ -101,14 +101,14 @@ public class Thread implements Runnable {
     public  Thread(String threadName) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         create(null, null, threadName, 0);
         addTaint(threadName.getTaint());
-        // ---------- Original Method ----------
-        //if (threadName == null) {
-            //throw new NullPointerException();
-        //}
-        //create(null, null, threadName, 0);
+        
+        
+            
+        
+        
     }
 
     
@@ -117,8 +117,8 @@ public class Thread implements Runnable {
         create(group, runnable, null, 0);
         addTaint(group.getTaint());
         addTaint(runnable.getTaint());
-        // ---------- Original Method ----------
-        //create(group, runnable, null, 0);
+        
+        
     }
 
     
@@ -126,16 +126,16 @@ public class Thread implements Runnable {
     public  Thread(ThreadGroup group, Runnable runnable, String threadName) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         create(group, runnable, threadName, 0);
         addTaint(group.getTaint());
         addTaint(runnable.getTaint());
         addTaint(threadName.getTaint());
-        // ---------- Original Method ----------
-        //if (threadName == null) {
-            //throw new NullPointerException();
-        //}
-        //create(group, runnable, threadName, 0);
+        
+        
+            
+        
+        
     }
 
     
@@ -143,15 +143,15 @@ public class Thread implements Runnable {
     public  Thread(ThreadGroup group, String threadName) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         create(group, null, threadName, 0);
         addTaint(group.getTaint());
         addTaint(threadName.getTaint());
-        // ---------- Original Method ----------
-        //if (threadName == null) {
-            //throw new NullPointerException();
-        //}
-        //create(group, null, threadName, 0);
+        
+        
+            
+        
+        
     }
 
     
@@ -159,17 +159,17 @@ public class Thread implements Runnable {
     public  Thread(ThreadGroup group, Runnable runnable, String threadName, long stackSize) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         create(group, runnable, threadName, stackSize);
         addTaint(group.getTaint());
         addTaint(runnable.getTaint());
         addTaint(threadName.getTaint());
         addTaint(stackSize);
-        // ---------- Original Method ----------
-        //if (threadName == null) {
-            //throw new NullPointerException();
-        //}
-        //create(group, runnable, threadName, stackSize);
+        
+        
+            
+        
+        
     }
 
     
@@ -177,78 +177,80 @@ public class Thread implements Runnable {
       Thread(ThreadGroup group, String name, int priority, boolean daemon) {
         {
             id = ++Thread.count;
-        } //End block
+        } 
         {
             this.name = "Thread-" + id;
-        } //End block
+        } 
         {
             this.name = name;
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new InternalError("group not specified");
-        } //End block
+        } 
         this.group = group;
         this.target = null;
         this.stackSize = 0;
         this.priority = priority;
         this.daemon = daemon;
         this.group.addThread(this);
-        // ---------- Original Method ----------
-        //synchronized (Thread.class) {
-            //id = ++Thread.count;
-        //}
-        //if (name == null) {
-            //this.name = "Thread-" + id;
-        //} else {
-            //this.name = name;
-        //}
-        //if (group == null) {
-            //throw new InternalError("group not specified");
-        //}
-        //this.group = group;
-        //this.target = null;
-        //this.stackSize = 0;
-        //this.priority = priority;
-        //this.daemon = daemon;
-        //this.group.addThread(this);
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.140 -0400", hash_original_method = "B7E7B76C5A1CA256325AA2280577DF6E", hash_generated_method = "5785DEC908F37874FED380BF6BDAE8E9")
     private void create(ThreadGroup group, Runnable runnable, String threadName, long stackSize) {
         Thread currentThread = Thread.currentThread();
         {
             group = currentThread.getThreadGroup();
-        } //End block
+        } 
         {
             boolean var1C58EACCC96861E06E4F3C98EDF34DE2_1647774408 = (group.isDestroyed());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalThreadStateException("Group already destroyed");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.group = group;
         {
             id = ++Thread.count;
-        } //End block
+        } 
         {
             this.name = "Thread-" + id;
-        } //End block
+        } 
         {
             this.name = threadName;
-        } //End block
+        } 
         this.target = runnable;
         this.stackSize = stackSize;
         this.priority = currentThread.getPriority();
         this.contextClassLoader = currentThread.contextClassLoader;
         {
             inheritableValues = new ThreadLocal.Values(currentThread.inheritableValues);
-        } //End block
+        } 
         this.group.addThread(this);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int activeCount() {
         return currentThread().getThreadGroup().activeCount();
     }
@@ -256,40 +258,45 @@ public class Thread implements Runnable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.141 -0400", hash_original_method = "9AC5D8EF15BD7837ACD785C0772615A1", hash_generated_method = "58C0335FEF548999868CED53D4078AEE")
     public final void checkAccess() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.142 -0400", hash_original_method = "6B880F3A25E0C40C35D8EAA702DA9116", hash_generated_method = "373623D91668E94D5E4BDB565641C502")
     @Deprecated
     public int countStackFrames() {
         int var9E94C75F0A654EE4FD94FC83E274820D_1771488847 = (getStackTrace().length);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_213276312 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_213276312;
-        // ---------- Original Method ----------
-        //return getStackTrace().length;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Thread currentThread() {
         return VMThread.currentThread();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.142 -0400", hash_original_method = "E295DBEBB7624DABB0FA2D3E0377892B", hash_generated_method = "36C3BECAF55A9A5399EDB2847CA487F4")
     @Deprecated
     public void destroy() {
         if (DroidSafeAndroidRuntime.control) throw new NoSuchMethodError("Thread.destroy()");
-        // ---------- Original Method ----------
-        //throw new NoSuchMethodError("Thread.destroy()");
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void dumpStack() {
         new Throwable("stack dump").printStackTrace();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int enumerate(Thread[] threads) {
         Thread thread = Thread.currentThread();
         return thread.getThreadGroup().enumerate(threads);
@@ -310,12 +317,12 @@ public class Thread implements Runnable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.143 -0400", hash_original_method = "D65A36EB6AF7077545898D8D2274216D", hash_generated_method = "976DC6D5BAE6E71D4FB2FA40794E3843")
     public ClassLoader getContextClassLoader() {
-        ClassLoader varB4EAC82CA7396A68D541C85D26508E83_1395625169 = null; //Variable for return #1
+        ClassLoader varB4EAC82CA7396A68D541C85D26508E83_1395625169 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1395625169 = contextClassLoader;
-        varB4EAC82CA7396A68D541C85D26508E83_1395625169.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1395625169.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1395625169;
-        // ---------- Original Method ----------
-        //return contextClassLoader;
+        
+        
     }
 
     
@@ -328,19 +335,19 @@ public class Thread implements Runnable {
     public long getId() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_809548834 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_809548834;
-        // ---------- Original Method ----------
-        //return id;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.144 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "9B084E5F073955F4BC5495FF494C7EAF")
     public final String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_612480251 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_612480251 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_612480251 = name;
-        varB4EAC82CA7396A68D541C85D26508E83_612480251.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_612480251.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_612480251;
-        // ---------- Original Method ----------
-        //return name;
+        
+        
     }
 
     
@@ -348,119 +355,122 @@ public class Thread implements Runnable {
     public final int getPriority() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_564987025 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_564987025;
-        // ---------- Original Method ----------
-        //return priority;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.144 -0400", hash_original_method = "105ECA4B48BD428C2A4BFADC722280E4", hash_generated_method = "7046467C1028847730628781C89CF459")
     public StackTraceElement[] getStackTrace() {
-        StackTraceElement[] varB4EAC82CA7396A68D541C85D26508E83_423092436 = null; //Variable for return #1
+        StackTraceElement[] varB4EAC82CA7396A68D541C85D26508E83_423092436 = null; 
         StackTraceElement ste[] = VMStack.getThreadStackTrace(this);
         varB4EAC82CA7396A68D541C85D26508E83_423092436 = ste != null ? ste : EmptyArray.STACK_TRACE_ELEMENT;
-        varB4EAC82CA7396A68D541C85D26508E83_423092436.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_423092436.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_423092436;
-        // ---------- Original Method ----------
-        //StackTraceElement ste[] = VMStack.getThreadStackTrace(this);
-        //return ste != null ? ste : EmptyArray.STACK_TRACE_ELEMENT;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.145 -0400", hash_original_method = "07EB6E55BA9633DD05ED126331098808", hash_generated_method = "46FC9AF42A06C581991A9CAEE2A1923E")
     public State getState() {
-        State varB4EAC82CA7396A68D541C85D26508E83_679439757 = null; //Variable for return #1
-        State varB4EAC82CA7396A68D541C85D26508E83_987003521 = null; //Variable for return #2
+        State varB4EAC82CA7396A68D541C85D26508E83_679439757 = null; 
+        State varB4EAC82CA7396A68D541C85D26508E83_987003521 = null; 
         VMThread vmt = this.vmThread;
         VMThread thread = vmThread;
         {
             int state = thread.getStatus();
             {
                 varB4EAC82CA7396A68D541C85D26508E83_679439757 = VMThread.STATE_MAP[state];
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_987003521 = hasBeenStarted ? Thread.State.TERMINATED : Thread.State.NEW;
-        State varA7E53CE21691AB073D9660D615818899_1481530322; //Final return value
+        State varA7E53CE21691AB073D9660D615818899_1481530322; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1481530322 = varB4EAC82CA7396A68D541C85D26508E83_679439757;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1481530322 = varB4EAC82CA7396A68D541C85D26508E83_987003521;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1481530322.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1481530322.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1481530322;
-        // ---------- Original Method ----------
-        //VMThread vmt = this.vmThread;
-        //VMThread thread = vmThread;
-        //if (thread != null) {
-            //int state = thread.getStatus();
-            //if(state != -1) {
-                //return VMThread.STATE_MAP[state];
-            //}
-        //}
-        //return hasBeenStarted ? Thread.State.TERMINATED : Thread.State.NEW;
+        
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.145 -0400", hash_original_method = "00D5D6D0C2A305848EB6704B96DA1F7A", hash_generated_method = "8304FA7079BC447E70F8BDE205A6B355")
     public final ThreadGroup getThreadGroup() {
-        ThreadGroup varB4EAC82CA7396A68D541C85D26508E83_904838599 = null; //Variable for return #1
-        ThreadGroup varB4EAC82CA7396A68D541C85D26508E83_57331995 = null; //Variable for return #2
+        ThreadGroup varB4EAC82CA7396A68D541C85D26508E83_904838599 = null; 
+        ThreadGroup varB4EAC82CA7396A68D541C85D26508E83_57331995 = null; 
         {
             boolean var171B2BD556C2DAB7616FF410FA854B68_73767171 = (getState() == Thread.State.TERMINATED);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_904838599 = null;
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_57331995 = group;
-            } //End block
-        } //End collapsed parenthetic
-        ThreadGroup varA7E53CE21691AB073D9660D615818899_2144594261; //Final return value
+            } 
+        } 
+        ThreadGroup varA7E53CE21691AB073D9660D615818899_2144594261; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2144594261 = varB4EAC82CA7396A68D541C85D26508E83_904838599;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2144594261 = varB4EAC82CA7396A68D541C85D26508E83_57331995;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2144594261.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2144594261.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2144594261;
-        // ---------- Original Method ----------
-        //if (getState() == Thread.State.TERMINATED) {
-            //return null;
-        //} else {
-            //return group;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.146 -0400", hash_original_method = "5CF1F81DC91E6D2E78C73116F661ED4D", hash_generated_method = "191F5FADBBAC366867BBD1E981EFB8F7")
     public UncaughtExceptionHandler getUncaughtExceptionHandler() {
-        UncaughtExceptionHandler varB4EAC82CA7396A68D541C85D26508E83_362558682 = null; //Variable for return #1
-        UncaughtExceptionHandler varB4EAC82CA7396A68D541C85D26508E83_1434417632 = null; //Variable for return #2
+        UncaughtExceptionHandler varB4EAC82CA7396A68D541C85D26508E83_362558682 = null; 
+        UncaughtExceptionHandler varB4EAC82CA7396A68D541C85D26508E83_1434417632 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_362558682 = uncaughtHandler;
         varB4EAC82CA7396A68D541C85D26508E83_1434417632 = group;
-        UncaughtExceptionHandler varA7E53CE21691AB073D9660D615818899_568721015; //Final return value
+        UncaughtExceptionHandler varA7E53CE21691AB073D9660D615818899_568721015; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_568721015 = varB4EAC82CA7396A68D541C85D26508E83_362558682;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_568721015 = varB4EAC82CA7396A68D541C85D26508E83_1434417632;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_568721015.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_568721015.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_568721015;
-        // ---------- Original Method ----------
-        //if (uncaughtHandler != null)
-            //return uncaughtHandler;
-        //else
-            //return group;
+        
+        
+            
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.146 -0400", hash_original_method = "17DDF3808A6EBB129363B48719FB5512", hash_generated_method = "85BDC992592956DFFC91E884124C4592")
     public void interrupt() {
         {
@@ -468,26 +478,27 @@ public class Thread implements Runnable {
                 int i = interruptActions.size() - 1;
                 {
                     interruptActions.get(i).run();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         VMThread vmt = this.vmThread;
         {
             vmt.interrupt();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (interruptActions) {
-            //for (int i = interruptActions.size() - 1; i >= 0; i--) {
-                //interruptActions.get(i).run();
-            //}
-        //}
-        //VMThread vmt = this.vmThread;
-        //if (vmt != null) {
-            //vmt.interrupt();
-        //}
+        } 
+        
+        
+            
+                
+            
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean interrupted() {
         return VMThread.interrupted();
     }
@@ -497,8 +508,8 @@ public class Thread implements Runnable {
     public final boolean isAlive() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_453775190 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_453775190;
-        // ---------- Original Method ----------
-        //return (vmThread != null);
+        
+        
     }
 
     
@@ -506,25 +517,26 @@ public class Thread implements Runnable {
     public final boolean isDaemon() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1963443926 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1963443926;
-        // ---------- Original Method ----------
-        //return daemon;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.147 -0400", hash_original_method = "8001B196EB7A1BAE7873C2E86818FA5F", hash_generated_method = "A6AE6669AD555A90ED5446007CDEB5A9")
     public boolean isInterrupted() {
         VMThread vmt = this.vmThread;
         {
             boolean varB147E6E3B016011716EF89C5EF4EE91E_1565146523 = (vmt.isInterrupted());
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1604515773 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1604515773;
-        // ---------- Original Method ----------
-        //VMThread vmt = this.vmThread;
-        //if (vmt != null) {
-            //return vmt.isInterrupted();
-        //}
-        //return false;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -536,19 +548,19 @@ public class Thread implements Runnable {
                 boolean var873063CBC3B5729E18294AEF568DDA2D_569650595 = (isAlive());
                 {
                     t.wait();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //VMThread t = vmThread;
-        //if (t == null) {
-            //return;
-        //}
-        //synchronized (t) {
-            //while (isAlive()) {
-                //t.wait();
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+        
+            
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -556,8 +568,8 @@ public class Thread implements Runnable {
     public final void join(long millis) throws InterruptedException {
         join(millis, 0);
         addTaint(millis);
-        // ---------- Original Method ----------
-        //join(millis, 0);
+        
+        
     }
 
     
@@ -565,34 +577,34 @@ public class Thread implements Runnable {
     public final void join(long millis, int nanos) throws InterruptedException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
+        } 
         boolean overflow = millis >= (Long.MAX_VALUE - nanos) / NANOS_PER_MILLI;
         boolean forever = (millis | nanos) == 0;
         {
             join();
-        } //End block
+        } 
         VMThread t = vmThread;
         {
             {
                 boolean var0566EB6AFDD7377E42AFAFF497085687_520053712 = (!isAlive());
-            } //End collapsed parenthetic
+            } 
             long nanosToWait = millis * NANOS_PER_MILLI + nanos;
             long start = System.nanoTime();
             {
                 t.wait(millis, nanos);
                 {
                     boolean varCB6183A31E0FF6013B5249081F624AB9_1245861015 = (!isAlive());
-                } //End collapsed parenthetic
+                } 
                 long nanosElapsed = System.nanoTime() - start;
                 long nanosRemaining = nanosToWait - nanosElapsed;
                 millis = nanosRemaining / NANOS_PER_MILLI;
                 nanos = (int) (nanosRemaining - millis * NANOS_PER_MILLI);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(millis);
         addTaint(nanos);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -600,28 +612,29 @@ public class Thread implements Runnable {
     @Deprecated
     public final void resume() {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.149 -0400", hash_original_method = "74F6289977938D08C5FBC2624A0DC216", hash_generated_method = "2BF63E07544CF8CAC1A6A84003858A15")
     public void run() {
         {
             target.run();
-        } //End block
-        // ---------- Original Method ----------
-        //if (target != null) {
-            //target.run();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.149 -0400", hash_original_method = "93EFC46ED375C1C54A6285C5204CF25C", hash_generated_method = "3571A2A1E3CF85993D3F0CF0F870AA51")
     public void setContextClassLoader(ClassLoader cl) {
         contextClassLoader = cl;
-        // ---------- Original Method ----------
-        //contextClassLoader = cl;
+        
+        
     }
 
     
@@ -629,17 +642,17 @@ public class Thread implements Runnable {
     public final void setDaemon(boolean isDaemon) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalThreadStateException("Thread already started.");
-        } //End block
+        } 
         {
             daemon = isDaemon;
-        } //End block
-        // ---------- Original Method ----------
-        //if (hasBeenStarted) {
-            //throw new IllegalThreadStateException("Thread already started."); 
-        //}
-        //if (vmThread == null) {
-            //daemon = isDaemon;
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -652,21 +665,21 @@ public class Thread implements Runnable {
     public final void pushInterruptAction$(Runnable interruptAction) {
         {
             interruptActions.add(interruptAction);
-        } //End block
+        } 
         {
             boolean var43B340B57A719D4D7C0CFC3F5006FC45_1721935705 = (interruptAction != null && isInterrupted());
             {
                 interruptAction.run();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(interruptAction.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (interruptActions) {
-            //interruptActions.add(interruptAction);
-        //}
-        //if (interruptAction != null && isInterrupted()) {
-            //interruptAction.run();
-        //}
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -677,17 +690,17 @@ public class Thread implements Runnable {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                         "Expected " + interruptAction + " but was " + removed);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(interruptAction.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (interruptActions) {
-            //Runnable removed = interruptActions.remove(interruptActions.size() - 1);
-            //if (interruptAction != removed) {
-                //throw new IllegalArgumentException(
-                        //"Expected " + interruptAction + " but was " + removed);
-            //}
-        //}
+        
+        
+            
+            
+                
+                        
+            
+        
     }
 
     
@@ -695,21 +708,21 @@ public class Thread implements Runnable {
     public final void setName(String threadName) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         name = threadName;
         VMThread vmt = this.vmThread;
         {
             vmt.nameChanged(threadName);
-        } //End block
-        // ---------- Original Method ----------
-        //if (threadName == null) {
-            //throw new NullPointerException();
-        //}
-        //name = threadName;
-        //VMThread vmt = this.vmThread;
-        //if (vmt != null) {
-            //vmt.nameChanged(threadName);
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -717,64 +730,67 @@ public class Thread implements Runnable {
     public final void setPriority(int priority) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Priority out of range");
-        } //End block
+        } 
         {
             boolean var09022039D3A5CC2E35F1A0263EEA0B28_1807078099 = (priority > group.getMaxPriority());
             {
                 priority = group.getMaxPriority();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.priority = priority;
         VMThread vmt = this.vmThread;
         {
             vmt.setPriority(priority);
-        } //End block
-        // ---------- Original Method ----------
-        //if (priority < Thread.MIN_PRIORITY || priority > Thread.MAX_PRIORITY) {
-            //throw new IllegalArgumentException("Priority out of range"); 
-        //}
-        //if (priority > group.getMaxPriority()) {
-            //priority = group.getMaxPriority();
-        //}
-        //this.priority = priority;
-        //VMThread vmt = this.vmThread;
-        //if (vmt != null) {
-            //vmt.setPriority(priority);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.152 -0400", hash_original_method = "D58D250923779D2B2016D80FC2081BA1", hash_generated_method = "32052A607317B2CF4FD95D37AFA858D8")
     public void setUncaughtExceptionHandler(UncaughtExceptionHandler handler) {
         uncaughtHandler = handler;
-        // ---------- Original Method ----------
-        //uncaughtHandler = handler;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void sleep(long time) throws InterruptedException {
         Thread.sleep(time, 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void sleep(long millis, int nanos) throws InterruptedException {
         VMThread.sleep(millis, nanos);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.153 -0400", hash_original_method = "389CF6E0D3A08F228CF4E4A156CC86D9", hash_generated_method = "A9E55DD47285DE615AB80AE7D304FD86")
     public synchronized void start() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalThreadStateException("Thread already started.");
-        } //End block
+        } 
         hasBeenStarted = true;
         VMThread.create(this, stackSize);
-        // ---------- Original Method ----------
-        //if (hasBeenStarted) {
-            //throw new IllegalThreadStateException("Thread already started."); 
-        //}
-        //hasBeenStarted = true;
-        //VMThread.create(this, stackSize);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -782,8 +798,8 @@ public class Thread implements Runnable {
     @Deprecated
     public final void stop() {
         stop(new ThreadDeath());
-        // ---------- Original Method ----------
-        //stop(new ThreadDeath());
+        
+        
     }
 
     
@@ -792,8 +808,8 @@ public class Thread implements Runnable {
     public final synchronized void stop(Throwable throwable) {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         addTaint(throwable.getTaint());
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -801,28 +817,31 @@ public class Thread implements Runnable {
     @Deprecated
     public final void suspend() {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.154 -0400", hash_original_method = "E21D755A7854968438B35D363D61DC14", hash_generated_method = "6C57A2A7BCD576B23C824C205EE353AE")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1360844124 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1360844124 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1360844124 = "Thread[" + name + "," + priority + "," + group.getName() + "]";
-        varB4EAC82CA7396A68D541C85D26508E83_1360844124.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1360844124.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1360844124;
-        // ---------- Original Method ----------
-        //return "Thread[" + name + "," + priority + "," + group.getName() + "]";
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void yield() {
         VMThread.yield();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean holdsLock(Object object) {
         return currentThread().vmThread.holdsLock(object);
     }
@@ -833,42 +852,42 @@ public class Thread implements Runnable {
         VMThread vmt = vmThread;
         {
             parkState = ParkState.PREEMPTIVELY_UNPARKED;
-        } //End block
+        } 
         {
-            //Begin case ParkState.UNPARKED 
+            
             {
                 parkState = ParkState.PREEMPTIVELY_UNPARKED;
-            } //End block
-            //End case ParkState.UNPARKED 
-            //Begin case default 
+            } 
+            
+            
             {
                 parkState = ParkState.UNPARKED;
                 vmt.notifyAll();
-            } //End block
-            //End case default 
-        } //End block
-        // ---------- Original Method ----------
-        //VMThread vmt = vmThread;
-        //if (vmt == null) {
-            //parkState = ParkState.PREEMPTIVELY_UNPARKED;
-            //return;
-        //}
-        //synchronized (vmt) {
-            //switch (parkState) {
-                //case ParkState.PREEMPTIVELY_UNPARKED: {
-                    //break;
-                //}
-                //case ParkState.UNPARKED: {
-                    //parkState = ParkState.PREEMPTIVELY_UNPARKED;
-                    //break;
-                //}
-                //default : {
-                    //parkState = ParkState.UNPARKED;
-                    //vmt.notifyAll();
-                    //break;
-                //}
-            //}
-        //}
+            } 
+            
+        } 
+        
+        
+        
+            
+            
+        
+        
+            
+                
+                    
+                
+                
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+            
+        
     }
 
     
@@ -877,14 +896,14 @@ public class Thread implements Runnable {
         VMThread vmt = vmThread;
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError();
-        } //End block
+        } 
         {
-            //Begin case ParkState.PREEMPTIVELY_UNPARKED 
+            
             {
                 parkState = ParkState.UNPARKED;
-            } //End block
-            //End case ParkState.PREEMPTIVELY_UNPARKED 
-            //Begin case ParkState.UNPARKED 
+            } 
+            
+            
             {
                 long millis = nanos / NANOS_PER_MILLI;
                 nanos %= NANOS_PER_MILLI;
@@ -892,29 +911,29 @@ public class Thread implements Runnable {
                 try 
                 {
                     vmt.wait(millis, (int) nanos);
-                } //End block
+                } 
                 catch (InterruptedException ex)
                 {
                     interrupt();
-                } //End block
+                } 
                 finally 
                 {
                     {
                         parkState = ParkState.UNPARKED;
-                    } //End block
-                } //End block
-            } //End block
-            //End case ParkState.UNPARKED 
-            //Begin case default 
+                    } 
+                } 
+            } 
+            
+            
             {
                 if (DroidSafeAndroidRuntime.control) throw new AssertionError(
                             "shouldn't happen: attempt to repark");
-            } //End block
-            //End case default 
-        } //End block
+            } 
+            
+        } 
         addTaint(nanos);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -923,30 +942,30 @@ public class Thread implements Runnable {
         VMThread vmt = vmThread;
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError();
-        } //End block
+        } 
         {
             long delayMillis = time - System.currentTimeMillis();
             {
                 parkState = ParkState.UNPARKED;
-            } //End block
+            } 
             {
                 parkFor(delayMillis * NANOS_PER_MILLI);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(time);
-        // ---------- Original Method ----------
-        //VMThread vmt = vmThread;
-        //if (vmt == null) {
-            //throw new AssertionError();
-        //}
-        //synchronized (vmt) {
-            //long delayMillis = time - System.currentTimeMillis();
-            //if (delayMillis <= 0) {
-                //parkState = ParkState.UNPARKED;
-            //} else {
-                //parkFor(delayMillis * NANOS_PER_MILLI);
-            //}
-        //}
+        
+        
+        
+            
+        
+        
+            
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -955,7 +974,7 @@ public class Thread implements Runnable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.158 -0400", hash_original_method = "13ABD2C1475A75B421FFE7ADB6CF97D6", hash_generated_method = "13ABD2C1475A75B421FFE7ADB6CF97D6")
         public ParkState ()
         {
-            //Synthesized constructor
+            
         }
 
 

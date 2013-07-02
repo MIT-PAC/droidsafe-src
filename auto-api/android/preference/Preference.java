@@ -1,11 +1,11 @@
 package android.preference;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.util.CharSequences;
 import android.content.Context;
@@ -128,64 +128,64 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
             int i = a.getIndexCount();
             {
                 int attr = a.getIndex(i);
-                //Begin case com.android.internal.R.styleable.Preference_icon 
+                
                 mIconResId = a.getResourceId(attr, 0);
-                //End case com.android.internal.R.styleable.Preference_icon 
-                //Begin case com.android.internal.R.styleable.Preference_key 
+                
+                
                 mKey = a.getString(attr);
-                //End case com.android.internal.R.styleable.Preference_key 
-                //Begin case com.android.internal.R.styleable.Preference_title 
+                
+                
                 mTitleRes = a.getResourceId(attr, 0);
-                //End case com.android.internal.R.styleable.Preference_title 
-                //Begin case com.android.internal.R.styleable.Preference_title 
+                
+                
                 mTitle = a.getString(attr);
-                //End case com.android.internal.R.styleable.Preference_title 
-                //Begin case com.android.internal.R.styleable.Preference_summary 
+                
+                
                 mSummary = a.getString(attr);
-                //End case com.android.internal.R.styleable.Preference_summary 
-                //Begin case com.android.internal.R.styleable.Preference_order 
+                
+                
                 mOrder = a.getInt(attr, mOrder);
-                //End case com.android.internal.R.styleable.Preference_order 
-                //Begin case com.android.internal.R.styleable.Preference_fragment 
+                
+                
                 mFragment = a.getString(attr);
-                //End case com.android.internal.R.styleable.Preference_fragment 
-                //Begin case com.android.internal.R.styleable.Preference_layout 
+                
+                
                 mLayoutResId = a.getResourceId(attr, mLayoutResId);
-                //End case com.android.internal.R.styleable.Preference_layout 
-                //Begin case com.android.internal.R.styleable.Preference_widgetLayout 
+                
+                
                 mWidgetLayoutResId = a.getResourceId(attr, mWidgetLayoutResId);
-                //End case com.android.internal.R.styleable.Preference_widgetLayout 
-                //Begin case com.android.internal.R.styleable.Preference_enabled 
+                
+                
                 mEnabled = a.getBoolean(attr, true);
-                //End case com.android.internal.R.styleable.Preference_enabled 
-                //Begin case com.android.internal.R.styleable.Preference_selectable 
+                
+                
                 mSelectable = a.getBoolean(attr, true);
-                //End case com.android.internal.R.styleable.Preference_selectable 
-                //Begin case com.android.internal.R.styleable.Preference_persistent 
+                
+                
                 mPersistent = a.getBoolean(attr, mPersistent);
-                //End case com.android.internal.R.styleable.Preference_persistent 
-                //Begin case com.android.internal.R.styleable.Preference_dependency 
+                
+                
                 mDependencyKey = a.getString(attr);
-                //End case com.android.internal.R.styleable.Preference_dependency 
-                //Begin case com.android.internal.R.styleable.Preference_defaultValue 
+                
+                
                 mDefaultValue = onGetDefaultValue(a, attr);
-                //End case com.android.internal.R.styleable.Preference_defaultValue 
-                //Begin case com.android.internal.R.styleable.Preference_shouldDisableView 
+                
+                
                 mShouldDisableView = a.getBoolean(attr, mShouldDisableView);
-                //End case com.android.internal.R.styleable.Preference_shouldDisableView 
-            } //End block
-        } //End collapsed parenthetic
+                
+            } 
+        } 
         a.recycle();
         {
             boolean var10BC812A3C0743D80A2FB7B328F2D5C8_605892450 = (!getClass().getName().startsWith("android.preference"));
             {
                 mHasSpecifiedLayout = true;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -194,7 +194,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
         this(context, attrs, com.android.internal.R.attr.preferenceStyle);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -202,87 +202,87 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     public  Preference(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.005 -0400", hash_original_method = "75C2469AD4E7F0A9F01D294D0E9B9A83", hash_generated_method = "89766C28CD21D4A42992F2B6B3A7589E")
     protected Object onGetDefaultValue(TypedArray a, int index) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        Object varB4EAC82CA7396A68D541C85D26508E83_2104419887 = null; //Variable for return #1
+        
+        Object varB4EAC82CA7396A68D541C85D26508E83_2104419887 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2104419887 = null;
         addTaint(a.getTaint());
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_2104419887.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2104419887.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2104419887;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.006 -0400", hash_original_method = "BB18D5EDF68F7EDDF74E48FAF30F475E", hash_generated_method = "36AB7FE2A4C2C0EF3565BBD54597E3F4")
     public void setIntent(Intent intent) {
         mIntent = intent;
-        // ---------- Original Method ----------
-        //mIntent = intent;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.007 -0400", hash_original_method = "AD027B7B58A4A2F151CC138FB7B23244", hash_generated_method = "7654FFA1E1BC6178B05F34F9ADC0AA27")
     public Intent getIntent() {
-        Intent varB4EAC82CA7396A68D541C85D26508E83_24835660 = null; //Variable for return #1
+        Intent varB4EAC82CA7396A68D541C85D26508E83_24835660 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_24835660 = mIntent;
-        varB4EAC82CA7396A68D541C85D26508E83_24835660.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_24835660.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_24835660;
-        // ---------- Original Method ----------
-        //return mIntent;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.007 -0400", hash_original_method = "B84A292EE370DC034681ED1A5B514CE4", hash_generated_method = "918CDAB4381AA56F58F01C803B049B49")
     public void setFragment(String fragment) {
         mFragment = fragment;
-        // ---------- Original Method ----------
-        //mFragment = fragment;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.008 -0400", hash_original_method = "133D42C98C64EF6757CE3D375E2E1FA7", hash_generated_method = "64001BC08DBDA693C2C6AF3375946DB9")
     public String getFragment() {
-        String varB4EAC82CA7396A68D541C85D26508E83_342793546 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_342793546 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_342793546 = mFragment;
-        varB4EAC82CA7396A68D541C85D26508E83_342793546.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_342793546.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_342793546;
-        // ---------- Original Method ----------
-        //return mFragment;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.009 -0400", hash_original_method = "F77D5C181034415714B081995209DE64", hash_generated_method = "E049BD95B3C06008389C4D0CB2E9A25E")
     public Bundle getExtras() {
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_228641393 = null; //Variable for return #1
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_228641393 = null; 
         {
             mExtras = new Bundle();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_228641393 = mExtras;
-        varB4EAC82CA7396A68D541C85D26508E83_228641393.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_228641393.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_228641393;
-        // ---------- Original Method ----------
-        //if (mExtras == null) {
-            //mExtras = new Bundle();
-        //}
-        //return mExtras;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.009 -0400", hash_original_method = "06728B07006932C3BCF42D880B54A6CC", hash_generated_method = "11D608AF23A5B688EE81226E91682B35")
     public Bundle peekExtras() {
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_182702290 = null; //Variable for return #1
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_182702290 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_182702290 = mExtras;
-        varB4EAC82CA7396A68D541C85D26508E83_182702290.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_182702290.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_182702290;
-        // ---------- Original Method ----------
-        //return mExtras;
+        
+        
     }
 
     
@@ -290,13 +290,13 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     public void setLayoutResource(int layoutResId) {
         {
             mHasSpecifiedLayout = true;
-        } //End block
+        } 
         mLayoutResId = layoutResId;
-        // ---------- Original Method ----------
-        //if (layoutResId != mLayoutResId) {
-            //mHasSpecifiedLayout = true;
-        //}
-        //mLayoutResId = layoutResId;
+        
+        
+            
+        
+        
     }
 
     
@@ -304,8 +304,8 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     public int getLayoutResource() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_269272201 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_269272201;
-        // ---------- Original Method ----------
-        //return mLayoutResId;
+        
+        
     }
 
     
@@ -313,13 +313,13 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     public void setWidgetLayoutResource(int widgetLayoutResId) {
         {
             mHasSpecifiedLayout = true;
-        } //End block
+        } 
         mWidgetLayoutResId = widgetLayoutResId;
-        // ---------- Original Method ----------
-        //if (widgetLayoutResId != mWidgetLayoutResId) {
-            //mHasSpecifiedLayout = true;
-        //}
-        //mWidgetLayoutResId = widgetLayoutResId;
+        
+        
+            
+        
+        
     }
 
     
@@ -327,36 +327,36 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     public int getWidgetLayoutResource() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1268458156 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1268458156;
-        // ---------- Original Method ----------
-        //return mWidgetLayoutResId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.012 -0400", hash_original_method = "10F5B4A945AE227B9B33457223123B2A", hash_generated_method = "C784EE0CC6CE63DDAFCDBFD1474B7C70")
     public View getView(View convertView, ViewGroup parent) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1553945024 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1553945024 = null; 
         {
             convertView = onCreateView(parent);
-        } //End block
+        } 
         onBindView(convertView);
         varB4EAC82CA7396A68D541C85D26508E83_1553945024 = convertView;
         addTaint(convertView.getTaint());
         addTaint(parent.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1553945024.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1553945024.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1553945024;
-        // ---------- Original Method ----------
-        //if (convertView == null) {
-            //convertView = onCreateView(parent);
-        //}
-        //onBindView(convertView);
-        //return convertView;
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.013 -0400", hash_original_method = "DD0E6DF051F4F0779DD2D5F6BCD064A5", hash_generated_method = "62FB78F224CFA89A8EA8A53190322722")
     protected View onCreateView(ViewGroup parent) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        View varB4EAC82CA7396A68D541C85D26508E83_214269521 = null; //Variable for return #1
+        
+        View varB4EAC82CA7396A68D541C85D26508E83_214269521 = null; 
         final LayoutInflater layoutInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final View layout = layoutInflater.inflate(mLayoutResId, parent, false);
         final ViewGroup widgetFrame = (ViewGroup) layout
@@ -364,39 +364,39 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
         {
             {
                 layoutInflater.inflate(mWidgetLayoutResId, widgetFrame);
-            } //End block
+            } 
             {
                 widgetFrame.setVisibility(View.GONE);
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_214269521 = layout;
         addTaint(parent.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_214269521.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_214269521.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_214269521;
-        // ---------- Original Method ----------
-        //final LayoutInflater layoutInflater =
-            //(LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        //final View layout = layoutInflater.inflate(mLayoutResId, parent, false);
-        //final ViewGroup widgetFrame = (ViewGroup) layout
-                //.findViewById(com.android.internal.R.id.widget_frame);
-        //if (widgetFrame != null) {
-            //if (mWidgetLayoutResId != 0) {
-                //layoutInflater.inflate(mWidgetLayoutResId, widgetFrame);
-            //} else {
-                //widgetFrame.setVisibility(View.GONE);
-            //}
-        //}
-        //return layout;
+        
+        
+            
+        
+        
+                
+        
+            
+                
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.014 -0400", hash_original_method = "D65593443BAE954E876A7311E3E1909A", hash_generated_method = "56C50AE26DA4E3ABA1E0395A91DEE929")
     protected void onBindView(View view) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         TextView textView = (TextView) view.findViewById(com.android.internal.R.id.title);
         {
             textView.setText(getTitle());
-        } //End block
+        } 
         textView = (TextView) view.findViewById(com.android.internal.R.id.summary);
         {
             final CharSequence summary = getSummary();
@@ -407,38 +407,38 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
                         boolean var130C18F3D215FC85E4C5C553CB359870_1543216871 = (textView.getVisibility() != View.VISIBLE);
                         {
                             textView.setVisibility(View.VISIBLE);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     textView.setText(getSummary());
-                } //End block
+                } 
                 {
                     {
                         boolean varB53302C499574F7ECA44F69707CCE618_55581835 = (textView.getVisibility() != View.GONE);
                         {
                             textView.setVisibility(View.GONE);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         ImageView imageView = (ImageView) view.findViewById(com.android.internal.R.id.icon);
         {
             {
                 {
                     mIcon = getContext().getResources().getDrawable(mIconResId);
-                } //End block
+                } 
                 {
                     imageView.setImageDrawable(mIcon);
-                } //End block
-            } //End block
+                } 
+            } 
             imageView.setVisibility(mIcon != null ? View.VISIBLE : View.GONE);
-        } //End block
+        } 
         {
             setEnabledStateOnViews(view, isEnabled());
-        } //End block
+        } 
         addTaint(view.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -451,19 +451,19 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
                 int i = vg.getChildCount() - 1;
                 {
                     setEnabledStateOnViews(vg.getChildAt(i), enabled);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(v.getTaint());
         addTaint(enabled);
-        // ---------- Original Method ----------
-        //v.setEnabled(enabled);
-        //if (v instanceof ViewGroup) {
-            //final ViewGroup vg = (ViewGroup) v;
-            //for (int i = vg.getChildCount() - 1; i >= 0; i--) {
-                //setEnabledStateOnViews(vg.getChildAt(i), enabled);
-            //}
-        //}
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -472,12 +472,12 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
         {
             mOrder = order;
             notifyHierarchyChanged();
-        } //End block
-        // ---------- Original Method ----------
-        //if (order != mOrder) {
-            //mOrder = order;
-            //notifyHierarchyChanged();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -485,8 +485,8 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     public int getOrder() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809315999 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809315999;
-        // ---------- Original Method ----------
-        //return mOrder;
+        
+        
     }
 
     
@@ -498,14 +498,14 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
                 mTitleRes = 0;
                 mTitle = title;
                 notifyChanged();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (title == null && mTitle != null || title != null && !title.equals(mTitle)) {
-            //mTitleRes = 0;
-            //mTitle = title;
-            //notifyChanged();
-        //}
+            } 
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -513,9 +513,9 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     public void setTitle(int titleResId) {
         setTitle(mContext.getString(titleResId));
         mTitleRes = titleResId;
-        // ---------- Original Method ----------
-        //setTitle(mContext.getString(titleResId));
-        //mTitleRes = titleResId;
+        
+        
+        
     }
 
     
@@ -523,19 +523,19 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     public int getTitleRes() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_254821303 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_254821303;
-        // ---------- Original Method ----------
-        //return mTitleRes;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.019 -0400", hash_original_method = "7D691BCB64236E7B5AF8F6CB0399C091", hash_generated_method = "E819048CD4157C836AF2B2E33481FDF2")
     public CharSequence getTitle() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_702630722 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_702630722 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_702630722 = mTitle;
-        varB4EAC82CA7396A68D541C85D26508E83_702630722.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_702630722.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_702630722;
-        // ---------- Original Method ----------
-        //return mTitle;
+        
+        
     }
 
     
@@ -544,12 +544,12 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
         {
             mIcon = icon;
             notifyChanged();
-        } //End block
-        // ---------- Original Method ----------
-        //if ((icon == null && mIcon != null) || (icon != null && mIcon != icon)) {
-            //mIcon = icon;
-            //notifyChanged();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -557,31 +557,31 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     public void setIcon(int iconResId) {
         mIconResId = iconResId;
         setIcon(mContext.getResources().getDrawable(iconResId));
-        // ---------- Original Method ----------
-        //mIconResId = iconResId;
-        //setIcon(mContext.getResources().getDrawable(iconResId));
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.022 -0400", hash_original_method = "ED78DC4ED6B2C6A65EDA3016CC1C1C4D", hash_generated_method = "2771F6F02DCBE625DA5CC3B77AA56832")
     public Drawable getIcon() {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_347575409 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_347575409 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_347575409 = mIcon;
-        varB4EAC82CA7396A68D541C85D26508E83_347575409.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_347575409.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_347575409;
-        // ---------- Original Method ----------
-        //return mIcon;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.022 -0400", hash_original_method = "485EE2482F168D23B57BE8096AF663D1", hash_generated_method = "73138343FA80393BBDEEDEB44AEE1CF2")
     public CharSequence getSummary() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_991952868 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_991952868 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_991952868 = mSummary;
-        varB4EAC82CA7396A68D541C85D26508E83_991952868.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_991952868.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_991952868;
-        // ---------- Original Method ----------
-        //return mSummary;
+        
+        
     }
 
     
@@ -592,13 +592,13 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
             {
                 mSummary = summary;
                 notifyChanged();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (summary == null && mSummary != null || summary != null && !summary.equals(mSummary)) {
-            //mSummary = summary;
-            //notifyChanged();
-        //}
+            } 
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -606,8 +606,8 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     public void setSummary(int summaryResId) {
         setSummary(mContext.getString(summaryResId));
         addTaint(summaryResId);
-        // ---------- Original Method ----------
-        //setSummary(mContext.getString(summaryResId));
+        
+        
     }
 
     
@@ -617,13 +617,13 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
             mEnabled = enabled;
             notifyDependencyChange(shouldDisableDependents());
             notifyChanged();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mEnabled != enabled) {
-            //mEnabled = enabled;
-            //notifyDependencyChange(shouldDisableDependents());
-            //notifyChanged();
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -631,8 +631,8 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     public boolean isEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1260045543 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1260045543;
-        // ---------- Original Method ----------
-        //return mEnabled && mDependencyMet;
+        
+        
     }
 
     
@@ -641,12 +641,12 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
         {
             mSelectable = selectable;
             notifyChanged();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mSelectable != selectable) {
-            //mSelectable = selectable;
-            //notifyChanged();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -654,8 +654,8 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     public boolean isSelectable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1032533125 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1032533125;
-        // ---------- Original Method ----------
-        //return mSelectable;
+        
+        
     }
 
     
@@ -663,9 +663,9 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     public void setShouldDisableView(boolean shouldDisableView) {
         mShouldDisableView = shouldDisableView;
         notifyChanged();
-        // ---------- Original Method ----------
-        //mShouldDisableView = shouldDisableView;
-        //notifyChanged();
+        
+        
+        
     }
 
     
@@ -673,8 +673,8 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     public boolean getShouldDisableView() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_624238009 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_624238009;
-        // ---------- Original Method ----------
-        //return mShouldDisableView;
+        
+        
     }
 
     
@@ -682,15 +682,15 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
      long getId() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1030078323 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1030078323;
-        // ---------- Original Method ----------
-        //return mId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.027 -0400", hash_original_method = "DE9BB9E40914727DA5D6E94159FAF3CB", hash_generated_method = "B12F9C4DD7EEB07FF06C6B7E88BC35E4")
     protected void onClick() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
@@ -701,24 +701,24 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
             boolean varD59801A1A66D3BBEFE5917383BD030C1_652809524 = (mRequiresKey && !hasKey());
             {
                 requireKey();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //mKey = key;
-        //if (mRequiresKey && !hasKey()) {
-            //requireKey();
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.028 -0400", hash_original_method = "E0CEA0C6ABDC55C32B991C1D155B5E3E", hash_generated_method = "0BF7FA14959736188A3F245F298AB2F4")
     public String getKey() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1272555477 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1272555477 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1272555477 = mKey;
-        varB4EAC82CA7396A68D541C85D26508E83_1272555477.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1272555477.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1272555477;
-        // ---------- Original Method ----------
-        //return mKey;
+        
+        
     }
 
     
@@ -726,13 +726,13 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
      void requireKey() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Preference does not have a key assigned.");
-        } //End block
+        } 
         mRequiresKey = true;
-        // ---------- Original Method ----------
-        //if (mKey == null) {
-            //throw new IllegalStateException("Preference does not have a key assigned.");
-        //}
-        //mRequiresKey = true;
+        
+        
+            
+        
+        
     }
 
     
@@ -741,8 +741,8 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
         boolean var5FDB348C3EC1AA79FB00873E989748AA_389406099 = (!TextUtils.isEmpty(mKey));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_465828295 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_465828295;
-        // ---------- Original Method ----------
-        //return !TextUtils.isEmpty(mKey);
+        
+        
     }
 
     
@@ -750,8 +750,8 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     public boolean isPersistent() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2104685363 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2104685363;
-        // ---------- Original Method ----------
-        //return mPersistent;
+        
+        
     }
 
     
@@ -760,16 +760,16 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
         boolean var2B9F974DBFD553E7FDC0654C6EC87725_1645107129 = (mPreferenceManager != null && isPersistent() && hasKey());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1861711756 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1861711756;
-        // ---------- Original Method ----------
-        //return mPreferenceManager != null && isPersistent() && hasKey();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.031 -0400", hash_original_method = "9780EA334E29D2930E2D9A0F1CB4087F", hash_generated_method = "C4414A607836682C6B94DC1DA7BB4DF5")
     public void setPersistent(boolean persistent) {
         mPersistent = persistent;
-        // ---------- Original Method ----------
-        //mPersistent = persistent;
+        
+        
     }
 
     
@@ -777,50 +777,50 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     protected boolean callChangeListener(Object newValue) {
         {
             Object var840D0FFA474209A8E9E502A96959FE2F_1945354292 = (mOnChangeListener.onPreferenceChange(this, newValue));
-        } //End flattened ternary
+        } 
         addTaint(newValue.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_184461303 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_184461303;
-        // ---------- Original Method ----------
-        //return mOnChangeListener == null ? true : mOnChangeListener.onPreferenceChange(this, newValue);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.032 -0400", hash_original_method = "D46636D80B7557AC6195A05902CC638C", hash_generated_method = "7D40D426D5687A76C5D11598A2206435")
     public void setOnPreferenceChangeListener(OnPreferenceChangeListener onPreferenceChangeListener) {
         mOnChangeListener = onPreferenceChangeListener;
-        // ---------- Original Method ----------
-        //mOnChangeListener = onPreferenceChangeListener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.033 -0400", hash_original_method = "9CC8E5271070D42EF9628C47033D91A6", hash_generated_method = "90C024C86F977DB4C11EC02F8F16883E")
     public OnPreferenceChangeListener getOnPreferenceChangeListener() {
-        OnPreferenceChangeListener varB4EAC82CA7396A68D541C85D26508E83_487560046 = null; //Variable for return #1
+        OnPreferenceChangeListener varB4EAC82CA7396A68D541C85D26508E83_487560046 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_487560046 = mOnChangeListener;
-        varB4EAC82CA7396A68D541C85D26508E83_487560046.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_487560046.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_487560046;
-        // ---------- Original Method ----------
-        //return mOnChangeListener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.034 -0400", hash_original_method = "E8A10745E179E2FA23FF715EAD4A5CB3", hash_generated_method = "1C194BF6887E87978417EF5A65E3F26D")
     public void setOnPreferenceClickListener(OnPreferenceClickListener onPreferenceClickListener) {
         mOnClickListener = onPreferenceClickListener;
-        // ---------- Original Method ----------
-        //mOnClickListener = onPreferenceClickListener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.034 -0400", hash_original_method = "55E2C6999F7D889141550F7A68D36827", hash_generated_method = "005F2C576AC7C68E8333374A9549BA55")
     public OnPreferenceClickListener getOnPreferenceClickListener() {
-        OnPreferenceClickListener varB4EAC82CA7396A68D541C85D26508E83_1735507736 = null; //Variable for return #1
+        OnPreferenceClickListener varB4EAC82CA7396A68D541C85D26508E83_1735507736 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1735507736 = mOnClickListener;
-        varB4EAC82CA7396A68D541C85D26508E83_1735507736.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1735507736.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1735507736;
-        // ---------- Original Method ----------
-        //return mOnClickListener;
+        
+        
     }
 
     
@@ -828,11 +828,11 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
      void performClick(PreferenceScreen preferenceScreen) {
         {
             boolean varC378F7D9F83769944CF2ACC662A4EAE3_876204663 = (!isEnabled());
-        } //End collapsed parenthetic
+        } 
         onClick();
         {
             boolean varACD6C4667640FA997CEF70414875FCB9_255321733 = (mOnClickListener != null && mOnClickListener.onPreferenceClick(this));
-        } //End collapsed parenthetic
+        } 
         PreferenceManager preferenceManager = getPreferenceManager();
         {
             PreferenceManager.OnPreferenceTreeClickListener listener = preferenceManager
@@ -840,112 +840,112 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
             {
                 boolean var6C0208A36FCEA21336C3A6F6854606AF_794375177 = (preferenceScreen != null && listener != null
                     && listener.onPreferenceTreeClick(preferenceScreen, this));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         {
             Context context = getContext();
             context.startActivity(mIntent);
-        } //End block
+        } 
         addTaint(preferenceScreen.getTaint());
-        // ---------- Original Method ----------
-        //if (!isEnabled()) {
-            //return;
-        //}
-        //onClick();
-        //if (mOnClickListener != null && mOnClickListener.onPreferenceClick(this)) {
-            //return;
-        //}
-        //PreferenceManager preferenceManager = getPreferenceManager();
-        //if (preferenceManager != null) {
-            //PreferenceManager.OnPreferenceTreeClickListener listener = preferenceManager
-                    //.getOnPreferenceTreeClickListener();
-            //if (preferenceScreen != null && listener != null
-                    //&& listener.onPreferenceTreeClick(preferenceScreen, this)) {
-                //return;
-            //}
-        //}
-        //if (mIntent != null) {
-            //Context context = getContext();
-            //context.startActivity(mIntent);
-        //}
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+                    
+            
+                    
+                
+            
+        
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.036 -0400", hash_original_method = "089B06359A27CB6D952DCE596F00B787", hash_generated_method = "F603B80FD53CB82C4DC57CBBADAA3C0E")
     public boolean onKey(View v, int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(v.getTaint());
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_396142931 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_396142931;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.037 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "4453865193247E6FEFA9099B549A1D33")
     public Context getContext() {
-        Context varB4EAC82CA7396A68D541C85D26508E83_343412816 = null; //Variable for return #1
+        Context varB4EAC82CA7396A68D541C85D26508E83_343412816 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_343412816 = mContext;
-        varB4EAC82CA7396A68D541C85D26508E83_343412816.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_343412816.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_343412816;
-        // ---------- Original Method ----------
-        //return mContext;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.038 -0400", hash_original_method = "8BF68140BB0364C46F5E3D57D69A6DB5", hash_generated_method = "26576BEE68DC5969437DA4E2AE354CDC")
     public SharedPreferences getSharedPreferences() {
-        SharedPreferences varB4EAC82CA7396A68D541C85D26508E83_1392913805 = null; //Variable for return #1
-        SharedPreferences varB4EAC82CA7396A68D541C85D26508E83_1285478697 = null; //Variable for return #2
+        SharedPreferences varB4EAC82CA7396A68D541C85D26508E83_1392913805 = null; 
+        SharedPreferences varB4EAC82CA7396A68D541C85D26508E83_1285478697 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1392913805 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1285478697 = mPreferenceManager.getSharedPreferences();
-        SharedPreferences varA7E53CE21691AB073D9660D615818899_868028309; //Final return value
+        SharedPreferences varA7E53CE21691AB073D9660D615818899_868028309; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_868028309 = varB4EAC82CA7396A68D541C85D26508E83_1392913805;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_868028309 = varB4EAC82CA7396A68D541C85D26508E83_1285478697;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_868028309.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_868028309.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_868028309;
-        // ---------- Original Method ----------
-        //if (mPreferenceManager == null) {
-            //return null;
-        //}
-        //return mPreferenceManager.getSharedPreferences();
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.040 -0400", hash_original_method = "59D9CBF7E4B6683DDFDC1DAE57ABD5B7", hash_generated_method = "44A98C30249294527E5A663E2FCC3D9E")
     public SharedPreferences.Editor getEditor() {
-        SharedPreferences.Editor varB4EAC82CA7396A68D541C85D26508E83_1383675138 = null; //Variable for return #1
-        SharedPreferences.Editor varB4EAC82CA7396A68D541C85D26508E83_958632029 = null; //Variable for return #2
+        SharedPreferences.Editor varB4EAC82CA7396A68D541C85D26508E83_1383675138 = null; 
+        SharedPreferences.Editor varB4EAC82CA7396A68D541C85D26508E83_958632029 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1383675138 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_958632029 = mPreferenceManager.getEditor();
-        SharedPreferences.Editor varA7E53CE21691AB073D9660D615818899_349786467; //Final return value
+        SharedPreferences.Editor varA7E53CE21691AB073D9660D615818899_349786467; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_349786467 = varB4EAC82CA7396A68D541C85D26508E83_1383675138;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_349786467 = varB4EAC82CA7396A68D541C85D26508E83_958632029;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_349786467.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_349786467.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_349786467;
-        // ---------- Original Method ----------
-        //if (mPreferenceManager == null) {
-            //return null;
-        //}
-        //return mPreferenceManager.getEditor();
+        
+        
+            
+        
+        
     }
 
     
@@ -954,11 +954,11 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
         boolean varB6DAC15187C329558C72653F1654C862_196175967 = (mPreferenceManager.shouldCommit());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_158939777 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_158939777;
-        // ---------- Original Method ----------
-        //if (mPreferenceManager == null) {
-            //return false;
-        //}
-        //return mPreferenceManager.shouldCommit();
+        
+        
+            
+        
+        
     }
 
     
@@ -966,29 +966,29 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     public int compareTo(Preference another) {
         {
             int var843ABEE7C36935B044756D876A54DA3D_421055313 = (CharSequences.compareToIgnoreCase(mTitle, another.mTitle));
-        } //End block
+        } 
         addTaint(another.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_264947675 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_264947675;
-        // ---------- Original Method ----------
-        //if (mOrder != DEFAULT_ORDER
-                //|| (mOrder == DEFAULT_ORDER && another.mOrder != DEFAULT_ORDER)) {
-            //return mOrder - another.mOrder; 
-        //} else if (mTitle == null) {
-            //return 1;
-        //} else if (another.mTitle == null) {
-            //return -1;
-        //} else {
-            //return CharSequences.compareToIgnoreCase(mTitle, another.mTitle);
-        //}
+        
+        
+                
+            
+        
+            
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.042 -0400", hash_original_method = "6457E3944D02DD03B8855B0556ABBC63", hash_generated_method = "E2BE31D553581E6027B8A65C18170CE5")
     final void setOnPreferenceChangeInternalListener(OnPreferenceChangeInternalListener listener) {
         mListener = listener;
-        // ---------- Original Method ----------
-        //mListener = listener;
+        
+        
     }
 
     
@@ -996,11 +996,11 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     protected void notifyChanged() {
         {
             mListener.onPreferenceChange(this);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mListener != null) {
-            //mListener.onPreferenceChange(this);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -1008,44 +1008,44 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     protected void notifyHierarchyChanged() {
         {
             mListener.onPreferenceHierarchyChange(this);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mListener != null) {
-            //mListener.onPreferenceHierarchyChange(this);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.044 -0400", hash_original_method = "002FC5CEE5BE5B5D1FE36CEDBC1DEB65", hash_generated_method = "7E487DBD1B914EC7BF8DF0AE1CE17305")
     public PreferenceManager getPreferenceManager() {
-        PreferenceManager varB4EAC82CA7396A68D541C85D26508E83_901048495 = null; //Variable for return #1
+        PreferenceManager varB4EAC82CA7396A68D541C85D26508E83_901048495 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_901048495 = mPreferenceManager;
-        varB4EAC82CA7396A68D541C85D26508E83_901048495.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_901048495.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_901048495;
-        // ---------- Original Method ----------
-        //return mPreferenceManager;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.044 -0400", hash_original_method = "664C21A1EBA456CB3BAFB18286851581", hash_generated_method = "E0785BE4D5230C52DEE75D865B3CCE59")
     protected void onAttachedToHierarchy(PreferenceManager preferenceManager) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mPreferenceManager = preferenceManager;
         mId = preferenceManager.getNextId();
         dispatchSetInitialValue();
-        // ---------- Original Method ----------
-        //mPreferenceManager = preferenceManager;
-        //mId = preferenceManager.getNextId();
-        //dispatchSetInitialValue();
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.044 -0400", hash_original_method = "ECA501E201E2D5472D2CB3C64A16D61F", hash_generated_method = "CEDF62541504E21C8B99E9FF9C6C284E")
     protected void onAttachedToActivity() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         registerDependency();
-        // ---------- Original Method ----------
-        //registerDependency();
+        
+        
     }
 
     
@@ -1053,24 +1053,24 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     private void registerDependency() {
         {
             boolean varB1E8F75C3553AAFEDCF5483B863F116C_1550769818 = (TextUtils.isEmpty(mDependencyKey));
-        } //End collapsed parenthetic
+        } 
         Preference preference = findPreferenceInHierarchy(mDependencyKey);
         {
             preference.registerDependent(this);
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Dependency \"" + mDependencyKey
                     + "\" not found for preference \"" + mKey + "\" (title: \"" + mTitle + "\"");
-        } //End block
-        // ---------- Original Method ----------
-        //if (TextUtils.isEmpty(mDependencyKey)) return;
-        //Preference preference = findPreferenceInHierarchy(mDependencyKey);
-        //if (preference != null) {
-            //preference.registerDependent(this);
-        //} else {
-            //throw new IllegalStateException("Dependency \"" + mDependencyKey
-                    //+ "\" not found for preference \"" + mKey + "\" (title: \"" + mTitle + "\"");
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+            
+                    
+        
     }
 
     
@@ -1080,46 +1080,46 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
             final Preference oldDependency = findPreferenceInHierarchy(mDependencyKey);
             {
                 oldDependency.unregisterDependent(this);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mDependencyKey != null) {
-            //final Preference oldDependency = findPreferenceInHierarchy(mDependencyKey);
-            //if (oldDependency != null) {
-                //oldDependency.unregisterDependent(this);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.047 -0400", hash_original_method = "913C05EFD2CE9AD9CE3BED6394A14862", hash_generated_method = "DB539072FE1749C86D3978CE5E71F605")
     protected Preference findPreferenceInHierarchy(String key) {
-        Preference varB4EAC82CA7396A68D541C85D26508E83_2098939420 = null; //Variable for return #1
-        Preference varB4EAC82CA7396A68D541C85D26508E83_1672473267 = null; //Variable for return #2
+        Preference varB4EAC82CA7396A68D541C85D26508E83_2098939420 = null; 
+        Preference varB4EAC82CA7396A68D541C85D26508E83_1672473267 = null; 
         {
             boolean var14B185A6FDE26BEB2F1F14099406A9CC_354608789 = (TextUtils.isEmpty(key) || mPreferenceManager == null);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_2098939420 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1672473267 = mPreferenceManager.findPreference(key);
         addTaint(key.getTaint());
-        Preference varA7E53CE21691AB073D9660D615818899_1068381469; //Final return value
+        Preference varA7E53CE21691AB073D9660D615818899_1068381469; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1068381469 = varB4EAC82CA7396A68D541C85D26508E83_2098939420;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1068381469 = varB4EAC82CA7396A68D541C85D26508E83_1672473267;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1068381469.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1068381469.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1068381469;
-        // ---------- Original Method ----------
-        //if (TextUtils.isEmpty(key) || mPreferenceManager == null) {
-            //return null;
-        //}
-        //return mPreferenceManager.findPreference(key);
+        
+        
+            
+        
+        
     }
 
     
@@ -1127,16 +1127,16 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     private void registerDependent(Preference dependent) {
         {
             mDependents = new ArrayList<Preference>();
-        } //End block
+        } 
         mDependents.add(dependent);
         dependent.onDependencyChanged(this, shouldDisableDependents());
         addTaint(dependent.getTaint());
-        // ---------- Original Method ----------
-        //if (mDependents == null) {
-            //mDependents = new ArrayList<Preference>();
-        //}
-        //mDependents.add(dependent);
-        //dependent.onDependencyChanged(this, shouldDisableDependents());
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -1144,12 +1144,12 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     private void unregisterDependent(Preference dependent) {
         {
             mDependents.remove(dependent);
-        } //End block
+        } 
         addTaint(dependent.getTaint());
-        // ---------- Original Method ----------
-        //if (mDependents != null) {
-            //mDependents.remove(dependent);
-        //}
+        
+        
+            
+        
     }
 
     
@@ -1161,36 +1161,36 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
             int i = 0;
             {
                 dependents.get(i).onDependencyChanged(this, disableDependents);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(disableDependents);
-        // ---------- Original Method ----------
-        //final List<Preference> dependents = mDependents;
-        //if (dependents == null) {
-            //return;
-        //}
-        //final int dependentsCount = dependents.size();
-        //for (int i = 0; i < dependentsCount; i++) {
-            //dependents.get(i).onDependencyChanged(this, disableDependents);
-        //}
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.051 -0400", hash_original_method = "E3DDA7BA2220D3A5C80FED1DB4754CB9", hash_generated_method = "78DD02C042F5223692E65666BF8BB279")
     public void onDependencyChanged(Preference dependency, boolean disableDependent) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             mDependencyMet = !disableDependent;
             notifyDependencyChange(shouldDisableDependents());
             notifyChanged();
-        } //End block
+        } 
         addTaint(dependency.getTaint());
-        // ---------- Original Method ----------
-        //if (mDependencyMet == disableDependent) {
-            //mDependencyMet = !disableDependent;
-            //notifyDependencyChange(shouldDisableDependents());
-            //notifyChanged();
-        //}
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -1199,8 +1199,8 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
         boolean var09FF3454BC8E65DB686A79A385F3030C_125447374 = (!isEnabled());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_785537672 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_785537672;
-        // ---------- Original Method ----------
-        //return !isEnabled();
+        
+        
     }
 
     
@@ -1209,38 +1209,38 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
         unregisterDependency();
         mDependencyKey = dependencyKey;
         registerDependency();
-        // ---------- Original Method ----------
-        //unregisterDependency();
-        //mDependencyKey = dependencyKey;
-        //registerDependency();
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.053 -0400", hash_original_method = "664EA11E01CF3C90DB639CBF1F232407", hash_generated_method = "DE956E044F21D78491A512A976C6502D")
     public String getDependency() {
-        String varB4EAC82CA7396A68D541C85D26508E83_209015046 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_209015046 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_209015046 = mDependencyKey;
-        varB4EAC82CA7396A68D541C85D26508E83_209015046.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_209015046.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_209015046;
-        // ---------- Original Method ----------
-        //return mDependencyKey;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.053 -0400", hash_original_method = "590B71B1265EC6EEA43053FD50985818", hash_generated_method = "14FE589E8685D8807F769025D0914FFE")
     protected void onPrepareForRemoval() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         unregisterDependency();
-        // ---------- Original Method ----------
-        //unregisterDependency();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.053 -0400", hash_original_method = "EC5991F73564EC767E73B865F0A17074", hash_generated_method = "2766AECCE7BBCD026046B542095917DF")
     public void setDefaultValue(Object defaultValue) {
         mDefaultValue = defaultValue;
-        // ---------- Original Method ----------
-        //mDefaultValue = defaultValue;
+        
+        
     }
 
     
@@ -1252,30 +1252,30 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
             {
                 {
                     onSetInitialValue(false, mDefaultValue);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 onSetInitialValue(true, null);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //final boolean shouldPersist = shouldPersist();
-        //if (!shouldPersist || !getSharedPreferences().contains(mKey)) {
-            //if (mDefaultValue != null) {
-                //onSetInitialValue(false, mDefaultValue);
-            //}
-        //} else {
-            //onSetInitialValue(true, null);
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.054 -0400", hash_original_method = "8C28678F9AE41A1BF1FA484A48C7C6F8", hash_generated_method = "82BFF194E4CB60779A58E0918F81627E")
     protected void onSetInitialValue(boolean restorePersistedValue, Object defaultValue) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(restorePersistedValue);
         addTaint(defaultValue.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -1287,22 +1287,22 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
                 try 
                 {
                     editor.apply();
-                } //End block
+                } 
                 catch (AbstractMethodError unused)
                 {
                     editor.commit();
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(editor.getTaint());
-        // ---------- Original Method ----------
-        //if (mPreferenceManager.shouldCommit()) {
-            //try {
-                //editor.apply();
-            //} catch (AbstractMethodError unused) {
-                //editor.commit();
-            //}
-        //}
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -1313,57 +1313,57 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
             {
                 {
                     boolean varB83E9DE1E67EF06C183B09C0E0D44CCE_1645367535 = (value == getPersistedString(null));
-                } //End collapsed parenthetic
+                } 
                 SharedPreferences.Editor editor = mPreferenceManager.getEditor();
                 editor.putString(mKey, value);
                 tryCommit(editor);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(value.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1167479423 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1167479423;
-        // ---------- Original Method ----------
-        //if (shouldPersist()) {
-            //if (value == getPersistedString(null)) {
-                //return true;
-            //}
-            //SharedPreferences.Editor editor = mPreferenceManager.getEditor();
-            //editor.putString(mKey, value);
-            //tryCommit(editor);
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+                
+            
+            
+            
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.057 -0400", hash_original_method = "5E73C8E580A094A1DF5E2EFDD3570FC9", hash_generated_method = "A00A673B5E3C97D30EE9813E0B24F19B")
     protected String getPersistedString(String defaultReturnValue) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1312311436 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_139324075 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1312311436 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_139324075 = null; 
         {
             boolean var55473E3F697E9E0994A85A68E07852AD_1138071667 = (!shouldPersist());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1312311436 = defaultReturnValue;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_139324075 = mPreferenceManager.getSharedPreferences().getString(mKey, defaultReturnValue);
         addTaint(defaultReturnValue.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_939666150; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_939666150; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_939666150 = varB4EAC82CA7396A68D541C85D26508E83_1312311436;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_939666150 = varB4EAC82CA7396A68D541C85D26508E83_139324075;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_939666150.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_939666150.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_939666150;
-        // ---------- Original Method ----------
-        //if (!shouldPersist()) {
-            //return defaultReturnValue;
-        //}
-        //return mPreferenceManager.getSharedPreferences().getString(mKey, defaultReturnValue);
+        
+        
+            
+        
+        
     }
 
     
@@ -1374,57 +1374,57 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
             {
                 {
                     boolean var65F6840337FA6F30C7823EE44C85EAFD_1780779008 = (values.equals(getPersistedStringSet(null)));
-                } //End collapsed parenthetic
+                } 
                 SharedPreferences.Editor editor = mPreferenceManager.getEditor();
                 editor.putStringSet(mKey, values);
                 tryCommit(editor);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(values.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_170499579 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_170499579;
-        // ---------- Original Method ----------
-        //if (shouldPersist()) {
-            //if (values.equals(getPersistedStringSet(null))) {
-                //return true;
-            //}
-            //SharedPreferences.Editor editor = mPreferenceManager.getEditor();
-            //editor.putStringSet(mKey, values);
-            //tryCommit(editor);
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+                
+            
+            
+            
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.060 -0400", hash_original_method = "D996103FD4641487F9C96461E983EA55", hash_generated_method = "DDCB5F494A8D81B518119C854DCA80E2")
     protected Set<String> getPersistedStringSet(Set<String> defaultReturnValue) {
-        Set<String> varB4EAC82CA7396A68D541C85D26508E83_101606810 = null; //Variable for return #1
-        Set<String> varB4EAC82CA7396A68D541C85D26508E83_487927871 = null; //Variable for return #2
+        Set<String> varB4EAC82CA7396A68D541C85D26508E83_101606810 = null; 
+        Set<String> varB4EAC82CA7396A68D541C85D26508E83_487927871 = null; 
         {
             boolean var55473E3F697E9E0994A85A68E07852AD_1044146153 = (!shouldPersist());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_101606810 = defaultReturnValue;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_487927871 = mPreferenceManager.getSharedPreferences().getStringSet(mKey, defaultReturnValue);
         addTaint(defaultReturnValue.getTaint());
-        Set<String> varA7E53CE21691AB073D9660D615818899_11298292; //Final return value
+        Set<String> varA7E53CE21691AB073D9660D615818899_11298292; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_11298292 = varB4EAC82CA7396A68D541C85D26508E83_101606810;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_11298292 = varB4EAC82CA7396A68D541C85D26508E83_487927871;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_11298292.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_11298292.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_11298292;
-        // ---------- Original Method ----------
-        //if (!shouldPersist()) {
-            //return defaultReturnValue;
-        //}
-        //return mPreferenceManager.getSharedPreferences().getStringSet(mKey, defaultReturnValue);
+        
+        
+            
+        
+        
     }
 
     
@@ -1435,26 +1435,26 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
             {
                 {
                     boolean varEB0E728FD1FBEED4ABBE87C7B22789DA_1566628536 = (value == getPersistedInt(~value));
-                } //End collapsed parenthetic
+                } 
                 SharedPreferences.Editor editor = mPreferenceManager.getEditor();
                 editor.putInt(mKey, value);
                 tryCommit(editor);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(value);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_592820580 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_592820580;
-        // ---------- Original Method ----------
-        //if (shouldPersist()) {
-            //if (value == getPersistedInt(~value)) {
-                //return true;
-            //}
-            //SharedPreferences.Editor editor = mPreferenceManager.getEditor();
-            //editor.putInt(mKey, value);
-            //tryCommit(editor);
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+                
+            
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -1462,16 +1462,16 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     protected int getPersistedInt(int defaultReturnValue) {
         {
             boolean var55473E3F697E9E0994A85A68E07852AD_1129032794 = (!shouldPersist());
-        } //End collapsed parenthetic
+        } 
         int varC34E9779AB3566FB4786F87E273A6847_901311963 = (mPreferenceManager.getSharedPreferences().getInt(mKey, defaultReturnValue));
         addTaint(defaultReturnValue);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1947433871 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1947433871;
-        // ---------- Original Method ----------
-        //if (!shouldPersist()) {
-            //return defaultReturnValue;
-        //}
-        //return mPreferenceManager.getSharedPreferences().getInt(mKey, defaultReturnValue);
+        
+        
+            
+        
+        
     }
 
     
@@ -1482,26 +1482,26 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
             {
                 {
                     boolean var5BA3946435CBD6AB81EDEDE75B77B581_540595297 = (value == getPersistedFloat(Float.NaN));
-                } //End collapsed parenthetic
+                } 
                 SharedPreferences.Editor editor = mPreferenceManager.getEditor();
                 editor.putFloat(mKey, value);
                 tryCommit(editor);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(value);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1630197673 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1630197673;
-        // ---------- Original Method ----------
-        //if (shouldPersist()) {
-            //if (value == getPersistedFloat(Float.NaN)) {
-                //return true;
-            //}
-            //SharedPreferences.Editor editor = mPreferenceManager.getEditor();
-            //editor.putFloat(mKey, value);
-            //tryCommit(editor);
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+                
+            
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -1509,16 +1509,16 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     protected float getPersistedFloat(float defaultReturnValue) {
         {
             boolean var55473E3F697E9E0994A85A68E07852AD_1504408141 = (!shouldPersist());
-        } //End collapsed parenthetic
+        } 
         float var3819A127749B4528B16EFCD41C31A62A_1524254096 = (mPreferenceManager.getSharedPreferences().getFloat(mKey, defaultReturnValue));
         addTaint(defaultReturnValue);
         float var546ADE640B6EDFBC8A086EF31347E768_2008658242 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_2008658242;
-        // ---------- Original Method ----------
-        //if (!shouldPersist()) {
-            //return defaultReturnValue;
-        //}
-        //return mPreferenceManager.getSharedPreferences().getFloat(mKey, defaultReturnValue);
+        
+        
+            
+        
+        
     }
 
     
@@ -1529,26 +1529,26 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
             {
                 {
                     boolean varC2E3E3F618AD788AD311EBDC65EA0C3C_1680683106 = (value == getPersistedLong(~value));
-                } //End collapsed parenthetic
+                } 
                 SharedPreferences.Editor editor = mPreferenceManager.getEditor();
                 editor.putLong(mKey, value);
                 tryCommit(editor);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(value);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_408859304 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_408859304;
-        // ---------- Original Method ----------
-        //if (shouldPersist()) {
-            //if (value == getPersistedLong(~value)) {
-                //return true;
-            //}
-            //SharedPreferences.Editor editor = mPreferenceManager.getEditor();
-            //editor.putLong(mKey, value);
-            //tryCommit(editor);
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+                
+            
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -1556,16 +1556,16 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     protected long getPersistedLong(long defaultReturnValue) {
         {
             boolean var55473E3F697E9E0994A85A68E07852AD_1859122379 = (!shouldPersist());
-        } //End collapsed parenthetic
+        } 
         long var92DA105CE3001EF7BDE755DAFE24D62A_1580889793 = (mPreferenceManager.getSharedPreferences().getLong(mKey, defaultReturnValue));
         addTaint(defaultReturnValue);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_849540628 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_849540628;
-        // ---------- Original Method ----------
-        //if (!shouldPersist()) {
-            //return defaultReturnValue;
-        //}
-        //return mPreferenceManager.getSharedPreferences().getLong(mKey, defaultReturnValue);
+        
+        
+            
+        
+        
     }
 
     
@@ -1576,26 +1576,26 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
             {
                 {
                     boolean varDA8CE2C0ADCE00323BB90806F37C4C6A_653789443 = (value == getPersistedBoolean(!value));
-                } //End collapsed parenthetic
+                } 
                 SharedPreferences.Editor editor = mPreferenceManager.getEditor();
                 editor.putBoolean(mKey, value);
                 tryCommit(editor);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(value);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1847585287 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1847585287;
-        // ---------- Original Method ----------
-        //if (shouldPersist()) {
-            //if (value == getPersistedBoolean(!value)) {
-                //return true;
-            //}
-            //SharedPreferences.Editor editor = mPreferenceManager.getEditor();
-            //editor.putBoolean(mKey, value);
-            //tryCommit(editor);
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+                
+            
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -1603,16 +1603,16 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     protected boolean getPersistedBoolean(boolean defaultReturnValue) {
         {
             boolean var55473E3F697E9E0994A85A68E07852AD_1722584196 = (!shouldPersist());
-        } //End collapsed parenthetic
+        } 
         boolean var1A496DFA26948F30715026809567A654_455973084 = (mPreferenceManager.getSharedPreferences().getBoolean(mKey, defaultReturnValue));
         addTaint(defaultReturnValue);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1140849169 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1140849169;
-        // ---------- Original Method ----------
-        //if (!shouldPersist()) {
-            //return defaultReturnValue;
-        //}
-        //return mPreferenceManager.getSharedPreferences().getBoolean(mKey, defaultReturnValue);
+        
+        
+            
+        
+        
     }
 
     
@@ -1620,64 +1620,64 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
      boolean hasSpecifiedLayout() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_566085355 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_566085355;
-        // ---------- Original Method ----------
-        //return mHasSpecifiedLayout;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.065 -0400", hash_original_method = "F82B18888AE588251FAAB1FF7696A001", hash_generated_method = "CEC3BE2A06FF1C4698F6C1F947DD8BB2")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_243698321 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_243698321 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_243698321 = getFilterableStringBuilder().toString();
-        varB4EAC82CA7396A68D541C85D26508E83_243698321.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_243698321.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_243698321;
-        // ---------- Original Method ----------
-        //return getFilterableStringBuilder().toString();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.067 -0400", hash_original_method = "7FA40EC09188F6F1BEA3B1B94241EA4A", hash_generated_method = "C36FFB81E29E1511447289E7A056496F")
      StringBuilder getFilterableStringBuilder() {
-        StringBuilder varB4EAC82CA7396A68D541C85D26508E83_100966702 = null; //Variable for return #1
+        StringBuilder varB4EAC82CA7396A68D541C85D26508E83_100966702 = null; 
         StringBuilder sb = new StringBuilder();
         CharSequence title = getTitle();
         {
             boolean var4315037A3FEAFB24D399CA884BFC6923_1551625064 = (!TextUtils.isEmpty(title));
             {
                 sb.append(title).append(' ');
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         CharSequence summary = getSummary();
         {
             boolean var7E93AF819D7D3BF2785B92F82525EC8F_1970861664 = (!TextUtils.isEmpty(summary));
             {
                 sb.append(summary).append(' ');
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var0C7AF3C04C994C56893AB35D4EE77EAD_355774210 = (sb.length() > 0);
             {
                 sb.setLength(sb.length() - 1);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_100966702 = sb;
-        varB4EAC82CA7396A68D541C85D26508E83_100966702.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_100966702.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_100966702;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder();
-        //CharSequence title = getTitle();
-        //if (!TextUtils.isEmpty(title)) {
-            //sb.append(title).append(' ');
-        //}
-        //CharSequence summary = getSummary();
-        //if (!TextUtils.isEmpty(summary)) {
-            //sb.append(summary).append(' ');
-        //}
-        //if (sb.length() > 0) {
-            //sb.setLength(sb.length() - 1);
-        //}
-        //return sb;
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -1685,8 +1685,8 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     public void saveHierarchyState(Bundle container) {
         dispatchSaveInstanceState(container);
         addTaint(container.getTaint());
-        // ---------- Original Method ----------
-        //dispatchSaveInstanceState(container);
+        
+        
     }
 
     
@@ -1700,39 +1700,39 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                         "Derived class did not call super.onSaveInstanceState()");
-                } //End block
+                } 
                 {
                     container.putParcelable(mKey, state);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(container.getTaint());
-        // ---------- Original Method ----------
-        //if (hasKey()) {
-            //mBaseMethodCalled = false;
-            //Parcelable state = onSaveInstanceState();
-            //if (!mBaseMethodCalled) {
-                //throw new IllegalStateException(
-                        //"Derived class did not call super.onSaveInstanceState()");
-            //}
-            //if (state != null) {
-                //container.putParcelable(mKey, state);
-            //}
-        //}
+        
+        
+            
+            
+            
+                
+                        
+            
+            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.071 -0400", hash_original_method = "9DD945A60796B8A8FF01F94A77988BE6", hash_generated_method = "7EFDA5D7F6EE6E75327BB92D8C02A4B8")
     protected Parcelable onSaveInstanceState() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        Parcelable varB4EAC82CA7396A68D541C85D26508E83_854588851 = null; //Variable for return #1
+        
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_854588851 = null; 
         mBaseMethodCalled = true;
         varB4EAC82CA7396A68D541C85D26508E83_854588851 = BaseSavedState.EMPTY_STATE;
-        varB4EAC82CA7396A68D541C85D26508E83_854588851.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_854588851.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_854588851;
-        // ---------- Original Method ----------
-        //mBaseMethodCalled = true;
-        //return BaseSavedState.EMPTY_STATE;
+        
+        
+        
     }
 
     
@@ -1740,8 +1740,8 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     public void restoreHierarchyState(Bundle container) {
         dispatchRestoreInstanceState(container);
         addTaint(container.getTaint());
-        // ---------- Original Method ----------
-        //dispatchRestoreInstanceState(container);
+        
+        
     }
 
     
@@ -1757,39 +1757,39 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
                     {
                         if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                             "Derived class did not call super.onRestoreInstanceState()");
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(container.getTaint());
-        // ---------- Original Method ----------
-        //if (hasKey()) {
-            //Parcelable state = container.getParcelable(mKey);
-            //if (state != null) {
-                //mBaseMethodCalled = false;
-                //onRestoreInstanceState(state);
-                //if (!mBaseMethodCalled) {
-                    //throw new IllegalStateException(
-                            //"Derived class did not call super.onRestoreInstanceState()");
-                //}
-            //}
-        //}
+        
+        
+            
+            
+                
+                
+                
+                    
+                            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.072 -0400", hash_original_method = "18B537C81357A7563BC62FF4E045FAEF", hash_generated_method = "8DE7060EAD75BF37A73AF8AE0F29D44F")
     protected void onRestoreInstanceState(Parcelable state) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mBaseMethodCalled = true;
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Wrong state class -- expecting Preference State");
-        } //End block
+        } 
         addTaint(state.getTaint());
-        // ---------- Original Method ----------
-        //mBaseMethodCalled = true;
-        //if (state != BaseSavedState.EMPTY_STATE && state != null) {
-            //throw new IllegalArgumentException("Wrong state class -- expecting Preference State");
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -1799,7 +1799,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
         public  BaseSavedState(Parcel source) {
             super(source);
             addTaint(source.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1807,7 +1807,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
         public  BaseSavedState(Parcelable superState) {
             super(superState);
             addTaint(superState.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1823,12 +1823,12 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
                 return new BaseSavedState[size];
             }
         };
-        // orphaned legacy method
+        
         public BaseSavedState createFromParcel(Parcel in) {
                 return new BaseSavedState(in);
             }
         
-        // orphaned legacy method
+        
         public BaseSavedState[] newArray(int size) {
                 return new BaseSavedState[size];
             }

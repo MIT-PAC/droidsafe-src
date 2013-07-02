@@ -1,11 +1,11 @@
 package org.apache.http.message;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.http.util.CharArrayBuffer;
 
@@ -25,23 +25,23 @@ public class ParserCursor {
         super();
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("Lower bound cannot be negative");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("Lower bound cannot be greater then upper bound");
-        } //End block
+        } 
         this.lowerBound = lowerBound;
         this.upperBound = upperBound;
         this.pos = lowerBound;
-        // ---------- Original Method ----------
-        //if (lowerBound < 0) {
-            //throw new IndexOutOfBoundsException("Lower bound cannot be negative");
-        //}
-        //if (lowerBound > upperBound) {
-            //throw new IndexOutOfBoundsException("Lower bound cannot be greater then upper bound");
-        //}
-        //this.lowerBound = lowerBound;
-        //this.upperBound = upperBound;
-        //this.pos = lowerBound;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -49,8 +49,8 @@ public class ParserCursor {
     public int getLowerBound() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1007700967 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1007700967;
-        // ---------- Original Method ----------
-        //return this.lowerBound;
+        
+        
     }
 
     
@@ -58,8 +58,8 @@ public class ParserCursor {
     public int getUpperBound() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_132928425 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_132928425;
-        // ---------- Original Method ----------
-        //return this.upperBound;
+        
+        
     }
 
     
@@ -67,28 +67,29 @@ public class ParserCursor {
     public int getPos() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2137186611 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2137186611;
-        // ---------- Original Method ----------
-        //return this.pos;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.386 -0400", hash_original_method = "A3829310204BDE639939B0DAE79170B8", hash_generated_method = "9A856FE2A5E3854FDC2C316AB6BCD9B0")
     public void updatePos(int pos) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-        } //End block
+        } 
         this.pos = pos;
-        // ---------- Original Method ----------
-        //if (pos < this.lowerBound) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //if (pos > this.upperBound) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //this.pos = pos;
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -96,14 +97,15 @@ public class ParserCursor {
     public boolean atEnd() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_847198818 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_847198818;
-        // ---------- Original Method ----------
-        //return this.pos >= this.upperBound;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.387 -0400", hash_original_method = "DBE0DD908DEA3CD4A10978C31BD1370E", hash_generated_method = "7196C206804F7B3F15870CD8ED4F0D96")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1433460591 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1433460591 = null; 
         CharArrayBuffer buffer = new CharArrayBuffer(16);
         buffer.append('[');
         buffer.append(Integer.toString(this.lowerBound));
@@ -113,18 +115,18 @@ public class ParserCursor {
         buffer.append(Integer.toString(this.upperBound));
         buffer.append(']');
         varB4EAC82CA7396A68D541C85D26508E83_1433460591 = buffer.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1433460591.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1433460591.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1433460591;
-        // ---------- Original Method ----------
-        //CharArrayBuffer buffer = new CharArrayBuffer(16);
-        //buffer.append('[');
-        //buffer.append(Integer.toString(this.lowerBound));
-        //buffer.append('>');
-        //buffer.append(Integer.toString(this.pos));
-        //buffer.append('>');
-        //buffer.append(Integer.toString(this.upperBound));
-        //buffer.append(']');
-        //return buffer.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     

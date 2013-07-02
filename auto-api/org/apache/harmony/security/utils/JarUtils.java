@@ -1,11 +1,11 @@
 package org.apache.harmony.security.utils;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.InputStream;
@@ -36,10 +36,11 @@ public class JarUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.353 -0400", hash_original_method = "C4E6A9DD3A1CC4544C825D59A384053A", hash_generated_method = "C4E6A9DD3A1CC4544C825D59A384053A")
     public JarUtils ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static Certificate[] verifySignature(InputStream signature, InputStream
             signatureBlock) throws IOException, GeneralSecurityException {
         BerInputStream bis = new BerInputStream(signatureBlock);
@@ -130,6 +131,7 @@ public class JarUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static X509Certificate[] createChain(X509Certificate  signer, X509Certificate[] candidates) {
         LinkedList chain = new LinkedList();
         chain.add(0, signer);
@@ -155,6 +157,7 @@ public class JarUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static X509Certificate findCert(Principal issuer, X509Certificate[] candidates) {
         for (int i = 0; i < candidates.length; i++) {
             if (issuer.equals(candidates[i].getSubjectDN())) {

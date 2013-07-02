@@ -1,11 +1,11 @@
 package org.apache.harmony.security.provider.crypto;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,7 +18,7 @@ public class RandomBitsSupplier implements SHA1_Data {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.178 -0400", hash_original_method = "C2EAC1E8FB299AA5C7A70ED055C01714", hash_generated_method = "C2EAC1E8FB299AA5C7A70ED055C01714")
     public RandomBitsSupplier ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -27,6 +27,7 @@ public class RandomBitsSupplier implements SHA1_Data {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static synchronized byte[] getUnixDeviceRandom(int numBytes) {
         byte[] bytes = new byte[numBytes];
         int total = 0;
@@ -51,6 +52,7 @@ public class RandomBitsSupplier implements SHA1_Data {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] getRandomBits(int numBytes) {
         if (numBytes <= 0) {
             throw new IllegalArgumentException(Integer.toString(numBytes));

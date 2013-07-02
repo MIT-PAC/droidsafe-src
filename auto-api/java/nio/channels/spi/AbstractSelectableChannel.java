@@ -1,11 +1,11 @@
 package java.nio.channels.spi;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.nio.channels.CancelledKeyException;
@@ -35,20 +35,20 @@ public abstract class AbstractSelectableChannel extends SelectableChannel {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.749 -0400", hash_original_method = "C1ED2F1D0A9F053BD27B8788D8E263F6", hash_generated_method = "CDC2687EFBB1875408EB822640372289")
     protected  AbstractSelectableChannel(SelectorProvider selectorProvider) {
         provider = selectorProvider;
-        // ---------- Original Method ----------
-        //provider = selectorProvider;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.750 -0400", hash_original_method = "B098D2E33834ACCBC46AD074E583FD9B", hash_generated_method = "BAFC17F02B80EDA34FC72C0FB23B666B")
     @Override
     public final SelectorProvider provider() {
-        SelectorProvider varB4EAC82CA7396A68D541C85D26508E83_1189689117 = null; //Variable for return #1
+        SelectorProvider varB4EAC82CA7396A68D541C85D26508E83_1189689117 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1189689117 = provider;
-        varB4EAC82CA7396A68D541C85D26508E83_1189689117.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1189689117.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1189689117;
-        // ---------- Original Method ----------
-        //return provider;
+        
+        
     }
 
     
@@ -58,16 +58,16 @@ public abstract class AbstractSelectableChannel extends SelectableChannel {
         boolean var2A0AA4A5AD5C173363E5A71D1D62507A_1170918359 = (!keyList.isEmpty());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1082900439 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1082900439;
-        // ---------- Original Method ----------
-        //return !keyList.isEmpty();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.754 -0400", hash_original_method = "4195F78E36942EF5DA6AFD3959F769A2", hash_generated_method = "54051BBF28A351F5328B62009BC640A7")
     @Override
     synchronized public final SelectionKey keyFor(Selector selector) {
-        SelectionKey varB4EAC82CA7396A68D541C85D26508E83_1254613241 = null; //Variable for return #1
-        SelectionKey varB4EAC82CA7396A68D541C85D26508E83_769513310 = null; //Variable for return #2
+        SelectionKey varB4EAC82CA7396A68D541C85D26508E83_1254613241 = null; 
+        SelectionKey varB4EAC82CA7396A68D541C85D26508E83_769513310 = null; 
         {
             Iterator<SelectionKey> varC1F62F2EA7BD54E755C9918034449484_2053837028 = (keyList).iterator();
             varC1F62F2EA7BD54E755C9918034449484_2053837028.hasNext();
@@ -77,30 +77,30 @@ public abstract class AbstractSelectableChannel extends SelectableChannel {
                     boolean var90AC5A9C726BE7F47DCD01E5BC19F7E7_1115672977 = (key != null && key.selector() == selector);
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1254613241 = key;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_769513310 = null;
         addTaint(selector.getTaint());
-        SelectionKey varA7E53CE21691AB073D9660D615818899_467793550; //Final return value
+        SelectionKey varA7E53CE21691AB073D9660D615818899_467793550; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_467793550 = varB4EAC82CA7396A68D541C85D26508E83_1254613241;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_467793550 = varB4EAC82CA7396A68D541C85D26508E83_769513310;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_467793550.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_467793550.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_467793550;
-        // ---------- Original Method ----------
-        //for (SelectionKey key : keyList) {
-            //if (key != null && key.selector() == selector) {
-                //return key;
-            //}
-        //}
-        //return null;
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -108,56 +108,56 @@ public abstract class AbstractSelectableChannel extends SelectableChannel {
     @Override
     public final SelectionKey register(Selector selector, int interestSet,
             Object attachment) throws ClosedChannelException {
-        SelectionKey varB4EAC82CA7396A68D541C85D26508E83_1489865591 = null; //Variable for return #1
+        SelectionKey varB4EAC82CA7396A68D541C85D26508E83_1489865591 = null; 
         {
             boolean var3A7D61B68AE823F6A30349D498C59A5C_1584493519 = (!isOpen());
             {
                 if (DroidSafeAndroidRuntime.control) throw new ClosedChannelException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varC6747048DC9A6C29F5E2D03CB8DD17AC_294242251 = (!((interestSet & ~validOps()) == 0));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalBlockingModeException();
-            } //End block
+            } 
             {
                 boolean varB6073B4D1239886C11DC4DA3FD749175_2129458686 = (!selector.isOpen());
                 {
                     {
                         if (DroidSafeAndroidRuntime.control) throw new IllegalSelectorException();
-                    } //End block
+                    } 
                     if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             SelectionKey key = keyFor(selector);
             {
                 key = ((AbstractSelector) selector).register(this, interestSet, attachment);
                 keyList.add(key);
-            } //End block
+            } 
             {
                 {
                     boolean var9F04A2B363242ECBF1ED998B2E98DDB8_2090082064 = (!key.isValid());
                     {
                         if (DroidSafeAndroidRuntime.control) throw new CancelledKeyException();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 key.interestOps(interestSet);
                 key.attach(attachment);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1489865591 = key;
-        } //End block
+        } 
         addTaint(selector.getTaint());
         addTaint(interestSet);
         addTaint(attachment.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1489865591.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1489865591.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1489865591;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -172,16 +172,16 @@ public abstract class AbstractSelectableChannel extends SelectableChannel {
             {
                 {
                     key.cancel();
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //implCloseSelectableChannel();
-        //for (SelectionKey key : keyList) {
-            //if (key != null) {
-                //key.cancel();
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -193,95 +193,97 @@ public abstract class AbstractSelectableChannel extends SelectableChannel {
     public final boolean isBlocking() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1519101528 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1519101528;
-        // ---------- Original Method ----------
-        //synchronized (blockingLock) {
-            //return isBlocking;
-        //}
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.764 -0400", hash_original_method = "CF2B6308C435D16AFC21EE86C3F92787", hash_generated_method = "1E257070049614C1623D2F5FA6C1D934")
     @Override
     public final Object blockingLock() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1029213958 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1029213958 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1029213958 = blockingLock;
-        varB4EAC82CA7396A68D541C85D26508E83_1029213958.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1029213958.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1029213958;
-        // ---------- Original Method ----------
-        //return blockingLock;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.766 -0400", hash_original_method = "C1D21D3B957CE63BA941CEBC7A89647F", hash_generated_method = "194E68F9493D0080970AA871E486CC95")
     @Override
     public final SelectableChannel configureBlocking(boolean blockingMode) throws IOException {
-        SelectableChannel varB4EAC82CA7396A68D541C85D26508E83_1693222019 = null; //Variable for return #1
-        SelectableChannel varB4EAC82CA7396A68D541C85D26508E83_796018932 = null; //Variable for return #2
+        SelectableChannel varB4EAC82CA7396A68D541C85D26508E83_1693222019 = null; 
+        SelectableChannel varB4EAC82CA7396A68D541C85D26508E83_796018932 = null; 
         {
             boolean var3A7D61B68AE823F6A30349D498C59A5C_737481371 = (!isOpen());
             {
                 if (DroidSafeAndroidRuntime.control) throw new ClosedChannelException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1693222019 = this;
-            } //End block
+            } 
             {
                 boolean varA1EE497A2C565C716AFB7F027C302B60_1551701461 = (blockingMode && containsValidKeys());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalBlockingModeException();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             implConfigureBlocking(blockingMode);
             isBlocking = blockingMode;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_796018932 = this;
-        SelectableChannel varA7E53CE21691AB073D9660D615818899_1594777451; //Final return value
+        SelectableChannel varA7E53CE21691AB073D9660D615818899_1594777451; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1594777451 = varB4EAC82CA7396A68D541C85D26508E83_1693222019;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1594777451 = varB4EAC82CA7396A68D541C85D26508E83_796018932;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1594777451.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1594777451.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1594777451;
-        // ---------- Original Method ----------
-        //if (!isOpen()) {
-            //throw new ClosedChannelException();
-        //}
-        //synchronized (blockingLock) {
-            //if (isBlocking == blockingMode) {
-                //return this;
-            //}
-            //if (blockingMode && containsValidKeys()) {
-                //throw new IllegalBlockingModeException();
-            //}
-            //implConfigureBlocking(blockingMode);
-            //isBlocking = blockingMode;
-        //}
-        //return this;
+        
+        
+            
+        
+        
+            
+                
+            
+            
+                
+            
+            
+            
+        
+        
     }
 
     
     protected abstract void implConfigureBlocking(boolean blocking) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.766 -0400", hash_original_method = "5E0A774ABE1807BF9448EF86554C6BF7", hash_generated_method = "3318E43F0A42478F2F33666E30A67376")
     synchronized void deregister(SelectionKey k) {
         {
             keyList.remove(k);
-        } //End block
+        } 
         addTaint(k.getTaint());
-        // ---------- Original Method ----------
-        //if (keyList != null) {
-            //keyList.remove(k);
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.769 -0400", hash_original_method = "57F0CA9634BB6BE72AE1A3DBAB2B8264", hash_generated_method = "40FEE35CE30D21616125D41AE2F07769")
     private synchronized boolean containsValidKeys() {
         {
@@ -291,18 +293,18 @@ public abstract class AbstractSelectableChannel extends SelectableChannel {
             {
                 {
                     boolean var38DC38D0794E14EE99B4E06A070E5D5F_616911530 = (key != null && key.isValid());
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_682927 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_682927;
-        // ---------- Original Method ----------
-        //for (SelectionKey key : keyList) {
-            //if (key != null && key.isValid()) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+                
+            
+        
+        
     }
 
     

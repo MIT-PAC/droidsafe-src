@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -61,9 +61,9 @@ public class SimpleTimeZone extends TimeZone {
         setID(name);
         rawOffset = offset;
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
-        //setID(name);
-        //rawOffset = offset;
+        
+        
+        
     }
 
     
@@ -83,7 +83,7 @@ public class SimpleTimeZone extends TimeZone {
         addTaint(endDay);
         addTaint(endDayOfWeek);
         addTaint(endTime);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -94,7 +94,7 @@ public class SimpleTimeZone extends TimeZone {
         this(offset, name);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid daylightSavings: " + daylightSavings);
-        } //End block
+        } 
         dstSavings = daylightSavings;
         setStartRule(startMonth, startDay, startDayOfWeek, startTime);
         setEndRule(endMonth, endDay, endDayOfWeek, endTime);
@@ -108,13 +108,13 @@ public class SimpleTimeZone extends TimeZone {
         addTaint(endDay);
         addTaint(endDayOfWeek);
         addTaint(endTime);
-        // ---------- Original Method ----------
-        //if (daylightSavings <= 0) {
-            //throw new IllegalArgumentException("Invalid daylightSavings: " + daylightSavings);
-        //}
-        //dstSavings = daylightSavings;
-        //setStartRule(startMonth, startDay, startDayOfWeek, startTime);
-        //setEndRule(endMonth, endDay, endDayOfWeek, endTime);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -138,26 +138,28 @@ public class SimpleTimeZone extends TimeZone {
         addTaint(endDayOfWeek);
         addTaint(endTime);
         addTaint(daylightSavings);
-        // ---------- Original Method ----------
-        //startMode = startTimeMode;
-        //endMode = endTimeMode;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.680 -0400", hash_original_method = "826DFB88845863F51C3C619017A5C62F", hash_generated_method = "ABA001B67314D6EBF31AA87FC1B382D2")
     @Override
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_2058011632 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_2058011632 = null; 
         SimpleTimeZone zone = (SimpleTimeZone) super.clone();
         varB4EAC82CA7396A68D541C85D26508E83_2058011632 = zone;
-        varB4EAC82CA7396A68D541C85D26508E83_2058011632.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2058011632.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2058011632;
-        // ---------- Original Method ----------
-        //SimpleTimeZone zone = (SimpleTimeZone) super.clone();
-        //return zone;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.680 -0400", hash_original_method = "6B0E934BFCA438C9EF8D8ACC7F42CB32", hash_generated_method = "417406E00638757F814E0EE841919658")
     @Override
     public boolean equals(Object object) {
@@ -176,8 +178,8 @@ public class SimpleTimeZone extends TimeZone {
         addTaint(object.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_349859591 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_349859591;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -186,42 +188,43 @@ public class SimpleTimeZone extends TimeZone {
     public int getDSTSavings() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2037831502 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2037831502;
-        // ---------- Original Method ----------
-        //if (!useDaylight) {
-            //return 0;
-        //}
-        //return dstSavings;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.683 -0400", hash_original_method = "8DB3C09D8D79030897991A8AF2C3603A", hash_generated_method = "5CC0C0A1B6789D782B49785D2A4A6199")
     @Override
     public int getOffset(int era, int year, int month, int day, int dayOfWeek, int time) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid era: " + era);
-        } //End block
+        } 
         checkRange(month, dayOfWeek, time);
         {
             boolean varDDE26ED6F6F2D378E54C9D0FD807F9B0_299879802 = (month != Calendar.FEBRUARY || day != 29 || !isLeapYear(year));
             {
                 checkDay(month, day);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varAE28A042D21B15EB2BF786A48B929263_932141976 = (!useDaylightTime() || era != GregorianCalendar.AD || year < startYear);
-        } //End collapsed parenthetic
+        } 
         int ruleDay = 0;
         int daysInMonth;
         int firstDayOfMonth = mod7(dayOfWeek - day);
         {
-            //Begin case DOM_MODE 
+            
             ruleDay = startDay;
-            //End case DOM_MODE 
-            //Begin case DOW_IN_MONTH_MODE 
+            
+            
             {
                 ruleDay = mod7(startDayOfWeek - firstDayOfMonth) + 1
                                 + (startDay - 1) * 7;
-            } //End block
+            } 
             {
                 daysInMonth = GregorianCalendar.DaysInMonth[startMonth];
                 {
@@ -229,69 +232,69 @@ public class SimpleTimeZone extends TimeZone {
                                 year));
                     {
                         daysInMonth += 1;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 ruleDay = daysInMonth
                                 + 1
                                 + mod7(startDayOfWeek
                                 - (firstDayOfMonth + daysInMonth))
                                 + startDay * 7;
-            } //End block
-            //End case DOW_IN_MONTH_MODE 
-            //Begin case DOW_GE_DOM_MODE 
+            } 
+            
+            
             ruleDay = startDay
                             + mod7(startDayOfWeek
                             - (firstDayOfMonth + startDay - 1));
-            //End case DOW_GE_DOM_MODE 
-            //Begin case DOW_LE_DOM_MODE 
+            
+            
             ruleDay = startDay
                             + mod7(startDayOfWeek
                             - (firstDayOfMonth + startDay - 1));
-            //End case DOW_LE_DOM_MODE 
-            //Begin case DOW_LE_DOM_MODE 
+            
+            
             {
                 ruleDay -= 7;
-            } //End block
-            //End case DOW_LE_DOM_MODE 
-        } //End block
+            } 
+            
+        } 
         int ruleTime = endTime - dstSavings;
         int nextMonth = (month + 1) % 12;
         {
-            //Begin case DOM_MODE 
+            
             ruleDay = endDay;
-            //End case DOM_MODE 
-            //Begin case DOW_IN_MONTH_MODE 
+            
+            
             {
                 ruleDay = mod7(endDayOfWeek - firstDayOfMonth) + 1
                                 + (endDay - 1) * 7;
-            } //End block
+            } 
             {
                 daysInMonth = GregorianCalendar.DaysInMonth[endMonth];
                 {
                     boolean varA62BC480A841AF891471E24690DA3AEC_1152029209 = (endMonth == Calendar.FEBRUARY && isLeapYear(year));
-                } //End collapsed parenthetic
+                } 
                 ruleDay = daysInMonth
                                 + 1
                                 + mod7(endDayOfWeek
                                 - (firstDayOfMonth + daysInMonth)) + endDay
                                 * 7;
-            } //End block
-            //End case DOW_IN_MONTH_MODE 
-            //Begin case DOW_GE_DOM_MODE 
+            } 
+            
+            
             ruleDay = endDay
                             + mod7(
                             endDayOfWeek - (firstDayOfMonth + endDay - 1));
-            //End case DOW_GE_DOM_MODE 
-            //Begin case DOW_LE_DOM_MODE 
+            
+            
             ruleDay = endDay
                             + mod7(
                             endDayOfWeek - (firstDayOfMonth + endDay - 1));
-            //End case DOW_LE_DOM_MODE 
-            //Begin case DOW_LE_DOM_MODE 
+            
+            
             {
                 ruleDay -= 7;
-            } //End block
-            //End case DOW_LE_DOM_MODE 
+            } 
+            
             int ruleMonth = endMonth;
             {
                 int changeDays = 1 - (ruleTime / 86400000);
@@ -300,14 +303,14 @@ public class SimpleTimeZone extends TimeZone {
                 {
                     {
                         ruleMonth = Calendar.DECEMBER;
-                    } //End block
+                    } 
                     ruleDay += GregorianCalendar.DaysInMonth[ruleMonth];
                     {
                         boolean var942B201C9F9DC371A222C49906220991_1977435309 = (ruleMonth == Calendar.FEBRUARY && isLeapYear(year));
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(era);
         addTaint(year);
         addTaint(month);
@@ -316,30 +319,31 @@ public class SimpleTimeZone extends TimeZone {
         addTaint(time);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_759968360 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_759968360;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.683 -0400", hash_original_method = "6DBE603182E450BA9A410285A6D6CE41", hash_generated_method = "CB2F4D4363AC621BE5D88053AF21F13C")
     @Override
     public int getOffset(long time) {
         {
             boolean varAC33886EBC7D5E71649B935B25265F07_237405047 = (!useDaylightTime());
-        } //End collapsed parenthetic
+        } 
         int[] fields = Grego.timeToFields(time + rawOffset, null);
         int var68E2FD47563B72F3EFF55569C2664413_1626882678 = (getOffset(GregorianCalendar.AD, fields[0], fields[1], fields[2],
                 fields[3], fields[5]));
         addTaint(time);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_933836359 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_933836359;
-        // ---------- Original Method ----------
-        //if (!useDaylightTime()) {
-            //return rawOffset;
-        //}
-        //int[] fields = Grego.timeToFields(time + rawOffset, null);
-        //return getOffset(GregorianCalendar.AD, fields[0], fields[1], fields[2],
-                //fields[3], fields[5]);
+        
+        
+            
+        
+        
+        
+                
     }
 
     
@@ -348,11 +352,12 @@ public class SimpleTimeZone extends TimeZone {
     public int getRawOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1862186152 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1862186152;
-        // ---------- Original Method ----------
-        //return rawOffset;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.684 -0400", hash_original_method = "543AFBFA58DD3885C5C6D68F749BE5FB", hash_generated_method = "E93C6358D5A70168447D01D8825A042A")
     @Override
     public synchronized int hashCode() {
@@ -361,17 +366,17 @@ public class SimpleTimeZone extends TimeZone {
             hashCode += startYear + startMonth + startDay + startDayOfWeek
                     + startTime + startMode + endMonth + endDay + endDayOfWeek
                     + endTime + endMode + dstSavings;
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1479114208 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1479114208;
-        // ---------- Original Method ----------
-        //int hashCode = getID().hashCode() + rawOffset;
-        //if (useDaylight) {
-            //hashCode += startYear + startMonth + startDay + startDayOfWeek
-                    //+ startTime + startMode + endMonth + endDay + endDayOfWeek
-                    //+ endTime + endMode + dstSavings;
-        //}
-        //return hashCode;
+        
+        
+        
+            
+                    
+                    
+        
+        
     }
 
     
@@ -382,27 +387,28 @@ public class SimpleTimeZone extends TimeZone {
         addTaint(zone.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1572348350 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1572348350;
-        // ---------- Original Method ----------
-        //if (!(zone instanceof SimpleTimeZone)) {
-            //return false;
-        //}
-        //SimpleTimeZone tz = (SimpleTimeZone) zone;
-        //if (useDaylight != tz.useDaylight) {
-            //return false;
-        //}
-        //if (!useDaylight) {
-            //return rawOffset == tz.rawOffset;
-        //}
-        //return rawOffset == tz.rawOffset && dstSavings == tz.dstSavings
-                //&& startYear == tz.startYear && startMonth == tz.startMonth
-                //&& startDay == tz.startDay && startMode == tz.startMode
-                //&& startDayOfWeek == tz.startDayOfWeek
-                //&& startTime == tz.startTime && endMonth == tz.endMonth
-                //&& endDay == tz.endDay && endDayOfWeek == tz.endDayOfWeek
-                //&& endTime == tz.endTime && endMode == tz.endMode;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
+        
+                
+                
+                
+                
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.685 -0400", hash_original_method = "C51A338C9795AC2507162C0CE1A08702", hash_generated_method = "77BB458406A22AF259506AB67096EA7F")
     @Override
     public boolean inDaylightTime(Date time) {
@@ -410,8 +416,8 @@ public class SimpleTimeZone extends TimeZone {
         addTaint(time.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_500735670 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_500735670;
-        // ---------- Original Method ----------
-        //return useDaylightTime() && getOffset(time.getTime()) != getRawOffset();
+        
+        
     }
 
     
@@ -420,11 +426,11 @@ public class SimpleTimeZone extends TimeZone {
         addTaint(year);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_512313576 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_512313576;
-        // ---------- Original Method ----------
-        //if (year > 1582) {
-            //return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
-        //}
-        //return year % 4 == 0;
+        
+        
+            
+        
+        
     }
 
     
@@ -434,106 +440,111 @@ public class SimpleTimeZone extends TimeZone {
         addTaint(num1);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1447111823 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1447111823;
-        // ---------- Original Method ----------
-        //int rem = num1 % 7;
-        //return (num1 < 0 && rem < 0) ? 7 + rem : rem;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.686 -0400", hash_original_method = "37D938F55D2005A7FF3D5AC31467EF4C", hash_generated_method = "CBB22A08F16C106C2CAD1E7AEC343566")
     public void setDSTSavings(int milliseconds) {
         {
             dstSavings = milliseconds;
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
-        // ---------- Original Method ----------
-        //if (milliseconds > 0) {
-            //dstSavings = milliseconds;
-        //} else {
-            //throw new IllegalArgumentException();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.686 -0400", hash_original_method = "29EACAF13C91B179EA825409505E4565", hash_generated_method = "EC2606E51A82463E30FF345C52C29710")
     private void checkRange(int month, int dayOfWeek, int time) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid month: " + month);
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid day of week: " + dayOfWeek);
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid time: " + time);
-        } //End block
+        } 
         addTaint(month);
         addTaint(dayOfWeek);
         addTaint(time);
-        // ---------- Original Method ----------
-        //if (month < Calendar.JANUARY || month > Calendar.DECEMBER) {
-            //throw new IllegalArgumentException("Invalid month: " + month);
-        //}
-        //if (dayOfWeek < Calendar.SUNDAY || dayOfWeek > Calendar.SATURDAY) {
-            //throw new IllegalArgumentException("Invalid day of week: " + dayOfWeek);
-        //}
-        //if (time < 0 || time >= 24 * 3600000) {
-            //throw new IllegalArgumentException("Invalid time: " + time);
-        //}
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.687 -0400", hash_original_method = "F04B5CC4561F29CBDFD2A63D85494102", hash_generated_method = "DC092CA7AB51B0A36201C97DA17437A2")
     private void checkDay(int month, int day) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid day of month: " + day);
-        } //End block
+        } 
         addTaint(month);
         addTaint(day);
-        // ---------- Original Method ----------
-        //if (day <= 0 || day > GregorianCalendar.DaysInMonth[month]) {
-            //throw new IllegalArgumentException("Invalid day of month: " + day);
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.687 -0400", hash_original_method = "E98C141304510A5F08CF5DF5CC63E118", hash_generated_method = "F8DEE44AD3F0DB21DB13D763ADEAA1D3")
     private void setEndMode() {
         {
             endMode = DOM_MODE;
-        } //End block
+        } 
         {
             endDayOfWeek = -endDayOfWeek;
             {
                 endDay = -endDay;
                 endMode = DOW_LE_DOM_MODE;
-            } //End block
+            } 
             {
                 endMode = DOW_GE_DOM_MODE;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             endMode = DOW_IN_MONTH_MODE;
-        } //End block
+        } 
         useDaylight = startDay != 0 && endDay != 0;
         {
             checkRange(endMonth, endMode == DOM_MODE ? 1 : endDayOfWeek,
                     endTime);
             {
                 checkDay(endMonth, endDay);
-            } //End block
+            } 
             {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Day of week in month: " + endDay);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.688 -0400", hash_original_method = "B4162090EB008A9B00DF0FE1EF92B7AC", hash_generated_method = "C0562577D3BEFBBA8D48F9088BA817C4")
     public void setEndRule(int month, int dayOfMonth, int time) {
         endMonth = month;
@@ -541,15 +552,16 @@ public class SimpleTimeZone extends TimeZone {
         endDayOfWeek = 0;
         endTime = time;
         setEndMode();
-        // ---------- Original Method ----------
-        //endMonth = month;
-        //endDay = dayOfMonth;
-        //endDayOfWeek = 0;
-        //endTime = time;
-        //setEndMode();
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.688 -0400", hash_original_method = "582DA5383125C3306AD7EBC943F58F20", hash_generated_method = "A6CE6CC12A87A78BAED4267F777AF0F3")
     public void setEndRule(int month, int day, int dayOfWeek, int time) {
         endMonth = month;
@@ -557,15 +569,16 @@ public class SimpleTimeZone extends TimeZone {
         endDayOfWeek = dayOfWeek;
         endTime = time;
         setEndMode();
-        // ---------- Original Method ----------
-        //endMonth = month;
-        //endDay = day;
-        //endDayOfWeek = dayOfWeek;
-        //endTime = time;
-        //setEndMode();
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.688 -0400", hash_original_method = "2E94B36A00113021CB8FDF603EDAA945", hash_generated_method = "92A47AE4EC7D81F56ABC3D44E434CD83")
     public void setEndRule(int month, int day, int dayOfWeek, int time, boolean after) {
         endMonth = month;
@@ -573,12 +586,12 @@ public class SimpleTimeZone extends TimeZone {
         endDayOfWeek = -dayOfWeek;
         endTime = time;
         setEndMode();
-        // ---------- Original Method ----------
-        //endMonth = month;
-        //endDay = after ? day : -day;
-        //endDayOfWeek = -dayOfWeek;
-        //endTime = time;
-        //setEndMode();
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -586,47 +599,49 @@ public class SimpleTimeZone extends TimeZone {
     @Override
     public void setRawOffset(int offset) {
         rawOffset = offset;
-        // ---------- Original Method ----------
-        //rawOffset = offset;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.689 -0400", hash_original_method = "4370DAC820CAB38F82466934EE4F5C8D", hash_generated_method = "F78AC451ED09031C844DED4FA305FC9D")
     private void setStartMode() {
         {
             startMode = DOM_MODE;
-        } //End block
+        } 
         {
             startDayOfWeek = -startDayOfWeek;
             {
                 startDay = -startDay;
                 startMode = DOW_LE_DOM_MODE;
-            } //End block
+            } 
             {
                 startMode = DOW_GE_DOM_MODE;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             startMode = DOW_IN_MONTH_MODE;
-        } //End block
+        } 
         useDaylight = startDay != 0 && endDay != 0;
         {
             checkRange(startMonth, startMode == DOM_MODE ? 1 : startDayOfWeek,
                     startTime);
             {
                 checkDay(startMonth, startDay);
-            } //End block
+            } 
             {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Day of week in month: " + startDay);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.689 -0400", hash_original_method = "1B6B9F6DA0D38FD2E6B0C75070F8A774", hash_generated_method = "8E3473DDB37FF6F7006F9986018B7502")
     public void setStartRule(int month, int dayOfMonth, int time) {
         startMonth = month;
@@ -634,15 +649,16 @@ public class SimpleTimeZone extends TimeZone {
         startDayOfWeek = 0;
         startTime = time;
         setStartMode();
-        // ---------- Original Method ----------
-        //startMonth = month;
-        //startDay = dayOfMonth;
-        //startDayOfWeek = 0;
-        //startTime = time;
-        //setStartMode();
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.690 -0400", hash_original_method = "05B57A1DF0091079AD9D1D4FB9E42767", hash_generated_method = "21B93F0AA81CC56EFC6B90272C1612AB")
     public void setStartRule(int month, int day, int dayOfWeek, int time) {
         startMonth = month;
@@ -650,15 +666,16 @@ public class SimpleTimeZone extends TimeZone {
         startDayOfWeek = dayOfWeek;
         startTime = time;
         setStartMode();
-        // ---------- Original Method ----------
-        //startMonth = month;
-        //startDay = day;
-        //startDayOfWeek = dayOfWeek;
-        //startTime = time;
-        //setStartMode();
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.691 -0400", hash_original_method = "D71B6352FE444D82D409CFA5438BDAA8", hash_generated_method = "538156448C614086085AEF11A2495F76")
     public void setStartRule(int month, int day, int dayOfWeek, int time, boolean after) {
         startMonth = month;
@@ -666,12 +683,12 @@ public class SimpleTimeZone extends TimeZone {
         startDayOfWeek = -dayOfWeek;
         startTime = time;
         setStartMode();
-        // ---------- Original Method ----------
-        //startMonth = month;
-        //startDay = after ? day : -day;
-        //startDayOfWeek = -dayOfWeek;
-        //startTime = time;
-        //setStartMode();
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -679,16 +696,17 @@ public class SimpleTimeZone extends TimeZone {
     public void setStartYear(int year) {
         startYear = year;
         useDaylight = true;
-        // ---------- Original Method ----------
-        //startYear = year;
-        //useDaylight = true;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.693 -0400", hash_original_method = "8DB4BEB563F494A2FC46832022F4609E", hash_generated_method = "540CF05A2086A40EBB4E30F67079C801")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_243233497 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_243233497 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_243233497 = getClass().getName()
                 + "[id="
                 + getID()
@@ -713,10 +731,10 @@ public class SimpleTimeZone extends TimeZone {
                 + ",endDayOfWeek="
                 + (useDaylight && (endMode != DOM_MODE) ? endDayOfWeek + 1 : 0)
                 + ",endTime=" + endTime + "]";
-        varB4EAC82CA7396A68D541C85D26508E83_243233497.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_243233497.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_243233497;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -725,11 +743,12 @@ public class SimpleTimeZone extends TimeZone {
     public boolean useDaylightTime() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1836752916 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1836752916;
-        // ---------- Original Method ----------
-        //return useDaylight;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.695 -0400", hash_original_method = "F4691E6CC75F84FE0527C352A6F6F1B9", hash_generated_method = "76DF1AC6F1C6645FE0396A059EF52936")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         int sEndDay = endDay;
@@ -744,17 +763,17 @@ public class SimpleTimeZone extends TimeZone {
                 sEndDay = cal.get(Calendar.DAY_OF_WEEK_IN_MONTH);
                 {
                     sEndDayOfWeek = cal.getFirstDayOfWeek();
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 cal.set(Calendar.MONTH, startMonth);
                 cal.set(Calendar.DATE, startDay);
                 sStartDay = cal.get(Calendar.DAY_OF_WEEK_IN_MONTH);
                 {
                     sStartDayOfWeek = cal.getFirstDayOfWeek();
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         ObjectOutputStream.PutField fields = stream.putFields();
         fields.put("dstSavings", dstSavings);
         fields.put("endDay", sEndDay);
@@ -781,11 +800,12 @@ public class SimpleTimeZone extends TimeZone {
         values[3] = (byte) (endMode == DOM_MODE ? 0 : endDayOfWeek + 1);
         stream.write(values);
         addTaint(stream.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.696 -0400", hash_original_method = "19765306B3DA0529AD0AFD53EDC0B4B8", hash_generated_method = "51692A36BA68F77C8534647DEBF3CDC0")
     private void readObject(ObjectInputStream stream) throws IOException,
             ClassNotFoundException {
@@ -798,7 +818,7 @@ public class SimpleTimeZone extends TimeZone {
             startMonth = fields.get("startMonth", 0);
             startTime = fields.get("startTime", 0);
             startYear = fields.get("startYear", 0);
-        } //End block
+        } 
         {
             boolean varB1402D125FA51CA7547D890DB81A6275_103523491 = (fields.get("serialVersionOnStream", 0) == 0);
             {
@@ -808,8 +828,8 @@ public class SimpleTimeZone extends TimeZone {
                     endDayOfWeek = fields.get("endDayOfWeek", 0) - 1;
                     startDay = fields.get("startDay", 0);
                     startDayOfWeek = fields.get("startDayOfWeek", 0) - 1;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 dstSavings = fields.get("dstSavings", 0);
                 {
@@ -823,13 +843,13 @@ public class SimpleTimeZone extends TimeZone {
                         startDayOfWeek = values[1];
                         endDay = values[2];
                         endDayOfWeek = values[3];
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(stream.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

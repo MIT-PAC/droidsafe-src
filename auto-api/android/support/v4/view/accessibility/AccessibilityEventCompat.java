@@ -1,11 +1,11 @@
 package android.support.v4.view.accessibility;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Build;
 import android.view.accessibility.AccessibilityEvent;
@@ -14,7 +14,7 @@ public class AccessibilityEventCompat {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.431 -0400", hash_original_method = "7235302697174B91ED05919A9677679C", hash_generated_method = "537EB0F8C8251B969DD646E3655E17D3")
     private  AccessibilityEventCompat() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -38,7 +38,7 @@ public class AccessibilityEventCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.432 -0400", hash_original_method = "49184BA4C73C970BF616A8E1EB656B67", hash_generated_method = "49184BA4C73C970BF616A8E1EB656B67")
         public AccessibilityEventStubImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -47,21 +47,21 @@ public class AccessibilityEventCompat {
         public void appendRecord(AccessibilityEvent event, Object record) {
             addTaint(event.getTaint());
             addTaint(record.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.434 -0400", hash_original_method = "0011894BC70FDA6596188C683FDF537A", hash_generated_method = "A9019009F3D49340893D803B70FA613C")
         @Override
         public Object getRecord(AccessibilityEvent event, int index) {
-            Object varB4EAC82CA7396A68D541C85D26508E83_2020411161 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_2020411161 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2020411161 = null;
             addTaint(event.getTaint());
             addTaint(index);
-            varB4EAC82CA7396A68D541C85D26508E83_2020411161.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2020411161.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2020411161;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
@@ -71,8 +71,8 @@ public class AccessibilityEventCompat {
             addTaint(event.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_251472255 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_251472255;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
@@ -85,7 +85,7 @@ public class AccessibilityEventCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.440 -0400", hash_original_method = "B5BE2109A6DAB61B9BC4DD5D6C5CF976", hash_generated_method = "B5BE2109A6DAB61B9BC4DD5D6C5CF976")
         public AccessibilityEventIcsImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -95,22 +95,22 @@ public class AccessibilityEventCompat {
             AccessibilityEventCompatIcs.appendRecord(event, record);
             addTaint(event.getTaint());
             addTaint(record.getTaint());
-            // ---------- Original Method ----------
-            //AccessibilityEventCompatIcs.appendRecord(event, record);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.442 -0400", hash_original_method = "A698E5305C0DF071EDEE66EFAE00872C", hash_generated_method = "190BE7EF3B1CB159003A426A3BCF89EE")
         @Override
         public Object getRecord(AccessibilityEvent event, int index) {
-            Object varB4EAC82CA7396A68D541C85D26508E83_2112826027 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_2112826027 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2112826027 = AccessibilityEventCompatIcs.getRecord(event, index);
             addTaint(event.getTaint());
             addTaint(index);
-            varB4EAC82CA7396A68D541C85D26508E83_2112826027.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2112826027.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2112826027;
-            // ---------- Original Method ----------
-            //return AccessibilityEventCompatIcs.getRecord(event, index);
+            
+            
         }
 
         
@@ -121,8 +121,8 @@ public class AccessibilityEventCompat {
             addTaint(event.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1836140559 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1836140559;
-            // ---------- Original Method ----------
-            //return AccessibilityEventCompatIcs.getRecordCount(event);
+            
+            
         }
 
         
