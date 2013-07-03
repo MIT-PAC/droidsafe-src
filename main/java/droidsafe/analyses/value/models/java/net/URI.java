@@ -15,13 +15,21 @@ import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisInt;
 
 public final class URI extends ValueAnalysisModeledObject {
 
-    private Set<String> string = new ValueAnalysisModelingSet<String>();
+    public Set<String> string = new ValueAnalysisModelingSet<String>();
 
     public URI(AllocNode allocNode) {
         super(allocNode);
     }
 
     private URI() {
+    }
+
+    // need this - called by the static method create(Set<String>) in this model
+    public URI(Set<String> spec) throws URISyntaxException {
+        this.string.addAll(spec);
+        /*
+        parseURI(spec, false);
+        */
     }
 
     /**
@@ -587,9 +595,7 @@ public final class URI extends ValueAnalysisModeledObject {
      */
     public static URI create(Set<String> uri) {
         try {
-            URI uriObj = new URI();
-            uriObj._init_(uri);
-            return uriObj;
+            return new URI(uri);
         } catch (URISyntaxException e) {
             throw new IllegalArgumentException(e.getMessage());
         }
