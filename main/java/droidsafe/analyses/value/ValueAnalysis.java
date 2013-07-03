@@ -281,11 +281,11 @@ public class ValueAnalysis {
 
         // Now run the analysis to fixed point, not stepping through the methods that we simulate.
         do {
+            System.out.println("Value Analysis Progress: fixed point not reached, re-running");
             changed = false;
             runOnce();
         } while(changed);
-
-        runOnce();
+        
         // log the results and statistics    
         am.log();
     }
@@ -300,7 +300,11 @@ public class ValueAnalysis {
         Set<SootMethod> reachableMethods = GeoPTA.v().getAllReachableMethods();
 
         // loop over all code, creating models and simulating whichever invokeExprs we can as we go
-        for (SootClass clazz : Scene.v().getApplicationClasses()) {
+        Chain<SootClass> sootClasses = Scene.v().getApplicationClasses();
+        int progressCounter = 0; 
+        for (SootClass clazz : sootClasses) {
+            System.out.println("Value Analysis Progress: " + (int)Math.ceil(100*(double)progressCounter/sootClasses.size()) + "%");
+            progressCounter++;
             String className = clazz.getName();
             // We don't care about the harness or interfaces
             if (clazz.isInterface() || className.equals(Harness.HARNESS_CLASS_NAME))
