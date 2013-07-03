@@ -1,15 +1,9 @@
 package droidsafe.transforms;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.HashMap;
 import java.util.Iterator;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.LinkedList;
 import java.util.Map;
-import java.lang.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,62 +11,33 @@ import org.slf4j.LoggerFactory;
 import soot.Body;
 import soot.BodyTransformer;
 import soot.RefType;
-import soot.SootResolver;
 import soot.Type;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
 import soot.Local;
-import soot.UnitBox;
 import soot.Unit;
 import soot.ValueBox;
-import soot.SootField;
-import soot.Value;
-import soot.NullType;
-import soot.jimple.NullConstant;
-import soot.SootMethodRef; 
 
 import soot.jimple.InstanceInvokeExpr;
-import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
-import soot.jimple.ArrayRef;
-import soot.jimple.InvokeExpr;
-import soot.jimple.FieldRef;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.Jimple;
-import soot.jimple.NewExpr;
 import soot.jimple.Expr;
-import soot.jimple.StringConstant;
-
-import soot.jimple.internal.JimpleLocalBox;
-import soot.jimple.internal.ImmediateBox;
-import soot.jimple.internal.VariableBox;
 
 import soot.util.Chain;
-import soot.util.HashChain;
-import soot.PatchingChain;
 
 import droidsafe.analyses.GeoPTA;
 import droidsafe.android.app.Project;
-import droidsafe.transforms.APICallSpecialization.CallSpecialization;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
 import droidsafe.android.app.resources.ResourcesSoot;
-
-import com.google.common.collect.HashBiMap;
 
 public class IntegrateXMLLayouts extends BodyTransformer {
 		private final static Logger logger = LoggerFactory.getLogger(IntegrateXMLLayouts.class);
 		
 		private static IntegrateXMLLayouts v;
-		
-		private SootMethod findViewById;
-		private SootMethod setContentView;
-		
-		/** debug */
-		private SootClass  activityClass;
-		private SootClass  javaObjClass;
 		
 		/** list of possible findViewById methods */
 		private List<SootMethod>  findViewByIdList    = new LinkedList<SootMethod>();
@@ -94,15 +59,13 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 		
 		private final String[] getStringClasses = new String[] {
 				"android.content.res.Resources", "android.app.Fragment",
-				"android.content.Context", 
+				"android.content.Context", "android.support.v4.app.Fragment"
 			};
 		
 		/**
 		 * Constructor
 		 */
 		public IntegrateXMLLayouts() {
-			activityClass =  Scene.v().getSootClass("android.app.Activity");
-			javaObjClass  =  Scene.v().getSootClass("java.lang.Object");
 			
 			//build findViewByIDList
 			for (String className: findViewByIdClasses){
@@ -182,8 +145,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				intId = new Integer(idBox.getValue().toString());
 			}
 			catch (Exception ex) {
-				logger.warn("stmt {} ", stmt);
-				logger.warn("Couldn't replace findViewById() NOT an integer constant");
+				logger.warn("Couldn't replace findViewById(): {} ", stmt);
 				return;
 			}
 
@@ -197,16 +159,14 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			Expr invokeExpr = Jimple.v().newStaticInvokeExpr(method.makeRef(), objectBox.getValue()); 
 			Stmt invokeStmt = Jimple.v().newInvokeStmt(invokeExpr);
 
+			logger.info("replacing {} ", stmt);
 			try {
 			    units.swapWith(stmt, invokeStmt);
-			    logger.info("replacing {} ", stmt);
 			    logger.info("with {} => OK", invokeStmt);
 			}
 			catch (Exception ex) {
-			    logger.warn("replacing {} ", stmt);
-			    logger.warn("with {} => NOT OK", invokeStmt);
+			    logger.warn("Replacing with {} => NOT OK", invokeStmt);
 			}
-			
         }
 		
 		
@@ -314,8 +274,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				intId = new Integer(idValueBox.getValue().toString());
 			}
 			catch (Exception ex) {
-				logger.warn("stmt {} ", stmt);
-				logger.warn("Couldn't replace findViewById() NOT an integer constant");
+				logger.warn("Couldn't replace {} ", stmt);
 				return;
 			}
 
@@ -428,59 +387,6 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 		/************************************************************
 		* Helper methods
 		*************************************************************/
-		protected boolean isActivitySubclass(SootClass sootClass) {
-			SootClass parentClass = sootClass.getSuperclass();
-
-			while (parentClass != javaObjClass) {
-				if (parentClass == activityClass)
-					return true;
-
-				parentClass = parentClass.getSuperclass();
-			}
-			return false;
-		}
-
-		// debug function
-		protected void dumpActivities() {
-			String[] androidActivityNames = new String[] {
-					"android.app.Activity", 
-					"android.app.ActivityGroup", 
-					"android.app.NativeActivity", 
-					"android.app.AliasActivity", 
-					"android.app.ExpandableListActivity",
-					"android.app.TabActivity",
-					"android.app.ListActivity",
-					"android.app.LauncherActivity",
-					"android.preference.PreferenceActivity",
-					"android.accounts.AccountAuthenticatorActivity"
-					 }; 
-
-			HashMap<SootClass, SootClass> androidActivityMap = new HashMap<SootClass, SootClass>();
-
-			for (int i = 0; i < androidActivityNames.length; i++) {
-				String className = androidActivityNames[i];
-				SootClass sc = Scene.v().getSootClass(className);
-				androidActivityMap.put(sc, sc);
-			}
-				 
-			for (SootClass clz : Scene.v().getClasses()) {
-				try {
-					if (androidActivityMap.get(clz) != null)
-						continue;
-
-					SootClass superClz = clz.getSuperclass();
-
-					if (androidActivityMap.get(superClz) != null) {
-						logger.warn("Found {} a child class of {} ", 
-									clz.toString(), superClz.toString());
-					}
-				} catch (Exception ex) {
-					continue;
-				}
-			}
-
-		}
-
 		// debug function
 		protected void dumpStmtBody(StmtBody stmtBody) {
             //System.out.printf("Dumping body %s \n", stmtBody);

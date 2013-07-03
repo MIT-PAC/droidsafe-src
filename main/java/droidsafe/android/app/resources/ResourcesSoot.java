@@ -135,6 +135,8 @@ public class ResourcesSoot {
     /** prebuilt reference for ViewClass */
     private SootClass  mViewClass;   
     
+    private List<SootClass> mBaseClassList;  
+    
     /** pre-built View::<init> method */
     private SootMethod mViewInitMethod;
 
@@ -167,6 +169,18 @@ public class ResourcesSoot {
         mSootClass.addField(mActivityField);
         mSootClass.setApplicationClass();
 
+        mBaseClassList = new LinkedList<SootClass>();
+        
+        String[] baseClasses = new String[] {
+        		"android.view.View", "android.app.Fragment",
+        		"android.app.Activity", "android.support.v4.app.Fragment"
+        };
+        
+        for (String className: baseClasses) {
+        	SootClass sootClass = Scene.v().getSootClass(className);
+        	mBaseClassList.add(sootClass);
+        }
+        
         mViewClass     = Scene.v().getSootClass("android.view.View");
         mViewInitMethod = Scene.v().getMethod(
                             "<android.view.View: void <init>(android.content.Context)>");
@@ -298,8 +312,11 @@ public class ResourcesSoot {
                 return false;
             }
             
+            logger.warn("addGetView with type {} ", fullTypeName);
             // create method getView_XYX()
             return addGetView_ID(id);
+            
+            //we need to determine if it is a view or a fragment that we need to add
         }
         return true;
     }
@@ -709,17 +726,28 @@ public class ResourcesSoot {
     	params.add(RefType.v("android.content.Context"));
 
     	RefType returnType = (RefType) obj.sootField.getType(); 
-
-    	/*
-    	SootMethod viewInitMethod = 
-    			Scene.v().getActiveHierarchy().resolveConcreteDispatch(
-    					returnType.getSootClass(), mFragmentInitMethod);
-
-    	if (viewInitMethod == null) {
-    		logger.warn("Cannot locate proper constructor for {})", returnType);
+    	
+    	SootMethod initMethod = null;
+    	
+    	for (String fragmentClass: new String[] {"android.app.Fragment", 
+    											"android.support.v4.app.Fragment"}) {
+    		String methodSig = String.format("<%s: void <init>()>", fragmentClass);
+    		SootMethod fragmentInit = Scene.v().getMethod(methodSig);
+    		
+    		initMethod = Scene.v().getActiveHierarchy().resolveConcreteDispatch(
+    						returnType.getSootClass(), fragmentInit); 
+    		
+    		if (initMethod != null)
+    			break;
+    	
+    	}
+    	
+    	if (initMethod == null) {
+    		logger.warn("Cannot resolve Fragment init method for {} ", returnType);
     		return false;
     	}
-    	*/
+    	
+    	
 
     	String funcName = "getFragment_" + String.format("%x", intId);
     	//instantiate a method
@@ -765,11 +793,8 @@ public class ResourcesSoot {
 
     	units.add(Jimple.v().newAssignStmt(localFragment, newExpr));
 
-    	/*
     	units.add(Jimple.v().newInvokeStmt(
-    			Jimple.v().newVirtualInvokeExpr(localFragment, viewInitMethod.makeRef(), 
-    					argContext))); 
-		*/
+    			Jimple.v().newVirtualInvokeExpr(localFragment, initMethod.makeRef())));
 
     	units.add(Jimple.v().newAssignStmt(fieldRef, localFragment));
 
@@ -960,7 +985,8 @@ public class ResourcesSoot {
         String[] basePackages = new String[] {
         		"android.widget",
         		"android.app",
-        		"android.view"
+        		"android.view",
+        		"android.support.v4.app"
         };
         
         for (String packageName: basePackages) {
@@ -990,9 +1016,11 @@ public class ResourcesSoot {
 	
 	        for (SootClass sootClass: classes) {
 	            logger.info("matching {} ", sootClass);
-	            if (SootUtils.checkAncestor(sootClass, mViewClass)) {
-	                logger.info("soot class {} is a view ", sootClass);
-	                return sootClass.toString();
+	            for (SootClass baseClass: mBaseClassList) {
+	            	if (SootUtils.checkAncestor(sootClass, baseClass)) {
+	            		logger.info("soot class {} is a view ", sootClass);
+	            		return sootClass.toString();
+	            	}
 	            }
 	        }
         }
