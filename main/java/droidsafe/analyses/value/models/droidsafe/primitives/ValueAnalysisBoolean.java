@@ -7,7 +7,7 @@ public class ValueAnalysisBoolean extends ValueAnalysisModeledObject {
     boolean value;
 
     public ValueAnalysisBoolean() {
-        this.invalidated = false;
+        this.__ds__invalidated = false;
     }
 
     public ValueAnalysisBoolean(boolean valueParam) {

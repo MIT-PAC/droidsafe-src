@@ -7,7 +7,7 @@ public class ValueAnalysisDouble extends ValueAnalysisModeledObject {
     double value;
 
     public ValueAnalysisDouble() {
-        this.invalidated = true;
+        this.__ds__invalidated = true;
     }
 
     public ValueAnalysisDouble(double valueParam) {
