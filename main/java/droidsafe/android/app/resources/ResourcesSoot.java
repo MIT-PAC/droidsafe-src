@@ -688,8 +688,9 @@ public class ResourcesSoot {
     	/* we want to do this:
     	 * getFragment_XYZ(context) {
     	 * 	if (fragment == null)
-    			fragment = instantiate(context, "classname");
+    			fragment_XYZ =  new DerivedFragment();
     		}
+    		
     	 */
 
     	UISootObject obj = mUiObjectTable.get(intId);    
@@ -719,6 +720,7 @@ public class ResourcesSoot {
     		logger.warn("Cannot locate proper constructor for {})", returnType);
     		return false;
     	}
+    	*/
 
     	String funcName = "getFragment_" + String.format("%x", intId);
     	//instantiate a method
@@ -764,29 +766,11 @@ public class ResourcesSoot {
 
     	units.add(Jimple.v().newAssignStmt(localFragment, newExpr));
 
+    	/*
     	units.add(Jimple.v().newInvokeStmt(
     			Jimple.v().newVirtualInvokeExpr(localFragment, viewInitMethod.makeRef(), 
     					argContext))); 
-
-    	for (String attrName: obj.attributes.keySet()) {
-    		SootMethod setter = AttributeSetterMap.v().resolveSetter(
-    				attrName, returnType.getSootClass());
-
-    		// if there is no setter match, skip the attribute
-    		if (setter == null) {
-    			// logger.debug("attr {}, class {} CANNOT resolve ", 
-    			//             attrName, returnType.getSootClass());
-    			continue;
-    		} 
-
-    		// at this point, we have a setter, need to call the setter with values
-    		logger.debug("attr {} => setter {} ", attrName, setter);
-
-
-    		Set<String> textSet = new HashSet<String>();
-    		String attrValue = obj.attributes.get(attrName);
-
-    	}
+		*/
 
     	units.add(Jimple.v().newAssignStmt(fieldRef, localFragment));
 
@@ -802,13 +786,135 @@ public class ResourcesSoot {
 
     	logger.debug("condStmt {} ", condStmt);
     	units.insertAfter(condStmt, beforeIf);
-    */	
 
     	return true;
     }
     
+    /**
+     * create field public static String String_XYZ;
+     * @param intId
+     * @return
+     */
+    private SootField createStringMember(Integer intId) {
+        String   idName    = makeIdName("String", intId); 
+        String   className = makeClassName("java.lang.String");
+
+        if (!mNumberToIDMap.containsKey(intId)) {
+        	logger.warn("ID {} is not in the resource info ", String.format("%x", intId));
+        	return null;
+        }
+        
+        SootField sf = null;
+        
+        try {
+        	sf = mSootClass.getFieldByName(idName);
+        }
+        catch (Exception ex ) {
+        	RefType  classType = RefType.v(className);         
+        	// step 1: create sootfield for member variable
+        	sf = new SootField(idName, classType, Modifier.PUBLIC | Modifier.STATIC);
+        	mSootClass.addField(sf);
+        	logger.warn("added field: {}", sf);
+        }
+        
+        logger.warn("Field name {} resolved", idName);
+
+        return sf;
+    }
     
-    
+    /**
+     * add getString_ID()
+     * @param intId
+     * @return
+     */
+    public SootMethod addGetString_ID(Integer intId) {
+    	SootField sootField = createStringMember(intId); 
+    	if (sootField == null)  {
+    		logger.warn("Cannot create String field for {} ", String.format("%x", intId));
+    		return null;
+    	}		    
+
+    	String stringName = mNumberToIDMap.get(intId);
+
+    	Set<RString> rvalueSet = mStringToValueSet.get(stringName);
+
+    	if (rvalueSet == null || rvalueSet.size() == 0) {
+    		logger.warn("String {} has no values ", stringName);
+    		return null;
+    	}
+
+    	List<Type> params = new LinkedList<Type>();
+
+    	RefType returnType = (RefType) sootField.getType(); 
+
+    	String methodName = "getString_" + String.format("%x", intId);
+
+    	SootMethod method = null;
+    	
+    	try {
+    		method = mSootClass.getMethodByName(methodName);
+    	} 
+    	catch(Exception ex) {
+    		
+    	}
+    	
+    	if (method != null)
+    		return method;
+    	
+    	//instantiate a method
+    	method = new SootMethod(methodName, params, returnType, 
+    			Modifier.PUBLIC | Modifier.STATIC);
+    	
+    	// add the method to the class
+    	mSootClass.addMethod(method);
+
+    	// create active body, and set the body active
+    	JimpleBody body = Jimple.v().newBody(method);
+    	method.setActiveBody(body);
+
+    	Chain<Unit> units = body.getUnits();
+
+    	// local Argument for view
+    	Local localString = Jimple.v().newLocal("localString",  returnType);
+    	body.getLocals().add(localString);
+
+    	FieldRef  fieldRef = Jimple.v().newStaticFieldRef(sootField.makeRef());
+
+    	// localString =  fieldRef
+    	units.add(Jimple.v().newAssignStmt(localString, fieldRef));
+
+    	// beforeIF block
+    	Stmt beforeIf = (Stmt) units.getLast();
+
+    	// IF block: adding more code for if block
+    	//Expr newExpr = Jimple.v().newNewExpr((RefType)returnType);
+    	//units.add(Jimple.v().newAssignStmt(localString, newExpr));
+
+    	for (RString rstring: rvalueSet) {
+    		units.add(Jimple.v().newAssignStmt(localString, StringConstant.v(rstring.value)));
+    		units.add(Jimple.v().newAssignStmt(fieldRef, localString));
+    	}
+
+    	units.add(Jimple.v().newAssignStmt(localString, fieldRef));
+
+    	//generate code for goto (if localString != null)
+
+    	// afterIF: return localView
+    	Stmt afterIf = Jimple.v().newReturnStmt(localString);
+    	units.add(afterIf);
+
+    	// condition expression and statement (not equal expr)
+    	ConditionExpr condExpr = Jimple.v().newNeExpr(localString, NullConstant.v());
+
+    	// condition statement
+    	Stmt condStmt =  Jimple.v().newIfStmt(condExpr, afterIf);
+
+    	// put in if conditionalblock right after beforeIf
+    	logger.debug("condStmt {} ", condStmt);
+    	units.insertAfter(condStmt, beforeIf);
+
+    	return method;
+    }
     
 
 
