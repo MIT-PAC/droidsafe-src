@@ -710,7 +710,6 @@ public class ResourcesSoot {
 
     	RefType returnType = (RefType) obj.sootField.getType(); 
 
-    	
     	/*
     	SootMethod viewInitMethod = 
     			Scene.v().getActiveHierarchy().resolveConcreteDispatch(
@@ -814,10 +813,10 @@ public class ResourcesSoot {
         	// step 1: create sootfield for member variable
         	sf = new SootField(idName, classType, Modifier.PUBLIC | Modifier.STATIC);
         	mSootClass.addField(sf);
-        	logger.warn("added field: {}", sf);
+        	logger.info("added field: {}", sf);
         }
         
-        logger.warn("Field name {} resolved", idName);
+        logger.info("Field name {} resolved", idName);
 
         return sf;
     }
@@ -887,8 +886,8 @@ public class ResourcesSoot {
     	Stmt beforeIf = (Stmt) units.getLast();
 
     	// IF block: adding more code for if block
-    	//Expr newExpr = Jimple.v().newNewExpr((RefType)returnType);
-    	//units.add(Jimple.v().newAssignStmt(localString, newExpr));
+    	Expr newExpr = Jimple.v().newNewExpr((RefType)returnType);
+    	units.add(Jimple.v().newAssignStmt(localString, newExpr));
 
     	for (RString rstring: rvalueSet) {
     		units.add(Jimple.v().newAssignStmt(localString, StringConstant.v(rstring.value)));

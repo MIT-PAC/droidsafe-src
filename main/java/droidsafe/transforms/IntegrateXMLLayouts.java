@@ -256,10 +256,12 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				return;
 			}
 			
+			/*
 			if (getStringMethod != null) {
 				logger.warn("Skipped replacing getString() for now ");
 				return;
 			}
+			*/
 
 			Expr invokeExpr = Jimple.v().newStaticInvokeExpr(getStringMethod.makeRef()); 
 			
