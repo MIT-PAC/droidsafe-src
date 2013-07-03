@@ -28,7 +28,6 @@ import soot.G;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
-import soot.ValueBox;
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.joran.JoranConfigurator;
 import ch.qos.logback.core.joran.spi.JoranException;
@@ -37,10 +36,10 @@ import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.RequiredModeling;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
+import droidsafe.analyses.infoflow.InjectedSourceFlows;
 import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.strings.JSAStrings;
-import droidsafe.analyses.strings.JSAStrings.Hotspot;
 import droidsafe.analyses.strings.JSAUtils;
 import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.android.app.EntryPoints;
@@ -130,6 +129,10 @@ public class DroidsafeAnalysisRunner extends Main {
     Config.v().dumpCallGraph = preferenceStore.getBoolean(PreferenceConstants.P_DUMP_CALL_GRAPH);
     Config.v().runStringAnalysis =
         preferenceStore.getBoolean(PreferenceConstants.P_RUN_STRING_ANALYSIS);
+    Config.v().unfilteredStringAnalysis =
+        preferenceStore.getBoolean(PreferenceConstants.P_UNFILTERED_STRING_ANALYSIS);
+
+    // Set this flag to false to avoid killing eclipse when the analysis get an error.
     Config.v().callSystemExitOnError = false;
     logger.info("From Activator.getPreferenceStore" + "\nJIMPLE Prefence = " + writeJimpleClasses
         + "\nInfoFlow = " + infoFlow + "\nPass = " + passTarget);
@@ -207,12 +210,13 @@ public class DroidsafeAnalysisRunner extends Main {
       return Status.CANCEL_STATUS;
     }
 
+    JSAStrings.init(Config.v());
     if (Config.v().runStringAnalysis) {
       jsaAnalysis();
-      monitor.worked(1);
-      if (monitor.isCanceled()) {
-        return Status.CANCEL_STATUS;
-      }
+    }
+    monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return Status.CANCEL_STATUS;
     }
 
     logger.info("Inserting DSTaintObject allocations at each new expression...");
@@ -268,24 +272,25 @@ public class DroidsafeAnalysisRunner extends Main {
       writeAllAppClasses();
     }
 
-    monitor.subTask("Generating Spec");
-    RCFG.generate();
-    logger.info("Ending DroidSafe Run");
+    logger.info("Starting Value Analysis");
+    monitor.subTask("Value Analysis");
+    ValueAnalysis.run();
     monitor.worked(1);
+    logger.info("Finished Value Analysis");
     if (monitor.isCanceled()) {
       return Status.CANCEL_STATUS;
     }
 
-    logger.info("Starting Attribute Modeling");
-    monitor.subTask("Value Analysis");
-    ValueAnalysis.run();
+    monitor.subTask("Generating Spec");
+    RCFG.generate();
+    logger.info("Finished generatin spec");
     monitor.worked(1);
-    logger.info("Finished Attribute Modeling");
     if (monitor.isCanceled()) {
       return Status.CANCEL_STATUS;
     }
 
     // print out what modeling is required for this application
+    monitor.subTask("Required Modeling");
     RequiredModeling.run();
     monitor.worked(1);
     if (monitor.isCanceled()) {
@@ -294,6 +299,8 @@ public class DroidsafeAnalysisRunner extends Main {
 
     if (Config.v().infoFlow) {
       logger.info("Starting Information Flow Analysis...");
+      monitor.subTask("Information Flow Analysis");
+      InjectedSourceFlows.run();
       InterproceduralControlFlowGraph.run();
       InformationFlowAnalysis.run();
 
@@ -313,46 +320,53 @@ public class DroidsafeAnalysisRunner extends Main {
       }
       logger.info("Finished Information Flow Analysis...");
     }
+    monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return Status.CANCEL_STATUS;
+    }
 
     if (Config.v().target.equals("specdump")) {
+      monitor.subTask("Writing Spec to File");
       RCFGToSSL.run(false);
       SecuritySpecification spec = RCFGToSSL.v().getSpec();
 
       if (spec != null) {
-        // generateMarkersForSecuritySpecification(spec);
         SecuritySpecModel securitySpecModel = new SecuritySpecModel(spec, Config.v().APP_ROOT_DIR);
         SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
         generateMarkersForSecuritySpecification(securitySpecModel);
       }
-
+      monitor.worked(1);
+      if (monitor.isCanceled()) {
+        return Status.CANCEL_STATUS;
+      }
     } else if (Config.v().target.equals("confcheck")) {
       logger.error("Not implemented yet!");
     }
 
 
-    List<ValueBox> hs = JSAStrings.v().getHotspots();
-    for (ValueBox vb : hs) {
-      logger
-          .debug(
-              "String analysis \nClass {} \nSource File {} \nMethodName {} \nSource Line {} \nRegex {}\n",
-              new Object[] {JSAStrings.v().getClassName(vb), JSAStrings.v().getSourceFile(vb),
-                  JSAStrings.v().getMetodName(vb), JSAStrings.v().getSourceLine(vb),
-                  JSAStrings.v().getRegex(vb.getValue())});
-    }
+    // List<ValueBox> hs = JSAStrings.v().getHotspots();
+    // for (ValueBox vb : hs) {
+    // logger
+    // .debug(
+    // "String analysis \nClass {} \nSource File {} \nMethodName {} \nSource Line {} \nRegex {}\n",
+    // new Object[] {JSAStrings.v().getClassName(vb), JSAStrings.v().getSourceFile(vb),
+    // JSAStrings.v().getMetodName(vb), JSAStrings.v().getSourceLine(vb),
+    // JSAStrings.v().getRegex(vb.getValue())});
+    // }
 
-    Map<String, List<Hotspot>> signatureToHotspotMap = JSAStrings.v().getSignatureToHotspotMap();
-    for (String sig : signatureToHotspotMap.keySet()) {
-      for (Hotspot hot : signatureToHotspotMap.get(sig)) {
-        for (ValueBox vb : hot.getHotspots()) {
-          logger
-              .debug(
-                  "String analysis \nSignature {}\nArgument Position {}\nClass {} \nSource File {} \nMethodName {} \nSource Line {} \nRegex {}\n",
-                  new Object[] {sig, hot.getArgumentPosition(), JSAStrings.v().getClassName(vb),
-                      JSAStrings.v().getSourceFile(vb), JSAStrings.v().getMetodName(vb),
-                      JSAStrings.v().getSourceLine(vb), JSAStrings.v().getRegex(vb.getValue())});
-        }
-      }
-    }
+    // Map<String, List<Hotspot>> signatureToHotspotMap = JSAStrings.v().getSignatureToHotspotMap();
+    // for (String sig : signatureToHotspotMap.keySet()) {
+    // for (Hotspot hot : signatureToHotspotMap.get(sig)) {
+    // for (ValueBox vb : hot.getHotspots()) {
+    // logger
+    // .debug(
+    // "String analysis \nSignature {}\nArgument Position {}\nClass {} \nSource File {} \nMethodName {} \nSource Line {} \nRegex {}\n",
+    // new Object[] {sig, hot.getArgumentPosition(), JSAStrings.v().getClassName(vb),
+    // JSAStrings.v().getSourceFile(vb), JSAStrings.v().getMetodName(vb),
+    // JSAStrings.v().getSourceLine(vb), JSAStrings.v().getRegex(vb.getValue())});
+    // }
+    // }
+    // }
 
     monitor.worked(1);
     return Status.OK_STATUS;
@@ -363,7 +377,6 @@ public class DroidsafeAnalysisRunner extends Main {
    * Run the JSA analysis
    */
   private static void jsaAnalysis() {
-    JSAStrings.init(Config.v());
     JSAUtils.setUpHotspots();
 
     // Adds hotspots added manually by the user.

@@ -47,7 +47,7 @@ public class GenerateSecuritySpecHandler extends AbstractHandler {
             Thread.currentThread().setName("Droidsafe "+project.getName());
             IStatus status = Status.OK_STATUS;
             try {
-              monitor.beginTask("Droidsafe spec dump", 16);
+              monitor.beginTask("Droidsafe spec dump", 22);
               DroidsafeAnalysisRunner droidsafeAnalysisRunner =
                   new DroidsafeAnalysisRunner(project);
               monitor.worked(1);
