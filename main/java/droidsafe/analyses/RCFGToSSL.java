@@ -61,14 +61,6 @@ public class RCFGToSSL {
 	 */
 	public static final boolean IGNORE_OE_FROM_DEFINED_PACKAGES = false;
 	
-	/** List of packages to ignore from the android API, use only second level package name: 
-	 * android.something.
-	 */
-	public static final Set<String> IGNORE_OE_FROM_PACKAGES = new HashSet<String>(Arrays.asList(""
-			/*"android.graphics", "android.view","android.widget"*/
-			));
-	
-	
 	private static final Set<String> IGNORE_SYS_METHODS_WITH_SUBSIG = 
 			new HashSet<String>(Arrays.asList(
 					"boolean equals(java.lang.Object)",
@@ -143,14 +135,10 @@ public class RCFGToSSL {
 	}
 	
 	private boolean shouldIgnore(OutputEvent oe) {	
-		String[] className = oe.getTarget().getDeclaringClass().getName().split("\\.");				
-		if (className.length < 2)
-			return false;
+		if (SafeAndroidClasses.v().isSafeClass(oe.getTarget().getDeclaringClass().getName()))
+		    return true;
 		
-		String packageStart = className[0] + "." + className[1];
-		
-		return (IGNORE_OE_FROM_PACKAGES.contains(packageStart) ||
-				IGNORE_SYS_METHODS_WITH_SUBSIG.contains(oe.getTarget().getSubSignature())); 
+		return (IGNORE_SYS_METHODS_WITH_SUBSIG.contains(oe.getTarget().getSubSignature())); 
 	}
 	
 	private List<Method> methodsFromOutputEvent(OutputEvent oe) {
