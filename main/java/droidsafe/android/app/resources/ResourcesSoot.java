@@ -250,6 +250,7 @@ public class ResourcesSoot {
         }
         return false;
     }
+    
     /**
     * addView:
     *   function to add a view info into uiObjectTable and create a static for use by the
@@ -312,13 +313,56 @@ public class ResourcesSoot {
                 return false;
             }
             
-            logger.warn("addGetView with type {} ", fullTypeName);
-            // create method getView_XYX()
-            return addGetView_ID(id);
+            // add in fragment
+            if (isFragmentType(fullTypeName)) {
+            	logger.warn("addGetFragment_ID with type:{}, id:{} ", 
+            				fullTypeName, String.format("%x", id));
+            	return addGetFragment_ID(id);
+            }
             
+            logger.warn("addGetView with type:{}, id:{} ", 
+            				fullTypeName, String.format("%x", id));
+            return addGetView_ID(id);
+
             //we need to determine if it is a view or a fragment that we need to add
         }
         return true;
+    }
+    
+    
+    /**
+     * check to see if it is a fragment type
+     * @param type
+     * @return
+     */
+    private boolean isFragmentType(String type) {
+    	if (type.endsWith(".Fragment"))
+    		return true;
+    	
+    	SootClass sootClass  = null;
+    	
+    	try {
+    		sootClass = Scene.v().getSootClass(type);
+    	}
+    	catch (Exception ex) {
+    		return false;
+    	}
+    	
+    	for (String fragment: new String[] {"android.app.Fragment", 
+    											"android.support.v4.app.Fragment"}) {
+    		try {
+    			SootClass fragmentClass = Scene.v().getSootClass(fragment);
+    			
+    			if (SootUtils.checkAncestor(sootClass, fragmentClass))
+    				return true;
+    					 
+    		} 
+    		catch (Exception ex) {
+    			
+    		}
+    		
+    	}
+    	return false;
     }
 
     /**
@@ -534,7 +578,7 @@ public class ResourcesSoot {
                     String.format("%08x", intId));
         UISootObject obj = mUiObjectTable.get(intId);    
         if (obj == null) {
-            logger.warn("Object for id 0x{} info is not available", 
+            logger.warn("Object for id {} info is not available", 
                         String.format("%x", intId));
             return null; 
         }
@@ -552,7 +596,7 @@ public class ResourcesSoot {
         logger.info("addGetView_ID({}:{}) ", intId.toString(), String.format("%x", intId));
 
         if (obj == null) {
-            logger.warn("Object for id {} does not exist ", intId);
+            logger.warn("Object for id {} does not exist ", String.format("%x", intId));
             return false;
         }
         if (obj.sootField == null)  {
@@ -734,8 +778,13 @@ public class ResourcesSoot {
     		String methodSig = String.format("<%s: void <init>()>", fragmentClass);
     		SootMethod fragmentInit = Scene.v().getMethod(methodSig);
     		
-    		initMethod = Scene.v().getActiveHierarchy().resolveConcreteDispatch(
-    						returnType.getSootClass(), fragmentInit); 
+    		try {
+    			initMethod = Scene.v().getActiveHierarchy().resolveConcreteDispatch(
+    					returnType.getSootClass(), fragmentInit); 
+    		} 
+    		catch (Exception ex) {
+    			
+    		}
     		
     		if (initMethod != null)
     			break;
@@ -1016,10 +1065,15 @@ public class ResourcesSoot {
 	
 	        for (SootClass sootClass: classes) {
 	            logger.info("matching {} ", sootClass);
-	            for (SootClass baseClass: mBaseClassList) {
-	            	if (SootUtils.checkAncestor(sootClass, baseClass)) {
-	            		logger.info("soot class {} is a view ", sootClass);
-	            		return sootClass.toString();
+	            for (SootClass baseClass: mBaseClassList) { 
+	            	try {
+	            		if (SootUtils.checkAncestor(sootClass, baseClass)) {
+	            			logger.info("soot class {} is a UI component", sootClass);
+	            			return sootClass.toString();
+	            		}
+	            	}
+	            	catch (Exception ex) {
+	            		logger.info("soot class {} is not available ", sootClass);
 	            	}
 	            }
 	        }

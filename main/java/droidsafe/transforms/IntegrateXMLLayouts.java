@@ -47,6 +47,8 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 		
 		private List<SootMethod>  getStringList = new LinkedList<SootMethod>();
 		
+		private List<SootMethod>  findFragmentByIdList = new LinkedList<SootMethod>();		
+		
 		/** all classes that have findViewById */
 		private final String[] findViewByIdClasses = new String[] {
 		       "android.app.Activity", "android.app.Dialog", 
@@ -61,6 +63,11 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				"android.content.res.Resources", "android.app.Fragment",
 				"android.content.Context", "android.support.v4.app.Fragment"
 			};
+		
+		private final String[] findFragmentByIdClasses = new String[] {
+				"android.app.FragmentManager",
+				"android.support.v4.app.FragmentManager"
+		};
 		
 		/**
 		 * Constructor
@@ -85,12 +92,31 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			    logger.debug("setContentView: {} ", method);
 			}
 			
+			// getString
 			for (String className: getStringClasses){
 			    String methodName = String.format("<%s: java.lang.String getString(int)>",
 			                               className);
-			    SootMethod method = Scene.v().getMethod(methodName); 
-			    getStringList.add(method);			    
-			    logger.debug("getString: {} ", method);
+			    try {
+			    	SootMethod method = Scene.v().getMethod(methodName); 
+			    	getStringList.add(method);			    
+			    	logger.debug("getString: {} ", method);
+			    } catch (Exception ex) {
+			    	logger.info("method {} not in soot scene ", methodName);
+			    }
+			}
+			
+			// 
+			for (String className: findFragmentByIdClasses){
+				String fragmentClass = className.replace("FragmentManager", "Fragment");
+			    String methodName = String.format("<%s: %s findFragmentById(int)>",
+			                               className, fragmentClass);
+			    try {
+			    	SootMethod method = Scene.v().getMethod(methodName); 
+			    	findFragmentByIdList.add(method);			    
+			    }
+			    catch (Exception ex) {
+			    	logger.info("method {} not in soot scene ", methodName);
+			    }
 			}
 		}
 		
@@ -377,6 +403,14 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 							logger.info(String.format("Found setContentView(): %s - %s\n", 
 									stmt, b.getMethod()));
 							replaceSetContentView(stmtBody, stmt);
+							break;
+						}
+					}
+					
+					for (SootMethod method: findFragmentByIdList) {
+						if (method.equals(resolved)) {
+							logger.warn(String.format("Found findFragmentById(): %s - %s\n", 
+									stmt, b.getMethod()));
 							break;
 						}
 					}
