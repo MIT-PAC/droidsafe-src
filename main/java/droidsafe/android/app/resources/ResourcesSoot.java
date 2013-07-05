@@ -177,8 +177,14 @@ public class ResourcesSoot {
         };
         
         for (String className: baseClasses) {
-        	SootClass sootClass = Scene.v().getSootClass(className);
-        	mBaseClassList.add(sootClass);
+        	try {
+        		SootClass sootClass = Scene.v().getSootClass(className);
+        		if (sootClass != null)
+	        		mBaseClassList.add(sootClass);
+        	} 
+        	catch(Exception ex) {
+        		
+        	}
         }
         
         mViewClass     = Scene.v().getSootClass("android.view.View");
@@ -857,9 +863,11 @@ public class ResourcesSoot {
     	// condition statement
     	Stmt condStmt =  Jimple.v().newIfStmt(condExpr, afterIf);
 
-    	logger.debug("condStmt {} ", condStmt);
+    	//logger.debug("condStmt {} ", condStmt);
     	units.insertAfter(condStmt, beforeIf);
 
+    	logger.info("addView(): done ");
+    	logger.info(" ");
     	return true;
     }
     
@@ -1073,7 +1081,8 @@ public class ResourcesSoot {
 	            		}
 	            	}
 	            	catch (Exception ex) {
-	            		logger.info("soot class {} is not available ", sootClass);
+	            		// logger.debug("soot class {} is not available ", baseClass);
+	            		// logger.debug("ex: {} ", ex);
 	            	}
 	            }
 	        }

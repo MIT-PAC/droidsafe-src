@@ -162,8 +162,13 @@ public class Layout {
 	  Map<String, String> attrs = cview.getAttributes();
 
 	  if (cview.id != null && cview.name != null && attrs != null) {
-		  logger.debug("addView({}, {} ", cview.name, cview.id);
-		  ResourcesSoot.v().addView(cview.name,  cview.id, attrs);
+		  logger.debug("addView({}, {}) ", cview.name, cview.id);
+		  
+		  String className = cview.name;
+		  if (cview.attr_exists("name"))
+			  className = cview.get_attr("name");
+		  
+		  ResourcesSoot.v().addView(className,  cview.id, attrs);
 	  }
   }
 
