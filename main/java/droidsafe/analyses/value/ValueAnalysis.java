@@ -280,11 +280,13 @@ public class ValueAnalysis {
 
         // Now run the analysis to fixed point, not stepping through the methods that we simulate.
         do {
-            System.out.println("Value Analysis Progress: fixed point not reached, re-running");
+            System.out.println("\nValue Analysis Progress: fixed point not reached, re-running");
             runAgain = false;
             runOnce();
         } while(runAgain);
-        
+ 
+        System.out.print("\n");
+ 
         // log the results and statistics    
         am.log();
     }
@@ -310,7 +312,7 @@ public class ValueAnalysis {
         Chain<SootClass> sootClasses = Scene.v().getApplicationClasses();
         int progressCounter = 0; 
         for (SootClass clazz : sootClasses) {
-            System.out.println("Value Analysis Progress: " + (int)Math.ceil(100*(double)progressCounter/sootClasses.size()) + "%");
+            System.out.print("Value Analysis Progress: " + (int)Math.ceil(100*(double)progressCounter/sootClasses.size()) + "%\r");
             progressCounter++;
             String className = clazz.getName();
             // We don't care about the harness or interfaces
