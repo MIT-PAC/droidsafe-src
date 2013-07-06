@@ -4,12 +4,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.SootMethod;
 import soot.Type;
+import droidsafe.android.system.Permissions;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.speclang.ArgumentValue;
 import droidsafe.speclang.Method;
@@ -100,7 +102,10 @@ public class MethodModel extends ModelChangeSupport
    */
   private String methodShortSignature;
 
-
+  /**
+   * Set of permissions a method may need at runtime.
+   */
+  private Set<String> permissions;
 
   /**
    * Main constructor.
@@ -115,7 +120,7 @@ public class MethodModel extends ModelChangeSupport
     this.returnType = originalMethod.getRtype();
     this.declarationLocation = originalMethod.getDeclSourceLocation();
     this.methodShortSignature = computeShortSignature(originalMethod);
-
+    this.permissions = Permissions.v().getPermissions(originalMethod.getSootMethod());
     for (SourceLocationTag line : originalMethod.getLines()) {
       this.lines.add(new CodeLocationModel(line));
     }
@@ -203,6 +208,16 @@ public class MethodModel extends ModelChangeSupport
    */
   public String getShortSignature() {
     return this.methodShortSignature;
+  }
+
+
+  /**
+   * Getter for the set of permissions needed to run this method at run time.
+   * 
+   * @return The set of permissions for this method.
+   */
+  public Set<String> getPermissions() {
+    return this.permissions;
   }
 
   /**
