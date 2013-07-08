@@ -41,6 +41,7 @@ public abstract class Authenticator {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.014 -0400", hash_original_method = "3093C4DCBD758CB1DB7C3B81720996CD", hash_generated_method = "899F1F1F7617EF9F443ECB0A2A648E90")
     protected PasswordAuthentication getPasswordAuthentication() {
         PasswordAuthentication varB4EAC82CA7396A68D541C85D26508E83_1746231027 = null; 
@@ -122,6 +123,7 @@ public abstract class Authenticator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setDefault(Authenticator a) {
         thisAuthenticator = a;
     }
@@ -156,6 +158,7 @@ public abstract class Authenticator {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static PasswordAuthentication requestPasswordAuthentication(
             String rHost, InetAddress rAddr, int rPort, String rProtocol,
             String rPrompt, String rScheme, URL rURL,
@@ -175,6 +178,7 @@ public abstract class Authenticator {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.017 -0400", hash_original_method = "3D575AEF6CE8C91A17FF3C39D0168781", hash_generated_method = "9BF422E405DDFF535F04A5B478CADAA4")
     protected URL getRequestingURL() {
         URL varB4EAC82CA7396A68D541C85D26508E83_1867394247 = null; 
@@ -186,6 +190,7 @@ public abstract class Authenticator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.018 -0400", hash_original_method = "55F670A5333D0DDAF23FC0CC5542C3C2", hash_generated_method = "01AC5521BDE5A4071DEBD3DCAA6D441A")
     protected Authenticator.RequestorType getRequestorType() {
         Authenticator.RequestorType varB4EAC82CA7396A68D541C85D26508E83_1727253063 = null; 

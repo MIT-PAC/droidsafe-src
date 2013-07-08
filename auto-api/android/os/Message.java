@@ -197,6 +197,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.511 -0400", hash_original_method = "003296F505672677447BEB837B373395", hash_generated_method = "DD38AFAE361E5ADD5D10C3A40C52C4FB")
     public long getWhen() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1257977225 = getTaintLong();
@@ -206,6 +207,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.512 -0400", hash_original_method = "4206C8A14E5D790EB7EB282A0235F495", hash_generated_method = "BFA69EC1EEA25086C4D9E40A15F143AE")
     public void setTarget(Handler target) {
         this.target = target;
@@ -214,6 +216,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.512 -0400", hash_original_method = "71A342D68A16A50B25BC4BF2093BFF62", hash_generated_method = "7B5DA9A1B868F3F92A970B03D0F9B6A1")
     public Handler getTarget() {
         Handler varB4EAC82CA7396A68D541C85D26508E83_1803010247 = null; 
@@ -225,6 +228,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.513 -0400", hash_original_method = "BE120AA50B796443E57F262EC015813E", hash_generated_method = "172F97B99231B2C63783924F9C2330E7")
     public Runnable getCallback() {
         Runnable varB4EAC82CA7396A68D541C85D26508E83_1376576412 = null; 
@@ -254,6 +258,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.514 -0400", hash_original_method = "82F96E5D1D9A678E87ADC3DA47E10262", hash_generated_method = "25177481273ECF1B23495A4F7B3175CA")
     public Bundle peekData() {
         Bundle varB4EAC82CA7396A68D541C85D26508E83_57126940 = null; 
@@ -265,6 +270,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.515 -0400", hash_original_method = "2A3AF1BEE5D39047FC40D7968EE3828B", hash_generated_method = "EAE8CA4F21A678E5FDC9CFA85AC5AD0E")
     public void setData(Bundle data) {
         this.data = data;
@@ -282,6 +288,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.516 -0400", hash_original_method = "9CE194651C6176A08C0A91B012A85C32", hash_generated_method = "11A13B0F3660F78F0D526315F89EA24B")
      void clearForRecycle() {
         flags = 0;
@@ -308,6 +315,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.517 -0400", hash_original_method = "2F71B67A0204C39D3FE8504F70842AAF", hash_generated_method = "2CB4B54765CCE679E6C59E278C618300")
      boolean isInUse() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1835580528 = getTaintBoolean();
@@ -317,6 +325,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.517 -0400", hash_original_method = "05D8812E72ABC796A0F0FB73D8BB23FD", hash_generated_method = "2406C8342B30A3F95EC80EECA1F8197F")
      void markInUse() {
         flags |= FLAG_IN_USE;
@@ -385,6 +394,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.519 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "355A97CA100052ED3709657D854ADCF0")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1688839518 = getTaintInt();

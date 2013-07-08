@@ -63,6 +63,7 @@ public abstract class HttpRequestBase extends AbstractHttpMessage implements Htt
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.786 -0400", hash_original_method = "548D933490D1B58733888D02043A11B0", hash_generated_method = "04DB8882503441DBE436213F7FE76FBA")
     public URI getURI() {
         URI varB4EAC82CA7396A68D541C85D26508E83_1700024656 = null; 
@@ -228,6 +229,7 @@ public abstract class HttpRequestBase extends AbstractHttpMessage implements Htt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.793 -0400", hash_original_method = "2E6315A95F3ECC29CFD4A6E95CF920AD", hash_generated_method = "611B881544F114A3086A5397DB4187E2")
     public boolean isAborted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_557226697 = getTaintBoolean();

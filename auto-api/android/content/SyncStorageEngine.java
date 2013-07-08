@@ -756,6 +756,7 @@ public class SyncStorageEngine extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.722 -0400", hash_original_method = "6DBCD9157A2DF54805879831F88D4B77", hash_generated_method = "55F49F79ADD3C5F46B2EC3E7C2756700")
     public boolean getMasterSyncAutomatically() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1026515873 = getTaintBoolean();

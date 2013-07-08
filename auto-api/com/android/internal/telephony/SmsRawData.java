@@ -23,6 +23,7 @@ public class SmsRawData implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.983 -0400", hash_original_method = "A347A6B90A5D4D940F0721005973D58D", hash_generated_method = "2388D4E38A6122D4C91A7E497BCA51B3")
     public byte[] getBytes() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_896610039 = {getTaintByte()};
@@ -32,6 +33,7 @@ public class SmsRawData implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.983 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "3BA274B779720D48DB0658F0EADA157B")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1318737331 = getTaintInt();

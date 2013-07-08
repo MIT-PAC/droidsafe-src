@@ -81,6 +81,7 @@ public class StorageVolume implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.695 -0400", hash_original_method = "F177C5B02553C0E0327F321BDDCEAFD5", hash_generated_method = "ED6B22CBB68032B5EC8CFD19D98A6A32")
     public String getPath() {
         String varB4EAC82CA7396A68D541C85D26508E83_1411317309 = null; 
@@ -92,6 +93,7 @@ public class StorageVolume implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.695 -0400", hash_original_method = "177DD147D2F75620FD2B154278EC57FA", hash_generated_method = "64B9CA12F6D528DE6033DEB0FDA12115")
     public String getDescription() {
         String varB4EAC82CA7396A68D541C85D26508E83_2146035456 = null; 
@@ -103,6 +105,7 @@ public class StorageVolume implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.696 -0400", hash_original_method = "C8355C5823499E966C6E9C9BBED7B59B", hash_generated_method = "0CB4D3FDDEFA50E2B81182FDF62E3A07")
     public boolean isRemovable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1268490699 = getTaintBoolean();
@@ -112,6 +115,7 @@ public class StorageVolume implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.696 -0400", hash_original_method = "3969E4BD26F514DAFEA3D81664C42C95", hash_generated_method = "6284595E8A9C54E1D0FA074E2CDCAE79")
     public boolean isEmulated() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1289912819 = getTaintBoolean();
@@ -121,6 +125,7 @@ public class StorageVolume implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.696 -0400", hash_original_method = "D91614A87EF069B6CB0CB580F9424F2A", hash_generated_method = "58A07C21F16B08243FB1E4473F7E65B7")
     public int getStorageId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1181073293 = getTaintInt();
@@ -130,6 +135,7 @@ public class StorageVolume implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.697 -0400", hash_original_method = "DF85DF3474DF218FD90EC56A476BBB47", hash_generated_method = "F681C9EB234C13040C7D4D682143B82F")
     public void setStorageId(int index) {
         mStorageId = ((index + 1) << 16) + 1;
@@ -138,6 +144,7 @@ public class StorageVolume implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.698 -0400", hash_original_method = "AD5CC5267CED7BD79E23E2B3D995596D", hash_generated_method = "CBEFA2A6F85B540AD341651C0CD97554")
     public int getMtpReserveSpace() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_471879041 = getTaintInt();
@@ -147,6 +154,7 @@ public class StorageVolume implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.698 -0400", hash_original_method = "70EAD3302E25E04AF22ADA1536C85D6E", hash_generated_method = "02FAD7F8517ED4860A427227991AB83F")
     public boolean allowMassStorage() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2130336062 = getTaintBoolean();
@@ -156,6 +164,7 @@ public class StorageVolume implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.698 -0400", hash_original_method = "F3A7583351778AC1576078A1D9F37684", hash_generated_method = "BCB49A52117DD95B96C4B27CE3C331A7")
     public long getMaxFileSize() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_742397204 = getTaintLong();
@@ -216,6 +225,7 @@ public class StorageVolume implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.700 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "46E4BEE3A222392ACE3BDBA7482ECF39")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1874992991 = getTaintInt();

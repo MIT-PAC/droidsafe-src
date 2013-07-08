@@ -63,6 +63,7 @@ public class BasicHeaderElement implements HeaderElement, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.943 -0400", hash_original_method = "6F5A80252F54E883F3837DA0C6833E69", hash_generated_method = "651B8C4A3F37554088C6C95D227A84E9")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1921052501 = null; 
@@ -74,6 +75,7 @@ public class BasicHeaderElement implements HeaderElement, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.943 -0400", hash_original_method = "ADE49245CA79B6D6B3F4663E953C8CD9", hash_generated_method = "931E9545B5F83752869EBF97E919C6D8")
     public String getValue() {
         String varB4EAC82CA7396A68D541C85D26508E83_544966416 = null; 
@@ -97,6 +99,7 @@ public class BasicHeaderElement implements HeaderElement, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.944 -0400", hash_original_method = "D96148994A6BB50642F5897F1E874B9E", hash_generated_method = "B39889B235AF5F858DB8F4E82438E362")
     public int getParameterCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1353264288 = getTaintInt();
@@ -106,6 +109,7 @@ public class BasicHeaderElement implements HeaderElement, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.944 -0400", hash_original_method = "7A51C396EF547B19A00C38AEE513A356", hash_generated_method = "0CBB9BE44E4DB78B14E1959C0293162B")
     public NameValuePair getParameter(int index) {
         NameValuePair varB4EAC82CA7396A68D541C85D26508E83_1199928553 = null; 

@@ -64,6 +64,7 @@ public class IdentityHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.422 -0400", hash_original_method = "781BC1AEB43B59447DF913A0C6E9B0CF", hash_generated_method = "9148DCFA2322196302C055946E5228E9")
     private int getThreshold(int maxSize) {
         addTaint(maxSize);
@@ -74,6 +75,7 @@ public class IdentityHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.422 -0400", hash_original_method = "1EC323E151A9A9F2A50AC6CDC57160D0", hash_generated_method = "2B7F8307E4A5A2BCD05B5DEFEE459523")
     private int computeElementArraySize() {
         int arraySize = (int) (((long) threshold * 10000) / loadFactor) * 2;
@@ -85,6 +87,7 @@ public class IdentityHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.423 -0400", hash_original_method = "82EDC40DB5D2D8551DABF13E0864CA4A", hash_generated_method = "B6F92F55D3F633277A424E361CA2790F")
     private Object[] newElementArray(int s) {
         Object[] varB4EAC82CA7396A68D541C85D26508E83_661521152 = null; 
@@ -111,6 +114,7 @@ public class IdentityHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.424 -0400", hash_original_method = "BDCD76FD65816EABAE96959FB0B37C8A", hash_generated_method = "FB306520919E91A959D588485570D829")
     @Override
     public void clear() {
@@ -150,6 +154,7 @@ public class IdentityHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.425 -0400", hash_original_method = "182DC7E21BB3FA85F9FDDA653B5E53EC", hash_generated_method = "839767B35D8B24C40EAD9DD9E48C7A23")
     @Override
     public boolean containsValue(Object value) {
@@ -426,6 +431,7 @@ public class IdentityHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.430 -0400", hash_original_method = "89E1F2A524C9BAC235F25992FD1AF281", hash_generated_method = "3D7CA775847A3C80DA39F0E34AAE3ABF")
     private void computeMaxSize() {
         threshold = (int) ((long) (elementData.length / 2) * loadFactor / 10000);
@@ -521,7 +527,8 @@ public class IdentityHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V
                     
                     
                 }
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.434 -0400", hash_original_method = "493FF83788BDD57678BE8EC76775D2EC", hash_generated_method = "85A7F843018B6961F2DBDB790D320547")
+                @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.434 -0400", hash_original_method = "493FF83788BDD57678BE8EC76775D2EC", hash_generated_method = "85A7F843018B6961F2DBDB790D320547")
                 @Override
                 public int size() {
                     int varBC51B28386FA67ED3E3F40218C89CFB9_670801143 = (IdentityHashMap.this.size());
@@ -530,7 +537,8 @@ public class IdentityHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V
                     
                     
                 }
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.435 -0400", hash_original_method = "8EE7B74E95EF739684600DCE51B8E175", hash_generated_method = "8E7BC4B18C8D2D3FCEC28F8038114E81")
+                @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.435 -0400", hash_original_method = "8EE7B74E95EF739684600DCE51B8E175", hash_generated_method = "8E7BC4B18C8D2D3FCEC28F8038114E81")
                 @Override
                 public void clear() {
                     IdentityHashMap.this.clear();
@@ -603,7 +611,8 @@ public class IdentityHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V
                     
                     
                 }
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.441 -0400", hash_original_method = "493FF83788BDD57678BE8EC76775D2EC", hash_generated_method = "C9DF7514FE8D2946E2D939ED4491B63E")
+                @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.441 -0400", hash_original_method = "493FF83788BDD57678BE8EC76775D2EC", hash_generated_method = "C9DF7514FE8D2946E2D939ED4491B63E")
                 @Override
                 public int size() {
                     int varBC51B28386FA67ED3E3F40218C89CFB9_1649948298 = (IdentityHashMap.this.size());
@@ -612,7 +621,8 @@ public class IdentityHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V
                     
                     
                 }
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.441 -0400", hash_original_method = "8EE7B74E95EF739684600DCE51B8E175", hash_generated_method = "8E7BC4B18C8D2D3FCEC28F8038114E81")
+                @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.441 -0400", hash_original_method = "8EE7B74E95EF739684600DCE51B8E175", hash_generated_method = "8E7BC4B18C8D2D3FCEC28F8038114E81")
                 @Override
                 public void clear() {
                     IdentityHashMap.this.clear();
@@ -738,6 +748,7 @@ public class IdentityHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.452 -0400", hash_original_method = "186376BCBF1440029A4A8EF9D3327AB7", hash_generated_method = "586F3E83135B26EA8ABA89DBBBC892E5")
     @Override
     public boolean isEmpty() {
@@ -748,6 +759,7 @@ public class IdentityHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.453 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "1F4B711F0163E0B9A7EAF9A5C48FF245")
     @Override
     public int size() {

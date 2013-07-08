@@ -104,6 +104,7 @@ public class ThreadSafeClientConnManager implements ClientConnectionManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.794 -0400", hash_original_method = "98F37EDA7C4377EF27FBBC8455A5DCE4", hash_generated_method = "A3B33BCD195CE2EE5D556F539BFCE121")
     public SchemeRegistry getSchemeRegistry() {
         SchemeRegistry varB4EAC82CA7396A68D541C85D26508E83_241105017 = null; 
@@ -242,6 +243,7 @@ public class ThreadSafeClientConnManager implements ClientConnectionManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.800 -0400", hash_original_method = "A7E68EC885457C399BA150A4DD387F90", hash_generated_method = "F75A05A53DDAB72B742695A702487106")
     public int getConnectionsInPool() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_71107610 = getTaintInt();

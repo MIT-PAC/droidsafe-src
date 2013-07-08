@@ -257,6 +257,7 @@ public class FrameLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.019 -0400", hash_original_method = "8DDBBCB9F2E6942D000521EEF66C0D86", hash_generated_method = "CD1ED4A0FC3DB3DCB3260009AC0E271B")
     public Drawable getForeground() {
         Drawable varB4EAC82CA7396A68D541C85D26508E83_1935423373 = null; 
@@ -556,6 +557,7 @@ public class FrameLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.025 -0400", hash_original_method = "F157652BCC07DCD3C1A1E63F95BA7504", hash_generated_method = "35F4313BD098BAEC40FB26B8C2BFA441")
     @android.view.RemotableViewMethod
     public void setMeasureAllChildren(boolean measureAll) {
@@ -577,6 +579,7 @@ public class FrameLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.025 -0400", hash_original_method = "52ECFF8459DAA24A15017A3D3C6FE0BF", hash_generated_method = "27E63593F79C088C1D945A172C171F01")
     public boolean getMeasureAllChildren() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_810002442 = getTaintBoolean();
@@ -600,6 +603,7 @@ public class FrameLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.026 -0400", hash_original_method = "9DA99B4E01A506E72BA59AF598A3C38D", hash_generated_method = "A42B948165C8CB17B91A92B32A76528D")
     @Override
     public boolean shouldDelayChildPressedState() {
@@ -610,6 +614,7 @@ public class FrameLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.026 -0400", hash_original_method = "E5E3FCBA546B7CFE2F525BEFE910A396", hash_generated_method = "83E8AE9E7CCDD2DCA45D458F859C5B6D")
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {

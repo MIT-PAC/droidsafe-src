@@ -54,6 +54,7 @@ public class NullReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.168 -0400", hash_original_method = "1760B71EAFD51B63FDFEE5AB7AC5FEE9", hash_generated_method = "0C69001502E3883231B8F2B0CD7A3844")
     public long getPosition() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1767993004 = getTaintLong();
@@ -63,6 +64,7 @@ public class NullReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.169 -0400", hash_original_method = "25EF411BA02CBCB0F772C5374653B5E7", hash_generated_method = "0FB8F440D52481BC681C44EFA2E2F59D")
     public long getSize() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_898120936 = getTaintLong();
@@ -72,6 +74,7 @@ public class NullReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.169 -0400", hash_original_method = "EEFDACC2C301B42650B1064C3D4059CC", hash_generated_method = "5B6DBF346B0CD0A1CC0DCF5E7165EC4E")
     @Override
     public void close() throws IOException {
@@ -103,6 +106,7 @@ public class NullReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.170 -0400", hash_original_method = "0829B6DA23F89F75CF76B7CF84C00C9F", hash_generated_method = "DCF9B5F5CE50D24FAC24B137EE2B977B")
     @Override
     public boolean markSupported() {
@@ -259,6 +263,7 @@ public class NullReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.172 -0400", hash_original_method = "A737830B6A2B6F6C2620CA3298757069", hash_generated_method = "CBE9FDEC735036EF9B50103135E092B9")
     protected int processChar() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_899196950 = getTaintInt();
@@ -268,6 +273,7 @@ public class NullReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.172 -0400", hash_original_method = "CECA15CD5926CD1CCF5DBC543CFC909D", hash_generated_method = "1028927649B8F13A27CC386B8B778485")
     protected void processChars(char[] chars, int offset, int length) {
         addTaint(chars[0]);

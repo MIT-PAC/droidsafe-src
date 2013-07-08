@@ -45,6 +45,7 @@ public class DHParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.253 -0400", hash_original_method = "451C630A2F5A52BD2AE63729BE355876", hash_generated_method = "A508E4234DF2047BB4F4BA12E95C3D9B")
     public BigInteger getP() {
         BigInteger varB4EAC82CA7396A68D541C85D26508E83_2136568369 = null; 
@@ -56,6 +57,7 @@ public class DHParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.254 -0400", hash_original_method = "8C38F55FA5DB902C3D9409517AA217E2", hash_generated_method = "CC039EC506F474DD1DD0F441B75E9F05")
     public BigInteger getG() {
         BigInteger varB4EAC82CA7396A68D541C85D26508E83_245611085 = null; 
@@ -67,6 +69,7 @@ public class DHParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.254 -0400", hash_original_method = "657EAD8DC5C96D72590F45704DE7ABCD", hash_generated_method = "3CE640207B44512EEF633AC759ECFEEA")
     public int getL() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1763893784 = getTaintInt();

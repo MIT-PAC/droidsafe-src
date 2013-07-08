@@ -108,6 +108,7 @@ public class PermissionGroupInfo extends PackageItemInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.834 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BAF3968B1C0474CF52543DA7452D2E1B")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_58784206 = getTaintInt();

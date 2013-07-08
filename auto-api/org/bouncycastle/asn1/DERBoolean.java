@@ -34,12 +34,14 @@ public class DERBoolean extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERBoolean getInstance(
         boolean  value) {
         return (value ? TRUE : FALSE);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERBoolean getInstance(
         byte[] octets) {
         return (octets[0] != 0) ? TRUE : FALSE;
@@ -62,6 +64,7 @@ public class DERBoolean extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.342 -0400", hash_original_method = "CAF36277BE2299D4A97B34E514847231", hash_generated_method = "5D4DA2F1AE5AD0D5B4876BA6B367C3E4")
     public boolean isTrue() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1963294323 = getTaintBoolean();
@@ -85,6 +88,7 @@ public class DERBoolean extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.342 -0400", hash_original_method = "7025372BC5443A52FED5B1B11C72A34D", hash_generated_method = "95EB0FFFA3237C82DEAFB90E85EC5038")
     protected boolean asn1Equals(
         DERObject  o) {
@@ -100,6 +104,7 @@ public class DERBoolean extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.343 -0400", hash_original_method = "961F210287166DF05D8915D632129E75", hash_generated_method = "9E3A2B52BDADE6B76A0B436FA18169E7")
     public int hashCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2047967709 = getTaintInt();
@@ -109,6 +114,7 @@ public class DERBoolean extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.343 -0400", hash_original_method = "9F6A9420185E5E125B8A61B3882EDFBB", hash_generated_method = "81E91818732602637DF6953B8B7747FB")
     public String toString() {
         String varB4EAC82CA7396A68D541C85D26508E83_425272704 = null; 

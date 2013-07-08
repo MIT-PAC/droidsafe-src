@@ -718,6 +718,7 @@ public class DevicePolicyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.947 -0400", hash_original_method = "B720364465717C512AF715245037D814", hash_generated_method = "4407096FAB260474A393C271A191A6DF")
     public int getPasswordMaximumLength(int quality) {
         addTaint(quality);

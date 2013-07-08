@@ -50,6 +50,7 @@ public class OvershootInterpolator implements Interpolator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.706 -0400", hash_original_method = "F21DD3F51BCD131DFD1A0AC343B5C733", hash_generated_method = "758C516160CB847B7ACA79EF0B918D3E")
     public float getInterpolation(float t) {
         t -= 1.0f;

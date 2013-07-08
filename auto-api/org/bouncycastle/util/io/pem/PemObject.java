@@ -43,6 +43,7 @@ public class PemObject implements PemObjectGenerator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.366 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "501766795E8A364D2AC9EB85DB31AE65")
     public String getType() {
         String varB4EAC82CA7396A68D541C85D26508E83_1074696188 = null; 
@@ -54,6 +55,7 @@ public class PemObject implements PemObjectGenerator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.366 -0400", hash_original_method = "7A0337E547AB2E290525371E494B1A30", hash_generated_method = "2EB5CDE33BD0897A1B0E9F2535797D74")
     public List getHeaders() {
         List varB4EAC82CA7396A68D541C85D26508E83_533492767 = null; 
@@ -65,6 +67,7 @@ public class PemObject implements PemObjectGenerator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.367 -0400", hash_original_method = "CA0902D8AF35560815DA28546D2C787A", hash_generated_method = "13170AAF6E569313C67D67D108E5CE7E")
     public byte[] getContent() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1743299941 = {getTaintByte()};
@@ -74,6 +77,7 @@ public class PemObject implements PemObjectGenerator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.367 -0400", hash_original_method = "E898D78DBFB1F3FB89A6D402FC0A6D27", hash_generated_method = "494E4097D3206AD87391DA3334B2877B")
     public PemObject generate() throws PemGenerationException {
         PemObject varB4EAC82CA7396A68D541C85D26508E83_520911692 = null; 

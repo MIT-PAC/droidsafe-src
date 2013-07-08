@@ -91,6 +91,7 @@ public final class IsimUiccRecords implements IsimRecords {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.982 -0400", hash_original_method = "0C48887FF3A7960AF9ADE0B3DADCC487", hash_generated_method = "39C97CE94834141F066EC5B44E85555B")
     public String getIsimImpi() {
         String varB4EAC82CA7396A68D541C85D26508E83_314820319 = null; 
@@ -102,6 +103,7 @@ public final class IsimUiccRecords implements IsimRecords {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.983 -0400", hash_original_method = "4243CC1C17FF1186628D392C9E7E1EB1", hash_generated_method = "6EB3D26A635D2E8718FEDA5F3FFA256E")
     public String getIsimDomain() {
         String varB4EAC82CA7396A68D541C85D26508E83_1932871839 = null; 

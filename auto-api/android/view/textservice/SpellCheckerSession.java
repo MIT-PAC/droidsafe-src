@@ -100,6 +100,7 @@ public class SpellCheckerSession {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.372 -0400", hash_original_method = "DA550B703A137477375C51611DE4E664", hash_generated_method = "11C35577E4D4D641264C70F74EA60ACB")
     public SpellCheckerInfo getSpellChecker() {
         SpellCheckerInfo varB4EAC82CA7396A68D541C85D26508E83_2016956453 = null; 
@@ -197,6 +198,7 @@ public class SpellCheckerSession {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.375 -0400", hash_original_method = "EB5F65A578EB2CF49F3B6FAEDD6A03A1", hash_generated_method = "BDC4A6C1829BA6EFD6648A909B8F102D")
     public ITextServicesSessionListener getTextServicesSessionListener() {
         ITextServicesSessionListener varB4EAC82CA7396A68D541C85D26508E83_757177767 = null; 
@@ -208,6 +210,7 @@ public class SpellCheckerSession {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.376 -0400", hash_original_method = "49E439EC4CF52AA024CAA5A403E07C82", hash_generated_method = "2BC5C67CFAC45F4FEE4263DD933647C7")
     public ISpellCheckerSessionListener getSpellCheckerSessionListener() {
         ISpellCheckerSessionListener varB4EAC82CA7396A68D541C85D26508E83_897231897 = null; 

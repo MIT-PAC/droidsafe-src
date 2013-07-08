@@ -123,6 +123,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.290 -0400", hash_original_method = "ED4C67C6B1C11ED6A644F86CCA800916", hash_generated_method = "98B7BE06BFFD69F2E1A82E9375A2D482")
     public Cursor getCursor() {
         Cursor varB4EAC82CA7396A68D541C85D26508E83_2017963006 = null; 
@@ -212,6 +213,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.293 -0400", hash_original_method = "047E07C1992C7400A48E08BF432AD584", hash_generated_method = "F883B157A223BA564EF6BE8BEA7DD93A")
     @Override
     public boolean hasStableIds() {
@@ -459,6 +461,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.299 -0400", hash_original_method = "67EA54121BE0FFEF70F7156625E7E3CE", hash_generated_method = "DF7782DAE4F81AE7122C8CEE8903BD8E")
     public FilterQueryProvider getFilterQueryProvider() {
         FilterQueryProvider varB4EAC82CA7396A68D541C85D26508E83_1557451250 = null; 
@@ -470,6 +473,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.299 -0400", hash_original_method = "DB32599181A301EC3439063743E0023E", hash_generated_method = "3AC0EC2BF9C403B489B89218AE938BE8")
     public void setFilterQueryProvider(FilterQueryProvider filterQueryProvider) {
         mFilterQueryProvider = filterQueryProvider;

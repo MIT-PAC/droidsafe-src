@@ -51,6 +51,7 @@ public class Transformation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.787 -0400", hash_original_method = "8DFDD7EF6072FC95D95C5176557C9475", hash_generated_method = "79494FF89CB9973CD816351A396D56B4")
     public int getTransformationType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_579486271 = getTaintInt();
@@ -60,6 +61,7 @@ public class Transformation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.787 -0400", hash_original_method = "B4636E05B9A8A9BE17FDDB51FD79878A", hash_generated_method = "39AC39ACD4F7908E138EDFE8ECD24ED9")
     public void setTransformationType(int transformationType) {
         mTransformationType = transformationType;
@@ -92,6 +94,7 @@ public class Transformation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.788 -0400", hash_original_method = "2E54F4327BDE93D0CE557FC100DEED67", hash_generated_method = "373F7E7AA24C0E46FE98DC4DD993962A")
     public Matrix getMatrix() {
         Matrix varB4EAC82CA7396A68D541C85D26508E83_1452495124 = null; 
@@ -103,6 +106,7 @@ public class Transformation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.788 -0400", hash_original_method = "0C33009713633FC103F0B586FD422009", hash_generated_method = "C9CD91170EA13924C0FBD5C314E4E67F")
     public void setAlpha(float alpha) {
         mAlpha = alpha;
@@ -111,6 +115,7 @@ public class Transformation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.789 -0400", hash_original_method = "84CA63CC358414A9CD87B6516C604402", hash_generated_method = "8288C654351E66E1836B6AC40A6D2FA1")
     public float getAlpha() {
         float var546ADE640B6EDFBC8A086EF31347E768_1141668607 = getTaintFloat();

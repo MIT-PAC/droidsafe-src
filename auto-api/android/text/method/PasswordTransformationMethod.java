@@ -77,6 +77,7 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.351 -0400", hash_original_method = "46932DA0618614AAF15434EFCC9FAF04", hash_generated_method = "D46551DFD7C1F01B7CC6C2850BBA7577")
     public void beforeTextChanged(CharSequence s, int start,
                                   int count, int after) {
@@ -123,6 +124,7 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.352 -0400", hash_original_method = "2B62725FCE5BAC340D42F3403AAE31A5", hash_generated_method = "B1E73F6E6A3A9E89AEF9681CB19F89E5")
     public void afterTextChanged(Editable s) {
         addTaint(s.getTaint());

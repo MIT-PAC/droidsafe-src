@@ -142,6 +142,7 @@ public class SipAudioCall {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.925 -0400", hash_original_method = "5739155C46DD20825CE1C589327CD281", hash_generated_method = "7D419F4A0BCD1B5E36D71DBBC5626D71")
     public boolean isInCall() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_512333227 = getTaintBoolean();
@@ -153,6 +154,7 @@ public class SipAudioCall {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.925 -0400", hash_original_method = "2FD69B096455E1B51D801F19A8DBFD35", hash_generated_method = "B9CDCC0F00973F78340DAEE0935975CC")
     public boolean isOnHold() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2002779498 = getTaintBoolean();
@@ -201,6 +203,7 @@ public class SipAudioCall {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.927 -0400", hash_original_method = "A61765ACD427BC1BAFB034CDA7289AED", hash_generated_method = "937F918477709AF4C2953576536C2A34")
     public SipProfile getLocalProfile() {
         SipProfile varB4EAC82CA7396A68D541C85D26508E83_297225088 = null; 
@@ -248,6 +251,7 @@ public class SipAudioCall {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.929 -0400", hash_original_method = "9DD9B38A5D2A310FA14C467CD9F0FD11", hash_generated_method = "36E8152BCC04521DFE6F15C189E50027")
     public SipSession getSipSession() {
         SipSession varB4EAC82CA7396A68D541C85D26508E83_965472898 = null; 
@@ -940,6 +944,7 @@ public class SipAudioCall {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.963 -0400", hash_original_method = "CF2F318ECC83A27F31B207A7653E2463", hash_generated_method = "44DB31D0248E8E272C836BF0996168AB")
     public boolean isMuted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_244784685 = getTaintBoolean();
@@ -1021,6 +1026,7 @@ public class SipAudioCall {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.965 -0400", hash_original_method = "974213146461E5146ED1F54CFC83DFBA", hash_generated_method = "2361B0F730662480DFC40F12384B8108")
     public AudioStream getAudioStream() {
         AudioStream varB4EAC82CA7396A68D541C85D26508E83_1091284804 = null; 

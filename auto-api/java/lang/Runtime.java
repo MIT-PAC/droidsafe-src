@@ -245,17 +245,20 @@ public class Runtime {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.624 -0400", hash_original_method = "67196F5597F9CC48251D355499CA1423", hash_generated_method = "A21E5AB7BBD81B5CC954F118A80344D3")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.624 -0400", hash_original_method = "67196F5597F9CC48251D355499CA1423", hash_generated_method = "A21E5AB7BBD81B5CC954F118A80344D3")
 	public long freeMemory() {
 		long var0F5264038205EDFB1AC05FBB0E8C5E94_1135677876 = getTaintLong();
 		return var0F5264038205EDFB1AC05FBB0E8C5E94_1135677876;
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.624 -0400", hash_original_method = "D5E9C32F4CCF731A5E6B245C708DE511", hash_generated_method = "F2BA90326A844E033E7882399F00530F")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.624 -0400", hash_original_method = "D5E9C32F4CCF731A5E6B245C708DE511", hash_generated_method = "F2BA90326A844E033E7882399F00530F")
 	public void gc() {
 	}
 
-	public static Runtime getRuntime() {
+	@DSModeled(DSC.SAFE)
+    public static Runtime getRuntime() {
 		return mRuntime;
 	}
 
@@ -268,7 +271,8 @@ public class Runtime {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.625 -0400", hash_original_method = "93CD7EAF10A1B837C6D2761A80025550", hash_generated_method = "A2D56C28EA37FCCF585207FFBB337419")
+	@DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.625 -0400", hash_original_method = "93CD7EAF10A1B837C6D2761A80025550", hash_generated_method = "A2D56C28EA37FCCF585207FFBB337419")
 	void load(String filename, ClassLoader loader) {
 		{
 			if (DroidSafeAndroidRuntime.control)
@@ -300,7 +304,8 @@ public class Runtime {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.632 -0400", hash_original_method = "5EE816C9B41613E4D79FD41D836C9458", hash_generated_method = "DE121221752AE396FAB2C57A77466D3A")
+	@DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.632 -0400", hash_original_method = "5EE816C9B41613E4D79FD41D836C9458", hash_generated_method = "DE121221752AE396FAB2C57A77466D3A")
 	void loadLibrary(String libraryName, ClassLoader loader) {
 		{
 			String filename = loader.findLibrary(libraryName);
@@ -343,10 +348,12 @@ public class Runtime {
 		
 	}
 
-	private static void nativeExit(int code, boolean isExit) {
+	@DSModeled(DSC.SAFE)
+    private static void nativeExit(int code, boolean isExit) {
 	}
 
-	private static String nativeLoad(String filename, ClassLoader loader) {
+	@DSModeled(DSC.BAN)
+    private static String nativeLoad(String filename, ClassLoader loader) {
 		
 		String ret = new String();
 		ret.addTaint(filename.taint);
@@ -371,18 +378,21 @@ public class Runtime {
 		
 	}
 
-	@Deprecated
+	@DSModeled(DSC.SAFE)
+    @Deprecated
 	public static void runFinalizersOnExit(boolean run) {
 		finalizeOnExit = run;
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.633 -0400", hash_original_method = "4EB2522F808EA94D0A66B66F863EF421", hash_generated_method = "C8317F58F83817B2CAFCFF0DB356528C")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.633 -0400", hash_original_method = "4EB2522F808EA94D0A66B66F863EF421", hash_generated_method = "C8317F58F83817B2CAFCFF0DB356528C")
 	public long totalMemory() {
 		long var0F5264038205EDFB1AC05FBB0E8C5E94_714844002 = getTaintLong();
 		return var0F5264038205EDFB1AC05FBB0E8C5E94_714844002;
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.633 -0400", hash_original_method = "53798D26DA92803B5299289F1912C9D0", hash_generated_method = "D48C5D50EAB5ED262BC047C38DB9B711")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.633 -0400", hash_original_method = "53798D26DA92803B5299289F1912C9D0", hash_generated_method = "D48C5D50EAB5ED262BC047C38DB9B711")
 	public void traceInstructions(boolean enable) {
 		addTaint(enable);
 		
@@ -567,7 +577,8 @@ public class Runtime {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.636 -0400", hash_original_method = "2D7CF54D0F59DA12C2E5D19C64B23A09", hash_generated_method = "903AA4ED1DF7612A3B2CCBFA21511325")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.636 -0400", hash_original_method = "2D7CF54D0F59DA12C2E5D19C64B23A09", hash_generated_method = "903AA4ED1DF7612A3B2CCBFA21511325")
 	public long maxMemory() {
 		long var0F5264038205EDFB1AC05FBB0E8C5E94_580957644 = getTaintLong();
 		return var0F5264038205EDFB1AC05FBB0E8C5E94_580957644;

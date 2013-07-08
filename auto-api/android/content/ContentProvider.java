@@ -154,6 +154,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
     public abstract boolean onCreate();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.346 -0400", hash_original_method = "8287235C28E9D1E310027A2DDEB95FCD", hash_generated_method = "BA7F1E69C22467D62A959775F321C0BA")
     public void onConfigurationChanged(Configuration newConfig) {
         
@@ -162,6 +163,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.346 -0400", hash_original_method = "4F0E380BE715BF5B2ECCDB1794C8905E", hash_generated_method = "39AEB8790734ECC8DC70BBAAEE0BAB0B")
     public void onLowMemory() {
         
@@ -169,6 +171,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.346 -0400", hash_original_method = "3AE0D4ACEA3D5F3B779A378D5AB27A6A", hash_generated_method = "C1AFC91F30E138BA03233A690A40C0CC")
     public void onTrimMemory(int level) {
         
@@ -217,6 +220,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
             String[] selectionArgs);
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:58.952 -0400", hash_original_method = "DCC5B23EAE3536B2EEFB8F5A1AA89B13", hash_generated_method = "F0E385AF3A2C7AAC1B33594FE9D3AABB")
     public ParcelFileDescriptor openFile(Uri uri, String mode) throws FileNotFoundException {
     	throw new FileNotFoundException("No files supported by provider at "
@@ -227,6 +231,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.349 -0400", hash_original_method = "58BEA9E66A4FD3FC19246F4A2CA5B928", hash_generated_method = "E2FE7B71DF893DFBE2E8AB984768A07D")
     public AssetFileDescriptor openAssetFile(Uri uri, String mode) throws FileNotFoundException {
         AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1546008861 = null; 
@@ -277,6 +282,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.351 -0400", hash_original_method = "BEF8B956D915C9CD914319D11D9F55DF", hash_generated_method = "3D7B6A8418C227F424DED7514949ADD0")
     public String[] getStreamTypes(Uri uri, String mimeTypeFilter) {
         String[] varB4EAC82CA7396A68D541C85D26508E83_1523772123 = null; 
@@ -290,6 +296,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.352 -0400", hash_original_method = "4E83B7632E2F0C6C101685B3A453F6C7", hash_generated_method = "56D0C056D21B4FD4910A9FFFDF9970DB")
     public AssetFileDescriptor openTypedAssetFile(Uri uri, String mimeTypeFilter, Bundle opts) throws FileNotFoundException {
         AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_495536272 = null; 
@@ -374,6 +381,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.353 -0400", hash_original_method = "5727E4CF3A64759CEEBA62DE047537C3", hash_generated_method = "C04B76D530B22E25019680A9EE63C6F8")
     protected boolean isTemporary() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1698133992 = getTaintBoolean();
@@ -383,6 +391,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.355 -0400", hash_original_method = "883A061900350051FBA62F6F6FD9E085", hash_generated_method = "E46DBFD2C7C44B521F77AEDFF13AFFBB")
     public IContentProvider getIContentProvider() {
         IContentProvider varB4EAC82CA7396A68D541C85D26508E83_1316038692 = null; 
@@ -449,6 +458,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.358 -0400", hash_original_method = "FDEF25FCA992321C96D9ED3D525FD124", hash_generated_method = "0A0BAD4C2A21828DF7A35865E49257E9")
     public Bundle call(String method, String arg, Bundle extras) {
         Bundle varB4EAC82CA7396A68D541C85D26508E83_1918143643 = null; 

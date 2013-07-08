@@ -51,6 +51,7 @@ public final class HprofData {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.055 -0400", hash_original_method = "CC766E32F9FC42071F3CC3CB88E9A18A", hash_generated_method = "B248CB0816DADB76F203C2C590FE73D3")
     public long getStartMillis() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_2029881342 = getTaintLong();
@@ -60,6 +61,7 @@ public final class HprofData {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.056 -0400", hash_original_method = "B0BB2E1F2492EC486CB4460593218E46", hash_generated_method = "32E114486602338DC0FFC6C493371EE3")
     public void setStartMillis(long startMillis) {
         this.startMillis = startMillis;
@@ -68,6 +70,7 @@ public final class HprofData {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.056 -0400", hash_original_method = "292C3EF40E00AFB28AC60AF92A04DB70", hash_generated_method = "F9436BA22E30B07472BA6D81605FFF53")
     public int getFlags() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1985953678 = getTaintInt();
@@ -77,6 +80,7 @@ public final class HprofData {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.056 -0400", hash_original_method = "E55E0ED6FE66EB0D458BFDED224C9943", hash_generated_method = "F61A3B65ECD9BA445206989DF2EF1A1F")
     public void setFlags(int flags) {
         this.flags = flags;
@@ -85,6 +89,7 @@ public final class HprofData {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.056 -0400", hash_original_method = "FBD5046615AAE9EDCC3CA2ADE86A92C3", hash_generated_method = "263F311861B7D4AC8A2823F1BF5D2F83")
     public int getDepth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1448025043 = getTaintInt();
@@ -94,6 +99,7 @@ public final class HprofData {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.056 -0400", hash_original_method = "7E87B9040AF172D5ADB37F7AF7F75CA6", hash_generated_method = "FFC7D812D0FFB494BA967C34F7E21CCC")
     public void setDepth(int depth) {
         this.depth = depth;
@@ -147,6 +153,7 @@ public final class HprofData {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.065 -0400", hash_original_method = "3644EE7A7CD6AEAD3C58A3E47BD5EAC7", hash_generated_method = "338819FD6CEB162E08D2114A3EF1A10A")
     public void addThreadEvent(ThreadEvent event) {
         {
@@ -172,6 +179,7 @@ public final class HprofData {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.065 -0400", hash_original_method = "ED310F254F72ACCB3181D18F31C09E67", hash_generated_method = "70CB2C60B267D45FE0CED6A9C85EF762")
     public void addStackTrace(StackTrace stackTrace, int[] countCell) {
         {

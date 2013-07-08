@@ -112,6 +112,7 @@ public class SyncStats implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.331 -0400", hash_original_method = "1DD335886100A2D5B4563E7A7FCB1E25", hash_generated_method = "93AA46C01012055B3F5E59B0B8F94448")
     public void clear() {
         numAuthExceptions = 0;
@@ -136,6 +137,7 @@ public class SyncStats implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.331 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "4E475650F05690BCE98D0546E2E6956E")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1848896576 = getTaintInt();

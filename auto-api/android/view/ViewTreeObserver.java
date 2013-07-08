@@ -291,6 +291,7 @@ public final class ViewTreeObserver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.628 -0400", hash_original_method = "8E102E0046F857D94D6EB92859BCA09E", hash_generated_method = "153CE4BC57F12ACF1400F11519E5EF82")
     public boolean isAlive() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1689986747 = getTaintBoolean();
@@ -300,6 +301,7 @@ public final class ViewTreeObserver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.628 -0400", hash_original_method = "CE15D88AAF79A195F4E8949632256817", hash_generated_method = "ADAC88CFF01E50F749BE8EE5F2A18844")
     private void kill() {
         mAlive = false;

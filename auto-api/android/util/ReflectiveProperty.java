@@ -216,6 +216,7 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.552 -0400", hash_original_method = "176D77E232A76459A0F514B7F2AA65DB", hash_generated_method = "70471920EF9581BA3FA23E2761761D47")
     @Override
     public boolean isReadOnly() {

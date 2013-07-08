@@ -335,6 +335,7 @@ class DatabaseConnectionPool {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.103 -0400", hash_original_method = "96488BAB5A39A9E992D6669775E5CBE2", hash_generated_method = "9D4509CE641891DA5CEC26B706A255AF")
     synchronized void setMaxPoolSize(int size) {
         mMaxPoolSize = size;
@@ -343,6 +344,7 @@ class DatabaseConnectionPool {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.104 -0400", hash_original_method = "A46AC3F11215B4A1E1FF85A064F0CFC1", hash_generated_method = "64235ACF38F33318115E0FF2252289E4")
     synchronized int getMaxPoolSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1367700038 = getTaintInt();

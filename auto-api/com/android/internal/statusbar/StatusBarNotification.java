@@ -140,6 +140,7 @@ public class StatusBarNotification implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.116 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "FCF9106A2E5AB643F4865F99ABAC0BA4")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_772586733 = getTaintInt();
@@ -175,6 +176,7 @@ public class StatusBarNotification implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.117 -0400", hash_original_method = "7CE63774DFBFD9AF881A293653A5D73C", hash_generated_method = "B5E7A7BE46ECECD2241421761E7A40F4")
     public boolean isOngoing() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_200917353 = getTaintBoolean();
@@ -184,6 +186,7 @@ public class StatusBarNotification implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.117 -0400", hash_original_method = "BD2B0089B2847866F80D96044B172188", hash_generated_method = "3730FBDCB844EFB1CCEDF2AD09913945")
     public boolean isClearable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1845960862 = getTaintBoolean();

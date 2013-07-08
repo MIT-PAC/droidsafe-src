@@ -68,6 +68,7 @@ public class PBES2Parameters extends ASN1Encodable implements PKCSObjectIdentifi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.079 -0400", hash_original_method = "EA8CB9021471F89DCA3D4DA5F755F4FC", hash_generated_method = "BC3E93C0E257E918D262EEDB6FDAC512")
     public KeyDerivationFunc getKeyDerivationFunc() {
         KeyDerivationFunc varB4EAC82CA7396A68D541C85D26508E83_211277582 = null; 
@@ -79,6 +80,7 @@ public class PBES2Parameters extends ASN1Encodable implements PKCSObjectIdentifi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.079 -0400", hash_original_method = "9053FDAC6FE0628F4B096189E8DDF584", hash_generated_method = "6E515C5818E3560A039FEE028201DD26")
     public EncryptionScheme getEncryptionScheme() {
         EncryptionScheme varB4EAC82CA7396A68D541C85D26508E83_572772758 = null; 

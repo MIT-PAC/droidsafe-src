@@ -47,7 +47,8 @@ public class SensorManager {
                     {
                         sRotation = sWindowManager.watchRotation(
                                 new IRotationWatcher.Stub() {                            
-                            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.004 -0400", hash_original_method = "BE005D6720C412EC6EF9D753DC3A6572", hash_generated_method = "ABD597AB6D97EA2FD083DF4550868008")
+                            @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.004 -0400", hash_original_method = "BE005D6720C412EC6EF9D753DC3A6572", hash_generated_method = "ABD597AB6D97EA2FD083DF4550868008")
                             public void onRotationChanged(int rotation) {
                                 
                                 SensorManager.this.onRotationChanged(rotation);
@@ -82,6 +83,7 @@ public class SensorManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.005 -0400", hash_original_method = "F97F3FCBB2B92661C96383BC3925201E", hash_generated_method = "BACB0928271E673135B619DC3F5E4CD4")
     private int getLegacySensorType(int type) {
         addTaint(type);
@@ -775,7 +777,8 @@ public class SensorManager {
     }
 
     
-        private static boolean remapCoordinateSystemImpl(float[] inR, int X, int Y,
+        @DSModeled(DSC.SAFE)
+    private static boolean remapCoordinateSystemImpl(float[] inR, int X, int Y,
             float[] outR) {
         final int length = outR.length;
         if (inR.length != length)
@@ -836,6 +839,7 @@ public class SensorManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.076 -0400", hash_original_method = "E0193DACD15BA8C3AC5F2C441048790B", hash_generated_method = "F45DE39634447C543023CA82667F0611")
     public void onRotationChanged(int rotation) {
         
@@ -850,7 +854,8 @@ public class SensorManager {
     }
 
     
-        static int getRotation() {
+        @DSModeled(DSC.SAFE)
+    static int getRotation() {
         synchronized(sListeners) {
             return sRotation;
         }
@@ -980,39 +985,46 @@ public class SensorManager {
     }
 
     
-        private static void nativeClassInit() {
+        @DSModeled(DSC.SAFE)
+    private static void nativeClassInit() {
     }
 
     
-        private static int sensors_module_init() {
+        @DSModeled(DSC.SAFE)
+    private static int sensors_module_init() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_289465153 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_289465153;
     }
 
     
-        private static int sensors_module_get_next_sensor(Sensor sensor, int next) {
+        @DSModeled(DSC.SAFE)
+    private static int sensors_module_get_next_sensor(Sensor sensor, int next) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_887780932 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_887780932;
     }
 
     
-        static int sensors_create_queue() {
+        @DSModeled(DSC.SAFE)
+    static int sensors_create_queue() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_801185530 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_801185530;
     }
 
     
-        static void sensors_destroy_queue(int queue) {
+        @DSModeled(DSC.SAFE)
+    static void sensors_destroy_queue(int queue) {
     }
 
     
-        static boolean sensors_enable_sensor(int queue, String name, int sensor, int enable) {
+        @DSModeled(DSC.SAFE)
+    static boolean sensors_enable_sensor(int queue, String name, int sensor, int enable) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1987149488 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1987149488;
     }
 
     
-        static int sensors_data_poll(int queue, float[] values, int[] status, long[] timestamp) {
+        @DSModeled(DSC.SAFE)
+    static int sensors_data_poll(int queue, float[] values, int[] status, long[] timestamp) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_378875873 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_378875873;
     }

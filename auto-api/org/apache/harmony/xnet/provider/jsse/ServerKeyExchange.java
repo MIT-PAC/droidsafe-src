@@ -215,6 +215,7 @@ public class ServerKeyExchange extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.295 -0400", hash_original_method = "620B9D3699DFA1CCAA0EB56AC40BC192", hash_generated_method = "31BDCE4F5B019062403DE99BEEBBEC44")
     @Override
     public int getType() {

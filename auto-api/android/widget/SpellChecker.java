@@ -145,6 +145,7 @@ public class SpellChecker implements SpellCheckerSessionListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.925 -0400", hash_original_method = "7E55E284FCAD6408034DF45536DFE0B3", hash_generated_method = "1CCC94473E2ABB1800494E7FC2DDBCF6")
     private boolean isSessionActive() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1410476229 = getTaintBoolean();

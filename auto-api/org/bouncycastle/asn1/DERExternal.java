@@ -215,6 +215,7 @@ public class DERExternal extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.392 -0400", hash_original_method = "0B6DEA5056C96F68CB576A145B8163A4", hash_generated_method = "B231E932EADD437262323431B297E399")
     public ASN1Object getDataValueDescriptor() {
         ASN1Object varB4EAC82CA7396A68D541C85D26508E83_1867621641 = null; 
@@ -226,6 +227,7 @@ public class DERExternal extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.393 -0400", hash_original_method = "5D19E791BF0146D74AAC703832ECF7B9", hash_generated_method = "C8F8C3AC0E1A7F69CA513CD343BD0BC9")
     public DERObjectIdentifier getDirectReference() {
         DERObjectIdentifier varB4EAC82CA7396A68D541C85D26508E83_1635898131 = null; 
@@ -237,6 +239,7 @@ public class DERExternal extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.393 -0400", hash_original_method = "20B2CEB64A03B59C5CB213FEC1AC33C9", hash_generated_method = "0863BCCB3F3F0C20C13B965C3DA08E0C")
     public int getEncoding() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_210532877 = getTaintInt();
@@ -246,6 +249,7 @@ public class DERExternal extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.393 -0400", hash_original_method = "A31A01A5BEAE5C1C675F68CA7DEBC312", hash_generated_method = "AF6DD04876827872533D5EF14EF4DEC6")
     public DERObject getExternalContent() {
         DERObject varB4EAC82CA7396A68D541C85D26508E83_2115159930 = null; 
@@ -257,6 +261,7 @@ public class DERExternal extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.394 -0400", hash_original_method = "A48170CD86EA456F3F5BDA9638D90BB1", hash_generated_method = "7465C112A8445520ECBDA054BBEF2E2C")
     public DERInteger getIndirectReference() {
         DERInteger varB4EAC82CA7396A68D541C85D26508E83_483949882 = null; 
@@ -268,6 +273,7 @@ public class DERExternal extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.394 -0400", hash_original_method = "0BD65C140FCC2077661040D20B226912", hash_generated_method = "EF6BD976ABD259EA66BA89BDDB768754")
     private void setDataValueDescriptor(ASN1Object dataValueDescriptor) {
         this.dataValueDescriptor = dataValueDescriptor;
@@ -276,6 +282,7 @@ public class DERExternal extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.394 -0400", hash_original_method = "A83523D5E22547A02A231238C93C9842", hash_generated_method = "D6AD4C337C3FD3A0AD5109A0D5A2ACE9")
     private void setDirectReference(DERObjectIdentifier directReferemce) {
         this.directReference = directReferemce;
@@ -300,6 +307,7 @@ public class DERExternal extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.395 -0400", hash_original_method = "DE6F2795286824746E38E92F0B41BA33", hash_generated_method = "24CEF734212704228B883286898B188C")
     private void setExternalContent(DERObject externalContent) {
         this.externalContent = externalContent;
@@ -308,6 +316,7 @@ public class DERExternal extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.395 -0400", hash_original_method = "0014F60DB99B68C720B34F07B78773E4", hash_generated_method = "D2EB81AEFDE4F6F36CC34563A6AD7814")
     private void setIndirectReference(DERInteger indirectReference) {
         this.indirectReference = indirectReference;

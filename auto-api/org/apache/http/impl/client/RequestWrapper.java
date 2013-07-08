@@ -79,6 +79,7 @@ public class RequestWrapper extends AbstractHttpMessage implements HttpUriReques
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.306 -0400", hash_original_method = "691C5451C67574E660997BC2056A5F23", hash_generated_method = "7CBA8F4D19B3D2A18E009F668A70BA1A")
     public String getMethod() {
         String varB4EAC82CA7396A68D541C85D26508E83_2116675433 = null; 
@@ -143,6 +144,7 @@ public class RequestWrapper extends AbstractHttpMessage implements HttpUriReques
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.307 -0400", hash_original_method = "548D933490D1B58733888D02043A11B0", hash_generated_method = "207BF2DC154F37062DD7C3F515596E8A")
     public URI getURI() {
         URI varB4EAC82CA7396A68D541C85D26508E83_1088942744 = null; 
@@ -204,6 +206,7 @@ public class RequestWrapper extends AbstractHttpMessage implements HttpUriReques
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.309 -0400", hash_original_method = "BBFC2C7FEB496FD80D74781CCFD675B2", hash_generated_method = "26DF462B8375BAE21C5A9F4BDFE55B4E")
     public boolean isAborted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_156811600 = getTaintBoolean();
@@ -213,6 +216,7 @@ public class RequestWrapper extends AbstractHttpMessage implements HttpUriReques
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.310 -0400", hash_original_method = "031DFDACC38ED516BF6F8D68C4847FFF", hash_generated_method = "342DDF68DCCB01385E17F869940879F3")
     public HttpRequest getOriginal() {
         HttpRequest varB4EAC82CA7396A68D541C85D26508E83_1346486267 = null; 
@@ -224,6 +228,7 @@ public class RequestWrapper extends AbstractHttpMessage implements HttpUriReques
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.311 -0400", hash_original_method = "8850B92ED3324DB77471CF2A1052D726", hash_generated_method = "EAB0570588564E3678B7E0BBF26BDF46")
     public boolean isRepeatable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1173951225 = getTaintBoolean();
@@ -233,6 +238,7 @@ public class RequestWrapper extends AbstractHttpMessage implements HttpUriReques
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.311 -0400", hash_original_method = "CF6A18341EACE9B23200B44E9109C775", hash_generated_method = "524FA8BBB271D372C7AF943A52B56CC5")
     public int getExecCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1584329510 = getTaintInt();
@@ -242,6 +248,7 @@ public class RequestWrapper extends AbstractHttpMessage implements HttpUriReques
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.311 -0400", hash_original_method = "D2EB72E1336F92B73CC51A8B455EFCB5", hash_generated_method = "00D1090628F63367D0D79A7A5FB5C0A3")
     public void incrementExecCount() {
         

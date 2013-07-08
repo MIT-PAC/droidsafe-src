@@ -139,6 +139,7 @@ public final class NfcAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.135 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "8317E53C1FE64B5134D77D6B25F84FD4")
     public Context getContext() {
         Context varB4EAC82CA7396A68D541C85D26508E83_232971793 = null; 

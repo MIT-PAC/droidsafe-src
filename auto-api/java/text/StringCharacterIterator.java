@@ -153,6 +153,7 @@ public final class StringCharacterIterator implements CharacterIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.298 -0400", hash_original_method = "C91A51EED2BDD0863CA60178FB31B7F7", hash_generated_method = "D30A9E5F7E4516EF1B995E195011038A")
     public int getBeginIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1271241892 = getTaintInt();
@@ -162,6 +163,7 @@ public final class StringCharacterIterator implements CharacterIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.299 -0400", hash_original_method = "2693C2AA223CB37D0504CD257C6327BC", hash_generated_method = "E6ACFE3E5C08ED98E0DC0BCF5870FF1A")
     public int getEndIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_293415067 = getTaintInt();
@@ -171,6 +173,7 @@ public final class StringCharacterIterator implements CharacterIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.299 -0400", hash_original_method = "0952456464DB8DF9DBB7507E3C2ED53C", hash_generated_method = "05EA21AE47A6A5FC7D483102FA72BB54")
     public int getIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1295273262 = getTaintInt();

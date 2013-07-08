@@ -23,14 +23,17 @@ public class PixelFormat {
     }
 
 
+    @DSModeled(DSC.SAFE)
     private static void nativeClassInit() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void getPixelFormatInfo(int format, PixelFormat info) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean formatHasAlpha(int format) {
         switch (format) {
             case PixelFormat.A_8:

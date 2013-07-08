@@ -16,86 +16,103 @@ public class Modifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int classModifiers() {
         return PUBLIC | PROTECTED | PRIVATE | ABSTRACT | STATIC | FINAL | STRICT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int constructorModifiers() {
         return PUBLIC | PROTECTED | PRIVATE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int fieldModifiers() {
         return PUBLIC | PROTECTED | PRIVATE | STATIC | FINAL | TRANSIENT | VOLATILE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int interfaceModifiers() {
         return PUBLIC | PROTECTED | PRIVATE | ABSTRACT | STATIC | STRICT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int methodModifiers() {
         return PUBLIC | PROTECTED | PRIVATE | ABSTRACT | STATIC | FINAL | SYNCHRONIZED | NATIVE | STRICT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isAbstract(int modifiers) {
         return ((modifiers & ABSTRACT) != 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isFinal(int modifiers) {
         return ((modifiers & FINAL) != 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isInterface(int modifiers) {
         return ((modifiers & INTERFACE) != 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isNative(int modifiers) {
         return ((modifiers & NATIVE) != 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isPrivate(int modifiers) {
         return ((modifiers & PRIVATE) != 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isProtected(int modifiers) {
         return ((modifiers & PROTECTED) != 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isPublic(int modifiers) {
         return ((modifiers & PUBLIC) != 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isStatic(int modifiers) {
         return ((modifiers & STATIC) != 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isStrict(int modifiers) {
         return ((modifiers & STRICT) != 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isSynchronized(int modifiers) {
         return ((modifiers & SYNCHRONIZED) != 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isTransient(int modifiers) {
         return ((modifiers & TRANSIENT) != 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isVolatile(int modifiers) {
         return ((modifiers & VOLATILE) != 0);
     }

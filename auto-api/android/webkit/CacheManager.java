@@ -72,6 +72,7 @@ public final class CacheManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static File getCacheFileBaseDir() {
         return mBaseDir;
@@ -91,6 +92,7 @@ public final class CacheManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static boolean cacheDisabled() {
         return mDisabled;
@@ -138,12 +140,14 @@ public final class CacheManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static boolean startCacheTransaction() {
         return false;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static boolean endCacheTransaction() {
         return false;
@@ -393,6 +397,7 @@ public final class CacheManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean isCachableRedirect(int statusCode) {
         if (statusCode == 301 || statusCode == 302 || statusCode == 307) {
             return true;
@@ -600,6 +605,7 @@ public final class CacheManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static CacheResult nativeGetCacheResult(String url) {
     	CacheResult ret = new CacheResult();
     	ret.taint.addTaint(url.taint);

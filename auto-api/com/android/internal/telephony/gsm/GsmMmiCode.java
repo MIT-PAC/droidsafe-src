@@ -252,6 +252,7 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.327 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "3A4A5397EDADC8AB93C0DBF42D244541")
     public State getState() {
         State varB4EAC82CA7396A68D541C85D26508E83_280571811 = null; 
@@ -263,6 +264,7 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.328 -0400", hash_original_method = "570FEAA437E41D0252DA00ACF07950A0", hash_generated_method = "C2BAC143CB326917BA7450A9135B6E32")
     public CharSequence getMessage() {
         CharSequence varB4EAC82CA7396A68D541C85D26508E83_1994533820 = null; 
@@ -297,6 +299,7 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.330 -0400", hash_original_method = "248235E8DF3E05BA5583B3AF86C41C77", hash_generated_method = "9FFDDB23492F7408CE2A882FB265C7E8")
     public boolean isCancelable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1470174279 = getTaintBoolean();
@@ -306,6 +309,7 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.330 -0400", hash_original_method = "C3EFABB6ACCE73BCC8BAFC802C5DCA3C", hash_generated_method = "F7D7899B4CBAEC49B78B7217F1DE3B28")
      boolean isMMI() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2087834489 = getTaintBoolean();
@@ -482,6 +486,7 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.333 -0400", hash_original_method = "18A8B0A5C57D2FDE667C353F321E4EE3", hash_generated_method = "0710A6DB87B4A791B823921F8A9D4B65")
     public boolean isPendingUSSD() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_353892404 = getTaintBoolean();
@@ -491,6 +496,7 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.334 -0400", hash_original_method = "29AF801768BF493864C8071B1DB2A48B", hash_generated_method = "CC71A1522F361C33A2246A5BCBE7CCDB")
     public boolean isUssdRequest() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1321798400 = getTaintBoolean();

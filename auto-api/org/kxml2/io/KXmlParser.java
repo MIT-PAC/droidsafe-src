@@ -138,6 +138,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.570 -0400", hash_original_method = "A527DEDBB8977F1D947B829D15DAACC5", hash_generated_method = "1634D7B912087B274B9C21F12413F3E3")
     public void keepNamespaceAttributes() {
         this.keepNamespaceAttributes = true;
@@ -1627,6 +1628,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.625 -0400", hash_original_method = "46D251D7075E8F175BB5AD72794934F4", hash_generated_method = "4C430773194920E5CA624BD915A0A8AA")
     public void setInput(Reader reader) throws XmlPullParserException {
         this.reader = reader;
@@ -1841,6 +1843,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.627 -0400", hash_original_method = "A279F06C875438B49B8D4A1047D2C8F6", hash_generated_method = "5E9504F4C2A8643BEF3882A8752A78C8")
     public String getInputEncoding() {
         String varB4EAC82CA7396A68D541C85D26508E83_873967183 = null; 
@@ -1944,6 +1947,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.647 -0400", hash_original_method = "9C3E6BF1FDA5FCF82C61137F91620CE9", hash_generated_method = "F134E496552B614A972C87617CDC2148")
     public String getRootElementName() {
         String varB4EAC82CA7396A68D541C85D26508E83_692600536 = null; 
@@ -1955,6 +1959,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.648 -0400", hash_original_method = "8088708D8DEEE6054468B7FD77400E50", hash_generated_method = "B175E38C7FE4C56364B2AA91FE8873AB")
     public String getSystemId() {
         String varB4EAC82CA7396A68D541C85D26508E83_518818713 = null; 
@@ -1966,6 +1971,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.648 -0400", hash_original_method = "C19BBE926A67132A1C6BC386100A3E69", hash_generated_method = "3CAC1ACD58DCE81553A10F819D01A1F8")
     public String getPublicId() {
         String varB4EAC82CA7396A68D541C85D26508E83_1388515415 = null; 
@@ -1994,6 +2000,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.649 -0400", hash_original_method = "DA805E6BD1FA77EA77FFD933A59A1A79", hash_generated_method = "19281228EB017388D91D4A5CD1AB2E75")
     public String getNamespacePrefix(int pos) {
         String varB4EAC82CA7396A68D541C85D26508E83_368859048 = null; 
@@ -2006,6 +2013,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.650 -0400", hash_original_method = "BEA3C6D36DAA76218F10B33482B7D86B", hash_generated_method = "74E47DFBD30E244519DBC86737CAD1EC")
     public String getNamespaceUri(int pos) {
         String varB4EAC82CA7396A68D541C85D26508E83_577257655 = null; 
@@ -2097,6 +2105,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.651 -0400", hash_original_method = "FBD5046615AAE9EDCC3CA2ADE86A92C3", hash_generated_method = "62DC1984DE85DFA2C7552B3EE6AA3C42")
     public int getDepth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1096995044 = getTaintInt();
@@ -2174,6 +2183,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.652 -0400", hash_original_method = "114340E3BA1FFC2D8A54D30C75AB06FF", hash_generated_method = "430115A31AA8EA70F2241DA84DCB8C1B")
     public int getLineNumber() {
         int result = bufferStartLine;
@@ -2193,6 +2203,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.653 -0400", hash_original_method = "C138C40AD0ECD6D56D342D21687BD452", hash_generated_method = "03C726AD52DFFC6732370759A3E6E7EC")
     public int getColumnNumber() {
         int result = bufferStartColumn;
@@ -2235,6 +2246,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.654 -0400", hash_original_method = "96BD4C193A5C47E4BA7EA81CE7C395CC", hash_generated_method = "C9DEAD4D80F076B73329F01B0091306B")
     public String getText() {
         String varB4EAC82CA7396A68D541C85D26508E83_1994209001 = null; 
@@ -2302,6 +2314,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.655 -0400", hash_original_method = "A99E1DDB500E37E7767EA602F963D96D", hash_generated_method = "859322EEDF0A508C20962CEE839E94BB")
     public String getNamespace() {
         String varB4EAC82CA7396A68D541C85D26508E83_375595497 = null; 
@@ -2313,6 +2326,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.655 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "1F3247989C26D0BDF921317C3CC0EBF2")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1959632986 = null; 
@@ -2324,6 +2338,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.655 -0400", hash_original_method = "FA5CE5A0FCC0C736D9446FFEBD0CAB9D", hash_generated_method = "6FC70EFA72859F95BE4B327C6522DF7A")
     public String getPrefix() {
         String varB4EAC82CA7396A68D541C85D26508E83_12069969 = null; 
@@ -2351,6 +2366,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.656 -0400", hash_original_method = "E7902A71CF05159AEACA5707956D2FB0", hash_generated_method = "6A9FCE80A806BD91FB71B4B63756C8B8")
     public int getAttributeCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_980137345 = getTaintInt();
@@ -2360,6 +2376,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.656 -0400", hash_original_method = "D075B222334138AA51A395211AD5E8BA", hash_generated_method = "2F870EA8A35ECA2293D878EE9A8004C7")
     public String getAttributeType(int index) {
         String varB4EAC82CA7396A68D541C85D26508E83_1655990737 = null; 
@@ -2372,6 +2389,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.657 -0400", hash_original_method = "506EE66AC609639C08948796E644B012", hash_generated_method = "BA94413737696D24042C35DE0A666FAD")
     public boolean isAttributeDefault(int index) {
         addTaint(index);
@@ -2501,6 +2519,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.660 -0400", hash_original_method = "0457ED08CBFC1348E0AAA3CE0D692605", hash_generated_method = "DE4B2A3512D98AD967BF3BE654B4AC55")
     public int getEventType() throws XmlPullParserException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1209694238 = getTaintInt();

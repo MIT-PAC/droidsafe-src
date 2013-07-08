@@ -29,6 +29,7 @@ public class Movie {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.677 -0400", hash_original_method = "84910C7B35CA680EF9DD8AE9E26E21F9", hash_generated_method = "F9B4078B5EA929F0FA4BAFDD3B6615E3")
     public int width() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1768049638 = getTaintInt();
@@ -36,6 +37,7 @@ public class Movie {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.678 -0400", hash_original_method = "C25EEDFD8D4C31BF8873912BD17554C7", hash_generated_method = "ADD5475DF6A927B12AE30DE612E1C8FF")
     public int height() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_249032603 = getTaintInt();
@@ -43,6 +45,7 @@ public class Movie {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.678 -0400", hash_original_method = "9A759A0D04375324D8F6D99375FF174F", hash_generated_method = "DE23A811B2F5885F87A08BEB2CFF5496")
     public boolean isOpaque() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_867014520 = getTaintBoolean();
@@ -50,6 +53,7 @@ public class Movie {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.679 -0400", hash_original_method = "6FBC32EA70076DE70D25629F42C7072B", hash_generated_method = "DEA7E19112A729BDCB840204767D2E0F")
     public int duration() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1047084327 = getTaintInt();
@@ -57,6 +61,7 @@ public class Movie {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.679 -0400", hash_original_method = "8413562E7FCFCF0CDE16790D77663C90", hash_generated_method = "9FB2AB8913607C54F566C04CB713FEC3")
     public boolean setTime(int relativeMilliseconds) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1831524425 = getTaintBoolean();
@@ -64,6 +69,7 @@ public class Movie {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.679 -0400", hash_original_method = "AB91E3BC6684B90AB29C38A2A4978664", hash_generated_method = "CD037BABBC64DBE1BAE402E06DA63CD9")
     public void draw(Canvas canvas, float x, float y, Paint paint) {
     }
@@ -80,17 +86,20 @@ public class Movie {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Movie decodeStream(InputStream is) {
     	return new Movie(0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Movie decodeByteArray(byte[] data, int offset,
                                                int length) {
     	return new Movie(0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeDestructor(int nativeMovie) {
     }
 

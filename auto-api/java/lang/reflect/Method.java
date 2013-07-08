@@ -158,7 +158,8 @@ public final class Method extends AccessibleObject implements GenericDeclaration
 		
 	}
 
-	static Object[] getSignatureAnnotation(Class declaringClass, int slot) {
+	@DSModeled(DSC.SAFE)
+    static Object[] getSignatureAnnotation(Class declaringClass, int slot) {
 		
 		Object[] ret = new Object[0];
 		ret[0].addTaint(declaringClass.taint);
@@ -356,7 +357,8 @@ public final class Method extends AccessibleObject implements GenericDeclaration
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_770988985;
 	}
 
-	static Annotation[][] noAnnotations(int size) {
+	@DSModeled(DSC.SAFE)
+    static Annotation[][] noAnnotations(int size) {
 		Annotation[][] annotations = new Annotation[size][];
 		for (int i = 0; i < size; i++) {
 			annotations[i] = NO_ANNOTATIONS;
@@ -405,7 +407,8 @@ public final class Method extends AccessibleObject implements GenericDeclaration
 		
 	}
 
-	static Annotation[][] getParameterAnnotations(Class declaringClass, int slot) {
+	@DSModeled(DSC.SAFE)
+    static Annotation[][] getParameterAnnotations(Class declaringClass, int slot) {
 		
 		Annotation[][] ret = new Annotation[0][0];
 		ret[0][0].addTaint(declaringClass.taint);
@@ -463,7 +466,8 @@ public final class Method extends AccessibleObject implements GenericDeclaration
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.884 -0400", hash_original_method = "01EB45D9363E910A54E557C442527E6E", hash_generated_method = "12453DE2F22689947CA412DBF05F783C")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.884 -0400", hash_original_method = "01EB45D9363E910A54E557C442527E6E", hash_generated_method = "12453DE2F22689947CA412DBF05F783C")
 	private Object getDefaultValue(Class declaringClass, int slot) {
 		
 		
@@ -556,7 +560,8 @@ public final class Method extends AccessibleObject implements GenericDeclaration
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1822823721;
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.894 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "7ED74AFABE04512C4B37DD262C064D15")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.894 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "7ED74AFABE04512C4B37DD262C064D15")
 	public String getName() {
 		String varB4EAC82CA7396A68D541C85D26508E83_802056819 = null; 
 																		

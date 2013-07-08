@@ -80,6 +80,7 @@ public class RadialGradient extends Shader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeCreate2(float x, float y, float radius,
             int color0, int color1, int tileMode) {
         return DSUtils.UNKNOWN_INT;
@@ -93,6 +94,7 @@ public class RadialGradient extends Shader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativePostCreate2(int native_shader, float x, float y, float radius,
             int color0, int color1, int tileMode) {
         return DSUtils.UNKNOWN_INT;

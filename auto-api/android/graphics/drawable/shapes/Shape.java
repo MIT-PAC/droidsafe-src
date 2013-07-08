@@ -74,6 +74,7 @@ public abstract class Shape implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.697 -0400", hash_original_method = "E1C0EB5C360EF4564AFB59E1743F2057", hash_generated_method = "B57568F66A072FE113CF0D0A5B09AF36")
     public boolean hasAlpha() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2058178441 = getTaintBoolean();
@@ -83,6 +84,7 @@ public abstract class Shape implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.698 -0400", hash_original_method = "BE42972290D2C4FCDE54C91B730EEF2B", hash_generated_method = "64CCA2E80A449DC56DE13C39CAADC48D")
     protected void onResize(float width, float height) {
         

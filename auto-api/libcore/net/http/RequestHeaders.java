@@ -210,6 +210,7 @@ public final class RequestHeaders {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.438 -0400", hash_original_method = "F8E205165DB0FFA5BCD89362DFA95E13", hash_generated_method = "2C11375D97D5EB96394DD5CACC42B08C")
     public URI getUri() {
         URI varB4EAC82CA7396A68D541C85D26508E83_725914374 = null; 
@@ -221,6 +222,7 @@ public final class RequestHeaders {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.438 -0400", hash_original_method = "8B8008667EA7E940C84B2A1E4AADF211", hash_generated_method = "940C09754066C95BF2C1862E5EC74D67")
     public RawHeaders getHeaders() {
         RawHeaders varB4EAC82CA7396A68D541C85D26508E83_521810279 = null; 
@@ -232,6 +234,7 @@ public final class RequestHeaders {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.439 -0400", hash_original_method = "6FC1CEF1DCDA63846245A172D489494E", hash_generated_method = "2893960F8F4168C6D48B26F61FB58A24")
     public boolean isNoCache() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2008430153 = getTaintBoolean();
@@ -241,6 +244,7 @@ public final class RequestHeaders {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.439 -0400", hash_original_method = "A8F2E8C976B81B2FCD2E37C57E26B8BC", hash_generated_method = "8094BC17093CF180FD3EA2EFBFF82FA4")
     public int getMaxAgeSeconds() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1328194788 = getTaintInt();
@@ -250,6 +254,7 @@ public final class RequestHeaders {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.439 -0400", hash_original_method = "1283AA8CCC67672D62DEF88994766C86", hash_generated_method = "B9FD6B2C45AE1A3BF04D71107156129D")
     public int getMaxStaleSeconds() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1564752840 = getTaintInt();
@@ -259,6 +264,7 @@ public final class RequestHeaders {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.439 -0400", hash_original_method = "4A1D928FA98CACC97BCF438ADC331E21", hash_generated_method = "11E5DBEE893491EC481012AA3F81D0D2")
     public int getMinFreshSeconds() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1152278322 = getTaintInt();
@@ -268,6 +274,7 @@ public final class RequestHeaders {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.439 -0400", hash_original_method = "C7564B78FAA65700183F7B25F17E4F9C", hash_generated_method = "0DC3FBBCC84CECBF16E9B9B49F2570D7")
     public boolean isOnlyIfCached() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_725286792 = getTaintBoolean();
@@ -277,6 +284,7 @@ public final class RequestHeaders {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.440 -0400", hash_original_method = "C62515C32B43542C8AED5B07CDF87144", hash_generated_method = "B6B59B1585FAD8BB445871A5998B8AC9")
     public boolean hasAuthorization() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1462598522 = getTaintBoolean();
@@ -286,6 +294,7 @@ public final class RequestHeaders {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.440 -0400", hash_original_method = "1B52BDD2BF1D0E488CD60B58C0023743", hash_generated_method = "00634F254C60EDAE3E5A426985EDD1D9")
     public int getContentLength() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_623193279 = getTaintInt();
@@ -295,6 +304,7 @@ public final class RequestHeaders {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.440 -0400", hash_original_method = "0DD6BAEEA01532BD95CE2FFB6DF498BA", hash_generated_method = "D2392E7D1C095315C501C642CB35A81B")
     public String getTransferEncoding() {
         String varB4EAC82CA7396A68D541C85D26508E83_1353535265 = null; 
@@ -306,6 +316,7 @@ public final class RequestHeaders {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.441 -0400", hash_original_method = "3896A2F0D61044E6B048D62FF1831396", hash_generated_method = "625E2F8A8BCC668584F8526D6B1FB8FB")
     public String getUserAgent() {
         String varB4EAC82CA7396A68D541C85D26508E83_2070057606 = null; 
@@ -317,6 +328,7 @@ public final class RequestHeaders {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.441 -0400", hash_original_method = "2F2AEDD17A97DC05E80343AAC323BA28", hash_generated_method = "46EC712BD51E25884DC46AC2F482415E")
     public String getHost() {
         String varB4EAC82CA7396A68D541C85D26508E83_2108948998 = null; 
@@ -328,6 +340,7 @@ public final class RequestHeaders {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.441 -0400", hash_original_method = "B2D78684E046945E6BE853B24B15E901", hash_generated_method = "6DA1950CA8C3F77FDC10990A2C5E85AC")
     public String getConnection() {
         String varB4EAC82CA7396A68D541C85D26508E83_1569884002 = null; 
@@ -339,6 +352,7 @@ public final class RequestHeaders {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.442 -0400", hash_original_method = "410EE1417DB3FF49910D59AA9DB70C64", hash_generated_method = "0ECC28F3E557E35922B596E6F58AD624")
     public String getAcceptEncoding() {
         String varB4EAC82CA7396A68D541C85D26508E83_1007658196 = null; 
@@ -350,6 +364,7 @@ public final class RequestHeaders {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.442 -0400", hash_original_method = "4B51DEA5FB62A221AFC62E38AC96F76E", hash_generated_method = "607AF8004B58A048DC75455E3728992A")
     public String getContentType() {
         String varB4EAC82CA7396A68D541C85D26508E83_828150506 = null; 
@@ -361,6 +376,7 @@ public final class RequestHeaders {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.442 -0400", hash_original_method = "1155C704429D96DA13DD63BD82AA2AE1", hash_generated_method = "A67FD134CADCB76AB6B9B72921A6AFC1")
     public String getIfModifiedSince() {
         String varB4EAC82CA7396A68D541C85D26508E83_971054939 = null; 
@@ -372,6 +388,7 @@ public final class RequestHeaders {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.442 -0400", hash_original_method = "94547B6348D449CB198230E7B6BBA258", hash_generated_method = "54A69F87D9057CCFAA7628843445B583")
     public String getIfNoneMatch() {
         String varB4EAC82CA7396A68D541C85D26508E83_306879084 = null; 
@@ -383,6 +400,7 @@ public final class RequestHeaders {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.443 -0400", hash_original_method = "0FC6BE3D1567DA200B4FD09DB67F8721", hash_generated_method = "B8F2C636C2CD540E3567A1C3E299C361")
     public String getProxyAuthorization() {
         String varB4EAC82CA7396A68D541C85D26508E83_1791441391 = null; 
@@ -550,6 +568,7 @@ public final class RequestHeaders {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.445 -0400", hash_original_method = "9FAB8376A6C98C10EDB080B222142712", hash_generated_method = "71C9DB9D701693A3519B0B7138BC3808")
     public boolean hasConditions() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_987012143 = getTaintBoolean();

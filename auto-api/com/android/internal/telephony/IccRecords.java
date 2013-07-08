@@ -82,6 +82,7 @@ public abstract class IccRecords extends Handler implements IccConstants {
     protected abstract void onRadioOffOrNotAvailable();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.014 -0400", hash_original_method = "6A785FD128F813B36570564C326DA1E7", hash_generated_method = "C75767526D5B62D6DA36A94919C5A916")
     public AdnRecordCache getAdnCache() {
         AdnRecordCache varB4EAC82CA7396A68D541C85D26508E83_1014692916 = null; 
@@ -122,6 +123,7 @@ public abstract class IccRecords extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.016 -0400", hash_original_method = "2D99B4210681FA66696D3EA5B94D1A66", hash_generated_method = "5303C9AE31661E18E8D1A819A612DF80")
     public String getIMSI() {
         String varB4EAC82CA7396A68D541C85D26508E83_1708815147 = null; 
@@ -133,6 +135,7 @@ public abstract class IccRecords extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.018 -0400", hash_original_method = "9D42E73ED1AA846035EF94EBFAAEA8F6", hash_generated_method = "B09E007EA4AB472156512860918C7B2D")
     public String getMsisdnNumber() {
         String varB4EAC82CA7396A68D541C85D26508E83_1703792677 = null; 
@@ -164,6 +167,7 @@ public abstract class IccRecords extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.020 -0400", hash_original_method = "E32EFED28CC433860D178485CFB4EEE4", hash_generated_method = "F7BC802FD93ED4D1D6867065B2327EB9")
     public String getMsisdnAlphaTag() {
         String varB4EAC82CA7396A68D541C85D26508E83_1537003045 = null; 
@@ -175,6 +179,7 @@ public abstract class IccRecords extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.021 -0400", hash_original_method = "77FFC0D98CD3CB2629C7F6A7D27E6FFF", hash_generated_method = "83517A40012007395A969B1F7CCD3373")
     public String getVoiceMailNumber() {
         String varB4EAC82CA7396A68D541C85D26508E83_1250678383 = null; 
@@ -186,6 +191,7 @@ public abstract class IccRecords extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.021 -0400", hash_original_method = "C90FEC698C502FA0146C0D3760005061", hash_generated_method = "5AAF6128C6366F63FC6EC9C7DB35EF71")
     public String getServiceProviderName() {
         String varB4EAC82CA7396A68D541C85D26508E83_193405797 = null; 
@@ -201,6 +207,7 @@ public abstract class IccRecords extends Handler implements IccConstants {
             Message onComplete);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.022 -0400", hash_original_method = "5A91F4662DCD8CEE6B5E6A046B7A4ABC", hash_generated_method = "E206B652792E48C9D67843BACE140608")
     public String getVoiceMailAlphaTag() {
         String varB4EAC82CA7396A68D541C85D26508E83_1724570736 = null; 
@@ -215,6 +222,7 @@ public abstract class IccRecords extends Handler implements IccConstants {
     public abstract void setVoiceMessageWaiting(int line, int countWaiting);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.023 -0400", hash_original_method = "2B603A0C333C2CCE42826636EDAB70FC", hash_generated_method = "68F75E82E2A5D626B5EA14036B43A068")
     public boolean getVoiceMessageWaiting() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_983163077 = getTaintBoolean();
@@ -224,6 +232,7 @@ public abstract class IccRecords extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.023 -0400", hash_original_method = "E7F9312CD80A2D040F1A458CAC0EDAD1", hash_generated_method = "85D51C1F483B95093B2EFE3C2EDE67E2")
     public int getVoiceMessageCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1427883275 = getTaintInt();
@@ -236,6 +245,7 @@ public abstract class IccRecords extends Handler implements IccConstants {
     public abstract void onRefresh(boolean fileChanged, int[] fileList);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.023 -0400", hash_original_method = "4C58BD1C1A36FD4BA9D906F07C4CE729", hash_generated_method = "2F976D6388B4BA64D353BEA573A190F3")
     public boolean getRecordsLoaded() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2077224127 = getTaintBoolean();
@@ -292,6 +302,7 @@ public abstract class IccRecords extends Handler implements IccConstants {
     public abstract int getDisplayRule(String plmn);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.025 -0400", hash_original_method = "CF0496644C3B01F406F298A44D1902AC", hash_generated_method = "89059B7D9A2D53C2E8C2CF840DF6365A")
     public boolean isCspPlmnEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_504286168 = getTaintBoolean();
@@ -301,6 +312,7 @@ public abstract class IccRecords extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.025 -0400", hash_original_method = "9AAC604385E70B59FD0C2282B5610980", hash_generated_method = "0DB6B4E98E60BA9F9278BC52B1A42C1D")
     public String getOperatorNumeric() {
         String varB4EAC82CA7396A68D541C85D26508E83_895920628 = null; 
@@ -312,6 +324,7 @@ public abstract class IccRecords extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.025 -0400", hash_original_method = "2E5510735E3E74118CEEB63E6C24CB4C", hash_generated_method = "E3FE7D3503123A4791288592746540AD")
     public boolean getVoiceCallForwardingFlag() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1172094130 = getTaintBoolean();
@@ -321,6 +334,7 @@ public abstract class IccRecords extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.025 -0400", hash_original_method = "C3DD6C998A7A28E21EC84968A9C4D811", hash_generated_method = "63517DD32CDF7652FFE9B51B2847F051")
     public void setVoiceCallForwardingFlag(int line, boolean enable) {
         addTaint(line);
@@ -329,6 +343,7 @@ public abstract class IccRecords extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.026 -0400", hash_original_method = "964BBC8F82C6DDB6B82192B110CE37ED", hash_generated_method = "0D9C8961043EAE0E0273D0A1CF45177E")
     public boolean isProvisioned() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1919312869 = getTaintBoolean();
@@ -344,6 +359,7 @@ public abstract class IccRecords extends Handler implements IccConstants {
     protected abstract void loge(String s);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.026 -0400", hash_original_method = "F728AE330C688766112F3603C63CB40C", hash_generated_method = "7B4B6EF60A9DCD99A3C0FEA176531F21")
     public IsimRecords getIsimRecords() {
         IsimRecords varB4EAC82CA7396A68D541C85D26508E83_1376652477 = null; 
@@ -355,6 +371,7 @@ public abstract class IccRecords extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.027 -0400", hash_original_method = "EA614E93014D97DC1971866BFCB21C89", hash_generated_method = "0CE26B7437845B5049D88778D9E53153")
     public UsimServiceTable getUsimServiceTable() {
         UsimServiceTable varB4EAC82CA7396A68D541C85D26508E83_1961308541 = null; 

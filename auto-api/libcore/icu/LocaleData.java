@@ -223,6 +223,7 @@ public final class LocaleData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:26.923 -0400", hash_original_method = "97F8929D36249A9101B1710A2B088C68", hash_generated_method = "F8FABCA580F990657D754E89E6009CBE")
     private void overrideWithDataFrom(LocaleData overrides) {
         {

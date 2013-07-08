@@ -264,27 +264,32 @@ public final class GeolocationPermissions {
     }
 
     
-        private static Set nativeGetOrigins() {
+        @DSModeled(DSC.SAFE)
+    private static Set nativeGetOrigins() {
         	Set s = new HashSet<>();
         	return s;
     }
 
     
-        private static boolean nativeGetAllowed(String origin) {
+        @DSModeled(DSC.SAFE)
+    private static boolean nativeGetAllowed(String origin) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1246562142 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1246562142;
     }
 
     
-        private static void nativeClear(String origin) {
+        @DSModeled(DSC.SAFE)
+    private static void nativeClear(String origin) {
     }
 
     
-        private static void nativeAllow(String origin) {
+        @DSModeled(DSC.SAFE)
+    private static void nativeAllow(String origin) {
     }
 
     
-        private static void nativeClearAll() {
+        @DSModeled(DSC.SAFE)
+    private static void nativeClearAll() {
     }
 
     

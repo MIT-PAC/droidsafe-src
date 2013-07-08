@@ -88,6 +88,7 @@ public final class DefaultedHttpContext implements HttpContext {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.564 -0400", hash_original_method = "FA59965C12DF7B81C110308001A0693E", hash_generated_method = "101EAF0F9FFA7C9AE8FF3898FC88381F")
     public HttpContext getDefaults() {
         HttpContext varB4EAC82CA7396A68D541C85D26508E83_2049784751 = null; 

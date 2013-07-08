@@ -31,6 +31,7 @@ public class ProxyRequire extends SIPHeader implements ProxyRequireHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.941 -0400", hash_original_method = "9C711BE19A8C0E0A7CB116A3F753C6F0", hash_generated_method = "80A6BF2C894D9763FFA0A2A4475E6E2C")
     public String encodeBody() {
         String varB4EAC82CA7396A68D541C85D26508E83_767372404 = null; 
@@ -54,6 +55,7 @@ public class ProxyRequire extends SIPHeader implements ProxyRequireHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.942 -0400", hash_original_method = "CE304AE728C556B979775346D4C5B456", hash_generated_method = "CB1E899EFE7AC287E90EF8AC719CC191")
     public String getOptionTag() {
         String varB4EAC82CA7396A68D541C85D26508E83_473382638 = null; 

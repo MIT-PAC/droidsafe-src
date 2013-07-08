@@ -249,6 +249,7 @@ public class LayerDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.258 -0400", hash_original_method = "C91DA5E408896EB69ADE8640201298D6", hash_generated_method = "C3DB05B207C9F30236079236FF1AF6E9")
     public Drawable findDrawableByLayerId(int id) {
         Drawable varB4EAC82CA7396A68D541C85D26508E83_993300394 = null; 
@@ -286,6 +287,7 @@ public class LayerDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.258 -0400", hash_original_method = "BFB89C99582071313F846F1C811CB3F0", hash_generated_method = "1FC88131F9D499108AE970D8E9987726")
     public void setId(int index, int id) {
         mLayerState.mChildren[index].mId = id;
@@ -294,6 +296,7 @@ public class LayerDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.259 -0400", hash_original_method = "A86CD78FFBAB297497BF089506C91B59", hash_generated_method = "627E12044CC5E730C2859687E5A24EB1")
     public int getNumberOfLayers() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_317627001 = getTaintInt();
@@ -303,6 +306,7 @@ public class LayerDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.265 -0400", hash_original_method = "34EED4495029B4FCBDB042C377184EB5", hash_generated_method = "3DD708997043D82B920385B4E394EBD6")
     public Drawable getDrawable(int index) {
         Drawable varB4EAC82CA7396A68D541C85D26508E83_1873795906 = null; 
@@ -315,6 +319,7 @@ public class LayerDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.270 -0400", hash_original_method = "AA527FDBA3D8F60360C6FC80FEEC74D7", hash_generated_method = "6BDD99A479059C9C0F5F6E0F1F49B059")
     public int getId(int index) {
         addTaint(index);
@@ -373,6 +378,7 @@ public class LayerDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.271 -0400", hash_original_method = "F7297B48CD52F9107957E141DF7BCBF2", hash_generated_method = "BAFDFCDE73A0A595766EAB20E7D1334C")
     public void setLayerInset(int index, int l, int t, int r, int b) {
         ChildDrawable childDrawable = mLayerState.mChildren[index];
@@ -618,6 +624,7 @@ public class LayerDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.279 -0400", hash_original_method = "3DEB6D6A50B9757568C5AA3089CD04F9", hash_generated_method = "2F8A5119D378716275841296882C6D16")
     public void setOpacity(int opacity) {
         mOpacityOverride = opacity;
@@ -918,6 +925,7 @@ public class LayerDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.285 -0400", hash_original_method = "6FB87F17A7189073B9E72073B203E52E", hash_generated_method = "59BBA7D2300D061C6F2456B32A326F99")
     private void ensurePadding() {
         final int N = mLayerState.mNum;

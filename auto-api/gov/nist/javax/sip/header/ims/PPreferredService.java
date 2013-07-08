@@ -143,6 +143,7 @@ public class PPreferredService extends SIPHeader implements PPreferredServiceHea
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.347 -0400", hash_original_method = "0A65ED1D7958A8DC93D54B9D5172FB86", hash_generated_method = "813392CF39A94B938B1B3C7E12E815AD")
     public void setApplicationIdentifiers(String appids) {
         this.subAppIds = appids;

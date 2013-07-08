@@ -268,6 +268,7 @@ public abstract class SecurityAgree extends ParametersHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.521 -0400", hash_original_method = "B428180B0BF5EA600E8FA7F08EE496F8", hash_generated_method = "E08C5D2ED37DAE72C045E92CA0DB4C44")
     public String getSecurityMechanism() {
         String varB4EAC82CA7396A68D541C85D26508E83_2012856206 = null; 

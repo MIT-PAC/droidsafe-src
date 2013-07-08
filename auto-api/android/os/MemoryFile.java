@@ -43,33 +43,41 @@ public class MemoryFile {
 		
 	}
 
-	private static FileDescriptor native_open(String name, int length) throws IOException {
+	@DSModeled(DSC.SAFE)
+    private static FileDescriptor native_open(String name, int length) throws IOException {
 		return new FileDescriptor();
 	}
 
-	private static int native_mmap(FileDescriptor fd, int length, int mode) throws IOException {
+	@DSModeled(DSC.SAFE)
+    private static int native_mmap(FileDescriptor fd, int length, int mode) throws IOException {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_437101719 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_437101719;
 	}
 
-	private static void native_munmap(int addr, int length) throws IOException {
+	@DSModeled(DSC.SAFE)
+    private static void native_munmap(int addr, int length) throws IOException {
 	}
 
-	private static void native_close(FileDescriptor fd) {
+	@DSModeled(DSC.SAFE)
+    private static void native_close(FileDescriptor fd) {
 	}
 
-	private static int native_read(FileDescriptor fd, int address, byte[] buffer, int srcOffset, int destOffset, int count, boolean isUnpinned) throws IOException {
+	@DSModeled(DSC.SAFE)
+    private static int native_read(FileDescriptor fd, int address, byte[] buffer, int srcOffset, int destOffset, int count, boolean isUnpinned) throws IOException {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1563409879 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1563409879;
 	}
 
-	private static void native_write(FileDescriptor fd, int address, byte[] buffer, int srcOffset, int destOffset, int count, boolean isUnpinned) throws IOException {
+	@DSModeled(DSC.SAFE)
+    private static void native_write(FileDescriptor fd, int address, byte[] buffer, int srcOffset, int destOffset, int count, boolean isUnpinned) throws IOException {
 	}
 
-	private static void native_pin(FileDescriptor fd, boolean pin) throws IOException {
+	@DSModeled(DSC.SAFE)
+    private static void native_pin(FileDescriptor fd, boolean pin) throws IOException {
 	}
 
-	private static int native_get_size(FileDescriptor fd) throws IOException {
+	@DSModeled(DSC.SAFE)
+    private static int native_get_size(FileDescriptor fd) throws IOException {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_962429955 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_962429955;
 	}
@@ -115,7 +123,8 @@ public class MemoryFile {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.477 -0400", hash_original_method = "6DDBFC199C19310599F0713304591847", hash_generated_method = "C74E3B600761E7B1EFE27692DF37CAD4")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.477 -0400", hash_original_method = "6DDBFC199C19310599F0713304591847", hash_generated_method = "C74E3B600761E7B1EFE27692DF37CAD4")
 	private boolean isDeactivated() {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1153815136 = getTaintBoolean();
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1153815136;
@@ -151,7 +160,8 @@ public class MemoryFile {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.478 -0400", hash_original_method = "C0D624CC7CEFFAF650D54F4FB963FAF6", hash_generated_method = "95E92E37CC542BE224FF7663FE62E06D")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.478 -0400", hash_original_method = "C0D624CC7CEFFAF650D54F4FB963FAF6", hash_generated_method = "95E92E37CC542BE224FF7663FE62E06D")
 	public int length() {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1151650476 = getTaintInt();
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1151650476;
@@ -159,7 +169,8 @@ public class MemoryFile {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.479 -0400", hash_original_method = "36BC15D120E9C0B3759A6273F0B6F394", hash_generated_method = "97936AFEF6AA92CD571A05C22FA94B4E")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.479 -0400", hash_original_method = "36BC15D120E9C0B3759A6273F0B6F394", hash_generated_method = "97936AFEF6AA92CD571A05C22FA94B4E")
 	public boolean isPurgingAllowed() {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_522151635 = getTaintBoolean();
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_522151635;
@@ -288,7 +299,8 @@ public class MemoryFile {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.482 -0400", hash_original_method = "2D6523548F3A6408618EC64E9280F841", hash_generated_method = "9B9AC70C8126792768D44A323C78B3BA")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.482 -0400", hash_original_method = "2D6523548F3A6408618EC64E9280F841", hash_generated_method = "9B9AC70C8126792768D44A323C78B3BA")
 	public FileDescriptor getFileDescriptor() throws IOException {
 		FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1817813123 = null; 
 																				

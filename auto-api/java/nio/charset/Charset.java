@@ -73,6 +73,7 @@ public abstract class Charset implements Comparable<Charset> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean isValidCharsetNameCharacter(char c) {
         return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9') ||
                 c == '-' || c == '.' || c == ':' || c == '_';
@@ -197,6 +198,7 @@ public abstract class Charset implements Comparable<Charset> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.845 -0400", hash_original_method = "73ACF950C7885C6BB8F7DA98628525CE", hash_generated_method = "804B468028CD523465EF13FED3903C4E")
     public String displayName() {
         String varB4EAC82CA7396A68D541C85D26508E83_674483081 = null; 
@@ -208,6 +210,7 @@ public abstract class Charset implements Comparable<Charset> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.845 -0400", hash_original_method = "E11EA2F6EB7DD1956A05FA3724D0F65C", hash_generated_method = "97872ECBA6CDE3EA8238A8B83DD0D6B4")
     public String displayName(Locale l) {
         String varB4EAC82CA7396A68D541C85D26508E83_110197489 = null; 
@@ -230,6 +233,7 @@ public abstract class Charset implements Comparable<Charset> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.846 -0400", hash_original_method = "CFD47AB423921DC9B7AAA90F2EE94666", hash_generated_method = "281128875D8E36A43108E5E14F8F8F15")
     public boolean canEncode() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1932623913 = getTaintBoolean();
@@ -360,6 +364,7 @@ public abstract class Charset implements Comparable<Charset> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Charset defaultCharset() {
         return DEFAULT_CHARSET;
     }

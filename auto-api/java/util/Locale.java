@@ -175,6 +175,7 @@ public final class Locale implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.210 -0400", hash_original_method = "40EA1D1DD90B3BAB3C58BE2B6A46A98D", hash_generated_method = "C92174AB3AA4172CCB8E3F46EDC01B31")
     public String getCountry() {
         String varB4EAC82CA7396A68D541C85D26508E83_1240303686 = null; 
@@ -186,6 +187,7 @@ public final class Locale implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Locale getDefault() {
         return defaultLocale;
     }
@@ -477,6 +479,7 @@ public final class Locale implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.218 -0400", hash_original_method = "1C720E5AEB210852D4C515195DCC49D3", hash_generated_method = "363EC3A26D8CC87A01ED7BC9AA09BB09")
     public String getLanguage() {
         String varB4EAC82CA7396A68D541C85D26508E83_2044795253 = null; 
@@ -488,6 +491,7 @@ public final class Locale implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.218 -0400", hash_original_method = "A8C86ADBDB8FE1FD75DA90D3A9B92BDE", hash_generated_method = "FF8DAA1A1DC33A34A6E90EA282CE9769")
     public String getVariant() {
         String varB4EAC82CA7396A68D541C85D26508E83_589541278 = null; 

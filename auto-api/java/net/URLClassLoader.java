@@ -107,6 +107,7 @@ public class URLClassLoader extends SecureClassLoader {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.453 -0400", hash_original_method = "8767B0DB3A608CD14EAA847CE6E9F597", hash_generated_method = "3834D3634E44E0F2A447C4EBFBE4F5C8")
     protected void addURL(URL url) {
         try 
@@ -243,6 +244,7 @@ public class URLClassLoader extends SecureClassLoader {
     }
 
     
+    @DSModeled(DSC.SPEC)
     private static boolean isDirectory(URL url) {
         String file = url.getFile();
         return (file.length() > 0 && file.charAt(file.length() - 1) == '/');
@@ -308,6 +310,7 @@ public class URLClassLoader extends SecureClassLoader {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.459 -0400", hash_original_method = "75025FE733C588323FB29CA64B72756D", hash_generated_method = "A4EFF457BB9BEA5BAF7463CE8A73F46D")
     private URL createSearchURL(URL url) throws MalformedURLException {
         URL varB4EAC82CA7396A68D541C85D26508E83_1571246232 = null; 
@@ -509,6 +512,7 @@ public class URLClassLoader extends SecureClassLoader {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.462 -0400", hash_original_method = "15D2A778081BB97B4F5082C5EA9323F2", hash_generated_method = "0D973D9D805C148615CE3D9DFFE6C0F6")
     private URLHandler createURLHandler(URL url) {
         URLHandler varB4EAC82CA7396A68D541C85D26508E83_797412355 = null; 
@@ -521,6 +525,7 @@ public class URLClassLoader extends SecureClassLoader {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.462 -0400", hash_original_method = "959FE775BCBFF6223F7FD94A4010D369", hash_generated_method = "11EED8684F5324F87F55ADF62724460E")
     private URLHandler createURLFileHandler(URL url) {
         URLHandler varB4EAC82CA7396A68D541C85D26508E83_667970577 = null; 
@@ -533,6 +538,7 @@ public class URLClassLoader extends SecureClassLoader {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.463 -0400", hash_original_method = "93DBA576D247FBB46E5BCA4D9E3C8DFF", hash_generated_method = "B3F819F33E8FD81898F8BA74B764D597")
     private URLHandler createURLJarHandler(URL url) {
         URLHandler varB4EAC82CA7396A68D541C85D26508E83_1713070424 = null; 
@@ -606,6 +612,7 @@ public class URLClassLoader extends SecureClassLoader {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.464 -0400", hash_original_method = "1F20C74E5FA90998EED1F262145E5A78", hash_generated_method = "C6BE60648CF3CB8C7281658263C760D8")
     protected Package definePackage(String packageName, Manifest manifest,
                                     URL url) throws IllegalArgumentException {

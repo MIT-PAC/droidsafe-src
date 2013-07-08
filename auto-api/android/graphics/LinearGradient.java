@@ -71,6 +71,7 @@ public class LinearGradient extends Shader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.561 -0400", hash_original_method = "CCD3C7044708751014C9FDE6E03EC148", hash_generated_method = "23720C8502AD5A2774B9E7578A11E01C")
     private int nativeCreate2(float x0, float y0, float x1, float y1,
             int color0, int color1, int tileMode) {
@@ -88,6 +89,7 @@ public class LinearGradient extends Shader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.563 -0400", hash_original_method = "9C29B9E72B1A16A8D3A2370F81F87105", hash_generated_method = "230632191FEF3B405F7AAF162849062F")
     private int nativePostCreate2(int native_shader, float x0, float y0, float x1, float y1,
             int color0, int color1, int tileMode) {

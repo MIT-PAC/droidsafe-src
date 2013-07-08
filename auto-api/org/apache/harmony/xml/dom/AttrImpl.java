@@ -59,6 +59,7 @@ public final class AttrImpl extends NodeImpl implements Attr {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.745 -0400", hash_original_method = "006A1593C2EDDFD80B5C8C9A0B08E49A", hash_generated_method = "1E01ABC335A38BB1B8613AFADB2DF5D6")
     @Override
     public String getLocalName() {
@@ -87,6 +88,7 @@ public final class AttrImpl extends NodeImpl implements Attr {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.746 -0400", hash_original_method = "1455FE8FE34AF373D39E8278191439A8", hash_generated_method = "E2CF218E93DC664BB3AEB771041DFD0D")
     @Override
     public String getNamespaceURI() {
@@ -112,6 +114,7 @@ public final class AttrImpl extends NodeImpl implements Attr {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.748 -0400", hash_original_method = "66DF12C09699AD1D686D4988F262C066", hash_generated_method = "E931B9DEDAACC0E944FEE6C846568C1E")
     public short getNodeType() {
         short var4F09DAA9D95BCB166A302407A0E0BABE_1757383734 = getTaintShort();
@@ -134,6 +137,7 @@ public final class AttrImpl extends NodeImpl implements Attr {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.751 -0400", hash_original_method = "B2B2C7739C0F8FABC1AEF26C1D9AEC3F", hash_generated_method = "417DB5BB201F06A9B2932AB0B4908B43")
     public Element getOwnerElement() {
         Element varB4EAC82CA7396A68D541C85D26508E83_2000169615 = null; 
@@ -145,6 +149,7 @@ public final class AttrImpl extends NodeImpl implements Attr {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.753 -0400", hash_original_method = "FA5CE5A0FCC0C736D9446FFEBD0CAB9D", hash_generated_method = "37E42F96331BC1FBF9A9F984A943455C")
     @Override
     public String getPrefix() {
@@ -157,6 +162,7 @@ public final class AttrImpl extends NodeImpl implements Attr {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.754 -0400", hash_original_method = "AB2D74F2DBFDF90175205031E5C24288", hash_generated_method = "DB04297237BDE22958229CD94EE8BA3C")
     public boolean getSpecified() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1009867923 = getTaintBoolean();
@@ -166,6 +172,7 @@ public final class AttrImpl extends NodeImpl implements Attr {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.755 -0400", hash_original_method = "CFCF943D36987E569CAB72593E604904", hash_generated_method = "E0B5563CB9666BA1A07560603A4FD262")
     public String getValue() {
         String varB4EAC82CA7396A68D541C85D26508E83_833999034 = null; 
@@ -187,6 +194,7 @@ public final class AttrImpl extends NodeImpl implements Attr {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.756 -0400", hash_original_method = "32019E33BF64530F6370A7D9E04CDBBC", hash_generated_method = "373507266CE99450E905DA9FE496A1CE")
     public void setValue(String value) throws DOMException {
         this.value = value;
@@ -195,6 +203,7 @@ public final class AttrImpl extends NodeImpl implements Attr {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.757 -0400", hash_original_method = "C51D6ACA797563231B3A9D05774313B4", hash_generated_method = "73F290DA2DD0E1A2A95D664D7EF0B005")
     public TypeInfo getSchemaTypeInfo() {
         TypeInfo varB4EAC82CA7396A68D541C85D26508E83_159076141 = null; 
@@ -206,6 +215,7 @@ public final class AttrImpl extends NodeImpl implements Attr {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.757 -0400", hash_original_method = "042EF4BE6689EE05C98757A02B7F892C", hash_generated_method = "A0292439D61635F0470F93254BC89ECB")
     public boolean isId() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1728180055 = getTaintBoolean();

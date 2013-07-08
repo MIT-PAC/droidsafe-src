@@ -17,12 +17,14 @@ public abstract class OutputStream implements Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.729 -0400", hash_original_method = "403A1214A00C2300123B494982A31042", hash_generated_method = "74372D27DE595543DBC3B69FBB71373E")
     public void close() throws IOException {
         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.729 -0400", hash_original_method = "1521992F8E9F05A9FDFB0E59716E3E93", hash_generated_method = "05987DDDCDD862E2FBC121135A80FA74")
     public void flush() throws IOException {
         
@@ -63,6 +65,7 @@ public abstract class OutputStream implements Closeable, Flushable {
     public abstract void write(int oneByte) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.730 -0400", hash_original_method = "0FEA708DB7A5B3B6D16FEC9623D0EEF8", hash_generated_method = "41A04104132C5C1DFBD9D0F81F2973D9")
      boolean checkError() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_649951112 = getTaintBoolean();

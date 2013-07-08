@@ -61,6 +61,7 @@ public class AlphaAnimation extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.252 -0400", hash_original_method = "484D654BC6ACB95ED68989DAAEF2DE56", hash_generated_method = "71BCED9B62E40B046DCC8C388C385153")
     @Override
     public boolean willChangeTransformationMatrix() {
@@ -71,6 +72,7 @@ public class AlphaAnimation extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.253 -0400", hash_original_method = "B56BC808CAC9750B79234A1D767E6B5D", hash_generated_method = "39ECA16514AC694E063852A86BA98F00")
     @Override
     public boolean willChangeBounds() {
@@ -81,6 +83,7 @@ public class AlphaAnimation extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.253 -0400", hash_original_method = "E1C0EB5C360EF4564AFB59E1743F2057", hash_generated_method = "D8B7B2D7CB0462D442FB6FA0D184F0B0")
     @Override
     public boolean hasAlpha() {

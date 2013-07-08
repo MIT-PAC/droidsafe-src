@@ -31,6 +31,7 @@ public class Credentials {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.599 -0400", hash_original_method = "78D1E6D4CA2C23604540BE821B70C9C5", hash_generated_method = "A878C0D92ACA6E8C286C323AD0799FEE")
     public int getPid() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1324850176 = getTaintInt();
@@ -40,6 +41,7 @@ public class Credentials {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.600 -0400", hash_original_method = "0C7AA9282DA1BA7425530FB39ADDE6D7", hash_generated_method = "BCDDA956E27C588CF602AAEFD5FE5342")
     public int getUid() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_633335102 = getTaintInt();
@@ -49,6 +51,7 @@ public class Credentials {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.600 -0400", hash_original_method = "62E574E9D4A38B83D3EBF8EDA61883B3", hash_generated_method = "9110C73A57DB48DBA48C212E7F52AE90")
     public int getGid() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_816119329 = getTaintInt();

@@ -215,6 +215,7 @@ public abstract class InnerNodeImpl extends LeafNodeImpl {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.160 -0400", hash_original_method = "EAC92D1975EC52765900D3EB8DB15DFE", hash_generated_method = "AB4960E58E47B5BBBFA777AB2053BB48")
     public boolean isParentOf(Node node) {
         LeafNodeImpl nodeImpl = (LeafNodeImpl) node;

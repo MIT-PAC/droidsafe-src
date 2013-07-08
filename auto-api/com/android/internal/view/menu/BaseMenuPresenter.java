@@ -176,6 +176,7 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.077 -0400", hash_original_method = "80E7AE02A73BB486D54AC38F406B92BB", hash_generated_method = "00DC0446DE1FD15986660B6447845996")
     public void setCallback(Callback cb) {
         mCallback = cb;
@@ -229,6 +230,7 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
     public abstract void bindItemView(MenuItemImpl item, MenuView.ItemView itemView);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.082 -0400", hash_original_method = "87E28A5B278A6CA733508943AA98463C", hash_generated_method = "32735135B49A14AA9907B70F7DBB6939")
     public boolean shouldIncludeItem(int childIndex, MenuItemImpl item) {
         addTaint(childIndex);
@@ -274,6 +276,7 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.082 -0400", hash_original_method = "4C665EA7F97447510193964EEFD645AE", hash_generated_method = "E1480EA602633B8ACDDDAD16C5657BAB")
     public boolean flagActionItems() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_491231394 = getTaintBoolean();
@@ -283,6 +286,7 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.083 -0400", hash_original_method = "5F1249279FE45B816C21E97DA3013708", hash_generated_method = "76A4E229CCFF91E21D31094F3B920ACD")
     public boolean expandItemActionView(MenuBuilder menu, MenuItemImpl item) {
         addTaint(menu.getTaint());
@@ -294,6 +298,7 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.083 -0400", hash_original_method = "06DF13061AFE044B0D38F9C19B18A57A", hash_generated_method = "330398F2EBC206B12CE1468C464EF01C")
     public boolean collapseItemActionView(MenuBuilder menu, MenuItemImpl item) {
         addTaint(menu.getTaint());
@@ -305,6 +310,7 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.083 -0400", hash_original_method = "849E83C6BA01C72387E236CA4FAA38B9", hash_generated_method = "BA862F2015E4C2F23AE6FE794D5033AF")
     public int getId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2068433272 = getTaintInt();
@@ -314,6 +320,7 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.083 -0400", hash_original_method = "97D2A517E68B7CE37726268CF0899D78", hash_generated_method = "0D5694E56798677AE48CDBAFFCA223E5")
     public void setId(int id) {
         mId = id;

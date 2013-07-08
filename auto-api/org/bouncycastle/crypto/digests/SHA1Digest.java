@@ -61,6 +61,7 @@ public class SHA1Digest extends GeneralDigest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.014 -0400", hash_original_method = "A93F195BA36C5C6DC02ECFC655EFA07D", hash_generated_method = "07BAE4615C72B55AD1041351E8A907E7")
     public String getAlgorithmName() {
         String varB4EAC82CA7396A68D541C85D26508E83_2042615439 = null; 
@@ -72,6 +73,7 @@ public class SHA1Digest extends GeneralDigest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.014 -0400", hash_original_method = "3039C1E557EE9A1557E064C50078D361", hash_generated_method = "CE1A21923AC0DD8E96942F39F81AE5AF")
     public int getDigestSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_645031813 = getTaintInt();
@@ -187,6 +189,7 @@ public class SHA1Digest extends GeneralDigest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.017 -0400", hash_original_method = "56B08AF140AAB579ED6513720D1D076E", hash_generated_method = "875623F88F6AACBA9FDFDBC2FA812D33")
     private int f(
         int    u,
@@ -202,6 +205,7 @@ public class SHA1Digest extends GeneralDigest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.017 -0400", hash_original_method = "D49E57B066D19086A0B27FD85ECFCAA8", hash_generated_method = "7589C3ECBE0CD861D8A157637F106119")
     private int h(
         int    u,
@@ -217,6 +221,7 @@ public class SHA1Digest extends GeneralDigest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.018 -0400", hash_original_method = "1EBC13F1810260C1F73348183BDA0BFB", hash_generated_method = "7F2BA17E2340485490A3D2141EE0BF38")
     private int g(
         int    u,

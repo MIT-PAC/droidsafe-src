@@ -23,6 +23,7 @@ public class TechListParcel implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.267 -0400", hash_original_method = "6EF67533858F398D5EC0425F1D475F89", hash_generated_method = "AE4EDA506435CF0047C3E77FF008A59D")
     public String[][] getTechLists() {
         String[][] varB4EAC82CA7396A68D541C85D26508E83_1997914361 = null; 
@@ -34,6 +35,7 @@ public class TechListParcel implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.268 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "F1B7540030A37B11A43D3DB75C741E68")
     @Override
     public int describeContents() {

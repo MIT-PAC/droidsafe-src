@@ -22,6 +22,7 @@ public class Subject extends SIPHeader implements SubjectHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.695 -0400", hash_original_method = "3C6B7893125DF6EE8816C7C8DB5CA48D", hash_generated_method = "60A22F4B5F65C05BF3C792CC0185BE37")
     public String encodeBody() {
         String varB4EAC82CA7396A68D541C85D26508E83_86636924 = null; 
@@ -68,6 +69,7 @@ public class Subject extends SIPHeader implements SubjectHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.696 -0400", hash_original_method = "8EBD535E211A75BE78AF45361DF5913D", hash_generated_method = "0B09EB72D8D7B2A1CAF6A4D45A78A97F")
     public String getSubject() {
         String varB4EAC82CA7396A68D541C85D26508E83_384927457 = null; 

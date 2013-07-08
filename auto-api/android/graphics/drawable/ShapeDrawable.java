@@ -48,6 +48,7 @@ public class ShapeDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.554 -0400", hash_original_method = "93DF953391DA58A2026A871408A81498", hash_generated_method = "D9BC212F88DC7B421A8B7C6ADE33B2CB")
     public Shape getShape() {
         Shape varB4EAC82CA7396A68D541C85D26508E83_1726086863 = null; 
@@ -70,6 +71,7 @@ public class ShapeDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.555 -0400", hash_original_method = "63480B19EB44379868D8321D7A96C7B7", hash_generated_method = "98C4B1E892C6B76796983BAC575AFE3D")
     public void setShaderFactory(ShaderFactory fact) {
         mShapeState.mShaderFactory = fact;
@@ -78,6 +80,7 @@ public class ShapeDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.556 -0400", hash_original_method = "E65D8AF971F17EDFF075456EB259C0A6", hash_generated_method = "7CE8641D65578730620679125656ECD4")
     public ShaderFactory getShaderFactory() {
         ShaderFactory varB4EAC82CA7396A68D541C85D26508E83_189757954 = null; 
@@ -89,6 +92,7 @@ public class ShapeDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.557 -0400", hash_original_method = "F97BA42DC4507A8A136D2774D1D1BA0E", hash_generated_method = "143EB0912F3E55330C55C3D7A9CF29D0")
     public Paint getPaint() {
         Paint varB4EAC82CA7396A68D541C85D26508E83_2138392153 = null; 
@@ -179,6 +183,7 @@ public class ShapeDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.559 -0400", hash_original_method = "2BA24D2DFEB102D9B9B4478CA4BDB4E4", hash_generated_method = "944EDF05F1131469D2D8D45020C5E236")
     @Override
     public int getIntrinsicWidth() {
@@ -189,6 +194,7 @@ public class ShapeDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.559 -0400", hash_original_method = "A17CBC5FDAD1E989314B42A85C195659", hash_generated_method = "1C2BCAB1ABBAA566E633C3FD57780AE1")
     @Override
     public int getIntrinsicHeight() {
@@ -222,6 +228,7 @@ public class ShapeDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int modulateAlpha(int paintAlpha, int alpha) {
         int scale = alpha + (alpha >>> 7);
         return paintAlpha * scale >>> 8;

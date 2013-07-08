@@ -60,6 +60,7 @@ public final class StatusLine extends SIPObject implements SipStatusLine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.679 -0400", hash_original_method = "72B66E964D13ABBD6BD5B9A3B23AE94A", hash_generated_method = "D651F6605A3DBCE632F06793020DB084")
     public void setMatchStatusClass(boolean flag) {
         matchStatusClass = flag;
@@ -87,6 +88,7 @@ public final class StatusLine extends SIPObject implements SipStatusLine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.682 -0400", hash_original_method = "756FD7B4E35B001597A1BAB462C97AFC", hash_generated_method = "C475CAA9A874014A5BF9BEF103F28B8B")
     public String getSipVersion() {
         String varB4EAC82CA7396A68D541C85D26508E83_356823940 = null; 
@@ -98,6 +100,7 @@ public final class StatusLine extends SIPObject implements SipStatusLine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.683 -0400", hash_original_method = "08273B061292A48923EC30EEEA581059", hash_generated_method = "F74D155B2DEBCB03B4C5D6091A2B0DF0")
     public int getStatusCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_963140515 = getTaintInt();
@@ -107,6 +110,7 @@ public final class StatusLine extends SIPObject implements SipStatusLine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.685 -0400", hash_original_method = "CA4528A98316683C1F54E337727EA693", hash_generated_method = "F21A5B49A5FFD760F313964C9B537091")
     public String getReasonPhrase() {
         String varB4EAC82CA7396A68D541C85D26508E83_1915604773 = null; 
@@ -118,6 +122,7 @@ public final class StatusLine extends SIPObject implements SipStatusLine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.685 -0400", hash_original_method = "B810A06FC4BF04031B4FF5A14EE77A78", hash_generated_method = "53F9AC2766DE93825A466772D60BE565")
     public void setSipVersion(String s) {
         sipVersion = s;
@@ -126,6 +131,7 @@ public final class StatusLine extends SIPObject implements SipStatusLine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.686 -0400", hash_original_method = "C85C39756030BBC4F8AB42FF73F21E45", hash_generated_method = "6C0492B67AE3FB59C46B073C28241295")
     public void setStatusCode(int statusCode) {
         this.statusCode = statusCode;
@@ -134,6 +140,7 @@ public final class StatusLine extends SIPObject implements SipStatusLine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.686 -0400", hash_original_method = "6488565BF42DDD1E8B09A0AD1F358FD4", hash_generated_method = "743765ECFE339CAABC3918E02ABAA910")
     public void setReasonPhrase(String reasonPhrase) {
         this.reasonPhrase = reasonPhrase;

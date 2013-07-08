@@ -108,6 +108,7 @@ public class TabWidget extends LinearLayout implements OnFocusChangeListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.290 -0400", hash_original_method = "6DB375E1DD97C7DB4A0C01A394FBBB39", hash_generated_method = "FF257AD91896483577088FCAB7DA810C")
     @Override
     protected int getChildDrawingOrder(int childCount, int i) {
@@ -356,6 +357,7 @@ public class TabWidget extends LinearLayout implements OnFocusChangeListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.295 -0400", hash_original_method = "187389676AA1F9CD7B5348DE6F614EB0", hash_generated_method = "97F4CA1A312268F926FB51F7AC8A09E0")
     public boolean isStripEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_229010105 = getTaintBoolean();
@@ -607,6 +609,7 @@ public class TabWidget extends LinearLayout implements OnFocusChangeListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.299 -0400", hash_original_method = "417165650412A4BD506B46A43D5F7416", hash_generated_method = "7FB911669829C940F00979E3196D854C")
      void setTabSelectionListener(OnTabSelectionChanged listener) {
         mSelectionChangedListener = listener;

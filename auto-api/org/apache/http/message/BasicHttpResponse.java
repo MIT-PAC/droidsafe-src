@@ -81,6 +81,7 @@ public class BasicHttpResponse extends AbstractHttpMessage implements HttpRespon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.092 -0400", hash_original_method = "17E71ED31D66483D3BDF78C743004CA2", hash_generated_method = "F149CEC5D9FB9C3CB594825963F732C0")
     public StatusLine getStatusLine() {
         StatusLine varB4EAC82CA7396A68D541C85D26508E83_96192844 = null; 
@@ -92,6 +93,7 @@ public class BasicHttpResponse extends AbstractHttpMessage implements HttpRespon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.093 -0400", hash_original_method = "FCFC1A07171F7DE920C85D2DD77008FA", hash_generated_method = "A8F15AA14E62E270819A1337B31449ED")
     public HttpEntity getEntity() {
         HttpEntity varB4EAC82CA7396A68D541C85D26508E83_1248759369 = null; 
@@ -103,6 +105,7 @@ public class BasicHttpResponse extends AbstractHttpMessage implements HttpRespon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.094 -0400", hash_original_method = "733D9DF7D9A8D6EAEA176BCCAA80EA96", hash_generated_method = "C7350DE13F7F24E3DBF057879E153BF3")
     public Locale getLocale() {
         Locale varB4EAC82CA7396A68D541C85D26508E83_1100872172 = null; 

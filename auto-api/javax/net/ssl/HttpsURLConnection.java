@@ -42,6 +42,7 @@ public abstract class HttpsURLConnection extends HttpURLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static HostnameVerifier getDefaultHostnameVerifier() {
         return defaultHostnameVerifier;
     }
@@ -56,6 +57,7 @@ public abstract class HttpsURLConnection extends HttpURLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SSLSocketFactory getDefaultSSLSocketFactory() {
         return defaultSSLSocketFactory;
     }
@@ -135,6 +137,7 @@ public abstract class HttpsURLConnection extends HttpURLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.540 -0400", hash_original_method = "ECCA6A5C3EF4993C1CFD64A0404A993B", hash_generated_method = "1E0D307AE2890B8A54FA554EA82B9F28")
     public HostnameVerifier getHostnameVerifier() {
         HostnameVerifier varB4EAC82CA7396A68D541C85D26508E83_769862155 = null; 
@@ -161,6 +164,7 @@ public abstract class HttpsURLConnection extends HttpURLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.541 -0400", hash_original_method = "9F872E117F4FD1E88D0B5BA15C4E96B2", hash_generated_method = "927200D7F1C8244041F59318B8ABB241")
     public SSLSocketFactory getSSLSocketFactory() {
         SSLSocketFactory varB4EAC82CA7396A68D541C85D26508E83_1832565985 = null; 

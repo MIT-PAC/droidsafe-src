@@ -24,6 +24,7 @@ public abstract class CollationKey implements Comparable<CollationKey> {
     public abstract int compareTo(CollationKey value);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.597 -0400", hash_original_method = "CAA51A8D77816B9C71E897924204286F", hash_generated_method = "7E0EAD1ACFB75F826694F4E62720ACF5")
     public String getSourceString() {
         String varB4EAC82CA7396A68D541C85D26508E83_64749024 = null; 

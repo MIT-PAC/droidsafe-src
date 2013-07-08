@@ -97,6 +97,7 @@ public class ContentLanguage extends SIPHeader implements javax.sip.header.Conte
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.419 -0400", hash_original_method = "BB5B9CEBF2423E9AF1F4569292591142", hash_generated_method = "F9969383B44EE72598792F45523F6C55")
     public Locale getContentLanguage() {
         Locale varB4EAC82CA7396A68D541C85D26508E83_1889270511 = null; 
@@ -108,6 +109,7 @@ public class ContentLanguage extends SIPHeader implements javax.sip.header.Conte
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.419 -0400", hash_original_method = "7E2DC8255947AB5497CF8DB62C4D31B5", hash_generated_method = "ECC90E2EED8E215D634D57C08DDAA062")
     public void setContentLanguage(Locale language) {
         this.locale = language;

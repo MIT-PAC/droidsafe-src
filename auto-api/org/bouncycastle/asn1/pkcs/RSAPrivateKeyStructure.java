@@ -134,6 +134,7 @@ public class RSAPrivateKeyStructure extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.159 -0400", hash_original_method = "00A0A81AB162D0816192A8848BD6F0D6", hash_generated_method = "B1A1D5B307F9E77A2676048AB44B0564")
     public int getVersion() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1597208601 = getTaintInt();
@@ -143,6 +144,7 @@ public class RSAPrivateKeyStructure extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.160 -0400", hash_original_method = "A6C1BE2632CACEB59AFFE6BB866E7B69", hash_generated_method = "E218E23BBE9D85748D3C8B5441847A62")
     public BigInteger getModulus() {
         BigInteger varB4EAC82CA7396A68D541C85D26508E83_2011229861 = null; 
@@ -154,6 +156,7 @@ public class RSAPrivateKeyStructure extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.160 -0400", hash_original_method = "32183112217BF048572A8B0F43293474", hash_generated_method = "84E49836FC44D1852E2D5C85DC4DD6FC")
     public BigInteger getPublicExponent() {
         BigInteger varB4EAC82CA7396A68D541C85D26508E83_1882857103 = null; 
@@ -165,6 +168,7 @@ public class RSAPrivateKeyStructure extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.161 -0400", hash_original_method = "DA7C8A3DDA38443F1F2D4DBDF52134FD", hash_generated_method = "76ED3608B6C2327DE4790784852EF52C")
     public BigInteger getPrivateExponent() {
         BigInteger varB4EAC82CA7396A68D541C85D26508E83_1588607241 = null; 
@@ -176,6 +180,7 @@ public class RSAPrivateKeyStructure extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.161 -0400", hash_original_method = "B99C0F53E18C4C91C319BE2CCC968C4F", hash_generated_method = "94EA9E3A3B2A289AEEF0C87CAFF88D79")
     public BigInteger getPrime1() {
         BigInteger varB4EAC82CA7396A68D541C85D26508E83_1388837721 = null; 
@@ -187,6 +192,7 @@ public class RSAPrivateKeyStructure extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.164 -0400", hash_original_method = "B93FCB0A892E4015213AB5057F688210", hash_generated_method = "B5D6C7D8AE5CF77346C5F907737B5256")
     public BigInteger getPrime2() {
         BigInteger varB4EAC82CA7396A68D541C85D26508E83_1153508755 = null; 
@@ -198,6 +204,7 @@ public class RSAPrivateKeyStructure extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.166 -0400", hash_original_method = "762AADF12D80291EC0F289058DBDBCEC", hash_generated_method = "A942F8005D0238166258F7FDA38B0B8D")
     public BigInteger getExponent1() {
         BigInteger varB4EAC82CA7396A68D541C85D26508E83_861557864 = null; 
@@ -209,6 +216,7 @@ public class RSAPrivateKeyStructure extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.166 -0400", hash_original_method = "DDCFEFECC032A2CEE6C8950AE5D7E294", hash_generated_method = "7C6DD7CC441A1784182C4D7CDE3F5829")
     public BigInteger getExponent2() {
         BigInteger varB4EAC82CA7396A68D541C85D26508E83_296801675 = null; 
@@ -220,6 +228,7 @@ public class RSAPrivateKeyStructure extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.167 -0400", hash_original_method = "C7CB66A1169BB550EC38CAFFC80D3C48", hash_generated_method = "B682C64DF7780E63E8A5E563281BE417")
     public BigInteger getCoefficient() {
         BigInteger varB4EAC82CA7396A68D541C85D26508E83_2052716460 = null; 

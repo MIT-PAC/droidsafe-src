@@ -117,6 +117,7 @@ public class DigestScheme extends RFC2617Scheme {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.845 -0400", hash_original_method = "590EDC4C396D176AA70267B4181524CE", hash_generated_method = "05ABDC6D72DA10CA44F7A1FA82963D10")
     public String getSchemeName() {
         String varB4EAC82CA7396A68D541C85D26508E83_2029993028 = null; 
@@ -128,6 +129,7 @@ public class DigestScheme extends RFC2617Scheme {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.845 -0400", hash_original_method = "52FB523EE33548A5337713590AB1DF72", hash_generated_method = "1FAF8CB04B8A81BC756B15CC8E9D79EC")
     public boolean isConnectionBased() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_666641786 = getTaintBoolean();
@@ -386,6 +388,7 @@ public class DigestScheme extends RFC2617Scheme {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.852 -0400", hash_original_method = "4B7F5D1CEF78CAAD9B937EECFEA67886", hash_generated_method = "B22083EB19BD9E36C2B42541BF140E0A")
     private String getQopVariantString() {
         String varB4EAC82CA7396A68D541C85D26508E83_1166643595 = null; 

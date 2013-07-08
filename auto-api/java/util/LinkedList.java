@@ -273,6 +273,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.102 -0400", hash_original_method = "F4AB109BD4924C3D8662019AA7349AF5", hash_generated_method = "D053313FADC6AFD02128C0FBBDD81B2D")
     @Override
     public void clear() {
@@ -958,6 +959,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.119 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "E9DE897986DCCF275D53DE878DF317DC")
     @Override
     public int size() {
@@ -1042,6 +1044,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.124 -0400", hash_original_method = "4C8EA5672445A0C074E2691E7533B645", hash_generated_method = "D990628BB000ECA78536DB7223A735D6")
     @Override
     public Object[] toArray() {

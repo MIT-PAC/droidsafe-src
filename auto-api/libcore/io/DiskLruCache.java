@@ -486,6 +486,7 @@ public final class DiskLruCache implements Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.981 -0400", hash_original_method = "0F452AFCA1F8F7ACF1A711B33CB47BDA", hash_generated_method = "C746A836EDEB50EA8B204649418BED6F")
     public File getDirectory() {
         File varB4EAC82CA7396A68D541C85D26508E83_1786673281 = null; 
@@ -497,6 +498,7 @@ public final class DiskLruCache implements Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.981 -0400", hash_original_method = "4A03A0F188DC0124026C9315925210D3", hash_generated_method = "EC4B8DA7249674B272A06C1803CF7E80")
     public long maxSize() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1680974984 = getTaintLong();
@@ -506,6 +508,7 @@ public final class DiskLruCache implements Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.981 -0400", hash_original_method = "EA3441215E7ACDF721D34D006EDC791B", hash_generated_method = "5B7973FE2D28A79131E5A1778E5157AE")
     public synchronized long size() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_48763410 = getTaintLong();
@@ -651,6 +654,7 @@ public final class DiskLruCache implements Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.986 -0400", hash_original_method = "DD17EBB3E7F8098B41E8CF3D3DB045E0", hash_generated_method = "8FF21DC45ECC4839B2AE697B49D7889C")
     public boolean isClosed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1316621409 = getTaintBoolean();

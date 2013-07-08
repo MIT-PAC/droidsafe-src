@@ -132,6 +132,7 @@ public final class CdmaLteUiccRecords extends SIMRecords {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.982 -0400", hash_original_method = "097B9B51B341025D2C6281D6E7202450", hash_generated_method = "001117E355A50FC39F859476EC90AD22")
     private int adjstMinDigits(int digits) {
         digits += 111;
@@ -308,6 +309,7 @@ public final class CdmaLteUiccRecords extends SIMRecords {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.986 -0400", hash_original_method = "0A56566EECB0365BEB6D3F46827C5157", hash_generated_method = "EC3AB5EA582076BCF92494C446DE9E73")
     public String getMdn() {
         String varB4EAC82CA7396A68D541C85D26508E83_378287026 = null; 
@@ -319,6 +321,7 @@ public final class CdmaLteUiccRecords extends SIMRecords {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.987 -0400", hash_original_method = "80A82BB385CD03C9B3FC60961865E100", hash_generated_method = "2AAFC36F19F09EAC4BDA1183232A0E80")
     public String getMin() {
         String varB4EAC82CA7396A68D541C85D26508E83_2144452580 = null; 
@@ -330,6 +333,7 @@ public final class CdmaLteUiccRecords extends SIMRecords {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.987 -0400", hash_original_method = "063CD09EDCF873A8EE48D2C85BBEA4D0", hash_generated_method = "386D2284BC50A4C12EF1C6199D0E5619")
     public String getSid() {
         String varB4EAC82CA7396A68D541C85D26508E83_1403888183 = null; 
@@ -341,6 +345,7 @@ public final class CdmaLteUiccRecords extends SIMRecords {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.988 -0400", hash_original_method = "884F79DB94780A6DBB795ED0D5CD48AE", hash_generated_method = "C9B82C62E17FBB9AD01F4B714E824E9D")
     public String getNid() {
         String varB4EAC82CA7396A68D541C85D26508E83_2005383035 = null; 
@@ -352,6 +357,7 @@ public final class CdmaLteUiccRecords extends SIMRecords {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.988 -0400", hash_original_method = "B5AD5686CB21B47DB5A2223CCDBB4F42", hash_generated_method = "E52E2F7FD9236BAE91BD3FDC4E55FC2A")
     public String getPrlVersion() {
         String varB4EAC82CA7396A68D541C85D26508E83_899591039 = null; 
@@ -363,6 +369,7 @@ public final class CdmaLteUiccRecords extends SIMRecords {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.989 -0400", hash_original_method = "C58B4A883B983444DBA9A30FEBE0DD9B", hash_generated_method = "6A1B545FE884269AC09456AA63AE6450")
     public boolean getCsimSpnDisplayCondition() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_844464040 = getTaintBoolean();
@@ -372,6 +379,7 @@ public final class CdmaLteUiccRecords extends SIMRecords {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.989 -0400", hash_original_method = "C3918CF1E72E747DA54324AC57BD2CA6", hash_generated_method = "8856A8409034A32ECAF1C12F7A0B6084")
     @Override
     public IsimRecords getIsimRecords() {

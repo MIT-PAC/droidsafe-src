@@ -79,6 +79,7 @@ public class EditTextPreference extends DialogPreference {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.818 -0400", hash_original_method = "2FFFCC59A442EF1196B854805331F3A7", hash_generated_method = "7093B3269E9726F5A291B942DC0CDE00")
     public String getText() {
         String varB4EAC82CA7396A68D541C85D26508E83_344767649 = null; 
@@ -210,6 +211,7 @@ public class EditTextPreference extends DialogPreference {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.822 -0400", hash_original_method = "25F3ADCBABEE77EF933107206F4A63FB", hash_generated_method = "0C3AF98A31A069BCAE541B58159F7AF7")
     public EditText getEditText() {
         EditText varB4EAC82CA7396A68D541C85D26508E83_1433811636 = null; 
@@ -221,6 +223,7 @@ public class EditTextPreference extends DialogPreference {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.823 -0400", hash_original_method = "7FAD769054190EA8D5B257F9884DACB8", hash_generated_method = "3CE674F69E1F44A323480F0E88CC7BA4")
     @Override
     protected boolean needInputMethod() {

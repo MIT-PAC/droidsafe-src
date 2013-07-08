@@ -50,6 +50,7 @@ public class FieldPosition {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.605 -0400", hash_original_method = "0917A34BEC387437E422442FF9D128A9", hash_generated_method = "7B55DCEF19A54303A6AEE5DCD2981156")
      void clear() {
         beginIndex = endIndex = 0;
@@ -58,6 +59,7 @@ public class FieldPosition {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.605 -0400", hash_original_method = "2EFD5CC62AE2C3EDB89CEF52D471F874", hash_generated_method = "42E066A836E5384C025EFBD0B3F44204")
     @Override
     public boolean equals(Object object) {
@@ -75,6 +77,7 @@ public class FieldPosition {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.605 -0400", hash_original_method = "D73EFD1B11663E2F20B33728384A7709", hash_generated_method = "D02726F48B30E1F456872C7ECED7C4D2")
     public int getBeginIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_576725718 = getTaintInt();
@@ -84,6 +87,7 @@ public class FieldPosition {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.605 -0400", hash_original_method = "9236177A75F6147947B59829E100715E", hash_generated_method = "A9A4725B01209D5DB38EE2C1DF9976BA")
     public int getEndIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1992407506 = getTaintInt();
@@ -93,6 +97,7 @@ public class FieldPosition {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.605 -0400", hash_original_method = "FA0D18F7CDA71089ACF7D0CA54DB97A6", hash_generated_method = "A18CF35E0E0E1DCB7172E8FD60B06DA8")
     public int getField() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1665010208 = getTaintInt();
@@ -102,6 +107,7 @@ public class FieldPosition {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.606 -0400", hash_original_method = "7CAF144562B490BE3E2EB59461F9FF9F", hash_generated_method = "62E15F604A97EE5E599A6E8CEE93B4C3")
     public Format.Field getFieldAttribute() {
         Format.Field varB4EAC82CA7396A68D541C85D26508E83_1190980436 = null; 
@@ -128,6 +134,7 @@ public class FieldPosition {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.606 -0400", hash_original_method = "B6704CE8D3A3B86DBE7C4466AFBF63DE", hash_generated_method = "52375A7B9E133C46ADD8958312B215FD")
     public void setBeginIndex(int index) {
         beginIndex = index;
@@ -136,6 +143,7 @@ public class FieldPosition {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.607 -0400", hash_original_method = "D0945845F8EA8830C89E5D5682FA6C51", hash_generated_method = "D80F847F9AB2F854C130F487969DD63C")
     public void setEndIndex(int index) {
         endIndex = index;

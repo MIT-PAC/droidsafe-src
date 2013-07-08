@@ -40,6 +40,7 @@ public class BasicManagedEntity extends HttpEntityWrapper implements ConnectionR
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.008 -0400", hash_original_method = "731D88F5D8865617BA362DCED4C30896", hash_generated_method = "E954215285806BD366979978D50187EB")
     @Override
     public boolean isRepeatable() {

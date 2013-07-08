@@ -221,6 +221,7 @@ class Network {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.277 -0400", hash_original_method = "1266E72491C7223244252637AD0BEC00", hash_generated_method = "DE565B38E8AB04726BC7DAE190912C2A")
     public synchronized String getProxyUsername() {
         String varB4EAC82CA7396A68D541C85D26508E83_2085041714 = null; 
@@ -232,6 +233,7 @@ class Network {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.278 -0400", hash_original_method = "F385770A128D43043A61D29E35184FCC", hash_generated_method = "5A96809A5336BB9814E7FDB2C6440674")
     public synchronized void setProxyUsername(String proxyUsername) {
         {
@@ -246,6 +248,7 @@ class Network {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.278 -0400", hash_original_method = "B46568E038B4519332317A487603C5DC", hash_generated_method = "4537BE69555DDD42DBC0908A1F1BE2EF")
     public synchronized String getProxyPassword() {
         String varB4EAC82CA7396A68D541C85D26508E83_119236723 = null; 
@@ -257,6 +260,7 @@ class Network {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.278 -0400", hash_original_method = "F4CD508AF44DC7CAF5CD08EB1469791C", hash_generated_method = "8A54065C094A7F3642C392AF8C362ED7")
     public synchronized void setProxyPassword(String proxyPassword) {
         {

@@ -30,6 +30,7 @@ public class ContentEncoding extends SIPHeader implements javax.sip.header.Conte
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.394 -0400", hash_original_method = "762501862EB015269BBC405DBBAC5194", hash_generated_method = "1F6717C577604E4E8F6C9D9705E053A6")
     public String encodeBody() {
         String varB4EAC82CA7396A68D541C85D26508E83_370338622 = null; 
@@ -41,6 +42,7 @@ public class ContentEncoding extends SIPHeader implements javax.sip.header.Conte
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.395 -0400", hash_original_method = "13F27076508F7754A69639743C7567EC", hash_generated_method = "7307962E1CA8DA39222318A7EDB6C47D")
     public String getEncoding() {
         String varB4EAC82CA7396A68D541C85D26508E83_1060360505 = null; 

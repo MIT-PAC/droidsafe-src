@@ -61,6 +61,7 @@ public class AllCapsTransformationMethod implements TransformationMethod2 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.860 -0400", hash_original_method = "13D8211EBDC6D4196EF2DDB70ED5CACD", hash_generated_method = "9D159F53239E26DFAC6C4F4E8981C85A")
     @Override
     public void onFocusChanged(View view, CharSequence sourceText, boolean focused, int direction,
@@ -75,6 +76,7 @@ public class AllCapsTransformationMethod implements TransformationMethod2 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.860 -0400", hash_original_method = "507549025152D254EA227D255598B5AF", hash_generated_method = "6202744402AD62DFF59CB62A9EF703E9")
     @Override
     public void setLengthChangesAllowed(boolean allowLengthChanges) {

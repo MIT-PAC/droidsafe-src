@@ -18,36 +18,42 @@ public final class VMDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static long lastDebuggerActivity() {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1326805405 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1326805405;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean isDebuggingEnabled() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_936903779 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_936903779;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean isDebuggerConnected() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1362108739 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1362108739;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String[] getVmFeatureList() {
     	String[] ret = new String[0];
     	return ret;
     }
 
     
+    @DSModeled(DSC.BAN)
     @Deprecated
     public static void startMethodTracing() {
         startMethodTracing(DEFAULT_METHOD_TRACE_FILE_NAME, 0, 0);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void startMethodTracing(String traceFileName,
         int bufferSize, int flags) {
         if (traceFileName == null) {
@@ -57,6 +63,7 @@ public final class VMDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void startMethodTracing(String traceFileName,
         FileDescriptor fd, int bufferSize, int flags) {
         if (traceFileName == null || fd == null) {
@@ -66,96 +73,116 @@ public final class VMDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void startMethodTracingDdms(int bufferSize, int flags) {
         startMethodTracingNative(null, null, bufferSize, flags);
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void startMethodTracingNative(String traceFileName,
         FileDescriptor fd, int bufferSize, int flags) {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean isMethodTracingActive() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1236083031 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1236083031;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void stopMethodTracing() {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void startEmulatorTracing() {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void stopEmulatorTracing() {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static long threadCpuTimeNanos() {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1349091814 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1349091814;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void startAllocCounting() {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void stopAllocCounting() {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int getAllocCount(int kind) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1006668567 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1006668567;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void resetAllocCount(int kinds) {
     }
 
     
+    @DSModeled(DSC.BAN)
     @Deprecated
     public static int setAllocationLimit(int limit) {
         return -1;
     }
 
     
+    @DSModeled(DSC.BAN)
     @Deprecated
     public static int setGlobalAllocationLimit(int limit) {
         return -1;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void startInstructionCounting() {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void stopInstructionCounting() {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void getInstructionCount(int[] counts) {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void resetInstructionCount() {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void printLoadedClasses(int flags) {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int getLoadedClassCount() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_368515312 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_368515312;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void dumpHprofData(String fileName) throws IOException {
         if (fileName == null)
             throw new NullPointerException();
@@ -163,40 +190,49 @@ public final class VMDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void dumpHprofDataDdms() {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void dumpHprofData(String fileName, FileDescriptor fd) throws IOException {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean cacheRegisterMap(String classAndMethodDesc) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1021648724 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1021648724;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void dumpReferenceTables() {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void crash() {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void infopoint(int id) {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void startGC() {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void startClassPrep() {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static long countInstancesOfClass(Class klass, boolean assignable) {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1477598897 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1477598897;

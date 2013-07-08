@@ -185,6 +185,7 @@ final class ProcessManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int exec(String[] command, String[] environment,
             String workingDirectory, FileDescriptor in, FileDescriptor out,
             FileDescriptor err, boolean redirectErrorStream) throws IOException {
@@ -265,6 +266,7 @@ final class ProcessManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ProcessManager getInstance() {
         return instance;
     }

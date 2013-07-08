@@ -96,6 +96,7 @@ public class Attribute extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.663 -0400", hash_original_method = "0C9FA4513BA0CB1318C076F6A4C1BAA0", hash_generated_method = "794B1A0BA01576F312C5807231EA1E43")
     public ASN1Set getAttrValues() {
         ASN1Set varB4EAC82CA7396A68D541C85D26508E83_546774320 = null; 

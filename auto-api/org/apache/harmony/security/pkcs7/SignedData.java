@@ -94,6 +94,7 @@ public final class SignedData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.025 -0400", hash_original_method = "00A0A81AB162D0816192A8848BD6F0D6", hash_generated_method = "89142CC5F61117866E205E05489ACCCF")
     public int getVersion() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_441484286 = getTaintInt();

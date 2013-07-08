@@ -168,6 +168,7 @@ public class RequestQueue implements RequestFeeder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.340 -0400", hash_original_method = "36781366BC2C228EA97F354BC28E7BDA", hash_generated_method = "D1F524E696F931CECE88102481354808")
     public HttpHost getProxyHost() {
         HttpHost varB4EAC82CA7396A68D541C85D26508E83_1081479702 = null; 

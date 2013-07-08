@@ -138,6 +138,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.845 -0400", hash_original_method = "2565B9EE896335E27EEEABBB213A9C77", hash_generated_method = "D69DCCD30D92186EAEE5FFE761A8AECE")
     public MessageChannel getRequestChannel() {
         MessageChannel varB4EAC82CA7396A68D541C85D26508E83_348289229 = null; 
@@ -1051,6 +1052,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.858 -0400", hash_original_method = "FADEF945106DA805CF02027B2BE28020", hash_generated_method = "F178A79F5020E3C9AEE90D08526F030A")
     protected void setViaPort(int port) {
         this.viaPort = port;
@@ -1059,6 +1061,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.859 -0400", hash_original_method = "0E538A29C97CB223EF1CD12A71C73074", hash_generated_method = "49F7B6C2EB4C3BA81CAAD6672E78455A")
     protected void setViaHost(String host) {
         this.viaHost = host;
@@ -1067,6 +1070,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.860 -0400", hash_original_method = "133D8E60A07873D19335FF91037EC663", hash_generated_method = "8C77084F83DA956A35960506093E182B")
     public int getViaPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1352251860 = getTaintInt();
@@ -1076,6 +1080,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.861 -0400", hash_original_method = "BFF3BD5D9B7619BE758B5D7001336743", hash_generated_method = "D1F80CE8A4F06E1593140477F8FF4212")
     public String getViaHost() {
         String varB4EAC82CA7396A68D541C85D26508E83_1180059923 = null; 
@@ -1099,6 +1104,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.862 -0400", hash_original_method = "B250DD181A3373E2CC04255377753F31", hash_generated_method = "6CCA103991603EF3F3C26F3C09E7F13D")
     public void clearState() {
         
@@ -1423,6 +1429,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.868 -0400", hash_original_method = "EC86D15857564E1427115ADA6B1A0784", hash_generated_method = "EE151DE6D324A4457E6B3A186C2225BA")
     public SIPDialog getDefaultDialog() {
         SIPDialog varB4EAC82CA7396A68D541C85D26508E83_720144889 = null; 
@@ -1434,6 +1441,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.868 -0400", hash_original_method = "BBF8312DD6859DF11BA280D3CE71F333", hash_generated_method = "92C54DFEBE82A33476818E16370481AA")
     public void setNextHop(Hop hop) {
         this.nextHop = hop;
@@ -1442,6 +1450,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.869 -0400", hash_original_method = "F8BB258224ADAD4254DDBC66AEC6C06F", hash_generated_method = "3CC82D22DD0301AF2188B1BF69AFA1C5")
     public Hop getNextHop() {
         Hop varB4EAC82CA7396A68D541C85D26508E83_1724255273 = null; 
@@ -1453,6 +1462,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.870 -0400", hash_original_method = "5A4A2DE6DA5EAFA8C9F9B9398CD98855", hash_generated_method = "77796E2667351045720A96FACE4561A1")
     public void setNotifyOnRetransmit(boolean notifyOnRetransmit) {
         this.notifyOnRetransmit = notifyOnRetransmit;
@@ -1461,6 +1471,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.871 -0400", hash_original_method = "27ED93829BD70EC80C4ABB0868670759", hash_generated_method = "239AE61043A588344AC71DE585340D5E")
     public boolean isNotifyOnRetransmit() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_355440538 = getTaintBoolean();
@@ -1470,6 +1481,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.871 -0400", hash_original_method = "E7190C5FA03F5363EA136DFEC0492C73", hash_generated_method = "A815816922C53FB5571D66EB4D353EEE")
     public void alertIfStillInCallingStateBy(int count) {
         this.timeoutIfStillInCallingState = true;

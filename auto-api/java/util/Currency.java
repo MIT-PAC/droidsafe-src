@@ -84,6 +84,7 @@ public final class Currency implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.614 -0400", hash_original_method = "2AC1FCCB5B1A729D4AAC7C21169200F6", hash_generated_method = "ABF57015E807182648E093784396C830")
     public String getCurrencyCode() {
         String varB4EAC82CA7396A68D541C85D26508E83_171711508 = null; 
@@ -198,6 +199,7 @@ public final class Currency implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.617 -0400", hash_original_method = "61F489343549C45D5079119B52911181", hash_generated_method = "01204BAF7B835AB024A4C87380F1A473")
     @Override
     public String toString() {

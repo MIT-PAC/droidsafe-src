@@ -29,6 +29,7 @@ abstract class LimitedInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.893 -0400", hash_original_method = "40872598AE6AA3CD657ADA29CC622AC7", hash_generated_method = "FB088EB84283B279D2743645A9AC4B58")
      int getRemaining() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_959727913 = getTaintInt();

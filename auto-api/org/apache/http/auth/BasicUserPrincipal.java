@@ -30,6 +30,7 @@ public final class BasicUserPrincipal implements Principal {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.648 -0400", hash_original_method = "C98891613636EF2965B8BFD539D89D43", hash_generated_method = "53B941DF0818E187B6561256FAA119E3")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1495857450 = null; 

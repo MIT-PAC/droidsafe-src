@@ -25,6 +25,7 @@ public class MimeVersion extends SIPHeader implements MimeVersionHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.802 -0400", hash_original_method = "D7FCE27D9AEC3742DED8FD71AF804648", hash_generated_method = "11D81BDA714888CE746A2B0D8C7E3A53")
     public int getMinorVersion() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_293779454 = getTaintInt();
@@ -34,6 +35,7 @@ public class MimeVersion extends SIPHeader implements MimeVersionHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.802 -0400", hash_original_method = "634F243B87354520E8F28C8C2539E93B", hash_generated_method = "9522A09B8F01D149E041665314F6393C")
     public int getMajorVersion() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_272066851 = getTaintInt();

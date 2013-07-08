@@ -579,6 +579,7 @@ public class WifiManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int calculateSignalLevel(int rssi, int numLevels) {
         if (rssi <= MIN_RSSI) {
             return 0;
@@ -592,6 +593,7 @@ public class WifiManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int compareSignalLevel(int rssiA, int rssiB) {
         return rssiA - rssiB;
     }

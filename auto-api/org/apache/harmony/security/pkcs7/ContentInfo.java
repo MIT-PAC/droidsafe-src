@@ -71,6 +71,7 @@ public final class ContentInfo {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.004 -0400", hash_original_method = "7EF6AE96CD0AADFF5C056ACE9B248CB2", hash_generated_method = "AAF59A4502F1C29327C2A83DA655190C")
     public Object getContent() {
         Object varB4EAC82CA7396A68D541C85D26508E83_246558695 = null; 
@@ -82,6 +83,7 @@ public final class ContentInfo {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.004 -0400", hash_original_method = "47E7DB6049BFBF7F7143C81AA2952707", hash_generated_method = "3C5CAC81A0F918752C5C0157F5A29B7C")
     public int[] getContentType() {
         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_128525407 = {getTaintInt()};

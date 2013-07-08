@@ -306,6 +306,7 @@ public class X500Name extends ASN1Encodable implements ASN1Choice {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static X500NameStyle getDefaultStyle() {
         return defaultStyle;
     }

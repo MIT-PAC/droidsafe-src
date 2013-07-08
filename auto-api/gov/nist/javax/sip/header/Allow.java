@@ -30,6 +30,7 @@ public final class Allow extends SIPHeader implements javax.sip.header.AllowHead
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.884 -0400", hash_original_method = "A65B682B0B822D8527FBE88A2FCA60FC", hash_generated_method = "AB926646E53C1013CB2AC3F8F2CADF91")
     public String getMethod() {
         String varB4EAC82CA7396A68D541C85D26508E83_1398778673 = null; 
@@ -57,6 +58,7 @@ public final class Allow extends SIPHeader implements javax.sip.header.AllowHead
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.885 -0400", hash_original_method = "48A673DBBFEBFCB1D74A4ACDDDC3C6AB", hash_generated_method = "15643C90DC7777E2700F8B36E1B1BBB0")
     protected String encodeBody() {
         String varB4EAC82CA7396A68D541C85D26508E83_1975471326 = null; 

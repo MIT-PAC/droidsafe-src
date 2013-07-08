@@ -21,6 +21,7 @@ public class DialerKeyListener extends NumberKeyListener {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.106 -0400", hash_original_method = "EEC77EA89700D9A449D9FC8461D61396", hash_generated_method = "D618DAA9C15B854E3109B3CA361B1F6C")
     @Override
     protected char[] getAcceptedChars() {
@@ -40,6 +41,7 @@ public class DialerKeyListener extends NumberKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.106 -0400", hash_original_method = "CF04961F3F1B69C39A5779241DF2A6D8", hash_generated_method = "9C6D9C73F2DCDF596361F83D0210CF5D")
     public int getInputType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1461957858 = getTaintInt();

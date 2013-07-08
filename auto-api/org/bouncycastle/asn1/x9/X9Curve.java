@@ -145,6 +145,7 @@ public class X9Curve extends ASN1Encodable implements X9ObjectIdentifiers {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.398 -0400", hash_original_method = "C3733AEA1B7056ED3896C5DBEA3E645D", hash_generated_method = "1B6CB12C072BC7422FC5B1B35FDECBBD")
     public ECCurve getCurve() {
         ECCurve varB4EAC82CA7396A68D541C85D26508E83_1055447969 = null; 
@@ -156,6 +157,7 @@ public class X9Curve extends ASN1Encodable implements X9ObjectIdentifiers {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.399 -0400", hash_original_method = "B051A8408593F9E1275AB818DE8E2A80", hash_generated_method = "CE79482750FD40A6D718A31615B247B9")
     public byte[] getSeed() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1315508704 = {getTaintByte()};

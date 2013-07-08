@@ -133,11 +133,13 @@ public class Services {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Provider.Service getSecureRandomService() {
         return secureRandom;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setNeedRefresh() {
         needRefresh = true;
     }

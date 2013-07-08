@@ -297,6 +297,7 @@ public class SipManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.071 -0400", hash_original_method = "E0DC1BF0888BDAC076F0EBE49A950610", hash_generated_method = "0FBF76B14D3AE2B99D88447F2895E438")
     public SipAudioCall takeAudioCall(Intent incomingCallIntent,
             SipAudioCall.Listener listener) throws SipException {
@@ -338,6 +339,7 @@ public class SipManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static boolean isIncomingCallIntent(Intent intent) {
         if (intent == null) return false;
         String callId = getCallId(intent);
@@ -346,16 +348,19 @@ public class SipManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static String getCallId(Intent incomingCallIntent) {
         return incomingCallIntent.getStringExtra(EXTRA_CALL_ID);
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static String getOfferSessionDescription(Intent incomingCallIntent) {
         return incomingCallIntent.getStringExtra(EXTRA_OFFER_SD);
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Intent createIncomingCallBroadcast(String callId,
             String sessionDescription) {
         Intent intent = new Intent();
@@ -436,6 +441,7 @@ public class SipManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.074 -0400", hash_original_method = "EDCDF2FC84E74B60CE6B84F2ED6BCA20", hash_generated_method = "DEFD0ED0C2780ED471488FD0C650B927")
     public SipSession getSessionFor(Intent incomingCallIntent) throws SipException {
         SipSession varB4EAC82CA7396A68D541C85D26508E83_295600658 = null; 

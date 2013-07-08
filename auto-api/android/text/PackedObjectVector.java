@@ -120,6 +120,7 @@ class PackedObjectVector<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.130 -0400", hash_original_method = "A7F055B05F3BF0E7B9EF67A5904EF45B", hash_generated_method = "D6B10E4FD374C8B14D1D57E743E89C17")
     public int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2106607043 = getTaintInt();
@@ -129,6 +130,7 @@ class PackedObjectVector<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.131 -0400", hash_original_method = "00C81AD9ACCD847707085D62472884FD", hash_generated_method = "72F191941931A1B830974C096884B628")
     public int width() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_325988499 = getTaintInt();
@@ -162,6 +164,7 @@ class PackedObjectVector<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.132 -0400", hash_original_method = "31F6FBDDD7D0FB1F20A58E1CEB067332", hash_generated_method = "6B6099B3E3EE158B2610EC8DCFE039E0")
     private void moveRowGapTo(int where) {
         {

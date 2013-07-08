@@ -31,37 +31,45 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeInitialize() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeDispose(int ptr) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeClear(int ptr) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeAddMovement(int ptr, MotionEvent event) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeComputeCurrentVelocity(int ptr, int units, float maxVelocity) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static float nativeGetXVelocity(int ptr, int id) {
         return DSUtils.UNKNOWN_FLOAT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static float nativeGetYVelocity(int ptr, int id) {
         return DSUtils.UNKNOWN_FLOAT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativeGetEstimator(int ptr, int id,
             int degree, int horizonMillis, Estimator outEstimator) {
         return DSUtils.UNKNOWN_BOOLEAN;
@@ -83,6 +91,7 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:55.233 -0400", hash_original_method = "2CC1A1BE49EC62DFF418BB32459396A9", hash_generated_method = "74AE9F16F0DD1BBCC61D5A9BA8889C0C")
     public void setNextPoolable(VelocityTracker element) {
         mNext = element;
@@ -91,6 +100,7 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:55.234 -0400", hash_original_method = "DEA3C3D2ED346DE60DC91CC9918022D0", hash_generated_method = "E4E3F6157428BDD2AF34EDFFFEC3273C")
     public VelocityTracker getNextPoolable() {
         VelocityTracker varB4EAC82CA7396A68D541C85D26508E83_794663144 = null; 
@@ -102,6 +112,7 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:55.235 -0400", hash_original_method = "4CB4F04617162A1F2BEBBAC63163A5FB", hash_generated_method = "9B195A71D1FE2C8A426454986615700C")
     public boolean isPooled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_267297761 = getTaintBoolean();
@@ -111,6 +122,7 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:55.235 -0400", hash_original_method = "CCE0492C3FBB65D8A1644633FE9AA3DF", hash_generated_method = "31CEC37D69D770078DC2E4A0F4797B2A")
     public void setPooled(boolean isPooled) {
         mIsPooled = isPooled;

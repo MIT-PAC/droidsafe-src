@@ -48,6 +48,7 @@ public class WebBackForwardList implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.735 -0400", hash_original_method = "2A2A2AA161DBB8DEEC2045188BE5DE03", hash_generated_method = "FF6A95510A4BB50BBDAFD9FA157B669C")
     public synchronized int getCurrentIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1844729692 = getTaintInt();
@@ -100,6 +101,7 @@ public class WebBackForwardList implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.736 -0400", hash_original_method = "7F0DA21FF2FDC3954DD60BB35F4D7E5E", hash_generated_method = "FD3EA87E0200D54A51503BD7F9A0EE2C")
     synchronized void setClearPending() {
         mClearPending = true;
@@ -108,6 +110,7 @@ public class WebBackForwardList implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.737 -0400", hash_original_method = "18F3D3D2A3274FA9BAB45BC52054A870", hash_generated_method = "0AE1F0E34E2FADFAEA4968C2833CA2B0")
     synchronized boolean getClearPending() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_418960796 = getTaintBoolean();
@@ -246,11 +249,13 @@ public class WebBackForwardList implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static synchronized void restoreIndex(int nativeFrame,
             int index) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeClose(int nativeFrame) {
     }
 

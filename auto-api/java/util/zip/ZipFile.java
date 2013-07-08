@@ -276,6 +276,7 @@ public class ZipFile implements ZipConstants {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.939 -0400", hash_original_method = "16A0E81CED7078E4D61B7DA2166E122D", hash_generated_method = "977D4119A557101632619A2AE81B2F8A")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_409166960 = null; 

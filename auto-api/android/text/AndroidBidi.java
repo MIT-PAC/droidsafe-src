@@ -132,6 +132,7 @@ class AndroidBidi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int runBidi(int dir, char[] chs, byte[] chInfo, int n, boolean haveInfo) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809432656 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809432656;

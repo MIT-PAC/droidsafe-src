@@ -84,6 +84,7 @@ public class Criteria implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.199 -0400", hash_original_method = "2F566A20A5A9A3E4947DCE83AA9DF67E", hash_generated_method = "87D315583638E675C7D50D38F354F121")
     public int getHorizontalAccuracy() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_298580329 = getTaintInt();
@@ -108,6 +109,7 @@ public class Criteria implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.200 -0400", hash_original_method = "E46E133CF34270F0210C8D2BD309B3F5", hash_generated_method = "1811B02F0D21293C8B6F30EEA37C134C")
     public int getVerticalAccuracy() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_474651999 = getTaintInt();
@@ -132,6 +134,7 @@ public class Criteria implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.200 -0400", hash_original_method = "87339E07174611DFFFF3AC3EA0F5BF3F", hash_generated_method = "648F8BB5E03BEE103F52F8EF160F78E7")
     public int getSpeedAccuracy() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_716302242 = getTaintInt();
@@ -156,6 +159,7 @@ public class Criteria implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.202 -0400", hash_original_method = "0A4814C8F779184929A4F3680AE62C8F", hash_generated_method = "B63D379458CE3B3EA4500AB43E64A301")
     public int getBearingAccuracy() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1927686867 = getTaintInt();
@@ -190,6 +194,7 @@ public class Criteria implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.203 -0400", hash_original_method = "738CC4C555122D617CAE26F950A7954B", hash_generated_method = "F7FAFC8F20ECF20FE198CCACE5E24A67")
     public int getAccuracy() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1407154540 = getTaintInt();
@@ -218,6 +223,7 @@ public class Criteria implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.204 -0400", hash_original_method = "50AB5D6061392E8FAC8A81CA41B14FB2", hash_generated_method = "E16555ADF87B8923D29922C92147667A")
     public int getPowerRequirement() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_767987971 = getTaintInt();
@@ -227,6 +233,7 @@ public class Criteria implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.204 -0400", hash_original_method = "F89CAE570739AB3028DA707B2893B5C5", hash_generated_method = "443B9DB636371A2B7B02DF32D76227F5")
     public void setCostAllowed(boolean costAllowed) {
         mCostAllowed = costAllowed;
@@ -235,6 +242,7 @@ public class Criteria implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.205 -0400", hash_original_method = "A41D9C3F2D62A3EB42A9C94631C7A3C6", hash_generated_method = "E7B1C0EF6BAE54D6D28F0D8D8460915B")
     public boolean isCostAllowed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_913937874 = getTaintBoolean();
@@ -244,6 +252,7 @@ public class Criteria implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.205 -0400", hash_original_method = "22D4EC779FEBEFBD7A04B35673FD6242", hash_generated_method = "524AA438AB1E72E536604C84A2FEE4DD")
     public void setAltitudeRequired(boolean altitudeRequired) {
         mAltitudeRequired = altitudeRequired;
@@ -252,6 +261,7 @@ public class Criteria implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.205 -0400", hash_original_method = "B960582E2C1A3651AC20223DA8436091", hash_generated_method = "9490361B9104B8DBE91D5DB04619D504")
     public boolean isAltitudeRequired() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_151687576 = getTaintBoolean();
@@ -261,6 +271,7 @@ public class Criteria implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.206 -0400", hash_original_method = "6A27513D0E2583F73F00042D0FDBD9E3", hash_generated_method = "8525723E1D70E6CFA504642A945EA5E3")
     public void setSpeedRequired(boolean speedRequired) {
         mSpeedRequired = speedRequired;
@@ -269,6 +280,7 @@ public class Criteria implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.206 -0400", hash_original_method = "F6BA7163C74D6BF39003C6333C2CFD6D", hash_generated_method = "52AD71CB869875458A7E294CB777925B")
     public boolean isSpeedRequired() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_511689564 = getTaintBoolean();
@@ -278,6 +290,7 @@ public class Criteria implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.206 -0400", hash_original_method = "B68158C6EC7F405A349EABCD21ABA300", hash_generated_method = "9B323C768409D641E011EE1EA543FD58")
     public void setBearingRequired(boolean bearingRequired) {
         mBearingRequired = bearingRequired;
@@ -286,6 +299,7 @@ public class Criteria implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.206 -0400", hash_original_method = "17013BC273E96D7EA584C9522A6EEB48", hash_generated_method = "971AA724A9477C2978FB1C6273BD474B")
     public boolean isBearingRequired() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_619323178 = getTaintBoolean();
@@ -295,6 +309,7 @@ public class Criteria implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.207 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "6F4A6F84C95026BE400F408F265CB885")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1064427878 = getTaintInt();

@@ -38,6 +38,7 @@ public abstract class Reference<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.597 -0400", hash_original_method = "0AFD16A0602732B7092274BEFFE68A69", hash_generated_method = "3CA142A05BF69F5A64895A936ECBE10C")
     public void clear() {
         referent = null;
@@ -87,6 +88,7 @@ public abstract class Reference<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.598 -0400", hash_original_method = "22F3CCC310074C277F932626BFB7DCB6", hash_generated_method = "D33AB153E3C3B42807DED9FD89AA6A37")
     public boolean isEnqueued() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2136076586 = getTaintBoolean();

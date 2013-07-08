@@ -58,6 +58,7 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.410 -0400", hash_original_method = "A550D0299CAB894F5185E5356A7BB697", hash_generated_method = "7564C9BAB223A8E7FAC043FBCC648B76")
     public void onCreate() {
         
@@ -65,6 +66,7 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.410 -0400", hash_original_method = "8DB0845BC67A569482FD95D924F2B38E", hash_generated_method = "8219973C28906A5A49CAD34BA7928B86")
     @Deprecated
     public void onStart(Intent intent, int startId) {
@@ -75,6 +77,7 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.411 -0400", hash_original_method = "C7065D6B9C7065CE68918429E4AC852C", hash_generated_method = "F7048F167B9A3691A30213514E25A331")
     public int onStartCommand(Intent intent, int flags, int startId) {
         
@@ -90,6 +93,7 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.411 -0400", hash_original_method = "7E0E89252855B3CDBF126F525B8DFC31", hash_generated_method = "E5C4FFF396F837C85A1D40A9B232BFA0")
     public void onDestroy() {
         
@@ -97,6 +101,7 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.412 -0400", hash_original_method = "8287235C28E9D1E310027A2DDEB95FCD", hash_generated_method = "BA7F1E69C22467D62A959775F321C0BA")
     public void onConfigurationChanged(Configuration newConfig) {
         
@@ -105,6 +110,7 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.413 -0400", hash_original_method = "4F0E380BE715BF5B2ECCDB1794C8905E", hash_generated_method = "39AEB8790734ECC8DC70BBAAEE0BAB0B")
     public void onLowMemory() {
         
@@ -112,6 +118,7 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.413 -0400", hash_original_method = "3AE0D4ACEA3D5F3B779A378D5AB27A6A", hash_generated_method = "C1AFC91F30E138BA03233A690A40C0CC")
     public void onTrimMemory(int level) {
         
@@ -123,6 +130,7 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
     public abstract IBinder onBind(Intent intent);
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.414 -0400", hash_original_method = "5942B5AC8056FD2F0F888A571E85A724", hash_generated_method = "7B45D178B7D2B2EB2D46FEDAC3E57C35")
     public boolean onUnbind(Intent intent) {
         
@@ -134,6 +142,7 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.414 -0400", hash_original_method = "96E602EF97C136D1349E20B0217FC297", hash_generated_method = "8F8E56AABCA0613BF8FBF0BDA2865E2C")
     public void onRebind(Intent intent) {
         
@@ -142,6 +151,7 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.415 -0400", hash_original_method = "8FB0E93CA9596F065DFD6DBA45B93821", hash_generated_method = "B691CB7FFACC5EF486F16983D7110EA8")
     public void onTaskRemoved(Intent rootIntent) {
         

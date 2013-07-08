@@ -78,6 +78,7 @@ public class AttCertIssuer extends ASN1Encodable implements ASN1Choice {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.633 -0400", hash_original_method = "B549CE271C623D3D9A432BB134D69900", hash_generated_method = "DC074D86926C3858DE66D74506407B0B")
     public ASN1Encodable getIssuer() {
         ASN1Encodable varB4EAC82CA7396A68D541C85D26508E83_714262458 = null; 
@@ -89,6 +90,7 @@ public class AttCertIssuer extends ASN1Encodable implements ASN1Choice {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.633 -0400", hash_original_method = "6A55D157378C948D2010903EFE111848", hash_generated_method = "EAFA08086DA761400F74F111D16D55B4")
     public DERObject toASN1Object() {
         DERObject varB4EAC82CA7396A68D541C85D26508E83_94885741 = null; 

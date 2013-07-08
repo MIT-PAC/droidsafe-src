@@ -156,6 +156,7 @@ public abstract class BulkCursorNative extends Binder implements IBulkCursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.604 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "51312D1805041D0544CF161B7E70C05D")
     public IBinder asBinder() {
         IBinder varB4EAC82CA7396A68D541C85D26508E83_1316645225 = null; 
@@ -187,6 +188,7 @@ final class BulkCursorProxy implements IBulkCursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.605 -0400", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "40FF415059923D4EAEF64EBF92E08D64")
     public IBinder asBinder() {
         IBinder varB4EAC82CA7396A68D541C85D26508E83_1480046156 = null; 

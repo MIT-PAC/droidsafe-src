@@ -252,6 +252,7 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.956 -0400", hash_original_method = "983C379A49D6519E05BB04A2322E89F2", hash_generated_method = "773AA5688D53470DBB4D6D3C24C1E0A2")
     public int getDropDownAnchor() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_241592883 = getTaintInt();
@@ -388,6 +389,7 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.959 -0400", hash_original_method = "5251E63145860B08CE1AA76BBDDDD070", hash_generated_method = "485811BBFE0FDAE516EA87941BAEA075")
     public boolean isDropDownDismissedOnCompletion() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1154428698 = getTaintBoolean();
@@ -397,6 +399,7 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.959 -0400", hash_original_method = "87D4B20D86EF98CE5F9B2DCFB12777AB", hash_generated_method = "60B8689EC6F3BBAD668A4B2923A0BC91")
     public void setDropDownDismissedOnCompletion(boolean dropDownDismissedOnCompletion) {
         mDropDownDismissedOnCompletion = dropDownDismissedOnCompletion;
@@ -405,6 +408,7 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.960 -0400", hash_original_method = "D355B3B251BB91FAED293791929579AC", hash_generated_method = "1FEEE5EECF8EEE7FED0FBB99E323B906")
     public int getThreshold() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_750653643 = getTaintInt();
@@ -414,6 +418,7 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.960 -0400", hash_original_method = "E80EC39EC531963E159919926C4979B9", hash_generated_method = "B09D48444A80E5C277F1A11E6CB8772A")
     public void setThreshold(int threshold) {
         {
@@ -428,6 +433,7 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.960 -0400", hash_original_method = "B69DF6D8B348285F7F509DAAD23C3372", hash_generated_method = "25CD98E2A8A27C201F3F3F3C7D972CAC")
     public void setOnItemClickListener(AdapterView.OnItemClickListener l) {
         mItemClickListener = l;
@@ -436,6 +442,7 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.960 -0400", hash_original_method = "48F24F393448111E92CC5CFF766C1584", hash_generated_method = "B7A11EA05B947A6361BE0A6FEA1488E9")
     public void setOnItemSelectedListener(AdapterView.OnItemSelectedListener l) {
         mItemSelectedListener = l;
@@ -444,6 +451,7 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.961 -0400", hash_original_method = "0AE6D510B9C16F8D52FF49376A7BF6A4", hash_generated_method = "FF2CE4EA6A158D939DD06D61BE83FC07")
     @Deprecated
     public AdapterView.OnItemClickListener getItemClickListener() {
@@ -456,6 +464,7 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.961 -0400", hash_original_method = "2A86C7E057A0C403AB649B0ED567456D", hash_generated_method = "BEB040E09DB265E52781CB23B5B8A313")
     @Deprecated
     public AdapterView.OnItemSelectedListener getItemSelectedListener() {
@@ -468,6 +477,7 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.961 -0400", hash_original_method = "CC34C836A582B2E0B6660928CDDA2E79", hash_generated_method = "FBF6ED8CE2D5824B1265BFCC082FCC5D")
     public AdapterView.OnItemClickListener getOnItemClickListener() {
         AdapterView.OnItemClickListener varB4EAC82CA7396A68D541C85D26508E83_691936395 = null; 
@@ -479,6 +489,7 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.962 -0400", hash_original_method = "CA4C95C3D87D9F2B4999807B4A5E6086", hash_generated_method = "FD16A2C36FFF5CB25E7947EDBBDE9BEE")
     public AdapterView.OnItemSelectedListener getOnItemSelectedListener() {
         AdapterView.OnItemSelectedListener varB4EAC82CA7396A68D541C85D26508E83_54570462 = null; 
@@ -490,6 +501,7 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.962 -0400", hash_original_method = "0E1A05724C497F45D7FB6AC34C501814", hash_generated_method = "F271B3C650548043C67980DA7EEC2DBC")
     public ListAdapter getAdapter() {
         ListAdapter varB4EAC82CA7396A68D541C85D26508E83_944653818 = null; 
@@ -896,6 +908,7 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.970 -0400", hash_original_method = "01D38330C874C1244C7D1EF978D11C36", hash_generated_method = "9B5BE634E4F949FD984502EDD3C46CC7")
     public boolean isPerformingCompletion() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_127313059 = getTaintBoolean();
@@ -1262,6 +1275,7 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.976 -0400", hash_original_method = "19381912498DA3D1F08FF4D2E33BF7A7", hash_generated_method = "6329C8E47F79ED3E974714DEACCABB5F")
     public void setValidator(Validator validator) {
         mValidator = validator;
@@ -1270,6 +1284,7 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.977 -0400", hash_original_method = "E2B844337B4F2E764213661E3DB17BC8", hash_generated_method = "E22415E20EB8D6A070DCEF069AEE57C0")
     public Validator getValidator() {
         Validator varB4EAC82CA7396A68D541C85D26508E83_2106056460 = null; 
@@ -1300,6 +1315,7 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.978 -0400", hash_original_method = "A182F1708C145D57F0135D6BE7F61F0B", hash_generated_method = "14C36B5D900351B534569FC3AACF7304")
     protected Filter getFilter() {
         Filter varB4EAC82CA7396A68D541C85D26508E83_1223749054 = null; 

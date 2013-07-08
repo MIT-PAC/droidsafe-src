@@ -144,6 +144,7 @@ public class NetscapeDraftSpec extends CookieSpecBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.252 -0400", hash_original_method = "F5A7F7B6DBF07E93DFA757749FB9F06B", hash_generated_method = "78637125CCD795AC030598C398B6B1BE")
     public int getVersion() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1651176144 = getTaintInt();
@@ -153,6 +154,7 @@ public class NetscapeDraftSpec extends CookieSpecBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.253 -0400", hash_original_method = "C1FA79C2C3115B4C8F8CB20B10CB9417", hash_generated_method = "B58FC8BAD20B05254B8B5FBF5AF93390")
     public Header getVersionHeader() {
         Header varB4EAC82CA7396A68D541C85D26508E83_1526629702 = null; 

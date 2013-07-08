@@ -108,6 +108,7 @@ abstract class SipConnectionBase extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.084 -0400", hash_original_method = "A8956DD6ACAC2731E62816490C646631", hash_generated_method = "2851F0C6353A96A26B8D2BBDBB18D934")
     @Override
     public long getCreateTime() {
@@ -118,6 +119,7 @@ abstract class SipConnectionBase extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.085 -0400", hash_original_method = "540CF01EF64CF5C6BAC1246743ECA8F1", hash_generated_method = "159AD090C96A401F2DC15BABC79824D8")
     @Override
     public long getConnectTime() {
@@ -128,6 +130,7 @@ abstract class SipConnectionBase extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.085 -0400", hash_original_method = "D17BC9E58BABC2D5CE1B7492B59E2165", hash_generated_method = "7977E864D95978DB777F7AE4460DAD63")
     @Override
     public long getDisconnectTime() {
@@ -178,6 +181,7 @@ abstract class SipConnectionBase extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.087 -0400", hash_original_method = "28455B27DA94996FB17C07BF72898FB4", hash_generated_method = "3E4AAC99F1A9C11835B2FA131F93170D")
     @Override
     public DisconnectCause getDisconnectCause() {
@@ -190,6 +194,7 @@ abstract class SipConnectionBase extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.088 -0400", hash_original_method = "04AFA3AB4AAFB99A0A1522AC045EFCCB", hash_generated_method = "CC2251B1F2D7B949CA5CE6AAB3C0D01C")
      void setDisconnectCause(DisconnectCause cause) {
         mCause = cause;
@@ -198,6 +203,7 @@ abstract class SipConnectionBase extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.089 -0400", hash_original_method = "4EE87D2E41D94C18F614BA2D1494AD36", hash_generated_method = "610C02ECE56EE4831ACCC7DA8E4CA6BD")
     @Override
     public PostDialState getPostDialState() {
@@ -210,6 +216,7 @@ abstract class SipConnectionBase extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.091 -0400", hash_original_method = "0751315CA6FC4E16145F947C7FEC6A28", hash_generated_method = "BB3C4E9784C28AF1655F838F726D7EED")
     @Override
     public void proceedAfterWaitChar() {
@@ -217,6 +224,7 @@ abstract class SipConnectionBase extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.092 -0400", hash_original_method = "1CC81519C3754B491F6AACE2E776B1AA", hash_generated_method = "9904AF5CB47E02718508F28B9EA971B1")
     @Override
     public void proceedAfterWildChar(String str) {
@@ -225,6 +233,7 @@ abstract class SipConnectionBase extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.092 -0400", hash_original_method = "A990DB72552DFD3D94264491EEB59CEC", hash_generated_method = "34D7B16591BBD4AA8BCBE387281F2D17")
     @Override
     public void cancelPostDial() {
@@ -281,6 +290,7 @@ abstract class SipConnectionBase extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.095 -0400", hash_original_method = "6B6F8D6F29C0FEAF9C52CC30010D6FE2", hash_generated_method = "2FFD42549D63FE77F4830E5CEE6AB763")
     @Override
     public int getNumberPresentation() {
@@ -291,6 +301,7 @@ abstract class SipConnectionBase extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.096 -0400", hash_original_method = "8B171385F62C7AA97B0882209EC3A206", hash_generated_method = "F650C5D3FE400B286ED79ABEBFAAB2A1")
     @Override
     public UUSInfo getUUSInfo() {

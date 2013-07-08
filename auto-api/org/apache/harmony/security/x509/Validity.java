@@ -33,6 +33,7 @@ public final class Validity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.579 -0400", hash_original_method = "CB2A2B3C356F1AD47950BB2253ACA4BD", hash_generated_method = "241FF2032FB062C4D43AF6C219A2B497")
     public Date getNotBefore() {
         Date varB4EAC82CA7396A68D541C85D26508E83_758534511 = null; 
@@ -44,6 +45,7 @@ public final class Validity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.579 -0400", hash_original_method = "9EADF7E1E76408811693CE379F621727", hash_generated_method = "C3230068B2228FF23E8695FAB4D0A1F9")
     public Date getNotAfter() {
         Date varB4EAC82CA7396A68D541C85D26508E83_1823368989 = null; 

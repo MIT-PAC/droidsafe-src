@@ -71,6 +71,7 @@ public class AutoText {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.514 -0400", hash_original_method = "2098B918320D3D5229820CAB47C60E59", hash_generated_method = "AB8BED3283B3E869E571CBAB26DDF4AE")
     private int getSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1498556605 = getTaintInt();

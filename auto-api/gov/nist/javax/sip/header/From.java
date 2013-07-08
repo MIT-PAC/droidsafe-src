@@ -159,6 +159,7 @@ public final class From extends AddressParametersHeader implements javax.sip.hea
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.561 -0400", hash_original_method = "2BC13538206715D5DC8E4E386607DAE6", hash_generated_method = "FCB09DD846F3388C4D68BC3653359E26")
     public void setAddress(javax.sip.address.Address address) {
         this.address = (AddressImpl) address;

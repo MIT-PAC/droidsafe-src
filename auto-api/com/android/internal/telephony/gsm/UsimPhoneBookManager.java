@@ -188,6 +188,7 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.934 -0400", hash_original_method = "4227D3403F7221594B4C4984D58136B1", hash_generated_method = "94D421C1BCB4B33EF173797F9066F6AC")
     public void invalidateCache() {
         mRefreshCache = true;

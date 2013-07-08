@@ -897,6 +897,7 @@ public class AssetManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.391 -0400", hash_original_method = "05F1691565177C2AFF700A7C71F6F6CD", hash_generated_method = "3A7AF2AA82D95CB2D761B5108753F113")
     private ParcelFileDescriptor openNonAssetFdNative(int cookie,
             String fileName, long[] outOffsets) throws IOException {

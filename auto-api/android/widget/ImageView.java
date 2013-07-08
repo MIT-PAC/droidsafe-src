@@ -312,6 +312,7 @@ public class ImageView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.766 -0400", hash_original_method = "EB73857FE18ECB168F084B0FAC346FEA", hash_generated_method = "79DFBF0CB12D07C0AEB4E082D13DCC35")
     @android.view.RemotableViewMethod
     public void setMaxWidth(int maxWidth) {
@@ -321,6 +322,7 @@ public class ImageView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.766 -0400", hash_original_method = "9473C5CB1AE9899AEC7CB726EABA77F7", hash_generated_method = "0CD17647B54DD7BBE70494C14EEAE2F5")
     @android.view.RemotableViewMethod
     public void setMaxHeight(int maxHeight) {
@@ -330,6 +332,7 @@ public class ImageView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.767 -0400", hash_original_method = "53D05784890C72350FD6879A6582F7F3", hash_generated_method = "C00360D6DF516BD58B06DD3F8D687318")
     public Drawable getDrawable() {
         Drawable varB4EAC82CA7396A68D541C85D26508E83_114340792 = null; 
@@ -365,6 +368,7 @@ public class ImageView extends View {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.767 -0400", hash_original_method = "796039DEA15F6465B0D947F27F5B4F32", hash_generated_method = "258E0C7459D54E2162AF66AD559701B3")
     @android.view.RemotableViewMethod
     public void setImageURI(Uri uri) {
@@ -511,6 +515,7 @@ public class ImageView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.770 -0400", hash_original_method = "84B4F1338E9C8554FC089CA7254325E0", hash_generated_method = "030628C1AA87F6FB03C2D0E0A5567A25")
     public ScaleType getScaleType() {
         ScaleType varB4EAC82CA7396A68D541C85D26508E83_2091292108 = null; 
@@ -522,6 +527,7 @@ public class ImageView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.770 -0400", hash_original_method = "5B9FD9A0A164EA90D695E910523F6E96", hash_generated_method = "8333BF655D8C07413B668B1F81492388")
     public Matrix getImageMatrix() {
         Matrix varB4EAC82CA7396A68D541C85D26508E83_1576888473 = null; 
@@ -728,6 +734,7 @@ public class ImageView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Matrix.ScaleToFit scaleTypeToScaleToFit(ScaleType st) {
         return sS2FArray[st.nativeInt - 1];
     }
@@ -1055,6 +1062,7 @@ public class ImageView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.780 -0400", hash_original_method = "7D3365C5D6F47846F65EFD0480835D79", hash_generated_method = "609F97693CF5F67855BCBAF769FEED60")
     public boolean getBaselineAlignBottom() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_754053992 = getTaintBoolean();

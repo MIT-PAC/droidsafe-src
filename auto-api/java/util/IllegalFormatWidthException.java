@@ -21,6 +21,7 @@ public class IllegalFormatWidthException extends IllegalFormatException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.527 -0400", hash_original_method = "E748E6398AAC681AB6A0D4D76FADF497", hash_generated_method = "50B8733C47C77EA237919A9256A127ED")
     public int getWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_755913725 = getTaintInt();

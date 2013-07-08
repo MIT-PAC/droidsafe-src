@@ -237,6 +237,7 @@ public class InflaterInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.853 -0400", hash_original_method = "99EDC8CF58ACEFC383E40E1B1F253896", hash_generated_method = "374E02FA36CE7C442AE21827EF6D82FC")
     @Override
     public void mark(int readlimit) {
@@ -255,6 +256,7 @@ public class InflaterInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.854 -0400", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "73F98748F519355B6C81FE506ED9BE5A")
     @Override
     public boolean markSupported() {

@@ -22,6 +22,7 @@ public class Organization extends SIPHeader implements OrganizationHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.836 -0400", hash_original_method = "64094CFB244C647C5657F3E488B1D7D6", hash_generated_method = "2B299968478F773C3EF62E8733F39E09")
     public String encodeBody() {
         String varB4EAC82CA7396A68D541C85D26508E83_1576517766 = null; 
@@ -33,6 +34,7 @@ public class Organization extends SIPHeader implements OrganizationHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.836 -0400", hash_original_method = "9435FCCFD7C054307D934681F7070D26", hash_generated_method = "3C5EABF98938D5E70DF585E578BAD45E")
     public String getOrganization() {
         String varB4EAC82CA7396A68D541C85D26508E83_394691253 = null; 

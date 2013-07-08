@@ -24,6 +24,7 @@ public class CursorWrapper implements Cursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.826 -0400", hash_original_method = "316180AD618802065A1D51DA27AEB312", hash_generated_method = "AA1808E093CA4F09C9F5DB32139D7DC7")
     public Cursor getWrappedCursor() {
         Cursor varB4EAC82CA7396A68D541C85D26508E83_1879271703 = null; 
@@ -447,6 +448,7 @@ public class CursorWrapper implements Cursor {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.843 -0400", hash_original_method = "EE868502A4046B2104E93564DA0F8447", hash_generated_method = "8FF659515F22BAC8456B990797806EF1")
     public void setNotificationUri(ContentResolver cr, Uri uri) {
         mCursor.setNotificationUri(cr, uri);

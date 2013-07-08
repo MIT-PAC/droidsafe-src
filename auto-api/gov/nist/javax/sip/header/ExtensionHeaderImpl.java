@@ -27,6 +27,7 @@ public class ExtensionHeaderImpl extends SIPHeader implements javax.sip.header.E
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.532 -0400", hash_original_method = "484F8876E72CD5E2F0338DF99C79D0F8", hash_generated_method = "CE5DDBB2CC882FDCDEEB362EE6539269")
     public void setName(String headerName) {
         this.headerName = headerName;
@@ -36,6 +37,7 @@ public class ExtensionHeaderImpl extends SIPHeader implements javax.sip.header.E
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.532 -0400", hash_original_method = "54A096BDAB783365763903A518BE6C1A", hash_generated_method = "811C079A212601355D5034023F0D4C0B")
     public void setValue(String value) {
         this.value = value;

@@ -347,6 +347,7 @@ public class HttpEngine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.883 -0400", hash_original_method = "A2A25877F13CAB8F3B2570F0DD573D04", hash_generated_method = "9B17052E81F9CC436DB1A10A389888F3")
     private boolean hasRequestBody() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_61793044 = getTaintBoolean();
@@ -471,6 +472,7 @@ public class HttpEngine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.886 -0400", hash_original_method = "A7591895A9BC485B929D9D45A1C9BC76", hash_generated_method = "E8090501926668CE727D7A9FD5B39BB2")
     protected boolean acceptCacheResponseType(CacheResponse cacheResponse) {
         addTaint(cacheResponse.getTaint());
@@ -502,6 +504,7 @@ public class HttpEngine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.887 -0400", hash_original_method = "CA4844B1B3E4576C0EA18E04D34BB6CE", hash_generated_method = "FE58A130B71EDF8A862183284D606082")
     protected HttpURLConnection getHttpConnectionToCache() {
         HttpURLConnection varB4EAC82CA7396A68D541C85D26508E83_783956425 = null; 
@@ -978,6 +981,7 @@ public class HttpEngine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.898 -0400", hash_original_method = "E79001B5362EC94E0060C3FC14A22DCF", hash_generated_method = "FB1728E301893E67ECBF591C9DA4E393")
     protected boolean requiresTunnel() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1242760795 = getTaintBoolean();

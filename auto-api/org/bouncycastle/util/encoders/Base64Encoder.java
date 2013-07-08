@@ -42,6 +42,7 @@ public class Base64Encoder implements Encoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.288 -0400", hash_original_method = "21DA0B3C66110012AEC4B0EF8A985DB1", hash_generated_method = "333A93F36A4047292D723904CDB52B68")
     protected void initialiseDecodingTable() {
         {
@@ -147,6 +148,7 @@ public class Base64Encoder implements Encoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.290 -0400", hash_original_method = "1B2A7D609CA1F47FC87AA118398B5C86", hash_generated_method = "ADEB092B1D61A7C1B152FE3ABC3D3EB3")
     private boolean ignore(
         char    c) {

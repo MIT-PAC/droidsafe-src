@@ -76,6 +76,7 @@ public abstract class ContentObserver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.676 -0400", hash_original_method = "A5B2D8696143266ED24B145CF029F206", hash_generated_method = "9E316C1670E8115E9EB321581F74673A")
     public boolean deliverSelfNotifications() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1902271680 = getTaintBoolean();
@@ -85,6 +86,7 @@ public abstract class ContentObserver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.677 -0400", hash_original_method = "6EAEE94A5AFBBE3CB405FFF6432059B8", hash_generated_method = "43E4B8EB52312D77453544CB6778AF9B")
     public void onChange(boolean selfChange) {
         

@@ -54,6 +54,7 @@ public final class IOCase implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.355 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "D3E2C244F06FEA346FC6D5FEFDA71BD3")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1078289472 = null; 
@@ -65,6 +66,7 @@ public final class IOCase implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.355 -0400", hash_original_method = "D4D1A27073CB69531CAF258DC4B9AC95", hash_generated_method = "94AB3A10B46180F1C2874185005CB47C")
     public boolean isCaseSensitive() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_956021501 = getTaintBoolean();
@@ -192,6 +194,7 @@ public final class IOCase implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.359 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "FB5CDB4ADD6CF1AAB39BED4502DD2EDD")
     @Override
     public String toString() {

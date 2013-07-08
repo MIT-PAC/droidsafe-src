@@ -355,6 +355,7 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.211 -0400", hash_original_method = "7D5E495C9B289687F8273FA9EA57C0F7", hash_generated_method = "58EC071B095B9519514357680DE7B90F")
      ResultReceiver getResultReceiver() {
         ResultReceiver varB4EAC82CA7396A68D541C85D26508E83_1934751651 = null; 
@@ -366,6 +367,7 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.211 -0400", hash_original_method = "0D2A49DF88825D4B2D39C3141FFC083A", hash_generated_method = "9F2DC5D24D4C7215906ACEDF9177E9B9")
      boolean isSameTextField(int ptr) {
         addTaint(ptr);
@@ -887,6 +889,7 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.219 -0400", hash_original_method = "2AA5BA571DA39EAF8290098D28F58BC6", hash_generated_method = "7C306E24F9DD1E5031560CC1BC438FDC")
     @Override
     public boolean requestRectangleOnScreen(Rect rectangle, boolean immediate) {
@@ -1266,6 +1269,7 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.227 -0400", hash_original_method = "E906B54723AD6F9ED79F8F4825A6BCDE", hash_generated_method = "00DFCCEAEBCA5AF7E29ED7EACECB08F0")
      void setAutoFillProfileIsSet(boolean autoFillProfileIsSet) {
         mAutoFillProfileIsSet = autoFillProfileIsSet;

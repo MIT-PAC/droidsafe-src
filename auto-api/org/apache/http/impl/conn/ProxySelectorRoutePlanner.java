@@ -52,6 +52,7 @@ public class ProxySelectorRoutePlanner implements HttpRoutePlanner {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.550 -0400", hash_original_method = "7BFDCA23B0C60DE048DC61BFB74DD1F2", hash_generated_method = "EDCAAC3078AC30A5F675C57C5C4C2B77")
     public ProxySelector getProxySelector() {
         ProxySelector varB4EAC82CA7396A68D541C85D26508E83_275023719 = null; 
@@ -63,6 +64,7 @@ public class ProxySelectorRoutePlanner implements HttpRoutePlanner {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.551 -0400", hash_original_method = "8D192BFFC053F859733660633466B9E1", hash_generated_method = "459A3B3BE9F0C2E926706EF05A5A3174")
     public void setProxySelector(ProxySelector prosel) {
         this.proxySelector = prosel;

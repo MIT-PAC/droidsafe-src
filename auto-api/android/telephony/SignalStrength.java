@@ -190,6 +190,7 @@ public class SignalStrength implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.035 -0400", hash_original_method = "2805E95BBC437ECAE5861EC35986FF86", hash_generated_method = "A7E9AAE67CFBB3173109CFF2547D84E6")
     protected void copyFrom(SignalStrength s) {
         mGsmSignalStrength = s.mGsmSignalStrength;
@@ -257,6 +258,7 @@ public class SignalStrength implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.036 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "A7E4FB3F75AEDB1F7609104D5328AD04")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1036651598 = getTaintInt();
@@ -266,6 +268,7 @@ public class SignalStrength implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.036 -0400", hash_original_method = "BF744C5FBE02CF825B56C3345AF59498", hash_generated_method = "C946FFFC729C36030B129A821858423E")
     public int getGsmSignalStrength() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2027489918 = getTaintInt();
@@ -275,6 +278,7 @@ public class SignalStrength implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.036 -0400", hash_original_method = "092AE71FB082AB370F835236471B5652", hash_generated_method = "267C4AC24844EB2308585F02B69CEC90")
     public int getGsmBitErrorRate() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_41590201 = getTaintInt();
@@ -284,6 +288,7 @@ public class SignalStrength implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.037 -0400", hash_original_method = "4A3A20AF02DE258CADBBD180CAF3D12D", hash_generated_method = "F5B34D274AB13A51B5EAA63AD15B5DD5")
     public int getCdmaDbm() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1112732178 = getTaintInt();
@@ -293,6 +298,7 @@ public class SignalStrength implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.037 -0400", hash_original_method = "38AEFFB984E37DCE606B9F88ABDA8DE8", hash_generated_method = "E76B87E6537C9DBCA4253B097B17E6E9")
     public int getCdmaEcio() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1066464230 = getTaintInt();
@@ -302,6 +308,7 @@ public class SignalStrength implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.037 -0400", hash_original_method = "D895F9B1A344D14CB24D80BCC48EF38D", hash_generated_method = "60D77635DC0AD7CD478D00F6D55C56AC")
     public int getEvdoDbm() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1463735768 = getTaintInt();
@@ -311,6 +318,7 @@ public class SignalStrength implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.038 -0400", hash_original_method = "E512C4871B3839CD9850A80797FFBB27", hash_generated_method = "7881E873A0075A0E95657BDDD0AB93FF")
     public int getEvdoEcio() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1281653369 = getTaintInt();
@@ -320,6 +328,7 @@ public class SignalStrength implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.038 -0400", hash_original_method = "76215695BF499679C7BA84176FCF6732", hash_generated_method = "F8358388772F06C3CD47CEBFDE15BB9E")
     public int getEvdoSnr() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_482893455 = getTaintInt();
@@ -621,6 +630,7 @@ public class SignalStrength implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.044 -0400", hash_original_method = "94E656AC1ABF6547309F24472B6D486E", hash_generated_method = "D813D32D8A5417EF7CA89452E0DDCB87")
     public int getLteDbm() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1885705280 = getTaintInt();
@@ -630,6 +640,7 @@ public class SignalStrength implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.044 -0400", hash_original_method = "CDB40306822E2DC8617AD5A6BB9C97E4", hash_generated_method = "AA8D3E5D6228494406858D8AAFA948B5")
     public int getLteLevel() {
         int levelLteRsrp = 0;
@@ -677,6 +688,7 @@ public class SignalStrength implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.045 -0400", hash_original_method = "7CBC52492CE7EC66B1A8811456B7D40A", hash_generated_method = "8A619E2E94CF5B2B17763862CBF45B7F")
     public boolean isGsm() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_551845528 = getTaintBoolean();
@@ -686,6 +698,7 @@ public class SignalStrength implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.046 -0400", hash_original_method = "77932B1FC1CD240B3EE054141A5B543F", hash_generated_method = "762EF1EDCA549A82A64494307E6598B2")
     @Override
     public int hashCode() {
@@ -704,6 +717,7 @@ public class SignalStrength implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.048 -0400", hash_original_method = "42740862A2861DE7D9325894DE272263", hash_generated_method = "CC6C7DA09DDF28CBFAE2B7C31CB8AB94")
     @Override
     public boolean equals(Object o) {

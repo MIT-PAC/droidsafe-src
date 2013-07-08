@@ -97,6 +97,7 @@ public class ProxyProperties implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.927 -0400", hash_original_method = "B21C2297C1E60D4D2D92DDE75D931874", hash_generated_method = "521311605E13FE489C3E25C419F2AADD")
     public String getHost() {
         String varB4EAC82CA7396A68D541C85D26508E83_1932471961 = null; 
@@ -108,6 +109,7 @@ public class ProxyProperties implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.927 -0400", hash_original_method = "D8DAED2CD8A0984A9202198C71DA9D83", hash_generated_method = "515D0BAD6FB00F17BE705B3252163518")
     public int getPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1831063063 = getTaintInt();
@@ -117,6 +119,7 @@ public class ProxyProperties implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.928 -0400", hash_original_method = "A9FE56F63855512203F6AE795614409C", hash_generated_method = "66D5C563C9BAC498820283EB1C1E67AE")
     public String getExclusionList() {
         String varB4EAC82CA7396A68D541C85D26508E83_728355363 = null; 
@@ -301,6 +304,7 @@ public class ProxyProperties implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.932 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "6367BF64DC0EAF8EA931820EF4360D51")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_914416163 = getTaintInt();

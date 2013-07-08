@@ -29,6 +29,7 @@ public class PathEffect {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeDestructor(int native_patheffect) {
     }
 

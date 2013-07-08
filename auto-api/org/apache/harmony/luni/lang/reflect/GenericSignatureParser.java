@@ -731,6 +731,7 @@ public class GenericSignatureParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.124 -0400", hash_original_method = "1CE8B25C92A2D6D9FB5D5E3D923D48F0", hash_generated_method = "7313CCC5A481EDB07402157B7FDFB415")
      boolean isStopSymbol(char ch) {
         addTaint(ch);

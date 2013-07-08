@@ -79,6 +79,7 @@ public class LinkProperties implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.124 -0400", hash_original_method = "658C71C3CDAAE8BF2A6E808615EC0533", hash_generated_method = "D58C219F5C5992BE6A4B05BFFDE78502")
     public void setInterfaceName(String iface) {
         mIfaceName = iface;
@@ -87,6 +88,7 @@ public class LinkProperties implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.125 -0400", hash_original_method = "DE3FEB2907F1F43DDDDBA76FC2B5A592", hash_generated_method = "CFE0A869169EA27A27A7D5ADDC0B007E")
     public String getInterfaceName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1157394690 = null; 
@@ -189,6 +191,7 @@ public class LinkProperties implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.135 -0400", hash_original_method = "A3A7E4451F64D99820B4BAAEF1AFE8A2", hash_generated_method = "8C961CFF90F31516B337EDFD675E66E4")
     public void setHttpProxy(ProxyProperties proxy) {
         mHttpProxy = proxy;
@@ -197,6 +200,7 @@ public class LinkProperties implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.136 -0400", hash_original_method = "6E571D9EDF02B85B7F325367F981AC91", hash_generated_method = "BBE9062B195816AD73E0FB20AD065415")
     public ProxyProperties getHttpProxy() {
         ProxyProperties varB4EAC82CA7396A68D541C85D26508E83_749956514 = null; 
@@ -225,6 +229,7 @@ public class LinkProperties implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.137 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E6D5C8C22AD917ECC1E99C23BA71CCD3")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_924922597 = getTaintInt();

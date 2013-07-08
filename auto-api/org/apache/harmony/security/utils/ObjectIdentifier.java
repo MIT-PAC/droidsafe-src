@@ -59,6 +59,7 @@ public final class ObjectIdentifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.369 -0400", hash_original_method = "30E83D32FBE8DF043D06124E9715286A", hash_generated_method = "53593EB3879EC9E5B4E8008573027CE4")
     public int[] getOid() {
         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1346204576 = {getTaintInt()};
@@ -68,6 +69,7 @@ public final class ObjectIdentifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.370 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "AEBCDF331F1DFFA8CA3BFE273D988461")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1377613962 = null; 
@@ -79,6 +81,7 @@ public final class ObjectIdentifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.370 -0400", hash_original_method = "FA340579AD853DABC65F97F27C820CE8", hash_generated_method = "26B55D3C16004C0C5D57748A55824C91")
     public Object getGroup() {
         Object varB4EAC82CA7396A68D541C85D26508E83_2067325227 = null; 
@@ -194,6 +197,7 @@ public final class ObjectIdentifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int hashIntArray(int[] array) {
         int intHash = 0;
         for (int i = 0; i < array.length && i < 4; i++) {

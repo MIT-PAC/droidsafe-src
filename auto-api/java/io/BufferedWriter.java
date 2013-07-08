@@ -155,6 +155,7 @@ public class BufferedWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.504 -0400", hash_original_method = "65F785E5C7A072182DBDFA4385D9D27B", hash_generated_method = "579A1FAB058D4DD9CD96409F8E130300")
     private boolean isClosed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_580478792 = getTaintBoolean();

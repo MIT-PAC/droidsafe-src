@@ -230,6 +230,7 @@ public class SSLServerSocketImpl extends SSLServerSocket {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.920 -0400", hash_original_method = "E95178BAD1AB83F5F7B2A543005EDE81", hash_generated_method = "4E9941DA668E6D3FE4628B24CC47E07C")
     @Override
     public Socket accept() throws IOException {
@@ -262,6 +263,7 @@ public class SSLServerSocketImpl extends SSLServerSocket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.921 -0400", hash_original_method = "2BD2C11E492A0926A3928FBE6062AA1A", hash_generated_method = "DB521F2EC0819DED76B423D5797B338F")
     @Override
     public String toString() {

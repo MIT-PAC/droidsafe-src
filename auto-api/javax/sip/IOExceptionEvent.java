@@ -35,6 +35,7 @@ public class IOExceptionEvent extends EventObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.017 -0400", hash_original_method = "B21C2297C1E60D4D2D92DDE75D931874", hash_generated_method = "15B3A67E113B66578EF4AD697235DC98")
     public String getHost() {
         String varB4EAC82CA7396A68D541C85D26508E83_277301549 = null; 
@@ -46,6 +47,7 @@ public class IOExceptionEvent extends EventObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.019 -0400", hash_original_method = "D8DAED2CD8A0984A9202198C71DA9D83", hash_generated_method = "BD9A6A9627B08FBA2F2F67C781A20078")
     public int getPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_758747965 = getTaintInt();
@@ -55,6 +57,7 @@ public class IOExceptionEvent extends EventObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.019 -0400", hash_original_method = "CC293D4A58B4AE34EE1EAFE01D7A0F93", hash_generated_method = "C97096E326D425F2BDA4DBF8C474ADD8")
     public String getTransport() {
         String varB4EAC82CA7396A68D541C85D26508E83_390391262 = null; 

@@ -76,6 +76,7 @@ public final class CollationKeyICU extends CollationKey {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.143 -0400", hash_original_method = "14EA39361109DCC90111D16D29CE0C8D", hash_generated_method = "A09F5F3C66E7CC5DFE79A3982C7146D2")
     @Override
     public int hashCode() {

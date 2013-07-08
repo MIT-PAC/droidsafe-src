@@ -27,16 +27,19 @@ public class EventLog {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int writeEvent(int tag, int value) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int writeEvent(int tag, long value) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int writeEvent(int tag, String str) {
         return DSUtils.UNKNOWN_INT;
     }

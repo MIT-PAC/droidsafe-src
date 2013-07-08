@@ -30,6 +30,7 @@ public final class Console implements Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Console getConsole() {
         return console;
     }
@@ -89,6 +90,7 @@ public final class Console implements Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.601 -0400", hash_original_method = "6872D36E6DE03121BD2812355740CF6B", hash_generated_method = "3A15D4969348E43CBFAC414C48B49CFE")
     public Reader reader() {
         Reader varB4EAC82CA7396A68D541C85D26508E83_1862069813 = null; 
@@ -186,6 +188,7 @@ public final class Console implements Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int setEchoImpl(boolean on, int previousState) throws IOException {
         return DSUtils.UNKNOWN_INT;
     }
@@ -209,6 +212,7 @@ public final class Console implements Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.604 -0400", hash_original_method = "EF4D37EF542F65995124A506A5A02FEA", hash_generated_method = "71ECE298A66C2DE04274070D5EC064B1")
     public PrintWriter writer() {
         PrintWriter varB4EAC82CA7396A68D541C85D26508E83_1516536533 = null; 

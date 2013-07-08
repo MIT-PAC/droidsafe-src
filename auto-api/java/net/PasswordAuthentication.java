@@ -37,6 +37,7 @@ public final class PasswordAuthentication {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.542 -0400", hash_original_method = "AE8C8ADC981355D9DAA86F7D72E53644", hash_generated_method = "FD1531F00A59CE3C883AC77D91FC5C09")
     public String getUserName() {
         String varB4EAC82CA7396A68D541C85D26508E83_2091602263 = null; 

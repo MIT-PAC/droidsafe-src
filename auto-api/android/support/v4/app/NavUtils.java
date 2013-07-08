@@ -23,7 +23,8 @@ public class NavUtils {
     }
 
     
-        public static boolean shouldUpRecreateTask(Activity sourceActivity, Intent targetIntent) {
+        @DSModeled(DSC.SPEC)
+    public static boolean shouldUpRecreateTask(Activity sourceActivity, Intent targetIntent) {
         String action = sourceActivity.getIntent().getAction();
         return action != null && !action.equals(Intent.ACTION_MAIN);
     }
@@ -43,14 +44,16 @@ public class NavUtils {
     }
 
     
-        public static void navigateUpTo(Activity sourceActivity, Intent upIntent) {
+        @DSModeled(DSC.SPEC)
+    public static void navigateUpTo(Activity sourceActivity, Intent upIntent) {
         upIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         sourceActivity.startActivity(upIntent);
         sourceActivity.finish();
     }
 
     
-        public static Intent getParentActivityIntent(Activity sourceActivity) {
+        @DSModeled(DSC.SPEC)
+    public static Intent getParentActivityIntent(Activity sourceActivity) {
         String parentActivity = getParentActivityName(sourceActivity);
         if (parentActivity == null) return null;
         return new Intent(Intent.ACTION_MAIN).setClassName(sourceActivity, parentActivity);
@@ -66,7 +69,8 @@ public class NavUtils {
     }
 
     
-        public static Intent getParentActivityIntent(Context context, ComponentName componentName) throws NameNotFoundException {
+        @DSModeled(DSC.SPEC)
+    public static Intent getParentActivityIntent(Context context, ComponentName componentName) throws NameNotFoundException {
         String parentActivity = getParentActivityName(context, componentName);
         if (parentActivity == null) return null;
         if (parentActivity.charAt(0) == '.') {

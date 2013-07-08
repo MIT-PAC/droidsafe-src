@@ -76,6 +76,7 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.448 -0400", hash_original_method = "1D516C6BB697A8ECCBFC751AA141CC3E", hash_generated_method = "868E4A3F73B37D2E0A6EF61755DCD898")
     @Override
     protected String getFormat() {
@@ -364,6 +365,7 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int resultToCause(int rc) {
         switch (rc) {
             case Activity.RESULT_OK:

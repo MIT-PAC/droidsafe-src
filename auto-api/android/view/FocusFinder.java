@@ -316,6 +316,7 @@ public class FocusFinder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.083 -0400", hash_original_method = "1AC6C27686DF7285B59CAB56ADBB9696", hash_generated_method = "E1AF52958E1CB9BBE7A5CB1E756B83F1")
      int getWeightedDistanceFor(int majorAxisDistance, int minorAxisDistance) {
         addTaint(majorAxisDistance);

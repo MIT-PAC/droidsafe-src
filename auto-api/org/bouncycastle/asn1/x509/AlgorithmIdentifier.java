@@ -141,6 +141,7 @@ public class AlgorithmIdentifier extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.622 -0400", hash_original_method = "494BC62B0A8F124F83635D3540B715A4", hash_generated_method = "9998F8D490D822E50AAE036250EC51CF")
     public DERObjectIdentifier getObjectId() {
         DERObjectIdentifier varB4EAC82CA7396A68D541C85D26508E83_739947912 = null; 
@@ -152,6 +153,7 @@ public class AlgorithmIdentifier extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.622 -0400", hash_original_method = "89C55006FD45E6E61AF55DE1360B9A68", hash_generated_method = "E87ABCB7211975F8FE4134837F402DD2")
     public DEREncodable getParameters() {
         DEREncodable varB4EAC82CA7396A68D541C85D26508E83_1795258617 = null; 

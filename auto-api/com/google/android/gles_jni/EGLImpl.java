@@ -31,6 +31,7 @@ public class EGLImpl implements EGL10 {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.385 -0400", hash_original_method = "0FE9F08E24E0D2453B9577BF62363101", hash_generated_method = "6E696855C61DA52195651501FC474974")
     public boolean eglInitialize(EGLDisplay display, int[] major_minor) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1638854290 = getTaintBoolean();
@@ -38,6 +39,7 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.386 -0400", hash_original_method = "F079BB68B5D124389F3B0A1B80EDA8E6", hash_generated_method = "3C4D8FCE56D23112076A5307A2BF5A39")
     public boolean eglQueryContext(EGLDisplay display, EGLContext context, int attribute, int[] value) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1722070311 = getTaintBoolean();
@@ -45,6 +47,7 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.386 -0400", hash_original_method = "543FE727862E36E7BB38AE92834CF157", hash_generated_method = "43DA74FD94EAC997ADAEB46238DE7C68")
     public boolean eglQuerySurface(EGLDisplay display, EGLSurface surface, int attribute, int[] value) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1789790392 = getTaintBoolean();
@@ -52,6 +55,7 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.386 -0400", hash_original_method = "BAFD3BC777B3DA03D70496857F209CFE", hash_generated_method = "289F15B88EA0B41E8E302F50FD360034")
     public boolean eglReleaseThread() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1399342504 = getTaintBoolean();
@@ -67,6 +71,7 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.387 -0400", hash_original_method = "CE0C84B918062E5840E34AEA7F4A16CD", hash_generated_method = "224491AA50D9B776DA77A6BABC5E6146")
     public boolean eglGetConfigAttrib(EGLDisplay display, EGLConfig config, int attribute, int[] value) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1105741969 = getTaintBoolean();
@@ -82,6 +87,7 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.388 -0400", hash_original_method = "30167F0B844356CC78AEA2C709085F0A", hash_generated_method = "BB059EE6F2BD6CF44962E6F7A4368801")
     public int eglGetError() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1411198359 = getTaintInt();
@@ -89,6 +95,7 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.388 -0400", hash_original_method = "F2C45513A57BFF3B5C76E0152AB1D6FE", hash_generated_method = "B994F28195F5D730364640D4071ED1EF")
     public boolean eglDestroyContext(EGLDisplay display, EGLContext context) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_229939847 = getTaintBoolean();
@@ -96,6 +103,7 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.388 -0400", hash_original_method = "F8BE74B02C97D5EFE0B64C835DE94243", hash_generated_method = "68C03229CED5FFB6FFE103E44883537E")
     public boolean eglDestroySurface(EGLDisplay display, EGLSurface surface) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2072506081 = getTaintBoolean();
@@ -103,6 +111,7 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.388 -0400", hash_original_method = "D0A5BC4F7F6AC39FDE4C2E9D6BB5947A", hash_generated_method = "D5FCA466ACE9FF219DE3B6AB746DBAB7")
     public boolean eglMakeCurrent(EGLDisplay display, EGLSurface draw, EGLSurface read, EGLContext context) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1635027542 = getTaintBoolean();
@@ -110,6 +119,7 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.388 -0400", hash_original_method = "7F0F6E22A72F3EFD03B53C72B8A334B5", hash_generated_method = "FD75A226178BC0A876B19864D0D93C7A")
     public String eglQueryString(EGLDisplay display, int name) {
     	addTaint(display.getTaint());
@@ -121,6 +131,7 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.389 -0400", hash_original_method = "3CBB90A352CD62A4CE70C5B74A91066B", hash_generated_method = "8AD02DFF166F078243356BA79D8C89FC")
     public boolean eglSwapBuffers(EGLDisplay display, EGLSurface surface) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1695774213 = getTaintBoolean();
@@ -128,6 +139,7 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.389 -0400", hash_original_method = "76CDC4A068B49052D1DE694B54AD997D", hash_generated_method = "57043AC130FE20E9FF34DA6F8DCCCCAE")
     public boolean eglTerminate(EGLDisplay display) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1801888869 = getTaintBoolean();
@@ -135,6 +147,7 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.389 -0400", hash_original_method = "4BC9AB9F0FAFDEDE82B7BBC20123D960", hash_generated_method = "70D9E0851C486D0AD99AAC5926D7FB0F")
     public boolean eglCopyBuffers(EGLDisplay display, EGLSurface surface, Object native_pixmap) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1731790315 = getTaintBoolean();
@@ -142,6 +155,7 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.389 -0400", hash_original_method = "CC5C6C40253D90C1249B907D63B6D41E", hash_generated_method = "1B5BEDDC05C3786A9666985A04B776AC")
     public boolean eglWaitGL() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1811915031 = getTaintBoolean();
@@ -149,6 +163,7 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.389 -0400", hash_original_method = "65BB1CF445260F062394F987EBFCAA01", hash_generated_method = "CD4B0B5C872750A998A142257C3E527F")
     public boolean eglWaitNative(int engine, Object bindTarget) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1952974093 = getTaintBoolean();
@@ -156,6 +171,7 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getInitCount(EGLDisplay display) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1163271600 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1163271600;
@@ -451,6 +467,7 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.398 -0400", hash_original_method = "00A9769D3FCB2BCA752959A2156960BA", hash_generated_method = "05FBD9B00C27855220ED3588BDD28C98")
     private int _eglCreateContext(EGLDisplay display, EGLConfig config, EGLContext share_context, int[] attrib_list) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_885766922 = getTaintInt();
@@ -458,6 +475,7 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.398 -0400", hash_original_method = "9C66F8DAF2CF1DF35D1777997045841F", hash_generated_method = "48EA57098ED674FC9FD22E702DC6F910")
     private int _eglCreatePbufferSurface(EGLDisplay display, EGLConfig config, int[] attrib_list) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_480476591 = getTaintInt();
@@ -465,11 +483,13 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.398 -0400", hash_original_method = "37A0D40F82301EFE54D93A3E184BD2AE", hash_generated_method = "67B71D5B2B8EA12F14EA13A7D4D22EC8")
     private void _eglCreatePixmapSurface(EGLSurface sur, EGLDisplay display, EGLConfig config, Object native_pixmap, int[] attrib_list) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.399 -0400", hash_original_method = "73053A5CE6D69977C0A5A55B454424E0", hash_generated_method = "8476AF037716767B08B91BD3F4726D80")
     private int _eglCreateWindowSurface(EGLDisplay display, EGLConfig config, Object native_window, int[] attrib_list) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1851951462 = getTaintInt();
@@ -477,6 +497,7 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.399 -0400", hash_original_method = "C683AABBDC194C692A1DD6C73D5E2B96", hash_generated_method = "2A809D27404EE88110441E01C2A5B5B6")
     private int _eglCreateWindowSurfaceTexture(EGLDisplay display, EGLConfig config, Object native_window, int[] attrib_list) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_241517995 = getTaintInt();
@@ -484,6 +505,7 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.399 -0400", hash_original_method = "E8D546530FFFC5C2FC6E86FFB85AACEC", hash_generated_method = "A85227FF1019C42593EB3E398860336C")
     private int _eglGetDisplay(Object native_display) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1800272887 = getTaintInt();
@@ -491,6 +513,7 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.400 -0400", hash_original_method = "37AAAAC75A3E4652292E435C97659047", hash_generated_method = "FA44BCDADE6564FB8DCDFE1C7427C607")
     private int _eglGetCurrentContext() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1552301368 = getTaintInt();
@@ -498,6 +521,7 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.400 -0400", hash_original_method = "AF8954095CE356BE495ED3F59D7027C3", hash_generated_method = "2DEA0616F04F1CBAB2AFB6D28FDE10EA")
     private int _eglGetCurrentDisplay() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1619656359 = getTaintInt();
@@ -505,6 +529,7 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.400 -0400", hash_original_method = "9F7D143F548ED01AA850BEE267C7749A", hash_generated_method = "1302405BE8B110457193D0BFC295B5F0")
     private int _eglGetCurrentSurface(int readdraw) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_417553124 = getTaintInt();
@@ -512,6 +537,7 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void _nativeClassInit() {
     }
 

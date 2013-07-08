@@ -49,6 +49,7 @@ public class PBEParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.290 -0400", hash_original_method = "3E24EA64DC831AAEDCCD9EAD88FFC369", hash_generated_method = "2A2FD96E66D9D74746042EB9521CEFA6")
     public int getIterationCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_806908759 = getTaintInt();

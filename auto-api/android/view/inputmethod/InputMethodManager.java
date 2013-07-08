@@ -246,11 +246,13 @@ public final class InputMethodManager {
     }
 
     
-        static public InputMethodManager peekInstance() {
+        @DSModeled(DSC.SAFE)
+    static public InputMethodManager peekInstance() {
         return mInstance;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.214 -0400", hash_original_method = "3D9C93A013E7DC300254687B6593E9DE", hash_generated_method = "B1DD8DB78B414EDAFD315791F8FA3DA2")
     public IInputMethodClient getClient() {
         IInputMethodClient varB4EAC82CA7396A68D541C85D26508E83_1438300044 = null; 
@@ -262,6 +264,7 @@ public final class InputMethodManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.214 -0400", hash_original_method = "BB1CC2AA4E519DFF3D7BB1A17FAAA9A1", hash_generated_method = "CEC42D6F96A6937ED574DCBCA816501D")
     public IInputContext getInputContext() {
         IInputContext varB4EAC82CA7396A68D541C85D26508E83_491723132 = null; 
@@ -412,6 +415,7 @@ public final class InputMethodManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.217 -0400", hash_original_method = "E3510526CEDC6D4EEDFFA989F1389EB2", hash_generated_method = "DBF532BC0434234D838BC6C0A047FC02")
     public void setFullscreenMode(boolean fullScreen) {
         mFullscreenMode = fullScreen;
@@ -465,6 +469,7 @@ public final class InputMethodManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.218 -0400", hash_original_method = "FCDCA2DC24AB76EAA903F8369A9A45F8", hash_generated_method = "A40A00D2CD746ECC437D014E580E26CD")
     public boolean isFullscreenMode() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_98815419 = getTaintBoolean();
@@ -538,6 +543,7 @@ public final class InputMethodManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.219 -0400", hash_original_method = "7C74580464CD8E195E3FB8BED8B93C53", hash_generated_method = "EFB7670AA252AD66E15371A32A6F6C81")
      void clearConnectionLocked() {
         mCurrentTextBoxAttribute = null;
@@ -993,6 +999,7 @@ public final class InputMethodManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.228 -0400", hash_original_method = "CA0F410F50592B0E0C8F6A16050EA193", hash_generated_method = "5FF0BB6EA55532664E9A8A325C4475BB")
     public void focusOut(View view) {
         {
@@ -1116,6 +1123,7 @@ public final class InputMethodManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.230 -0400", hash_original_method = "1A7A85BD07D131CBE39BA9D28F0E6F2A", hash_generated_method = "B9FF052D043E401AE8605F4965E6E768")
     public void startGettingWindowFocus(View rootView) {
         {
@@ -1198,6 +1206,7 @@ public final class InputMethodManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.231 -0400", hash_original_method = "385DC57C25B266614A0F3F767A2E43B1", hash_generated_method = "FBAEAC2AD2971D1412B3B2E7AC6DAA16")
     public boolean isWatchingCursor(View view) {
         addTaint(view.getTaint());

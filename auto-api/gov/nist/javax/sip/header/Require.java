@@ -31,6 +31,7 @@ public class Require extends SIPHeader implements RequireHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.112 -0400", hash_original_method = "9C711BE19A8C0E0A7CB116A3F753C6F0", hash_generated_method = "E7CFB80BD9089D24AE24925AF2C47EEE")
     public String encodeBody() {
         String varB4EAC82CA7396A68D541C85D26508E83_1752007709 = null; 
@@ -58,6 +59,7 @@ public class Require extends SIPHeader implements RequireHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.113 -0400", hash_original_method = "CE304AE728C556B979775346D4C5B456", hash_generated_method = "C77CF5AA36EC80E32581C92205D46B7E")
     public String getOptionTag() {
         String varB4EAC82CA7396A68D541C85D26508E83_1493285254 = null; 

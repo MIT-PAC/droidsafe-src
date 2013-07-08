@@ -140,31 +140,37 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int runStateOf(int c) {
         return c & ~CAPACITY;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int workerCountOf(int c) {
         return c & CAPACITY;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int ctlOf(int rs, int wc) {
         return rs | wc;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean runStateLessThan(int c, int s) {
         return c < s;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean runStateAtLeast(int c, int s) {
         return c >= s;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean isRunning(int c) {
         return c < SHUTDOWN;
     }
@@ -443,6 +449,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.185 -0400", hash_original_method = "0A1F69177689475EC5D7889C7292052F", hash_generated_method = "A8810A0A581CC8BD0FA906871342B1C5")
      void onShutdown() {
         
@@ -962,6 +969,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.206 -0400", hash_original_method = "304653AC486A914BB8844AA1040FA7EB", hash_generated_method = "C007348DC07E525492F357A41A24B6EA")
     public ThreadFactory getThreadFactory() {
         ThreadFactory varB4EAC82CA7396A68D541C85D26508E83_2014873921 = null; 
@@ -985,6 +993,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.207 -0400", hash_original_method = "6DBE484B7F2A61BE5C5EC698F3E381D8", hash_generated_method = "1AB24D65F86869BB9C93C01B72793DEC")
     public RejectedExecutionHandler getRejectedExecutionHandler() {
         RejectedExecutionHandler varB4EAC82CA7396A68D541C85D26508E83_991063695 = null; 
@@ -1034,6 +1043,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.208 -0400", hash_original_method = "51C354BC1AFFD9D1E19ED52BB81EBE2C", hash_generated_method = "04B1B39C5DF67AFE914D35D0E9371273")
     public int getCorePoolSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1500779267 = getTaintInt();
@@ -1073,6 +1083,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.210 -0400", hash_original_method = "B47D14DD952D3505364B334F55BDAD78", hash_generated_method = "E0B0583680914EB6E55A38D347459620")
     public boolean allowsCoreThreadTimeOut() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1780481581 = getTaintBoolean();
@@ -1119,6 +1130,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.212 -0400", hash_original_method = "4164BA9A7B4677354D8831E6C94ADF71", hash_generated_method = "9EF16CC41D35B41CEF9B22C5A4C44D54")
     public int getMaximumPoolSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1909639860 = getTaintInt();
@@ -1454,6 +1466,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.267 -0400", hash_original_method = "4C3878CDFFA0878930C89982189B5032", hash_generated_method = "695E162B3A9788D8D0A44B85DD6CC7FB")
     protected void beforeExecute(Thread t, Runnable r) {
         addTaint(t.getTaint());
@@ -1462,6 +1475,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.271 -0400", hash_original_method = "1E835AC60F46FC4FB8E958FFB42880D4", hash_generated_method = "5571B558345407E7529C983C9B921829")
     protected void afterExecute(Runnable r, Throwable t) {
         addTaint(r.getTaint());
@@ -1470,6 +1484,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.273 -0400", hash_original_method = "A29D7F7280B94AB8E3FBFAF6674D4BBC", hash_generated_method = "F157B5EF4A6890FC5741BB31F75810D9")
     protected void terminated() {
         

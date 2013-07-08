@@ -205,31 +205,38 @@ public class BitmapFactory {
 		nativeSetDefaultConfig(config.nativeInt);
 	}
 
-	private static void nativeSetDefaultConfig(int nativeConfig) {
+	@DSModeled(DSC.SAFE)
+    private static void nativeSetDefaultConfig(int nativeConfig) {
 	}
 
-	private static Bitmap nativeDecodeStream(InputStream is, byte[] storage, Rect padding, Options opts) {
+	@DSModeled(DSC.SAFE)
+    private static Bitmap nativeDecodeStream(InputStream is, byte[] storage, Rect padding, Options opts) {
 		return new Bitmap();
 	}
 
-	private static Bitmap nativeDecodeFileDescriptor(FileDescriptor fd, Rect padding, Options opts) {
+	@DSModeled(DSC.SAFE)
+    private static Bitmap nativeDecodeFileDescriptor(FileDescriptor fd, Rect padding, Options opts) {
 		return new Bitmap();
 	}
 
-	private static Bitmap nativeDecodeAsset(int asset, Rect padding, Options opts) {
+	@DSModeled(DSC.SAFE)
+    private static Bitmap nativeDecodeAsset(int asset, Rect padding, Options opts) {
 		return new Bitmap();
 	}
 
-	private static Bitmap nativeDecodeByteArray(byte[] data, int offset, int length, Options opts) {
+	@DSModeled(DSC.SAFE)
+    private static Bitmap nativeDecodeByteArray(byte[] data, int offset, int length, Options opts) {
 		return new Bitmap();
 	}
 
-	private static byte[] nativeScaleNinePatch(byte[] chunk, float scale, Rect pad) {
+	@DSModeled(DSC.SAFE)
+    private static byte[] nativeScaleNinePatch(byte[] chunk, float scale, Rect pad) {
 		byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_721079546 = { DSUtils.UNKNOWN_BYTE };
 		return var2F9C81BC6E497382285CD6B7A7E33DE1_721079546;
 	}
 
-	private static boolean nativeIsSeekable(FileDescriptor fd) {
+	@DSModeled(DSC.SAFE)
+    private static boolean nativeIsSeekable(FileDescriptor fd) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_440919392 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_440919392;
 	}

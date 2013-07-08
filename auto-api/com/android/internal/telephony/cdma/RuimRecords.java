@@ -109,6 +109,7 @@ public final class RuimRecords extends IccRecords {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.526 -0400", hash_original_method = "08E37B8778E680438FC3D481E4B7618D", hash_generated_method = "7AEC383395C25CBBE167804CAA545475")
     public String getMdnNumber() {
         String varB4EAC82CA7396A68D541C85D26508E83_748281868 = null; 
@@ -120,6 +121,7 @@ public final class RuimRecords extends IccRecords {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.526 -0400", hash_original_method = "70E8E8D1A91067A8AAF119FFCE233CA9", hash_generated_method = "981746C90956018F2B39CB6188CDCD07")
     public String getCdmaMin() {
         String varB4EAC82CA7396A68D541C85D26508E83_634265786 = null; 
@@ -131,6 +133,7 @@ public final class RuimRecords extends IccRecords {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.526 -0400", hash_original_method = "B5AD5686CB21B47DB5A2223CCDBB4F42", hash_generated_method = "185B24A2015126226B85C8A331F3602D")
     public String getPrlVersion() {
         String varB4EAC82CA7396A68D541C85D26508E83_300818471 = null; 
@@ -420,6 +423,7 @@ public final class RuimRecords extends IccRecords {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.532 -0400", hash_original_method = "409F5B7F98F19D492107B7A38CA851EE", hash_generated_method = "C7D8577BF882BC30D794D248FE671DB5")
     @Override
     public int getDisplayRule(String plmn) {

@@ -42,6 +42,7 @@ public final class GpsSatellite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.254 -0400", hash_original_method = "6104464C0A9B407CFF88F943228D0F31", hash_generated_method = "2E85106BF30CF89569D5A3C5F4EF082E")
      void setStatus(GpsSatellite satellite) {
         mValid = satellite.mValid;
@@ -62,6 +63,7 @@ public final class GpsSatellite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.254 -0400", hash_original_method = "1CFB1A0ACEFDBC53538E3DE39E0274F8", hash_generated_method = "8590BE06E15F32DDA769AB5B898BEA59")
     public int getPrn() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_609737374 = getTaintInt();
@@ -71,6 +73,7 @@ public final class GpsSatellite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.255 -0400", hash_original_method = "86375E5795460EBC5BAEFE7343FFC8C2", hash_generated_method = "14E3F756AA4D74068259EB1F042C2ADB")
     public float getSnr() {
         float var546ADE640B6EDFBC8A086EF31347E768_1524838675 = getTaintFloat();
@@ -80,6 +83,7 @@ public final class GpsSatellite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.255 -0400", hash_original_method = "45660D841120F9B89BAE31417734A703", hash_generated_method = "1B7517C011FDBF841C0231E3BDA76B3C")
     public float getElevation() {
         float var546ADE640B6EDFBC8A086EF31347E768_709576137 = getTaintFloat();
@@ -89,6 +93,7 @@ public final class GpsSatellite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.255 -0400", hash_original_method = "F306C300B6B496BB95E6F8AB34665AA0", hash_generated_method = "54A53A5B14255BA3836965A5CFED3EBB")
     public float getAzimuth() {
         float var546ADE640B6EDFBC8A086EF31347E768_1596124085 = getTaintFloat();
@@ -98,6 +103,7 @@ public final class GpsSatellite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.256 -0400", hash_original_method = "A2DF67CCEC020DAA7F7D1228AFE48AE4", hash_generated_method = "82AA819522BD1F9765C3FEBFBBBA5EED")
     public boolean hasEphemeris() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1475935359 = getTaintBoolean();
@@ -107,6 +113,7 @@ public final class GpsSatellite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.256 -0400", hash_original_method = "6F26EA9283182B6EDEDBB0B351568D69", hash_generated_method = "15098EC44A2A67E193EDF71F496608FA")
     public boolean hasAlmanac() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_165639675 = getTaintBoolean();
@@ -116,6 +123,7 @@ public final class GpsSatellite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.257 -0400", hash_original_method = "D2570999F2D51C5CE871F64BF39BACFE", hash_generated_method = "389DD20978BFB3DE7946A6B5F2B8624D")
     public boolean usedInFix() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1595053299 = getTaintBoolean();

@@ -170,6 +170,7 @@ public final class GeneralName {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.038 -0400", hash_original_method = "749703D76C1808D33D4CAAFA8A986840", hash_generated_method = "6CB71D7FB34A6C9F37A1AC2AE8995BA6")
     public int getTag() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1928648389 = getTaintInt();
@@ -179,6 +180,7 @@ public final class GeneralName {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.039 -0400", hash_original_method = "20B60556BB46EC823C9319E49D0425A2", hash_generated_method = "C39E8A78E2BAA604AA1537ED3885295A")
     public Object getName() {
         Object varB4EAC82CA7396A68D541C85D26508E83_1733504197 = null; 

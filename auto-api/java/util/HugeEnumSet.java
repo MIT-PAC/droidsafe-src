@@ -116,6 +116,7 @@ final class HugeEnumSet<E extends Enum<E>> extends EnumSet<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.336 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "2C51D9EC27E4550EAC9B785779344067")
     @Override
     public int size() {

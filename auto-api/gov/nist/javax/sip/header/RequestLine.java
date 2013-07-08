@@ -86,6 +86,7 @@ public class RequestLine extends SIPObject implements SipRequestLine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.075 -0400", hash_original_method = "F87CE2D8FFE3E61DA8A4BD8B0BDA0697", hash_generated_method = "6C810A6E2E5090067DB9B0A6BF73B7BD")
     public GenericURI getUri() {
         GenericURI varB4EAC82CA7396A68D541C85D26508E83_295105471 = null; 
@@ -97,6 +98,7 @@ public class RequestLine extends SIPObject implements SipRequestLine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.075 -0400", hash_original_method = "A65B682B0B822D8527FBE88A2FCA60FC", hash_generated_method = "093DEBDCEAE0CA59538B4792E64E9063")
     public String getMethod() {
         String varB4EAC82CA7396A68D541C85D26508E83_382853744 = null; 
@@ -108,6 +110,7 @@ public class RequestLine extends SIPObject implements SipRequestLine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.075 -0400", hash_original_method = "756FD7B4E35B001597A1BAB462C97AFC", hash_generated_method = "B0FDF97E230BD31BFB1AEAE067D86930")
     public String getSipVersion() {
         String varB4EAC82CA7396A68D541C85D26508E83_457657514 = null; 
@@ -119,6 +122,7 @@ public class RequestLine extends SIPObject implements SipRequestLine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.076 -0400", hash_original_method = "E1410A4CC0BAAD1440D0D1F349F6B893", hash_generated_method = "9490E77B55167E8C08B818C0A6425D28")
     public void setUri(URI uri) {
         this.uri = (GenericURI)uri;
@@ -127,6 +131,7 @@ public class RequestLine extends SIPObject implements SipRequestLine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.076 -0400", hash_original_method = "190C52163DA3AE651D57D1F9409B666E", hash_generated_method = "0A32A302E12C16AB7BD122DBD89AC3B9")
     public void setMethod(String method) {
         this.method = method;
@@ -135,6 +140,7 @@ public class RequestLine extends SIPObject implements SipRequestLine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.076 -0400", hash_original_method = "1D61DBA7A6626C97B8FBAF50D3DDD562", hash_generated_method = "5D5262EE7BD591D6E71A6ED43A58938F")
     public void setSipVersion(String version) {
         this.sipVersion = version;

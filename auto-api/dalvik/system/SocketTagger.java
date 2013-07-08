@@ -58,6 +58,7 @@ public abstract class SocketTagger {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static synchronized void set(SocketTagger tagger) {
         if (tagger == null) {
             throw new NullPointerException("tagger == null");
@@ -66,6 +67,7 @@ public abstract class SocketTagger {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static synchronized SocketTagger get() {
         return tagger;
     }
@@ -74,7 +76,8 @@ public abstract class SocketTagger {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.778 -0400", hash_original_field = "B97DCF68D320E085515A8D2144D4C814", hash_generated_field = "23BEE6B2224CB13CE066B2939D5005AD")
 
     private static SocketTagger tagger = new SocketTagger() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.778 -0400", hash_original_method = "8328599569196B30B389F2CEF15714B9", hash_generated_method = "464053965BAB7380A18FB745C85C07DF")
+        @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.778 -0400", hash_original_method = "8328599569196B30B389F2CEF15714B9", hash_generated_method = "464053965BAB7380A18FB745C85C07DF")
         @Override
         public void tag(FileDescriptor socketDescriptor) throws SocketException {
             addTaint(socketDescriptor.getTaint());
@@ -82,7 +85,8 @@ public abstract class SocketTagger {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.778 -0400", hash_original_method = "47AD6090A21FCA2559F757EDA52B92F0", hash_generated_method = "90FFA01302CC5CF4A2BB81B5E73337A0")
+        @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.778 -0400", hash_original_method = "47AD6090A21FCA2559F757EDA52B92F0", hash_generated_method = "90FFA01302CC5CF4A2BB81B5E73337A0")
         @Override
         public void untag(FileDescriptor socketDescriptor) throws SocketException {
             addTaint(socketDescriptor.getTaint());

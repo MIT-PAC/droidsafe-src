@@ -36,10 +36,12 @@ public final class NativeCrypto {
     }
 
 
+    @DSModeled(DSC.SAFE)
     private static void clinit() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int EVP_PKEY_new_DSA(byte[] p, byte[] q, byte[] g,
                                               byte[] priv_key, byte[] pub_key) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_865609011 = DSUtils.UNKNOWN_INT;
@@ -47,71 +49,84 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int EVP_PKEY_new_RSA(byte[] n, byte[] e, byte[] d, byte[] p, byte[] q) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_232903658 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_232903658;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void EVP_PKEY_free(int pkey) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int EVP_get_digestbyname(String name) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1067004612 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1067004612;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int EVP_MD_size(int evp_md) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_371314546 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_371314546;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int EVP_MD_block_size(int evp_md) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1519226683 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1519226683;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void EVP_MD_CTX_destroy(int ctx) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int EVP_MD_CTX_copy(int ctx) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1963314458 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1963314458;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int EVP_DigestInit(int evp_md) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1024163460 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1024163460;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void EVP_DigestUpdate(int ctx, byte[] buffer, int offset, int length) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int EVP_DigestFinal(int ctx, byte[] hash, int offset) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1668405372 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1668405372;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int EVP_VerifyInit(String algorithm) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1134582078 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1134582078;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void EVP_VerifyUpdate(int ctx, byte[] buffer,
                                                int offset, int length) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int EVP_VerifyFinal(int ctx, byte[] signature,
                                              int offset, int length, int key) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_181030487 = DSUtils.UNKNOWN_INT;
@@ -119,10 +134,12 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void RAND_seed(byte[] seed) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int RAND_load_file(String filename, long max_bytes) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_562927099 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_562927099;
@@ -159,12 +176,14 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int SSL_CTX_new() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_499904329 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_499904329;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] getDefaultCipherSuites() {
         return new String[] {
             "SSL_RSA_WITH_RC4_128_MD5",
@@ -212,10 +231,12 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void SSL_CTX_free(int ssl_ctx) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int SSL_new(int ssl_ctx) throws SSLException {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_431793162 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_431793162;
@@ -232,14 +253,17 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void SSL_use_certificate(int ssl, byte[][] asn1DerEncodedCertificateChain) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void SSL_use_PrivateKey(int ssl, byte[] pkcs8EncodedPrivateKey) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void SSL_check_private_key(int ssl) throws SSLException {
     }
 
@@ -254,46 +278,54 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void SSL_set_client_CA_list(int ssl, byte[][] asn1DerEncodedX500Principals) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long SSL_get_mode(int ssl) {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_935462345 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_935462345;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long SSL_set_mode(int ssl, long mode) {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1592410460 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1592410460;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long SSL_clear_mode(int ssl, long mode) {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1994213698 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1994213698;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long SSL_get_options(int ssl) {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1351792898 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1351792898;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long SSL_set_options(int ssl, long options) {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1606611539 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1606611539;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long SSL_clear_options(int ssl, long options) {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1442836426 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1442836426;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] getSupportedProtocols() {
         return new String[] { SUPPORTED_PROTOCOL_SSLV3, SUPPORTED_PROTOCOL_TLSV1 };
     }
@@ -341,6 +373,7 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void SSL_set_cipher_lists(int ssl, String[] ciphers) {
     }
 
@@ -442,23 +475,28 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void SSL_set_verify(int sslNativePointer, int mode) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void SSL_set_session(int sslNativePointer, int sslSessionNativePointer) throws SSLException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void SSL_set_session_creation_enabled(
             int sslNativePointer, boolean creationEnabled) throws SSLException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void SSL_set_tlsext_host_name(int sslNativePointer, String hostname) throws SSLException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String SSL_get_servername(int sslNativePointer) {
                 
     	String ret = new String();
@@ -467,6 +505,7 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int SSL_do_handshake(int sslNativePointer,
                                               FileDescriptor fd,
                                               SSLHandshakeCallbacks shc,
@@ -477,22 +516,26 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void SSL_renegotiate(int sslNativePointer) throws SSLException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[][] SSL_get_certificate(int sslNativePointer) {
                 byte[][] var09EEFE93BC05FD972F5A60957AA3195B_275851818 = {{DSUtils.UNKNOWN_BYTE}};
         return var09EEFE93BC05FD972F5A60957AA3195B_275851818;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[][] SSL_get_peer_cert_chain(int sslNativePointer) {
                 byte[][] var09EEFE93BC05FD972F5A60957AA3195B_144247038 = {{DSUtils.UNKNOWN_BYTE}};
         return var09EEFE93BC05FD972F5A60957AA3195B_144247038;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int SSL_read(int sslNativePointer,
                                       FileDescriptor fd,
                                       SSLHandshakeCallbacks shc,
@@ -502,6 +545,7 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void SSL_write(int sslNativePointer,
                                         FileDescriptor fd,
                                         SSLHandshakeCallbacks shc,
@@ -509,32 +553,38 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void SSL_interrupt(int sslNativePointer) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void SSL_shutdown(int sslNativePointer,
                                            FileDescriptor fd,
                                            SSLHandshakeCallbacks shc) throws IOException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void SSL_free(int sslNativePointer) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] SSL_SESSION_session_id(int sslSessionNativePointer) {
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1024556878 = {DSUtils.UNKNOWN_BYTE};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1024556878;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long SSL_SESSION_get_time(int sslSessionNativePointer) {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_922418158 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_922418158;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String SSL_SESSION_get_version(int sslSessionNativePointer) {
                 
     	String ret = new String();
@@ -544,6 +594,7 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String SSL_SESSION_cipher(int sslSessionNativePointer) {
                 
     	String ret = new String();
@@ -552,6 +603,7 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String SSL_SESSION_compress_meth(int sslCtxNativePointer,
                                                           int sslSessionNativePointer) {
                 
@@ -562,16 +614,19 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void SSL_SESSION_free(int sslSessionNativePointer) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] i2d_SSL_SESSION(int sslSessionNativePointer) {
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_503780473 = {DSUtils.UNKNOWN_BYTE};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_503780473;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int d2i_SSL_SESSION(byte[] data) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1053194282 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1053194282;

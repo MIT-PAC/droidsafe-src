@@ -59,6 +59,7 @@ public final class ErrorInfo extends ParametersHeader implements ErrorInfoHeader
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.479 -0400", hash_original_method = "BEF760DA2ED1BBF6FE66AFCF85F4B855", hash_generated_method = "ED9C70B309FE86559BBD1BE0632FAA86")
     public void setErrorInfo(javax.sip.address.URI errorInfo) {
         this.errorInfo = (GenericURI) errorInfo;
@@ -67,6 +68,7 @@ public final class ErrorInfo extends ParametersHeader implements ErrorInfoHeader
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.480 -0400", hash_original_method = "4A04B5BB24A371C2D4F0F24F47A1F48A", hash_generated_method = "390E57993E065A0C134DC3A0339CD396")
     public URI getErrorInfo() {
         URI varB4EAC82CA7396A68D541C85D26508E83_490870097 = null; 

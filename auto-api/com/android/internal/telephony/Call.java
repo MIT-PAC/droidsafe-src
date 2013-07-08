@@ -68,6 +68,7 @@ public abstract class Call {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.446 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "8FC3256A8B357053DAEC71E26CC5AA42")
     public State getState() {
         State varB4EAC82CA7396A68D541C85D26508E83_1082154939 = null; 
@@ -306,6 +307,7 @@ public abstract class Call {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.470 -0400", hash_original_method = "26476B959AA4096CC4669AF0A1E29ED1", hash_generated_method = "0C48D59C41B1BA63B8A3B97619C216F2")
     public boolean isGeneric() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_228088321 = getTaintBoolean();
@@ -315,6 +317,7 @@ public abstract class Call {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.470 -0400", hash_original_method = "3EA9E9B35830CEB0D3B80D105DCC59E2", hash_generated_method = "514423FE597FCFBA9E7023F2C6BFEFDF")
     public void setGeneric(boolean generic) {
         isGeneric = generic;

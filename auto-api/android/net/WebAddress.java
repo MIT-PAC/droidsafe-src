@@ -143,6 +143,7 @@ public class WebAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.438 -0400", hash_original_method = "67DD4047E44F32E39FC9F9A2588A82A9", hash_generated_method = "9EF399851C0503F706319A3887847965")
     public void setScheme(String scheme) {
         mScheme = scheme;
@@ -151,6 +152,7 @@ public class WebAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.439 -0400", hash_original_method = "631B0276BE6088C8DB198A5E8698D898", hash_generated_method = "7D45FFEB262F669EC98E3FFA3960F4B8")
     public String getScheme() {
         String varB4EAC82CA7396A68D541C85D26508E83_831580323 = null; 
@@ -162,6 +164,7 @@ public class WebAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.440 -0400", hash_original_method = "5915AC219B5071991752C386758578AC", hash_generated_method = "F8431D59CF529A7CBE808EEE2BEF2AA2")
     public void setHost(String host) {
         mHost = host;
@@ -170,6 +173,7 @@ public class WebAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.440 -0400", hash_original_method = "B21C2297C1E60D4D2D92DDE75D931874", hash_generated_method = "4173BBC2FD8491617F9EE76914773EC5")
     public String getHost() {
         String varB4EAC82CA7396A68D541C85D26508E83_1569794387 = null; 
@@ -181,6 +185,7 @@ public class WebAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.441 -0400", hash_original_method = "0F13114466AF9A53F82890B2842E5497", hash_generated_method = "CECD3BF3EBF2D08F8055D744DC0ADDA2")
     public void setPort(int port) {
         mPort = port;
@@ -189,6 +194,7 @@ public class WebAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.441 -0400", hash_original_method = "D8DAED2CD8A0984A9202198C71DA9D83", hash_generated_method = "C26FA4B6AD68E78FE336795F02C70F1A")
     public int getPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1883610660 = getTaintInt();
@@ -198,6 +204,7 @@ public class WebAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.441 -0400", hash_original_method = "33BABAA311E3F3938C433EAC08EFC3BD", hash_generated_method = "B815314BD25E18C6E7FAC198128A0270")
     public void setPath(String path) {
         mPath = path;
@@ -206,6 +213,7 @@ public class WebAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.442 -0400", hash_original_method = "F177C5B02553C0E0327F321BDDCEAFD5", hash_generated_method = "FF791ABAA0618CAE10B931EB68B7E7DE")
     public String getPath() {
         String varB4EAC82CA7396A68D541C85D26508E83_1719758735 = null; 
@@ -217,6 +225,7 @@ public class WebAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.442 -0400", hash_original_method = "F675A31B49A9379F049E4826FB854FCA", hash_generated_method = "50CF9B7BCF54D8FB72CC4A5C85F0D2A2")
     public void setAuthInfo(String authInfo) {
         mAuthInfo = authInfo;
@@ -225,6 +234,7 @@ public class WebAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.442 -0400", hash_original_method = "C7467B6BC58B66FEF459E374D8052C25", hash_generated_method = "422A44C7C6B9B97E7D8D8FC18038F3B3")
     public String getAuthInfo() {
         String varB4EAC82CA7396A68D541C85D26508E83_1687497574 = null; 

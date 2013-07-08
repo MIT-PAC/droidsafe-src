@@ -98,11 +98,13 @@ public class HttpsConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private synchronized static SSLSocketFactory getSocketFactory() {
         return mSslSocketFactory;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.978 -0400", hash_original_method = "CE5F1A45B1025117B442485B7D853DDB", hash_generated_method = "AC0DECA411F29D56F22FA411B0F399E9")
      void setCertificate(SslCertificate certificate) {
         mCertificate = certificate;
@@ -368,6 +370,7 @@ public class HttpsConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.010 -0400", hash_original_method = "369703D22EBB0B4280A990A7CBC1073E", hash_generated_method = "14C196BF4953237F335C51F3716D7A3D")
     @Override
      String getScheme() {

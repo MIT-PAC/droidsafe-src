@@ -107,11 +107,13 @@ public abstract class FragmentManager {
     public abstract void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args);
 
     
+    @DSModeled(DSC.SAFE)
     public static void enableDebugLogging(boolean enabled) {
         FragmentManagerImpl.DEBUG = enabled;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:18.323 -0400", hash_original_method = "15ED404039200ACA8749491C77846D3D", hash_generated_method = "DBB7CD62A7EC5E14380DEAAF62A330E3")
     public void invalidateOptionsMenu() {
         
@@ -177,6 +179,7 @@ final class FragmentManagerState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:18.325 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E1307046F5698284B6C57BCC264EF22E")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1137779282 = getTaintInt();
@@ -2396,6 +2399,7 @@ final class FragmentManagerImpl extends FragmentManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:18.388 -0400", hash_original_method = "9E4E3FCA42BDE19CBF71140223B4B8D0", hash_generated_method = "B5C7E72CCEE273A62746EE3408615591")
     public void noteStateNotSaved() {
         mStateSaved = false;
@@ -2747,7 +2751,8 @@ final class FragmentManagerImpl extends FragmentManager {
     }
 
     
-        public static int reverseTransit(int transit) {
+        @DSModeled(DSC.SAFE)
+    public static int reverseTransit(int transit) {
         int rev = 0;
         switch (transit) {
             case FragmentTransaction.TRANSIT_FRAGMENT_OPEN:
@@ -2764,7 +2769,8 @@ final class FragmentManagerImpl extends FragmentManager {
     }
 
     
-        public static int transitToStyleIndex(int transit, boolean enter) {
+        @DSModeled(DSC.SAFE)
+    public static int transitToStyleIndex(int transit, boolean enter) {
         int animAttr = -1;
         switch (transit) {
             case FragmentTransaction.TRANSIT_FRAGMENT_OPEN:

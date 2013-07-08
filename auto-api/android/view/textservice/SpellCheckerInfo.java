@@ -141,6 +141,7 @@ public final class SpellCheckerInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.349 -0400", hash_original_method = "89A68E81BC93C5F428177630DB2A624A", hash_generated_method = "B59860F0541885FC6C96D873BA85F328")
     public String getId() {
         String varB4EAC82CA7396A68D541C85D26508E83_992484029 = null; 
@@ -166,6 +167,7 @@ public final class SpellCheckerInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.351 -0400", hash_original_method = "0C90B853C75D6A321E7BDA40C2595177", hash_generated_method = "94DE522BD985B0A8409969A2499C3F34")
     public String getPackageName() {
         String varB4EAC82CA7396A68D541C85D26508E83_148437986 = null; 
@@ -235,6 +237,7 @@ public final class SpellCheckerInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.353 -0400", hash_original_method = "543F99CB65CBDD66082E6D4B92910AC5", hash_generated_method = "A684532516BD3542A2AE6868CED1D5B1")
     public ServiceInfo getServiceInfo() {
         ServiceInfo varB4EAC82CA7396A68D541C85D26508E83_1655255538 = null; 
@@ -246,6 +249,7 @@ public final class SpellCheckerInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.353 -0400", hash_original_method = "EE56873026FFE7A9D4435487CEBA8D19", hash_generated_method = "861EE5347B3FC0680304F4A976AC75A4")
     public String getSettingsActivity() {
         String varB4EAC82CA7396A68D541C85D26508E83_1505974517 = null; 
@@ -281,6 +285,7 @@ public final class SpellCheckerInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.354 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "C6612F2225D0BD719856A07579C6FF1D")
     @Override
     public int describeContents() {

@@ -66,6 +66,7 @@ final class ReadOnlyDirectByteBuffer extends DirectByteBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.886 -0400", hash_original_method = "D0F583BEFACE4F70BE4011CED42FF4E6", hash_generated_method = "585F91F6CF4768827FCE1389A39C5C4D")
     @Override
     public boolean isReadOnly() {
@@ -259,6 +260,7 @@ final class ReadOnlyDirectByteBuffer extends DirectByteBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.897 -0400", hash_original_method = "22273AD75DCD1D369E6F6089E4C15AAA", hash_generated_method = "15C0AB652623F00B65E54BC1E5CB1579")
     @Override
     protected boolean protectedHasArray() {

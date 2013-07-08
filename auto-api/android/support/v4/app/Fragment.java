@@ -162,6 +162,7 @@ final class FragmentState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.650 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8933693103947E1E7F3E4DB72B8CA8D5")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_835342645 = getTaintInt();
@@ -564,6 +565,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.657 -0400", hash_original_method = "1E1EC1C5F204666846AC7A8EC55494F6", hash_generated_method = "A9E9A3E67F9FE2F0071A3B399678868D")
     public void setTargetFragment(Fragment fragment, int requestCode) {
         mTarget = fragment;
@@ -785,6 +787,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.667 -0400", hash_original_method = "FE8A5DF015D2662392185902D9D0AEDD", hash_generated_method = "764071413F7B945096A2936EA3340233")
     public void onHiddenChanged(boolean hidden) {
         
@@ -793,6 +796,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.668 -0400", hash_original_method = "DD8E6A20AB766DE2DFF904C4C63DFDE5", hash_generated_method = "B609BAEF1B936256B05D620F42F6AFE5")
     public void setRetainInstance(boolean retain) {
         {
@@ -879,6 +883,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.670 -0400", hash_original_method = "16570E728AF342CDACA5E18099682804", hash_generated_method = "6AD4ECCCB67F59404F5C432CE2873900")
     public boolean getUserVisibleHint() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1239409861 = getTaintBoolean();
@@ -926,6 +931,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.673 -0400", hash_original_method = "B68B30EDC5AB3BE8EF657FB7051C7F7E", hash_generated_method = "034AFFA898CD52B33567D6F4ACA58FB1")
     public void startActivity(Intent intent) {
         {
@@ -941,6 +947,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.673 -0400", hash_original_method = "849399EB62F8B6EE6A6E550D7989B87C", hash_generated_method = "FA0152001483243EABA7E04774885D8D")
     public void startActivityForResult(Intent intent, int requestCode) {
         {
@@ -957,6 +964,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.673 -0400", hash_original_method = "6D8F676326F7C192A2903AC6F4C36AC9", hash_generated_method = "13FACCD4A154E6B91F08CDAC9AEA6EFF")
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         
@@ -980,6 +988,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.675 -0400", hash_original_method = "6B431F4170E83AA9D07B8C377544B225", hash_generated_method = "9DA4C20C8A19E611A8973863DB823C49")
     public void onInflate(Activity activity, AttributeSet attrs, Bundle savedInstanceState) {
         
@@ -992,6 +1001,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.675 -0400", hash_original_method = "7FCB8118913FF635CB1CDE717E61023E", hash_generated_method = "8D44122C10CCAD99B6B0F3E7B51550CD")
     public void onAttach(Activity activity) {
         
@@ -1002,6 +1012,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.676 -0400", hash_original_method = "273C1CEA731372543F92C5C1B99E7FBF", hash_generated_method = "9B1A1D6EC20E11AA39EC1169F07F07B8")
     public Animation onCreateAnimation(int transit, boolean enter, int nextAnim) {
         
@@ -1017,6 +1028,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.676 -0400", hash_original_method = "00494AECA41C1730DF6E82548FC2C3D5", hash_generated_method = "A703DECD1A13E142CAFC14CA278F8464")
     public void onCreate(Bundle savedInstanceState) {
         
@@ -1027,6 +1039,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.676 -0400", hash_original_method = "57C338AB393ED440CE12C76B2627A085", hash_generated_method = "230CF08797FB94603D0FD29E094801B5")
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
@@ -1043,6 +1056,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.677 -0400", hash_original_method = "F4318A499F9B06ABC9CCF0644AE6DC10", hash_generated_method = "0AC185C4D1405DA07D13BEEEF3A63E65")
     public void onViewCreated(View view, Bundle savedInstanceState) {
         
@@ -1052,6 +1066,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.677 -0400", hash_original_method = "23562CAF30DEA91689886E5D0DFB3D0F", hash_generated_method = "D4C3BBF4EDAC27A6B843719CED0261C4")
     public View getView() {
         View varB4EAC82CA7396A68D541C85D26508E83_1424671868 = null; 
@@ -1063,6 +1078,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.678 -0400", hash_original_method = "C52625884C98429BE8DE42F4FBFE7367", hash_generated_method = "7167642356FF710749355DABB699B2F5")
     public void onActivityCreated(Bundle savedInstanceState) {
         
@@ -1114,6 +1130,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.679 -0400", hash_original_method = "3B8608ED59C2663D271D57F8D8F534C0", hash_generated_method = "A35C9648644440B1AB73336CCB6DEAB5")
     public void onResume() {
         
@@ -1123,6 +1140,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.679 -0400", hash_original_method = "9C4F98F3F5A4FCEFF66E261EDA5693F3", hash_generated_method = "AD15648AB8B6357D84B3060587BAA98F")
     public void onSaveInstanceState(Bundle outState) {
         
@@ -1131,6 +1149,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.679 -0400", hash_original_method = "16A05561D5415124B893EA7E2AFB953D", hash_generated_method = "F6F68BCCFBFEF8D06BF8C744D4370BE8")
     public void onConfigurationChanged(Configuration newConfig) {
         
@@ -1141,6 +1160,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.680 -0400", hash_original_method = "CEF2FF1DA31E7EE9D761807A037B37B2", hash_generated_method = "637684B70754E8D79E076DC6A513E031")
     public void onPause() {
         
@@ -1150,6 +1170,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.680 -0400", hash_original_method = "FC062A9ECA017F6E5D455E8C973942F9", hash_generated_method = "7E26AAA6FA11DEDE75C340853A5FC7A3")
     public void onStop() {
         
@@ -1159,6 +1180,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.681 -0400", hash_original_method = "28328842E1AEC7ECF313405184622A29", hash_generated_method = "A607A7A5A4E7888F4F9DD46B7BE5C1AF")
     public void onLowMemory() {
         
@@ -1168,6 +1190,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.681 -0400", hash_original_method = "E54F17C7BAFD082A48D2152349C1815A", hash_generated_method = "D6DBBF3121DDE73B3DDC3BCBF558AE8E")
     public void onDestroyView() {
         
@@ -1201,6 +1224,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.683 -0400", hash_original_method = "04633BF5293F80973E1AA355DB2C35EF", hash_generated_method = "4C027456133F87915A9EF12926708CE0")
      void initState() {
         mIndex = -1;
@@ -1247,6 +1271,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.683 -0400", hash_original_method = "EF609D2FD1394DFBC19807CB21AD7D10", hash_generated_method = "CD3AD86EF54BB27DA72F7E9F9B9DEA15")
     public void onDetach() {
         
@@ -1256,6 +1281,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.684 -0400", hash_original_method = "B3C5F3D019B47C47E6111F1C7C38CA5D", hash_generated_method = "A2AC01879561E76B9598F6018B2688B1")
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         
@@ -1265,6 +1291,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.684 -0400", hash_original_method = "4CE703F4C1FA6FC474411DFE6A3F5275", hash_generated_method = "32B650DEFAD74BF60D957C3D22EC9F79")
     public void onPrepareOptionsMenu(Menu menu) {
         
@@ -1273,6 +1300,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.684 -0400", hash_original_method = "0E8C037F224061747BFFD0611606AAB6", hash_generated_method = "EF044D3D33EBB476DBBCFB32576782C1")
     public void onDestroyOptionsMenu() {
         
@@ -1280,6 +1308,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.685 -0400", hash_original_method = "8EF9A1828892EFEBF4B93362A866125C", hash_generated_method = "F191E4851510682B96AAA00A27AC6071")
     public boolean onOptionsItemSelected(MenuItem item) {
         
@@ -1291,6 +1320,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.685 -0400", hash_original_method = "D53E4189B6E7F0EC0F9883E9844F2140", hash_generated_method = "CC9F879215C8D6911F3F43FE45124EF9")
     public void onOptionsMenuClosed(Menu menu) {
         
@@ -1333,6 +1363,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.686 -0400", hash_original_method = "801D77DFDCCE5570587CA592634E3D3B", hash_generated_method = "6DD4E56B5C76994CFDE4293F27681901")
     public boolean onContextItemSelected(MenuItem item) {
         

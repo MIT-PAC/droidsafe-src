@@ -869,6 +869,7 @@ public class DecimalFormat extends NumberFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.098 -0400", hash_original_method = "665DD451D3753ACD20842BCA4E3EB32E", hash_generated_method = "BAB36CFCB6191D5287604B94D8CCC496")
     public RoundingMode getRoundingMode() {
         RoundingMode varB4EAC82CA7396A68D541C85D26508E83_1164097555 = null; 

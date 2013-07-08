@@ -277,6 +277,7 @@ final class GsmServiceStateTracker extends ServiceStateTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.700 -0400", hash_original_method = "A0DE0F5E4F4D4787509D60C270D17835", hash_generated_method = "D99C06D5F30F658E1214C17505D5A577")
     @Override
     protected Phone getPhone() {
@@ -1041,6 +1042,7 @@ final class GsmServiceStateTracker extends ServiceStateTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.708 -0400", hash_original_method = "FF36AACCF1BD8DBC263BCA1FAF3CB26B", hash_generated_method = "7CAE983F78C62645774EC7ECB755141D")
     private boolean isGprsConsistent(int gprsState, int serviceState) {
         addTaint(gprsState);
@@ -1368,6 +1370,7 @@ final class GsmServiceStateTracker extends ServiceStateTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.719 -0400", hash_original_method = "19036A7D1DADA943DC912DAB6396B9AD", hash_generated_method = "FA07919D09439535A3E9DF19E558BA64")
     private boolean regCodeIsRoaming(int code) {
         addTaint(code);
@@ -1432,6 +1435,7 @@ final class GsmServiceStateTracker extends ServiceStateTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.721 -0400", hash_original_method = "462522C9E25E239E090C32F4DC1CCDBD", hash_generated_method = "17A04E31F546474D4D9F901D6AF25514")
      int getCurrentGprsState() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1423405654 = getTaintInt();
@@ -1441,6 +1445,7 @@ final class GsmServiceStateTracker extends ServiceStateTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.721 -0400", hash_original_method = "76A0DFDE7E82168261B9485993735FA8", hash_generated_method = "EB9D937BF4B10F838BC637D07157B45D")
     public int getCurrentDataConnectionState() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1141375666 = getTaintInt();
@@ -1450,6 +1455,7 @@ final class GsmServiceStateTracker extends ServiceStateTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.722 -0400", hash_original_method = "35025CCE5222CF7AFA718FFADECE80EF", hash_generated_method = "7CBEFDBA701E2DF70B463A5D0DC97E27")
     public boolean isConcurrentVoiceAndDataAllowed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_388129913 = getTaintBoolean();
@@ -1657,6 +1663,7 @@ final class GsmServiceStateTracker extends ServiceStateTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.728 -0400", hash_original_method = "AC4D6B705E7065D39BD6B0621414F077", hash_generated_method = "89E6488BB9B703C7CA9BBABF73A30618")
     private void saveNitzTimeZone(String zoneId) {
         mSavedTimeZone = zoneId;

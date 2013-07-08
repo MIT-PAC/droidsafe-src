@@ -211,6 +211,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.298 -0400", hash_original_method = "130A49FBCE1398CCC055AA736C1B7B6D", hash_generated_method = "BA960E3EFCDE2FBB1F87D08213947CD5")
     public boolean isInitialized() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1685694877 = getTaintBoolean();
@@ -246,6 +247,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.299 -0400", hash_original_method = "4EEF3DF2F4BA4D9B865A07AD850625E7", hash_generated_method = "AA450A6BACD2D2A4B441CFF1CF324E18")
     public void setInterpolator(Interpolator i) {
         mInterpolator = i;
@@ -254,6 +256,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.299 -0400", hash_original_method = "BF0ACB3E237AAE7044714380D4DED735", hash_generated_method = "424940C4F5E7DA004B724B16B7141A9B")
     public void setStartOffset(long startOffset) {
         mStartOffset = startOffset;
@@ -277,6 +280,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.300 -0400", hash_original_method = "448C869CF9265A7FCC7AB9AE39BBC12A", hash_generated_method = "1F798CF76AB8AB87BB735D4383C5C2D8")
     public void restrictDuration(long durationMillis) {
         {
@@ -326,6 +330,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.301 -0400", hash_original_method = "7B723F7D723B2ADF0E8C91EC6AA68330", hash_generated_method = "C4880321253D48FFDAEDC63441B30760")
     public void scaleCurrentDuration(float scale) {
         mDuration = (long) (mDuration * scale);
@@ -336,6 +341,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.301 -0400", hash_original_method = "C5F2E1E5B86432971DA671FBAF722042", hash_generated_method = "F61EFA6E5B483C91A8AD0B877BECA980")
     public void setStartTime(long startTimeMillis) {
         mStartTime = startTimeMillis;
@@ -370,6 +376,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.302 -0400", hash_original_method = "DDD317A37915E8A65D2BE1E304EF578A", hash_generated_method = "17D1360A733DBD458CAB0359A395CE7B")
     public void setRepeatMode(int repeatMode) {
         mRepeatMode = repeatMode;
@@ -378,6 +385,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.302 -0400", hash_original_method = "A134D6BEB9FF1047810E15F38A519E7E", hash_generated_method = "17728B39FDE776D685AAE4873225CC0B")
     public void setRepeatCount(int repeatCount) {
         {
@@ -392,6 +400,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.302 -0400", hash_original_method = "99447AF68D215B648170642F948B1397", hash_generated_method = "BFCAF2C4EA01E99B692D012450AC9511")
     public boolean isFillEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1297627172 = getTaintBoolean();
@@ -401,6 +410,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.303 -0400", hash_original_method = "FD550D09AAFA6DFC07B09135F2C7B62C", hash_generated_method = "039C156EB130A31B2B3D2DDB452A9F4E")
     public void setFillEnabled(boolean fillEnabled) {
         mFillEnabled = fillEnabled;
@@ -409,6 +419,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.303 -0400", hash_original_method = "4449C3292A8570D114A58B4E08D55011", hash_generated_method = "E22ACD6422C750DD61089037D6A5467E")
     public void setFillBefore(boolean fillBefore) {
         mFillBefore = fillBefore;
@@ -417,6 +428,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.303 -0400", hash_original_method = "4CCE59DDFB007D2C725E384A84210333", hash_generated_method = "49F55925CC5A820D4B8135937231E53B")
     public void setFillAfter(boolean fillAfter) {
         mFillAfter = fillAfter;
@@ -425,6 +437,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.303 -0400", hash_original_method = "B53AFA13C43018FC57757729E8C6F5B9", hash_generated_method = "468123765E68AF71806CFB4882A6CCA9")
     public void setZAdjustment(int zAdjustment) {
         mZAdjustment = zAdjustment;
@@ -433,6 +446,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.304 -0400", hash_original_method = "5CC3CCDE182714D1D24D814D03E78D72", hash_generated_method = "1D031963F8D9249329C42FBB1A944D82")
     public void setBackgroundColor(int bg) {
         mBackgroundColor = bg;
@@ -441,6 +455,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.304 -0400", hash_original_method = "209B3580CB795CD8B9886E8B498D1959", hash_generated_method = "190E58B5464A9C58B72343E721CD53F1")
     protected float getScaleFactor() {
         float var546ADE640B6EDFBC8A086EF31347E768_2075526055 = getTaintFloat();
@@ -450,6 +465,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.304 -0400", hash_original_method = "DC51879EADA1EC63F555D590C58841F2", hash_generated_method = "FA1E152176E4962E1A592137B68096BA")
     public void setDetachWallpaper(boolean detachWallpaper) {
         mDetachWallpaper = detachWallpaper;
@@ -458,6 +474,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.305 -0400", hash_original_method = "8AA04851FFB5BE49EA5890940035B142", hash_generated_method = "F7AE33B30206993FD37B6F8DD354353C")
     public Interpolator getInterpolator() {
         Interpolator varB4EAC82CA7396A68D541C85D26508E83_1286550586 = null; 
@@ -469,6 +486,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.306 -0400", hash_original_method = "62DE33F2E1C7C51F234B4CE29FC5DCED", hash_generated_method = "6409E89C90A5D30EB22B801ADA278904")
     public long getStartTime() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_798894967 = getTaintLong();
@@ -478,6 +496,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.306 -0400", hash_original_method = "5E13B5E872677B59408FA3E6BB94A9F6", hash_generated_method = "73986ECC4AC8F68AF6ACD6F4F45EBDFE")
     public long getDuration() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_289924778 = getTaintLong();
@@ -487,6 +506,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.306 -0400", hash_original_method = "F15F7E68559FE94D65E8E77E2E4D8AE9", hash_generated_method = "2FE821297F2CC82EB444080C8A1BCECD")
     public long getStartOffset() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1399820928 = getTaintLong();
@@ -496,6 +516,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.307 -0400", hash_original_method = "081205714C0DCBE8DC8471C6BC7C6458", hash_generated_method = "B1E056EB8D73F930C1B5E1C12A8553B1")
     public int getRepeatMode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_924299137 = getTaintInt();
@@ -505,6 +526,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.307 -0400", hash_original_method = "4FE747AC8B0667617AE307ECFC6ED74A", hash_generated_method = "063CE2146BC8AD082894F295EBE5B733")
     public int getRepeatCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1428143230 = getTaintInt();
@@ -514,6 +536,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.308 -0400", hash_original_method = "EC25BC6D19EE141C12788801543B6178", hash_generated_method = "E243BAA40B6ABD6706AB976FC0EAC9AA")
     public boolean getFillBefore() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1064606391 = getTaintBoolean();
@@ -523,6 +546,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.309 -0400", hash_original_method = "6D667DA3C62337EC4E4606350728AE89", hash_generated_method = "2E5E73D49E11554ADC93957912CF69D0")
     public boolean getFillAfter() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2093785870 = getTaintBoolean();
@@ -532,6 +556,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.309 -0400", hash_original_method = "409F6F7832CADDC17E7E5231CAA22AC6", hash_generated_method = "7AA73543ABE0E1F6F3E90CBEB1BB15E3")
     public int getZAdjustment() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_216918620 = getTaintInt();
@@ -541,6 +566,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.310 -0400", hash_original_method = "FAF00526A7BA7C979C907792653A05BB", hash_generated_method = "7C262231D3778801010D78AE20486BC0")
     public int getBackgroundColor() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1933622127 = getTaintInt();
@@ -550,6 +576,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.310 -0400", hash_original_method = "E6A00B836A83DBDC739846B44941121A", hash_generated_method = "7070FDCCC094A2DED04D09A0C852B79A")
     public boolean getDetachWallpaper() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_414096179 = getTaintBoolean();
@@ -559,6 +586,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.310 -0400", hash_original_method = "06611FABC5DAE0D86003F0AC94713BBE", hash_generated_method = "3A85713774EC29B39EBF4964206D8AB5")
     public boolean willChangeTransformationMatrix() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_286995666 = getTaintBoolean();
@@ -568,6 +596,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.310 -0400", hash_original_method = "75ECA58382FCAFBFF99662736FC361D6", hash_generated_method = "4DE0B054FC0F70F124CFB5771E121264")
     public boolean willChangeBounds() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_253726378 = getTaintBoolean();
@@ -577,6 +606,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.311 -0400", hash_original_method = "93175FBEC8620A1D25367C53936C85B5", hash_generated_method = "B6B2E431FB5A3DE909C2B13E925B35BF")
     public void setAnimationListener(AnimationListener listener) {
         mListener = listener;
@@ -693,6 +723,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.313 -0400", hash_original_method = "777CAD815D79C7ADA7276922FB123EB2", hash_generated_method = "BC4752E5D8CB8AE49DAA8DE4AA13F736")
     public boolean hasStarted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1193180434 = getTaintBoolean();
@@ -702,6 +733,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.313 -0400", hash_original_method = "D01D8338B537AF4FCC0E5AB769C5FB0B", hash_generated_method = "1BFEBBD77CFD89C813368E8EC0569ED5")
     public boolean hasEnded() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_138046036 = getTaintBoolean();
@@ -711,6 +743,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.314 -0400", hash_original_method = "073EBA254DBED3B6D4C21030E1884802", hash_generated_method = "B7B2109EE959D94E663269015881B45D")
     protected void applyTransformation(float interpolatedTime, Transformation t) {
         addTaint(interpolatedTime);
@@ -719,6 +752,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.314 -0400", hash_original_method = "51B92BC0266A1C2F3581A8B430ACF6F7", hash_generated_method = "9EBC984FB55E64E3EA196917AD9733A6")
     protected float resolveSize(int type, float value, int size, int parentSize) {
         addTaint(type);
@@ -830,6 +864,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.316 -0400", hash_original_method = "00F0E38B38876C14DBBEFF57F3DE3ED9", hash_generated_method = "4E64C84B55552483A3702B6A0A71912E")
     public boolean hasAlpha() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1255308606 = getTaintBoolean();

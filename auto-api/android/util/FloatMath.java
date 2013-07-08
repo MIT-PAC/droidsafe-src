@@ -16,26 +16,31 @@ public class FloatMath {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float floor(float value) {
         return DSUtils.UNKNOWN_FLOAT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float ceil(float value) {
         return DSUtils.UNKNOWN_FLOAT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float sin(float angle) {
         return DSUtils.UNKNOWN_FLOAT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float cos(float angle) {
         return DSUtils.UNKNOWN_FLOAT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float sqrt(float value) {
         return DSUtils.UNKNOWN_FLOAT;
     }

@@ -46,6 +46,7 @@ public class LogConfigurationException extends RuntimeException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.865 -0400", hash_original_method = "9EB82C3F9FB6AE0D2962237AF0B1061E", hash_generated_method = "03B169FAE44B9547F4A928B0CE185798")
     public Throwable getCause() {
         Throwable varB4EAC82CA7396A68D541C85D26508E83_2100928172 = null; 

@@ -43,6 +43,7 @@ public class ColorFilter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void finalizer(int native_instance, int nativeColorFilter) {
     }
 

@@ -99,6 +99,7 @@ public class BufferedHttpEntity extends HttpEntityWrapper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.597 -0400", hash_original_method = "8850B92ED3324DB77471CF2A1052D726", hash_generated_method = "A0FA756BF78F5E6B636748C4CEC84B36")
     public boolean isRepeatable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_985680179 = getTaintBoolean();

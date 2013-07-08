@@ -103,26 +103,31 @@ public class SmsCbHeader implements SmsCbConstants {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isEmergencyMessage(int id) {
         return id >= MESSAGE_ID_PWS_FIRST_IDENTIFIER && id <= MESSAGE_ID_PWS_LAST_IDENTIFIER;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isEtwsMessage(int id) {
         return (id & MESSAGE_ID_ETWS_TYPE_MASK) == MESSAGE_ID_ETWS_TYPE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isCmasMessage(int id) {
         return id >= MESSAGE_ID_CMAS_FIRST_IDENTIFIER && id <= MESSAGE_ID_CMAS_LAST_IDENTIFIER;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isEtwsPopupAlert(int messageCode) {
         return (messageCode & MESSAGE_CODE_ETWS_ACTIVATE_POPUP) != 0;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isEtwsEmergencyUserAlert(int messageCode) {
         return (messageCode & MESSAGE_CODE_ETWS_EMERGENCY_USER_ALERT) != 0;
     }

@@ -206,6 +206,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.005 -0400", hash_original_method = "75C2469AD4E7F0A9F01D294D0E9B9A83", hash_generated_method = "89766C28CD21D4A42992F2B6B3A7589E")
     protected Object onGetDefaultValue(TypedArray a, int index) {
         
@@ -220,6 +221,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.006 -0400", hash_original_method = "BB18D5EDF68F7EDDF74E48FAF30F475E", hash_generated_method = "36AB7FE2A4C2C0EF3565BBD54597E3F4")
     public void setIntent(Intent intent) {
         mIntent = intent;
@@ -228,6 +230,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.007 -0400", hash_original_method = "AD027B7B58A4A2F151CC138FB7B23244", hash_generated_method = "7654FFA1E1BC6178B05F34F9ADC0AA27")
     public Intent getIntent() {
         Intent varB4EAC82CA7396A68D541C85D26508E83_24835660 = null; 
@@ -239,6 +242,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.007 -0400", hash_original_method = "B84A292EE370DC034681ED1A5B514CE4", hash_generated_method = "918CDAB4381AA56F58F01C803B049B49")
     public void setFragment(String fragment) {
         mFragment = fragment;
@@ -247,6 +251,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.008 -0400", hash_original_method = "133D42C98C64EF6757CE3D375E2E1FA7", hash_generated_method = "64001BC08DBDA693C2C6AF3375946DB9")
     public String getFragment() {
         String varB4EAC82CA7396A68D541C85D26508E83_342793546 = null; 
@@ -275,6 +280,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.009 -0400", hash_original_method = "06728B07006932C3BCF42D880B54A6CC", hash_generated_method = "11D608AF23A5B688EE81226E91682B35")
     public Bundle peekExtras() {
         Bundle varB4EAC82CA7396A68D541C85D26508E83_182702290 = null; 
@@ -286,6 +292,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.010 -0400", hash_original_method = "528C4C3ACF7780A9B6B960E406A0977A", hash_generated_method = "9BC9CDEF57BB8B884A923053E3224AFB")
     public void setLayoutResource(int layoutResId) {
         {
@@ -300,6 +307,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.010 -0400", hash_original_method = "A2555092F113429083F033F36B8E024F", hash_generated_method = "1374887C158A1E2BAD242BF72D5ACBC4")
     public int getLayoutResource() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_269272201 = getTaintInt();
@@ -309,6 +317,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.011 -0400", hash_original_method = "2204831C4D4DE968C9A72D9D306DDD8C", hash_generated_method = "7D69EAF5A42E30772D9C3169D7AE6AD6")
     public void setWidgetLayoutResource(int widgetLayoutResId) {
         {
@@ -323,6 +332,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.011 -0400", hash_original_method = "6D000A2827FAFE2A1A87DD4A065ACF04", hash_generated_method = "294F20E3EDE7C6CE4FB4929957A1C4E7")
     public int getWidgetLayoutResource() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1268458156 = getTaintInt();
@@ -481,6 +491,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.015 -0400", hash_original_method = "BE8C43C510B8AF8546FEBBAA3EF0F0B1", hash_generated_method = "243FC93BC79471971E84B67773099F63")
     public int getOrder() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809315999 = getTaintInt();
@@ -519,6 +530,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.017 -0400", hash_original_method = "9778C1A15B3D4EC3FC935EB49323C011", hash_generated_method = "A619EE7116B0EAC0BA3BC52D0E824ABC")
     public int getTitleRes() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_254821303 = getTaintInt();
@@ -528,6 +540,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.019 -0400", hash_original_method = "7D691BCB64236E7B5AF8F6CB0399C091", hash_generated_method = "E819048CD4157C836AF2B2E33481FDF2")
     public CharSequence getTitle() {
         CharSequence varB4EAC82CA7396A68D541C85D26508E83_702630722 = null; 
@@ -563,6 +576,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.022 -0400", hash_original_method = "ED78DC4ED6B2C6A65EDA3016CC1C1C4D", hash_generated_method = "2771F6F02DCBE625DA5CC3B77AA56832")
     public Drawable getIcon() {
         Drawable varB4EAC82CA7396A68D541C85D26508E83_347575409 = null; 
@@ -574,6 +588,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.022 -0400", hash_original_method = "485EE2482F168D23B57BE8096AF663D1", hash_generated_method = "73138343FA80393BBDEEDEB44AEE1CF2")
     public CharSequence getSummary() {
         CharSequence varB4EAC82CA7396A68D541C85D26508E83_991952868 = null; 
@@ -627,6 +642,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.024 -0400", hash_original_method = "1BB77BECC2C1296C251576AD714A96C1", hash_generated_method = "CE659E1E003AF22192F0702629122E12")
     public boolean isEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1260045543 = getTaintBoolean();
@@ -650,6 +666,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.025 -0400", hash_original_method = "A1A8E91E60B51F4951583D0866634B48", hash_generated_method = "AB84B570C86B9C9C2125F4879774B2E1")
     public boolean isSelectable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1032533125 = getTaintBoolean();
@@ -669,6 +686,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.026 -0400", hash_original_method = "465C9050F708FCF1A73506501FE4644E", hash_generated_method = "6FC8B0A96066C5FF4047F56144E40CA2")
     public boolean getShouldDisableView() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_624238009 = getTaintBoolean();
@@ -678,6 +696,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.026 -0400", hash_original_method = "6AF16C815DE6FE4144432EF99CDC825B", hash_generated_method = "CEFAC21F24309927B031C4E61610E810")
      long getId() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1030078323 = getTaintLong();
@@ -687,6 +706,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.027 -0400", hash_original_method = "DE9BB9E40914727DA5D6E94159FAF3CB", hash_generated_method = "B12F9C4DD7EEB07FF06C6B7E88BC35E4")
     protected void onClick() {
         
@@ -711,6 +731,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.028 -0400", hash_original_method = "E0CEA0C6ABDC55C32B991C1D155B5E3E", hash_generated_method = "0BF7FA14959736188A3F245F298AB2F4")
     public String getKey() {
         String varB4EAC82CA7396A68D541C85D26508E83_1272555477 = null; 
@@ -746,6 +767,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.030 -0400", hash_original_method = "45C46AF35C2A296F9912D410933691CF", hash_generated_method = "923B5AA94C85D8DFE2CDAF35F383310B")
     public boolean isPersistent() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2104685363 = getTaintBoolean();
@@ -765,6 +787,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.031 -0400", hash_original_method = "9780EA334E29D2930E2D9A0F1CB4087F", hash_generated_method = "C4414A607836682C6B94DC1DA7BB4DF5")
     public void setPersistent(boolean persistent) {
         mPersistent = persistent;
@@ -786,6 +809,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.032 -0400", hash_original_method = "D46636D80B7557AC6195A05902CC638C", hash_generated_method = "7D40D426D5687A76C5D11598A2206435")
     public void setOnPreferenceChangeListener(OnPreferenceChangeListener onPreferenceChangeListener) {
         mOnChangeListener = onPreferenceChangeListener;
@@ -794,6 +818,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.033 -0400", hash_original_method = "9CC8E5271070D42EF9628C47033D91A6", hash_generated_method = "90C024C86F977DB4C11EC02F8F16883E")
     public OnPreferenceChangeListener getOnPreferenceChangeListener() {
         OnPreferenceChangeListener varB4EAC82CA7396A68D541C85D26508E83_487560046 = null; 
@@ -805,6 +830,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.034 -0400", hash_original_method = "E8A10745E179E2FA23FF715EAD4A5CB3", hash_generated_method = "1C194BF6887E87978417EF5A65E3F26D")
     public void setOnPreferenceClickListener(OnPreferenceClickListener onPreferenceClickListener) {
         mOnClickListener = onPreferenceClickListener;
@@ -813,6 +839,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.034 -0400", hash_original_method = "55E2C6999F7D889141550F7A68D36827", hash_generated_method = "005F2C576AC7C68E8333374A9549BA55")
     public OnPreferenceClickListener getOnPreferenceClickListener() {
         OnPreferenceClickListener varB4EAC82CA7396A68D541C85D26508E83_1735507736 = null; 
@@ -871,6 +898,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.036 -0400", hash_original_method = "089B06359A27CB6D952DCE596F00B787", hash_generated_method = "F603B80FD53CB82C4DC57CBBADAA3C0E")
     public boolean onKey(View v, int keyCode, KeyEvent event) {
         
@@ -884,6 +912,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.037 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "4453865193247E6FEFA9099B549A1D33")
     public Context getContext() {
         Context varB4EAC82CA7396A68D541C85D26508E83_343412816 = null; 
@@ -1016,6 +1045,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.044 -0400", hash_original_method = "002FC5CEE5BE5B5D1FE36CEDBC1DEB65", hash_generated_method = "7E487DBD1B914EC7BF8DF0AE1CE17305")
     public PreferenceManager getPreferenceManager() {
         PreferenceManager varB4EAC82CA7396A68D541C85D26508E83_901048495 = null; 
@@ -1216,6 +1246,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.053 -0400", hash_original_method = "664EA11E01CF3C90DB639CBF1F232407", hash_generated_method = "DE956E044F21D78491A512A976C6502D")
     public String getDependency() {
         String varB4EAC82CA7396A68D541C85D26508E83_209015046 = null; 
@@ -1236,6 +1267,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.053 -0400", hash_original_method = "EC5991F73564EC767E73B865F0A17074", hash_generated_method = "2766AECCE7BBCD026046B542095917DF")
     public void setDefaultValue(Object defaultValue) {
         mDefaultValue = defaultValue;
@@ -1270,6 +1302,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.054 -0400", hash_original_method = "8C28678F9AE41A1BF1FA484A48C7C6F8", hash_generated_method = "82BFF194E4CB60779A58E0918F81627E")
     protected void onSetInitialValue(boolean restorePersistedValue, Object defaultValue) {
         
@@ -1616,6 +1649,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.065 -0400", hash_original_method = "79DC631A87B79C35E44BC11E3C275CE7", hash_generated_method = "7728A1FD320787A5642AAD05AD5F321D")
      boolean hasSpecifiedLayout() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_566085355 = getTaintBoolean();
@@ -1722,6 +1756,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.071 -0400", hash_original_method = "9DD945A60796B8A8FF01F94A77988BE6", hash_generated_method = "7EFDA5D7F6EE6E75327BB92D8C02A4B8")
     protected Parcelable onSaveInstanceState() {
         

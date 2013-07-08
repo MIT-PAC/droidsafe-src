@@ -32,6 +32,7 @@ public class PemGenerationException extends IOException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.349 -0400", hash_original_method = "CDBDBC1C44563A9D34649A0018341F0E", hash_generated_method = "6F135F446635FC84C27E18730044504F")
     public Throwable getCause() {
         Throwable varB4EAC82CA7396A68D541C85D26508E83_208533650 = null; 

@@ -24,6 +24,7 @@ public abstract class BaseAdapter implements ListAdapter, SpinnerAdapter {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.988 -0400", hash_original_method = "715CB29FF3CEE320E11EC1BD997C9D63", hash_generated_method = "BC933DFF67DB01C7F5DA9B114DC28300")
     public boolean hasStableIds() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_607704218 = getTaintBoolean();
@@ -72,6 +73,7 @@ public abstract class BaseAdapter implements ListAdapter, SpinnerAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.990 -0400", hash_original_method = "DC1745DFF85763BBC0B3711D531FD60B", hash_generated_method = "413B321F5B6C77C88D5A2E10BDA15174")
     public boolean areAllItemsEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1155321079 = getTaintBoolean();
@@ -81,6 +83,7 @@ public abstract class BaseAdapter implements ListAdapter, SpinnerAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.991 -0400", hash_original_method = "C1B9753B52C20D50833727AFD33E53F1", hash_generated_method = "366F74D2B30318BBA7C006EC2F953A8B")
     public boolean isEnabled(int position) {
         addTaint(position);
@@ -106,6 +109,7 @@ public abstract class BaseAdapter implements ListAdapter, SpinnerAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.992 -0400", hash_original_method = "EE97D094FF23924861F9B1BB9874462B", hash_generated_method = "108D8DEC4F6AC7CEFFD634DF2F0A1300")
     public int getItemViewType(int position) {
         addTaint(position);
@@ -116,6 +120,7 @@ public abstract class BaseAdapter implements ListAdapter, SpinnerAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.992 -0400", hash_original_method = "A6079B88B18082AA3C7D7E460D2C3B87", hash_generated_method = "9F2D699FF1A2CFD3327838592E9CDDC4")
     public int getViewTypeCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1055157175 = getTaintInt();

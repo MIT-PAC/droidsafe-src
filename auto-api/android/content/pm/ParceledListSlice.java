@@ -42,6 +42,7 @@ public class ParceledListSlice<T extends Parcelable> implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.795 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E07F2DEC40D0547A6617A72A45EB6057")
     @Override
     public int describeContents() {
@@ -136,6 +137,7 @@ public class ParceledListSlice<T extends Parcelable> implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.800 -0400", hash_original_method = "1F10264B91664C7E8F28E8217E753C37", hash_generated_method = "ABBE6BB800E0320F1A7EC7F3DF4139A4")
     public void setLastSlice(boolean lastSlice) {
         mIsLastSlice = lastSlice;
@@ -144,6 +146,7 @@ public class ParceledListSlice<T extends Parcelable> implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.800 -0400", hash_original_method = "C1EA9F78A57EB4E786518F27886C353B", hash_generated_method = "B5DD3BB74A0F87D002CAC5F697D0D089")
     public boolean isLastSlice() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1552665607 = getTaintBoolean();

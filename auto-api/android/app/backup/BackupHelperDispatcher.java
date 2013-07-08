@@ -169,21 +169,25 @@ public class BackupHelperDispatcher {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int readHeader_native(Header h, FileDescriptor fd) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int skipChunk_native(FileDescriptor fd, int bytesToSkip) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int allocateHeader_native(Header h, FileDescriptor fd) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int writeHeader_native(Header h, FileDescriptor fd, int pos) {
         return DSUtils.UNKNOWN_INT;
     }

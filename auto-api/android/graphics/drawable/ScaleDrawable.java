@@ -64,6 +64,7 @@ public class ScaleDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.503 -0400", hash_original_method = "AEF970ED5616036B7E8018EB225E392F", hash_generated_method = "7B907333841F0A55C4F2563F619CACB0")
     public Drawable getDrawable() {
         Drawable varB4EAC82CA7396A68D541C85D26508E83_1305078885 = null; 

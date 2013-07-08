@@ -48,6 +48,7 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.659 -0400", hash_original_method = "86AF4C096D752C20A8CB0D886E79B7FB", hash_generated_method = "776AA9151FAD73EFE988A7995D6E6806")
     private void allocateElements(int numElements) {
         int initialCapacity = MIN_INITIAL_CAPACITY;
@@ -581,6 +582,7 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.678 -0400", hash_original_method = "D58AA3C48B1B36CF35B203F4633D4120", hash_generated_method = "D0C56CBAA05FE6987DAC637DFC02AC22")
     public int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1582857512 = getTaintInt();
@@ -590,6 +592,7 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.679 -0400", hash_original_method = "029A9450FF46747D2F1AB4761630FBFA", hash_generated_method = "FE85B2771955E6BF4B1C1AF67D7888D2")
     public boolean isEmpty() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1175858800 = getTaintBoolean();
@@ -668,6 +671,7 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.687 -0400", hash_original_method = "AB065CB5BA1D923138DE6DFF9B806E2B", hash_generated_method = "1F80827C555E8A146AF8D534108BA8B9")
     public void clear() {
         int h = head;

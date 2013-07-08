@@ -153,6 +153,7 @@ public final class ByteArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.672 -0400", hash_original_method = "A450C39265F5D0A0BD0BDC87E4C74433", hash_generated_method = "337424E6F35DDD475218DC5AB9D00E92")
     public void clear() {
         this.len = 0;
@@ -179,6 +180,7 @@ public final class ByteArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.672 -0400", hash_original_method = "613A69635B934E492B5C1ACCF6550798", hash_generated_method = "751D44677EE46EA6BF97B6BB305A394F")
     public int byteAt(int i) {
         addTaint(i);
@@ -189,6 +191,7 @@ public final class ByteArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.673 -0400", hash_original_method = "E6DBC98D148FFCF2E5C7804935F48006", hash_generated_method = "5FE249899F5853712608589C2768EF51")
     public int capacity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1404978005 = getTaintInt();
@@ -198,6 +201,7 @@ public final class ByteArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.673 -0400", hash_original_method = "2CD8E08F4F467579BB3BB8F7D0C8447F", hash_generated_method = "F7990B370456997D1C8CF2951F321739")
     public int length() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_337759374 = getTaintInt();
@@ -207,6 +211,7 @@ public final class ByteArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.674 -0400", hash_original_method = "7FCD7FDEC66BB92B19CC1167E6D11C2F", hash_generated_method = "10F0B28B328D49E31C21A819AA3F4FC1")
     public byte[] buffer() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1671568540 = {getTaintByte()};
@@ -231,6 +236,7 @@ public final class ByteArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.675 -0400", hash_original_method = "469F2C344B75CE70282CF1EAB0C57115", hash_generated_method = "6D853A0AC8C4BA9B39C46B7E8D07ED1B")
     public boolean isEmpty() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1007748371 = getTaintBoolean();
@@ -240,6 +246,7 @@ public final class ByteArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.676 -0400", hash_original_method = "174E21FDFCCB8A5F3AFE842BEA806892", hash_generated_method = "4492CAE19D271F557DF939526E5EAE97")
     public boolean isFull() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_969165245 = getTaintBoolean();

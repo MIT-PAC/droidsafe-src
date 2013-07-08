@@ -137,6 +137,7 @@ public class WifiP2pDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.687 -0400", hash_original_method = "76992CA06444764D9CF7DB1AFF10640E", hash_generated_method = "DB50AFECAD5149A845DE6D179898DF50")
     public boolean wpsPbcSupported() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1130737943 = getTaintBoolean();
@@ -146,6 +147,7 @@ public class WifiP2pDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.688 -0400", hash_original_method = "B2A0BAE23B24F963FF842B8EAAF5D840", hash_generated_method = "06E7A0AFD0A8A2F7E478DA1BCA38FB83")
     public boolean wpsKeypadSupported() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1013234801 = getTaintBoolean();
@@ -155,6 +157,7 @@ public class WifiP2pDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.688 -0400", hash_original_method = "89517E0D3099BE3BB50FEAB8A124BB8F", hash_generated_method = "24E992620758F7E52EEBE38965859A38")
     public boolean wpsDisplaySupported() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1221204241 = getTaintBoolean();
@@ -164,6 +167,7 @@ public class WifiP2pDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.688 -0400", hash_original_method = "3FBC138270F4ADEAF27B9A0357206073", hash_generated_method = "E92E45B94070CE1B38CEE0873A4CCE60")
     public boolean isServiceDiscoveryCapable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_752757843 = getTaintBoolean();
@@ -173,6 +177,7 @@ public class WifiP2pDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.689 -0400", hash_original_method = "A041F8E96FF7F1638DE5EDEE0D23FE8B", hash_generated_method = "3DE41FC275F337B3CE3F6DDFA5BF1471")
     public boolean isGroupOwner() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2074801762 = getTaintBoolean();
@@ -234,6 +239,7 @@ public class WifiP2pDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.691 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "EFD89173929A7680FFB9AD0D2FC91962")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1871971323 = getTaintInt();

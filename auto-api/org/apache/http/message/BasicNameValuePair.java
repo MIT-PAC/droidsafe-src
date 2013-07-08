@@ -36,6 +36,7 @@ public class BasicNameValuePair implements NameValuePair, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.217 -0400", hash_original_method = "6F5A80252F54E883F3837DA0C6833E69", hash_generated_method = "7841FF14A502F85C86C6623AE1677E6D")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1095710759 = null; 
@@ -47,6 +48,7 @@ public class BasicNameValuePair implements NameValuePair, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.218 -0400", hash_original_method = "ADE49245CA79B6D6B3F4663E953C8CD9", hash_generated_method = "0623CE2BB7406587E6FC2FBA13A6C4C0")
     public String getValue() {
         String varB4EAC82CA7396A68D541C85D26508E83_1481452043 = null; 

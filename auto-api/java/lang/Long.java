@@ -29,6 +29,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.294 -0400", hash_original_method = "6B61312FC318A12A6B19178CA8B54E86", hash_generated_method = "0047E74ADBA112394DC25D838BA04035")
     @Override
     public byte byteValue() {
@@ -51,6 +52,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int compare(long lhs, long rhs) {
         return lhs < rhs ? -1 : (lhs == rhs ? 0 : 1);
     }
@@ -102,6 +104,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.295 -0400", hash_original_method = "3D3B0AF18CC8081B7BB4A7DC662E1F07", hash_generated_method = "07FF8366DF8A3126DB26C763F3514C69")
     @Override
     public double doubleValue() {
@@ -112,6 +115,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.296 -0400", hash_original_method = "9DAD4C26B4F70BDE1AF6A261529DF01A", hash_generated_method = "ECBC653EFDAD3A5E6A8EE5059A8F4D0A")
     @Override
     public boolean equals(Object o) {
@@ -123,6 +127,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.296 -0400", hash_original_method = "9E2C0918A44EC11D2232D0B603F66A6B", hash_generated_method = "153DA5787A0B0DE110330FA405F41D2A")
     @Override
     public float floatValue() {
@@ -184,6 +189,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.297 -0400", hash_original_method = "7CEEFB1EC71C1E868FBC10557351E2DA", hash_generated_method = "2FA352D35471329EA6614C0CCC23F353")
     @Override
     public int hashCode() {
@@ -194,6 +200,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.298 -0400", hash_original_method = "138584002FB2DE9D0E5B5F8DAEDB3270", hash_generated_method = "A4F73998075891B739F3172184DDDB28")
     @Override
     public int intValue() {
@@ -204,6 +211,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.298 -0400", hash_original_method = "ABF4FE035C950AC910A646D4B85E3F35", hash_generated_method = "FE98CAE363A6A1767B587D26E71D920C")
     @Override
     public long longValue() {
@@ -268,6 +276,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.299 -0400", hash_original_method = "8E8C16CBE89F9837B346C9544C9B6BCC", hash_generated_method = "C8B8684B37182B8AB5AED550AADD5DC0")
     @Override
     public short shortValue() {
@@ -333,6 +342,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long highestOneBit(long v) {
         v |= (v >> 1);
         v |= (v >> 2);
@@ -344,11 +354,13 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long lowestOneBit(long v) {
         return v & -v;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int numberOfLeadingZeros(long v) {
         if (v < 0) {
             return 0;
@@ -390,6 +402,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int bitCount(long v) {
         v -=  (v >>> 1) & 0x5555555555555555L;
         v = (v & 0x3333333333333333L) + ((v >>> 2) & 0x3333333333333333L);
@@ -401,16 +414,19 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long rotateLeft(long v, int distance) {
         return (v << distance) | (v >>> -distance);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long rotateRight(long v, int distance) {
         return (v >>> distance) | (v << -distance);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long reverseBytes(long v) {
         v = ((v >>> 8) & 0x00FF00FF00FF00FFL) | ((v & 0x00FF00FF00FF00FFL) << 8);
         v = ((v >>>16) & 0x0000FFFF0000FFFFL) | ((v & 0x0000FFFF0000FFFFL) <<16);
@@ -418,6 +434,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long reverse(long v) {
         v = ((v >>> 1) & 0x5555555555555555L) | ((v & 0x5555555555555555L) << 1);
         v = ((v >>> 2) & 0x3333333333333333L) | ((v & 0x3333333333333333L) << 2);
@@ -428,6 +445,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int signum(long v) {
         return v < 0 ? -1 : (v == 0 ? 0 : 1);
     }

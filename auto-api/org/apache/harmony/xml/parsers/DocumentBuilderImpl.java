@@ -61,6 +61,7 @@ class DocumentBuilderImpl extends DocumentBuilder {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.501 -0400", hash_original_method = "EFC1F1695F664AAB80C061E3A6039A89", hash_generated_method = "2B12757C3AD4171FDB951A90F0F6F6B8")
     @Override
     public void reset() {
@@ -80,6 +81,7 @@ class DocumentBuilderImpl extends DocumentBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.502 -0400", hash_original_method = "18E3291D22CB922EEB4EFC42536C583A", hash_generated_method = "7F01A4E23115B63CA5EEFAC0FB3321FF")
     @Override
     public DOMImplementation getDOMImplementation() {
@@ -92,6 +94,7 @@ class DocumentBuilderImpl extends DocumentBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.502 -0400", hash_original_method = "550ADB90AA897C85DDC99A20E85473AF", hash_generated_method = "6BE237057BF653AAD05CA3EB0B2D6D46")
     @Override
     public boolean isNamespaceAware() {
@@ -102,6 +105,7 @@ class DocumentBuilderImpl extends DocumentBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.502 -0400", hash_original_method = "BC62268279A4D4DB4B44A495D4290EBF", hash_generated_method = "8EDBB29E81FDCC0AC0895EE0524231B3")
     @Override
     public boolean isValidating() {
@@ -367,6 +371,7 @@ class DocumentBuilderImpl extends DocumentBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.508 -0400", hash_original_method = "EF3844DB5418C4CB611313F3BE9E31B8", hash_generated_method = "F6C937BA9FB5D557A5996E2A79EB5DEF")
     @Override
     public void setEntityResolver(EntityResolver resolver) {
@@ -376,6 +381,7 @@ class DocumentBuilderImpl extends DocumentBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.508 -0400", hash_original_method = "2F1C93DC349F4C532F80AB43A58B1D4F", hash_generated_method = "11AEE823D94AC8C9400608C1180478AB")
     @Override
     public void setErrorHandler(ErrorHandler handler) {
@@ -385,6 +391,7 @@ class DocumentBuilderImpl extends DocumentBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.508 -0400", hash_original_method = "1DD135B57BB0EB96EC13DA0D7BA611DF", hash_generated_method = "05B80D9CDF2B77D1BB0F88AEFBE01DEB")
     public void setIgnoreComments(boolean value) {
         ignoreComments = value;
@@ -393,6 +400,7 @@ class DocumentBuilderImpl extends DocumentBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.508 -0400", hash_original_method = "2E9B1D166C3D3A81908F8020FAC250A6", hash_generated_method = "A6D6A159EF8C25563FDBAB7ED388A0B6")
     public void setCoalescing(boolean value) {
         coalescing = value;
@@ -401,6 +409,7 @@ class DocumentBuilderImpl extends DocumentBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.509 -0400", hash_original_method = "9500E8ECEFA6BF93266530CE7C837D66", hash_generated_method = "20E4D2800982DC5C649D9C7E0B8BCEB7")
     public void setIgnoreElementContentWhitespace(boolean value) {
         ignoreElementContentWhitespace = value;
@@ -409,6 +418,7 @@ class DocumentBuilderImpl extends DocumentBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.509 -0400", hash_original_method = "16455E0CEE4216C1E1A45B9ED8EFF729", hash_generated_method = "51CE5D3FAA2FC8C2C7E38867B04EB554")
     public void setNamespaceAware(boolean value) {
         namespaceAware = value;

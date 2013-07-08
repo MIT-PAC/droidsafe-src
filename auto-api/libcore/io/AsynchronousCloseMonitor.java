@@ -17,6 +17,7 @@ public final class AsynchronousCloseMonitor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void signalBlockedThreads(FileDescriptor fd) {
     }
 

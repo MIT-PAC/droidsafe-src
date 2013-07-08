@@ -116,6 +116,7 @@ public class LexerCore extends StringTokenizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.622 -0400", hash_original_method = "D20C9FA92CD9B4968A44EC6CC8CD338F", hash_generated_method = "B54E7BB236C631028B1E4228D89A1C2D")
     public void selectLexer(String lexerName) {
         this.currentLexerName = lexerName;
@@ -156,6 +157,7 @@ public class LexerCore extends StringTokenizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.625 -0400", hash_original_method = "DD3F66B83694243DF059D5B5621ADB54", hash_generated_method = "FFD0643F89C4D7AD2CD8CE96A7E3FE50")
     public Token getNextToken() {
         Token varB4EAC82CA7396A68D541C85D26508E83_929007247 = null; 
@@ -884,6 +886,7 @@ public class LexerCore extends StringTokenizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.640 -0400", hash_original_method = "8137BED0F2B5219001CD3D42EAB84127", hash_generated_method = "6E708D4EFB4EF043F265E721693CF55D")
     public int markInputPosition() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1716378815 = getTaintInt();
@@ -893,6 +896,7 @@ public class LexerCore extends StringTokenizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.640 -0400", hash_original_method = "4FFD881D960C22E5DF32EAF983DA52C6", hash_generated_method = "D413B9EF62DAB37108B918E35BA715C3")
     public void rewindInputPosition(int position) {
         this.ptr = position;
@@ -973,6 +977,7 @@ public class LexerCore extends StringTokenizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.642 -0400", hash_original_method = "976AE9BCD44A20D9CC809F6C91A5525F", hash_generated_method = "360D97DAAF22E41800BB51550DC00ABA")
     public int getPtr() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1151745780 = getTaintInt();
@@ -982,6 +987,7 @@ public class LexerCore extends StringTokenizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.643 -0400", hash_original_method = "E132864DD50CA73C29855C29E535CA90", hash_generated_method = "E73461FB8A6283C2EB8BD55B66B60064")
     public String getBuffer() {
         String varB4EAC82CA7396A68D541C85D26508E83_54640570 = null; 

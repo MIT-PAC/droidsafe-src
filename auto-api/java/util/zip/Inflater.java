@@ -48,6 +48,7 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.824 -0400", hash_original_method = "EB8AEE543E2EBA4CEDE95D04C6068F47", hash_generated_method = "E76A6D9F352BB2624A6AE3EAB609B134")
     private long createStream(boolean noHeader1) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_510629893 = getTaintLong();
@@ -76,6 +77,7 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.825 -0400", hash_original_method = "3E089BB1F2369FD5C4FB6F32377D1DAC", hash_generated_method = "69FF97505E0CE664E4B075F4BA3AB10B")
     private void endImpl(long handle) {
     }
@@ -119,6 +121,7 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.825 -0400", hash_original_method = "AE445D0E75B15DAD06E7B3F2F4342E00", hash_generated_method = "9A0D4753E797DA2982E2189D0FDEAA8D")
     public synchronized boolean finished() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_391820275 = getTaintBoolean();
@@ -141,6 +144,7 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.826 -0400", hash_original_method = "B92F3D2B64C580905B1CBAEAEEC7E950", hash_generated_method = "FCA1B65E214536451418CE18FEBC293A")
     private int getAdlerImpl(long handle) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_771437954 = getTaintInt();
@@ -174,6 +178,7 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.827 -0400", hash_original_method = "32C3A4ADD77E37876C3BDB6A1F021118", hash_generated_method = "79F567395CB5577CFEBEEE695FC97F03")
     public synchronized int getRemaining() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_311229069 = getTaintInt();
@@ -196,6 +201,7 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.827 -0400", hash_original_method = "BB22F222483240F64BF20392C09B432F", hash_generated_method = "FF850B5E04BAF7AA052FCEE9D39C2FB0")
     private long getTotalInImpl(long handle) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1042727837 = getTaintLong();
@@ -216,6 +222,7 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.827 -0400", hash_original_method = "2C5C1800FBCC7A9569101FDF1B411571", hash_generated_method = "BE9606D57BA37F7D25F408D7816AC890")
     private long getTotalOutImpl(long handle) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1147419590 = getTaintLong();
@@ -270,6 +277,7 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.828 -0400", hash_original_method = "A8B950E858D2B61E3A45CBD5749ED1E4", hash_generated_method = "22F2396FC3F98B5618C284F0277FF174")
     private int inflateImpl(byte[] buf, int offset, int byteCount, long handle) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_159735787 = getTaintInt();
@@ -277,6 +285,7 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.829 -0400", hash_original_method = "2E859AFCAB2941AC9B20C295FD1D1EA5", hash_generated_method = "ACB4F72B4479A0A4C7B9370545BC655B")
     public synchronized boolean needsDictionary() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1779966440 = getTaintBoolean();
@@ -286,6 +295,7 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.829 -0400", hash_original_method = "2FEA461389DC997E7C6EFE4743DC8941", hash_generated_method = "5185B414197EA0C7EC486A8426E1657D")
     public synchronized boolean needsInput() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1264366316 = getTaintBoolean();
@@ -312,6 +322,7 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.829 -0400", hash_original_method = "D92307F0039AB335BB1BCA1E70FBBC75", hash_generated_method = "828BDA31BE8E9DA88C9805DDF29C0415")
     private void resetImpl(long handle) {
     }
@@ -343,6 +354,7 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.830 -0400", hash_original_method = "3A877A890ED74FC0EF087E03CFE5648B", hash_generated_method = "D8569DD1E53C010664D216B77A175707")
     private void setDictionaryImpl(byte[] dictionary, int offset, int byteCount, long handle) {
     }
@@ -377,6 +389,7 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.831 -0400", hash_original_method = "CFB5087A7D9EFE706B98C4EB08838FDC", hash_generated_method = "A07D70B78BE6B11783FE90F8CB71C6AF")
     private void setInputImpl(byte[] buf, int offset, int byteCount, long handle) {
     }
@@ -398,6 +411,7 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.832 -0400", hash_original_method = "E3E6A66CB79BDD3B7E592B29E67DC77B", hash_generated_method = "A1E192835FA03DB37F93327D71C6399A")
     private int setFileInputImpl(FileDescriptor fd, long offset, int byteCount, long handle) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1061966441 = getTaintInt();

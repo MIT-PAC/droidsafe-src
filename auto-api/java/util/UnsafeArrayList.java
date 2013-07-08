@@ -79,6 +79,7 @@ public class UnsafeArrayList<T> extends AbstractList<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.676 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "353E790B7A73F8D260730C6E65C55CD6")
     public int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1805567145 = getTaintInt();

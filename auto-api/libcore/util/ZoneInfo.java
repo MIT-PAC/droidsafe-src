@@ -191,6 +191,7 @@ public final class ZoneInfo extends TimeZone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.083 -0400", hash_original_method = "87352764C6114566CFCD3A7F913CA653", hash_generated_method = "C7B46BCA3500119E38139351E9202A5A")
     @Override
     public int getRawOffset() {
@@ -201,6 +202,7 @@ public final class ZoneInfo extends TimeZone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.083 -0400", hash_original_method = "AE2A1B68EBE1FCF14F7860BA64C34CCE", hash_generated_method = "079E0D8D6A4EFB8E0B2D948CAED07A5E")
     @Override
     public void setRawOffset(int off) {
@@ -210,6 +212,7 @@ public final class ZoneInfo extends TimeZone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.084 -0400", hash_original_method = "81F7D5AE987C5D23D9D894C0567E3722", hash_generated_method = "88263B1578C238E90FBAF96DB96C6E6D")
     @Override
     public boolean useDaylightTime() {

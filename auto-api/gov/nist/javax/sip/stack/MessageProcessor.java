@@ -89,6 +89,7 @@ public abstract class MessageProcessor implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.573 -0400", hash_original_method = "22854860B4C916CC2FA65D60880C8F3F", hash_generated_method = "EF20F41FE2E68D9576042D0A0357DCD3")
     public String getTransport() {
         String varB4EAC82CA7396A68D541C85D26508E83_2099073110 = null; 
@@ -100,6 +101,7 @@ public abstract class MessageProcessor implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.576 -0400", hash_original_method = "1804D4B8ED6914D43C8BF926A65BA4F9", hash_generated_method = "7B533E91F80DD36260B09CD44598E7AB")
     public int getPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1259533268 = getTaintInt();
@@ -234,6 +236,7 @@ public abstract class MessageProcessor implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.582 -0400", hash_original_method = "63BE272C790EA048A7B52BA4EDD2764B", hash_generated_method = "42765B08A49AEA0A023926274286EC3C")
     public String getSavedIpAddress() {
         String varB4EAC82CA7396A68D541C85D26508E83_1084748205 = null; 
@@ -245,6 +248,7 @@ public abstract class MessageProcessor implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.582 -0400", hash_original_method = "884B07577FCFC9DD806F4641FDB0A38E", hash_generated_method = "1CEA4493752A0F78BDABF691B89D951C")
     public InetAddress getIpAddress() {
         InetAddress varB4EAC82CA7396A68D541C85D26508E83_80861339 = null; 
@@ -362,6 +366,7 @@ public abstract class MessageProcessor implements Runnable {
     public abstract void run();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.588 -0400", hash_original_method = "7D85FA3843A3F240694BBADD6AC174E2", hash_generated_method = "E9B7934991A7E77E343867E3CCF4E7ED")
     public boolean isSentBySet() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_273130917 = getTaintBoolean();

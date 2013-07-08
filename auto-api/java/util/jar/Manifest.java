@@ -127,6 +127,7 @@ public class Manifest implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.211 -0400", hash_original_method = "E50165B574B80B3A6D479CE79F6197B1", hash_generated_method = "DB214AFF465C192A449E8E040A47E03D")
     public Attributes getMainAttributes() {
         Attributes varB4EAC82CA7396A68D541C85D26508E83_626538263 = null; 
@@ -276,6 +277,7 @@ public class Manifest implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.215 -0400", hash_original_method = "CB43854902C5BB6A2160DF9CF6991C4E", hash_generated_method = "9BF48AA4EEED401D667F1EAB133BFDF9")
      void removeChunks() {
         chunks = null;
@@ -284,6 +286,7 @@ public class Manifest implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.215 -0400", hash_original_method = "4F9436521007A1D33F6CF267D74BE295", hash_generated_method = "B607A1217DF244E85EBCE613F8CF2FDE")
      int getMainAttributesEnd() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_857486032 = getTaintInt();

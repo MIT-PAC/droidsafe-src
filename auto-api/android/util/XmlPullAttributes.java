@@ -87,6 +87,7 @@ class XmlPullAttributes implements AttributeSet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.796 -0400", hash_original_method = "367A5DCA84F3DB949AE42F70B52DA04A", hash_generated_method = "250BC064B0E727D18C9298B36BF3F948")
     public int getAttributeNameResource(int index) {
         addTaint(index);

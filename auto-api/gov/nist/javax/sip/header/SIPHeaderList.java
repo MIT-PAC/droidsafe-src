@@ -42,6 +42,7 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.462 -0400", hash_original_method = "5A8D65821D08B5534EF9F59F256EB0ED", hash_generated_method = "C94CF503B90709F4D4703CBF71A21A3B")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1890077639 = null; 
@@ -585,6 +586,7 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.483 -0400", hash_original_method = "32932F147EA25CC7B7BC47F740C6BF91", hash_generated_method = "46CEE002A49B3E9AC380441DD8BC969A")
     public boolean isHeaderList() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_928465327 = getTaintBoolean();
@@ -843,6 +845,7 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setPrettyEncode(boolean flag) {
         prettyEncode = flag;
     }

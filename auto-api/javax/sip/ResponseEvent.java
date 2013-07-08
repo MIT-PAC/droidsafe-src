@@ -36,6 +36,7 @@ public class ResponseEvent extends EventObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.058 -0400", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "6E5CB7294B58AD19F78AF8EA7E14D76B")
     public Dialog getDialog() {
         Dialog varB4EAC82CA7396A68D541C85D26508E83_970190510 = null; 
@@ -47,6 +48,7 @@ public class ResponseEvent extends EventObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.059 -0400", hash_original_method = "00292A90D159CA5BE7BB594CFFCF61C9", hash_generated_method = "25CDFD5ADB0A869D415E380A94E793AF")
     public Response getResponse() {
         Response varB4EAC82CA7396A68D541C85D26508E83_2107630378 = null; 
@@ -58,6 +60,7 @@ public class ResponseEvent extends EventObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.060 -0400", hash_original_method = "00896F7299BD9459656811B60B06B2C6", hash_generated_method = "1DDC4F30C19888CA0FA6B530E1983CA4")
     public ClientTransaction getClientTransaction() {
         ClientTransaction varB4EAC82CA7396A68D541C85D26508E83_2012412133 = null; 

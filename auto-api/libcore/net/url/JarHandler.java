@@ -22,6 +22,7 @@ public class JarHandler extends URLStreamHandler {
     }
 
 
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.894 -0400", hash_original_method = "BD0D54E815B3E8434D2BE4AD1DDC7411", hash_generated_method = "1F08495764047EE0CD4CE8973CB6B6CB")
     @Override
     protected URLConnection openConnection(URL u) throws IOException {
@@ -35,6 +36,7 @@ public class JarHandler extends URLStreamHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.897 -0400", hash_original_method = "57C5D17E5E318F4D460452A0FAAB1E77", hash_generated_method = "D0B38D5B5EF3EB55353C3FEFEB8BB469")
     @Override
     protected void parseURL(URL url, String spec, int start, int limit) {
@@ -90,6 +92,7 @@ public class JarHandler extends URLStreamHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.899 -0400", hash_original_method = "F692A804EFA22D479A24DA08ED26F838", hash_generated_method = "38C90E24407D462261B85566A8EDA562")
     @Override
     protected String toExternalForm(URL url) {

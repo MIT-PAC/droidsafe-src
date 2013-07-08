@@ -278,6 +278,7 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.744 -0400", hash_original_method = "A7ED1EB61B0FBCD2BEBD15D1C1303F9C", hash_generated_method = "9F5C7DAA3E2BF87BE2ACDED77873FF9E")
      void applyTransformForChildAtIndex(View child, int relativeIndex) {
         addTaint(child.getTaint());
@@ -286,6 +287,7 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.744 -0400", hash_original_method = "EEFA4D3ABF985412351A1BD0CB5D6161", hash_generated_method = "C46A817B1502E2EE908E1FBCC5363AC5")
     public int getDisplayedChild() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1695104358 = getTaintInt();
@@ -313,6 +315,7 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.745 -0400", hash_original_method = "2C561D0D9BDC240B9A5D5DE9ED7CC2E1", hash_generated_method = "05F5CAB7935FB62EAE6F97636396B049")
      int modulo(int pos, int size) {
         addTaint(pos);
@@ -1008,6 +1011,7 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.784 -0400", hash_original_method = "23AFF2D08DB63552361956C44B4439AE", hash_generated_method = "1D033D1DC2888F9723E3C1BCEB6A2469")
     public ObjectAnimator getInAnimation() {
         ObjectAnimator varB4EAC82CA7396A68D541C85D26508E83_428334702 = null; 
@@ -1019,6 +1023,7 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.784 -0400", hash_original_method = "4E43CB38736F57C9005B93984FDB3BE2", hash_generated_method = "EA5FC0666FD015F2A1540E2A3150D3AB")
     public void setInAnimation(ObjectAnimator inAnimation) {
         mInAnimation = inAnimation;
@@ -1027,6 +1032,7 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.785 -0400", hash_original_method = "6B0CDF48C8054A61C9B211FDE065CA93", hash_generated_method = "1E67BDF99D79C214019339967487CC92")
     public ObjectAnimator getOutAnimation() {
         ObjectAnimator varB4EAC82CA7396A68D541C85D26508E83_32807768 = null; 
@@ -1038,6 +1044,7 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.785 -0400", hash_original_method = "1BCB8E8A3DAEDE15E6756EE2F683DC83", hash_generated_method = "C301EFF9C320600FE647D35958651477")
     public void setOutAnimation(ObjectAnimator outAnimation) {
         mOutAnimation = outAnimation;
@@ -1068,6 +1075,7 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.786 -0400", hash_original_method = "8FC95409534ABC48E92905DC8C518CE2", hash_generated_method = "B8F320B30FC7DD41541BCFCAA6FCA367")
     public void setAnimateFirstView(boolean animate) {
         mAnimateFirstTime = animate;
@@ -1092,6 +1100,7 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.786 -0400", hash_original_method = "4778E83EF7DB01E18145E85F688E24B4", hash_generated_method = "3BB98781901640FD6294EE33711DDF33")
     @Override
     public Adapter getAdapter() {
@@ -1138,6 +1147,7 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.787 -0400", hash_original_method = "27E899D618A9F50FEEEF08AE1A9356B2", hash_generated_method = "4978C6296E36A8A42F09E019461656FD")
     @android.view.RemotableViewMethod
     public void setRemoteViewsAdapter(Intent intent) {
@@ -1189,6 +1199,7 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.789 -0400", hash_original_method = "0410210FC7BC336B3896BEA7510AAE3D", hash_generated_method = "9D38AC80197E9738EE138974F1EA14DE")
     public void deferNotifyDataSetChanged() {
         mDeferNotifyDataSetChanged = true;
@@ -1237,6 +1248,7 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.790 -0400", hash_original_method = "062C10606C6763A75AEC213E65863835", hash_generated_method = "64085B2EAF9EA39B9EA364A5E4CA7F63")
     public void onRemoteAdapterDisconnected() {
         
@@ -1253,6 +1265,7 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.791 -0400", hash_original_method = "1A32686EBDFA985B54B6CF53155BB413", hash_generated_method = "AD4C3644092881C2E0FBB4399DF4389D")
     public void fyiWillBeAdvancedByHostKThx() {
         

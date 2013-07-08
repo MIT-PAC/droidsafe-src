@@ -229,6 +229,7 @@ public class ApplicationInfo extends PackageItemInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.032 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "52C4727BC1249B5A858450DC32C06349")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_222543023 = getTaintInt();
@@ -308,6 +309,7 @@ public class ApplicationInfo extends PackageItemInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.034 -0400", hash_original_method = "110E01A7854D6A7CF0C047806FCA3437", hash_generated_method = "4260BDBF7ADA9DD58BFC26F5C7BE7B86")
     public void disableCompatibilityMode() {
         flags |= (FLAG_SUPPORTS_LARGE_SCREENS | FLAG_SUPPORTS_NORMAL_SCREENS |
@@ -378,6 +380,7 @@ public class ApplicationInfo extends PackageItemInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.036 -0400", hash_original_method = "4CB14D4C822DE3694FE375457E968E4C", hash_generated_method = "DF7239491F3F41C6C0EEAA612D23020A")
     @Override
     protected ApplicationInfo getApplicationInfo() {

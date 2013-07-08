@@ -96,6 +96,7 @@ final class ReadWriteHeapByteBuffer extends HeapByteBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.173 -0400", hash_original_method = "19E9B6B291778F8D7BAF6F9BA6FE7EDF", hash_generated_method = "1B8C8BD520128F89961D9D7A81F3B65C")
     @Override
     public boolean isReadOnly() {
@@ -106,6 +107,7 @@ final class ReadWriteHeapByteBuffer extends HeapByteBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.173 -0400", hash_original_method = "DFA49F6DA30AF833A3263BE3EE9CD5BB", hash_generated_method = "28B11DF17DAA79AB27E0039A68BF52D6")
     @Override
     protected byte[] protectedArray() {
@@ -116,6 +118,7 @@ final class ReadWriteHeapByteBuffer extends HeapByteBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.174 -0400", hash_original_method = "F848F07A68FC53238B1B56C46C388C04", hash_generated_method = "B3AD1E36D6DA0AC94C6E613B38530ACB")
     @Override
     protected int protectedArrayOffset() {
@@ -126,6 +129,7 @@ final class ReadWriteHeapByteBuffer extends HeapByteBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.174 -0400", hash_original_method = "504D4244F3E9BA0CFC7CEE21DED3336C", hash_generated_method = "D71DC747907B3F7DE5CB3DABCF325B6F")
     @Override
     protected boolean protectedHasArray() {

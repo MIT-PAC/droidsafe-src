@@ -100,6 +100,7 @@ public abstract class ASN1OctetString extends ASN1Object implements ASN1OctetStr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.927 -0400", hash_original_method = "9D3ECD11646B7B9703C16B797DA8DA2E", hash_generated_method = "03CD060905CFA554824909EADE7D7F8C")
     public ASN1OctetStringParser parser() {
         ASN1OctetStringParser varB4EAC82CA7396A68D541C85D26508E83_315310235 = null; 
@@ -111,6 +112,7 @@ public abstract class ASN1OctetString extends ASN1Object implements ASN1OctetStr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.928 -0400", hash_original_method = "C5326C1D0359BDCEF8241B3A70DD591D", hash_generated_method = "E34EC1948B248599FCB482DE4DAED154")
     public byte[] getOctets() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_288522910 = {getTaintByte()};

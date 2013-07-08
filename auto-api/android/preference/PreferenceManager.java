@@ -105,6 +105,7 @@ public class PreferenceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.574 -0400", hash_original_method = "922F3E36F99E52FA3036E92080002B11", hash_generated_method = "0365529319BA5CC1DE5358358F20159B")
      void setFragment(PreferenceFragment fragment) {
         mFragment = fragment;
@@ -113,6 +114,7 @@ public class PreferenceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.575 -0400", hash_original_method = "11BC570017448843B9A9A22E52E0E479", hash_generated_method = "233A631F93FDFCDBFFD1A949F127D957")
      PreferenceFragment getFragment() {
         PreferenceFragment varB4EAC82CA7396A68D541C85D26508E83_187083871 = null; 
@@ -139,6 +141,7 @@ public class PreferenceManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:30.360 -0400", hash_original_method = "96A93C80BB9070BDED20D9AB85FFA8E8", hash_generated_method = "81E23B027CF4E9DA588940F5C6C95B14")
      PreferenceScreen inflateFromIntent(Intent queryIntent, PreferenceScreen rootPreferences) {
         PreferenceScreen varB4EAC82CA7396A68D541C85D26508E83_1553149189 = null; 
@@ -237,6 +240,7 @@ public class PreferenceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.578 -0400", hash_original_method = "D904EAF0B6D90BB52E1F8594EC3F4D15", hash_generated_method = "A63410BB604CD9ACE85A0359C1727941")
      long getNextId() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_115224282 = getTaintLong();
@@ -248,6 +252,7 @@ public class PreferenceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.578 -0400", hash_original_method = "BDB110631059975A566BD4AA87A106E8", hash_generated_method = "0C2961B21E8AE27E1920E29E3CC999C1")
     public String getSharedPreferencesName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1189457685 = null; 
@@ -259,6 +264,7 @@ public class PreferenceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.579 -0400", hash_original_method = "F8FB75CAC643ECF72FE6E9CDE35245C6", hash_generated_method = "D9BEB55F87EC14156033461466352F28")
     public void setSharedPreferencesName(String sharedPreferencesName) {
         mSharedPreferencesName = sharedPreferencesName;
@@ -269,6 +275,7 @@ public class PreferenceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.579 -0400", hash_original_method = "D2CF6E8640E20A030077A21285843C05", hash_generated_method = "490150F6D28AC0987D69AC2996945F75")
     public int getSharedPreferencesMode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1742533321 = getTaintInt();
@@ -278,6 +285,7 @@ public class PreferenceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.579 -0400", hash_original_method = "6988E36A0998B14CBE7D70DCBAB74FF8", hash_generated_method = "9D485153CC70863E2B681C1F00F79C11")
     public void setSharedPreferencesMode(int sharedPreferencesMode) {
         mSharedPreferencesMode = sharedPreferencesMode;
@@ -321,11 +329,13 @@ public class PreferenceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int getDefaultSharedPreferencesMode() {
         return Context.MODE_PRIVATE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.581 -0400", hash_original_method = "60967B21FA602EB86E9B5EB647B08AF2", hash_generated_method = "A8F605CBEC5307556592616EF2E925C7")
      PreferenceScreen getPreferenceScreen() {
         PreferenceScreen varB4EAC82CA7396A68D541C85D26508E83_220707835 = null; 
@@ -337,6 +347,7 @@ public class PreferenceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.581 -0400", hash_original_method = "72F330353D1AAD0C361FC98ABB0551E0", hash_generated_method = "C464ACAB07AADB8881168849042DA135")
      boolean setPreferences(PreferenceScreen preferenceScreen) {
         {
@@ -446,6 +457,7 @@ public class PreferenceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.583 -0400", hash_original_method = "47C154426E8AAB84597A7B272BF8D2FA", hash_generated_method = "9D55A8D5289B69D75032FAB5910608C8")
      boolean shouldCommit() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_320213457 = getTaintBoolean();
@@ -481,6 +493,7 @@ public class PreferenceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.584 -0400", hash_original_method = "3F17133E8D63AE8C7414DC58966291E3", hash_generated_method = "422258F6F08E5C9B7A9EE80C861FACB8")
      Activity getActivity() {
         Activity varB4EAC82CA7396A68D541C85D26508E83_1156706278 = null; 
@@ -492,6 +505,7 @@ public class PreferenceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.585 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "10A3D9041AF602BA1EA7311149C60755")
      Context getContext() {
         Context varB4EAC82CA7396A68D541C85D26508E83_1764902396 = null; 
@@ -547,6 +561,7 @@ public class PreferenceManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.587 -0400", hash_original_method = "A3EFE32034D38DFF1A90F9A5F45D56A6", hash_generated_method = "56AB6BF78B9A08C100A8C030DB3812D2")
      void dispatchActivityResult(int requestCode, int resultCode, Intent data) {
         List<OnActivityResultListener> list;
@@ -729,6 +744,7 @@ public class PreferenceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.590 -0400", hash_original_method = "74A43F7F50012109C1C50A128DECA709", hash_generated_method = "EE6AC02F50B6B946EBA4155F96806FA4")
      int getNextRequestCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1863314507 = getTaintInt();
@@ -775,6 +791,7 @@ public class PreferenceManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.591 -0400", hash_original_method = "4573B347852C64DB794205DBF1F726CF", hash_generated_method = "5F9FA38D60D9F7C9289F17546751CC26")
      void dispatchNewIntent(Intent intent) {
         dismissAllScreens();
@@ -813,6 +830,7 @@ public class PreferenceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.592 -0400", hash_original_method = "285310B7C58E8A2220B6B265614A6D90", hash_generated_method = "54FF302A27BDAFD0688C064472C3369F")
      void setOnPreferenceTreeClickListener(OnPreferenceTreeClickListener listener) {
         mOnPreferenceTreeClickListener = listener;
@@ -821,6 +839,7 @@ public class PreferenceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.593 -0400", hash_original_method = "44D09E26591D5A19BD471058A1477B47", hash_generated_method = "BAB674C18FCF08BCCE499B47971E93BF")
      OnPreferenceTreeClickListener getOnPreferenceTreeClickListener() {
         OnPreferenceTreeClickListener varB4EAC82CA7396A68D541C85D26508E83_1719690360 = null; 

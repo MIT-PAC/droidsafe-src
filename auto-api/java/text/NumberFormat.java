@@ -56,7 +56,8 @@ public abstract class NumberFormat extends Format {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.936 -0400", hash_original_method = "CF2A5131022F3DE945450C291D454139", hash_generated_method = "B0F0F3F5F877D0DB1C5D10184AA64020")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.936 -0400", hash_original_method = "CF2A5131022F3DE945450C291D454139", hash_generated_method = "B0F0F3F5F877D0DB1C5D10184AA64020")
 	@Override
 	public boolean equals(Object object) {
 		{
@@ -229,7 +230,8 @@ public abstract class NumberFormat extends Format {
 		return new DecimalFormat(pattern, locale);
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.944 -0400", hash_original_method = "E813DF8258936A130B114EAEAD95EDA2", hash_generated_method = "E4943E02A55209BB0DFBA16B0220CED1")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.944 -0400", hash_original_method = "E813DF8258936A130B114EAEAD95EDA2", hash_generated_method = "E4943E02A55209BB0DFBA16B0220CED1")
 	public int getMaximumFractionDigits() {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_259455014 = getTaintInt();
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_259455014;
@@ -237,7 +239,8 @@ public abstract class NumberFormat extends Format {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.945 -0400", hash_original_method = "78A0327FC665D89694C44AF144F747A0", hash_generated_method = "CB467B7782049FA75A4B651B6A7B5F43")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.945 -0400", hash_original_method = "78A0327FC665D89694C44AF144F747A0", hash_generated_method = "CB467B7782049FA75A4B651B6A7B5F43")
 	public int getMaximumIntegerDigits() {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1876906333 = getTaintInt();
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1876906333;
@@ -245,7 +248,8 @@ public abstract class NumberFormat extends Format {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.945 -0400", hash_original_method = "357B48579C639D091425919515E6A5BC", hash_generated_method = "45B795EE1BD31899B66B524D0B89956A")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.945 -0400", hash_original_method = "357B48579C639D091425919515E6A5BC", hash_generated_method = "45B795EE1BD31899B66B524D0B89956A")
 	public int getMinimumFractionDigits() {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1908027095 = getTaintInt();
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1908027095;
@@ -253,7 +257,8 @@ public abstract class NumberFormat extends Format {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.945 -0400", hash_original_method = "F5C90064F0CFBE4D6C8C4DDC2FA4814C", hash_generated_method = "329FC4F6F5B871125E31221EA602D526")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.945 -0400", hash_original_method = "F5C90064F0CFBE4D6C8C4DDC2FA4814C", hash_generated_method = "329FC4F6F5B871125E31221EA602D526")
 	public int getMinimumIntegerDigits() {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1816723963 = getTaintInt();
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1816723963;
@@ -279,7 +284,8 @@ public abstract class NumberFormat extends Format {
 		return getInstance(LocaleData.get(locale).percentPattern, locale);
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.947 -0400", hash_original_method = "BA195880AA858EB457E0D875FED9F2CD", hash_generated_method = "D1A89EEA004CC9B420A4A836AD74BFBC")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.947 -0400", hash_original_method = "BA195880AA858EB457E0D875FED9F2CD", hash_generated_method = "D1A89EEA004CC9B420A4A836AD74BFBC")
 	@Override
 	public int hashCode() {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_689792573 = getTaintInt();
@@ -291,7 +297,8 @@ public abstract class NumberFormat extends Format {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.947 -0400", hash_original_method = "4D5DDA7520229906D909C6D4DE03887B", hash_generated_method = "9AAA6D87A2A37F3FE2836C49F0F54E0D")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.947 -0400", hash_original_method = "4D5DDA7520229906D909C6D4DE03887B", hash_generated_method = "9AAA6D87A2A37F3FE2836C49F0F54E0D")
 	public boolean isGroupingUsed() {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1264205816 = getTaintBoolean();
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1264205816;
@@ -299,7 +306,8 @@ public abstract class NumberFormat extends Format {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.948 -0400", hash_original_method = "2C7184F183FABEE99D4475D92EBC3629", hash_generated_method = "69AED87F3AFA9246B4553CFF3634ABD3")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.948 -0400", hash_original_method = "2C7184F183FABEE99D4475D92EBC3629", hash_generated_method = "69AED87F3AFA9246B4553CFF3634ABD3")
 	public boolean isParseIntegerOnly() {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_104959384 = getTaintBoolean();
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_104959384;
@@ -401,14 +409,16 @@ public abstract class NumberFormat extends Format {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.955 -0400", hash_original_method = "A7E1435E673E29B6F1D0E28A7EA1B8E8", hash_generated_method = "579E547AED141F13B97721B484886296")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.955 -0400", hash_original_method = "A7E1435E673E29B6F1D0E28A7EA1B8E8", hash_generated_method = "579E547AED141F13B97721B484886296")
 	public void setGroupingUsed(boolean value) {
 		groupingUsed = value;
 		
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.956 -0400", hash_original_method = "8D829B5D993AE8CFC3165307650DC45D", hash_generated_method = "979309CAAEB255D26FFC8E250B3A1A58")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.956 -0400", hash_original_method = "8D829B5D993AE8CFC3165307650DC45D", hash_generated_method = "979309CAAEB255D26FFC8E250B3A1A58")
 	public void setMaximumFractionDigits(int value) {
 		maximumFractionDigits = value < 0 ? 0 : value;
 		{
@@ -421,7 +431,8 @@ public abstract class NumberFormat extends Format {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.956 -0400", hash_original_method = "21B8BEFD42232423658838BAC20C84FE", hash_generated_method = "5E1D03428256DBB14D382BAF5C25FAC5")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.956 -0400", hash_original_method = "21B8BEFD42232423658838BAC20C84FE", hash_generated_method = "5E1D03428256DBB14D382BAF5C25FAC5")
 	public void setMaximumIntegerDigits(int value) {
 		maximumIntegerDigits = value < 0 ? 0 : value;
 		{
@@ -434,7 +445,8 @@ public abstract class NumberFormat extends Format {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.957 -0400", hash_original_method = "2004D453A285EC62847C50B61DD7CBAF", hash_generated_method = "CA921B64E5FB83ADC0F5C232AF317A79")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.957 -0400", hash_original_method = "2004D453A285EC62847C50B61DD7CBAF", hash_generated_method = "CA921B64E5FB83ADC0F5C232AF317A79")
 	public void setMinimumFractionDigits(int value) {
 		minimumFractionDigits = value < 0 ? 0 : value;
 		{
@@ -447,7 +459,8 @@ public abstract class NumberFormat extends Format {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.958 -0400", hash_original_method = "6D62345156926236ED68DA3CBABDD448", hash_generated_method = "314275626C7C3ACE82FAB27B43E94527")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.958 -0400", hash_original_method = "6D62345156926236ED68DA3CBABDD448", hash_generated_method = "314275626C7C3ACE82FAB27B43E94527")
 	public void setMinimumIntegerDigits(int value) {
 		minimumIntegerDigits = value < 0 ? 0 : value;
 		{
@@ -460,7 +473,8 @@ public abstract class NumberFormat extends Format {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.959 -0400", hash_original_method = "7914BBF7EC4F88E69DC0254980E5E100", hash_generated_method = "17744EC5A610FD6FB76060138790E549")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.959 -0400", hash_original_method = "7914BBF7EC4F88E69DC0254980E5E100", hash_generated_method = "17744EC5A610FD6FB76060138790E549")
 	public void setParseIntegerOnly(boolean value) {
 		parseIntegerOnly = value;
 		

@@ -88,6 +88,7 @@ public final class Accept extends ParametersHeader implements javax.sip.header.A
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.778 -0400", hash_original_method = "95EC1B8E6B4FF94ADCA4E5294FD4A8E3", hash_generated_method = "51D932D9DD636367856BDDC573F1AB8F")
     public MediaRange getMediaRange() {
         MediaRange varB4EAC82CA7396A68D541C85D26508E83_837004590 = null; 
@@ -221,6 +222,7 @@ public final class Accept extends ParametersHeader implements javax.sip.header.A
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.783 -0400", hash_original_method = "E4AF328E0ACDB3837FCDCFA232CB922B", hash_generated_method = "D4B8159947A4E1D723FD3764612CBB21")
     public void setMediaRange(MediaRange m) {
         mediaRange = m;

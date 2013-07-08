@@ -63,6 +63,7 @@ public final class InputDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.979 -0400", hash_original_method = "849E83C6BA01C72387E236CA4FAA38B9", hash_generated_method = "17FDE6A83EF905AD4F29430034F4F149")
     public int getId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2102397920 = getTaintInt();
@@ -72,6 +73,7 @@ public final class InputDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.979 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "0E67F56F311741BE1CB7BDC5392DB12B")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_956773543 = null; 
@@ -83,6 +85,7 @@ public final class InputDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.980 -0400", hash_original_method = "3BD5CDD2AD0F6E345998577876EA9513", hash_generated_method = "EA3879840288CF1786AA50CC9830F932")
     public int getSources() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_779586383 = getTaintInt();
@@ -92,6 +95,7 @@ public final class InputDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.980 -0400", hash_original_method = "3E019E9C92E6EAD3726AE49F913F1619", hash_generated_method = "153A881C83718468FB28345994CD0C18")
     public int getKeyboardType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_47587733 = getTaintInt();
@@ -113,6 +117,7 @@ public final class InputDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.981 -0400", hash_original_method = "6E63969CFD2DFD594C82531499F7DA54", hash_generated_method = "C2BADEC57E99293C4440D995E5895D73")
      String getKeyCharacterMapFile() {
         String varB4EAC82CA7396A68D541C85D26508E83_1801815941 = null; 
@@ -308,6 +313,7 @@ public final class InputDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.987 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8F740CB5F788344ADDDEA2C29EB8F9DE")
     @Override
     public int describeContents() {

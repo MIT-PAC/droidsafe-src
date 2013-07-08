@@ -49,6 +49,7 @@ public class ByteArrayInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.526 -0400", hash_original_method = "60B3E89517A58F980CEC13EE6BBDFCDA", hash_generated_method = "0D58A6827AEC0F9EC52D1486459D3DED")
     @Override
     public synchronized int available() {
@@ -59,6 +60,7 @@ public class ByteArrayInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.526 -0400", hash_original_method = "403A1214A00C2300123B494982A31042", hash_generated_method = "6B4749673D8A7A62B822BE7109DA1BE7")
     @Override
     public void close() throws IOException {
@@ -66,6 +68,7 @@ public class ByteArrayInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.526 -0400", hash_original_method = "78F90254D622F331873962595002D35F", hash_generated_method = "E9AFBC14CFC872FA782DC7FDB8371ACF")
     @Override
     public synchronized void mark(int readlimit) {
@@ -76,6 +79,7 @@ public class ByteArrayInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.527 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "5D621815B35C8ED0AA06153CC53A38FD")
     @Override
     public boolean markSupported() {
@@ -86,6 +90,7 @@ public class ByteArrayInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.527 -0400", hash_original_method = "BB56F6666E3E1FB5BE1E06064B4DC5BD", hash_generated_method = "B01DB2C38620551B3A06D07F1BFA5661")
     @Override
     public synchronized int read() {
@@ -126,6 +131,7 @@ public class ByteArrayInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.528 -0400", hash_original_method = "C62CA45FA6D33EC45CB5D1463505B2CA", hash_generated_method = "5F81C3DDB804B4E1ED077DCCACC7F88D")
     @Override
     public synchronized void reset() {
@@ -135,6 +141,7 @@ public class ByteArrayInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.529 -0400", hash_original_method = "18E56C09FFA023CF1EF098815CAD3886", hash_generated_method = "114D56263E57FC9A6B4539500D31C34A")
     @Override
     public synchronized long skip(long byteCount) {

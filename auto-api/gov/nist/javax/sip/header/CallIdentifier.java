@@ -129,6 +129,7 @@ public final class CallIdentifier extends SIPObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.268 -0400", hash_original_method = "842945DA69DE126BDF81117018A1E298", hash_generated_method = "B9434B0580B00904404DB861B121DAC7")
     public String getLocalId() {
         String varB4EAC82CA7396A68D541C85D26508E83_406852828 = null; 
@@ -140,6 +141,7 @@ public final class CallIdentifier extends SIPObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.269 -0400", hash_original_method = "2F2AEDD17A97DC05E80343AAC323BA28", hash_generated_method = "EC781BF57F29EA24FFB908EC961E7688")
     public String getHost() {
         String varB4EAC82CA7396A68D541C85D26508E83_1942554377 = null; 
@@ -151,6 +153,7 @@ public final class CallIdentifier extends SIPObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.269 -0400", hash_original_method = "0AB9BF9EEACCCDCF81C792E2B80A49BD", hash_generated_method = "B25AB12FE689784887B4988DF74D0163")
     public void setLocalId(String localId) {
         this.localId = localId;
@@ -192,6 +195,7 @@ public final class CallIdentifier extends SIPObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.270 -0400", hash_original_method = "50061DDE3121AF364F9B69CF73D75DB1", hash_generated_method = "8B7526142A00FCD16001137F323106D3")
     public void setHost(String host) {
         this.host = host;

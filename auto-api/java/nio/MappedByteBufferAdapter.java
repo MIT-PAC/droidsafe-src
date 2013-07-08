@@ -438,6 +438,7 @@ final class MappedByteBufferAdapter extends MappedByteBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.750 -0400", hash_original_method = "E1FB1E1D5A4E2DA2FDB3B2E50C938B59", hash_generated_method = "853EA0360EEB1BC0E63163851B4D54A4")
     @Override
     public boolean isDirect() {

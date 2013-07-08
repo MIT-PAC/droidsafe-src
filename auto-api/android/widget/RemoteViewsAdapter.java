@@ -277,6 +277,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.183 -0400", hash_original_method = "F998EBA4725E32A416A597964901E5AB", hash_generated_method = "597AD99A262A2D1E5C3CDAD8E7B3911D")
     public Intent getRemoteViewsServiceIntent() {
         Intent varB4EAC82CA7396A68D541C85D26508E83_2146430325 = null; 
@@ -301,6 +302,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.184 -0400", hash_original_method = "AE0D3BF5CEF608E0D2B9C47624E8B8EC", hash_generated_method = "68C8FCAEAF9E51AF1D61690B5B9109AA")
     public Object getItem(int position) {
         Object varB4EAC82CA7396A68D541C85D26508E83_2086008875 = null; 

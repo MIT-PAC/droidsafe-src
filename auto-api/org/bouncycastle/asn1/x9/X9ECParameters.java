@@ -153,6 +153,7 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.435 -0400", hash_original_method = "C3733AEA1B7056ED3896C5DBEA3E645D", hash_generated_method = "37E1216193B105FD71664655DD8DCB65")
     public ECCurve getCurve() {
         ECCurve varB4EAC82CA7396A68D541C85D26508E83_1634885025 = null; 
@@ -164,6 +165,7 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.435 -0400", hash_original_method = "F49644298FFD38F2CFD5B0D378F29102", hash_generated_method = "50335F5D02028625DC0E2CD5953882F2")
     public ECPoint getG() {
         ECPoint varB4EAC82CA7396A68D541C85D26508E83_698382514 = null; 
@@ -175,6 +177,7 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.435 -0400", hash_original_method = "30674A850FAA3528D3976F32A0E4EE43", hash_generated_method = "07ED9D64183108635E070AA5AA9BB3AD")
     public BigInteger getN() {
         BigInteger varB4EAC82CA7396A68D541C85D26508E83_1664045136 = null; 
@@ -186,6 +189,7 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.436 -0400", hash_original_method = "9DE3987FDD4335D5C0BE76F667E07DA1", hash_generated_method = "93FA0D40577CAFBBD6049C243F20592A")
     public BigInteger getH() {
         BigInteger varB4EAC82CA7396A68D541C85D26508E83_329065643 = null; 
@@ -214,6 +218,7 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.436 -0400", hash_original_method = "B051A8408593F9E1275AB818DE8E2A80", hash_generated_method = "B8CF73F6B0226E3C034BBF19E9BDE10C")
     public byte[] getSeed() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1478852809 = {getTaintByte()};

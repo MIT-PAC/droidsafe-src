@@ -64,6 +64,7 @@ public class LogManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.369 -0400", hash_original_method = "9AC5D8EF15BD7837ACD785C0772615A1", hash_generated_method = "C308BE0846D76E01A367023713D9A840")
     public void checkAccess() {
         
@@ -177,7 +178,8 @@ public class LogManager {
     }
 
     
-        public static LogManager getLogManager() {
+        @DSModeled(DSC.SAFE)
+    public static LogManager getLogManager() {
         return manager;
     }
 

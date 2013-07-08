@@ -43,11 +43,13 @@ public abstract class LoaderManager {
     public abstract void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args);
 
     
-        public static void enableDebugLogging(boolean enabled) {
+        @DSModeled(DSC.SAFE)
+    public static void enableDebugLogging(boolean enabled) {
         LoaderManagerImpl.DEBUG = enabled;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.119 -0400", hash_original_method = "59280299B88BC81400789A85A7BD24F4", hash_generated_method = "203D9F62B11D066BC581DB699E435787")
     public boolean hasRunningLoaders() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_343675916 = getTaintBoolean();
@@ -108,6 +110,7 @@ class LoaderManagerImpl extends LoaderManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.120 -0400", hash_original_method = "39148A68E08215CAB837BA67F40FAA62", hash_generated_method = "FD7298AAA1462E00D71BDFDBAB50C6A6")
      void updateActivity(FragmentActivity activity) {
         mActivity = activity;

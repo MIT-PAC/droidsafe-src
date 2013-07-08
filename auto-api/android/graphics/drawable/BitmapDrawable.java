@@ -279,6 +279,7 @@ public class BitmapDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.637 -0400", hash_original_method = "35E95FC787F9F24A49C5DE1ED0297F4C", hash_generated_method = "9C0D41A128E10BD5222F76FE8AD70726")
     public int getGravity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1970974660 = getTaintInt();
@@ -343,6 +344,7 @@ public class BitmapDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.639 -0400", hash_original_method = "8C03C626370DF89EB681D1D91A4CB25A", hash_generated_method = "01ED8EB43CB092BB4CE5DBC7C60C61AF")
     public Shader.TileMode getTileModeX() {
         Shader.TileMode varB4EAC82CA7396A68D541C85D26508E83_497050970 = null; 
@@ -354,6 +356,7 @@ public class BitmapDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.640 -0400", hash_original_method = "C4F6E36EB6EDDD2C280548D4CD537229", hash_generated_method = "316314DF16B2A3C1E69C64A04B9876CF")
     public Shader.TileMode getTileModeY() {
         Shader.TileMode varB4EAC82CA7396A68D541C85D26508E83_1215831096 = null; 
@@ -580,6 +583,7 @@ public class BitmapDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.647 -0400", hash_original_method = "6DB114FB8E950C38C4587167EE2392DA", hash_generated_method = "7AD8A31E1AD399EA8D18F0022637E7DE")
     @Override
     public int getIntrinsicWidth() {
@@ -590,6 +594,7 @@ public class BitmapDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.648 -0400", hash_original_method = "391FEC77F059693D96A6B7B3AE926494", hash_generated_method = "C01A53378840DAC6AAD643847732282D")
     @Override
     public int getIntrinsicHeight() {

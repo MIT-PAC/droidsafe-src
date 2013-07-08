@@ -19,6 +19,7 @@ public class NullOutputStream extends OutputStream {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.727 -0400", hash_original_method = "6E71F74AE8E714A009EC36E9EAC6B88D", hash_generated_method = "80E2AA9AA0A5E40F9A3E1390E07C48B2")
     @Override
     public void write(byte[] b, int off, int len) {
@@ -29,6 +30,7 @@ public class NullOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.727 -0400", hash_original_method = "074160D8FBF16E881F1835AE7B894602", hash_generated_method = "A0A41554A799D17D7F8CC13E20744EEA")
     @Override
     public void write(int b) {
@@ -37,6 +39,7 @@ public class NullOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.727 -0400", hash_original_method = "14210D7CE620CE82255795453724F2AF", hash_generated_method = "2C7AFD2F1BA8FF9EB58342799B0D3374")
     @Override
     public void write(byte[] b) throws IOException {

@@ -88,7 +88,8 @@ public final class Bundle implements Parcelable, Cloneable {
 		
 	}
 	
-	public void setClassLoader(ClassLoader loader){
+	@DSModeled(DSC.BAN)
+    public void setClassLoader(ClassLoader loader){
 		mClassLoader = loader;  
 		
 		
@@ -96,14 +97,16 @@ public final class Bundle implements Parcelable, Cloneable {
 		
 	}
 	
-	public ClassLoader getClassLoader(){
+	@DSModeled(DSC.BAN)
+    public ClassLoader getClassLoader(){
 		return mClassLoader;
 		
 		
 		
 	}
 	
-	public boolean setAllowFds(boolean allowFds){
+	@DSModeled(DSC.SAFE)
+    public boolean setAllowFds(boolean allowFds){
 		addTaint(allowFds);
 		return getTaintBoolean();
 		

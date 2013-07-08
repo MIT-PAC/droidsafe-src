@@ -83,6 +83,7 @@ public class DeferredFileOutputStream extends ThresholdingOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.669 -0400", hash_original_method = "F995E868509776850AFF6498E755EFC4", hash_generated_method = "FF8B9E0479D1D8CE7C9D382D97BDE5C9")
     @Override
     protected OutputStream getStream() throws IOException {
@@ -145,6 +146,7 @@ public class DeferredFileOutputStream extends ThresholdingOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.670 -0400", hash_original_method = "2FAEE05DD81B3DF9BBBB7355A430983C", hash_generated_method = "89312090196F7C3EED4A85765765F0E8")
     public File getFile() {
         File varB4EAC82CA7396A68D541C85D26508E83_1776663472 = null; 

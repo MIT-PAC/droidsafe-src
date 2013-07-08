@@ -23,6 +23,7 @@ public class TypeNotPresentException extends RuntimeException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.443 -0400", hash_original_method = "4654D488024911B4CA912D2186B5898B", hash_generated_method = "9C47EECD2A59B17FF2916B4BE51DCED6")
     public String typeName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1578720812 = null; 

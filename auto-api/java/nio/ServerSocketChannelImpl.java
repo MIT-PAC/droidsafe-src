@@ -49,6 +49,7 @@ final class ServerSocketChannelImpl extends ServerSocketChannel implements FileD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.372 -0400", hash_original_method = "0B1D553D9DA92AA497AE372DB2D8B920", hash_generated_method = "F8B8DDD4AE6AF44A1A33491CE08574D5")
     @Override
     public ServerSocket socket() {

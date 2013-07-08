@@ -97,6 +97,7 @@ final class ReadWriteDirectByteBuffer extends DirectByteBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.044 -0400", hash_original_method = "19E9B6B291778F8D7BAF6F9BA6FE7EDF", hash_generated_method = "B7EF59703E310DDD57ECC81A2EB25337")
     @Override
     public boolean isReadOnly() {

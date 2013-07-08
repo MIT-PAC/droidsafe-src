@@ -659,6 +659,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.006 -0400", hash_original_method = "1B8FCD54ED5E137B1A38ACB963DE1ED8", hash_generated_method = "7A552385BBE4270B0B01A30ABBB0F4F5")
      boolean isAutomaticDialogSupportEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1226970552 = getTaintBoolean();
@@ -875,6 +876,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.010 -0400", hash_original_method = "BCFD29C2FE3D7BF7BBC15432578BF66F", hash_generated_method = "6DA9411C1BBA42CEC93D8F3964A881A2")
     public boolean isRetransmissionFilterActive() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_345140295 = getTaintBoolean();
@@ -895,6 +897,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.011 -0400", hash_original_method = "98CDA556C50A8E057D89E8EADBB5B35E", hash_generated_method = "BE796237B61AB11826ADD34248C4D4A7")
     public String getStackName() {
         String varB4EAC82CA7396A68D541C85D26508E83_159206260 = null; 
@@ -974,6 +977,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.014 -0400", hash_original_method = "007AB23FB90DEFAA901334391BCA8574", hash_generated_method = "32DFA3A2C8407BC6AF990736A11A7D35")
     public SipListener getSipListener() {
         SipListener varB4EAC82CA7396A68D541C85D26508E83_318573002 = null; 
@@ -985,6 +989,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.014 -0400", hash_original_method = "41341CEB98E5DA012DCAACB9910CCA31", hash_generated_method = "B23B6FD6389726F40148A30D2321BBCA")
     public LogRecordFactory getLogRecordFactory() {
         LogRecordFactory varB4EAC82CA7396A68D541C85D26508E83_1518828465 = null; 
@@ -996,6 +1001,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.014 -0400", hash_original_method = "DD6917F16C5DC825A79D8F74525C77AA", hash_generated_method = "EC0D82D717281AF44D905CDE0BE8A54E")
     @Deprecated
     public EventScanner getEventScanner() {
@@ -1038,6 +1044,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.016 -0400", hash_original_method = "23CB36659469F37B2B1A4E89C6C5A109", hash_generated_method = "EEF876C7AA37CA82F9A54624D848F42A")
     public void setEnabledCipherSuites(String[] newCipherSuites) {
         cipherSuites = newCipherSuites;
@@ -1046,6 +1053,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.017 -0400", hash_original_method = "15C35F67057574B0384681051DA88AFD", hash_generated_method = "E3A8A09491B24509780FCB84717941D4")
     public String[] getEnabledCipherSuites() {
         String[] varB4EAC82CA7396A68D541C85D26508E83_1713122065 = null; 
@@ -1057,6 +1065,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.018 -0400", hash_original_method = "146720FA6D9E688CD139244E691C1622", hash_generated_method = "367AACC0BB535AEDE0F21EE0BE1604FA")
     public void setEnabledProtocols(String[] newProtocols) {
         enabledProtocols = newProtocols;
@@ -1065,6 +1074,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.021 -0400", hash_original_method = "36B040AE4C1B32E20301E5CF570A7C53", hash_generated_method = "D4BF67CAAB7DD2572AC64211035654F4")
     public String[] getEnabledProtocols() {
         String[] varB4EAC82CA7396A68D541C85D26508E83_595502972 = null; 
@@ -1076,6 +1086,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.022 -0400", hash_original_method = "B3A8DF498FA0698B770F05249042765A", hash_generated_method = "03886AAE7E894E0D90DA83D6366182F2")
     public void setIsBackToBackUserAgent(boolean flag) {
         super.isBackToBackUserAgent = flag;
@@ -1085,6 +1096,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.023 -0400", hash_original_method = "1623111994CBCA0890DA0FF2A1E140E0", hash_generated_method = "8ADFF0762EA61966E180D8885F78BD1D")
     public boolean isBackToBackUserAgent() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2082214435 = getTaintBoolean();
@@ -1094,6 +1106,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.024 -0400", hash_original_method = "8A30592F142C300BD40BD8A31AEE1D8D", hash_generated_method = "7D82E33835F8411698B3B92E48400CDC")
     public boolean isAutomaticDialogErrorHandlingEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1663982792 = getTaintBoolean();

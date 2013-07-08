@@ -343,6 +343,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.463 -0400", hash_original_method = "AF5FE6AF92A07FF4E461FEC03ECD4D84", hash_generated_method = "FE9F7778773C4A80E9AB8F17A0816318")
     public IOException ioException() {
         IOException varB4EAC82CA7396A68D541C85D26508E83_415583280 = null; 
@@ -1517,6 +1518,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.490 -0400", hash_original_method = "07C369462F22245026E1280008B34AEC", hash_generated_method = "D5F4D7D234DC76DA2D8ABB6AF0FAFF36")
     private int to12Hour(int hour) {
         addTaint(hour);

@@ -694,6 +694,7 @@ public class JSONTokener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.416 -0400", hash_original_method = "8E6F2519C4EF5016C5BDFABD97F81370", hash_generated_method = "E69C5655DD65275250CBBCF1D432F901")
     public void back() {
         {
@@ -706,6 +707,7 @@ public class JSONTokener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int dehexchar(char hex) {
         if (hex >= '0' && hex <= '9') {
             return hex - '0';

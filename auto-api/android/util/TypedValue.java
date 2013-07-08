@@ -48,6 +48,7 @@ public class TypedValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float complexToFloat(int complex) {
         return (complex&(TypedValue.COMPLEX_MANTISSA_MASK
                    <<TypedValue.COMPLEX_MANTISSA_SHIFT))
@@ -106,6 +107,7 @@ public class TypedValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float applyDimension(int unit, float value,
                                        DisplayMetrics metrics) {
         switch (unit) {
@@ -222,6 +224,7 @@ public class TypedValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.773 -0400", hash_original_method = "AE1CAB20A8487EE7B21133A09B8F6C44", hash_generated_method = "92B2774E264185FFD066BBD574CB6742")
     public void setTo(TypedValue other) {
         type = other.type;

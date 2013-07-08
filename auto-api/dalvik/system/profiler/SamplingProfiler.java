@@ -74,6 +74,7 @@ public final class SamplingProfiler {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static ThreadSampler findDefaultThreadSampler() {
         if ("Dalvik Core Library".equals(System.getProperty("java.specification.name"))) {
             String className = "dalvik.system.profiler.DalvikThreadSampler";
@@ -92,11 +93,13 @@ public final class SamplingProfiler {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static ThreadSet newThreadGroupTheadSet(ThreadGroup threadGroup) {
         return new ThreadGroupThreadSet(threadGroup);
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.136 -0400", hash_original_method = "27D03994E61C1E4974C7BBD91A5CED76", hash_generated_method = "2705245FE9A54719445D9CA658697092")
     public void start(int interval) {
         {
@@ -122,6 +125,7 @@ public final class SamplingProfiler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.136 -0400", hash_original_method = "67E3C9BA9A63DEAC75D61937C8B159A6", hash_generated_method = "2F55F670185D8318E18E18355C5996E6")
     public void stop() {
         {
@@ -153,6 +157,7 @@ public final class SamplingProfiler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.138 -0400", hash_original_method = "E9FD5B0933A1848F685AEBC164A37AF6", hash_generated_method = "62A5E416FD9EC25C2C2402805D8B0333")
     public void shutdown() {
         stop();
@@ -163,6 +168,7 @@ public final class SamplingProfiler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.139 -0400", hash_original_method = "ED23570BD9F6C6F13BA5A80428CD13EC", hash_generated_method = "AE4C86A2D23D5E0CBCA4D7BAFB4DA30F")
     public HprofData getHprofData() {
         HprofData varB4EAC82CA7396A68D541C85D26508E83_1202799013 = null; 

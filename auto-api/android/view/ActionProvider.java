@@ -24,6 +24,7 @@ public abstract class ActionProvider {
     public abstract View onCreateActionView();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.829 -0400", hash_original_method = "366B075407E0A5F04994070AE9F78DED", hash_generated_method = "4CFF31EF69139F12CE4DD1F81134A843")
     public boolean onPerformDefaultAction() {
         
@@ -34,6 +35,7 @@ public abstract class ActionProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.829 -0400", hash_original_method = "6145E76FB29B74D78245641D6BEF294B", hash_generated_method = "865C06D73B73CD0152D89AC0283D0EBC")
     public boolean hasSubMenu() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1437987241 = getTaintBoolean();
@@ -43,6 +45,7 @@ public abstract class ActionProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.829 -0400", hash_original_method = "F59137EC2C0A4379BE18A71AFD20A9D8", hash_generated_method = "9DA1EF53C8D5BEB9087131E3E0114121")
     public void onPrepareSubMenu(SubMenu subMenu) {
         
@@ -65,6 +68,7 @@ public abstract class ActionProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.830 -0400", hash_original_method = "D36B582FBFECE681E89AD6546A9F8E0B", hash_generated_method = "B1FA1AA5736D11F90BC907F84A60ABD9")
     public void setSubUiVisibilityListener(SubUiVisibilityListener listener) {
         mSubUiVisibilityListener = listener;

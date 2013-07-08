@@ -1413,6 +1413,7 @@ public class SimpleDateFormat extends DateFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.263 -0400", hash_original_method = "35D638E960413F452190EF441C98A34C", hash_generated_method = "5F31B96A7CB3B89E5D6F83068100A3FF")
     public String toPattern() {
         String varB4EAC82CA7396A68D541C85D26508E83_1924748816 = null; 

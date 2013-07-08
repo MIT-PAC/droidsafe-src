@@ -510,6 +510,7 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.944 -0400", hash_original_method = "85F4612555E33B447C725C49965B14D6", hash_generated_method = "4273143CCA6E95A2C8596BE20934D03B")
     public void setProgressStyle(int style) {
         mProgressStyle = style;

@@ -149,6 +149,7 @@ public class SparseBooleanArray implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.631 -0400", hash_original_method = "9550C69BAA91C5298BA75D226127D5FF", hash_generated_method = "AC0B5F239F762837C02DA441F8320280")
     public int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_858231436 = getTaintInt();
@@ -158,6 +159,7 @@ public class SparseBooleanArray implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.631 -0400", hash_original_method = "A3423B1919CBB5E5DDAE8E35A522AED2", hash_generated_method = "5C2522D9BF845446552757335077E632")
     public int keyAt(int index) {
         addTaint(index);
@@ -168,6 +170,7 @@ public class SparseBooleanArray implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.632 -0400", hash_original_method = "29A1BAF882E385B3C84A3B34D45CFC9E", hash_generated_method = "A75BA2E729D25FB09DDDE37908EA498A")
     public boolean valueAt(int index) {
         addTaint(index);
@@ -190,6 +193,7 @@ public class SparseBooleanArray implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.633 -0400", hash_original_method = "7EFAF81E1CDED3A683A46526F2D63473", hash_generated_method = "DF201115C4F139FC723247B20416F93E")
     public int indexOfValue(boolean value) {
         {
@@ -206,6 +210,7 @@ public class SparseBooleanArray implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.633 -0400", hash_original_method = "78B640B3511AD026106C387D36058FFC", hash_generated_method = "2F55AFCAF967A1646FEBDAF6AC2C8455")
     public void clear() {
         mSize = 0;
@@ -254,6 +259,7 @@ public class SparseBooleanArray implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int binarySearch(int[] a, int start, int len, int key) {
         int high = start + len, low = start - 1, guess;
         while (high - low > 1) {

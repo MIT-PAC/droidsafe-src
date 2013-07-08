@@ -56,6 +56,7 @@ public class OperatorInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.318 -0400", hash_original_method = "B51FA3C3765E71F08A241B1C8BA79C96", hash_generated_method = "1CF12C97C5F9A3EAB10934BFD15CD016")
     public String getOperatorAlphaLong() {
         String varB4EAC82CA7396A68D541C85D26508E83_1250520272 = null; 
@@ -67,6 +68,7 @@ public class OperatorInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.318 -0400", hash_original_method = "A8269EAEF0CA69A19C2F3D33BBF8152B", hash_generated_method = "6B4ED1DA5AB4FDACD4A3818A92E99B85")
     public String getOperatorAlphaShort() {
         String varB4EAC82CA7396A68D541C85D26508E83_1285069017 = null; 
@@ -78,6 +80,7 @@ public class OperatorInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.318 -0400", hash_original_method = "06DBB2F851A1F540C7CE21639E1F11FC", hash_generated_method = "89A11062C5D0CD123F2B63A5AF7D724F")
     public String getOperatorNumeric() {
         String varB4EAC82CA7396A68D541C85D26508E83_1185635879 = null; 
@@ -89,6 +92,7 @@ public class OperatorInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.319 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "2580255178973BBD21138857068BBD3F")
     public State getState() {
         State varB4EAC82CA7396A68D541C85D26508E83_1427492831 = null; 
@@ -135,6 +139,7 @@ public class OperatorInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.320 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "419BE8171D9DD8C7AF3548BD9D550886")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_521660289 = getTaintInt();

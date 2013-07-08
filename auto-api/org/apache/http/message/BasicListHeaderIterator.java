@@ -88,6 +88,7 @@ public class BasicListHeaderIterator implements HeaderIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.202 -0400", hash_original_method = "A999EE5BCD06DCC7730AAD5F8A866DB2", hash_generated_method = "25DAEC2135548FDC9E2D7E87D39B4539")
     public boolean hasNext() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_859206183 = getTaintBoolean();

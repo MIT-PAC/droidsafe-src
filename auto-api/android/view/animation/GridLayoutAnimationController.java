@@ -83,6 +83,7 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.519 -0400", hash_original_method = "3717FF744AD9B352598BB020F584214F", hash_generated_method = "B5D6A27291E9307180364C5EE096811C")
     public float getColumnDelay() {
         float var546ADE640B6EDFBC8A086EF31347E768_854693131 = getTaintFloat();
@@ -92,6 +93,7 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.520 -0400", hash_original_method = "9501A5CA0F153641CDBB87B4A0FF2D10", hash_generated_method = "C7AA2AD84759C6B2FECFC5080692540A")
     public void setColumnDelay(float columnDelay) {
         mColumnDelay = columnDelay;
@@ -100,6 +102,7 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.520 -0400", hash_original_method = "4A1DF1219341ECD3C219976F02BC50A3", hash_generated_method = "188947EB7AC8A5430B206C1DEBF52775")
     public float getRowDelay() {
         float var546ADE640B6EDFBC8A086EF31347E768_811518861 = getTaintFloat();
@@ -109,6 +112,7 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.520 -0400", hash_original_method = "64D555696CC7461EC1F71D4A3CF182E8", hash_generated_method = "44CD6692632F04CC8033AC326535A160")
     public void setRowDelay(float rowDelay) {
         mRowDelay = rowDelay;
@@ -117,6 +121,7 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.520 -0400", hash_original_method = "41E7A7956AF2C8AD22DB281BF2D1824C", hash_generated_method = "4D67226801DD4570089DB355DC280275")
     public int getDirection() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_234883975 = getTaintInt();
@@ -126,6 +131,7 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.520 -0400", hash_original_method = "1018F9EE846F5F3D270E1DDB698C3F6E", hash_generated_method = "308442DCD74853153DE9BB2BF46521FD")
     public void setDirection(int direction) {
         mDirection = direction;
@@ -134,6 +140,7 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.521 -0400", hash_original_method = "B1015DE18826455B040F95A300414206", hash_generated_method = "EBD94548A93077FF5EDB90DE77C3C07F")
     public int getDirectionPriority() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1887957257 = getTaintInt();
@@ -143,6 +150,7 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.522 -0400", hash_original_method = "709631E231E1B8C214255AB5EF74A588", hash_generated_method = "ECC5BD2FC1392EAC72A0F198845CE262")
     public void setDirectionPriority(int directionPriority) {
         mDirectionPriority = directionPriority;
@@ -151,6 +159,7 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.522 -0400", hash_original_method = "A375B490E9D5A30E7BEB9896805D2CB7", hash_generated_method = "1D7893B1F3C43FB8ECE66B8A73A98CE6")
     @Override
     public boolean willOverlap() {

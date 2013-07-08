@@ -27,6 +27,7 @@ public class MissingFormatArgumentException extends IllegalFormatException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.301 -0400", hash_original_method = "4D96301902AD0649417B90D095E1EDFD", hash_generated_method = "837CA02747E2F1B1DF0D7E86786E193E")
     public String getFormatSpecifier() {
         String varB4EAC82CA7396A68D541C85D26508E83_1011159558 = null; 

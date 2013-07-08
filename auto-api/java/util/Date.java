@@ -98,6 +98,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.685 -0400", hash_original_method = "A5A1DDC35C23D543E612D23967A596DA", hash_generated_method = "A706579DAA012F162D69B24553B0ECC5")
     public boolean after(Date date) {
         addTaint(date.getTaint());
@@ -108,6 +109,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.685 -0400", hash_original_method = "EB21B83A31DD3DBD1842C230376F433E", hash_generated_method = "2CBF3B0EDB2E56C2F7C2BEBABF259C79")
     public boolean before(Date date) {
         addTaint(date.getTaint());
@@ -142,6 +144,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.687 -0400", hash_original_method = "7C9742DC24BA8DF560999557E5DD5087", hash_generated_method = "B5DF5AE64C489FC3C6DF363242EA7BD9")
     public int compareTo(Date date) {
         addTaint(date.getTaint());
@@ -158,6 +161,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.689 -0400", hash_original_method = "DDDF9262D80550B9DB77ACA0997BD3D6", hash_generated_method = "342A9538C5BEC6118E8C630E2DB3248D")
     @Override
     public boolean equals(Object object) {
@@ -244,6 +248,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.693 -0400", hash_original_method = "6634404A1A66BE1A7302C8A8E427A289", hash_generated_method = "9397C246A3F8F27FAAE6800D14741624")
     public long getTime() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_660664982 = getTaintLong();
@@ -279,6 +284,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.694 -0400", hash_original_method = "B128FED5B5AAAF883404F36E34AD6524", hash_generated_method = "ED33AACA2CE09F88A240B4C36C85418E")
     @Override
     public int hashCode() {
@@ -554,6 +560,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.698 -0400", hash_original_method = "9E6A699B7F6421DBF4934C3ED6E82161", hash_generated_method = "1BF1F7F86998003806F58E7BCFC18FB0")
     public void setTime(long milliseconds) {
         this.milliseconds = milliseconds;

@@ -114,6 +114,7 @@ public class PrintWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.855 -0400", hash_original_method = "9EE080B9329CC6FAACC493ECC7141CFB", hash_generated_method = "0FB396FA9B1359C29CF99D8928A9F51A")
     protected void clearError() {
         {
@@ -464,6 +465,7 @@ public class PrintWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.865 -0400", hash_original_method = "03F201CD8682A0C64485926BB6B35745", hash_generated_method = "2A2E0A41F670A08AE912C405A23E19BA")
     protected void setError() {
         {

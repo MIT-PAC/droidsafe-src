@@ -170,6 +170,7 @@ public final class PreferenceScreen extends PreferenceGroup implements AdapterVi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.635 -0400", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "5757A68BCC7A3A05205B82B1597F6B84")
     public Dialog getDialog() {
         Dialog varB4EAC82CA7396A68D541C85D26508E83_1255271246 = null; 
@@ -206,6 +207,7 @@ public final class PreferenceScreen extends PreferenceGroup implements AdapterVi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.636 -0400", hash_original_method = "B68456EA6FB78586D0952577C0AE0058", hash_generated_method = "B650C5744CE31F40AE222BD8AF67C413")
     @Override
     protected boolean isOnSameScreenAsChildren() {

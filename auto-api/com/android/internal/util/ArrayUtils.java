@@ -18,6 +18,7 @@ public class ArrayUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int idealByteArraySize(int need) {
         for (int i = 4; i < 32; i++)
             if (need <= (1 << i) - 12)
@@ -68,6 +69,7 @@ public class ArrayUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean equals(byte[] array1, byte[] array2, int length) {
         if (array1 == array2) {
             return true;
@@ -112,6 +114,7 @@ public class ArrayUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean contains(int[] array, int value) {
         for (int element : array) {
             if (element == value) {

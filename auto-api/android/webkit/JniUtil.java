@@ -38,6 +38,7 @@ class JniUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected static synchronized Context getContext() {
         return sContext;
     }
@@ -148,6 +149,7 @@ class JniUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativeUseChromiumHttpStack() {
         return DSUtils.UNKNOWN_BOOLEAN;
     }

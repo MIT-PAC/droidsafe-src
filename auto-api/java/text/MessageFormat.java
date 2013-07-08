@@ -430,6 +430,7 @@ public class MessageFormat extends Format {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.835 -0400", hash_original_method = "6305A24530517BEB5A0FB94704F4E840", hash_generated_method = "883D4F268FD292403B3106B0672BAE68")
     public Format[] getFormatsByArgumentIndex() {
         Format[] varB4EAC82CA7396A68D541C85D26508E83_864498221 = null; 
@@ -452,6 +453,7 @@ public class MessageFormat extends Format {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.836 -0400", hash_original_method = "A090F158D8C76258E8307612B54D8E7F", hash_generated_method = "E1BCB6FA3665DA88B4548C6777FE1693")
     public void setFormatByArgumentIndex(int argIndex, Format format) {
         {
@@ -472,6 +474,7 @@ public class MessageFormat extends Format {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.836 -0400", hash_original_method = "A9324DA1CAF88845D05BF77827620ABB", hash_generated_method = "C09BE2CB24674B40BF88B6EFB676DC75")
     public void setFormatsByArgumentIndex(Format[] formats) {
         {
@@ -498,6 +501,7 @@ public class MessageFormat extends Format {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.837 -0400", hash_original_method = "4C873AD5A0D4D89DBA836C1C6CEC9B8D", hash_generated_method = "9CC1CAC547F44274695808C9B9C1A15A")
     public Locale getLocale() {
         Locale varB4EAC82CA7396A68D541C85D26508E83_641987852 = null; 
@@ -882,6 +886,7 @@ public class MessageFormat extends Format {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.848 -0400", hash_original_method = "40ED9258145F8A9FA53AE23CC8BC5498", hash_generated_method = "F1F0700A79FE15C5103D16FF48D78E94")
     public void setFormat(int offset, Format format) {
         formats[offset] = format;
@@ -890,6 +895,7 @@ public class MessageFormat extends Format {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.848 -0400", hash_original_method = "F9E7D69C4CD5EB0783A6761389D5E01C", hash_generated_method = "E34E8DA745609AD0E7C98107DA6CDDA3")
     public void setFormats(Format[] formats) {
         int min = this.formats.length;

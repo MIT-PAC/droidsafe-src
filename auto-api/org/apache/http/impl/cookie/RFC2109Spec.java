@@ -380,6 +380,7 @@ public class RFC2109Spec extends CookieSpecBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.394 -0400", hash_original_method = "48398E54A721F2ABBD2AD2C5ED75FBF5", hash_generated_method = "C9F2B974DDADA2FD24D211E7CDB83EE3")
     public int getVersion() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1076605137 = getTaintInt();
@@ -389,6 +390,7 @@ public class RFC2109Spec extends CookieSpecBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.395 -0400", hash_original_method = "C1FA79C2C3115B4C8F8CB20B10CB9417", hash_generated_method = "8E3C28CEBB2AF3F97D042463A381ADBF")
     public Header getVersionHeader() {
         Header varB4EAC82CA7396A68D541C85D26508E83_234751376 = null; 

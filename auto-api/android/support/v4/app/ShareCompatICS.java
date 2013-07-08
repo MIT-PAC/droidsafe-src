@@ -22,7 +22,8 @@ class ShareCompatICS {
     }
 
 
-        public static void configureMenuItem(MenuItem item, Activity callingActivity, Intent intent) {
+        @DSModeled(DSC.SPEC)
+    public static void configureMenuItem(MenuItem item, Activity callingActivity, Intent intent) {
         ActionProvider itemProvider = item.getActionProvider();
         ShareActionProvider provider = null;
         if (!(itemProvider instanceof ShareActionProvider)) {

@@ -691,6 +691,7 @@ public class SipProviderImpl implements javax.sip.SipProvider, gov.nist.javax.si
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:37.844 -0400", hash_original_method = "4583BF79BF08EE358F0E8CEF923996E7", hash_generated_method = "D295239AAC197811BBE3FE06E931FDA1")
     public SipStack getSipStack() {
         SipStack varB4EAC82CA7396A68D541C85D26508E83_1988802193 = null; 
@@ -1235,6 +1236,7 @@ public class SipProviderImpl implements javax.sip.SipProvider, gov.nist.javax.si
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:37.859 -0400", hash_original_method = "08917B93BCD125C29B1D418CFBD693FD", hash_generated_method = "96A4390FCBC998F4A7B54E2F8EF10165")
     public void setAutomaticDialogSupportEnabled(
             boolean automaticDialogSupportEnabled) {
@@ -1250,6 +1252,7 @@ public class SipProviderImpl implements javax.sip.SipProvider, gov.nist.javax.si
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:37.859 -0400", hash_original_method = "18DDE4A1FF25A19616718FBEC8927BCF", hash_generated_method = "B05C166E3E7FBEF72596B63B405144C8")
     public boolean isAutomaticDialogSupportEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_822509633 = getTaintBoolean();
@@ -1259,6 +1262,7 @@ public class SipProviderImpl implements javax.sip.SipProvider, gov.nist.javax.si
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:37.860 -0400", hash_original_method = "8E72F0F9A971C2A6E1313B02079A711A", hash_generated_method = "21A90BA4CDE53CBAB0B11EDE68F90954")
     public void setDialogErrorsAutomaticallyHandled() {
         this.dialogErrorsAutomaticallyHandled = true;
@@ -1267,6 +1271,7 @@ public class SipProviderImpl implements javax.sip.SipProvider, gov.nist.javax.si
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:37.860 -0400", hash_original_method = "D32D7DD8A91D988429F699F6AD4CC892", hash_generated_method = "AB8DE902C98BBDD7EDE71B8ED5229255")
     public boolean isDialogErrorsAutomaticallyHandled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1639984687 = getTaintBoolean();
@@ -1276,6 +1281,7 @@ public class SipProviderImpl implements javax.sip.SipProvider, gov.nist.javax.si
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:37.860 -0400", hash_original_method = "C4DC38CCAB12B1686E686A836D3DE2C4", hash_generated_method = "4F5CCCC96DE9878EF942C5DC4090FBC8")
     public SipListener getSipListener() {
         SipListener varB4EAC82CA7396A68D541C85D26508E83_1700905401 = null; 

@@ -23,19 +23,23 @@ public final class InputQueue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeRegisterInputChannel(InputChannel inputChannel,
             InputHandler inputHandler, MessageQueue messageQueue) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeUnregisterInputChannel(InputChannel inputChannel) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeFinished(long finishedToken, boolean handled) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.119 -0400", hash_original_method = "61914318E0BCFE3BB34C0890B61B6D95", hash_generated_method = "E15F369CA63A294254204E761B8F450E")
     public InputChannel getInputChannel() {
         InputChannel varB4EAC82CA7396A68D541C85D26508E83_1305842057 = null; 

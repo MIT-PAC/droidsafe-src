@@ -33,6 +33,7 @@ public class StringReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.131 -0400", hash_original_method = "827A4A30AD2891E9194C78AEA719C92F", hash_generated_method = "56CB6D45E1B04874E8BB64A2135F32B4")
     @Override
     public void close() {
@@ -42,6 +43,7 @@ public class StringReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.131 -0400", hash_original_method = "E02036AA0C500209CBC33A804345F86B", hash_generated_method = "D510F8E8EB6D6E6D27354DA49ED5A0C3")
     private boolean isClosed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1431017085 = getTaintBoolean();
@@ -90,6 +92,7 @@ public class StringReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.132 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "F4998B56685CE1E4052DBEF2A184F44E")
     @Override
     public boolean markSupported() {

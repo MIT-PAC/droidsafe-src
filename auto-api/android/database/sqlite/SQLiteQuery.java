@@ -46,17 +46,20 @@ public class SQLiteQuery extends SQLiteProgram {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeFillWindow(int databasePtr, int statementPtr, int windowPtr,
             int startPos, int offsetParam) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeColumnCount(int statementPtr) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String nativeColumnName(int statementPtr, int columnIndex) {
         	return new String();
     }

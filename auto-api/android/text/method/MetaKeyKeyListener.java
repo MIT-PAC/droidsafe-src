@@ -83,12 +83,14 @@ public abstract class MetaKeyKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isMetaTracker(CharSequence text, Object what) {
         return what == CAP || what == ALT || what == SYM ||
                what == SELECTING;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isSelectingMetaTracker(CharSequence text, Object what) {
         return what == SELECTING;
     }
@@ -287,6 +289,7 @@ public abstract class MetaKeyKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long resetLockedMeta(long state) {
         if ((state & META_CAP_LOCKED) != 0) {
             state &= ~META_SHIFT_MASK;
@@ -342,6 +345,7 @@ public abstract class MetaKeyKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long adjustMetaAfterKeypress(long state) {
         if ((state & META_CAP_PRESSED) != 0) {
             state = (state & ~META_SHIFT_MASK) | META_SHIFT_ON | META_CAP_USED;
@@ -381,6 +385,7 @@ public abstract class MetaKeyKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static long press(long state, int what, long mask,
             long locked, long pressed, long released, long used) {
         if ((state & pressed) != 0) {
@@ -434,6 +439,7 @@ public abstract class MetaKeyKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.223 -0400", hash_original_method = "DB6E28AB316658FAB51CA26FDC440ADD", hash_generated_method = "D9DFE54C9CA44FE11588E01AA242716A")
     public long clearMetaKeyState(long state, int which) {
         {

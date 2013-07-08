@@ -124,6 +124,7 @@ public class CertificationRequestInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.003 -0400", hash_original_method = "C14C6949EA2D9724014BC15AB24B85D9", hash_generated_method = "8AAEDD8E4EEF226EB5BE9FC8EDF75698")
     public DERInteger getVersion() {
         DERInteger varB4EAC82CA7396A68D541C85D26508E83_1784349177 = null; 
@@ -135,6 +136,7 @@ public class CertificationRequestInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.003 -0400", hash_original_method = "CA422C660E8CA6347A77201218B988AE", hash_generated_method = "F971F7C72E3395799AEAAD34EB1000B3")
     public X509Name getSubject() {
         X509Name varB4EAC82CA7396A68D541C85D26508E83_756176855 = null; 
@@ -146,6 +148,7 @@ public class CertificationRequestInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.003 -0400", hash_original_method = "9158BC4B5A10C8DD7FADE51069C303FC", hash_generated_method = "7D154E00E30D32712F0221D2DDE6AA79")
     public SubjectPublicKeyInfo getSubjectPublicKeyInfo() {
         SubjectPublicKeyInfo varB4EAC82CA7396A68D541C85D26508E83_1589153772 = null; 
@@ -157,6 +160,7 @@ public class CertificationRequestInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.004 -0400", hash_original_method = "2B5879FE48F35BA3284D87B378AFE5E1", hash_generated_method = "7898FA6FEFC8B240A2B5E9B70711D050")
     public ASN1Set getAttributes() {
         ASN1Set varB4EAC82CA7396A68D541C85D26508E83_944583944 = null; 

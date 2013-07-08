@@ -22,30 +22,35 @@ public class AudioSystem {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int muteMicrophone(boolean on) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1756309994 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1756309994;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isMicrophoneMuted() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_177342172 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_177342172;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isStreamActive(int stream, int inPastMs) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1331802538 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1331802538;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int setParameters(String keyValuePairs) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1860833902 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1860833902;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getParameters(String keys) {
     	return new String();
     }
@@ -72,60 +77,70 @@ public class AudioSystem {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int setDeviceConnectionState(int device, int state, String device_address) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_187799177 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_187799177;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getDeviceConnectionState(int device, String device_address) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_11225308 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_11225308;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int setPhoneState(int state) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_995969536 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_995969536;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int setRingerMode(int mode, int mask) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1507481703 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1507481703;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int setForceUse(int usage, int config) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1429176203 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1429176203;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getForceUse(int usage) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2138645 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2138645;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int initStreamVolume(int stream, int indexMin, int indexMax) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1593650950 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1593650950;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int setStreamVolumeIndex(int stream, int index) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1515598909 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1515598909;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getStreamVolumeIndex(int stream) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_458088729 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_458088729;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getDevicesForStream(int stream) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_65095384 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_65095384;

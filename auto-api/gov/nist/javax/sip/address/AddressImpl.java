@@ -219,6 +219,7 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.173 -0400", hash_original_method = "93137A429171577005AC852AA3CBD92B", hash_generated_method = "A44FC3660D4E209A4E35DC19A50AAFD3")
     public int getAddressType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_215300267 = getTaintInt();
@@ -228,6 +229,7 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.173 -0400", hash_original_method = "9F1FE4476648947E875579C9BD408A94", hash_generated_method = "9C4A3E70947FB3FDA091FB999E129026")
     public void setAddressType(int atype) {
         addressType = atype;
@@ -236,6 +238,7 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.174 -0400", hash_original_method = "050EB531E383683E34CFFBB41EC12665", hash_generated_method = "CB2C8D114E99EB672520005A06950FD4")
     public String getDisplayName() {
         String varB4EAC82CA7396A68D541C85D26508E83_117155212 = null; 
@@ -247,6 +250,7 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.174 -0400", hash_original_method = "20237627212B7A29DEC009BA073F5A0F", hash_generated_method = "22F780AE0AAD394C441B1705A60742F1")
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
@@ -257,6 +261,7 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.174 -0400", hash_original_method = "EB99F908657CD76194DE95632B999EA3", hash_generated_method = "5BB3C8C1253F38C0663C21B0AFC0573D")
     public void setAddess(javax.sip.address.URI address) {
         this.address = (GenericURI) address;
@@ -296,6 +301,7 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.175 -0400", hash_original_method = "B0F53EB98996816F5E75DFC90AF9D2B6", hash_generated_method = "86BD0B6DEB4300E57B84C635345130FC")
     public boolean hasDisplayName() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_985594755 = getTaintBoolean();
@@ -305,6 +311,7 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.175 -0400", hash_original_method = "1C9F40C92EDF6ED97BB2D87B31D06D96", hash_generated_method = "5CD955E1E7F6119F595EEFAF2698F225")
     public void removeDisplayName() {
         displayName = null;
@@ -313,6 +320,7 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.176 -0400", hash_original_method = "DEDDE1E197FB1DB769CF6C0A06F1A55D", hash_generated_method = "542F8D629390932E6A8BA185F235D866")
     public boolean isSIPAddress() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1844373987 = getTaintBoolean();
@@ -322,6 +330,7 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.176 -0400", hash_original_method = "1CCD793210D749E7DAD6ED996CE553FC", hash_generated_method = "00C7135BD92FD0101EE20B7F8598A213")
     public URI getURI() {
         URI varB4EAC82CA7396A68D541C85D26508E83_1124937113 = null; 
@@ -333,6 +342,7 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.177 -0400", hash_original_method = "6DCA089E698119AE5E5CAA45D8347BA0", hash_generated_method = "239789603FD327C51072A2AB53770919")
     public boolean isWildcard() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1175799711 = getTaintBoolean();
@@ -342,6 +352,7 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.177 -0400", hash_original_method = "EE5571D54561E1127EBAFF3098CB1511", hash_generated_method = "07B1C81B131244B8D0886DCB048597CC")
     public void setURI(URI address) {
         this.address = (GenericURI) address;

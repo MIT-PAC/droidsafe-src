@@ -120,6 +120,7 @@ public class UriMatcher {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.913 -0400", hash_original_method = "4993091A11603906CAD34405800B45EB", hash_generated_method = "59ADFEABDCF0B044DFADA2594577099D")
     public int match(Uri uri) {
         final List<String> pathSegments = uri.getPathSegments();

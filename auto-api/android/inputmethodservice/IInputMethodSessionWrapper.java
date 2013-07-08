@@ -41,6 +41,7 @@ class IInputMethodSessionWrapper extends IInputMethodSession.Stub implements Han
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.577 -0400", hash_original_method = "FE0809D61F310D1DE2584DA263F14DCD", hash_generated_method = "9309B84F37B0E2F68640EDE775CD8F42")
     public InputMethodSession getInternalInputMethodSession() {
         InputMethodSession varB4EAC82CA7396A68D541C85D26508E83_1147184943 = null; 

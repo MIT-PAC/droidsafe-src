@@ -133,6 +133,7 @@ public class AccessibilityServiceInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:12:54.104 -0400", hash_original_method = "2C9B75B7F79417EB76D61370935CF9C8", hash_generated_method = "A0C7324A63FA3E4756821C675147A473")
     public void updateDynamicallyConfigurableProperties(AccessibilityServiceInfo other) {
         eventTypes = other.eventTypes;
@@ -149,6 +150,7 @@ public class AccessibilityServiceInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:12:54.112 -0400", hash_original_method = "89A68E81BC93C5F428177630DB2A624A", hash_generated_method = "3EED6C249AA90791338F588D56003678")
     public String getId() {
         String varB4EAC82CA7396A68D541C85D26508E83_1776555801 = null; 
@@ -160,6 +162,7 @@ public class AccessibilityServiceInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:12:54.124 -0400", hash_original_method = "CD70F9B024F94168959F7F67ECCC2D46", hash_generated_method = "7BC30821D7251AB6CE5640B4EC930763")
     public ResolveInfo getResolveInfo() {
         ResolveInfo varB4EAC82CA7396A68D541C85D26508E83_1461984509 = null; 
@@ -171,6 +174,7 @@ public class AccessibilityServiceInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:12:54.128 -0400", hash_original_method = "193585B262D581003491A72A585CC7AB", hash_generated_method = "FDA7B7F7A54188BEDF911E9586FB18AF")
     public String getSettingsActivityName() {
         String varB4EAC82CA7396A68D541C85D26508E83_711015350 = null; 
@@ -182,6 +186,7 @@ public class AccessibilityServiceInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:12:54.131 -0400", hash_original_method = "E6B94BCDAE7DB4F02CCDA58E176F7C09", hash_generated_method = "8803C1FCC908C19CEBB378123C8464FB")
     public boolean getCanRetrieveWindowContent() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_734356769 = getTaintBoolean();
@@ -191,6 +196,7 @@ public class AccessibilityServiceInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:12:54.134 -0400", hash_original_method = "177DD147D2F75620FD2B154278EC57FA", hash_generated_method = "4ADCFA177F1CCD7352D3E519B32D92D6")
     public String getDescription() {
         String varB4EAC82CA7396A68D541C85D26508E83_297514688 = null; 
@@ -202,6 +208,7 @@ public class AccessibilityServiceInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:12:54.136 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "EA903679E4A4CDA21988E6018D7C96D0")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_574229752 = getTaintInt();
@@ -396,6 +403,7 @@ public class AccessibilityServiceInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String flagToString(int flag) {
         switch (flag) {
             case DEFAULT:

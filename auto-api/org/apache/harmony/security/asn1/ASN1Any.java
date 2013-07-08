@@ -18,6 +18,7 @@ public final class ASN1Any extends ASN1Type {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ASN1Any getInstance() {
         return ASN1;
     }
@@ -103,6 +104,7 @@ public final class ASN1Any extends ASN1Type {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.381 -0400", hash_original_method = "9FE1E04620BBFE07A0C8F71EADD10582", hash_generated_method = "28412896F17AF4B874C6F607DA4D2993")
     public void setEncodingContent(BerOutputStream out) {
         out.length = ((byte[]) out.content).length;
@@ -112,6 +114,7 @@ public final class ASN1Any extends ASN1Type {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.381 -0400", hash_original_method = "4E35D9A00930BDC0DD7D3944E7329986", hash_generated_method = "BD4876C207AFE2BFF898D9221D887ABE")
     public int getEncodedLength(BerOutputStream out) {
         addTaint(out.getTaint());

@@ -540,6 +540,7 @@ public abstract class ApplicationThreadNative extends Binder implements IApplica
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.762 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "069E73B4A3A930A0DFC2B45765E420F5")
     public IBinder asBinder() {
         IBinder varB4EAC82CA7396A68D541C85D26508E83_1644475366 = null; 
@@ -1321,6 +1322,7 @@ class ApplicationThreadProxy implements IApplicationThread {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.793 -0400", hash_original_method = "D0D9D13B7AFC8143680190DFDB1E27B8", hash_generated_method = "5271FC8C1B6C7866F3684082FB8E5315")
     public void scheduleRegisteredReceiver(IIntentReceiver receiver, Intent intent,
             int resultCode, String dataStr, Bundle extras, boolean ordered, boolean sticky) throws RemoteException {

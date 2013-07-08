@@ -140,6 +140,7 @@ public class ListView extends AbsListView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.782 -0400", hash_original_method = "13CC3D3BB67006B8B223FEAA5CEB8AD3", hash_generated_method = "3CF3F49D60F4B45E722D19D6D2FB466A")
     public int getMaxScrollAmount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1189051536 = getTaintInt();
@@ -392,6 +393,7 @@ public class ListView extends AbsListView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.787 -0400", hash_original_method = "0E1A05724C497F45D7FB6AC34C501814", hash_generated_method = "0F64E60BC75D57C9F92E589C0A1C27F8")
     @Override
     public ListAdapter getAdapter() {
@@ -404,6 +406,7 @@ public class ListView extends AbsListView {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.787 -0400", hash_original_method = "8AB2C6958FD7CEC3A8A71FE59763D6A4", hash_generated_method = "D18E7401555F2345B6B780E77B86E39C")
     @android.view.RemotableViewMethod
     public void setRemoteViewsAdapter(Intent intent) {
@@ -882,6 +885,7 @@ public class ListView extends AbsListView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.797 -0400", hash_original_method = "DDE472821830C07DE1368C905BA02EE1", hash_generated_method = "2D28A5BF7469A209BF5B1C701EC93A80")
     private int getBottomSelectionPixel(int childrenBottom, int fadingEdgeLength,
             int selectedPosition) {
@@ -903,6 +907,7 @@ public class ListView extends AbsListView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.798 -0400", hash_original_method = "173BB2BFF18272B67A930A02164FEB0F", hash_generated_method = "508AFA0953F52D5A847393D726374314")
     private int getTopSelectionPixel(int childrenTop, int fadingEdgeLength, int selectedPosition) {
         int topSelectionPixel = childrenTop;
@@ -1157,6 +1162,7 @@ public class ListView extends AbsListView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.802 -0400", hash_original_method = "8F0B08D4426D8F4F23EF014B56CDCFE6", hash_generated_method = "DF35629C3225553DD3A0DE2A865E349A")
     @ViewDebug.ExportedProperty(category = "list")
     protected boolean recycleOnMeasure() {
@@ -3119,6 +3125,7 @@ public class ListView extends AbsListView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.858 -0400", hash_original_method = "1C95AE1007B5CDC38C9B3E3B2904F365", hash_generated_method = "372C094C18BF32613A1AB51DC62BEB7E")
     public boolean getItemsCanFocus() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1191962720 = getTaintBoolean();
@@ -3439,6 +3446,7 @@ public class ListView extends AbsListView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.863 -0400", hash_original_method = "7B5403D1FD6AC98A776FCB41ADD8E487", hash_generated_method = "9C43ED72DE1C8700BF739B322EC9CDD4")
     public Drawable getDivider() {
         Drawable varB4EAC82CA7396A68D541C85D26508E83_964630050 = null; 
@@ -3476,6 +3484,7 @@ public class ListView extends AbsListView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.864 -0400", hash_original_method = "229663AAAB1BC0B50485AD0B5CC199F3", hash_generated_method = "974639243288C5A4EBE688764EF123DC")
     public int getDividerHeight() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_393073895 = getTaintInt();
@@ -3535,6 +3544,7 @@ public class ListView extends AbsListView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.865 -0400", hash_original_method = "95FFBAE371294243FE9AD2355C3622A4", hash_generated_method = "6AC453A732CB727D110887B94B85260B")
     public Drawable getOverscrollHeader() {
         Drawable varB4EAC82CA7396A68D541C85D26508E83_1404137343 = null; 
@@ -3557,6 +3567,7 @@ public class ListView extends AbsListView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.866 -0400", hash_original_method = "C43851852530BF4773181DC349AD3704", hash_generated_method = "0A0D9F8D6EA1BA50C7E8DD344FC68849")
     public Drawable getOverscrollFooter() {
         Drawable varB4EAC82CA7396A68D541C85D26508E83_291807148 = null; 

@@ -47,15 +47,18 @@ public class RegionIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeConstructor(int native_region) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeDestructor(int native_iter) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativeNext(int native_iter, Rect r) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }

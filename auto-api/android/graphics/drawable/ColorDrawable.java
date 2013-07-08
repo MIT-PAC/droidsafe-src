@@ -77,6 +77,7 @@ public class ColorDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.721 -0400", hash_original_method = "12CB188AAA441342DA340C647E5F4CB8", hash_generated_method = "BC1FE2B248D649E16D4E9E85BD0C8DC3")
     public int getColor() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_33412012 = getTaintInt();
@@ -101,6 +102,7 @@ public class ColorDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.722 -0400", hash_original_method = "5CD88AD7EDD59028127023DB7F8765AB", hash_generated_method = "79B6A59DFC56FBF35DE6C58840F1546A")
     public int getAlpha() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1543337096 = getTaintInt();
@@ -134,6 +136,7 @@ public class ColorDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.723 -0400", hash_original_method = "A617079D3CF57FB47B0EF9E1F05040EF", hash_generated_method = "607C53DAEBDA2ED67847FBFFF6FC8251")
     public void setColorFilter(ColorFilter colorFilter) {
         addTaint(colorFilter.getTaint());
@@ -141,6 +144,7 @@ public class ColorDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.724 -0400", hash_original_method = "B5DEC9C614B60B544E3B9333F2490C35", hash_generated_method = "5F902ADB8643ABEA99C19BB70B675660")
     public int getOpacity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1923479155 = getTaintInt();

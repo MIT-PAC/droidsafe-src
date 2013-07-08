@@ -176,6 +176,7 @@ public abstract class AbstractHttpClient implements HttpClient {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.948 -0400", hash_original_method = "E8FEA16F6836AB209AB35B29A74CFADA", hash_generated_method = "BC5D0F150AB716DC339EA236FCA8A24D")
     public synchronized void setParams(HttpParams params) {
         defaultParams = params;

@@ -35,6 +35,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isHierarchical() {
     	return getTaintBoolean();
     }
@@ -50,6 +51,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isRelative() {
     	return getTaintBoolean();
     }
@@ -65,76 +67,91 @@ public class Uri implements Parcelable, Comparable<Uri> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getScheme() {
     	return uriString;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getSchemeSpecificPart() {
     	return uriString;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getEncodedSchemeSpecificPart() {
     	return uriString;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getAuthority() {
     	return uriString;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getEncodedAuthority() {
     	return uriString;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getUserInfo() {
     	return uriString;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getEncodedUserInfo() {
     	return uriString;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getHost() {
     	return uriString;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public int getPort(){
     	return getTaintInt();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getPath(){
     	return uriString;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getEncodedPath(){
     	return uriString;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getQuery(){
     	return uriString;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getEncodedQuery(){
     	return uriString;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getFragment(){
     	return uriString;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getEncodedFragment(){
     	return uriString;
     }
@@ -147,6 +164,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getLastPathSegment(){
     	return uriString;
     }
@@ -178,6 +196,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.284 -0400", hash_original_method = "45EC734684FFFB3EE70A4C12F2A2F839", hash_generated_method = "A80ADE847A43B13D80CD58A9CB186FE2")
     public int compareTo(Uri other) {
         int var9FDCE1533C4137A95AA1B9336AC2C904_597655754 = (toString().compareTo(other.toString()));
@@ -189,6 +208,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String toString() {
     	return uriString;
     }
@@ -253,16 +273,19 @@ public class Uri implements Parcelable, Comparable<Uri> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public Builder buildUpon() {
     	return new Builder();
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Uri parse(String uriString) {
         return new StringUri(uriString);
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Uri fromFile(File file) {
         if (file == null) {
             throw new NullPointerException("file");
@@ -273,6 +296,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Uri fromParts(String scheme, String ssp,
             String fragment) {
         if (scheme == null) {
@@ -496,6 +520,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static void writeToParcel(Parcel out, Uri uri) {
         if (uri == null) {
             out.writeInt(NULL_TYPE_ID);
@@ -626,6 +651,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Uri withAppendedPath(Uri baseUri, String pathSegment) {
         Builder builder = baseUri.buildUpon();
         builder = builder.appendEncodedPath(pathSegment);

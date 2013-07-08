@@ -22,6 +22,7 @@ public class TextImpl extends CharacterDataImpl implements Text {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.447 -0400", hash_original_method = "F5AD87001A4CE84E4D3D0566BEEE7118", hash_generated_method = "D041A02AE7FB0EEA27FDD5E07F6BC031")
     @Override
     public String getNodeName() {
@@ -34,6 +35,7 @@ public class TextImpl extends CharacterDataImpl implements Text {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.447 -0400", hash_original_method = "C38FDDE6CC592E744EE6602E5FF8812E", hash_generated_method = "F06E654BE43BB88EA135C17823D41992")
     @Override
     public short getNodeType() {

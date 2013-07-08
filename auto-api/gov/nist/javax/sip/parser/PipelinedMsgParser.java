@@ -75,6 +75,7 @@ public final class PipelinedMsgParser implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static synchronized int getNewUid() {
         return uid++;
     }
@@ -111,6 +112,7 @@ public final class PipelinedMsgParser implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.401 -0400", hash_original_method = "AE1DFBE29C50512ACC863FBFFDC539ED", hash_generated_method = "853BB09F699662204A7FAC41D98CD659")
     public void setMessageListener(SIPMessageListener mlistener) {
         sipMessageListener = mlistener;

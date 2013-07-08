@@ -331,6 +331,7 @@ final class SchemaFactoryFinder  {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String which(String classname, ClassLoader loader) {
         String classnameAsResource = classname.replace('.', '/') + ".class";
 

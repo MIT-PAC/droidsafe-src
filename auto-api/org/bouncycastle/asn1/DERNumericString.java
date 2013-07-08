@@ -92,6 +92,7 @@ public class DERNumericString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.557 -0400", hash_original_method = "3CB977BE316CAC9520A0E1ADE8D338F7", hash_generated_method = "2429D317FA604346FCCBF9F0126D0E5D")
     public String getString() {
         String varB4EAC82CA7396A68D541C85D26508E83_1552915533 = null; 
@@ -103,6 +104,7 @@ public class DERNumericString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.557 -0400", hash_original_method = "A7AD745E242BD88C36EC3708384A50C0", hash_generated_method = "E80A3190CD77450494AA041DB665C439")
     public String toString() {
         String varB4EAC82CA7396A68D541C85D26508E83_1268632315 = null; 

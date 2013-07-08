@@ -48,6 +48,7 @@ public final class GpsStatus {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.275 -0400", hash_original_method = "4D31391A39726BDC955321B1E3DBD71C", hash_generated_method = "5049B51F2B6450B07DD9CBBF08DD28CF")
     synchronized void setStatus(int svCount, int[] prns, float[] snrs,
             float[] elevations, float[] azimuths, int ephemerisMask,
@@ -123,6 +124,7 @@ public final class GpsStatus {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.276 -0400", hash_original_method = "DB9D2F6104F17C34589316947F2A601E", hash_generated_method = "67EFC13BBD63DDF4ED5824FCE6033C6E")
      void setTimeToFirstFix(int ttff) {
         mTimeToFirstFix = ttff;
@@ -131,6 +133,7 @@ public final class GpsStatus {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.276 -0400", hash_original_method = "75FBD0BC51265BCFA2480910110E8F36", hash_generated_method = "6EB4487648650506D3C666FE2C0A60C2")
     public int getTimeToFirstFix() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_147016549 = getTaintInt();
@@ -151,6 +154,7 @@ public final class GpsStatus {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.277 -0400", hash_original_method = "30B567DEF49ED207BED02E25B8D7701A", hash_generated_method = "6CC408F02BDC02A093E0305443A61760")
     public int getMaxSatellites() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1652142535 = getTaintInt();

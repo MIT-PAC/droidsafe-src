@@ -71,6 +71,7 @@ public final class Ndef extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.408 -0400", hash_original_method = "522E1BD05C0F58597909DF2D37B1E51E", hash_generated_method = "98E83CCBE632F456C285369EF60FBFED")
     public NdefMessage getCachedNdefMessage() {
         NdefMessage varB4EAC82CA7396A68D541C85D26508E83_1546985892 = null; 
@@ -82,6 +83,7 @@ public final class Ndef extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.409 -0400", hash_original_method = "A8A4A8CA63E3E206537FB1A4A1A58DE6", hash_generated_method = "E1729A38668EC46B022A306F10C4D766")
     public String getType() {
         String varB4EAC82CA7396A68D541C85D26508E83_1697372262 = null; 
@@ -158,6 +160,7 @@ public final class Ndef extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.410 -0400", hash_original_method = "4EADEE4A8AA14EA957D69BF1EB117D34", hash_generated_method = "D76CA9D3040125E9F1F8439B4DFD8F77")
     public int getMaxSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_911478637 = getTaintInt();
@@ -167,6 +170,7 @@ public final class Ndef extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.411 -0400", hash_original_method = "9C15355B29C0704385FAC8BA222CAFE7", hash_generated_method = "A069D579C7D0E16A689211FB9B0D0248")
     public boolean isWritable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_155896735 = getTaintBoolean();

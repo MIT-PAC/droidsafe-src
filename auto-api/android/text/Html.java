@@ -814,6 +814,7 @@ class HtmlToSpannedConverter implements ContentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.757 -0400", hash_original_method = "764EC710ED4FDFB68C9E6FE9ED249649", hash_generated_method = "8982242C86C53DDD9F8374B3C93C1CFB")
     public void setDocumentLocator(Locator locator) {
         addTaint(locator.getTaint());
@@ -821,18 +822,21 @@ class HtmlToSpannedConverter implements ContentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.757 -0400", hash_original_method = "FAA725B72A2ADC391C781CAB49B849AD", hash_generated_method = "F5ABC17320CB17FAFC02F6F62510312E")
     public void startDocument() throws SAXException {
         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.758 -0400", hash_original_method = "08AD4CBC251CA96B103DE58FB6AA2921", hash_generated_method = "3ACBE0E14DE791A4A89F8374A54B4D72")
     public void endDocument() throws SAXException {
         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.758 -0400", hash_original_method = "9A8DBFCDD6673580DBBCEDB8AE69733A", hash_generated_method = "D2DEDFEF366F67889D9FA3A94A552C63")
     public void startPrefixMapping(String prefix, String uri) throws SAXException {
         addTaint(prefix.getTaint());
@@ -841,6 +845,7 @@ class HtmlToSpannedConverter implements ContentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.758 -0400", hash_original_method = "0E90E85A66154559EA3C98CC7177C34F", hash_generated_method = "5B3A24B5853AE441BDBBB759C4F775AE")
     public void endPrefixMapping(String prefix) throws SAXException {
         addTaint(prefix.getTaint());
@@ -920,6 +925,7 @@ class HtmlToSpannedConverter implements ContentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.760 -0400", hash_original_method = "D7C64873BD0FC0A0449628F53B089507", hash_generated_method = "F156EAF285B0C46B9FE32434ED0F4856")
     public void processingInstruction(String target, String data) throws SAXException {
         addTaint(target.getTaint());
@@ -928,6 +934,7 @@ class HtmlToSpannedConverter implements ContentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.761 -0400", hash_original_method = "1616136BE44E483876717F8A446FD8E6", hash_generated_method = "78177C3306D49108B776A6C694C380AB")
     public void skippedEntity(String name) throws SAXException {
         addTaint(name.getTaint());

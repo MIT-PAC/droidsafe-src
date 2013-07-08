@@ -52,6 +52,7 @@ public class TypedArray {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.337 -0400", hash_original_method = "C0D624CC7CEFFAF650D54F4FB963FAF6", hash_generated_method = "98052EEA65E589320BDBB898234656CB")
     public int length() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1607897145 = getTaintInt();
@@ -61,6 +62,7 @@ public class TypedArray {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.337 -0400", hash_original_method = "E11A0D9421BCBF5642F2B23C8115E006", hash_generated_method = "46EE56A32966ABA5ABBF822B0D24026C")
     public int getIndexCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_204443745 = getTaintInt();
@@ -70,6 +72,7 @@ public class TypedArray {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.338 -0400", hash_original_method = "757B3D64706707A79AF98EFF90D4FA5D", hash_generated_method = "977771BB5D831DF1E8960DB278F2F3BB")
     public int getIndex(int at) {
         addTaint(at);
@@ -80,6 +83,7 @@ public class TypedArray {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.339 -0400", hash_original_method = "9FEC9CB1792EB215E49CBF732B0DBF5B", hash_generated_method = "C41E40E509B9B1CBCCE3E521EC1C6699")
     public Resources getResources() {
         Resources varB4EAC82CA7396A68D541C85D26508E83_1458871943 = null; 
@@ -700,6 +704,7 @@ public class TypedArray {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.355 -0400", hash_original_method = "DF47714E2511EE2CB8E5736FC0D36FFE", hash_generated_method = "93E40159E4A91BC6FB375E14B7C0CED8")
     public int getResourceId(int index, int defValue) {
         index *= AssetManager.STYLE_NUM_ENTRIES;
@@ -841,6 +846,7 @@ public class TypedArray {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.358 -0400", hash_original_method = "0EF762AB49E40F4FF6959DF2595733A2", hash_generated_method = "4765E56DC7E3EC32053A528C27D92236")
     public boolean hasValue(int index) {
         index *= AssetManager.STYLE_NUM_ENTRIES;
@@ -903,6 +909,7 @@ public class TypedArray {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.361 -0400", hash_original_method = "A1E6C58584B412829C21C498310464D0", hash_generated_method = "2D007B4A750B585CF9353575EAB53146")
     public void recycle() {
         {

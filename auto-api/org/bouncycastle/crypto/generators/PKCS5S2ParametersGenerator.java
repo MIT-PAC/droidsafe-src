@@ -95,6 +95,7 @@ public class PKCS5S2ParametersGenerator extends PBEParametersGenerator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.047 -0400", hash_original_method = "D84C49C513A1760CAD87960E0D89CE0E", hash_generated_method = "4F67EBA3834A87687C5D876D9EF848D7")
     private void intToOctet(
         byte[]  buf,

@@ -99,6 +99,7 @@ public abstract class GenericObjectList extends LinkedList<GenericObject> implem
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected static boolean isCloneable(Object obj) {
         return obj instanceof Cloneable;
     }
@@ -138,6 +139,7 @@ public abstract class GenericObjectList extends LinkedList<GenericObject> implem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.416 -0400", hash_original_method = "D0155A1FF97450AAAC485CBFCA9B9151", hash_generated_method = "CD555D9A7A572ADB1416682B5064D9A7")
     public void setMyClass(Class cl) {
         myClass = cl;
@@ -519,6 +521,7 @@ public abstract class GenericObjectList extends LinkedList<GenericObject> implem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.424 -0400", hash_original_method = "8B5A99905EE1811A879B3378EE7C88B1", hash_generated_method = "BE8D7A91CF35C3CE4342E681E66ABB40")
     public void setSeparator(String sep) {
         separator = sep;
@@ -527,6 +530,7 @@ public abstract class GenericObjectList extends LinkedList<GenericObject> implem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.424 -0400", hash_original_method = "F98DCBD8FE8A6074B159B4049EE2DA7B", hash_generated_method = "4DF3C94B625EEA4826D24114596B0BBC")
     public int hashCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1489088411 = getTaintInt();

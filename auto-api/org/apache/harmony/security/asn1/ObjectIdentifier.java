@@ -78,6 +78,7 @@ public final class ObjectIdentifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.904 -0400", hash_original_method = "8929009F517116C951EAF49377701B44", hash_generated_method = "D4FF41ADD740DD5597979E085D7FD3A6")
     @Override
     public int hashCode() {

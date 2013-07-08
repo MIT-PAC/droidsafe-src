@@ -148,6 +148,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int newCapacity(int currentCapacity) {
         int increment = (currentCapacity < (MIN_CAPACITY_INCREMENT / 2) ?
                 MIN_CAPACITY_INCREMENT : currentCapacity >> 1);
@@ -323,6 +324,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.749 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "A62888E2AE87A57B768DEFD91FF56A7E")
     @Override
     public int size() {
@@ -333,6 +335,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.750 -0400", hash_original_method = "186376BCBF1440029A4A8EF9D3327AB7", hash_generated_method = "CBEDCE47B51F66A9F4FC10042C1DD6CB")
     @Override
     public boolean isEmpty() {

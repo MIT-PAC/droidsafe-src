@@ -83,6 +83,7 @@ public final class CookieOrigin {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.510 -0400", hash_original_method = "052AA62CF2AFB76178CB036EF4B7BAB4", hash_generated_method = "B89FF9B81446B7DB8325C12268E3465F")
     public String getHost() {
         String varB4EAC82CA7396A68D541C85D26508E83_133494978 = null; 
@@ -94,6 +95,7 @@ public final class CookieOrigin {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.510 -0400", hash_original_method = "1447F7E138124D077576DF2B2413D348", hash_generated_method = "3433EBE88FF5A59B21EBDCDA735744AF")
     public String getPath() {
         String varB4EAC82CA7396A68D541C85D26508E83_1119133560 = null; 
@@ -105,6 +107,7 @@ public final class CookieOrigin {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.510 -0400", hash_original_method = "1804D4B8ED6914D43C8BF926A65BA4F9", hash_generated_method = "70215788FE58D7D50BF75795F42E4154")
     public int getPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1313733232 = getTaintInt();
@@ -114,6 +117,7 @@ public final class CookieOrigin {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.511 -0400", hash_original_method = "F448B780707B5356535204966A8ECD14", hash_generated_method = "A3DFB6A777A55C6D0A1760C8E9273484")
     public boolean isSecure() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_362776238 = getTaintBoolean();

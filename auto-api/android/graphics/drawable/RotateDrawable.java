@@ -74,6 +74,7 @@ public class RotateDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.448 -0400", hash_original_method = "CE08CCF44A5C011BE03C2CE7D256555D", hash_generated_method = "78C24DCF3FDC8EAC4DD8663B968EF1A8")
     public Drawable getDrawable() {
         Drawable varB4EAC82CA7396A68D541C85D26508E83_2015042536 = null; 

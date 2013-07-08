@@ -37,6 +37,7 @@ public class Random implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.513 -0400", hash_original_method = "9E0494734DCD804B33C2E0A263F97885", hash_generated_method = "129C580D73055DCBBB3C2054771C6C41")
     protected synchronized int next(int bits) {
         seed = (seed * multiplier + 0xbL) & ((1L << 48) - 1);
@@ -205,6 +206,7 @@ public class Random implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.519 -0400", hash_original_method = "7BB21D33F15BE2B6645BBF6EE498410D", hash_generated_method = "698784A92CF20D1A4151BF7CEB8BC18D")
     public synchronized void setSeed(long seed) {
         this.seed = (seed ^ multiplier) & ((1L << 48) - 1);

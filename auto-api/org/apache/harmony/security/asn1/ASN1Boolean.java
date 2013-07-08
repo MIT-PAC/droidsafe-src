@@ -18,6 +18,7 @@ public final class ASN1Boolean extends ASN1Primitive {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ASN1Boolean getInstance() {
         return ASN1;
     }
@@ -54,6 +55,7 @@ public final class ASN1Boolean extends ASN1Primitive {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.421 -0400", hash_original_method = "61E80FB6E60B72FAF41ECC8283C8390E", hash_generated_method = "62BDFDB1221DE361153D1EE3D09846C1")
     @Override
     public Object getDecodedObject(BerInputStream in) throws IOException {
@@ -93,6 +95,7 @@ public final class ASN1Boolean extends ASN1Primitive {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.421 -0400", hash_original_method = "E10D3150F01479FE85EBF9E119EE1844", hash_generated_method = "E5F019B44A8D9708611B427F89C6C298")
     public void setEncodingContent(BerOutputStream out) {
         out.length = 1;

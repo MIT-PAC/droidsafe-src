@@ -187,6 +187,7 @@ public class DigitalSignature {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.045 -0400", hash_original_method = "B9CA7162ECD9A3463C27E4B77DAB6CBA", hash_generated_method = "2581847F6C7AB0F9303F842275B2D775")
     public void setMD5(byte[] data) {
         md5_hash = data;
@@ -195,6 +196,7 @@ public class DigitalSignature {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.045 -0400", hash_original_method = "3BA66B7FA2FDB006FB2AA15DCD71C98C", hash_generated_method = "6D5B34CD82B069FE4DDB4F1367E06DCE")
     public void setSHA(byte[] data) {
         sha_hash = data;

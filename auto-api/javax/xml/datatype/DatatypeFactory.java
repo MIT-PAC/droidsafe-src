@@ -32,6 +32,7 @@ public abstract class DatatypeFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static DatatypeFactory newInstance(String factoryClassName, ClassLoader classLoader) throws DatatypeConfigurationException {
         if (factoryClassName == null) {
             throw new DatatypeConfigurationException("factoryClassName == null");

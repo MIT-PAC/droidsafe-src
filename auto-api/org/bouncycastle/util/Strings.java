@@ -182,6 +182,7 @@ public final class Strings {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] toByteArray(char[] chars) {
         byte[] bytes = new byte[chars.length];
         for (int i = 0; i != bytes.length; i++)

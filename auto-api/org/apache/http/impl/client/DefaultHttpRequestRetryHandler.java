@@ -66,6 +66,7 @@ public class DefaultHttpRequestRetryHandler implements HttpRequestRetryHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.127 -0400", hash_original_method = "D094CEC45107E8B04F6D27DB66E61646", hash_generated_method = "C5EEEF6AC56F51CEB8C126378BE66998")
     public boolean isRequestSentRetryEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_139192896 = getTaintBoolean();
@@ -75,6 +76,7 @@ public class DefaultHttpRequestRetryHandler implements HttpRequestRetryHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.127 -0400", hash_original_method = "C82A3B7CA490A8560B081A320AF1EB0A", hash_generated_method = "5508B4D93E5D39E826B788C3954F2952")
     public int getRetryCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1518454558 = getTaintInt();

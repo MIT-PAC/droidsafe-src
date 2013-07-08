@@ -159,6 +159,7 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.993 -0400", hash_original_method = "2512D126AA76678C0FD3EA5EF92C167A", hash_generated_method = "86CEEB80EAE109905A6293EE27933D7C")
     public void setOnBreadCrumbClickListener(OnBreadCrumbClickListener listener) {
         mOnBreadCrumbClickListener = listener;
@@ -288,6 +289,7 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:18.000 -0400", hash_original_method = "2B539BE1FB77B26F9FE87488F97A1875", hash_generated_method = "7A9CADB930F1640CB79D2D0F0727A848")
     private int getPreEntryCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_788823463 = getTaintInt();
@@ -297,6 +299,7 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:18.003 -0400", hash_original_method = "A88BBDCBE11FD6391FA665272F0534CD", hash_generated_method = "3C49FBA8F4724E8671B011916CBE544F")
     private BackStackEntry getPreEntry(int index) {
         BackStackEntry varB4EAC82CA7396A68D541C85D26508E83_163789121 = null; 

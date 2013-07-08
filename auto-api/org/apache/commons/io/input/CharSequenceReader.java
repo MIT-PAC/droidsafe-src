@@ -29,6 +29,7 @@ public class CharSequenceReader extends Reader implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.094 -0400", hash_original_method = "40FE3D25511A62018FC369BF8427CEB7", hash_generated_method = "2266D4060420D067CA6CE07C3053E68E")
     @Override
     public void close() {
@@ -40,6 +41,7 @@ public class CharSequenceReader extends Reader implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.094 -0400", hash_original_method = "AE312126AF817511B6AC9FA9A8EAB6F5", hash_generated_method = "F906E7D523EDCEFCE65C629F0CB5465F")
     @Override
     public void mark(int readAheadLimit) {
@@ -50,6 +52,7 @@ public class CharSequenceReader extends Reader implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.094 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "C1A4FD56BFAF058959583A26B4E97262")
     @Override
     public boolean markSupported() {
@@ -132,6 +135,7 @@ public class CharSequenceReader extends Reader implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.096 -0400", hash_original_method = "854753638CC0197CC47838DCD9FB66E4", hash_generated_method = "0D4963B14DD2BC669773665FA36345A5")
     @Override
     public void reset() {

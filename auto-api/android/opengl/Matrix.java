@@ -17,17 +17,20 @@ public class Matrix {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static void multiplyMM(float[] result, int resultOffset,
             float[] lhs, int lhsOffset, float[] rhs, int rhsOffset) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void multiplyMV(float[] resultVec,
             int resultVecOffset, float[] lhsMat, int lhsMatOffset,
             float[] rhsVec, int rhsVecOffset) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void transposeM(float[] mTrans, int mTransOffset, float[] m,
             int mOffset) {
         for (int i = 0; i < 4; i++) {
@@ -40,6 +43,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean invertM(float[] mInv, int mInvOffset, float[] m,
             int mOffset) {
         final float src0  = m[mOffset +  0];
@@ -258,6 +262,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setIdentityM(float[] sm, int smOffset) {
         for (int i=0 ; i<16 ; i++) {
             sm[smOffset + i] = 0;
@@ -268,6 +273,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void scaleM(float[] sm, int smOffset,
             float[] m, int mOffset,
             float x, float y, float z) {
@@ -282,6 +288,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void scaleM(float[] m, int mOffset,
             float x, float y, float z) {
         for (int i=0 ; i<4 ; i++) {
@@ -293,6 +300,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void translateM(float[] tm, int tmOffset,
             float[] m, int mOffset,
             float x, float y, float z) {
@@ -308,6 +316,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void translateM(
             float[] m, int mOffset,
             float x, float y, float z) {

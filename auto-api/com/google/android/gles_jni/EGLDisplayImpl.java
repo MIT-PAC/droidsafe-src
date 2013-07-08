@@ -40,6 +40,7 @@ public class EGLDisplayImpl extends EGLDisplay {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.368 -0400", hash_original_method = "BE5B0756D1165F3111B638ABD354FBB1", hash_generated_method = "932CF61AB0391DBA2AF5D348CE692A8C")
     @Override
     public int hashCode() {

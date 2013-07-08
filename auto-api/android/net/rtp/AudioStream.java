@@ -39,6 +39,7 @@ public class AudioStream extends RtpStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.526 -0400", hash_original_method = "477F536A3076B0B10A19072AA2686CEC", hash_generated_method = "0DDBB4CA0C3641C17098D38592D17CE4")
     public AudioGroup getGroup() {
         AudioGroup varB4EAC82CA7396A68D541C85D26508E83_1523208866 = null; 
@@ -80,6 +81,7 @@ public class AudioStream extends RtpStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.527 -0400", hash_original_method = "477233579E49B9ACBFE0DA40A2D8DF9C", hash_generated_method = "5B962C8255025EF33780899818A4380A")
     public AudioCodec getCodec() {
         AudioCodec varB4EAC82CA7396A68D541C85D26508E83_1190711589 = null; 
@@ -115,6 +117,7 @@ public class AudioStream extends RtpStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.528 -0400", hash_original_method = "67DA2B7B029AD6BDA2A522BA945FCCC7", hash_generated_method = "3C02EEA2FC85697E1C1FEAED42F26D63")
     public int getDtmfType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1053953620 = getTaintInt();

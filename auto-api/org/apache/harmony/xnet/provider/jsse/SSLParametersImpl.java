@@ -107,6 +107,7 @@ public class SSLParametersImpl implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.831 -0400", hash_original_method = "F41241796D4BD57A765BA19A5F557DE2", hash_generated_method = "5797C318688557145F978EE2BBFC3B4D")
     protected CipherSuite[] getEnabledCipherSuitesMember() {
         CipherSuite[] varB4EAC82CA7396A68D541C85D26508E83_694065468 = null; 
@@ -138,6 +139,7 @@ public class SSLParametersImpl implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.832 -0400", hash_original_method = "658F9BFC8B9B3779298360EB3ED283E0", hash_generated_method = "1887394B9A0531442539F4C903D085CF")
     protected ServerSessionContext getServerSessionContext() {
         ServerSessionContext varB4EAC82CA7396A68D541C85D26508E83_1664927060 = null; 
@@ -149,6 +151,7 @@ public class SSLParametersImpl implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.834 -0400", hash_original_method = "F2ACF841A45F78E0C0C46B366B8BBEF0", hash_generated_method = "76D80CF3EF07D3FB212B7FEAD6502BE9")
     protected ClientSessionContext getClientSessionContext() {
         ClientSessionContext varB4EAC82CA7396A68D541C85D26508E83_1885968628 = null; 
@@ -160,6 +163,7 @@ public class SSLParametersImpl implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.836 -0400", hash_original_method = "55EECB48B318CBDDE6A76E7D2964C45E", hash_generated_method = "5D910A4EC277C569E89820151547505D")
     protected X509KeyManager getKeyManager() {
         X509KeyManager varB4EAC82CA7396A68D541C85D26508E83_1319975757 = null; 
@@ -171,6 +175,7 @@ public class SSLParametersImpl implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.837 -0400", hash_original_method = "6C6A481BDDE46D9B11307A3C2E7627FB", hash_generated_method = "1C4B663D599C1A1C974B9BC24026CDBC")
     protected X509TrustManager getTrustManager() {
         X509TrustManager varB4EAC82CA7396A68D541C85D26508E83_1766981302 = null; 
@@ -220,6 +225,7 @@ public class SSLParametersImpl implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.839 -0400", hash_original_method = "3F930A54995EF963563BF853943EBA6D", hash_generated_method = "6A68BAA70AF6396F3C547644254BD9A8")
     protected SecureRandom getSecureRandomMember() {
         SecureRandom varB4EAC82CA7396A68D541C85D26508E83_1390457312 = null; 
@@ -353,6 +359,7 @@ public class SSLParametersImpl implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.841 -0400", hash_original_method = "D4C2A3C88DBFC7AAADB7163E376EACA1", hash_generated_method = "887DE4735EDEE4C8E4C83849AF3EB99A")
     protected void setUseClientMode(boolean mode) {
         client_mode = mode;
@@ -361,6 +368,7 @@ public class SSLParametersImpl implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.842 -0400", hash_original_method = "90A3F3D7EBB1ED0C929CAB981D05518C", hash_generated_method = "614A1640268C89549DC36B52792531DB")
     protected boolean getUseClientMode() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_148853933 = getTaintBoolean();
@@ -370,6 +378,7 @@ public class SSLParametersImpl implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.842 -0400", hash_original_method = "2F62AC894AF3F12D83050C91D4850055", hash_generated_method = "52A5FCBC97E504C4D517CB08073F3187")
     protected void setNeedClientAuth(boolean need) {
         need_client_auth = need;
@@ -380,6 +389,7 @@ public class SSLParametersImpl implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.842 -0400", hash_original_method = "2471CA6C7557FB2D62663705E2DBC565", hash_generated_method = "C86A047250F39B3A524172B9BE4C01CB")
     protected boolean getNeedClientAuth() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_423227370 = getTaintBoolean();
@@ -389,6 +399,7 @@ public class SSLParametersImpl implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.843 -0400", hash_original_method = "AF76AB0175AB43F1BF7C9A05C2972923", hash_generated_method = "720F660EEC765CE9DA60BECAD1888659")
     protected void setWantClientAuth(boolean want) {
         want_client_auth = want;
@@ -399,6 +410,7 @@ public class SSLParametersImpl implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.843 -0400", hash_original_method = "180B768884625BF4E09AC4E909474C3B", hash_generated_method = "59729AC5D079ED6EBADC87A1D90E0A36")
     protected boolean getWantClientAuth() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_368361555 = getTaintBoolean();
@@ -408,6 +420,7 @@ public class SSLParametersImpl implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.843 -0400", hash_original_method = "982E0D6CA0433DE88B1B4310D3610067", hash_generated_method = "28552D8F807A40A67118E4FFED07DB76")
     protected void setEnableSessionCreation(boolean flag) {
         enable_session_creation = flag;
@@ -416,6 +429,7 @@ public class SSLParametersImpl implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.843 -0400", hash_original_method = "73058AE9A102A5DCB03ABA90C3F4D3DE", hash_generated_method = "44C1D05529DDC47D5D18D901F43196B9")
     protected boolean getEnableSessionCreation() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2061602144 = getTaintBoolean();
@@ -477,6 +491,7 @@ public class SSLParametersImpl implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static X509KeyManager findX509KeyManager(KeyManager[] kms) {
         for (KeyManager km : kms) {
             if (km instanceof X509KeyManager) {
@@ -514,6 +529,7 @@ public class SSLParametersImpl implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static X509TrustManager findX509TrustManager(TrustManager[] tms) {
         for (TrustManager tm : tms) {
             if (tm instanceof X509TrustManager) {

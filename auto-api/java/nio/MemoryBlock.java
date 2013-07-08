@@ -78,6 +78,7 @@ class MemoryBlock {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.812 -0400", hash_original_method = "0474BFDE3AD81DCD66C16B9CD0EF394B", hash_generated_method = "D7FB9128C75214CB1A47C482AE522B68")
     public byte[] array() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1841263369 = {getTaintByte()};
@@ -87,6 +88,7 @@ class MemoryBlock {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.812 -0400", hash_original_method = "DAA4200658B56FF77DA7170F747BB7D3", hash_generated_method = "5BE07C58F63F85984738B520AF21ADD2")
     public void free() {
         

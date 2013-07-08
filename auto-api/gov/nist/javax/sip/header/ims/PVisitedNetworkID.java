@@ -109,6 +109,7 @@ public class PVisitedNetworkID extends gov.nist.javax.sip.header.ParametersHeade
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.424 -0400", hash_original_method = "C32CBAC6FBA17FDD7866AA432385EFB6", hash_generated_method = "51191DF9A62BE11CD908F1A9381DAAE0")
     public String getVisitedNetworkID() {
         String varB4EAC82CA7396A68D541C85D26508E83_795644532 = null; 

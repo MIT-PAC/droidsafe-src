@@ -149,6 +149,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.739 -0400", hash_original_method = "616C057876C322A61AA799FA470B1CEA", hash_generated_method = "9802993BD0F72AB4AC58EEAAA252C63C")
     public void reset() {
         mProvider = null;
@@ -443,6 +444,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.743 -0400", hash_original_method = "BFECE3BB8B622B00AFB7A331FE5F6AF2", hash_generated_method = "3A4B000B065774374864B9BBCA732578")
     public String getProvider() {
         String varB4EAC82CA7396A68D541C85D26508E83_432053547 = null; 
@@ -454,6 +456,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.743 -0400", hash_original_method = "25D5387E6BE9F4E7F6250416A2346065", hash_generated_method = "D4DDA5FD376A8D7A0AB64AD1E0FBF0B0")
     public void setProvider(String provider) {
         mProvider = provider;
@@ -462,6 +465,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.744 -0400", hash_original_method = "997C67A326545139029C9D8F308B45E1", hash_generated_method = "6355730FB222D879EBCDE289FC9EF652")
     public long getTime() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_497108288 = getTaintLong();
@@ -471,6 +475,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.744 -0400", hash_original_method = "1825242101B57AC7053134E109B277AF", hash_generated_method = "58DABEC95C53E00275149175E1A0B6A4")
     public void setTime(long time) {
         mTime = time;
@@ -479,6 +484,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.744 -0400", hash_original_method = "F25A3F38BD2475F276CF0768419142B9", hash_generated_method = "9F8473126CD36F54BEB451481B9602CF")
     public double getLatitude() {
         double varE8CD7DA078A86726031AD64F35F5A6C0_1458609618 = getTaintDouble();
@@ -488,6 +494,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.745 -0400", hash_original_method = "1F7F9B57342DE3FD3D5D55490B64EE27", hash_generated_method = "FC6A7DC458B61FEDE4D25D69F95BD772")
     public void setLatitude(double latitude) {
         mLatitude = latitude;
@@ -496,6 +503,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.745 -0400", hash_original_method = "7E07C4F8B2560C863B560B81405E4EA8", hash_generated_method = "04DC41BED302A26E7B8E4ECEFED17C70")
     public double getLongitude() {
         double varE8CD7DA078A86726031AD64F35F5A6C0_2066066133 = getTaintDouble();
@@ -505,6 +513,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.745 -0400", hash_original_method = "D382B7FFFC1832B1199A432F05F295AF", hash_generated_method = "950F51F7A7B87639F3E5F8D3B8F6A89B")
     public void setLongitude(double longitude) {
         mLongitude = longitude;
@@ -513,6 +522,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.745 -0400", hash_original_method = "8588CDCF553966E03782186D08715F65", hash_generated_method = "5513D469CE77D6F110282FD0A2394F8E")
     public boolean hasAltitude() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1343151509 = getTaintBoolean();
@@ -522,6 +532,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.746 -0400", hash_original_method = "38598EF38BAA57E5BBA23C5814512D64", hash_generated_method = "37FC8F33CE00FEDFED143F1BF15BC319")
     public double getAltitude() {
         double varE8CD7DA078A86726031AD64F35F5A6C0_291581963 = getTaintDouble();
@@ -531,6 +542,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.746 -0400", hash_original_method = "8207B2258C8D7E964A376C6D8FB9BDB2", hash_generated_method = "96E91323AADC3BDBE674936065F8BD0C")
     public void setAltitude(double altitude) {
         mAltitude = altitude;
@@ -541,6 +553,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.746 -0400", hash_original_method = "5A565618B4FD768311EE533344239248", hash_generated_method = "3C6C4C32C0A06792221D8F9CA2011B2A")
     public void removeAltitude() {
         mAltitude = 0.0f;
@@ -551,6 +564,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.747 -0400", hash_original_method = "053704FA5AD46F36CEE00CE492DC93E4", hash_generated_method = "D39B0F57C4108A3EE17FD6B9E9DDBC73")
     public boolean hasSpeed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1465927099 = getTaintBoolean();
@@ -560,6 +574,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.747 -0400", hash_original_method = "CA7E551E55E608E59EEFDA2D55C22485", hash_generated_method = "244FAF85F4DA7751FE88A543EF466E55")
     public float getSpeed() {
         float var546ADE640B6EDFBC8A086EF31347E768_1961096525 = getTaintFloat();
@@ -569,6 +584,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.747 -0400", hash_original_method = "34F00EE21F4532CBE8BBCA1E84CB5B7E", hash_generated_method = "FB8501B9FE99D7121D1B6E86551C9B62")
     public void setSpeed(float speed) {
         mSpeed = speed;
@@ -579,6 +595,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.748 -0400", hash_original_method = "B58ABDA4F4570A6C6402F324866C9A78", hash_generated_method = "092A296900E41495B6AA50E91B45595A")
     public void removeSpeed() {
         mSpeed = 0.0f;
@@ -589,6 +606,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.748 -0400", hash_original_method = "D55FF6AB44947F083C797EDEE83A6188", hash_generated_method = "EC54EC757A5ED99561439174B26C33B5")
     public boolean hasBearing() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_35481079 = getTaintBoolean();
@@ -598,6 +616,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.748 -0400", hash_original_method = "AC6CB3B684BB76DAFC78CFB4B9F35C9A", hash_generated_method = "014E59ECEB21355A3DD376E7C1C2C13B")
     public float getBearing() {
         float var546ADE640B6EDFBC8A086EF31347E768_1414880198 = getTaintFloat();
@@ -607,6 +626,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.748 -0400", hash_original_method = "8FBA12B19B970F6442007D37D9E216CC", hash_generated_method = "DCDF4E323327DE982E5ACE8E9E576EA2")
     public void setBearing(float bearing) {
         {
@@ -629,6 +649,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.749 -0400", hash_original_method = "57889AAEA0A214C7174BC35DF28DBD1D", hash_generated_method = "8FAAFFDC9B89944657C7FF0FDF0A1A8A")
     public void removeBearing() {
         mBearing = 0.0f;
@@ -639,6 +660,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.749 -0400", hash_original_method = "25E2CFAA647DEEE085853277B0217FAA", hash_generated_method = "E4E5E610F455910059E0444044F82432")
     public boolean hasAccuracy() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1302852639 = getTaintBoolean();
@@ -648,6 +670,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.750 -0400", hash_original_method = "080C41F346C9D7277489423C5A91C89D", hash_generated_method = "9B957A544307FE1B27F4EF6957387948")
     public float getAccuracy() {
         float var546ADE640B6EDFBC8A086EF31347E768_1939014094 = getTaintFloat();
@@ -657,6 +680,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.750 -0400", hash_original_method = "BF61AAF1E1B3170C7527B801249DD59B", hash_generated_method = "B32716322755EBBD575AAEACFC01BE90")
     public void setAccuracy(float accuracy) {
         mAccuracy = accuracy;
@@ -667,6 +691,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.750 -0400", hash_original_method = "10BF9B2FD08E11C5C21016EDE854825A", hash_generated_method = "53264F9A65193E66F9C1D1CBFC1FBF3D")
     public void removeAccuracy() {
         mAccuracy = 0.0f;
@@ -677,6 +702,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.751 -0400", hash_original_method = "CF33C86C13BFD55DE499066ECC955562", hash_generated_method = "B2143F93B3CB67755B09E9A7763831C1")
     public Bundle getExtras() {
         Bundle varB4EAC82CA7396A68D541C85D26508E83_1902743362 = null; 
@@ -734,6 +760,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.753 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7FB7BCAEC0C238353A76AC629EA0C833")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1233791085 = getTaintInt();

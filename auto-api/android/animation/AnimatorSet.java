@@ -438,6 +438,7 @@ public final class AnimatorSet extends Animator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:11.390 -0400", hash_original_method = "4FF549E03853BC8FE3FDFAEBF99B8097", hash_generated_method = "100A87F7E97F79EEE92A8353F08E3F70")
     @Override
     public boolean isStarted() {
@@ -448,6 +449,7 @@ public final class AnimatorSet extends Animator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:11.391 -0400", hash_original_method = "36807B48FC1321C96D3D559AECDD954B", hash_generated_method = "938D3B113C68100B8EB3C5907AA45E22")
     @Override
     public long getStartDelay() {
@@ -458,6 +460,7 @@ public final class AnimatorSet extends Animator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:11.392 -0400", hash_original_method = "9B89801AA661B38F8303A0C7891B0195", hash_generated_method = "DFD3698D1A235894B218DEC62F508D58")
     @Override
     public void setStartDelay(long startDelay) {
@@ -467,6 +470,7 @@ public final class AnimatorSet extends Animator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:11.393 -0400", hash_original_method = "5E13B5E872677B59408FA3E6BB94A9F6", hash_generated_method = "5FEDEBCEEFB41CE47DCBCB6C5BEC7CC9")
     @Override
     public long getDuration() {

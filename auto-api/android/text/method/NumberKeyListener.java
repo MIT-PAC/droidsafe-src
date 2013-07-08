@@ -130,6 +130,7 @@ public abstract class NumberKeyListener extends BaseKeyListener implements Input
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected static boolean ok(char[] accept, char c) {
         for (int i = accept.length - 1; i >= 0; i--) {
             if (accept[i] == c) {

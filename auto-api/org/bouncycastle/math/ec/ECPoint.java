@@ -42,6 +42,7 @@ public abstract class ECPoint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.613 -0400", hash_original_method = "C3733AEA1B7056ED3896C5DBEA3E645D", hash_generated_method = "315B0D8D5D0F25932161932EF460F52E")
     public ECCurve getCurve() {
         ECCurve varB4EAC82CA7396A68D541C85D26508E83_638887864 = null; 
@@ -53,6 +54,7 @@ public abstract class ECPoint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.613 -0400", hash_original_method = "C7C8D965D2F53EB7BBE8F50406AF2883", hash_generated_method = "28055B1616AB16A2F9E31A2998CD91F4")
     public ECFieldElement getX() {
         ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1575453853 = null; 
@@ -64,6 +66,7 @@ public abstract class ECPoint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.613 -0400", hash_original_method = "B5FEFF99DC806D61F0BCF9BC7ACEB9BA", hash_generated_method = "94AC66E8922ABAB8BBE6CFB4C18EAA0B")
     public ECFieldElement getY() {
         ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_964951452 = null; 
@@ -75,6 +78,7 @@ public abstract class ECPoint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.613 -0400", hash_original_method = "B09C1F46CE24A0176C4C3F4348C76697", hash_generated_method = "9DE4926A5E9CE7C99338604829C39120")
     public boolean isInfinity() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_979662704 = getTaintBoolean();
@@ -84,6 +88,7 @@ public abstract class ECPoint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.614 -0400", hash_original_method = "47BFB55B0C4A3BF2B8623783D9C43540", hash_generated_method = "052024C518A63360B9BAA7DE2C2309ED")
     public boolean isCompressed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_364139018 = getTaintBoolean();
@@ -147,6 +152,7 @@ public abstract class ECPoint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.615 -0400", hash_original_method = "3CED2898CE1D9F7EEE71D4F4E6298B52", hash_generated_method = "7B74A03DE78F3C307128B0AF3CA7A466")
      void setPreCompInfo(PreCompInfo preCompInfo) {
         this.preCompInfo = preCompInfo;

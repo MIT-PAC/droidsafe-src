@@ -514,6 +514,7 @@ public class HeaderViewListAdapter implements WrapperListAdapter, Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.425 -0400", hash_original_method = "16C6428A588CE1C0BF49AB22D8718A60", hash_generated_method = "6088CD7CB7826FF94069408E07442F9F")
     public ListAdapter getWrappedAdapter() {
         ListAdapter varB4EAC82CA7396A68D541C85D26508E83_1880856578 = null; 

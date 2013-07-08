@@ -108,6 +108,7 @@ public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.On
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.576 -0400", hash_original_method = "2004F2F21A84D03A526AC70184547D5A", hash_generated_method = "0710CCB8429C117DCC4BCE13AE2B0253")
     public void setAnchorView(View anchor) {
         mAnchorView = anchor;
@@ -116,6 +117,7 @@ public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.On
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.577 -0400", hash_original_method = "DBE6A6207EE05003848472E8CEC3C651", hash_generated_method = "C9635FB89EA1428BE4DC6AB8F19B0163")
     public void setForceShowIcon(boolean forceShow) {
         mForceShowIcon = forceShow;
@@ -331,6 +333,7 @@ public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.On
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.585 -0400", hash_original_method = "F8871633F0D16FC506B109A82F589F71", hash_generated_method = "07DDEA36766AB113F870E845C6726299")
     @Override
     public void onViewAttachedToWindow(View v) {
@@ -362,6 +365,7 @@ public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.On
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.586 -0400", hash_original_method = "596FF06362BA36AEC7FC1AB43ADB5BB8", hash_generated_method = "A9861F4973CC25C38BCCDC12EB68EA05")
     @Override
     public void initForMenu(Context context, MenuBuilder menu) {
@@ -392,6 +396,7 @@ public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.On
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.587 -0400", hash_original_method = "10FF3E14371A7D0CA3058A6B9B33844C", hash_generated_method = "683D39E515D828F3DB31688688C9D775")
     @Override
     public void setCallback(Callback cb) {
@@ -464,6 +469,7 @@ public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.On
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.588 -0400", hash_original_method = "4C665EA7F97447510193964EEFD645AE", hash_generated_method = "737F99E51FBC7EF50FFEDFA143D139CC")
     @Override
     public boolean flagActionItems() {
@@ -474,6 +480,7 @@ public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.On
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.588 -0400", hash_original_method = "5F1249279FE45B816C21E97DA3013708", hash_generated_method = "7B6CE2CF564C94C9AD14F3B590D3B867")
     public boolean expandItemActionView(MenuBuilder menu, MenuItemImpl item) {
         addTaint(menu.getTaint());
@@ -485,6 +492,7 @@ public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.On
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.589 -0400", hash_original_method = "06DF13061AFE044B0D38F9C19B18A57A", hash_generated_method = "34BED683F624F97D3A94E0AE6B451D9D")
     public boolean collapseItemActionView(MenuBuilder menu, MenuItemImpl item) {
         addTaint(menu.getTaint());
@@ -496,6 +504,7 @@ public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.On
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.589 -0400", hash_original_method = "B74F33F41EA76949D2B7FFC2C0C48D8F", hash_generated_method = "C9544994A750B48106BE915465B31875")
     @Override
     public int getId() {
@@ -506,6 +515,7 @@ public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.On
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.589 -0400", hash_original_method = "F5855573BDD3346EB58FBC078F0D1E94", hash_generated_method = "8E607655F94B08FC5DFB6798B3DDEB13")
     @Override
     public Parcelable onSaveInstanceState() {
@@ -519,6 +529,7 @@ public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.On
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.590 -0400", hash_original_method = "0C3EAD71D41C59A31F244EC76F29937C", hash_generated_method = "121C283A529B0D7F6A336D6D29A15283")
     @Override
     public void onRestoreInstanceState(Parcelable state) {

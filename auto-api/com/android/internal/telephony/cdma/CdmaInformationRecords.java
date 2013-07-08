@@ -51,6 +51,7 @@ public final class CdmaInformationRecords {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String idToString(int id) {
         switch(id) {
         case RIL_CDMA_DISPLAY_INFO_REC: return "RIL_CDMA_DISPLAY_INFO_REC";

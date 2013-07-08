@@ -78,6 +78,7 @@ public class TransformerException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.963 -0400", hash_original_method = "78CCEDF93B9D36FA2F4D6EE8483F521D", hash_generated_method = "33ECC7045678AC73E7DC4B067DE59ACA")
     public SourceLocator getLocator() {
         SourceLocator varB4EAC82CA7396A68D541C85D26508E83_1909750926 = null; 
@@ -89,6 +90,7 @@ public class TransformerException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.964 -0400", hash_original_method = "2730D26302DDFE02DFC9B94C57BA2229", hash_generated_method = "3A60D6D9C48F9C8CC784DDE0EBAB1BA2")
     public void setLocator(SourceLocator location) {
         locator = location;
@@ -97,6 +99,7 @@ public class TransformerException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.964 -0400", hash_original_method = "4E3501B9804FC98D0826FF297E292112", hash_generated_method = "444BB89EEBBB682E2C3B3D7E6ABB605E")
     public Throwable getException() {
         Throwable varB4EAC82CA7396A68D541C85D26508E83_1373795111 = null; 
@@ -108,6 +111,7 @@ public class TransformerException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.964 -0400", hash_original_method = "CFB99AF15EF81FE883309E381BCDFD32", hash_generated_method = "1E8EDD4CC618E02021FC268FDFB036E7")
     public Throwable getCause() {
         Throwable varB4EAC82CA7396A68D541C85D26508E83_253156563 = null; 

@@ -57,6 +57,7 @@ public class ContentResolver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected IContentProvider acquireProvider(Context c, String name) {
     	return null;
     }
@@ -75,6 +76,7 @@ public class ContentResolver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public boolean releaseProvider(IContentProvider icp) {
     	return false;
     }
@@ -159,6 +161,7 @@ public class ContentResolver {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.876 -0400", hash_original_method = "BFD7301BBEDEF32538E97E3FEFB31C63", hash_generated_method = "53842157B8C48542CFD4D15EDF8D4558")
     public String[] getStreamTypes(Uri url, String mimeTypeFilter) {
         String[] varB4EAC82CA7396A68D541C85D26508E83_238404426 = null; 
@@ -577,6 +580,7 @@ public class ContentResolver {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:59.253 -0400", hash_original_method = "39DD117C1A4502740FE90592CCDD92D2", hash_generated_method = "258F53816724C0F377E749195C1C0E2C")
     public OpenResourceIdResult getResourceId(Uri uri) throws FileNotFoundException {
         OpenResourceIdResult varB4EAC82CA7396A68D541C85D26508E83_1409789901 = null; 
@@ -639,6 +643,7 @@ public class ContentResolver {
     }
 
     
+    @DSModeled(DSC.SPEC)
     static public int modeToMode(Uri uri, String mode) throws FileNotFoundException {
         int modeBits;
         if ("r".equals(mode)) {
@@ -1169,6 +1174,7 @@ public class ContentResolver {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.990 -0400", hash_original_method = "E76834C8ABF23847CEBC5965503FC8D5", hash_generated_method = "721276707545B26042C057743EC44CDD")
     public void notifyChange(Uri uri, ContentObserver observer) {
         notifyChange(uri, observer, true );
@@ -1179,6 +1185,7 @@ public class ContentResolver {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.991 -0400", hash_original_method = "F301FE1DDD6CC7648C7F98CD4F863542", hash_generated_method = "F06544AA2409D27DE31AE985ED9A27CF")
     public void notifyChange(Uri uri, ContentObserver observer, boolean syncToNetwork) {
         try 
@@ -1202,6 +1209,7 @@ public class ContentResolver {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.994 -0400", hash_original_method = "2D6405030D787F1D91AFA94E2D425989", hash_generated_method = "38742134F70390713A6766278148A548")
     @Deprecated
     public void startSync(Uri uri, Bundle extras) {
@@ -1264,6 +1272,7 @@ public class ContentResolver {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.000 -0400", hash_original_method = "B4949CE6FC68B3756629FF654EA4F622", hash_generated_method = "3896274AB60E4DB371F225EC4FB73EDF")
     @Deprecated
     public void cancelSync(Uri uri) {
@@ -1477,6 +1486,7 @@ public class ContentResolver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.024 -0400", hash_original_method = "5964C3B3CD446EC6DF12ED3CA7F7D861", hash_generated_method = "301F73758F9B20E86ED46C245A4BB941")
     private int samplePercentForDuration(long durationMillis) {
         addTaint(durationMillis);
@@ -1490,6 +1500,7 @@ public class ContentResolver {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.026 -0400", hash_original_method = "339BAFB8AA6EDB4FDC193A187E8B0067", hash_generated_method = "26E2E654ADD497ABDE904C177FCF196D")
     private void maybeLogQueryToEventLog(long durationMillis,
                                          Uri uri, String[] projection,
@@ -1532,6 +1543,7 @@ public class ContentResolver {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.028 -0400", hash_original_method = "8C4CA0C0E96B47F9D6365343066B43C9", hash_generated_method = "C0C026E6DB83CA05F6EC3557957AAF09")
     private void maybeLogUpdateToEventLog(
         long durationMillis, Uri uri, String operation, String selection) {

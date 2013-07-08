@@ -50,6 +50,7 @@ public class DragEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.986 -0400", hash_original_method = "7C5024523CDDAF1D0113FCBE9F36B975", hash_generated_method = "938EDBDAF55CF15B95F169EDD98664E3")
     private void init(int action, float x, float y, ClipDescription description, ClipData data,
             Object localState, boolean result) {
@@ -106,6 +107,7 @@ public class DragEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.987 -0400", hash_original_method = "96C17C1FB3A34A2A0AFECF0EC83B48C2", hash_generated_method = "B6103010D2D5FFFF311A69E24BCF80A0")
     public int getAction() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1170797013 = getTaintInt();
@@ -115,6 +117,7 @@ public class DragEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.987 -0400", hash_original_method = "331663EFF3E2EE62701FDAFEDB013F35", hash_generated_method = "8BF00033F5E296F182A728DE401AA5CF")
     public float getX() {
         float var546ADE640B6EDFBC8A086EF31347E768_1284509788 = getTaintFloat();
@@ -124,6 +127,7 @@ public class DragEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.988 -0400", hash_original_method = "ABC228174E672AD41349CE6D52652626", hash_generated_method = "5ADE32754D0BF34B25447F7830622354")
     public float getY() {
         float var546ADE640B6EDFBC8A086EF31347E768_1620281625 = getTaintFloat();
@@ -133,6 +137,7 @@ public class DragEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.988 -0400", hash_original_method = "933F7F307168902744E3973968DC1B74", hash_generated_method = "2142EBA8AA4CE6D699004E19F7C51965")
     public ClipData getClipData() {
         ClipData varB4EAC82CA7396A68D541C85D26508E83_1070439922 = null; 
@@ -144,6 +149,7 @@ public class DragEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.989 -0400", hash_original_method = "314798A5FB9D41875D673F25B7EDBA77", hash_generated_method = "A8D64E2D3507DA72C59F74F21D2A7D5E")
     public ClipDescription getClipDescription() {
         ClipDescription varB4EAC82CA7396A68D541C85D26508E83_1052998544 = null; 
@@ -155,6 +161,7 @@ public class DragEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.990 -0400", hash_original_method = "37C7BCFB2F6F270ABDBD12EAE79514EC", hash_generated_method = "1FAFBECC1722F3EC675CF1CC27C3608F")
     public Object getLocalState() {
         Object varB4EAC82CA7396A68D541C85D26508E83_2077961447 = null; 
@@ -166,6 +173,7 @@ public class DragEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.990 -0400", hash_original_method = "137903529BA54F55A1080182FA7064FC", hash_generated_method = "61B0F82C082EB21F5E7CEDC1C30A1466")
     public boolean getResult() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1858790265 = getTaintBoolean();
@@ -242,6 +250,7 @@ public class DragEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.992 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "94D75A6E5A27CBA96AE43924D05F5C15")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1176041438 = getTaintInt();

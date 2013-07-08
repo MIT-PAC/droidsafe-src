@@ -48,6 +48,7 @@ public abstract class MessageChannel {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.441 -0400", hash_original_method = "B5543AC884E160C74E00608F95C390A3", hash_generated_method = "547268D6CF76DECC0066A4DC26EFC855")
     protected void uncache() {
         
@@ -506,6 +507,7 @@ public abstract class MessageChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.472 -0400", hash_original_method = "B369445AF3BB32430CE637694E76219B", hash_generated_method = "BE22E13C41EFF9501B703FF029E95DDF")
     public MessageProcessor getMessageProcessor() {
         MessageProcessor varB4EAC82CA7396A68D541C85D26508E83_725235226 = null; 

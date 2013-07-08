@@ -824,226 +824,267 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int native_create(int native_src_or_zero) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_isIdentity(int native_object) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_rectStaysRect(int native_object) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_reset(int native_object) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_set(int native_object, int other) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_setTranslate(int native_object,
                                                    float dx, float dy) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_setScale(int native_object,
                                         float sx, float sy, float px, float py) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_setScale(int native_object,
                                                float sx, float sy) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_setRotate(int native_object,
                                             float degrees, float px, float py) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_setRotate(int native_object,
                                                 float degrees) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_setSinCos(int native_object,
                             float sinValue, float cosValue, float px, float py) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_setSinCos(int native_object,
                                                 float sinValue, float cosValue) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_setSkew(int native_object,
                                         float kx, float ky, float px, float py) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_setSkew(int native_object,
                                               float kx, float ky) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_setConcat(int native_object,
                                                    int a, int b) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_preTranslate(int native_object,
                                                       float dx, float dy) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_preScale(int native_object,
                                         float sx, float sy, float px, float py) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_preScale(int native_object,
                                                   float sx, float sy) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_preRotate(int native_object,
                                             float degrees, float px, float py) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_preRotate(int native_object,
                                                    float degrees) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_preSkew(int native_object,
                                         float kx, float ky, float px, float py) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_preSkew(int native_object,
                                                  float kx, float ky) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_preConcat(int native_object,
                                                    int other_matrix) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_postTranslate(int native_object,
                                                        float dx, float dy) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_postScale(int native_object,
                                         float sx, float sy, float px, float py) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_postScale(int native_object,
                                                    float sx, float sy) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_postRotate(int native_object,
                                             float degrees, float px, float py) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_postRotate(int native_object,
                                                     float degrees) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_postSkew(int native_object,
                                         float kx, float ky, float px, float py) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_postSkew(int native_object,
                                                   float kx, float ky) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_postConcat(int native_object,
                                                     int other_matrix) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_setRectToRect(int native_object,
                                                 RectF src, RectF dst, int stf) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_setPolyToPoly(int native_object,
         float[] src, int srcIndex, float[] dst, int dstIndex, int pointCount) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_invert(int native_object, int inverse) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_mapPoints(int native_object,
                         float[] dst, int dstIndex, float[] src, int srcIndex,
                         int ptCount, boolean isPts) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_mapRect(int native_object,
                                                  RectF dst, RectF src) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static float native_mapRadius(int native_object,
                                                  float radius) {
         return DSUtils.UNKNOWN_FLOAT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_getValues(int native_object,
                                                 float[] values) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_setValues(int native_object,
                                                 float[] values) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_equals(int native_a, int native_b) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void finalizer(int native_instance) {
     }
 

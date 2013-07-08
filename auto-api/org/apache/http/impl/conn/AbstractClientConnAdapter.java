@@ -63,6 +63,7 @@ public abstract class AbstractClientConnAdapter implements ManagedClientConnecti
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.340 -0400", hash_original_method = "5CCC2D76AB339C78C9BD8A2A561C74E1", hash_generated_method = "C05FA2E5875C4FAD66CDB84286BB9B34")
     protected void detach() {
         wrappedConnection = null;
@@ -75,6 +76,7 @@ public abstract class AbstractClientConnAdapter implements ManagedClientConnecti
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.341 -0400", hash_original_method = "6A8409740777F9B554371FD5CA23B84B", hash_generated_method = "3C636157F253BACD9E3DE246430C756E")
     protected OperatedClientConnection getWrappedConnection() {
         OperatedClientConnection varB4EAC82CA7396A68D541C85D26508E83_1328905209 = null; 
@@ -86,6 +88,7 @@ public abstract class AbstractClientConnAdapter implements ManagedClientConnecti
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.341 -0400", hash_original_method = "D124AA8CBEEBBCAB0459F467E40DD04B", hash_generated_method = "989CA3D84711A76B7CB2DB7866317754")
     protected ClientConnectionManager getManager() {
         ClientConnectionManager varB4EAC82CA7396A68D541C85D26508E83_249162246 = null; 
@@ -426,6 +429,7 @@ public abstract class AbstractClientConnAdapter implements ManagedClientConnecti
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.357 -0400", hash_original_method = "839709285FE118C452FA26DE879FFB1D", hash_generated_method = "7BE665094380AED20128BA3103013769")
     public void markReusable() {
         markedReusable = true;
@@ -434,6 +438,7 @@ public abstract class AbstractClientConnAdapter implements ManagedClientConnecti
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.358 -0400", hash_original_method = "7923E01503297FB76AA22E34EEF6FDF5", hash_generated_method = "F127E589DEE28AC35FB277B0F37C1F36")
     public void unmarkReusable() {
         markedReusable = false;
@@ -442,6 +447,7 @@ public abstract class AbstractClientConnAdapter implements ManagedClientConnecti
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.358 -0400", hash_original_method = "2387742F6BF9638BB6ECF14FF1FDB0EE", hash_generated_method = "7E57A3FA7B3C451EC615D04906F9F5F4")
     public boolean isMarkedReusable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1148018016 = getTaintBoolean();

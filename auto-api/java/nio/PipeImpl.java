@@ -49,6 +49,7 @@ final class PipeImpl extends Pipe {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.846 -0400", hash_original_method = "C0C603D3286C71D643834A21D35D5621", hash_generated_method = "DE286B883EC4588C22580E876BA49453")
     @Override
     public SinkChannel sink() {
@@ -61,6 +62,7 @@ final class PipeImpl extends Pipe {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.847 -0400", hash_original_method = "06051B335F1A44C7022D361E395E201A", hash_generated_method = "928D469E5A5780EE4F27158D7D5BA8BB")
     @Override
     public SourceChannel source() {

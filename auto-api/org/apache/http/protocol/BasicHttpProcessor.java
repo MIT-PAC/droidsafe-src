@@ -240,6 +240,7 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.544 -0400", hash_original_method = "145E2FEDCA1A32FEC7370D21776649A2", hash_generated_method = "2DD9E24066548ACA81CF15355B844800")
     public void clearRequestInterceptors() {
         this.requestInterceptors = null;
@@ -331,6 +332,7 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.547 -0400", hash_original_method = "312DB737544A7054D89F25FB9ECC2521", hash_generated_method = "9D3E135536DF2EF44F610851B9BC1333")
     public void clearResponseInterceptors() {
         this.responseInterceptors = null;

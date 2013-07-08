@@ -206,6 +206,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.340 -0400", hash_original_method = "9CC6B7578CF19F95DF8C884BF5987E46", hash_generated_method = "145E075B397CDE9A9578D57AB1D9175B")
     public String getSuggestAuthority() {
         String varB4EAC82CA7396A68D541C85D26508E83_1273857462 = null; 
@@ -217,6 +218,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.341 -0400", hash_original_method = "BE8BEFD3C329420CF7D6C5DA35EA0FF0", hash_generated_method = "37DF9BB531FC365F3C11C2C45C637313")
     public String getSuggestPackage() {
         String varB4EAC82CA7396A68D541C85D26508E83_434807813 = null; 
@@ -228,6 +230,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.342 -0400", hash_original_method = "F3041DF7A3866005E32579E92AEBEE6A", hash_generated_method = "97A19A7F98D7961CCB45BCE251ADC8C8")
     public ComponentName getSearchActivity() {
         ComponentName varB4EAC82CA7396A68D541C85D26508E83_1565265717 = null; 
@@ -239,6 +242,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.342 -0400", hash_original_method = "E8E1D8EA6D890D66AA7ADE8877B0250D", hash_generated_method = "035A4E1A19EE4BFBE2F9B1E36C65D642")
     public boolean useBadgeLabel() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_575605875 = getTaintBoolean();
@@ -248,6 +252,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.343 -0400", hash_original_method = "FEE9D772AE5D3D19558CCEFFB0D8835C", hash_generated_method = "8F955A4BA40C071832522A96B08CE57C")
     public boolean useBadgeIcon() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1313486974 = getTaintBoolean();
@@ -257,6 +262,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.344 -0400", hash_original_method = "B8AED61CE994D23FCE3A1E2344A9A897", hash_generated_method = "CEF05B32EEEA7B431EAD3BE1B53B6EB6")
     public boolean shouldRewriteQueryFromData() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_940651581 = getTaintBoolean();
@@ -266,6 +272,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.344 -0400", hash_original_method = "5A9C6F4DB0BEA2BB31C909F5BB55A3E0", hash_generated_method = "846C6892765128FA65D289F4898E7184")
     public boolean shouldRewriteQueryFromText() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1119734029 = getTaintBoolean();
@@ -275,6 +282,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.345 -0400", hash_original_method = "19684FC2043C1BDB61A3E740D6C19B34", hash_generated_method = "FDD73676E2BA6A7F768D076D2DD074DD")
     public int getSettingsDescriptionId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_401549345 = getTaintInt();
@@ -284,6 +292,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.345 -0400", hash_original_method = "E8F19B2AFF47ACFE52244E7315CE6CBA", hash_generated_method = "8D4B90781218EA16C9F2FFB78D445ED1")
     public String getSuggestPath() {
         String varB4EAC82CA7396A68D541C85D26508E83_1608235765 = null; 
@@ -295,6 +304,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.346 -0400", hash_original_method = "03B94AF5E978777AF0A4DF7C1D53B2F0", hash_generated_method = "D087447E0014545D373E7677D7148CC5")
     public String getSuggestSelection() {
         String varB4EAC82CA7396A68D541C85D26508E83_1511305598 = null; 
@@ -306,6 +316,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.346 -0400", hash_original_method = "41669F0953535FACC4B7926CFCBDA8A1", hash_generated_method = "6EC763408CFD2C0693460C2B9CA747E3")
     public String getSuggestIntentAction() {
         String varB4EAC82CA7396A68D541C85D26508E83_915914853 = null; 
@@ -317,6 +328,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.347 -0400", hash_original_method = "E2551EFF005AD652F4CA5C2DEBD8F1C5", hash_generated_method = "DB0EE6EBA8B4D934B4F71A99DA33C75A")
     public String getSuggestIntentData() {
         String varB4EAC82CA7396A68D541C85D26508E83_2043246041 = null; 
@@ -328,6 +340,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.347 -0400", hash_original_method = "EC28F48C38E111E12DD92E58268AB4B1", hash_generated_method = "68895A3D2A6A24CFC5761698016D434E")
     public int getSuggestThreshold() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1808277881 = getTaintInt();
@@ -538,6 +551,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.355 -0400", hash_original_method = "32CB8385CEC61194A5C52A7CECC7153B", hash_generated_method = "818E2AFCC901E478F547201C04962A03")
     public int getLabelId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_678762069 = getTaintInt();
@@ -547,6 +561,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.356 -0400", hash_original_method = "DC9D54FA42277F7545187887A5854A7A", hash_generated_method = "F1CEB06ED88CF2A68AD431C25A792848")
     public int getHintId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_335382418 = getTaintInt();
@@ -556,6 +571,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.357 -0400", hash_original_method = "B3A2F353BC85020D961D66DA378099D0", hash_generated_method = "945FC38F1439BB8E0C76D20333BEB31D")
     public int getIconId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1952383746 = getTaintInt();
@@ -565,6 +581,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.357 -0400", hash_original_method = "BD4587B1756B2E1B29D5C797A6E8E884", hash_generated_method = "04661D697997E70C9ACF9AEC41FC2F26")
     public boolean getVoiceSearchEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_305450102 = getTaintBoolean();
@@ -574,6 +591,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.358 -0400", hash_original_method = "AD4F5DA741FB0C864BEACDD753D4C8F3", hash_generated_method = "73D0C320057DDC692A4A610E3E9A7430")
     public boolean getVoiceSearchLaunchWebSearch() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_347791163 = getTaintBoolean();
@@ -583,6 +601,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.358 -0400", hash_original_method = "8242FA220A8F4815DCA2E78C8BAC691A", hash_generated_method = "B8C79B59C8D48D570003412400050FCE")
     public boolean getVoiceSearchLaunchRecognizer() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1279559710 = getTaintBoolean();
@@ -592,6 +611,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.359 -0400", hash_original_method = "AE92C4DB1762FDEF1095AB548D604322", hash_generated_method = "C53B7ACE97FA9B06494465F291079AB0")
     public int getVoiceLanguageModeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1425458837 = getTaintInt();
@@ -601,6 +621,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.359 -0400", hash_original_method = "22DBBDA410168ED4037FF766F7DE7742", hash_generated_method = "631C23EF5D116FD9A07FFAC55788E1C3")
     public int getVoicePromptTextId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_727721551 = getTaintInt();
@@ -610,6 +631,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.360 -0400", hash_original_method = "79CDC130EB87863FB2A36D85DFC36EA0", hash_generated_method = "5FB79D0FD14C416FCF5AB2B36A0659D4")
     public int getVoiceLanguageId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_658300383 = getTaintInt();
@@ -619,6 +641,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.360 -0400", hash_original_method = "77BBA2ED9E38231A613E9BF06CBFC2B7", hash_generated_method = "35CD7A318EFA0A89E9EE3E5040124F3E")
     public int getVoiceMaxResults() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1279961772 = getTaintInt();
@@ -628,6 +651,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.360 -0400", hash_original_method = "A9AA4A30E735A990543D5C1057AC451E", hash_generated_method = "1814EF7D5B81AEE1570F52CE92DC16F3")
     public int getSearchButtonText() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_572594019 = getTaintInt();
@@ -637,6 +661,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.361 -0400", hash_original_method = "4835EFF052D409983E396160FFE84050", hash_generated_method = "FBA7623D12C466AE7F9C79D0C44061E1")
     public int getInputType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1545919936 = getTaintInt();
@@ -646,6 +671,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.361 -0400", hash_original_method = "1FE8811970C0953B1D5BA2B119F61221", hash_generated_method = "78124D80313DE25BE6476909C9C1F764")
     public int getImeOptions() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_591156661 = getTaintInt();
@@ -655,6 +681,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.361 -0400", hash_original_method = "B3CD0EA91E55821485199A61F4C775D4", hash_generated_method = "BD92776A97818FBCF75BDE5C05B4DAF9")
     public boolean shouldIncludeInGlobalSearch() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1976860576 = getTaintBoolean();
@@ -664,6 +691,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.362 -0400", hash_original_method = "942D4E1EA5C6469103A344EA38AACE8F", hash_generated_method = "9E7B83DA59C51A6B3F6140A60BD02236")
     public boolean queryAfterZeroResults() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_480238730 = getTaintBoolean();
@@ -673,6 +701,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.363 -0400", hash_original_method = "43849E9B2F1DCB4A199E2A722DA4C20F", hash_generated_method = "CCDA556F415C0CAB5D78169D8A3F5939")
     public boolean autoUrlDetect() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1743069911 = getTaintBoolean();
@@ -682,6 +711,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.363 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "5657B96CEE9B4DFD2AD9B36B089056EF")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_403689373 = getTaintInt();

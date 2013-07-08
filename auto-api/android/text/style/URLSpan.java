@@ -37,6 +37,7 @@ public class URLSpan extends ClickableSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.026 -0400", hash_original_method = "922B12E08E67C6B8053CA65C059545DA", hash_generated_method = "7FB00D9D2AD878DE18ABF48BBF84EDCB")
     public int getSpanTypeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_474072331 = getTaintInt();
@@ -46,6 +47,7 @@ public class URLSpan extends ClickableSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.027 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "2BE962CC4257E22813D6F6756A5BC067")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_247535431 = getTaintInt();
@@ -65,6 +67,7 @@ public class URLSpan extends ClickableSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.027 -0400", hash_original_method = "C929B5C6A842A00D31BD07E0935FD2ED", hash_generated_method = "8340A38FDEC5CAB58561270789ACEA73")
     public String getURL() {
         String varB4EAC82CA7396A68D541C85D26508E83_1864348905 = null; 

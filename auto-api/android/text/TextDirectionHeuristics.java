@@ -19,6 +19,7 @@ public class TextDirectionHeuristics {
     }
 
 
+    @DSModeled(DSC.SAFE)
     private static TriState isRtlText(int directionality) {
         switch (directionality) {
             case Character.DIRECTIONALITY_LEFT_TO_RIGHT:
@@ -32,6 +33,7 @@ public class TextDirectionHeuristics {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static TriState isRtlTextOrFormat(int directionality) {
         switch (directionality) {
             case Character.DIRECTIONALITY_LEFT_TO_RIGHT:

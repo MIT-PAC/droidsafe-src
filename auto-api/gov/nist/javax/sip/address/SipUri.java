@@ -62,6 +62,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.441 -0400", hash_original_method = "C01635CAE84CEFF188CA85B1E841E2AF", hash_generated_method = "846338EFD1F897F35E639E276A401888")
     public String getScheme() {
         String varB4EAC82CA7396A68D541C85D26508E83_100784101 = null; 
@@ -98,6 +99,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.442 -0400", hash_original_method = "92C8D5BE70E6877E725894DF3752DAAD", hash_generated_method = "AD1777046D6452C253DB4280634841AA")
     public Authority getAuthority() {
         Authority varB4EAC82CA7396A68D541C85D26508E83_579929749 = null; 
@@ -415,6 +417,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.449 -0400", hash_original_method = "5EDAD210CE239248A46B40B8A7E4E067", hash_generated_method = "2F638F6EC433D6E535C94524173CB46C")
     public NameValueList getParameters() {
         NameValueList varB4EAC82CA7396A68D541C85D26508E83_1076337941 = null; 
@@ -435,6 +438,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.449 -0400", hash_original_method = "69A77D050D6DE602ACFB758F18CE1C2E", hash_generated_method = "465FEA75AF69A33407FC4ED3CF92FAEE")
     public NameValueList getQheaders() {
         NameValueList varB4EAC82CA7396A68D541C85D26508E83_612123722 = null; 
@@ -733,6 +737,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.457 -0400", hash_original_method = "8155A130BB5ECD11F95AAB0DA6526B6B", hash_generated_method = "17C5E94A9E6A70133A97A70EC4723660")
     public void setAuthority(Authority authority) {
         this.authority = authority;
@@ -754,6 +759,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.457 -0400", hash_original_method = "BF30B120DCA846B2AB31EE4276940CB4", hash_generated_method = "C12913C3D366050264426BFF362BC735")
     public void setUriParms(NameValueList parms) {
         uriParms = parms;
@@ -775,6 +781,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.458 -0400", hash_original_method = "3BCF6EC7FF3BBA5809384A38F15B6A45", hash_generated_method = "2E952D0669523402C7D8C7BA5EACD080")
     public void setQheaders(NameValueList parms) {
         qheaders = parms;
@@ -841,6 +848,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.459 -0400", hash_original_method = "988EFE784E2C119D10B2A809CB388B9F", hash_generated_method = "BABA85DAD3AFF0C47B1D5E16AE852918")
     public void setTelephoneSubscriber(TelephoneNumber tel) {
         telephoneSubscriber = tel;
@@ -1156,6 +1164,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.467 -0400", hash_original_method = "56D579416E6E52BEF406E20E9865D4C4", hash_generated_method = "D26CC0EDAFE95046F9146F606202CDEB")
     public boolean isSipURI() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_274772323 = getTaintBoolean();
@@ -1253,6 +1262,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.474 -0400", hash_original_method = "93EA8C8ECDAC523AC50E68B355F469C8", hash_generated_method = "7A589808ED7E6C2BFD87AB94EB76C43A")
     public void setSecure(boolean secure) {
         this.scheme = SIPS;

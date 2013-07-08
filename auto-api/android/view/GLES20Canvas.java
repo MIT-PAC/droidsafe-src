@@ -98,11 +98,13 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nIsAvailable() {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean isAvailable() {
         return sIsAvailable;
     }
@@ -135,65 +137,79 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nCreateRenderer() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nCreateLayerRenderer(int layer) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nCreateDisplayListRenderer() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nResetDisplayListRenderer(int renderer) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nDestroyRenderer(int renderer) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int nCreateTextureLayer(boolean opaque, int[] layerInfo) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int nCreateLayer(int width, int height, boolean isOpaque, int[] layerInfo) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void nResizeLayer(int layerId, int width, int height, int[] layerInfo) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void nUpdateTextureLayer(int layerId, int width, int height, boolean opaque,
             SurfaceTexture surface) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void nSetTextureLayerTransform(int layerId, int matrix) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void nDestroyLayer(int layerId) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void nDestroyLayerDeferred(int layerId) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean nCopyLayer(int layerId, int bitmap) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.160 -0400", hash_original_method = "AB6C012A4EC234C0DA96929A7EE984CD", hash_generated_method = "3FCB0DD128C90CEA35255F0B5080335B")
     @Override
     public boolean isOpaque() {
@@ -204,6 +220,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.160 -0400", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "A9B4B55E794271E12A332D37E44961C9")
     @Override
     public int getWidth() {
@@ -214,6 +231,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.160 -0400", hash_original_method = "0304EDCF78FF45B68A7EB91BFEAAA2CD", hash_generated_method = "D20D691DF12B98D8AC596CAC4B187900")
     @Override
     public int getHeight() {
@@ -248,11 +266,13 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nGetMaximumTextureWidth() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nGetMaximumTextureHeight() {
         return DSUtils.UNKNOWN_INT;
     }
@@ -272,6 +292,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nSetViewport(int renderer, int width, int height) {
     }
 
@@ -282,6 +303,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nPreserveBackBuffer() {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
@@ -293,6 +315,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nIsBackBufferPreserved() {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
@@ -304,6 +327,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nDisableVsync() {
     }
 
@@ -328,10 +352,12 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nPrepare(int renderer, boolean opaque) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nPrepareDirty(int renderer, int left, int top, int right, int bottom,
             boolean opaque) {
     }
@@ -347,6 +373,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nFinish(int renderer) {
     }
 
@@ -364,6 +391,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nCallDrawGLFunction(int renderer, int drawGLFunction) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
@@ -375,6 +403,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nFlushCaches(int level) {
     }
 
@@ -385,6 +414,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nTerminateCaches() {
     }
 
@@ -395,6 +425,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nInitCaches() {
     }
 
@@ -410,6 +441,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nGetDisplayList(int renderer, int displayList) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -421,6 +453,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nDestroyDisplayList(int displayList) {
     }
 
@@ -431,6 +464,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nGetDisplayListSize(int displayList) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -454,6 +488,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nDrawDisplayList(int renderer, int displayList,
             int width, int height, Rect dirty) {
         return DSUtils.UNKNOWN_BOOLEAN;
@@ -470,6 +505,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nOutputDisplayList(int renderer, int displayList) {
     }
 
@@ -498,6 +534,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nDrawLayer(int renderer, int layer, float x, float y, int paint) {
     }
 
@@ -518,10 +555,12 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nInterrupt(int renderer) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nResume(int renderer) {
     }
 
@@ -568,6 +607,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nClipRect(int renderer, float left, float top,
             float right, float bottom, int op) {
         return DSUtils.UNKNOWN_BOOLEAN;
@@ -606,6 +646,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nClipRect(int renderer, int left, int top, int right, int bottom,
             int op) {
         return DSUtils.UNKNOWN_BOOLEAN;
@@ -707,6 +748,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nGetClipBounds(int renderer, Rect bounds) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
@@ -729,6 +771,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nQuickReject(int renderer, float left, float top,
             float right, float bottom, int edge) {
         return DSUtils.UNKNOWN_BOOLEAN;
@@ -775,6 +818,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nTranslate(int renderer, float dx, float dy) {
     }
 
@@ -791,6 +835,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nSkew(int renderer, float sx, float sy) {
     }
 
@@ -806,6 +851,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nRotate(int renderer, float degrees) {
     }
 
@@ -822,6 +868,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nScale(int renderer, float sx, float sy) {
     }
 
@@ -837,6 +884,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nSetMatrix(int renderer, int matrix) {
     }
 
@@ -852,6 +900,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nGetMatrix(int renderer, int matrix) {
     }
 
@@ -867,6 +916,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nConcatMatrix(int renderer, int matrix) {
     }
 
@@ -896,6 +946,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nSave(int renderer, int flags) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -933,6 +984,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nSaveLayer(int renderer, int paint, int saveFlags) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -974,6 +1026,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nSaveLayer(int renderer, float left, float top,
             float right, float bottom, int paint, int saveFlags) {
         return DSUtils.UNKNOWN_INT;
@@ -1003,6 +1056,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nSaveLayerAlpha(int renderer, int alpha, int saveFlags) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -1033,6 +1087,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nSaveLayerAlpha(int renderer, float left, float top, float right,
             float bottom, int alpha, int saveFlags) {
         return DSUtils.UNKNOWN_INT;
@@ -1049,6 +1104,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nRestore(int renderer) {
     }
 
@@ -1064,6 +1120,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nRestoreToCount(int renderer, int saveCount) {
     }
 
@@ -1080,11 +1137,13 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nGetSaveCount(int renderer) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.186 -0400", hash_original_method = "846B7706B193B695840103C92096214E", hash_generated_method = "2A2151BC53135B33E05ECD91C4DDE028")
     @Override
     public void setDrawFilter(DrawFilter filter) {
@@ -1094,6 +1153,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.187 -0400", hash_original_method = "00C808EC6F25CC6E1FA57C10F69CA13D", hash_generated_method = "25FFD7DCFE0E56E60FFE50EFAEFC7186")
     @Override
     public DrawFilter getDrawFilter() {
@@ -1128,6 +1188,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nDrawArc(int renderer, float left, float top,
             float right, float bottom, float startAngle, float sweepAngle,
             boolean useCenter, int paint) {
@@ -1174,6 +1235,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nDrawPatch(int renderer, int bitmap, byte[] buffer, byte[] chunks,
             float left, float top, float right, float bottom, int paint) {
     }
@@ -1203,6 +1265,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nDrawBitmap(
             int renderer, int bitmap, byte[] buffer, float left, float top, int paint) {
     }
@@ -1233,6 +1296,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nDrawBitmap(int renderer, int bitmap, byte[] buff,
             int matrix, int paint) {
     }
@@ -1342,6 +1406,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nDrawBitmap(int renderer, int bitmap, byte[] buffer,
             float srcLeft, float srcTop, float srcRight, float srcBottom,
             float left, float top, float right, float bottom, int paint) {
@@ -1454,6 +1519,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nDrawBitmapMesh(int renderer, int bitmap, byte[] buffer,
             int meshWidth, int meshHeight, float[] verts, int vertOffset,
             int[] colors, int colorOffset, int paint) {
@@ -1478,6 +1544,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nDrawCircle(int renderer, float cx, float cy,
             float radius, int paint) {
     }
@@ -1505,6 +1572,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nDrawColor(int renderer, int color, int mode) {
     }
 
@@ -1552,6 +1620,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nDrawLines(int renderer, float[] points,
             int offset, int count, int paint) {
     }
@@ -1585,6 +1654,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nDrawOval(int renderer, float left, float top,
             float right, float bottom, int paint) {
     }
@@ -1634,10 +1704,12 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nDrawPath(int renderer, int path, int paint) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nDrawRects(int renderer, int region, int paint) {
     }
 
@@ -1722,11 +1794,13 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nDrawPoints(int renderer, float[] points,
             int offset, int count, int paint) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.203 -0400", hash_original_method = "A1D0375AE9DFF68E398CA7F0C8CFDC48", hash_generated_method = "C58AAF0ED1F6D9D63C48503C4E523D01")
     @Override
     public void drawPosText(char[] text, int index, int count, float[] pos, Paint paint) {
@@ -1739,6 +1813,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.203 -0400", hash_original_method = "2727BD7310EB8AF1CE9C5E69FE8F5F77", hash_generated_method = "528C69E94D75929A5C52268974BE27CA")
     @Override
     public void drawPosText(String text, float[] pos, Paint paint) {
@@ -1768,6 +1843,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nDrawRect(int renderer, float left, float top,
             float right, float bottom, int paint) {
     }
@@ -1830,6 +1906,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nDrawRoundRect(int renderer, float left, float top,
             float right, float bottom, float rx, float y, int paint) {
     }
@@ -1870,6 +1947,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nDrawText(int renderer, char[] text, int index, int count,
             float x, float y, int bidiFlags, int paint) {
     }
@@ -1951,6 +2029,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nDrawText(int renderer, String text, int start, int end,
             float x, float y, int bidiFlags, int paint) {
     }
@@ -1985,6 +2064,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.208 -0400", hash_original_method = "C2D0F05CD306BD6EB45BAEA1052EFD68", hash_generated_method = "E8072F6412FBF0708CCDC684DDEFC2CC")
     @Override
     public void drawTextOnPath(char[] text, int index, int count, Path path, float hOffset,
@@ -2000,6 +2080,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.208 -0400", hash_original_method = "E399416700F7228806FC79CB70E6A478", hash_generated_method = "68D8C9D341F43CDFE24109F7E8C46C4D")
     @Override
     public void drawTextOnPath(String text, Path path, float hOffset, float vOffset, Paint paint) {
@@ -2059,6 +2140,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nDrawTextRun(int renderer, char[] text, int index, int count,
             int contextIndex, int contextCount, float x, float y, int dir, int nativePaint) {
     }
@@ -2117,11 +2199,13 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nDrawTextRun(int renderer, String text, int start, int end,
             int contextStart, int contextEnd, float x, float y, int flags, int nativePaint) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.211 -0400", hash_original_method = "7C5BB6E42A47B8FFC1224CB48EC5DC66", hash_generated_method = "B8AD1C1FAE2C4B6BF26DC49B7C01AC46")
     @Override
     public void drawVertices(VertexMode mode, int vertexCount, float[] verts, int vertOffset,
@@ -2236,19 +2320,23 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nSetupShader(int renderer, int shader) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nSetupColorFilter(int renderer, int colorFilter) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nSetupShadow(int renderer, float radius,
             float dx, float dy, int color) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nResetModifiers(int renderer, int modifiers) {
     }
 

@@ -414,6 +414,7 @@ public class CalendarView extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.153 -0400", hash_original_method = "466B93651CABC20F69979D67C7EC6971", hash_generated_method = "2C94ED3F430DB780A1DF03F15A2D0C85")
     public boolean getShowWeekNumber() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1034490609 = getTaintBoolean();
@@ -423,6 +424,7 @@ public class CalendarView extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.153 -0400", hash_original_method = "13AE9B7D254FD4442860EE49493A72AE", hash_generated_method = "EEDBECA7B013F8ADE0DEB44AD55BA618")
     public int getFirstDayOfWeek() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_25471466 = getTaintInt();
@@ -449,6 +451,7 @@ public class CalendarView extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.154 -0400", hash_original_method = "2EC5480533B2BF54D56B2049BA7CA5D7", hash_generated_method = "40E23822C44A26C2CDF30A58488DCCDD")
     public void setOnDateChangeListener(OnDateChangeListener listener) {
         mOnDateChangeListener = listener;

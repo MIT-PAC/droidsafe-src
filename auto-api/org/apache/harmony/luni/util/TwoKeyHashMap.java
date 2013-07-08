@@ -215,6 +215,7 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.339 -0400", hash_original_method = "4E92EE4014ABA801EB273C60A5958799", hash_generated_method = "674189D909A99589BCBCAFC19DFB2E51")
     @SuppressWarnings("unchecked")
      void rehash() {
@@ -314,6 +315,7 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.341 -0400", hash_original_method = "186376BCBF1440029A4A8EF9D3327AB7", hash_generated_method = "52C87EC13E7E35B71842EAF3A823EACE")
     public boolean isEmpty() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1513078562 = getTaintBoolean();
@@ -323,6 +325,7 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.341 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "3B759C4B64469C61783D963AB2BA6CF6")
     public int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_205903504 = getTaintInt();

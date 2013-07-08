@@ -36,6 +36,7 @@ public class GeocoderParams implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.245 -0400", hash_original_method = "95F8746C49CE2A7FBF7EA83DF206E003", hash_generated_method = "BDF0AD892EE84DA6B5E9D9066AE06F8F")
     public Locale getLocale() {
         Locale varB4EAC82CA7396A68D541C85D26508E83_1169682137 = null; 
@@ -47,6 +48,7 @@ public class GeocoderParams implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.245 -0400", hash_original_method = "1D100AD0503AB463478DA14DEA58A5D8", hash_generated_method = "8A536B9B62A0210ABE3BD78A627D9B0D")
     public String getClientPackage() {
         String varB4EAC82CA7396A68D541C85D26508E83_1604319787 = null; 
@@ -58,6 +60,7 @@ public class GeocoderParams implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.246 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "EA4BA20476297900614DA5DBCD6B5589")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1531109004 = getTaintInt();

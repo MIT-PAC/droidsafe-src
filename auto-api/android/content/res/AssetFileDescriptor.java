@@ -59,6 +59,7 @@ public class AssetFileDescriptor implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.323 -0400", hash_original_method = "9E61752120AEDC1582A5E495568F317A", hash_generated_method = "58B38944FCD2F5BFB993EFD5EE173084")
     public ParcelFileDescriptor getParcelFileDescriptor() {
         ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_840708633 = null; 
@@ -82,6 +83,7 @@ public class AssetFileDescriptor implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.325 -0400", hash_original_method = "F15F7E68559FE94D65E8E77E2E4D8AE9", hash_generated_method = "87913CC51493CF7A4234B08E26AE76BF")
     public long getStartOffset() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_932125304 = getTaintLong();
@@ -106,6 +108,7 @@ public class AssetFileDescriptor implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.326 -0400", hash_original_method = "017FD707368B4170A32A7494D8D576FE", hash_generated_method = "8DD093B5F2AF7B1CC137E0FBC18D3B25")
     public long getDeclaredLength() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_753561319 = getTaintLong();

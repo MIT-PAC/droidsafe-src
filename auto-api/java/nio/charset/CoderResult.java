@@ -63,6 +63,7 @@ public class CoderResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.996 -0400", hash_original_method = "72D962B2D73E7D1A25E9E1AB76F037A1", hash_generated_method = "0A088E902FC3B5BA1FA0A0D57C109C5D")
     public boolean isUnderflow() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_173777278 = getTaintBoolean();
@@ -72,6 +73,7 @@ public class CoderResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.996 -0400", hash_original_method = "6E4CD2CEA8B470E2711551FAF2632892", hash_generated_method = "322A5DB774A048662FBF487C9ECB72CD")
     public boolean isError() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1121933034 = getTaintBoolean();
@@ -82,6 +84,7 @@ public class CoderResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.996 -0400", hash_original_method = "A1FC6FBF45CD4662583E11635A563069", hash_generated_method = "B5BEBE901E83F69B189EE0F56E5EAD99")
     public boolean isMalformed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_288971261 = getTaintBoolean();
@@ -91,6 +94,7 @@ public class CoderResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.996 -0400", hash_original_method = "B611C5CE05597AA2840AB6FA98EFB1D0", hash_generated_method = "ED0AEEF443D8640290B3F2BC7BB74639")
     public boolean isOverflow() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_130944382 = getTaintBoolean();
@@ -100,6 +104,7 @@ public class CoderResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.997 -0400", hash_original_method = "406F98BDE206F12612B0B50954C0A2D7", hash_generated_method = "B31C7E8EB6028135EC05517ED5765BDF")
     public boolean isUnmappable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_631480977 = getTaintBoolean();

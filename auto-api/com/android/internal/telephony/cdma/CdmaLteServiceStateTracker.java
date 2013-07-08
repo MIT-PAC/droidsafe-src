@@ -510,6 +510,7 @@ public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.910 -0400", hash_original_method = "020897B26D59971A2D338DF9E45E01F9", hash_generated_method = "6CE26747CE1BC50A385A86CD05C13DE6")
     @Override
     public boolean isConcurrentVoiceAndDataAllowed() {

@@ -31,6 +31,7 @@ public class AccessControlException extends SecurityException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.053 -0400", hash_original_method = "DFDCEBDA71EECDB1948D7EAD61470F05", hash_generated_method = "2305609CACA40DB007894F842F6C7F33")
     public Permission getPermission() {
         Permission varB4EAC82CA7396A68D541C85D26508E83_1687426958 = null; 

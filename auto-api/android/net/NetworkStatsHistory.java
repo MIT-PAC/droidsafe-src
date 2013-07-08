@@ -214,6 +214,7 @@ public class NetworkStatsHistory implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.761 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "DB18EF0C38B070BD88F75007D725918C")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_211742541 = getTaintInt();
@@ -223,6 +224,7 @@ public class NetworkStatsHistory implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.761 -0400", hash_original_method = "3E2D8D04EF3E8C4BDF56D4CFDD864A04", hash_generated_method = "70260FD60BD503066D1930F14E5DDAE0")
     public int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1942335836 = getTaintInt();
@@ -232,6 +234,7 @@ public class NetworkStatsHistory implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.762 -0400", hash_original_method = "D0E743773F77C0F20C1DE2E3BE48F30B", hash_generated_method = "D7983E14F2E37D5FA0F3E3DFED006923")
     public long getBucketDuration() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_215514627 = getTaintLong();
@@ -241,6 +244,7 @@ public class NetworkStatsHistory implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.762 -0400", hash_original_method = "0DA78BB7B3F99E1543E4DC9DFD2BD9F4", hash_generated_method = "D7E93D14E53FC0B8059BC61E8EA3D7F1")
     public long getStart() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_983319023 = getTaintLong();
@@ -254,6 +258,7 @@ public class NetworkStatsHistory implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.762 -0400", hash_original_method = "D4476AE88A84FACA51BF4BF1E3EE2F8D", hash_generated_method = "5B51035569D56C6B454FC4D5D8B61E94")
     public long getEnd() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_969773309 = getTaintLong();
@@ -737,16 +742,19 @@ public class NetworkStatsHistory implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static long getLong(long[] array, int i, long value) {
         return array != null ? array[i] : value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void setLong(long[] array, int i, long value) {
         if (array != null) array[i] = value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void addLong(long[] array, int i, long value) {
         if (array != null) array[i] += value;
     }

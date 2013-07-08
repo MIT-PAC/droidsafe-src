@@ -148,6 +148,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.934 -0400", hash_original_method = "EDE1166C9C5D6E2371538FA8BF1D31B5", hash_generated_method = "89721D0CEA79F09D9C0737AC06DA189B")
     public void setWidthLimit(int width, boolean strict) {
         mWidthLimit = width;
@@ -160,6 +161,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.934 -0400", hash_original_method = "9F648716EF61D229ED05FF998E104A97", hash_generated_method = "B64A2DDCBD4CDF5CA323C99F8D98CF86")
     public void setReserveOverflow(boolean reserveOverflow) {
         mReserveOverflow = reserveOverflow;
@@ -170,6 +172,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.934 -0400", hash_original_method = "481A608E0CFB48388247866BAE1C540A", hash_generated_method = "87E2B32D1F0B97A5238894F1E0A59883")
     public void setItemLimit(int itemCount) {
         mMaxItems = itemCount;
@@ -180,6 +183,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.934 -0400", hash_original_method = "28685D1CD5555D455AA1245A08028303", hash_generated_method = "DA8155DF8D4813D0B03173FE5C681E23")
     public void setExpandedActionViewsExclusive(boolean isExclusive) {
         mExpandedActionViewsExclusive = isExclusive;
@@ -556,6 +560,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.942 -0400", hash_original_method = "9F44211E52A7149BFED02520B6DEF800", hash_generated_method = "19B17410E4D66B80BBD0559EF9B13F79")
     public boolean isOverflowReserved() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1163060282 = getTaintBoolean();

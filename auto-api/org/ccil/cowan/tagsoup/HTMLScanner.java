@@ -68,6 +68,7 @@ public class HTMLScanner implements Scanner, Locator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.778 -0400", hash_original_method = "17D8C6B884298309CDBB8C115CEF45AD", hash_generated_method = "CB9AF1EDA03175296061BA6B189CA5A6")
     public int getLineNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_988922368 = getTaintInt();
@@ -77,6 +78,7 @@ public class HTMLScanner implements Scanner, Locator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.778 -0400", hash_original_method = "CC76CCC6A19838EC65870F98307D39F4", hash_generated_method = "3E1D5FC589AFFF243758ACD7CE4B693D")
     public int getColumnNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1629996163 = getTaintInt();
@@ -86,6 +88,7 @@ public class HTMLScanner implements Scanner, Locator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.778 -0400", hash_original_method = "EE9557AC8121925813378C18555B01E0", hash_generated_method = "2C4D1109CF9C672530A7148738564BAA")
     public String getPublicId() {
         String varB4EAC82CA7396A68D541C85D26508E83_2089742219 = null; 
@@ -97,6 +100,7 @@ public class HTMLScanner implements Scanner, Locator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.778 -0400", hash_original_method = "B52DC32D5FB92F39EE1C6D62A566FA39", hash_generated_method = "1D27018169F1948DBA23C5511325B2C3")
     public String getSystemId() {
         String varB4EAC82CA7396A68D541C85D26508E83_1404191506 = null; 
@@ -108,6 +112,7 @@ public class HTMLScanner implements Scanner, Locator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.779 -0400", hash_original_method = "0F092EE343E640C5A578BAEFAE8AEFB5", hash_generated_method = "75FB287F9A48CFCE5989892AD073900A")
     public void resetDocumentLocator(String publicid, String systemid) {
         thePublicid = publicid;
@@ -481,6 +486,7 @@ Integer.toString(theState));
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.784 -0400", hash_original_method = "5C668F99FD089E189A03C18C500CC1BE", hash_generated_method = "184BAEB313A1690D7B9F3C377B2C05BA")
     private void mark() {
         theLastColumn = theCurrentColumn;
@@ -491,6 +497,7 @@ Integer.toString(theState));
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.785 -0400", hash_original_method = "ADD8A6D3E398AE84BB2395E77CB3DD25", hash_generated_method = "1EF97924DE4200F8FC7B47D12F17ED38")
     public void startCDATA() {
         theNextState = S_CDATA;

@@ -106,6 +106,7 @@ public class HexDump {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] toByteArray(byte b) {
         byte[] array = new byte[1];
         array[0] = b;
@@ -113,6 +114,7 @@ public class HexDump {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] toByteArray(int i) {
         byte[] array = new byte[4];
         array[3] = (byte)(i & 0xFF);

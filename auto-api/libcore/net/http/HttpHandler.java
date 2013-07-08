@@ -22,6 +22,7 @@ public final class HttpHandler extends URLStreamHandler {
     }
 
 
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.918 -0400", hash_original_method = "36344CA950B2A976BD9D30B58C91386F", hash_generated_method = "5F10BB7EF4B5CF237B593650370D1046")
     @Override
     protected URLConnection openConnection(URL u) throws IOException {
@@ -35,6 +36,7 @@ public final class HttpHandler extends URLStreamHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.919 -0400", hash_original_method = "1382348F6F5129438828F631F9FA5282", hash_generated_method = "083AA2216615B26AD519890BCEFDC943")
     @Override
     protected URLConnection openConnection(URL url, Proxy proxy) throws IOException {
@@ -55,6 +57,7 @@ public final class HttpHandler extends URLStreamHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.920 -0400", hash_original_method = "FEEAB6915C12BF9E3FEC7C9D98366E77", hash_generated_method = "61F70046E9088B19A4E6F03DC0F87D47")
     @Override
     protected int getDefaultPort() {

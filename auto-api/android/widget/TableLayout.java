@@ -200,6 +200,7 @@ public class TableLayout extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.342 -0400", hash_original_method = "624BF5A05D2AD2F91E52D17C6AFF6DC5", hash_generated_method = "570AC9C35E94372F0808BA0A7B5FE369")
     public boolean isShrinkAllColumns() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_883306531 = getTaintBoolean();
@@ -209,6 +210,7 @@ public class TableLayout extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.342 -0400", hash_original_method = "26E4ADFC91B374A7FF7EFE7A14E44F9B", hash_generated_method = "BBE5382EC77465A31A4447AFE719DE61")
     public void setShrinkAllColumns(boolean shrinkAllColumns) {
         mShrinkAllColumns = shrinkAllColumns;
@@ -217,6 +219,7 @@ public class TableLayout extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.343 -0400", hash_original_method = "C0959877EF2F1B6CBC27D41EECDAD445", hash_generated_method = "468FC8E3778731DDBC766772352FD700")
     public boolean isStretchAllColumns() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_198978969 = getTaintBoolean();
@@ -226,6 +229,7 @@ public class TableLayout extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.343 -0400", hash_original_method = "276589380DE193D6AFC8DA7EB773135F", hash_generated_method = "61A303E8046B3D7315D7C10E5A2B80A2")
     public void setStretchAllColumns(boolean stretchAllColumns) {
         mStretchAllColumns = stretchAllColumns;
@@ -680,6 +684,7 @@ public class TableLayout extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.383 -0400", hash_original_method = "447CAFAFE5648615FE51407189D906A6", hash_generated_method = "AC9F2A198852BB33E580C798DE7EFF78")
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {

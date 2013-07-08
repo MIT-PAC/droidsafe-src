@@ -239,6 +239,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.611 -0400", hash_original_method = "AFE6187BDD69B153F64B909F5043D2E4", hash_generated_method = "7DE81D841858914A4E07A059D1CC1996")
     @Override
     public boolean onLongClick(View v) {
@@ -316,6 +317,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.613 -0400", hash_original_method = "6F9DAEA6D666DAEBDC5BF41A6DC31573", hash_generated_method = "7ADEADCFECC234D4DD5F3D923F6BD079")
     @Override
     public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
@@ -371,6 +373,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.614 -0400", hash_original_method = "46932DA0618614AAF15434EFCC9FAF04", hash_generated_method = "CE696FAE02394D0C52F9F992D2DE20A0")
     @Override
     public void beforeTextChanged(CharSequence s,
@@ -402,6 +405,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.615 -0400", hash_original_method = "2B62725FCE5BAC340D42F3403AAE31A5", hash_generated_method = "4E9426C0C70F36D91AD564261B4FF2B0")
     @Override
     public void afterTextChanged(Editable s) {

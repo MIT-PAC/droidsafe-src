@@ -237,6 +237,7 @@ public class SIPDate implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.256 -0400", hash_original_method = "457D7CE469867FC10EBD436F0D51643B", hash_generated_method = "615C577B321C9EB70F1F942D026DCCFC")
     public String getWkday() {
         String varB4EAC82CA7396A68D541C85D26508E83_1673329208 = null; 
@@ -248,6 +249,7 @@ public class SIPDate implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.256 -0400", hash_original_method = "A22F3A31D7F5863E790748C0D0AB40F6", hash_generated_method = "634024F0E0D08A7585F4800CCC959DD5")
     public String getMonth() {
         String varB4EAC82CA7396A68D541C85D26508E83_1258310889 = null; 
@@ -259,6 +261,7 @@ public class SIPDate implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.256 -0400", hash_original_method = "4346EB52B1E97382E292AD2394C76CAA", hash_generated_method = "A44D99F5475949B606EDAC53A6FBC090")
     public int getHour() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_313134324 = getTaintInt();
@@ -268,6 +271,7 @@ public class SIPDate implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.257 -0400", hash_original_method = "ADC91C6D58A75EA1079C93B22A777A18", hash_generated_method = "7B6207185F206F2A483C2C651DF68753")
     public int getMinute() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1078913124 = getTaintInt();
@@ -277,6 +281,7 @@ public class SIPDate implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.257 -0400", hash_original_method = "033202145FC9480CAEE9B3FD508F85AB", hash_generated_method = "D4C248A6DDBFAA79763D73D6F4D8133B")
     public int getSecond() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1949141908 = getTaintInt();
@@ -505,6 +510,7 @@ public class SIPDate implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.260 -0400", hash_original_method = "685E9F12E07BC44AEFABA3E87A7BA88C", hash_generated_method = "85DFA1172949BCD7CDF5B1157E0F8A2C")
     public int getYear() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_140171448 = getTaintInt();

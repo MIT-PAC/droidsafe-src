@@ -27,6 +27,7 @@ public class HttpHostConnectException extends ConnectException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.054 -0400", hash_original_method = "6529E0B2BF5C95A4487D992F02B2AAA6", hash_generated_method = "1A816B4CB0CD5515B2A807F8F24ADC3A")
     public HttpHost getHost() {
         HttpHost varB4EAC82CA7396A68D541C85D26508E83_227660756 = null; 

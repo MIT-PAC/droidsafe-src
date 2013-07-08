@@ -72,6 +72,7 @@ public class ProtectionDomain {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.445 -0400", hash_original_method = "15107D2478EB5CA607140B3E4F96BD4D", hash_generated_method = "839545923C1D074F3C222B36EE3EC448")
     public boolean implies(Permission permission) {
         addTaint(permission.getTaint());

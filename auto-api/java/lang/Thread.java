@@ -315,6 +315,7 @@ public class Thread implements Runnable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.143 -0400", hash_original_method = "D65A36EB6AF7077545898D8D2274216D", hash_generated_method = "976DC6D5BAE6E71D4FB2FA40794E3843")
     public ClassLoader getContextClassLoader() {
         ClassLoader varB4EAC82CA7396A68D541C85D26508E83_1395625169 = null; 
@@ -326,11 +327,13 @@ public class Thread implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static UncaughtExceptionHandler getDefaultUncaughtExceptionHandler() {
         return defaultUncaughtHandler;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.144 -0400", hash_original_method = "AC34FCBA00CFFBED3290FFC752B7D422", hash_generated_method = "49CD63A326FDE475FD557D92E1AA1D41")
     public long getId() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_809548834 = getTaintLong();
@@ -445,6 +448,7 @@ public class Thread implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.146 -0400", hash_original_method = "5CF1F81DC91E6D2E78C73116F661ED4D", hash_generated_method = "191F5FADBBAC366867BBD1E981EFB8F7")
     public UncaughtExceptionHandler getUncaughtExceptionHandler() {
         UncaughtExceptionHandler varB4EAC82CA7396A68D541C85D26508E83_362558682 = null; 
@@ -630,6 +634,7 @@ public class Thread implements Runnable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.149 -0400", hash_original_method = "93EFC46ED375C1C54A6285C5204CF25C", hash_generated_method = "3571A2A1E3CF85993D3F0CF0F870AA51")
     public void setContextClassLoader(ClassLoader cl) {
         contextClassLoader = cl;
@@ -656,6 +661,7 @@ public class Thread implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setDefaultUncaughtExceptionHandler(UncaughtExceptionHandler handler) {
         Thread.defaultUncaughtHandler = handler;
     }
@@ -757,6 +763,7 @@ public class Thread implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.152 -0400", hash_original_method = "D58D250923779D2B2016D80FC2081BA1", hash_generated_method = "32052A607317B2CF4FD95D37AFA858D8")
     public void setUncaughtExceptionHandler(UncaughtExceptionHandler handler) {
         uncaughtHandler = handler;

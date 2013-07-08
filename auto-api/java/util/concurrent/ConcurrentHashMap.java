@@ -98,6 +98,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int hash(int h) {
         h += (h <<  15) ^ 0xffffcd7d;
         h ^= (h >>> 10);
@@ -120,6 +121,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.276 -0400", hash_original_method = "1D5F6259D73E7678D3D06BFBE271A26B", hash_generated_method = "4E8E64DE66B0518B60C772560E52D190")
     public boolean isEmpty() {
         final Segment<K,V>[] segments = this.segments;

@@ -20,6 +20,7 @@ public class AppWidgetProvider extends BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.965 -0400", hash_original_method = "8B20EBF206EE708E791CD471F78F9BAE", hash_generated_method = "71ECAE668D3FE6847867371C513A9E71")
     public void onReceive(Context context, Intent intent) {
         
@@ -68,6 +69,7 @@ public class AppWidgetProvider extends BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.966 -0400", hash_original_method = "A2E84788BA84189ABE3F219EBDAC629C", hash_generated_method = "CC9D7FBF747BA60370E681863405F31C")
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         
@@ -78,6 +80,7 @@ public class AppWidgetProvider extends BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.967 -0400", hash_original_method = "0AB37BC4D28009D0D79CD2D0DC9B7953", hash_generated_method = "74FB7EC64DEB1852B45907EF66A2EA22")
     public void onDeleted(Context context, int[] appWidgetIds) {
         
@@ -87,6 +90,7 @@ public class AppWidgetProvider extends BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.967 -0400", hash_original_method = "A066DA52DDA31A9511487AE3845ED018", hash_generated_method = "0B915167097F155742FBB7F56749B7EC")
     public void onEnabled(Context context) {
         
@@ -95,6 +99,7 @@ public class AppWidgetProvider extends BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.968 -0400", hash_original_method = "D927F2373817E24DFC9B3FEAB7D30B31", hash_generated_method = "BBBA003B1A0C8AA6F2BE99EB08B19D4C")
     public void onDisabled(Context context) {
         

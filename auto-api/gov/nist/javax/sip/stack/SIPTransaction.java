@@ -195,6 +195,7 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.246 -0400", hash_original_method = "F0D7866FE2BBCD680DCAF285C3141724", hash_generated_method = "673E640403866E34F38453D9F99CE685")
     public String getBranchId() {
         String varB4EAC82CA7396A68D541C85D26508E83_488245193 = null; 
@@ -251,6 +252,7 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.248 -0400", hash_original_method = "E55FA929D44B8592CC293995403E5C80", hash_generated_method = "BBAC27CD1F2417600427FEFC52BECE7D")
     public SIPRequest getOriginalRequest() {
         SIPRequest varB4EAC82CA7396A68D541C85D26508E83_881085297 = null; 
@@ -262,6 +264,7 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.249 -0400", hash_original_method = "77DF64C3C6C54874FB57EB6F51047938", hash_generated_method = "AE8974DC82A1D2BDB105FB18F7F651D7")
     public Request getRequest() {
         Request varB4EAC82CA7396A68D541C85D26508E83_1857789013 = null; 
@@ -303,6 +306,7 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.251 -0400", hash_original_method = "4873376BBCB3E7C4172E860864FE5E6F", hash_generated_method = "33F6D2F6FD8C69D7204514C137578BC8")
     public MessageChannel getMessageChannel() {
         MessageChannel varB4EAC82CA7396A68D541C85D26508E83_597850450 = null; 
@@ -384,6 +388,7 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.256 -0400", hash_original_method = "61525F5D630175E526789474B6CFB85F", hash_generated_method = "6F819ECA79CA2441CF08A4F866168302")
     public TransactionState getState() {
         TransactionState varB4EAC82CA7396A68D541C85D26508E83_1780714913 = null; 
@@ -534,6 +539,7 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.266 -0400", hash_original_method = "28698FFA104E0D8C500A173E95CB7CFA", hash_generated_method = "F9CC1E6B3222D45D071A5570E417A001")
     public SIPTransactionStack getSIPStack() {
         SIPTransactionStack varB4EAC82CA7396A68D541C85D26508E83_343812661 = null; 
@@ -545,6 +551,7 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.267 -0400", hash_original_method = "4D24925E393EE43229BBE6696196C496", hash_generated_method = "483CFA073243580A07911AB9ACC5FD02")
     public String getPeerAddress() {
         String varB4EAC82CA7396A68D541C85D26508E83_1114089147 = null; 
@@ -556,6 +563,7 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.267 -0400", hash_original_method = "A1F90D00B31019C3C4E0EAACEB8565BB", hash_generated_method = "2881828161F4E96B9D48827CCED246C8")
     public int getPeerPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1275115424 = getTaintInt();
@@ -565,6 +573,7 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.267 -0400", hash_original_method = "D72195827AEF451FEF473FAF2B8F43B1", hash_generated_method = "47FE75ED7DC83C214084204D4573A648")
     public int getPeerPacketSourcePort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_724782734 = getTaintInt();
@@ -574,6 +583,7 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.267 -0400", hash_original_method = "46454A41BD800FBE664B92E119C6A2FF", hash_generated_method = "5C6684BA1C14150924EABB6D111CA252")
     public InetAddress getPeerPacketSourceAddress() {
         InetAddress varB4EAC82CA7396A68D541C85D26508E83_533054364 = null; 
@@ -585,6 +595,7 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.268 -0400", hash_original_method = "DE04102C176E73364B597E64B8D5F233", hash_generated_method = "4386A8D82CB9ABFBF92BABD009D1AC80")
     protected InetAddress getPeerInetAddress() {
         InetAddress varB4EAC82CA7396A68D541C85D26508E83_1144970816 = null; 
@@ -596,6 +607,7 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.268 -0400", hash_original_method = "DB79607DA3ACB5FA2D24428DF2713F98", hash_generated_method = "F766454A42457F485EE50260A8B95F72")
     protected String getPeerProtocol() {
         String varB4EAC82CA7396A68D541C85D26508E83_541300750 = null; 
@@ -749,6 +761,7 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.273 -0400", hash_original_method = "1EC803C9686336CE6058D1F41391EBE2", hash_generated_method = "C17E733AB1AF2F72F6407DF5057E2AB8")
     protected boolean isServerTransaction() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1502349818 = getTaintBoolean();
@@ -764,6 +777,7 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     public abstract void setDialog(SIPDialog sipDialog, String dialogId);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.273 -0400", hash_original_method = "A1D654E2B8EB18DBD9E2FBE3DBA84F3D", hash_generated_method = "9EBC3E8060698635A2D731B80457AE8D")
     public int getRetransmitTimer() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2026826566 = getTaintInt();
@@ -785,6 +799,7 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.274 -0400", hash_original_method = "025E14F038A1EDFF743C73F970E03870", hash_generated_method = "DFFC1D6D7BFA6B309BDC4CF2C714839E")
     public SIPResponse getLastResponse() {
         SIPResponse varB4EAC82CA7396A68D541C85D26508E83_1274613207 = null; 
@@ -796,6 +811,7 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.274 -0400", hash_original_method = "260B447AD36FE2CA2411AAAD920B4F1F", hash_generated_method = "0AACE051ED804603D45EDE7A3AED7DBA")
     public Response getResponse() {
         Response varB4EAC82CA7396A68D541C85D26508E83_112874827 = null; 
@@ -807,6 +823,7 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.275 -0400", hash_original_method = "AB08BB44F7439305FB61E3E9EFAC9224", hash_generated_method = "8E1E6A75A6057247266641146835CB29")
     public String getTransactionId() {
         String varB4EAC82CA7396A68D541C85D26508E83_1820090797 = null; 
@@ -991,6 +1008,7 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.279 -0400", hash_original_method = "552E0456C33D24CD63C8EBCDAC1D019B", hash_generated_method = "E17DD994BC845C3BDBBD70ECC432242E")
     public void setApplicationData(Object applicationData) {
         this.applicationData = applicationData;
@@ -999,6 +1017,7 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.280 -0400", hash_original_method = "5F924FC61375970A4DC758380BEBFF0F", hash_generated_method = "25A1D22388F9C95BDF51562E10E9D8D9")
     public Object getApplicationData() {
         Object varB4EAC82CA7396A68D541C85D26508E83_334316144 = null; 
@@ -1152,6 +1171,7 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.287 -0400", hash_original_method = "39E9029186E8CC55AF8CBCC68EB9597C", hash_generated_method = "A2F58E43E2259B7B3A9A7B29314A5400")
     public boolean passToListener() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1951476201 = getTaintBoolean();
@@ -1179,6 +1199,7 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.288 -0400", hash_original_method = "5D50ECFAFAF878A5B29EF8C830BE2C71", hash_generated_method = "91CE07D86FF7120642CFF5CCCB979C0D")
     protected synchronized boolean testAndSetTransactionTerminatedEvent() {
         boolean retval = !this.terminatedEventDelivered;

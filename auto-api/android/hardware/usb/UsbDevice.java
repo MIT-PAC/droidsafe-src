@@ -57,6 +57,7 @@ public class UsbDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.301 -0400", hash_original_method = "271D12AC1725A6D768ED59A731E22C7D", hash_generated_method = "AA54C5CBB579D0B4923B509FC91875CA")
     public String getDeviceName() {
         String varB4EAC82CA7396A68D541C85D26508E83_70879612 = null; 
@@ -79,6 +80,7 @@ public class UsbDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.302 -0400", hash_original_method = "D8945A991BD9144132914298D2B7FC76", hash_generated_method = "3B1DDD75853AEC7269EEA03ABEFAA5F0")
     public int getVendorId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_65908523 = getTaintInt();
@@ -88,6 +90,7 @@ public class UsbDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.303 -0400", hash_original_method = "A32B17A7DCA377FC904869E22B60DAE0", hash_generated_method = "5432E662FCEA6C3E2B74E6212D7E2578")
     public int getProductId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_542604130 = getTaintInt();
@@ -97,6 +100,7 @@ public class UsbDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.304 -0400", hash_original_method = "45BD51C898E5D7F479BD37DC16F7713C", hash_generated_method = "30EE2E4DA60C54E2DEDBE97EB6D4FEFF")
     public int getDeviceClass() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1696742178 = getTaintInt();
@@ -106,6 +110,7 @@ public class UsbDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.305 -0400", hash_original_method = "13162F24DC75BB4BAAF33D909DA8EE5C", hash_generated_method = "C8E19173EDC151E90B6C6A0BE15F3A33")
     public int getDeviceSubclass() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1303085836 = getTaintInt();
@@ -115,6 +120,7 @@ public class UsbDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.305 -0400", hash_original_method = "5B59FED3FAC8826DFB249AE836C6A83B", hash_generated_method = "DE4FC4862581C3F05C62012C29C44B1E")
     public int getDeviceProtocol() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1168074742 = getTaintInt();
@@ -124,6 +130,7 @@ public class UsbDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.306 -0400", hash_original_method = "3245218866A20CE01DF5327E310A1077", hash_generated_method = "3141E714236F0771C3F6750FB75E19D0")
     public int getInterfaceCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_659155172 = getTaintInt();
@@ -133,6 +140,7 @@ public class UsbDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.308 -0400", hash_original_method = "CB4E75DEC838C411BA866F14CD6483BC", hash_generated_method = "53B1C9F6329E2263ADE47F9EB3510BA2")
     public UsbInterface getInterface(int index) {
         UsbInterface varB4EAC82CA7396A68D541C85D26508E83_301246933 = null; 
@@ -200,6 +208,7 @@ public class UsbDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.315 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "F2C64ACC8EB63A56AAC129A37D5EFBD3")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_823831425 = getTaintInt();
@@ -244,11 +253,13 @@ public class UsbDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int native_get_device_id(String name) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String native_get_device_name(int id) {
         	return DSUtils.UNKNOWN_STRING;
     }

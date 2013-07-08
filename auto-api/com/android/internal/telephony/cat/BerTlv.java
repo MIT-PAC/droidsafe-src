@@ -39,6 +39,7 @@ class BerTlv {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.138 -0400", hash_original_method = "F4331D0775C023B121D08D63B25AAACE", hash_generated_method = "8E581A1687D99A048424981FC1F748E6")
     public int getTag() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1674238906 = getTaintInt();

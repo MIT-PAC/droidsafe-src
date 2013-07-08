@@ -55,6 +55,7 @@ public class PAccessNetworkInfo extends ParametersHeader implements PAccessNetwo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.154 -0400", hash_original_method = "7B5E071ADED3A6B6E006FB21C0442CF7", hash_generated_method = "7F9F24D9572C79C5F8106E50DC4B51BF")
     public String getAccessType() {
         String varB4EAC82CA7396A68D541C85D26508E83_547638236 = null; 
@@ -235,6 +236,7 @@ public class PAccessNetworkInfo extends ParametersHeader implements PAccessNetwo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.157 -0400", hash_original_method = "1DDCE9F900020BBCC56ECC227A2A793D", hash_generated_method = "24E45F5260EB6601EDEA17A891033C85")
     public Object getExtensionAccessInfo() {
         Object varB4EAC82CA7396A68D541C85D26508E83_1920499632 = null; 

@@ -322,6 +322,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.571 -0400", hash_original_method = "CC364AFCED646D5BD618C239A0F61C61", hash_generated_method = "FB8F32B7985E2B240502D873FAE13D52")
     private void setBigInt(BigInt bigInt) {
         this.bigInt = bigInt;
@@ -332,6 +333,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.571 -0400", hash_original_method = "DA7CFD2DB9135F0E2C89139BCCCBB12F", hash_generated_method = "0F64427ABCDD686DC8AEFEEE13813050")
     private void setJavaRepresentation(int sign, int numberLength, int[] digits) {
         {
@@ -1408,6 +1410,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int multiplyByInt(int[] res, int[] a, int aSize, int factor) {
         long carry = 0;
         for (int i = 0; i < aSize; i++) {
@@ -1419,6 +1422,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int inplaceAdd(int[] a, int aSize, int addend) {
         long carry = addend & 0xFFFFFFFFL;
         for (int i = 0; (carry != 0) && (i < aSize); i++) {
@@ -1466,6 +1470,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.614 -0400", hash_original_method = "4BA60B28A036933466CC713B9C7854B3", hash_generated_method = "11DCEAD92348CB58EE0C96028BC3BF78")
      int getFirstNonzeroDigit() {
         {

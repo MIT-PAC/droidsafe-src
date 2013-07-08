@@ -74,6 +74,7 @@ class MeasuredText {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static MeasuredText recycle(MeasuredText mt) {
         mt.mText = null;
         if (mt.mLen < 1000) {
@@ -259,6 +260,7 @@ class MeasuredText {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.057 -0400", hash_original_method = "F30A282CEAB73A5948442153B9251096", hash_generated_method = "39CD3EB6B58AD52576AAE4A53CD83DD1")
      int breakText(int start, int limit, boolean forwards, float width) {
         float[] w = mWidths;
@@ -307,6 +309,7 @@ class MeasuredText {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.057 -0400", hash_original_method = "053843F92349BBB89263F41FED96E473", hash_generated_method = "21D0BB6D43BAC3C9BA5E3EBBDA6C0699")
      float measure(int start, int limit) {
         float width = 0;

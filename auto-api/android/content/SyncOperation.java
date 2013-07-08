@@ -255,6 +255,7 @@ public class SyncOperation implements Comparable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.185 -0400", hash_original_method = "94E2F05BFAF6BA397C21B12E8FAD132F", hash_generated_method = "2DE758E30EB4AFD5230C3D5DACA5C027")
     public int compareTo(Object o) {
         SyncOperation other = (SyncOperation)o;

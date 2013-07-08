@@ -68,6 +68,7 @@ public class ContextThemeWrapper extends ContextWrapper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.873 -0400", hash_original_method = "AE4733E1C9FA88CFC00EFC04FF1EA93F", hash_generated_method = "6C955D308137962A04F7AD6468897331")
     @Override
     public int getThemeResId() {

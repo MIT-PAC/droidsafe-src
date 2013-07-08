@@ -105,6 +105,7 @@ class InitManifest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.982 -0400", hash_original_method = "DA9F28DCB522B20E2FDE0CD9A032935D", hash_generated_method = "941AC7091D861D059F66D990B9ECAF34")
      int getPos() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2009535124 = getTaintInt();

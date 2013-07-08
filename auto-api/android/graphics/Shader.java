@@ -78,10 +78,12 @@ public class Shader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeDestructor(int native_shader, int native_skiaShader) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeSetLocalMatrix(int native_shader,
             int native_skiaShader, int matrix_instance) {
     }

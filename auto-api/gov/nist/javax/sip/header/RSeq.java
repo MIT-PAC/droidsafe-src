@@ -21,6 +21,7 @@ public class RSeq extends SIPHeader implements javax.sip.header.RSeqHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.972 -0400", hash_original_method = "39133A5DFA90BF891F6ADEE458981A87", hash_generated_method = "3B4146A60E2D91B5B119A4537D8E768B")
     public int getSequenceNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1238203743 = getTaintInt();
@@ -42,6 +43,7 @@ public class RSeq extends SIPHeader implements javax.sip.header.RSeqHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.973 -0400", hash_original_method = "5EE204E642716446A9A561BAE9DA4271", hash_generated_method = "103A91A875380172E1BA39B406F4FD37")
     public long getSeqNumber() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_312397779 = getTaintLong();

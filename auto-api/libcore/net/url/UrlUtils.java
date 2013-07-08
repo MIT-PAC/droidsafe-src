@@ -81,6 +81,7 @@ public final class UrlUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isValidSchemeChar(int index, char c) {
         if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
             return true;

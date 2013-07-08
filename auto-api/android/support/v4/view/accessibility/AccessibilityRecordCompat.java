@@ -26,6 +26,7 @@ public class AccessibilityRecordCompat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.964 -0400", hash_original_method = "2C39E0AE7A2BCE05DB00110D59202E17", hash_generated_method = "466B8726B2360733261F674326169412")
     public Object getImpl() {
         Object varB4EAC82CA7396A68D541C85D26508E83_1052631907 = null; 

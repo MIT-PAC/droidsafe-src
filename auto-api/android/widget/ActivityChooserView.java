@@ -253,6 +253,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.559 -0400", hash_original_method = "4EB99ACA5BA34A284707803087697EF8", hash_generated_method = "BB5F635A8854257C75F3E39227EB8F20")
     public void setProvider(ActionProvider provider) {
         mProvider = provider;
@@ -494,6 +495,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.563 -0400", hash_original_method = "3D692CC2129791FB098BE485AC739689", hash_generated_method = "AFEDE7910A1B37993DCCD6535D2798FB")
     public void setOnDismissListener(PopupWindow.OnDismissListener listener) {
         mOnDismissListener = listener;
@@ -502,6 +504,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.563 -0400", hash_original_method = "861F24EC23ECA4CA4EF104A377B2D34D", hash_generated_method = "706332B7EEAD1AE51173D975872ABB45")
     public void setInitialActivityCount(int itemCount) {
         mInitialActivityCount = itemCount;
@@ -510,6 +513,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.564 -0400", hash_original_method = "A16FFC5DB1EC302B931A83E3D5524FB1", hash_generated_method = "3AA11D7A925E1612E7FB383801FF727D")
     public void setDefaultActionButtonContentDescription(int resourceId) {
         mDefaultActionButtonContentDescription = resourceId;

@@ -157,6 +157,7 @@ public class X509V2AttributeCertificate implements X509AttributeCertificate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.592 -0400", hash_original_method = "CB2A2B3C356F1AD47950BB2253ACA4BD", hash_generated_method = "67E5703500D61F17BF1F8BB90A1A7129")
     public Date getNotBefore() {
         Date varB4EAC82CA7396A68D541C85D26508E83_1143907297 = null; 
@@ -168,6 +169,7 @@ public class X509V2AttributeCertificate implements X509AttributeCertificate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.593 -0400", hash_original_method = "9EADF7E1E76408811693CE379F621727", hash_generated_method = "3C346232A47A5BC1F630DA4217F5050B")
     public Date getNotAfter() {
         Date varB4EAC82CA7396A68D541C85D26508E83_1253085301 = null; 

@@ -183,6 +183,7 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.788 -0400", hash_original_method = "AB3C62FD6F005880E77BC1927A87EEED", hash_generated_method = "ACD3383991C1CC3DA428CC1798C24418")
     private SurfaceView getSurfaceView() {
         SurfaceView varB4EAC82CA7396A68D541C85D26508E83_2114379764 = null; 
@@ -311,6 +312,7 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.790 -0400", hash_original_method = "D38369E141B1495D009E7319C4B9F69F", hash_generated_method = "6A82EF148C5D7DF10405FF81B635B2B9")
     public boolean fullScreenExited() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2147166453 = getTaintBoolean();
@@ -362,6 +364,7 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.791 -0400", hash_original_method = "2F3070B25A278338AEEAB48124299E28", hash_generated_method = "A24496F33B20F779302E0DDE618B5C7A")
     public boolean isFullScreenMode() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_369059238 = getTaintBoolean();
@@ -371,6 +374,7 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.792 -0400", hash_original_method = "1DF27838EDEF437B2494B2DF149883EF", hash_generated_method = "062BA74297B458737A666676E9AA1951")
     @Override
     public boolean canPause() {
@@ -381,6 +385,7 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.792 -0400", hash_original_method = "B916F92CBCCEC1C42038C36AAFFAA2A8", hash_generated_method = "AC11E4694F36757C4A130FDB2833C831")
     @Override
     public boolean canSeekBackward() {
@@ -391,6 +396,7 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.792 -0400", hash_original_method = "7621B01EBEE0D0CEF34FD8A655C3B087", hash_generated_method = "89AE9DD666F958AD6E9F8021238876A3")
     @Override
     public boolean canSeekForward() {
@@ -401,6 +407,7 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.792 -0400", hash_original_method = "5712A5AFCA7A8FC23B7D8D35D8488604", hash_generated_method = "563616BCCE4F9A629DF25DCE8F7A6767")
     @Override
     public int getBufferPercentage() {

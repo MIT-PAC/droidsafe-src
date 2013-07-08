@@ -18,6 +18,7 @@ public class ClosedInputStream extends InputStream {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.102 -0400", hash_original_method = "7FDC5668BF104D2F1DB6279D6F3A1179", hash_generated_method = "1CC2A3BD548C77AE6BD544AEF075BA76")
     @Override
     public int read() {

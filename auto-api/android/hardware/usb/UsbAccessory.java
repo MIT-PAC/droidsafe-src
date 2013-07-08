@@ -69,6 +69,7 @@ public class UsbAccessory implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.255 -0400", hash_original_method = "EECC97019E28DA07B84EC558152DCFEE", hash_generated_method = "27EEC2DD3F9931D7B89FB04AA5C19BA7")
     public String getManufacturer() {
         String varB4EAC82CA7396A68D541C85D26508E83_703406240 = null; 
@@ -80,6 +81,7 @@ public class UsbAccessory implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.255 -0400", hash_original_method = "375C14568C2F8D8E7E614D0D011D7B99", hash_generated_method = "1D71F2F4093B3891EA13706E6E4AA43E")
     public String getModel() {
         String varB4EAC82CA7396A68D541C85D26508E83_502716840 = null; 
@@ -91,6 +93,7 @@ public class UsbAccessory implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.256 -0400", hash_original_method = "177DD147D2F75620FD2B154278EC57FA", hash_generated_method = "A67B34F9AFAC0DB30E3AD3263518DDFB")
     public String getDescription() {
         String varB4EAC82CA7396A68D541C85D26508E83_129383620 = null; 
@@ -102,6 +105,7 @@ public class UsbAccessory implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.257 -0400", hash_original_method = "F243A33CF0A3D0D255225863927F4698", hash_generated_method = "D94B213A03EC7D485B3D492A115C8578")
     public String getVersion() {
         String varB4EAC82CA7396A68D541C85D26508E83_161849664 = null; 
@@ -113,6 +117,7 @@ public class UsbAccessory implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.258 -0400", hash_original_method = "8CFE2355A63AF986F8238800728B9A56", hash_generated_method = "F4E80D0E14424F3BBD622DF54D1C89E9")
     public String getUri() {
         String varB4EAC82CA7396A68D541C85D26508E83_461496234 = null; 
@@ -124,6 +129,7 @@ public class UsbAccessory implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.258 -0400", hash_original_method = "E1067F8A99D04B6FDB11E19036F1F2CD", hash_generated_method = "6E371ACE3495C63B5198CF3556E6976E")
     public String getSerial() {
         String varB4EAC82CA7396A68D541C85D26508E83_1462273917 = null; 
@@ -217,6 +223,7 @@ public class UsbAccessory implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.260 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8C8E02531BFB6B9456652C2392A9A6DA")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1516959001 = getTaintInt();

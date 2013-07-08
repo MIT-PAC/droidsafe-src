@@ -44,6 +44,7 @@ public class PathPermission extends PatternMatcher {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.810 -0400", hash_original_method = "5C94FD95ADD3C0054247C1BF6F500E4F", hash_generated_method = "0DAF6CCE6B23C8899D3B527A176C6422")
     public String getReadPermission() {
         String varB4EAC82CA7396A68D541C85D26508E83_14313277 = null; 
@@ -55,6 +56,7 @@ public class PathPermission extends PatternMatcher {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.811 -0400", hash_original_method = "7A0A16A9FA1EB10AD9D087C65A3EFFB1", hash_generated_method = "E7A20165DD87389976C1D8557F80481C")
     public String getWritePermission() {
         String varB4EAC82CA7396A68D541C85D26508E83_1857978498 = null; 

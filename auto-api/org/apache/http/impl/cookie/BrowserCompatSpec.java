@@ -169,6 +169,7 @@ public class BrowserCompatSpec extends CookieSpecBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.077 -0400", hash_original_method = "F5A7F7B6DBF07E93DFA757749FB9F06B", hash_generated_method = "DA80455CF5CA2276EC5C6FF658450FD6")
     public int getVersion() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_969872118 = getTaintInt();
@@ -178,6 +179,7 @@ public class BrowserCompatSpec extends CookieSpecBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.078 -0400", hash_original_method = "C1FA79C2C3115B4C8F8CB20B10CB9417", hash_generated_method = "0A9918342E3260ACF263EEE80A56DFA8")
     public Header getVersionHeader() {
         Header varB4EAC82CA7396A68D541C85D26508E83_969276270 = null; 

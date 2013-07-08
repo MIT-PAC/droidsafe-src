@@ -24,6 +24,7 @@ public class SSLSessionBindingEvent extends EventObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.699 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "1454BCD15C32DC0C3B23AC503BC194F5")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1363530859 = null; 
@@ -35,6 +36,7 @@ public class SSLSessionBindingEvent extends EventObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.699 -0400", hash_original_method = "C5768F99D51ECCDFF4B75CB996C2544E", hash_generated_method = "2468DEF27CF7689803893F4C4ABD1653")
     public SSLSession getSession() {
         SSLSession varB4EAC82CA7396A68D541C85D26508E83_1433650999 = null; 

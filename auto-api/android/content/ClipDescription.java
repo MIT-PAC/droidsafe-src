@@ -76,6 +76,7 @@ public class ClipDescription implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.119 -0400", hash_original_method = "4A1E1E1996A16BAAC783C4D4608DA412", hash_generated_method = "2D36F0FBBF2B2F56628AB318C3FF8CA7")
     public CharSequence getLabel() {
         CharSequence varB4EAC82CA7396A68D541C85D26508E83_1280694761 = null; 
@@ -168,6 +169,7 @@ public class ClipDescription implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.122 -0400", hash_original_method = "B31C73D49DA2B2DFF06E53A9680B864B", hash_generated_method = "0ADD4616A60C4A49D71519A2C186215F")
     public int getMimeTypeCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_716822925 = getTaintInt();
@@ -177,6 +179,7 @@ public class ClipDescription implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.122 -0400", hash_original_method = "764DD8C2717756748E8339CB8965B38B", hash_generated_method = "BFFD9EA868A1092B09CBE00BDA9CAA4C")
     public String getMimeType(int index) {
         String varB4EAC82CA7396A68D541C85D26508E83_583421493 = null; 
@@ -221,6 +224,7 @@ public class ClipDescription implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.123 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "15C0CC6A5D6D70AF00E1FA45ED38041A")
     @Override
     public int describeContents() {

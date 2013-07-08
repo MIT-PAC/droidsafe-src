@@ -159,6 +159,7 @@ public class SparseIntArray implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.669 -0400", hash_original_method = "9550C69BAA91C5298BA75D226127D5FF", hash_generated_method = "522760F3AE7E4FE6CACCD5A66BAC8157")
     public int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723260385 = getTaintInt();
@@ -168,6 +169,7 @@ public class SparseIntArray implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.670 -0400", hash_original_method = "A3423B1919CBB5E5DDAE8E35A522AED2", hash_generated_method = "C7C2882C1BCB17253E49957C385547BF")
     public int keyAt(int index) {
         addTaint(index);
@@ -178,6 +180,7 @@ public class SparseIntArray implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.671 -0400", hash_original_method = "C4C41F7CADA2DF58870780D8F849030A", hash_generated_method = "29786E1EECD83BA5D2934E6164E6C3B3")
     public int valueAt(int index) {
         addTaint(index);
@@ -200,6 +203,7 @@ public class SparseIntArray implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.672 -0400", hash_original_method = "951F96E1F188074D8F08952A6EB559DF", hash_generated_method = "32C6BA84C0B7A6707D5A142129CBD67B")
     public int indexOfValue(int value) {
         {
@@ -216,6 +220,7 @@ public class SparseIntArray implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.673 -0400", hash_original_method = "78B640B3511AD026106C387D36058FFC", hash_generated_method = "2F55AFCAF967A1646FEBDAF6AC2C8455")
     public void clear() {
         mSize = 0;
@@ -264,6 +269,7 @@ public class SparseIntArray implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int binarySearch(int[] a, int start, int len, int key) {
         int high = start + len, low = start - 1, guess;
         while (high - low > 1) {

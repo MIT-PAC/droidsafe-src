@@ -17,101 +17,121 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double abs(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float abs(float f) {
         return DSUtils.UNKNOWN_FLOAT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int abs(int i) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long abs(long l) {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double acos(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double asin(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double atan(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double atan2(double y, double x) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double cbrt(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double ceil(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double cos(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double cosh(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double exp(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double expm1(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double floor(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double hypot(double x, double y) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double IEEEremainder(double x, double y) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double log(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double log10(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double log1p(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
@@ -153,11 +173,13 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int max(int i1, int i2) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long max(long l1, long l2) {
         return l1 > l2 ? l1 : l2;
     }
@@ -199,21 +221,25 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int min(int i1, int i2) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long min(long l1, long l2) {
         return l1 < l2 ? l1 : l2;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double pow(double x, double y) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double rint(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
@@ -267,26 +293,31 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double sin(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double sinh(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double sqrt(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double tan(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double tanh(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
@@ -301,11 +332,13 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double toRadians(double angdeg) {
         return angdeg / 180d * PI;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double toDegrees(double angrad) {
         return angrad * 180d / PI;
     }
@@ -323,6 +356,7 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static double nextafter(double x, double y) {
         return DSUtils.UNKNOWN_DOUBLE;
     }

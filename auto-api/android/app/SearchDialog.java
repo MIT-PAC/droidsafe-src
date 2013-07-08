@@ -756,6 +756,7 @@ public class SearchDialog extends Dialog {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.089 -0400", hash_original_method = "BC4CCAAD8BAD8DFDC06067A6480767AA", hash_generated_method = "C653AA31586676AF5C9F3A77ABDFB483")
     private void launchIntent(Intent intent) {
         Log.d(LOG_TAG, "launching " + intent);
@@ -792,6 +793,7 @@ public class SearchDialog extends Dialog {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.091 -0400", hash_original_method = "7931502AE551A2F220A0C85C1181EB09", hash_generated_method = "2B2EAD44BB1540733EFEA0F87CA52E5E")
     private Intent createIntent(String action, Uri data, String extraData, String query,
             int actionKey, String actionMsg) {

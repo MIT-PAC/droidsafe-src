@@ -64,6 +64,7 @@ public abstract class SelectorProvider {
     public abstract SocketChannel openSocketChannel() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.799 -0400", hash_original_method = "1567929400994F6BBA42155A37789D93", hash_generated_method = "22004705B61A8A3BCD9E82F94AD21AC5")
     public Channel inheritedChannel() throws IOException {
         Channel varB4EAC82CA7396A68D541C85D26508E83_2004112928 = null; 

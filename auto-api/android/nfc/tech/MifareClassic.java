@@ -116,6 +116,7 @@ public final class MifareClassic extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.341 -0400", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "428D722F540EB6D62EC71907E3A5C074")
     public int getType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2098602812 = getTaintInt();
@@ -125,6 +126,7 @@ public final class MifareClassic extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.341 -0400", hash_original_method = "2098B918320D3D5229820CAB47C60E59", hash_generated_method = "B6E6EA854765881298A9A4310173B0E8")
     public int getSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_635843969 = getTaintInt();
@@ -134,6 +136,7 @@ public final class MifareClassic extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.341 -0400", hash_original_method = "571F1D61EE68738D4B1083BD48C02876", hash_generated_method = "044028EAAA3A88994F3C90E8112E4685")
     public boolean isEmulated() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2032536494 = getTaintBoolean();
@@ -143,6 +146,7 @@ public final class MifareClassic extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.342 -0400", hash_original_method = "4AAA3C3D329C939FDD63EF1F58378EDA", hash_generated_method = "6CE7E55379B851FC051EED51EACCF563")
     public int getSectorCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_512979136 = getTaintInt();
@@ -163,6 +167,7 @@ public final class MifareClassic extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.343 -0400", hash_original_method = "94025DFC316C8F4CE80BFCF15B00E224", hash_generated_method = "5288672541AABD280DF9131C26A2564A")
     public int getBlockCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1131783781 = getTaintInt();
@@ -206,6 +211,7 @@ public final class MifareClassic extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.344 -0400", hash_original_method = "9D4F0360D229F71B4914DA14E59850F0", hash_generated_method = "8853184C0DE457395C306A33AA8DF5D0")
     public int sectorToBlock(int sectorIndex) {
         addTaint(sectorIndex);

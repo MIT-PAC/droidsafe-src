@@ -194,6 +194,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Intent createChooser(Intent target, CharSequence title) {
         Intent intent = new Intent(ACTION_CHOOSER);
         intent.putExtra(EXTRA_INTENT, target);
@@ -217,6 +218,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.914 -0400", hash_original_method = "321DCA737B51074721765C9DBE3DB18C", hash_generated_method = "2EFFF68FD1926CAF688CD8AD12CAF657")
     public Intent cloneFilter() {
         Intent varB4EAC82CA7396A68D541C85D26508E83_1724057464 = null; 
@@ -228,6 +230,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Intent makeMainActivity(ComponentName mainActivity) {
         Intent intent = new Intent(ACTION_MAIN);
         intent.setComponent(mainActivity);
@@ -236,6 +239,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Intent makeMainSelectorActivity(String selectorAction,
             String selectorCategory) {
         Intent intent = new Intent(ACTION_MAIN);
@@ -248,6 +252,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Intent makeRestartActivityTask(ComponentName mainActivity) {
         Intent intent = makeMainActivity(mainActivity);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK
@@ -256,12 +261,14 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Deprecated
     public static Intent getIntent(String uri) throws URISyntaxException {
         return parseUri(uri, 0);
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Intent parseUri(String uri, int flags) throws URISyntaxException {
         int i = 0;
         try {
@@ -359,6 +366,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Intent getIntentOld(String uri) throws URISyntaxException {
         Intent intent;
         int i = uri.lastIndexOf('#');
@@ -504,6 +512,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.917 -0400", hash_original_method = "E338941BA5F359CEDBE88CD11D2A1B67", hash_generated_method = "1CB3BB6FAC571F8B14E92F023C330629")
     public Uri getData() {
         Uri varB4EAC82CA7396A68D541C85D26508E83_2008543362 = null; 
@@ -663,6 +672,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.927 -0400", hash_original_method = "0EFF867FD71A8B842E16179807F3AE79", hash_generated_method = "C6D5ECAC4E319C95F4409EF9B56E6202")
     public Intent getSelector() {
         Intent varB4EAC82CA7396A68D541C85D26508E83_134217660 = null; 
@@ -674,6 +684,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.928 -0400", hash_original_method = "C5389CB5192CD8E55615D6E62222251D", hash_generated_method = "F0FBA8D75C22CD2CFA1EDB76BE433A36")
     public void setExtrasClassLoader(ClassLoader loader) {
         {
@@ -1193,6 +1204,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.960 -0400", hash_original_method = "CE8F8E5E4A30C515D6BD9049A49703B9", hash_generated_method = "46C8BAAB1336CD34B155646AD71372EE")
     public int getFlags() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_399476173 = getTaintInt();
@@ -1202,6 +1214,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.960 -0400", hash_original_method = "35A271981CF0FB3B138FC227A1ADE9BA", hash_generated_method = "AA57CB82293CA9425223BBD37AA7B252")
     public boolean isExcludingStopped() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1333929680 = getTaintBoolean();
@@ -1236,6 +1249,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.964 -0400", hash_original_method = "418D2917B5B7B0B035ED428CB7C119CA", hash_generated_method = "520D9F7DC6697D3B7B7B2B0F766FC134")
     public Rect getSourceBounds() {
         Rect varB4EAC82CA7396A68D541C85D26508E83_1040052513 = null; 
@@ -1351,6 +1365,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.968 -0400", hash_original_method = "7ABFC734F037DFB16AA9737CCDEC3D90", hash_generated_method = "E1CE6053E4529A7B9D303BF989173144")
     public Intent setData(Uri data) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_223283251 = null; 
@@ -1398,6 +1413,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.972 -0400", hash_original_method = "0929EFE348972B36CEEED1BD1629D6D4", hash_generated_method = "56D1ECCA2B82AD9824BBB416E1C9D149")
     public Intent addCategory(String category) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_201343313 = null; 
@@ -1441,6 +1457,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.975 -0400", hash_original_method = "4143B41199E8262105CB671C15097E99", hash_generated_method = "31EE1BE2C00C21E200E24BA4C19E37DA")
     public void setSelector(Intent selector) {
         {
@@ -1490,6 +1507,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.977 -0400", hash_original_method = "983951350B18B30CD357EFC4A5F8C533", hash_generated_method = "652159FB4F6793775D472347E0805568")
     public Intent putExtra(String name, byte value) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_1007632258 = null; 
@@ -1511,6 +1529,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.978 -0400", hash_original_method = "44F743D0FCF3A3B09735F92996DFB8B8", hash_generated_method = "AFC20DBCF8E3EDF9D511940D047E9A36")
     public Intent putExtra(String name, char value) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_968201221 = null; 
@@ -1532,6 +1551,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.978 -0400", hash_original_method = "D504428E6A64263CB337167E8E11D24B", hash_generated_method = "CB15DD4066D2A267139C64EF38D90F16")
     public Intent putExtra(String name, short value) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_2015514819 = null; 
@@ -1553,6 +1573,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.979 -0400", hash_original_method = "0F8D3938F71F1CBC0AF93312AEF5DBAF", hash_generated_method = "935B2DA9D0CEEA01E0FDE2FEE45966B0")
     public Intent putExtra(String name, int value) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_1857485417 = null; 
@@ -1574,6 +1595,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.980 -0400", hash_original_method = "210CE6920B09DE82954A1910A2E05BDA", hash_generated_method = "44576000BA8CF21873BBDDA36274DA4E")
     public Intent putExtra(String name, long value) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_2120741521 = null; 
@@ -1595,6 +1617,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.981 -0400", hash_original_method = "5563D3D5FF8C4FA36F1584B48F1347B6", hash_generated_method = "5B594417892A07C3F23D81B56E8248C2")
     public Intent putExtra(String name, float value) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_758885438 = null; 
@@ -1616,6 +1639,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.983 -0400", hash_original_method = "FDAB0726590DA4887C7F048C162A9588", hash_generated_method = "D1EC46C230E2D800C572BC79FB3FAA72")
     public Intent putExtra(String name, double value) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_1288863333 = null; 
@@ -1637,6 +1661,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.986 -0400", hash_original_method = "FFA94FE476B4FC82FDFAB8191F06F76A", hash_generated_method = "0403AC070AF00FD236FD793CFA8CE141")
     public Intent putExtra(String name, String value) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_1615684069 = null; 
@@ -1658,6 +1683,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.987 -0400", hash_original_method = "C3AAC0183A1B956AD55E80A8556AFB71", hash_generated_method = "E6957B3E72DAB53EF46C9ECEDE6221CE")
     public Intent putExtra(String name, CharSequence value) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_2145633185 = null; 
@@ -1679,6 +1705,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.988 -0400", hash_original_method = "49EBB52F87B2F24E715C34795BBE3213", hash_generated_method = "881F33EB4A467A325B744DBC9CB40AED")
     public Intent putExtra(String name, Parcelable value) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_758787134 = null; 
@@ -1700,6 +1727,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.989 -0400", hash_original_method = "478D5F3649CF3C1019BEE6D895BDE15B", hash_generated_method = "D166A830E4808BF688D7CE58A8E724CB")
     public Intent putExtra(String name, Parcelable[] value) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_1894068227 = null; 
@@ -1809,6 +1837,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.992 -0400", hash_original_method = "050AC720F09B8AB16CBB253B94EE49E6", hash_generated_method = "1028730325D9B9FB334E384D93795FEA")
     public Intent putExtra(String name, Serializable value) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_1847964338 = null; 
@@ -1830,6 +1859,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.993 -0400", hash_original_method = "6C30326EEBD8635124BFC9218A6B6422", hash_generated_method = "53EEE78E5095C40B4C34EF8BE723A6B9")
     public Intent putExtra(String name, boolean[] value) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_1017886646 = null; 
@@ -1851,6 +1881,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.993 -0400", hash_original_method = "4D4788E50F7779B1D72BD45B4E76C775", hash_generated_method = "C3048186858B6905BFCC2B768824342D")
     public Intent putExtra(String name, byte[] value) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_670912891 = null; 
@@ -1872,6 +1903,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.994 -0400", hash_original_method = "521E65BC95668B6A66CE17103975D2B1", hash_generated_method = "C482D89E0BF7D0A4128B345B7073AFEE")
     public Intent putExtra(String name, short[] value) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_1263146297 = null; 
@@ -1893,6 +1925,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.995 -0400", hash_original_method = "CEC6E945D8554F36BF71D2D38B61B7EF", hash_generated_method = "3EFAD86280CA4467EEF2EF37184EB904")
     public Intent putExtra(String name, char[] value) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_1224866453 = null; 
@@ -1914,6 +1947,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.997 -0400", hash_original_method = "AD8C8F2DD7A3862E32E54CE0FBFF67CE", hash_generated_method = "09B99DF1650154C49E3D5E4185695394")
     public Intent putExtra(String name, int[] value) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_563521141 = null; 
@@ -1935,6 +1969,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.999 -0400", hash_original_method = "EEA209751D515DE89BAC56042276C483", hash_generated_method = "9584C9172604F70F0477F0214B328D59")
     public Intent putExtra(String name, long[] value) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_212518408 = null; 
@@ -1956,6 +1991,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.001 -0400", hash_original_method = "F6CA728A57FEA4C77AF7294872C7D495", hash_generated_method = "D710ADCE404DC658E7A2E8EC0D765B85")
     public Intent putExtra(String name, float[] value) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_1490070150 = null; 
@@ -1977,6 +2013,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.002 -0400", hash_original_method = "3F155E9B232579FD3DCD2D3FAECEA79F", hash_generated_method = "8233D4542C5E5A6C015FA61FDDB292C3")
     public Intent putExtra(String name, double[] value) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_1881936045 = null; 
@@ -1998,6 +2035,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.002 -0400", hash_original_method = "4105C6229BFDC8C2B450D57FAD8A78CA", hash_generated_method = "21D2D89F1A1AC30D3EB0893A6AF14957")
     public Intent putExtra(String name, String[] value) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_922856813 = null; 
@@ -2019,6 +2057,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.004 -0400", hash_original_method = "5B5979B9E2BB6EA8D0974FC96788F02A", hash_generated_method = "2EE9FE5B6A97C838C08136FFB90D686A")
     public Intent putExtra(String name, CharSequence[] value) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_70972303 = null; 
@@ -2040,6 +2079,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.006 -0400", hash_original_method = "79076492A33BAA4B69A022CE305E32E8", hash_generated_method = "4074038CAC32B23A2B5202A48F3EBFD6")
     public Intent putExtra(String name, Bundle value) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_497646936 = null; 
@@ -2061,6 +2101,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.008 -0400", hash_original_method = "1AE089536D0C6059F1731DCA673BC867", hash_generated_method = "160B80B26BF5DC98BC388CC14663A07B")
     @Deprecated
     public Intent putExtra(String name, IBinder value) {
@@ -2083,6 +2124,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.009 -0400", hash_original_method = "49B5D5019DC4C58D3432134ADBF206CE", hash_generated_method = "E29788E6410B49C0D880CB023FF846D7")
     public Intent putExtras(Intent src) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_1883907065 = null; 
@@ -2109,6 +2151,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.011 -0400", hash_original_method = "300503D60C48D249178D35D7CDB92339", hash_generated_method = "410168AE855D3C83BB129F4EA4A9D337")
     public Intent putExtras(Bundle extras) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_1133297996 = null; 
@@ -2129,6 +2172,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.012 -0400", hash_original_method = "9273ED8AEDE591E5D2100B41909C8A11", hash_generated_method = "097E0FC32AAAD24C8196CF8A7F3AE163")
     public Intent replaceExtras(Intent src) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_235965387 = null; 
@@ -2142,6 +2186,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.013 -0400", hash_original_method = "CBF42E478CC456FFD10D6777F319F0BD", hash_generated_method = "9E57FC7FEFB9D59B7919B5A9E82DB428")
     public Intent replaceExtras(Bundle extras) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_1679824396 = null; 
@@ -2178,6 +2223,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.017 -0400", hash_original_method = "240F6D2BBC198957F28DF199FF71FA51", hash_generated_method = "53B1EE258CA553025B8FF4809A7E9F42")
     public Intent setFlags(int flags) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_1215452688 = null; 
@@ -2206,7 +2252,7 @@ public class Intent implements Parcelable, Cloneable {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.019 -0400", hash_original_method = "200C4521B9AF8FCBBA6D2C276396E1AF", hash_generated_method = "E442E84E4EDAD23CB858F66E9C4E019D")
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     public Intent setPackage(String packageName) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_239156127 = null; 
         {
@@ -2228,7 +2274,7 @@ public class Intent implements Parcelable, Cloneable {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.020 -0400", hash_original_method = "36A7CA099992FC1299C683CE16869B23", hash_generated_method = "9AD604C5230AB1B98A30C8238D34C8DC")
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     public Intent setComponent(ComponentName component) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_1876137013 = null; 
         mComponent = component;
@@ -2241,6 +2287,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.020 -0400", hash_original_method = "A7E573A4994CE22857A73F3E6FF16052", hash_generated_method = "C98A5FCA3FEF957BE52D87FD045A3208")
     public Intent setClassName(Context packageContext, String className) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_506112548 = null; 
@@ -2254,6 +2301,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.021 -0400", hash_original_method = "0DAD204BCD083F4BEBCC949C19CA4443", hash_generated_method = "05978FB674AAFAC26F158AED4A46461E")
     public Intent setClassName(String packageName, String className) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_1746375341 = null; 
@@ -2299,6 +2347,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.026 -0400", hash_original_method = "E5580C6082A47C0EDDA03A45ABBBF7D7", hash_generated_method = "136EC5B751939BD7BFE167400E46F912")
     public int fillIn(Intent other, int flags) {
         int changes = 0;
@@ -2362,6 +2411,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.028 -0400", hash_original_method = "B6E4053A3570119C1E3D361525D403A8", hash_generated_method = "AA91A29CB29F20C5037A7DFED30F3C2A")
     public boolean filterEquals(Intent other) {
         {
@@ -2890,6 +2940,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Intent parseIntent(Resources resources, XmlPullParser parser, AttributeSet attrs) throws XmlPullParserException, IOException {
         Intent intent = new Intent();
         TypedArray sa = resources.obtainAttributes(attrs,

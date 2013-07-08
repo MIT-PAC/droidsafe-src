@@ -63,6 +63,7 @@ public abstract class PreferenceGroup extends Preference implements GenericInfla
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.444 -0400", hash_original_method = "6CBD3E9C112A20CE725E0B14080873B3", hash_generated_method = "FBB1310A5EFCDF2B72BEFBD717EF881F")
     public void setOrderingAsAdded(boolean orderingAsAdded) {
         mOrderingAsAdded = orderingAsAdded;
@@ -71,6 +72,7 @@ public abstract class PreferenceGroup extends Preference implements GenericInfla
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.445 -0400", hash_original_method = "5AE1DA121FD737E8D77F265AA9EE4792", hash_generated_method = "20539B9454DC789D271BB2DEB70F31D8")
     public boolean isOrderingAsAdded() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_615480814 = getTaintBoolean();
@@ -308,6 +310,7 @@ public abstract class PreferenceGroup extends Preference implements GenericInfla
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.450 -0400", hash_original_method = "DAC56CE9E9B1E4D46C67382001476B7D", hash_generated_method = "210B9EC880DC870AA4ACA045E488B4EF")
     protected boolean isOnSameScreenAsChildren() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_837872571 = getTaintBoolean();

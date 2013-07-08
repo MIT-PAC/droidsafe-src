@@ -132,6 +132,7 @@ public class AnimationSet extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.367 -0400", hash_original_method = "100CC04F928443BDDD1350B26299D2DB", hash_generated_method = "5931F6904132B4A25B60E9C33D9C37BA")
     private void setFlag(int mask, boolean value) {
         {
@@ -150,6 +151,7 @@ public class AnimationSet extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.368 -0400", hash_original_method = "96CA9C56EEADA219CA715399206CF9BC", hash_generated_method = "C0944DDBBB8FF4378AF642CA83ECA72A")
     private void init() {
         mStartTime = 0;
@@ -658,6 +660,7 @@ public class AnimationSet extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.379 -0400", hash_original_method = "007230E9C632DD7C25BB9E67DB11C3C3", hash_generated_method = "6F0A30D9364D1D47031497420C8C07BE")
     @Override
     public boolean willChangeTransformationMatrix() {
@@ -668,6 +671,7 @@ public class AnimationSet extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.379 -0400", hash_original_method = "A538326162AE4CED46022318A3520B17", hash_generated_method = "75AADF83FDCC002BFEAAFABFFDCD62F1")
     @Override
     public boolean willChangeBounds() {

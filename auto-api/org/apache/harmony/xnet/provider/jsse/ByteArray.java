@@ -27,6 +27,7 @@ final class ByteArray {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.642 -0400", hash_original_method = "8BA9483852C95CF52834EFFEFBE67C86", hash_generated_method = "213C3BFF84FD7FA75C1F1F6981D1E844")
     @Override
     public int hashCode() {

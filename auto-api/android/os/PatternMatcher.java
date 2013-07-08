@@ -102,6 +102,7 @@ public class PatternMatcher implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.909 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "2DF2C07BB8B84712C1054BB2D33744CD")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2074339528 = getTaintInt();

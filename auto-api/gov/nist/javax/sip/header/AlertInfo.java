@@ -60,6 +60,7 @@ public final class AlertInfo extends ParametersHeader implements javax.sip.heade
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.870 -0400", hash_original_method = "9100B3E97C317A9574634DF51E7BF148", hash_generated_method = "2A7E426316EE15F7DFB236079F127014")
     public void setAlertInfo(URI uri) {
         this.uri = (GenericURI) uri;
@@ -68,6 +69,7 @@ public final class AlertInfo extends ParametersHeader implements javax.sip.heade
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.870 -0400", hash_original_method = "70582DF127DE5708E4C226DA4F1719D4", hash_generated_method = "5CC62B65558F5189ED3430FEE8A6DEC0")
     public void setAlertInfo(String string) {
         this.string = string;

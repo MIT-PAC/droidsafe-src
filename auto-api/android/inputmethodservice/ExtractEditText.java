@@ -48,6 +48,7 @@ public class ExtractEditText extends EditText {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.553 -0400", hash_original_method = "E6DBB41915E723C9F2EECFAC48030375", hash_generated_method = "B5DB85C3F2BB9A526DFFD35933729A52")
      void setIME(InputMethodService ime) {
         mIME = ime;
@@ -56,6 +57,7 @@ public class ExtractEditText extends EditText {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.553 -0400", hash_original_method = "29AED765F6785A82C9D8840D589CD172", hash_generated_method = "27A568DC538086C464A343B5494E6E51")
     public void startInternalChanges() {
         mSettingExtractedText += 1;
@@ -64,6 +66,7 @@ public class ExtractEditText extends EditText {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.553 -0400", hash_original_method = "B6A18168A6952BD0C0F99B7AFD2A1CFC", hash_generated_method = "6D0BECC3D9DA8C9768F35AB3B6B16D1B")
     public void finishInternalChanges() {
         mSettingExtractedText -= 1;
@@ -151,6 +154,7 @@ public class ExtractEditText extends EditText {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.555 -0400", hash_original_method = "CC164D54DA859C5908F37C0D6AF369B4", hash_generated_method = "66824B7FB8F324B73872235334C1C0E4")
     @Override
     public boolean isInputMethodTarget() {

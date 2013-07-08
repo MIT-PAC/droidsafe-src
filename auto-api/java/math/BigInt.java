@@ -58,6 +58,7 @@ final class BigInt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.479 -0400", hash_original_method = "5BE7FB396EC56810A84432A49B351D93", hash_generated_method = "5C7C156AEE831E8CA685D9E53785A522")
      int getNativeBIGNUM() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_296925829 = getTaintInt();

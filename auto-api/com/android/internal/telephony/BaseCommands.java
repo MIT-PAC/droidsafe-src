@@ -212,6 +212,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.380 -0400", hash_original_method = "9B72FF4B03FA7DBB789195860BAD353E", hash_generated_method = "709EDEE91BC5097A9867BB884336EBA1")
     public RadioState getRadioState() {
         RadioState varB4EAC82CA7396A68D541C85D26508E83_1590437228 = null; 
@@ -223,6 +224,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.381 -0400", hash_original_method = "683B910DC6B22521B92A68335EE5839B", hash_generated_method = "05AC696CC377C481D60AFCEE5A34EF13")
     public RadioState getSimState() {
         RadioState varB4EAC82CA7396A68D541C85D26508E83_328780430 = null; 
@@ -234,6 +236,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.381 -0400", hash_original_method = "109C4CEB2CE04AD161352D599FB1B09F", hash_generated_method = "21240131F650693B1A2C4AAFE9E2A50F")
     public RadioState getRuimState() {
         RadioState varB4EAC82CA7396A68D541C85D26508E83_574064244 = null; 
@@ -245,6 +248,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.382 -0400", hash_original_method = "903DF1C2B5F50A021347F02D35C70B16", hash_generated_method = "CB6E022125EB725D368413A7CC220E95")
     public RadioState getNvState() {
         RadioState varB4EAC82CA7396A68D541C85D26508E83_599136338 = null; 
@@ -1610,6 +1614,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.415 -0400", hash_original_method = "9E4D177DE2C4D1C0BCFAAE47CCC59231", hash_generated_method = "4213F91204D502CD576FBCFFBFDC54D6")
     @Override
     public void setCurrentPreferredNetworkType() {
@@ -1744,6 +1749,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.417 -0400", hash_original_method = "1193518C5021D5365FC51C472C5050CB", hash_generated_method = "69A42F2EFF74FEEABD1AC7F929142872")
     protected void onRadioAvailable() {
         

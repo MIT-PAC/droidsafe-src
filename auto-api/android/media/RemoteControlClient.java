@@ -270,6 +270,7 @@ public class RemoteControlClient {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.465 -0400", hash_original_method = "2C35ADA55DC65E9D8CCC19BDAA7D2B4B", hash_generated_method = "5510513D386522AEEAAE7BC19A86BE85")
     public PendingIntent getRcMediaIntent() {
         PendingIntent varB4EAC82CA7396A68D541C85D26508E83_1175651604 = null; 
@@ -281,6 +282,7 @@ public class RemoteControlClient {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.466 -0400", hash_original_method = "6031DEC176ACCB06C28473E7885E0907", hash_generated_method = "795863280FA82414477FF866309C79C9")
     public IRemoteControlClient getIRemoteControlClient() {
         IRemoteControlClient varB4EAC82CA7396A68D541C85D26508E83_818209586 = null; 
@@ -292,6 +294,7 @@ public class RemoteControlClient {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.466 -0400", hash_original_method = "1D4279FF389DE00E45CE62733E438945", hash_generated_method = "7BE69845830A5C30F8E86A0E732E3185")
     private void detachFromDisplay_syncCacheLock() {
         mRcDisplay = null;
@@ -458,6 +461,7 @@ public class RemoteControlClient {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.469 -0400", hash_original_method = "6CA13622614E338BD9C3EB3C00B6EAD4", hash_generated_method = "3FF62058D3A647B70C055B8AAB75C39B")
     private void onNewCurrentClientGen(int clientGeneration) {
         {
@@ -470,6 +474,7 @@ public class RemoteControlClient {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.469 -0400", hash_original_method = "53EC796651633C35ADEE8DE59FBA0A28", hash_generated_method = "4C40438E54442322ACB9E5F2A5968DB2")
     private void onPlugDisplay(IRemoteControlDisplay rcd) {
         {
@@ -539,7 +544,8 @@ public class RemoteControlClient {
     }
 
     
-        private static boolean validTypeForKey(int key, int[] validKeys) {
+        @DSModeled(DSC.SAFE)
+    private static boolean validTypeForKey(int key, int[] validKeys) {
         try {
             for (int i = 0 ; ; i++) {
                 if (key == validKeys[i]) {

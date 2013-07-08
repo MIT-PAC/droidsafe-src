@@ -89,6 +89,7 @@ public class ConfigurationInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.098 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "07B8AB28104B1D68D17223322AFA8D69")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_929833458 = getTaintInt();

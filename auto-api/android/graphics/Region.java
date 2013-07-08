@@ -141,6 +141,7 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.394 -0400", hash_original_method = "9B1CCC3AB82A9C7B7A46C788921405FB", hash_generated_method = "373F32B5C5D9D821C78FC87256AD696D")
     public boolean isEmpty() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_578762212 = getTaintBoolean();
@@ -148,6 +149,7 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.395 -0400", hash_original_method = "2BE881D6CE1CF3506EFB49B5287B67D4", hash_generated_method = "188A3C2840198A9E3A100F2DF56554F7")
     public boolean isRect() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1926706982 = getTaintBoolean();
@@ -155,6 +157,7 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.395 -0400", hash_original_method = "96E541304104A48A190119203B0E80D4", hash_generated_method = "D52979BD919B9DA829AAE8D4E0B130E4")
     public boolean isComplex() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_652653039 = getTaintBoolean();
@@ -224,6 +227,7 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.398 -0400", hash_original_method = "5B0A75408C2B4CF9238ADD529FC37D02", hash_generated_method = "5C600B7804C83F1F5F6229F0DDD45561")
     public boolean contains(int x, int y) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1135233485 = getTaintBoolean();
@@ -243,6 +247,7 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.398 -0400", hash_original_method = "F4780612A05468EA5B4971365E65F2E9", hash_generated_method = "80B3788EBA88FA4829D168BE023F346D")
     public boolean quickContains(int left, int top, int right,
                                         int bottom) {
@@ -263,6 +268,7 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.399 -0400", hash_original_method = "C7FE089D5B9638DFC662C69BB1CCA253", hash_generated_method = "15602AF1010EA4BC8541EE6E339C9781")
     public boolean quickReject(int left, int top, int right, int bottom) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1544138247 = getTaintBoolean();
@@ -270,6 +276,7 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.399 -0400", hash_original_method = "248FAC130B583135AFED72EC96EB473C", hash_generated_method = "5EE2BB218D26BE1B9F52E31FDFA64D06")
     public boolean quickReject(Region rgn) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1584539484 = getTaintBoolean();
@@ -288,6 +295,7 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.400 -0400", hash_original_method = "F2F101D23D8556E25BBA4D0A405F0CD3", hash_generated_method = "2A31251C6E83A876D8030DE3CA7F91C4")
     public void translate(int dx, int dy, Region dst) {
     }
@@ -303,6 +311,7 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.401 -0400", hash_original_method = "704645B9B50E78F1B3F526FB095B5A0C", hash_generated_method = "93622E1801E30E8106831D2D97D909FA")
     public void scale(float scale, Region dst) {
     }
@@ -409,6 +418,7 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.405 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "5D2A239F40013AC2471F59331AA58CA1")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_284711407 = getTaintInt();
@@ -483,78 +493,92 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativeEquals(int native_r1, int native_r2) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeConstructor() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeDestructor(int native_region) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativeSetRegion(int native_dst,
                                                   int native_src) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativeSetRect(int native_dst, int left,
                                                 int top, int right, int bottom) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativeSetPath(int native_dst, int native_path,
                                                 int native_clip) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativeGetBounds(int native_region, Rect rect) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativeGetBoundaryPath(int native_region,
                                                         int native_path) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativeOp(int native_dst, int left, int top,
                                            int right, int bottom, int op) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativeOp(int native_dst, Rect rect,
                                            int native_region, int op) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativeOp(int native_dst, int native_region1,
                                            int native_region2, int op) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeCreateFromParcel(Parcel p) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativeWriteToParcel(int native_region,
                                                       Parcel p) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String nativeToString(int native_region) {
         	return ""; 
         }

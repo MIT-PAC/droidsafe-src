@@ -29,6 +29,7 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.179 -0400", hash_original_method = "6B61312FC318A12A6B19178CA8B54E86", hash_generated_method = "16A94DEF64F454A95299F02674388663")
     @Override
     public byte byteValue() {
@@ -51,6 +52,7 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int compare(int lhs, int rhs) {
         return lhs < rhs ? -1 : (lhs == rhs ? 0 : 1);
     }
@@ -100,6 +102,7 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.180 -0400", hash_original_method = "3D3B0AF18CC8081B7BB4A7DC662E1F07", hash_generated_method = "F54CE542FE4652379C489FF86F5BA5C8")
     @Override
     public double doubleValue() {
@@ -110,6 +113,7 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.180 -0400", hash_original_method = "F74FD59F9B798AB03C90305DF48139A2", hash_generated_method = "78A6ABD162FD747B4C644A2B997F6B80")
     @Override
     public boolean equals(Object o) {
@@ -121,6 +125,7 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.180 -0400", hash_original_method = "9E2C0918A44EC11D2232D0B603F66A6B", hash_generated_method = "7E3066909B9D32CAD4A4A479054AD695")
     @Override
     public float floatValue() {
@@ -182,6 +187,7 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.181 -0400", hash_original_method = "961F210287166DF05D8915D632129E75", hash_generated_method = "F435F274E17204E6979DBE528348CBF1")
     @Override
     public int hashCode() {
@@ -192,6 +198,7 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.181 -0400", hash_original_method = "4668226786F0223B69B1E8157F3C469B", hash_generated_method = "65524BEAE563B0D50CF2C709501C5F7E")
     @Override
     public int intValue() {
@@ -202,6 +209,7 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.182 -0400", hash_original_method = "ABF4FE035C950AC910A646D4B85E3F35", hash_generated_method = "EF06ECDE30D42469A7C77B4848D4864F")
     @Override
     public long longValue() {
@@ -266,6 +274,7 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.183 -0400", hash_original_method = "8E8C16CBE89F9837B346C9544C9B6BCC", hash_generated_method = "CA042995F3D8420763A56366ACF4A958")
     @Override
     public short shortValue() {
@@ -331,6 +340,7 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int highestOneBit(int i) {
         i |= (i >> 1);
         i |= (i >> 2);
@@ -341,11 +351,13 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int lowestOneBit(int i) {
         return i & -i;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int numberOfLeadingZeros(int i) {
         if (i <= 0) {
             return (~i >> 26) & 32;
@@ -371,11 +383,13 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int numberOfTrailingZeros(int i) {
         return NTZ_TABLE[((i & -i) * 0x0450FBAF) >>> 26];
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int bitCount(int i) {
         i -= (i >> 1) & 0x55555555;
         i = (i & 0x33333333) + ((i >> 2) & 0x33333333);
@@ -386,22 +400,26 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int rotateLeft(int i, int distance) {
         return (i << distance) | (i >>> -distance);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int rotateRight(int i, int distance) {
         return (i >>> distance) | (i << -distance);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int reverseBytes(int i) {
         i =    ((i >>>  8) & 0x00FF00FF) | ((i & 0x00FF00FF) <<  8);
         return ( i >>> 16              ) | ( i               << 16);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int reverse(int i) {
         i =    ((i >>>  1) & 0x55555555) | ((i & 0x55555555) <<  1);
         i =    ((i >>>  2) & 0x33333333) | ((i & 0x33333333) <<  2);
@@ -411,6 +429,7 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int signum(int i) {
         return (i >> 31) | (-i >>> 31);
     }

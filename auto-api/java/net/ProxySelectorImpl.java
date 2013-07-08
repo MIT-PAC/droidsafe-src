@@ -20,6 +20,7 @@ final class ProxySelectorImpl extends ProxySelector {
     }
 
 
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.685 -0400", hash_original_method = "01DD13242757A7D8F74EE28AFD708C0E", hash_generated_method = "04D2B6793EC0816A04A159E59567AEEC")
     @Override
     public void connectFailed(URI uri, SocketAddress sa, IOException ioe) {
@@ -49,6 +50,7 @@ final class ProxySelectorImpl extends ProxySelector {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.688 -0400", hash_original_method = "77552E7F4A5B4D6DFBBFBB4C81DE3154", hash_generated_method = "D3E1CC634BD95AF7C729979044925D49")
     private Proxy selectOneProxy(URI uri) {
         Proxy varB4EAC82CA7396A68D541C85D26508E83_1289707322 = null; 
