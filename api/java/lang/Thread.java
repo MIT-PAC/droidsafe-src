@@ -19,6 +19,7 @@ public class Thread implements Runnable {
 		if (this.target != null) {
 			this.target.run();
 		}
+                this.run();
 	}
 
 	@DSModeled(DSC.SPEC)
