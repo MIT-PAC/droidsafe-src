@@ -138,6 +138,7 @@ public class DERNumericString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.558 -0400", hash_original_method = "9CAFE2F99C4AA1A810005CA2021DBA5F", hash_generated_method = "35A32FE8EBB6FD07F8E3CC34B44D1432")
      void encode(
         DEROutputStream  out) throws IOException {
@@ -159,6 +160,7 @@ public class DERNumericString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.560 -0400", hash_original_method = "8BA017E030540263DAC8EBF952EA3B45", hash_generated_method = "9FE1CB70DC62E0B00B2CE0668602F484")
      boolean asn1Equals(
         DERObject  o) {

@@ -1056,6 +1056,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.444 -0400", hash_original_method = "3F6307E0FF2B24CF42D639D72702E7A3", hash_generated_method = "4CCBE0467AB7CCA0B0E7408BF5552FC9")
      ListenerInfo getListenerInfo() {
         ListenerInfo varB4EAC82CA7396A68D541C85D26508E83_1125890995 = null; 
@@ -1438,6 +1439,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.456 -0400", hash_original_method = "16B5A8656CEB6785661CF48B92B45991", hash_generated_method = "0E462B4578169A032465CD2E0962E903")
      void handleFocusGainInternal(int direction, Rect previouslyFocusedRect) {
         {
@@ -1546,6 +1548,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.459 -0400", hash_original_method = "B948A77A86E2A2242F3F753171415A6F", hash_generated_method = "E185FEEAEED513A145564C4D000D5AD6")
      void clearFocusForRemoval() {
         {
@@ -1562,6 +1565,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.460 -0400", hash_original_method = "895408B45B14DF7336768B76769FDFBE", hash_generated_method = "8CFD639286A261F7C8B5F8F3C689E3F6")
      void unFocus() {
         {
@@ -1663,6 +1667,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.461 -0400", hash_original_method = "BE2AB20B544FD38FEA2111E9FF446FAD", hash_generated_method = "A4479704D853EB0ED1B4E38257669FE4")
      void sendAccessibilityEventInternal(int eventType) {
         {
@@ -1698,6 +1703,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.462 -0400", hash_original_method = "2BAF48857D95094002D2EF1740E1384F", hash_generated_method = "05229D83F222D9E19D06BF5ADFF8C096")
      void sendAccessibilityEventUncheckedInternal(AccessibilityEvent event) {
         {
@@ -1745,6 +1751,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.463 -0400", hash_original_method = "8EC2668F1DC902F63C332D19DDE36094", hash_generated_method = "5D30AD768B1DB323CE25069BDD6FEE97")
      boolean dispatchPopulateAccessibilityEventInternal(AccessibilityEvent event) {
         onPopulateAccessibilityEvent(event);
@@ -1805,6 +1812,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.464 -0400", hash_original_method = "43B5B6E634D7CF960BF74CE0E1DDA2CD", hash_generated_method = "A6BAE42A863676C68738E0D6D531536B")
      void onInitializeAccessibilityEventInternal(AccessibilityEvent event) {
         
@@ -1878,6 +1886,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.466 -0400", hash_original_method = "8753AD1110C37F0E73AF31B4448B5211", hash_generated_method = "6E66DE85B2FD549BAABD6A4C45E16B5B")
      void onInitializeAccessibilityNodeInfoInternal(AccessibilityNodeInfo info) {
         
@@ -2696,6 +2705,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.493 -0400", hash_original_method = "402D36B98ACE611B6285D11A0B7474BF", hash_generated_method = "C150BD674BE49C7CCA54DEEF2C466641")
      View findUserSetNextFocus(View root, int direction) {
         View varB4EAC82CA7396A68D541C85D26508E83_97664805 = null; 
@@ -3005,6 +3015,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.500 -0400", hash_original_method = "7FA91653ABFF57A00EB7068CB83E321B", hash_generated_method = "7208556ED126126DE94D56E296C2957E")
      ViewRootImpl getViewRootImpl() {
         ViewRootImpl varB4EAC82CA7396A68D541C85D26508E83_685110027 = null; 
@@ -3621,6 +3632,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.513 -0400", hash_original_method = "4092DD0F41D441E58BB892F3C094C4B3", hash_generated_method = "AB1108C2478BF4D14408840B84F8B890")
      void dispatchCollectViewAttributes(int visibility) {
         performCollectViewAttributes(visibility);
@@ -3630,6 +3642,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.513 -0400", hash_original_method = "01D7FE9ADD969187268E5CA00DFC8244", hash_generated_method = "C9C7B8686D7CBA49E22487887C130AA9")
      void performCollectViewAttributes(int visibility) {
         {
@@ -4319,6 +4332,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.529 -0400", hash_original_method = "DB01C6D64C7923FFF91C0044F6A0DAD3", hash_generated_method = "F5F4AD600A48EA3E65DFEF668E3672CF")
      void setFlags(int flags, int mask) {
         int old = mViewFlags;

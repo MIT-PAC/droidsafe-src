@@ -1043,6 +1043,7 @@ public class CdmaConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.560 -0400", hash_original_method = "EB1ACECD3BB7B8254CD65689A960D6CE", hash_generated_method = "0173D0D0AB8EF4DE0EF54CEE93E3A55E")
      void processNextPostDialChar() {
         char c = 0;

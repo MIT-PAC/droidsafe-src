@@ -1367,6 +1367,7 @@ public final class WebViewCore {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.700 -0400", hash_original_method = "1D90769B244FD8A3CA2CA8B94E1DA948", hash_generated_method = "CEB7BB35954DB2C288C1AEABFC16E552")
      void contentDraw() {
         {

@@ -865,6 +865,7 @@ public final class CdmaCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.307 -0400", hash_original_method = "CA7F8E55CA885F7D7A3A262DD3D03608", hash_generated_method = "8D8FEDE533EFA98513B912F55875A470")
      void hangup(CdmaConnection conn) throws CallStateException {
         {

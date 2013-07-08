@@ -215,6 +215,7 @@ public final class GsmCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.295 -0400", hash_original_method = "BBA59EE5F024CF032CB3FE359D476C6C", hash_generated_method = "61497C065462D40E5E112AB7C91AE291")
      Connection dial(String dialString, int clirMode, UUSInfo uusInfo) throws CallStateException {
         Connection varB4EAC82CA7396A68D541C85D26508E83_204185667 = null; 

@@ -562,6 +562,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.343 -0400", hash_original_method = "0B8DEDA7075751956ABB1ACBE337F637", hash_generated_method = "63F1ACAC64E61988552CEDE2C7C95884")
      void setRemoteTarget(ContactHeader contact) {
         this.remoteTarget = contact.getAddress();
@@ -3161,6 +3162,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.434 -0400", hash_original_method = "5A72AC369AA326C1E4BE607E2D1E31FF", hash_generated_method = "F08C11048AE35F6D706DAF526FE75267")
      void releaseAckSem() {
         {
@@ -3182,6 +3184,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.435 -0400", hash_original_method = "75493DFA4E25D8A29CC5DF9217BF734F", hash_generated_method = "FF13C000F320C922846B30FCC9C69DCC")
      boolean takeAckSem() {
         {

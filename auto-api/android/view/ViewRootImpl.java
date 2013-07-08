@@ -2406,6 +2406,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.247 -0400", hash_original_method = "FAD7953F436A3C038802D5DE07F19E9E", hash_generated_method = "2973AC653CF38E6A75AE9EC455B50579")
      boolean scrollToRectOrFocus(Rect rectangle, boolean immediate) {
         final View.AttachInfo attachInfo = mAttachInfo;

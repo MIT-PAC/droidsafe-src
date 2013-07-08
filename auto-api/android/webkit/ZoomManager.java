@@ -785,6 +785,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.279 -0400", hash_original_method = "B42D229ABB1FC24C49B118C5D42DFED9", hash_generated_method = "7DFDF9C33F6C980A97C4101C5AF96504")
      float getZoomOverviewScale() {
         float varC68098F3B3A8CF52938B6BE93874939F_2003744699 = (mWebView.getViewWidth() * mInvZoomOverviewWidth);

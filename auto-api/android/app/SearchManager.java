@@ -126,6 +126,7 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.137 -0400", hash_original_method = "665629AEED9E4B619C9A8F98A6E670F8", hash_generated_method = "96CBA42B7EB3C52AF82A6C321950B3F5")
      void startGlobalSearch(String initialQuery, boolean selectInitialQuery,
             Bundle appSearchData, Rect sourceBounds) {
