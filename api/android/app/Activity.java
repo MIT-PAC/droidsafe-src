@@ -2636,6 +2636,11 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 	}
 	
+	@DSModeled
+	public final String getString(int id) {
+		return new String();
+	}
+	
 	public final int getTitleColor(){
 		return dsTaint.getTaintInt();
 		
