@@ -69,6 +69,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				"android.support.v4.app.FragmentManager"
 		};
 		
+		static boolean debugOn = false;
 		/**
 		 * Constructor
 		 */
@@ -132,11 +133,27 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 
 			v = new IntegrateXMLLayouts();
 
+			// we probably will need to do 2 pass 
 			for (SootClass clz : Scene.v().getClasses()) {
-				if (Project.v().isSrcClass(clz.toString()) || Project.v().isLibClass(clz.toString())) {
+				//if (Project.v().isSrcClass(clz.toString()) || Project.v().isLibClass(clz.toString())) {
+				debugOn = false;
+				if (clz.getName().contains("com.challenge")) {
+					logger.info("Class {} ", clz);
+					debugOn = true;
+				}
+				
+				if (true) {
 					for (SootMethod meth : clz.getMethods()) {
-						if (meth.isConcrete())
+						if (debugOn) {
+							logger.info("Checking method {} ", meth);
+						}
+						if (meth.isConcrete()) {
+							if (debugOn) {
+								logger.info("XML transform: {} ", meth);
+								logger.info("{}", meth.retrieveActiveBody());
+							}
 							v.transform(meth.retrieveActiveBody());
+						}
 					}
 				}
 			}
@@ -342,11 +359,21 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			// get a snapshot iterator of the unit since we are going to
 			// mutate the chain when iterating over it.
 			Iterator<Unit> stmtIt = units.snapshotIterator();
-
+			
+			if (debugOn) {
+				logger.info("Output body again ");
+				logger.info("{} ", b);
+			}
+			
 			while (stmtIt.hasNext()) {
 				Stmt stmt = (Stmt)stmtIt.next();
 
+				if (debugOn)
+					logger.info("{}", stmt);
+				
 				if (!stmt.containsInvokeExpr()) {
+					if (debugOn)
+						logger.info("Skipped ");
 					continue;
 				}
 
@@ -354,9 +381,23 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				//get the receiver, receivers are only present for instance invokes 
 				InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(stmt);
 				if (iie == null) {
+					if (stmt.toString().contains("findViewById()")) {
+						logger.warn("findViewById: cannot get instanceInvokde ");
+					}
 					continue;
 				}
+				
+				if (debugOn) {
+					logger.info("iie.getBase(): {} ", iie.getBase());
+					logger.info("getPointToSet: {} ", 
+							GeoPTA.v().getPTSetContextIns(iie.getBase()));
+				}
+				
 				for (AllocNode node : GeoPTA.v().getPTSetContextIns(iie.getBase())) {
+					
+					if (debugOn) {
+						logger.info("AllocNode {} ", node);
+					}
 
 					Type nodeType = node.getType();
 
@@ -366,8 +407,10 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 					}
 
 					//if replaced, done.  Not sure why YARR showed up 2 times
-					if (!units.contains(stmt))
+					if (!units.contains(stmt)) {
+						logger.info("statmen {} repated ", stmt);
 						break;
+					}
 
 					SootClass allocClz = ((RefType)node.getType()).getSootClass();
 					SootMethod resolved = null; 
@@ -376,7 +419,12 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 								resolveConcreteDispatch(allocClz, iie.getMethod());
 
 					} catch (CannotFindMethodException e) {
+						if (iie.getMethod().toString().contains("findView")) {
+							logger.warn("exception {} ", e);
+						}
 						continue;
+					} catch (Exception ex) {
+						logger.warn("Exception ex {} ", ex);
 					}
 
 					// replacing findViewById
@@ -387,9 +435,15 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 							replaceGetString(stmtBody, stmt);
 						}
 					}
-
+					
+					//
+					if (resolved.toString().contains("findView")) {
+						logger.info("findView resolved {} ", resolved);
+					}
+	
 					// replacing findViewById
 					for (SootMethod method: findViewByIdList) {
+					
 						if (method.equals(resolved))  {
 							logger.info(String.format("Found findViewById(): %s - %s\n", 
 									stmt, b.getMethod()));
