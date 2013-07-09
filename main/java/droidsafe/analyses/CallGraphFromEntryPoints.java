@@ -33,8 +33,8 @@ public class CallGraphFromEntryPoints {
 	private final static Logger logger = LoggerFactory.getLogger(CallGraphFromEntryPoints.class);
 
 	public static void run() {
-		for (SootMethod entryPoint : EntryPoints.v().getAppEntryPoints()) {
-			findReachableMethodsFrom(entryPoint);		
+		for (EntryPoints.EntryPoint entryPoint : EntryPoints.v().getAppEntryPoints()) {
+			findReachableMethodsFrom(entryPoint.method);		
 		}
 	}
 

@@ -20,7 +20,7 @@ import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisInt;
 
 public final class URL extends ValueAnalysisModeledObject {
 
-    private Set<String> urlString = new ValueAnalysisModelingSet<String>();
+    public Set<String> urlString = new ValueAnalysisModelingSet<String>();
 
     public URL(AllocNode allocNode) {
         super(allocNode);

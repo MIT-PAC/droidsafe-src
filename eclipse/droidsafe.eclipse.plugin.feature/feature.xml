@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="Droidsafe"
+      id="droidsafe.eclipse.plugin.feature"
       label="Droidsafe Plugin"
       version="1.0.0.qualifier"
       provider-name="Kestrel Institute">
@@ -22,7 +22,6 @@ All rights reserved.
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.core.resources"/>
-      <import plugin="org.slf4j.api"/>
       <import plugin="org.eclipse.ui.ide"/>
       <import plugin="org.eclipse.jface.text"/>
       <import plugin="org.eclipse.ui.editors"/>

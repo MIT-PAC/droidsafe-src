@@ -175,10 +175,9 @@ public class ValueAnalysis {
     public static final String MODEL_CLASS_BASE_DIR = "classes/main/droidsafe.analyses.value.models.";
 
     /** 
-     * Variable used to tell if any models changed on a run of the analysis. 
-     * Used to make sure the analysis runs to a fixed point.
-     * */
-    public static boolean changed = false;
+     * Determined whether the analysis should be run again. Used to make sure the analysis runs to a fixed point.
+     */
+    public static boolean runAgain = false;
 
     //==================================================================================================================
     // Constructors
@@ -281,13 +280,23 @@ public class ValueAnalysis {
 
         // Now run the analysis to fixed point, not stepping through the methods that we simulate.
         do {
-            changed = false;
+            System.out.println("\nValue Analysis Progress: fixed point not reached, re-running");
+            runAgain = false;
             runOnce();
-        } while(changed);
-
-        runOnce();
+        } while(runAgain);
+ 
+        System.out.print("\n");
+ 
         // log the results and statistics    
         am.log();
+    }
+ 
+    /** Sets the global runAgain to true, meaning that the analysis will run again. Called when fixed points has been
+     *  determined to not have been reached yet.
+     */
+    public static void runAgain() {
+        logger.info("Value Analysis: runAgain got called");
+        runAgain = true;
     }
 
     /** run the full analysis once */ 
@@ -300,7 +309,11 @@ public class ValueAnalysis {
         Set<SootMethod> reachableMethods = GeoPTA.v().getAllReachableMethods();
 
         // loop over all code, creating models and simulating whichever invokeExprs we can as we go
-        for (SootClass clazz : Scene.v().getApplicationClasses()) {
+        Chain<SootClass> sootClasses = Scene.v().getApplicationClasses();
+        int progressCounter = 0; 
+        for (SootClass clazz : sootClasses) {
+            System.out.print("Value Analysis Progress: " + (int)Math.ceil(100*(double)progressCounter/sootClasses.size()) + "%\r");
+            progressCounter++;
             String className = clazz.getName();
             // We don't care about the harness or interfaces
             if (clazz.isInterface() || className.equals(Harness.HARNESS_CLASS_NAME))
@@ -311,12 +324,16 @@ public class ValueAnalysis {
                 continue;
             }
 
+            logger.info("Value Analysis: stepping through " + clazz);
+            
             // Get source filename that contains the class 
             SourceFileTag sourceFileTag = (SourceFileTag)clazz.getTag("SourceFileTag");
 
             for (SootMethod meth : clazz.getMethods()) {
                 if (meth.isConcrete() && reachableMethods.contains(meth) && !am.simulatedMethods.contains(meth)) {
-                    //am.logError("analyzing " + meth);
+                    
+                    logger.info("Value Analysis: stepping through " + meth);
+                    
                     StmtBody stmtBody = (StmtBody)meth.retrieveActiveBody();
 
                     // get body's unit as a chain
@@ -343,8 +360,9 @@ public class ValueAnalysis {
                         if (!stmt.containsInvokeExpr()) {
                             continue;
                         }
+                        
                         InvokeExpr invokeExpr = (InvokeExpr)stmt.getInvokeExpr();
-                        //am.logError("on invokeExpr " + invokeExpr);
+                        
                         SootMethod sootMethod = invokeExpr.getMethod();
                         SootClass sootClass = sootMethod.getDeclaringClass();
 
@@ -472,6 +490,9 @@ public class ValueAnalysis {
             // simulate the method using reflection for every permutation of parameter values, aggregating the returned
             // objects
             Object objectToReturn;
+
+            logger.info("Value Analysis: simulating " + invokeExpr);
+
             for (ArrayList paramObjectPermutation : paramObjectCartesianProduct) {
                 objectToReturn = method.invoke(modeledReceiverObject, paramObjectPermutation.toArray());
                 if (objectToReturn != null) {

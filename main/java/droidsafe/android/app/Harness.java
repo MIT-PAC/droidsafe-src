@@ -259,10 +259,10 @@ public class Harness {
 	            
 	            //create field for class and allocation
 	            //call all system implemented methods
-	            for (SootMethod m : clz.getMethods()) {
+	            for (SootMethod m : Hierarchy.v().getAllInheritedAppMethodsIncluded(clz)) {
 	                if (Hierarchy.v().isImplementedSystemMethod(m)) {
 	                    logger.info("Adding entry point for class that was not alloced: " + m);
-	                    addCallToEntryPointAndCreateLocal(body, m);
+	                    addCallToEntryPointAndCreateLocal(body, clz, m);
 	                }
 	            }
 	        }
@@ -281,10 +281,9 @@ public class Harness {
 			//we need to keep around this field if there are non-modeled calls to it
 			//any method of it
 			boolean needField = false;
-			for (SootMethod method : clz.getMethods()) {
+			for (SootMethod method : Hierarchy.v().getAllInheritedAppMethodsIncluded(clz)) {
 				//Messages.log("    Checking for method: " + method.getSignature());
-    			if (!clz.declaresMethod(method.getSubSignature()) ||
-    					!method.isConcrete())
+    			if (!method.isConcrete())
     				continue;
  
     			if (Hierarchy.v().isImplementedSystemMethod(method)) {
@@ -336,13 +335,13 @@ public class Harness {
 	    localsMap = new LinkedHashMap<SootClass, Local>();
 	    Set<SootClass> visited = new LinkedHashSet<SootClass>();
 		
-		for (SootMethod entryPoint : EntryPoints.v().getAppEntryPoints()) {
-			SootClass clazz = entryPoint.getDeclaringClass();
+		for (EntryPoints.EntryPoint entryPoint : EntryPoints.v().getAppEntryPoints()) {
+			SootClass clazz = entryPoint.clz;
 			
 			if (clazz.isInterface() || clazz.isAbstract())
 				continue;
 			
-			addCallToEntryPointAndCreateLocal(body, entryPoint); 
+			addCallToEntryPointAndCreateLocal(body, clazz, entryPoint.method); 
 			
 			visited.add(clazz);
 		}
@@ -354,8 +353,7 @@ public class Harness {
 	 * Add a call to the method in the main of the harness, and create the receiver class if it does
 	 * not exist in a local reference in the main (meaning it is the first time we have seen the class).
 	 */
-	private void addCallToEntryPointAndCreateLocal(StmtBody body, SootMethod entryPoint) {
-	    SootClass clazz = entryPoint.getDeclaringClass();
+	private void addCallToEntryPointAndCreateLocal(StmtBody body, SootClass clazz, SootMethod entryPoint) {
 	    
 	    //first create the local for the declaring class if we have not created it before
 	    if (!localsMap.containsKey(clazz) && !entryPoint.isStatic()) {
