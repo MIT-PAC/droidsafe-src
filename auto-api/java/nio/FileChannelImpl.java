@@ -908,6 +908,7 @@ final class FileChannelImpl extends FileChannel {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.297 -0400", hash_original_method = "AAE954E5885EFA2B8D6D7679145B1DEF", hash_generated_method = "3016F9A2CB63BAE584E425CD9AE55133")
         public boolean isValid() {
             boolean varAFEB083609C9546DA785CB8359B712FC_1592431627 = (!isReleased && channel().isOpen());
@@ -918,6 +919,7 @@ final class FileChannelImpl extends FileChannel {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.297 -0400", hash_original_method = "7DF971FEA31B34CE257DD1638735950E", hash_generated_method = "E2184DCE262C109E6317680DCC936556")
         public void release() throws IOException {
             {

@@ -1615,6 +1615,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.290 -0400", hash_original_method = "1E8BCB605E875657A6EC0245732A9544", hash_generated_method = "FCDF5FB5CD8C8149A38211EC494FC292")
         public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
             {
@@ -1670,6 +1671,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.292 -0400", hash_original_method = "81B7AD8C9B3A9908C7C41F3CCCB6E30B", hash_generated_method = "3F6D29A84EB37505757D74358D3B6FBC")
         public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
             addTaint(r.getTaint());

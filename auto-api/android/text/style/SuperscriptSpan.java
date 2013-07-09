@@ -56,6 +56,7 @@ public class SuperscriptSpan extends MetricAffectingSpan implements ParcelableSp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.968 -0400", hash_original_method = "E27C5F044B669DD3305C3952779CC951", hash_generated_method = "0EC429023F13963888CA4492D7F0740B")
     @Override
     public void updateDrawState(TextPaint tp) {
@@ -66,6 +67,7 @@ public class SuperscriptSpan extends MetricAffectingSpan implements ParcelableSp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.969 -0400", hash_original_method = "A4B2093D2F6B24A1446298F151C8C815", hash_generated_method = "FD19025545772C3FB075F0950CD5E7B1")
     @Override
     public void updateMeasureState(TextPaint tp) {

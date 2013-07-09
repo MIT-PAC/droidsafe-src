@@ -406,7 +406,7 @@ public class Region implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:14.286 -0400", hash_original_method = "9B6C5B9AE4B0C715D06D485A7F8D4046", hash_generated_method = "C927D002CCE9A303051CBAFFD42F732B")
     public String toString() {
         String varB4EAC82CA7396A68D541C85D26508E83_696163758 = null; 
@@ -446,7 +446,7 @@ public class Region implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.406 -0400", hash_original_method = "1060AF13EAB0782D5AA6FD12A9EA9F72", hash_generated_method = "471947E1793CDE89BF4A089F7C8CF0E6")
     @Override
     public boolean equals(Object obj) {
@@ -464,7 +464,7 @@ public class Region implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.407 -0400", hash_original_method = "7B9D4EAB814BE6F839A0AFACF43162A1", hash_generated_method = "88533E051B74F60620695CD5B6D42F0C")
     protected void finalize() throws Throwable {
         try 

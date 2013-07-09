@@ -456,6 +456,7 @@ public class Canvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.409 -0400", hash_original_method = "ADF2B4EDD750040189755D8AA2B089F0", hash_generated_method = "6F1B4DB018D73CB568DAA14BBC7A9E47")
     public boolean clipRect(RectF rect, Region.Op op) {
         boolean varAC47F037A127A32BF1967A9F17C8D6EE_1218930252 = (native_clipRect(mNativeCanvas,
@@ -472,6 +473,7 @@ public class Canvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.410 -0400", hash_original_method = "C0255CEC0BCD1AD46E1B4E180BE74E1B", hash_generated_method = "4EDFB33844CF5388F9A6687809E200C4")
     public boolean clipRect(Rect rect, Region.Op op) {
         boolean varAC47F037A127A32BF1967A9F17C8D6EE_1665877989 = (native_clipRect(mNativeCanvas,
@@ -504,6 +506,7 @@ public class Canvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.411 -0400", hash_original_method = "1DF6FF81DFB932BE2B5849557766481E", hash_generated_method = "874B38F2616FD29CBE538AE1F061069D")
     public boolean clipRect(float left, float top, float right, float bottom,
                             Region.Op op) {
@@ -540,6 +543,7 @@ public class Canvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.412 -0400", hash_original_method = "7A7DE76338CD4FF5C3A48558D2B4614E", hash_generated_method = "09BEEDF387EA2397A35B433631F18129")
     public boolean clipPath(Path path, Region.Op op) {
         boolean var3967E0369498EDA77CDA505C721131EC_461265394 = (native_clipPath(mNativeCanvas, path.ni(), op.nativeInt));
@@ -564,6 +568,7 @@ public class Canvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.413 -0400", hash_original_method = "28C7C5FF233FA752A95A4980EB733491", hash_generated_method = "DF8503E3A2056934919264A2C6E3AFC1")
     public boolean clipRegion(Region region, Region.Op op) {
         boolean var670725A52E9FB351AE9F8E165F40703A_166798600 = (native_clipRegion(mNativeCanvas, region.ni(), op.nativeInt));
@@ -726,6 +731,7 @@ public class Canvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.421 -0400", hash_original_method = "4AB8965ACD48B286E6BCF28D614F6B00", hash_generated_method = "52C3B6FDF011A048C52AFFCD6D3279AD")
     public void drawColor(int color, PorterDuff.Mode mode) {
         native_drawColor(mNativeCanvas, color, mode.nativeInt);
@@ -1919,6 +1925,7 @@ public class Canvas {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.455 -0400", hash_original_method = "DC60B53B0AE455E1CAF5A4B9B6F554F2", hash_generated_method = "284671E9CCA761E0F6E36393D7646CA2")
         @Override
         protected void finalize() throws Throwable {

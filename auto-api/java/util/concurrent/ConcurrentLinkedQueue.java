@@ -562,6 +562,7 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.535 -0400", hash_original_method = "2DB3995911F14A1266042DB21211C241", hash_generated_method = "222A67D39E8562536860AC9AADB6455B")
     private void writeObject(java.io.ObjectOutputStream s) throws java.io.IOException {
         s.defaultWriteObject();
@@ -586,6 +587,7 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.536 -0400", hash_original_method = "4C4E4F1C2555347B7DA11DAA134BF488", hash_generated_method = "195043087F4D59714EBE6DCB2A72BA96")
     private void readObject(java.io.ObjectInputStream s) throws java.io.IOException, ClassNotFoundException {
         s.defaultReadObject();
@@ -805,6 +807,7 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.549 -0400", hash_original_method = "F3203522041DB53AA10973946A26B4E6", hash_generated_method = "77C8EF812F4316524A8D0A1EA92C50CB")
         public boolean hasNext() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1037224272 = getTaintBoolean();

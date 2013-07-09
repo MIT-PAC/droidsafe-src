@@ -123,6 +123,7 @@ public final class CdmaCall extends Call {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.102 -0400", hash_original_method = "ADEE6A90086841672D212D83F619D5B4", hash_generated_method = "CA3BFFAFC1C36E78B0478C3FF716B23A")
      void attach(Connection conn, DriverCall dc) {
         connections.add(conn);
@@ -134,6 +135,7 @@ public final class CdmaCall extends Call {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.102 -0400", hash_original_method = "1D150B86FE35D9DF33C56E5123257F96", hash_generated_method = "060448F3048ABDD756C3C83A86C7C637")
      void attachFake(Connection conn, State state) {
         connections.add(conn);
@@ -185,6 +187,7 @@ public final class CdmaCall extends Call {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.103 -0400", hash_original_method = "1EA8F68D5A466EEC41832970B917D4DC", hash_generated_method = "37A1788C267AED1820241FCE2D09F48E")
      void detach(CdmaConnection conn) {
         connections.remove(conn);
@@ -203,6 +206,7 @@ public final class CdmaCall extends Call {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.104 -0400", hash_original_method = "653CAD94409C4BC1F3DC33028F34238B", hash_generated_method = "19270C2BE2E318FD0DE3DC9C4E4BD9C7")
      boolean update(CdmaConnection conn, DriverCall dc) {
         State newState;
@@ -228,6 +232,7 @@ public final class CdmaCall extends Call {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.104 -0400", hash_original_method = "1C46465CDA75E6DA5CCE62BB3DA600A6", hash_generated_method = "9012E3EA6832F3C328F12440EDFAE5CC")
      boolean isFull() {
         boolean varC5489A296DC91591FD5D45FE337F3741_1487748145 = (connections.size() == CdmaCallTracker.MAX_CONNECTIONS_PER_CALL);

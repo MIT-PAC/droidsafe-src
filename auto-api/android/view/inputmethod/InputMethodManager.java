@@ -1854,6 +1854,7 @@ public final class InputMethodManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.247 -0400", hash_original_method = "FB049513493D8EDB25EAFF891B2EE0A9", hash_generated_method = "491FE9AAE0C5C99171D9D219DB88B9C0")
         @Override
         public boolean isActive() {

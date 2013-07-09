@@ -76,6 +76,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.839 -0400", hash_original_method = "43122228A318CAFA2BE5FD8EB8B7119A", hash_generated_method = "D5BA9992A8F0504461D9AFFD14384CFC")
      boolean canRunInCurrentRunState(boolean periodic) {
         boolean var636123F330B288C0794F274F6243222D_1790802412 = (isRunningOrShutdown(periodic ?
@@ -149,6 +150,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.846 -0400", hash_original_method = "64FA3598D4BDF802451AB41ACA7E6BE8", hash_generated_method = "2DBEAC21D14AF0753F4895D35CC469E2")
     @Override
      void onShutdown() {
@@ -232,6 +234,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.847 -0400", hash_original_method = "43548DFC0EE197F487A673EC89A4A123", hash_generated_method = "40BF9BB45A8FCD0A2599BBEBFAEC0A6E")
      long triggerTime(long delay) {
         long var9E9C1F7E6FCC2FB90620873C1CB2CFB4_1732916086 = (now() +
@@ -664,6 +667,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.857 -0400", hash_original_method = "28936E7BC66C2ACF8A84332D0E4F56D6", hash_generated_method = "B4E81076D79368E24BE7CF1940C46F9A")
         public boolean isPeriodic() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1591148728 = getTaintBoolean();
@@ -758,6 +762,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.859 -0400", hash_original_method = "871562DD277C0AC8BA441D82903E861A", hash_generated_method = "E5400757E0ABDA0692DD3FDCC4FF0F6E")
         private void setIndex(RunnableScheduledFuture f, int idx) {
             ((ScheduledFutureTask)f).heapIndex = idx;
@@ -985,6 +990,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.866 -0400", hash_original_method = "E7CDD1D543D1F61B1D969765A4629893", hash_generated_method = "ADEF7612547F08D42315AAEF1A36D8D8")
         public int remainingCapacity() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_207468183 = getTaintInt();
@@ -1552,6 +1558,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.890 -0400", hash_original_method = "C1264B905CC60CA39EE5BE51F177AC9A", hash_generated_method = "27B561EF2D961765EC70F41D6A709AF1")
             public boolean hasNext() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_88516941 = getTaintBoolean();

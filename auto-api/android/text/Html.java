@@ -50,11 +50,13 @@ public class Html {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Spanned fromHtml(String source) {
         return fromHtml(source, null, null);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Spanned fromHtml(String source, ImageGetter imageGetter,
                                    TagHandler tagHandler) {
         Parser parser = new Parser();
@@ -72,6 +74,7 @@ public class Html {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toHtml(Spanned text) {
         StringBuilder out = new StringBuilder();
         withinHtml(out, text);
@@ -79,6 +82,7 @@ public class Html {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void withinHtml(StringBuilder out, Spanned text) {
         int len = text.length();
         int next;
@@ -112,6 +116,7 @@ public class Html {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void withinDiv(StringBuilder out, Spanned text,
             int start, int end) {
         int next;
@@ -129,6 +134,7 @@ public class Html {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void withinBlockquote(StringBuilder out, Spanned text,
                                          int start, int end) {
         out.append("<p>");
@@ -149,6 +155,7 @@ public class Html {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void withinParagraph(StringBuilder out, Spanned text,
                                         int start, int end, int nl,
                                         boolean last) {
@@ -266,6 +273,7 @@ public class Html {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void withinStyle(StringBuilder out, Spanned text,
                                     int start, int end) {
         for (int i = start; i < end; i++) {

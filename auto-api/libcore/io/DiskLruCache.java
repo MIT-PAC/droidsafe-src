@@ -785,6 +785,7 @@ public final class DiskLruCache implements Closeable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.997 -0400", hash_original_method = "1265F3570693D55B3F128D89D3B629D2", hash_generated_method = "D0CD27AEAB006C8CAFFE8DF88D956C6C")
         public InputStream getInputStream(int index) {
             InputStream varB4EAC82CA7396A68D541C85D26508E83_39208850 = null; 

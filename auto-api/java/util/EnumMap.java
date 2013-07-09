@@ -777,6 +777,7 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.987 -0400", hash_original_method = "6D6AB5C8509128D2C00828238AD4C0D9", hash_generated_method = "AF90C751A8765A5EE84FC09E13A67C39")
         public boolean hasNext() {
             int length = enumMap.enumSize;

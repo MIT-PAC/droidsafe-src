@@ -30,6 +30,7 @@ public final class DefaultSSLContextImpl extends OpenSSLContextImpl {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.024 -0400", hash_original_method = "E512CF487829C633B2731FE964DEE240", hash_generated_method = "0A7E7D64308A21F494BD746A99C663B9")
      KeyManager[] getKeyManagers() throws GeneralSecurityException, IOException {
         KeyManager[] varB4EAC82CA7396A68D541C85D26508E83_1815498344 = null; 
@@ -86,6 +87,7 @@ public final class DefaultSSLContextImpl extends OpenSSLContextImpl {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.025 -0400", hash_original_method = "06C43D579C0D6CACEEC14574641391C0", hash_generated_method = "05064CD035D513906B0988567FD62F6E")
      TrustManager[] getTrustManagers() throws GeneralSecurityException, IOException {
         TrustManager[] varB4EAC82CA7396A68D541C85D26508E83_1450687896 = null; 

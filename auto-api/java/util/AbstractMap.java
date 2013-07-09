@@ -670,6 +670,7 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.538 -0400", hash_original_method = "5E665954E6171F76B6FD9130152FC1D9", hash_generated_method = "D6868DE1B53A4B19ABD179D80B5FCEEE")
         @Override
         public boolean equals(Object object) {
@@ -698,6 +699,7 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.539 -0400", hash_original_method = "6416487D313DFCFD3052C01ADB883217", hash_generated_method = "E8372C03009EDC1677675DC35EB0C31C")
         @Override
         public int hashCode() {
@@ -711,6 +713,7 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.541 -0400", hash_original_method = "D7D954865532EB22F9DFE06F79F78E27", hash_generated_method = "251BE5FBBE8EB9D7EFF4705C555174C1")
         @Override
         public String toString() {
@@ -795,6 +798,7 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.546 -0400", hash_original_method = "5E665954E6171F76B6FD9130152FC1D9", hash_generated_method = "C40C188BE63DA87F4B478C2AFE74D20C")
         @Override
         public boolean equals(Object object) {
@@ -823,6 +827,7 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.546 -0400", hash_original_method = "6416487D313DFCFD3052C01ADB883217", hash_generated_method = "23D2C4993D2E11F9BF9168A3A0ADC472")
         @Override
         public int hashCode() {
@@ -836,6 +841,7 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.547 -0400", hash_original_method = "D7D954865532EB22F9DFE06F79F78E27", hash_generated_method = "1B6481D5FE114251EC854A9348552BDC")
         @Override
         public String toString() {

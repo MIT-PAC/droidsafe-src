@@ -283,6 +283,7 @@ public final class TBSCertList {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.506 -0400", hash_original_method = "235B3774752183ABFC67FCFEA882E536", hash_generated_method = "6CBB9C0FBD9C13D82E65564D1CE3B432")
         public Extensions getCrlEntryExtensions() {
             Extensions varB4EAC82CA7396A68D541C85D26508E83_510873723 = null; 
@@ -294,6 +295,7 @@ public final class TBSCertList {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.506 -0400", hash_original_method = "95F3FA234A9F19C0F47C92249F7AFDCC", hash_generated_method = "9BFA58FBC05051BEB4B1B5C3551E49E3")
         public BigInteger getUserCertificate() {
             BigInteger varB4EAC82CA7396A68D541C85D26508E83_230124980 = null; 
@@ -305,6 +307,7 @@ public final class TBSCertList {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.506 -0400", hash_original_method = "0C5E7D843026F709B3652BD32A196980", hash_generated_method = "6FBCC4A6D06FD14637D3F3C8D24BBCDD")
         public Date getRevocationDate() {
             Date varB4EAC82CA7396A68D541C85D26508E83_279380189 = null; 
@@ -316,6 +319,7 @@ public final class TBSCertList {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.507 -0400", hash_original_method = "CDE119A341F8D25B9AE6819B0711631F", hash_generated_method = "F51B68C3563E057891DC9CD9068EE080")
         public X500Principal getIssuer() {
             X500Principal varB4EAC82CA7396A68D541C85D26508E83_1465506237 = null; 
@@ -364,6 +368,7 @@ public final class TBSCertList {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.508 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "5F99282FCD5395C1DC8372CBD0867D68")
         public byte[] getEncoded() {
             {
@@ -379,6 +384,7 @@ public final class TBSCertList {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.508 -0400", hash_original_method = "E8EF795929F81DA5391DEE3D693BAF7B", hash_generated_method = "5558C9646E1D4A1FCD29978F8502B99B")
         public boolean equals(Object rc) {
             RevokedCertificate rcert = (RevokedCertificate) rc;
@@ -405,6 +411,7 @@ public final class TBSCertList {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.509 -0400", hash_original_method = "524410A369A93135245C5EB9BC27F7C2", hash_generated_method = "1649150C5C575FA35B09E823BE190444")
         public int hashCode() {
             int var72DA3C28B9AFC66C53817C70139CF3EF_1593369294 = (userCertificate.hashCode() * 37 + (int)revocationDate.getTime() / 1000
@@ -417,6 +424,7 @@ public final class TBSCertList {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.510 -0400", hash_original_method = "8F642BB50419022F85F1FC1824E6E317", hash_generated_method = "8A9DDD53D6D85B9CDDAD7A0FBDECA4D1")
         public void dumpValue(StringBuilder sb, String prefix) {
             sb.append(prefix).append("Certificate Serial Number: ").append(userCertificate).append('\n');

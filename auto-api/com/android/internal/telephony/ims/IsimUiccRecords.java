@@ -136,6 +136,7 @@ public final class IsimUiccRecords implements IsimRecords {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.984 -0400", hash_original_method = "81740E578FCC01A298E59A120ACB7A20", hash_generated_method = "7178950E2FDE4FE01AD79B06F0E23470")
         public String getEfName() {
             String varB4EAC82CA7396A68D541C85D26508E83_1950306373 = null; 
@@ -147,6 +148,7 @@ public final class IsimUiccRecords implements IsimRecords {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.985 -0400", hash_original_method = "90A14C4AAFF433EE7EAC0700F3BB549F", hash_generated_method = "2FF6A27BB0D3A86CA06715A5D8ED73A4")
         public void onRecordLoaded(AsyncResult ar) {
             
@@ -174,6 +176,7 @@ public final class IsimUiccRecords implements IsimRecords {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.986 -0400", hash_original_method = "6ACADD4D30DF15849A74BDE374634092", hash_generated_method = "4381216760DA5FDA7B19C349F405C2F1")
         public String getEfName() {
             String varB4EAC82CA7396A68D541C85D26508E83_1668018052 = null; 
@@ -229,6 +232,7 @@ public final class IsimUiccRecords implements IsimRecords {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.995 -0400", hash_original_method = "42CE7E28C1D31526FC06B2AB64B01116", hash_generated_method = "0AD1B22CE87A1053F6F8FA77CD60519E")
         public String getEfName() {
             String varB4EAC82CA7396A68D541C85D26508E83_507251467 = null; 
@@ -240,6 +244,7 @@ public final class IsimUiccRecords implements IsimRecords {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.995 -0400", hash_original_method = "7C79F77549AD4915107C48F1E050653A", hash_generated_method = "D192C690D8427E8A1C501811A198DFE7")
         public void onRecordLoaded(AsyncResult ar) {
             

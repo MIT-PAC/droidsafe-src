@@ -319,6 +319,7 @@ public class TBSCertList extends ASN1Encodable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.986 -0400", hash_original_method = "4F65DC188C3501616DCFC998DA7DBFCB", hash_generated_method = "710D9D36F189C7D99D34638831EF6BAE")
         public DERInteger getUserCertificate() {
             DERInteger varB4EAC82CA7396A68D541C85D26508E83_1339354920 = null; 
@@ -330,6 +331,7 @@ public class TBSCertList extends ASN1Encodable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.986 -0400", hash_original_method = "4B493204B476D887C77BCF51D1F57DB2", hash_generated_method = "1DA3B57685D0D04848EF959D1ECEC953")
         public Time getRevocationDate() {
             Time varB4EAC82CA7396A68D541C85D26508E83_1812033588 = null; 
@@ -341,6 +343,7 @@ public class TBSCertList extends ASN1Encodable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.987 -0400", hash_original_method = "15344AC9965F1BCC242E7479E06915DE", hash_generated_method = "B7D8FB1A8683F057694C60ADE8154E1D")
         public X509Extensions getExtensions() {
             X509Extensions varB4EAC82CA7396A68D541C85D26508E83_893376072 = null; 
@@ -362,6 +365,7 @@ public class TBSCertList extends ASN1Encodable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.988 -0400", hash_original_method = "0BE753B103EB5E27F0AD9CE4B67E8D14", hash_generated_method = "A93CCB80309A56B33AC3D56133E58B18")
         public DERObject toASN1Object() {
             DERObject varB4EAC82CA7396A68D541C85D26508E83_632132947 = null; 
@@ -390,6 +394,7 @@ public class TBSCertList extends ASN1Encodable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.990 -0400", hash_original_method = "FBC842E02AF9214599A6659CADABA547", hash_generated_method = "52120165FE4F50B79FA0B2286A830334")
         public boolean hasMoreElements() {
             boolean varB188EF125CE599069C2B3F78653D629C_590223783 = (en.hasMoreElements());
@@ -400,6 +405,7 @@ public class TBSCertList extends ASN1Encodable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.991 -0400", hash_original_method = "09463CFA8BEF092B2195E66AA891F38D", hash_generated_method = "1DE7E25459B6153FCA02DB740424CD62")
         public Object nextElement() {
             Object varB4EAC82CA7396A68D541C85D26508E83_330782231 = null; 
@@ -424,6 +430,7 @@ public class TBSCertList extends ASN1Encodable {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.992 -0400", hash_original_method = "50CD0E92886EDA5BEE0164B092B351EC", hash_generated_method = "E1CF32CAD7EA4C27A6450EF73A69EE1F")
         public boolean hasMoreElements() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_6259513 = getTaintBoolean();
@@ -433,6 +440,7 @@ public class TBSCertList extends ASN1Encodable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.994 -0400", hash_original_method = "6A32EEF26E654AE1CD00BB3EBA8A611E", hash_generated_method = "27C65079816AD72511B4B4EDDBB92407")
         public Object nextElement() {
             Object varB4EAC82CA7396A68D541C85D26508E83_545882378 = null; 

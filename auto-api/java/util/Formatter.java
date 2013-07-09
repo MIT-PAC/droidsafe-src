@@ -1962,6 +1962,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.504 -0400", hash_original_method = "784B3214258603820EA00D340F6FA563", hash_generated_method = "5810D5C6A84A5B6CCD8D8CB68EC94C88")
         public NativeDecimalFormat update(LocaleData localeData, String pattern) {
             NativeDecimalFormat varB4EAC82CA7396A68D541C85D26508E83_1726938070 = null; 
@@ -2054,6 +2055,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.505 -0400", hash_original_method = "A7B957B3122A1E0264F586D374F2E6B7", hash_generated_method = "2A22B05000C61347FEBCC6DF5E68A740")
          boolean isDefault() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_644518210 = getTaintBoolean();
@@ -2064,6 +2066,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.506 -0400", hash_original_method = "A13969ECEC9F8D1C94EA6A52CDFB6E17", hash_generated_method = "34A94901FEE29621D0595BC9DFE5509B")
          boolean isPrecisionSet() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_161653675 = getTaintBoolean();
@@ -2073,6 +2076,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.506 -0400", hash_original_method = "3A74106121887CCA509F985D60DB5637", hash_generated_method = "C694281182EECB0EBFFB772248BD1290")
          int getArgIndex() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1525403651 = getTaintInt();
@@ -2082,6 +2086,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.506 -0400", hash_original_method = "27CE41687BF54420F4C00D2CFB6A73FA", hash_generated_method = "F3E94D0F268DD41F463EE67139BE9385")
          void setArgIndex(int index) {
             argIndex = index;
@@ -2090,6 +2095,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.506 -0400", hash_original_method = "40140C97EC91863535630C305615FEC1", hash_generated_method = "66D8F6629A1309EB07077042511FF80B")
          int getWidth() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1556963231 = getTaintInt();
@@ -2099,6 +2105,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.507 -0400", hash_original_method = "5C954D9C93DF99E2E990960A3CC1749D", hash_generated_method = "D40BD430ACB0EA3E0D63770A2976B08D")
          void setWidth(int width) {
             this.width = width;
@@ -2107,6 +2114,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.507 -0400", hash_original_method = "71BCDCF9E73C85D95AB18BEF6635FA18", hash_generated_method = "344A1F425669CD968A07635790B988C2")
          int getPrecision() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1457551793 = getTaintInt();
@@ -2116,6 +2124,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.507 -0400", hash_original_method = "7515FB19ACE3C47DEBBD3E8357F6915C", hash_generated_method = "5866B10F1157266750859E3B0502D979")
          void setPrecision(int precise) {
             this.precision = precise;
@@ -2124,6 +2133,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.508 -0400", hash_original_method = "837A02C50E03265F058B23775F6F6197", hash_generated_method = "052CA00A2B99A602F72EF0F1CF12F90D")
          String getStrFlags() {
             String varB4EAC82CA7396A68D541C85D26508E83_1690588044 = null; 
@@ -2195,6 +2205,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.510 -0400", hash_original_method = "563B5213711441DEFA9BB3355CD61032", hash_generated_method = "AA0ABD4AEBC9A7B4C3BF6967DCF8A747")
          char getConversionType() {
             char varA87DEB01C5F539E6BDA34829C8EF2368_1780909020 = getTaintChar();
@@ -2204,6 +2215,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.511 -0400", hash_original_method = "6C3279116A999B7A879305F448E4C7E6", hash_generated_method = "37AF4C580148FD1E99691D99021A9434")
          void setConversionType(char c) {
             conversionType = c;
@@ -2212,6 +2224,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.511 -0400", hash_original_method = "EE45DA1AFAF958B13872135C146745E9", hash_generated_method = "F03C25A5705D3B27040605D99313B861")
          char getDateSuffix() {
             char varA87DEB01C5F539E6BDA34829C8EF2368_1903014016 = getTaintChar();
@@ -2221,6 +2234,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.512 -0400", hash_original_method = "6F4F20E9A23952874C5B1A6A80E321B4", hash_generated_method = "B3184FE9D51C912BE0F6FB157BD6AF85")
          void setDateSuffix(char c) {
             dateSuffix = c;
@@ -2229,6 +2243,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.512 -0400", hash_original_method = "67F4DE623207C5AE23B919ACAD45AA0B", hash_generated_method = "C2C90F14A07E364098480392257B3704")
          boolean requireArgument() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_698734086 = getTaintBoolean();
@@ -2357,6 +2372,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.515 -0400", hash_original_method = "ECFEC3AA46FEEC6BDD34290E5303C5C1", hash_generated_method = "1F40DF5C85005D492273A294DD80B82F")
         public UnknownFormatConversionException unknownFormatConversionException() {
             {
@@ -2416,6 +2432,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.518 -0400", hash_original_method = "F77740880648C3886F14C74FD023BD3A", hash_generated_method = "C2097C18439B735376EFE7A3A9C9B82C")
          FormatToken parseFormatToken(int offset) {
             FormatToken varB4EAC82CA7396A68D541C85D26508E83_1302893153 = null; 
@@ -2431,6 +2448,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.520 -0400", hash_original_method = "7C388C74117CDF3E7844B526DC734D8C", hash_generated_method = "43BF942299B4829473E24F00103EA267")
          String getFormatSpecifierText() {
             String varB4EAC82CA7396A68D541C85D26508E83_208988470 = null; 
@@ -2442,6 +2460,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.523 -0400", hash_original_method = "6521B9C02DA744FF180556D39A74ED44", hash_generated_method = "A16D5C184AF013DD6A5E3A1CD978CDA6")
         private int peek() {
             {
@@ -2454,6 +2473,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.524 -0400", hash_original_method = "F520742ED92EBACDB47FBF0D0B1F08F4", hash_generated_method = "FACE0D9305AC8039F2C48FCCF1C92A68")
         private char advance() {
             {
@@ -2470,6 +2490,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.525 -0400", hash_original_method = "DFAEBB829CC6A7AFE465DA1B9A0C1D5A", hash_generated_method = "30FA7929508460104EF53B75E4099319")
         private UnknownFormatConversionException unknownFormatConversionException() {
         	throw new UnknownFormatConversionException(getFormatSpecifierText());
@@ -2556,6 +2577,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.527 -0400", hash_original_method = "F4C6E47C7F58A93445972E2EDFDFCD5C", hash_generated_method = "E70A8ACCD5439E030EB11FE6D375B98F")
         private FormatToken parseWidth(FormatToken token, int width) {
             FormatToken varB4EAC82CA7396A68D541C85D26508E83_470294632 = null; 
@@ -2592,6 +2614,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.529 -0400", hash_original_method = "06DE93E908B11B43F41251F270A468F2", hash_generated_method = "A3910035DB71A87A8A4267343820CAA0")
         private FormatToken parsePrecision(FormatToken token) {
             FormatToken varB4EAC82CA7396A68D541C85D26508E83_1970296999 = null; 
@@ -2622,6 +2645,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.529 -0400", hash_original_method = "779E7C7A9E24C2B8C7A984530163E241", hash_generated_method = "53BE908F49527112DDF281793FA857B3")
         private FormatToken parseConversionType(FormatToken token) {
             FormatToken varB4EAC82CA7396A68D541C85D26508E83_1329770109 = null; 
@@ -2646,6 +2670,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.530 -0400", hash_original_method = "ADF8322FF676CF5038257F50E4E4E6DC", hash_generated_method = "B7E83DB2DD2AECE9EAF4306611622E4B")
         private int nextInt() {
             long value = 0;
@@ -2672,6 +2697,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.531 -0400", hash_original_method = "F2814F47D4EB7F1D4CA24D9FE1C3918D", hash_generated_method = "939D14B88A753FD925BDB713245BFDB9")
         private int failNextInt() {
             {

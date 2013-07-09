@@ -31,6 +31,7 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.350 -0400", hash_original_method = "46C31F1840FDB44A1F40EC87B2DB5960", hash_generated_method = "4771AA5725C9B4E7D0D4347C56D127F2")
     public CharSequence getTransformation(CharSequence source, View view) {
         CharSequence varB4EAC82CA7396A68D541C85D26508E83_981359392 = null; 
@@ -69,6 +70,7 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static PasswordTransformationMethod getInstance() {
         if (sInstance != null)
             return sInstance;
@@ -89,6 +91,7 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.351 -0400", hash_original_method = "E9233B27956FDFC70D77F5557A52BB47", hash_generated_method = "1AA7773B00C3CA80EF00CCBF7D8AD44C")
     public void onTextChanged(CharSequence s, int start,
                               int before, int count) {
@@ -132,6 +135,7 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.352 -0400", hash_original_method = "D64B8AB73A1F5CA65D62622D3C82E686", hash_generated_method = "CAD03482B712B19E777303DA29E90C67")
     public void onFocusChanged(View view, CharSequence sourceText,
                                boolean focused, int direction,
@@ -158,6 +162,7 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void removeVisibleSpans(Spannable sp) {
         Visible[] old = sp.getSpans(0, sp.length(), Visible.class);
         for (int i = 0; i < old.length; i++) {

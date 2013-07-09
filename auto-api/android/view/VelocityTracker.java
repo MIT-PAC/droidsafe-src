@@ -314,6 +314,7 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:55.243 -0400", hash_original_method = "17E8AE405780B4520E14D05EC083CF07", hash_generated_method = "CD415829A27280D9EBFA1EEABAD4F6FC")
         private float estimate(float time, float[] c) {
             float a = 0;

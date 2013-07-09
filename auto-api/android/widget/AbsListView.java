@@ -6456,6 +6456,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.993 -0400", hash_original_method = "57C233A5EDE21FDF3E40ACFA65FCBA6D", hash_generated_method = "3BE0D93844CB69FC6467C6B3B65058ED")
         public void setWrapped(MultiChoiceModeListener wrapped) {
             mWrapped = wrapped;
@@ -6723,6 +6724,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.997 -0400", hash_original_method = "511AFE11A00C49C0B36C81F833AD1339", hash_generated_method = "9262277D5F81CC07A8F83F400DD04180")
         public boolean shouldRecycleViewType(int viewType) {
             addTaint(viewType);
@@ -6814,6 +6816,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.000 -0400", hash_original_method = "6DDE0EAFBBDE35C2F4BC64D693E74936", hash_generated_method = "06E07503C3DDDFB58268EED896EB89A7")
          View getActiveView(int position) {
             View varB4EAC82CA7396A68D541C85D26508E83_154285438 = null; 

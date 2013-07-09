@@ -1464,6 +1464,7 @@ public class SIPServerTransaction extends SIPTransaction implements ServerReques
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.018 -0400", hash_original_method = "2AF4E8E71B0B58D5A8BFD9769A90D169", hash_generated_method = "F8DF0D2902597E43F984D04793F539C7")
         protected void runTask() {
             SIPServerTransaction serverTransaction = SIPServerTransaction.this;

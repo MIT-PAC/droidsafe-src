@@ -1010,6 +1010,7 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.581 -0400", hash_original_method = "F09A90C496A148F600E3D02A9731BC19", hash_generated_method = "3E167B4580A2092826C96F6BA634716F")
      void bumpBackStackNesting(int amt) {
         Op op = mHead;
@@ -1056,6 +1057,7 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.582 -0400", hash_original_method = "01D779364E83C28A30DD99CF6E54EB38", hash_generated_method = "8982AFD2B748AE618F66781031B7AAB1")
      int commitInternal(boolean allowStateLoss) {
         if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("commit already called");

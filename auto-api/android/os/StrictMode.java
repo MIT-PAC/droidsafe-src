@@ -786,6 +786,7 @@ public final class StrictMode {
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.304 -0400", hash_original_method = "450902735A2D953DC54C05378B49DC09", hash_generated_method = "2814457D8F49B1D73A4819BA8E547C48")
             private Builder enable(int bit) {
                 Builder varB4EAC82CA7396A68D541C85D26508E83_1962805246 = null; 
@@ -799,6 +800,7 @@ public final class StrictMode {
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.305 -0400", hash_original_method = "DD377E4C338D3B09C11C3D4D7DFD99D3", hash_generated_method = "DA8E33686D2A625F0C94D0D7C43A8278")
             private Builder disable(int bit) {
                 Builder varB4EAC82CA7396A68D541C85D26508E83_54106548 = null; 
@@ -1030,6 +1032,7 @@ public final class StrictMode {
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.314 -0400", hash_original_method = "450902735A2D953DC54C05378B49DC09", hash_generated_method = "3C1D05F7FD76C9388FC4C4E3402F288C")
             private Builder enable(int bit) {
                 Builder varB4EAC82CA7396A68D541C85D26508E83_21991455 = null; 
@@ -1176,6 +1179,7 @@ public final class StrictMode {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.318 -0400", hash_original_method = "BDAE35F9BC36FEF12DCB9013D520032B", hash_generated_method = "82DC5767A4589C8BB0D2A68F045DB249")
         public int getPolicyMask() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1604120362 = getTaintInt();
@@ -1280,6 +1284,7 @@ public final class StrictMode {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.321 -0400", hash_original_method = "A35D2E9A8AD0B9C28C9280D1C3956061", hash_generated_method = "6D9513DC2646B63D96CE73E109E46A70")
         public void setPolicyMask(int policyMask) {
             mPolicyMask = policyMask;

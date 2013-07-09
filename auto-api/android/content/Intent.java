@@ -1382,7 +1382,7 @@ public class Intent implements Parcelable, Cloneable {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.969 -0400", hash_original_method = "797A6BD6371209544F539CFD71A54CFB", hash_generated_method = "0153D37FB9977C2BA452EE7EA8509A6A")
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     public Intent setType(String type) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_590987695 = null; 
         mData = null;
@@ -1398,7 +1398,7 @@ public class Intent implements Parcelable, Cloneable {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.970 -0400", hash_original_method = "43AA0CE5E260B0FA5B26C9FC36ABF327", hash_generated_method = "694EE77F060E21E47061A30AA01A6898")
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     public Intent setDataAndType(Uri data, String type) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_519849909 = null; 
         mData = data;
@@ -1486,7 +1486,7 @@ public class Intent implements Parcelable, Cloneable {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.976 -0400", hash_original_method = "E358DED697FF080F831811D5D578FEBC", hash_generated_method = "2673D3955466958DB9482125880C906D")
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     public Intent putExtra(String name, boolean value) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_1593338260 = null; 
         {
@@ -2238,7 +2238,7 @@ public class Intent implements Parcelable, Cloneable {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.018 -0400", hash_original_method = "324CD70B42F70589537B5DD566C39001", hash_generated_method = "A57CFC44A4ABED881097D33E27748DFB")
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     public Intent addFlags(int flags) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_644363471 = null; 
         mFlags |= flags;
@@ -3001,6 +3001,7 @@ public class Intent implements Parcelable, Cloneable {
         }
 
 
+        @DSModeled(DSC.SPEC)
         public static ShortcutIconResource fromContext(Context context, int resourceId) {
             ShortcutIconResource icon = new ShortcutIconResource();
             icon.packageName = context.getPackageName();
@@ -3009,6 +3010,7 @@ public class Intent implements Parcelable, Cloneable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.096 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "FCDA573577109894B5402F2835F68B3A")
         public int describeContents() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_217372686 = getTaintInt();
@@ -3018,6 +3020,7 @@ public class Intent implements Parcelable, Cloneable {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.096 -0400", hash_original_method = "A078CBD5399741F593957325C4A01342", hash_generated_method = "8744A70258812FA0D96388DB5F87F3EB")
         public void writeToParcel(Parcel dest, int flags) {
             dest.writeString(packageName);
@@ -3030,6 +3033,7 @@ public class Intent implements Parcelable, Cloneable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.098 -0400", hash_original_method = "8D66F7367028E1EB1EA87D8477E02D6C", hash_generated_method = "572D2016C46006F12C5253683B4434DA")
         @Override
         public String toString() {
@@ -3093,6 +3097,7 @@ public class Intent implements Parcelable, Cloneable {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.102 -0400", hash_original_method = "AD027B7B58A4A2F151CC138FB7B23244", hash_generated_method = "B180EFB86DC36705FDC9FF6438F07E52")
         public Intent getIntent() {
             Intent varB4EAC82CA7396A68D541C85D26508E83_419321933 = null; 
@@ -3104,6 +3109,7 @@ public class Intent implements Parcelable, Cloneable {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.103 -0400", hash_original_method = "57E0DE3F426C34FAD2C087D7985C733F", hash_generated_method = "DB169C8D01F8C75A57A9DBDC31A53FD2")
         @Override
         public boolean equals(Object obj) {
@@ -3123,6 +3129,7 @@ public class Intent implements Parcelable, Cloneable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.103 -0400", hash_original_method = "D7D5E8B622FC6A9CB6E203DCD79B8799", hash_generated_method = "FE9690D63208BF4A193201FCA1386380")
         @Override
         public int hashCode() {

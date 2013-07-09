@@ -811,6 +811,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.947 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "FB81FDB4CEB435818762BA1B271FE20C")
         @Override
         public int describeContents() {
@@ -896,6 +897,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.950 -0400", hash_original_method = "6BA15F1E8189A4801AF337396791DD31", hash_generated_method = "1F85CFCC7E663C2E73F24AF230EBEBF6")
         public boolean needsDividerBefore() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_457165050 = getTaintBoolean();
@@ -905,6 +907,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.951 -0400", hash_original_method = "CA065FAE0BB06CECFBFA2C36E268A066", hash_generated_method = "D6B31F1C2C560455C8058C43AB179B91")
         public boolean needsDividerAfter() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_402273565 = getTaintBoolean();

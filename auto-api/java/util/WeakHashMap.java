@@ -103,6 +103,7 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
             public void clear() {
                 WeakHashMap.this.clear();
@@ -118,6 +119,7 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.920 -0400", hash_original_method = "7C0BA359573790AC71E46CA35F3B3C5D", hash_generated_method = "75F50AC397AC0C19287DABFC39A84386")
     @Override
     public boolean containsKey(Object key) {
@@ -136,11 +138,13 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
         Set<Map.Entry<K, V>> varB4EAC82CA7396A68D541C85D26508E83_98932952 = null; 
         poll();
         varB4EAC82CA7396A68D541C85D26508E83_98932952 = new AbstractSet<Map.Entry<K, V>>() {
-            @Override
+            @DSModeled(DSC.SAFE)
+    @Override
             public int size() {
                 return WeakHashMap.this.size();
             }
-            @Override
+            @DSModeled(DSC.SAFE)
+    @Override
             public void clear() {
                 WeakHashMap.this.clear();
             }
@@ -201,7 +205,8 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                     
                     
                 }
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.924 -0400", hash_original_method = "997773928D6A4FA2A905BEE282A68997", hash_generated_method = "71F8C37510C95CD83230ED91788B2D2E")
+                @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.924 -0400", hash_original_method = "997773928D6A4FA2A905BEE282A68997", hash_generated_method = "71F8C37510C95CD83230ED91788B2D2E")
                 @Override
                 public int size() {
                     int varEB466AC21988954CC038D6EAFB4E7FEA_274505826 = (WeakHashMap.this.size());
@@ -210,7 +215,8 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                     
                     
                 }
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.924 -0400", hash_original_method = "0820DD19F55EBD9E05BEDEF72AA76B85", hash_generated_method = "216199AA5B7C7589486AA111C1364167")
+                @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.924 -0400", hash_original_method = "0820DD19F55EBD9E05BEDEF72AA76B85", hash_generated_method = "216199AA5B7C7589486AA111C1364167")
                 @Override
                 public void clear() {
                     WeakHashMap.this.clear();
@@ -316,7 +322,8 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
         poll();
         {
             valuesCollection = new AbstractCollection<V>() {                
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.928 -0400", hash_original_method = "997773928D6A4FA2A905BEE282A68997", hash_generated_method = "EF93317917BA4940EF33F5F2A4CAF8C4")
+                @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.928 -0400", hash_original_method = "997773928D6A4FA2A905BEE282A68997", hash_generated_method = "EF93317917BA4940EF33F5F2A4CAF8C4")
                 @Override
                 public int size() {
                     int varEB466AC21988954CC038D6EAFB4E7FEA_1933907739 = (WeakHashMap.this.size());
@@ -325,7 +332,8 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                     
                     
                 }
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.928 -0400", hash_original_method = "0820DD19F55EBD9E05BEDEF72AA76B85", hash_generated_method = "216199AA5B7C7589486AA111C1364167")
+                @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.928 -0400", hash_original_method = "0820DD19F55EBD9E05BEDEF72AA76B85", hash_generated_method = "216199AA5B7C7589486AA111C1364167")
                 @Override
                 public void clear() {
                     WeakHashMap.this.clear();
@@ -513,6 +521,7 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.935 -0400", hash_original_method = "EBDA4BA5DE93153797BA511A1B84894F", hash_generated_method = "1D3BC917D97E4654A0FC4AFCBAD9C8DC")
     @Override
     public boolean containsValue(Object value) {
@@ -553,6 +562,7 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.935 -0400", hash_original_method = "296240B68F4A866C698190CF33710ED8", hash_generated_method = "06C84630E0CD8EB17B8EBB299F3405B9")
     @Override
     public boolean isEmpty() {
@@ -564,6 +574,7 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.936 -0400", hash_original_method = "0A4BB2570FECEAC055174AF0C493CF3C", hash_generated_method = "F1153C6963365656657E6D73D165E8A3")
     @SuppressWarnings("unchecked")
      void poll() {
@@ -678,6 +689,7 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.943 -0400", hash_original_method = "2B64F6E6AE3910B09507F9013DEACFFD", hash_generated_method = "742AC41AB566188090CFE5CBA393A7F2")
     private void rehash() {
         int length = elementData.length * 2;
@@ -789,6 +801,7 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.948 -0400", hash_original_method = "B65BB7405B9BD112F0A817BA32556A99", hash_generated_method = "3314B8CC9E12316B094819BA633CA3C4")
     @Override
     public int size() {

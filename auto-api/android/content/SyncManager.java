@@ -374,7 +374,7 @@ public class SyncManager implements OnAccountsUpdateListener {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.969 -0400", hash_original_method = "90A2C58DEF02026C184592212F85FF18", hash_generated_method = "3DCB114F1FD95C58A67FDAF80A44DEDD")
     private boolean readDataConnectionState() {
         NetworkInfo networkInfo = getConnectivityManager().getActiveNetworkInfo();
@@ -387,7 +387,7 @@ public class SyncManager implements OnAccountsUpdateListener {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.971 -0400", hash_original_method = "85835365DA8D3F37E74A4C98C5566C52", hash_generated_method = "31EFE1514B59B46AA32E935D32AAD1E1")
     private ConnectivityManager getConnectivityManager() {
         ConnectivityManager varB4EAC82CA7396A68D541C85D26508E83_1710970775 = null; 
@@ -448,7 +448,7 @@ public class SyncManager implements OnAccountsUpdateListener {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.974 -0400", hash_original_method = "51F169FF6EC2BB253880B74521EEDA04", hash_generated_method = "35DF559DA3A5DA237B231F2EE75E3A9C")
     private void ensureAlarmService() {
         {
@@ -622,7 +622,7 @@ public class SyncManager implements OnAccountsUpdateListener {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.976 -0400", hash_original_method = "9A217D026FB5B08090F4BAFAA08C0DF7", hash_generated_method = "6449DABDB90B4BB5CCB5A2A2DFFBA1A7")
     public void scheduleLocalSync(Account account, String authority) {
         final Bundle extras = new Bundle();
@@ -897,6 +897,7 @@ public class SyncManager implements OnAccountsUpdateListener {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.996 -0400", hash_original_method = "7F8B5486825DA8802A08F87FCECDEB6D", hash_generated_method = "0E72F9B22090E9DDA03C074833BDBFED")
      void maybeRescheduleSync(SyncResult syncResult, SyncOperation operation) {
         boolean isLoggable = Log.isLoggable(TAG, Log.DEBUG);
@@ -1654,6 +1655,7 @@ public class SyncManager implements OnAccountsUpdateListener {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.078 -0400", hash_original_method = "9C4A98A4ADBC598450E25E4EB304536B", hash_generated_method = "F9570B3E1B80C03E81B9C0CA1492B7FB")
         public void onServiceConnected(ComponentName name, IBinder service) {
             
@@ -1696,6 +1698,7 @@ public class SyncManager implements OnAccountsUpdateListener {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.079 -0400", hash_original_method = "7C8777D718751E565C82B5C1458835CE", hash_generated_method = "956FEBD81C7AB60A87B4B273B50F4D63")
         public void onServiceDisconnected(ComponentName name) {
             
@@ -1747,6 +1750,7 @@ public class SyncManager implements OnAccountsUpdateListener {
         }
 
 
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.082 -0400", hash_original_method = "B17BCAD698B90432E3978D14A6575096", hash_generated_method = "5BD8AF817AB4808B9D575FFF16CD1C8F")
         public void onReceive(Context context, Intent intent) {
             
@@ -1824,12 +1828,14 @@ public class SyncManager implements OnAccountsUpdateListener {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.084 -0400", hash_original_method = "7456DA1EA096E82DD762DA299B1797D3", hash_generated_method = "540CBBFBA53CA8CE698C636F326A356D")
         public void sendHeartbeat() {
             
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.085 -0400", hash_original_method = "2741CA480AE203CDFD1BCCBB420C487D", hash_generated_method = "DC9C4DBF7DABB67996D2F707E0092881")
         public void onFinished(SyncResult result) {
             
@@ -2210,6 +2216,7 @@ public class SyncManager implements OnAccountsUpdateListener {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.108 -0400", hash_original_method = "AC98BBE28F5005D2D34EEDF919BF395C", hash_generated_method = "DA00B71E528041238B05464041229EF3")
         public void handleMessage(Message msg) {
             long earliestFuturePollTime = Long.MAX_VALUE;
@@ -2407,6 +2414,7 @@ public class SyncManager implements OnAccountsUpdateListener {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.118 -0400", hash_original_method = "8B5418D48FBDFB608CDA80C6788E1356", hash_generated_method = "81EAE5C89C978BDC2D7548C8F0285B34")
         private long maybeStartNextSyncLocked() {
             final boolean isLoggable = Log.isLoggable(TAG, Log.VERBOSE);
@@ -2565,6 +2573,7 @@ public class SyncManager implements OnAccountsUpdateListener {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.121 -0400", hash_original_method = "40340E62514BC19DB7E9216642814F86", hash_generated_method = "3C00D5D7760B3535820D9F7C94C77ADC")
         private boolean dispatchSyncOperation(SyncOperation op) {
             {
@@ -2634,6 +2643,7 @@ public class SyncManager implements OnAccountsUpdateListener {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.127 -0400", hash_original_method = "7B28CEC882EFEBA05BFBBAFD319121EA", hash_generated_method = "AA0DE2354D2AC4F912EBA66BCDF1097F")
         private void cancelActiveSyncLocked(Account account, String authority) {
             ArrayList<ActiveSyncContext> activeSyncs = new ArrayList<ActiveSyncContext>(mActiveSyncContexts);
@@ -2665,6 +2675,7 @@ public class SyncManager implements OnAccountsUpdateListener {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.128 -0400", hash_original_method = "8D8637124BC010FEF841826099E3536E", hash_generated_method = "F8B16AF3F21914CBAC56D254C17450EF")
         private void runSyncFinishedOrCanceledLocked(SyncResult syncResult,
                 ActiveSyncContext activeSyncContext) {
@@ -2761,6 +2772,7 @@ public class SyncManager implements OnAccountsUpdateListener {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.133 -0400", hash_original_method = "D7164ED4506DE94304BF76B0FBC03583", hash_generated_method = "E99BCFE1BCC50B20358946A5340E8E15")
         private void manageSyncNotificationLocked() {
             boolean shouldCancel;
@@ -2819,6 +2831,7 @@ public class SyncManager implements OnAccountsUpdateListener {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.138 -0400", hash_original_method = "E1B88EC7C887370D571018E17194D40D", hash_generated_method = "429298C19A4D607BE0F687175DAA2482")
         private void manageSyncAlarmLocked(long nextPeriodicEventElapsedTime,
                 long nextPendingEventElapsedTime) {
@@ -2916,6 +2929,7 @@ public class SyncManager implements OnAccountsUpdateListener {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.139 -0400", hash_original_method = "87A468A0891FD210AAD2B0099F053FF2", hash_generated_method = "C1721F8108F2277D2ED1BE890A21DDB2")
         private void installHandleTooManyDeletesNotification(Account account, String authority,
                 long numDeletes) {
@@ -2951,6 +2965,7 @@ public class SyncManager implements OnAccountsUpdateListener {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.140 -0400", hash_original_method = "ABB616725C31652C20F8F96BBDEFC6AA", hash_generated_method = "578B6C1885D1AA152E738646795BE342")
         private boolean isActivityAvailable(Intent intent) {
             PackageManager pm = mContext.getPackageManager();

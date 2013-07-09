@@ -268,6 +268,7 @@ public class Selection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean moveToPreceding(
             Spannable text, PositionIterator iter, boolean extendSelection) {
         final int offset = iter.preceding(getSelectionEnd(text));
@@ -282,6 +283,7 @@ public class Selection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean moveToFollowing(
             Spannable text, PositionIterator iter, boolean extendSelection) {
         final int offset = iter.following(getSelectionEnd(text));
@@ -296,6 +298,7 @@ public class Selection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int findEdge(Spannable text, Layout layout, int dir) {
         int pt = getSelectionEnd(text);
         int line = layout.getLineForOffset(pt);
@@ -312,6 +315,7 @@ public class Selection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int chooseHorizontal(Layout layout, int direction,
                                         int off1, int off2) {
         int line1 = layout.getLineForOffset(off1);

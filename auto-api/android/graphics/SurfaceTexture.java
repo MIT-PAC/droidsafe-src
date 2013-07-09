@@ -74,6 +74,7 @@ public class SurfaceTexture {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.436 -0400", hash_original_method = "73040EC5A717DD03B1E2713EBAC256DF", hash_generated_method = "A4145A0245B3888FB176CF0DDAA2B447")
     public void setDefaultBufferSize(int width, int height) {
         nativeSetDefaultBufferSize(width, height);
@@ -84,6 +85,7 @@ public class SurfaceTexture {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.436 -0400", hash_original_method = "2A6ADC9927C563F3FF4AF28D3226D576", hash_generated_method = "F4AEB83BAEB1AA2023C62C4F3C86F99C")
     public void updateTexImage() {
         int err = nativeUpdateTexImage();
@@ -98,6 +100,7 @@ public class SurfaceTexture {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.437 -0400", hash_original_method = "BB625075136BE4BF04377676D5DA464A", hash_generated_method = "0E1F03DB38B24954FE657591E6FFBCDE")
     public void getTransformMatrix(float[] mtx) {
         {
@@ -113,6 +116,7 @@ public class SurfaceTexture {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.437 -0400", hash_original_method = "1E06887ADD0CA49D5969AE26836E85A4", hash_generated_method = "5913659FE9FAE46FCA28234ED56B98F5")
     public long getTimestamp() {
         long var18BA78939055EC15B891B01928A9AA7A_529166601 = (nativeGetTimestamp());
@@ -123,6 +127,7 @@ public class SurfaceTexture {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.437 -0400", hash_original_method = "D25304D195F58D125972FA32527A0B4B", hash_generated_method = "B7776AF5A8E3FC4F626BC7EA0247303C")
     public void release() {
         nativeRelease();
@@ -131,6 +136,7 @@ public class SurfaceTexture {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.438 -0400", hash_original_method = "9BBDD5FE82DE1D04FB6B805CB455ABD6", hash_generated_method = "D2EC0274E3B94A62F39E610CB5453EC2")
     protected void finalize() throws Throwable {
         try 
@@ -150,6 +156,7 @@ public class SurfaceTexture {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings({"UnusedDeclaration"})
     private static void postEventFromNative(Object selfRef) {
         WeakReference weakSelf = (WeakReference)selfRef;

@@ -107,6 +107,7 @@ public class EdgeEffectCompat {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.314 -0400", hash_original_method = "598F7EE7163BC02F940E7AE457E81E71", hash_generated_method = "04BB62EAF6A30E672B87E2FF05E23790")
         public Object newEdgeEffect(Context context) {
             Object varB4EAC82CA7396A68D541C85D26508E83_442929234 = null; 
@@ -119,6 +120,7 @@ public class EdgeEffectCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.315 -0400", hash_original_method = "7AB0823D4C5E0A56EB104E764A6EE643", hash_generated_method = "49B2AA1843748C607BB1606128254A22")
         public void setSize(Object edgeEffect, int width, int height) {
             addTaint(edgeEffect.getTaint());
@@ -128,6 +130,7 @@ public class EdgeEffectCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.315 -0400", hash_original_method = "18A3B4E50EAF82FBFB3F783FB1724270", hash_generated_method = "9091B19E0029EC4B4824BA6FDDE5E3F5")
         public boolean isFinished(Object edgeEffect) {
             addTaint(edgeEffect.getTaint());
@@ -138,6 +141,7 @@ public class EdgeEffectCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.316 -0400", hash_original_method = "4537DDA1058A07DD12C2683C46DAE0A0", hash_generated_method = "214222B178933FED02E3E3C1CFC2ED00")
         public void finish(Object edgeEffect) {
             addTaint(edgeEffect.getTaint());
@@ -145,6 +149,7 @@ public class EdgeEffectCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.316 -0400", hash_original_method = "6D6767FA0A7FD096DC5FAE330C25B4EB", hash_generated_method = "3E738DDF48FF5A79F0B1A3E7D01E767B")
         public boolean onPull(Object edgeEffect, float deltaDistance) {
             
@@ -157,6 +162,7 @@ public class EdgeEffectCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.317 -0400", hash_original_method = "4CCDA82CBCC611597E463B09D91011D3", hash_generated_method = "4D414B3AB7831C2C504EA14C72EAFA0A")
         public boolean onRelease(Object edgeEffect) {
             
@@ -168,6 +174,7 @@ public class EdgeEffectCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.317 -0400", hash_original_method = "E4A19D3F19F8749DFC3F77D5467C90AC", hash_generated_method = "7FA39F5884BE376CF7D3C0CF1EC86945")
         public boolean onAbsorb(Object edgeEffect, int velocity) {
             
@@ -180,6 +187,7 @@ public class EdgeEffectCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.318 -0400", hash_original_method = "014795F812E9F03FFB958DEDF8F6EEBD", hash_generated_method = "07CEBA38868EC0492FB606538E200922")
         public boolean draw(Object edgeEffect, Canvas canvas) {
             addTaint(edgeEffect.getTaint());

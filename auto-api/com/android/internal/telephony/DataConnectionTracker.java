@@ -1600,6 +1600,7 @@ public abstract class DataConnectionTracker extends Handler {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.024 -0400", hash_original_method = "B90ABFF6DE01DDCB354DDF92EE51905A", hash_generated_method = "487AD44CB3A136E5E51D9AD0525E13FB")
         public void register(Context context) {
             final ContentResolver resolver = context.getContentResolver();
@@ -1613,6 +1614,7 @@ public abstract class DataConnectionTracker extends Handler {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.025 -0400", hash_original_method = "A96EEB9B30A252CB5EDDDA8B92E0867E", hash_generated_method = "484AD7C78B005DE3738C4CB86E9C4246")
         public void unregister(Context context) {
             final ContentResolver resolver = context.getContentResolver();
@@ -1624,6 +1626,7 @@ public abstract class DataConnectionTracker extends Handler {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.025 -0400", hash_original_method = "169C7D81EE3F2154C9E94D652CC4F700", hash_generated_method = "7078379D68C8CF85B358A0DE1DB16F06")
         @Override
         public void onChange(boolean selfChange) {
@@ -1675,6 +1678,7 @@ public abstract class DataConnectionTracker extends Handler {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.026 -0400", hash_original_method = "AC7E7693FF46B721A881337A05B09C85", hash_generated_method = "8B79F23D5DA55C534A1AF5C4055F1390")
         public void reset() {
             txPkts = -1;

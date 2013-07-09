@@ -1384,6 +1384,7 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.229 -0400", hash_original_method = "5784D116F3F796E4D5324F7E68A41209", hash_generated_method = "DCDCC287CA9BC5217D3FA2BC94984F3E")
         @Override
         public void setAlpha(int alpha) {
@@ -1392,6 +1393,7 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.229 -0400", hash_original_method = "77240A7357C6E5E7293BFF14ACDD79D8", hash_generated_method = "18D8B35FAE562ED5B4F19A1CD78B9AEE")
         @Override
         public void setColorFilter(ColorFilter cf) {
@@ -1400,6 +1402,7 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.230 -0400", hash_original_method = "AB3D570DA2A917C408AB4F7D8FCD7103", hash_generated_method = "7F9C14EA5103F0715E924005B7576B18")
         @Override
         public int getOpacity() {
@@ -1518,6 +1521,7 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.233 -0400", hash_original_method = "C453A8A8AADC44244B92E3146B6F4B07", hash_generated_method = "E29443429247A5B5E60DF42163779843")
         private void setTextView(TextView tv) {
             mTextView = tv;

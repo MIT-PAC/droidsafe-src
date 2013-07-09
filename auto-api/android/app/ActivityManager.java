@@ -963,6 +963,7 @@ public class ActivityManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.067 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "866FCDCD88E448847A0FE7C8CF7AF762")
         public int describeContents() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1233037427 = getTaintInt();
@@ -972,6 +973,7 @@ public class ActivityManager {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.068 -0400", hash_original_method = "A024AE935060D48D15B6110668C59DDF", hash_generated_method = "0BF19E261D38CC388BB62C5E1402C04B")
         public void writeToParcel(Parcel dest, int flags) {
             dest.writeInt(id);
@@ -1003,6 +1005,7 @@ public class ActivityManager {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.069 -0400", hash_original_method = "F67217ABAEC36040C8F444901EE65BC8", hash_generated_method = "5BAF897D190C9C64C109FA4DE49FFBB2")
         public void readFromParcel(Parcel source) {
             id = source.readInt();
@@ -1094,6 +1097,7 @@ public class ActivityManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.072 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "CB75E4D559FF12887904D65F1E9FC562")
         public int describeContents() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2088702904 = getTaintInt();
@@ -1220,6 +1224,7 @@ public class ActivityManager {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.079 -0400", hash_original_method = "C8A1C6791C443D43BB18F989CA6219B6", hash_generated_method = "0F2AB61375583385D3416DE70C2D281A")
         public Bitmap getSubThumbnail(int index) {
             Bitmap varB4EAC82CA7396A68D541C85D26508E83_207372580 = null; 
@@ -1253,6 +1258,7 @@ public class ActivityManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.079 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "A78D64EC8A55E874698980414E735BA1")
         public int describeContents() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_849089139 = getTaintInt();
@@ -1262,6 +1268,7 @@ public class ActivityManager {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.080 -0400", hash_original_method = "1641949793D35FD49D0AD46DB3E00603", hash_generated_method = "6AB7CF3EB39990DAB269010FEE23B929")
         public void writeToParcel(Parcel dest, int flags) {
             {
@@ -1287,6 +1294,7 @@ public class ActivityManager {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.081 -0400", hash_original_method = "19A7C144CCAE5CD51406B760DF512EA1", hash_generated_method = "BBEBFBDCE8AB4E11936FF2F8961B5255")
         public void readFromParcel(Parcel source) {
             {
@@ -1394,6 +1402,7 @@ public class ActivityManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.086 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7EB5D83F0ED7422C01EF70299103500F")
         public int describeContents() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_232502832 = getTaintInt();
@@ -1403,6 +1412,7 @@ public class ActivityManager {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.087 -0400", hash_original_method = "048D37EC670A88D2663FCC084087D5E3", hash_generated_method = "E41679A34EC2E47A5E6D1587C1ADFE22")
         public void writeToParcel(Parcel dest, int flags) {
             ComponentName.writeToParcel(service, dest);
@@ -1439,6 +1449,7 @@ public class ActivityManager {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.089 -0400", hash_original_method = "264C3E4C1DAB76B38CA08CE45829A86C", hash_generated_method = "DD78297D77B49BEF3DC4CE1566C885A4")
         public void readFromParcel(Parcel source) {
             service = ComponentName.readFromParcel(source);
@@ -1547,6 +1558,7 @@ public class ActivityManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.093 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "FAA78BCA1E57292229E83609A6221B1E")
         public int describeContents() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_838263863 = getTaintInt();
@@ -1556,6 +1568,7 @@ public class ActivityManager {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.094 -0400", hash_original_method = "F89D0A9B79191784D882D224AE236CD7", hash_generated_method = "0EAEE8ADC1B25D2228EA758BB11C4D91")
         public void writeToParcel(Parcel dest, int flags) {
             dest.writeLong(availMem);
@@ -1578,6 +1591,7 @@ public class ActivityManager {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.095 -0400", hash_original_method = "63344B29322BA9906ACD5F2C274D4AFB", hash_generated_method = "BC66AADD41130FA5D032784C56DC61C2")
         public void readFromParcel(Parcel source) {
             availMem = source.readLong();
@@ -1667,6 +1681,7 @@ public class ActivityManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.100 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "6649B544D5A611A3201A51CB57A35E45")
         public int describeContents() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1412884851 = getTaintInt();
@@ -1676,6 +1691,7 @@ public class ActivityManager {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.100 -0400", hash_original_method = "38EC9879A184B274D068BE64A2E942B7", hash_generated_method = "AA969BCC5C910D3517709C2EA0A9AB49")
         public void writeToParcel(Parcel dest, int flags) {
             dest.writeInt(condition);
@@ -1700,6 +1716,7 @@ public class ActivityManager {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.101 -0400", hash_original_method = "7EE07760084269563BF2AEE27C9085AD", hash_generated_method = "6FF9C96E0672E5AF8E3073FD70A01A17")
         public void readFromParcel(Parcel source) {
             condition = source.readInt();
@@ -1822,6 +1839,7 @@ public class ActivityManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.107 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E070702521E0229CCC5D3CF3A0C1667B")
         public int describeContents() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1029133945 = getTaintInt();
@@ -1831,6 +1849,7 @@ public class ActivityManager {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.107 -0400", hash_original_method = "DDF0D3D0D0B3E35B68DDE155F98679B3", hash_generated_method = "D95FCB59AC223F26DC609E55AC67081A")
         public void writeToParcel(Parcel dest, int flags) {
             dest.writeString(processName);
@@ -1861,6 +1880,7 @@ public class ActivityManager {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.109 -0400", hash_original_method = "41C420DA0EF6445C06E1F94D547B6411", hash_generated_method = "6CEE33DDD5B34CFCAE50871715C114F5")
         public void readFromParcel(Parcel source) {
             processName = source.readString();

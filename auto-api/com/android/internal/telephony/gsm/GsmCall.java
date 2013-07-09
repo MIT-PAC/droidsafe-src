@@ -107,6 +107,7 @@ class GsmCall extends Call {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.126 -0400", hash_original_method = "ADEE6A90086841672D212D83F619D5B4", hash_generated_method = "E1D6DE3DB4F8E09EF74D5A336B63CF81")
      void attach(Connection conn, DriverCall dc) {
         connections.add(conn);
@@ -119,6 +120,7 @@ class GsmCall extends Call {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.127 -0400", hash_original_method = "1D150B86FE35D9DF33C56E5123257F96", hash_generated_method = "415FA717321E9F355787A9DBB86120EB")
      void attachFake(Connection conn, State state) {
         connections.add(conn);
@@ -171,6 +173,7 @@ class GsmCall extends Call {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.128 -0400", hash_original_method = "D8060A2D244E5FF428DF6CE721032DF1", hash_generated_method = "D8F97316784CC2466462A55B6B9D1FC2")
      void detach(GsmConnection conn) {
         connections.remove(conn);
@@ -189,6 +192,7 @@ class GsmCall extends Call {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.129 -0400", hash_original_method = "B7010AC293AED59823FAEF8D2AD3B969", hash_generated_method = "252990A5BB953ED3FED207AA49D2F9C7")
      boolean update(GsmConnection conn, DriverCall dc) {
         State newState;
@@ -214,6 +218,7 @@ class GsmCall extends Call {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.129 -0400", hash_original_method = "8D2922917355F4AB0DD299BF5AB22FDE", hash_generated_method = "610129ACFF26ED6B4A88550927A320EC")
      boolean isFull() {
         boolean var2DF79FCB526F8B8B7AF2EB3786378692_293511514 = (connections.size() == GsmCallTracker.MAX_CONNECTIONS_PER_CALL);

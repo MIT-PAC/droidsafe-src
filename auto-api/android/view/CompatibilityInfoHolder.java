@@ -21,7 +21,7 @@ public class CompatibilityInfoHolder {
     }
 
 
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.857 -0400", hash_original_method = "0EA4FD6EEBB493F77BF170E078055D26", hash_generated_method = "F19ADD9FC0A0C6FC6F2E17795848E09E")
     public void set(CompatibilityInfo compatInfo) {
         {

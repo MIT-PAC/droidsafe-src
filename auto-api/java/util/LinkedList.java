@@ -1292,6 +1292,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.135 -0400", hash_original_method = "D12271F7604D5FEC65FB34942C4AE52F", hash_generated_method = "B740970C4C0CF822E0D0CFD9249DAAAD")
         public boolean hasNext() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1217743366 = getTaintBoolean();
@@ -1301,6 +1302,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.135 -0400", hash_original_method = "D62F69678251E4F27FB63666837CF4D1", hash_generated_method = "6FB0273C741EAD3889C16584AF9C1E57")
         public boolean hasPrevious() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1732794658 = getTaintBoolean();
@@ -1338,6 +1340,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.137 -0400", hash_original_method = "1B59C01DCB2067B0BBD0025D75B60071", hash_generated_method = "E307D3796B7AA665C796F1F567758A5F")
         public int nextIndex() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1772971743 = getTaintInt();
@@ -1375,6 +1378,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.139 -0400", hash_original_method = "DC75AA0325D63F3F64774210ED43B204", hash_generated_method = "1973128A90D151FB0CE59A7C6918396D")
         public int previousIndex() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1210243071 = getTaintInt();
@@ -1484,6 +1488,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.144 -0400", hash_original_method = "683C5349A490B93F6F23CFDE8DA49A7E", hash_generated_method = "437BA48BE100A169BF1E4213E8764544")
         public boolean hasNext() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1841680363 = getTaintBoolean();

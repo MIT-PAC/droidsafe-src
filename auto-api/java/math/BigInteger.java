@@ -275,6 +275,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.571 -0400", hash_original_method = "7B92331634E6E3BE19D048B912B09B7F", hash_generated_method = "F387D03F096887BED26E9E02FB32EF25")
      BigInt getBigInt() {
         BigInt varB4EAC82CA7396A68D541C85D26508E83_918386367 = null; 
@@ -360,6 +361,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.572 -0400", hash_original_method = "E11A76F306D885B62849938EE7ACFF1F", hash_generated_method = "AC2BEF0A1DB61768713D6C33C1277B8B")
      void prepareJavaRepresentation() {
         {
@@ -649,6 +651,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.576 -0400", hash_original_method = "3F948826829C47AB028976261F4B8D55", hash_generated_method = "57A08DF084DE62F0B1BF65FCC6BB7651")
      BigInteger shiftLeftOneBit() {
         BigInteger varB4EAC82CA7396A68D541C85D26508E83_2144515070 = null; 
@@ -1506,6 +1509,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.617 -0400", hash_original_method = "FABC86F56C336DE2152BE8F133BAAD74", hash_generated_method = "074B1D8E91BBE8B4EC394128DDBBB605")
      BigInteger copy() {
         BigInteger varB4EAC82CA7396A68D541C85D26508E83_2048816250 = null; 

@@ -822,6 +822,7 @@ public class SmsMessage extends SmsMessageBase {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.800 -0400", hash_original_method = "2F75C981EB64A28A85FF5D6FE13A88A1", hash_generated_method = "6983A6BD9AA3F14BD63F77D08E213846")
          int getByte() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_681690534 = getTaintInt();
@@ -920,6 +921,7 @@ public class SmsMessage extends SmsMessageBase {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.812 -0400", hash_original_method = "832EF14448695517A54541076D502A0C", hash_generated_method = "2E09602893DBD1AE7E7559ABD4781AA2")
          byte[] getUserData() {
             byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_954720804 = {getTaintByte()};
@@ -929,6 +931,7 @@ public class SmsMessage extends SmsMessageBase {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.817 -0400", hash_original_method = "904FFB9CBF6AC3FF663F8EA296F9CEA9", hash_generated_method = "64376D6233313D3727C4F742E4CEF7E0")
          int getUserDataSeptetPadding() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_578988751 = getTaintInt();
@@ -938,6 +941,7 @@ public class SmsMessage extends SmsMessageBase {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.818 -0400", hash_original_method = "4DA43BCCB17FE826B675411D64594E85", hash_generated_method = "7BE720F5BDA007473A20862B1DB2E918")
          SmsHeader getUserDataHeader() {
             SmsHeader varB4EAC82CA7396A68D541C85D26508E83_1368014076 = null; 
@@ -1029,6 +1033,7 @@ public class SmsMessage extends SmsMessageBase {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.820 -0400", hash_original_method = "AB0388E5C4230464C7FA98166E0C9557", hash_generated_method = "AAD109259B855911CD466DC8B577B0CA")
          boolean moreDataPresent() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1255537480 = getTaintBoolean();

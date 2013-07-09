@@ -778,6 +778,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.251 -0400", hash_original_method = "8ACD8C7DACBB258E07DA374214A46BC1", hash_generated_method = "E65457772A4680971FD8E5466D29E63A")
         public ActionBar.Tab getTab() {
             ActionBar.Tab varB4EAC82CA7396A68D541C85D26508E83_915223589 = null; 
@@ -826,6 +827,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.253 -0400", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "1D97DCFD6EA2A8A65734D18585F4833E")
         @Override
         public long getItemId(int position) {
@@ -920,6 +922,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.261 -0400", hash_original_method = "42B0250930D53F64D6DEADC73C3EFBBA", hash_generated_method = "E71C6EE3209F64754A0EC6B8E76C5900")
         public VisibilityAnimListener withFinalVisibility(int visibility) {
             VisibilityAnimListener varB4EAC82CA7396A68D541C85D26508E83_754674920 = null; 
@@ -962,6 +965,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.264 -0400", hash_original_method = "2F84891C5ED8AB616225A7D641700DEA", hash_generated_method = "66692DF1E254D3C3C92CC85749BF5C5B")
         @Override
         public void onAnimationCancel(Animator animation) {
@@ -973,6 +977,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.265 -0400", hash_original_method = "FA58700A4888ED9E658B43737D17A966", hash_generated_method = "4BE2C3EAC3B10B8BD5CE86F0E3077935")
         @Override
         public void onAnimationRepeat(Animator animation) {

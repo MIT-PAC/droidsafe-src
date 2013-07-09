@@ -66,7 +66,8 @@ public class LocalSocketAddress {
         Namespace (int id) {
             this.id = id;
         }
-         int getId() {
+         @DSModeled(DSC.SAFE)
+        int getId() {
             return id;
         }
     }

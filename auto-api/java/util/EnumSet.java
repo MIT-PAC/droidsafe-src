@@ -170,6 +170,7 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.244 -0400", hash_original_method = "04E56AE18F38E72A8E3B6B437517B693", hash_generated_method = "27CB6816053B8F0748F157B02FBFD254")
      boolean isValidType(Class<?> cls) {
         boolean varC4F22E7D1D98E0932E239EA5CACE82BB_2057604744 = (cls == elementClass || cls.getSuperclass() == elementClass);
@@ -181,6 +182,7 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.246 -0400", hash_original_method = "3A8DA3E34FE3E13C123721386FD31559", hash_generated_method = "6FA2EB01A6268ED717BBE8634B850F41")
     @SuppressWarnings("unchecked")
      Object writeReplace() {

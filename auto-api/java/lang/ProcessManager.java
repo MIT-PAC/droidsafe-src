@@ -331,6 +331,7 @@ final class ProcessManager {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.505 -0400", hash_original_method = "72D26C729273916A38DD81F020E1EC4C", hash_generated_method = "B4EBD0C0AEF689A2CCE2CFC2B27A2A3F")
         public int exitValue() {
             {
@@ -352,6 +353,7 @@ final class ProcessManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.506 -0400", hash_original_method = "DCE7BF5109CA162BD54D93588001BD51", hash_generated_method = "680B0C60D858E5A3EF4C668D310C0313")
         public InputStream getErrorStream() {
             InputStream varB4EAC82CA7396A68D541C85D26508E83_1634253641 = null; 
@@ -363,6 +365,7 @@ final class ProcessManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.507 -0400", hash_original_method = "DC1F0F5A793D1EF64AF6C7DB099DCE34", hash_generated_method = "286CAF29D60CAC729C6C299B9C21EC94")
         public InputStream getInputStream() {
             InputStream varB4EAC82CA7396A68D541C85D26508E83_1586882243 = null; 
@@ -374,6 +377,7 @@ final class ProcessManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.508 -0400", hash_original_method = "94C3B255D73CD61583B0AC248BC392B9", hash_generated_method = "5A15A151E7ECDBEFD75546A508C4B9A8")
         public OutputStream getOutputStream() {
             OutputStream varB4EAC82CA7396A68D541C85D26508E83_778031264 = null; 
@@ -385,6 +389,7 @@ final class ProcessManager {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.509 -0400", hash_original_method = "BE1794A2A2D4EC2F61628D9639894105", hash_generated_method = "4ABF83D3A0C77C82E7B93ADA34D12D03")
         public int waitFor() throws InterruptedException {
             {
@@ -404,6 +409,7 @@ final class ProcessManager {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.509 -0400", hash_original_method = "B7D46CBA2679C4E3B0149113D5DCFB48", hash_generated_method = "C75ECC9B762CE8F42D4CFF9DA7A3C4A4")
          void setExitValue(int exitValue) {
             {
@@ -418,6 +424,7 @@ final class ProcessManager {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.510 -0400", hash_original_method = "945EE59E08960A318B9D424632962227", hash_generated_method = "58D8207420EBEDF45851A70B18B6B7F4")
         @Override
         public String toString() {
@@ -462,6 +469,7 @@ final class ProcessManager {
         }
 
 
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.511 -0400", hash_original_method = "A8419736BED4DA94F6EABC777190260F", hash_generated_method = "9BDBFE86D200A52CE6F2385EC4027052")
         @Override
         public ProcessReference poll() {

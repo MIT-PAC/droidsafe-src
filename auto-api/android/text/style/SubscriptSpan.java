@@ -56,6 +56,7 @@ public class SubscriptSpan extends MetricAffectingSpan implements ParcelableSpan
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.901 -0400", hash_original_method = "9DCCA482100D1E9EC8F2615F051D6490", hash_generated_method = "D1E1706279C9F8A9EF8CDDF2CF68D55C")
     @Override
     public void updateDrawState(TextPaint tp) {
@@ -66,6 +67,7 @@ public class SubscriptSpan extends MetricAffectingSpan implements ParcelableSpan
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.902 -0400", hash_original_method = "7DFDD8213FBD02BEC2253684A70AD5F4", hash_generated_method = "1A8037C31851F13711CF3284149B246F")
     @Override
     public void updateMeasureState(TextPaint tp) {

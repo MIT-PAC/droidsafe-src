@@ -69,6 +69,7 @@ public class Duration implements Parcelable {
         TimeUnit(int value) {
             mValue = value;
         }
+        @DSModeled(DSC.SAFE)
         public int value() {
             return mValue;
         }

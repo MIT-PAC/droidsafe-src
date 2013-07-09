@@ -1072,6 +1072,7 @@ public class SurfaceView extends View {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:55.154 -0400", hash_original_method = "BE0716F4AD0CF82E07CDF7A02946EA01", hash_generated_method = "8DFBCE56B7B4A7917AC4BEE9870F8E58")
         public void dispatchAppVisibility(boolean visible) {
             addTaint(visible);
@@ -1104,6 +1105,7 @@ public class SurfaceView extends View {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:55.157 -0400", hash_original_method = "FFE9D2CBC83B323644FA8C6DFE6F40CA", hash_generated_method = "2DA19C290949804107091EF7511AD672")
         public void executeCommand(String command, String parameters, ParcelFileDescriptor out) {
             addTaint(command.getTaint());

@@ -391,6 +391,7 @@ class Network {
         }
 
 
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.281 -0400", hash_original_method = "FF6D86ABCD7F084A4EADD45C592C2902", hash_generated_method = "80FF5808E66FBA8F0E8F73FD0A52E442")
         @Override
         public void onReceive(Context context, Intent intent) {

@@ -157,6 +157,7 @@ public abstract Keyframe clone();
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:11.922 -0400", hash_original_method = "8110BFED38B99D4A69F8125D4CA46C20", hash_generated_method = "E84D1C8741AAFDEC5FD2A7FBE9F82B3B")
         public Object getValue() {
             Object varB4EAC82CA7396A68D541C85D26508E83_1389412478 = null; 
@@ -168,6 +169,7 @@ public abstract Keyframe clone();
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:11.923 -0400", hash_original_method = "A57ED313A37784FB1DA17FC9F39344A7", hash_generated_method = "BCD44A16AB81E639720244E80BED9701")
         public void setValue(Object value) {
             mValue = value;
@@ -229,6 +231,7 @@ public abstract Keyframe clone();
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:11.935 -0400", hash_original_method = "7D27B9B7622273E5F87FD5AC6ACFC5AE", hash_generated_method = "CF9F37A3C954BF1B154915D55F7322A5")
         public int getIntValue() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1362801644 = getTaintInt();
@@ -317,6 +320,7 @@ public abstract Keyframe clone();
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:11.954 -0400", hash_original_method = "4878123D1CBF5008E7E0955AB5FB61F2", hash_generated_method = "00FC9A53D1D12F5BEED36971240BE750")
         public float getFloatValue() {
             float var546ADE640B6EDFBC8A086EF31347E768_711955671 = getTaintFloat();

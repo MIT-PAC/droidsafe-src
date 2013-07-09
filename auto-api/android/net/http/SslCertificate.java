@@ -444,6 +444,7 @@ public class SslCertificate {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.422 -0400", hash_original_method = "CA7B7457EAE364E31ECFC3E240698ADB", hash_generated_method = "891825842C5A52AAAC2D465A36D629FF")
         public String getDName() {
             String varB4EAC82CA7396A68D541C85D26508E83_1162343451 = null; 
@@ -455,6 +456,7 @@ public class SslCertificate {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.423 -0400", hash_original_method = "9443834DD976C880848529D9F73675CC", hash_generated_method = "273163AE2D68E8D80ED52C1207D60D62")
         public String getCName() {
             String varB4EAC82CA7396A68D541C85D26508E83_1851359821 = null; 
@@ -466,6 +468,7 @@ public class SslCertificate {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.423 -0400", hash_original_method = "7251BF6AE7EA38B61D97CF2E138787A6", hash_generated_method = "1DD20B050217D65344127830E5475809")
         public String getOName() {
             String varB4EAC82CA7396A68D541C85D26508E83_820655610 = null; 
@@ -477,6 +480,7 @@ public class SslCertificate {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.424 -0400", hash_original_method = "372D1A5E33F38EEDF5C6B63F53532F1F", hash_generated_method = "1F6ECD3E413E47E73A8AC6C2C0BBC4E1")
         public String getUName() {
             String varB4EAC82CA7396A68D541C85D26508E83_1953605206 = null; 

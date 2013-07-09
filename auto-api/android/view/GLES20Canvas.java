@@ -332,6 +332,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.163 -0400", hash_original_method = "9B095EEB0FC45774066EB055E8D05D05", hash_generated_method = "194D03C0C0802C77E17386DC78E96B57")
     @Override
      void onPreDraw(Rect dirty) {
@@ -363,6 +364,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.163 -0400", hash_original_method = "7365F42EBD4B3D862109C8AFB45818F1", hash_generated_method = "D28DBD24898E379BFD423F6D4D12570A")
     @Override
      void onPostDraw() {
@@ -430,6 +432,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.165 -0400", hash_original_method = "B6A785707CFBE1E38AD4FE8A1D6625FF", hash_generated_method = "AE9ACAC6704CE8E68DC6B9274FA358A9")
      int getDisplayList(int displayList) {
         int varCBB832023A69ED9BB808A7FE776E9BD9_636855390 = (nGetDisplayList(mRenderer, displayList));
@@ -495,6 +498,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.166 -0400", hash_original_method = "5B863FAF56BDA796D9647970A297D545", hash_generated_method = "392FF023F6FF54515E49CD1513012D05")
     @Override
      void outputDisplayList(DisplayList displayList) {
@@ -510,6 +514,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.169 -0400", hash_original_method = "34690C8D247D9A973C4DB94AE9D7C53D", hash_generated_method = "88557E4A99998A17E55C40247C390558")
      void drawHardwareLayer(HardwareLayer layer, float x, float y, Paint paint) {
         final GLES20Layer glLayer = (GLES20Layer) layer;
@@ -539,6 +544,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.170 -0400", hash_original_method = "2CAEF0DDE58BE10FAAA9AA0E667CCD64", hash_generated_method = "BA861453510B5BC8D04AD58E7A1553A0")
      void interrupt() {
         nInterrupt(mRenderer);
@@ -547,6 +553,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.171 -0400", hash_original_method = "C365B4BBFEB4F0EDD5006A765220696B", hash_generated_method = "1C80A41B36E63E43CCFBDD0716C47088")
      void resume() {
         nResume(mRenderer);
@@ -2354,6 +2361,7 @@ class GLES20Canvas extends HardwareCanvas {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.215 -0400", hash_original_method = "98F8E6E4208DCA7352053ED1AE5E9232", hash_generated_method = "172B7210461BDF8CBEDEDD56AE7B7486")
         @Override
         protected void finalize() throws Throwable {

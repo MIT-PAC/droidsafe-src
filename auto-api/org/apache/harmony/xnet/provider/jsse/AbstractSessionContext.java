@@ -272,6 +272,7 @@ abstract class AbstractSessionContext implements SSLSessionContext {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.597 -0400", hash_original_method = "1F6A50EAF05C581243DFC8EDF15FF940", hash_generated_method = "57A656108E2E6A605B0594F033BC11A1")
      SSLSession toSession(byte[] data, String host, int port) {
         SSLSession varB4EAC82CA7396A68D541C85D26508E83_444377047 = null; 
@@ -377,6 +378,7 @@ abstract class AbstractSessionContext implements SSLSessionContext {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.599 -0400", hash_original_method = "01E7B06223DFEA7D5DECA9A679FEAED7", hash_generated_method = "89C45D5BB447414713850C3E48C17315")
      void putSession(SSLSession session) {
         byte[] id = session.getId();

@@ -401,6 +401,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.132 -0400", hash_original_method = "D1A12C2F09D145663A4318954DC7CD00", hash_generated_method = "1062951FCBA1D8886A1F49A60B6BAE2D")
         public Context getContext() {
             Context varB4EAC82CA7396A68D541C85D26508E83_850213284 = null; 
@@ -425,6 +426,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.136 -0400", hash_original_method = "255D326AF0B389CCA9CBF4AFBC3FE756", hash_generated_method = "3C337CF6CF5041BF28F1DBA38F395954")
         public Builder setTitle(CharSequence title) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_1127320860 = null; 
@@ -438,6 +440,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.137 -0400", hash_original_method = "0009CCFABCB39131348E93CD167BBCD7", hash_generated_method = "E3607112CCBC762A15E5378F94FAD3FB")
         public Builder setCustomTitle(View customTitleView) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_481447098 = null; 
@@ -464,6 +467,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.143 -0400", hash_original_method = "F560859B14C962F22BDF3327E633A8EC", hash_generated_method = "0123107DB7ED682D7EB13C23E2B9E1B3")
         public Builder setMessage(CharSequence message) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_219578305 = null; 
@@ -477,6 +481,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.144 -0400", hash_original_method = "EBD38AA9C651B93ADF14B14E5D33C5C9", hash_generated_method = "21F2F91A9B581CB5D3A37C55690A45DC")
         public Builder setIcon(int iconId) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_83829625 = null; 
@@ -490,6 +495,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.146 -0400", hash_original_method = "EDCD80F224B2F3CED85A928D84460540", hash_generated_method = "17F9C7CEF58487A846A41624777681CC")
         public Builder setIcon(Drawable icon) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_2130016178 = null; 
@@ -611,6 +617,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.159 -0400", hash_original_method = "D23CAE45E6F3DF826F9F93A9D8E4F37B", hash_generated_method = "ED0D34F07DA03201FB7E75BB22CDDDB4")
         public Builder setCancelable(boolean cancelable) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_1973558221 = null; 
@@ -624,6 +631,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.162 -0400", hash_original_method = "D6E5909FD450512C75F4E75E987AC229", hash_generated_method = "87F021F020072177D33B113DC3450C07")
         public Builder setOnCancelListener(OnCancelListener onCancelListener) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_48450637 = null; 
@@ -637,6 +645,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.163 -0400", hash_original_method = "6E5FB56A362A817B52A235DFACC25DAE", hash_generated_method = "98BE61FE07A598C2B126401B9572EA5C")
         public Builder setOnKeyListener(OnKeyListener onKeyListener) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_1822393842 = null; 
@@ -855,6 +864,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.183 -0400", hash_original_method = "2F93F9BAEF2ABE538EE141EAC45DF294", hash_generated_method = "63413A158C5F43A2DF649BD4A84E1EE4")
         public Builder setOnItemSelectedListener(final AdapterView.OnItemSelectedListener listener) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_6727290 = null; 
@@ -868,6 +878,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.184 -0400", hash_original_method = "ECE0E9F89C9289601A4B4F810B41F8E6", hash_generated_method = "B67467F3627E7B0101315ABB0AE23673")
         public Builder setView(View view) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_538509390 = null; 
@@ -883,6 +894,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.186 -0400", hash_original_method = "BAFAE1A19AC8AE3D7A23796C6231E632", hash_generated_method = "A7606F9E3D31667197FFBBE7F83FC862")
         public Builder setView(View view, int viewSpacingLeft, int viewSpacingTop,
                 int viewSpacingRight, int viewSpacingBottom) {
@@ -907,6 +919,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.187 -0400", hash_original_method = "574A516CEEC9B60678E7B4D3D76288FB", hash_generated_method = "E1D2ED5CDEBB29902D8A842F22644AB7")
         public Builder setInverseBackgroundForced(boolean useInverseBackground) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_1721607082 = null; 
@@ -920,6 +933,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.188 -0400", hash_original_method = "B90B897256AEB065436BDBB1FFCE63CD", hash_generated_method = "3379C16313FB3C257545FDB91283E590")
         public Builder setRecycleOnMeasureEnabled(boolean enabled) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_1351559399 = null; 

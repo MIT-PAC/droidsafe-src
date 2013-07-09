@@ -477,6 +477,7 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.793 -0400", hash_original_method = "9B50960AB78A53ECD97D5FCFD81C02C7", hash_generated_method = "CAB27126C902E18E79DC0B2E43AFAD6B")
         @Override
         protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -527,6 +528,7 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.794 -0400", hash_original_method = "5C37CDC7ADB20FAB9875274C523AD18A", hash_generated_method = "4E68293E9704C553AB907504EE8C063E")
         @Override
         public void show() {
@@ -542,6 +544,7 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.795 -0400", hash_original_method = "82DCA636A8398ED2FB754EAF8FD1AC92", hash_generated_method = "284795290C307592280E0EB38F7AE6E6")
         @Override
         public void hide() {

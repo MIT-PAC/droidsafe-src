@@ -440,6 +440,7 @@ public class WifiConfiguration implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.504 -0400", hash_original_method = "54A096BDAB783365763903A518BE6C1A", hash_generated_method = "811C079A212601355D5034023F0D4C0B")
         public void setValue(String value) {
             this.value = value;
@@ -448,6 +449,7 @@ public class WifiConfiguration implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.504 -0400", hash_original_method = "1FBB233886BBDFBC3AF13BD83F42443E", hash_generated_method = "5B7490DBB978F9FD28FF5DD1F7352D1A")
         public String varName() {
             String varB4EAC82CA7396A68D541C85D26508E83_1341369200 = null; 
@@ -459,6 +461,7 @@ public class WifiConfiguration implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.505 -0400", hash_original_method = "75F20E3AB28F2448BFFE64E6D18AFDB6", hash_generated_method = "8959E41B46489187B357D4CE436EEE0C")
         public String value() {
             String varB4EAC82CA7396A68D541C85D26508E83_809834224 = null; 

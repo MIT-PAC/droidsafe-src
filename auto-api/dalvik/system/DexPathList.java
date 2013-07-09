@@ -362,6 +362,7 @@ final class DexPathList {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.756 -0400", hash_original_method = "853A43CB46D2A1F46888921026F3A6BF", hash_generated_method = "14ED2B8BC0329D4B375DB3E9FAAD410E")
         public URL findResource(String name) {
             URL varB4EAC82CA7396A68D541C85D26508E83_2056915489 = null; 

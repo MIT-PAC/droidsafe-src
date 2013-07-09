@@ -254,6 +254,7 @@ public class Pipeline extends InputStream {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.383 -0400", hash_original_method = "C5E9FA9D1099E171DFD942E3B525903F", hash_generated_method = "9776835C2F9275D9661102683EE0AFEF")
         public int getNextByte() {
             int retval = bytes[ptr++] & 0xFF;

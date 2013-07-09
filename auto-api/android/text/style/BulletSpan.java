@@ -96,6 +96,7 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.709 -0400", hash_original_method = "D1CA1ADAD215DD7AD321DC70F751BAEF", hash_generated_method = "CF7B0CF6206A97868C94BFDBF700FC7D")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mGapWidth);

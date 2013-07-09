@@ -251,7 +251,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.851 -0400", hash_original_method = "7B2466E598494011616B7E0248698FD2", hash_generated_method = "82D262E7D798F3CC9CBD1642A355844D")
     @Override
     public boolean isApnTypeActive(String type) {
@@ -308,7 +308,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.851 -0400", hash_original_method = "6FB50CEA8307C4B6093E637FBC3F2923", hash_generated_method = "586E4F0B9964C893B65A8A5D4241A99C")
     @Override
     protected void finalize() {

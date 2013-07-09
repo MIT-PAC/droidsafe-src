@@ -418,6 +418,7 @@ public abstract class AbsActionBarView extends ViewGroup {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.663 -0400", hash_original_method = "42B0250930D53F64D6DEADC73C3EFBBA", hash_generated_method = "6E4D6226663E0438BB390032D0703E39")
         public VisibilityAnimListener withFinalVisibility(int visibility) {
             VisibilityAnimListener varB4EAC82CA7396A68D541C85D26508E83_1697385221 = null; 
@@ -466,6 +467,7 @@ public abstract class AbsActionBarView extends ViewGroup {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.664 -0400", hash_original_method = "2F84891C5ED8AB616225A7D641700DEA", hash_generated_method = "66692DF1E254D3C3C92CC85749BF5C5B")
         @Override
         public void onAnimationCancel(Animator animation) {
@@ -477,6 +479,7 @@ public abstract class AbsActionBarView extends ViewGroup {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.664 -0400", hash_original_method = "FA58700A4888ED9E658B43737D17A966", hash_generated_method = "4BE2C3EAC3B10B8BD5CE86F0E3077935")
         @Override
         public void onAnimationRepeat(Animator animation) {

@@ -155,6 +155,7 @@ public class ShareCompat {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.186 -0400", hash_original_method = "CC05494BB54ABC476F91DA83FFC83A1D", hash_generated_method = "B773277F0E6E868CCE34B9873DF2B3A2")
         public Intent getIntent() {
             Intent varB4EAC82CA7396A68D541C85D26508E83_1494099958 = null; 
@@ -205,6 +206,7 @@ public class ShareCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.186 -0400", hash_original_method = "3F17133E8D63AE8C7414DC58966291E3", hash_generated_method = "736761F747073E33E106A285F3778C7E")
          Activity getActivity() {
             Activity varB4EAC82CA7396A68D541C85D26508E83_259641511 = null; 
@@ -266,6 +268,7 @@ public class ShareCompat {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.188 -0400", hash_original_method = "4A271FB631FE734F0A005F0662E72303", hash_generated_method = "43080F759E29AEF338F4446B9C39F8BD")
         public Intent createChooserIntent() {
             Intent varB4EAC82CA7396A68D541C85D26508E83_528838512 = null; 
@@ -285,6 +288,7 @@ public class ShareCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.189 -0400", hash_original_method = "06E956E502A80DA9473ED82266A5A9DE", hash_generated_method = "C20E2516BAC33A9FD3DF9F422F935B3E")
         public IntentBuilder setChooserTitle(CharSequence title) {
             IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1815663813 = null; 
@@ -338,6 +342,7 @@ public class ShareCompat {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.191 -0400", hash_original_method = "0CC67542367F5DDA6287793533CA2797", hash_generated_method = "BC3B26672F2D5316C376545B38E0A486")
         public IntentBuilder setStream(Uri streamUri) {
             IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1136049056 = null; 
@@ -363,6 +368,7 @@ public class ShareCompat {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.192 -0400", hash_original_method = "5DA0D5B75B65E8A970BBB6A6FE8B4CFF", hash_generated_method = "F9B9675D7F578E12346222B3383BCCA6")
         public IntentBuilder addStream(Uri streamUri) {
             IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1020223791 = null; 
@@ -667,6 +673,7 @@ public class ShareCompat {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.206 -0400", hash_original_method = "6766C6C36607D95201A80937E1C93C5B", hash_generated_method = "554F7CE40726B255CCE6E4B67B08F3E7")
         public Uri getStream() {
             Uri varB4EAC82CA7396A68D541C85D26508E83_1857103562 = null; 
@@ -678,6 +685,7 @@ public class ShareCompat {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.207 -0400", hash_original_method = "CA16C800A8BACDD493D26B5DCB8F6704", hash_generated_method = "ED64F459B6C200E3F17A92EC5C864EA4")
         public Uri getStream(int index) {
             Uri varB4EAC82CA7396A68D541C85D26508E83_1162469898 = null; 
@@ -794,6 +802,7 @@ public class ShareCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.212 -0400", hash_original_method = "599A2909147C5ABF7649B275042032E0", hash_generated_method = "1A774269C44B83AE59A4AC1B35A2FCE2")
         public String getCallingPackage() {
             String varB4EAC82CA7396A68D541C85D26508E83_1689039019 = null; 
@@ -805,6 +814,7 @@ public class ShareCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.213 -0400", hash_original_method = "7754B7141829C06037743B2AEFCB8100", hash_generated_method = "5A80457DE0A37285C92F83B2C3D69BC5")
         public ComponentName getCallingActivity() {
             ComponentName varB4EAC82CA7396A68D541C85D26508E83_978483958 = null; 

@@ -474,6 +474,7 @@ class DatabaseConnectionPool {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.109 -0400", hash_original_method = "16D989C7D844FEE29812B797BE2CFCD6", hash_generated_method = "7F2E6F8B5960BDE881F1546738CACCA2")
         synchronized int getNumHolders() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1643284459 = getTaintInt();

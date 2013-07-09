@@ -516,6 +516,7 @@ public class DownloadManager {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.655 -0400", hash_original_method = "D90BC1E489B6C6F52B7EAE5F6B3F7838", hash_generated_method = "4F4D4CBE9B753F0A04A89B50BEFF8EA2")
         public Request setDestinationUri(Uri uri) {
             Request varB4EAC82CA7396A68D541C85D26508E83_302114779 = null; 
@@ -529,6 +530,7 @@ public class DownloadManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.656 -0400", hash_original_method = "D82AD486A04E11ACCF6C157FAE4ED191", hash_generated_method = "C15D5EAB5DC2B9E68F6A6D9F3FEAED2A")
         public Request setDestinationToSystemCache() {
             Request varB4EAC82CA7396A68D541C85D26508E83_233047530 = null; 
@@ -622,6 +624,7 @@ public class DownloadManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.659 -0400", hash_original_method = "39458C7E93B4E0F8CC50399F7846AF71", hash_generated_method = "C96F98A19F0478D3BC60EAEC74698C65")
         public void allowScanningByMediaScanner() {
             mScannable = true;
@@ -666,6 +669,7 @@ public class DownloadManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.662 -0400", hash_original_method = "D2617ADF02871E26D8818B6B93DA088D", hash_generated_method = "077DDAD3E173F47D63003245EC9B2D12")
         public Request setTitle(CharSequence title) {
             Request varB4EAC82CA7396A68D541C85D26508E83_2041817269 = null; 
@@ -679,6 +683,7 @@ public class DownloadManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.664 -0400", hash_original_method = "3BFD78827604EC47FE3892636D121D42", hash_generated_method = "4A8E9F695664C0779B03F5B6BB27E88E")
         public Request setDescription(CharSequence description) {
             Request varB4EAC82CA7396A68D541C85D26508E83_369526079 = null; 
@@ -692,6 +697,7 @@ public class DownloadManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.665 -0400", hash_original_method = "EAEBE95F38EAF7D74F8EC9BD89175C39", hash_generated_method = "A8A686003095FA3B7EA76F4EA881088F")
         public Request setMimeType(String mimeType) {
             Request varB4EAC82CA7396A68D541C85D26508E83_1466767399 = null; 
@@ -720,6 +726,7 @@ public class DownloadManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.667 -0400", hash_original_method = "0E1BEC1EE7CB7BCA18E6C69650765291", hash_generated_method = "1163C85CEF9D320FBF873CCEEFD84563")
         public Request setNotificationVisibility(int visibility) {
             Request varB4EAC82CA7396A68D541C85D26508E83_379328451 = null; 
@@ -733,6 +740,7 @@ public class DownloadManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.668 -0400", hash_original_method = "1FB95247AA3BF4BC290C0031C887893C", hash_generated_method = "D52436DE776034E0F138B45C45742230")
         public Request setAllowedNetworkTypes(int flags) {
             Request varB4EAC82CA7396A68D541C85D26508E83_579842364 = null; 
@@ -746,6 +754,7 @@ public class DownloadManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.669 -0400", hash_original_method = "EED7837CFCCAA493B8F853E6287613BD", hash_generated_method = "6EEE32AD5EC1C5A0E397A96A212D5C94")
         public Request setAllowedOverRoaming(boolean allowed) {
             Request varB4EAC82CA7396A68D541C85D26508E83_1469539557 = null; 
@@ -759,6 +768,7 @@ public class DownloadManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.671 -0400", hash_original_method = "865D9FB8BB624139754E18F2F470A937", hash_generated_method = "E3023186A722C6AC67F6EB94776DCA25")
         public Request setVisibleInDownloadsUi(boolean isVisible) {
             Request varB4EAC82CA7396A68D541C85D26508E83_1865109093 = null; 
@@ -929,6 +939,7 @@ public class DownloadManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.695 -0400", hash_original_method = "9600119EF208E670C5EE47F5F776ED3A", hash_generated_method = "822C10171C17BBF9FE27C48E41235293")
         public Query setOnlyIncludeVisibleInDownloadsUi(boolean value) {
             Query varB4EAC82CA7396A68D541C85D26508E83_1247038235 = null; 
@@ -984,6 +995,7 @@ public class DownloadManager {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.699 -0400", hash_original_method = "3E117BB34A8C7FFA67D17AB4CC250832", hash_generated_method = "1B288235ABEFCA780C05F0AE60BEFB7A")
          Cursor runQuery(ContentResolver resolver, String[] projection, Uri baseUri) {
             Cursor varB4EAC82CA7396A68D541C85D26508E83_1545597950 = null; 
@@ -1239,6 +1251,7 @@ public class DownloadManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.724 -0400", hash_original_method = "8BF9F68328111BA50CCB78B1792F76F0", hash_generated_method = "B614B12B7CEE9238046F645BCE14F1AB")
         private long getPausedReason(int status) {
             addTaint(status);
@@ -1258,6 +1271,7 @@ public class DownloadManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.725 -0400", hash_original_method = "A27080D0C32BDBDFED7217EFE39DC72F", hash_generated_method = "183C5B9367D957D1DE8BB507628098DD")
         private long getErrorCode(int status) {
             addTaint(status);

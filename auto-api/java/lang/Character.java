@@ -1060,7 +1060,8 @@ public final class Character implements Serializable, Comparable<Character> {
 			
 		}
 
-		public static UnicodeBlock forName(String blockName) {
+		@DSModeled(DSC.SAFE)
+        public static UnicodeBlock forName(String blockName) {
 			if (blockName == null) {
 				throw new NullPointerException();
 			}
@@ -1078,11 +1079,13 @@ public final class Character implements Serializable, Comparable<Character> {
 			return BLOCKS[block];
 		}
 
-		public static UnicodeBlock of(char c) {
+		@DSModeled(DSC.SAFE)
+        public static UnicodeBlock of(char c) {
 			return of((int) c);
 		}
 
-		public static UnicodeBlock of(int codePoint) {
+		@DSModeled(DSC.SAFE)
+        public static UnicodeBlock of(int codePoint) {
 			checkValidCodePoint(codePoint);
 			int block = ofImpl(codePoint);
 			if (block == -1 || block >= BLOCKS.length) {

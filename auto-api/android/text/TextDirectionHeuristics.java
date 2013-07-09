@@ -143,6 +143,7 @@ public class TextDirectionHeuristics {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.717 -0400", hash_original_method = "F33559B09616EA1059BD515D9BD28DCA", hash_generated_method = "DEF599296059A16EF03CB913E3056BD1")
         @Override
         protected boolean defaultIsRtl() {

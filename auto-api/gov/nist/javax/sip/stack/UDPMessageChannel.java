@@ -989,6 +989,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.211 -0400", hash_original_method = "6BA8F9798D5715ABDAD288256921D45A", hash_generated_method = "A12DB3F698D6F6B742E8AA41F07B747A")
         @Override
         public void run() {
@@ -998,6 +999,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.211 -0400", hash_original_method = "E214E7BC5755C758A91BCF58AAE3832E", hash_generated_method = "3D3AC354238C08FCD6D8B21EEC5E37A2")
         @Override
         public int hashCode() {

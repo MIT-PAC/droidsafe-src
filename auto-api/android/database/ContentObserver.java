@@ -126,6 +126,7 @@ public abstract class ContentObserver {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.679 -0400", hash_original_method = "ADCF046F07EA9B09E2364857C3DDF0F7", hash_generated_method = "30ECC851BB12D6B371695B1BC5CB6757")
         public void run() {
             ContentObserver.this.onChange(mSelf);
@@ -151,6 +152,7 @@ public abstract class ContentObserver {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.680 -0400", hash_original_method = "158F530B046C6D686908DD95065C53F9", hash_generated_method = "27D29DDBA2D6D5EFE44B0A678CA4F9BC")
         public boolean deliverSelfNotifications() {
             ContentObserver contentObserver = mContentObserver;
@@ -168,6 +170,7 @@ public abstract class ContentObserver {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.680 -0400", hash_original_method = "71BABE68DF8E341DA3CAF0778B2BD246", hash_generated_method = "708BBFB488DFE690052E3940AB168E28")
         public void onChange(boolean selfChange) {
             
@@ -184,6 +187,7 @@ public abstract class ContentObserver {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.681 -0400", hash_original_method = "A0916E3A0DA123DBB345BC81644B70F3", hash_generated_method = "ADD05F525B1B13738DD98FA14B241126")
         public void releaseContentObserver() {
             mContentObserver = null;

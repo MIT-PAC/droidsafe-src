@@ -465,6 +465,7 @@ public final class SipSession {
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static String toString(int state) {
             switch (state) {
                 case READY_TO_CALL:
@@ -542,6 +543,7 @@ public final class SipSession {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.181 -0400", hash_original_method = "AE0E913F9E3F8804DBC653BF8673EC2F", hash_generated_method = "DEA829A09039A527CA98846EDC2F4ACF")
         public void onCalling(SipSession session) {
             
@@ -550,6 +552,7 @@ public final class SipSession {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.181 -0400", hash_original_method = "A6495E0C14482D9554C3F987B616D040", hash_generated_method = "D2FE500449CA2504C9B71457B8EA5453")
         public void onRinging(SipSession session, SipProfile caller,
                 String sessionDescription) {
@@ -561,6 +564,7 @@ public final class SipSession {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.181 -0400", hash_original_method = "3040682D1BCFEA9BA338FA9FE200A62D", hash_generated_method = "734D120B16431C158B81B709F8D3F8DF")
         public void onRingingBack(SipSession session) {
             
@@ -569,6 +573,7 @@ public final class SipSession {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.181 -0400", hash_original_method = "E5D299BA3CDE0EE166AC2795783FB427", hash_generated_method = "243BEA7166B8A5E29C68ED25D0865C26")
         public void onCallEstablished(SipSession session,
                 String sessionDescription) {
@@ -579,6 +584,7 @@ public final class SipSession {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.182 -0400", hash_original_method = "711404AF80F30F53943AF0817E2DC7DA", hash_generated_method = "4B4B0C8857AD559F3C6FAE56F4202E36")
         public void onCallEnded(SipSession session) {
             
@@ -587,6 +593,7 @@ public final class SipSession {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.182 -0400", hash_original_method = "DF73FA582D888219D7BAD8AC6A6DFD56", hash_generated_method = "3CB7A353A87EFF26ADA549ED713B3DD5")
         public void onCallBusy(SipSession session) {
             
@@ -595,6 +602,7 @@ public final class SipSession {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.182 -0400", hash_original_method = "BA5AD9CB5800C0FF06E65720317D213F", hash_generated_method = "9389B51D6338B1B039E32D37BAF2C49F")
         public void onCallTransferring(SipSession newSession,
                 String sessionDescription) {
@@ -605,6 +613,7 @@ public final class SipSession {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.183 -0400", hash_original_method = "4CD681E2D11D80A916993A5E2A67B6D2", hash_generated_method = "D7EF0224F0CDF59CBF008227DAF727E4")
         public void onError(SipSession session, int errorCode,
                 String errorMessage) {
@@ -616,6 +625,7 @@ public final class SipSession {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.183 -0400", hash_original_method = "98747504BDA403336DDC3899112D7C4E", hash_generated_method = "5F24C8B8159D82EF6700BA14B872750F")
         public void onCallChangeFailed(SipSession session, int errorCode,
                 String errorMessage) {
@@ -627,6 +637,7 @@ public final class SipSession {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.184 -0400", hash_original_method = "20558DF6BFC1217A7001B14AA50A9A03", hash_generated_method = "49556F3917EE074EE7287D4C2426EBC3")
         public void onRegistering(SipSession session) {
             
@@ -635,6 +646,7 @@ public final class SipSession {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.184 -0400", hash_original_method = "7504CEF239C11FEA532F08720FD2042B", hash_generated_method = "FBEF814628A6B17E4528CB04E1F2F9B1")
         public void onRegistrationDone(SipSession session, int duration) {
             
@@ -644,6 +656,7 @@ public final class SipSession {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.185 -0400", hash_original_method = "3E873AF3736F468DF3025CAE14D73D95", hash_generated_method = "27A36AAC9516CB737E4D229703284149")
         public void onRegistrationFailed(SipSession session, int errorCode,
                 String errorMessage) {
@@ -655,6 +668,7 @@ public final class SipSession {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.186 -0400", hash_original_method = "43D598AFE19AB6009363638DB64C1F7B", hash_generated_method = "92DD4357599040EC3BD89E95FDDF4AD7")
         public void onRegistrationTimeout(SipSession session) {
             

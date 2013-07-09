@@ -263,6 +263,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.196 -0400", hash_original_method = "F5A5E3786D2DDCB2FEFEBA688154C5D7", hash_generated_method = "9A30453E13CCDB2DDF6FCDFF796D08FF")
      void dispatchMessage(Message msg) {
         {

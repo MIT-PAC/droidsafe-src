@@ -340,6 +340,7 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.580 -0400", hash_original_method = "27BF28A81EBEDB0A58E981BB8A0B8A16", hash_generated_method = "040B3EBC6F1CEAA7949E1409F51E021F")
      int getPrefs(Context context) {
         {
@@ -377,6 +378,7 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.581 -0400", hash_original_method = "579E66F4F4B0748C979BD80ED5F12401", hash_generated_method = "A2AF79B94AB6D3ACACDDF391E6BF61B9")
         public int getInputType() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1772520160 = getTaintInt();
@@ -386,6 +388,7 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.581 -0400", hash_original_method = "3A5E70FDE36A1D45C2BCBEA410D24514", hash_generated_method = "5E3ECA244A96514B04531CBAAA859A65")
         public boolean onKeyDown(View view, Editable content,
                                  int keyCode, KeyEvent event) {
@@ -401,6 +404,7 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.581 -0400", hash_original_method = "1D7ECDFDE217EC70CAE84F2DF1B7B165", hash_generated_method = "A2E9A7322F5CBB4292253F0C26EC7B4F")
         public boolean onKeyUp(View view, Editable content, int keyCode,
                                         KeyEvent event) {
@@ -416,6 +420,7 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.582 -0400", hash_original_method = "2352E2665ECFCE8217C303C63497A70F", hash_generated_method = "86FF6B8B90DEE6613AFC914E9C9456E9")
         public boolean onKeyOther(View view, Editable content, KeyEvent event) {
             
@@ -429,6 +434,7 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.582 -0400", hash_original_method = "7A4583B5F6FBB25B3AFA5ED32AFA7AE1", hash_generated_method = "1A62862E11E4D00BF167C37E2E071C4D")
         public void clearMetaKeyState(View view, Editable content, int states) {
             addTaint(view.getTaint());

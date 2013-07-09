@@ -560,6 +560,7 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.139 -0400", hash_original_method = "3904E95A10FA919CA386CED8B9FE2A62", hash_generated_method = "9635B54CD40AB4C56B4C1281959B8400")
         public Builder setOutboundProxy(String outboundProxy) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_1506155703 = null; 
@@ -573,6 +574,7 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.140 -0400", hash_original_method = "6E9362DA0DBE9DD97645F0D0015D1E5C", hash_generated_method = "C608568AE04EA866E218C55FCC35AE9A")
         public Builder setDisplayName(String displayName) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_664780008 = null; 

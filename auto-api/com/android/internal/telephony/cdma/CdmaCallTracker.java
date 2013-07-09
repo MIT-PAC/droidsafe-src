@@ -259,6 +259,7 @@ public final class CdmaCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.293 -0400", hash_original_method = "FEC4E6BC08FD10A2C518984DAAD113C7", hash_generated_method = "7EB11BC51490B620079C4454672BB8E3")
      Connection dial(String dialString, int clirMode) throws CallStateException {
         Connection varB4EAC82CA7396A68D541C85D26508E83_882631443 = null; 
@@ -325,6 +326,7 @@ public final class CdmaCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.294 -0400", hash_original_method = "916DB4F3BDDE26A491E1178653223CEE", hash_generated_method = "68CA528F9C634AFC8B9D26F0F3BFBCBF")
      Connection dial(String dialString) throws CallStateException {
         Connection varB4EAC82CA7396A68D541C85D26508E83_199221767 = null; 
@@ -473,6 +475,7 @@ public final class CdmaCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.297 -0400", hash_original_method = "B9B58214FE30DEB2D41379B25D88E6DD", hash_generated_method = "91DDF637F580C2F12D44ADB525F30440")
      void explicitCallTransfer() throws CallStateException {
         cm.explicitCallTransfer(obtainCompleteMessage(EVENT_ECT_RESULT));
@@ -481,6 +484,7 @@ public final class CdmaCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.298 -0400", hash_original_method = "89E1881B087BAA2C040FAFD444B532DA", hash_generated_method = "93C10D32BFEAACBDB937011534F3F686")
      void clearDisconnected() {
         internalClearDisconnected();
@@ -493,6 +497,7 @@ public final class CdmaCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.298 -0400", hash_original_method = "885B69631C6ACC1E38924306F8EB7459", hash_generated_method = "146B17A4690E31284BC8358446EF8DB7")
      boolean canConference() {
         boolean varA1CCEEF4312D253306B2C816C3DB70CE_1503176204 = (foregroundCall.getState() == CdmaCall.State.ACTIVE
@@ -509,6 +514,7 @@ public final class CdmaCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.298 -0400", hash_original_method = "DFFE89A6FC85DFAF69854FF09292A4CC", hash_generated_method = "4CA806D1BD29DBC6E87739679D200D60")
      boolean canDial() {
         boolean ret;
@@ -547,6 +553,7 @@ public final class CdmaCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.299 -0400", hash_original_method = "F828A2F1845194FFD82C471D7E89F726", hash_generated_method = "D5230E9F9607560D7EBAE9D483D436D9")
      boolean canTransfer() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_533226454 = getTaintBoolean();
@@ -935,6 +942,7 @@ public final class CdmaCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.309 -0400", hash_original_method = "8E7DA06B8727FE7EBCD155EA09819106", hash_generated_method = "09D97CBFA339BB68260AAF45EF5FD946")
      void setMute(boolean mute) {
         desiredMute = mute;
@@ -1007,6 +1015,7 @@ public final class CdmaCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.314 -0400", hash_original_method = "E840FBD61F8E6AF3DE802E32C39DD93E", hash_generated_method = "4AF2AF2C1AF283F2B3D66EB92EFBBE89")
      void hangupWaitingOrBackground() {
         log("hangupWaitingOrBackground");
@@ -1017,6 +1026,7 @@ public final class CdmaCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.317 -0400", hash_original_method = "D10B26113142441F52E905015040129F", hash_generated_method = "939D43994EC933107D2D3D9C50AF847D")
      void hangupForegroundResumeBackground() {
         log("hangupForegroundResumeBackground");
@@ -1087,6 +1097,7 @@ public final class CdmaCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.325 -0400", hash_original_method = "DA3BA6D275DE18892F45915EBAE08DC8", hash_generated_method = "ED3C0BA1D7E424CC9153B8E0926AAA0B")
      CdmaConnection getConnectionByIndex(CdmaCall call, int index) throws CallStateException {
         CdmaConnection varB4EAC82CA7396A68D541C85D26508E83_524800197 = null; 

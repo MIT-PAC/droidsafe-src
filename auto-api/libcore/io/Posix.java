@@ -446,6 +446,7 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.393 -0400", hash_original_method = "A333C05E603FD568E448FA55BD420BEE", hash_generated_method = "2B14B660CBDBC77400B55A268341AB0A")
     public int poll(StructPollfd[] fds, int timeoutMs) throws ErrnoException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_497952812 = getTaintInt();

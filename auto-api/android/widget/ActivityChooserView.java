@@ -814,6 +814,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.569 -0400", hash_original_method = "A69A431394F21E5FD61198963B3D5202", hash_generated_method = "BF29C59B11D153405572E9B4D36D3397")
         @Override
         public int getViewTypeCount() {
@@ -895,6 +896,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.571 -0400", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "A9B1DFA56B78FF1CB1D516F53F30EB23")
         public long getItemId(int position) {
             addTaint(position);
@@ -1083,6 +1085,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.575 -0400", hash_original_method = "3E4531A24528D01DAB939C9C71B2C3DE", hash_generated_method = "B5D9CAEF995F0ACF9C89E78E9E6307C5")
         public int getMaxActivityCount() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1498657453 = getTaintInt();
@@ -1092,6 +1095,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.576 -0400", hash_original_method = "5525C6AC91C9709046E305FD9A15863B", hash_generated_method = "E9FFBB0871DB8C063D386806AB689238")
         public ActivityChooserModel getDataModel() {
             ActivityChooserModel varB4EAC82CA7396A68D541C85D26508E83_2122073697 = null; 
@@ -1121,6 +1125,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.576 -0400", hash_original_method = "1922E89BA39A7DE83F0D6E6EABDFE98E", hash_generated_method = "E4D712316B84081765DFA877B7649CCD")
         public boolean getShowDefaultActivity() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1176040566 = getTaintBoolean();

@@ -33,6 +33,7 @@ final class CertTool {
     }
 
     
+    @DSModeled(DSC.SPEC)
     static String getSignedPublicKey(Context context, int index, String challenge) {
         try {
             KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");

@@ -61,6 +61,7 @@ public class AccessibilityManagerCompat {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.477 -0400", hash_original_method = "7D59B8882263E438CB4361275EA728A2", hash_generated_method = "4DEE1B92670BFB39B4262816636D3180")
         public Object newAccessiblityStateChangeListener(
                 AccessibilityStateChangeListenerCompat listener) {
@@ -74,6 +75,7 @@ public class AccessibilityManagerCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.479 -0400", hash_original_method = "33A1F684547BED5D3B48AAD04779CA50", hash_generated_method = "4B98B01348BEE9DA7C65572DC419623C")
         public boolean addAccessibilityStateChangeListener(AccessibilityManager manager,
                 AccessibilityStateChangeListenerCompat listener) {
@@ -86,6 +88,7 @@ public class AccessibilityManagerCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.479 -0400", hash_original_method = "3EC1834EAD9521199DD8CC1AEEEE93EE", hash_generated_method = "501B28691BA9C5FFCCFB9BA7933DE0E9")
         public boolean removeAccessibilityStateChangeListener(AccessibilityManager manager,
                 AccessibilityStateChangeListenerCompat listener) {
@@ -125,6 +128,7 @@ public class AccessibilityManagerCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.482 -0400", hash_original_method = "D41A4A15681F6206C5A89225952F89E0", hash_generated_method = "36C0375A17AE13CF1E1CFD0149C1ADB5")
         public boolean isTouchExplorationEnabled(AccessibilityManager manager) {
             addTaint(manager.getTaint());

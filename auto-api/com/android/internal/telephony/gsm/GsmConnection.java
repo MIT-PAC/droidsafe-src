@@ -160,6 +160,7 @@ public class GsmConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.406 -0400", hash_original_method = "0553AC873EBF02DCE0ECDD52D690154B", hash_generated_method = "8234893539011CA0CBD6A88DABC240EB")
      boolean compareTo(DriverCall c) {
         String cAddress = PhoneNumberUtils.stringFromStringAndTOA(c.number, c.TOA);
@@ -587,6 +588,7 @@ public class GsmConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.415 -0400", hash_original_method = "6DD0016A82A0EEA168B83665DD86A0FB", hash_generated_method = "B3C3159BD6CBC2613A9F6D73DE50EA65")
      void onRemoteDisconnect(int causeCode) {
         
@@ -632,6 +634,7 @@ public class GsmConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.417 -0400", hash_original_method = "96B42EEDFF6F1EDC58573CD6BAE53841", hash_generated_method = "9382473DCA208BE0D8989A8224072A18")
      boolean update(DriverCall dc) {
         GsmCall newParent;
@@ -704,6 +707,7 @@ public class GsmConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.419 -0400", hash_original_method = "CA6F3BC3A0E7C25CF1D3A00C4B3FEC79", hash_generated_method = "8670E572457B0479F623D4EC774FCB0B")
      int getGSMIndex() throws CallStateException {
         {
@@ -1062,6 +1066,7 @@ public class GsmConnection extends Connection {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.435 -0400", hash_original_method = "E8F40E6883CDABD6C8E283CE0D2B4E28", hash_generated_method = "82E315FF4D841CD23578FEA3A741B202")
         public void handleMessage(Message msg) {
             

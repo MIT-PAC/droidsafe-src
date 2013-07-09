@@ -667,6 +667,7 @@ public final class CacheManager {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.926 -0400", hash_original_method = "DD5A2376D1CE8800456745E0EBB16914", hash_generated_method = "AB8410A1758BC7171DA00E1A32F3705F")
         public int getHttpStatusCode() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1898066096 = getTaintInt();
@@ -676,6 +677,7 @@ public final class CacheManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.926 -0400", hash_original_method = "043A311B0C55CC2C0E7ED635C15C25FD", hash_generated_method = "5AF7658C0E31ED45C1E0D428DE0F17AD")
         public long getContentLength() {
             long var0F5264038205EDFB1AC05FBB0E8C5E94_932954308 = getTaintLong();
@@ -685,6 +687,7 @@ public final class CacheManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.926 -0400", hash_original_method = "AD502AEBBD528088B1D12F9CAC38CB54", hash_generated_method = "924DC743407D6688FE4763F6CE3DF5E5")
         public String getLocalPath() {
             String varB4EAC82CA7396A68D541C85D26508E83_1815065868 = null; 
@@ -696,6 +699,7 @@ public final class CacheManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.927 -0400", hash_original_method = "4C886ADD26DB3A9818AA89FF03B8C3FC", hash_generated_method = "A85A73AFA0EF2EE7D2D03673AFD4505C")
         public long getExpires() {
             long var0F5264038205EDFB1AC05FBB0E8C5E94_638695714 = getTaintLong();
@@ -705,6 +709,7 @@ public final class CacheManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.927 -0400", hash_original_method = "EF25E8FEFAF784FE84A0290E2AAD114E", hash_generated_method = "546A9CB7B38CD1759FD8CE04A47BDA12")
         public String getExpiresString() {
             String varB4EAC82CA7396A68D541C85D26508E83_454091039 = null; 
@@ -716,6 +721,7 @@ public final class CacheManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.927 -0400", hash_original_method = "9BE76A44786245A5C82A387C274361E4", hash_generated_method = "78DAF8F60031634C83538B5E1C10FE41")
         public String getLastModified() {
             String varB4EAC82CA7396A68D541C85D26508E83_386858380 = null; 
@@ -727,6 +733,7 @@ public final class CacheManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.928 -0400", hash_original_method = "C916AEC2FCF91BC5DCA69D0B98CD1013", hash_generated_method = "B8C1C54E4FF9B305B427A1D0CEAA9208")
         public String getETag() {
             String varB4EAC82CA7396A68D541C85D26508E83_1486336779 = null; 
@@ -738,6 +745,7 @@ public final class CacheManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.928 -0400", hash_original_method = "6CD12CC12FD0AC9D51B06E8F6D96C76B", hash_generated_method = "A06CAAED9E79BD7693BEDB12C93617D7")
         public String getMimeType() {
             String varB4EAC82CA7396A68D541C85D26508E83_2035040232 = null; 
@@ -749,6 +757,7 @@ public final class CacheManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.929 -0400", hash_original_method = "958E0B7EB30F5353747022B831D2FD74", hash_generated_method = "39B89E90E4D88810121596BF44875595")
         public String getLocation() {
             String varB4EAC82CA7396A68D541C85D26508E83_223283193 = null; 
@@ -760,6 +769,7 @@ public final class CacheManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.929 -0400", hash_original_method = "ECC6E581C26F132636CDCE9C9A5E5807", hash_generated_method = "99652EFD8C107C1B02A8F5A6574EF345")
         public String getEncoding() {
             String varB4EAC82CA7396A68D541C85D26508E83_827989271 = null; 
@@ -771,6 +781,7 @@ public final class CacheManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.929 -0400", hash_original_method = "C0D4D7C4AE17A99630CF9DD48649B988", hash_generated_method = "2B6BD57BBCB0C65993ABC049FB6CC988")
         public String getContentDisposition() {
             String varB4EAC82CA7396A68D541C85D26508E83_686554811 = null; 
@@ -782,6 +793,7 @@ public final class CacheManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.930 -0400", hash_original_method = "3D92385EA50556C1C84606BD9B5473E5", hash_generated_method = "376712E0180CB8D1AAAD0CD8CB91EC4C")
         public InputStream getInputStream() {
             InputStream varB4EAC82CA7396A68D541C85D26508E83_186015703 = null; 
@@ -793,6 +805,7 @@ public final class CacheManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.930 -0400", hash_original_method = "B77E86F2D56E5DBE0D55411B47D89551", hash_generated_method = "E03046D41EE43752D8A0B77D8FB63A95")
         public OutputStream getOutputStream() {
             OutputStream varB4EAC82CA7396A68D541C85D26508E83_769507057 = null; 
@@ -804,6 +817,7 @@ public final class CacheManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.930 -0400", hash_original_method = "B7D827E5771A9B377DDBAC601F400FD6", hash_generated_method = "D50427B4C8F38D7752B90DF293596A71")
         public void setInputStream(InputStream stream) {
             this.inStream = stream;
@@ -812,6 +826,7 @@ public final class CacheManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.931 -0400", hash_original_method = "109F4EE072FF4A68A1B686347AFE92DB", hash_generated_method = "7E8E9F5581B45D04B721857DE5AE6090")
         public void setEncoding(String encoding) {
             this.encoding = encoding;
@@ -820,6 +835,7 @@ public final class CacheManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.931 -0400", hash_original_method = "24FE4CA1135DA21E8B00A4A2D819D5D2", hash_generated_method = "3969089D2E06A5D5A418BB6CA59DBC16")
         public void setContentLength(long contentLength) {
             this.contentLength = contentLength;

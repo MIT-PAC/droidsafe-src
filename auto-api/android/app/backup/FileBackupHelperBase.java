@@ -81,6 +81,7 @@ class FileBackupHelperBase {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.554 -0400", hash_original_method = "A480CB5B709E68610E22FE65F3C016D5", hash_generated_method = "21F34F569B449C2A29EF21ED0BE8C7E4")
      boolean writeFile(File f, BackupDataInputStream in) {
         int result = -1;

@@ -2393,6 +2393,7 @@ public class WebSettings {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.929 -0400", hash_original_method = "F64F21D16CFD05D4B80E501A354D44C1", hash_generated_method = "B29EC72059CE29B3319C19052C00CC47")
         public int getUniqueId() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_661811776 = getTaintInt();
@@ -2402,6 +2403,7 @@ public class WebSettings {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.929 -0400", hash_original_method = "1443687462A2902C11BD4613CE447F4A", hash_generated_method = "FBCF55ED4C9A4F47728DF247EEBCDE50")
         public String getFullName() {
             String varB4EAC82CA7396A68D541C85D26508E83_212278582 = null; 
@@ -2413,6 +2415,7 @@ public class WebSettings {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.930 -0400", hash_original_method = "F1CEF297E349972E689A87BC52C1313A", hash_generated_method = "3B9BFC4526B9E7988C781F9809E98C7F")
         public String getEmailAddress() {
             String varB4EAC82CA7396A68D541C85D26508E83_1413214073 = null; 
@@ -2424,6 +2427,7 @@ public class WebSettings {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.930 -0400", hash_original_method = "52206539E751E4CCE5415670F9F725D8", hash_generated_method = "4A707A8C6393784859CFF813046F4B2F")
         public String getCompanyName() {
             String varB4EAC82CA7396A68D541C85D26508E83_1466473490 = null; 
@@ -2435,6 +2439,7 @@ public class WebSettings {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.931 -0400", hash_original_method = "C545FDC49346DC5A5D71F5AD1D1BEF53", hash_generated_method = "A67FCC9765C1FBC9A19A55E2A0B87E51")
         public String getAddressLine1() {
             String varB4EAC82CA7396A68D541C85D26508E83_760319888 = null; 
@@ -2446,6 +2451,7 @@ public class WebSettings {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.931 -0400", hash_original_method = "F55EC6B8A39F598BB4DCA9E4A078AA07", hash_generated_method = "82C8890C63B32DD988E2B35B6F80E7BF")
         public String getAddressLine2() {
             String varB4EAC82CA7396A68D541C85D26508E83_46525478 = null; 
@@ -2457,6 +2463,7 @@ public class WebSettings {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.932 -0400", hash_original_method = "B85B96BC49C3B97C84AB4B17868CBD9D", hash_generated_method = "2B0C802D4F816430E1618F42E43EC86A")
         public String getCity() {
             String varB4EAC82CA7396A68D541C85D26508E83_492665757 = null; 
@@ -2468,6 +2475,7 @@ public class WebSettings {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.932 -0400", hash_original_method = "E347213115686AEA23D455AF8267D98C", hash_generated_method = "854B7817DAFC891E387265C8EDDD964B")
         public String getState() {
             String varB4EAC82CA7396A68D541C85D26508E83_212744308 = null; 
@@ -2479,6 +2487,7 @@ public class WebSettings {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.933 -0400", hash_original_method = "07A544AD716F805F393CD2D204A5CDEF", hash_generated_method = "7AFCB5B1567FE4F286C99BDFC4B2FD87")
         public String getZipCode() {
             String varB4EAC82CA7396A68D541C85D26508E83_808303724 = null; 
@@ -2490,6 +2499,7 @@ public class WebSettings {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.933 -0400", hash_original_method = "F3511327404A79B77D5BB05807C0214B", hash_generated_method = "F439C12A65D180121E530D0E5C2FCE06")
         public String getCountry() {
             String varB4EAC82CA7396A68D541C85D26508E83_1574471077 = null; 
@@ -2501,6 +2511,7 @@ public class WebSettings {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.934 -0400", hash_original_method = "6EFA8840ED98073D74C9222B8B96940F", hash_generated_method = "57A4FEC391B125DD42CFDA2DBABF2690")
         public String getPhoneNumber() {
             String varB4EAC82CA7396A68D541C85D26508E83_1435854020 = null; 

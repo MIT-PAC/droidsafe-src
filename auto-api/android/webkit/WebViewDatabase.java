@@ -510,6 +510,7 @@ public class WebViewDatabase {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.994 -0400", hash_original_method = "BC23D2938EE88E31CA87024518493BE2", hash_generated_method = "B72D032585281CD44C5B801ED9E40347")
      void deleteCookies(String domain, String path, String name) {
         {
@@ -539,6 +540,7 @@ public class WebViewDatabase {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.994 -0400", hash_original_method = "33710CB1E65A2C52E9ABEE23433BB87F", hash_generated_method = "3CDFFCED88EEBFC78398003EE71F3DC8")
      void addCookie(Cookie cookie) {
         {
@@ -578,6 +580,7 @@ public class WebViewDatabase {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.995 -0400", hash_original_method = "83E6237273AAD0C9F4D2DED923ACAFB7", hash_generated_method = "5008768C4B96C7E81C194C2997484D15")
      boolean hasCookies() {
         {
@@ -718,6 +721,7 @@ public class WebViewDatabase {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.998 -0400", hash_original_method = "BF73224910862A6343E046C49771A81E", hash_generated_method = "8E1E957D3F1FCF47EEC5FBEA0E345AB5")
      CacheResult getCache(String url) {
         CacheResult varB4EAC82CA7396A68D541C85D26508E83_173943745 = null; 
@@ -799,6 +803,7 @@ public class WebViewDatabase {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.999 -0400", hash_original_method = "C4FACCF94A8569C78058717A9665F703", hash_generated_method = "BEE9D1933318F1528F483AB986F960B8")
      void addCache(String url, CacheResult c) {
         {
@@ -925,6 +930,7 @@ public class WebViewDatabase {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.003 -0400", hash_original_method = "E1CB3EA921D4F41F15D60CB73EFC3B4C", hash_generated_method = "0DB734BC8669DE60E56F480947773C8E")
      List<String> trimCache(long amount) {
         List<String> varB4EAC82CA7396A68D541C85D26508E83_1383646375 = null; 
@@ -1048,6 +1054,7 @@ public class WebViewDatabase {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.005 -0400", hash_original_method = "06E61C8A80289A57F170E4E5B574929B", hash_generated_method = "BCB0D93CB9622210D4CDA3387D982EEF")
      void setUsernamePassword(String schemePlusHost, String username,
                 String password) {
@@ -1357,6 +1364,7 @@ public class WebViewDatabase {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.013 -0400", hash_original_method = "699FE9DC5ACA57A32D74F51785DE679D", hash_generated_method = "AE5975E3CD0E4039E44F01A3104B122D")
      ArrayList<String> getFormData(String url, String name) {
         ArrayList<String> varB4EAC82CA7396A68D541C85D26508E83_1840212567 = null; 

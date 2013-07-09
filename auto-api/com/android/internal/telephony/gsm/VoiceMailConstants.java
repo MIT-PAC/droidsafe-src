@@ -34,6 +34,7 @@ class VoiceMailConstants {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.962 -0400", hash_original_method = "EA61BB6A69E663D3A55745A8DC567B93", hash_generated_method = "F88EA8CF73F5BD56F6C3208C654D61FD")
      boolean containsCarrier(String carrier) {
         boolean varFF25C7C2ECBD496582D005691839F35D_111328833 = (CarrierVmMap.containsKey(carrier));
@@ -45,6 +46,7 @@ class VoiceMailConstants {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.963 -0400", hash_original_method = "50C2E249A143A488875B9940B1F1FDE1", hash_generated_method = "F70158249EFE4073A318292B9298E284")
      String getCarrierName(String carrier) {
         String varB4EAC82CA7396A68D541C85D26508E83_1689531155 = null; 
@@ -59,6 +61,7 @@ class VoiceMailConstants {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.965 -0400", hash_original_method = "0EE8F97DB48267A64D2C0726286D2A1F", hash_generated_method = "BA1DEAB72AAFC4F4B333A57ADEB7E040")
      String getVoiceMailNumber(String carrier) {
         String varB4EAC82CA7396A68D541C85D26508E83_855155866 = null; 
@@ -73,6 +76,7 @@ class VoiceMailConstants {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.966 -0400", hash_original_method = "DE969177752DBF24A725FEF909B2130D", hash_generated_method = "E1D3846C2F3AB2F00B26D9E2CE13F5A1")
      String getVoiceMailTag(String carrier) {
         String varB4EAC82CA7396A68D541C85D26508E83_327776704 = null; 

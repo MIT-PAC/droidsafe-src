@@ -559,6 +559,7 @@ public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.On
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.590 -0400", hash_original_method = "A184D01EFF77484135B24A56DB5CEE5C", hash_generated_method = "429814B5158728BEEF9F959F4F9A9581")
         public int getCount() {
             ArrayList<MenuItemImpl> items;
@@ -580,6 +581,7 @@ public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.On
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.591 -0400", hash_original_method = "007AF294AD9B69A523B4CB65CF7063F8", hash_generated_method = "49BAB627AB1A2F1E79983BE9A22680B7")
         public MenuItemImpl getItem(int position) {
             MenuItemImpl varB4EAC82CA7396A68D541C85D26508E83_1984449278 = null; 
@@ -600,6 +602,7 @@ public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.On
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.591 -0400", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "B979C5EAFB71E368FFE0471BD4687E43")
         public long getItemId(int position) {
             addTaint(position);
@@ -610,6 +613,7 @@ public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.On
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.592 -0400", hash_original_method = "D8FCA6D369D77459F33FFA03EFE73A9B", hash_generated_method = "2A789A19F2D0ECBF6C6ADB8713338C76")
         public View getView(int position, View convertView, ViewGroup parent) {
             View varB4EAC82CA7396A68D541C85D26508E83_1496704141 = null; 
@@ -640,6 +644,7 @@ public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.On
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.593 -0400", hash_original_method = "8514B841FB70F13278F6FFF144403E57", hash_generated_method = "D375F41C08C8FC232594E7040849E500")
          void findExpandedIndex() {
             final MenuItemImpl expandedItem = mMenu.getExpandedItem();
@@ -687,6 +692,7 @@ public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.On
         }
 
 
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.594 -0400", hash_original_method = "1C37910D450C50461EF8022194A48276", hash_generated_method = "51B792B1C3D711BA95FF92B803E8A157")
         @Override
         public void onChanged() {

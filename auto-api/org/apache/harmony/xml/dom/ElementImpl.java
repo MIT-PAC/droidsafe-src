@@ -768,6 +768,7 @@ public class ElementImpl extends InnerNodeImpl implements Element {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.086 -0400", hash_original_method = "FF1F71CDD63994FD93D39F9EA196EECF", hash_generated_method = "004E6F4C99377889749E130CAA37B2F9")
         public int getLength() {
             int var885D16ACBA3AAF937512B6C61A3B731A_792990145 = (ElementImpl.this.attributes.size());
@@ -778,6 +779,7 @@ public class ElementImpl extends InnerNodeImpl implements Element {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.086 -0400", hash_original_method = "DC316EFAFE6C9719F9A6712C7C0724A1", hash_generated_method = "88EA467D1645F003B60226589C44D167")
         private int indexOfItem(String name) {
             int var4539B068F44D8760B8121FFD1C636043_933916238 = (ElementImpl.this.indexOfAttribute(name));
@@ -789,6 +791,7 @@ public class ElementImpl extends InnerNodeImpl implements Element {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.087 -0400", hash_original_method = "258D65E063DA88D4950E14323AAE31E6", hash_generated_method = "C146DB95C12BEB0A4889CF0EF7A817E3")
         private int indexOfItemNS(String namespaceURI, String localName) {
             int var6BB86ADC07E7A5ED0C713094AF81B0B0_1769536830 = (ElementImpl.this.indexOfAttributeNS(namespaceURI, localName));
@@ -801,6 +804,7 @@ public class ElementImpl extends InnerNodeImpl implements Element {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.087 -0400", hash_original_method = "5386255E2AB4AB2C7C1C9B01DBB08720", hash_generated_method = "B2EF521ED81576584FA6DE559BBA0E94")
         public Node getNamedItem(String name) {
             Node varB4EAC82CA7396A68D541C85D26508E83_1569445341 = null; 
@@ -813,6 +817,7 @@ public class ElementImpl extends InnerNodeImpl implements Element {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.088 -0400", hash_original_method = "4A42E6CB38C61058D8EEC911A360EDF7", hash_generated_method = "73789CD72F816CC1F9242F29E21DB712")
         public Node getNamedItemNS(String namespaceURI, String localName) {
             Node varB4EAC82CA7396A68D541C85D26508E83_1354371259 = null; 
@@ -826,6 +831,7 @@ public class ElementImpl extends InnerNodeImpl implements Element {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.089 -0400", hash_original_method = "F60AE240A182D1B0B5E9071C74F61EEF", hash_generated_method = "06AE0FF3AE21D314B416F2BE543D7F31")
         public Node item(int index) {
             Node varB4EAC82CA7396A68D541C85D26508E83_353434938 = null; 
@@ -838,6 +844,7 @@ public class ElementImpl extends InnerNodeImpl implements Element {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.090 -0400", hash_original_method = "92540DEE2EDFF119EB60FC0ECC313E2F", hash_generated_method = "8C9E03D03657C2F6C58E2AF1C9C78C44")
         public Node removeNamedItem(String name) throws DOMException {
             Node varB4EAC82CA7396A68D541C85D26508E83_1754095629 = null; 
@@ -858,6 +865,7 @@ public class ElementImpl extends InnerNodeImpl implements Element {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.090 -0400", hash_original_method = "5947BF939F7AE1F8A4D4CDE5B6951547", hash_generated_method = "BBB3B3931821BB687E910FF3330F283E")
         public Node removeNamedItemNS(String namespaceURI, String localName) throws DOMException {
             Node varB4EAC82CA7396A68D541C85D26508E83_2092151216 = null; 
@@ -879,6 +887,7 @@ public class ElementImpl extends InnerNodeImpl implements Element {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.091 -0400", hash_original_method = "5D95624F12CAAE730B29BD47EADFC40A", hash_generated_method = "FFA0C9D3C329BC14631C5B6BA63060EF")
         public Node setNamedItem(Node arg) throws DOMException {
             Node varB4EAC82CA7396A68D541C85D26508E83_1316386622 = null; 
@@ -897,6 +906,7 @@ public class ElementImpl extends InnerNodeImpl implements Element {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.091 -0400", hash_original_method = "74F8A255439FFDD82EF1D14936D16522", hash_generated_method = "8F3B47D18CF0C3CE199A482E41B3692F")
         public Node setNamedItemNS(Node arg) throws DOMException {
             Node varB4EAC82CA7396A68D541C85D26508E83_1918293484 = null; 

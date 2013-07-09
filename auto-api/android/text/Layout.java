@@ -132,6 +132,7 @@ public abstract class Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.945 -0400", hash_original_method = "4BA809AE232557C36D4CE5AE6E36D4D2", hash_generated_method = "BBAF0084E8D40C760639B9BEAB427E56")
      void replaceWith(CharSequence text, TextPaint paint,
                               int width, Alignment align,
@@ -1817,6 +1818,7 @@ public abstract class Layout {
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static float nextDefaultStop(float h, int inc) {
             return ((int) ((h + inc) / inc)) * inc;
         }
@@ -1969,6 +1971,7 @@ public abstract class Layout {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.992 -0400", hash_original_method = "E8AB479016A2E00AFF48AA43F345FA2A", hash_generated_method = "33E44CA204CE90B94C13F13C24892617")
         public <T> T[] getSpans(int start, int end, Class<T> type) {
             T[] varB4EAC82CA7396A68D541C85D26508E83_818201155 = null; 

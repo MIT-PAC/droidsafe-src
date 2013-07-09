@@ -264,6 +264,7 @@ class FrameLoader {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.662 -0400", hash_original_method = "24B8F725DD0D2F171F529FAFE2897245", hash_generated_method = "1B6F4FD03343E93149F0A7BB5ED52804")
      boolean handleHTTPLoad() {
         {

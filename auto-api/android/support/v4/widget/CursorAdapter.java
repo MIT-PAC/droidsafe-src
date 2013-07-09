@@ -513,6 +513,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.296 -0400", hash_original_method = "0AAB5F0B0973D030DF154EF2BA0EE06F", hash_generated_method = "435665FACD824F36B4EBE26548A8E6E8")
         @Override
         public boolean deliverSelfNotifications() {

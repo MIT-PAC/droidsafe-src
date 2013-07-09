@@ -99,6 +99,7 @@ abstract class SpannableStringInternal {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.512 -0400", hash_original_method = "7B198AB61B6B726FF2E2996AF3FF95CD", hash_generated_method = "C58EE48B3ED660EDC5377FC02D97ABD2")
      void setSpan(Object what, int start, int end, int flags) {
         int nstart = start;
@@ -159,6 +160,7 @@ abstract class SpannableStringInternal {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.513 -0400", hash_original_method = "03C5B870069E116AF35881F1682BF48B", hash_generated_method = "D9A4FA4CA9787EE0203E05DA06517731")
      void removeSpan(Object what) {
         int count = mSpanCount;
@@ -359,6 +361,7 @@ abstract class SpannableStringInternal {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.516 -0400", hash_original_method = "AE7B5CCE37B25ED0DAD474C110343705", hash_generated_method = "B55B0A38083A0FBCC18F1FDA689CD3B2")
     public int nextSpanTransition(int start, int limit, Class kind) {
         int count = mSpanCount;
@@ -406,6 +409,7 @@ abstract class SpannableStringInternal {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.517 -0400", hash_original_method = "AE5753E793A4485018C5FAB8D6A92DBC", hash_generated_method = "177FF102A3C0730ABD7BCD8DBD2AB16D")
     private void sendSpanAdded(Object what, int start, int end) {
         SpanWatcher[] recip = getSpans(start, end, SpanWatcher.class);
@@ -428,6 +432,7 @@ abstract class SpannableStringInternal {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.517 -0400", hash_original_method = "60A86A7ABB49125FA35263BF87AB59D6", hash_generated_method = "3CFCBE6D032BDAD4F4305586E2B6FB28")
     private void sendSpanRemoved(Object what, int start, int end) {
         SpanWatcher[] recip = getSpans(start, end, SpanWatcher.class);
@@ -450,6 +455,7 @@ abstract class SpannableStringInternal {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.518 -0400", hash_original_method = "859EF27A1BB05860E7E5EF0EAB661D52", hash_generated_method = "314AE87D53AD7ACC6B2E249F8488BB2A")
     private void sendSpanChanged(Object what, int s, int e, int st, int en) {
         SpanWatcher[] recip = getSpans(Math.min(s, st), Math.max(e, en),
@@ -476,6 +482,7 @@ abstract class SpannableStringInternal {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String region(int start, int end) {
         return "(" + start + " ... " + end + ")";
     }

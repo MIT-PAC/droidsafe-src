@@ -704,6 +704,7 @@ public final class Debug {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.126 -0400", hash_original_method = "0F7876D4F39A60F2060DE34A3D4B321B", hash_generated_method = "2A9B4359E63769F5AB7C40C5BD61B797")
         public int getTotalPss() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1973116109 = getTaintInt();
@@ -713,6 +714,7 @@ public final class Debug {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.126 -0400", hash_original_method = "5F6AFDC3B733846B095E6E612D37EF25", hash_generated_method = "B116089C543746CDAD3FF2F45D0941C1")
         public int getTotalPrivateDirty() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_216688076 = getTaintInt();
@@ -722,6 +724,7 @@ public final class Debug {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.127 -0400", hash_original_method = "DD332BDFA0A32D6562D4D066F36B1807", hash_generated_method = "06D7EA76AA488C9740D24BDF8BD949E4")
         public int getTotalSharedDirty() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_662059289 = getTaintInt();
@@ -731,6 +734,7 @@ public final class Debug {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.128 -0400", hash_original_method = "8C545D479EA5CCAA2D5CE5956250CE73", hash_generated_method = "3C0406FDFD081F72CA6ACD2CFC49935F")
         public int getOtherPss(int which) {
             addTaint(which);
@@ -741,6 +745,7 @@ public final class Debug {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.129 -0400", hash_original_method = "45A31C2AA910C3CDA42EF94E68B5E963", hash_generated_method = "A14282199098D4FE0ACE3976DDA9AE97")
         public int getOtherPrivateDirty(int which) {
             addTaint(which);
@@ -751,6 +756,7 @@ public final class Debug {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.129 -0400", hash_original_method = "1FF35BC5D0D80C168B4EDFE5B23B6F0A", hash_generated_method = "77348A605B71BB848DF7B1D4AD95DC58")
         public int getOtherSharedDirty(int which) {
             addTaint(which);
@@ -761,6 +767,7 @@ public final class Debug {
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static String getOtherLabel(int which) {
             switch (which) {
                 case 0: return "Cursor";
@@ -777,6 +784,7 @@ public final class Debug {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.130 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "6A5D1839CC8F35D3219B61FDF83030B0")
         public int describeContents() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_685100035 = getTaintInt();
@@ -924,6 +932,7 @@ public final class Debug {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.132 -0400", hash_original_method = "51D086FA18F9CD076FA7BBB430E7197D", hash_generated_method = "25A1A882B579067A716EF84F71EED978")
         public int globalTotal() {
             int count = 0;

@@ -552,6 +552,7 @@ public class PriorityQueue<E> extends AbstractQueue<E> implements Serializable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.368 -0400", hash_original_method = "23667DB5E37E55798D44E0D3057B4835", hash_generated_method = "0ED9F2A1A9148BECB2BC61DFAE458042")
         public E next() {
             E varB4EAC82CA7396A68D541C85D26508E83_1314774558 = null; 

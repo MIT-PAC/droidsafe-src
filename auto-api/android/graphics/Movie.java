@@ -75,6 +75,7 @@ public class Movie {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.680 -0400", hash_original_method = "27AF6C33DD27E3F7A12E5155D66D2F71", hash_generated_method = "CDD48E03784E943B91431AB56B64A252")
     public void draw(Canvas canvas, float x, float y) {
         draw(canvas, x, y, null);
@@ -104,6 +105,7 @@ public class Movie {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Movie decodeFile(String pathName) {
         InputStream is;
         try {
@@ -116,6 +118,7 @@ public class Movie {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.681 -0400", hash_original_method = "2A8A5725920B2887C390528D14702FB9", hash_generated_method = "F60431C87802AFB4C31B956CE5749F71")
     @Override
     protected void finalize() throws Throwable {
@@ -136,6 +139,7 @@ public class Movie {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Movie decodeTempStream(InputStream is) {
         Movie moov = null;
         try {

@@ -401,6 +401,7 @@ public abstract class DateFormat extends Format {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.736 -0400", hash_original_method = "E3ED29195795ED22C0785EABF4B5C0B6", hash_generated_method = "37E09C8313D739BA6F3CE7CE35631332")
         public int getCalendarField() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_42745566 = getTaintInt();

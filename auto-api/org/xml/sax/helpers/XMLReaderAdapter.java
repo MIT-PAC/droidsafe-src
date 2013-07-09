@@ -301,6 +301,7 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.077 -0400", hash_original_method = "53FC4E3BB2217D6659CB21AA159A3250", hash_generated_method = "7A0F98D55CE81AA31A2B8414CFC871B3")
          void setAttributes(Attributes attributes) {
             this.attributes = attributes;

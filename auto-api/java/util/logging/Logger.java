@@ -73,6 +73,7 @@ public class Logger {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.488 -0400", hash_original_method = "A65BD0ACD527953E44A5CA711754E9EF", hash_generated_method = "4F9AB434A286878CEFCF3751254F3762")
      void updateDalvikLogHandler() {
         DalvikLogHandler newLogHandler = GENERAL_LOG_HANDLER;
@@ -229,6 +230,7 @@ public class Logger {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.499 -0400", hash_original_method = "4498A4914B339ECC6C0CA41B926DD713", hash_generated_method = "67BE0A9D27E79C4E4940E62B4EF5BCCD")
      void setManager(LogManager manager) {
         String levelProperty = manager.getProperty(name + ".level");
@@ -1267,6 +1269,7 @@ public class Logger {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.540 -0400", hash_original_method = "D14DBD797D15B100512BFD083DBB1EBD", hash_generated_method = "4A8492AAD3680E42F7FF4A077502C1FA")
      void reset() {
         levelObjVal = null;

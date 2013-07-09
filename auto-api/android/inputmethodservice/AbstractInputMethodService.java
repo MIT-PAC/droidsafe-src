@@ -149,6 +149,7 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.502 -0400", hash_original_method = "B599CE9BD5CE6C0947F95A74F4693444", hash_generated_method = "0D14873DF20C55FFFA92A231EC4E38DF")
         public boolean isEnabled() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_239403827 = getTaintBoolean();
@@ -158,6 +159,7 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.502 -0400", hash_original_method = "C0B4C5A0A5D7F00D5E6612F5DDAFF7B5", hash_generated_method = "38BB98E1687F23D0FA12C75E3FB45445")
         public boolean isRevoked() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_410204180 = getTaintBoolean();
@@ -167,6 +169,7 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.502 -0400", hash_original_method = "BA8B8E3B4141C528807EA03970F3ED77", hash_generated_method = "94A2A90AC6C5A052E1295DDC3118E60A")
         public void setEnabled(boolean enabled) {
             {
@@ -179,6 +182,7 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.503 -0400", hash_original_method = "6150597809F85496BEE526162ACEB60F", hash_generated_method = "E60B36F04B14FB96FAC9E90F23CA5FB2")
         public void revokeSelf() {
             mRevoked = true;

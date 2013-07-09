@@ -56,6 +56,7 @@ public class StrikethroughSpan extends CharacterStyle implements UpdateAppearanc
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.884 -0400", hash_original_method = "405DAF545E7B8CA376105971B6D6FF49", hash_generated_method = "E53E249A8041C9B8AA6A1D86389C6700")
     @Override
     public void updateDrawState(TextPaint ds) {

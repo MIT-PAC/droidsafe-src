@@ -134,6 +134,7 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.628 -0400", hash_original_method = "224E04BA70E2891F43254A5C70CBC214", hash_generated_method = "106C54ADD84AFAE7B75CEDFAFF4384A9")
         @Override
         public String toString() {

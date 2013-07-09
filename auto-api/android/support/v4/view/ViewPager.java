@@ -2365,6 +2365,7 @@ public class ViewPager extends ViewGroup {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.075 -0400", hash_original_method = "FDA1A61FADE7F0C7FCCDCC2DC76C3CF3", hash_generated_method = "B2FBB2FB94B804AD0B70502C0D4396BB")
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -2376,6 +2377,7 @@ public class ViewPager extends ViewGroup {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.076 -0400", hash_original_method = "53640E8AF66EBB8ED10DFFE2A0D2E8B4", hash_generated_method = "E14EBD5798939F6D36F12C55A8B6805A")
         @Override
         public void onPageSelected(int position) {
@@ -2385,6 +2387,7 @@ public class ViewPager extends ViewGroup {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.078 -0400", hash_original_method = "257CCDCF3F3C71EC13191438C1C85826", hash_generated_method = "7D1A18F60472A016F9CCDF171AEF93EC")
         @Override
         public void onPageScrollStateChanged(int state) {

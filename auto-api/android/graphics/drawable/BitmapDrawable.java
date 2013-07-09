@@ -368,6 +368,7 @@ public class BitmapDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.640 -0400", hash_original_method = "856CFED7038AD7D83A692D422DD3B90C", hash_generated_method = "ACF585952D9FB3F7A0DED05140FDAF03")
     public void setTileModeX(Shader.TileMode mode) {
         setTileModeXY(mode, mBitmapState.mTileModeY);
@@ -386,6 +387,7 @@ public class BitmapDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.641 -0400", hash_original_method = "ADEC19A1E439C619635E588D2B7F4415", hash_generated_method = "9FA377191A1FBD9A70EAB4200F3A9E9A")
     public void setTileModeXY(Shader.TileMode xmode, Shader.TileMode ymode) {
         final BitmapState state = mBitmapState;
@@ -719,6 +721,7 @@ public class BitmapDrawable extends Drawable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.652 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "6696C5AF04F5D58C42DA9EC2D09F5102")
         @Override
         public int getChangingConfigurations() {

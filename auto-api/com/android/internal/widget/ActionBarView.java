@@ -1648,6 +1648,7 @@ public class ActionBarView extends AbsActionBarView {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.108 -0400", hash_original_method = "515851E7BACA5483746DDD359AD42324", hash_generated_method = "9AC96C63F5E1CDCD5CF892B3010E92D9")
         @Override
         public void writeToParcel(Parcel out, int flags) {
@@ -1707,6 +1708,7 @@ public class ActionBarView extends AbsActionBarView {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.111 -0400", hash_original_method = "9F32A31FB673DE4EC8BCDCE1EEBEDDFA", hash_generated_method = "C5FAECDE8ED1DD073B9B388055C8CCD3")
         public void setUp(boolean isUp) {
             mUpView.setVisibility(isUp ? VISIBLE : GONE);
@@ -1716,6 +1718,7 @@ public class ActionBarView extends AbsActionBarView {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.111 -0400", hash_original_method = "F0A9CABDEAA57DB9E5ACC2CB832FAA3E", hash_generated_method = "9B57DB7ABC228AFB1395FD587CAE938E")
         public void setIcon(Drawable icon) {
             mIconView.setImageDrawable(icon);
@@ -1725,6 +1728,7 @@ public class ActionBarView extends AbsActionBarView {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.112 -0400", hash_original_method = "CFB95F18A35F8E50D440D10682646E0E", hash_generated_method = "D223DB8283C70D648A9D6EF39625BF4F")
         @Override
         public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
@@ -1738,6 +1742,7 @@ public class ActionBarView extends AbsActionBarView {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.113 -0400", hash_original_method = "FDE4E65FE29B6BBB876E3C716DF53BA6", hash_generated_method = "CC158F5B7FDE14A5107BFD05D8FD46AD")
         @Override
         public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
@@ -1760,6 +1765,7 @@ public class ActionBarView extends AbsActionBarView {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.114 -0400", hash_original_method = "757AA99E9D5B690C1E0FFF7AC4DD062B", hash_generated_method = "A26B52AF35377B4F5CEF6C215DCB66DA")
         @Override
         public boolean dispatchHoverEvent(MotionEvent event) {
@@ -1772,6 +1778,7 @@ public class ActionBarView extends AbsActionBarView {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.114 -0400", hash_original_method = "2B32BD9128787E0840E1C599EF5CB94E", hash_generated_method = "5EC2FAF832A2B3F6243B07B3538B4611")
         @Override
         protected void onFinishInflate() {
@@ -1784,6 +1791,7 @@ public class ActionBarView extends AbsActionBarView {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.115 -0400", hash_original_method = "782BC6B05C8AB6ECAC8D4CC02CB172F4", hash_generated_method = "642513A51F1F0DE942D6475270616547")
         public int getLeftOffset() {
             {
@@ -1909,6 +1917,7 @@ public class ActionBarView extends AbsActionBarView {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.118 -0400", hash_original_method = "C60404B6CC35B9780D9F9822482B710D", hash_generated_method = "453CFF33A870F92F099D3EA33D6A6EBF")
         @Override
         public MenuView getMenuView(ViewGroup root) {
@@ -1922,6 +1931,7 @@ public class ActionBarView extends AbsActionBarView {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.118 -0400", hash_original_method = "226E9F894ABBAE0501C29D5C6F0FF83B", hash_generated_method = "3D8B77A3C6F7D57783CB5625DBB4925C")
         @Override
         public void updateMenuView(boolean cleared) {
@@ -1964,6 +1974,7 @@ public class ActionBarView extends AbsActionBarView {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.118 -0400", hash_original_method = "C83F707E18EA3360FADD00AE5C28CDF5", hash_generated_method = "91C24072A9EDE4FB74D3CC5F1FE81127")
         @Override
         public void setCallback(Callback cb) {
@@ -1972,6 +1983,7 @@ public class ActionBarView extends AbsActionBarView {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.119 -0400", hash_original_method = "7065AC4BF04829F4DD8494E3AEDE278B", hash_generated_method = "CB28B8445779386C0C07054AFCE515FE")
         @Override
         public boolean onSubMenuSelected(SubMenuBuilder subMenu) {
@@ -1984,6 +1996,7 @@ public class ActionBarView extends AbsActionBarView {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.119 -0400", hash_original_method = "FBD72BA67A5E56379A29D442239E7ED0", hash_generated_method = "15DD56E801446E62CB8AD586B99C35C7")
         @Override
         public void onCloseMenu(MenuBuilder menu, boolean allMenusAreClosing) {
@@ -1994,6 +2007,7 @@ public class ActionBarView extends AbsActionBarView {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.119 -0400", hash_original_method = "4C665EA7F97447510193964EEFD645AE", hash_generated_method = "211095491A67385E52FA9DD29DDB1BD4")
         @Override
         public boolean flagActionItems() {
@@ -2040,6 +2054,7 @@ public class ActionBarView extends AbsActionBarView {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.121 -0400", hash_original_method = "91D41E28867193763062F9A55820BEE2", hash_generated_method = "9F39CE5F74AAEBE7F13614FBC4836D2B")
         @Override
         public boolean collapseItemActionView(MenuBuilder menu, MenuItemImpl item) {
@@ -2082,6 +2097,7 @@ public class ActionBarView extends AbsActionBarView {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.121 -0400", hash_original_method = "B74F33F41EA76949D2B7FFC2C0C48D8F", hash_generated_method = "75D9F8625002479336EB000FE04D8B08")
         @Override
         public int getId() {
@@ -2092,6 +2108,7 @@ public class ActionBarView extends AbsActionBarView {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.123 -0400", hash_original_method = "F5855573BDD3346EB58FBC078F0D1E94", hash_generated_method = "9375BB1351FC44D72815CD09B332E3E3")
         @Override
         public Parcelable onSaveInstanceState() {
@@ -2105,6 +2122,7 @@ public class ActionBarView extends AbsActionBarView {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.125 -0400", hash_original_method = "0C3EAD71D41C59A31F244EC76F29937C", hash_generated_method = "121C283A529B0D7F6A336D6D29A15283")
         @Override
         public void onRestoreInstanceState(Parcelable state) {

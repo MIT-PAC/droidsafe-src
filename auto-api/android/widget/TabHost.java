@@ -643,6 +643,7 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.231 -0400", hash_original_method = "0D57BE6053E1E40100589C46AD4E8491", hash_generated_method = "01823399EA5078952ADBA0067E65E4CF")
         public TabSpec setContent(Intent intent) {
             TabSpec varB4EAC82CA7396A68D541C85D26508E83_1923306501 = null; 
@@ -656,6 +657,7 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.232 -0400", hash_original_method = "ED26754F6A82B43F30EAE698B7941323", hash_generated_method = "FDC37582AC69EC20D17AD26AE6A5AECF")
         public String getTag() {
             String varB4EAC82CA7396A68D541C85D26508E83_982163834 = null; 
@@ -792,6 +794,7 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.236 -0400", hash_original_method = "E81C3A0236D0948C1B54CB0897C263EB", hash_generated_method = "1B90969FCCE39E7AF82F2802E29D51EF")
         public View createIndicatorView() {
             View varB4EAC82CA7396A68D541C85D26508E83_578884042 = null; 

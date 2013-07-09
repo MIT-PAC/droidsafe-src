@@ -79,6 +79,7 @@ class IconLoader extends Handler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.570 -0400", hash_original_method = "E56E284105F777D8A6CAB7DB3EDAC84F", hash_generated_method = "B6ACC3FC0029FE1701705E3A5139F568")
      void loadIcons(int[] recordNumbers, Message msg) {
         mEndMsg = msg;
@@ -100,6 +101,7 @@ class IconLoader extends Handler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.571 -0400", hash_original_method = "328A1F48C7F5C3C618F7E134C6DE5C8B", hash_generated_method = "699168182308EFE2FB0864C4782A74DF")
      void loadIcon(int recordNumber, Message msg) {
         mEndMsg = msg;

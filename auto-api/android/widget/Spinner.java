@@ -723,6 +723,7 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.036 -0400", hash_original_method = "EE97D094FF23924861F9B1BB9874462B", hash_generated_method = "B2F2EA46DA0C1CBF006E4BA01977F35C")
         public int getItemViewType(int position) {
             addTaint(position);
@@ -733,6 +734,7 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.037 -0400", hash_original_method = "A6079B88B18082AA3C7D7E460D2C3B87", hash_generated_method = "8FF926DC591392497859751E9DDBEAC9")
         public int getViewTypeCount() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_39054723 = getTaintInt();
@@ -796,6 +798,7 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.038 -0400", hash_original_method = "8403FBCA2C28723FD059691B00D88CE1", hash_generated_method = "2A0FFE64737AEA0CAA4489A819F70A16")
         public void setAdapter(ListAdapter adapter) {
             mListAdapter = adapter;
@@ -804,6 +807,7 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.039 -0400", hash_original_method = "9624F776B01A0F54225A1B393847DC0B", hash_generated_method = "BB0F0F2687998277E739EA69AA391DAB")
         public void setPromptText(CharSequence hintText) {
             mPrompt = hintText;
@@ -812,6 +816,7 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.039 -0400", hash_original_method = "2D362FF1EB68D3106D16676724B21A20", hash_generated_method = "D053CBD0446D1C77B69FA8A756AF78DF")
         public CharSequence getHintText() {
             CharSequence varB4EAC82CA7396A68D541C85D26508E83_887867464 = null; 
@@ -914,6 +919,7 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.041 -0400", hash_original_method = "708F2EB27A8EC2C1F7F8C9DF82B35D6E", hash_generated_method = "27011EE29443B22D7CFDB17904BD3DFF")
         public CharSequence getHintText() {
             CharSequence varB4EAC82CA7396A68D541C85D26508E83_733183051 = null; 
@@ -925,6 +931,7 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.042 -0400", hash_original_method = "5C072498C5CF07F19C35B82F77A3E1EC", hash_generated_method = "16E5231AF70EBF4E19AB1B172E7CB522")
         public void setPromptText(CharSequence hintText) {
             mHintText = hintText;

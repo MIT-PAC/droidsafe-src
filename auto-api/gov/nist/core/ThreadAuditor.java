@@ -186,6 +186,7 @@ public class ThreadAuditor {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.917 -0400", hash_original_method = "7C169FF6005EF7125A62D6FC1B2750B7", hash_generated_method = "0255DD6DB1D9EA804D13E06958FCD4CF")
         public boolean isThreadActive() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1061912172 = getTaintBoolean();
@@ -195,6 +196,7 @@ public class ThreadAuditor {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.918 -0400", hash_original_method = "88A3AB81179102C8D04CED6A81B233E5", hash_generated_method = "F939265BD831E182F8951ADA8E09D004")
         protected void setThreadActive(boolean value) {
             isThreadActive = value;
@@ -203,6 +205,7 @@ public class ThreadAuditor {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.918 -0400", hash_original_method = "F8B0A54928E7ECAC7F4DBC7FBE8E98A4", hash_generated_method = "37C247424F4C4D70C8832F8945623919")
         public Thread getThread() {
             Thread varB4EAC82CA7396A68D541C85D26508E83_852567862 = null; 

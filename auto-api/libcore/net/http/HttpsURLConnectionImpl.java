@@ -923,6 +923,7 @@ final class HttpsURLConnectionImpl extends HttpsURLConnection {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.244 -0400", hash_original_method = "F3639B01983CFF48B5D8296AB1C5BDBE", hash_generated_method = "BDFBFEEF3508A61ED59329969D28570E")
         public SSLSocket getSSLSocket() {
             SSLSocket varB4EAC82CA7396A68D541C85D26508E83_1227038992 = null; 
@@ -965,6 +966,7 @@ final class HttpsURLConnectionImpl extends HttpsURLConnection {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.247 -0400", hash_original_method = "2764C3EBE7E55CBE19AD199214E9E45F", hash_generated_method = "02E6ECFDCF5CEDF5B6F74C745F2B66D5")
         @Override
         protected void connect() throws IOException {
@@ -1074,6 +1076,7 @@ final class HttpsURLConnectionImpl extends HttpsURLConnection {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.250 -0400", hash_original_method = "E90F26103F02D3FE62A3059524C5B610", hash_generated_method = "737838A5CF7BDD8B4FDBE12D83100480")
         @Override
         protected boolean acceptCacheResponseType(CacheResponse cacheResponse) {
@@ -1085,6 +1088,7 @@ final class HttpsURLConnectionImpl extends HttpsURLConnection {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.250 -0400", hash_original_method = "7AEFB2847C4237E3ACCA6586A2D947A2", hash_generated_method = "C6E86E6DBCB38E333BE4804359E90EA7")
         @Override
         protected boolean includeAuthorityInRequestLine() {
@@ -1095,6 +1099,7 @@ final class HttpsURLConnectionImpl extends HttpsURLConnection {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.251 -0400", hash_original_method = "F1E50F3C05FEF05D40BA1FEDA33CCDCF", hash_generated_method = "56AE574FA71798D523D3FD2F9DFEEA3C")
         @Override
         protected HttpURLConnection getHttpConnectionToCache() {
@@ -1124,6 +1129,7 @@ final class HttpsURLConnectionImpl extends HttpsURLConnection {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.253 -0400", hash_original_method = "4E873E328DE258FE448018732F781F9A", hash_generated_method = "A2F3B365844A2E3EBD2987EF43131A4A")
         @Override
         protected RawHeaders getNetworkRequestHeaders() throws IOException {
@@ -1156,6 +1162,7 @@ final class HttpsURLConnectionImpl extends HttpsURLConnection {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.254 -0400", hash_original_method = "8CAA920CAFADAC8866B230CA35502445", hash_generated_method = "7A05E66C7F7662465FA822424469B23D")
         @Override
         protected boolean requiresTunnel() {

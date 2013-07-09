@@ -306,6 +306,7 @@ public abstract class DirectoryWalker<T> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.253 -0400", hash_original_method = "254E9EB55B544E07E2A606FED2225F70", hash_generated_method = "112117E7609CC82D10412331FA79D64F")
         public File getFile() {
             File varB4EAC82CA7396A68D541C85D26508E83_1174943673 = null; 
@@ -317,6 +318,7 @@ public abstract class DirectoryWalker<T> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.254 -0400", hash_original_method = "FBD5046615AAE9EDCC3CA2ADE86A92C3", hash_generated_method = "40AE4AA119C7A8A26530E3673207A2BC")
         public int getDepth() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_140355782 = getTaintInt();

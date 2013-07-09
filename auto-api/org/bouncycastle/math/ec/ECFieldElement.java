@@ -91,6 +91,7 @@ public abstract class ECFieldElement implements ECConstants {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.498 -0400", hash_original_method = "980758C44AA9D55BE8845E0F1627D066", hash_generated_method = "81D8D86DEE940693E49A382B3FDE6280")
         public BigInteger toBigInteger() {
             BigInteger varB4EAC82CA7396A68D541C85D26508E83_1121317804 = null; 
@@ -102,6 +103,7 @@ public abstract class ECFieldElement implements ECConstants {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.499 -0400", hash_original_method = "0E8B7E675C6828F2CC0DC48F96E6F8E3", hash_generated_method = "982AAB3AB1EA4DF0A8E0E67299B5257B")
         public String getFieldName() {
             String varB4EAC82CA7396A68D541C85D26508E83_894904204 = null; 
@@ -123,6 +125,7 @@ public abstract class ECFieldElement implements ECConstants {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.500 -0400", hash_original_method = "ACFCE2DB75EFF131F33A5EE2D309C15F", hash_generated_method = "79F7FAD235DA1289F281DCB575FA7F3D")
         public BigInteger getQ() {
             BigInteger varB4EAC82CA7396A68D541C85D26508E83_770702677 = null; 
@@ -498,6 +501,7 @@ public abstract class ECFieldElement implements ECConstants {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.509 -0400", hash_original_method = "69EE8C1832EFB43BF906E0C4BE94B23A", hash_generated_method = "F376329580FF6762DDFC68F915619F81")
         public String getFieldName() {
             String varB4EAC82CA7396A68D541C85D26508E83_1197522286 = null; 
@@ -509,6 +513,7 @@ public abstract class ECFieldElement implements ECConstants {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.509 -0400", hash_original_method = "42523CF7F05F42E24BD30D4320A4984C", hash_generated_method = "81970787E499118C8AEF76D5E6F00E25")
         public int getFieldSize() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1906302334 = getTaintInt();
@@ -605,6 +610,7 @@ public abstract class ECFieldElement implements ECConstants {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.513 -0400", hash_original_method = "3796F7BD0BD7CB77DE18BFC002B0C069", hash_generated_method = "999A74BB87344AC1CD11B82B87AA23A5")
         public ECFieldElement negate() {
             ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_657709130 = null; 
@@ -684,6 +690,7 @@ public abstract class ECFieldElement implements ECConstants {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.515 -0400", hash_original_method = "F44EC09A2F605B64D128CF1FD080E96F", hash_generated_method = "99B58C5752EFA22DB09C2909B6687B87")
         public int getRepresentation() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_173712182 = getTaintInt();
@@ -693,6 +700,7 @@ public abstract class ECFieldElement implements ECConstants {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.516 -0400", hash_original_method = "16D4D66DBFDF91ECDD28D772829DE89A", hash_generated_method = "4248C64EF2F51270F1CDE35A8515F7C8")
         public int getM() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1701664315 = getTaintInt();
@@ -702,6 +710,7 @@ public abstract class ECFieldElement implements ECConstants {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.516 -0400", hash_original_method = "788DAA97D92752E8BB2DDD2E9F6BC21F", hash_generated_method = "B0F0646B72D932883458E2524DED80B3")
         public int getK1() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1752652247 = getTaintInt();
@@ -711,6 +720,7 @@ public abstract class ECFieldElement implements ECConstants {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.516 -0400", hash_original_method = "F79890B1EB0EE6C2416B5951B6A3A0C5", hash_generated_method = "CDFCD2238F91C34DC86EFB754E271A3B")
         public int getK2() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_16246122 = getTaintInt();
@@ -720,6 +730,7 @@ public abstract class ECFieldElement implements ECConstants {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.516 -0400", hash_original_method = "1D65CE2828E295283E79F47AB831B6A0", hash_generated_method = "A4A7FB10287607F95D305A7B0E70C81A")
         public int getK3() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_804502062 = getTaintInt();

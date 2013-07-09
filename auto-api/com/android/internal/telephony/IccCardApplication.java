@@ -314,18 +314,23 @@ public class IccCardApplication {
         APPSTATE_PUK,
         APPSTATE_SUBSCRIPTION_PERSO,
         APPSTATE_READY;
+        @DSModeled(DSC.SAFE)
         boolean isPinRequired() {
             return this == APPSTATE_PIN;
         }
+        @DSModeled(DSC.SAFE)
         boolean isPukRequired() {
             return this == APPSTATE_PUK;
         }
+        @DSModeled(DSC.SAFE)
         boolean isSubscriptionPersoEnabled() {
             return this == APPSTATE_SUBSCRIPTION_PERSO;
         }
+        @DSModeled(DSC.SAFE)
         boolean isAppReady() {
             return this == APPSTATE_READY;
         }
+        @DSModeled(DSC.SAFE)
         boolean isAppNotReady() {
             return this == APPSTATE_UNKNOWN  ||
                    this == APPSTATE_DETECTED;
@@ -359,6 +364,7 @@ public class IccCardApplication {
         PERSOSUBSTATE_RUIM_CORPORATE_PUK,
         PERSOSUBSTATE_RUIM_SERVICE_PROVIDER_PUK,
         PERSOSUBSTATE_RUIM_RUIM_PUK;
+        @DSModeled(DSC.SAFE)
         boolean isPersoSubStateUnknown() {
             return this == PERSOSUBSTATE_UNKNOWN;
         }

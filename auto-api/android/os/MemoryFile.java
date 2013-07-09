@@ -346,7 +346,8 @@ public class MemoryFile {
 			
 		}
 
-		@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.483 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "451A179FED5C23535E8470FCC117D8AE")
+		@DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.483 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "451A179FED5C23535E8470FCC117D8AE")
 		@Override
 		public boolean markSupported() {
 			boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_203256060 = getTaintBoolean();
@@ -355,7 +356,8 @@ public class MemoryFile {
 			
 		}
 
-		@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.483 -0400", hash_original_method = "D9C9FB514524CC537FCE6FACAF9A295C", hash_generated_method = "AF5321611A336F9FC05FFEE23E084B6E")
+		@DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.483 -0400", hash_original_method = "D9C9FB514524CC537FCE6FACAF9A295C", hash_generated_method = "AF5321611A336F9FC05FFEE23E084B6E")
 		@Override
 		public void mark(int readlimit) {
 			mMark = mOffset;
@@ -364,7 +366,8 @@ public class MemoryFile {
 			
 		}
 
-		@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.484 -0400", hash_original_method = "35916CEFACB2EEB27C627D30B06B91CE", hash_generated_method = "51C43F06C3033D3370FC41BB3D926B97")
+		@DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.484 -0400", hash_original_method = "35916CEFACB2EEB27C627D30B06B91CE", hash_generated_method = "51C43F06C3033D3370FC41BB3D926B97")
 		@Override
 		public void reset() throws IOException {
 			mOffset = mMark;

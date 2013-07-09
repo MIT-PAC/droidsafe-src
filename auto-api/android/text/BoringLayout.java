@@ -126,6 +126,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static BoringLayout make(CharSequence source,
                         TextPaint paint, int outerwidth,
                         Alignment align,
@@ -137,6 +138,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static BoringLayout make(CharSequence source,
                         TextPaint paint, int outerwidth,
                         Alignment align,
@@ -149,6 +151,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.550 -0400", hash_original_method = "CC7D93FCE240EB61BF168844CD074EBF", hash_generated_method = "66FFE27CFB1DA1D8FC2F04DB2543C296")
     public BoringLayout replaceOrMake(CharSequence source, TextPaint paint,
                                       int outerwidth, Alignment align,
@@ -185,6 +188,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.551 -0400", hash_original_method = "4B78087A434BCC06D8E64A3B5F0E26A9", hash_generated_method = "AFE74D3935128F6BDD519371FC55AE70")
     public BoringLayout replaceOrMake(CharSequence source, TextPaint paint,
                                       int outerwidth, Alignment align,
@@ -229,6 +233,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.552 -0400", hash_original_method = "72A5FE71A3D3A6FEDD367DD5E3D986F4", hash_generated_method = "EB8F642D1F218DE905053BBF2F00E315")
      void init(CharSequence source,
                             TextPaint paint, int outerwidth,
@@ -574,6 +579,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.559 -0400", hash_original_method = "12CBEFE116384BBA88EB750F89F5AC01", hash_generated_method = "594BA3D38C7851541E33652BCD8C5E15")
         @Override
         public String toString() {

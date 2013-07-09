@@ -760,6 +760,7 @@ public class TimePicker extends FrameLayout {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.164 -0400", hash_original_method = "E8F47E3750239DF4EC2B02FDC3043C0E", hash_generated_method = "012C6C1D29FA5C299056176C149896B8")
         public int getHour() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_945282188 = getTaintInt();
@@ -769,6 +770,7 @@ public class TimePicker extends FrameLayout {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.165 -0400", hash_original_method = "3E9A445CD5F3D9118D6AF471987F3B8F", hash_generated_method = "7BE87CCA4A7CFEE0EBCEC90F5061E5CA")
         public int getMinute() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1781680770 = getTaintInt();

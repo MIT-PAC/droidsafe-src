@@ -245,6 +245,7 @@ final class StringToReal {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.064 -0400", hash_original_method = "910639D1FB7C57E8188938A4D56F4369", hash_generated_method = "4EE3977C2783EA38B7BBFAAA108CAA63")
         public float specialValue() {
             float var546ADE640B6EDFBC8A086EF31347E768_1876258657 = getTaintFloat();

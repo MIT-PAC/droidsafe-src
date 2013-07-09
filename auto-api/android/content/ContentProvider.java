@@ -490,6 +490,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.359 -0400", hash_original_method = "D85CC82248E7B34649DA1C02380D9E2C", hash_generated_method = "88F04C1F1C5D28CF911DE96EE5BA418B")
          ContentProvider getContentProvider() {
             ContentProvider varB4EAC82CA7396A68D541C85D26508E83_47817433 = null; 
@@ -513,6 +514,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.361 -0400", hash_original_method = "C07C2CC52F2EA8ADD199B18CF964D47B", hash_generated_method = "D9FB4EBE980A4F16F0F0246698621944")
         public Cursor query(Uri uri, String[] projection,
                 String selection, String[] selectionArgs, String sortOrder) {
@@ -534,6 +536,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.362 -0400", hash_original_method = "BE9D1875DBA635C7BA04B42A3E893DA2", hash_generated_method = "615F69165F81F6E9A61E8546E545BEBD")
         public String getType(Uri uri) {
             String varB4EAC82CA7396A68D541C85D26508E83_844904804 = null; 
@@ -546,6 +549,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.363 -0400", hash_original_method = "2D883DF9190F17ADC9F3F05EDAD4CA9E", hash_generated_method = "744C91E9711DDDD9A244BFB8F6B9466D")
         public Uri insert(Uri uri, ContentValues initialValues) {
             Uri varB4EAC82CA7396A68D541C85D26508E83_252942102 = null; 
@@ -614,6 +618,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.372 -0400", hash_original_method = "9F536F247E1CDAAB23A0513292709CB1", hash_generated_method = "F44A74FD8EC170406B06F5064CB3F916")
         public int delete(Uri uri, String selection, String[] selectionArgs) {
             enforceWritePermission(uri);
@@ -629,6 +634,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.373 -0400", hash_original_method = "A4C580D76A4BE435F05FDF3658D031E7", hash_generated_method = "71DCF894B3F2AAA4BCC7D753E49E6229")
         public int update(Uri uri, ContentValues values, String selection,
                 String[] selectionArgs) {
@@ -646,6 +652,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.374 -0400", hash_original_method = "A3B5DD3A6EF0BED7F3109E14959CA5EF", hash_generated_method = "05CBA4470472057499B6512A21EF1E39")
         public ParcelFileDescriptor openFile(Uri uri, String mode) throws FileNotFoundException {
             ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_10163974 = null; 
@@ -666,6 +673,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.375 -0400", hash_original_method = "9FC3CF0D01502503E6A8E959789D91E0", hash_generated_method = "6939686D91FA4DA86FA7C3BFB5101E9A")
         public AssetFileDescriptor openAssetFile(Uri uri, String mode) throws FileNotFoundException {
             AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1819448755 = null; 
@@ -700,6 +708,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.377 -0400", hash_original_method = "8E1F3128EE5808B485D05EE809576B99", hash_generated_method = "2C77FAFE3671C60C83CB825A93C49A01")
         @Override
         public String[] getStreamTypes(Uri uri, String mimeTypeFilter) {
@@ -714,6 +723,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.377 -0400", hash_original_method = "C18E75C38B25261EF8CFA8F7B83C6E2D", hash_generated_method = "64E8527EFEBACD75583265E1BCED95FD")
         @Override
         public AssetFileDescriptor openTypedAssetFile(Uri uri, String mimeType, Bundle opts) throws FileNotFoundException {
@@ -731,6 +741,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.378 -0400", hash_original_method = "E57399204B1619B526E92C84388A407F", hash_generated_method = "B05CBF9347CC985E7C512E67451A8860")
         private void enforceReadPermission(Uri uri) {
             final int uid = Binder.getCallingUid();
@@ -777,6 +788,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.379 -0400", hash_original_method = "329C06E4068EEDF4ECCAEC3BA5AB45CE", hash_generated_method = "2F7B71C396C276C40C50D30A62E53EB0")
         private boolean hasWritePermission(Uri uri) {
             final int uid = Binder.getCallingUid();
@@ -819,6 +831,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.380 -0400", hash_original_method = "7CEC600BB70206A61DA89C0C0D2014C1", hash_generated_method = "65E44B639467E55543914E4573BCC130")
         private void enforceWritePermission(Uri uri) {
             {

@@ -66,6 +66,7 @@ public class Logger {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.210 -0400", hash_original_method = "330ED05F95D8039149C4EE202C44E32C", hash_generated_method = "13E6B0A7ED2046F68EA1958C76857BC1")
         public void newIndent() {
             
@@ -73,6 +74,7 @@ public class Logger {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.210 -0400", hash_original_method = "85AD8C1F1AFBCA83430C30D8B2614DB0", hash_generated_method = "949118FCC724942B9B24B51D90111D34")
         public void endIndent() {
             

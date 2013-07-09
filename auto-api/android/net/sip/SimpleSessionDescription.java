@@ -310,6 +310,7 @@ public class SimpleSessionDescription {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.818 -0400", hash_original_method = "F57356AE1A37FC524BD36BB2BA67325B", hash_generated_method = "D8E08773911F8F039031B4D25FA66793")
         public String getType() {
             String varB4EAC82CA7396A68D541C85D26508E83_2125710539 = null; 
@@ -321,6 +322,7 @@ public class SimpleSessionDescription {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.819 -0400", hash_original_method = "D8DAED2CD8A0984A9202198C71DA9D83", hash_generated_method = "CBE5D20B9B766AD8D0BEF3FCAF2F58CC")
         public int getPort() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_680989320 = getTaintInt();
@@ -330,6 +332,7 @@ public class SimpleSessionDescription {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.819 -0400", hash_original_method = "7A9595EE55A65FB3ADE35A1A62D4E357", hash_generated_method = "AC9C01DEBDB90B3AAAA7368E27BFABFC")
         public int getPortCount() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_958817980 = getTaintInt();
@@ -339,6 +342,7 @@ public class SimpleSessionDescription {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.820 -0400", hash_original_method = "259570BEE3678204ECD026726561CF7F", hash_generated_method = "1A06E42CFB6E2F253D082004B29E48F0")
         public String getProtocol() {
             String varB4EAC82CA7396A68D541C85D26508E83_289857101 = null; 

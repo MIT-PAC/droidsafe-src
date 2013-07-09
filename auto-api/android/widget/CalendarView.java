@@ -1056,6 +1056,7 @@ public class CalendarView extends FrameLayout {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.166 -0400", hash_original_method = "B5E95894B654555C190BA20C07877305", hash_generated_method = "36957FC0FE727D9A4DBBEF2723CCAF85")
         public Calendar getSelectedDay() {
             Calendar varB4EAC82CA7396A68D541C85D26508E83_644077315 = null; 
@@ -1067,6 +1068,7 @@ public class CalendarView extends FrameLayout {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.166 -0400", hash_original_method = "F04F5B9FBE7B2AAA41BE9F0558597E2D", hash_generated_method = "7F06AC2E4E46A6532E8B425B5A337C22")
         @Override
         public int getCount() {
@@ -1077,6 +1079,7 @@ public class CalendarView extends FrameLayout {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.167 -0400", hash_original_method = "AE0D3BF5CEF608E0D2B9C47624E8B8EC", hash_generated_method = "E49CED1F354DA8167F387B5B0A04F5D7")
         @Override
         public Object getItem(int position) {
@@ -1090,6 +1093,7 @@ public class CalendarView extends FrameLayout {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.167 -0400", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "7C1B7359DA36A28C281A3872F58DB714")
         @Override
         public long getItemId(int position) {
@@ -1218,6 +1222,7 @@ public class CalendarView extends FrameLayout {
             }
 
 
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.169 -0400", hash_original_method = "685EB340645172BC9B4FCDA0078720CA", hash_generated_method = "33FB9BADFDF20552B58F84A90B2CF7EC")
             @Override
             public boolean onSingleTapUp(MotionEvent e) {
@@ -1373,6 +1378,7 @@ public class CalendarView extends FrameLayout {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.173 -0400", hash_original_method = "132ACA3161A5E95F30BDE89FA7E699D9", hash_generated_method = "A89873444003FC6DBEAE117DFCBB2D9C")
         public int getMonthOfFirstWeekDay() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_647800946 = getTaintInt();
@@ -1382,6 +1388,7 @@ public class CalendarView extends FrameLayout {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.174 -0400", hash_original_method = "CD3B8D9B4D0AF03A28010706DE17FBAB", hash_generated_method = "39FA7200C2D3B3DB139831884BEC9A65")
         public int getMonthOfLastWeekDay() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1592512097 = getTaintInt();
@@ -1391,6 +1398,7 @@ public class CalendarView extends FrameLayout {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.174 -0400", hash_original_method = "58CF666CFDF77BB5B426C92097C0AA79", hash_generated_method = "3BD23AE45796CBB8051A9DD15B8F2B52")
         public Calendar getFirstDay() {
             Calendar varB4EAC82CA7396A68D541C85D26508E83_1591849630 = null; 

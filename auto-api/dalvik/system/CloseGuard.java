@@ -105,6 +105,7 @@ public final class CloseGuard {
         }
 
 
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.627 -0400", hash_original_method = "F3799B66B3E6BA78B84AD9198872DB1A", hash_generated_method = "421BA6754F2FF0EC78CCFD41BBFF0000")
         public void report(String message, Throwable allocationSite) {
             System.logW(message, allocationSite);

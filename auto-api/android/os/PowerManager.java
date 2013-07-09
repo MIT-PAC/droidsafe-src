@@ -226,6 +226,7 @@ public class PowerManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.990 -0400", hash_original_method = "C9C09C089F97F5128A15BBE86111A3BF", hash_generated_method = "494115ABA2B3754EECDF64EBFE873031")
         public void setReferenceCounted(boolean value) {
             mRefCounted = value;
@@ -328,6 +329,7 @@ public class PowerManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.993 -0400", hash_original_method = "B8CE240AF6103639736D7EE1F34595B3", hash_generated_method = "473B8B41B57C426F35D1B543BAF38D0B")
         public boolean isHeld() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1212609960 = getTaintBoolean();

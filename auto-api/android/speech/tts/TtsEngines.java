@@ -712,6 +712,7 @@ public class TtsEngines {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.461 -0400", hash_original_method = "E919388D461770C5E68C050C2BB6D626", hash_generated_method = "F4A15AA138A2BD8631A1CC9679F16E93")
         @Override
         public int compare(EngineInfo lhs, EngineInfo rhs) {

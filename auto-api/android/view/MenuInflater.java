@@ -361,6 +361,7 @@ public class MenuInflater {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.513 -0400", hash_original_method = "72B0BA7C11D7E690CFEDBC790E5F02DB", hash_generated_method = "52EC9BD2B64C18BC1661223C54B55626")
         public void resetGroup() {
             groupId = defaultGroupId;
@@ -541,6 +542,7 @@ public class MenuInflater {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.517 -0400", hash_original_method = "EEE8EEEED979875FD25E1447BB361BB0", hash_generated_method = "F3B0FEAD51C2D68C0094B5BFD5E5A18C")
         public boolean hasAddedItem() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1463137955 = getTaintBoolean();

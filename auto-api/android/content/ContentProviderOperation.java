@@ -827,6 +827,7 @@ public class ContentProviderOperation implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.684 -0400", hash_original_method = "1D016C05C5C9EB70F24159159C761C5E", hash_generated_method = "FCAA3211C6F400F47FC6B55E1AC87F55")
         public Builder withYieldAllowed(boolean yieldAllowed) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_669214649 = null; 

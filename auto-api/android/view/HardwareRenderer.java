@@ -272,6 +272,7 @@ public abstract class HardwareRenderer {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.517 -0400", hash_original_method = "8E011D652AD55D9A8BD48AFBDECCE639", hash_generated_method = "7C6720DE85AFCFA491669AAA962BC298")
          boolean hasDirtyRegions() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_726782828 = getTaintBoolean();
@@ -726,6 +727,7 @@ public abstract class HardwareRenderer {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.542 -0400", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "CE881E387BB372F53B4706C4285526C0")
         @Override
          int getWidth() {
@@ -736,6 +738,7 @@ public abstract class HardwareRenderer {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.542 -0400", hash_original_method = "0304EDCF78FF45B68A7EB91BFEAAA2CD", hash_generated_method = "E304BA92DB167459706EA50382266939")
         @Override
          int getHeight() {
@@ -746,6 +749,7 @@ public abstract class HardwareRenderer {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.543 -0400", hash_original_method = "03525402B3DC937D128A720724E320B3", hash_generated_method = "63A266BD443E0D8EB43E5E728CC4A180")
         @Override
          HardwareCanvas getCanvas() {
@@ -758,6 +762,7 @@ public abstract class HardwareRenderer {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.543 -0400", hash_original_method = "BAED9FCEBD48E8CDA814A9102CB815B2", hash_generated_method = "D8B714B039F7B91989159CABF4CA5AF8")
          boolean canDraw() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_964526446 = getTaintBoolean();
@@ -767,6 +772,7 @@ public abstract class HardwareRenderer {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.544 -0400", hash_original_method = "5270AAD77A1E26F7563AFAAC446C8262", hash_generated_method = "D1D1BF3A49F969C9AFF6B64380268E6B")
          void onPreDraw(Rect dirty) {
             
@@ -775,6 +781,7 @@ public abstract class HardwareRenderer {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.544 -0400", hash_original_method = "600776A2676C628EF453DCB2EAD62BCF", hash_generated_method = "CE44E4A0F53F45960A85861D50074AD3")
          void onPostDraw() {
             
@@ -975,6 +982,7 @@ public abstract class HardwareRenderer {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.550 -0400", hash_original_method = "F0C99ACF7C56841B3F486F5BFE1F4C1E", hash_generated_method = "6B81BAE9C31342F906C3A463E4E5AD56")
         @Override
          int[] getConfig(boolean dirtyRegions) {

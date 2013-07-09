@@ -163,6 +163,7 @@ class RILRequest {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.293 -0400", hash_original_method = "DAF6125A6A3BAA8EA4AAF17920DB80E6", hash_generated_method = "BA8A1D52078D3A6AF8F13F23255497FF")
      void onError(int error, Object ret) {
         
@@ -5157,6 +5158,7 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.490 -0400", hash_original_method = "941C644B96F3E7EE75FAD0CC47E0EEC2", hash_generated_method = "A2E5AE58616EECC7176440E5139E1684")
         public void run() {
             
@@ -5278,6 +5280,7 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.494 -0400", hash_original_method = "3E25FFC0D00CEB4B0CF0C518A51DB777", hash_generated_method = "1D2F2B3DB4C351B325B9B6C35ACFC438")
         public void run() {
             int retryCount = 0;

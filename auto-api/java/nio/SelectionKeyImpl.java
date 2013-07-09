@@ -166,6 +166,7 @@ final class SelectionKeyImpl extends AbstractSelectionKey {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.273 -0400", hash_original_method = "566ADAA0BA7A180A2DDEAD33A7978412", hash_generated_method = "888BE1AAAD71EBE752698D327C3D1464")
      boolean isConnected() {
         boolean var08D66B4AB10143CEB25DBF301DBA2EC3_482183838 = (!(channel instanceof SocketChannel) || ((SocketChannel) channel).isConnected());

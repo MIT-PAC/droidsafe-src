@@ -604,6 +604,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.869 -0400", hash_original_method = "10A80C718FDF3E5D6299035E54551605", hash_generated_method = "E923F3841E06CACF45B0A2A5DF07EDAA")
      void animate(boolean schedule) {
         final long now = SystemClock.uptimeMillis();
@@ -866,6 +867,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.874 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "47D8882B24099FD8C8F5927688D2B9B9")
         @Override
         public int getChangingConfigurations() {
@@ -1068,6 +1070,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.883 -0400", hash_original_method = "113DB032EAC82FBADFFAA0B97D39A18D", hash_generated_method = "3196D8C191C1590AB5CFE0477B30AC1B")
         protected void computeConstantSize() {
             mComputedConstantSize = true;
@@ -1213,6 +1216,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.886 -0400", hash_original_method = "A9E2F6299A2B0C0DB78600A3C23F092D", hash_generated_method = "E11619AE34CF6BE91C412151455E81D1")
         public void growArray(int oldSize, int newSize) {
             Drawable[] newDrawables = new Drawable[newSize];
@@ -1227,6 +1231,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.887 -0400", hash_original_method = "F91020706361DEC18BACE4525A4D4C39", hash_generated_method = "5FBB97C40C3863232906A8E50420FC5B")
         public synchronized boolean canConstantState() {
             {

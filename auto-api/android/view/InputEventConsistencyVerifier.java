@@ -889,6 +889,7 @@ public final class InputEventConsistencyVerifier {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.109 -0400", hash_original_method = "F16B27E6183802CE84F6921B26D81A30", hash_generated_method = "B629E2138B7F43397A9CD306024B7EA5")
         public void recycle() {
             {

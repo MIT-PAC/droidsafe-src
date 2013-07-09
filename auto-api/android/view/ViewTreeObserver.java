@@ -512,6 +512,7 @@ public final class ViewTreeObserver {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.652 -0400", hash_original_method = "01F6FFADBD331B04D5C349DCEDD59961", hash_generated_method = "8DEE7B19E2DFEBD717CC580FD498B385")
         public void setTouchableInsets(int val) {
             mTouchableInsets = val;
@@ -520,6 +521,7 @@ public final class ViewTreeObserver {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.652 -0400", hash_original_method = "22281D8629688FB4A664F43EE105A786", hash_generated_method = "89C6DA539F001E086465C4E7D0FD2B6C")
         public int getTouchableInsets() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1059125030 = getTaintInt();

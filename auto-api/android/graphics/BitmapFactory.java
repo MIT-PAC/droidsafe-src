@@ -198,7 +198,8 @@ public class BitmapFactory {
 		return decodeFileDescriptor(fd, null, null);
 	}
 
-	public static void setDefaultConfig(Bitmap.Config config) {
+	@DSModeled(DSC.SAFE)
+    public static void setDefaultConfig(Bitmap.Config config) {
 		if (config == null) {
 			config = Bitmap.Config.RGB_565;
 		}
@@ -289,7 +290,8 @@ public class BitmapFactory {
 			
 		}
 
-		@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.314 -0400", hash_original_method = "D7A23FF2AF4CBD01F551E962769DA287", hash_generated_method = "0A55D796763E8D9E6E50E72FD3E99166")
+		@DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.314 -0400", hash_original_method = "D7A23FF2AF4CBD01F551E962769DA287", hash_generated_method = "0A55D796763E8D9E6E50E72FD3E99166")
 		private void requestCancel() {
 		}
 

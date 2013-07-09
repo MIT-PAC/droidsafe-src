@@ -173,6 +173,7 @@ final class PipeImpl extends Pipe {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.850 -0400", hash_original_method = "A16D8AC033B12AF5E337D988C94AB7BA", hash_generated_method = "9E9681FD3CF602DAA4DA915C6A652D85")
         public FileDescriptor getFD() {
             FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1430906948 = null; 
@@ -261,6 +262,7 @@ final class PipeImpl extends Pipe {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.852 -0400", hash_original_method = "A16D8AC033B12AF5E337D988C94AB7BA", hash_generated_method = "F281C50659282924D1A74666FFB3C17F")
         public FileDescriptor getFD() {
             FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1934077347 = null; 

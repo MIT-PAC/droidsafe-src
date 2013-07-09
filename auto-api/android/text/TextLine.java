@@ -993,6 +993,7 @@ class TextLine {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.861 -0400", hash_original_method = "14C2C64E52F272A1D061AF5FA0B61C4E", hash_generated_method = "952EE89FCA66ABF79DB69DAE8C4F61E3")
         public boolean hasSpansIntersecting(int start, int end) {
             {
@@ -1011,6 +1012,7 @@ class TextLine {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.862 -0400", hash_original_method = "70A36A49F9CEFC761501124E36FC2A8C", hash_generated_method = "A4FADACB5CA9209C34545D8878EC378A")
          int getNextTransition(int start, int limit) {
             {
@@ -1037,6 +1039,7 @@ class TextLine {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.863 -0400", hash_original_method = "5E840A260140B15B0CFAF6F2BC649D6A", hash_generated_method = "77E40000D99CB01AC6A8E7A793D4F30B")
         public void recycle() {
             {

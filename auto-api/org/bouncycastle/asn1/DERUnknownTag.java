@@ -77,6 +77,7 @@ public class DERUnknownTag extends DERObject {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.825 -0400", hash_original_method = "444E91CF9E2407B92E5AF0788B821FF3", hash_generated_method = "E658D4F29167BC0102B610648E6F3347")
      void encode(
         DEROutputStream  out) throws IOException {

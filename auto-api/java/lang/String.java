@@ -864,6 +864,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.865 -0400", hash_original_method = "25FFBBE7056EE87BB826458DBC43764C", hash_generated_method = "BC6509E5F5F3A4E23CFFDEBC23B1C41D")
      void _getChars(int start, int end, char[] buffer, int index) {
         System.arraycopy(value, start + offset, buffer, index, end - start);

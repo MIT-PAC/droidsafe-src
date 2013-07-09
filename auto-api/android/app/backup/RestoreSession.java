@@ -248,6 +248,7 @@ public class RestoreSession {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.779 -0400", hash_original_method = "856BC446A8E3590AAA97D30784AFC7AF", hash_generated_method = "0F4B48B16503E021BF125AFDA4C930A6")
         public void restoreSetsAvailable(RestoreSet[] result) {
             mHandler.sendMessage(
@@ -259,6 +260,7 @@ public class RestoreSession {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.779 -0400", hash_original_method = "09B9DD73C3E4A1439A279C7C4D1CFC03", hash_generated_method = "43168A6BD30BBBCA70222C2DD2FCEC24")
         public void restoreStarting(int numPackages) {
             mHandler.sendMessage(
@@ -270,6 +272,7 @@ public class RestoreSession {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.780 -0400", hash_original_method = "4CFF49A8B007F8B448F2967D6A75009D", hash_generated_method = "D71A39D5EA6E0448F3E7603350D16E7C")
         public void onUpdate(int nowBeingRestored, String currentPackage) {
             
@@ -283,6 +286,7 @@ public class RestoreSession {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.780 -0400", hash_original_method = "9021095FD560CADBADD83E17671DA995", hash_generated_method = "A7F7596524BE4CE656B05C6F5D4A045C")
         public void restoreFinished(int error) {
             mHandler.sendMessage(

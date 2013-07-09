@@ -208,6 +208,7 @@ public final class MccTable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.293 -0400", hash_original_method = "A9AC63D31BDD3C9311D3D9491FFA185B", hash_generated_method = "04E5FF8D81FDE3C835BB8879632100D9")
         public int compareTo(MccEntry o) {
             addTaint(o.getTaint());

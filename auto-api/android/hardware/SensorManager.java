@@ -1098,6 +1098,7 @@ public class SensorManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.082 -0400", hash_original_method = "C46016A1870C47E495A9527702944C16", hash_generated_method = "EA7521FA436708DF1B7C8A9D177D117F")
          void returnToPool(SensorEvent t) {
             {
@@ -1135,6 +1136,7 @@ public class SensorManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.083 -0400", hash_original_method = "3012BD4162FEB4D4063E0B4E3944BED9", hash_generated_method = "0065A500F2AC1D21DA0CBFBF0E28A56E")
         @Override
         protected void finalize() {
@@ -1331,6 +1333,7 @@ public class SensorManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.091 -0400", hash_original_method = "02DCCE55D13DD3643E30DA559E9BDE85", hash_generated_method = "78B4A75F49A9C5693983982D8C29D160")
          Object getListener() {
             Object varB4EAC82CA7396A68D541C85D26508E83_738562002 = null; 
@@ -1454,6 +1457,7 @@ public class SensorManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.095 -0400", hash_original_method = "4097E1683A40A6DEAB5492A2296E3879", hash_generated_method = "8131930ADF7BA919DC4A2597B2FC2264")
          void registerSensor(int legacyType) {
             
@@ -1463,6 +1467,7 @@ public class SensorManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.097 -0400", hash_original_method = "737F8C4556D577A83A29D9000B85627C", hash_generated_method = "14E41210CAC75E17CDE29D78969B1D95")
          boolean unregisterSensor(int legacyType) {
             mSensors &= ~legacyType;
@@ -1546,6 +1551,7 @@ public class SensorManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.100 -0400", hash_original_method = "7A14D827894C3DC6FC1EC81B36F33A0A", hash_generated_method = "7379D636E35EC54AA61FB2831CE85338")
         private void mapSensorDataToWindow(int sensor,
                 float[] values, int orientation) {

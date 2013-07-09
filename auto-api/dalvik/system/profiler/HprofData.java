@@ -273,18 +273,21 @@ public final class HprofData {
         }
 
         
-                public static ThreadEvent start(int objectId, int threadId, String threadName,
+                @DSModeled(DSC.BAN)
+        public static ThreadEvent start(int objectId, int threadId, String threadName,
                                         String groupName, String parentGroupName) {
             return new ThreadEvent(ThreadEventType.START, objectId, threadId,
                                    threadName, groupName, parentGroupName);
         }
 
         
-                public static ThreadEvent end(int threadId) {
+                @DSModeled(DSC.BAN)
+        public static ThreadEvent end(int threadId) {
             return new ThreadEvent(ThreadEventType.END, threadId);
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.072 -0400", hash_original_method = "FD54D2802DF7D246F84571D313E0773D", hash_generated_method = "D1108B2896A11C51E36A612451851C6D")
         @Override
         public int hashCode() {
@@ -307,11 +310,13 @@ public final class HprofData {
         }
 
         
-                private static int hashCode(Object o) {
+                @DSModeled(DSC.BAN)
+        private static int hashCode(Object o) {
             return (o == null) ? 0 : o.hashCode();
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.073 -0400", hash_original_method = "11A9724AFC12A4881460E902B1AEFFA3", hash_generated_method = "65D6E34D80F643B7F8A28BF0F96DAE68")
         @Override
         public boolean equals(Object o) {
@@ -339,11 +344,13 @@ public final class HprofData {
         }
 
         
-                private static boolean equal(Object a, Object b) {
+                @DSModeled(DSC.BAN)
+        private static boolean equal(Object a, Object b) {
             return a == b || (a != null && a.equals(b));
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.074 -0400", hash_original_method = "B2760D4380298F8E4BDF009F5947B547", hash_generated_method = "8F9D65EE5FD1CBB76D6CBCCB4CFF4494")
         @Override
         public String toString() {
@@ -423,6 +430,7 @@ public final class HprofData {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.075 -0400", hash_original_method = "904149F69266C7F1ED9811C71073DCCC", hash_generated_method = "45B020A46A7BF635E6C322977C46CB3A")
         public int getThreadId() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2046741135 = getTaintInt();
@@ -432,6 +440,7 @@ public final class HprofData {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.076 -0400", hash_original_method = "825D6A57778B026225A4AA6FF793AA6E", hash_generated_method = "A6074E76A31D44F42ABAADE00B99E8DF")
         public StackTraceElement[] getStackFrames() {
             StackTraceElement[] varB4EAC82CA7396A68D541C85D26508E83_1959729994 = null; 
@@ -443,6 +452,7 @@ public final class HprofData {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.076 -0400", hash_original_method = "E0B79EC3EEC67C907668B24F8C3EF7D1", hash_generated_method = "ECE21444546DA09A07FD5D65CE2AEB31")
         @Override
         public int hashCode() {
@@ -459,6 +469,7 @@ public final class HprofData {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.077 -0400", hash_original_method = "A370788F6EF207DC60ADB1FE1413BF45", hash_generated_method = "6722D1929D95996D1EB404135C35DDA8")
         @Override
         public boolean equals(Object o) {
@@ -476,6 +487,7 @@ public final class HprofData {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.086 -0400", hash_original_method = "2C975038FABEA62C51E7521430E68593", hash_generated_method = "E796FC4CE82F7ACBEDFDE7780C126F29")
         @Override
         public String toString() {
@@ -552,6 +564,7 @@ public final class HprofData {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.089 -0400", hash_original_method = "EB1A3879F5EB62721F94FC1BD32D5C70", hash_generated_method = "5D02618619EF2ED034BE5DD633B7584B")
         @Override
         public int hashCode() {
@@ -568,6 +581,7 @@ public final class HprofData {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.090 -0400", hash_original_method = "9F96433135E9DB2A8F09B7286FEF9854", hash_generated_method = "D184E5C878631F009672E16F0AABBEF1")
         @Override
         public boolean equals(Object o) {
@@ -585,6 +599,7 @@ public final class HprofData {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.091 -0400", hash_original_method = "27C27C8BDAE57781C2B46A818775E5B8", hash_generated_method = "EF00CA4472AE9456BAC64EBEC6AAD010")
         @Override
         public String toString() {

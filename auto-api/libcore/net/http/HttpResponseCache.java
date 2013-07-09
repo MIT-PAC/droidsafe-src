@@ -533,6 +533,7 @@ public final class HttpResponseCache extends ResponseCache {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.037 -0400", hash_original_method = "CD115A1F543477A8E0342CED7BC41A18", hash_generated_method = "43EC16517959440405820BFBCA270695")
         @Override
         public OutputStream getBody() throws IOException {

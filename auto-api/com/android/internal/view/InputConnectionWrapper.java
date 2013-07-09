@@ -691,6 +691,7 @@ public class InputConnectionWrapper implements InputConnection {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.740 -0400", hash_original_method = "114A3AA754115CB63309037B1A16C75C", hash_generated_method = "DEB7402431C747CDAA87E13C266B649E")
         private void dispose() {
             {
@@ -833,6 +834,7 @@ public class InputConnectionWrapper implements InputConnection {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.743 -0400", hash_original_method = "0DFF250C75DABF6F6E35FBCC4F44FCEA", hash_generated_method = "BBF5BBEA78875C5072400CC07E68E97D")
          void waitForResultLocked() {
             long startTime = SystemClock.uptimeMillis();

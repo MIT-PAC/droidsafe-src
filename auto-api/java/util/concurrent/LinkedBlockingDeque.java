@@ -1467,6 +1467,7 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.459 -0400", hash_original_method = "00D32B8E76B917A114B33777EC6C582C", hash_generated_method = "98FAB8172ACFE70CB53C2D515AB09AD9")
     private void writeObject(java.io.ObjectOutputStream s) throws java.io.IOException {
         final ReentrantLock lock = this.lock;
@@ -1500,6 +1501,7 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.460 -0400", hash_original_method = "56ED7CDA4A1F5E7C2D4B953EF10E899A", hash_generated_method = "A46584781AF0FCE26291140986160D1D")
     private void readObject(java.io.ObjectInputStream s) throws java.io.IOException, ClassNotFoundException {
         s.defaultReadObject();
@@ -1658,6 +1660,7 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.464 -0400", hash_original_method = "5C1B7B0DA20667590A4D5C5559468A28", hash_generated_method = "460E9400E62110ED7BACCF6441226716")
         public boolean hasNext() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_833234413 = getTaintBoolean();

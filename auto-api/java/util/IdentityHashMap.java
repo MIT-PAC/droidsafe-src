@@ -973,6 +973,7 @@ public class IdentityHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.461 -0400", hash_original_method = "B784A2EBEA8DE50E57B347BC65196B23", hash_generated_method = "017113B91894153D4E1584685C24A96A")
         public boolean hasNext() {
             {
@@ -1087,6 +1088,7 @@ public class IdentityHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.464 -0400", hash_original_method = "738E45D9F25B44D082CFB9E446EECBFE", hash_generated_method = "3C37855880D012F99DB6A1384FD660B8")
         @Override
         public int size() {

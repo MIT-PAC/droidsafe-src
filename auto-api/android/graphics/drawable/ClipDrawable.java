@@ -447,6 +447,7 @@ public class ClipDrawable extends Drawable implements Drawable.Callback {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.700 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "5E1D66B69491D645742A9B3773084099")
         @Override
         public int getChangingConfigurations() {

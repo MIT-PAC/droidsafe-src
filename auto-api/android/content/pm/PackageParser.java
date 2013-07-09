@@ -3883,6 +3883,7 @@ public class PackageParser {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.701 -0400", hash_original_method = "AFFE8B7215C15E45738BCB365FA520F8", hash_generated_method = "3F64AB8F1AD7923F2CDDDC8010C0F739")
         public void setPackageName(String packageName) {
             componentName = null;

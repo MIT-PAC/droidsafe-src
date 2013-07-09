@@ -927,6 +927,7 @@ public class AlertController {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.887 -0400", hash_original_method = "9DCA0509220194E0D65C0AA0793BD261", hash_generated_method = "20305F10D3512EFFBCB9FC8E461F6420")
         @Override
         protected boolean recycleOnMeasure() {

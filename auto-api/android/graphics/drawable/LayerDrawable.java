@@ -111,6 +111,7 @@ public class LayerDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.256 -0400", hash_original_method = "7FB89ACAD944F734BBC3DF72F4EDEEB2", hash_generated_method = "238FEE12D1AB1BDE90F5D3C10B298D96")
      LayerState createConstantState(LayerState state, Resources res) {
         LayerState varB4EAC82CA7396A68D541C85D26508E83_1650700660 = null; 
@@ -1147,6 +1148,7 @@ public class LayerDrawable extends Drawable implements Drawable.Callback {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.295 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "F67FFC1E818D3675FEF014767024AEA2")
         @Override
         public int getChangingConfigurations() {

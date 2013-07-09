@@ -53,6 +53,7 @@ public class RelativeSizeSpan extends MetricAffectingSpan implements ParcelableS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.838 -0400", hash_original_method = "0FDF8A7C1083C0A4BBAF4047CBF27DA9", hash_generated_method = "C2C298C420AE56AA07A619B100DBDBD3")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeFloat(mProportion);
@@ -73,6 +74,7 @@ public class RelativeSizeSpan extends MetricAffectingSpan implements ParcelableS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.861 -0400", hash_original_method = "D87A5BB37ACAA736C762D797F93AD23D", hash_generated_method = "299E2FA7287C0FF7949B43ACCFBC895E")
     @Override
     public void updateDrawState(TextPaint ds) {
@@ -83,6 +85,7 @@ public class RelativeSizeSpan extends MetricAffectingSpan implements ParcelableS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.861 -0400", hash_original_method = "B20FAC1EC83BD8EFC8CAF1EE401E0C1F", hash_generated_method = "D3E4F74AF44F717AE1B403FB6AC95049")
     @Override
     public void updateMeasureState(TextPaint ds) {

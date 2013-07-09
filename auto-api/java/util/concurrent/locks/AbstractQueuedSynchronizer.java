@@ -1431,6 +1431,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.747 -0400", hash_original_method = "43F5E066353E431B2C9AD7CD0397BCCF", hash_generated_method = "E4601E87B43629C38561E7C95AC641BF")
         private Node addConditionWaiter() {
             Node varB4EAC82CA7396A68D541C85D26508E83_1112391234 = null; 
@@ -1462,6 +1463,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.747 -0400", hash_original_method = "74B8316ED8B5F40365D8BD9CF002AB2D", hash_generated_method = "5C5EA7ACA7CB99CD1C902C5E0049AF6A")
         private void doSignal(Node first) {
             {
@@ -1486,6 +1488,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.748 -0400", hash_original_method = "DE4F68C515AD9FDEF86DCFCC83AF390E", hash_generated_method = "9931E3B6B12CDDBA4B66622CAF0687D2")
         private void doSignalAll(Node first) {
             lastWaiter = firstWaiter = null;
@@ -1507,6 +1510,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.749 -0400", hash_original_method = "2AF991EC026F340CB09E7C74A01E5A9A", hash_generated_method = "A6D234243F76AEBD78095CCA15575435")
         private void unlinkCancelledWaiters() {
             Node t = firstWaiter;
@@ -1610,6 +1614,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.756 -0400", hash_original_method = "5CA3F4E55230C1BE0E77A65DF87A61F3", hash_generated_method = "744CA2B25519D6219BC001CD62067D8F")
         private int checkInterruptWhileWaiting(Node node) {
             {
@@ -1627,6 +1632,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.756 -0400", hash_original_method = "5304D5C5F98F936C59A15960318DA98F", hash_generated_method = "4F0549A9C71A3F0067ABB9F9CD8E2C15")
         private void reportInterruptAfterWait(int interruptMode) throws InterruptedException {
             if (DroidSafeAndroidRuntime.control) throw new InterruptedException();

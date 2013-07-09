@@ -397,6 +397,7 @@ public abstract class Provider extends Properties {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.611 -0400", hash_original_method = "73ADEB588A693290C2EBE420EE1B60DD", hash_generated_method = "C406A11FFDD83C962C2ACE99945C8DF4")
      boolean implementsAlg(String serv, String alg, String attribute, String val) {
         String servAlg = serv + "." + alg;
@@ -1413,6 +1414,7 @@ public abstract class Provider extends Properties {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.652 -0400", hash_original_method = "A158C77880B526D8A49B8720A1D647AC", hash_generated_method = "E09A15C12B67C48B11A1309AF35CF7B4")
         public boolean supportsParameter(Object parameter) {
             addTaint(parameter.getTaint());

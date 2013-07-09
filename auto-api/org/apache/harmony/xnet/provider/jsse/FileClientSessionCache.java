@@ -343,6 +343,7 @@ public class FileClientSessionCache {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.093 -0400", hash_original_method = "D50DE30B99FDC8E45DF3D781BD6CEC46", hash_generated_method = "DA6D9CA38774AA61B55A98CF9F275C2B")
         @Override
         public int compareTo(File another) {

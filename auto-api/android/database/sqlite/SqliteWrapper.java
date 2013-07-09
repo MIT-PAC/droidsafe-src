@@ -24,13 +24,13 @@ public final class SqliteWrapper {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     private static boolean isLowMemory(SQLiteException e) {
         return e.getMessage().equals(SQLITE_EXCEPTION_DETAIL_MESSAGE);
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static void checkSQLiteException(Context context, SQLiteException e) {
         if (isLowMemory(e)) {
             Toast.makeText(context, com.android.internal.R.string.low_memory,
@@ -54,7 +54,7 @@ public final class SqliteWrapper {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static boolean requery(Context context, Cursor cursor) {
         try {
             return cursor.requery();

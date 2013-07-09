@@ -27,6 +27,7 @@ public class UsbDeviceConnection {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.329 -0400", hash_original_method = "F5372DEAC10FA7FD7870C2FF0E38F2EF", hash_generated_method = "EBC645C57F307FE0101B17D2A72C2E72")
      boolean open(String name, ParcelFileDescriptor pfd) {
         boolean var285CA921394210A8A14FA5321382861D_490555944 = (native_open(name, pfd.getFileDescriptor()));

@@ -1427,6 +1427,7 @@ class ZoomManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.294 -0400", hash_original_method = "7BD5EC8FD84F966DA50367EA866227AA", hash_generated_method = "A941726517A105A191383A5B9680D16C")
         private void clear() {
             mSize = 0;
@@ -1448,6 +1449,7 @@ class ZoomManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.295 -0400", hash_original_method = "BEA568413C11D502CA7CED6FD222D059", hash_generated_method = "E09B726BE53BDEE657056A6D7361163B")
         private void add(float focusDelta) {
             mSum += focusDelta;
@@ -1468,6 +1470,7 @@ class ZoomManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.295 -0400", hash_original_method = "D980EABC4C0F2D2A081289A0764FD494", hash_generated_method = "9D90013ECB76D10B1EDCA6EE47E77D80")
         private float getSum() {
             float var546ADE640B6EDFBC8A086EF31347E768_198797366 = getTaintFloat();
@@ -1496,6 +1499,7 @@ class ZoomManager {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.296 -0400", hash_original_method = "9075B37C27A1752EF4C1C0179D09116C", hash_generated_method = "32A78566D952487EEF6E6C85590E4299")
         public boolean onScaleBegin(ScaleGestureDetector detector) {
             
@@ -1523,6 +1527,7 @@ class ZoomManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.296 -0400", hash_original_method = "B0E9BE71CCDF607A4C10071A1E309D43", hash_generated_method = "4C79E5BD3D20A070A62486751E948E1B")
         public boolean isPanningOnly(ScaleGestureDetector detector) {
             float prevFocusX = mFocusX;
@@ -1583,6 +1588,7 @@ class ZoomManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.297 -0400", hash_original_method = "ED0E7724FBEBB5F90A0828B68DD48F69", hash_generated_method = "D93DA175A7E7F462F036863ACB337915")
         public boolean onScale(ScaleGestureDetector detector) {
             

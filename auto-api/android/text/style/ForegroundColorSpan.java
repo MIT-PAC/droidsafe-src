@@ -53,6 +53,7 @@ public class ForegroundColorSpan extends CharacterStyle implements UpdateAppeara
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.744 -0400", hash_original_method = "F35F8912B3182FC877D8B21825C3ABAF", hash_generated_method = "4434B22B71E34F3AE6C4E59891B471B8")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mColor);
@@ -73,6 +74,7 @@ public class ForegroundColorSpan extends CharacterStyle implements UpdateAppeara
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.745 -0400", hash_original_method = "119B8D3BB9F53DFAB442699FA205FF8F", hash_generated_method = "2F1C2E8F6B8BD6A6D6757FC91916A06D")
     @Override
     public void updateDrawState(TextPaint ds) {

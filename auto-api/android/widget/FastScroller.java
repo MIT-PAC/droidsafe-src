@@ -645,6 +645,7 @@ class FastScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.863 -0400", hash_original_method = "800EB68723F3F3F4CE4E1BDE2BD8DC58", hash_generated_method = "B5F95F03320C9CAA8B815DC872257AC0")
      void getSectionsFromIndexer() {
         Adapter adapter = mList.getAdapter();
@@ -857,6 +858,7 @@ class FastScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.868 -0400", hash_original_method = "12EF9C1930DF387CC333A7C9F1E54726", hash_generated_method = "35D4DE833C677581785D47E702F2E832")
      void beginDrag() {
         setState(STATE_DRAGGING);
@@ -881,6 +883,7 @@ class FastScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.869 -0400", hash_original_method = "D950A8D9B3AA1D87B11E428662FC0A13", hash_generated_method = "E57EF4DD6D85E52BE7D1802973E646F7")
      boolean onInterceptTouchEvent(MotionEvent ev) {
         
@@ -1109,6 +1112,7 @@ class FastScroller {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.872 -0400", hash_original_method = "3A2ADC6F19B17BA5C164F36207FFFC0C", hash_generated_method = "131C075F9CD238CA9D5078200560339B")
         public void run() {
             {

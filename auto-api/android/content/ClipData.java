@@ -366,6 +366,7 @@ public class ClipData implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.070 -0400", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "28BA78BE6472A9BFB2258DB0B7DD45B7")
         public CharSequence getText() {
             CharSequence varB4EAC82CA7396A68D541C85D26508E83_659347048 = null; 
@@ -377,6 +378,7 @@ public class ClipData implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.071 -0400", hash_original_method = "AD027B7B58A4A2F151CC138FB7B23244", hash_generated_method = "5F6A4A245F9BDE38B1D69A659DFC581E")
         public Intent getIntent() {
             Intent varB4EAC82CA7396A68D541C85D26508E83_1798323764 = null; 
@@ -388,6 +390,7 @@ public class ClipData implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.072 -0400", hash_original_method = "225259AA593B6A59F476A2C569F1B075", hash_generated_method = "E291D64E01A107DF13754F3F6383DA11")
         public Uri getUri() {
             Uri varB4EAC82CA7396A68D541C85D26508E83_315816102 = null; 

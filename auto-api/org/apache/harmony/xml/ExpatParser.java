@@ -874,6 +874,7 @@ class ExpatParser {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.682 -0400", hash_original_method = "81345E38E6C55A28DE606E0BCA6E5F93", hash_generated_method = "D77BE0E57A56ED1673FBB8F0A5891CA1")
         @Override
         public int getParserPointer() {
@@ -884,6 +885,7 @@ class ExpatParser {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.683 -0400", hash_original_method = "8BF0A90E7356097362ADB7AB9898D2BC", hash_generated_method = "7D3ACED13C64D783938B16C168405F3C")
         @Override
         public int getPointer() {
@@ -894,6 +896,7 @@ class ExpatParser {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.683 -0400", hash_original_method = "A993727E7D5DC0CA2BB581135F7F678B", hash_generated_method = "5BAB4AE6DDA50F153CA8BC58F29E2500")
         @Override
         public int getLength() {
@@ -1146,6 +1149,7 @@ class ExpatParser {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.688 -0400", hash_original_method = "D7EA50355B500A6304213C79BC9E9E09", hash_generated_method = "A2D881C6AFC253ADFFDC806313520307")
         @Override
         @SuppressWarnings("FinalizeDoesntCallSuperFinalize")

@@ -127,6 +127,7 @@ public class AccessibilityDelegateCompat {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:02.832 -0400", hash_original_method = "5A07CEDF6000B635EBB3282D6BCEC4C0", hash_generated_method = "2A6E0A75583D01B9537C18DAA8A99FCF")
         public Object newAccessiblityDelegateDefaultImpl() {
             Object varB4EAC82CA7396A68D541C85D26508E83_1695461801 = null; 
@@ -138,6 +139,7 @@ public class AccessibilityDelegateCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:02.834 -0400", hash_original_method = "CA4708336A662876B1C4E973563DF8C7", hash_generated_method = "DD50278B84067D0C04D6D13247A5683D")
         public Object newAccessiblityDelegateBridge(AccessibilityDelegateCompat listener) {
             Object varB4EAC82CA7396A68D541C85D26508E83_1658922055 = null; 
@@ -150,6 +152,7 @@ public class AccessibilityDelegateCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:02.836 -0400", hash_original_method = "9EE5CAEDF307AFCEB241BA171EF39C83", hash_generated_method = "D648D5A783F8975ACD24DE40E1970584")
         public boolean dispatchPopulateAccessibilityEvent(Object delegate, View host,
                 AccessibilityEvent event) {
@@ -163,6 +166,7 @@ public class AccessibilityDelegateCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:02.837 -0400", hash_original_method = "1447397CED667B971B04D5F82ACD0B6D", hash_generated_method = "4AA540987961F0EBF5084648D65AFC02")
         public void onInitializeAccessibilityEvent(Object delegate, View host,
                 AccessibilityEvent event) {
@@ -174,6 +178,7 @@ public class AccessibilityDelegateCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:02.839 -0400", hash_original_method = "99C4DEE76C5B6F4A70F08ECD66D4CBFF", hash_generated_method = "9C128D820C3EF4C4A3AC4C05F804E9B6")
         public void onInitializeAccessibilityNodeInfo(Object delegate, View host,
                 AccessibilityNodeInfoCompat info) {
@@ -185,6 +190,7 @@ public class AccessibilityDelegateCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:02.840 -0400", hash_original_method = "01D49E3547E9C548CD307570029DA5C4", hash_generated_method = "B5E0E056B04A078952AD989636C909EC")
         public void onPopulateAccessibilityEvent(Object delegate, View host,
                 AccessibilityEvent event) {
@@ -196,6 +202,7 @@ public class AccessibilityDelegateCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:02.842 -0400", hash_original_method = "389DE28FC8C0CFCD072BB38D30CE111B", hash_generated_method = "A3A242655E8D34B449F5C1CF81CC0951")
         public boolean onRequestSendAccessibilityEvent(Object delegate, ViewGroup host, View child,
                 AccessibilityEvent event) {
@@ -211,6 +218,7 @@ public class AccessibilityDelegateCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:02.843 -0400", hash_original_method = "62BC6D1148E35F68F64E7D17E3EF0845", hash_generated_method = "021E25B476F42F0A67A8C6D8A2722461")
         public void sendAccessibilityEvent(Object delegate, View host, int eventType) {
             addTaint(delegate.getTaint());
@@ -220,6 +228,7 @@ public class AccessibilityDelegateCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:02.845 -0400", hash_original_method = "B229E2592A12C5FBAB6E11834FD34BE2", hash_generated_method = "6628CE8D8E2CE518FFB3B6E8B3009709")
         public void sendAccessibilityEventUnchecked(Object delegate, View host,
                 AccessibilityEvent event) {

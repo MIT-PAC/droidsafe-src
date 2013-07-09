@@ -214,6 +214,7 @@ public class AttributedString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.486 -0400", hash_original_method = "F800EB2F1E580436E49CB51D04E3F37C", hash_generated_method = "F1A489CF12FDC4CFCC822F1F1E4B8964")
     public void addAttribute(AttributedCharacterIterator.Attribute attribute, Object value) {
         {
@@ -254,6 +255,7 @@ public class AttributedString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.487 -0400", hash_original_method = "1EA9CE9DE6197B4051F39E120F823C8E", hash_generated_method = "77847F8EEAD668347D1BF0240112EEE5")
     public void addAttribute(AttributedCharacterIterator.Attribute attribute,
             Object value, int start, int end) {
@@ -568,6 +570,7 @@ public class AttributedString {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.492 -0400", hash_original_method = "81A9D498AF1F73C3D962F8C3EDD6D3D9", hash_generated_method = "5C102694C2257C535840F83D4B364107")
         public char current() {
             char var7471FC70B539530D7206B8BC1B31F802_988158402 = (attrString.text.charAt(offset));
@@ -581,6 +584,7 @@ public class AttributedString {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.492 -0400", hash_original_method = "4AF9D055D17E58470820B415A8EBAFA4", hash_generated_method = "3C4ABA7EDDB10175C34008266DBE7AA0")
         public char first() {
             offset = begin;
@@ -596,6 +600,7 @@ public class AttributedString {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.492 -0400", hash_original_method = "1D4D2C19F23B97FE6ECF3D3284916FD4", hash_generated_method = "1C8E958345E1D4D95C3AEC4DC5AF0FEC")
         public int getBeginIndex() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1866068366 = getTaintInt();
@@ -605,6 +610,7 @@ public class AttributedString {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.492 -0400", hash_original_method = "2693C2AA223CB37D0504CD257C6327BC", hash_generated_method = "F0A6D7FE6A653AC2494787BD3F64FE9F")
         public int getEndIndex() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_296255665 = getTaintInt();
@@ -614,6 +620,7 @@ public class AttributedString {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.492 -0400", hash_original_method = "0952456464DB8DF9DBB7507E3C2ED53C", hash_generated_method = "3E95A14D766478B72328C54A03E520D3")
         public int getIndex() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1562436713 = getTaintInt();
@@ -623,6 +630,7 @@ public class AttributedString {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.493 -0400", hash_original_method = "20101C80E99D94E4CD68776989F0B447", hash_generated_method = "EA681FCE952A4A6E085494011ED05437")
         private boolean inRange(Range range) {
             addTaint(range.getTaint());
@@ -848,6 +856,7 @@ public class AttributedString {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.498 -0400", hash_original_method = "B67CDF67136100A9ADF2991D47BD9A14", hash_generated_method = "E8947C84220697C89806ACD6180ED6FA")
         public int getRunLimit() {
             int varB8CB18E7DB26C804CE1E291715EC4085_1100052799 = (getRunLimit(getAllAttributeKeys()));
@@ -953,6 +962,7 @@ public class AttributedString {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.501 -0400", hash_original_method = "FE3F08CD8D40BCC02EAAB9CF9D349F73", hash_generated_method = "6C7AF5F5CF627D5EFABF8F9BE50E6791")
         public int getRunStart() {
             int varD479F53F5B086C7131ABCE733DD47303_78226506 = (getRunStart(getAllAttributeKeys()));
@@ -1058,6 +1068,7 @@ public class AttributedString {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.503 -0400", hash_original_method = "6CAD62DAB178D2919A2036BE42DEC497", hash_generated_method = "8FC2C5C05ACAAEE63193D81CE156CD30")
         public char last() {
             offset = end - 1;
@@ -1073,6 +1084,7 @@ public class AttributedString {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.503 -0400", hash_original_method = "B623F272BE854A8CF15368B2FE2B8A97", hash_generated_method = "6D7C385B873AA47704FFFED7543323CC")
         public char next() {
             {
@@ -1090,6 +1102,7 @@ public class AttributedString {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.504 -0400", hash_original_method = "E77E60DF0F891730B03F44D98923AB66", hash_generated_method = "790C795899C6B1ED6CB21EAFEA08A108")
         public char previous() {
             char var2ECEAF615C1A7B98A9B5DA51518FE2D8_1107072248 = (attrString.text.charAt(--offset));
@@ -1103,6 +1116,7 @@ public class AttributedString {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.504 -0400", hash_original_method = "C542CEFF91217DDB3083AD983C51F194", hash_generated_method = "A72129D577A8F45F57358CBC4611D9F6")
         public char setIndex(int location) {
             {

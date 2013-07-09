@@ -538,6 +538,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.634 -0400", hash_original_method = "79A696122767FFD8BC894F5F20A8F390", hash_generated_method = "2397E2132D66A9B67652FE4FE96B68CE")
     protected void onStart() {
         
@@ -589,6 +590,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.638 -0400", hash_original_method = "F3C7FB58C48A3E40E2BB0C45916F9A60", hash_generated_method = "1D0F1F0F0B8A7E9011B76E382A1D8D96")
     protected void onPostResume() {
         
@@ -644,6 +646,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.641 -0400", hash_original_method = "8A0B1A781281636D9884F4D74FBF5AF9", hash_generated_method = "BF89EE6B85A32C7489F94603C661A565")
     private void saveManagedDialogs(Bundle outState) {
         final int numDialogs = mManagedDialogs.size();
@@ -788,6 +791,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.648 -0400", hash_original_method = "30CE766C89D5A8D407C7E787A35027AF", hash_generated_method = "4D1FA5B9C502EA77AEB0068A6951F095")
     public void onConfigurationChanged(Configuration newConfig) {
         
@@ -1144,6 +1148,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.673 -0400", hash_original_method = "FC4CFA409E0DBC3CD2C86D908686341E", hash_generated_method = "99531264B62A1567E246A8B28A73A994")
     public void setContentView(int layoutResID) {
         getWindow().setContentView(layoutResID);
@@ -1760,6 +1765,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.704 -0400", hash_original_method = "06AE80A8039E39DC7E4DC1C38B6D66B0", hash_generated_method = "42ECBB4F116B01D38390CB335F2C26DD")
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         
@@ -1847,6 +1853,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.705 -0400", hash_original_method = "319389EBA801B290FB41D02473EB2E9E", hash_generated_method = "E3CB03CA5E4EB5916215E567B4276E95")
     public void invalidateOptionsMenu() {
         mWindow.invalidatePanelMenu(Window.FEATURE_OPTIONS_PANEL);
@@ -1959,6 +1966,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.713 -0400", hash_original_method = "6A7E2B106BB1CEE7C3B668A773DE5A5B", hash_generated_method = "344591114B98358744F7FCF1C426D7AD")
     public void unregisterForContextMenu(View view) {
         view.setOnCreateContextMenuListener(null);
@@ -1978,6 +1986,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.715 -0400", hash_original_method = "0F5BE8719D80390C88A4C0CDCF0E8C81", hash_generated_method = "A649B62C078D6DDA81669B8C50CB3152")
     public void closeContextMenu() {
         mWindow.closePanel(Window.FEATURE_CONTEXT_MENU);
@@ -2003,6 +2012,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.717 -0400", hash_original_method = "3B89231032C2ACDB0A53B5E9B36C3177", hash_generated_method = "289A28B79761B391DA11B88EBEFC8A18")
     public void onContextMenuClosed(Menu menu) {
         
@@ -2225,6 +2235,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.731 -0400", hash_original_method = "0192041795732D663EE503A2AEC04112", hash_generated_method = "1C4EC0D223F9E3DCEC8DCF0D86A4D651")
     public void takeKeyEvents(boolean get) {
         getWindow().takeKeyEvents(get);
@@ -2641,6 +2652,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.750 -0400", hash_original_method = "0CB07497B5E56C46E5A71AB5CB4CC143", hash_generated_method = "3C3AE556460FDD4910F9956EE91C22B0")
     public void overridePendingTransition(int enterAnim, int exitAnim) {
         try 
@@ -3632,6 +3644,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.796 -0400", hash_original_method = "9D8EB8E29C9BCD315046F1934B1FF39B", hash_generated_method = "F967F018A9C613C44B7AACBB5F12019D")
     public void setImmersive(boolean i) {
         try 

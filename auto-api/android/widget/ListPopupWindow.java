@@ -1248,6 +1248,7 @@ public class ListPopupWindow {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.331 -0400", hash_original_method = "BEB5883597D4F7E6EC69D5E4B00F4808", hash_generated_method = "77ED6FEC41ABFE0FF7B87CF1F8DE3B8B")
         @Override
         public void onInvalidated() {
@@ -1271,6 +1272,7 @@ public class ListPopupWindow {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.331 -0400", hash_original_method = "9AD729468BC88951DC9B447B72E180D0", hash_generated_method = "33F921B8E266BA77FD9A621DF2DFDB10")
         public void run() {
             clearListSelection();
@@ -1292,6 +1294,7 @@ public class ListPopupWindow {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.332 -0400", hash_original_method = "A0D6625363C0412112380631C620D963", hash_generated_method = "3583834767CD0122653E6638B655196D")
         public void run() {
             {
@@ -1324,6 +1327,7 @@ public class ListPopupWindow {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.333 -0400", hash_original_method = "6DB51D562B35DA9065539F31B98AD12D", hash_generated_method = "3E30742451A3E0CB0CF815F1BE6566D6")
         public boolean onTouch(View v, MotionEvent event) {
             
@@ -1373,6 +1377,7 @@ public class ListPopupWindow {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.334 -0400", hash_original_method = "6B5691236DBDB14CA060F218338C51C6", hash_generated_method = "1E0CD89024A89C685CED8A22BF60B332")
         public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
                 int totalItemCount) {
@@ -1385,6 +1390,7 @@ public class ListPopupWindow {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.334 -0400", hash_original_method = "50D93865D772C2EF3B15BE53BF421FFA", hash_generated_method = "93527C574EF41A4CEDE69A8D7DCD5D76")
         public void onScrollStateChanged(AbsListView view, int scrollState) {
             

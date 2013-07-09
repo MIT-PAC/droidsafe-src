@@ -171,6 +171,7 @@ final class ServerSocketChannelImpl extends ServerSocketChannel implements FileD
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.376 -0400", hash_original_method = "BBE5EDFC9B689589BC654E0B103C84FF", hash_generated_method = "1204E5E122F3192084306C075A847A41")
         @Override
         public void bind(SocketAddress localAddress, int backlog) throws IOException {
@@ -184,6 +185,7 @@ final class ServerSocketChannelImpl extends ServerSocketChannel implements FileD
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.377 -0400", hash_original_method = "FFAB0B1226A929FA42E5D3CF52806643", hash_generated_method = "AF110AC0F380C6A703B14053D04324BE")
         @Override
         public Socket accept() throws IOException {
@@ -210,6 +212,7 @@ final class ServerSocketChannelImpl extends ServerSocketChannel implements FileD
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.378 -0400", hash_original_method = "65367E3BCE6469B06918214294C7E857", hash_generated_method = "001CF840C82E3ED32E2CDF2C9CBBF652")
         public Socket implAccept(SocketChannelImpl clientSocketChannel) throws IOException {
             Socket varB4EAC82CA7396A68D541C85D26508E83_2125894584 = null; 
@@ -255,6 +258,7 @@ final class ServerSocketChannelImpl extends ServerSocketChannel implements FileD
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.380 -0400", hash_original_method = "9062324EB68516522A00021BE06AA12D", hash_generated_method = "97A6EF05DE18274D464E16693A73234A")
         @Override
         public ServerSocketChannel getChannel() {
@@ -267,6 +271,7 @@ final class ServerSocketChannelImpl extends ServerSocketChannel implements FileD
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.380 -0400", hash_original_method = "F11CC1C6B1751A820DF0839300E56C28", hash_generated_method = "501D62CC7DF7E38FE4004BD93F67A4BD")
         @Override
         public boolean isBound() {
@@ -277,6 +282,7 @@ final class ServerSocketChannelImpl extends ServerSocketChannel implements FileD
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.381 -0400", hash_original_method = "67582FB1AEE3F050543A066EF39FFBDB", hash_generated_method = "116E840E6FB3EE8EBA6CC205D8451624")
         @Override
         public void bind(SocketAddress localAddress) throws IOException {
@@ -289,6 +295,7 @@ final class ServerSocketChannelImpl extends ServerSocketChannel implements FileD
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.383 -0400", hash_original_method = "7BB2E5C011080F2650E0866A01912B69", hash_generated_method = "6E1CB8ABDFC787DEED5155CCC13E1FAC")
         @Override
         public void close() throws IOException {

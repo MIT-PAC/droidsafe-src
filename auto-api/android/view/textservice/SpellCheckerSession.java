@@ -385,6 +385,7 @@ public class SpellCheckerSession {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.380 -0400", hash_original_method = "C74449D517ED376786ADEE83EFA902AD", hash_generated_method = "103D445048041EE51FCCC624D3A2D834")
         public boolean isDisconnected() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1702319880 = getTaintBoolean();

@@ -635,6 +635,7 @@ public class RequestQueue implements RequestFeeder {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.353 -0400", hash_original_method = "D2A094DDB6185336258EAA22554B8B48", hash_generated_method = "8F0981B631F440E9FBD386E7A75F370F")
         public void startTiming() {
             {
@@ -839,6 +840,7 @@ public class RequestQueue implements RequestFeeder {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.358 -0400", hash_original_method = "E0C38BA5AF5E9B7363BEA9E204F697F3", hash_generated_method = "775B69EAB26AB987768E0EE5B033EFD8")
         public Request getRequest() {
             Request varB4EAC82CA7396A68D541C85D26508E83_1904602906 = null; 
@@ -866,6 +868,7 @@ public class RequestQueue implements RequestFeeder {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.359 -0400", hash_original_method = "30BE3F23DCE5F30BFE4C540BF8AE4D20", hash_generated_method = "DDC2BD9193F06E136813464E165E11E7")
         public boolean haveRequest(HttpHost host) {
             addTaint(host.getTaint());
@@ -876,6 +879,7 @@ public class RequestQueue implements RequestFeeder {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.359 -0400", hash_original_method = "D0AA652C1F1A28EE12BADC892C348224", hash_generated_method = "0490D711BBE9F89E677FF31CE7FA801F")
         public void requeueRequest(Request r) {
             mRequest = r;

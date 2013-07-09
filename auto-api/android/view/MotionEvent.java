@@ -1736,6 +1736,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static PointerCoords[] createArray(int size) {
             PointerCoords[] array = new PointerCoords[size];
             for (int i = 0; i < size; i++) {
@@ -1745,6 +1746,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.661 -0400", hash_original_method = "5B10C041062144B27347C9202A1953B2", hash_generated_method = "85A3A31EE556A4BEA00BDAAD4B198A1A")
         public void clear() {
             mPackedAxisBits = 0;
@@ -1771,6 +1773,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.662 -0400", hash_original_method = "A2C68F8615572C95C5947791A8CC8026", hash_generated_method = "C1F0F677ABF7B6FC5B2CAAEE5D38D46A")
         public void copyFrom(PointerCoords other) {
             final long bits = other.mPackedAxisBits;
@@ -1799,6 +1802,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.663 -0400", hash_original_method = "566631CFDB34A411EF93513211D62594", hash_generated_method = "ED249138EF303F7C20A20E16498131DE")
         public float getAxisValue(int axis) {
             
@@ -1819,6 +1823,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.663 -0400", hash_original_method = "55E9DEFA01615304E1434A1FAB8328FA", hash_generated_method = "F1760985D3AA8576BD20F9F7593CEB1C")
         public void setAxisValue(int axis, float value) {
             
@@ -1922,6 +1927,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static PointerProperties[] createArray(int size) {
             PointerProperties[] array = new PointerProperties[size];
             for (int i = 0; i < size; i++) {
@@ -1931,6 +1937,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.665 -0400", hash_original_method = "ADC6A83F955A9ED0C1C75B5F08682583", hash_generated_method = "DFC90B75E706F2F74BBF473BA904F663")
         public void clear() {
             id = INVALID_POINTER_ID;
@@ -1941,6 +1948,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.665 -0400", hash_original_method = "1E34ECE529256025A33CF5DCBE029131", hash_generated_method = "83EE2C55C6A446D371F6C2FC0D637123")
         public void copyFrom(PointerProperties other) {
             id = other.id;

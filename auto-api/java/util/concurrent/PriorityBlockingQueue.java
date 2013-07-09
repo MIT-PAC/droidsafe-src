@@ -1020,6 +1020,7 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.692 -0400", hash_original_method = "4F878ABF7AAF09586275C9E3C0FC32B2", hash_generated_method = "E1D3DA8A81E441390EECCBF3E96CC123")
     private void writeObject(java.io.ObjectOutputStream s) throws java.io.IOException {
         lock.lock();
@@ -1050,6 +1051,7 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.693 -0400", hash_original_method = "29A8172D11EE1F6C2B41EDC469205BD4", hash_generated_method = "93034FB6F0B6D7269346FC5CF72C253B")
     private void readObject(java.io.ObjectInputStream s) throws java.io.IOException, ClassNotFoundException {
         try 
@@ -1109,6 +1111,7 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.695 -0400", hash_original_method = "C1264B905CC60CA39EE5BE51F177AC9A", hash_generated_method = "86D1ECF74735BE215096B12813D9B00E")
         public boolean hasNext() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1618545209 = getTaintBoolean();

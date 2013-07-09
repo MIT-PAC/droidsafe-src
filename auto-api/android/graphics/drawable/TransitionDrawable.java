@@ -73,6 +73,7 @@ public class TransitionDrawable extends LayerDrawable implements Drawable.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.656 -0400", hash_original_method = "7DD647D65429090EAAF6E9E0252444A1", hash_generated_method = "799231BF8E25D2CEF7381417135D0014")
     @Override
      LayerState createConstantState(LayerState state, Resources res) {
@@ -268,6 +269,7 @@ public class TransitionDrawable extends LayerDrawable implements Drawable.Callba
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.662 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "344B5C7BC0C074F7041CE9AB53DA2F3E")
         @Override
         public int getChangingConfigurations() {

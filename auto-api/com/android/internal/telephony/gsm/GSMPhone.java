@@ -496,6 +496,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.024 -0400", hash_original_method = "292444BE96E352C8E8312B338E19EF02", hash_generated_method = "9CAE80423F167649B545BC55A8273188")
      void notifyNewRingingConnection(Connection c) {
         super.notifyNewRingingConnectionP(c);
@@ -505,6 +506,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.025 -0400", hash_original_method = "1858091673D3A4B62C058FCC91892C36", hash_generated_method = "0756798023112E23775C5ED34868F8B8")
      void notifyDisconnect(Connection cn) {
         mDisconnectRegistrants.notifyResult(cn);
@@ -514,6 +516,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.025 -0400", hash_original_method = "4DFA3B176AED92FABCFB596FBC88C127", hash_generated_method = "78FF0EBB369D5E48C88943009DE8A38C")
      void notifyUnknownConnection() {
         mUnknownConnectionRegistrants.notifyResult(this);
@@ -522,6 +525,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.025 -0400", hash_original_method = "952D093251486E722309085461233179", hash_generated_method = "0D459839BFD4CE2D513A693B187FDF40")
      void notifySuppServiceFailed(SuppService code) {
         mSuppServiceFailedRegistrants.notifyResult(code);
@@ -531,6 +535,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.025 -0400", hash_original_method = "73E7BFF04E4E9785E6146409272926BA", hash_generated_method = "A54D16F558EC12982CF56FB0933CD181")
      void notifyServiceStateChanged(ServiceState ss) {
         super.notifyServiceStateChangedP(ss);
@@ -540,6 +545,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.026 -0400", hash_original_method = "482FE18FBD1949DAF708F2E65940DE8F", hash_generated_method = "0723685B826BB9996EC0449E7B1A8FCF")
      void notifyLocationChanged() {
         mNotifier.notifyCellLocation(this);
@@ -548,6 +554,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.026 -0400", hash_original_method = "FCBAE539BB72BE21647FF37299DC2B96", hash_generated_method = "0C6B7A0FF6350CF17887F3D234BB96C8")
      void notifySignalStrength() {
         mNotifier.notifySignalStrength(this);
@@ -1028,6 +1035,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.035 -0400", hash_original_method = "711944CD15C0B30B5C3E1DF07833B9CC", hash_generated_method = "32F618B1DEEBA2C01123F48A3844181D")
      boolean isInCall() {
         GsmCall.State foregroundCallState = getForegroundCall().getState();

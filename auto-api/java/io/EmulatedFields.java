@@ -511,6 +511,7 @@ class EmulatedFields {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.715 -0400", hash_original_method = "59E78F3DAFAB25C124D589BA3544A531", hash_generated_method = "E62FB00B2BBF91C2C3B063DE6BA0ECBE")
         public ObjectStreamField getField() {
             ObjectStreamField varB4EAC82CA7396A68D541C85D26508E83_17275482 = null; 
@@ -522,6 +523,7 @@ class EmulatedFields {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.716 -0400", hash_original_method = "31B3B47C28245F569D31AEBE619B4C79", hash_generated_method = "992A2180879847408FDD39688E3A34A5")
         public Object getFieldValue() {
             Object varB4EAC82CA7396A68D541C85D26508E83_820494331 = null; 

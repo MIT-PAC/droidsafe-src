@@ -876,6 +876,7 @@ public class RemoteViews implements Parcelable, Filter {
         public abstract void apply(View root, ViewGroup rootParent) throws ActionException;
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.089 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "AEC5B25466E760D97F5CC599F1429796")
         public int describeContents() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_496208840 = getTaintInt();
@@ -885,6 +886,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.089 -0400", hash_original_method = "F71AEDBFF608C755FB28C9D45BA8F347", hash_generated_method = "E6544460AD15DE17E386E7E557B83699")
         public void updateMemoryUsageEstimate(MemoryUsageCounter counter) {
             addTaint(counter.getTaint());
@@ -893,6 +895,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.089 -0400", hash_original_method = "18203BE61B7EF9CD6501BEC6EAEF8812", hash_generated_method = "F4E4DD03C038752C5ACEC6498855F688")
         protected boolean startIntentSafely(Context context, PendingIntent pendingIntent,
                 Intent fillInIntent) {
@@ -1803,6 +1806,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.108 -0400", hash_original_method = "E66E0BF97844CCF37DCED039A425AFDA", hash_generated_method = "B6AD99CEF31BD84E25924E4205CB7F91")
         private Class getParameterType() {
             Class varB4EAC82CA7396A68D541C85D26508E83_1383944493 = null; 
@@ -2144,6 +2148,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.113 -0400", hash_original_method = "F68FB7282799CC52F4314E5E47499FED", hash_generated_method = "980B3E80527B474B5039262E61BD9D48")
         public void clear() {
             mBitmapHeapMemoryUsage = 0;
@@ -2152,6 +2157,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.113 -0400", hash_original_method = "9C864F7ABFEE7832A18F21C728CCE23F", hash_generated_method = "583FD2D740DF0E423E81CC172F08A31C")
         public void bitmapIncrement(int numBytes) {
             mBitmapHeapMemoryUsage += numBytes;
@@ -2160,6 +2166,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.113 -0400", hash_original_method = "F4B214FD82765971EA3822C02AABA16F", hash_generated_method = "8720A7669ABD3B396A1DBB8CA2664855")
         public int getBitmapHeapMemoryUsage() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_505455615 = getTaintInt();

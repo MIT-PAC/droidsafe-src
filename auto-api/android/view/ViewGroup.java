@@ -6110,6 +6110,7 @@ protected abstract void onLayout(boolean changed,
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.075 -0400", hash_original_method = "CE6F1B4BC3F83182FFE42E3A8827DEEC", hash_generated_method = "6D86F89DE956B69559B0A86CF3A2E3CD")
         protected void resolveWithDirection(int layoutDirection) {
             addTaint(layoutDirection);
@@ -6253,6 +6254,7 @@ protected abstract void onLayout(boolean changed,
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.080 -0400", hash_original_method = "A7CFD8E9AA47AE278733C57B8CF5503F", hash_generated_method = "E9FA91064C566B35F37192AF7E41F6DA")
         public void setMargins(int left, int top, int right, int bottom) {
             leftMargin = left;
@@ -6267,6 +6269,7 @@ protected abstract void onLayout(boolean changed,
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.080 -0400", hash_original_method = "F5A63690A2F55CE5C4D6B1F24495E028", hash_generated_method = "142C3C1A10C4FC10B505CFEA80893BBF")
         public void setMarginsRelative(int start, int top, int end, int bottom) {
             startMargin = start;
@@ -6281,6 +6284,7 @@ protected abstract void onLayout(boolean changed,
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.081 -0400", hash_original_method = "A60FB56334BFE35432A89BE021472DEF", hash_generated_method = "38B717C05A7369B32D81D8E7772FAFCD")
         public int getMarginStart() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_14114264 = getTaintInt();
@@ -6290,6 +6294,7 @@ protected abstract void onLayout(boolean changed,
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.081 -0400", hash_original_method = "2B74CF4F3396E75552B1A46DF3D4BFD7", hash_generated_method = "3CD78C1AC684133957D2FCB732A4CE95")
         public int getMarginEnd() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1085583979 = getTaintInt();
@@ -6299,6 +6304,7 @@ protected abstract void onLayout(boolean changed,
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.081 -0400", hash_original_method = "C9EA583BDFA2583A2B96D706C959CDBC", hash_generated_method = "43F04FA0A5070ACA8C61610FBDAB75DE")
         public boolean isMarginRelative() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_960763005 = getTaintBoolean();
@@ -6308,6 +6314,7 @@ protected abstract void onLayout(boolean changed,
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.082 -0400", hash_original_method = "25B74C4F994FDDCB83271E7B2F9BDDEE", hash_generated_method = "7CFCDD8EC476530E2206429F2D5CDA8F")
         @Override
         protected void resolveWithDirection(int layoutDirection) {
@@ -6381,6 +6388,7 @@ protected abstract void onLayout(boolean changed,
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.083 -0400", hash_original_method = "0B1C6D1635B2332F7800E0E7CCBD2BE0", hash_generated_method = "AB54E1D51CAE4173450A000EBCA7A06A")
         public void recycle() {
             {
@@ -6458,6 +6466,7 @@ protected abstract void onLayout(boolean changed,
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.084 -0400", hash_original_method = "0B1C6D1635B2332F7800E0E7CCBD2BE0", hash_generated_method = "AB54E1D51CAE4173450A000EBCA7A06A")
         public void recycle() {
             {

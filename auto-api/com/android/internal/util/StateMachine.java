@@ -534,6 +534,7 @@ public class StateMachine {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.894 -0400", hash_original_method = "AE92957E52CD2ECF48167D0FF23A4162", hash_generated_method = "A47569B5D257EE43083BE43CD751A5F9")
         public void update(Message message, State state, State orgState) {
             this.what = message.what;
@@ -546,6 +547,7 @@ public class StateMachine {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.894 -0400", hash_original_method = "4AA8DBE0617D26A2E34EC5BDBA364E43", hash_generated_method = "6F1AE8C23C4D94D44EFD13F48BE54989")
         public int getWhat() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_569309065 = getTaintInt();
@@ -555,6 +557,7 @@ public class StateMachine {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.895 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "3F4ADE28C7113F038D248E7DB68D7E32")
         public State getState() {
             State varB4EAC82CA7396A68D541C85D26508E83_142498864 = null; 
@@ -566,6 +569,7 @@ public class StateMachine {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.895 -0400", hash_original_method = "6453845FB279EEE2A3A97B4923853CA9", hash_generated_method = "9B3DF60FCD897ED6F48AB6B9ABD64928")
         public State getOriginalState() {
             State varB4EAC82CA7396A68D541C85D26508E83_459998359 = null; 
@@ -684,6 +688,7 @@ public class StateMachine {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.899 -0400", hash_original_method = "173278F07A9E3F76B246C31AF2BEE799", hash_generated_method = "A99F675D8D5CEAF755098293A4863537")
          int count() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1147562979 = getTaintInt();
@@ -1410,6 +1415,7 @@ public class StateMachine {
             }
 
 
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.931 -0400", hash_original_method = "5D2BC087464A61E35A06899EEE03AD06", hash_generated_method = "1B6D2F34C8CC4F5F55A17E63A6E45247")
             @Override
             public boolean processMessage(Message msg) {

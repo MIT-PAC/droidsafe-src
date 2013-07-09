@@ -942,6 +942,7 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.367 -0400", hash_original_method = "351E0C8E290AF7E9E6FFA36B6DF7C9FA", hash_generated_method = "5DD7194CDF2287CB8FFD03C3E29D78F6")
         public V next() {
             V varB4EAC82CA7396A68D541C85D26508E83_1591539315 = null; 

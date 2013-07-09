@@ -119,7 +119,8 @@ public final class Method extends AccessibleObject implements GenericDeclaration
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.873 -0400", hash_original_method = "1CDF5107AC443AA5F8C2E1DA9DF559A0", hash_generated_method = "7A7E2BAED3F659C1C4022FBBE469270A")
+	@DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.873 -0400", hash_original_method = "1CDF5107AC443AA5F8C2E1DA9DF559A0", hash_generated_method = "7A7E2BAED3F659C1C4022FBBE469270A")
 	@Override
 	String getSignatureAttribute() {
 		String varB4EAC82CA7396A68D541C85D26508E83_1772093031 = null; 

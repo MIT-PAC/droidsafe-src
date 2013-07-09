@@ -42,6 +42,7 @@ public class AccessibilityEventCompat {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.433 -0400", hash_original_method = "6DC417BFFFF374A16DB9A049CC5CFE7B", hash_generated_method = "554AEF757AD4BB8AE9D6AE9956FA9708")
         @Override
         public void appendRecord(AccessibilityEvent event, Object record) {
@@ -51,6 +52,7 @@ public class AccessibilityEventCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.434 -0400", hash_original_method = "0011894BC70FDA6596188C683FDF537A", hash_generated_method = "A9019009F3D49340893D803B70FA613C")
         @Override
         public Object getRecord(AccessibilityEvent event, int index) {
@@ -65,6 +67,7 @@ public class AccessibilityEventCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.435 -0400", hash_original_method = "57C8A18205681899A54255474D3D91AF", hash_generated_method = "EE149645A2F162768C8456E9181A960A")
         @Override
         public int getRecordCount(AccessibilityEvent event) {

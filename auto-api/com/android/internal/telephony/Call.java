@@ -353,12 +353,15 @@ public abstract class Call {
     
     public enum State {
         IDLE, ACTIVE, HOLDING, DIALING, ALERTING, INCOMING, WAITING, DISCONNECTED, DISCONNECTING;
+        @DSModeled(DSC.SAFE)
         public boolean isAlive() {
             return !(this == IDLE || this == DISCONNECTED || this == DISCONNECTING);
         }
+        @DSModeled(DSC.SAFE)
         public boolean isRinging() {
             return this == INCOMING || this == WAITING;
         }
+        @DSModeled(DSC.SAFE)
         public boolean isDialing() {
             return this == DIALING || this == ALERTING;
         }

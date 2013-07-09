@@ -439,6 +439,7 @@ public final class CdmaLteUiccRecords extends SIMRecords {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.990 -0400", hash_original_method = "46D131BE59CA4E55BA893DF6F7101791", hash_generated_method = "A2221A25309EDBFA6BBC6F1A73F34CAD")
         public String getEfName() {
             String varB4EAC82CA7396A68D541C85D26508E83_10519624 = null; 
@@ -475,6 +476,7 @@ public final class CdmaLteUiccRecords extends SIMRecords {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.991 -0400", hash_original_method = "43CB272303B94BD2BDA1313C04660298", hash_generated_method = "FA06A6FCB0B6020EFAB33EE1C4452B5A")
         public String getEfName() {
             String varB4EAC82CA7396A68D541C85D26508E83_1941221240 = null; 
@@ -577,6 +579,7 @@ public final class CdmaLteUiccRecords extends SIMRecords {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.993 -0400", hash_original_method = "E361E237BF5D8C3526DBBFADBF2588AE", hash_generated_method = "876B6E7E3A3718066303A802DDDA2876")
         public String getEfName() {
             String varB4EAC82CA7396A68D541C85D26508E83_36091476 = null; 
@@ -647,6 +650,7 @@ public final class CdmaLteUiccRecords extends SIMRecords {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.996 -0400", hash_original_method = "6DF96F6BE7868B2EF5D1FBEB4BBED3CD", hash_generated_method = "2181D5F61D2209462EA96357FCB280AA")
         public String getEfName() {
             String varB4EAC82CA7396A68D541C85D26508E83_1927159481 = null; 
@@ -689,6 +693,7 @@ public final class CdmaLteUiccRecords extends SIMRecords {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.998 -0400", hash_original_method = "076F279972298500654A9EE948D0453D", hash_generated_method = "2C29DC795BEC1E620411627AD46C6D00")
         public String getEfName() {
             String varB4EAC82CA7396A68D541C85D26508E83_61083654 = null; 
@@ -745,6 +750,7 @@ public final class CdmaLteUiccRecords extends SIMRecords {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.999 -0400", hash_original_method = "72D2F700CD05B7B8BF5E2816D58B5E15", hash_generated_method = "95427FC313254F1EA6FD06E26C497534")
         public String getEfName() {
             String varB4EAC82CA7396A68D541C85D26508E83_1044904967 = null; 
@@ -756,6 +762,7 @@ public final class CdmaLteUiccRecords extends SIMRecords {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.009 -0400", hash_original_method = "71E7D2ACFBE7DC249602D69114B85759", hash_generated_method = "ACF06BCD94C808F802246D01BC777630")
         public void onRecordLoaded(AsyncResult ar) {
             
@@ -802,6 +809,7 @@ public final class CdmaLteUiccRecords extends SIMRecords {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.014 -0400", hash_original_method = "04C305ABDF4F5B734468C2FED0130506", hash_generated_method = "F8F88DB6113B3ECAC3A242EAF6AE357B")
         public String getEfName() {
             String varB4EAC82CA7396A68D541C85D26508E83_173968373 = null; 
@@ -813,6 +821,7 @@ public final class CdmaLteUiccRecords extends SIMRecords {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.018 -0400", hash_original_method = "B4E1B568EC9A83A605CFFEF5F57F8030", hash_generated_method = "DEED060B9909A9ED769BC4B5070AD46A")
         public void onRecordLoaded(AsyncResult ar) {
             

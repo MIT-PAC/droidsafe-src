@@ -1260,6 +1260,7 @@ class CallbackProxy extends Handler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.085 -0400", hash_original_method = "96CFDF49B56568DC278F123893B1481C", hash_generated_method = "E3CEFF5A3361D77264E3194C256B5A92")
      void onReceivedLoginRequest(String realm, String account, String args) {
         
@@ -1528,6 +1529,7 @@ class CallbackProxy extends Handler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.089 -0400", hash_original_method = "F0350B43E0ECCB1BDA5D312CA7F06F8A", hash_generated_method = "21AA562348BAE0F6DB11503C68B35C50")
      void onReceivedTouchIconUrl(String url, boolean precomposed) {
         
@@ -2160,6 +2162,7 @@ class CallbackProxy extends Handler {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.104 -0400", hash_original_method = "9D48109A15DDC7CFDE503C879117A387", hash_generated_method = "C49BCF578091A9D0199D2AC13572DB54")
         public UploadFile getUploadFile() {
             UploadFile varB4EAC82CA7396A68D541C85D26508E83_1771790188 = null; 
@@ -2171,6 +2174,7 @@ class CallbackProxy extends Handler {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.105 -0400", hash_original_method = "EE5645A876B8829341B5E714F10E353A", hash_generated_method = "B63FB6DC5378381B3B4280C1901699DF")
         public String getAcceptType() {
             String varB4EAC82CA7396A68D541C85D26508E83_1206468746 = null; 
@@ -2198,6 +2202,7 @@ class CallbackProxy extends Handler {
         }
 
 
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.105 -0400", hash_original_method = "4E719BBCA95A35A86F37F83B7E6AA557", hash_generated_method = "0D3D6CBC09A20A6460F1CAC777B0CFB1")
         public void onReceiveValue(Uri value) {
             
@@ -2216,6 +2221,7 @@ class CallbackProxy extends Handler {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.106 -0400", hash_original_method = "546BF3EDB8840D5BF09D8B66103FFEC6", hash_generated_method = "B4F80FAFEBF49EAA555F8938A3F95F18")
         public Uri getResult() {
             Uri varB4EAC82CA7396A68D541C85D26508E83_1178610497 = null; 

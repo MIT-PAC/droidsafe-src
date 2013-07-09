@@ -5493,6 +5493,7 @@ public final class ActivityThread {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.994 -0400", hash_original_method = "0E238081C4996703A2EA0540C6977CE0", hash_generated_method = "5D03A8CD7858AA8957D593C5285A33DF")
         public void scheduleRegisteredReceiver(IIntentReceiver receiver, Intent intent,
                 int resultCode, String dataStr, Bundle extras, boolean ordered,
@@ -5992,6 +5993,7 @@ public final class ActivityThread {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.019 -0400", hash_original_method = "D4EECE8CA6B12CA48ED79AE861C2FF1C", hash_generated_method = "3C8DF3CEE44D92428EC67D447AF44984")
          String codeToString(int code) {
             String varB4EAC82CA7396A68D541C85D26508E83_1398565327 = null; 
@@ -6708,6 +6710,7 @@ public final class ActivityThread {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.033 -0400", hash_original_method = "FDD99B6C6105A3F31D8E7DC9390101DA", hash_generated_method = "54813C75854919F82E2304710CCEFE51")
         @Override
         public int hashCode() {

@@ -265,6 +265,7 @@ public class Manifest implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.215 -0400", hash_original_method = "5810BB520240B1A3498784B2D92EABA8", hash_generated_method = "CFF471924FC3F84E09006CC3A4D26870")
      Chunk getChunk(String name) {
         Chunk varB4EAC82CA7396A68D541C85D26508E83_1094798013 = null; 
@@ -327,6 +328,7 @@ public class Manifest implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void writeEntry(OutputStream os, Attributes.Name name,
             String value, CharsetEncoder encoder, ByteBuffer bBuf) throws IOException {
         String nameString = name.getName();

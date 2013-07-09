@@ -433,6 +433,7 @@ public final class InputDevice implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.990 -0400", hash_original_method = "7AA123496C72318A01ADA9E2FDF13D66", hash_generated_method = "ABC7FD38CFEAD9943E176F6AB9531E2F")
         public int getAxis() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_757226971 = getTaintInt();
@@ -442,6 +443,7 @@ public final class InputDevice implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.990 -0400", hash_original_method = "7037355E864C633C32E117AF9FFED93E", hash_generated_method = "F9AD0CE897AFA30A8C89D3C182F007EF")
         public int getSource() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1726154920 = getTaintInt();
@@ -451,6 +453,7 @@ public final class InputDevice implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.991 -0400", hash_original_method = "5BD2FEA7B11B9283C78F11EA439073DF", hash_generated_method = "CC3C4A5AE14C18ACEEAE1CA267B9ADA6")
         public float getMin() {
             float var546ADE640B6EDFBC8A086EF31347E768_176742219 = getTaintFloat();
@@ -460,6 +463,7 @@ public final class InputDevice implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.991 -0400", hash_original_method = "CDE9D2624870C8EBE80058272C14174B", hash_generated_method = "7F70340B67CEF84EB99D22453E6FD97F")
         public float getMax() {
             float var546ADE640B6EDFBC8A086EF31347E768_1290210832 = getTaintFloat();
@@ -469,6 +473,7 @@ public final class InputDevice implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.991 -0400", hash_original_method = "FCC48134B6B008CC9CD869CCEF03FE5F", hash_generated_method = "49E5A5598BE1EF0E07A6CA7DB6A09061")
         public float getRange() {
             float var546ADE640B6EDFBC8A086EF31347E768_1706931582 = getTaintFloat();
@@ -478,6 +483,7 @@ public final class InputDevice implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.992 -0400", hash_original_method = "6E70447A0F19559DDEE9B218BFC4E0A9", hash_generated_method = "7DF59A49414A2005DAC3D3F6CE8E9049")
         public float getFlat() {
             float var546ADE640B6EDFBC8A086EF31347E768_570128515 = getTaintFloat();
@@ -487,6 +493,7 @@ public final class InputDevice implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.993 -0400", hash_original_method = "6C32BE9CB35AEE464A215A2BDA6324A6", hash_generated_method = "6F6226D8FAD330FB626E54B8E4A8103C")
         public float getFuzz() {
             float var546ADE640B6EDFBC8A086EF31347E768_2034964047 = getTaintFloat();

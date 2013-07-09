@@ -702,6 +702,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.192 -0400", hash_original_method = "8522D247C3B96C2C6A0E0A6DFCD61958", hash_generated_method = "ED06284128C8B9D4F1A5EF68D72D1EC1")
         public synchronized void bind(Context context, int appWidgetId, Intent intent) {
             {
@@ -735,6 +736,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.193 -0400", hash_original_method = "21A72C8FC580D8D0E809A3FEE2FDD93D", hash_generated_method = "024BDD211B0A5232D1DD228542A02387")
         public synchronized void unbind(Context context, int appWidgetId, Intent intent) {
             try 
@@ -870,6 +872,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.197 -0400", hash_original_method = "9AC2F72588B70E9E489A1C9892FF58B7", hash_generated_method = "F6365C9C3E45AD8D99F0F29B817379A0")
         public synchronized IRemoteViewsFactory getRemoteViewsFactory() {
             IRemoteViewsFactory varB4EAC82CA7396A68D541C85D26508E83_414839946 = null; 
@@ -881,6 +884,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.197 -0400", hash_original_method = "EB76BB3DACEAD8AEFFF382088AE69C8F", hash_generated_method = "8524648AE47BAF754E1752A4F1FCC5D2")
         public synchronized boolean isConnected() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_173648096 = getTaintBoolean();
@@ -1089,6 +1093,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.202 -0400", hash_original_method = "E784F858D155FE6C94A91B290D47017F", hash_generated_method = "3F14235CB6E89896EEF4C4E563635AB3")
         public void setLoadingViewTemplates(RemoteViews loadingView, RemoteViews firstView) {
             mUserLoadingView = loadingView;
@@ -1335,6 +1340,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.208 -0400", hash_original_method = "CE79B98C6EC29820DC37D3CBF74EA749", hash_generated_method = "2EF7CEB40E137B3A7E71F4D81F140EB6")
         public RemoteViewsMetaData getMetaData() {
             RemoteViewsMetaData varB4EAC82CA7396A68D541C85D26508E83_1840198774 = null; 
@@ -1346,6 +1352,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.208 -0400", hash_original_method = "1D24E06D74C40EECF68D58BAFBBECA77", hash_generated_method = "5EF13E1B5721F58AF2F7A5BB77CCE345")
         public RemoteViewsMetaData getTemporaryMetaData() {
             RemoteViewsMetaData varB4EAC82CA7396A68D541C85D26508E83_1593124448 = null; 

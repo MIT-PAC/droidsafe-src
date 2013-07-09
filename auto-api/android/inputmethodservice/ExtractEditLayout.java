@@ -172,6 +172,7 @@ public class ExtractEditLayout extends LinearLayout {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.535 -0400", hash_original_method = "F1AD782B0CD2259E0BE9FDDD0EC2ADD5", hash_generated_method = "EA5142F85218179C74E31C4344F7840C")
         @Override
         public void setTitle(CharSequence title) {
@@ -180,6 +181,7 @@ public class ExtractEditLayout extends LinearLayout {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.535 -0400", hash_original_method = "B30C6763E9E5F305FC4AC0CFECBEE869", hash_generated_method = "C6BC91ECFE1C379B9775192FE76B7EE1")
         @Override
         public void setTitle(int resId) {
@@ -188,6 +190,7 @@ public class ExtractEditLayout extends LinearLayout {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.535 -0400", hash_original_method = "EB006AC48BB7A6AA8B2958DC91304E5C", hash_generated_method = "9DFEDFD3C97DB086294C2841AEBA9335")
         @Override
         public void setSubtitle(CharSequence subtitle) {
@@ -196,6 +199,7 @@ public class ExtractEditLayout extends LinearLayout {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.535 -0400", hash_original_method = "1F86E8EB25240C47EC24308D126D97B9", hash_generated_method = "D51D417B20F4E43280CDC3BCD8EA2931")
         @Override
         public void setSubtitle(int resId) {
@@ -204,6 +208,7 @@ public class ExtractEditLayout extends LinearLayout {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.536 -0400", hash_original_method = "3E94F533B6F67EA66D83CADA4353AF33", hash_generated_method = "A18B374E9FE9E6972BDC43896DF58822")
         @Override
         public void setCustomView(View view) {
@@ -282,6 +287,7 @@ public class ExtractEditLayout extends LinearLayout {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.537 -0400", hash_original_method = "B2B8DF93D41CD214F77DE42BB625BB9F", hash_generated_method = "8997A2482AAA3D625DCAF41D74EF4032")
         @Override
         public Menu getMenu() {
@@ -294,6 +300,7 @@ public class ExtractEditLayout extends LinearLayout {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.537 -0400", hash_original_method = "CD9B990298CF856E49A643E530553914", hash_generated_method = "623409EFF9AE392762EDF662452BDF31")
         @Override
         public CharSequence getTitle() {
@@ -306,6 +313,7 @@ public class ExtractEditLayout extends LinearLayout {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.538 -0400", hash_original_method = "F475DA391A1931FE20FFD2579FFFF5AF", hash_generated_method = "393431B4098D65DE7EA03D3532FB8D39")
         @Override
         public CharSequence getSubtitle() {
@@ -318,6 +326,7 @@ public class ExtractEditLayout extends LinearLayout {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.538 -0400", hash_original_method = "7A49E6A1A0BF55D8D926541A71E4907E", hash_generated_method = "536CEB6A584E6815D22D111FB9FEDADE")
         @Override
         public View getCustomView() {
@@ -361,6 +370,7 @@ public class ExtractEditLayout extends LinearLayout {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.539 -0400", hash_original_method = "BD3281B75359F57929C0B7D8E3BC0065", hash_generated_method = "4DC0BAA3678E3B1F051D28FC48B7B7DA")
         @Override
         public void onMenuModeChange(MenuBuilder menu) {

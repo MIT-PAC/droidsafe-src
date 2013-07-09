@@ -588,7 +588,8 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
         }
 
         
-                public static void pauseAndDispatch() {
+                @DSModeled(DSC.SPEC)
+        public static void pauseAndDispatch() {
             if (mHTML5VideoView != null) {
                 mHTML5VideoView.pauseAndDispatch(mCurrentProxy);
                 setBaseLayer(mBaseLayer);
@@ -616,7 +617,8 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
         }
 
         
-                public static void play(String url, int time, HTML5VideoViewProxy proxy,
+                @DSModeled(DSC.SPEC)
+        public static void play(String url, int time, HTML5VideoViewProxy proxy,
                 WebChromeClient client, int videoLayerId) {
             int currentVideoLayerId = -1;
             boolean backFromFullScreenMode = false;
@@ -677,7 +679,8 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
         }
 
         
-                public static void onPrepared() {
+                @DSModeled(DSC.SPEC)
+        public static void onPrepared() {
             
             if (!mHTML5VideoView.isFullScreenMode() || mHTML5VideoView.getAutostart()) {
                 mHTML5VideoView.start();
@@ -688,7 +691,8 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
         }
 
         
-                public static void end() {
+                @DSModeled(DSC.SPEC)
+        public static void end() {
             if (mCurrentProxy != null) {
                 if (isVideoSelfEnded)
                     mCurrentProxy.dispatchOnEnded();
@@ -761,6 +765,7 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.897 -0400", hash_original_method = "CC810E3C0FAB270632EED4A599C0CF83", hash_generated_method = "9D6048266DCC28F7D6E817749C18C2AA")
         public void start() {
             retainQueue();
@@ -785,6 +790,7 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.898 -0400", hash_original_method = "8F7C386AF7191A4B819017852DB14B13", hash_generated_method = "58A1947F8D5AFC8F40A04CAEFB4AA722")
         public void cancelAndReleaseQueue() {
             {
@@ -801,6 +807,7 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.898 -0400", hash_original_method = "3D0957D11B46ABCB01980155EE173252", hash_generated_method = "8A9F3EB1A373E93708BA55B21BE9ED19")
         public void status(int major_version,
                 int minor_version,
@@ -815,6 +822,7 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.898 -0400", hash_original_method = "BF40C4FA5E162E01EBED02AABC1482F3", hash_generated_method = "E45FA39053CF44926A6AA06D774A1F7D")
         public void headers(Headers headers) {
             mHeaders = headers;
@@ -823,6 +831,7 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.899 -0400", hash_original_method = "859FCB672305C2E845A33390ED99DE51", hash_generated_method = "5F7576424E608608C354ECD55E3058C7")
         public void data(byte[] data, int len) {
             {
@@ -883,6 +892,7 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.900 -0400", hash_original_method = "1CF1F157C74C81DF70E7D72EFED2A778", hash_generated_method = "BA975D17C2A9DCB3141CC03D45651106")
         public void certificate(SslCertificate certificate) {
             addTaint(certificate.getTaint());
@@ -900,6 +910,7 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.900 -0400", hash_original_method = "4CC585D4993857C36C3ADB32AB66A34A", hash_generated_method = "DFD4F09596B0C5C78A9D549A00D356FB")
         public boolean handleSslErrorRequest(SslError error) {
             addTaint(error.getTaint());
@@ -936,6 +947,7 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.901 -0400", hash_original_method = "AF9CEA251B70F416DD7268C7CEF45292", hash_generated_method = "D57A3B4053BF0CC77D99642113419936")
         private void retainQueue() {
             {

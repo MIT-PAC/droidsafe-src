@@ -72,6 +72,7 @@ public final class Daemons {
         public abstract void run();
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.910 -0400", hash_original_method = "DAD25559614D18C95C6D7AD3A5FF9D6E", hash_generated_method = "FEF7BFC80693958320B124FC53E51EEB")
         protected synchronized boolean isRunning() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_467039261 = getTaintBoolean();

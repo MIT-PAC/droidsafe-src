@@ -1116,6 +1116,7 @@ public final class NativeDecimalFormat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.698 -0400", hash_original_method = "F481D50CCC1AB38B4CA6D00583ECCD74", hash_generated_method = "3037F836EDC519E83BBA2E7E588DF637")
         public int fieldId() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1458965784 = getTaintInt();
@@ -1160,6 +1161,7 @@ public final class NativeDecimalFormat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.700 -0400", hash_original_method = "E1A3B20A4A62E5F6661DF7F73A635F7C", hash_generated_method = "2FA05A6182FB4AA13AC353371D99B73A")
         private void setData(int[] data) {
             this.data = data;

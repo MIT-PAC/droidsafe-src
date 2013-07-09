@@ -265,6 +265,7 @@ public final class GsmCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.297 -0400", hash_original_method = "890AB92FDE9FE4C57A1E95495C075681", hash_generated_method = "8B2E8A731D6F138193C1082A4DD655EF")
      Connection dial(String dialString) throws CallStateException {
         Connection varB4EAC82CA7396A68D541C85D26508E83_304231210 = null; 
@@ -277,6 +278,7 @@ public final class GsmCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.299 -0400", hash_original_method = "2869CC3BF5EF49E3F89EEEBD1A0C3021", hash_generated_method = "705AC23B37DC457597E49685989C50B2")
      Connection dial(String dialString, UUSInfo uusInfo) throws CallStateException {
         Connection varB4EAC82CA7396A68D541C85D26508E83_814486120 = null; 
@@ -290,6 +292,7 @@ public final class GsmCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.302 -0400", hash_original_method = "EC4F7F51F5F0A4F61E0068E2B7BE6FF2", hash_generated_method = "47073AD491BD2A45D77E8F17ADD14745")
      Connection dial(String dialString, int clirMode) throws CallStateException {
         Connection varB4EAC82CA7396A68D541C85D26508E83_1805015679 = null; 
@@ -378,6 +381,7 @@ public final class GsmCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.305 -0400", hash_original_method = "21B7458D194C157C186B70ABA7C7D274", hash_generated_method = "25B6942AE32BFB6C44A786C1B8AF0EFE")
      void conference() throws CallStateException {
         cm.conference(obtainCompleteMessage(EVENT_CONFERENCE_RESULT));
@@ -386,6 +390,7 @@ public final class GsmCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.305 -0400", hash_original_method = "B9B58214FE30DEB2D41379B25D88E6DD", hash_generated_method = "91DDF637F580C2F12D44ADB525F30440")
      void explicitCallTransfer() throws CallStateException {
         cm.explicitCallTransfer(obtainCompleteMessage(EVENT_ECT_RESULT));
@@ -394,6 +399,7 @@ public final class GsmCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.306 -0400", hash_original_method = "89E1881B087BAA2C040FAFD444B532DA", hash_generated_method = "93C10D32BFEAACBDB937011534F3F686")
      void clearDisconnected() {
         internalClearDisconnected();
@@ -406,6 +412,7 @@ public final class GsmCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.306 -0400", hash_original_method = "C3AFF7137220AE966ED90D221261BE5A", hash_generated_method = "716C5EC87AFCABEDBE2A486811E448EB")
      boolean canConference() {
         boolean var78F41FEE2FA482AD87767611C0E1F98D_1529911281 = (foregroundCall.getState() == GsmCall.State.ACTIVE
@@ -451,6 +458,7 @@ public final class GsmCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.308 -0400", hash_original_method = "E4A32A086AF9F2037148F022098D94F1", hash_generated_method = "065B2A7E21B7AD1A4990AD2D1B33FBB7")
      boolean canTransfer() {
         boolean varE2A225D3277C2D536901962ABDFBA11D_1004086019 = (foregroundCall.getState() == GsmCall.State.ACTIVE
@@ -813,6 +821,7 @@ public final class GsmCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.316 -0400", hash_original_method = "9804562F218584F49F1000DB30741809", hash_generated_method = "45ADAEC6CC75E056C500FCB0699785B7")
      void hangup(GsmConnection conn) throws CallStateException {
         {
@@ -888,6 +897,7 @@ public final class GsmCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.317 -0400", hash_original_method = "8E7DA06B8727FE7EBCD155EA09819106", hash_generated_method = "09D97CBFA339BB68260AAF45EF5FD946")
      void setMute(boolean mute) {
         desiredMute = mute;
@@ -960,6 +970,7 @@ public final class GsmCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.319 -0400", hash_original_method = "E840FBD61F8E6AF3DE802E32C39DD93E", hash_generated_method = "4AF2AF2C1AF283F2B3D66EB92EFBBE89")
      void hangupWaitingOrBackground() {
         log("hangupWaitingOrBackground");
@@ -970,6 +981,7 @@ public final class GsmCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.319 -0400", hash_original_method = "D10B26113142441F52E905015040129F", hash_generated_method = "939D43994EC933107D2D3D9C50AF847D")
      void hangupForegroundResumeBackground() {
         log("hangupForegroundResumeBackground");
@@ -1040,6 +1052,7 @@ public final class GsmCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.326 -0400", hash_original_method = "A13EE98B51441FF2D592407455BBCDEE", hash_generated_method = "3F275E38292F6357C08BE7A69D3E01CE")
      GsmConnection getConnectionByIndex(GsmCall call, int index) throws CallStateException {
         GsmConnection varB4EAC82CA7396A68D541C85D26508E83_697234234 = null; 

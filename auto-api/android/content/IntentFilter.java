@@ -1387,6 +1387,7 @@ public class IntentFilter implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.346 -0400", hash_original_method = "56B964ED44110D4A8630C57ED8411A1C", hash_generated_method = "144BFF9B3BF5E180BDCFE630D588AE8F")
         public String getHost() {
             String varB4EAC82CA7396A68D541C85D26508E83_733921036 = null; 
@@ -1398,6 +1399,7 @@ public class IntentFilter implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.347 -0400", hash_original_method = "D8DAED2CD8A0984A9202198C71DA9D83", hash_generated_method = "F8B05C316200FE88D6F9766D5983F0F1")
         public int getPort() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_247537424 = getTaintInt();
@@ -1407,6 +1409,7 @@ public class IntentFilter implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.348 -0400", hash_original_method = "FC31CC7FA89B702CE4ED1283F0D70C24", hash_generated_method = "43F575151E87D8527AB5BCA62645D1AB")
         public int match(Uri data) {
             String host = data.getHost();

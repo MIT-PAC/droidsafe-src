@@ -61,6 +61,7 @@ class ConnectionThread extends Thread {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.764 -0400", hash_original_method = "A5666AE0946DEF68E8FF606C0FDBCF6D", hash_generated_method = "146A132A51D2014347E7E60F759AB8B1")
      void requestStop() {
         {

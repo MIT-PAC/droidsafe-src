@@ -207,6 +207,7 @@ public class DERObjectIdentifier extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.596 -0400", hash_original_method = "ECFD3ADA5852656A886183CB7FE8CA3F", hash_generated_method = "C814997571F2D11801297BAE70290132")
      void encode(
         DEROutputStream out) throws IOException {

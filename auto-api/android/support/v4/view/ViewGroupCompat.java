@@ -36,6 +36,7 @@ public class ViewGroupCompat {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.158 -0400", hash_original_method = "63663A61AE72F4EA1BE6069DE9E21D17", hash_generated_method = "5ADD5DD5A4C48727FE558C8924279478")
         public boolean onRequestSendAccessibilityEvent(
                 ViewGroup group, View child, AccessibilityEvent event) {

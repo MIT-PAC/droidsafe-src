@@ -812,6 +812,7 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.047 -0400", hash_original_method = "272F2E718E0C10B582849935E6BE168A", hash_generated_method = "F4C8FB7E1F6BD4CBE7AC5C8669DDD228")
         @Override
         public DatagramChannel getChannel() {
@@ -824,6 +825,7 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.047 -0400", hash_original_method = "F11CC1C6B1751A820DF0839300E56C28", hash_generated_method = "75620AECAE92BCA01FC1A04A8557A31B")
         @Override
         public boolean isBound() {
@@ -834,6 +836,7 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.047 -0400", hash_original_method = "EBC91F4CCE587021E0B931D77134C0EB", hash_generated_method = "BFF2B46E2539AE8C18C5BFEE96EEFC91")
         @Override
         public boolean isConnected() {
@@ -845,6 +848,7 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.048 -0400", hash_original_method = "F2E78E937EC010AD3CD73E7409B0139F", hash_generated_method = "4E16A1B089FC585908DF168BE4EF3AEE")
         @Override
         public InetAddress getInetAddress() {
@@ -873,6 +877,7 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.048 -0400", hash_original_method = "2C69EB670D32F39C986C933D03BF3A1E", hash_generated_method = "489D2C59AC444AE479F977C4B1D94644")
         @Override
         public InetAddress getLocalAddress() {
@@ -885,6 +890,7 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.049 -0400", hash_original_method = "4B98C51C8664AA9BAB8C98CDD2BAB4FB", hash_generated_method = "A4EBDE2173B178CBE8B247B2CB8AB456")
         @Override
         public int getPort() {
@@ -899,6 +905,7 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.049 -0400", hash_original_method = "42FCE5AEF7C64B9A4F845E086D487D7D", hash_generated_method = "554ACCDE1F04ECCBE7A351F26FB64866")
         @Override
         public void bind(SocketAddress localAddr) throws SocketException {
@@ -920,6 +927,7 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.049 -0400", hash_original_method = "714770E7AF180E6CA35843F3D6FA59F5", hash_generated_method = "7F2EFBB0A9EEA23FD57601FBE5F95DB9")
         @Override
         public void receive(DatagramPacket packet) throws IOException {
@@ -939,6 +947,7 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.050 -0400", hash_original_method = "B8D9E7A66BAFFB4AAB90A90FE956BDD4", hash_generated_method = "5E3094B1DCE88B88008B268B2CAC58AE")
         @Override
         public void send(DatagramPacket packet) throws IOException {
@@ -958,6 +967,7 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.050 -0400", hash_original_method = "46B266D91BAFA027B87005DE54970890", hash_generated_method = "19C6663ACDAA52EC632C9402C55ECFFA")
         @Override
         public void close() {
@@ -988,6 +998,7 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.051 -0400", hash_original_method = "CD5228FAD6696C7AA890BA57AAC5031A", hash_generated_method = "4C622B878174EC52BA204C445BD3024B")
         @Override
         public void disconnect() {

@@ -2936,6 +2936,7 @@ public class ContextImpl extends Context {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.309 -0400", hash_original_method = "1D54690CD1C75C22354AFE636FCBB54C", hash_generated_method = "1E9266EF6A857E3DC75B2A57A6507287")
         @Override
         protected IContentProvider acquireProvider(Context context, String name) {
@@ -2950,6 +2951,7 @@ public class ContextImpl extends Context {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.311 -0400", hash_original_method = "88B28437EF544809DF8D55FC39CCF726", hash_generated_method = "EDCC80F862D2A22FD7FC57A4FBE236B5")
         @Override
         protected IContentProvider acquireExistingProvider(Context context, String name) {
@@ -2964,6 +2966,7 @@ public class ContextImpl extends Context {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.312 -0400", hash_original_method = "2FE34FA97A494E67E9164BEE654A40D1", hash_generated_method = "54CA51AB151EB10443CCCE885F97E482")
         @Override
         public boolean releaseProvider(IContentProvider provider) {

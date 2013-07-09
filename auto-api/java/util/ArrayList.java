@@ -889,6 +889,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.770 -0400", hash_original_method = "44DFBDD5F60969C85FF7C62CEFF63BE1", hash_generated_method = "DDDAA5294F55A7D85BE5855CEB9F9ECC")
         public boolean hasNext() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1776139192 = getTaintBoolean();
@@ -898,6 +899,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.771 -0400", hash_original_method = "4E01EE32653D357535C28CF692990943", hash_generated_method = "3E799C9EC53BC0ED6076CC26AAC05FBD")
         @SuppressWarnings("unchecked")
         public E next() {

@@ -361,6 +361,7 @@ final class MiniEnumSet<E extends Enum<E>> extends EnumSet<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.295 -0400", hash_original_method = "9CD323C98F30FAEA7DF6B6CE47F14F1E", hash_generated_method = "D9E549FEDCE10AAC9E6C510925773223")
     @Override
      void setRange(E start, E end) {
@@ -396,6 +397,7 @@ final class MiniEnumSet<E extends Enum<E>> extends EnumSet<E> {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.295 -0400", hash_original_method = "04AD09EE87D1D0FB4F163A9180F152BA", hash_generated_method = "91C69EDC988C043B638D57B0CB8B78EF")
         public boolean hasNext() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1613218843 = getTaintBoolean();

@@ -2020,6 +2020,7 @@ public class NumberPicker extends LinearLayout {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.147 -0400", hash_original_method = "5619839AC48FF521F5D3DA01ED2E4A22", hash_generated_method = "065F3EAEF49C10D19E7FFFA9025D07E2")
         public int getInputType() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_73647372 = getTaintInt();
@@ -2218,6 +2219,7 @@ public class NumberPicker extends LinearLayout {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.152 -0400", hash_original_method = "ED1739B7A0ACAE655C07ED8C0ABABF1C", hash_generated_method = "3E122DEB3F2DDEA67EBDA1CC64C07EBB")
         private void setIncrement(boolean increment) {
             mIncrement = increment;

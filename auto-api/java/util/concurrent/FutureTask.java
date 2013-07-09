@@ -162,6 +162,7 @@ public class FutureTask<V> implements RunnableFuture<V> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.289 -0400", hash_original_method = "87EA2642D244DCFE21163D8924915415", hash_generated_method = "EB654A5213B9392AA929D72493F23D04")
         private boolean ranOrCancelled(int state) {
             addTaint(state);
@@ -185,6 +186,7 @@ public class FutureTask<V> implements RunnableFuture<V> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.290 -0400", hash_original_method = "BADEFBD4164CAA2A58BD789F486A58F8", hash_generated_method = "657BDB97BDB3CCDD35AAB7E49172D920")
         protected boolean tryReleaseShared(int ignore) {
             runner = null;

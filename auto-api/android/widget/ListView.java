@@ -4062,6 +4062,7 @@ public class ListView extends AbsListView {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.878 -0400", hash_original_method = "5C0213FE7A42F47411000D870177F1B7", hash_generated_method = "01B8DE9D2C6011459D6FE19DE607EEA5")
         public FocusSelector setup(int position, int top) {
             FocusSelector varB4EAC82CA7396A68D541C85D26508E83_991590032 = null; 
@@ -4104,6 +4105,7 @@ public class ListView extends AbsListView {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.880 -0400", hash_original_method = "E4C7C1A71AB7D603722F7CE31ED09575", hash_generated_method = "C8559F673D941812E13F3F631D0BAA1F")
          void populate(int selectedPosition, int amountToScroll) {
             mSelectedPosition = selectedPosition;
@@ -4114,6 +4116,7 @@ public class ListView extends AbsListView {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.880 -0400", hash_original_method = "57FF42983620727F309A47A5C295AFEC", hash_generated_method = "4019BC35734FAA56CCF868F19DC63BFD")
         public int getSelectedPosition() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_250008231 = getTaintInt();
@@ -4123,6 +4126,7 @@ public class ListView extends AbsListView {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.881 -0400", hash_original_method = "547539826ED165E8A574C9320A564E9F", hash_generated_method = "F77C73ECD9A85DB844AE7745BD810036")
         public int getAmountToScroll() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_843107900 = getTaintInt();

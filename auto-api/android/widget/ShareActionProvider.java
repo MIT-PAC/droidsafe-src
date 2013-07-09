@@ -226,6 +226,7 @@ public class ShareActionProvider extends ActionProvider {
         }
 
 
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.848 -0400", hash_original_method = "5A8A50866214BBC9FA1FE4AEB29A128B", hash_generated_method = "81E1F29E9AC7961BD52608C9DC877BBF")
         @Override
         public boolean onChooseActivity(ActivityChooserModel host, Intent intent) {

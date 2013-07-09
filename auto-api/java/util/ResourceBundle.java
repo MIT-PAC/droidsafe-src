@@ -55,7 +55,7 @@ public abstract class ResourceBundle {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static ResourceBundle getBundle(String bundleName, Locale locale,
             ClassLoader loader) throws MissingResourceException {
         if (loader == null || bundleName == null) {
@@ -87,18 +87,20 @@ public abstract class ResourceBundle {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ResourceBundle getBundle(String baseName, ResourceBundle.Control control) {
         return getBundle(baseName, Locale.getDefault(), getLoader(), control);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ResourceBundle getBundle(String baseName,
             Locale targetLocale, ResourceBundle.Control control) {
         return getBundle(baseName, targetLocale, getLoader(), control);
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static ClassLoader getLoader() {
         ClassLoader cl = ResourceBundle.class.getClassLoader();
         if (cl == null) {
@@ -108,7 +110,7 @@ public abstract class ResourceBundle {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static ResourceBundle getBundle(String baseName,
             Locale targetLocale, ClassLoader loader,
             ResourceBundle.Control control) {
@@ -141,7 +143,7 @@ public abstract class ResourceBundle {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static ResourceBundle processGetBundle(String baseName,
             Locale targetLocale, ClassLoader loader,
             ResourceBundle.Control control, boolean expired,
@@ -277,7 +279,7 @@ public abstract class ResourceBundle {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static ResourceBundle handleGetBundle(boolean loadBase, String base, Locale locale,
             ClassLoader loader) {
         String localeName = locale.toString();
@@ -408,7 +410,7 @@ public abstract class ResourceBundle {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static void clearCache(ClassLoader loader) {
         if (loader == null) {
             throw new NullPointerException();
@@ -515,6 +517,7 @@ public abstract class ResourceBundle {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.630 -0400", hash_original_method = "F3BE912397EA9F5D184546387C802359", hash_generated_method = "7D0B38FEE9DBAE4051407AEEA4BEB34F")
         @Override
         public Object handleGetObject(String name) {
@@ -744,6 +747,7 @@ public abstract class ResourceBundle {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.637 -0400", hash_original_method = "42195BC54E9E8857F62CE9C9CCBB8A2E", hash_generated_method = "51D4958E8DEC4475135981345FB2F88D")
         public Locale getFallbackLocale(String baseName, Locale locale) {
             Locale varB4EAC82CA7396A68D541C85D26508E83_2005977983 = null; 
@@ -782,6 +786,7 @@ public abstract class ResourceBundle {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.638 -0400", hash_original_method = "90658AB613E6A89EDB72A67F02A5F78D", hash_generated_method = "B4E5CC5B87FD2B4C447CE5E577FC76A4")
         public ResourceBundle newBundle(String baseName, Locale locale,
                 String format, ClassLoader loader, boolean reload) throws IllegalAccessException, InstantiationException,
@@ -902,6 +907,7 @@ public abstract class ResourceBundle {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.638 -0400", hash_original_method = "7BA29E8DE065D9912A86853D625E45B1", hash_generated_method = "C342E9FB3D18DE79F005BA1106190467")
         public long getTimeToLive(String baseName, Locale locale) {
             {
@@ -919,6 +925,7 @@ public abstract class ResourceBundle {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.639 -0400", hash_original_method = "C3CC28923ED9707E414F789F1523116A", hash_generated_method = "C0F347BC51F4B7A95653C0A529DB01CD")
         public boolean needsReload(String baseName, Locale locale,
                 String format, ClassLoader loader, ResourceBundle bundle,
@@ -979,6 +986,7 @@ public abstract class ResourceBundle {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.641 -0400", hash_original_method = "95EF33F16C513E472DD742F40E256E32", hash_generated_method = "26290CB3EC8A08B70E5F93EC7D7A4D00")
         public String toBundleName(String baseName, Locale locale) {
             String varB4EAC82CA7396A68D541C85D26508E83_858811815 = null; 

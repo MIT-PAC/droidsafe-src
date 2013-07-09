@@ -10106,6 +10106,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.312 -0400", hash_original_method = "425DF0BB46AC42AA7BF0BE404A263B4A", hash_generated_method = "A9A4B57876E149A4CA9F2A29180461CF")
         public synchronized void setWebView(WebView webview) {
             mWebview = webview;
@@ -10114,6 +10115,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.313 -0400", hash_original_method = "FCFE2F49718195B26DF12E8855D16060", hash_generated_method = "3D37A83044703632008A075C79F8F92D")
         public synchronized WebView getWebView() {
             WebView varB4EAC82CA7396A68D541C85D26508E83_1414644641 = null; 
@@ -10147,6 +10149,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.314 -0400", hash_original_method = "8287235C28E9D1E310027A2DDEB95FCD", hash_generated_method = "E555930F6C60B6E43E637690DA6E289E")
         @Override
         public void onConfigurationChanged(Configuration newConfig) {
@@ -10156,6 +10159,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.314 -0400", hash_original_method = "4F0E380BE715BF5B2ECCDB1794C8905E", hash_generated_method = "703A059557F06AE044520D2E93D3D2F0")
         @Override
         public void onLowMemory() {
@@ -10204,6 +10208,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.315 -0400", hash_original_method = "08A67C8151DE1D5470E41F8D364D7EBB", hash_generated_method = "89AFF8CBC1B7750AC1399D58F1A48453")
         private void setType(int type) {
             mType = type;
@@ -10212,6 +10217,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.315 -0400", hash_original_method = "5A11195D61FECD91E6C46251DAE6160C", hash_generated_method = "66AE08DAEF8D5073B71F7FF854ADD4F3")
         private void setExtra(String extra) {
             mExtra = extra;
@@ -10220,6 +10226,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.316 -0400", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "43C9D416B03E1E096EB9FFA14C657AEC")
         public int getType() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1468696597 = getTaintInt();
@@ -10229,6 +10236,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.316 -0400", hash_original_method = "993DAEFB4C11E7BC5E9CBC52DC4B1BBC", hash_generated_method = "8E28350825FF3FE313FD51A71410673F")
         public String getExtra() {
             String varB4EAC82CA7396A68D541C85D26508E83_454671782 = null; 
@@ -10285,6 +10293,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         }
 
 
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.317 -0400", hash_original_method = "C1BF85501C9C720293FF5A0F8027F066", hash_generated_method = "AB97D2264FF7D057BCFCB26ED3DF7FEF")
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -10317,6 +10326,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         }
 
 
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.318 -0400", hash_original_method = "4BDCCDF31B8D55EFD7432A60E1C7C253", hash_generated_method = "38ED85F109FF5FCE3B870EF4B961001F")
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -10530,6 +10540,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.320 -0400", hash_original_method = "201239734E7C46277BDFD2F489AEF42B", hash_generated_method = "03CCE174D35E97095F8C0B0526FC6876")
         public QueuedTouch set(TouchEventData ted) {
             QueuedTouch varB4EAC82CA7396A68D541C85D26508E83_1866541369 = null; 
@@ -10568,6 +10579,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.321 -0400", hash_original_method = "2404A1906D32ADB8867231DC065AA7FE", hash_generated_method = "4008EE34916008C059BAD9BB773601AE")
         public QueuedTouch add(QueuedTouch other) {
             QueuedTouch varB4EAC82CA7396A68D541C85D26508E83_726710008 = null; 
@@ -10747,6 +10759,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.324 -0400", hash_original_method = "1A49831775AEFA2CD0798618E9FF10FB", hash_generated_method = "23ACD9865FD3C2DC7344B474F0472DC4")
         private void recycleQueuedTouch(QueuedTouch qd) {
             {
@@ -10794,6 +10807,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.324 -0400", hash_original_method = "3F8E561F61CC5D0495097299D7328F1D", hash_generated_method = "025E3C6F9E85B71D64151E2AFD2033F4")
         public long nextTouchSequence() {
             long var0F5264038205EDFB1AC05FBB0E8C5E94_2018403085 = getTaintLong();
@@ -11786,6 +11800,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             }
 
 
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.341 -0400", hash_original_method = "47413D805E887745DF3971F679277823", hash_generated_method = "2F50B5CE5FC93A952122151657D68C6D")
             @Override
             public String toString() {
@@ -11881,6 +11896,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.342 -0400", hash_original_method = "715CB29FF3CEE320E11EC1BD997C9D63", hash_generated_method = "23CBDB00C2A3EC14AE90E92F42FB382B")
             @Override
             public boolean hasStableIds() {
@@ -11938,6 +11954,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.344 -0400", hash_original_method = "19954EF3B060E791A26DF845CEE18A7B", hash_generated_method = "7DF26D899C54947031F6630296829B71")
             @Override
             public boolean areAllItemsEnabled() {

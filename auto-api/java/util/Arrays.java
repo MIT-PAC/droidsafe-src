@@ -1561,6 +1561,7 @@ public class Arrays {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.915 -0400", hash_original_method = "2292A4CE789907EDD632B4A1EB11E4D2", hash_generated_method = "C7535451322573D6A8676974BB27525E")
         @Override
         public E get(int location) {
@@ -1663,6 +1664,7 @@ public class Arrays {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.917 -0400", hash_original_method = "34158A3678F4541935DDD01AA8496683", hash_generated_method = "D8309DB905C0E1AE2C08B02FEE7AD042")
         @Override
         public E set(int location, E object) {
@@ -1679,6 +1681,7 @@ public class Arrays {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.917 -0400", hash_original_method = "E1955A04BFD4754737F2A0E48B09DBE4", hash_generated_method = "759AC9F52187FFD2DDD0EC3505D269BD")
         @Override
         public int size() {
@@ -1701,6 +1704,7 @@ public class Arrays {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.918 -0400", hash_original_method = "7C6C61B0D92D6FAC6E5A876622A28815", hash_generated_method = "B65F5324EEB5CCED1854A3982C9F5D32")
         @Override
         @SuppressWarnings({"unchecked", "SuspiciousSystemArraycopy"})

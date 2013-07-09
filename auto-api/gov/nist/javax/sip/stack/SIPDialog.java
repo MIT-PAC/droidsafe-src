@@ -867,6 +867,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.348 -0400", hash_original_method = "45B7AAA172C2FB7B4FDF9001755F4630", hash_generated_method = "7C80F5AA2C4C977BA309CBBDED69B9CE")
      void ackReceived(SIPRequest sipRequest) {
         SIPServerTransaction tr = this.getInviteTransaction();
@@ -3583,6 +3584,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.448 -0400", hash_original_method = "CEEC3EAE1C5B12DC43D70E37F1A80A0A", hash_generated_method = "E0D9F209796864C7C064424BA32A7ECA")
         protected void runTask() {
             SIPDialog dialog = SIPDialog.this;
@@ -3705,6 +3707,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.450 -0400", hash_original_method = "705C6BB4461CC5F37E0565BB6F16C084", hash_generated_method = "12743D2452C0A21B643AFBC46E200A26")
         protected void runTask() {
             delete();
@@ -3730,6 +3733,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.451 -0400", hash_original_method = "47EF190411AC9DCEBDEAD83DF8BB27D9", hash_generated_method = "B57EA781CB7351D49C4D568963F1BB61")
         protected void runTask() {
             {

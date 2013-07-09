@@ -97,6 +97,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.608 -0400", hash_original_method = "CA5CD09DA796000F712B45157C41B130", hash_generated_method = "6234178EFA3022E14E7CD14745AB0320")
      void setText(String text) {
         mEditText.setText(text);

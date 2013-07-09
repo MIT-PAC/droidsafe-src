@@ -56,6 +56,7 @@ public class UnderlineSpan extends CharacterStyle implements UpdateAppearance, P
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.035 -0400", hash_original_method = "0AB5A88A5517CF0706AB68CD6097189A", hash_generated_method = "B63DA487A3B75D8CFA02C746550EAD94")
     @Override
     public void updateDrawState(TextPaint ds) {

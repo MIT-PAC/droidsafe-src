@@ -1528,6 +1528,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.450 -0400", hash_original_method = "5C1B7B0DA20667590A4D5C5559468A28", hash_generated_method = "2E100FB913BCC86561DE796A09986F54")
         public boolean hasNext() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_553739796 = getTaintBoolean();
@@ -1622,6 +1623,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.455 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "D67A64726CBDBF1B031B29B2E127459C")
         @Override
         public int size() {
@@ -1707,6 +1709,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.457 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "0639F493158D20EB66B2F32D4DA73861")
         @Override
         public int size() {
@@ -1991,26 +1994,32 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
     
     enum Bound {
         INCLUSIVE {
-            @Override public String leftCap(Object from) {
+            @DSModeled(DSC.SAFE)
+        @Override public String leftCap(Object from) {
                 return "[" + from;
             }
-            @Override public String rightCap(Object to) {
+            @DSModeled(DSC.SAFE)
+        @Override public String rightCap(Object to) {
                 return to + "]";
             }
         },
         EXCLUSIVE {
-            @Override public String leftCap(Object from) {
+            @DSModeled(DSC.SAFE)
+        @Override public String leftCap(Object from) {
                 return "(" + from;
             }
-            @Override public String rightCap(Object to) {
+            @DSModeled(DSC.SAFE)
+        @Override public String rightCap(Object to) {
                 return to + ")";
             }
         },
         NO_BOUND {
-            @Override public String leftCap(Object from) {
+            @DSModeled(DSC.SAFE)
+        @Override public String leftCap(Object from) {
                 return ".";
             }
-            @Override public String rightCap(Object to) {
+            @DSModeled(DSC.SAFE)
+        @Override public String rightCap(Object to) {
                 return ".";
             }
         };

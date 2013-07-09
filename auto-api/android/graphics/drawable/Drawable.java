@@ -180,6 +180,7 @@ public abstract class Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.766 -0400", hash_original_method = "F8C083250821C64B63A1F88F9B7D8469", hash_generated_method = "7D6E5BF0C00594CDE4802DF590C490D3")
     public Callback getCallback() {
         Callback varB4EAC82CA7396A68D541C85D26508E83_1870110631 = null; 
@@ -207,6 +208,7 @@ public abstract class Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.766 -0400", hash_original_method = "9D9FDBFF51AC2DBEF3B6FA3B8569CCD5", hash_generated_method = "13A4DF538C7B56FF960FE4ED2281E0C6")
     public void invalidateSelf() {
         final Callback callback = getCallback();
@@ -221,6 +223,7 @@ public abstract class Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.767 -0400", hash_original_method = "4BA44AAA8396AA668795CA7F4E916174", hash_generated_method = "A4921FDCFD31786AF4C03EE8AB145680")
     public void scheduleSelf(Runnable what, long when) {
         final Callback callback = getCallback();
@@ -237,6 +240,7 @@ public abstract class Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.767 -0400", hash_original_method = "40D05A483A091B37888582EA72925B1D", hash_generated_method = "FF5DE0985B90D7AE9A6B59E7A4E89CED")
     public void unscheduleSelf(Runnable what) {
         final Callback callback = getCallback();
@@ -252,6 +256,7 @@ public abstract class Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.768 -0400", hash_original_method = "D8B32EDE038D6347583B50AC97BFE4A6", hash_generated_method = "6434DC928955982AE3FFCAC6109A7454")
     public int getResolvedLayoutDirectionSelf() {
         final Callback callback = getCallback();
@@ -273,6 +278,7 @@ public abstract class Drawable {
     public abstract void setColorFilter(ColorFilter cf);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.769 -0400", hash_original_method = "F0522F608E5F96C5D99BDA1CF055B16B", hash_generated_method = "C2926271377446C3A66DA12B7ECADC08")
     public void setColorFilter(int color, PorterDuff.Mode mode) {
         setColorFilter(new PorterDuffColorFilter(color, mode));
@@ -283,6 +289,7 @@ public abstract class Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.769 -0400", hash_original_method = "B358CFD4AAFD748C624F742F21F12081", hash_generated_method = "4583F0874D1CBB724BCBB622A001163D")
     public void clearColorFilter() {
         setColorFilter(null);
@@ -376,6 +383,7 @@ public abstract class Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.773 -0400", hash_original_method = "385D529E13116BE326F07B115E2B9363", hash_generated_method = "3A4E2D12D3B7395EA8B5C8D793EAA980")
     public boolean setVisible(boolean visible, boolean restart) {
         boolean changed = mVisible != visible;
@@ -491,6 +499,7 @@ public abstract class Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.778 -0400", hash_original_method = "5035EEEA88B512A7AC30F75048C2F85A", hash_generated_method = "16C983E46E1B1E5791E93859D3643B45")
     public int getMinimumWidth() {
         final int intrinsicWidth = getIntrinsicWidth();
@@ -502,6 +511,7 @@ public abstract class Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.778 -0400", hash_original_method = "FB4CD88D7DE1F0713A1472841A364838", hash_generated_method = "F1D46F5E5F3E33E3EAF40B1E9B536429")
     public int getMinimumHeight() {
         final int intrinsicHeight = getIntrinsicHeight();
@@ -513,6 +523,7 @@ public abstract class Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.779 -0400", hash_original_method = "3EEC3E25F33F4D98A0E1482CE3BAC48C", hash_generated_method = "D3AA21B1057671AD659B0F932C702852")
     public boolean getPadding(Rect padding) {
         padding.set(0, 0, 0, 0);
@@ -537,17 +548,20 @@ public abstract class Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Drawable createFromStream(InputStream is, String srcName) {
         return createFromResourceStream(null, null, is, srcName, null);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Drawable createFromResourceStream(Resources res, TypedValue value,
             InputStream is, String srcName) {
         return createFromResourceStream(res, value, is, srcName, null);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Drawable createFromResourceStream(Resources res, TypedValue value,
             InputStream is, String srcName, BitmapFactory.Options opts) {
         if (is == null) {
@@ -569,6 +583,7 @@ public abstract class Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Drawable createFromXml(Resources r, XmlPullParser parser) throws XmlPullParserException, IOException {
         AttributeSet attrs = Xml.asAttributeSet(parser);
         int type;
@@ -586,6 +601,7 @@ public abstract class Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Drawable createFromXmlInner(Resources r, XmlPullParser parser, AttributeSet attrs) throws XmlPullParserException, IOException {
         Drawable drawable;
         final String name = parser.getName();
@@ -632,6 +648,7 @@ public abstract class Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Drawable createFromPath(String pathName) {
         if (pathName == null) {
             return null;
@@ -644,6 +661,7 @@ public abstract class Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.781 -0400", hash_original_method = "A7AA835959A57BB8EBB74755836F5541", hash_generated_method = "322D6AD741270D4F67E8B8AF9F1423E9")
     public void inflate(Resources r, XmlPullParser parser, AttributeSet attrs) throws XmlPullParserException, IOException {
         TypedArray a = r.obtainAttributes(attrs, com.android.internal.R.styleable.Drawable);
@@ -659,6 +677,7 @@ public abstract class Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.782 -0400", hash_original_method = "9471DE214DF2BB650CFB53CA22D70654", hash_generated_method = "08ADBA3045DE1758253A6BB72A5875ED")
      void inflateWithAttributes(Resources r, XmlPullParser parser,
             TypedArray attrs, int visibleAttr) throws XmlPullParserException, IOException {
@@ -682,6 +701,7 @@ public abstract class Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Drawable drawableFromBitmap(Resources res, Bitmap bm, byte[] np,
             Rect pad, String srcName) {
         if (np != null) {
@@ -703,6 +723,7 @@ public abstract class Drawable {
         public abstract Drawable newDrawable();
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.786 -0400", hash_original_method = "5FCE46455F7833ADD9520B3BEB7232AE", hash_generated_method = "74080BA37AC37300A5E6EAC06D2CA412")
         public Drawable newDrawable(Resources res) {
             Drawable varB4EAC82CA7396A68D541C85D26508E83_711619604 = null; 

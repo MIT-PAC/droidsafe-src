@@ -1079,7 +1079,8 @@ public final class Bitmap implements Parcelable {
 			this.nativeInt = ni;
 		}
 
-		static Config nativeToConfig(int ni) {
+		@DSModeled(DSC.SAFE)
+        static Config nativeToConfig(int ni) {
 			return sConfigs[ni];
 		}
 	}

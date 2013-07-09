@@ -206,6 +206,7 @@ public class CdmaConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.538 -0400", hash_original_method = "0553AC873EBF02DCE0ECDD52D690154B", hash_generated_method = "BBDF14596FFF0E060948271F28A21704")
      boolean compareTo(DriverCall c) {
         String cAddress = PhoneNumberUtils.stringFromStringAndTOA(c.number, c.TOA);
@@ -527,6 +528,7 @@ public class CdmaConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.551 -0400", hash_original_method = "A61D9E53307E65432299CCBF8D846DEE", hash_generated_method = "FA0DF89A1A448302D3D6A8B1CB5C01B2")
      DisconnectCause disconnectCauseFromCode(int causeCode) {
         DisconnectCause varB4EAC82CA7396A68D541C85D26508E83_399727536 = null; 
@@ -692,6 +694,7 @@ public class CdmaConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.551 -0400", hash_original_method = "6DD0016A82A0EEA168B83665DD86A0FB", hash_generated_method = "B3C3159BD6CBC2613A9F6D73DE50EA65")
      void onRemoteDisconnect(int causeCode) {
         
@@ -849,6 +852,7 @@ public class CdmaConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.554 -0400", hash_original_method = "94F7523429B223E41798A5302127009B", hash_generated_method = "9AB8496E54511EAF839A2265B2B58059")
      int getCDMAIndex() throws CallStateException {
         {
@@ -1374,6 +1378,7 @@ public class CdmaConnection extends Connection {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.573 -0400", hash_original_method = "E8F40E6883CDABD6C8E283CE0D2B4E28", hash_generated_method = "82E315FF4D841CD23578FEA3A741B202")
         public void handleMessage(Message msg) {
             

@@ -246,6 +246,7 @@ public class WapPushOverSms {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.068 -0400", hash_original_method = "12BA8034F310D7C3159CADAC53085388", hash_generated_method = "09E37F9B5AF99076F337DB57FE0D464E")
         public IWapPushManager getWapPushManager() {
             IWapPushManager varB4EAC82CA7396A68D541C85D26508E83_1692295721 = null; 

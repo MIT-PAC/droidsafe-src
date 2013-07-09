@@ -224,6 +224,7 @@ public class ThreadLocal<T> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.384 -0400", hash_original_method = "8D46CF6663407215221C449D596ED15A", hash_generated_method = "C7EB45EBDA4EAA513131B1354BE102DF")
         private void initializeTable(int capacity) {
             this.table = new Object[capacity * 2];
@@ -465,6 +466,7 @@ public class ThreadLocal<T> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.392 -0400", hash_original_method = "A1B9AE6202C436A7C194238B45D86066", hash_generated_method = "28B065286D5BB9178BEBFA6FFB382A51")
         private int next(int index) {
             addTaint(index);

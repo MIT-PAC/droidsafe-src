@@ -501,6 +501,7 @@ public abstract class BroadcastReceiver {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.033 -0400", hash_original_method = "09CFE321AB9E3444E3559F2B522AB2BE", hash_generated_method = "449E6A93D95685E4BACE2BE26A644340")
         public void setExtrasClassLoader(ClassLoader cl) {
             {

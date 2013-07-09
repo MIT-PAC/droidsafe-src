@@ -660,7 +660,7 @@ public abstract class IccCard {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.742 -0400", hash_original_method = "482C40D5983445C1A7C95EBEDC56AC82", hash_generated_method = "318079C0D419C283A47E804226ED16EB")
     private void onIccSwap(boolean isAdded) {
         DialogInterface.OnClickListener listener = null;
@@ -1079,9 +1079,11 @@ public abstract class IccCard {
         READY,
         NOT_READY,
         PERM_DISABLED;
+        @DSModeled(DSC.SAFE)
         public boolean isPinLocked() {
             return ((this == PIN_REQUIRED) || (this == PUK_REQUIRED));
         }
+        @DSModeled(DSC.SAFE)
         public boolean iccCardExist() {
             return ((this == PIN_REQUIRED) || (this == PUK_REQUIRED)
                     || (this == NETWORK_LOCKED) || (this == READY)

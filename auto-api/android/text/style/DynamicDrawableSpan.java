@@ -53,6 +53,7 @@ public abstract class DynamicDrawableSpan extends ReplacementSpan {
     public abstract Drawable getDrawable();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.732 -0400", hash_original_method = "0E2414BE2E113C87DD8ACCDB4F014ABB", hash_generated_method = "8412BC090314C674DF4D8F6DBE69A477")
     @Override
     public int getSize(Paint paint, CharSequence text,
@@ -86,7 +87,7 @@ public abstract class DynamicDrawableSpan extends ReplacementSpan {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.733 -0400", hash_original_method = "6EDA777F5CB3128927ADAA236FCAEE94", hash_generated_method = "B00E52505CB03871258946A86CEC8B6D")
     @Override
     public void draw(Canvas canvas, CharSequence text,
@@ -123,7 +124,7 @@ public abstract class DynamicDrawableSpan extends ReplacementSpan {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.734 -0400", hash_original_method = "0EFD0E735C0FDE972D23D8A040440B54", hash_generated_method = "BAE96E5767FB7DFB5F1BB1A094265644")
     private Drawable getCachedDrawable() {
         Drawable varB4EAC82CA7396A68D541C85D26508E83_1165864530 = null; 

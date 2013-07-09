@@ -298,7 +298,7 @@ public class Package implements AnnotatedElement {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.456 -0400", hash_original_method = "55B8ABCD808682E10A2965544061F7A5", hash_generated_method = "59E2464E7F8E88EE1587FB716F543AA9")
     public boolean isSealed(URL url) {
         boolean varACBE1F9FCC34100F410205F440770D39_75412424 = (sealBase != null && sealBase.sameFile(url));

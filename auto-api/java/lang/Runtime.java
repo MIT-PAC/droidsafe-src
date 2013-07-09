@@ -271,7 +271,7 @@ public class Runtime {
 		
 	}
 
-	@DSModeled(DSC.BAN)
+	@DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.625 -0400", hash_original_method = "93CD7EAF10A1B837C6D2761A80025550", hash_generated_method = "A2D56C28EA37FCCF585207FFBB337419")
 	void load(String filename, ClassLoader loader) {
 		{
@@ -304,7 +304,7 @@ public class Runtime {
 		
 	}
 
-	@DSModeled(DSC.BAN)
+	@DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.632 -0400", hash_original_method = "5EE816C9B41613E4D79FD41D836C9458", hash_generated_method = "DE121221752AE396FAB2C57A77466D3A")
 	void loadLibrary(String libraryName, ClassLoader loader) {
 		{
@@ -352,7 +352,7 @@ public class Runtime {
     private static void nativeExit(int code, boolean isExit) {
 	}
 
-	@DSModeled(DSC.BAN)
+	@DSModeled(DSC.SAFE)
     private static String nativeLoad(String filename, ClassLoader loader) {
 		
 		String ret = new String();

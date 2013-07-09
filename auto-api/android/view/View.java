@@ -10966,17 +10966,20 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         }
 
 
-                public static int makeMeasureSpec(int size, int mode) {
+                @DSModeled(DSC.SAFE)
+        public static int makeMeasureSpec(int size, int mode) {
             return size + mode;
         }
 
         
-                public static int getMode(int measureSpec) {
+                @DSModeled(DSC.SAFE)
+        public static int getMode(int measureSpec) {
             return (measureSpec & MODE_MASK);
         }
 
         
-                public static int getSize(int measureSpec) {
+                @DSModeled(DSC.SAFE)
+        public static int getSize(int measureSpec) {
             return (measureSpec & ~MODE_MASK);
         }
 
@@ -11053,6 +11056,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.914 -0400", hash_original_method = "52714AB9B90C75C7141A8D07DDC0C4CA", hash_generated_method = "AB01C47E8931054C927C8BF677A5865E")
         public void rememberWindowAttachCount() {
             mOriginalWindowAttachCount = mWindowAttachCount;
@@ -11352,6 +11356,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             }
 
 
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.919 -0400", hash_original_method = "AAFC70DDA5FB82CEF5E58C1F01C303B7", hash_generated_method = "F6E2001C60EDD672A67B8BFFD0EA80B4")
             public void setNextPoolable(InvalidateInfo element) {
                 mNext = element;
@@ -11360,6 +11365,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.920 -0400", hash_original_method = "8D8571C3CBC87318B5EA7A031BC44388", hash_generated_method = "7C9A6C181B169C7D8772CB09725CC47A")
             public InvalidateInfo getNextPoolable() {
                 InvalidateInfo varB4EAC82CA7396A68D541C85D26508E83_1961906637 = null; 
@@ -11384,6 +11390,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.921 -0400", hash_original_method = "4CB4F04617162A1F2BEBBAC63163A5FB", hash_generated_method = "9AA13F271DA147DE197D2240DBC45638")
             public boolean isPooled() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_708403066 = getTaintBoolean();
@@ -11393,6 +11400,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.922 -0400", hash_original_method = "CCE0492C3FBB65D8A1644633FE9AA3DF", hash_generated_method = "31CEC37D69D770078DC2E4A0F4797B2A")
             public void setPooled(boolean isPooled) {
                 mIsPooled = isPooled;

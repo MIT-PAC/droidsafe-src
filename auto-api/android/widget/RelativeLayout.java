@@ -1346,6 +1346,7 @@ public class RelativeLayout extends ViewGroup {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.900 -0400", hash_original_method = "F14B7CDC14D112CF9F86D0C64F4D29ED", hash_generated_method = "93452E0A48B7041D6E93F6CB23E7C08D")
         public void addRule(int verb) {
             mRules[verb] = TRUE;
@@ -1354,6 +1355,7 @@ public class RelativeLayout extends ViewGroup {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.901 -0400", hash_original_method = "E6336A158C939972C1CFCFE234B123CF", hash_generated_method = "15C34D41A65E9FA80EF1B69E592566CD")
         public void addRule(int verb, int anchor) {
             mRules[verb] = anchor;
@@ -1362,6 +1364,7 @@ public class RelativeLayout extends ViewGroup {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.901 -0400", hash_original_method = "42AF2398E9BA5CDF378E196E0674D4AF", hash_generated_method = "C6F5E975E0F5F5E68259117B0E0A4799")
         public int[] getRules() {
             int[] varB4CCCA26F9DB9189C32F33E82D425CFB_944962084 = {getTaintInt()};
@@ -1622,6 +1625,7 @@ public class RelativeLayout extends ViewGroup {
             }
 
 
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.916 -0400", hash_original_method = "A08BF9EBBE4B2747346D150314791002", hash_generated_method = "2FE07B58E0CD5DBB314046E4692100A0")
             public void setNextPoolable(Node element) {
                 mNext = element;
@@ -1630,6 +1634,7 @@ public class RelativeLayout extends ViewGroup {
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.916 -0400", hash_original_method = "3B74D9DA1E659E0940912A17ED2BA31C", hash_generated_method = "0F382ECBC95B0EA7A226E8997B51BB56")
             public Node getNextPoolable() {
                 Node varB4EAC82CA7396A68D541C85D26508E83_1017949239 = null; 
@@ -1641,6 +1646,7 @@ public class RelativeLayout extends ViewGroup {
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.917 -0400", hash_original_method = "4CB4F04617162A1F2BEBBAC63163A5FB", hash_generated_method = "71CF2BFA2E7B50A0BDE0C3538B358123")
             public boolean isPooled() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1394943721 = getTaintBoolean();
@@ -1650,6 +1656,7 @@ public class RelativeLayout extends ViewGroup {
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.917 -0400", hash_original_method = "CCE0492C3FBB65D8A1644633FE9AA3DF", hash_generated_method = "31CEC37D69D770078DC2E4A0F4797B2A")
             public void setPooled(boolean isPooled) {
                 mIsPooled = isPooled;

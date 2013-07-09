@@ -868,6 +868,7 @@ public abstract class Window {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.725 -0400", hash_original_method = "93C5B5997EB72284CF079AECD506D640", hash_generated_method = "89BF13823F9C348F18011793E47E2F85")
         public boolean isHardwareAccelerated() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_887503205 = getTaintBoolean();

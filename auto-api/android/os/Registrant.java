@@ -85,6 +85,7 @@ public class Registrant {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.033 -0400", hash_original_method = "8E93682DAE1125F8892DB75F842EE54A", hash_generated_method = "BB8C3EC05E96B1FE316BFBE5D8FF8B6F")
      void internalNotifyRegistrant(Object result, Throwable exception) {
         Handler h = getHandler();

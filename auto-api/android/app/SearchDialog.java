@@ -928,6 +928,7 @@ public class SearchDialog extends Dialog {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.097 -0400", hash_original_method = "7E3A3D5A1CCC1779F8492CDCF581870E", hash_generated_method = "723912D2FF4CFA7FED8D56FF3CC86130")
         public void setSearchDialog(SearchDialog searchDialog) {
             mSearchDialog = searchDialog;
@@ -936,6 +937,7 @@ public class SearchDialog extends Dialog {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.098 -0400", hash_original_method = "195483BC208A3A4410E3220FCA03E982", hash_generated_method = "D10A3387198C355074E0B66A3813B222")
         @Override
         public ActionMode startActionModeForChild(View child, ActionMode.Callback callback) {

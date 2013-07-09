@@ -523,6 +523,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.009 -0400", hash_original_method = "FCBAE539BB72BE21647FF37299DC2B96", hash_generated_method = "0C6B7A0FF6350CF17887F3D234BB96C8")
      void notifySignalStrength() {
         mNotifier.notifySignalStrength(this);
@@ -626,6 +627,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.012 -0400", hash_original_method = "F6112A9AE3405415322B12D2CA172B80", hash_generated_method = "9E808C7A4AF328A8AC337670E89384BE")
      boolean isInCall() {
         CdmaCall.State foregroundCallState = getForegroundCall().getState();
@@ -1498,6 +1500,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.044 -0400", hash_original_method = "73E7BFF04E4E9785E6146409272926BA", hash_generated_method = "A54D16F558EC12982CF56FB0933CD181")
      void notifyServiceStateChanged(ServiceState ss) {
         super.notifyServiceStateChangedP(ss);
@@ -1507,6 +1510,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.044 -0400", hash_original_method = "482FE18FBD1949DAF708F2E65940DE8F", hash_generated_method = "0723685B826BB9996EC0449E7B1A8FCF")
      void notifyLocationChanged() {
         mNotifier.notifyCellLocation(this);
@@ -1515,6 +1519,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.045 -0400", hash_original_method = "292444BE96E352C8E8312B338E19EF02", hash_generated_method = "9CAE80423F167649B545BC55A8273188")
      void notifyNewRingingConnection(Connection c) {
         super.notifyNewRingingConnectionP(c);
@@ -1524,6 +1529,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.046 -0400", hash_original_method = "1858091673D3A4B62C058FCC91892C36", hash_generated_method = "0756798023112E23775C5ED34868F8B8")
      void notifyDisconnect(Connection cn) {
         mDisconnectRegistrants.notifyResult(cn);
@@ -1533,6 +1539,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.046 -0400", hash_original_method = "4DFA3B176AED92FABCFB596FBC88C127", hash_generated_method = "78FF0EBB369D5E48C88943009DE8A38C")
      void notifyUnknownConnection() {
         mUnknownConnectionRegistrants.notifyResult(this);
@@ -1562,6 +1569,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.048 -0400", hash_original_method = "00543A79BC25C997F29F0DAD4E28E830", hash_generated_method = "7CE6F5517B8FC79E1089086F9F4C05A9")
      void sendEmergencyCallbackModeChange() {
         Intent intent = new Intent(TelephonyIntents.ACTION_EMERGENCY_CALLBACK_MODE_CHANGED);

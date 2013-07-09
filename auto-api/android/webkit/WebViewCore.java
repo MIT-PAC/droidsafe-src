@@ -864,6 +864,7 @@ public final class WebViewCore {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.681 -0400", hash_original_method = "D1B7DF7B765695C5C682B348754C5EEE", hash_generated_method = "F1CE17105A07E4CAFDF09BB76101A5C6")
      void stopLoading() {
         {
@@ -887,6 +888,7 @@ public final class WebViewCore {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.681 -0400", hash_original_method = "E19A847BDC376FCC409B2080F91A4777", hash_generated_method = "888335AE5C7B9CAE78A6F5A7317DAD1C")
      void sendMessage(int what) {
         mEventHub.sendMessage(Message.obtain(null, what));
@@ -896,6 +898,7 @@ public final class WebViewCore {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.681 -0400", hash_original_method = "3E0AD5D05665DC86C1B2BC352FB304E3", hash_generated_method = "9C83D6A8D50C358CE91429ADD467C686")
      void sendMessage(int what, Object obj) {
         mEventHub.sendMessage(Message.obtain(null, what, obj));
@@ -916,6 +919,7 @@ public final class WebViewCore {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.682 -0400", hash_original_method = "BB791EA62C0999DDA8C7D0E8B12A435D", hash_generated_method = "DAE58A8DA6ED410EDB71929E38B23D11")
      void sendMessage(int what, int arg1, int arg2) {
         mEventHub.sendMessage(Message.obtain(null, what, arg1, arg2));
@@ -938,6 +942,7 @@ public final class WebViewCore {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.682 -0400", hash_original_method = "6F3BFA4748A47EA8C7E77DF53F526C02", hash_generated_method = "5FC57679205E701498160CA9CDFB7BDC")
      void sendMessage(int what, int arg1, int arg2, Object obj) {
         mEventHub.sendMessage(Message.obtain(null, what, arg1, arg2, obj));
@@ -950,6 +955,7 @@ public final class WebViewCore {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.683 -0400", hash_original_method = "D6940867453E54F97589FC877C811177", hash_generated_method = "109D5ACE13A167EB3166CACC50F5782E")
      void sendMessageAtFrontOfQueue(int what, Object obj) {
         mEventHub.sendMessageAtFrontOfQueue(Message.obtain(
@@ -962,6 +968,7 @@ public final class WebViewCore {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.683 -0400", hash_original_method = "E02AF416600FEDFA3677939C48774A40", hash_generated_method = "208D14B9888583952E28360C7019E3C4")
      void sendMessageDelayed(int what, Object obj, long delay) {
         mEventHub.sendMessageDelayed(Message.obtain(null, what, obj), delay);
@@ -973,6 +980,7 @@ public final class WebViewCore {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.683 -0400", hash_original_method = "5A5B79979B60ACD2210356FAD25017D3", hash_generated_method = "8CFACA9EDBA3048B4F61E54C6E2AB8DD")
      void removeMessages(int what) {
         mEventHub.removeMessages(what);
@@ -982,6 +990,7 @@ public final class WebViewCore {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.683 -0400", hash_original_method = "24F837264907471F101C9345660807F0", hash_generated_method = "4EB910573394E1C2C40C4AC009188F44")
      void removeMessages() {
         mEventHub.removeMessages();
@@ -990,6 +999,7 @@ public final class WebViewCore {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.683 -0400", hash_original_method = "632CCE7E9EF22DEC0E7940476F7FAE4E", hash_generated_method = "7132B1CE839549CA48285E86C9DBC192")
      void destroy() {
         {
@@ -1204,6 +1214,7 @@ public final class WebViewCore {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.696 -0400", hash_original_method = "5A8A60F9907CD1F32895929FD9CD4B62", hash_generated_method = "6BF11002AAD7A4E0CFDB0DA1DED388BC")
      void splitContent(int content) {
         {
@@ -1437,6 +1448,7 @@ public final class WebViewCore {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.701 -0400", hash_original_method = "A3D463EE1053B0BDD6C0EF630EFBF61E", hash_generated_method = "FB867318FE4B709F20DD39FA1A36D311")
      void layersDraw() {
         {
@@ -2940,6 +2952,7 @@ public final class WebViewCore {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.732 -0400", hash_original_method = "7DF004F757D7E4F7320327B99689B65F", hash_generated_method = "0F9BA403FC2A05CEEBFCFAA42A662800")
         public int getQueryId() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_845109488 = getTaintInt();
@@ -2949,6 +2962,7 @@ public final class WebViewCore {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.732 -0400", hash_original_method = "E4F5699DB01CFB534A6B08E3CFDC42EF", hash_generated_method = "2813A250753314C3DCF08AA833CF4DDD")
         public String getPreviewString() {
             String varB4EAC82CA7396A68D541C85D26508E83_1699908789 = null; 
@@ -3784,6 +3798,7 @@ public final class WebViewCore {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.749 -0400", hash_original_method = "7F4FC3BA20FD4185DE24EC53F9CE84DB", hash_generated_method = "26B51E76D19EB36CD02103295CF60E9F")
         private synchronized void blockMessages() {
             mBlockMessages = true;

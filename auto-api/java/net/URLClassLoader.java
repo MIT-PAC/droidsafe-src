@@ -761,6 +761,7 @@ public class URLClassLoader extends SecureClassLoader {
         }
 
         
+        @DSModeled(DSC.SPEC)
         static IndexFile readIndexFile(JarFile jf, JarEntry indexEntry, URL url) {
             BufferedReader in = null;
             InputStream is = null;
@@ -810,6 +811,7 @@ public class URLClassLoader extends SecureClassLoader {
         }
 
         
+        @DSModeled(DSC.SPEC)
         private static URL getParentURL(URL url) throws IOException {
             URL fileURL = ((JarURLConnection) url.openConnection()).getJarFileURL();
             String file = fileURL.getFile();
@@ -975,6 +977,7 @@ public class URLClassLoader extends SecureClassLoader {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.480 -0400", hash_original_method = "127A00E2878A258FF82AAAD1F4FC3101", hash_generated_method = "1C662FF3365BA14C29529480838B2802")
          URL findResource(String name) {
             URL varB4EAC82CA7396A68D541C85D26508E83_3321543 = null; 
@@ -1058,6 +1061,7 @@ public class URLClassLoader extends SecureClassLoader {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.483 -0400", hash_original_method = "0524D4A234DDE6E7BD7D4DF76408464F", hash_generated_method = "5B6B1BFEF26A581CFD63094CECA11EA8")
          URL targetURL(URL base, String name) {
             URL varB4EAC82CA7396A68D541C85D26508E83_875100832 = null; 
@@ -1153,6 +1157,7 @@ public class URLClassLoader extends SecureClassLoader {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.485 -0400", hash_original_method = "2D62A5E011065AD5CA1BC3D6BB78BB91", hash_generated_method = "1332E72F6FE485FF92045FBF511933F0")
          IndexFile getIndex() {
             IndexFile varB4EAC82CA7396A68D541C85D26508E83_679436838 = null; 
@@ -1351,6 +1356,7 @@ public class URLClassLoader extends SecureClassLoader {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.505 -0400", hash_original_method = "BEAE23CC7138835BB0FEF01D26145FD9", hash_generated_method = "439DBAC353949FCC43BF38C7B047FB49")
          URL findResourceInOwn(String name) {
             URL varB4EAC82CA7396A68D541C85D26508E83_895804505 = null; 
@@ -1384,6 +1390,7 @@ public class URLClassLoader extends SecureClassLoader {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.512 -0400", hash_original_method = "7546D3992FBBAF86B12F0B740620B74B", hash_generated_method = "1BF7806D2EFF8F6B6AC734F96D1879B6")
         @Override
          URL findResource(String name) {
@@ -1439,6 +1446,7 @@ public class URLClassLoader extends SecureClassLoader {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.514 -0400", hash_original_method = "47CD540256D0F2B23AE4D5BB7E445858", hash_generated_method = "7FB6B82232022E45AB66F44C415367C2")
         private synchronized URLHandler getSubHandler(URL url) {
             URLHandler varB4EAC82CA7396A68D541C85D26508E83_706953382 = null; 
@@ -1499,6 +1507,7 @@ public class URLClassLoader extends SecureClassLoader {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.515 -0400", hash_original_method = "CC5C093E882DD207DA9222EBC985A361", hash_generated_method = "FFF9E56F38E1C1CEAF9AC16B71C227E2")
         private URLHandler createURLSubJarHandler(URL url) {
             URLHandler varB4EAC82CA7396A68D541C85D26508E83_148828846 = null; 
@@ -1672,6 +1681,7 @@ public class URLClassLoader extends SecureClassLoader {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.520 -0400", hash_original_method = "5954C39BABA19C5921C727F17BF4740B", hash_generated_method = "7BDBB2E33C32B752DEC687D4666778F4")
         @Override
          URL findResource(String name) {

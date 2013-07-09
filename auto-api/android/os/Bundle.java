@@ -489,7 +489,8 @@ public final class Bundle implements Parcelable, Cloneable {
 	
 	private IBinder mValueIBinder;
 	
-	@Deprecated public void putIBinder(String key, IBinder value){
+	@DSModeled(DSC.SPEC)
+    @Deprecated public void putIBinder(String key, IBinder value){
 		mKey = key;
 		mValueIBinder = value;
 		

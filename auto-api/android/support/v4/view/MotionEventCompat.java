@@ -63,6 +63,7 @@ public class MotionEventCompat {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.513 -0400", hash_original_method = "915485589CA18931BFA6184EB5D82CE0", hash_generated_method = "7D3C8D8554FD262D21653C31C1FDF796")
         @Override
         public int findPointerIndex(MotionEvent event, int pointerId) {

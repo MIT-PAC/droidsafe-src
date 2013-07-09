@@ -591,6 +591,7 @@ public class AnimatedRotateDrawable extends Drawable implements Drawable.Callbac
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.539 -0400", hash_original_method = "90513075AAF61DC02051F8AF573AA026", hash_generated_method = "A36EFB87C2638CCCD9E55D7D89A84E7E")
         @Override
         public Drawable newDrawable() {
@@ -603,6 +604,7 @@ public class AnimatedRotateDrawable extends Drawable implements Drawable.Callbac
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.540 -0400", hash_original_method = "8E62ECEB973FF3825859D252B23F201A", hash_generated_method = "28CC34B201AE11C825C169BC365E5481")
         @Override
         public Drawable newDrawable(Resources res) {
@@ -616,6 +618,7 @@ public class AnimatedRotateDrawable extends Drawable implements Drawable.Callbac
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.540 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "772E4225A6EFA5ABCEDDF8198D410FE7")
         @Override
         public int getChangingConfigurations() {
@@ -626,6 +629,7 @@ public class AnimatedRotateDrawable extends Drawable implements Drawable.Callbac
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.541 -0400", hash_original_method = "8D2A3A495FE794F654E28C73CF35A2A1", hash_generated_method = "50FF71331AE16D69867D7ABC12FB1F45")
         public boolean canConstantState() {
             {

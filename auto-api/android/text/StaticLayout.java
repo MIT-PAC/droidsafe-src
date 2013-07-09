@@ -222,6 +222,7 @@ public class StaticLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.660 -0400", hash_original_method = "36200F938D6B110E70DA8FCD0A142EF7", hash_generated_method = "D19FED2D5A5030DE752C7F2ABB52403A")
      void generate(CharSequence source, int bufStart, int bufEnd,
                         TextPaint paint, int outerWidth,
@@ -740,6 +741,7 @@ public class StaticLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.663 -0400", hash_original_method = "12884526F2C70C1C98137C0940B4D04E", hash_generated_method = "1F11E659FD913D35C3CB4AE929DBA8D8")
     private void calculateEllipsis(int lineStart, int lineEnd,
                                    float[] widths, int widthStart,
@@ -1045,6 +1047,7 @@ public class StaticLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.670 -0400", hash_original_method = "B52C8C631677053C363ACE90856C8484", hash_generated_method = "95EDBE59F598FE401B87F39CB299AF78")
      void prepare() {
         mMeasured = MeasuredText.obtain();
@@ -1053,6 +1056,7 @@ public class StaticLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.671 -0400", hash_original_method = "C0F6C3CAFEEBD4E75E81773515CBCC0B", hash_generated_method = "25F76FF05D99A4E8F3EC719ABEED0A6E")
      void finish() {
         mMeasured = MeasuredText.recycle(mMeasured);

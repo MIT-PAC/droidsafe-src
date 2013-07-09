@@ -1213,6 +1213,7 @@ public class ViewDebug {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.582 -0400", hash_original_method = "154FC169BABA0D9841DA90FB18C972FB", hash_generated_method = "4D5EEED3A4E0DDBF058576EAC9A4A5DC")
         @Override
         public void println(String x) {

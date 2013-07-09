@@ -372,6 +372,7 @@ public class ZipFile implements ZipConstants {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.940 -0400", hash_original_method = "EBB90581A10714B3978F18E12312CB3A", hash_generated_method = "6CA720CA4E2251A8EF6EA7E8DE1FD542")
         @Override
         public int available() throws IOException {
@@ -428,6 +429,7 @@ public class ZipFile implements ZipConstants {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.942 -0400", hash_original_method = "62A626F8A4A0AABE786C23986D3622F2", hash_generated_method = "B64B0D896424DE8A66BA7B7CAC0862E4")
         @Override
         public long skip(long byteCount) throws IOException {

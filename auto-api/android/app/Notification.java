@@ -521,6 +521,7 @@ public class Notification implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.757 -0400", hash_original_method = "F33CFE0DDEF1BDE88E81CA07B2B4AF4A", hash_generated_method = "D21079D9D53A1151A2DC046114D66F2F")
         public Builder setWhen(long when) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_241996922 = null; 
@@ -534,6 +535,7 @@ public class Notification implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.763 -0400", hash_original_method = "76509FA1EC330D1A963F56DC8E00B5D8", hash_generated_method = "ADA23C367BFEBED892BE343410DB9106")
         public Builder setSmallIcon(int icon) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_1976086283 = null; 
@@ -547,6 +549,7 @@ public class Notification implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.767 -0400", hash_original_method = "686130331B3575C911C4ACE6437F15B8", hash_generated_method = "FA65DB93E0EA907FDE2E939D1F929139")
         public Builder setSmallIcon(int icon, int level) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_747061149 = null; 
@@ -562,6 +565,7 @@ public class Notification implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.771 -0400", hash_original_method = "51D215D9B594EB5434D1A4893B0851B6", hash_generated_method = "00D9ED9018A7CA2C599700936F6A9680")
         public Builder setContentTitle(CharSequence title) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_1967616580 = null; 
@@ -575,6 +579,7 @@ public class Notification implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.776 -0400", hash_original_method = "3B85C73BAA4531891B097F4FBFA7845D", hash_generated_method = "7576D680CF740BEE2DD447F89A9F4ABF")
         public Builder setContentText(CharSequence text) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_528372050 = null; 
@@ -588,6 +593,7 @@ public class Notification implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.780 -0400", hash_original_method = "5E0FC1F68404C1057ACE1D67E6ED676A", hash_generated_method = "229A8A5858CF0AC10791BB2DF03A9477")
         public Builder setNumber(int number) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_1828375858 = null; 
@@ -601,6 +607,7 @@ public class Notification implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.785 -0400", hash_original_method = "52A8AABE54D5BDFE521B8B41861DFCD9", hash_generated_method = "C71D33037A63D95906D256B1E3C12953")
         public Builder setContentInfo(CharSequence info) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_612260578 = null; 
@@ -614,6 +621,7 @@ public class Notification implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.788 -0400", hash_original_method = "D0B2BE14A572EFF2EC3981BC799BA989", hash_generated_method = "C84D6A2F7155EA8F9A04641A13907CF2")
         public Builder setProgress(int max, int progress, boolean indeterminate) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_999465274 = null; 
@@ -631,6 +639,7 @@ public class Notification implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.792 -0400", hash_original_method = "0C2B2238CAAAD5F7B913F4DC0C6DE3C5", hash_generated_method = "1787BE795E69F71707A26BC664541755")
         public Builder setContent(RemoteViews views) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_1361967900 = null; 
@@ -644,6 +653,7 @@ public class Notification implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.797 -0400", hash_original_method = "13AF9850EB916E3E1CD09235309F6318", hash_generated_method = "B1B439F872C1E19351AE303A946462B8")
         public Builder setContentIntent(PendingIntent intent) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_362147367 = null; 
@@ -657,6 +667,7 @@ public class Notification implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.800 -0400", hash_original_method = "F48B9AE94AA7354563811F0226E4C56E", hash_generated_method = "C9F94D3BBCE0A60778509F87F2507741")
         public Builder setDeleteIntent(PendingIntent intent) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_1816323067 = null; 
@@ -686,6 +697,7 @@ public class Notification implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.805 -0400", hash_original_method = "43D2B64A31B6B61BB554BA691C460973", hash_generated_method = "96002492A6C2D8759DFD99C147875D47")
         public Builder setTicker(CharSequence tickerText) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_1897919922 = null; 
@@ -699,6 +711,7 @@ public class Notification implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.806 -0400", hash_original_method = "4C6C26DEDB76E0CF44BFBAEE6FBE84BC", hash_generated_method = "691C9407C9AFD4AE3DEE8B54E842E605")
         public Builder setTicker(CharSequence tickerText, RemoteViews views) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_2027104404 = null; 
@@ -714,6 +727,7 @@ public class Notification implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.808 -0400", hash_original_method = "7DCB1EA67ACA56F0B2754C8E360CAB68", hash_generated_method = "47E2B056659AB0E58D926E16F2C23C0E")
         public Builder setLargeIcon(Bitmap icon) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_249465677 = null; 
@@ -727,6 +741,7 @@ public class Notification implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.809 -0400", hash_original_method = "E4D966D2AF4F815A75885EB0928B9225", hash_generated_method = "7EB04CCDB08B33A36105EFBD82E62012")
         public Builder setSound(Uri sound) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_1226635147 = null; 
@@ -742,6 +757,7 @@ public class Notification implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.810 -0400", hash_original_method = "2D9F8E95A20AD7FBCF7EC4A8FF50BED5", hash_generated_method = "F5972504734FF259EC9C32124084A519")
         public Builder setSound(Uri sound, int streamType) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_344822955 = null; 
@@ -757,6 +773,7 @@ public class Notification implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.812 -0400", hash_original_method = "A86D234FAB504C5B3A4DEC6712517174", hash_generated_method = "1D76B18A8C96C159987335F80A942988")
         public Builder setVibrate(long[] pattern) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_450137818 = null; 
@@ -770,6 +787,7 @@ public class Notification implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.815 -0400", hash_original_method = "06C76CABA696566E00D48B5A1D10E8B9", hash_generated_method = "8E26CF8962FD33C34B1CCC93DB50E154")
         public Builder setLights(int argb, int onMs, int offMs) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_1047937043 = null; 
@@ -829,6 +847,7 @@ public class Notification implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.821 -0400", hash_original_method = "413289369D1534DD93CD0DF6E13619C0", hash_generated_method = "90424D2C053A66F56271C486AC909240")
         public Builder setDefaults(int defaults) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_1695368254 = null; 
@@ -842,6 +861,7 @@ public class Notification implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.822 -0400", hash_original_method = "100CC04F928443BDDD1350B26299D2DB", hash_generated_method = "5931F6904132B4A25B60E9C33D9C37BA")
         private void setFlag(int mask, boolean value) {
             {

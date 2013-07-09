@@ -365,6 +365,7 @@ public class Loader<D> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.315 -0400", hash_original_method = "0AAB5F0B0973D030DF154EF2BA0EE06F", hash_generated_method = "D4A00DA03A05A934F4CAD398C0A89B5D")
         @Override
         public boolean deliverSelfNotifications() {

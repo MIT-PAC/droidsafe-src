@@ -51,7 +51,7 @@ public final class FinalizerReference<T> extends Reference<T> {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     static void add(Object referent) {
         FinalizerReference<?> reference = new FinalizerReference<Object>(referent, queue);
         synchronized (FinalizerReference.class) {

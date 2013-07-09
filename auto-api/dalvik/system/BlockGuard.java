@@ -72,6 +72,7 @@ public final class BlockGuard {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.590 -0400", hash_original_method = "7E4A409F6FF395255A09FF646F59C182", hash_generated_method = "569BCF828591554F5FF39439915ED6F9")
         public int getPolicy() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2037016033 = getTaintInt();
@@ -81,6 +82,7 @@ public final class BlockGuard {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.590 -0400", hash_original_method = "51330C8A3B9EAC192FDD6907E318F7AB", hash_generated_method = "5F4E04A5494E956D8001B9C865FB970F")
         public int getPolicyViolation() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1509996075 = getTaintInt();
@@ -90,6 +92,7 @@ public final class BlockGuard {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.591 -0400", hash_original_method = "AA2ABAF31AA2D7A8C7A88450DEB5E574", hash_generated_method = "38A6830ACEA931CD6EDCE24916965607")
         public String getMessage() {
             String varB4EAC82CA7396A68D541C85D26508E83_1288596970 = null; 

@@ -69,6 +69,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.554 -0400", hash_original_method = "F49410E49FF0F4105142DBDFDDA2C341", hash_generated_method = "6FD9B15FA735939A1D72A93DE14E931C")
         public boolean hasCountryCode() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_408243327 = getTaintBoolean();
@@ -78,6 +79,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.554 -0400", hash_original_method = "919900A7E94AD27066F6B024991185E0", hash_generated_method = "0F7BA9465D3E3F999F26C6110E1332CA")
         public int getCountryCode() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1847860161 = getTaintInt();
@@ -87,6 +89,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.554 -0400", hash_original_method = "231BDC2ACAA546410AD99483D572C314", hash_generated_method = "B75804BF445D58BCD3B67491E83C6461")
         public PhoneNumber setCountryCode(int value) {
             PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_761750041 = null; 
@@ -102,6 +105,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.555 -0400", hash_original_method = "F3480C339E6576F38870C4A8107DC432", hash_generated_method = "14E874946783E53C37F6D888BFD2F446")
         public PhoneNumber clearCountryCode() {
             PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_1442239319 = null; 
@@ -117,6 +121,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.555 -0400", hash_original_method = "9E5DD8721DB5E6B4EA37D3D3DF3C82B6", hash_generated_method = "2BFA2D8CF1AC26AE5E1E18C2C4D86E1A")
         public boolean hasNationalNumber() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1606630798 = getTaintBoolean();
@@ -126,6 +131,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.556 -0400", hash_original_method = "6637472029560B21624D3926379C2007", hash_generated_method = "E49C25266AB3E8D9DA9B107CD2968092")
         public long getNationalNumber() {
             long var0F5264038205EDFB1AC05FBB0E8C5E94_1149215348 = getTaintLong();
@@ -135,6 +141,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.557 -0400", hash_original_method = "6A535B2D70F0F9B1A2B7BD33E2B75251", hash_generated_method = "908E4FDA7E589275605441001AC31362")
         public PhoneNumber setNationalNumber(long value) {
             PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_1303898074 = null; 
@@ -150,6 +157,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.557 -0400", hash_original_method = "805285A190D17B224561E5C065A4AB00", hash_generated_method = "52797CAF80A075F6837AF452FAE5CCF8")
         public PhoneNumber clearNationalNumber() {
             PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_1451378874 = null; 
@@ -165,6 +173,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.558 -0400", hash_original_method = "66338EE760653FB7826716BD4179F0EB", hash_generated_method = "8ACE16B8D255D9FBA6D8B6C0E6B9F9A7")
         public boolean hasExtension() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_250624583 = getTaintBoolean();
@@ -174,6 +183,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.558 -0400", hash_original_method = "F04D3A8DBD1CCF0248A759BF39EDDDEC", hash_generated_method = "440E6B4B3A34D2F11A134FBC1280F3A8")
         public String getExtension() {
             String varB4EAC82CA7396A68D541C85D26508E83_1386345795 = null; 
@@ -185,6 +195,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.558 -0400", hash_original_method = "38A692624EA50F65C5AAF1C27A4F1E79", hash_generated_method = "26D006FB28648501C884C19CDBB8405E")
         public PhoneNumber setExtension(String value) {
             PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_2110698217 = null; 
@@ -206,6 +217,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.559 -0400", hash_original_method = "831C8D6965C7D5091D9400B8A1911F63", hash_generated_method = "961F4512A2D4BE33EAB4C245D91FA642")
         public PhoneNumber clearExtension() {
             PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_577375491 = null; 
@@ -221,6 +233,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.559 -0400", hash_original_method = "297A117AFD1E548B3AE9E987C5DEDB53", hash_generated_method = "7502B82DBA17970CAD0BB9D51ECDDD6A")
         public boolean hasItalianLeadingZero() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_412917233 = getTaintBoolean();
@@ -230,6 +243,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.559 -0400", hash_original_method = "B0BA7A66148037C7B1A35A6061ECB1A6", hash_generated_method = "ED8658005ED853CE2FB43E44189C34CE")
         public boolean isItalianLeadingZero() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1988808645 = getTaintBoolean();
@@ -239,6 +253,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.560 -0400", hash_original_method = "5FB07870F4A15DEE8F66E77590B141DD", hash_generated_method = "BD0F8F8BE68098A292655A8C8F4A55C8")
         public PhoneNumber setItalianLeadingZero(boolean value) {
             PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_1676595732 = null; 
@@ -254,6 +269,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.560 -0400", hash_original_method = "55D33A5E10AF87EF82FB6277592BFD48", hash_generated_method = "C239B0EB7644E4164C1C6427FDDC094D")
         public PhoneNumber clearItalianLeadingZero() {
             PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_1160560232 = null; 
@@ -269,6 +285,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.560 -0400", hash_original_method = "FC01A3A255BE4F11BA51CD36FFDCBB37", hash_generated_method = "5656E40B5E1BB09AFF50C81B195C196C")
         public boolean hasRawInput() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_133600399 = getTaintBoolean();
@@ -278,6 +295,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.561 -0400", hash_original_method = "F6017E34CFBABE539ED487A19641D13D", hash_generated_method = "305F0FD3A67E35A81471F5848E13D791")
         public String getRawInput() {
             String varB4EAC82CA7396A68D541C85D26508E83_1800546561 = null; 
@@ -289,6 +307,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.561 -0400", hash_original_method = "1DF89DBF221798F84EE73F6641D85CA9", hash_generated_method = "05875E3CC59741CF48DC2251F670F88F")
         public PhoneNumber setRawInput(String value) {
             PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_958624195 = null; 
@@ -310,6 +329,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.562 -0400", hash_original_method = "090A68BA48513AA6167B14B8C7E5B538", hash_generated_method = "EAED79D178D27524E3D95D83D0A3D795")
         public PhoneNumber clearRawInput() {
             PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_88627780 = null; 
@@ -325,6 +345,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.562 -0400", hash_original_method = "49E6B213C7CF699A88721EC66ED6A85C", hash_generated_method = "EDBF6D420D920A959688182F31E4DF60")
         public boolean hasCountryCodeSource() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_124183961 = getTaintBoolean();
@@ -334,6 +355,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.562 -0400", hash_original_method = "EC13D38EB752707A5D37EF84821B18F3", hash_generated_method = "7701EB73A6BFCC55E6C309AB0F64EA80")
         public CountryCodeSource getCountryCodeSource() {
             CountryCodeSource varB4EAC82CA7396A68D541C85D26508E83_1307819130 = null; 
@@ -345,6 +367,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.563 -0400", hash_original_method = "4C681F77FE4C34506AE7929BB9F5DB5B", hash_generated_method = "113791A355A24345B3BB6444EDEF3917")
         public PhoneNumber setCountryCodeSource(CountryCodeSource value) {
             PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_1272222797 = null; 
@@ -366,6 +389,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.563 -0400", hash_original_method = "AD210C1FCCDAAC9D9B6A95A61CE920CC", hash_generated_method = "A4DFF2F68C6996C6303237A0D1C1D5B9")
         public PhoneNumber clearCountryCodeSource() {
             PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_521282866 = null; 
@@ -381,6 +405,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.563 -0400", hash_original_method = "8350C830C26B7D092EEEE9A503A10DA0", hash_generated_method = "56D985B92269092446F6763B98146A17")
         public boolean hasPreferredDomesticCarrierCode() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1363322026 = getTaintBoolean();
@@ -390,6 +415,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.564 -0400", hash_original_method = "47CB8521CF67D388DB30B3F811726252", hash_generated_method = "05EFE7E406A635ADA666F5844C038E20")
         public String getPreferredDomesticCarrierCode() {
             String varB4EAC82CA7396A68D541C85D26508E83_956706123 = null; 
@@ -401,6 +427,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.564 -0400", hash_original_method = "41BB5D81F1B0279F583403646A2042B9", hash_generated_method = "67189AE1E0A56BD901211C28247A0C83")
         public PhoneNumber setPreferredDomesticCarrierCode(String value) {
             PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_1770095738 = null; 
@@ -422,6 +449,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.564 -0400", hash_original_method = "26AD27D6AD8CEDC77B768F25CC124964", hash_generated_method = "05AF504E2B351E2ED5491CE544F33730")
         public PhoneNumber clearPreferredDomesticCarrierCode() {
             PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_335110414 = null; 
@@ -537,6 +565,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.567 -0400", hash_original_method = "DE1C4B1DD2D8C57C4042DF1B529C7D4D", hash_generated_method = "6E2C86D581F2AD9FCE8B5278A71CF225")
         public boolean exactlySameAs(PhoneNumber other) {
             boolean var4EB77A9CEDB1032569C973613A9313C9_867174034 = ((countryCode_ == other.countryCode_ && nationalNumber_ == other.nationalNumber_ &&
@@ -562,6 +591,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.568 -0400", hash_original_method = "EF0E3A387E8AEF6EC396B951EC1536A9", hash_generated_method = "3FBF2D7BC959CE92F5FFCAD6DA242E57")
         @Override
         public boolean equals(Object that) {
@@ -602,6 +632,7 @@ public final class Phonenumber {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.571 -0400", hash_original_method = "16D1E3F084AA1063C11CF7C5BDA5DD45", hash_generated_method = "E16D098C786CCA2063885A49004EAD3F")
         @Override
         public String toString() {

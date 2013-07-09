@@ -256,6 +256,7 @@ public final class KeyChain {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.107 -0400", hash_original_method = "954EE7241574324971051CDC9EEAAD50", hash_generated_method = "19F589D85C11ECC52A97690BD716451C")
         public IKeyChainService getService() {
             IKeyChainService varB4EAC82CA7396A68D541C85D26508E83_1438892754 = null; 

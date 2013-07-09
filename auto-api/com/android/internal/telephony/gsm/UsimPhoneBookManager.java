@@ -615,6 +615,7 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.943 -0400", hash_original_method = "27E6C520D8DED1C5B5FE1A348EAE7100", hash_generated_method = "29ABEF24B5410DD0417D70AD558BD9C2")
          void parseEf(SimTlv tlv, Map<Integer, Integer> val, int parentTag) {
             int tag;

@@ -1502,6 +1502,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.310 -0400", hash_original_method = "7A446B7A655E4D7578F3AEB4F96BA0A4", hash_generated_method = "6F3E1C09C97F4B915F220C789244AE2A")
         public void reset(Object target) {
             {

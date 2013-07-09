@@ -490,6 +490,7 @@ public final class MenuItemImpl implements MenuItem {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.492 -0400", hash_original_method = "84077AC2D714BDDE1A3A80B85CC9BFB0", hash_generated_method = "9BE0E7ADF2FF7A8D98A414C8B1B91CC8")
      void setSubMenu(SubMenuBuilder subMenu) {
         mSubMenu = subMenu;
@@ -757,6 +758,7 @@ public final class MenuItemImpl implements MenuItem {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.508 -0400", hash_original_method = "F4E3FA5EA691BD61029F7B342451D96B", hash_generated_method = "26B6707CAE85620A8D6095D83C01EA56")
      void setCheckedInt(boolean checked) {
         final int oldFlags = mFlags;

@@ -476,6 +476,7 @@ final class HttpConnection {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.757 -0400", hash_original_method = "19AE87D83FEEE8E799F844F8A7A84495", hash_generated_method = "980D6F9F4F0BD1B8828495FFA711217E")
         public Proxy getProxy() {
             Proxy varB4EAC82CA7396A68D541C85D26508E83_1138909235 = null; 

@@ -2267,6 +2267,7 @@ public class Paint {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.875 -0400", hash_original_method = "97A4B08E6C02C426AA89747CCB47B314", hash_generated_method = "C82B2751383C4D0359DE364C2AFBD28C")
         @Override
         public String toString() {

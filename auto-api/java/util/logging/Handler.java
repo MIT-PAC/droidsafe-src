@@ -111,6 +111,7 @@ public abstract class Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.283 -0400", hash_original_method = "B5D56DC5C4B8FE4C311A48E44264ABBB", hash_generated_method = "6679F9FC9DC88EA3BF1188FD5FC10571")
      void printInvalidPropMessage(String key, String value, Exception e) {
         String msg = "Invalid property value for " + prefix + ":" + key + "/" + value;
@@ -124,6 +125,7 @@ public abstract class Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.284 -0400", hash_original_method = "329775ED115F17D9C0AB62A79233F4A6", hash_generated_method = "99BC144239965C33C2088CD3805B8676")
      void initProperties(String defaultLevel, String defaultFilter,
             String defaultFormatter, String defaultEncoding) {
@@ -302,6 +304,7 @@ public abstract class Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.288 -0400", hash_original_method = "DC978F88261D557C3638CA74D49294AA", hash_generated_method = "4FFAE80C2424B02F8743DCF8362F9C9F")
      void internalSetEncoding(String newEncoding) throws UnsupportedEncodingException {
         {
@@ -371,6 +374,7 @@ public abstract class Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.290 -0400", hash_original_method = "DEDBD4D0DEEB998F333BEBDE35469176", hash_generated_method = "907885E8382BD589AB4167E0CA5C56E1")
      void internalSetFormatter(Formatter newFormatter) {
         {

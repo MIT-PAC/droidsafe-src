@@ -545,6 +545,7 @@ public final class WebStorage {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.041 -0400", hash_original_method = "1C35B3C80693DCFAD3BBB071D3FEEF91", hash_generated_method = "77D52D0B4F9DA9B3F7ED8FCE4DFEE654")
         public String getOrigin() {
             String varB4EAC82CA7396A68D541C85D26508E83_865759349 = null; 
@@ -556,6 +557,7 @@ public final class WebStorage {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.041 -0400", hash_original_method = "85A4ADA77B01EE5A270890AB8ED69D00", hash_generated_method = "9FE14256D9556F7760416E268FA8B809")
         public long getQuota() {
             long var0F5264038205EDFB1AC05FBB0E8C5E94_679957732 = getTaintLong();
@@ -565,6 +567,7 @@ public final class WebStorage {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.042 -0400", hash_original_method = "9EBBDD3C0652D213E94F799A53008143", hash_generated_method = "210B7C3161958E75F0E4F9F806D5F9F4")
         public long getUsage() {
             long var0F5264038205EDFB1AC05FBB0E8C5E94_335402996 = getTaintLong();

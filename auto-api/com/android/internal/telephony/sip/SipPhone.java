@@ -706,6 +706,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
 
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.225 -0400", hash_original_method = "077C3D2ABFDDE04A697972D273B811AD", hash_generated_method = "AFC116FB336DFDAE16FA5C7A5CE7B964")
          void reset() {
             connections.clear();
@@ -716,6 +717,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.226 -0400", hash_original_method = "375D19E8671ADDF3312252661F52306D", hash_generated_method = "79013DFB2C9530684A67D2A95700D59C")
          void switchWith(SipCall that) {
             {
@@ -757,6 +759,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.233 -0400", hash_original_method = "BB25C6B7E2DC41EA59445495652EDD92", hash_generated_method = "CBBC317FDBA03F956F421879B28200FA")
         @Override
         public Phone getPhone() {
@@ -899,6 +902,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.253 -0400", hash_original_method = "F8072C3AD3C86AEC184FDD0C13B73AA0", hash_generated_method = "D7F0174B5C634AAAD4965899108AA01C")
          void rejectCall() throws CallStateException {
             hangup();
@@ -907,6 +911,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.254 -0400", hash_original_method = "B2C3B5FE3154049893EC854E60F79D8F", hash_generated_method = "D18932923E014CE8F2FEA722DA401194")
          void acceptCall() throws CallStateException {
             {
@@ -930,6 +935,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.254 -0400", hash_original_method = "1B6C9A8A7DE7A949D0CD2E188D6FBBDC", hash_generated_method = "E5DAC700025BD5D5018E5E6B22461D2D")
         private boolean isSpeakerOn() {
             boolean var65FC9098A8240679D54D31921AD18341_1640855130 = (((AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE))
@@ -1044,6 +1050,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.273 -0400", hash_original_method = "B414CA4B3846B73054EF059A06E7BBBE", hash_generated_method = "85A93B3C100A153D11E160A8C0174833")
          boolean getMute() {
             {
@@ -1059,6 +1066,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.280 -0400", hash_original_method = "C6685F4BB929C317D55EF29FDD744317", hash_generated_method = "427711B5DA917864AFF575BCBC4E8B31")
          void merge(SipCall that) throws CallStateException {
             AudioGroup audioGroup = getAudioGroup();
@@ -1113,6 +1121,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.281 -0400", hash_original_method = "994C45B8BD8978A705E69F1BE351A00B", hash_generated_method = "BC66848070E19266A361AFF219A3D3E0")
          void sendDtmf(char c) {
             AudioGroup audioGroup = getAudioGroup();
@@ -1125,6 +1134,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.281 -0400", hash_original_method = "C4229E0DAB0B84D6720429F368FEF1C3", hash_generated_method = "49F7C203EC243C2979C54F9C0BD12AEB")
         private int convertDtmf(char c) {
             int code = c - '0';
@@ -1156,6 +1166,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.282 -0400", hash_original_method = "A20E6ED570A38BE2669CFE3ED9219E0D", hash_generated_method = "FCDE0DF59BA2F85CBAA4E2866169FE95")
         @Override
         protected void setState(State newState) {
@@ -1190,6 +1201,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.282 -0400", hash_original_method = "9B48819375B09AF6C57EC0D05234CB41", hash_generated_method = "990CC098C4D7C3DE6BBB9AAC0FCC900A")
          void onConnectionStateChanged(SipConnection conn) {
             
@@ -1204,6 +1216,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.290 -0400", hash_original_method = "67A791C264A58046C696AC400E0B1106", hash_generated_method = "0E8DC5F1DD7923F808ED800912E47FF5")
          void onConnectionEnded(SipConnection conn) {
             
@@ -1249,6 +1262,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.292 -0400", hash_original_method = "3BDED5D4E6618481393AD33B1F728E6A", hash_generated_method = "CC76872DABA9C96F9B261FC647C87641")
         private AudioGroup getAudioGroup() {
             AudioGroup varB4EAC82CA7396A68D541C85D26508E83_349237310 = null; 
@@ -1434,6 +1448,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.301 -0400", hash_original_method = "57E4C10F499E8E36FDDCF5DF3794947E", hash_generated_method = "83A3D9228CE7439028CB891F63ADE5D9")
         @Override
         public String getCnapName() {
@@ -1450,6 +1465,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.302 -0400", hash_original_method = "6B6F8D6F29C0FEAF9C52CC30010D6FE2", hash_generated_method = "9763E81FEF907D2882196F9CF7442E4D")
         @Override
         public int getNumberPresentation() {
@@ -1494,6 +1510,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.303 -0400", hash_original_method = "5D5AACCF3178F43A37FA6476F3FA2309", hash_generated_method = "F4F212B9E8EECDAFB8ECD3B21BCA89BD")
          void changeOwner(SipCall owner) {
             mOwner = owner;
@@ -1502,6 +1519,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.303 -0400", hash_original_method = "81195A6CBC9B38EAFBB5618CD4E171CB", hash_generated_method = "4F7A77AEE8A65260AEFBF9D071AD6C5C")
          AudioGroup getAudioGroup() {
             AudioGroup varB4EAC82CA7396A68D541C85D26508E83_1954661185 = null; 
@@ -1525,6 +1543,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.304 -0400", hash_original_method = "766A0FDDBD2B3A4E947C7E8FBAB0F165", hash_generated_method = "93C009E595843D9B5B39352F3D675F51")
          void dial() throws SipException {
             setState(Call.State.DIALING);
@@ -1584,6 +1603,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.306 -0400", hash_original_method = "91B9A79444A0C09E86ABE6F5C7C89706", hash_generated_method = "4D1AD2A714D5A0A03613A134D8F03272")
          void setMute(boolean muted) {
             {
@@ -1600,6 +1620,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.307 -0400", hash_original_method = "E20C6A660C2E35A5253ACCD901B5D855", hash_generated_method = "1AC316493A3F2A9D42771F69C06D3454")
          boolean getMute() {
             {
@@ -1625,6 +1646,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.308 -0400", hash_original_method = "0D6E90F055C537B49BE3263741E0D2AC", hash_generated_method = "E08D358002590618A2A7062EAFE89B3A")
         @Override
         public Call.State getState() {
@@ -1637,6 +1659,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.309 -0400", hash_original_method = "0C9900F417D1D38623450F6C44261C8A", hash_generated_method = "90D8A6E511AFDA25A3CE44B3C36AA6A0")
         @Override
         public boolean isIncoming() {
@@ -1647,6 +1670,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.309 -0400", hash_original_method = "FE0C81270397910192F7BF8C9CDDDAB6", hash_generated_method = "F04FF5B807B1256AD0287DAE12A79103")
         @Override
         public String getAddress() {
@@ -1659,6 +1683,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.310 -0400", hash_original_method = "710C86DFEBE06A4514867B4563DB846F", hash_generated_method = "48795D2FEA8E180E4C4AE2C9A21C52BA")
         @Override
         public SipCall getCall() {
@@ -1671,6 +1696,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.310 -0400", hash_original_method = "925322092199D63FE2A7CC7A8AD6AC9C", hash_generated_method = "8B41FD40B9C33391292E1FA9A354CBD7")
         @Override
         protected Phone getPhone() {
@@ -1718,6 +1744,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.311 -0400", hash_original_method = "7B400982296D21B9968B9808849E5473", hash_generated_method = "D3452833312B206A61C774C6D92FAD16")
         @Override
         public void separate() throws CallStateException {
@@ -1770,6 +1797,7 @@ public class SipPhone extends SipPhoneBase {
         protected abstract void onError(Connection.DisconnectCause cause);
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.312 -0400", hash_original_method = "FAC45A8F53047AFBBF88628CAD98E6D5", hash_generated_method = "A5848E407AAF0106D276C2FB2ED18D01")
         @Override
         public void onCallEnded(SipAudioCall call) {
@@ -1785,6 +1813,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.312 -0400", hash_original_method = "5FEE35421FE68DCB9D837EF94FC0CC79", hash_generated_method = "1BB9F92D03E2291554F0BCFEE0A95811")
         @Override
         public void onCallBusy(SipAudioCall call) {

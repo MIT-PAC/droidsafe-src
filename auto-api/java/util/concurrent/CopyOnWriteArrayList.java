@@ -1346,6 +1346,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.690 -0400", hash_original_method = "D639D4E7D9CD50DE4105991F3953FD80", hash_generated_method = "F1E31BD6E904F181FC6A68E7A450D149")
         public boolean hasNext() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_179636994 = getTaintBoolean();
@@ -1355,6 +1356,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.690 -0400", hash_original_method = "EC30B2CF9A7B23E69047D11D06EFA3CA", hash_generated_method = "EEE6BF4CE20253EB430F0578409D98A4")
         public boolean hasPrevious() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_599968437 = getTaintBoolean();
@@ -1385,6 +1387,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.692 -0400", hash_original_method = "B3E96A2468FAF72FDE35394237D3EDCC", hash_generated_method = "F79AA19A8D54D1E1D17BCC80FAF594D0")
         public int nextIndex() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1417337105 = getTaintInt();
@@ -1415,6 +1418,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.694 -0400", hash_original_method = "30EF9C1C05880C206BCB89722B1108E9", hash_generated_method = "BDF0A77A8D7208EF13AB1532CB2BD292")
         public int previousIndex() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2005176286 = getTaintInt();

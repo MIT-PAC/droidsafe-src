@@ -332,6 +332,7 @@ class BrowserFrame extends Handler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.712 -0400", hash_original_method = "027FDD69E025CF7A20175D3E84246197", hash_generated_method = "357F4E3DB5D03FD6715BE288D2C81D45")
      void didFirstLayout() {
         {
@@ -473,6 +474,7 @@ class BrowserFrame extends Handler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.715 -0400", hash_original_method = "D2CB1A360A21716BE59AD0C99E7F7543", hash_generated_method = "E7E6C8BB504C1ABC54529D5BF268DFFE")
      void certificate(SslCertificate certificate) {
         {
@@ -1792,6 +1794,7 @@ class BrowserFrame extends Handler {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.746 -0400", hash_original_method = "3638F495C0637CBBD96B9D8F0DA8CFC2", hash_generated_method = "7474AF23E4F5F92EBF42E1D9D80D6FAE")
         public synchronized void addHandler(Handler h) {
             mHandlers.add(new WeakReference<Handler>(h));
@@ -1801,6 +1804,7 @@ class BrowserFrame extends Handler {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.757 -0400", hash_original_method = "2BDCB7974021DF1350762A5BB88607D6", hash_generated_method = "AE7FDC1644875F7E24D9FBD2AAF1A982")
         public void onConfigurationChanged(Configuration newConfig) {
             
@@ -1852,6 +1856,7 @@ class BrowserFrame extends Handler {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.757 -0400", hash_original_method = "4F0E380BE715BF5B2ECCDB1794C8905E", hash_generated_method = "39AEB8790734ECC8DC70BBAAEE0BAB0B")
         public void onLowMemory() {
             

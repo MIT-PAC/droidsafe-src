@@ -495,6 +495,7 @@ final class HugeEnumSet<E extends Enum<E>> extends EnumSet<E> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.344 -0400", hash_original_method = "04AD09EE87D1D0FB4F163A9180F152BA", hash_generated_method = "388925885EA7D5BA5C3F53984A234082")
         public boolean hasNext() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1298072413 = getTaintBoolean();
@@ -504,6 +505,7 @@ final class HugeEnumSet<E extends Enum<E>> extends EnumSet<E> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.344 -0400", hash_original_method = "B99B4F6D513EFDAF8AFCA1BFB6A725C7", hash_generated_method = "81E6533FEB70C7DB8A2D2DA8BDB9A15E")
         public E next() {
             E varB4EAC82CA7396A68D541C85D26508E83_1241355822 = null; 

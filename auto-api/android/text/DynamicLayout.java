@@ -505,6 +505,7 @@ public class DynamicLayout extends Layout {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.649 -0400", hash_original_method = "95E45B237E67DBC952009C430C254747", hash_generated_method = "4F775BE1160AA8E838671D141E4576EC")
         public void beforeTextChanged(CharSequence s, int where, int before, int after) {
             addTaint(s.getTaint());
@@ -528,6 +529,7 @@ public class DynamicLayout extends Layout {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.649 -0400", hash_original_method = "2B62725FCE5BAC340D42F3403AAE31A5", hash_generated_method = "B1E73F6E6A3A9E89AEF9681CB19F89E5")
         public void afterTextChanged(Editable s) {
             addTaint(s.getTaint());

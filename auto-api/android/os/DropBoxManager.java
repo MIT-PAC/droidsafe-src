@@ -287,6 +287,7 @@ public class DropBoxManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.167 -0400", hash_original_method = "ED26754F6A82B43F30EAE698B7941323", hash_generated_method = "9CEEFE2FA4A4ACEB5A737783377192D2")
         public String getTag() {
             String varB4EAC82CA7396A68D541C85D26508E83_2097104175 = null; 
@@ -298,6 +299,7 @@ public class DropBoxManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.167 -0400", hash_original_method = "6C399926D10F83AEDA9A5ADCC6A5D3A1", hash_generated_method = "6C5981961B8A62639FDAED235EAF707D")
         public long getTimeMillis() {
             long var0F5264038205EDFB1AC05FBB0E8C5E94_1786575087 = getTaintLong();
@@ -307,6 +309,7 @@ public class DropBoxManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.168 -0400", hash_original_method = "DEBA147F1626153ABBF4AEA4FEEBC80F", hash_generated_method = "88D3A2E80D82CEFF7EBB3552AF3DFA84")
         public int getFlags() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1750414391 = getTaintInt();
@@ -436,6 +439,7 @@ public class DropBoxManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.170 -0400", hash_original_method = "CE12D992AD97C7CB4D92B660FD5831CC", hash_generated_method = "36225685C32C8DBB96AFF748A6D443EE")
         public int describeContents() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_359436360 = getTaintInt();

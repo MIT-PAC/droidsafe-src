@@ -990,6 +990,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.981 -0400", hash_original_method = "E5C2B853B7FE0DFF8A1198070D9AED67", hash_generated_method = "DA68464ED9DBC71FE0B453C2882E6348")
      Iterator<K> newKeyIterator() {
         Iterator<K> varB4EAC82CA7396A68D541C85D26508E83_1947505655 = null; 
@@ -1001,6 +1002,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.982 -0400", hash_original_method = "58BEE1C21CE9010029EB8FF9FDCDF9B3", hash_generated_method = "8D8E21FBEF34A3B9AA4B5E6E9875882F")
      Iterator<V> newValueIterator() {
         Iterator<V> varB4EAC82CA7396A68D541C85D26508E83_307450329 = null; 
@@ -1260,6 +1262,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.001 -0400", hash_original_method = "F0F1A7352709A4A442C7E6635A47CE9D", hash_generated_method = "AF2EBDA5E94CBF0E7483048966006065")
         public boolean hasNext() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1725693423 = getTaintBoolean();
@@ -1331,6 +1334,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.003 -0400", hash_original_method = "EA50D6F1622FBE805CA447972176B648", hash_generated_method = "B4BC3417ADBC9DB4BDF53380F8F9603C")
         public K next() {
             K varB4EAC82CA7396A68D541C85D26508E83_427231341 = null; 
@@ -1355,6 +1359,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.004 -0400", hash_original_method = "53BB4827D74FCF37FAF510D076C14D5E", hash_generated_method = "040F0E4F355592FCF38BF15D12D82B40")
         public V next() {
             V varB4EAC82CA7396A68D541C85D26508E83_1308353326 = null; 
@@ -1403,6 +1408,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.006 -0400", hash_original_method = "29CBC31BB957230FC921EA16C45EAF59", hash_generated_method = "80994ECEBDA04F6AF0A4BE641B3FAF66")
         public Iterator<K> iterator() {
             Iterator<K> varB4EAC82CA7396A68D541C85D26508E83_393276758 = null; 
@@ -1414,6 +1420,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.006 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "DC747E0C47749EA1D9F719193FDCE15B")
         public int size() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_594156011 = getTaintInt();
@@ -1423,6 +1430,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.006 -0400", hash_original_method = "186376BCBF1440029A4A8EF9D3327AB7", hash_generated_method = "A6AC67BDC2E82648929795022BEAF915")
         public boolean isEmpty() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_788959144 = getTaintBoolean();
@@ -1478,6 +1486,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.009 -0400", hash_original_method = "3C7262C80A3C469695720BFA46AA113C", hash_generated_method = "1A0D101C2E28C43DCE9FE2360B52ECF9")
         public Iterator<V> iterator() {
             Iterator<V> varB4EAC82CA7396A68D541C85D26508E83_632831829 = null; 
@@ -1489,6 +1498,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.010 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "86012ADF3E2CE4A6BC997279A44EA73F")
         public int size() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1548415433 = getTaintInt();
@@ -1498,6 +1508,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.010 -0400", hash_original_method = "186376BCBF1440029A4A8EF9D3327AB7", hash_generated_method = "486F53B6B0688D52F1CD19676E1D5F24")
         public boolean isEmpty() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_587761453 = getTaintBoolean();
@@ -1580,6 +1591,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.013 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "A6FD493759F5BDC67A0501F4EF248B01")
         public int size() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1078896349 = getTaintInt();
@@ -1589,6 +1601,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.013 -0400", hash_original_method = "186376BCBF1440029A4A8EF9D3327AB7", hash_generated_method = "F0B6DC3A041EB06BE93EA04906D0F1FB")
         public boolean isEmpty() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1349432921 = getTaintBoolean();

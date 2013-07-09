@@ -1085,6 +1085,7 @@ public class ActionBarImpl extends ActionBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.739 -0400", hash_original_method = "6F997D5B2915B28943A5CB4BD830D4B2", hash_generated_method = "E821E3C6CB1E5B117BD0825C4E7D585C")
      void animateToMode(boolean toActionMode) {
         {
@@ -1399,6 +1400,7 @@ public class ActionBarImpl extends ActionBar {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.754 -0400", hash_original_method = "B2B8DF93D41CD214F77DE42BB625BB9F", hash_generated_method = "B1C3A3D7E86E51314F5B0A503FD9D1F5")
         @Override
         public Menu getMenu() {
@@ -1529,6 +1531,7 @@ public class ActionBarImpl extends ActionBar {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.759 -0400", hash_original_method = "47F5B9C8307FB4AF11C6A2812A14A860", hash_generated_method = "12B649311EA5564B0D0292D4C3A6A0E4")
         @Override
         public void setTitle(int resId) {
@@ -1539,6 +1542,7 @@ public class ActionBarImpl extends ActionBar {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.760 -0400", hash_original_method = "0B3678050067173199BE985BD486C4DF", hash_generated_method = "3E00FBD2E9936B4FECA817B91ED397FB")
         @Override
         public void setSubtitle(int resId) {
@@ -1604,6 +1608,7 @@ public class ActionBarImpl extends ActionBar {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.763 -0400", hash_original_method = "FBD72BA67A5E56379A29D442239E7ED0", hash_generated_method = "A2CF4D0437BFEF81F64A913714948494")
         public void onCloseMenu(MenuBuilder menu, boolean allMenusAreClosing) {
             
@@ -1613,6 +1618,7 @@ public class ActionBarImpl extends ActionBar {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.764 -0400", hash_original_method = "7D886846B59E57EE3CE79C98862AC926", hash_generated_method = "CD03B5D893169AC312975A9A916E047E")
         public boolean onSubMenuSelected(SubMenuBuilder subMenu) {
             
@@ -1635,6 +1641,7 @@ public class ActionBarImpl extends ActionBar {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.764 -0400", hash_original_method = "6B692B27380EC4C10CDFFF60DC2D0482", hash_generated_method = "2074465CD9A30183B1E5202C403E062E")
         public void onCloseSubMenu(SubMenuBuilder menu) {
             
@@ -1692,6 +1699,7 @@ public class ActionBarImpl extends ActionBar {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.765 -0400", hash_original_method = "15C9157ADF1B79E512CAFF71050D7BD7", hash_generated_method = "DFCE86AB4BF6984E63FDA9E966D6AD9A")
         @Override
         public Object getTag() {
@@ -1704,6 +1712,7 @@ public class ActionBarImpl extends ActionBar {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.766 -0400", hash_original_method = "BB14A4918D906598A88E3D6A8128EA77", hash_generated_method = "29A08838DEC34598E9BA33A1D0A26894")
         @Override
         public Tab setTag(Object tag) {
@@ -1718,6 +1727,7 @@ public class ActionBarImpl extends ActionBar {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.766 -0400", hash_original_method = "E24F48568604237F2413A93282202AA0", hash_generated_method = "03B046CB2562F20032542297066EC0A0")
         public ActionBar.TabListener getCallback() {
             ActionBar.TabListener varB4EAC82CA7396A68D541C85D26508E83_2103814908 = null; 
@@ -1729,6 +1739,7 @@ public class ActionBarImpl extends ActionBar {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.767 -0400", hash_original_method = "464280ABF8AEC5C77A1E9FBBDE9C172D", hash_generated_method = "C67F7584EEAA100C52244B421D11BC40")
         @Override
         public Tab setTabListener(ActionBar.TabListener callback) {
@@ -1743,6 +1754,7 @@ public class ActionBarImpl extends ActionBar {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.767 -0400", hash_original_method = "564891C70D3FD9FDA6B8DDF54A8A1C12", hash_generated_method = "40EBFAA4A8D9A669C75870FC1961DB60")
         @Override
         public View getCustomView() {
@@ -1775,6 +1787,7 @@ public class ActionBarImpl extends ActionBar {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.769 -0400", hash_original_method = "AB0A301D41389C31F697384DEDEE9E45", hash_generated_method = "41C7848E0E1B4919C87D6181A88098E3")
         @Override
         public Tab setCustomView(int layoutResId) {
@@ -1790,6 +1803,7 @@ public class ActionBarImpl extends ActionBar {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.770 -0400", hash_original_method = "ED78DC4ED6B2C6A65EDA3016CC1C1C4D", hash_generated_method = "1E597D99B39A91AA05C13CAF7B590BF5")
         @Override
         public Drawable getIcon() {
@@ -1802,6 +1816,7 @@ public class ActionBarImpl extends ActionBar {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.770 -0400", hash_original_method = "88750DD9C7394A9CF6B657A7AF77F3EB", hash_generated_method = "B522B488B66EDDE58BA2F5BE7F82C9A3")
         @Override
         public int getPosition() {
@@ -1812,6 +1827,7 @@ public class ActionBarImpl extends ActionBar {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.770 -0400", hash_original_method = "3F4169F86E913801B39145F8B5F1CF4A", hash_generated_method = "9BE30D60DD8D509C2095B8721378C660")
         public void setPosition(int position) {
             mPosition = position;
@@ -1820,6 +1836,7 @@ public class ActionBarImpl extends ActionBar {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.771 -0400", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "172BD60DAC835EE3FA82B90BDDE2DD18")
         @Override
         public CharSequence getText() {
@@ -1852,6 +1869,7 @@ public class ActionBarImpl extends ActionBar {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.772 -0400", hash_original_method = "95CB6D2B1B424F33C131278F8466F7F6", hash_generated_method = "07D314BFAD1206D7F8AC54F443A85C71")
         @Override
         public Tab setIcon(int resId) {
@@ -1885,6 +1903,7 @@ public class ActionBarImpl extends ActionBar {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.776 -0400", hash_original_method = "593BCE41C6DE3623B8717D7BF5F8858F", hash_generated_method = "9C257641BA275C7E50FC71726DFE4E3D")
         @Override
         public Tab setText(int resId) {
@@ -1907,6 +1926,7 @@ public class ActionBarImpl extends ActionBar {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.780 -0400", hash_original_method = "64BDEA3E085EE551443B27403AA215D4", hash_generated_method = "28C0561ECB6B4AF092CD8F4BEFB61493")
         @Override
         public Tab setContentDescription(int resId) {
@@ -1940,6 +1960,7 @@ public class ActionBarImpl extends ActionBar {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.783 -0400", hash_original_method = "637498C982C6D53C6EA2D802031901B7", hash_generated_method = "7796C09CBD63124890A85714DA7621D2")
         @Override
         public CharSequence getContentDescription() {

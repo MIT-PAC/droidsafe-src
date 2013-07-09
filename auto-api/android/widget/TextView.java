@@ -10713,6 +10713,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.958 -0400", hash_original_method = "9DC2F69D47DD9984FB3378BE28468419", hash_generated_method = "72DA95D14539877C07C287DFECCF13DC")
          void set(char[] chars, int start, int len) {
             mChars = chars;
@@ -10725,6 +10726,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.958 -0400", hash_original_method = "C0D624CC7CEFFAF650D54F4FB963FAF6", hash_generated_method = "2692FB228BB248459CB4B21139E93968")
         public int length() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_373333631 = getTaintInt();
@@ -10734,6 +10736,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.958 -0400", hash_original_method = "02B707818F2669493B94939B301EE67F", hash_generated_method = "CF3397C219BD2F6F1C9537A5BB64F744")
         public char charAt(int off) {
             addTaint(off);
@@ -11405,6 +11408,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.971 -0400", hash_original_method = "8BEDD434588E893B08521C1E5E937982", hash_generated_method = "C20C4CAF7AAB242136B44D071F5F2B83")
          float getGhostOffset() {
             float var546ADE640B6EDFBC8A086EF31347E768_711890163 = getTaintFloat();
@@ -11414,6 +11418,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.972 -0400", hash_original_method = "FBB73F0BC2F425DEBE19335413BBBBD5", hash_generated_method = "907AC04B54D7EB75D58FB67D8CB9309C")
          boolean shouldDrawLeftFade() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1714212977 = getTaintBoolean();
@@ -11423,6 +11428,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.973 -0400", hash_original_method = "297E21CB54951ECF2F6E26FAB2DC7036", hash_generated_method = "2B010A973521A0B9107CB92B60128BA1")
          boolean shouldDrawGhost() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1827075139 = getTaintBoolean();
@@ -11432,6 +11438,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.973 -0400", hash_original_method = "9069B9288EAB1BBCE4A11291BAF7E3F4", hash_generated_method = "EC165BBA864139A3BEA35B7C68378363")
          boolean isRunning() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_596888203 = getTaintBoolean();
@@ -11441,6 +11448,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.974 -0400", hash_original_method = "57F6027DED5DA77924B224C2BB22701E", hash_generated_method = "AB901573DD0B746312EFAF9D327F1396")
          boolean isStopped() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1455245548 = getTaintBoolean();
@@ -11778,6 +11786,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.979 -0400", hash_original_method = "48C7510506F753F88F1EBACB4F114059", hash_generated_method = "C98F2544657F2C9A497F5E0EE39DBB6F")
         @Override
         protected int clipVertically(int positionY) {
@@ -12007,6 +12016,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.985 -0400", hash_original_method = "A06944554EAF73141DA4277B06D0E2BD", hash_generated_method = "EA43542F6DD16B86D3EB9C7A9CB5E56B")
          void uncancel() {
             mCancelled = false;
@@ -12154,6 +12164,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.987 -0400", hash_original_method = "256A376A54FD4CD53D18A0F020A0467C", hash_generated_method = "A59CA6E50A96848CB51DA8F9ECF4CB5C")
         public int getPositionX() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_685245872 = getTaintInt();
@@ -12163,6 +12174,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.987 -0400", hash_original_method = "4CCC26BBD5544F9405CBD90295EAF862", hash_generated_method = "403EFA7D4E32C5CA082D89C46BDC3D32")
         public int getPositionY() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1937037837 = getTaintInt();
@@ -12222,6 +12234,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.989 -0400", hash_original_method = "45AFA571A6FC9FC84FC093F1FB86DABC", hash_generated_method = "85B5F4ED6EC23E44740E0F696105857A")
         public void onScrollChanged() {
             
@@ -12512,6 +12525,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.996 -0400", hash_original_method = "4C7853BA5C99567CAD84815F4452E5F9", hash_generated_method = "1564698033A6E64560B6595DF567E527")
         public boolean isShowingUp() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2075388434 = getTaintBoolean();
@@ -12521,6 +12535,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:16.996 -0400", hash_original_method = "3914DCDC5DB3E14D1A1A163B7497EFBA", hash_generated_method = "CBD237ACC458BFEA613530AFCAFC26CB")
         public void onParentLostFocus() {
             
@@ -12988,6 +13003,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.008 -0400", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "E5A002D395E82AE7BE546E18F29575AA")
             @Override
             public long getItemId(int position) {
@@ -13565,6 +13581,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.020 -0400", hash_original_method = "8E1053DB926B4787A5B252A5CCF7E3E6", hash_generated_method = "2D4345EF6013F875363615EAFDB115F6")
         public boolean offsetHasBeenChanged() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1036715574 = getTaintBoolean();
@@ -13871,6 +13888,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.029 -0400", hash_original_method = "A2059A5EB773F7552F7C3D2AAFE1E47B", hash_generated_method = "414082CECCB7EE7ED8379248E8A1204A")
         public boolean isDragging() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1373683122 = getTaintBoolean();
@@ -14198,6 +14216,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.039 -0400", hash_original_method = "0C631CE72876F998F945C3B67884BC26", hash_generated_method = "7B67CE105A855EA388EDC2F1D0D44C7D")
         public ActionPopupWindow getActionPopupWindow() {
             ActionPopupWindow varB4EAC82CA7396A68D541C85D26508E83_1678911552 = null; 
@@ -14286,6 +14305,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.041 -0400", hash_original_method = "1AE0953CF1E401F1791B2AA9D0C762E1", hash_generated_method = "BA1A80848BD3464B993B996B099EA4D3")
         public void setActionPopupWindow(ActionPopupWindow actionPopupWindow) {
             mActionPopupWindow = actionPopupWindow;
@@ -14584,6 +14604,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.077 -0400", hash_original_method = "CE1D6B62E449D2E0E68A6EA4156BEDFA", hash_generated_method = "9ABB813C2A4E418141156FC5FD327E33")
         public int getMinTouchOffset() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1996964834 = getTaintInt();
@@ -14593,6 +14614,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.078 -0400", hash_original_method = "C55B3C28483F8C218641DDDF4F4BCFF7", hash_generated_method = "51BF099EAF414E6F14FD8B7305321250")
         public int getMaxTouchOffset() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_846929877 = getTaintInt();
@@ -14602,6 +14624,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.078 -0400", hash_original_method = "4C87B6BF406B366B26A5C4FE4B60E794", hash_generated_method = "9EFAFC374F80667294B5FCC935B7A9C3")
         public void resetTouchOffsets() {
             mMinTouchOffset = mMaxTouchOffset = -1;

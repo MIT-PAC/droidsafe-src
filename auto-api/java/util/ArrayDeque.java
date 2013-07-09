@@ -826,6 +826,7 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.691 -0400", hash_original_method = "8D6FDA09A878582CCF6BFDDE96A3C673", hash_generated_method = "8DA842879753F5174A5E7B187466DF93")
         public boolean hasNext() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_826252627 = getTaintBoolean();
@@ -902,6 +903,7 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.693 -0400", hash_original_method = "8D6FDA09A878582CCF6BFDDE96A3C673", hash_generated_method = "DDF217922FF80566E0A2BBBFC785DE29")
         public boolean hasNext() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_775818751 = getTaintBoolean();

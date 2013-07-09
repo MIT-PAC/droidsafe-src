@@ -614,6 +614,7 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.011 -0400", hash_original_method = "7D09E30D83D104D1B391B393C60F770D", hash_generated_method = "BEA820A471F67E44B05AC7485AEA4512")
         @Override
         public void onPageScrollStateChanged(int state) {

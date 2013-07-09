@@ -88,6 +88,7 @@ public abstract class ECCurve {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.380 -0400", hash_original_method = "ACFCE2DB75EFF131F33A5EE2D309C15F", hash_generated_method = "448B033B1B8C5473F5F1EA40948BBE9D")
         public BigInteger getQ() {
             BigInteger varB4EAC82CA7396A68D541C85D26508E83_1617504673 = null; 
@@ -211,6 +212,7 @@ public abstract class ECCurve {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.384 -0400", hash_original_method = "D748A17CBCA9116B03723FC1B2367E9D", hash_generated_method = "D325BA48C8822FD2C44633CE29BD35DB")
         public ECPoint getInfinity() {
             ECPoint varB4EAC82CA7396A68D541C85D26508E83_701975355 = null; 
@@ -387,6 +389,7 @@ public abstract class ECCurve {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.387 -0400", hash_original_method = "42523CF7F05F42E24BD30D4320A4984C", hash_generated_method = "194B4408D7ECA25FED597B398306DE7B")
         public int getFieldSize() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_168566227 = getTaintInt();
@@ -479,6 +482,7 @@ public abstract class ECCurve {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.390 -0400", hash_original_method = "D748A17CBCA9116B03723FC1B2367E9D", hash_generated_method = "CA3FD604B741B35193BC454DC83FBECD")
         public ECPoint getInfinity() {
             ECPoint varB4EAC82CA7396A68D541C85D26508E83_1549850925 = null; 
@@ -690,6 +694,7 @@ public abstract class ECCurve {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.401 -0400", hash_original_method = "2FA087881284515E1CE9CA954B1F01D0", hash_generated_method = "5A8D1AAF3406E3D2E83251CFD621F043")
         public int getM() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_391640237 = getTaintInt();
@@ -699,6 +704,7 @@ public abstract class ECCurve {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.402 -0400", hash_original_method = "0A21FBE14C3CF35BF18E601EA9469DB4", hash_generated_method = "9378F190832B36583357CAD1576E0FE3")
         public boolean isTrinomial() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1918184983 = getTaintBoolean();
@@ -708,6 +714,7 @@ public abstract class ECCurve {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.403 -0400", hash_original_method = "6F5E01D9EB3F8F69F3EDFAB71A89E9BA", hash_generated_method = "1A4A01F3A76EBA673098C8748EB8FEF3")
         public int getK1() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_428432301 = getTaintInt();
@@ -717,6 +724,7 @@ public abstract class ECCurve {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.404 -0400", hash_original_method = "39AC234DC3848032A728401BC68DF439", hash_generated_method = "B6F618E5C348783D2DAB3566994878B7")
         public int getK2() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2110368189 = getTaintInt();
@@ -726,6 +734,7 @@ public abstract class ECCurve {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.405 -0400", hash_original_method = "A40D42566F753B213E5F7F205217D7F1", hash_generated_method = "B223CF3280B4E5F3203283825D780640")
         public int getK3() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2015900358 = getTaintInt();
@@ -735,6 +744,7 @@ public abstract class ECCurve {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.408 -0400", hash_original_method = "30674A850FAA3528D3976F32A0E4EE43", hash_generated_method = "838935F59543267FF45DB1FC360D0F4B")
         public BigInteger getN() {
             BigInteger varB4EAC82CA7396A68D541C85D26508E83_140182911 = null; 
@@ -746,6 +756,7 @@ public abstract class ECCurve {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.408 -0400", hash_original_method = "A75824F76318CCD34CB8B7E35601A9FC", hash_generated_method = "6CF972CA258D7D030944383F6286B067")
         public BigInteger getH() {
             BigInteger varB4EAC82CA7396A68D541C85D26508E83_729485439 = null; 

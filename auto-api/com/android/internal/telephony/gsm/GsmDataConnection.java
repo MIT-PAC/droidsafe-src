@@ -134,7 +134,7 @@ public class GsmDataConnection extends DataConnection {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.480 -0400", hash_original_method = "0657EF2F9C80323FA50A03320BF221A9", hash_generated_method = "6169089F5A56E9DBF60FA27C489FD34F")
     @Override
     protected boolean isDnsOk(String[] domainNameServers) {

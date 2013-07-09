@@ -280,6 +280,7 @@ public class IccCardStatus {
         CARDSTATE_ABSENT,
         CARDSTATE_PRESENT,
         CARDSTATE_ERROR;
+        @DSModeled(DSC.SAFE)
         boolean isCardPresent() {
             return this == CARDSTATE_PRESENT;
         }
@@ -293,12 +294,15 @@ public class IccCardStatus {
         PINSTATE_DISABLED,
         PINSTATE_ENABLED_BLOCKED,
         PINSTATE_ENABLED_PERM_BLOCKED;
+        @DSModeled(DSC.SAFE)
         boolean isPermBlocked() {
             return this == PINSTATE_ENABLED_PERM_BLOCKED;
         }
+        @DSModeled(DSC.SAFE)
         boolean isPinRequired() {
             return this == PINSTATE_ENABLED_NOT_VERIFIED;
         }
+        @DSModeled(DSC.SAFE)
         boolean isPukRequired() {
             return this == PINSTATE_ENABLED_BLOCKED;
         }

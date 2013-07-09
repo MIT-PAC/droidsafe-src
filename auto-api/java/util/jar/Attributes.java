@@ -254,6 +254,7 @@ public class Attributes implements Cloneable, Map<Object, Object> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.958 -0400", hash_original_method = "738755F264DB023D14F89BE9B353A481", hash_generated_method = "EFD1B7E65655C0F2DC2B29097D910C2F")
     public String getValue(Attributes.Name name) {
         String varB4EAC82CA7396A68D541C85D26508E83_897581703 = null; 
@@ -332,6 +333,7 @@ public class Attributes implements Cloneable, Map<Object, Object> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.960 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "3D6C21C880D291F38BE4768AFD0184E7")
          String getName() {
             String varB4EAC82CA7396A68D541C85D26508E83_1885007431 = null; 
@@ -343,6 +345,7 @@ public class Attributes implements Cloneable, Map<Object, Object> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.961 -0400", hash_original_method = "44A371BEEBBEF1D1024A1D234C6B6AC2", hash_generated_method = "1FB4711CB86683FA3AB976E9DD174C17")
         @Override
         public boolean equals(Object object) {
@@ -357,6 +360,7 @@ public class Attributes implements Cloneable, Map<Object, Object> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.961 -0400", hash_original_method = "9402BF4C103D69D49EBD5DEF399C9512", hash_generated_method = "835B65B1AB97B0C3F59717C56721FAC0")
         @Override
         public int hashCode() {
@@ -368,6 +372,7 @@ public class Attributes implements Cloneable, Map<Object, Object> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.962 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "F4E2BFD5349DFBB1D081716F68EC7A69")
         @Override
         public String toString() {

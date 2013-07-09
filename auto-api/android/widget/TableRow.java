@@ -620,6 +620,7 @@ public class TableRow extends LinearLayout {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.447 -0400", hash_original_method = "366CDDD217CE23168243D85764F583BC", hash_generated_method = "DDC70C8E2E013ACEDF81D1F8C000792F")
         private void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
             this.listener = listener;

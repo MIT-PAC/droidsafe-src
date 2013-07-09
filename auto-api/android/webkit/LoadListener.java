@@ -715,6 +715,7 @@ class LoadListener extends Handler implements EventHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.161 -0400", hash_original_method = "0AD650AC52F38566687E74B5EF113675", hash_generated_method = "E47C4E4F199E1D4E97C992663A0FBE32")
      boolean checkCache(Map<String, String> headers) {
         CacheResult result = CacheManager.getCacheFile(url(), mPostIdentifier,
@@ -845,6 +846,7 @@ class LoadListener extends Handler implements EventHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.163 -0400", hash_original_method = "B53822BFF4A674DE454739734B590814", hash_generated_method = "72356899C9962B441901557EF6E6A4EF")
      boolean authCredentialsInvalid() {
         boolean var3969C3B58B09A1ECDB164E540B11F523_177288030 = ((mAuthFailed &&
@@ -890,6 +892,7 @@ class LoadListener extends Handler implements EventHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.165 -0400", hash_original_method = "7E02E9AA12C4A958E94F9A413E55434A", hash_generated_method = "CB117F7EB32BBE6EF3D6A4D41FE257FE")
      void handleAuthResponse(String username, String password) {
         {
@@ -916,6 +919,7 @@ class LoadListener extends Handler implements EventHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.166 -0400", hash_original_method = "D4EC792204E12F6CD4476F22DB2D7416", hash_generated_method = "D4C2AF4063B6153D331F8F13F9E6B662")
      void makeAuthResponse(String username, String password) {
         mAuthHeader.setUsername(username);
@@ -979,6 +983,7 @@ class LoadListener extends Handler implements EventHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.168 -0400", hash_original_method = "0451B8994B1846476A8FE8B0355ADDFF", hash_generated_method = "5A4479AB34DA87B24671FDD63CF9AA6F")
      String host() {
         String varB4EAC82CA7396A68D541C85D26508E83_134503213 = null; 
@@ -1073,6 +1078,7 @@ class LoadListener extends Handler implements EventHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.170 -0400", hash_original_method = "34F543213ABA35F3500E526ABE3EA0BF", hash_generated_method = "C51EE3EB880DEE2C6E9A9DFF6BE15A5F")
      void downloadFile() {
         WebViewWorker.getHandler().obtainMessage(

@@ -1696,6 +1696,7 @@ public class Instrumentation {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.031 -0400", hash_original_method = "DAC102A9F551BEDDEF83F16167EFAEA6", hash_generated_method = "56B0A088BE38667A9BFF3C4456EDFF80")
         public int getResultCode() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_928772042 = getTaintInt();
@@ -1705,6 +1706,7 @@ public class Instrumentation {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.032 -0400", hash_original_method = "230B95D397C0359A2CE808B90BABA149", hash_generated_method = "5E926A7C17762072AA106723B7FD6E9A")
         public Intent getResultData() {
             Intent varB4EAC82CA7396A68D541C85D26508E83_62658712 = null; 
@@ -1771,6 +1773,7 @@ public class Instrumentation {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.035 -0400", hash_original_method = "941C644B96F3E7EE75FAD0CC47E0EEC2", hash_generated_method = "A2E5AE58616EECC7176440E5139E1684")
         public void run() {
             

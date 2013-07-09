@@ -741,7 +741,8 @@ public class ParserAdapter implements XMLReader, DocumentHandler {
 			
 		}
 
-		@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.035 -0400", hash_original_method = "5931F172E3791972ECDA205EAC9CCB14", hash_generated_method = "21260D7331F1562A9DF84A94008BBDC7")
+		@DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.035 -0400", hash_original_method = "5931F172E3791972ECDA205EAC9CCB14", hash_generated_method = "21260D7331F1562A9DF84A94008BBDC7")
 		void setAttributeList(AttributeList qAtts) {
 			this.qAtts = qAtts;
 			
@@ -757,7 +758,8 @@ public class ParserAdapter implements XMLReader, DocumentHandler {
 			
 		}
 
-		@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.038 -0400", hash_original_method = "20CEB246971EBBCECBF2ACA441CBBECD", hash_generated_method = "7DAF40CF34F2D3D46F550198A8F30F77")
+		@DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.038 -0400", hash_original_method = "20CEB246971EBBCECBF2ACA441CBBECD", hash_generated_method = "7DAF40CF34F2D3D46F550198A8F30F77")
 		public String getURI(int i) {
 			String varB4EAC82CA7396A68D541C85D26508E83_608484543 = null; 
 																			
@@ -774,7 +776,8 @@ public class ParserAdapter implements XMLReader, DocumentHandler {
 			
 		}
 
-		@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.041 -0400", hash_original_method = "FEDFFD9A667A49103BC32EE7ED61A0BB", hash_generated_method = "492C998D318F99575FC232466C7BE712")
+		@DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.041 -0400", hash_original_method = "FEDFFD9A667A49103BC32EE7ED61A0BB", hash_generated_method = "492C998D318F99575FC232466C7BE712")
 		public String getLocalName(int i) {
 			String varB4EAC82CA7396A68D541C85D26508E83_1297229145 = null; 
 																			
@@ -842,7 +845,8 @@ public class ParserAdapter implements XMLReader, DocumentHandler {
 			
 		}
 
-		@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.046 -0400", hash_original_method = "696F42D8785320084719A8378B03A3E8", hash_generated_method = "6E27E60AD1529B2FFDC7C5BCDD157D27")
+		@DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.046 -0400", hash_original_method = "696F42D8785320084719A8378B03A3E8", hash_generated_method = "6E27E60AD1529B2FFDC7C5BCDD157D27")
 		public int getIndex(String uri, String localName) {
 			addTaint(uri.getTaint());
 			addTaint(localName.getTaint());
@@ -876,7 +880,8 @@ public class ParserAdapter implements XMLReader, DocumentHandler {
 			
 		}
 
-		@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.048 -0400", hash_original_method = "DB45F41F9C44849C439912CF28FC6F39", hash_generated_method = "6D7577A3EC98B303E177BB040591D48A")
+		@DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.048 -0400", hash_original_method = "DB45F41F9C44849C439912CF28FC6F39", hash_generated_method = "6D7577A3EC98B303E177BB040591D48A")
 		public String getType(String uri, String localName) {
 			String varB4EAC82CA7396A68D541C85D26508E83_1713367158 = null; 
 																			
@@ -911,7 +916,8 @@ public class ParserAdapter implements XMLReader, DocumentHandler {
 			
 		}
 
-		@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.050 -0400", hash_original_method = "A923F17E07DEE910B88DBEE5B2421501", hash_generated_method = "96CE96B4504B358E88DA0E8CFB3B6344")
+		@DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.050 -0400", hash_original_method = "A923F17E07DEE910B88DBEE5B2421501", hash_generated_method = "96CE96B4504B358E88DA0E8CFB3B6344")
 		public String getValue(String uri, String localName) {
 			String varB4EAC82CA7396A68D541C85D26508E83_2136672805 = null; 
 																			

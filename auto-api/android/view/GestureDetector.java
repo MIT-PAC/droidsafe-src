@@ -480,6 +480,7 @@ public class GestureDetector {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.378 -0400", hash_original_method = "6CD5191C407A0B3CBB6F0A0F3D91B6D6", hash_generated_method = "956ECCA217D53A1FC6B881B4D9248870")
         public boolean onSingleTapUp(MotionEvent e) {
             
@@ -491,6 +492,7 @@ public class GestureDetector {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.378 -0400", hash_original_method = "E609FB951BEBFF493B5A5F179A09A7F5", hash_generated_method = "CE7B5EECBD6FB992C82AB867D868DEBD")
         public void onLongPress(MotionEvent e) {
             
@@ -499,6 +501,7 @@ public class GestureDetector {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.378 -0400", hash_original_method = "3D0A16086A925B93F4340895FE1B4CBC", hash_generated_method = "62528DE48EE5ACED6689A909BD750BE8")
         public boolean onScroll(MotionEvent e1, MotionEvent e2,
                 float distanceX, float distanceY) {
@@ -514,6 +517,7 @@ public class GestureDetector {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.379 -0400", hash_original_method = "BDBE517451C02C6DD8B1C60030C3C43A", hash_generated_method = "28EA2F3DFCECB06A6E30CA0E83F22AA6")
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
                 float velocityY) {
@@ -529,6 +533,7 @@ public class GestureDetector {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.379 -0400", hash_original_method = "54A2BF3809B435C5302401FC76B54B22", hash_generated_method = "59BDBECCD2C5F0A2860E71595A2D2C31")
         public void onShowPress(MotionEvent e) {
             
@@ -537,6 +542,7 @@ public class GestureDetector {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.379 -0400", hash_original_method = "124BA11CC014942E61EFD87F7F37262C", hash_generated_method = "CE44D7783259BF3AF90BB0905938078D")
         public boolean onDown(MotionEvent e) {
             
@@ -548,6 +554,7 @@ public class GestureDetector {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.379 -0400", hash_original_method = "40BA7E2512EA076BF84D5B49A825B220", hash_generated_method = "6A75189043035FC1E17FC1629B776A20")
         public boolean onDoubleTap(MotionEvent e) {
             
@@ -559,6 +566,7 @@ public class GestureDetector {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.380 -0400", hash_original_method = "D3FAA1FBAE0BE329BB5AEDA3CD619E7D", hash_generated_method = "23A50485ABF86CAB1930A6795902B6E0")
         public boolean onDoubleTapEvent(MotionEvent e) {
             
@@ -570,6 +578,7 @@ public class GestureDetector {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.380 -0400", hash_original_method = "5E9F34FF920329D07D248580C4BBB180", hash_generated_method = "0D63758D54E86D620F58A303A827EC27")
         public boolean onSingleTapConfirmed(MotionEvent e) {
             

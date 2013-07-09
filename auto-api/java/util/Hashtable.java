@@ -1171,6 +1171,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.211 -0400", hash_original_method = "F0F1A7352709A4A442C7E6635A47CE9D", hash_generated_method = "7DDB0489D3955D9447D2A6418FAC7A01")
         public boolean hasNext() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_620077703 = getTaintBoolean();
@@ -1270,6 +1271,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.215 -0400", hash_original_method = "EA50D6F1622FBE805CA447972176B648", hash_generated_method = "BE9CA147DB41889E3336DD6D593D462A")
         public K next() {
             K varB4EAC82CA7396A68D541C85D26508E83_114810037 = null; 
@@ -1294,6 +1296,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.216 -0400", hash_original_method = "53BB4827D74FCF37FAF510D076C14D5E", hash_generated_method = "082A6C2D2077BCA990271F34540B9D75")
         public V next() {
             V varB4EAC82CA7396A68D541C85D26508E83_1319744898 = null; 
@@ -1352,6 +1355,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.219 -0400", hash_original_method = "BED82438F0CBBB90FF7803670DD55802", hash_generated_method = "C81D865AE0141FC46D70F81E2950D564")
         public K nextElement() {
             K varB4EAC82CA7396A68D541C85D26508E83_1593422259 = null; 
@@ -1386,6 +1390,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.222 -0400", hash_original_method = "433328C2A0882CA6574B6B21E730CA05", hash_generated_method = "38FBA5580CF2DE628A16DA05855D7FD0")
         public V nextElement() {
             V varB4EAC82CA7396A68D541C85D26508E83_1968089166 = null; 
@@ -1410,6 +1415,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.224 -0400", hash_original_method = "29CBC31BB957230FC921EA16C45EAF59", hash_generated_method = "DB185CAA1B2F96A8E299ECEF0E33694D")
         public Iterator<K> iterator() {
             Iterator<K> varB4EAC82CA7396A68D541C85D26508E83_514825137 = null; 
@@ -1471,6 +1477,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.229 -0400", hash_original_method = "9BA117A8F63C9FFDE2D5EA1FE72298AB", hash_generated_method = "EE3C24241DAE633AF73690D98F6FE678")
         public boolean removeAll(Collection<?> collection) {
             {
@@ -1489,6 +1496,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.229 -0400", hash_original_method = "F51EE2CE89398EE7EFBA716BFF5B2C29", hash_generated_method = "5B43FF15B559815F3622FD5DD20B4821")
         public boolean retainAll(Collection<?> collection) {
             {
@@ -1507,6 +1515,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.230 -0400", hash_original_method = "16251063ADEDD8E4E0F4377C58C438F7", hash_generated_method = "2372F4AA9552F6B5DA5D39FA652C473D")
         public boolean containsAll(Collection<?> collection) {
             {
@@ -1596,6 +1605,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.233 -0400", hash_original_method = "9FE9B3BD459851B05CC02013C00F3ABD", hash_generated_method = "2D12CD4C2AD0ABD5F7D50216091F9074")
         public <T> T[] toArray(T[] a) {
             T[] varB4EAC82CA7396A68D541C85D26508E83_769781133 = null; 
@@ -1628,6 +1638,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.234 -0400", hash_original_method = "3C7262C80A3C469695720BFA46AA113C", hash_generated_method = "8C95B7BE352B405F58186A6F04B0E4C9")
         public Iterator<V> iterator() {
             Iterator<V> varB4EAC82CA7396A68D541C85D26508E83_645755456 = null; 
@@ -1668,6 +1679,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.235 -0400", hash_original_method = "16251063ADEDD8E4E0F4377C58C438F7", hash_generated_method = "3959EF1BC9EB86FC8B0FC2DF34D51886")
         public boolean containsAll(Collection<?> collection) {
             {
@@ -1722,6 +1734,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.238 -0400", hash_original_method = "9FE9B3BD459851B05CC02013C00F3ABD", hash_generated_method = "5FA31E39905CC133AD4D31396DDF5697")
         public <T> T[] toArray(T[] a) {
             T[] varB4EAC82CA7396A68D541C85D26508E83_1860107476 = null; 
@@ -1813,6 +1826,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.240 -0400", hash_original_method = "9BA117A8F63C9FFDE2D5EA1FE72298AB", hash_generated_method = "3DB9B75995C17FB9EF3C29D82CE909BB")
         public boolean removeAll(Collection<?> collection) {
             {
@@ -1831,6 +1845,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.240 -0400", hash_original_method = "F51EE2CE89398EE7EFBA716BFF5B2C29", hash_generated_method = "DEDE71F112E48E3B355805B731FC3ED8")
         public boolean retainAll(Collection<?> collection) {
             {
@@ -1849,6 +1864,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.240 -0400", hash_original_method = "16251063ADEDD8E4E0F4377C58C438F7", hash_generated_method = "B9EBB6B901D94E7F2288967390CE13EF")
         public boolean containsAll(Collection<?> collection) {
             {
@@ -1931,6 +1947,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.243 -0400", hash_original_method = "9FE9B3BD459851B05CC02013C00F3ABD", hash_generated_method = "5F7284A99E09C9252DE21EE841980FB7")
         public <T> T[] toArray(T[] a) {
             T[] varB4EAC82CA7396A68D541C85D26508E83_1592433286 = null; 

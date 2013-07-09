@@ -32,6 +32,7 @@ public class MenuCompat {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.388 -0400", hash_original_method = "7F014EF22317C05910A706092D499BCA", hash_generated_method = "6DEDB9D95491B1F64E1829B40AD86EF8")
         @Override
         public boolean setShowAsAction(MenuItem item, int actionEnum) {

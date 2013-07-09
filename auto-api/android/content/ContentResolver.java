@@ -63,6 +63,7 @@ public class ContentResolver {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.873 -0400", hash_original_method = "4AF2A0465BC3B713C9C8E0417552AB76", hash_generated_method = "D9520228B624E1C4B2E50287BF4E12CB")
     protected IContentProvider acquireExistingProvider(Context c, String name) {
         IContentProvider varB4EAC82CA7396A68D541C85D26508E83_1234056711 = null; 
@@ -1249,6 +1250,7 @@ public class ContentResolver {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static void validateSyncExtrasBundle(Bundle extras) {
         try {
             for (String key : extras.keySet()) {
@@ -1291,6 +1293,7 @@ public class ContentResolver {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static SyncAdapterType[] getSyncAdapterTypes() {
         try {
             return getContentService().getSyncAdapterTypes();
@@ -1373,6 +1376,7 @@ public class ContentResolver {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static int getIsSyncable(Account account, String authority) {
         try {
             return getContentService().getIsSyncable(account, authority);
@@ -1430,6 +1434,7 @@ public class ContentResolver {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static List<SyncInfo> getCurrentSyncs() {
         try {
             return getContentService().getCurrentSyncs();
@@ -1589,6 +1594,7 @@ public class ContentResolver {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static IContentService getContentService() {
         if (sContentService != null) {
             return sContentService;
@@ -1643,6 +1649,7 @@ public class ContentResolver {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.034 -0400", hash_original_method = "CB76115716387DD39854EA1927F29C52", hash_generated_method = "8346DD9120A3FACE871850785D20B4F6")
         @Override
         public void close() {
@@ -1718,6 +1725,7 @@ public class ContentResolver {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.039 -0400", hash_original_method = "88C4FC226DB7C9E08A0225C4D4C037C0", hash_generated_method = "C0DD3FCB29B5C8207E20F17E6CE63C70")
         @Override
         public void close() throws IOException {
@@ -1735,6 +1743,7 @@ public class ContentResolver {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.042 -0400", hash_original_method = "E5C83F24E1B33F16225B47651FBE1E16", hash_generated_method = "0A895962D46081094F888ADADCCE02CC")
         @Override
         protected void finalize() throws Throwable {

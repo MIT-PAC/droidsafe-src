@@ -848,6 +848,7 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.642 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "B18CDE741B042880241F70C6A35B05A6")
         public int describeContents() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1135117248 = getTaintInt();
@@ -930,6 +931,7 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.643 -0400", hash_original_method = "5AD4B913B9726C3345D273778B3773BA", hash_generated_method = "C2D78B097428DD4DBD267482388DC1E9")
         private void resetState() {
             position = null;
@@ -985,6 +987,7 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.644 -0400", hash_original_method = "3DA77438EDE7E493B793AF2E840B43CD", hash_generated_method = "609142F02ED197F026F1FC88CD60EC0C")
         public boolean isExpanded() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1891001016 = getTaintBoolean();

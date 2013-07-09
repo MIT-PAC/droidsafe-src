@@ -53,6 +53,7 @@ public class BackgroundColorSpan extends CharacterStyle implements UpdateAppeara
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.695 -0400", hash_original_method = "F35F8912B3182FC877D8B21825C3ABAF", hash_generated_method = "4434B22B71E34F3AE6C4E59891B471B8")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mColor);

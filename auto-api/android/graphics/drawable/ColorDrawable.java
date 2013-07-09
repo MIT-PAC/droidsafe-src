@@ -248,6 +248,7 @@ public class ColorDrawable extends Drawable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.728 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "DBA60DB89FA86CD88C3C371C56ADB61C")
         @Override
         public int getChangingConfigurations() {

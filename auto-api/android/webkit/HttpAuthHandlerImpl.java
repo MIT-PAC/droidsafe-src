@@ -206,6 +206,7 @@ class HttpAuthHandlerImpl extends HttpAuthHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.927 -0400", hash_original_method = "69FA3518C12F8613622C8FCCAB6F2AF7", hash_generated_method = "65061F02FB88C5942BEE9D0C3D81B731")
      void handleAuthRequest(LoadListener loader) {
         {

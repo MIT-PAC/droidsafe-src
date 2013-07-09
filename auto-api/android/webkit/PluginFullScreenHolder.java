@@ -190,6 +190,7 @@ class PluginFullScreenHolder {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.365 -0400", hash_original_method = "D87B32C51AD302A4F9341AA86337AE33", hash_generated_method = "9D8D7437BC0FCB38C4F6F3A613D11AE6")
         @Override
         public boolean onTouchEvent(MotionEvent event) {

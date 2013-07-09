@@ -114,6 +114,7 @@ public class HttpsConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.007 -0400", hash_original_method = "F14CEFDDF6A25D53C3E36A1E481088F2", hash_generated_method = "B160EA7EEF2631EC58C9B1F6966C7B35")
     @Override
      AndroidHttpClientConnection openConnection(Request req) throws IOException {

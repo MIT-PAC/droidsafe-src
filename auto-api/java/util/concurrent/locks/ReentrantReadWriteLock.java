@@ -307,11 +307,13 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         }
 
         
+        @DSModeled(DSC.SAFE)
         static int sharedCount(int c) {
             return c >>> SHARED_SHIFT;
         }
 
         
+        @DSModeled(DSC.SAFE)
         static int exclusiveCount(int c) {
             return c & EXCLUSIVE_MASK;
         }
@@ -874,6 +876,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.911 -0400", hash_original_method = "8D72D73F25D8DE6C9209D04669F96039", hash_generated_method = "F147980700CF869A8D6F7133099FA372")
         public void lock() {
             sync.acquireShared(1);
@@ -882,6 +885,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.911 -0400", hash_original_method = "61D542FCA692219B5199CDDD1A71CCC6", hash_generated_method = "87CEA29C19FE66B6CBD3C0925E99729C")
         public void lockInterruptibly() throws InterruptedException {
             sync.acquireSharedInterruptibly(1);
@@ -890,6 +894,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.911 -0400", hash_original_method = "6F9DD593410D3A6A5FB658A804C67B03", hash_generated_method = "44F333F28A76623D315ACEE0B5176228")
         public boolean tryLock() {
             boolean var82642F761C8CC4EFB1E9891565A562E0_1460524610 = (sync.tryReadLock());
@@ -900,6 +905,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.911 -0400", hash_original_method = "CABC63B31BFC6EB1808F17E4FED50740", hash_generated_method = "58EF80D699BD461388CE8F42DA6A82E9")
         public boolean tryLock(long timeout, TimeUnit unit) throws InterruptedException {
             boolean varC650725F0ACDDC932C370EDA1774172F_1179307705 = (sync.tryAcquireSharedNanos(1, unit.toNanos(timeout)));
@@ -912,6 +918,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.912 -0400", hash_original_method = "2E2DA507FE1EE35FD0E649F791C4FA62", hash_generated_method = "CE7F47B976DC7C53582533934AC31AFE")
         public void unlock() {
             sync.releaseShared(1);
@@ -920,6 +927,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.912 -0400", hash_original_method = "9996D083DB29CA9E935A73F01FAD8A4F", hash_generated_method = "AA6177806CFC2176E106167AD695F2AC")
         public Condition newCondition() {
         	throw new UnsupportedOperationException();
@@ -928,6 +936,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.913 -0400", hash_original_method = "4EA811A9ADBECD9416D19B5EBD75BF53", hash_generated_method = "4057578D00BADBA337466D741FF16977")
         public String toString() {
             String varB4EAC82CA7396A68D541C85D26508E83_2074920168 = null; 
@@ -963,6 +972,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.913 -0400", hash_original_method = "4197ECA2CFEBBAA5B9BD7C840B7670C7", hash_generated_method = "DDE8BF3B445A2924BC3E70FCADFAA419")
         public void lock() {
             sync.acquire(1);
@@ -971,6 +981,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.914 -0400", hash_original_method = "5966BE77DAE264B5F21646B0E7A08FC1", hash_generated_method = "CFF689BB53A067D7B9EB5F12CA3F00CC")
         public void lockInterruptibly() throws InterruptedException {
             sync.acquireInterruptibly(1);
@@ -979,6 +990,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.914 -0400", hash_original_method = "55CC434A7054CDED1693C2BA6E1C81AA", hash_generated_method = "ED1593926054BFBB9C7DC074297BB3CA")
         public boolean tryLock( ) {
             boolean var55CFE4E4F15027819D6679D2F0F9E5EB_984744023 = (sync.tryWriteLock());
@@ -989,6 +1001,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.914 -0400", hash_original_method = "6EF7D2E282F143C52CC20B0DBAA61A21", hash_generated_method = "AAC9227DB0ACEC4AA7C0A25534538B1D")
         public boolean tryLock(long timeout, TimeUnit unit) throws InterruptedException {
             boolean var4E766E765BA3F93DDE7082A08A077E42_292888309 = (sync.tryAcquireNanos(1, unit.toNanos(timeout)));
@@ -1001,6 +1014,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.915 -0400", hash_original_method = "7AD42B9E2BC6DD4A4DE0EB9EBA3A2515", hash_generated_method = "87142E80D82254348B0CA43367BBC9B7")
         public void unlock() {
             sync.release(1);
@@ -1009,6 +1023,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.915 -0400", hash_original_method = "6BB095C6835043568D960ACB9C15058D", hash_generated_method = "758CE82BBE867E5AD1DBA08A4D6D8DBD")
         public Condition newCondition() {
             Condition varB4EAC82CA7396A68D541C85D26508E83_341202708 = null; 
@@ -1020,6 +1035,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.916 -0400", hash_original_method = "E0C199518E39715763AFB28F76F97305", hash_generated_method = "11B2F9A03E0014E2E295E38B891D6D35")
         public String toString() {
             String varB4EAC82CA7396A68D541C85D26508E83_1480566140 = null; 
@@ -1037,6 +1053,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.916 -0400", hash_original_method = "53A74F7432D74C33316852C3E739832B", hash_generated_method = "6937A0A4897F0274226B7BA4E7128290")
         public boolean isHeldByCurrentThread() {
             boolean var8A9E5BF2F58F6E9DAF336A434F65DD91_613493350 = (sync.isHeldExclusively());
@@ -1047,6 +1064,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.917 -0400", hash_original_method = "17A37C9E70A2D6C131240856FD5B2099", hash_generated_method = "BC18300DABBA37B0A2B8D574349BC9D2")
         public int getHoldCount() {
             int varE800E928AAA5AF8116F9B878EB5C4BA2_1299672044 = (sync.getWriteHoldCount());

@@ -1511,6 +1511,7 @@ public class AudioManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.020 -0400", hash_original_method = "10E7D4FA7AE5C5A4DFE91478AE111D01", hash_generated_method = "29536E3AF83BA457DDBAC562FF8B2D83")
          Handler getHandler() {
             Handler varB4EAC82CA7396A68D541C85D26508E83_902991881 = null; 

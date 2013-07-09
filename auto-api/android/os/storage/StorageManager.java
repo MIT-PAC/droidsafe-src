@@ -722,6 +722,7 @@ public class StorageManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.639 -0400", hash_original_method = "237083C18B821DBF98088C4FF8F2E015", hash_generated_method = "D1DADB007C951BD9369B10FD9DA3FEE8")
         public Message getMessage() {
             Message varB4EAC82CA7396A68D541C85D26508E83_39022023 = null; 
@@ -835,6 +836,7 @@ public class StorageManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.642 -0400", hash_original_method = "DA2EC644741ABB32C38C92FF70A87DA0", hash_generated_method = "809A21ACCA352D78A486265201ED6F79")
          StorageEventListener getListener() {
             StorageEventListener varB4EAC82CA7396A68D541C85D26508E83_1541215320 = null; 

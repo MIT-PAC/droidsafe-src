@@ -285,6 +285,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.374 -0400", hash_original_method = "812A77A153EDB691C43A0B58CAFAA77A", hash_generated_method = "AB35579F49622E7A241F12B7DDB4EC19")
      void notifyPhoneStateChanged() {
         mNotifier.notifyPhoneState(this);
@@ -293,6 +294,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.374 -0400", hash_original_method = "3EB8461625C29B29FD6CB8E5D60B43F3", hash_generated_method = "D04CBC6D94303085010D6FD72DFDF138")
      void notifyPreciseCallStateChanged() {
         super.notifyPreciseCallStateChangedP();

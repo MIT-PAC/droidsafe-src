@@ -365,6 +365,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.032 -0400", hash_original_method = "7D89BB192BA936EC93EB72454855578A", hash_generated_method = "A4D7E8594EE2D9926A2A6A061CDB471E")
     private void writeObject(java.io.ObjectOutputStream s) throws java.io.IOException {
         boolean fair = transferer instanceof TransferQueue;
@@ -396,6 +397,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.032 -0400", hash_original_method = "E156E82E550566200FEDBE52C0090F6F", hash_generated_method = "221738A97F236F02972DC9F5321F60CF")
     private void readObject(final java.io.ObjectInputStream s) throws java.io.IOException, ClassNotFoundException {
         s.defaultReadObject();
@@ -451,6 +453,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
         }
 
 
+        @DSModeled(DSC.SAFE)
         static boolean isFulfilling(int m) {
             return (m & FULFILLING) != 0;
         }
@@ -754,6 +757,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.039 -0400", hash_original_method = "BB4CEE3409ECC1A047D42B262CFDD801", hash_generated_method = "A69582FC2EAAFEC2AD5D1EF41EDF5C08")
              boolean isCancelled() {
                 boolean var7F5D65803B47A70559075CCD6D448518_1860994530 = (match == this);
@@ -1087,6 +1091,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.051 -0400", hash_original_method = "45E5A9573D9BA1D0D86064CD1643198D", hash_generated_method = "FEEB683761FE857C5407392FBD91F785")
              boolean isCancelled() {
                 boolean varA64503E11EBD2041198E2D58A05084A8_1592751954 = (item == this);
@@ -1097,6 +1102,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.052 -0400", hash_original_method = "355DAB50A3ED00DA4B9C20D2E0EF6792", hash_generated_method = "C0931F3E7826B067A91E1FA863EDC380")
              boolean isOffList() {
                 boolean varB6C5D4B086DE21F098503EC790F4AB8E_1423888570 = (next == this);

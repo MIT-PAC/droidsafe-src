@@ -339,6 +339,7 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.837 -0400", hash_original_method = "580583282F0D57EA1D5F8BCC7DFB7226", hash_generated_method = "F36B3062AED1BBB8F9642BF4CF58D6B5")
         public Object get(DOMConfigurationImpl config) {
             Object varB4EAC82CA7396A68D541C85D26508E83_254641582 = null; 
@@ -395,6 +396,7 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.838 -0400", hash_original_method = "BF6F151915BB667F3BD2F9A011756FE4", hash_generated_method = "AB1B24F5C817C9C119422EF2794A3D3F")
         public boolean canSet(DOMConfigurationImpl config, Object value) {
             addTaint(config.getTaint());

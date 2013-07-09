@@ -76,6 +76,7 @@ public final class Settings {
         }
 
 
+        @DSModeled(DSC.SPEC)
         protected static boolean putString(ContentResolver resolver, Uri uri,
                 String name, String value) {
             try {
@@ -91,6 +92,7 @@ public final class Settings {
         }
 
         
+        @DSModeled(DSC.SPEC)
         public static Uri getUriFor(Uri uri, String name) {
             return Uri.withAppendedPath(uri, name);
         }
@@ -138,6 +140,7 @@ public final class Settings {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.876 -0400", hash_original_method = "30813ECB8D9A0346E7379ADA0BD790C8", hash_generated_method = "4585D64DE0DA40B29821B2C35EA48105")
         public String getString(ContentResolver cr, String name) {
             String varB4EAC82CA7396A68D541C85D26508E83_245345736 = null; 
@@ -251,6 +254,7 @@ public final class Settings {
         }
 
 
+        @DSModeled(DSC.SPEC)
         public synchronized static String getString(ContentResolver resolver, String name) {
             if (MOVED_TO_SECURE.contains(name)) {
                 Log.w(TAG, "Setting " + name + " has moved from android.provider.Settings.System"
@@ -275,6 +279,7 @@ public final class Settings {
         }
 
         
+        @DSModeled(DSC.SPEC)
         public static Uri getUriFor(String name) {
             if (MOVED_TO_SECURE.contains(name)) {
                 Log.w(TAG, "Setting " + name + " has moved from android.provider.Settings.System"
@@ -365,6 +370,7 @@ public final class Settings {
         }
 
         
+        @DSModeled(DSC.SPEC)
         public static void getConfiguration(ContentResolver cr, Configuration outConfig) {
             outConfig.fontScale = Settings.System.getFloat(
                 cr, FONT_SCALE, outConfig.fontScale);
@@ -374,26 +380,31 @@ public final class Settings {
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static void clearConfiguration(Configuration inoutConfig) {
             inoutConfig.fontScale = 0;
         }
 
         
+        @DSModeled(DSC.SPEC)
         public static boolean putConfiguration(ContentResolver cr, Configuration config) {
             return Settings.System.putFloat(cr, FONT_SCALE, config.fontScale);
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static boolean hasInterestingConfigurationChanges(int changes) {
             return (changes&ActivityInfo.CONFIG_FONT_SCALE) != 0;
         }
 
         
+        @DSModeled(DSC.SPEC)
         public static boolean getShowGTalkServiceStatus(ContentResolver cr) {
             return getInt(cr, SHOW_GTALK_SERVICE_STATUS, 0) != 0;
         }
 
         
+        @DSModeled(DSC.SPEC)
         public static void setShowGTalkServiceStatus(ContentResolver cr, boolean flag) {
             putInt(cr, SHOW_GTALK_SERVICE_STATUS, flag ? 1 : 0);
         }
@@ -1011,6 +1022,7 @@ public final class Settings {
         }
 
 
+        @DSModeled(DSC.SPEC)
         public synchronized static String getString(ContentResolver resolver, String name) {
             if (sNameValueCache == null) {
                 sNameValueCache = new NameValueCache(SYS_PROP_SETTING_VERSION, CONTENT_URI,
@@ -1026,6 +1038,7 @@ public final class Settings {
         }
 
         
+        @DSModeled(DSC.SPEC)
         public static Uri getUriFor(String name) {
             return getUriFor(CONTENT_URI, name);
         }
@@ -1971,6 +1984,7 @@ public final class Settings {
         }
 
 
+        @DSModeled(DSC.SPEC)
         public static Intent getIntentForShortcut(ContentResolver cr, char shortcut) {
             Intent intent = null;
             Cursor c = cr.query(CONTENT_URI,
@@ -1993,6 +2007,7 @@ public final class Settings {
         }
 
         
+        @DSModeled(DSC.SPEC)
         public static Uri add(ContentResolver cr,
                                            Intent intent,
                                            String title,
@@ -2013,6 +2028,7 @@ public final class Settings {
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static CharSequence getLabelForFolder(Resources r, String folder) {
             return folder;
         }

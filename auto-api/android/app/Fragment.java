@@ -1518,6 +1518,7 @@ public class Fragment implements ComponentCallbacks2, OnCreateContextMenuListene
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.926 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "B144F8507C9EB1704E0F23E26AF17540")
         @Override
         public int describeContents() {

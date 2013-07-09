@@ -823,6 +823,7 @@ public final class SearchableInfo implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.389 -0400", hash_original_method = "AA2A4756B9F9E3EBD53F7A185B310C03", hash_generated_method = "5CE09FCF6777DCF48C9F5A2134DFEAD6")
         public int getKeyCode() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_139449763 = getTaintInt();
@@ -832,6 +833,7 @@ public final class SearchableInfo implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.390 -0400", hash_original_method = "0A4F0AAE3D0D859714A4EE4638C2A280", hash_generated_method = "C551215E8D7B8B9B73AFD68688BB1F33")
         public String getQueryActionMsg() {
             String varB4EAC82CA7396A68D541C85D26508E83_276636291 = null; 
@@ -843,6 +845,7 @@ public final class SearchableInfo implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.391 -0400", hash_original_method = "EDCBBABEEE2D0A0DD8ABF8A81407A4FD", hash_generated_method = "6670A7914144B09969714F8563EFF3A5")
         public String getSuggestActionMsg() {
             String varB4EAC82CA7396A68D541C85D26508E83_1682874739 = null; 
@@ -854,6 +857,7 @@ public final class SearchableInfo implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.392 -0400", hash_original_method = "94611E44E9C4989C8B71AAF260F46112", hash_generated_method = "243359BC00BECA62A5F9B31B76257EEA")
         public String getSuggestActionMsgColumn() {
             String varB4EAC82CA7396A68D541C85D26508E83_1024335002 = null; 
@@ -865,6 +869,7 @@ public final class SearchableInfo implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.392 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "9B32B4981187F2DFE0BDB96FB85E4CDB")
         public int describeContents() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_629062042 = getTaintInt();

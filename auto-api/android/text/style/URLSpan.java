@@ -57,6 +57,7 @@ public class URLSpan extends ClickableSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.027 -0400", hash_original_method = "C4C1C8BAFA904799F51D3BBA35A0D0C5", hash_generated_method = "819D9178922FA7943AAED32806C41C8C")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(mURL);
@@ -79,6 +80,7 @@ public class URLSpan extends ClickableSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.028 -0400", hash_original_method = "04E55325C1106D52B4E11E13B7EEFAD9", hash_generated_method = "EC5C471B5D242A1B84E6E77A73A68DA7")
     @Override
     public void onClick(View widget) {

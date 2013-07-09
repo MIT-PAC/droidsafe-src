@@ -584,6 +584,7 @@ public class CompatibilityInfo implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.610 -0400", hash_original_method = "9DE177160064B2A1F8C9D8228C599CDD", hash_generated_method = "86A292F07A183A4B8325053620DD8134")
         public void translatePointInScreenToAppWindow(PointF point) {
             final float scale = applicationInvertedScale;

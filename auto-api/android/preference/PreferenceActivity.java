@@ -1739,6 +1739,7 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.389 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8E271ED24B79FA6D40EA12E5B60D9157")
         @Override
         public int describeContents() {

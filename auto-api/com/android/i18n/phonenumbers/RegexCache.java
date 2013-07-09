@@ -93,6 +93,7 @@ public class RegexCache {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.594 -0400", hash_original_method = "EEC311F1C8E6E4405BF9A97AEC3D11BF", hash_generated_method = "2D78954A16CFAF5798BE325791984C83")
         public synchronized V get(K key) {
             V varB4EAC82CA7396A68D541C85D26508E83_1672311579 = null; 
@@ -105,6 +106,7 @@ public class RegexCache {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.594 -0400", hash_original_method = "C4C725598B9694AF1F3D731C0033484D", hash_generated_method = "6A121F230509D6B7823307835D9E4CA1")
         public synchronized void put(K key, V value) {
             map.put(key, value);
@@ -115,6 +117,7 @@ public class RegexCache {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.595 -0400", hash_original_method = "145C938C17F7FBD329FF51DDD81E595D", hash_generated_method = "BCFFC13A5FDA52C0FA116E4EE759EC5B")
         public synchronized boolean containsKey(K key) {
             boolean varC4E367E3FE7F5E2BFFF66DFA372B2F07_582899179 = (map.containsKey(key));

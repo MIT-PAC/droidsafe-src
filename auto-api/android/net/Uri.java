@@ -702,11 +702,13 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SPEC)
         static Uri readFrom(Parcel parcel) {
             return new StringUri(parcel.readString());
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.294 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "1FCE50BABC9FE5860849D82AF0A15FDC")
         public int describeContents() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2103994475 = getTaintInt();
@@ -1151,6 +1153,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.313 -0400", hash_original_method = "ECB4588CBE3D957B88D2558A4C044374", hash_generated_method = "9C73B395D4C52C8188758939C40A8EEA")
         public String toString() {
             String varB4EAC82CA7396A68D541C85D26508E83_999075722 = null; 
@@ -1299,6 +1302,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SPEC)
         static Uri readFrom(Parcel parcel) {
             return new OpaqueUri(
                 parcel.readString(),
@@ -1308,6 +1312,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.316 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "2F6DEF69100E13EFB55E7BB0614BB5D8")
         public int describeContents() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_672010388 = getTaintInt();
@@ -1333,6 +1338,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.317 -0400", hash_original_method = "414EEC63B62C24CE4C288B4F88575946", hash_generated_method = "9531957FFEA5B64B04C3C48DCD72C874")
         public boolean isHierarchical() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1481303270 = getTaintBoolean();
@@ -1342,6 +1348,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.318 -0400", hash_original_method = "9639BAD4AF2BECE413ED6DDD1E0FB03A", hash_generated_method = "77FA5E3B0037733FC83BFCCC2E2FB546")
         public boolean isRelative() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1685933567 = getTaintBoolean();
@@ -1351,6 +1358,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.318 -0400", hash_original_method = "76031D31C1CA528B8F038117D6808811", hash_generated_method = "FE2C50740BA665E9F1AF8673FB2D962F")
         public String getScheme() {
             String varB4EAC82CA7396A68D541C85D26508E83_1093379338 = null; 
@@ -1384,6 +1392,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.320 -0400", hash_original_method = "31E41E1CB0338F9BAA50A0AC05D7D02D", hash_generated_method = "91FB12C1B6C6EA872936371ED1DDB20E")
         public String getAuthority() {
             String varB4EAC82CA7396A68D541C85D26508E83_511016190 = null; 
@@ -1395,6 +1404,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.320 -0400", hash_original_method = "C6F3CA63C6BE518EBD2AA32E2786DD3A", hash_generated_method = "B3DF0706EA4D95D20106C37151C2EFB2")
         public String getEncodedAuthority() {
             String varB4EAC82CA7396A68D541C85D26508E83_507347244 = null; 
@@ -1406,6 +1416,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.321 -0400", hash_original_method = "F489014FCD27D67260CBEC8AC84559A2", hash_generated_method = "0D781E29CDE7804FF14851B2FE46A6FF")
         public String getPath() {
             String varB4EAC82CA7396A68D541C85D26508E83_1182018615 = null; 
@@ -1417,6 +1428,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.321 -0400", hash_original_method = "F167E35F53D1A5A8B17A8A72FE8359AE", hash_generated_method = "9771466666FEF4F1014A40F47120D700")
         public String getEncodedPath() {
             String varB4EAC82CA7396A68D541C85D26508E83_901580678 = null; 
@@ -1428,6 +1440,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.322 -0400", hash_original_method = "2E34959E1DD3631C67E93F1AE6B31056", hash_generated_method = "1A9BFDEE8134B79D91293F947A49327F")
         public String getQuery() {
             String varB4EAC82CA7396A68D541C85D26508E83_400889605 = null; 
@@ -1439,6 +1452,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.323 -0400", hash_original_method = "53661DD2D38C9C2E00E8B8D2FF316BB7", hash_generated_method = "CD912AC08C1302613697423BAFF49B02")
         public String getEncodedQuery() {
             String varB4EAC82CA7396A68D541C85D26508E83_2123473973 = null; 
@@ -1483,6 +1497,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.326 -0400", hash_original_method = "AE7FF2A9DFCB643CF70873B2C08CD5A8", hash_generated_method = "DD3A377C6FB2C4805861913DFB869DAB")
         public String getLastPathSegment() {
             String varB4EAC82CA7396A68D541C85D26508E83_601257265 = null; 
@@ -1494,6 +1509,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.326 -0400", hash_original_method = "520FB960E4127ABC7143DD06EFB52356", hash_generated_method = "570AB5464EBFAC228EA9067AC2259780")
         public String getUserInfo() {
             String varB4EAC82CA7396A68D541C85D26508E83_1981555392 = null; 
@@ -1505,6 +1521,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.327 -0400", hash_original_method = "88ECB0B5D6F4AA907FC3666F8C1418EB", hash_generated_method = "C6EB846DE1E3DC9E784AC6411CDD2586")
         public String getEncodedUserInfo() {
             String varB4EAC82CA7396A68D541C85D26508E83_1329444801 = null; 
@@ -1516,6 +1533,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.327 -0400", hash_original_method = "00C71B0865F91AE7EF71B7BE21B14B9F", hash_generated_method = "60C397CEB4C5B053FD4B6FC4E9ED6147")
         public String getHost() {
             String varB4EAC82CA7396A68D541C85D26508E83_1758992384 = null; 
@@ -1527,6 +1545,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.327 -0400", hash_original_method = "B159430668427C6760C3FB4B772D9F59", hash_generated_method = "3AFA98A3CACC8B738EDF73EC51070497")
         public int getPort() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_756468683 = getTaintInt();
@@ -1641,6 +1660,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.332 -0400", hash_original_method = "BAF1AF8B1284BE94C387C840AF9FA265", hash_generated_method = "E85C76C8DC6C2F93FBC94E52B4A5D290")
         public int size() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1570746876 = getTaintInt();
@@ -1999,6 +2019,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SPEC)
         static Uri readFrom(Parcel parcel) {
             return new HierarchicalUri(
                 parcel.readString(),
@@ -2010,6 +2031,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.345 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "4EA67F1702E7F9B4B60B9B57E86CDBDA")
         public int describeContents() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_52479829 = getTaintInt();
@@ -2039,6 +2061,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.346 -0400", hash_original_method = "3471DB7575AAB7FBFD2140BF4AB89F77", hash_generated_method = "A846500F4D38B86297306319820F40E9")
         public boolean isHierarchical() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_739031149 = getTaintBoolean();
@@ -2048,6 +2071,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.346 -0400", hash_original_method = "9639BAD4AF2BECE413ED6DDD1E0FB03A", hash_generated_method = "E73423EF37D0C11D63903B184F6477FA")
         public boolean isRelative() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2120415870 = getTaintBoolean();
@@ -2057,6 +2081,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.347 -0400", hash_original_method = "C01635CAE84CEFF188CA85B1E841E2AF", hash_generated_method = "FA11CF3CDAEF773BD975B552937E31D4")
         public String getScheme() {
             String varB4EAC82CA7396A68D541C85D26508E83_724913593 = null; 
@@ -2350,6 +2375,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.360 -0400", hash_original_method = "1FAF048543AEDF54BF8218C15362FDC3", hash_generated_method = "5EDE3C29A61F6C289E293FEAE83DC69D")
         public Builder scheme(String scheme) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_1709897966 = null; 
@@ -2363,6 +2389,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.361 -0400", hash_original_method = "8D4C2B402A916DF01BF39AF004B22B4B", hash_generated_method = "0D0AD7DF32DDEA04E0DEDC0DDD9F4E35")
          Builder opaquePart(Part opaquePart) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_1147574028 = null; 
@@ -2400,6 +2427,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.364 -0400", hash_original_method = "CE12FA6D2315F74B1A3B79C027FFFA6D", hash_generated_method = "351AA0D67A2F67A04CBBE5188AB470D3")
          Builder authority(Part authority) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_925943511 = null; 
@@ -2439,6 +2467,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.366 -0400", hash_original_method = "0552AFD7FA04CD9C4E588C7FB644B387", hash_generated_method = "A9882FADB74F316CCEC77F96C98D6D9B")
          Builder path(PathPart path) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_701507955 = null; 
@@ -2502,6 +2531,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.369 -0400", hash_original_method = "526B00AFFC674BC410AFF0DB5058AD68", hash_generated_method = "B45D610A06E4DBE5358A5C0FC4EFF230")
          Builder query(Part query) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_87781242 = null; 
@@ -2541,6 +2571,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.371 -0400", hash_original_method = "AAD8E80453C4B46D11B41869FDCBA00D", hash_generated_method = "B6171A4A9C2E467462A2E0BDC4565CE0")
          Builder fragment(Part fragment) {
             Builder varB4EAC82CA7396A68D541C85D26508E83_1257340078 = null; 
@@ -2642,6 +2673,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.376 -0400", hash_original_method = "C36CE5067F02DA1F1C7276BF67665A1B", hash_generated_method = "896B95F0D68B69BD2493D7972412C2C8")
         public Uri build() {
             Uri varB4EAC82CA7396A68D541C85D26508E83_2132869431 = null; 
@@ -2685,6 +2717,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.376 -0400", hash_original_method = "7917AD3B49169A1AC8EEA7DD014B7E45", hash_generated_method = "C3D927ACB0A3C2AF8E4AC19D4CF8EE5C")
         private boolean hasSchemeOrAuthority() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_397446047 = getTaintBoolean();
@@ -2825,6 +2858,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.380 -0400", hash_original_method = "BD94DCCF5B44419F4498543CA74892E2", hash_generated_method = "699AD448A963503DA10F419A9E5CAD02")
          boolean isEmpty() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_949568178 = getTaintBoolean();
@@ -2864,6 +2898,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
+        @DSModeled(DSC.SAFE)
         static Part nonNull(Part part) {
             return part == null ? NULL : part;
         }
@@ -2906,6 +2941,7 @@ public class Uri implements Parcelable, Comparable<Uri> {
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.382 -0400", hash_original_method = "9A172AFBEDC6074FE36DA0C4940853DE", hash_generated_method = "3CEE4ED3EC3712934801972F062DE9A1")
             @Override
              boolean isEmpty() {

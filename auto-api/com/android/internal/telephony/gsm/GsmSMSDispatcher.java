@@ -481,6 +481,7 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.456 -0400", hash_original_method = "EE152888A937A1561BADC909DEBD7300", hash_generated_method = "0F73C8A8A64127B05C615F2324475569")
         @Override
         public int hashCode() {
@@ -491,6 +492,7 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.456 -0400", hash_original_method = "A4665EFAF0A95C2E46EAC850D0E6C5D5", hash_generated_method = "299E7686BAAE3D27924F991E23B05997")
         @Override
         public boolean equals(Object obj) {

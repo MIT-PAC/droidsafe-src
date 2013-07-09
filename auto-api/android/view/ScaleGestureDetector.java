@@ -668,6 +668,7 @@ public class ScaleGestureDetector {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.788 -0400", hash_original_method = "F1A51F1E1A44A60BDE5250CC79B6BF22", hash_generated_method = "438C189907AFC947701616D25DE070AE")
         public boolean onScale(ScaleGestureDetector detector) {
             
@@ -679,6 +680,7 @@ public class ScaleGestureDetector {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.789 -0400", hash_original_method = "2018A466C052949DAB40F7C8547E8FA5", hash_generated_method = "05794F51D80370DD96E11460B6B6174F")
         public boolean onScaleBegin(ScaleGestureDetector detector) {
             
@@ -690,6 +692,7 @@ public class ScaleGestureDetector {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.789 -0400", hash_original_method = "5B9499EAA38A4A49EE469DC4AE83A358", hash_generated_method = "60B04B78A4A04F6C7A1F2B5D39D8EB97")
         public void onScaleEnd(ScaleGestureDetector detector) {
             

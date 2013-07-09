@@ -196,6 +196,7 @@ public class ArrayBlockingQueue<E> extends AbstractQueue<E> implements BlockingQ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.122 -0400", hash_original_method = "94E6DD980D252AA320ADEF879614EDE5", hash_generated_method = "8FEBAEE14BE375F726CEC9769D253297")
      void removeAt(int i) {
         final Object[] items = this.items;
@@ -1001,6 +1002,7 @@ public class ArrayBlockingQueue<E> extends AbstractQueue<E> implements BlockingQ
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.138 -0400", hash_original_method = "BD6D3436A392753337E742307DB75B57", hash_generated_method = "F2A1A288327F24E4B4E38F48137A70E9")
         public boolean hasNext() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1587729408 = getTaintBoolean();

@@ -180,6 +180,7 @@ public final class GpsStatus {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.278 -0400", hash_original_method = "280A0F6C9C24DB057056B6AC4648E027", hash_generated_method = "C1708BF972B082821CD0EFD8AE5971F8")
         public boolean hasNext() {
             {

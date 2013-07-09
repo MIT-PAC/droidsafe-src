@@ -481,6 +481,7 @@ public class AccessibilityRecordCompat {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.003 -0400", hash_original_method = "817FD8D623FDA4524F619AFC293F09EC", hash_generated_method = "B5BE255727F4822945BFB6235EB25571")
         public Object obtain() {
             Object varB4EAC82CA7396A68D541C85D26508E83_548616916 = null; 
@@ -492,6 +493,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.005 -0400", hash_original_method = "C833934C702CCEDDDC40965CF6BB153A", hash_generated_method = "D8D09D0D8DBEB8180F305D08DCEF35A8")
         public Object obtain(Object record) {
             Object varB4EAC82CA7396A68D541C85D26508E83_213923047 = null; 
@@ -504,6 +506,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.005 -0400", hash_original_method = "F90CB281D321FEE4A4F0AF83B7ABB25F", hash_generated_method = "2B3735A858F7C55B5D65DCF4136DB405")
         public int getAddedCount(Object record) {
             addTaint(record.getTaint());
@@ -514,6 +517,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.006 -0400", hash_original_method = "D88DAB510B8A28B158E9FAE2985AFAAE", hash_generated_method = "B566C3B091F58BDADACAA5A46B36A547")
         public CharSequence getBeforeText(Object record) {
             CharSequence varB4EAC82CA7396A68D541C85D26508E83_711454842 = null; 
@@ -526,6 +530,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.008 -0400", hash_original_method = "FD914D1EFD1979B37ED7245D7B7F7059", hash_generated_method = "A9B0A16B7751645F4E087FFEC5845BDC")
         public CharSequence getClassName(Object record) {
             CharSequence varB4EAC82CA7396A68D541C85D26508E83_401564111 = null; 
@@ -538,6 +543,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.009 -0400", hash_original_method = "D84898F53B55733105C243C31FF4D92A", hash_generated_method = "EC761A500C17EB929B21B67D804D9F4B")
         public CharSequence getContentDescription(Object record) {
             CharSequence varB4EAC82CA7396A68D541C85D26508E83_1364741104 = null; 
@@ -550,6 +556,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.009 -0400", hash_original_method = "ED755EB9CD2FCB213F8D0958182918B1", hash_generated_method = "CC1168C4E2DA67259CF55D1F12C3DAE3")
         public int getCurrentItemIndex(Object record) {
             addTaint(record.getTaint());
@@ -560,6 +567,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.010 -0400", hash_original_method = "EA55EE1496DF735826E7042DBF59DA21", hash_generated_method = "ED317A3F444EC61CFD2CEC807AD518DE")
         public int getFromIndex(Object record) {
             addTaint(record.getTaint());
@@ -570,6 +578,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.011 -0400", hash_original_method = "B2CEF64A9C6DC39EFF7F59F41B235ACE", hash_generated_method = "5526532EE3AC16B18F9B61CA96BDFDA5")
         public int getItemCount(Object record) {
             addTaint(record.getTaint());
@@ -580,6 +589,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.012 -0400", hash_original_method = "43109DE447EFD28C11432306FD2A6430", hash_generated_method = "154F5410440A9489A98982AE0D1B9E7D")
         public int getMaxScrollX(Object record) {
             addTaint(record.getTaint());
@@ -590,6 +600,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.012 -0400", hash_original_method = "79A4CD5BA9EBA207867CFDF16F8DCECF", hash_generated_method = "72C69B6A5DC3A551190099E45264A2E2")
         public int getMaxScrollY(Object record) {
             addTaint(record.getTaint());
@@ -600,6 +611,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.013 -0400", hash_original_method = "A496485FDBB3D7A6E6A1E20087CB0236", hash_generated_method = "DD2245F877D591C23835F30E5ABF8E6C")
         public Parcelable getParcelableData(Object record) {
             Parcelable varB4EAC82CA7396A68D541C85D26508E83_1385734164 = null; 
@@ -612,6 +624,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.014 -0400", hash_original_method = "83058A7D703FFDCDBF9FB80F6F624B91", hash_generated_method = "A6C9166720B55A4C4C978612D488FF81")
         public int getRemovedCount(Object record) {
             addTaint(record.getTaint());
@@ -622,6 +635,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.015 -0400", hash_original_method = "A98DC13E63DB6EDF6312E82E1369DC81", hash_generated_method = "F802285DF72D2506CCCF6D94EC01E1D4")
         public int getScrollX(Object record) {
             addTaint(record.getTaint());
@@ -632,6 +646,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.015 -0400", hash_original_method = "D402DAA3C0FEF0B1A87C51CCB5A458A6", hash_generated_method = "B57366E57F973B80225A8CF987DAD2AA")
         public int getScrollY(Object record) {
             addTaint(record.getTaint());
@@ -642,6 +657,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.017 -0400", hash_original_method = "5E1028B22D24ABF330B31F8D1C2B3273", hash_generated_method = "BDBCA6D811B6708DC91B1FBB84ADC31E")
         public Object getSource(Object record) {
             Object varB4EAC82CA7396A68D541C85D26508E83_1967926691 = null; 
@@ -666,6 +682,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.018 -0400", hash_original_method = "53BD445A2E4F458172E7D521BE2BA282", hash_generated_method = "EEABBC712037E51F662C4B860EF78D1D")
         public int getToIndex(Object record) {
             addTaint(record.getTaint());
@@ -676,6 +693,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.019 -0400", hash_original_method = "E7E274C535518FCBAF4AC98EFC681CC0", hash_generated_method = "0AC5ED1CF99819F2BE1D98065891B266")
         public int getWindowId(Object record) {
             addTaint(record.getTaint());
@@ -686,6 +704,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.020 -0400", hash_original_method = "B009BFD7507989B7F184DE698965678F", hash_generated_method = "BD6B7A1BD796F1DF9C331E454868DEC3")
         public boolean isChecked(Object record) {
             addTaint(record.getTaint());
@@ -696,6 +715,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.021 -0400", hash_original_method = "387492772BF087B392CED940E81C610C", hash_generated_method = "D459CC43DBF06EF8D0315790863B6736")
         public boolean isEnabled(Object record) {
             addTaint(record.getTaint());
@@ -706,6 +726,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.021 -0400", hash_original_method = "C9E2268D6783DD1689D249ED1947D214", hash_generated_method = "A2D0693A3B8AE5511EA72B740A6E5C79")
         public boolean isFullScreen(Object record) {
             addTaint(record.getTaint());
@@ -716,6 +737,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.022 -0400", hash_original_method = "B0A101CD42EE708C94CC714B34E79483", hash_generated_method = "003F0CD0CCCBBA3E2599EEA6A36B0296")
         public boolean isPassword(Object record) {
             addTaint(record.getTaint());
@@ -726,6 +748,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.023 -0400", hash_original_method = "EFE1A97D41CCD0AC1CAE8AE734022222", hash_generated_method = "6319204B4CDA3F390A5FAC8E430F6C0A")
         public boolean isScrollable(Object record) {
             addTaint(record.getTaint());
@@ -736,6 +759,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.023 -0400", hash_original_method = "0822C51B444C5D0A3B1814CCF76346D8", hash_generated_method = "C4DD1BCD02276DC1A58794021EE4769D")
         public void recycle(Object record) {
             addTaint(record.getTaint());
@@ -743,6 +767,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.024 -0400", hash_original_method = "AB58CF4EF2D36470A4509FD8C486C38C", hash_generated_method = "AFC220B65A1FACA102723F6D00BF1A23")
         public void setAddedCount(Object record, int addedCount) {
             addTaint(record.getTaint());
@@ -751,6 +776,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.025 -0400", hash_original_method = "0C616FCF3D2F73E411A730590E3D5D32", hash_generated_method = "B14DE201EAC5AEBFC36C83B775C6FE90")
         public void setBeforeText(Object record, CharSequence beforeText) {
             addTaint(record.getTaint());
@@ -759,6 +785,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.025 -0400", hash_original_method = "7C27BC3788733125D507437335EC353D", hash_generated_method = "18BEF68D3E1C3584268E276BC6FAFF49")
         public void setChecked(Object record, boolean isChecked) {
             addTaint(record.getTaint());
@@ -767,6 +794,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.026 -0400", hash_original_method = "FD317401C826C1223A64867C6EC5B291", hash_generated_method = "111A63A16D4875FFD3F3F1C0E267A550")
         public void setClassName(Object record, CharSequence className) {
             addTaint(record.getTaint());
@@ -775,6 +803,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.027 -0400", hash_original_method = "94F0136A29282DAA3DE997090A6A286A", hash_generated_method = "F5A441C0C45B4B64EB378D25D2451BD0")
         public void setContentDescription(Object record, CharSequence contentDescription) {
             addTaint(record.getTaint());
@@ -783,6 +812,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.027 -0400", hash_original_method = "A2C7EF51987839BAAD4F90BA90C23B24", hash_generated_method = "2FBE9F13C3FEF3964762A2ECA3B37D72")
         public void setCurrentItemIndex(Object record, int currentItemIndex) {
             addTaint(record.getTaint());
@@ -791,6 +821,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.028 -0400", hash_original_method = "1CB087CD34A2A1CF4BACE46FF2A73CB2", hash_generated_method = "CE7D6C30E55330224ABDC597A2756353")
         public void setEnabled(Object record, boolean isEnabled) {
             addTaint(record.getTaint());
@@ -799,6 +830,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.029 -0400", hash_original_method = "A1530126D49151037E6BE9D65E5EF0F5", hash_generated_method = "21CE33D216532561C689DD23F2BA4723")
         public void setFromIndex(Object record, int fromIndex) {
             addTaint(record.getTaint());
@@ -807,6 +839,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.029 -0400", hash_original_method = "636733158A16FF28777C708D236383E9", hash_generated_method = "9575FDC1BA203FEA31D8BEBC1A64A813")
         public void setFullScreen(Object record, boolean isFullScreen) {
             addTaint(record.getTaint());
@@ -815,6 +848,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.030 -0400", hash_original_method = "7CF260AA168E10865865C5096E83F546", hash_generated_method = "1A0BEFC8AB659239966872A3D5535BBB")
         public void setItemCount(Object record, int itemCount) {
             addTaint(record.getTaint());
@@ -823,6 +857,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.031 -0400", hash_original_method = "B0E228EC678D60AF999CBBCF90005DC4", hash_generated_method = "62B810683D07C9B1273A5DD7EA7B82E2")
         public void setMaxScrollX(Object record, int maxScrollX) {
             addTaint(record.getTaint());
@@ -831,6 +866,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.031 -0400", hash_original_method = "6BFFE4DDD0D4E15E25FCE31267BE93D4", hash_generated_method = "9BE3A3263DFA77FEA594A55F65F88E8C")
         public void setMaxScrollY(Object record, int maxScrollY) {
             addTaint(record.getTaint());
@@ -839,6 +875,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.032 -0400", hash_original_method = "451273F7B55B772F2ACF5DAE588A6DDB", hash_generated_method = "9A05512AA660E93052DD827C39C570B5")
         public void setParcelableData(Object record, Parcelable parcelableData) {
             addTaint(record.getTaint());
@@ -847,6 +884,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.032 -0400", hash_original_method = "F35ACC96BB4285B03C9C78E114EF8F8B", hash_generated_method = "AECA75952F61DC76BC139596AB9AF495")
         public void setPassword(Object record, boolean isPassword) {
             addTaint(record.getTaint());
@@ -855,6 +893,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.033 -0400", hash_original_method = "A89AC7628D40B20639C8511B06AD2E79", hash_generated_method = "0E07FF27DCBD7706B93CCD299F21E39D")
         public void setRemovedCount(Object record, int removedCount) {
             addTaint(record.getTaint());
@@ -863,6 +902,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.034 -0400", hash_original_method = "DA3CC9AB973CA8FF4F8225CF31D19FEC", hash_generated_method = "749C94C3DF616712C8B328A138AC487F")
         public void setScrollX(Object record, int scrollX) {
             addTaint(record.getTaint());
@@ -871,6 +911,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.034 -0400", hash_original_method = "867F931D8D0C10A48663B9ECBFA8AA42", hash_generated_method = "FA775ED449E42A312B7CDC7043A14665")
         public void setScrollY(Object record, int scrollY) {
             addTaint(record.getTaint());
@@ -879,6 +920,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.035 -0400", hash_original_method = "D396DC479E27254826BDBDB3890ABCBE", hash_generated_method = "CC13821B8875799E94EBF4630C54C5A7")
         public void setScrollable(Object record, boolean scrollable) {
             addTaint(record.getTaint());
@@ -887,6 +929,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.036 -0400", hash_original_method = "D302B78A3606FA23A1E14A2A82F4DEFF", hash_generated_method = "769AA30882D16222E3C021B2279CBA91")
         public void setSource(Object record, View source) {
             addTaint(record.getTaint());
@@ -895,6 +938,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.036 -0400", hash_original_method = "D8359FB6845E0B840F7081D0CBF68C27", hash_generated_method = "7CBEFD3D747E28AE1FA20ECD80E5070C")
         public void setToIndex(Object record, int toIndex) {
             addTaint(record.getTaint());
@@ -1019,6 +1063,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.046 -0400", hash_original_method = "43109DE447EFD28C11432306FD2A6430", hash_generated_method = "3F5B583A29933CE5FE5DF595AA8115B7")
         public int getMaxScrollX(Object record) {
             addTaint(record.getTaint());
@@ -1029,6 +1074,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.047 -0400", hash_original_method = "79A4CD5BA9EBA207867CFDF16F8DCECF", hash_generated_method = "A0E9AF488D0A6DDF07AEE2060FD9265A")
         public int getMaxScrollY(Object record) {
             addTaint(record.getTaint());
@@ -1294,6 +1340,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.069 -0400", hash_original_method = "B0E228EC678D60AF999CBBCF90005DC4", hash_generated_method = "62B810683D07C9B1273A5DD7EA7B82E2")
         public void setMaxScrollX(Object record, int maxScrollX) {
             addTaint(record.getTaint());
@@ -1302,6 +1349,7 @@ public class AccessibilityRecordCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:53.070 -0400", hash_original_method = "6BFFE4DDD0D4E15E25FCE31267BE93D4", hash_generated_method = "9BE3A3263DFA77FEA594A55F65F88E8C")
         public void setMaxScrollY(Object record, int maxScrollY) {
             addTaint(record.getTaint());

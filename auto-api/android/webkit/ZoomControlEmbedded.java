@@ -164,6 +164,7 @@ class ZoomControlEmbedded implements ZoomControlBase {
         }
 
 
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.065 -0400", hash_original_method = "CAB57885F430D7392888CFD12B17B225", hash_generated_method = "8FF895FBB8D9E9C4EA66CF68F1381998")
         public void onVisibilityChanged(boolean visible) {
             

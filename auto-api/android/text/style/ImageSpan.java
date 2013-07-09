@@ -166,7 +166,7 @@ public class ImageSpan extends DynamicDrawableSpan {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.777 -0400", hash_original_method = "16DECD9D0B2DB9DD9C51FE274851DFB5", hash_generated_method = "9A8BBC59A1019B0BC2ED389CAC21B247")
     @Override
     public Drawable getDrawable() {

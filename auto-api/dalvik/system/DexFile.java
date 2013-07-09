@@ -215,6 +215,7 @@ public final class DexFile {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.654 -0400", hash_original_method = "44B49EF070D2DA767A519B4A12A72A0B", hash_generated_method = "2D4929EF1314C00ABCF34ABA6EBCBA6A")
         public boolean hasMoreElements() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1554841106 = getTaintBoolean();
@@ -224,6 +225,7 @@ public final class DexFile {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.655 -0400", hash_original_method = "EDE97A24B23321A2938B638C5AA975A1", hash_generated_method = "B2188616125B4E794077892B10B25491")
         public String nextElement() {
             String varB4EAC82CA7396A68D541C85D26508E83_750601599 = null; 

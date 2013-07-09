@@ -412,6 +412,7 @@ public class Timer {
             }
 
 
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.954 -0400", hash_original_method = "54D4D4169DAC5C26DC557B9A789FA70D", hash_generated_method = "327CD31BD0CA81CF47F5148CD87EF858")
             public TimerTask minimum() {
                 TimerTask varB4EAC82CA7396A68D541C85D26508E83_1368371109 = null; 
@@ -423,6 +424,7 @@ public class Timer {
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.954 -0400", hash_original_method = "186376BCBF1440029A4A8EF9D3327AB7", hash_generated_method = "BB14193FAFB6B8051E241A2BC36B1ACD")
             public boolean isEmpty() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_468914170 = getTaintBoolean();
@@ -468,6 +470,7 @@ public class Timer {
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.957 -0400", hash_original_method = "4756DE20DDADB3FD04AA7E2F3A372FAC", hash_generated_method = "F91BF5B30C813A82E7CDE773B453B8D9")
             private void upHeap() {
                 int current = size - 1;
@@ -492,6 +495,7 @@ public class Timer {
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.959 -0400", hash_original_method = "A63AC6E1F65E01631F08DE00B4EE87D2", hash_generated_method = "2E12BF94E677CA281F09024FC210320A")
             private void downHeap(int pos) {
                 int current = pos;
@@ -524,6 +528,7 @@ public class Timer {
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.960 -0400", hash_original_method = "2535A97D037DD57E0DAFCE2BC7E2038E", hash_generated_method = "FEDFA13AA9192D076D68218879D9832F")
             public void reset() {
                 timers = new TimerTask[DEFAULT_HEAP_SIZE];
@@ -563,6 +568,7 @@ public class Timer {
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.961 -0400", hash_original_method = "B28407BF2F77FCC6A87AD91AEA3746F4", hash_generated_method = "FDB158C617F3127FDBE588830B84AC43")
             private int getTask(TimerTask task) {
                 {

@@ -280,6 +280,7 @@ class X509Util {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.541 -0400", hash_original_method = "BE45F36A26940534B07006714A378835", hash_generated_method = "51B522A9979A390114F57D5F0896C0D6")
          Object getEngine() {
             Object varB4EAC82CA7396A68D541C85D26508E83_1833069912 = null; 
@@ -291,6 +292,7 @@ class X509Util {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.542 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "8AAA5E6542584067EE45A1695245FD5C")
          Provider getProvider() {
             Provider varB4EAC82CA7396A68D541C85D26508E83_1332500710 = null; 

@@ -757,6 +757,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.548 -0400", hash_original_method = "A5B2D8696143266ED24B145CF029F206", hash_generated_method = "D17A3F2E88211FB5CD9B9134EDD68432")
         @Override
         public boolean deliverSelfNotifications() {

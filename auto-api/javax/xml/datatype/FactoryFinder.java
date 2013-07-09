@@ -209,6 +209,7 @@ final class FactoryFinder {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.461 -0400", hash_original_method = "DEACD8BC5F5C015493740DB375DC8E7E", hash_generated_method = "F82A39E40DA1CC7D9DFB9F3220989874")
          Exception getException() {
             Exception varB4EAC82CA7396A68D541C85D26508E83_689508038 = null; 

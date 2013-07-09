@@ -526,6 +526,7 @@ public class ScaleDrawable extends Drawable implements Drawable.Callback {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.517 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "0A7CD6F569E334FE40471A991616904A")
         @Override
         public int getChangingConfigurations() {

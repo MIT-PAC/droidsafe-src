@@ -414,6 +414,7 @@ class AccessibilityInjector {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.566 -0400", hash_original_method = "8E50A2B3D320E1E0EE376617185D134A", hash_generated_method = "4A6A906C306BB3927EA729D133B0A70B")
         public int getKeyCode() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1502555969 = getTaintInt();
@@ -423,6 +424,7 @@ class AccessibilityInjector {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.566 -0400", hash_original_method = "C813CFA88B40923E17E3BC75AACF9837", hash_generated_method = "61E173FBA91E38CEC309F87BC8C30BBB")
         public int getModifiers() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1642200476 = getTaintInt();
@@ -432,6 +434,7 @@ class AccessibilityInjector {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.566 -0400", hash_original_method = "7BDD12B6399A0F96D6927AAB9227781B", hash_generated_method = "177D2C0A42D1BABB3122E9575F2A2FBF")
         public int getActionCount() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_759904255 = getTaintInt();
@@ -441,6 +444,7 @@ class AccessibilityInjector {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.567 -0400", hash_original_method = "7D2F0A4FD4E90A95C2DF2F50740199D4", hash_generated_method = "874652BB8C798C2C762A2E82A15EB968")
         public int getAction(int index) {
             addTaint(index);
@@ -451,6 +455,7 @@ class AccessibilityInjector {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.567 -0400", hash_original_method = "CA4B639111BCEE7DB87E06F000E025C0", hash_generated_method = "9F4C9CC6DD76A62D91382E1B47A3736B")
         public int getActionCode(int index) {
             addTaint(index);
@@ -461,6 +466,7 @@ class AccessibilityInjector {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.567 -0400", hash_original_method = "D4FD6DE193B436AB1DC7E71BD25D2E14", hash_generated_method = "DFA12510B98EDE9AEDD1B9446A7488A0")
         public int getFirstArgument(int index) {
             addTaint(index);
@@ -471,6 +477,7 @@ class AccessibilityInjector {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.568 -0400", hash_original_method = "632B802F886C3F34DA2DAC0FE9DCCFBA", hash_generated_method = "088B8D69359D8C8A969D84FCC72E71AB")
         public int getSecondArgument(int index) {
             addTaint(index);
@@ -481,6 +488,7 @@ class AccessibilityInjector {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.568 -0400", hash_original_method = "F37454AACD85ADFC551E32B3CAA53EB4", hash_generated_method = "DFA6B635555ABDF7028BAF2F90014279")
         public int getThirdArgument(int index) {
             addTaint(index);

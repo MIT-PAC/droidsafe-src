@@ -2614,6 +2614,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.250 -0400", hash_original_method = "59E93FB376BDE71F69616A2B01BFF0AF", hash_generated_method = "3E4DF2392B74902D7C9F3D973A959C02")
      void dispatchDetachedFromWindow() {
         {
@@ -5138,6 +5139,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.299 -0400", hash_original_method = "93900AD5EB4A5A0D65615E175C2FC0CA", hash_generated_method = "2C1BB336E518A3E99AD42D8EC1455512")
         @Override
         public boolean onAllowLockCanvas() {
@@ -5149,6 +5151,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.299 -0400", hash_original_method = "CAFD67152D224915C2628F6ACAAF5E06", hash_generated_method = "769E8A917A2AE0CACCF50C3D308C76DF")
         @Override
         public void onRelayoutContainer() {
@@ -5175,6 +5178,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.300 -0400", hash_original_method = "65C8D4CF87AA6164C88CB73B7231A722", hash_generated_method = "F372C0B52A7977F3E6CD7075DE72C5D9")
         @Override
         public void onUpdateSurface() {
@@ -5185,6 +5189,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.300 -0400", hash_original_method = "FBEC596A43003FDD0C674BF719352967", hash_generated_method = "3C714ECAB857257CA09657659AC224B3")
         public boolean isCreating() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_790601217 = getTaintBoolean();
@@ -5249,6 +5254,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.302 -0400", hash_original_method = "93549AC7AA704598E881A2A0D800AB4C", hash_generated_method = "B59F51822D7ED309BAF5863A034576FE")
         public void sessionCreated(IInputMethodSession session) {
             addTaint(session.getTaint());
@@ -5351,6 +5357,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.305 -0400", hash_original_method = "BAC64B61AF453BEA5AB28D214B8FF7C5", hash_generated_method = "FE693F5A43BD4CB40BB998C69F34826D")
         public void executeCommand(String command, String parameters, ParcelFileDescriptor out) {
             final ViewRootImpl viewAncestor = mViewAncestor.get();
@@ -5537,6 +5544,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.308 -0400", hash_original_method = "A6304CADA1EF057D91BA6FF70064FCCC", hash_generated_method = "94AD87BF947D2DA6B9302A4900B6F256")
          void reset(int _step) {
             position = 0;
@@ -6606,6 +6614,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             }
 
 
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.326 -0400", hash_original_method = "BEE0522D727ED0DB1FBC81A3E3B176C5", hash_generated_method = "D35B9F19D3E1AC0544A54BC4FEEC323D")
             public SomeArgs getNextPoolable() {
                 SomeArgs varB4EAC82CA7396A68D541C85D26508E83_1797377885 = null; 
@@ -6617,6 +6626,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.327 -0400", hash_original_method = "4CB4F04617162A1F2BEBBAC63163A5FB", hash_generated_method = "1EA6636C21BFE932B4D6BCB4F78AA008")
             public boolean isPooled() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_557037504 = getTaintBoolean();
@@ -6626,6 +6636,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.327 -0400", hash_original_method = "B595989EA0DDF2662B95D2584CF9AF77", hash_generated_method = "F4A2EC156C0A86672F5B936336F0364D")
             public void setNextPoolable(SomeArgs args) {
                 mNext = args;
@@ -6634,6 +6645,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.327 -0400", hash_original_method = "CCE0492C3FBB65D8A1644633FE9AA3DF", hash_generated_method = "31CEC37D69D770078DC2E4A0F4797B2A")
             public void setPooled(boolean isPooled) {
                 mIsPooled = isPooled;
@@ -6642,6 +6654,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.328 -0400", hash_original_method = "95D0476EAE9CBD3221945617281C6DDB", hash_generated_method = "316EB695B735DFEA458AF811F180A884")
             private void clear() {
                 arg1 = null;

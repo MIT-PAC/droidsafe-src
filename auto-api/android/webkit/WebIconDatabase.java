@@ -287,6 +287,7 @@ public final class WebIconDatabase {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.802 -0400", hash_original_method = "9D0DE68A4BFD007DC242C5FC5FA57FA9", hash_generated_method = "186C78AE98CFBA72F0C21018DE491560")
         private synchronized boolean hasHandler() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2102283487 = getTaintBoolean();

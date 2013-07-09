@@ -376,6 +376,7 @@ class ViewManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.715 -0400", hash_original_method = "49948859AFA14B35AAA713D3429ED265", hash_generated_method = "1647B31ED8A57F0659AE086FB95F7A06")
          void setBounds(int x, int y, int width, int height) {
             this.x = x;
@@ -390,6 +391,7 @@ class ViewManager {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.716 -0400", hash_original_method = "C5CB26D6C1A4635E70554CC63D76B563", hash_generated_method = "5315B8D18A591B5EE51F2E6BF220F7BD")
          void attachView(int x, int y, int width, int height) {
             setBounds(x, y, width, height);

@@ -3112,13 +3112,15 @@ public class PhoneNumberUtil {
     
     public enum Leniency {
     POSSIBLE {
-      @Override
+      @DSModeled(DSC.SAFE)
+        @Override
       boolean verify(PhoneNumber number, String candidate, PhoneNumberUtil util) {
         return util.isPossibleNumber(number);
       }
     },
     VALID {
-      @Override
+      @DSModeled(DSC.SAFE)
+        @Override
       boolean verify(PhoneNumber number, String candidate, PhoneNumberUtil util) {
         if (!util.isValidNumber(number)) {
           return false;
@@ -3127,7 +3129,8 @@ public class PhoneNumberUtil {
       }
     },
     STRICT_GROUPING {
-      @Override
+      @DSModeled(DSC.SAFE)
+        @Override
       boolean verify(PhoneNumber number, String candidate, PhoneNumberUtil util) {
         if (!util.isValidNumber(number) ||
             !containsOnlyValidXChars(number, candidate, util) ||
@@ -3156,7 +3159,8 @@ public class PhoneNumberUtil {
       }
     },
     EXACT_GROUPING {
-      @Override
+      @DSModeled(DSC.SAFE)
+        @Override
       boolean verify(PhoneNumber number, String candidate, PhoneNumberUtil util) {
         if (!util.isValidNumber(number) ||
             !containsOnlyValidXChars(number, candidate, util) ||

@@ -1174,6 +1174,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.682 -0400", hash_original_method = "FEB1A2B1EE4CD2130FB08EC4E4CC489E", hash_generated_method = "45FAE979B6EF5255E98919F10948FE73")
         public void clearSavedState() {
             mInstanceState = null;

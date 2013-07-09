@@ -73,6 +73,7 @@ public class ViewCompat {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.075 -0400", hash_original_method = "B6398682E53A0553C234AF7A57520A50", hash_generated_method = "1BFEB47F5D7B48436F6EF4006655398E")
         public boolean canScrollHorizontally(View v, int direction) {
             addTaint(v.getTaint());
@@ -84,6 +85,7 @@ public class ViewCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.076 -0400", hash_original_method = "503E40CFCA77F79E3DB90A02CF27CB11", hash_generated_method = "88F0F5DA54A23A02AFF95A17EA827577")
         public boolean canScrollVertically(View v, int direction) {
             addTaint(v.getTaint());
@@ -95,6 +97,7 @@ public class ViewCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.077 -0400", hash_original_method = "FE606A273B3E1C6F88C42FF299410004", hash_generated_method = "5120BB9B1516C85E291EB555456F5951")
         public int getOverScrollMode(View v) {
             addTaint(v.getTaint());
@@ -105,6 +108,7 @@ public class ViewCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.094 -0400", hash_original_method = "6EF0161350C522C30619CD84403B6E93", hash_generated_method = "2D02E8B290DEC2CDF2F2DB0722B517FB")
         public void setOverScrollMode(View v, int mode) {
             addTaint(v.getTaint());
@@ -113,6 +117,7 @@ public class ViewCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.096 -0400", hash_original_method = "122EA5B596C8B5B38E62AE02215B1570", hash_generated_method = "2E96D59A9F0F49C19106593E853399E2")
         public void setAccessibilityDelegate(View v, AccessibilityDelegateCompat delegate) {
             addTaint(v.getTaint());
@@ -121,6 +126,7 @@ public class ViewCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.097 -0400", hash_original_method = "702F7E45C5537D15A13A9B08A18B3D2B", hash_generated_method = "3FE22AACD73F1DAACF65AADBC6F00B9B")
         public void onPopulateAccessibilityEvent(View v, AccessibilityEvent event) {
             
@@ -130,6 +136,7 @@ public class ViewCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.098 -0400", hash_original_method = "9137ED0A1BFDD4FC8792E5A61DC6F04E", hash_generated_method = "52AAFF06B3F65DCB34F9396FD974B22F")
         public void onInitializeAccessibilityEvent(View v, AccessibilityEvent event) {
             
@@ -139,6 +146,7 @@ public class ViewCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.103 -0400", hash_original_method = "E0BDF5AA116BC42106585B9B041EC074", hash_generated_method = "8A4948A59C9913A2E51572DBD040132E")
         public void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeInfoCompat info) {
             

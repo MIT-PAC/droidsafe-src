@@ -759,6 +759,7 @@ final class SharedPreferencesImpl implements SharedPreferences {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.518 -0400", hash_original_method = "59F9BBF7AADFDAE77F62CA904307DAB9", hash_generated_method = "3539C733C5515581CB81DCA4AF612E7D")
         public Editor clear() {
             Editor varB4EAC82CA7396A68D541C85D26508E83_1968146096 = null; 
@@ -776,6 +777,7 @@ final class SharedPreferencesImpl implements SharedPreferences {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:55.905 -0400", hash_original_method = "874FED7345E8B1C9E07FEF0510B9D798", hash_generated_method = "BFCA20DC6902321268BE1A072C0F913B")
         public void apply() {
             final MemoryCommitResult mcr;
@@ -821,6 +823,7 @@ final class SharedPreferencesImpl implements SharedPreferences {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.523 -0400", hash_original_method = "686A9AF4CEF5EAEBEB20BB8BD072C7B7", hash_generated_method = "175B925E15942B4845A8684A6AA90C55")
         private MemoryCommitResult commitToMemory() {
             MemoryCommitResult varB4EAC82CA7396A68D541C85D26508E83_46161598 = null; 

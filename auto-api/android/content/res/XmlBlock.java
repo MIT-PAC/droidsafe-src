@@ -337,6 +337,7 @@ final class XmlBlock {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.448 -0400", hash_original_method = "5175B2315D9AD451CFA017AE30114E6D", hash_generated_method = "75C081255E916AE87F46DAC54BD73C8B")
         public Object getProperty(String name) {
             Object varB4EAC82CA7396A68D541C85D26508E83_1053981698 = null; 
@@ -386,6 +387,7 @@ final class XmlBlock {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.451 -0400", hash_original_method = "5C999184AAA0F0E674F1363E90C0FD13", hash_generated_method = "EE0BE6C1B2AAA1C427F53F7BA87BA31E")
         public String getInputEncoding() {
             String varB4EAC82CA7396A68D541C85D26508E83_1176546983 = null; 
@@ -435,6 +437,7 @@ final class XmlBlock {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.454 -0400", hash_original_method = "8861CD3D81AD120598D5847E998DCDDD", hash_generated_method = "778DCC4D227C60DEE60767A7A381CA8C")
         public int getColumnNumber() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_814240229 = getTaintInt();
@@ -444,6 +447,7 @@ final class XmlBlock {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.454 -0400", hash_original_method = "DE1021F4C2B2A1E4D5CF36677B434DEA", hash_generated_method = "F27DBF2AFDD08FF3F9592380A30650FD")
         public int getDepth() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1695827581 = getTaintInt();
@@ -476,6 +480,7 @@ final class XmlBlock {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.456 -0400", hash_original_method = "8A2CD03AAFDD20222A8759980FBB28AE", hash_generated_method = "BF2D786D1B7E1C030B5E09959819AFBC")
         public int getEventType() throws XmlPullParserException {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_727696885 = getTaintInt();
@@ -485,6 +490,7 @@ final class XmlBlock {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.456 -0400", hash_original_method = "926F3413D3806C4A183D059B4FD2543E", hash_generated_method = "802DFD908B0AC646E3FDF381786A2749")
         public boolean isWhitespace() throws XmlPullParserException {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1170594871 = getTaintBoolean();
@@ -610,6 +616,7 @@ final class XmlBlock {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.461 -0400", hash_original_method = "860332C2A14F44509730B84BDA1621A5", hash_generated_method = "4EC9F8CF41A9361C8352E024842E1F80")
         public boolean isEmptyElementTag() throws XmlPullParserException {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1394528661 = getTaintBoolean();
@@ -669,6 +676,7 @@ final class XmlBlock {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.465 -0400", hash_original_method = "D075B222334138AA51A395211AD5E8BA", hash_generated_method = "D490450CBA143620A30E4B0E7730E251")
         public String getAttributeType(int index) {
             String varB4EAC82CA7396A68D541C85D26508E83_1720223271 = null; 
@@ -681,6 +689,7 @@ final class XmlBlock {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.466 -0400", hash_original_method = "506EE66AC609639C08948796E644B012", hash_generated_method = "1B5BCF4A5ECB4A3B5EEF9B7F35266453")
         public boolean isAttributeDefault(int index) {
             addTaint(index);

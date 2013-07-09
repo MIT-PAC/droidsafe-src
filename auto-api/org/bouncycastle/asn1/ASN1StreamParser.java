@@ -168,6 +168,7 @@ public class ASN1StreamParser {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.050 -0400", hash_original_method = "52179F915187689C742CC095EFF2DB0F", hash_generated_method = "3054CEA10A08219D1B27FFE13C76A81C")
      DERObject readTaggedObject(boolean constructed, int tag) throws IOException {
         DERObject varB4EAC82CA7396A68D541C85D26508E83_1529327149 = null; 

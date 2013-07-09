@@ -55,6 +55,7 @@ public final class Telephony {
         }
 
         
+        @DSModeled(DSC.SPEC)
         public static Uri addMessageToUri(ContentResolver resolver,
                 Uri uri, String address, String body, String subject,
                 Long date, boolean read, boolean deliveryReport) {
@@ -63,6 +64,7 @@ public final class Telephony {
         }
 
         
+        @DSModeled(DSC.SPEC)
         public static Uri addMessageToUri(ContentResolver resolver,
                 Uri uri, String address, String body, String subject,
                 Long date, boolean read, boolean deliveryReport, long threadId) {
@@ -84,6 +86,7 @@ public final class Telephony {
         }
 
         
+        @DSModeled(DSC.SPEC)
         public static boolean moveMessageToFolder(Context context,
                 Uri uri, int folder, int error) {
             if (uri == null) {
@@ -119,6 +122,7 @@ public final class Telephony {
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static boolean isOutgoingFolder(int messageType) {
             return  (messageType == MESSAGE_TYPE_FAILED)
                     || (messageType == MESSAGE_TYPE_OUTBOX)
@@ -136,6 +140,7 @@ public final class Telephony {
             }
 
 
+            @DSModeled(DSC.SPEC)
             public static Uri addMessage(ContentResolver resolver,
                     String address, String body, String subject, Long date,
                     boolean read) {
@@ -164,6 +169,7 @@ public final class Telephony {
             }
 
 
+            @DSModeled(DSC.SPEC)
             public static Uri addMessage(ContentResolver resolver,
                     String address, String body, String subject, Long date) {
                 return addMessageToUri(resolver, CONTENT_URI, address, body,
@@ -191,6 +197,7 @@ public final class Telephony {
             }
 
 
+            @DSModeled(DSC.SPEC)
             public static Uri addMessage(ContentResolver resolver,
                     String address, String body, String subject, Long date) {
                 return addMessageToUri(resolver, CONTENT_URI, address, body,
@@ -198,6 +205,7 @@ public final class Telephony {
             }
 
             
+            @DSModeled(DSC.SPEC)
             public static boolean saveMessage(ContentResolver resolver,
                     Uri uri, String body) {
                 ContentValues values = new ContentValues(2);
@@ -227,6 +235,7 @@ public final class Telephony {
             }
 
 
+            @DSModeled(DSC.SPEC)
             public static Uri addMessage(ContentResolver resolver,
                     String address, String body, String subject, Long date,
                     boolean deliveryReport, long threadId) {
@@ -281,6 +290,7 @@ public final class Telephony {
             }
 
 
+            @DSModeled(DSC.SPEC)
             public static SmsMessage[] getMessagesFromIntent(
                     Intent intent) {
                 Object[] messages = (Object[]) intent.getSerializableExtra("pdus");

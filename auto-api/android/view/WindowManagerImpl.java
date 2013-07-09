@@ -752,6 +752,7 @@ public class WindowManagerImpl implements WindowManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.866 -0400", hash_original_method = "56BE5D6095195D262FD5BEEEDA100E7B", hash_generated_method = "ED76E5DCDD85DF65ABF6CE491EF4D915")
         @Override
         public Display getDefaultDisplay() {

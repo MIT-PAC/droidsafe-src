@@ -727,6 +727,7 @@ class SocketChannelImpl extends SocketChannel implements FileDescriptorChannel {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.527 -0400", hash_original_method = "453300FCAD69AE8F91F62237BE21CFBA", hash_generated_method = "49942AF280C75E411025ED7A3E67FA73")
          PlainSocketImpl socketImpl() {
             PlainSocketImpl varB4EAC82CA7396A68D541C85D26508E83_560334513 = null; 
@@ -738,6 +739,7 @@ class SocketChannelImpl extends SocketChannel implements FileDescriptorChannel {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.527 -0400", hash_original_method = "379CE4067399395F02052517F4DCE995", hash_generated_method = "ACE22AFD9B50FDB8372109622EA772E3")
         @Override
         public SocketChannel getChannel() {

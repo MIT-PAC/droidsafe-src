@@ -1123,6 +1123,7 @@ public class WifiManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.626 -0400", hash_original_method = "792BAAC8BC5216CF4F7CAEC0A7A38B7F", hash_generated_method = "91B8A28629F935F303A73D2F07650B69")
         public void setReferenceCounted(boolean refCounted) {
             mRefCounted = refCounted;
@@ -1131,6 +1132,7 @@ public class WifiManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.627 -0400", hash_original_method = "D7CEEF49E1A909FEFC04FBB22CAEF31F", hash_generated_method = "053BD3F52B751D2EA7376238BAE711D1")
         public boolean isHeld() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_328827436 = getTaintBoolean();
@@ -1367,6 +1369,7 @@ public class WifiManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.631 -0400", hash_original_method = "792BAAC8BC5216CF4F7CAEC0A7A38B7F", hash_generated_method = "91B8A28629F935F303A73D2F07650B69")
         public void setReferenceCounted(boolean refCounted) {
             mRefCounted = refCounted;
@@ -1375,6 +1378,7 @@ public class WifiManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.631 -0400", hash_original_method = "D7CEEF49E1A909FEFC04FBB22CAEF31F", hash_generated_method = "DBFD1B6DEF05B891CDCE1F061B678416")
         public boolean isHeld() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1217122041 = getTaintBoolean();

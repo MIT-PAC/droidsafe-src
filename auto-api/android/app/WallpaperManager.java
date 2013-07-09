@@ -691,6 +691,7 @@ public class WallpaperManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.745 -0400", hash_original_method = "20937ACEFD1116260A9689661466F3F7", hash_generated_method = "80D512788A067001B9F953B14B19E30C")
         @Override
         public int getOpacity() {
@@ -701,6 +702,7 @@ public class WallpaperManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.747 -0400", hash_original_method = "AD75C11A4E8AD86B9F9EB3DCD5857128", hash_generated_method = "DD8AC77956034A39F37DA405A27E901A")
         @Override
         public void setBounds(int left, int top, int right, int bottom) {
@@ -752,6 +754,7 @@ public class WallpaperManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.751 -0400", hash_original_method = "7C6E7C05DAF2C7C11CBD631A19BA11F2", hash_generated_method = "62290B4EA1B152EF5FD12F60220734D7")
         @Override
         public int getIntrinsicWidth() {
@@ -762,6 +765,7 @@ public class WallpaperManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.752 -0400", hash_original_method = "3C735D6B09C7947D1D4F4735F7E16410", hash_generated_method = "66A16CF00E8337AB83190ABCEFA1DFDB")
         @Override
         public int getIntrinsicHeight() {
@@ -772,6 +776,7 @@ public class WallpaperManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.753 -0400", hash_original_method = "6C36D8FD6C4DA506CC2056E38D29BDE3", hash_generated_method = "2FAF6BD5FE0A024B82BCF2ED39A9A8DC")
         @Override
         public int getMinimumWidth() {
@@ -782,6 +787,7 @@ public class WallpaperManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.753 -0400", hash_original_method = "F7F1B37FEC841079758C9B817D6DD4F6", hash_generated_method = "EC10ED73575C48C2B433A889D63796F4")
         @Override
         public int getMinimumHeight() {
@@ -864,6 +870,7 @@ public class WallpaperManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.759 -0400", hash_original_method = "10E7D4FA7AE5C5A4DFE91478AE111D01", hash_generated_method = "14ED117A6115E7666262A8966D0A4332")
         public Handler getHandler() {
             Handler varB4EAC82CA7396A68D541C85D26508E83_564660297 = null; 
@@ -929,6 +936,7 @@ public class WallpaperManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.762 -0400", hash_original_method = "0171ADD4BBF298493CC8451FAA0D3640", hash_generated_method = "3151A98DD7FE11BDFB8D5F0E76230461")
         public void forgetLoadedWallpaper() {
             {

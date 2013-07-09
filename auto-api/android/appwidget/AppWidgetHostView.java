@@ -536,6 +536,7 @@ public class AppWidgetHostView extends FrameLayout {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.914 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "25EF92D2D22BF37488A8E8C1F68BE86D")
         public int describeContents() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1828128269 = getTaintInt();
