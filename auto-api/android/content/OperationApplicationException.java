@@ -72,6 +72,7 @@ public class OperationApplicationException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.443 -0400", hash_original_method = "0D03973B4F1A76863E3DF446BDE01596", hash_generated_method = "F1B5C37E1371B792376829FF67DAF7D3")
     public int getNumSuccessfulYieldPoints() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_660434232 = getTaintInt();

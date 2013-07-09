@@ -187,6 +187,7 @@ public class RuntimeInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getQwertyKeyboard() {
         return DSUtils.UNKNOWN_INT;
     }

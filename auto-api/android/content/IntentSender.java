@@ -41,6 +41,7 @@ public class IntentSender implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.377 -0400", hash_original_method = "D1640EC79CDF4472CD1CED043D9B375E", hash_generated_method = "9D655C93143908F72EFA0BD754768A5B")
     public void sendIntent(Context context, int code, Intent intent,
             OnFinished onFinished, Handler handler) throws SendIntentException {
@@ -55,6 +56,7 @@ public class IntentSender implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.378 -0400", hash_original_method = "5984C2C3625490063272E3C39EF4CC1F", hash_generated_method = "016796477E7BBB647D8D5B85C82FE32B")
     public void sendIntent(Context context, int code, Intent intent,
             OnFinished onFinished, Handler handler, String requiredPermission) throws SendIntentException {
@@ -189,6 +191,7 @@ public class IntentSender implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.383 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "2141A65B8B7E6FF7EA04F4C91E6DC8C3")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_892253677 = getTaintInt();
@@ -221,6 +224,7 @@ public class IntentSender implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.385 -0400", hash_original_method = "5A73019C5B7699A011E114A766F68ECD", hash_generated_method = "AF4ABAD0086807C7E7337EA7E269386F")
     public IIntentSender getTarget() {
         IIntentSender varB4EAC82CA7396A68D541C85D26508E83_1179850807 = null; 

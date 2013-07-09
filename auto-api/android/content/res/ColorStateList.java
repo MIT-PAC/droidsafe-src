@@ -231,6 +231,7 @@ public class ColorStateList implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.527 -0400", hash_original_method = "1C923E0661B9E6FB6B4C6C1FDCEBD767", hash_generated_method = "33C608D6131EAED1F1AE6B698C14377C")
     public boolean isStateful() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_696671904 = getTaintBoolean();
@@ -269,6 +270,7 @@ public class ColorStateList implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.529 -0400", hash_original_method = "28A9CB761E85FC98D00C67A51FDC0266", hash_generated_method = "A1261B3A44D48A736BA686A3021414F9")
     public int getDefaultColor() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2079169662 = getTaintInt();
@@ -296,6 +298,7 @@ public class ColorStateList implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.530 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "FA2220AC860B5A28B259B2B1689BC67C")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2039654779 = getTaintInt();

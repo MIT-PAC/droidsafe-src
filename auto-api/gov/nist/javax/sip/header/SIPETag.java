@@ -32,6 +32,7 @@ public class SIPETag extends SIPHeader implements SIPETagHeader, ExtensionHeader
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.284 -0400", hash_original_method = "D71FCA65B3027CF0021F4CC3EAA91DA7", hash_generated_method = "E5608824EE5212D7B191CAD6754532EA")
     public String encodeBody() {
         String varB4EAC82CA7396A68D541C85D26508E83_1519203257 = null; 
@@ -43,6 +44,7 @@ public class SIPETag extends SIPHeader implements SIPETagHeader, ExtensionHeader
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.285 -0400", hash_original_method = "3D6890113704CA3A689BE5D16088DA64", hash_generated_method = "0290A5AB195A7336152161014BF3FE6A")
     public String getETag() {
         String varB4EAC82CA7396A68D541C85D26508E83_961225449 = null; 

@@ -183,6 +183,7 @@ public class Date extends java.util.Date {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static long normalizeTime(long theTime) {
         return theTime;
     }

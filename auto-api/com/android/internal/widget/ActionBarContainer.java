@@ -225,6 +225,7 @@ public class ActionBarContainer extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.711 -0400", hash_original_method = "1563ACF140881C9576C37880F51665C0", hash_generated_method = "BEA9515D76969D30AAD58C016BE498DF")
     public View getTabContainer() {
         View varB4EAC82CA7396A68D541C85D26508E83_1367443680 = null; 
@@ -273,6 +274,7 @@ public class ActionBarContainer extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.712 -0400", hash_original_method = "195483BC208A3A4410E3220FCA03E982", hash_generated_method = "A822A3678532FFEA615B4B20F42C00A9")
     @Override
     public ActionMode startActionModeForChild(View child, ActionMode.Callback callback) {

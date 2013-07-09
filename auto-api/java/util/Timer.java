@@ -55,6 +55,7 @@ public class Timer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private synchronized static long nextId() {
         return timerId++;
     }

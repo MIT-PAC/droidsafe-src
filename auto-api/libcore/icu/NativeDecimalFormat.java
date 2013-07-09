@@ -633,6 +633,7 @@ public final class NativeDecimalFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.680 -0400", hash_original_method = "84561142CC409560F18895112EB228ED", hash_generated_method = "4ABF34803F0C3BB17B8FBA4B20C4B3AC")
     public boolean isParseBigDecimal() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_101936727 = getTaintBoolean();
@@ -825,6 +826,7 @@ public final class NativeDecimalFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.691 -0400", hash_original_method = "16B3A7386DF3851CB73D32D9A838D98B", hash_generated_method = "A04CC31A40B62965DB9042EEB28F4644")
     public void setParseBigDecimal(boolean value) {
         parseBigDecimal = value;
@@ -906,44 +908,52 @@ public final class NativeDecimalFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void applyPatternImpl(int addr, boolean localized, String pattern) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int cloneImpl(int addr) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2036702316 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2036702316;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void close(int addr) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static char[] formatLong(int addr, long value, FieldPositionIterator iter) {
                 char[] var50607924ABD4C17119BAF3A1CE41C0EC_478728693 = {DSUtils.UNKNOWN_CHAR};
         return var50607924ABD4C17119BAF3A1CE41C0EC_478728693;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static char[] formatDouble(int addr, double value, FieldPositionIterator iter) {
                 char[] var50607924ABD4C17119BAF3A1CE41C0EC_1264013246 = {DSUtils.UNKNOWN_CHAR};
         return var50607924ABD4C17119BAF3A1CE41C0EC_1264013246;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static char[] formatDigitList(int addr, String value, FieldPositionIterator iter) {
                 char[] var50607924ABD4C17119BAF3A1CE41C0EC_1973734016 = {DSUtils.UNKNOWN_CHAR};
         return var50607924ABD4C17119BAF3A1CE41C0EC_1973734016;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int getAttribute(int addr, int symbol) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1917559035 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1917559035;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String getTextAttribute(int addr, int symbol) {
     	String s = new String();
     	s.addTaint(symbol);
@@ -951,6 +961,7 @@ public final class NativeDecimalFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int open(String pattern, String currencySymbol,
             char decimalSeparator, char digit, String exponentSeparator, char groupingSeparator,
             String infinity, String internationalCurrencySymbol, char minusSign,
@@ -961,6 +972,7 @@ public final class NativeDecimalFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Number parse(int addr, String string, ParsePosition position, boolean parseBigDecimal) {
     	Number ret;
     	if (parseBigDecimal) {
@@ -980,6 +992,7 @@ public final class NativeDecimalFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void setDecimalFormatSymbols(int addr, String currencySymbol,
             char decimalSeparator, char digit, String exponentSeparator, char groupingSeparator,
             String infinity, String internationalCurrencySymbol, char minusSign,
@@ -988,22 +1001,27 @@ public final class NativeDecimalFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void setSymbol(int addr, int symbol, String str) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void setAttribute(int addr, int symbol, int i) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void setRoundingMode(int addr, int roundingMode, double roundingIncrement) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void setTextAttribute(int addr, int symbol, String str) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String toPatternImpl(int addr, boolean localized) {
     	String s = new String();
     	s.addTaint(localized);

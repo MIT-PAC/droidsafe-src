@@ -41,6 +41,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.890 -0400", hash_original_method = "0C7BC9C54BE00E03201ACF18B2913309", hash_generated_method = "02F0DE52E028FE70DE7167A2A559095A")
     public ReentrantReadWriteLock.WriteLock writeLock() {
         ReentrantReadWriteLock.WriteLock varB4EAC82CA7396A68D541C85D26508E83_2104056646 = null; 
@@ -52,6 +53,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.891 -0400", hash_original_method = "22D8B34ECDA1804C5F879E9731CF210D", hash_generated_method = "F8F94105818A859093206C95A404AA14")
     public ReentrantReadWriteLock.ReadLock readLock() {
         ReentrantReadWriteLock.ReadLock varB4EAC82CA7396A68D541C85D26508E83_164154840 = null; 

@@ -44,6 +44,7 @@ public class DigitsKeyListener extends NumberKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.122 -0400", hash_original_method = "699568E4919BD4E82DA190E9B839182F", hash_generated_method = "5FF11ED5F987FAD97CBDC101B1573B2C")
     @Override
     protected char[] getAcceptedChars() {
@@ -79,6 +80,7 @@ public class DigitsKeyListener extends NumberKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.123 -0400", hash_original_method = "C58B63A603B7A45CFB1185F323DD143F", hash_generated_method = "E50153D2DF99DC789095F91091271BA7")
     public int getInputType() {
         int contentType = InputType.TYPE_CLASS_NUMBER;

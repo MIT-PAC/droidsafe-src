@@ -92,6 +92,7 @@ public class Toast {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.201 -0400", hash_original_method = "A152CAEDF892AE03EF7992276FE51073", hash_generated_method = "BEBF20515F3CF648B66FD299727BC65E")
     public void setView(View view) {
         mNextView = view;
@@ -100,6 +101,7 @@ public class Toast {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.201 -0400", hash_original_method = "2CED2C577EBE287B42B9009F6CFBB820", hash_generated_method = "0BBA19E8F1E3663875BC98D757A08768")
     public View getView() {
         View varB4EAC82CA7396A68D541C85D26508E83_1647900362 = null; 
@@ -111,6 +113,7 @@ public class Toast {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.201 -0400", hash_original_method = "CFB561A2B5CB71F6E4A1F9C7A12A3738", hash_generated_method = "F9C7C4EC13468CD19CD7C7E3AFD925F1")
     public void setDuration(int duration) {
         mDuration = duration;
@@ -119,6 +122,7 @@ public class Toast {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.201 -0400", hash_original_method = "C5CB9F23218BD0303C05492AF6E52DA2", hash_generated_method = "4205ED1538A1BD5BE63AD2FB29701846")
     public int getDuration() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_394287606 = getTaintInt();
@@ -128,6 +132,7 @@ public class Toast {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.202 -0400", hash_original_method = "F425C47FB7437E78AF178C34F14EA79B", hash_generated_method = "F83E15EA06D82C079894A843F93CA717")
     public void setMargin(float horizontalMargin, float verticalMargin) {
         mTN.mHorizontalMargin = horizontalMargin;
@@ -138,6 +143,7 @@ public class Toast {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.202 -0400", hash_original_method = "F7B8097D0A28A7644F4CAA36263A6BC5", hash_generated_method = "AA847136AFC06CFD58FB7CD7B454C245")
     public float getHorizontalMargin() {
         float var546ADE640B6EDFBC8A086EF31347E768_569734310 = getTaintFloat();
@@ -147,6 +153,7 @@ public class Toast {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.203 -0400", hash_original_method = "08E3924FC925E4DE8E371EC71C6F9BB2", hash_generated_method = "2EF0AEC51F9345F967A883A7303E2BA4")
     public float getVerticalMargin() {
         float var546ADE640B6EDFBC8A086EF31347E768_730760058 = getTaintFloat();
@@ -156,6 +163,7 @@ public class Toast {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.203 -0400", hash_original_method = "0F798A7E93CD7957534C3E69090E738D", hash_generated_method = "C5E35E16B7D1472EF7531715FE78EC40")
     public void setGravity(int gravity, int xOffset, int yOffset) {
         mTN.mGravity = gravity;
@@ -168,6 +176,7 @@ public class Toast {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.203 -0400", hash_original_method = "2C9BD84752A31EC6F5E143771739878E", hash_generated_method = "49C13824C3657E79882B1CC8117ADABF")
     public int getGravity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_223209581 = getTaintInt();
@@ -177,6 +186,7 @@ public class Toast {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.203 -0400", hash_original_method = "2AE943B633C6B771A3DBDC9830EE282D", hash_generated_method = "247EF4DA045C2A52B204D7D63B50FC31")
     public int getXOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1500439875 = getTaintInt();
@@ -186,6 +196,7 @@ public class Toast {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.204 -0400", hash_original_method = "3212505834221ECE93D6F08E5BDF4AC5", hash_generated_method = "BFF7E0C933348F46B24A49E17871A5DD")
     public int getYOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_305159765 = getTaintInt();

@@ -55,12 +55,14 @@ public final class DexFile {
     }
 
     
+    @DSModeled(DSC.BAN)
     static public DexFile loadDex(String sourcePathName, String outputPathName,
         int flags) throws IOException {
         return new DexFile(sourcePathName, outputPathName, flags);
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.650 -0400", hash_original_method = "DFE26EB6CF2622DAE30C5BD1FDBCFEE9", hash_generated_method = "CD4398CF109B4EAD6BC5AAFCFA391918")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_181510391 = null; 
@@ -72,6 +74,7 @@ public final class DexFile {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.650 -0400", hash_original_method = "9CC3987533495060FC4949865817E44B", hash_generated_method = "E86A97E31ACA959189568D3FF85B193D")
     public void close() throws IOException {
         guard.close();
@@ -84,6 +87,7 @@ public final class DexFile {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.651 -0400", hash_original_method = "292E8055A30ED290AAAD3D0A5C7397D8", hash_generated_method = "724610FE5364D69B6E8E57A4F649E645")
     public Class loadClass(String name, ClassLoader loader) {
         Class varB4EAC82CA7396A68D541C85D26508E83_1827955259 = null; 
@@ -99,6 +103,7 @@ public final class DexFile {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.651 -0400", hash_original_method = "66D81951CD1FBB575468E800A0D13125", hash_generated_method = "EFFED9465789BB2ED3870D97E83E0FF9")
     public Class loadClassBinaryName(String name, ClassLoader loader) {
     	
@@ -129,6 +134,7 @@ public final class DexFile {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String[] getClassNameList(int cookie) {
     	String[] s = new String[0];
     	s.addTaint(cookie);
@@ -136,6 +142,7 @@ public final class DexFile {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.652 -0400", hash_original_method = "7D87091EC31B409C33B787AE3F2DC647", hash_generated_method = "9FC9D50BDD14E42CF33F4D9E8C015023")
     @Override
     protected void finalize() throws Throwable {
@@ -162,6 +169,7 @@ public final class DexFile {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int openDexFile(String sourceName, String outputName,
         int flags) throws IOException {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_623029097 = DSUtils.UNKNOWN_INT;
@@ -169,16 +177,19 @@ public final class DexFile {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int openDexFile(byte[] fileContents) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1747228384 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1747228384;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void closeDexFile(int cookie) {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean isDexOptNeeded(String fileName) throws FileNotFoundException, IOException {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_689770446 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_689770446;

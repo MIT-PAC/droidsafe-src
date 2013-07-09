@@ -16,6 +16,7 @@ public final class Arrays {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean areEqual(
         boolean[]  a,
         boolean[]  b) {
@@ -42,6 +43,7 @@ public final class Arrays {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean areEqual(
         char[]  a,
         char[]  b) {
@@ -68,6 +70,7 @@ public final class Arrays {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean areEqual(
         byte[]  a,
         byte[]  b) {
@@ -94,6 +97,7 @@ public final class Arrays {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean constantTimeAreEqual(
         byte[]  a,
         byte[]  b) {
@@ -118,6 +122,7 @@ public final class Arrays {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean areEqual(
         int[]  a,
         int[]  b) {
@@ -144,6 +149,7 @@ public final class Arrays {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void fill(
         byte[] array,
         byte value) {
@@ -154,6 +160,7 @@ public final class Arrays {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void fill(
         long[] array,
         long value) {
@@ -164,6 +171,7 @@ public final class Arrays {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void fill(
         short[] array, 
         short value) {
@@ -174,6 +182,7 @@ public final class Arrays {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int hashCode(byte[] data) {
         if (data == null)
         {

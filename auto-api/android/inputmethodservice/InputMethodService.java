@@ -322,6 +322,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.804 -0400", hash_original_method = "76EDD2B848D79265B59C656C09132FEB", hash_generated_method = "83EE169EF2FBBDAF4C6A06E84EF30B78")
     public void onInitializeInterface() {
         
@@ -485,6 +486,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.808 -0400", hash_original_method = "F107DE3A8547E443866FF02369203993", hash_generated_method = "8ADCBE3B48BCD1B7617670CE296EB904")
     public LayoutInflater getLayoutInflater() {
         LayoutInflater varB4EAC82CA7396A68D541C85D26508E83_1515384177 = null; 
@@ -496,6 +498,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.810 -0400", hash_original_method = "B35683FF457638BA2516208C83F2FBFC", hash_generated_method = "C093EAF53B8A265913ED51E570EE21D8")
     public Dialog getWindow() {
         Dialog varB4EAC82CA7396A68D541C85D26508E83_553326512 = null; 
@@ -507,6 +510,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.814 -0400", hash_original_method = "4B38ED63C74A7D25A43EF42301FB70B0", hash_generated_method = "46A6C22207C263E445ACBEE325B9DE9D")
     public void setBackDisposition(int disposition) {
         mBackDisposition = disposition;
@@ -515,6 +519,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.815 -0400", hash_original_method = "FA0668AA74F2A3E40C75CD8A8BEC8D4A", hash_generated_method = "63E89147D48A4CFA4C76DF6DA4E6266B")
     public int getBackDisposition() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1087724259 = getTaintInt();
@@ -537,6 +542,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.816 -0400", hash_original_method = "064CBE2A131D4B226EADDD6A40CEAEED", hash_generated_method = "99B32E14519E887523ED4555B3A5B1DA")
     public InputBinding getCurrentInputBinding() {
         InputBinding varB4EAC82CA7396A68D541C85D26508E83_107482753 = null; 
@@ -548,6 +554,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.816 -0400", hash_original_method = "25EFF753F3CF5167178BD7379B9659BF", hash_generated_method = "5C7C96C7F184CFE8D5732D2DDE9992B0")
     public InputConnection getCurrentInputConnection() {
         InputConnection varB4EAC82CA7396A68D541C85D26508E83_1153641656 = null; 
@@ -577,6 +584,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.817 -0400", hash_original_method = "26F207E076BC370412C35CB8C7E97837", hash_generated_method = "8ABBBDC599E8570F1AA7CCB9D5C0FFDE")
     public boolean getCurrentInputStarted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2131138293 = getTaintBoolean();
@@ -586,6 +594,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.817 -0400", hash_original_method = "659C592D4ABB3DB82261D1C4692ABF2E", hash_generated_method = "248E7A8B8A32D85F04EA27A88C3D165D")
     public EditorInfo getCurrentInputEditorInfo() {
         EditorInfo varB4EAC82CA7396A68D541C85D26508E83_1498711046 = null; 
@@ -667,6 +676,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.818 -0400", hash_original_method = "0B558CA7980DF9D2EBB981E6DDF5DF60", hash_generated_method = "A448E83390B053BB81B915FC62C7C85C")
     public boolean isFullscreenMode() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_319414110 = getTaintBoolean();
@@ -711,6 +721,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.820 -0400", hash_original_method = "DE07F0C980519D51E427F21507DA3D90", hash_generated_method = "5BF29279B56799F9851E5ADB18924D6E")
     public boolean isExtractViewShown() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_978115611 = getTaintBoolean();
@@ -843,6 +854,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.824 -0400", hash_original_method = "CE1497EC29214CA28D281C89DC587F5D", hash_generated_method = "5509CCC1A2A0D5678EF5987570517E58")
     public boolean isShowInputRequested() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1233717088 = getTaintBoolean();
@@ -852,6 +864,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.826 -0400", hash_original_method = "FAB0B10F230F7249B0A5682A6CF03BDF", hash_generated_method = "86F0047951EA164E43F925E2C613F750")
     public boolean isInputViewShown() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_522019097 = getTaintBoolean();
@@ -1042,6 +1055,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.838 -0400", hash_original_method = "F89AAD61B39578A3862B8537E7226DB5", hash_generated_method = "F00AC552D86FB5EE84872347F60998DD")
     public View onCreateCandidatesView() {
         
@@ -1054,6 +1068,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.839 -0400", hash_original_method = "75C53F9A7550BADCC3EEC67DE46E8BC4", hash_generated_method = "0B4311C697C5C6CF0A58D380F5E8042F")
     public View onCreateInputView() {
         
@@ -1066,6 +1081,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.840 -0400", hash_original_method = "4B7A497965AEC42ECF0C79E271F7AFEF", hash_generated_method = "E916951172883C0F58CDCC3747E38446")
     public void onStartInputView(EditorInfo info, boolean restarting) {
         
@@ -1096,6 +1112,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.841 -0400", hash_original_method = "C1D318033051A63629AB7F18935A055B", hash_generated_method = "7BE62851E5BD3F3C78A4B38A6A2455C3")
     public void onStartCandidatesView(EditorInfo info, boolean restarting) {
         
@@ -1302,6 +1319,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.849 -0400", hash_original_method = "D99B15EAA68884714BB333A2583A0571", hash_generated_method = "E797350F14362CA554D013A5659543F1")
     public void onWindowShown() {
         
@@ -1309,6 +1327,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.849 -0400", hash_original_method = "C1BA79DB491FC590F2A9A222970A46B9", hash_generated_method = "82493FCA94AEB547B2950C787893F07B")
     public void onWindowHidden() {
         
@@ -1316,6 +1335,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.850 -0400", hash_original_method = "56BEE8816781B99E44028AA4DD49AFE8", hash_generated_method = "9A3D5E9EBB717318D195E3F6D8803AE5")
     public void onBindInput() {
         
@@ -1323,6 +1343,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.850 -0400", hash_original_method = "D52B154580F2280F1D8D5CF7DCC6C0BF", hash_generated_method = "049C427B4927AA2DB3B5531ABC79BA72")
     public void onUnbindInput() {
         
@@ -1330,6 +1351,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.851 -0400", hash_original_method = "3ADFFB39DB97C5354271962A42564DD7", hash_generated_method = "4C0B9C5E6309EE4241134758A86A3D42")
     public void onStartInput(EditorInfo attribute, boolean restarting) {
         
@@ -1498,6 +1520,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.858 -0400", hash_original_method = "D49077B58DC986892621B88ACD9BF0F7", hash_generated_method = "87A26FC82293103A524EB821FB8B0059")
     public void onViewClicked(boolean focusChanged) {
         
@@ -1506,6 +1529,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.858 -0400", hash_original_method = "F8EB5FE11A8138FB360940D74155758A", hash_generated_method = "4CB7960253167CFAAB602CD800822ACE")
     public void onUpdateCursor(Rect newCursor) {
         
@@ -1600,6 +1624,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.862 -0400", hash_original_method = "2A75FF2C44C4D96068DDAFC2643F0C8B", hash_generated_method = "F5702FA0236C3E2021F98207E3F3E683")
     public boolean onKeyLongPress(int keyCode, KeyEvent event) {
         
@@ -1652,6 +1677,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.864 -0400", hash_original_method = "4A983FDB3FF481E2165B7D8D641CDD48", hash_generated_method = "226874E0804CDBA87785E1F8ED9DFAC6")
     @Override
     public boolean onTrackballEvent(MotionEvent event) {
@@ -1664,6 +1690,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.865 -0400", hash_original_method = "E2F219F9B605C6393794145B9C28D4D7", hash_generated_method = "152610093C22CA4DD8518A4BDB847682")
     public void onAppPrivateCommand(String action, Bundle data) {
         
@@ -2246,6 +2273,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.884 -0400", hash_original_method = "18DCEDE4996E63CB2DB494AAC7CE4961", hash_generated_method = "22FF06AE96EBFAD2C10CC25B4574EC44")
     protected void onCurrentInputMethodSubtypeChanged(InputMethodSubtype newSubtype) {
         

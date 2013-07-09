@@ -99,6 +99,7 @@ public class LineIterator implements Iterator<String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.435 -0400", hash_original_method = "D521A7CE64679A779C6680051467F6C8", hash_generated_method = "62D5E2223EAD2CE88D1D8E3CD8EE0798")
     protected boolean isValidLine(String line) {
         addTaint(line.getTaint());

@@ -27,6 +27,7 @@ public class OIDTokenizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.900 -0400", hash_original_method = "F35D489C40702BC97B5927032D797DB7", hash_generated_method = "F117DDA1102100228CB77E91145A78BF")
     public boolean hasMoreTokens() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1658420558 = getTaintBoolean();

@@ -183,6 +183,7 @@ public final class ImplForVariable<D extends GenericDeclaration> implements Type
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.170 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "32BBC2BA615788101AC337D9FBCCB292")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_97609835 = null; 
@@ -194,6 +195,7 @@ public final class ImplForVariable<D extends GenericDeclaration> implements Type
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.171 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "C450A33555409845C55811118FE09975")
     @Override
     public String toString() {

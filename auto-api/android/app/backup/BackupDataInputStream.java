@@ -78,6 +78,7 @@ public class BackupDataInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.429 -0400", hash_original_method = "EC81A9ECDA808FF062BB2254D312B94E", hash_generated_method = "4511DDE560CB42D7DE8E5780178B38EF")
     public String getKey() {
         String varB4EAC82CA7396A68D541C85D26508E83_240899253 = null; 
@@ -89,6 +90,7 @@ public class BackupDataInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.429 -0400", hash_original_method = "EB0F38C5E31652AF776348A02A47056B", hash_generated_method = "3A71FA3F9133AC9922B740A54AD46FAD")
     public int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_791242875 = getTaintInt();

@@ -136,6 +136,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int capacityForInitSize(int size) {
         int result = (size >> 1) + size;
         return (result & ~(MAXIMUM_CAPACITY-1))==0 ? result : MAXIMUM_CAPACITY;
@@ -183,6 +184,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.160 -0400", hash_original_method = "186376BCBF1440029A4A8EF9D3327AB7", hash_generated_method = "E66331C216B0F694D75A518035E7A6C0")
     public synchronized boolean isEmpty() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_658792751 = getTaintBoolean();
@@ -192,6 +194,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.160 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "11308D5F0787F96896B90A459B3B57B7")
     public synchronized int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_819754425 = getTaintInt();
@@ -515,6 +518,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.175 -0400", hash_original_method = "CC28673E29B73787492CFDC805600F5D", hash_generated_method = "E3452D490AF44DF99FFD2B9DFC516DAB")
     protected void rehash() {
         
@@ -931,12 +935,14 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int secondaryHash(int h) {
         h ^= (h >>> 20) ^ (h >>> 12);
         return h ^ (h >>> 7) ^ (h >>> 4);
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int roundUpToPowerOfTwo(int i) {
         i--;
         i |= i >>>  1;

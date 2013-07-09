@@ -223,14 +223,16 @@ public class ParserAdapter implements XMLReader, DocumentHandler {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.001 -0400", hash_original_method = "EF3844DB5418C4CB611313F3BE9E31B8", hash_generated_method = "82A21E5D6439DF297D3DDA5C9F15C57B")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.001 -0400", hash_original_method = "EF3844DB5418C4CB611313F3BE9E31B8", hash_generated_method = "82A21E5D6439DF297D3DDA5C9F15C57B")
 	public void setEntityResolver(EntityResolver resolver) {
 		entityResolver = resolver;
 		
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.002 -0400", hash_original_method = "3D81AADF9B7990F38C11DFC7B847459D", hash_generated_method = "ACEB560CC1624F0D1B508FABD7E58545")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.002 -0400", hash_original_method = "3D81AADF9B7990F38C11DFC7B847459D", hash_generated_method = "ACEB560CC1624F0D1B508FABD7E58545")
 	public EntityResolver getEntityResolver() {
 		EntityResolver varB4EAC82CA7396A68D541C85D26508E83_73151369 = null; 
 																			
@@ -246,14 +248,16 @@ public class ParserAdapter implements XMLReader, DocumentHandler {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.002 -0400", hash_original_method = "119A8AEB4875146983459E145CF644BE", hash_generated_method = "FAA2A53872CCD36AFCB158CD655074B2")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.002 -0400", hash_original_method = "119A8AEB4875146983459E145CF644BE", hash_generated_method = "FAA2A53872CCD36AFCB158CD655074B2")
 	public void setDTDHandler(DTDHandler handler) {
 		dtdHandler = handler;
 		
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.002 -0400", hash_original_method = "0F3DB0A89C47F7E5E68CDAECBE47BDA3", hash_generated_method = "89B94A2BE111DDCCC8D435E3BCA4DEAC")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.002 -0400", hash_original_method = "0F3DB0A89C47F7E5E68CDAECBE47BDA3", hash_generated_method = "89B94A2BE111DDCCC8D435E3BCA4DEAC")
 	public DTDHandler getDTDHandler() {
 		DTDHandler varB4EAC82CA7396A68D541C85D26508E83_2140345342 = null; 
 																			
@@ -269,14 +273,16 @@ public class ParserAdapter implements XMLReader, DocumentHandler {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.003 -0400", hash_original_method = "D8A0D6D3310208C2BEAFD8789BB430C2", hash_generated_method = "3B6BB5CD628919FBC0C763FB80D35E5E")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.003 -0400", hash_original_method = "D8A0D6D3310208C2BEAFD8789BB430C2", hash_generated_method = "3B6BB5CD628919FBC0C763FB80D35E5E")
 	public void setContentHandler(ContentHandler handler) {
 		contentHandler = handler;
 		
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.003 -0400", hash_original_method = "0648A0EF88EB44B7C03930DFF59893AE", hash_generated_method = "92192CDE35A378FBB10828D5A5137755")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.003 -0400", hash_original_method = "0648A0EF88EB44B7C03930DFF59893AE", hash_generated_method = "92192CDE35A378FBB10828D5A5137755")
 	public ContentHandler getContentHandler() {
 		ContentHandler varB4EAC82CA7396A68D541C85D26508E83_345975788 = null; 
 																				
@@ -292,14 +298,16 @@ public class ParserAdapter implements XMLReader, DocumentHandler {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.003 -0400", hash_original_method = "2F1C93DC349F4C532F80AB43A58B1D4F", hash_generated_method = "E6625B96D2BEDE434929849AF18BADF6")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.003 -0400", hash_original_method = "2F1C93DC349F4C532F80AB43A58B1D4F", hash_generated_method = "E6625B96D2BEDE434929849AF18BADF6")
 	public void setErrorHandler(ErrorHandler handler) {
 		errorHandler = handler;
 		
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.004 -0400", hash_original_method = "96333264931FDEA89262C2A3168E5DDE", hash_generated_method = "6C8B46C50747C4969A443217E64B07ED")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.004 -0400", hash_original_method = "96333264931FDEA89262C2A3168E5DDE", hash_generated_method = "6C8B46C50747C4969A443217E64B07ED")
 	public ErrorHandler getErrorHandler() {
 		ErrorHandler varB4EAC82CA7396A68D541C85D26508E83_1841469320 = null; 
 																			

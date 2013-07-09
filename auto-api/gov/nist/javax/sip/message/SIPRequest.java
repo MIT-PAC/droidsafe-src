@@ -71,6 +71,7 @@ public final class SIPRequest extends SIPMessage implements javax.sip.message.Re
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.426 -0400", hash_original_method = "10A6E8DED0F9574AB3D1598F76906EF6", hash_generated_method = "C6AC0571491A50A4C1B12F6B2501DABB")
     public RequestLine getRequestLine() {
         RequestLine varB4EAC82CA7396A68D541C85D26508E83_1114842525 = null; 
@@ -82,6 +83,7 @@ public final class SIPRequest extends SIPMessage implements javax.sip.message.Re
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.426 -0400", hash_original_method = "B9CB3F60AB911F16367336645DE9DCA3", hash_generated_method = "058C4665ACE5103972748C3D479B673A")
     public void setRequestLine(RequestLine requestLine) {
         this.requestLine = requestLine;
@@ -1181,6 +1183,7 @@ public final class SIPRequest extends SIPMessage implements javax.sip.message.Re
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.460 -0400", hash_original_method = "1671629A516F35F213CEF63536914216", hash_generated_method = "23834E32D34DD180929E11825B4FC346")
     public Object getTransaction() {
         Object varB4EAC82CA7396A68D541C85D26508E83_980906950 = null; 
@@ -1192,6 +1195,7 @@ public final class SIPRequest extends SIPMessage implements javax.sip.message.Re
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.461 -0400", hash_original_method = "29C9F28BA62C1C5D6183FC49B73B119A", hash_generated_method = "94869A7C33E91A92D8453F215213E646")
     public void setTransaction(Object transaction) {
         this.transactionPointer = transaction;
@@ -1200,6 +1204,7 @@ public final class SIPRequest extends SIPMessage implements javax.sip.message.Re
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.462 -0400", hash_original_method = "D6849E418A3430D13263F7E766EC96CA", hash_generated_method = "1185B09E983B919BFB3F3126ABD4CAED")
     public Object getMessageChannel() {
         Object varB4EAC82CA7396A68D541C85D26508E83_361835262 = null; 
@@ -1211,6 +1216,7 @@ public final class SIPRequest extends SIPMessage implements javax.sip.message.Re
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.462 -0400", hash_original_method = "F021F3118E1F64B2274957A9C076266A", hash_generated_method = "35A1FA712B0E58B7E51DD40258282990")
     public void setMessageChannel(Object messageChannel) {
         this.messageChannel = messageChannel;
@@ -1257,6 +1263,7 @@ public final class SIPRequest extends SIPMessage implements javax.sip.message.Re
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.464 -0400", hash_original_method = "8408AE2B464881D5E749D0715A83122D", hash_generated_method = "D0FB6723A7B923AC4749917A36A0F167")
     public void setInviteTransaction(Object inviteTransaction) {
         this.inviteTransaction = inviteTransaction;
@@ -1265,6 +1272,7 @@ public final class SIPRequest extends SIPMessage implements javax.sip.message.Re
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.466 -0400", hash_original_method = "E74B555DC4A151C37AF9F95C34B6492D", hash_generated_method = "F2C2261EEE69BCA791A2CA36409D21EE")
     public Object getInviteTransaction() {
         Object varB4EAC82CA7396A68D541C85D26508E83_1476679268 = null; 

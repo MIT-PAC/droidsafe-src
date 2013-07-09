@@ -80,6 +80,7 @@ public class TransformerFactoryConfigurationError extends Error {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.010 -0400", hash_original_method = "DEACD8BC5F5C015493740DB375DC8E7E", hash_generated_method = "1C41B1319FA65CC1B89A3DA83A8D4010")
     public Exception getException() {
         Exception varB4EAC82CA7396A68D541C85D26508E83_2029484137 = null; 

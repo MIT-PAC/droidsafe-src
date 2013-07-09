@@ -273,6 +273,7 @@ public class AppWidgetManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.954 -0400", hash_original_method = "9635C6DE1FB30445E1097958A10AD035", hash_generated_method = "298C091155C6ED85D34088E10E30A2CA")
     public void bindRemoteViewsService(int appWidgetId, Intent intent, IBinder connection) {
         try 
@@ -296,6 +297,7 @@ public class AppWidgetManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.954 -0400", hash_original_method = "2B1B0C7D3E264A2CA6F28D675EB000CD", hash_generated_method = "54AAA5A8ABD34120EC9E572782A129F1")
     public void unbindRemoteViewsService(int appWidgetId, Intent intent) {
         try 

@@ -377,6 +377,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static File toFile(URL url) {
         if (url == null || !"file".equalsIgnoreCase(url.getProtocol())) {
             return null;
@@ -661,6 +662,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static void copyURLToFile(URL source, File destination) throws IOException {
         InputStream input = source.openStream();
         copyInputStreamToFile(input, destination);

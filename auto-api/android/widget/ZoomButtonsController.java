@@ -255,6 +255,7 @@ public class ZoomButtonsController implements View.OnTouchListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.337 -0400", hash_original_method = "B44D483F6F47563C2A0666A9C41723E6", hash_generated_method = "39466DB7BD80A5311AC75D7EF4F60C50")
     public void setOnZoomListener(OnZoomListener listener) {
         mCallback = listener;
@@ -290,6 +291,7 @@ public class ZoomButtonsController implements View.OnTouchListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.337 -0400", hash_original_method = "CDC5AD23EC463D7BB2411752926A03FA", hash_generated_method = "22E87F28B9FE3773C4E7248D48818487")
     public boolean isAutoDismissed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_431469012 = getTaintBoolean();
@@ -299,6 +301,7 @@ public class ZoomButtonsController implements View.OnTouchListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.338 -0400", hash_original_method = "F5C09C601D97CCC2B78CB5FD3ABF9CB9", hash_generated_method = "0658DFBD9214CCF478A566E2F117C6C3")
     public void setAutoDismissed(boolean autoDismiss) {
         mAutoDismissControls = autoDismiss;
@@ -308,6 +311,7 @@ public class ZoomButtonsController implements View.OnTouchListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.338 -0400", hash_original_method = "74E1901CABAC1FE9F1005B36E67FD276", hash_generated_method = "89547EF1BC8ABDC6AA887F84B5AA5A31")
     public boolean isVisible() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1813214079 = getTaintBoolean();
@@ -380,6 +384,7 @@ public class ZoomButtonsController implements View.OnTouchListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.340 -0400", hash_original_method = "5F28A319C2D73660C6EEE12017C9EFC5", hash_generated_method = "C7B08934075EC6E0A9925D290294FCD1")
     public ViewGroup getContainer() {
         ViewGroup varB4EAC82CA7396A68D541C85D26508E83_1146447410 = null; 
@@ -391,6 +396,7 @@ public class ZoomButtonsController implements View.OnTouchListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.340 -0400", hash_original_method = "7C1C4B956CF0AB08A097C4C4837C0B3D", hash_generated_method = "978FF6ACC2B7E2860EA02FD77F7B8163")
     public View getZoomControls() {
         View varB4EAC82CA7396A68D541C85D26508E83_1381706562 = null; 
@@ -490,6 +496,7 @@ public class ZoomButtonsController implements View.OnTouchListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.342 -0400", hash_original_method = "1F6E6E50114A7831DEC27688067C55C8", hash_generated_method = "1760E1225F3682815C500655F0F27694")
     private boolean isInterestingKey(int keyCode) {
         addTaint(keyCode);

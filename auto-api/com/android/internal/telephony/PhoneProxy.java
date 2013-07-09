@@ -1720,6 +1720,7 @@ public class PhoneProxy extends Handler implements Phone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.712 -0400", hash_original_method = "C3F5107FB4E93BC1C37D52CD5D46B8CE", hash_generated_method = "65691F90ED4C20ABC7832C2AA82569C3")
     public Phone getActivePhone() {
         Phone varB4EAC82CA7396A68D541C85D26508E83_1524688408 = null; 

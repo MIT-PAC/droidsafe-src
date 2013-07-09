@@ -93,6 +93,7 @@ public class SecretKeySpec implements SecretKey, KeySpec, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.320 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "BA6C21A1760FCE9DDA768991A1008C98")
     public String getAlgorithm() {
         String varB4EAC82CA7396A68D541C85D26508E83_427445669 = null; 
@@ -104,6 +105,7 @@ public class SecretKeySpec implements SecretKey, KeySpec, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.320 -0400", hash_original_method = "DA06499CB28B740B0D3C21B02311BB46", hash_generated_method = "4EE1371AB6EB5A76EE7778C9DBDCC2E8")
     public String getFormat() {
         String varB4EAC82CA7396A68D541C85D26508E83_1198671846 = null; 

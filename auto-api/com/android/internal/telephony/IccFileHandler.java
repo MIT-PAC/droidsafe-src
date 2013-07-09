@@ -25,6 +25,7 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.905 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     public void dispose() {
         
@@ -496,6 +497,7 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.915 -0400", hash_original_method = "186CFCBD54A740D0E08382313B3D28EB", hash_generated_method = "50CE926CA5F37049A14EF5E9815853D9")
     protected String getCommonIccEFPath(int efid) {
         String varB4EAC82CA7396A68D541C85D26508E83_1160959065 = null; 

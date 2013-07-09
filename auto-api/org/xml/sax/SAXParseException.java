@@ -99,6 +99,7 @@ public class SAXParseException extends SAXException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.809 -0400", hash_original_method = "CF8913A55801AA3E419E95D1888FBD68", hash_generated_method = "791E854378503806A83FE508B80FB7F1")
     private void init(String publicId, String systemId,
                int lineNumber, int columnNumber) {
@@ -114,6 +115,7 @@ public class SAXParseException extends SAXException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.812 -0400", hash_original_method = "651ECBF976325F0553967BB40DF656D7", hash_generated_method = "153F134DBC1DA212B2F97BE081FB1CD1")
     public String getPublicId() {
         String varB4EAC82CA7396A68D541C85D26508E83_175685833 = null; 
@@ -125,6 +127,7 @@ public class SAXParseException extends SAXException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.815 -0400", hash_original_method = "600C253C44A23EDB0A978A11FA5F90C2", hash_generated_method = "1AFC64A5F10CB228525292D55C35CE96")
     public String getSystemId() {
         String varB4EAC82CA7396A68D541C85D26508E83_1290196415 = null; 
@@ -136,6 +139,7 @@ public class SAXParseException extends SAXException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.816 -0400", hash_original_method = "1D6EF9406E829BF96953F811A8A7C017", hash_generated_method = "869AAA6F6C2C321F03F29C97971EDAC2")
     public int getLineNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_27104787 = getTaintInt();
@@ -145,6 +149,7 @@ public class SAXParseException extends SAXException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.817 -0400", hash_original_method = "0DEBF9F56751828220A5A7801C031403", hash_generated_method = "F2659383993096BC6A932560E27A5ED7")
     public int getColumnNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_545963429 = getTaintInt();

@@ -26,7 +26,8 @@ public enum TimeUnit {
     public long toDays(long d)    { return d/(C6/C0); }
         @DSModeled(DSC.SAFE)
     public long convert(long d, TimeUnit u) { return u.toNanos(d); }
-        int excessNanos(long d, long m) { return (int)(d - (m*C2)); }
+        @DSModeled(DSC.SAFE)
+    int excessNanos(long d, long m) { return (int)(d - (m*C2)); }
     },
     MICROSECONDS {
         @DSModeled(DSC.SAFE)
@@ -45,7 +46,8 @@ public enum TimeUnit {
     public long toDays(long d)    { return d/(C6/C1); }
         @DSModeled(DSC.SAFE)
     public long convert(long d, TimeUnit u) { return u.toMicros(d); }
-        int excessNanos(long d, long m) { return (int)((d*C1) - (m*C2)); }
+        @DSModeled(DSC.SAFE)
+    int excessNanos(long d, long m) { return (int)((d*C1) - (m*C2)); }
     },
     MILLISECONDS {
         @DSModeled(DSC.SAFE)
@@ -64,7 +66,8 @@ public enum TimeUnit {
     public long toDays(long d)    { return d/(C6/C2); }
         @DSModeled(DSC.SAFE)
     public long convert(long d, TimeUnit u) { return u.toMillis(d); }
-        int excessNanos(long d, long m) { return 0; }
+        @DSModeled(DSC.SAFE)
+    int excessNanos(long d, long m) { return 0; }
     },
     SECONDS {
         @DSModeled(DSC.SAFE)
@@ -83,7 +86,8 @@ public enum TimeUnit {
     public long toDays(long d)    { return d/(C6/C3); }
         @DSModeled(DSC.SAFE)
     public long convert(long d, TimeUnit u) { return u.toSeconds(d); }
-        int excessNanos(long d, long m) { return 0; }
+        @DSModeled(DSC.SAFE)
+    int excessNanos(long d, long m) { return 0; }
     },
     MINUTES {
         @DSModeled(DSC.SAFE)
@@ -102,7 +106,8 @@ public enum TimeUnit {
     public long toDays(long d)    { return d/(C6/C4); }
         @DSModeled(DSC.SAFE)
     public long convert(long d, TimeUnit u) { return u.toMinutes(d); }
-        int excessNanos(long d, long m) { return 0; }
+        @DSModeled(DSC.SAFE)
+    int excessNanos(long d, long m) { return 0; }
     },
     HOURS {
         @DSModeled(DSC.SAFE)
@@ -121,7 +126,8 @@ public enum TimeUnit {
     public long toDays(long d)    { return d/(C6/C5); }
         @DSModeled(DSC.SAFE)
     public long convert(long d, TimeUnit u) { return u.toHours(d); }
-        int excessNanos(long d, long m) { return 0; }
+        @DSModeled(DSC.SAFE)
+    int excessNanos(long d, long m) { return 0; }
     },
     DAYS {
         @DSModeled(DSC.SAFE)
@@ -140,7 +146,8 @@ public enum TimeUnit {
     public long toDays(long d)    { return d; }
         @DSModeled(DSC.SAFE)
     public long convert(long d, TimeUnit u) { return u.toDays(d); }
-        int excessNanos(long d, long m) { return 0; }
+        @DSModeled(DSC.SAFE)
+    int excessNanos(long d, long m) { return 0; }
     };
     static final long C0 = 1L;
     static final long C1 = C0 * 1000L;
@@ -150,6 +157,7 @@ public enum TimeUnit {
     static final long C5 = C4 * 60L;
     static final long C6 = C5 * 24L;
     static final long MAX = Long.MAX_VALUE;
+    @DSModeled(DSC.SAFE)
     static long x(long d, long m, long over) {
         if (d >  over) return Long.MAX_VALUE;
         if (d < -over) return Long.MIN_VALUE;

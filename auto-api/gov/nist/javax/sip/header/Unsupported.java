@@ -30,6 +30,7 @@ public class Unsupported extends SIPHeader implements javax.sip.header.Unsupport
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.791 -0400", hash_original_method = "9C711BE19A8C0E0A7CB116A3F753C6F0", hash_generated_method = "92BF0EF906E069A3794C50535EE7B438")
     public String encodeBody() {
         String varB4EAC82CA7396A68D541C85D26508E83_605168439 = null; 
@@ -41,6 +42,7 @@ public class Unsupported extends SIPHeader implements javax.sip.header.Unsupport
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.791 -0400", hash_original_method = "CE304AE728C556B979775346D4C5B456", hash_generated_method = "750F8A196933CF8AE5785F9C0FEDAC4A")
     public String getOptionTag() {
         String varB4EAC82CA7396A68D541C85D26508E83_849065612 = null; 

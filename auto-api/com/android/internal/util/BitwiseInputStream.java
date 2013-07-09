@@ -31,6 +31,7 @@ public class BitwiseInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.614 -0400", hash_original_method = "66AE1F5CE6A7D22DCB733CBBD166C2BB", hash_generated_method = "B6A8F5DD36405FF653F10472E9C75071")
     public int available() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_906654994 = getTaintInt();

@@ -51,6 +51,7 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.970 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "63FE3120529F360F42489B5082934718")
     @Override
     public String toString() {

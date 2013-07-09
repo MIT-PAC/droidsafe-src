@@ -202,7 +202,8 @@ public final class Parcel {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.774 -0400", hash_original_method = "13EF9FAE46E0DC273567B76840FE8431", hash_generated_method = "B7B1791B1819FAA4AC4DF261A54493B1")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.774 -0400", hash_original_method = "13EF9FAE46E0DC273567B76840FE8431", hash_generated_method = "B7B1791B1819FAA4AC4DF261A54493B1")
 	private void writeNative(byte[] b, int offset, int len) {
 	}
 
@@ -1714,25 +1715,30 @@ public final class Parcel {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.816 -0400", hash_original_method = "33B415422717616FBFFA4D8F233FE3A4", hash_generated_method = "0FD8D4B30F488C8E04BA04A3C811CF90")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.816 -0400", hash_original_method = "33B415422717616FBFFA4D8F233FE3A4", hash_generated_method = "0FD8D4B30F488C8E04BA04A3C811CF90")
 	private FileDescriptor internalReadFileDescriptor() {
 		FileDescriptor fd = new FileDescriptor();
 		fd.addTaint(this.taint);
 		return fd;
 	}
 
-	static FileDescriptor openFileDescriptor(String file, int mode) throws FileNotFoundException {
+	@DSModeled(DSC.SAFE)
+    static FileDescriptor openFileDescriptor(String file, int mode) throws FileNotFoundException {
 		return new FileDescriptor();
 	}
 
-	static FileDescriptor dupFileDescriptor(FileDescriptor orig) throws IOException {
+	@DSModeled(DSC.SAFE)
+    static FileDescriptor dupFileDescriptor(FileDescriptor orig) throws IOException {
 		return new FileDescriptor();
 	}
 
-	static void closeFileDescriptor(FileDescriptor desc) throws IOException {
+	@DSModeled(DSC.SAFE)
+    static void closeFileDescriptor(FileDescriptor desc) throws IOException {
 	}
 
-	static void clearFileDescriptor(FileDescriptor desc) {
+	@DSModeled(DSC.SAFE)
+    static void clearFileDescriptor(FileDescriptor desc) {
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.818 -0400", hash_original_method = "12B71841CE7C7BEB8DB394B4DC6EF58B", hash_generated_method = "234888288D57C72268F1A30319D2CAF8")
@@ -3050,19 +3056,23 @@ public final class Parcel {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.845 -0400", hash_original_method = "C0427B473F1AF57292972C32F441E719", hash_generated_method = "61A4E66F7E3CD1708E9FB208543A8E37")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.845 -0400", hash_original_method = "C0427B473F1AF57292972C32F441E719", hash_generated_method = "61A4E66F7E3CD1708E9FB208543A8E37")
 	private void freeBuffer() {
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.846 -0400", hash_original_method = "70F6A5F1801DEC2DB8BE38968C81061C", hash_generated_method = "2B68B9C20AB085D1D67AAC97913FD822")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.846 -0400", hash_original_method = "70F6A5F1801DEC2DB8BE38968C81061C", hash_generated_method = "2B68B9C20AB085D1D67AAC97913FD822")
 	private void init(int obj) {
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.846 -0400", hash_original_method = "73111F72F4AB0474EB2CFBD7E4AF4E1A", hash_generated_method = "870C0C4D9949E316DFA0E367EFD712A9")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.846 -0400", hash_original_method = "73111F72F4AB0474EB2CFBD7E4AF4E1A", hash_generated_method = "870C0C4D9949E316DFA0E367EFD712A9")
 	private void destroy() {
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.846 -0400", hash_original_method = "377C79A0AFFA00A75F96A5842171AC58", hash_generated_method = "4B9A23A5F06E09E3E250AB4A9539D654")
+	@DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.846 -0400", hash_original_method = "377C79A0AFFA00A75F96A5842171AC58", hash_generated_method = "4B9A23A5F06E09E3E250AB4A9539D654")
 	void readMapInternal(Map outVal, int N, ClassLoader loader) {
 		{
 			Object key = readValue(loader);
@@ -3081,7 +3091,8 @@ public final class Parcel {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.847 -0400", hash_original_method = "9EEE2505D88E68CC65378BE9FEB363CC", hash_generated_method = "C3DDBC1DA80EBB50B48A827FDC0D2353")
+	@DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.847 -0400", hash_original_method = "9EEE2505D88E68CC65378BE9FEB363CC", hash_generated_method = "C3DDBC1DA80EBB50B48A827FDC0D2353")
 	private void readListInternal(List outVal, int N, ClassLoader loader) {
 		{
 			Object value = readValue(loader);
@@ -3098,7 +3109,8 @@ public final class Parcel {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.848 -0400", hash_original_method = "8048910DC1D629DD4CA2AB6051E757D5", hash_generated_method = "53D16C40149542FDB787F6413EC7F88F")
+	@DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.848 -0400", hash_original_method = "8048910DC1D629DD4CA2AB6051E757D5", hash_generated_method = "53D16C40149542FDB787F6413EC7F88F")
 	private void readArrayInternal(Object[] outVal, int N, ClassLoader loader) {
 		{
 			int i = 0;
@@ -3117,7 +3129,8 @@ public final class Parcel {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.848 -0400", hash_original_method = "43DDAB261C65CF1F1B4E5B19576BB376", hash_generated_method = "B4D5B9DE693BAA74BA9255235886081D")
+	@DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.848 -0400", hash_original_method = "43DDAB261C65CF1F1B4E5B19576BB376", hash_generated_method = "B4D5B9DE693BAA74BA9255235886081D")
 	private void readSparseArrayInternal(SparseArray outVal, int N, ClassLoader loader) {
 		{
 			int key = readInt();

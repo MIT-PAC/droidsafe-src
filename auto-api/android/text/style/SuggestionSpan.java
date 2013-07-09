@@ -180,6 +180,7 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.958 -0400", hash_original_method = "04652F77FFC7CAE5D602B0C4E1FED158", hash_generated_method = "8482D4D09362042C4A71EDCD1B649D75")
     public String[] getSuggestions() {
         String[] varB4EAC82CA7396A68D541C85D26508E83_1029791560 = null; 
@@ -191,6 +192,7 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.958 -0400", hash_original_method = "A5C216C37271149997104A3E25E89F54", hash_generated_method = "EB7533ADE047D37F7BE214FE475E07D7")
     public String getLocale() {
         String varB4EAC82CA7396A68D541C85D26508E83_1460474504 = null; 
@@ -202,6 +204,7 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.959 -0400", hash_original_method = "248A1CDF1DF25C4245B012EBF128264F", hash_generated_method = "80F1880D3A1850B754BC51479DD13662")
     public String getNotificationTargetClassName() {
         String varB4EAC82CA7396A68D541C85D26508E83_893881512 = null; 
@@ -213,6 +216,7 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.959 -0400", hash_original_method = "CE8F8E5E4A30C515D6BD9049A49703B9", hash_generated_method = "CB0074D1A74785A44A893E1F35355F13")
     public int getFlags() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1796133944 = getTaintInt();
@@ -222,6 +226,7 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.959 -0400", hash_original_method = "CA4BF4BE3BC1B3094957FBC465D7A081", hash_generated_method = "85F0B9F34D43E8A3B2C0982106D45E4D")
     public void setFlags(int flags) {
         mFlags = flags;
@@ -230,6 +235,7 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.959 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "2EC7D8802A08D62AA1A965B509699894")
     @Override
     public int describeContents() {
@@ -272,6 +278,7 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.960 -0400", hash_original_method = "DBAA6553895459183AA1E1C35310F256", hash_generated_method = "898CEAA6E78C2B2BCAE4CBEE421F6A4B")
     @Override
     public int getSpanTypeId() {
@@ -300,6 +307,7 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.961 -0400", hash_original_method = "D7D5E8B622FC6A9CB6E203DCD79B8799", hash_generated_method = "7F12213FCB3B1F1D2BED9A6C10AADE8A")
     @Override
     public int hashCode() {
@@ -353,6 +361,7 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.962 -0400", hash_original_method = "6F69CCF79C26CDB5AAE1758554866B40", hash_generated_method = "E824A4BF99CB9B1D63AB3C92327FEF2E")
     public int getUnderlineColor() {
         final boolean misspelled = (mFlags & FLAG_MISSPELLED) != 0;

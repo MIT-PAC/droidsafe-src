@@ -99,6 +99,7 @@ public class SQLiteCursor extends AbstractWindowedCursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.194 -0400", hash_original_method = "AF759727D3C973E194D48B5E653874F6", hash_generated_method = "4789F0D311DC57FAAB7EFBF794D6DA48")
     public SQLiteDatabase getDatabase() {
         SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_1374806598 = null; 
@@ -192,6 +193,7 @@ public class SQLiteCursor extends AbstractWindowedCursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.197 -0400", hash_original_method = "976132A7E3467B4AD1CD095C1F4D25D0", hash_generated_method = "4F584A883A7D20C5429EF1C19C3DCD07")
     private synchronized SQLiteQuery getQuery() {
         SQLiteQuery varB4EAC82CA7396A68D541C85D26508E83_1829533251 = null; 
@@ -236,6 +238,7 @@ public class SQLiteCursor extends AbstractWindowedCursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.198 -0400", hash_original_method = "6996FDAE7F544E3AE18BC0C5BC1EECAC", hash_generated_method = "12E7A08B20555216578E59ADA39D684E")
     @Override
     public String[] getColumnNames() {

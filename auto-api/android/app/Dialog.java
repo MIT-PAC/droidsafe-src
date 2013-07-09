@@ -202,6 +202,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.386 -0400", hash_original_method = "624FE63EC935EE8F7C5CD37954EA0AEA", hash_generated_method = "0387E29C009C8728E843071D53B7F56D")
     public ActionBar getActionBar() {
         ActionBar varB4EAC82CA7396A68D541C85D26508E83_195234825 = null; 
@@ -234,6 +235,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.389 -0400", hash_original_method = "F21458EB6FE36A924A49B40493E1F9F8", hash_generated_method = "D7F5A8A4AE8D69278613F8487CB42831")
     public boolean isShowing() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1625438776 = getTaintBoolean();
@@ -410,6 +412,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.397 -0400", hash_original_method = "B84ED822BC6011EB138B2F6F1D018FE5", hash_generated_method = "DE98DECCC817096DF1B839F626292181")
     protected void onCreate(Bundle savedInstanceState) {
         
@@ -488,6 +491,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.401 -0400", hash_original_method = "51ACB33F24592F8ED3FAFF9D96DEAF2A", hash_generated_method = "2D3B6EE8FB798A72EB48646F15EB4142")
     public Window getWindow() {
         Window varB4EAC82CA7396A68D541C85D26508E83_1247115004 = null; 
@@ -606,6 +610,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.412 -0400", hash_original_method = "2A75FF2C44C4D96068DDAFC2643F0C8B", hash_generated_method = "7D7B32C8A7F968F96E1AFA61D86248A7")
     public boolean onKeyLongPress(int keyCode, KeyEvent event) {
         
@@ -643,6 +648,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.414 -0400", hash_original_method = "E364C67ED15F0AA31C6DCFFA6137C8C0", hash_generated_method = "DEC42C112BBE2CAC3AF5979BF17236EB")
     public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event) {
         
@@ -670,6 +676,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.417 -0400", hash_original_method = "2ECF3E4914B4B3BE2238F799B7435A51", hash_generated_method = "554C0FD3012FA51BC2C384B02FBAFC10")
     public boolean onKeyShortcut(int keyCode, KeyEvent event) {
         
@@ -704,6 +711,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.419 -0400", hash_original_method = "4A983FDB3FF481E2165B7D8D641CDD48", hash_generated_method = "BAADEDD1330ECB80DA86226A475B49E1")
     public boolean onTrackballEvent(MotionEvent event) {
         
@@ -715,6 +723,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.420 -0400", hash_original_method = "0E59A005881F30C798F764BCF32D89A3", hash_generated_method = "BA5DD93E9D7DECD417A0D2B15F3AA495")
     public boolean onGenericMotionEvent(MotionEvent event) {
         
@@ -740,6 +749,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.421 -0400", hash_original_method = "32D7339793DCE0D5AEFE6621981EC978", hash_generated_method = "15CE33052F85E41C1BB65E1E6B2C108A")
     public void onContentChanged() {
         
@@ -747,6 +757,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.421 -0400", hash_original_method = "C7622FC561A602386C2112BC0445F7C6", hash_generated_method = "EEF2114A935228AD19BFEE6FAB48379F")
     public void onWindowFocusChanged(boolean hasFocus) {
         
@@ -755,6 +766,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.422 -0400", hash_original_method = "D6E949EE9F0768F47016EEA4FC0347A8", hash_generated_method = "0E08FFA9282E502085CC6973CB60CDA1")
     public void onAttachedToWindow() {
         
@@ -762,6 +774,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.422 -0400", hash_original_method = "E592299EBB4DE1D6696EB8C4009A9EF4", hash_generated_method = "1328510831112E7A424EFCA8583CA87C")
     public void onDetachedFromWindow() {
         
@@ -890,6 +903,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.431 -0400", hash_original_method = "8FB2859FE43E0606E21921E291A18BDA", hash_generated_method = "D2A5C1AB21513413257BD9AF0E55D9D1")
     public View onCreatePanelView(int featureId) {
         
@@ -963,6 +977,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.435 -0400", hash_original_method = "CDCEA93B87CB4399825B767626A61473", hash_generated_method = "E8DA7203A2E618FC50D8C1935DCBF227")
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         
@@ -991,6 +1006,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.438 -0400", hash_original_method = "F3CAA7B8E21AB403B530132B4E52A4EB", hash_generated_method = "5B427224E6F03C8F95A872BACEE285B9")
     public boolean onCreateOptionsMenu(Menu menu) {
         
@@ -1002,6 +1018,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.439 -0400", hash_original_method = "BF0F08B18C75FC62D01E0D6DB107696E", hash_generated_method = "99B2F53E20C6CC96724B428265E60325")
     public boolean onPrepareOptionsMenu(Menu menu) {
         
@@ -1013,6 +1030,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.439 -0400", hash_original_method = "8EF9A1828892EFEBF4B93362A866125C", hash_generated_method = "2A2E5D35E0987843EAEF5AFE897AEBA7")
     public boolean onOptionsItemSelected(MenuItem item) {
         
@@ -1024,6 +1042,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.440 -0400", hash_original_method = "D53E4189B6E7F0EC0F9883E9844F2140", hash_generated_method = "CC9F879215C8D6911F3F43FE45124EF9")
     public void onOptionsMenuClosed(Menu menu) {
         
@@ -1059,6 +1078,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.442 -0400", hash_original_method = "85F2A519B2781A30F4BC68DB47459C98", hash_generated_method = "170D9A5A5BFA1A654CA19943D4D0F496")
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
         
@@ -1100,6 +1120,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.445 -0400", hash_original_method = "801D77DFDCCE5570587CA592634E3D3B", hash_generated_method = "4895A6DD8639162624E5DE11476F5063")
     public boolean onContextItemSelected(MenuItem item) {
         
@@ -1111,6 +1132,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.446 -0400", hash_original_method = "5C6F377B774E414E6D9422BBC7AAE81F", hash_generated_method = "F6A83BFE417F19EC2EE2F1DD7A9E9351")
     public void onContextMenuClosed(Menu menu) {
         
@@ -1178,6 +1200,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.450 -0400", hash_original_method = "00C0B67E273850713F0D88B8DE976F73", hash_generated_method = "CC0EA6E92777768F9F821B7C1ECE81BA")
     public void onActionModeStarted(ActionMode mode) {
         
@@ -1187,6 +1210,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.451 -0400", hash_original_method = "9FD315390CEABDE5B2497E2EE78C905A", hash_generated_method = "267373F481F3A04D55725F51391EFFC9")
     public void onActionModeFinished(ActionMode mode) {
         
@@ -1309,6 +1333,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.459 -0400", hash_original_method = "C80CDCB014C953B0801E95FEB1706C5F", hash_generated_method = "99A166D313D0204F9E1B3BB77DF8F04A")
     public void setCancelable(boolean flag) {
         mCancelable = flag;

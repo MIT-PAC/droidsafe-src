@@ -23,6 +23,7 @@ public class BaseMovementMethod implements MovementMethod {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.045 -0400", hash_original_method = "3C8541B244B3E418A0704604E985C4F6", hash_generated_method = "61F16E3DED075F6BEFF73AD274B8DB03")
     @Override
     public boolean canSelectArbitrarily() {
@@ -33,6 +34,7 @@ public class BaseMovementMethod implements MovementMethod {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.046 -0400", hash_original_method = "D13D908BA0DAF76C398D062F3F380F09", hash_generated_method = "C57EDA36F09CC6129F642DA1BD1E4D7D")
     @Override
     public void initialize(TextView widget, Spannable text) {
@@ -126,6 +128,7 @@ public class BaseMovementMethod implements MovementMethod {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.047 -0400", hash_original_method = "03F6AD3B58EDAE8DF6A1CC395F5B54B3", hash_generated_method = "BA9B0A4D4F54B26655BC782661C77C2F")
     @Override
     public boolean onKeyUp(TextView widget, Spannable text, int keyCode, KeyEvent event) {
@@ -141,6 +144,7 @@ public class BaseMovementMethod implements MovementMethod {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.047 -0400", hash_original_method = "AC3F1CB1818DDCB7BD27F03C760797A7", hash_generated_method = "D617C850B9E6AEDCA4942B3A21B86765")
     @Override
     public void onTakeFocus(TextView widget, Spannable text, int direction) {
@@ -152,6 +156,7 @@ public class BaseMovementMethod implements MovementMethod {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.048 -0400", hash_original_method = "136932FCA27B55C4FFFE4C0F482F5C95", hash_generated_method = "88747A82B3E2946578C1102029398581")
     @Override
     public boolean onTouchEvent(TextView widget, Spannable text, MotionEvent event) {
@@ -166,6 +171,7 @@ public class BaseMovementMethod implements MovementMethod {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.049 -0400", hash_original_method = "B091339813AE51B8A0FCC53026E81FDE", hash_generated_method = "7D9F07303968FEE1E1F9AB0F521C88CC")
     @Override
     public boolean onTrackballEvent(TextView widget, Spannable text, MotionEvent event) {
@@ -400,6 +406,7 @@ public class BaseMovementMethod implements MovementMethod {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.051 -0400", hash_original_method = "176341E451B55C50C4D903315018153A", hash_generated_method = "8BCBE6C7A5D724228A46D3F3BD5D2736")
     protected boolean left(TextView widget, Spannable buffer) {
         addTaint(widget.getTaint());
@@ -411,6 +418,7 @@ public class BaseMovementMethod implements MovementMethod {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.052 -0400", hash_original_method = "68CC4A5755726297BC90EB8071236539", hash_generated_method = "A0341F1D54E34B2D38C6749A2EDFD47C")
     protected boolean right(TextView widget, Spannable buffer) {
         addTaint(widget.getTaint());
@@ -422,6 +430,7 @@ public class BaseMovementMethod implements MovementMethod {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.052 -0400", hash_original_method = "4C3F0CF20A3CBF82271A73533254C678", hash_generated_method = "885BDAEBA6513132FE771CBE9497DADC")
     protected boolean up(TextView widget, Spannable buffer) {
         addTaint(widget.getTaint());
@@ -433,6 +442,7 @@ public class BaseMovementMethod implements MovementMethod {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.052 -0400", hash_original_method = "FDACBEC8690232193991EC2D654F498C", hash_generated_method = "7333F3B7E9E87B778F676DDC044A1945")
     protected boolean down(TextView widget, Spannable buffer) {
         addTaint(widget.getTaint());
@@ -444,6 +454,7 @@ public class BaseMovementMethod implements MovementMethod {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.053 -0400", hash_original_method = "C9503F691DAF48A1F140F42890F719F7", hash_generated_method = "4050009FCE0FAC29A53B97AE167F1324")
     protected boolean pageUp(TextView widget, Spannable buffer) {
         addTaint(widget.getTaint());
@@ -455,6 +466,7 @@ public class BaseMovementMethod implements MovementMethod {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.053 -0400", hash_original_method = "EA27CD9461C85470B182D05F37CF9E99", hash_generated_method = "EE2932D1CB2BF8C61D555463C719E81F")
     protected boolean pageDown(TextView widget, Spannable buffer) {
         addTaint(widget.getTaint());
@@ -466,6 +478,7 @@ public class BaseMovementMethod implements MovementMethod {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.053 -0400", hash_original_method = "3F6686FAC1641E4D3DFFC3F0DB33E5B2", hash_generated_method = "F18FD5550F7B013D56B9BFEF9B8BF0BA")
     protected boolean top(TextView widget, Spannable buffer) {
         addTaint(widget.getTaint());
@@ -477,6 +490,7 @@ public class BaseMovementMethod implements MovementMethod {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.053 -0400", hash_original_method = "721AC2C980F4969C548FB1DE5C82C277", hash_generated_method = "F06D31DC1F76E21D7B167EF5B35D790F")
     protected boolean bottom(TextView widget, Spannable buffer) {
         addTaint(widget.getTaint());
@@ -488,6 +502,7 @@ public class BaseMovementMethod implements MovementMethod {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.054 -0400", hash_original_method = "A4B1F2E867C9A510C601A243C52C492E", hash_generated_method = "693E6E54D1D45F517D3BA695B8CE6FA6")
     protected boolean lineStart(TextView widget, Spannable buffer) {
         addTaint(widget.getTaint());
@@ -499,6 +514,7 @@ public class BaseMovementMethod implements MovementMethod {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.054 -0400", hash_original_method = "A632F71919730AFFFF566F700D39B7D0", hash_generated_method = "B26B57A705B07BB25989AD7F9DDD2D0D")
     protected boolean lineEnd(TextView widget, Spannable buffer) {
         addTaint(widget.getTaint());
@@ -510,6 +526,7 @@ public class BaseMovementMethod implements MovementMethod {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.054 -0400", hash_original_method = "1043D0C7BC940A703E52A54D62DB9381", hash_generated_method = "27B99478F2443AC6D81FB08825DE6BBB")
     protected boolean leftWord(TextView widget, Spannable buffer) {
         addTaint(widget.getTaint());
@@ -521,6 +538,7 @@ public class BaseMovementMethod implements MovementMethod {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.054 -0400", hash_original_method = "8D9EF29844655A160F605C571CBB67AE", hash_generated_method = "84014AAA8965AB321DEEEA71BC036F11")
     protected boolean rightWord(TextView widget, Spannable buffer) {
         addTaint(widget.getTaint());
@@ -532,6 +550,7 @@ public class BaseMovementMethod implements MovementMethod {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.055 -0400", hash_original_method = "8E23D2BEC9459FE2CC91B2DD463DCF3F", hash_generated_method = "9A8145EC1088A39BFD5B83EF579CBF78")
     protected boolean home(TextView widget, Spannable buffer) {
         addTaint(widget.getTaint());
@@ -543,6 +562,7 @@ public class BaseMovementMethod implements MovementMethod {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.055 -0400", hash_original_method = "6807F0AF3535B8AAE125BEB8D24FA4BA", hash_generated_method = "A4F7B2E447FC8F619DFEA506CEB5763C")
     protected boolean end(TextView widget, Spannable buffer) {
         addTaint(widget.getTaint());

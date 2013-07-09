@@ -29,12 +29,14 @@ public class BitmapShader extends Shader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeCreate(int native_bitmap, int shaderTileModeX,
             int shaderTileModeY) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativePostCreate(int native_shader, int native_bitmap,
             int shaderTileModeX, int shaderTileModeY) {
         return DSUtils.UNKNOWN_INT;

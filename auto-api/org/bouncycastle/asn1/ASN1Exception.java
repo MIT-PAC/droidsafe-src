@@ -32,6 +32,7 @@ public class ASN1Exception extends IOException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.826 -0400", hash_original_method = "CDBDBC1C44563A9D34649A0018341F0E", hash_generated_method = "8B4076CBC1F898E0A5461C2855BBE13C")
     public Throwable getCause() {
         Throwable varB4EAC82CA7396A68D541C85D26508E83_298925464 = null; 

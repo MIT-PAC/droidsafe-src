@@ -296,6 +296,7 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Phone.State convertCallState(int state) {
         switch (state) {
             case TelephonyManager.CALL_STATE_RINGING:
@@ -322,6 +323,7 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Phone.DataState convertDataState(int state) {
         switch (state) {
             case TelephonyManager.DATA_CONNECTING:
@@ -352,6 +354,7 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Phone.DataActivityState convertDataActivityState(int state) {
         switch (state) {
             case TelephonyManager.DATA_ACTIVITY_IN:

@@ -32,22 +32,26 @@ public class KeyCharacterMap {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeLoad(String file) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_123601077 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_123601077;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeDispose(int ptr) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static char nativeGetCharacter(int ptr, int keyCode, int metaState) {
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1244637250 = DSUtils.UNKNOWN_CHAR;
         return varA87DEB01C5F539E6BDA34829C8EF2368_1244637250;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativeGetFallbackAction(int ptr, int keyCode, int metaState,
             FallbackAction outFallbackAction) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_185696657 = DSUtils.UNKNOWN_BOOLEAN;
@@ -55,30 +59,35 @@ public class KeyCharacterMap {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static char nativeGetNumber(int ptr, int keyCode) {
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1984588844 = DSUtils.UNKNOWN_CHAR;
         return varA87DEB01C5F539E6BDA34829C8EF2368_1984588844;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static char nativeGetMatch(int ptr, int keyCode, char[] chars, int metaState) {
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1376476993 = DSUtils.UNKNOWN_CHAR;
         return varA87DEB01C5F539E6BDA34829C8EF2368_1376476993;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static char nativeGetDisplayLabel(int ptr, int keyCode) {
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1718283332 = DSUtils.UNKNOWN_CHAR;
         return varA87DEB01C5F539E6BDA34829C8EF2368_1718283332;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeGetKeyboardType(int ptr) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1471314073 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1471314073;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static KeyEvent[] nativeGetEvents(int ptr, int deviceId, char[] chars) {
     	KeyEvent[] k = new KeyEvent[1];
     	return  k;

@@ -112,16 +112,19 @@ public final class ICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getIcuVersion() {
     	return new String();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getUnicodeVersion() {
     	return new String();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toLowerCase(String s, String localeName) {
     	String ret = new String(s);
     	ret.addTaint(localeName.getTaint());
@@ -129,6 +132,7 @@ public final class ICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toUpperCase(String s, String localeName) {
     	String ret = new String(s);
     	ret.addTaint(localeName.getTaint());
@@ -136,48 +140,56 @@ public final class ICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String[] getAvailableBreakIteratorLocalesNative() {
     	String[] arr = {new String()};
     	return arr;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String[] getAvailableCalendarLocalesNative() {
     	String[] arr = {new String()};
     	return arr;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String[] getAvailableCollatorLocalesNative() {
     	String[] arr = {new String()};
     	return arr;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String[] getAvailableDateFormatLocalesNative() {
     	String[] arr = {new String()};
     	return arr;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String[] getAvailableLocalesNative() {
     	String[] arr = {new String()};
     	return arr;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String[] getAvailableNumberFormatLocalesNative() {
     	String[] arr = {new String()};
     	return arr;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] getAvailableCurrencyCodes() {
     	String[] arr = {new String()};
     	return arr;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getCurrencyCode(String countryCode) {
     	String ret = new String();
     	ret.addTaint(countryCode.getTaint());
@@ -185,6 +197,7 @@ public final class ICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getCurrencyDisplayName(String locale, String currencyCode) {
     	String ret = new String();
     	ret.addTaint(locale.getTaint());
@@ -193,12 +206,14 @@ public final class ICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getCurrencyFractionDigits(String currencyCode) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1785716854 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1785716854;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getCurrencySymbol(String locale, String currencyCode) {
     	String ret = new String();
     	ret.addTaint(locale.getTaint());
@@ -207,6 +222,7 @@ public final class ICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getDisplayCountryNative(String countryCode, String locale) {
     	String ret = new String();
     	ret.addTaint(locale.getTaint());
@@ -215,6 +231,7 @@ public final class ICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getDisplayLanguageNative(String languageCode, String locale) {
     	String ret = new String();
     	ret.addTaint(locale.getTaint());
@@ -223,6 +240,7 @@ public final class ICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getDisplayVariantNative(String variantCode, String locale) {
     	String ret = new String();
     	ret.addTaint(locale.getTaint());
@@ -231,6 +249,7 @@ public final class ICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getISO3CountryNative(String locale) {
     	String ret = new String();
     	ret.addTaint(locale.getTaint());
@@ -238,6 +257,7 @@ public final class ICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getISO3LanguageNative(String locale) {
     	String ret = new String();
     	ret.addTaint(locale.getTaint());
@@ -245,6 +265,7 @@ public final class ICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String addLikelySubtags(String locale) {
     	String ret = new String();
     	ret.addTaint(locale.getTaint());
@@ -252,6 +273,7 @@ public final class ICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getScript(String locale) {
     	String ret = new String();
     	ret.addTaint(locale.getTaint());
@@ -259,18 +281,21 @@ public final class ICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String[] getISOLanguagesNative() {
     	String[] arr = {new String()};
     	return arr;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String[] getISOCountriesNative() {
     	String[] arr = {new String()};
     	return arr;
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean initLocaleDataImpl(String locale, LocaleData result) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1011393629 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1011393629;

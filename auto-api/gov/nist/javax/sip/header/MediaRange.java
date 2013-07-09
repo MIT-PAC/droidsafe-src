@@ -22,6 +22,7 @@ public class MediaRange extends SIPObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.790 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "B58504D499E14AD53936052E62D1BCFF")
     public String getType() {
         String varB4EAC82CA7396A68D541C85D26508E83_337343283 = null; 
@@ -33,6 +34,7 @@ public class MediaRange extends SIPObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.790 -0400", hash_original_method = "F553636983A7698A0C67E9F36C861E72", hash_generated_method = "2DACBD4B657586FAD70CBEDB32DFA852")
     public String getSubtype() {
         String varB4EAC82CA7396A68D541C85D26508E83_1199743025 = null; 
@@ -44,6 +46,7 @@ public class MediaRange extends SIPObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.791 -0400", hash_original_method = "1F9FAB648DA6511C86522C3730D40F12", hash_generated_method = "3A963E148C8DEA20E44FBC8909AF4438")
     public void setType(String t) {
         type = t;
@@ -52,6 +55,7 @@ public class MediaRange extends SIPObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.791 -0400", hash_original_method = "3A0BB05139828A93AF0155E2224A9877", hash_generated_method = "8F25E54D9A9BC590C1B963D060DAD10B")
     public void setSubtype(String s) {
         subtype = s;

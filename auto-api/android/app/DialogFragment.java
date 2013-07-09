@@ -53,6 +53,7 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.499 -0400", hash_original_method = "E2CE03FA6B4DC8948BADB09C58533480", hash_generated_method = "B1A8511C15F9BE5073836D3F1127584E")
     public void setStyle(int style, int theme) {
         mStyle = style;
@@ -183,6 +184,7 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.504 -0400", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "39054A93C6D67C3978D440842270A94D")
     public Dialog getDialog() {
         Dialog varB4EAC82CA7396A68D541C85D26508E83_192513205 = null; 
@@ -194,6 +196,7 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.504 -0400", hash_original_method = "EDA2E352252479FB515DBD558139BFDA", hash_generated_method = "C295D1E8039663910975C99E2BBC5AE6")
     public int getTheme() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_165191990 = getTaintInt();
@@ -214,6 +217,7 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.505 -0400", hash_original_method = "C5B21DACDF63560D5CBEBB813CF00A94", hash_generated_method = "9697B5EB4033BEC5ED189B6F966E0989")
     public boolean isCancelable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_390899630 = getTaintBoolean();
@@ -223,6 +227,7 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.505 -0400", hash_original_method = "9B3CB0767DA345E448E7161B8A1612ED", hash_generated_method = "498BC809D2A3B6E137721CDFAE7E8200")
     public void setShowsDialog(boolean showsDialog) {
         mShowsDialog = showsDialog;
@@ -231,6 +236,7 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.506 -0400", hash_original_method = "A66E43B75AC73A59CB0304F6142C6A81", hash_generated_method = "CF5ED922F00D24151C70CA832E36CB2D")
     public boolean getShowsDialog() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_280621630 = getTaintBoolean();
@@ -360,6 +366,7 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.510 -0400", hash_original_method = "355678003B9B3B1563024A6589368B65", hash_generated_method = "ED2DA15A78724B9512FA1FE0573630C9")
     public void onCancel(DialogInterface dialog) {
         

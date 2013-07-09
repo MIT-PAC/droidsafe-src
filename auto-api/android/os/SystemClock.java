@@ -36,31 +36,37 @@ public final class SystemClock {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean setCurrentTimeMillis(long millis) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long uptimeMillis() {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long elapsedRealtime() {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long currentThreadTimeMillis() {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long currentThreadTimeMicro() {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long currentTimeMicro() {
         return DSUtils.UNKNOWN_LONG;
     }

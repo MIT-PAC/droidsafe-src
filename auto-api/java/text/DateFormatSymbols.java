@@ -292,6 +292,7 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.996 -0400", hash_original_method = "EEE83582BA421C729308A747699C1F8B", hash_generated_method = "F71E31181AF2FC8F8B1818DCE2EBA955")
     public String getLocalPatternChars() {
         String varB4EAC82CA7396A68D541C85D26508E83_1257255169 = null; 

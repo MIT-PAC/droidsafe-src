@@ -84,6 +84,7 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean isXMLIdentifierStart(char c) {
         return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c == '_');
     }
@@ -689,6 +690,7 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.988 -0400", hash_original_method = "871220F29645F989F5FF83627B59D2B9", hash_generated_method = "EAAAAF1FB641A83308A6C16A64A1E3DA")
     public DOMImplementation getImplementation() {
         DOMImplementation varB4EAC82CA7396A68D541C85D26508E83_560051331 = null; 
@@ -700,6 +702,7 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.988 -0400", hash_original_method = "3823D9F624F2EC5FAA072B7BE8806F96", hash_generated_method = "C63464EA2FC4955A9EA2364467949DAD")
     @Override
     public String getNodeName() {
@@ -712,6 +715,7 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.989 -0400", hash_original_method = "043CCE8DE1A8362BF53702E45F3637E9", hash_generated_method = "3F022F9B36FC363604695629A2CBFA56")
     @Override
     public short getNodeType() {
@@ -759,6 +763,7 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.991 -0400", hash_original_method = "523640531DE4ABEBCC885A0C8EFFAA8E", hash_generated_method = "3B912C2B9892FA16B606A7239A1A0310")
     @Override
     public String getTextContent() {
@@ -771,6 +776,7 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.991 -0400", hash_original_method = "94C9917BD9FB417B21D37D438D58D41C", hash_generated_method = "E9FFE4657CAB12B0725BD210869C877F")
     public String getInputEncoding() {
         String varB4EAC82CA7396A68D541C85D26508E83_1747317049 = null; 
@@ -782,6 +788,7 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.992 -0400", hash_original_method = "54494C811BAA1F5B46191C70DF542771", hash_generated_method = "E01C0555B9E002A8AF65149A4BB67B25")
     public String getXmlEncoding() {
         String varB4EAC82CA7396A68D541C85D26508E83_1238373996 = null; 
@@ -793,6 +800,7 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.993 -0400", hash_original_method = "A9BBCA9526831CCA3B1BE6D8EEF33ABE", hash_generated_method = "E546989B70CA9A58AB9017F9B9306488")
     public boolean getXmlStandalone() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1219670322 = getTaintBoolean();
@@ -802,6 +810,7 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.993 -0400", hash_original_method = "9E601CBC8BB08C0D3B66A0213931419B", hash_generated_method = "9E81AB93ADB44B2013F3533C3DA5BE8E")
     public void setXmlStandalone(boolean xmlStandalone) {
         this.xmlStandalone = xmlStandalone;
@@ -810,6 +819,7 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.994 -0400", hash_original_method = "BC354AC833FDCF3905B7FEDC7BFD541D", hash_generated_method = "D1B5E2A21761D22F13285DE90080484F")
     public String getXmlVersion() {
         String varB4EAC82CA7396A68D541C85D26508E83_391548280 = null; 
@@ -821,6 +831,7 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.994 -0400", hash_original_method = "C0A21B3EE9603BF0EAE2488DE43FD78E", hash_generated_method = "1D025D03CF816AA6E6E7E13C188987CA")
     public void setXmlVersion(String xmlVersion) {
         this.xmlVersion = xmlVersion;
@@ -829,6 +840,7 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.994 -0400", hash_original_method = "338EEC38209BE0DB329E33E9EDD7ED88", hash_generated_method = "D91C8F10F239263591A51904E592E5ED")
     public boolean getStrictErrorChecking() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1460295096 = getTaintBoolean();
@@ -838,6 +850,7 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.995 -0400", hash_original_method = "55375073A29EAEC23495FBD30A28EDB3", hash_generated_method = "B5D30D71D7A11256EBFA7BCECCF3D144")
     public void setStrictErrorChecking(boolean strictErrorChecking) {
         this.strictErrorChecking = strictErrorChecking;
@@ -846,6 +859,7 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.996 -0400", hash_original_method = "2433E48CE07A4EB6DFAAA40EF72A0853", hash_generated_method = "B82097050DBD3D59564067E207205FA7")
     public String getDocumentURI() {
         String varB4EAC82CA7396A68D541C85D26508E83_1698116428 = null; 
@@ -857,6 +871,7 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.997 -0400", hash_original_method = "2ABB3572AC2E2195C4BFB544AFA05B7C", hash_generated_method = "88DFDC039A98BD865B0FDF5C62AD2EAE")
     public void setDocumentURI(String documentUri) {
         this.documentUri = documentUri;

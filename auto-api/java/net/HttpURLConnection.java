@@ -43,6 +43,7 @@ public abstract class HttpURLConnection extends URLConnection {
     public abstract void disconnect();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.186 -0400", hash_original_method = "6640096D2D877ED3E740627246DA5AF9", hash_generated_method = "73599F92A7A429FD47209F6E8FA1B8F5")
     public InputStream getErrorStream() {
         InputStream varB4EAC82CA7396A68D541C85D26508E83_118087106 = null; 
@@ -54,6 +55,7 @@ public abstract class HttpURLConnection extends URLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean getFollowRedirects() {
         return followRedirects;
     }
@@ -81,6 +83,7 @@ public abstract class HttpURLConnection extends URLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.188 -0400", hash_original_method = "0D9C6E3C645DAD49E763E30DD315D3EF", hash_generated_method = "324B5078B198E3C45139B9ECC44405D5")
     public String getRequestMethod() {
         String varB4EAC82CA7396A68D541C85D26508E83_363304571 = null; 
@@ -168,6 +171,7 @@ public abstract class HttpURLConnection extends URLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setFollowRedirects(boolean auto) {
         followRedirects = auto;
     }
@@ -223,6 +227,7 @@ public abstract class HttpURLConnection extends URLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.200 -0400", hash_original_method = "881D26516B84F6D6EEADB518A168ADE5", hash_generated_method = "BBAB3CAC708E3EDBCA381AF694063EDC")
     public boolean getInstanceFollowRedirects() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_603148432 = getTaintBoolean();
@@ -232,6 +237,7 @@ public abstract class HttpURLConnection extends URLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.200 -0400", hash_original_method = "BB71B8E9C2D3F0EF20C7720F9E44016D", hash_generated_method = "A4E72D6C11951C7D0B323DF1D1093EEE")
     public void setInstanceFollowRedirects(boolean followRedirects) {
         instanceFollowRedirects = followRedirects;

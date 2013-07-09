@@ -139,6 +139,7 @@ public class AppWidgetHostView extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.900 -0400", hash_original_method = "523EC9820CA9D9B6EC1AAD0F0C3D4C58", hash_generated_method = "5D04343C650660E959159A5BA7F008FA")
     public int getAppWidgetId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_209801883 = getTaintInt();
@@ -148,6 +149,7 @@ public class AppWidgetHostView extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.902 -0400", hash_original_method = "FF9792E81F5B9850F94285F82FEF7EB6", hash_generated_method = "195BA25D8FC79B0BBBFBF4011BF4BAEC")
     public AppWidgetProviderInfo getAppWidgetInfo() {
         AppWidgetProviderInfo varB4EAC82CA7396A68D541C85D26508E83_1360637706 = null; 

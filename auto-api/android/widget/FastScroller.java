@@ -197,6 +197,7 @@ class FastScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.854 -0400", hash_original_method = "FE4F6BFF00D7A9534103DEC6DDA5B37C", hash_generated_method = "63171B427C1EC742CA8B6EAC354C5A1C")
     public boolean isAlwaysShowEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1942855534 = getTaintBoolean();
@@ -235,6 +236,7 @@ class FastScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.855 -0400", hash_original_method = "4A2BCFB2C4534D1665C92142AF186787", hash_generated_method = "92B1C33A8159587A6DA748D5DA5E8540")
     public void setScrollbarPosition(int position) {
         mPosition = position;
@@ -259,6 +261,7 @@ class FastScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.855 -0400", hash_original_method = "B47561E95C2F1E64B16085B75AB60280", hash_generated_method = "88E2E27840031F6F181A25BE2411B612")
     public int getWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_131080781 = getTaintInt();
@@ -316,6 +319,7 @@ class FastScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.856 -0400", hash_original_method = "10E9373648D5DF4EE43B4904732E3886", hash_generated_method = "FFF627CE8796638F7E59F341ED538F40")
     public int getState() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1486650382 = getTaintInt();
@@ -430,6 +434,7 @@ class FastScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.858 -0400", hash_original_method = "DC69F15A6278F37206902D3451EB4A27", hash_generated_method = "A574900C9092F1C3542AFD9F6D9CBD1B")
      boolean isVisible() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1107060791 = getTaintBoolean();
@@ -557,6 +562,7 @@ class FastScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.861 -0400", hash_original_method = "33CBCEE809BB980D8FD69134B46323D0", hash_generated_method = "CBE8A31FA740CC2B251FBA33E3999D4C")
      void onItemCountChanged(int oldCount, int newCount) {
         
@@ -610,6 +616,7 @@ class FastScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.862 -0400", hash_original_method = "AD42D97439FFEC71F76D9E9B9EF1920A", hash_generated_method = "E9E14B4BBEEF117AB13ED18EACE25F35")
      SectionIndexer getSectionIndexer() {
         SectionIndexer varB4EAC82CA7396A68D541C85D26508E83_1575190949 = null; 
@@ -673,6 +680,7 @@ class FastScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.863 -0400", hash_original_method = "B72F5DA2B803BA6E8807DBDDDB2D9463", hash_generated_method = "3DA083163E23080BFCF30DF5DB399931")
     public void onSectionsChanged() {
         

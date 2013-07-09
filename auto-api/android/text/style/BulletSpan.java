@@ -76,6 +76,7 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.708 -0400", hash_original_method = "487ABDFFC7C87077FB337ABC7D22F575", hash_generated_method = "A24BFBB8A25B1F13CA75EB5C5FBBD4D8")
     public int getSpanTypeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_213519245 = getTaintInt();
@@ -85,6 +86,7 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.709 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "FFA472789CC617292D7B6410EEA61E00")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_453217591 = getTaintInt();
@@ -108,6 +110,7 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.710 -0400", hash_original_method = "77C9B4F0913BD5D8F7E0CF3C61E7D063", hash_generated_method = "6E2F9C5CFC9A1E3C579AB345521A3538")
     public int getLeadingMargin(boolean first) {
         addTaint(first);

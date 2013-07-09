@@ -140,6 +140,7 @@ public class RDN extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.398 -0400", hash_original_method = "C51EA85277B01B717571B534CACD612E", hash_generated_method = "4EE426731246FA431E7D10DF94F6976C")
     public DERObject toASN1Object() {
         DERObject varB4EAC82CA7396A68D541C85D26508E83_1824158216 = null; 

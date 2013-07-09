@@ -196,6 +196,7 @@ public abstract class PhoneBase extends Handler implements Phone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.404 -0400", hash_original_method = "AD2C393D4007178071128FB79D198E7A", hash_generated_method = "939AA9D60C792DDBF5AE38E81D1C4004")
     public void removeReferences() {
         mSmsStorageMonitor = null;
@@ -249,6 +250,7 @@ public abstract class PhoneBase extends Handler implements Phone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.406 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "A26FA9EFED57AFD1E267704550DF4707")
     public Context getContext() {
         Context varB4EAC82CA7396A68D541C85D26508E83_1127508894 = null; 
@@ -277,6 +279,7 @@ public abstract class PhoneBase extends Handler implements Phone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.407 -0400", hash_original_method = "26E6CAA04D711DCC258BDCDD2AAE1C53", hash_generated_method = "DDC8A19FAF57C668C4D92D5FA37845F4")
     public boolean isDnsCheckDisabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1408881980 = getTaintBoolean();
@@ -585,6 +588,7 @@ public abstract class PhoneBase extends Handler implements Phone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.413 -0400", hash_original_method = "347AF2D7A75CED9B3C82A500C1FA5AD6", hash_generated_method = "3688FCA7B96722A600A49ED95FD11CA4")
     public void setUnitTestMode(boolean f) {
         mUnitTestMode = f;
@@ -593,6 +597,7 @@ public abstract class PhoneBase extends Handler implements Phone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.413 -0400", hash_original_method = "958D127406A24370C06699E6AB687F2A", hash_generated_method = "8D390A4796E698E5BF60387787AD0558")
     public boolean getUnitTestMode() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_913016657 = getTaintBoolean();
@@ -686,6 +691,7 @@ public abstract class PhoneBase extends Handler implements Phone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.416 -0400", hash_original_method = "F34715D262D40C908422031B6920D016", hash_generated_method = "4A991C5D707470F1B7A17B8AA612EC14")
     public void setEchoSuppressionEnabled(boolean enabled) {
         addTaint(enabled);
@@ -707,6 +713,7 @@ public abstract class PhoneBase extends Handler implements Phone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.416 -0400", hash_original_method = "6C132AD700E1EDF5A17434649EDA0F2C", hash_generated_method = "E5CA24A6B22F596818D4CA0223059401")
     public SimulatedRadioControl getSimulatedRadioControl() {
         SimulatedRadioControl varB4EAC82CA7396A68D541C85D26508E83_688239444 = null; 
@@ -854,6 +861,7 @@ public abstract class PhoneBase extends Handler implements Phone {
     public abstract IccFileHandler getIccFileHandler();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.421 -0400", hash_original_method = "B77EA67F9749FFFAEC203B31F557B343", hash_generated_method = "B9F8687D65E661415E198CB0CFF1F2EC")
     public Handler getHandler() {
         Handler varB4EAC82CA7396A68D541C85D26508E83_820876911 = null; 
@@ -865,6 +873,7 @@ public abstract class PhoneBase extends Handler implements Phone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.422 -0400", hash_original_method = "E9813275B540C23EC4ABDDE1F3F36487", hash_generated_method = "0C86295D08430681CF305908E605C48F")
     public ServiceStateTracker getServiceStateTracker() {
         ServiceStateTracker varB4EAC82CA7396A68D541C85D26508E83_1444052452 = null; 
@@ -876,6 +885,7 @@ public abstract class PhoneBase extends Handler implements Phone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.423 -0400", hash_original_method = "A2CFF60AF23DAF5B5D13432A0E634448", hash_generated_method = "430170BC9C07E0BC50C6B544C2C20E6E")
     public CallTracker getCallTracker() {
         CallTracker varB4EAC82CA7396A68D541C85D26508E83_1080282660 = null; 
@@ -887,6 +897,7 @@ public abstract class PhoneBase extends Handler implements Phone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.426 -0400", hash_original_method = "E12359725DA3BA4F59BA85FD7E4F143C", hash_generated_method = "F512785AAD6376B8BDD0428DF70163C0")
     @Override
     public IccCard getIccCard() {
@@ -899,6 +910,7 @@ public abstract class PhoneBase extends Handler implements Phone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.428 -0400", hash_original_method = "26C3C4C321ACD0FC593701A52D49E497", hash_generated_method = "826A202642771DDC0067BDEAE889C509")
     @Override
     public String getIccSerialNumber() {
@@ -1178,6 +1190,7 @@ public abstract class PhoneBase extends Handler implements Phone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.462 -0400", hash_original_method = "EBE7791CDB6F228DD3645706A64042D5", hash_generated_method = "336B813777E003220D1EB3AD73B2A4A3")
     public boolean isInEmergencyCall() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_695110409 = getTaintBoolean();
@@ -1187,6 +1200,7 @@ public abstract class PhoneBase extends Handler implements Phone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.462 -0400", hash_original_method = "2D052AB13CFF7511C3F5373523EDFF5B", hash_generated_method = "9C124C27A670FE28A57AE27C186B7A98")
     public boolean isInEcm() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1443134101 = getTaintBoolean();
@@ -1202,6 +1216,7 @@ public abstract class PhoneBase extends Handler implements Phone {
     public abstract int getPhoneType();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.463 -0400", hash_original_method = "91CE395C2B1A59CCA21CB689DCBFE10B", hash_generated_method = "8A35ADD61B3A9D26D70743D5831A9572")
     public int getVoiceMessageCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2084928107 = getTaintInt();
@@ -1357,6 +1372,7 @@ public abstract class PhoneBase extends Handler implements Phone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.470 -0400", hash_original_method = "08A6E4B71FA09531A80AE7640F0ED8FC", hash_generated_method = "EDA030EE7BAA626C063D97F00CAD73CA")
     public boolean needsOtaServiceProvisioning() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_337253191 = getTaintBoolean();
@@ -1366,6 +1382,7 @@ public abstract class PhoneBase extends Handler implements Phone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.471 -0400", hash_original_method = "A73C77982F42451CD95F88A8474FB403", hash_generated_method = "F00F85E2C870F8220EE23FDDC5AD15E8")
     public boolean isOtaSpNumber(String dialStr) {
         addTaint(dialStr.getTaint());

@@ -21,6 +21,7 @@ public class Utils implements UtilsExt {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static Utils getInstance() {
         return instance;
     }
@@ -124,6 +125,7 @@ public class Utils implements UtilsExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getSignature() {
         return signature;
     }

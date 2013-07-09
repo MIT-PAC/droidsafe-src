@@ -36,6 +36,7 @@ public class ConsoleMessage {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.143 -0400", hash_original_method = "25C4EE735F0CFD6521F32D3F800D92AC", hash_generated_method = "2632424AF9D613598B7BB5C0C37BC789")
     public MessageLevel messageLevel() {
         MessageLevel varB4EAC82CA7396A68D541C85D26508E83_188621800 = null; 
@@ -47,6 +48,7 @@ public class ConsoleMessage {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.144 -0400", hash_original_method = "52DD879A1942417F2863E1B67C410E21", hash_generated_method = "35127B2F93D1103418D4DAADF9B170FC")
     public String message() {
         String varB4EAC82CA7396A68D541C85D26508E83_866999319 = null; 
@@ -58,6 +60,7 @@ public class ConsoleMessage {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.144 -0400", hash_original_method = "215864977BD1865913F9AFF2A58F69AA", hash_generated_method = "DAD077EA35EB841882004D3CB9310AB1")
     public String sourceId() {
         String varB4EAC82CA7396A68D541C85D26508E83_477453321 = null; 
@@ -69,6 +72,7 @@ public class ConsoleMessage {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.145 -0400", hash_original_method = "C9721078850915D930C57EA652CD2BDC", hash_generated_method = "7E3E5DC00BD00F9D2F201F97A175442F")
     public int lineNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_143580671 = getTaintInt();

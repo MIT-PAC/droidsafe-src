@@ -161,6 +161,7 @@ public class SIPServerTransaction extends SIPTransaction implements ServerReques
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.985 -0400", hash_original_method = "D3B4FF5E31929A9875E21530A6B99142", hash_generated_method = "3EEBB02788635AC8FD8E72B990DB01D4")
     public void setRequestInterface(ServerRequestInterface newRequestOf) {
         requestOf = newRequestOf;
@@ -169,6 +170,7 @@ public class SIPServerTransaction extends SIPTransaction implements ServerReques
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.985 -0400", hash_original_method = "BE06A4E585FD9A272717267C4A83F5CF", hash_generated_method = "64234886B12C7A316D6D02388843617D")
     public MessageChannel getResponseChannel() {
         MessageChannel varB4EAC82CA7396A68D541C85D26508E83_1334265594 = null; 
@@ -302,6 +304,7 @@ public class SIPServerTransaction extends SIPTransaction implements ServerReques
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.988 -0400", hash_original_method = "7F46EDF7DD1A49A585957DF512054145", hash_generated_method = "A86AB934B46A57D8468EA899AE2622E2")
     public boolean isTransactionMapped() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1212033285 = getTaintBoolean();
@@ -803,6 +806,7 @@ public class SIPServerTransaction extends SIPTransaction implements ServerReques
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.994 -0400", hash_original_method = "025E14F038A1EDFF743C73F970E03870", hash_generated_method = "2E998BE022A551F2E7C198DC3A9CCE49")
     public SIPResponse getLastResponse() {
         SIPResponse varB4EAC82CA7396A68D541C85D26508E83_1675658108 = null; 
@@ -1133,6 +1137,7 @@ public class SIPServerTransaction extends SIPTransaction implements ServerReques
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.002 -0400", hash_original_method = "BF9D0C52E87E80DCC85E6728CE121EFC", hash_generated_method = "930DACE9418B55A05695F29D56FB2CD4")
     public Dialog getDialog() {
         Dialog varB4EAC82CA7396A68D541C85D26508E83_103826292 = null; 
@@ -1248,6 +1253,7 @@ public class SIPServerTransaction extends SIPTransaction implements ServerReques
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.006 -0400", hash_original_method = "423AF4ABBE12E54C6351754EACC47E3E", hash_generated_method = "5B383FDF7D403D0EEB0CC80B198DC46F")
     public SIPResponse getReliableProvisionalResponse() {
         SIPResponse varB4EAC82CA7396A68D541C85D26508E83_1973145172 = null; 
@@ -1299,6 +1305,7 @@ public class SIPServerTransaction extends SIPTransaction implements ServerReques
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.010 -0400", hash_original_method = "9CE3EB2FC8AC208C1528F5A08B1A1A7B", hash_generated_method = "5C395F773463FE425886D66F2CEB2E0D")
     public boolean isRetransmissionAlertEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1374358541 = getTaintBoolean();
@@ -1333,6 +1340,7 @@ public class SIPServerTransaction extends SIPTransaction implements ServerReques
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.013 -0400", hash_original_method = "157974C13DCC3CB54CBF1C9A15C7B6B6", hash_generated_method = "81F3099A5939DE0798711A37A1B51FCD")
     public void setAckSeen() {
         this.isAckSeen = true;
@@ -1341,6 +1349,7 @@ public class SIPServerTransaction extends SIPTransaction implements ServerReques
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.013 -0400", hash_original_method = "C14F76EB0E4E278210A5D612100CE915", hash_generated_method = "9EB11A72338FB04F06E14317972026A6")
     public boolean ackSeen() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1592095380 = getTaintBoolean();
@@ -1350,6 +1359,7 @@ public class SIPServerTransaction extends SIPTransaction implements ServerReques
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.014 -0400", hash_original_method = "6AEC262895B13A63B164E8F6877168F2", hash_generated_method = "933B9239F59250FB7BDA3E89093B23A0")
     public void setMapped(boolean b) {
         this.isMapped = true;
@@ -1359,6 +1369,7 @@ public class SIPServerTransaction extends SIPTransaction implements ServerReques
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.014 -0400", hash_original_method = "63F9C939BCFFEC59883E0EC5005B2509", hash_generated_method = "EC6E81A40B0FF5912A47574DDD99BB8B")
     public void setPendingSubscribe(SIPClientTransaction pendingSubscribeClientTx) {
         this.pendingSubscribeTransaction = pendingSubscribeClientTx;
@@ -1390,6 +1401,7 @@ public class SIPServerTransaction extends SIPTransaction implements ServerReques
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.015 -0400", hash_original_method = "0E2D0772A5243821270857191F448BEA", hash_generated_method = "58F6C6E283CD70A04E09BF213A465752")
     public void setInviteTransaction(SIPServerTransaction st) {
         this.inviteTransaction = st;
@@ -1398,6 +1410,7 @@ public class SIPServerTransaction extends SIPTransaction implements ServerReques
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.016 -0400", hash_original_method = "3EE4598A64A5BA68559842E002FBD20B", hash_generated_method = "DF66E664F1DB9721ACAE37142D72B8A4")
     public SIPServerTransaction getCanceledInviteTransaction() {
         SIPServerTransaction varB4EAC82CA7396A68D541C85D26508E83_620003780 = null; 

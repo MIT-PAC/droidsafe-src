@@ -95,6 +95,7 @@ public final class ComponentName implements Parcelable, Cloneable, Comparable<Co
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.183 -0400", hash_original_method = "89B4378559F402BEFD7FD434E355C3B4", hash_generated_method = "24976ED0390360DF3FF75B760331BE8B")
     public String getPackageName() {
         String varB4EAC82CA7396A68D541C85D26508E83_921896509 = null; 
@@ -106,6 +107,7 @@ public final class ComponentName implements Parcelable, Cloneable, Comparable<Co
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.183 -0400", hash_original_method = "ABD4E1FA4C56F78B933D2E76ACF407D1", hash_generated_method = "9148C2B7F13461424D113BB9CE4735CF")
     public String getClassName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1904453656 = null; 
@@ -284,6 +286,7 @@ public final class ComponentName implements Parcelable, Cloneable, Comparable<Co
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.189 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "82FA495EAC2D74D9AE3739BA7A606E4A")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_336547838 = getTaintInt();

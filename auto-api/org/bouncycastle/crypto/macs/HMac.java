@@ -86,6 +86,7 @@ public class HMac implements Mac {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.069 -0400", hash_original_method = "DF57895E7914F211606EA32A352DF2A7", hash_generated_method = "8D5BD6E3141E6FE36B8B03DC6508F387")
     public Digest getUnderlyingDigest() {
         Digest varB4EAC82CA7396A68D541C85D26508E83_787982866 = null; 
@@ -143,6 +144,7 @@ public class HMac implements Mac {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.071 -0400", hash_original_method = "26B5BCE6AD930971148E6F9157D6A115", hash_generated_method = "613A62265959500E7AC2B255634057C7")
     public int getMacSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_801007043 = getTaintInt();

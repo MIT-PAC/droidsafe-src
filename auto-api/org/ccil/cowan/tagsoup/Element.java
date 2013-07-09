@@ -39,6 +39,7 @@ public class Element {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.683 -0400", hash_original_method = "BFA15C1190E0B500E7A321E762D22239", hash_generated_method = "B58BD981450F64C4450FCCC1846BDCFC")
     public ElementType type() {
         ElementType varB4EAC82CA7396A68D541C85D26508E83_951234638 = null; 
@@ -50,6 +51,7 @@ public class Element {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.684 -0400", hash_original_method = "5DFAF4737CD1323AC5BCD66ECC931C62", hash_generated_method = "8699B259C00D848B883EE6612A4B2486")
     public AttributesImpl atts() {
         AttributesImpl varB4EAC82CA7396A68D541C85D26508E83_1813308691 = null; 
@@ -61,6 +63,7 @@ public class Element {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.685 -0400", hash_original_method = "9BD985D9D137F9E87CC0C75657FC57B8", hash_generated_method = "2B34755533A98D433686D71D1513E972")
     public Element next() {
         Element varB4EAC82CA7396A68D541C85D26508E83_1053674660 = null; 
@@ -72,6 +75,7 @@ public class Element {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.685 -0400", hash_original_method = "9784418C474A290336108D75EC2613BB", hash_generated_method = "B0D02388E7E125BF20397459054E2AB9")
     public void setNext(Element next) {
         theNext = next;
@@ -238,6 +242,7 @@ public class Element {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.691 -0400", hash_original_method = "4B2B445A367BD9870FD7E6D0B377F667", hash_generated_method = "9487A721FE8CC0EDA322618ED3CDFEEE")
     public void preclose() {
         preclosed = true;
@@ -246,6 +251,7 @@ public class Element {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.691 -0400", hash_original_method = "D6339CFBAEA862E2360C9454B8ED0BC8", hash_generated_method = "4A650C0FE92AF558193FDDCF48371913")
     public boolean isPreclosed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1976652011 = getTaintBoolean();

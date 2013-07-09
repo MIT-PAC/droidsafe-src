@@ -105,6 +105,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.109 -0400", hash_original_method = "C94BFF970D5BE6329B9B5E73EF9CE16C", hash_generated_method = "7D32BBC899657F96CB528A1D4FA46DA2")
     public void onBeginPackageChanges() {
         
@@ -112,6 +113,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.109 -0400", hash_original_method = "39FE58D26F24B4456BFC90B3786DCD61", hash_generated_method = "89E81C6729E29ED21D65892232C174F7")
     public void onPackageAdded(String packageName, int uid) {
         
@@ -121,6 +123,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.109 -0400", hash_original_method = "0F3AB92CAC2DECB3AF2CEF56E76BE513", hash_generated_method = "EC7EEAB856BF7E5B806B904A9D198D4E")
     public void onPackageRemoved(String packageName, int uid) {
         
@@ -130,6 +133,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.109 -0400", hash_original_method = "70B1555D02BCE21F5F249AB3232813C5", hash_generated_method = "3081F49472F6EB4752CE9AFBF0867DC6")
     public void onPackageUpdateStarted(String packageName, int uid) {
         
@@ -139,6 +143,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.109 -0400", hash_original_method = "C1124FA7C0A54DF3B3E313F6E0508E79", hash_generated_method = "0D6786336F49DB1118663729EBEEED06")
     public void onPackageUpdateFinished(String packageName, int uid) {
         
@@ -148,6 +153,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.109 -0400", hash_original_method = "030682B94A5C17B98C68812D78EDA104", hash_generated_method = "859CCC8705BA7356F09B56CF06ED17F7")
     public void onPackageChanged(String packageName, int uid, String[] components) {
         
@@ -158,6 +164,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.110 -0400", hash_original_method = "EBFD761C242ABE2AA3537B2F7610A65A", hash_generated_method = "9A831AFC5BD08B48A339CD9233699239")
     public boolean onHandleForceStop(Intent intent, String[] packages, int uid, boolean doit) {
         
@@ -172,6 +179,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.110 -0400", hash_original_method = "D388436436DCC67D6B4275E67E6BEBD2", hash_generated_method = "84A0A7F7B06BF4C473C3A66F3411B8F7")
     public void onUidRemoved(int uid) {
         
@@ -180,6 +188,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.110 -0400", hash_original_method = "D0F5545F1CBA52AD5FDF8554424C6F7F", hash_generated_method = "89A934AA220D3884C367BD1A28FA7388")
     public void onPackagesAvailable(String[] packages) {
         
@@ -188,6 +197,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.111 -0400", hash_original_method = "95C573D28E0FE5F1DA6F2C482B3FAE76", hash_generated_method = "F9811E999DE5495E50FB1FFF6D83955E")
     public void onPackagesUnavailable(String[] packages) {
         
@@ -196,6 +206,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.111 -0400", hash_original_method = "981D6CDBB84DA6444001057EF6BAA725", hash_generated_method = "08DDE20E43C9004875543CD37A539552")
     public void onPackageDisappeared(String packageName, int reason) {
         
@@ -205,6 +216,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.111 -0400", hash_original_method = "12BAED38AA9047ADF8438C1D2386A99B", hash_generated_method = "315FBFFF58D513B709DEB43F973A7AEC")
     public void onPackageAppeared(String packageName, int reason) {
         
@@ -214,6 +226,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.112 -0400", hash_original_method = "6245D80E856A5A5ACA0034EE7540D8FF", hash_generated_method = "3D568DB3448DF91ECDF0CACCD1B88248")
     public void onPackageModified(String packageName) {
         
@@ -222,6 +235,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.112 -0400", hash_original_method = "17B0E80ECA0F203595AB08C03E582A6E", hash_generated_method = "8F990BD87060EE487D83EDA856698415")
     public boolean didSomePackagesChange() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1914911067 = getTaintBoolean();
@@ -259,6 +273,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.113 -0400", hash_original_method = "C232E85354F8FADEB8DAF25E13A8A2B6", hash_generated_method = "084B030C94C5942754DEBE75297FA1F1")
     public boolean anyPackagesAppearing() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1268703902 = getTaintBoolean();
@@ -296,6 +311,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.114 -0400", hash_original_method = "732AD1F656A41076D7320338ABFAAB0C", hash_generated_method = "E42D695814950D883AFB9AD38C519A50")
     public boolean anyPackagesDisappearing() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_818471636 = getTaintBoolean();
@@ -333,6 +349,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.114 -0400", hash_original_method = "D5490034D4EF09CAB3BC7334BE26E552", hash_generated_method = "81CC0669B4A9021B8C9A7811BCBA1FD5")
     public void onSomePackagesChanged() {
         
@@ -340,6 +357,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.114 -0400", hash_original_method = "D8E0B204F7DD735407D0D5971428B1D2", hash_generated_method = "A04E6D7AE177AD771BA1E65021AB70B5")
     public void onFinishPackageChanges() {
         
@@ -347,6 +365,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.115 -0400", hash_original_method = "19E02459BAFEB1E910E6AB68B93B5860", hash_generated_method = "F5F27F7D11BFBC4BB4438D96531A57C2")
      String getPackageName(Intent intent) {
         String varB4EAC82CA7396A68D541C85D26508E83_238074444 = null; 
@@ -365,6 +384,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.117 -0400", hash_original_method = "B895BCFF247B459848C20BC8F667143B", hash_generated_method = "CF6A79F83A52A7AB8AB96B8478629CF3")
     @Override
     public void onReceive(Context context, Intent intent) {

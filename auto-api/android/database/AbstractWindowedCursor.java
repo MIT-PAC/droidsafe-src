@@ -240,6 +240,7 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.567 -0400", hash_original_method = "1266B4A96CD75271FEBF68638404515E", hash_generated_method = "251B3A263CF13A51CA5FF69351AF0B00")
     @Override
     public CursorWindow getWindow() {
@@ -267,6 +268,7 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.569 -0400", hash_original_method = "CE7634279B030B3367B24B82DE682EB0", hash_generated_method = "124113338C3EEC45943525C7B5EA8F3D")
     public boolean hasWindow() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_962778252 = getTaintBoolean();

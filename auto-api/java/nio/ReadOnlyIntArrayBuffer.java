@@ -67,6 +67,7 @@ throw new ReadOnlyBufferException();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.962 -0400", hash_original_method = "D0F583BEFACE4F70BE4011CED42FF4E6", hash_generated_method = "5E625D052DA99D01BC3E7D00D25759D9")
     @Override
     public boolean isReadOnly() {
@@ -101,6 +102,7 @@ throw new ReadOnlyBufferException();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.962 -0400", hash_original_method = "22273AD75DCD1D369E6F6089E4C15AAA", hash_generated_method = "0CA72AF0EF32F54BAA6E08AB8B21C277")
     @Override
     protected boolean protectedHasArray() {

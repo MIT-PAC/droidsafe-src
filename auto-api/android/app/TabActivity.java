@@ -30,6 +30,7 @@ public class TabActivity extends ActivityGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.581 -0400", hash_original_method = "DD818EDD04198A64589FCF3CE4F0396C", hash_generated_method = "6EF6D298E53C3A38F863841FD7A54A7A")
     public void setDefaultTab(String tag) {
         mDefaultTab = tag;
@@ -40,6 +41,7 @@ public class TabActivity extends ActivityGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.582 -0400", hash_original_method = "4CDCBCFE71ABD3C5FA6E0629F75B0C62", hash_generated_method = "826E6F3E2CF34349C386CCE272BF95A1")
     public void setDefaultTab(int index) {
         mDefaultTab = null;

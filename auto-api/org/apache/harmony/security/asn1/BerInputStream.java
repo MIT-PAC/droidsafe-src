@@ -172,6 +172,7 @@ public class BerInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getLength(byte[] encoding) {
         int length = encoding[1] & 0xFF;
         int numOctets = 0;
@@ -908,6 +909,7 @@ public class BerInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.778 -0400", hash_original_method = "5B069BEEA06FE3B546FE9A5858249664", hash_generated_method = "4052DC2651E8308650534F6CD007AC04")
     public Object get(Object key) {
         Object varB4EAC82CA7396A68D541C85D26508E83_1670465641 = null; 

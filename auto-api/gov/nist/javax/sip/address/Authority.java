@@ -101,6 +101,7 @@ public class Authority extends NetObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.212 -0400", hash_original_method = "96FAFC3A7A03957C239B3F2891116715", hash_generated_method = "018C0C416F19B49CC5BEA9F1FA08557E")
     public HostPort getHostPort() {
         HostPort varB4EAC82CA7396A68D541C85D26508E83_1325236006 = null; 
@@ -112,6 +113,7 @@ public class Authority extends NetObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.213 -0400", hash_original_method = "7432173A73E0C28FDB3243D392049BFB", hash_generated_method = "2CB188FBD00996182B3BF4EC54F6DF77")
     public UserInfo getUserInfo() {
         UserInfo varB4EAC82CA7396A68D541C85D26508E83_2026475520 = null; 
@@ -123,6 +125,7 @@ public class Authority extends NetObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.213 -0400", hash_original_method = "0D75875975A37063C0158825ECC49152", hash_generated_method = "D03C3354C168B8DBE544303F17B42551")
     public String getPassword() {
         String varB4EAC82CA7396A68D541C85D26508E83_2062931823 = null; 
@@ -148,6 +151,7 @@ public class Authority extends NetObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.214 -0400", hash_original_method = "A937EFB3E6E8C8E07C44A0CAF1D94D2D", hash_generated_method = "13F4E9C9D2FC4E12F4B43AF57119392C")
     public String getUser() {
         String varB4EAC82CA7396A68D541C85D26508E83_1122385401 = null; 
@@ -261,6 +265,7 @@ public class Authority extends NetObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.217 -0400", hash_original_method = "D8F21BCC66A176F57688F337D1095243", hash_generated_method = "B745BD321C9016470F27FA9AECB556E7")
     public void setHostPort(HostPort h) {
         hostPort = h;
@@ -269,6 +274,7 @@ public class Authority extends NetObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.217 -0400", hash_original_method = "108550F6AB3E82CA87F2AE105EB44E65", hash_generated_method = "A34790455365BCD424DE7999BCD46105")
     public void setUserInfo(UserInfo u) {
         userInfo = u;
@@ -277,6 +283,7 @@ public class Authority extends NetObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.218 -0400", hash_original_method = "92EC2CE878476F294B46126B230CFAA0", hash_generated_method = "FAD43CE7B46962FC334CBF7E370A70DE")
     public void removeUserInfo() {
         this.userInfo = null;

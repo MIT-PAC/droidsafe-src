@@ -111,6 +111,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void startRecyclerTracing(String prefix, View view) {
         if (!TRACE_RECYCLER) {
             return;
@@ -126,6 +127,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void stopRecyclerTracing() {
         if (!TRACE_RECYCLER) {
             return;
@@ -195,6 +197,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void startHierarchyTracing(String prefix, View view) {
         if (!TRACE_HIERARCHY) {
             return;
@@ -217,6 +220,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void stopHierarchyTracing() {
         if (!TRACE_HIERARCHY) {
             return;

@@ -149,6 +149,7 @@ public class MimeTypeMap {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static MimeTypeMap getSingleton() {
         return sMimeTypeMap;
     }

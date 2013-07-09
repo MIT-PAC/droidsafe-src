@@ -19,6 +19,7 @@ public class ASN1OctetString extends ASN1StringType {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ASN1OctetString getInstance() {
         return ASN1;
     }
@@ -81,6 +82,7 @@ public class ASN1OctetString extends ASN1StringType {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.553 -0400", hash_original_method = "9FE1E04620BBFE07A0C8F71EADD10582", hash_generated_method = "E76CC36EECA306EE3B96C1FF22DE2414")
     @Override
     public void setEncodingContent(BerOutputStream out) {

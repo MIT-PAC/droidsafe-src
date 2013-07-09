@@ -419,6 +419,7 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.153 -0400", hash_original_method = "903092ED2C38BF649D61CAF92AAF4DF4", hash_generated_method = "B091948D31507164528E2CB3A01B1509")
     private void clearResultLocked() {
         mInteractionId = -1;
@@ -535,6 +536,7 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.155 -0400", hash_original_method = "44FB956257430D3824804A6F98AEDC24", hash_generated_method = "CF385794A6FEBBED71EA0FE4482B850C")
     private Message getSameProcessMessageAndClear() {
         Message varB4EAC82CA7396A68D541C85D26508E83_889402407 = null; 

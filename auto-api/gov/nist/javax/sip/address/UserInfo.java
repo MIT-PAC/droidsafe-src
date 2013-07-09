@@ -92,6 +92,7 @@ public final class UserInfo extends NetObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.556 -0400", hash_original_method = "B45A9D19151CAED15569D78F83AD2095", hash_generated_method = "C8505DC09422B6CFF865611C6AB8A6C3")
     public void clearPassword() {
         this.password = null;
@@ -100,6 +101,7 @@ public final class UserInfo extends NetObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.557 -0400", hash_original_method = "0304D4B17F9026D87C6633B5EFA54170", hash_generated_method = "9E1477CC144F3CB3FBA9D8DBB308E8E9")
     public int getUserType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1569419071 = getTaintInt();
@@ -109,6 +111,7 @@ public final class UserInfo extends NetObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.557 -0400", hash_original_method = "067A1216625EE4AD320B5B1536FC853E", hash_generated_method = "0F37C9EFD6E0C78D2D758F191A4411F8")
     public String getUser() {
         String varB4EAC82CA7396A68D541C85D26508E83_287047733 = null; 
@@ -120,6 +123,7 @@ public final class UserInfo extends NetObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.557 -0400", hash_original_method = "9DBD0BEF507048073F2256BD69D03A45", hash_generated_method = "86DC84DC088DCAD3E4FD64194B52D1E5")
     public String getPassword() {
         String varB4EAC82CA7396A68D541C85D26508E83_622786066 = null; 
@@ -156,6 +160,7 @@ public final class UserInfo extends NetObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.558 -0400", hash_original_method = "914969AC5F0FD02943850406A5ADB2DF", hash_generated_method = "F4C8503980BC4D291DEAF6570BD57166")
     public void setPassword(String p) {
         password = p;

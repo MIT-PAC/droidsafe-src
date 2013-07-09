@@ -386,16 +386,19 @@ public abstract void replacePreferredActivity(IntentFilter filter, int match,
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getUserId(int uid) {
         return uid / PER_USER_RANGE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getUid(int userId, int appId) {
         return userId * PER_USER_RANGE + (appId % PER_USER_RANGE);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getAppId(int uid) {
         return uid % PER_USER_RANGE;
     }

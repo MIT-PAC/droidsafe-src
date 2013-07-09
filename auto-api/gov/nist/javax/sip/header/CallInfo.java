@@ -76,6 +76,7 @@ public final class CallInfo extends ParametersHeader implements javax.sip.header
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.284 -0400", hash_original_method = "EF1B9495763809E09B57BAE8A2B95EE3", hash_generated_method = "F401F85D512B1666417DFD3AF88973B5")
     public javax.sip.address.URI getInfo() {
         javax.sip.address.URI varB4EAC82CA7396A68D541C85D26508E83_41003491 = null; 
@@ -108,6 +109,7 @@ public final class CallInfo extends ParametersHeader implements javax.sip.header
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.285 -0400", hash_original_method = "5AA5786EA20C5BC42796F42D6FB1BBD6", hash_generated_method = "529B104F54989C0661DF25CACCDA676F")
     public void setInfo(javax.sip.address.URI info) {
         this.info = (GenericURI) info;

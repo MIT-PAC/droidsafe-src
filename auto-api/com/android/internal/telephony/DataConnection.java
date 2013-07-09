@@ -281,6 +281,7 @@ public abstract String toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.761 -0400", hash_original_method = "AAF5779D145C421CCE90F0916803977D", hash_generated_method = "9738603BDEE15522CFBCC91C7BBC7E64")
     public int getDataConnectionId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1111251686 = getTaintInt();
@@ -464,6 +465,7 @@ public abstract String toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.765 -0400", hash_original_method = "F1DF17AEAB523CA725A1A0E7587A5B33", hash_generated_method = "AD6056FEAB65F6DA5B9E03EE2C347859")
     private int getSuggestedRetryTime(AsyncResult ar) {
         int retry = -1;

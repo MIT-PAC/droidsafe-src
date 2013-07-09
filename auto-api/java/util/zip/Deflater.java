@@ -145,6 +145,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.737 -0400", hash_original_method = "54CA80994C94CBB2D32C9857F1640D60", hash_generated_method = "52217A26484215DD02BCA848ECF4167F")
     private int deflateImpl(byte[] buf, int offset, int byteCount, long handle, int flushParm) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1182257396 = getTaintInt();
@@ -180,6 +181,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.737 -0400", hash_original_method = "3E089BB1F2369FD5C4FB6F32377D1DAC", hash_generated_method = "69FF97505E0CE664E4B075F4BA3AB10B")
     private void endImpl(long handle) {
     }
@@ -229,6 +231,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.738 -0400", hash_original_method = "CE8BB8EC5EB7D8A83BE6D0D952D2FABD", hash_generated_method = "DE0495773E68A9D77614A209FED334FD")
     public synchronized void finish() {
         flushParm = FINISH;
@@ -237,6 +240,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.738 -0400", hash_original_method = "AE445D0E75B15DAD06E7B3F2F4342E00", hash_generated_method = "87723C1F046B97178625901240F64BC4")
     public synchronized boolean finished() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_762101054 = getTaintBoolean();
@@ -259,6 +263,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.739 -0400", hash_original_method = "B92F3D2B64C580905B1CBAEAEEC7E950", hash_generated_method = "4588C4CA1F0F0A9B87E866FDBDF51CFA")
     private int getAdlerImpl(long handle) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1259915978 = getTaintInt();
@@ -279,6 +284,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.739 -0400", hash_original_method = "BB22F222483240F64BF20392C09B432F", hash_generated_method = "CC2088A5FBCBC8AEF3C64E4BA406EF44")
     private long getTotalInImpl(long handle) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_2017179815 = getTaintLong();
@@ -299,6 +305,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.740 -0400", hash_original_method = "2C5C1800FBCC7A9569101FDF1B411571", hash_generated_method = "2137097302A8BDACFA1634D57F60B8E9")
     private long getTotalOutImpl(long handle) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_778951557 = getTaintLong();
@@ -306,6 +313,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.740 -0400", hash_original_method = "F6DEF148508A4D024151CB5B8FE739D4", hash_generated_method = "5347ECD7776873FB82F1C088FD402216")
     public synchronized boolean needsInput() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1687411497 = getTaintBoolean();
@@ -335,6 +343,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.741 -0400", hash_original_method = "D92307F0039AB335BB1BCA1E70FBBC75", hash_generated_method = "828BDA31BE8E9DA88C9805DDF29C0415")
     private void resetImpl(long handle) {
     }
@@ -366,6 +375,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.742 -0400", hash_original_method = "7E435812B66ABED0B356693E1B3AC0D7", hash_generated_method = "27D3805C15D2F67C20A0B01214394D68")
     private void setDictionaryImpl(byte[] buf, int offset, int byteCount, long handle) {
     }
@@ -407,11 +417,13 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.743 -0400", hash_original_method = "6366C8E331223E53339096A4FF906729", hash_generated_method = "AF1DD229C3811CE1BC4818D190947479")
     private void setLevelsImpl(int level, int strategy, long handle) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.743 -0400", hash_original_method = "CFB5087A7D9EFE706B98C4EB08838FDC", hash_generated_method = "A07D70B78BE6B11783FE90F8CB71C6AF")
     private void setInputImpl(byte[] buf, int offset, int byteCount, long handle) {
     }
@@ -485,6 +497,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.745 -0400", hash_original_method = "C56CB62EAF4356747257EC4F43A6E2A6", hash_generated_method = "A04CC6106B0C7A1FE60C47AF9B91F6DA")
     private long createStream(int level, int strategy1, boolean noHeader1) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1184739993 = getTaintLong();

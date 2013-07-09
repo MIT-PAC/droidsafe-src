@@ -190,6 +190,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.856 -0400", hash_original_method = "7519B8FEB07821EB54C84C24ACFADDFA", hash_generated_method = "178B1F3F50B4632FA54670FF64888C5C")
     public void setEnterFadeDuration(int ms) {
         mDrawableContainerState.mEnterFadeDuration = ms;
@@ -198,6 +199,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.856 -0400", hash_original_method = "037AE4EFE359E0A64F3D29E228D5C257", hash_generated_method = "BC4F4832E0DF7B103CB719B318AB9698")
     public void setExitFadeDuration(int ms) {
         mDrawableContainerState.mExitFadeDuration = ms;
@@ -652,6 +654,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.869 -0400", hash_original_method = "2271215EA07D061295E4A17A597D4C85", hash_generated_method = "36DD56DB95A366C4F366BBE30EE092E0")
     @Override
     public Drawable getCurrent() {
@@ -733,6 +736,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.872 -0400", hash_original_method = "8007C958EC09F138BD431BCAF111D646", hash_generated_method = "C420DDEC89C73B6C63F887832E2D9CA4")
     protected void setConstantState(DrawableContainerState state) {
         mDrawableContainerState = state;

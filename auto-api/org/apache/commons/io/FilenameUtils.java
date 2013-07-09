@@ -22,11 +22,13 @@ public class FilenameUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean isSystemWindows() {
         return SYSTEM_SEPARATOR == WINDOWS_SEPARATOR;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean isSeparator(char ch) {
         return ch == UNIX_SEPARATOR || ch == WINDOWS_SEPARATOR;
     }

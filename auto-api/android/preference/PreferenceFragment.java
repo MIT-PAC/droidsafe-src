@@ -252,6 +252,7 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.415 -0400", hash_original_method = "ED65E8315019E6E9FED78D8EFC0AFB01", hash_generated_method = "55955FA368C10DD998CDE3F08D677E27")
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -267,6 +268,7 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.415 -0400", hash_original_method = "002FC5CEE5BE5B5D1FE36CEDBC1DEB65", hash_generated_method = "D6616F6B4B499AB484A1DFCAE08ADC30")
     public PreferenceManager getPreferenceManager() {
         PreferenceManager varB4EAC82CA7396A68D541C85D26508E83_1131465622 = null; 
@@ -311,6 +313,7 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.417 -0400", hash_original_method = "5674CE8C214451535BFAB18211614C8C", hash_generated_method = "C197DF940CA351D67F29E7068DF4C51E")
     public void addPreferencesFromIntent(Intent intent) {
         requirePreferenceManager();

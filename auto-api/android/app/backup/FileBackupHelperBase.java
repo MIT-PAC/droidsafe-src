@@ -147,26 +147,31 @@ class FileBackupHelperBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int ctor() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void dtor(int ptr) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int performBackup_native(FileDescriptor oldState,
             int data, FileDescriptor newState, String[] files, String[] keys) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int writeFile_native(int ptr, String filename, int backupReader) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int writeSnapshot_native(int ptr, FileDescriptor fd) {
         return DSUtils.UNKNOWN_INT;
     }

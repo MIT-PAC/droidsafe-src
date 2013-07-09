@@ -107,6 +107,7 @@ public class Signature implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.236 -0400", hash_original_method = "AD9B978BF103416C8AF045B7D5E010A1", hash_generated_method = "5FBEEA6DAAFEB3D0E9440C2072444266")
     public char[] toChars(char[] existingArray, int[] outLen) {
         byte[] sig = mSignature;
@@ -262,6 +263,7 @@ public class Signature implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.243 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "23D83FD945077D03046F2A22201B746E")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1663365846 = getTaintInt();

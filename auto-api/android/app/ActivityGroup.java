@@ -159,6 +159,7 @@ public class ActivityGroup extends Activity {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.850 -0400", hash_original_method = "EF15653BE893F37F81828092C1398373", hash_generated_method = "B3FC0F0682782F27CFB40F23F16DD589")
     @Override
      void dispatchActivityResult(String who, int requestCode, int resultCode,

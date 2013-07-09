@@ -104,6 +104,7 @@ public class DERInteger extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.533 -0400", hash_original_method = "473F358B008FFCD851D487BD1750243E", hash_generated_method = "BE67725681D75E3AAB1BBE2361B17592")
     public int hashCode() {
         int value = 0;

@@ -30,6 +30,7 @@ public class BasicClientCookie2 extends BasicClientCookie implements SetCookie2 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.901 -0400", hash_original_method = "95D16F8D855E74509F3FC69A633DD645", hash_generated_method = "FCF2E4A884A646574106250AC65BF74C")
     @Override
     public int[] getPorts() {
@@ -48,6 +49,7 @@ public class BasicClientCookie2 extends BasicClientCookie implements SetCookie2 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.903 -0400", hash_original_method = "601AD280A8E13C6CCEB794F77493867D", hash_generated_method = "C524B67ABA989F721C799F0F8750F895")
     @Override
     public String getCommentURL() {
@@ -68,6 +70,7 @@ public class BasicClientCookie2 extends BasicClientCookie implements SetCookie2 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.903 -0400", hash_original_method = "9446CEDD4455A1D30E4774BBDD3B750C", hash_generated_method = "E6CDF344C6C1B9923E6E003A3B1B943D")
     public void setDiscard(boolean discard) {
         this.discard = discard;

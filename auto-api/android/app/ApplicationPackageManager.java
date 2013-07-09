@@ -150,6 +150,7 @@ final class ApplicationPackageManager extends PackageManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.486 -0400", hash_original_method = "A679E3857CF73FF4B9C2EA4F09C7DBB7", hash_generated_method = "5AC91BBF6A67A69FA67BAF31CB72E5DB")
     @Override
     public Intent getLaunchIntentForPackage(String packageName) {
@@ -889,6 +890,7 @@ final class ApplicationPackageManager extends PackageManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.519 -0400", hash_original_method = "0CD7CD39AE65A355BC33F2BA54C4DC37", hash_generated_method = "518BE1589F5FF8D06B10E4B46FF03294")
     @Override
     public ResolveInfo resolveActivity(Intent intent, int flags) {
@@ -1030,6 +1032,7 @@ final class ApplicationPackageManager extends PackageManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.527 -0400", hash_original_method = "D7D4C733DB611C9D18D346868F9BD0BD", hash_generated_method = "50D29F214768B6AB6CE955E5CCCFA709")
     @Override
     public ResolveInfo resolveService(Intent intent, int flags) {
@@ -1287,6 +1290,7 @@ final class ApplicationPackageManager extends PackageManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.540 -0400", hash_original_method = "EF5F409F30F5D50F1964B6AB6B7F75B7", hash_generated_method = "F325DF407B9A32913C308B537318FDE5")
     @Override
     public Drawable getActivityIcon(Intent intent) throws NameNotFoundException {
@@ -1382,6 +1386,7 @@ final class ApplicationPackageManager extends PackageManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.548 -0400", hash_original_method = "3B1A86BB5E25FB8EFA7A1AD1A88B3B01", hash_generated_method = "B733A1F5AA2B5FCCAD223EF54F855C92")
     @Override
     public Drawable getActivityLogo(Intent intent) throws NameNotFoundException {
@@ -1852,6 +1857,7 @@ final class ApplicationPackageManager extends PackageManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.590 -0400", hash_original_method = "99610A6DD5E10C01303307EBA6938AA8", hash_generated_method = "400A22F298DF08C5D0E769F3CCD38501")
     @Override
     public void installPackage(Uri packageURI, IPackageInstallObserver observer, int flags,
@@ -1874,6 +1880,7 @@ final class ApplicationPackageManager extends PackageManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.591 -0400", hash_original_method = "769145FCC72852B2314845C8A89A2DAD", hash_generated_method = "F3245D05F97B312C267DEC2D9622BA8B")
     @Override
     public void installPackageWithVerification(Uri packageURI, IPackageInstallObserver observer,
@@ -2449,6 +2456,7 @@ final class ApplicationPackageManager extends PackageManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.612 -0400", hash_original_method = "C52981B6B26B608864F1952FFD2E785F", hash_generated_method = "4417EB3E02E6716448462D97478FC1FC")
     @Override
     public void updateUserName(int id, String name) {
@@ -2458,6 +2466,7 @@ final class ApplicationPackageManager extends PackageManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.612 -0400", hash_original_method = "B193A8F9463928060D13777D952477CD", hash_generated_method = "D32F8A11D82F3C142EEC3FF4520279CC")
     @Override
     public void updateUserFlags(int id, int flags) {

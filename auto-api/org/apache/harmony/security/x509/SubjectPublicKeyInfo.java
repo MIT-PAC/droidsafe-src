@@ -71,6 +71,7 @@ public final class SubjectPublicKeyInfo {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.346 -0400", hash_original_method = "D3585B3653154AD3FE820FC3C464AD5E", hash_generated_method = "32398D8CD4613E042B7379F41DFA248A")
     public AlgorithmIdentifier getAlgorithmIdentifier() {
         AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_535296586 = null; 
@@ -82,6 +83,7 @@ public final class SubjectPublicKeyInfo {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.346 -0400", hash_original_method = "6DD3F56EFCD8D5575183C0DEA4BCE90C", hash_generated_method = "304309D245A3FD400140668B6F85F1C2")
     public byte[] getSubjectPublicKey() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_986167887 = {getTaintByte()};

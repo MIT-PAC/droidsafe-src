@@ -87,58 +87,70 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeCreate(String name, int cursorWindowSize) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeCreateFromParcel(Parcel parcel) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeDispose(int windowPtr) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeWriteToParcel(int windowPtr, Parcel parcel) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeClear(int windowPtr) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeGetNumRows(int windowPtr) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativeSetNumColumns(int windowPtr, int columnNum) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativeAllocRow(int windowPtr) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeFreeLastRow(int windowPtr) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeGetType(int windowPtr, int row, int column) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static byte[] nativeGetBlob(int windowPtr, int row, int column) {
         byte[] ret = {DSUtils.UNKNOWN_BYTE};
         return ret;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String nativeGetString(int windowPtr, int row, int column) {
         	String ret = new String();
         	ret.addTaint(windowPtr);
@@ -148,46 +160,55 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static long nativeGetLong(int windowPtr, int row, int column) {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static double nativeGetDouble(int windowPtr, int row, int column) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeCopyStringToBuffer(int windowPtr, int row, int column,
             CharArrayBuffer buffer) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativePutBlob(int windowPtr, byte[] value, int row, int column) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativePutString(int windowPtr, String value, int row, int column) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativePutLong(int windowPtr, long value, int row, int column) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativePutDouble(int windowPtr, double value, int row, int column) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativePutNull(int windowPtr, int row, int column) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String nativeGetName(int windowPtr) {
         	String ret =  new String();
         	ret.addTaint(windowPtr);
@@ -245,6 +266,7 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.786 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "FBAA6690035CD56CC59F9731C4304ACB")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1008289281 = null; 
@@ -289,6 +311,7 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.788 -0400", hash_original_method = "E83B1D6D3C97BD3B3A2AA134F51457E7", hash_generated_method = "2F6EE15EED9163B7AB6DFE7BD6C0EE9E")
     public int getStartPosition() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_310553591 = getTaintInt();
@@ -298,6 +321,7 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.789 -0400", hash_original_method = "A3D22CBF25891D62569B204C4A11C84D", hash_generated_method = "494AFECC1CA5EB1938A9EB7987E5F3E4")
     public void setStartPosition(int pos) {
         mStartPos = pos;
@@ -814,6 +838,7 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.805 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BCD101AD6872563EC2216320AACC1890")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1098831131 = getTaintInt();

@@ -39,6 +39,7 @@ public class HandlerThread extends Thread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.281 -0400", hash_original_method = "7869505C1EE96F329E4F7F0EA5AF9C5D", hash_generated_method = "FB28300AB029F1A68D6A159EC4AF6459")
     protected void onLooperPrepared() {
         
@@ -144,6 +145,7 @@ public class HandlerThread extends Thread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.283 -0400", hash_original_method = "EC4E0EE5AEE6B394A49A3FA195776A82", hash_generated_method = "315ACE4803E348FD304090334C72F8F8")
     public int getThreadId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1721233129 = getTaintInt();

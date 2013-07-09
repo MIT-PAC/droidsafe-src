@@ -69,11 +69,13 @@ public final class Bitmap implements Parcelable {
 		
 	}
 
-	public static void setDefaultDensity(int density) {
+	@DSModeled(DSC.SAFE)
+    public static void setDefaultDensity(int density) {
 		sDefaultDensity = density;
 	}
 
-	static int getDefaultDensity() {
+	@DSModeled(DSC.SAFE)
+    static int getDefaultDensity() {
 		if (sDefaultDensity >= 0) {
 			return sDefaultDensity;
 		}
@@ -81,7 +83,8 @@ public final class Bitmap implements Parcelable {
 		return sDefaultDensity;
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.226 -0400", hash_original_method = "ED34D3D3464A21C5929C60D84F577074", hash_generated_method = "93728BA52F1239035003DB1D6067C4C8")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.226 -0400", hash_original_method = "ED34D3D3464A21C5929C60D84F577074", hash_generated_method = "93728BA52F1239035003DB1D6067C4C8")
 	public int getDensity() {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1054243371 = getTaintInt();
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1054243371;
@@ -89,14 +92,16 @@ public final class Bitmap implements Parcelable {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.226 -0400", hash_original_method = "9862D9E59C2B168AB35D015A9ED81A18", hash_generated_method = "58D723A4F769D2A3CBAF9A17D68E73B4")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.226 -0400", hash_original_method = "9862D9E59C2B168AB35D015A9ED81A18", hash_generated_method = "58D723A4F769D2A3CBAF9A17D68E73B4")
 	public void setDensity(int density) {
 		mDensity = density;
 		
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.226 -0400", hash_original_method = "30CA035C727F2D2385273CE8F87AAA35", hash_generated_method = "84E478FF6E7328C663D71E05433F8696")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.226 -0400", hash_original_method = "30CA035C727F2D2385273CE8F87AAA35", hash_generated_method = "84E478FF6E7328C663D71E05433F8696")
 	public void setNinePatchChunk(byte[] chunk) {
 		mNinePatchChunk = chunk;
 		
@@ -439,7 +444,8 @@ public final class Bitmap implements Parcelable {
 		return createBitmap(colors, 0, width, width, height, config);
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.236 -0400", hash_original_method = "FE9BA3F148B3AC85DF389A396D130B66", hash_generated_method = "D29547CC4A9856A919F446B7DD017690")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.236 -0400", hash_original_method = "FE9BA3F148B3AC85DF389A396D130B66", hash_generated_method = "D29547CC4A9856A919F446B7DD017690")
 	public byte[] getNinePatchChunk() {
 		byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_776031311 = { getTaintByte() };
 		return var2F9C81BC6E497382285CD6B7A7E33DE1_776031311;
@@ -574,7 +580,8 @@ public final class Bitmap implements Parcelable {
 		
 	}
 
-	static public int scaleFromDensity(int size, int sdensity, int tdensity) {
+	@DSModeled(DSC.SAFE)
+    static public int scaleFromDensity(int size, int sdensity, int tdensity) {
 		if (sdensity == DENSITY_NONE || sdensity == tdensity) {
 			return size;
 		}
@@ -831,7 +838,8 @@ public final class Bitmap implements Parcelable {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.258 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "9C4558AE77A9FF7F93D0F5638649AAF4")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.258 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "9C4558AE77A9FF7F93D0F5638649AAF4")
 	public int describeContents() {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1523302169 = getTaintInt();
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1523302169;
@@ -932,98 +940,122 @@ public final class Bitmap implements Parcelable {
 		
 	}
 
-	private static Bitmap nativeCreate(int[] colors, int offset, int stride, int width, int height, int nativeConfig, boolean mutable) {
+	@DSModeled(DSC.SAFE)
+    private static Bitmap nativeCreate(int[] colors, int offset, int stride, int width, int height, int nativeConfig, boolean mutable) {
 		return new Bitmap();
 	}
 
-	private static Bitmap nativeCopy(int srcBitmap, int nativeConfig, boolean isMutable) {
+	@DSModeled(DSC.SAFE)
+    private static Bitmap nativeCopy(int srcBitmap, int nativeConfig, boolean isMutable) {
 		return new Bitmap();
 	}
 
-	private static void nativeDestructor(int nativeBitmap) {
+	@DSModeled(DSC.SAFE)
+    private static void nativeDestructor(int nativeBitmap) {
 	}
 
-	private static void nativeRecycle(int nativeBitmap) {
+	@DSModeled(DSC.SAFE)
+    private static void nativeRecycle(int nativeBitmap) {
 	}
 
-	private static boolean nativeCompress(int nativeBitmap, int format, int quality, OutputStream stream, byte[] tempStorage) {
+	@DSModeled(DSC.SAFE)
+    private static boolean nativeCompress(int nativeBitmap, int format, int quality, OutputStream stream, byte[] tempStorage) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1104407749 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1104407749;
 	}
 
-	private static void nativeErase(int nativeBitmap, int color) {
+	@DSModeled(DSC.SAFE)
+    private static void nativeErase(int nativeBitmap, int color) {
 	}
 
-	private static int nativeWidth(int nativeBitmap) {
+	@DSModeled(DSC.SAFE)
+    private static int nativeWidth(int nativeBitmap) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1883901434 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1883901434;
 	}
 
-	private static int nativeHeight(int nativeBitmap) {
+	@DSModeled(DSC.SAFE)
+    private static int nativeHeight(int nativeBitmap) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1185058667 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1185058667;
 	}
 
-	private static int nativeRowBytes(int nativeBitmap) {
+	@DSModeled(DSC.SAFE)
+    private static int nativeRowBytes(int nativeBitmap) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2006498156 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2006498156;
 	}
 
-	private static int nativeConfig(int nativeBitmap) {
+	@DSModeled(DSC.SAFE)
+    private static int nativeConfig(int nativeBitmap) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_639280674 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_639280674;
 	}
 
-	private static boolean nativeHasAlpha(int nativeBitmap) {
+	@DSModeled(DSC.SAFE)
+    private static boolean nativeHasAlpha(int nativeBitmap) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_606515604 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_606515604;
 	}
 
-	private static int nativeGetPixel(int nativeBitmap, int x, int y) {
+	@DSModeled(DSC.SAFE)
+    private static int nativeGetPixel(int nativeBitmap, int x, int y) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1039533584 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1039533584;
 	}
 
-	private static void nativeGetPixels(int nativeBitmap, int[] pixels, int offset, int stride, int x, int y, int width, int height) {
+	@DSModeled(DSC.SAFE)
+    private static void nativeGetPixels(int nativeBitmap, int[] pixels, int offset, int stride, int x, int y, int width, int height) {
 	}
 
-	private static void nativeSetPixel(int nativeBitmap, int x, int y, int color) {
+	@DSModeled(DSC.SAFE)
+    private static void nativeSetPixel(int nativeBitmap, int x, int y, int color) {
 	}
 
-	private static void nativeSetPixels(int nativeBitmap, int[] colors, int offset, int stride, int x, int y, int width, int height) {
+	@DSModeled(DSC.SAFE)
+    private static void nativeSetPixels(int nativeBitmap, int[] colors, int offset, int stride, int x, int y, int width, int height) {
 	}
 
-	private static void nativeCopyPixelsToBuffer(int nativeBitmap, Buffer dst) {
+	@DSModeled(DSC.SAFE)
+    private static void nativeCopyPixelsToBuffer(int nativeBitmap, Buffer dst) {
 	}
 
-	private static void nativeCopyPixelsFromBuffer(int nb, Buffer src) {
+	@DSModeled(DSC.SAFE)
+    private static void nativeCopyPixelsFromBuffer(int nb, Buffer src) {
 	}
 
-	private static int nativeGenerationId(int nativeBitmap) {
+	@DSModeled(DSC.SAFE)
+    private static int nativeGenerationId(int nativeBitmap) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_699577780 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_699577780;
 	}
 
-	private static Bitmap nativeCreateFromParcel(Parcel p) {
+	@DSModeled(DSC.SAFE)
+    private static Bitmap nativeCreateFromParcel(Parcel p) {
 		return new Bitmap();
 	}
 
-	private static boolean nativeWriteToParcel(int nativeBitmap, boolean isMutable, int density, Parcel p) {
+	@DSModeled(DSC.SAFE)
+    private static boolean nativeWriteToParcel(int nativeBitmap, boolean isMutable, int density, Parcel p) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_709717476 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_709717476;
 	}
 
-	private static Bitmap nativeExtractAlpha(int nativeBitmap, int nativePaint, int[] offsetXY) {
+	@DSModeled(DSC.SAFE)
+    private static Bitmap nativeExtractAlpha(int nativeBitmap, int nativePaint, int[] offsetXY) {
 		return new Bitmap();
 	}
 
-	private static void nativePrepareToDraw(int nativeBitmap) {
+	@DSModeled(DSC.SAFE)
+    private static void nativePrepareToDraw(int nativeBitmap) {
 	}
 
-	private static void nativeSetHasAlpha(int nBitmap, boolean hasAlpha) {
+	@DSModeled(DSC.SAFE)
+    private static void nativeSetHasAlpha(int nBitmap, boolean hasAlpha) {
 	}
 
-	private static boolean nativeSameAs(int nb0, int nb1) {
+	@DSModeled(DSC.SAFE)
+    private static boolean nativeSameAs(int nb0, int nb1) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_767903221 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_767903221;
 	}

@@ -102,6 +102,7 @@ final class HttpConnection {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static HttpConnection connect(URI uri, Proxy proxy, boolean requiresTunnel,
             int connectTimeout) throws IOException {
         if (proxy != null) {
@@ -242,6 +243,7 @@ final class HttpConnection {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.752 -0400", hash_original_method = "EA9CBC15CAAA468AF10BBF1CD02918CF", hash_generated_method = "EAE6F8E0BC100F7D81EEFD29DB066B91")
     protected Socket getSocket() {
         Socket varB4EAC82CA7396A68D541C85D26508E83_1735774312 = null; 
@@ -253,6 +255,7 @@ final class HttpConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.753 -0400", hash_original_method = "9472CD13980FF331A1EC2B82F4638C6F", hash_generated_method = "788D749080DE44C543F79BFF29EF7750")
     public Address getAddress() {
         Address varB4EAC82CA7396A68D541C85D26508E83_1632602147 = null; 
@@ -295,6 +298,7 @@ final class HttpConnection {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.754 -0400", hash_original_method = "E313A7AB78F75EDB07568DFA09A3BF60", hash_generated_method = "DD3402DC3B7F2293FE7263CC45C40463")
     public SSLSocket verifySecureSocketHostname(HostnameVerifier hostnameVerifier) throws IOException {
         SSLSocket varB4EAC82CA7396A68D541C85D26508E83_7221574 = null; 
@@ -318,6 +322,7 @@ final class HttpConnection {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.754 -0400", hash_original_method = "0390CC00C23D2289E08AFB9047DDDB88", hash_generated_method = "A7DD2692D206724AD558D2E64CE37894")
     public SSLSocket getSecureSocketIfConnected() {
         SSLSocket varB4EAC82CA7396A68D541C85D26508E83_1329045118 = null; 

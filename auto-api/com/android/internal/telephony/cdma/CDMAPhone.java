@@ -321,6 +321,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.005 -0400", hash_original_method = "DA0F221C2247572C4D631280E4033E9A", hash_generated_method = "75C9A4DC009E7C6E8BD6E3E6F2F54641")
     public ServiceState getServiceState() {
         ServiceState varB4EAC82CA7396A68D541C85D26508E83_1485372939 = null; 
@@ -332,6 +333,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.005 -0400", hash_original_method = "79AFD9B845E4547B981131DAC9E3A14D", hash_generated_method = "0673B097E808358AAA4A724CD276D518")
     public CallTracker getCallTracker() {
         CallTracker varB4EAC82CA7396A68D541C85D26508E83_508399122 = null; 
@@ -343,6 +345,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.005 -0400", hash_original_method = "8AEFB373111A9C8AD30F3E8C75C461D2", hash_generated_method = "C25F6042B38E07CB84DA41946A21558C")
     public Phone.State getState() {
         Phone.State varB4EAC82CA7396A68D541C85D26508E83_338276763 = null; 
@@ -354,6 +357,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.006 -0400", hash_original_method = "BD481539215D5A66E62B4E6909625141", hash_generated_method = "10FE0B72DAB737EE17BD0C7491F0CE0D")
     public ServiceStateTracker getServiceStateTracker() {
         ServiceStateTracker varB4EAC82CA7396A68D541C85D26508E83_288066415 = null; 
@@ -365,6 +369,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.006 -0400", hash_original_method = "B0BDAF041F7F636A26D0F46F60D4BC7B", hash_generated_method = "AFEAEA8D04B74239FD71EE57DCC1133B")
     public String getPhoneName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1281937172 = null; 
@@ -376,6 +381,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.006 -0400", hash_original_method = "94F6AF6179535CBD756D5B387D52C3CA", hash_generated_method = "B61FB36BB46B43BE7F9F2FBE72676F86")
     public int getPhoneType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2137106739 = getTaintInt();
@@ -396,6 +402,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.007 -0400", hash_original_method = "31E0316605311F71BD2BE82139C4C7B1", hash_generated_method = "CD0E32DC791EC1AD2D28822995AD3F6B")
     public CdmaCall getRingingCall() {
         CdmaCall varB4EAC82CA7396A68D541C85D26508E83_796364633 = null; 
@@ -548,6 +555,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.010 -0400", hash_original_method = "46D9BC6E3280014832CD8FC523C20E6E", hash_generated_method = "829F177786477F8FA37306C1D0E3D67E")
     public SignalStrength getSignalStrength() {
         SignalStrength varB4EAC82CA7396A68D541C85D26508E83_1282167116 = null; 
@@ -594,6 +602,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.011 -0400", hash_original_method = "9F7E8D6F89A6C75F0A7653B179AA02CE", hash_generated_method = "5492E631BBCE3BA7A6A7F5219DAB0AAB")
     public CdmaCall getBackgroundCall() {
         CdmaCall varB4EAC82CA7396A68D541C85D26508E83_2003440185 = null; 
@@ -747,6 +756,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.017 -0400", hash_original_method = "A71BC42B8E5B39F885F4E0F3CDCE1523", hash_generated_method = "582F3198B5948D0FCAAE8A0582840ED1")
     public String getEsn() {
         String varB4EAC82CA7396A68D541C85D26508E83_659363438 = null; 
@@ -758,6 +768,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.017 -0400", hash_original_method = "7E7AAA89C01F3229F1902E361A6CD86F", hash_generated_method = "1378386CCBA4646243B52C3E1861E04D")
     public String getMeid() {
         String varB4EAC82CA7396A68D541C85D26508E83_662233374 = null; 
@@ -844,6 +855,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.020 -0400", hash_original_method = "E38329BE2FF507326358BBAF596945E6", hash_generated_method = "098F07C3AD48228F1BE65129E56263B2")
     public CellLocation getCellLocation() {
         CellLocation varB4EAC82CA7396A68D541C85D26508E83_2057313913 = null; 
@@ -855,6 +867,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.020 -0400", hash_original_method = "5D417D4C057D78BF0DEF3D949E557B3C", hash_generated_method = "DE86B7ACF673C82DD7545F34B174B1EA")
     public CdmaCall getForegroundCall() {
         CdmaCall varB4EAC82CA7396A68D541C85D26508E83_1607024970 = null; 
@@ -1539,6 +1552,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.048 -0400", hash_original_method = "B4B2A6F2428B54DDD4A7791B2905A02A", hash_generated_method = "36CBF34C0991E901B5A36EBE982248DC")
     public boolean isInEcm() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1557256671 = getTaintBoolean();
@@ -1817,6 +1831,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.053 -0400", hash_original_method = "4BF16EE42BDE3709043B0CD4BA1346D5", hash_generated_method = "267CA4BBDFA1B84480561FEE7BAA1ECB")
     public PhoneSubInfo getPhoneSubInfo() {
         PhoneSubInfo varB4EAC82CA7396A68D541C85D26508E83_452397847 = null; 
@@ -1828,6 +1843,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.054 -0400", hash_original_method = "A5B3830D3022369CFD45112AC4A19D05", hash_generated_method = "0A72CB2E6197079D4C99739441805E94")
     public IccSmsInterfaceManager getIccSmsInterfaceManager() {
         IccSmsInterfaceManager varB4EAC82CA7396A68D541C85D26508E83_556907683 = null; 
@@ -1839,6 +1855,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.055 -0400", hash_original_method = "F4C16F1EDC7887AFA610A21C85E2FBBC", hash_generated_method = "0262E094BA7789D6DA84D8A0376D8215")
     public IccPhoneBookInterfaceManager getIccPhoneBookInterfaceManager() {
         IccPhoneBookInterfaceManager varB4EAC82CA7396A68D541C85D26508E83_1859327422 = null; 
@@ -1910,6 +1927,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.059 -0400", hash_original_method = "515987807F65054AFA6AA9A268DDB599", hash_generated_method = "2BE774D668194C3B5B9E7123D9E9B6B9")
     public IccFileHandler getIccFileHandler() {
         IccFileHandler varB4EAC82CA7396A68D541C85D26508E83_1394709311 = null; 
@@ -2275,6 +2293,7 @@ public class CDMAPhone extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.074 -0400", hash_original_method = "A95BEE5F1920F9C579D7A59FC4DBB414", hash_generated_method = "4852DBE4EBDE1D0CC3992D0FA5E5692C")
      boolean updateCurrentCarrierInProvider() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_456799353 = getTaintBoolean();

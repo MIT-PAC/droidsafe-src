@@ -60,6 +60,7 @@ public class InputSource {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.771 -0400", hash_original_method = "0C418225BFB03C04E3636F3891B47A3E", hash_generated_method = "784431903087FA4FFEF9763F16480709")
     public void setPublicId(String publicId) {
         this.publicId = publicId;
@@ -68,6 +69,7 @@ public class InputSource {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.771 -0400", hash_original_method = "C19BBE926A67132A1C6BC386100A3E69", hash_generated_method = "29F0E04CEB6B910C50B849E3DD3BCC2A")
     public String getPublicId() {
         String varB4EAC82CA7396A68D541C85D26508E83_397651046 = null; 
@@ -79,6 +81,7 @@ public class InputSource {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.772 -0400", hash_original_method = "77F5337B905F22D1C71F7C949FEF5117", hash_generated_method = "DE20300D341EFA9D9888E5637810608B")
     public void setSystemId(String systemId) {
         this.systemId = systemId;
@@ -87,6 +90,7 @@ public class InputSource {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.772 -0400", hash_original_method = "8088708D8DEEE6054468B7FD77400E50", hash_generated_method = "27061110E0A5E2BDA704EEDD81F321F6")
     public String getSystemId() {
         String varB4EAC82CA7396A68D541C85D26508E83_592599112 = null; 
@@ -98,6 +102,7 @@ public class InputSource {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.772 -0400", hash_original_method = "E15E53FA80250CBE7F24584A185B9018", hash_generated_method = "B841545B8F2C566C639881C15FF48B83")
     public void setByteStream(InputStream byteStream) {
         this.byteStream = byteStream;
@@ -106,6 +111,7 @@ public class InputSource {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.773 -0400", hash_original_method = "831A861201E96F794D74C2B24BAB3555", hash_generated_method = "21CD4C46873ED1D46C69F614DC5FBC09")
     public InputStream getByteStream() {
         InputStream varB4EAC82CA7396A68D541C85D26508E83_282436229 = null; 
@@ -117,6 +123,7 @@ public class InputSource {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.773 -0400", hash_original_method = "109F4EE072FF4A68A1B686347AFE92DB", hash_generated_method = "7E8E9F5581B45D04B721857DE5AE6090")
     public void setEncoding(String encoding) {
         this.encoding = encoding;
@@ -125,6 +132,7 @@ public class InputSource {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.775 -0400", hash_original_method = "ECC6E581C26F132636CDCE9C9A5E5807", hash_generated_method = "8EFCABC0C2E9CCEF574EA0235B82AA42")
     public String getEncoding() {
         String varB4EAC82CA7396A68D541C85D26508E83_1058472769 = null; 
@@ -136,6 +144,7 @@ public class InputSource {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.776 -0400", hash_original_method = "079C1AFEC48E7E3C6462740060167438", hash_generated_method = "81D26BAB949E3D4C89EA05FA577F07A9")
     public void setCharacterStream(Reader characterStream) {
         this.characterStream = characterStream;
@@ -144,6 +153,7 @@ public class InputSource {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.777 -0400", hash_original_method = "420D22C3C623A59BA758E1AC6387B142", hash_generated_method = "D68858ED829A0BFC9A260F7B5A56F551")
     public Reader getCharacterStream() {
         Reader varB4EAC82CA7396A68D541C85D26508E83_1888365784 = null; 

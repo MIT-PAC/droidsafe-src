@@ -635,6 +635,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.070 -0400", hash_original_method = "1AA2C9794D97C2364A0DADD5E85D90A7", hash_generated_method = "04CCCA39115104D6AC5BA74803FE09D2")
      void incrementTextGeneration() {
         
@@ -665,6 +666,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SPEC)
     private static void handleProxyBroadcast(Intent intent) {
         ProxyProperties proxyProperties = (ProxyProperties)intent.getExtra(Proxy.EXTRA_PROXY_INFO);
         if (proxyProperties == null || proxyProperties.getHost() == null) {
@@ -751,6 +753,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.073 -0400", hash_original_method = "C2F251AFC67F9C484131CB8CA191D5D9", hash_generated_method = "76706BC9F2CEA6C2EFA15D23451ECE58")
     @Override
     public boolean shouldDelayChildPressedState() {
@@ -2587,7 +2590,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
-        static int pinLoc(int x, int viewMax, int docMax) {
+        @DSModeled(DSC.SAFE)
+    static int pinLoc(int x, int viewMax, int docMax) {
         if (docMax < viewMax) {   
             x = 0;
         } else if (x < 0) {
@@ -3305,6 +3309,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.132 -0400", hash_original_method = "CC08B3036F1FD603613A57F943902091", hash_generated_method = "692C4B604C14A71FA735182A48B61F1E")
     public int getContentWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_89283109 = getTaintInt();
@@ -3440,6 +3445,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.135 -0400", hash_original_method = "0A4A277C67A1CBC7C62543C182164A85", hash_generated_method = "907B05EE07EAB7221F148E8C74A83F21")
     public boolean isPaused() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_873618120 = getTaintBoolean();
@@ -4996,6 +5002,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.196 -0400", hash_original_method = "079D561B903F747D50B5A79B1ECD14A7", hash_generated_method = "F513A52672CB1E550463E4D37F381A27")
      boolean drawHistory() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_823551315 = getTaintBoolean();
@@ -5445,6 +5452,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.206 -0400", hash_original_method = "6AB19E93948D2A1BBE98A475D0E38626", hash_generated_method = "F0AD0DD9D019471AD6C4EFC6041C70B7")
     private boolean isEnterActionKey(int keyCode) {
         addTaint(keyCode);
@@ -6124,6 +6132,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.216 -0400", hash_original_method = "1F5E023ED4B943F886020EF0C3C728C0", hash_generated_method = "B273FE7D61E13E6CE45FEB7014C0E93B")
     @Deprecated
     public void onChildViewAdded(View parent, View child) {
@@ -6134,6 +6143,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.217 -0400", hash_original_method = "A1852453035469FD96D226C7DED2259E", hash_generated_method = "C170B29F38EB702918070B8FAF483BB6")
     @Deprecated
     public void onChildViewRemoved(View p, View child) {
@@ -6144,6 +6154,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.217 -0400", hash_original_method = "41543FFF07459A3CC35AF53F19C64652", hash_generated_method = "03699C1B0285E84E7176C9EC92F4A5C1")
     @Deprecated
     public void onGlobalFocusChanged(View oldFocus, View newFocus) {
@@ -6485,6 +6496,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.223 -0400", hash_original_method = "E716E368428AC43DD861FB41DD4177B7", hash_generated_method = "8E9B9035D0B0E6632641AD1EAA5717BB")
     private boolean shouldForwardTouchEvent() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1846340227 = getTaintBoolean();
@@ -6499,6 +6511,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.223 -0400", hash_original_method = "D8A5E5AFACABC5E7BA1118E01B4C441A", hash_generated_method = "20E8C5429A7C0912720614D969929EB1")
     private boolean inFullScreenMode() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1242898654 = getTaintBoolean();
@@ -7479,6 +7492,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.241 -0400", hash_original_method = "B9600CE64DC445389C4969B83D045257", hash_generated_method = "6AC8F93A7F315BEE56D465931AC8D27F")
      void resetTrackballTime() {
         mTrackballLastTime = 0;
@@ -7589,6 +7603,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.243 -0400", hash_original_method = "44B6EC62F94A30D145B4D96D02167D11", hash_generated_method = "FBCA9C82A43BF41364053D9792BEE036")
     private int scaleTrackballX(float xRate, int width) {
         int xMove = (int) (xRate / TRACKBALL_SCALE * width);
@@ -7621,6 +7636,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.243 -0400", hash_original_method = "4955ADB09DEAD56B8F7C2CA183746984", hash_generated_method = "6BC3CB498E4751DE1488F5195BB6A877")
     private int scaleTrackballY(float yRate, int height) {
         int yMove = (int) (yRate / TRACKBALL_SCALE * height);
@@ -8607,6 +8623,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.264 -0400", hash_original_method = "9E9681EB8914AFEDBD59BEDC85F3A0A3", hash_generated_method = "6ACAFA145EAD2B911B21FF242758AD91")
     public synchronized WebViewCore getWebViewCore() {
         WebViewCore varB4EAC82CA7396A68D541C85D26508E83_957640153 = null; 
@@ -9025,6 +9042,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.289 -0400", hash_original_method = "32BD565DE772EAA014BAC9C9F2C97315", hash_generated_method = "532DEB102DF9CA4E589F44849288BE45")
     private boolean accessibilityScriptInjected() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1247876817 = getTaintBoolean();
@@ -9069,6 +9087,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.290 -0400", hash_original_method = "74367596F95573C97AD83A4084EC0CCE", hash_generated_method = "60F0103DEBE1A0FA6D924B8BF32F9420")
     public void setHTML5VideoViewProxy(HTML5VideoViewProxy proxy) {
         mHTML5VideoViewProxy = proxy;
@@ -9077,6 +9096,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.290 -0400", hash_original_method = "3903E5FDBADBBF10F8555758708758EA", hash_generated_method = "0341554DA62305A207D3B8C95E999187")
     public void setTouchInterval(int interval) {
         mCurrentTouchInterval = interval;
@@ -9103,6 +9123,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.291 -0400", hash_original_method = "D7B2726C13999E8A86361BD414F1463C", hash_generated_method = "42B86BC72D9CF2B6B71B5A6190BDE8E3")
      ViewManager getViewManager() {
         ViewManager varB4EAC82CA7396A68D541C85D26508E83_1971455825 = null; 
@@ -9220,6 +9241,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.293 -0400", hash_original_method = "AD2D640C3667F77EA8D9A6F6AFA42937", hash_generated_method = "321A598B9EA7A08C50920125DF55FD16")
     private int nativeCacheHitFramePointer() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_89830374 = getTaintInt();
@@ -9227,6 +9249,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.293 -0400", hash_original_method = "C5535D5868AF8EFE71BDF7284C12F351", hash_generated_method = "2A9C10B1A8BA18FF1F5FCC6403A75DF7")
     private boolean nativeCacheHitIsPlugin() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1790871375 = getTaintBoolean();
@@ -9234,12 +9257,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.294 -0400", hash_original_method = "C7D338FF64B881B2FAA82154B2896288", hash_generated_method = "C211C5C405AAE9953CCBBEEF22D45B31")
     private Rect nativeCacheHitNodeBounds() {
     	return new Rect();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.294 -0400", hash_original_method = "E7CF5B837B37AF1FB0FFA94B1E5A9C49", hash_generated_method = "007D8B606161EFD4C610C8DE5DBE4B9F")
     private int nativeCacheHitNodePointer() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1863031923 = getTaintInt();
@@ -9247,16 +9272,19 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.294 -0400", hash_original_method = "21C51F3D001D4692500D45D045D1D1A2", hash_generated_method = "2C929D3168FE3E72D461E6649B6EC306")
      void nativeClearCursor() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.294 -0400", hash_original_method = "D5BD5BC1C047EF29A0BA74787ABFA8DB", hash_generated_method = "7DFA4BA9D9D2F081C4674D9A23AF40D6")
     private void nativeCreate(int ptr, String drawableDir, boolean isHighEndGfx) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.294 -0400", hash_original_method = "12D518518F45FEF02F029B364840A9CD", hash_generated_method = "804D0084D6C283A843E091EC4BE740A8")
     private int nativeCursorFramePointer() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1067539569 = getTaintInt();
@@ -9264,12 +9292,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.295 -0400", hash_original_method = "843882909A38B2FC0D8F4867EE2AC0A0", hash_generated_method = "E271E918D4C574FDDE4719E4B98A8B2B")
     private Rect nativeCursorNodeBounds() {
     	return new Rect();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.295 -0400", hash_original_method = "F74724E9A0C85C98C40FDE06FDCC4B7E", hash_generated_method = "831F48CD64451AD326D17E68C78906DC")
     private int nativeCursorNodePointer() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_461270621 = getTaintInt();
@@ -9277,6 +9307,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.295 -0400", hash_original_method = "0CCAA8E51DFECB80A1DAAA18BBAA93E1", hash_generated_method = "7BE9839CA8AB04C00421D8962961A333")
     private boolean nativeCursorIntersects(Rect visibleRect) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1025240703 = getTaintBoolean();
@@ -9284,6 +9315,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.295 -0400", hash_original_method = "8A09EF437BF7C2698409EA0A7A76891D", hash_generated_method = "FE4ADE4F0B5F2FB98BA36F5CC3A81439")
     private boolean nativeCursorIsAnchor() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1421134912 = getTaintBoolean();
@@ -9291,6 +9323,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.296 -0400", hash_original_method = "EE630232B25B714D7F7B153A20D259D0", hash_generated_method = "ADE207A01EDF777F3E185785C3C63AD3")
     private boolean nativeCursorIsTextInput() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1131245656 = getTaintBoolean();
@@ -9298,6 +9331,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.296 -0400", hash_original_method = "CB263EC43145C659054742CE0640D198", hash_generated_method = "2045A184BB97A2996B1887CC917B0804")
     private Point nativeCursorPosition() {
     	
@@ -9305,12 +9339,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.296 -0400", hash_original_method = "05985317D344F6F01EE48FCED9442B85", hash_generated_method = "3E24BE9E7EBDB8C5312CC587887CD85C")
     private String nativeCursorText() {
     	return new String();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.296 -0400", hash_original_method = "883A2B6BC8DFA6DE2AE51F0C99D32AC6", hash_generated_method = "E6E17FF2BCD2C628E5794E66D9715B8D")
     private boolean nativeCursorWantsKeyEvents() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_715829123 = getTaintBoolean();
@@ -9318,16 +9354,19 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.296 -0400", hash_original_method = "BCDACACF9A7294298FFE59BBEA2E56E6", hash_generated_method = "F601101523F054AD48972FF053FC6215")
     private void nativeDebugDump() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.297 -0400", hash_original_method = "E34EA3919C76BD220428BD59B66C56DD", hash_generated_method = "1439525E8540D7F69358452344174A0D")
     private void nativeDestroy() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.297 -0400", hash_original_method = "C2ECE2AA332B7BCDEACB0B8BAB186CAE", hash_generated_method = "5BB7B1A8CCF4941EA0743B341B0680CE")
     private int nativeDraw(Canvas canvas, RectF visibleRect,
             int color, int extra, boolean splitIfNeeded) {
@@ -9336,11 +9375,13 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.297 -0400", hash_original_method = "B94EBE52746C23266AA56FE8E26D2041", hash_generated_method = "DEC3E2BF23E95688EF02A9D60A934BC6")
     private void nativeDumpDisplayTree(String urlOrNull) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.297 -0400", hash_original_method = "37CA92648450960165CE0DC4D7461803", hash_generated_method = "C8933FC5725D5ECC7D426DA5A3E25463")
     private boolean nativeEvaluateLayersAnimations(int nativeInstance) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1260473596 = getTaintBoolean();
@@ -9348,6 +9389,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.297 -0400", hash_original_method = "AC4C8B7485570D2501FDB7D14AD52EF3", hash_generated_method = "A717151181B62D2A8B6F4E62DE191E9C")
     private int nativeGetDrawGLFunction(int nativeInstance, Rect rect,
             Rect viewRect, RectF visibleRect, float scale, int extras) {
@@ -9356,17 +9398,20 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.298 -0400", hash_original_method = "5F36FDF1F0F523C00D52E094440893E0", hash_generated_method = "CE8A8077BABA841A2AD2D59A5548E6AE")
     private void nativeUpdateDrawGLFunction(Rect rect, Rect viewRect,
             RectF visibleRect) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.298 -0400", hash_original_method = "20D90A20109930F09B8AC2021CC572AC", hash_generated_method = "AAD4FC58EFA073FDC913BA79EDD7DCDA")
     private void nativeExtendSelection(int x, int y) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.298 -0400", hash_original_method = "985C1C45895761A3003321E2C6FD0B56", hash_generated_method = "11DC1172052E40C290A2DF2E8F4C52BA")
     private int nativeFindAll(String findLower, String findUpper,
             boolean sameAsLastSearch) {
@@ -9375,11 +9420,13 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.298 -0400", hash_original_method = "E9CD8F854D329A9FF8E3CC0A72C785E4", hash_generated_method = "937E5B11B8379FE5830DBA653F9B7999")
     private void nativeFindNext(boolean forward) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.298 -0400", hash_original_method = "EABE56EC33C0D8AE2F7016F541E31965", hash_generated_method = "9C13CAB2DD1A3C783E8E38BC42916081")
      int nativeFocusCandidateFramePointer() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_787334893 = getTaintInt();
@@ -9387,6 +9434,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.299 -0400", hash_original_method = "7C3995367E82B6D7312732D654157F4F", hash_generated_method = "370DCFBAF79FC79630CC0AB872D52381")
      boolean nativeFocusCandidateHasNextTextfield() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_134143428 = getTaintBoolean();
@@ -9394,6 +9442,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.299 -0400", hash_original_method = "24F608E9C25D3CEA18DC40F168470BAE", hash_generated_method = "22855BF4561EADEFC9CA3B75ED54DF19")
      boolean nativeFocusCandidateIsPassword() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1252160613 = getTaintBoolean();
@@ -9401,6 +9450,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.299 -0400", hash_original_method = "CA3BBE06DE230A233DBE6462F7BDC345", hash_generated_method = "FD6DB1721C60C932CCCC3FA1DF4578E0")
     private boolean nativeFocusCandidateIsRtlText() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1849490932 = getTaintBoolean();
@@ -9408,6 +9458,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.299 -0400", hash_original_method = "FC5F0AF7060BA9D9D74BB55FE6CCEE91", hash_generated_method = "59449299BD55BCCB23FCEC6B2E803819")
     private boolean nativeFocusCandidateIsTextInput() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_276130161 = getTaintBoolean();
@@ -9415,6 +9466,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.299 -0400", hash_original_method = "64EE2979CD9E511D4C9D292EB40853CA", hash_generated_method = "DB15833C1EA4B5F1E0CF1300C17E6E4F")
      int nativeFocusCandidateMaxLength() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2035772968 = getTaintInt();
@@ -9422,6 +9474,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.299 -0400", hash_original_method = "94ADCAD0C90E2D8B1D617C0CE4175108", hash_generated_method = "0E4231119E7D3EE7CB2EB8E26B986240")
      boolean nativeFocusCandidateIsAutoComplete() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_342523229 = getTaintBoolean();
@@ -9429,6 +9482,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.300 -0400", hash_original_method = "AC7BA3D73ADA11038E3573CC7BEA31D0", hash_generated_method = "DD135175E8F55F87574E4EC5BCAC72F6")
      boolean nativeFocusCandidateIsSpellcheck() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1951870542 = getTaintBoolean();
@@ -9436,6 +9490,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.300 -0400", hash_original_method = "86B0A32819E6798AA0F2F34418D25901", hash_generated_method = "482EB255509BA82D443BAA9D71623788")
      String nativeFocusCandidateName() {
     	String s = new String();
@@ -9444,6 +9499,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.300 -0400", hash_original_method = "784E4422EBCAC3915206737F2EF978E9", hash_generated_method = "E9FE505188BFAFC647C681A775DCAAFD")
     private Rect nativeFocusCandidateNodeBounds() {
     	Rect r = new Rect();
@@ -9452,6 +9508,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.300 -0400", hash_original_method = "D493BA74B0D04E6E35C47B87F2973345", hash_generated_method = "8CA80E2A60FEEA9061A61B09DA68625A")
     private Rect nativeFocusCandidatePaddingRect() {
     	Rect r = new Rect();
@@ -9460,6 +9517,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.300 -0400", hash_original_method = "6C37516810160216239ECA2C27DBBDE1", hash_generated_method = "DAB518E7248CCB99FCC21EE04091DF64")
      int nativeFocusCandidatePointer() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_655035570 = getTaintInt();
@@ -9467,6 +9525,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.300 -0400", hash_original_method = "AA9102676E28CA1EE920093EBAB8030A", hash_generated_method = "B8D2D3434495629B87849A0DDE9761CA")
     private String nativeFocusCandidateText() {
     	String s = new String();
@@ -9475,6 +9534,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.300 -0400", hash_original_method = "4B89B6EF718BD6147261DEC98F6C6A16", hash_generated_method = "656E0D75A8990960188D64B98A2430CB")
      float nativeFocusCandidateTextSize() {
         float var546ADE640B6EDFBC8A086EF31347E768_202471343 = getTaintFloat();
@@ -9482,6 +9542,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.301 -0400", hash_original_method = "082CC9662FD544AEC67B8D4963511576", hash_generated_method = "B5E00049CD4F8A9F146AE77D68DF29C3")
      int nativeFocusCandidateLineHeight() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_642828409 = getTaintInt();
@@ -9489,6 +9550,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.301 -0400", hash_original_method = "C99437A2BF0BA310505C74B618275504", hash_generated_method = "01477897C48EF06ABC0DF8254A0FB8F2")
     private int nativeFocusCandidateType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1379550709 = getTaintInt();
@@ -9496,6 +9558,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.301 -0400", hash_original_method = "6657822939CE46802B84DA6445C72EDE", hash_generated_method = "71B838960EE15619DB777A105C284008")
     private int nativeFocusCandidateLayerId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_170852794 = getTaintInt();
@@ -9503,6 +9566,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.301 -0400", hash_original_method = "38CCA0E50FE8BE9EE5C40886CF34F6A3", hash_generated_method = "E4562DB3A13D9D1FD1CC25FB827F4FC3")
     private boolean nativeFocusIsPlugin() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2119367859 = getTaintBoolean();
@@ -9510,6 +9574,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.301 -0400", hash_original_method = "899095159EA7E211C628ECE871CC9E5E", hash_generated_method = "65244A088D15DCA1F0C3C7F2D973DFD4")
     private Rect nativeFocusNodeBounds() {
     	Rect r = new Rect();
@@ -9518,6 +9583,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.301 -0400", hash_original_method = "2168CEA1D043FC34995E51661BDC9CBF", hash_generated_method = "09FB0B87E29F775C7811DFCC436B429A")
      int nativeFocusNodePointer() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_446492351 = getTaintInt();
@@ -9525,6 +9591,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.302 -0400", hash_original_method = "6FF91C20F7461FC76B80187F5F0D17F4", hash_generated_method = "68114054688AC2ACF3B41A1E50F28F3A")
     private Rect nativeGetCursorRingBounds() {
     	Rect r = new Rect();
@@ -9533,6 +9600,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.302 -0400", hash_original_method = "B8443DF7AEBDC7EB5C8A06305D57CB4B", hash_generated_method = "CAEC1387621E6EAAC0BBE851878D90E6")
     private String nativeGetSelection() {
     	String s = new String();
@@ -9541,6 +9609,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.302 -0400", hash_original_method = "FA5B299A908E966DB0A85AB880BBEA98", hash_generated_method = "489C9414961A8C19409D6A9ED36AFB89")
     private boolean nativeHasCursorNode() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_509007134 = getTaintBoolean();
@@ -9548,6 +9617,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.302 -0400", hash_original_method = "1230EC94ADDF74636FD1B9B93024FF53", hash_generated_method = "34F72896BFFFA82B04D407EC980B57AC")
     private boolean nativeHasFocusNode() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2128281885 = getTaintBoolean();
@@ -9555,11 +9625,13 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.302 -0400", hash_original_method = "3CDE90299F8497C5A30DB753AD8E9AB4", hash_generated_method = "C5D686BF12DF1683258EF31789BFD66A")
     private void nativeHideCursor() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.302 -0400", hash_original_method = "6D847FD6DBE9A26EB9B01E37604B0ED1", hash_generated_method = "724D435BFFBD6A38CF468EFA5F7FD275")
     private boolean nativeHitSelection(int x, int y) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1804316481 = getTaintBoolean();
@@ -9567,6 +9639,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.302 -0400", hash_original_method = "D8C9CADCD399CD2B0D790CF6CE41AE1A", hash_generated_method = "68E20D0E121FE807EF3A683540460D64")
     private String nativeImageURI(int x, int y) {
     	String s = new String();
@@ -9575,11 +9648,13 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.303 -0400", hash_original_method = "289E95AB759FD8B3BECC4FA3039C950F", hash_generated_method = "4931CD211AE029703EBE8600C611C50A")
     private void nativeInstrumentReport() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.303 -0400", hash_original_method = "BE6268DADB8C47F15DBBDF42ECD48F77", hash_generated_method = "0EF9BAF6479325B7AFB630E9F288D638")
     private Rect nativeLayerBounds(int layer) {
     	Rect r = new Rect();
@@ -9588,6 +9663,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.303 -0400", hash_original_method = "23983C5AE9F3B90E3D90CC6935289B58", hash_generated_method = "D4E20DDE30A48524240665AA463E1184")
      boolean nativeMoveCursorToNextTextInput() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1932765078 = getTaintBoolean();
@@ -9595,6 +9671,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.303 -0400", hash_original_method = "7F3259156FFC0A38C18AAEF5C0591DB3", hash_generated_method = "BF1249223408503F2BE1B73CC8178EDB")
     private boolean nativeMotionUp(int x, int y, int slop) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1134331200 = getTaintBoolean();
@@ -9602,6 +9679,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.303 -0400", hash_original_method = "094B8659C7254EEB01CFCE7FBFE8BBED", hash_generated_method = "5402A388B47DA7C7A26B0DE01AABFB25")
     private boolean nativeMoveCursor(int keyCode, int count,
             boolean noScroll) {
@@ -9610,6 +9688,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.303 -0400", hash_original_method = "748DDF93C93929F1CD9BE00B19B3BA55", hash_generated_method = "8BD2C624A7D950CF84857F47CC6EE483")
     private int nativeMoveGeneration() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1109195430 = getTaintInt();
@@ -9617,11 +9696,13 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.304 -0400", hash_original_method = "3DA7CADF6D4BEBD104A91ECB891DF4CA", hash_generated_method = "806420BABD34DA76CA52BDFCE6493234")
     private void nativeMoveSelection(int x, int y) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.304 -0400", hash_original_method = "05DCCA381B09C4BC3817018280EDAE42", hash_generated_method = "84BB33B3EBCF4473147475AA464C3DD6")
     private boolean nativePageShouldHandleShiftAndArrows() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1162248701 = getTaintBoolean();
@@ -9629,6 +9710,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.304 -0400", hash_original_method = "0AA207E0F2BD4C326B970B5B7BF77061", hash_generated_method = "A7340D2C70E82F229BE735FDDF1E04D8")
     private boolean nativePointInNavCache(int x, int y, int slop) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_842122433 = getTaintBoolean();
@@ -9636,11 +9718,13 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.304 -0400", hash_original_method = "43FBFCC191D9F061753D0D417BC9C6C2", hash_generated_method = "7E164F51BFD26BAEB37C17707BD8874E")
     private void nativeResetSelection() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.304 -0400", hash_original_method = "F89A02659B72CC4FB73CF3CB2176116A", hash_generated_method = "4FCCB0475B387C1F5318EC92944C45EC")
     private Point nativeSelectableText() {
     	Point p = new Point();
@@ -9649,21 +9733,25 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.304 -0400", hash_original_method = "F11E44988F58D9D39319A53083CB7329", hash_generated_method = "5DACEC38ECF99BF3DA52929D8D3AE5DA")
     private void nativeSelectAll() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.305 -0400", hash_original_method = "AF42FC37DCBBE7E470931D41D8D7F10A", hash_generated_method = "3D9F4D8FE552F46EDFE668F28DAC36F3")
     private void nativeSelectBestAt(Rect rect) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.305 -0400", hash_original_method = "171731039A93A1C88CEFD0B973727269", hash_generated_method = "5DFA19011F6357FF14C8F2E2695F621D")
     private void nativeSelectAt(int x, int y) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.305 -0400", hash_original_method = "76F5F718978066DCC4CD2ED10AE577B5", hash_generated_method = "F0F806D45544C9BC7253FEF749CA2943")
     private int nativeSelectionX() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1717350876 = getTaintInt();
@@ -9671,6 +9759,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.305 -0400", hash_original_method = "E124736544D40704ACD3DCD907FAABD1", hash_generated_method = "4E16D3976FA7F348FA07EF6C563B67BD")
     private int nativeSelectionY() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2032343888 = getTaintInt();
@@ -9678,6 +9767,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.306 -0400", hash_original_method = "08AE00555578B509AEAB57063B9D57A8", hash_generated_method = "15A92B8CA4A8C98B5D6D22400AA9A1DA")
     private int nativeFindIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_670353399 = getTaintInt();
@@ -9685,26 +9775,31 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.306 -0400", hash_original_method = "DED8D9D80421F30F4F05109978E5FD6C", hash_generated_method = "5AB5068259CCABEFACDEA5560EBD42C9")
     private void nativeSetExtendSelection() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.306 -0400", hash_original_method = "2C274D2245FB0A8D7528ABFEC087E1D5", hash_generated_method = "BF3E2C6C0F834088FF260D2D57AB8864")
     private void nativeSetFindIsEmpty() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.306 -0400", hash_original_method = "71074D26EBA852989A8E599F8DC99CDA", hash_generated_method = "256EAA7FD60D28E5E7062DFF998E2D2D")
     private void nativeSetFindIsUp(boolean isUp) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.306 -0400", hash_original_method = "1A40DDCBB5C6BAC480C205B4EFEFF411", hash_generated_method = "7A8E31F2B5D777EBEC23BD7B2069CA12")
     private void nativeSetHeightCanMeasure(boolean measure) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.306 -0400", hash_original_method = "42797342EBEAC39A012069DBF3959CE4", hash_generated_method = "AA06B3FFAAA82012E0DCB53B80602404")
     private void nativeSetBaseLayer(int layer, Region invalRegion,
             boolean showVisualIndicator, boolean isPictureAfterFirstLayout,
@@ -9712,6 +9807,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.307 -0400", hash_original_method = "8D8AA88701C38C5931114ED0C0161C5D", hash_generated_method = "2FA77398F4EC5F822D6FFC8BDFBC50E5")
     private int nativeGetBaseLayer() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2143472725 = getTaintInt();
@@ -9719,21 +9815,25 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.307 -0400", hash_original_method = "D25F410799B2D3B48F5A317D9083959F", hash_generated_method = "7AA70DF267F5A3B8D5F1139BE8B04F95")
     private void nativeShowCursorTimed() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.307 -0400", hash_original_method = "C916B75893AF77B1961F4CFBD5CF9E23", hash_generated_method = "2586905A54FC6D89F60FA868528B5ABD")
     private void nativeReplaceBaseContent(int content) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.307 -0400", hash_original_method = "FDA26A90E4050D5E65C761F188A7935F", hash_generated_method = "0DD0F39A70B93DCE529A7DB104FE79BF")
     private void nativeCopyBaseContentToPicture(Picture pict) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.307 -0400", hash_original_method = "93FAC0611A3E6EEE3FD4009FA5AD9BAF", hash_generated_method = "DD3F2FD809DEC23B2E8CEADAEF8A4ACA")
     private boolean nativeHasContent() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_571317116 = getTaintBoolean();
@@ -9741,12 +9841,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.307 -0400", hash_original_method = "F42CB5D0D8C6F398F22A64C079F97418", hash_generated_method = "646E5B0E2F3492FE7CA52836500770AC")
     private void nativeSetSelectionPointer(int nativeInstance,
             boolean set, float scale, int x, int y) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.308 -0400", hash_original_method = "166887E4A34037559593792A54186A9D", hash_generated_method = "A417873FA2AA5B077ABC533178F8C367")
     private boolean nativeStartSelection(int x, int y) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1584481196 = getTaintBoolean();
@@ -9754,11 +9856,13 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.308 -0400", hash_original_method = "5D555E1F640D417609912A2DCA84BA2D", hash_generated_method = "A11715011B8424E4C1DF23E23BC77CCA")
     private void nativeStopGL() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.308 -0400", hash_original_method = "BB5930F93E7BD301B785F374DEB45F7F", hash_generated_method = "59C253F3D708B1AEFB61B74588B1BC4B")
     private Rect nativeSubtractLayers(Rect content) {
     	Rect r = new Rect();
@@ -9767,6 +9871,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.308 -0400", hash_original_method = "25A60C73C1815A9FF162B041F21F90EA", hash_generated_method = "174587258FFCEC512EEB0C6A9C9072F1")
     private int nativeTextGeneration() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1847112592 = getTaintInt();
@@ -9774,16 +9879,19 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.308 -0400", hash_original_method = "0D7B3DBB181E1128790AEAAF27B15FC3", hash_generated_method = "357B1EA2F63D3ED8C271D67AFCCC12A7")
     private void nativeRegisterPageSwapCallback() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.308 -0400", hash_original_method = "D3632E330863903E3989B40201820082", hash_generated_method = "2E113EDF1B459505AA2AF4625DE30F08")
     private void nativeTileProfilingStart() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.308 -0400", hash_original_method = "519320FD6756673905506146600ACF0A", hash_generated_method = "C89CDC1F1859DE39B8BCF3028BAAAB46")
     private float nativeTileProfilingStop() {
         float var546ADE640B6EDFBC8A086EF31347E768_260972059 = getTaintFloat();
@@ -9791,11 +9899,13 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.309 -0400", hash_original_method = "AEAE2ACA1E9867F86B84209E17FE783E", hash_generated_method = "7EF0A6540C2A701F27B19DB98FD72058")
     private void nativeTileProfilingClear() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.309 -0400", hash_original_method = "86701842D3863B80BD61F786E7AD5328", hash_generated_method = "93852F4E2B3E7BEFB078D33758053A18")
     private int nativeTileProfilingNumFrames() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_652918318 = getTaintInt();
@@ -9803,6 +9913,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.309 -0400", hash_original_method = "DE63339DB4EA006DCE5F905546A74593", hash_generated_method = "7EBFF432286671F5898618198673BD6C")
     private int nativeTileProfilingNumTilesInFrame(int frame) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_715888567 = getTaintInt();
@@ -9810,6 +9921,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.309 -0400", hash_original_method = "5EBAC4ACE18C38FBC9AF365A21A2808A", hash_generated_method = "3465BAFFB2ECF698827BBC79A8574782")
     private int nativeTileProfilingGetInt(int frame, int tile, String key) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1593303027 = getTaintInt();
@@ -9817,6 +9929,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.309 -0400", hash_original_method = "CFD0B3800F002661BCFC975AAB28BBE6", hash_generated_method = "DEA1653B280EABEC3601CACD33112533")
     private float nativeTileProfilingGetFloat(int frame, int tile, String key) {
         float var546ADE640B6EDFBC8A086EF31347E768_993286774 = getTaintFloat();
@@ -9824,12 +9937,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.309 -0400", hash_original_method = "683C18D758473E94C91EEFF634790572", hash_generated_method = "3ABB45EA050CAA1CCC1C02DFC1E93D91")
     private void nativeUpdateCachedTextfield(String updatedText,
             int generation) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.310 -0400", hash_original_method = "618779B5001C09E40268503B4D70EE37", hash_generated_method = "D6D74C38D49867BF0215D702C0ACEA1F")
     private boolean nativeWordSelection(int x, int y) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1843782671 = getTaintBoolean();
@@ -9837,6 +9952,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.310 -0400", hash_original_method = "4ED84BC2578D8932046470A1A989D8EC", hash_generated_method = "C218DD9F4DC4D9403AC2EFCA54E54805")
      int nativeGetBlockLeftEdge(int x, int y, float scale) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_125544039 = getTaintInt();
@@ -9844,11 +9960,13 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.310 -0400", hash_original_method = "AB72670D7F17311A218110AB090BFE5C", hash_generated_method = "5002655B986F7D641C298CC95BBCC6C7")
     private void nativeUseHardwareAccelSkia(boolean enabled) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.310 -0400", hash_original_method = "E3322754F569B0B21B53AD98F12F9737", hash_generated_method = "50AC541CFA354C6C31618E223ABE27DD")
     private int nativeScrollableLayer(int x, int y, Rect scrollRect,
             Rect scrollBounds) {
@@ -9857,6 +9975,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.310 -0400", hash_original_method = "C9A386E9B72701103ACB4832FD09DAEB", hash_generated_method = "1E77DD6A59483ED8165DD8045C0707C7")
     private boolean nativeScrollLayer(int layer, int newX, int newY) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2108488021 = getTaintBoolean();
@@ -9864,11 +9983,13 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.310 -0400", hash_original_method = "160FD188DECAD1E6A3D02C4EB5DCA1CC", hash_generated_method = "CD169E3A3B653F3A1D68A46881511434")
     private void nativeSetIsScrolling(boolean isScrolling) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.311 -0400", hash_original_method = "17D1DE14A7938D6C86D5133FB1C7A6A4", hash_generated_method = "31DFF13C2DB8E16C4B8B90F55E2DEC07")
     private int nativeGetBackgroundColor() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_709036975 = getTaintInt();
@@ -9876,6 +9997,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.311 -0400", hash_original_method = "0783F3130E130E529F16479AC73581A6", hash_generated_method = "663E86D5DD6DDB9FA80FBE9BAB095D77")
      boolean nativeSetProperty(String key, String value) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_580504073 = getTaintBoolean();
@@ -9883,6 +10005,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.311 -0400", hash_original_method = "11B431686EC785B8746B288CFEF25EFA", hash_generated_method = "2CDC971A436EF25C108C6D2B163E982B")
      String nativeGetProperty(String key) {
     	String s = new String();
@@ -9891,21 +10014,25 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.311 -0400", hash_original_method = "964ED52A62649E4E15C185190ECEDB3A", hash_generated_method = "1A68B083C5E652A8EAFCED90D7609277")
     private void nativeGetTextSelectionRegion(int instance, Region region) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.311 -0400", hash_original_method = "B3ADAA854D5758BDC9F0620E40CA4927", hash_generated_method = "D9F1018CE749271C3133A021A996233E")
     private void nativeGetSelectionHandles(int instance, int[] handles) {
     }
 
     
-        private static void nativeOnTrimMemory(int level) {
+        @DSModeled(DSC.SAFE)
+    private static void nativeOnTrimMemory(int level) {
     }
 
     
-        private static void nativeSetPauseDrawing(int instance, boolean pause) {
+        @DSModeled(DSC.SAFE)
+    private static void nativeSetPauseDrawing(int instance, boolean pause) {
     }
 
     

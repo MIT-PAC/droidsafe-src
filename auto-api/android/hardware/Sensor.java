@@ -46,6 +46,7 @@ public class Sensor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.716 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "9A29248A1996CC6DC545F85043441D1C")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_459871380 = null; 
@@ -57,6 +58,7 @@ public class Sensor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.717 -0400", hash_original_method = "F6DBA9B895A9F6BE7E05CE87ECD019F4", hash_generated_method = "AC8FB78CD2636F073D0694DF78B6D4DF")
     public String getVendor() {
         String varB4EAC82CA7396A68D541C85D26508E83_1781958533 = null; 
@@ -68,6 +70,7 @@ public class Sensor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.717 -0400", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "799A37B5C5B6FE02FC39ECEE5E9AF21B")
     public int getType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_838315843 = getTaintInt();
@@ -77,6 +80,7 @@ public class Sensor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.718 -0400", hash_original_method = "FFB84CD4E6F908DBB49F8BB0926B46F5", hash_generated_method = "C2FCBB9F8BDD480479494C74C8DC1AFF")
     public int getVersion() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1791817566 = getTaintInt();
@@ -86,6 +90,7 @@ public class Sensor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.718 -0400", hash_original_method = "6198FEF981E7D8A1688F54FA00E65E8C", hash_generated_method = "8A7032DAF9308AF9B3CF7DDD3438D055")
     public float getMaximumRange() {
         float var546ADE640B6EDFBC8A086EF31347E768_63777568 = getTaintFloat();
@@ -95,6 +100,7 @@ public class Sensor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.719 -0400", hash_original_method = "1725287A095026A35800C8C63E2384B5", hash_generated_method = "7D9DA9DA4F003FCD7B8FFDB679D44537")
     public float getResolution() {
         float var546ADE640B6EDFBC8A086EF31347E768_2047809551 = getTaintFloat();
@@ -104,6 +110,7 @@ public class Sensor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.719 -0400", hash_original_method = "B0474A1BCCE237F866EBC98A98505E0E", hash_generated_method = "23114D0B666192270A8CC3B13B32F9F3")
     public float getPower() {
         float var546ADE640B6EDFBC8A086EF31347E768_1157060549 = getTaintFloat();
@@ -113,6 +120,7 @@ public class Sensor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.720 -0400", hash_original_method = "4A9FEF4C412DF9B7A3BC77180D9B6BAD", hash_generated_method = "E73D67F02B0D99C41DE56D61EFE60C8C")
     public int getMinDelay() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_474178560 = getTaintInt();
@@ -122,6 +130,7 @@ public class Sensor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.721 -0400", hash_original_method = "D36DE5C675AF98C788AA35665F02D96A", hash_generated_method = "FEDCA976FDA6B5CE5D59B9326DD88C99")
      int getHandle() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_471400634 = getTaintInt();
@@ -131,6 +140,7 @@ public class Sensor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.722 -0400", hash_original_method = "79FDA84CCAB5F11B9228B733B07E659A", hash_generated_method = "55F8A4578DDB548AF38C7C2E7259452F")
      void setRange(float max, float res) {
         mMaxRange = max;
@@ -141,6 +151,7 @@ public class Sensor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.722 -0400", hash_original_method = "16ED5C2A25AA97BC63C7DA19CC8F6BA9", hash_generated_method = "2395A4BE1A50167E3283C7DDD34B5E2E")
      void setLegacyType(int legacyType) {
         mLegacyType = legacyType;
@@ -149,6 +160,7 @@ public class Sensor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.723 -0400", hash_original_method = "D8F34D64979AA05FA819D64B70FA9A46", hash_generated_method = "861A2A563444309DD4BF4B2DE2CC28EE")
      int getLegacyType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_767658108 = getTaintInt();

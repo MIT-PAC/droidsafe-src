@@ -101,6 +101,7 @@ public class Package implements AnnotatedElement {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.450 -0400", hash_original_method = "CE9406711F7ECFD943F53415A91A4AFB", hash_generated_method = "1C6142FF750419C00E238E48688BA999")
     public Annotation[] getAnnotations() {
         Annotation[] varB4EAC82CA7396A68D541C85D26508E83_734658730 = null; 
@@ -112,6 +113,7 @@ public class Package implements AnnotatedElement {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.450 -0400", hash_original_method = "85F9B8C255479693ABE2E35CFE49FA4D", hash_generated_method = "D9C49E96E4FA91D5247A14E35E215400")
     public Annotation[] getDeclaredAnnotations() {
         Annotation[] varB4EAC82CA7396A68D541C85D26508E83_391911666 = null; 
@@ -135,6 +137,7 @@ public class Package implements AnnotatedElement {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.451 -0400", hash_original_method = "E42A840611E51BD44AB9A8F4763E49C9", hash_generated_method = "ABE7029A559A42F08F0D4BFA620A534B")
     public String getImplementationTitle() {
         String varB4EAC82CA7396A68D541C85D26508E83_194439847 = null; 
@@ -146,6 +149,7 @@ public class Package implements AnnotatedElement {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.451 -0400", hash_original_method = "D69197AE643082D750CA7D47C00F7B92", hash_generated_method = "FA620FA546B7FE3C11B725C7695CADE2")
     public String getImplementationVendor() {
         String varB4EAC82CA7396A68D541C85D26508E83_1834794116 = null; 
@@ -157,6 +161,7 @@ public class Package implements AnnotatedElement {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.452 -0400", hash_original_method = "B250FD1AF223F79726E50E96D0BA0340", hash_generated_method = "475268505934EC6AEFA8CB9840B8F332")
     public String getImplementationVersion() {
         String varB4EAC82CA7396A68D541C85D26508E83_282417615 = null; 
@@ -168,6 +173,7 @@ public class Package implements AnnotatedElement {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.452 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "4FACB75E7A1E93675AF9F5974A576058")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_311465320 = null; 
@@ -199,6 +205,7 @@ public class Package implements AnnotatedElement {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.453 -0400", hash_original_method = "C2759232E597756D73053EF3F23A361A", hash_generated_method = "B559CE229B8E722E8C83C57A6A3C5854")
     public String getSpecificationTitle() {
         String varB4EAC82CA7396A68D541C85D26508E83_905812805 = null; 
@@ -210,6 +217,7 @@ public class Package implements AnnotatedElement {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.454 -0400", hash_original_method = "973AEF12B2769D423D9BB1FEC4D6C13E", hash_generated_method = "5B994E775DA4B9E3A311E9B64F29B308")
     public String getSpecificationVendor() {
         String varB4EAC82CA7396A68D541C85D26508E83_787940961 = null; 
@@ -221,6 +229,7 @@ public class Package implements AnnotatedElement {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.454 -0400", hash_original_method = "1669663C0689EAEF8399B71C607499D9", hash_generated_method = "7F2A8E1C2BFF0F74A04E960A040B131B")
     public String getSpecificationVersion() {
         String varB4EAC82CA7396A68D541C85D26508E83_881657596 = null; 
@@ -279,6 +288,7 @@ public class Package implements AnnotatedElement {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.455 -0400", hash_original_method = "8B9E9C35AFB855740620C92F002E4A38", hash_generated_method = "5C280C56CF87A7E77EEB403D3CC50F65")
     public boolean isSealed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1598034063 = getTaintBoolean();
@@ -288,6 +298,7 @@ public class Package implements AnnotatedElement {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.456 -0400", hash_original_method = "55B8ABCD808682E10A2965544061F7A5", hash_generated_method = "59E2464E7F8E88EE1587FB716F543AA9")
     public boolean isSealed(URL url) {
         boolean varACBE1F9FCC34100F410205F440770D39_75412424 = (sealBase != null && sealBase.sameFile(url));

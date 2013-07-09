@@ -138,6 +138,7 @@ public class HTML5VideoInline extends HTML5VideoView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.805 -0400", hash_original_method = "AA8729C4AB453FEA19B6A154CE4123AC", hash_generated_method = "D0D13C7D084FBE9084A3508292A69813")
     public boolean surfaceTextureDeleted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_334961802 = getTaintBoolean();
@@ -147,6 +148,7 @@ public class HTML5VideoInline extends HTML5VideoView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.806 -0400", hash_original_method = "E38F4460BC96178C575F30AC43E88839", hash_generated_method = "F1BB64CE92C1AFA610EE4ED22B48313F")
     @Override
     public void deleteSurfaceTexture() {
@@ -159,6 +161,7 @@ public class HTML5VideoInline extends HTML5VideoView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.806 -0400", hash_original_method = "B622F7D686DE5D5F2F53BAC4F4685738", hash_generated_method = "B5B9B997AF210DEBADCDD9EFD4016237")
     @Override
     public int getTextureName() {

@@ -91,6 +91,7 @@ public final class AccessibilityManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.208 -0400", hash_original_method = "20CDD5F21F40208C5206265F82FC5959", hash_generated_method = "D54BA4FCBFE3AE0A35A45AF9A47AC9ED")
     public boolean isEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1548684764 = getTaintBoolean();
@@ -102,6 +103,7 @@ public final class AccessibilityManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.209 -0400", hash_original_method = "7B07E9E942D9981C7AD5D7B1A6A19F18", hash_generated_method = "F9B11075B24426FF99D39B97EBFC2739")
     public boolean isTouchExplorationEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1369734560 = getTaintBoolean();

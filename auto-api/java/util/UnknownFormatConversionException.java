@@ -27,6 +27,7 @@ public class UnknownFormatConversionException extends IllegalFormatException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.666 -0400", hash_original_method = "F42E87FF5499AB643BB7E67C5DADAA6D", hash_generated_method = "DFC8C5E47BB28861C968946FA33FC778")
     public String getConversion() {
         String varB4EAC82CA7396A68D541C85D26508E83_767545227 = null; 

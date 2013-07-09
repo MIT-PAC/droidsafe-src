@@ -33,6 +33,7 @@ public class SuggestionRangeSpan extends CharacterStyle implements ParcelableSpa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.906 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "9C9B06C84C481783F8E52AB39AB7684D")
     @Override
     public int describeContents() {
@@ -55,6 +56,7 @@ public class SuggestionRangeSpan extends CharacterStyle implements ParcelableSpa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.906 -0400", hash_original_method = "C317BC4F0E850D3D8EACD128701AD14B", hash_generated_method = "16B59B4E335A3A32EB2FDE8028D33049")
     @Override
     public int getSpanTypeId() {
@@ -65,6 +67,7 @@ public class SuggestionRangeSpan extends CharacterStyle implements ParcelableSpa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.907 -0400", hash_original_method = "E6A11EC9B3E2DA21777E259CEAE43825", hash_generated_method = "C1EDFD39139B52FAB44D8473BFF01E1A")
     public void setBackgroundColor(int backgroundColor) {
         mBackgroundColor = backgroundColor;
@@ -73,6 +76,7 @@ public class SuggestionRangeSpan extends CharacterStyle implements ParcelableSpa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.907 -0400", hash_original_method = "DC157379F92590C2B130D316844D8B74", hash_generated_method = "F5F2C9C58794B83BE0C607308DD51751")
     @Override
     public void updateDrawState(TextPaint tp) {

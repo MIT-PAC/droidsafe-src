@@ -121,12 +121,14 @@ public class ClipData implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     static public ClipData newIntent(CharSequence label, Intent intent) {
         Item item = new Item(intent);
         return new ClipData(label, MIMETYPES_TEXT_INTENT, item);
     }
 
     
+    @DSModeled(DSC.SPEC)
     static public ClipData newUri(ContentResolver resolver, CharSequence label,
             Uri uri) {
         Item item = new Item(uri);
@@ -157,12 +159,14 @@ public class ClipData implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     static public ClipData newRawUri(CharSequence label, Uri uri) {
         Item item = new Item(uri);
         return new ClipData(label, MIMETYPES_TEXT_URILIST, item);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.063 -0400", hash_original_method = "8475A7793CA47249207DFD30E601781C", hash_generated_method = "D0C007B8F5089D5E007DDBE59D4544D4")
     public ClipDescription getDescription() {
         ClipDescription varB4EAC82CA7396A68D541C85D26508E83_1171112870 = null; 
@@ -190,6 +194,7 @@ public class ClipData implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.065 -0400", hash_original_method = "229D9D1026C0301FD9A4AD50AC984F17", hash_generated_method = "5D41E17175FFCA32DABDA38642E0692F")
     public Bitmap getIcon() {
         Bitmap varB4EAC82CA7396A68D541C85D26508E83_601315981 = null; 
@@ -225,6 +230,7 @@ public class ClipData implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.066 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E99DB485F5DC4772D4F3503AF8DE09D6")
     @Override
     public int describeContents() {

@@ -21,6 +21,7 @@ public class ServerSessionContext extends AbstractSessionContext {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.303 -0400", hash_original_method = "72569EA6711DBA1D81D9BBC862AD3D03", hash_generated_method = "98DC823E6DF5392957E496FAD00FA2DE")
     public void setPersistentCache(SSLServerSessionCache persistentCache) {
         this.persistentCache = persistentCache;
@@ -29,6 +30,7 @@ public class ServerSessionContext extends AbstractSessionContext {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.303 -0400", hash_original_method = "D4D4D8A9ED5E99BC7DD197F41DEEDD43", hash_generated_method = "16DEE84B347D7E24654B9D4FF767833A")
     protected void sessionRemoved(SSLSession session) {
         addTaint(session.getTaint());

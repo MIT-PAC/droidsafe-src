@@ -17,6 +17,7 @@ public abstract class DataSetObserver {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.853 -0400", hash_original_method = "A2F6F8AC5E54A056ACCE252299447DF2", hash_generated_method = "8B0D607774AE816315C0F0172C37DCB7")
     public void onChanged() {
         
@@ -24,6 +25,7 @@ public abstract class DataSetObserver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.853 -0400", hash_original_method = "721348118ADDD0A94842A07CCDAC8B4F", hash_generated_method = "CE11CE24A2051D6494C748A6600786C9")
     public void onInvalidated() {
         

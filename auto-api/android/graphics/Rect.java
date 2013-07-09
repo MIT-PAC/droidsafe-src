@@ -61,6 +61,7 @@ public final class Rect implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.216 -0400", hash_original_method = "AE4801E4151B09AB4E729E9F7DAAD949", hash_generated_method = "6645AEBED96ED367D243CD4827FAD25F")
     @Override
     public boolean equals(Object obj) {
@@ -286,6 +287,7 @@ public final class Rect implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.225 -0400", hash_original_method = "86DA251BA391C7524C2010551ABD907E", hash_generated_method = "A534843FC0914524CAF333DFA3D47813")
     public void setEmpty() {
         left = right = top = bottom = 0;
@@ -294,6 +296,7 @@ public final class Rect implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.225 -0400", hash_original_method = "8A4FF15661083ACC473F83074A89D6F5", hash_generated_method = "B63489F6650F99BD0728CD3CDF29B804")
     public void set(int left, int top, int right, int bottom) {
         this.left = left;
@@ -308,6 +311,7 @@ public final class Rect implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.226 -0400", hash_original_method = "91C11C9F320DC60DE37EBB0C50768E5F", hash_generated_method = "45CCA2CE8624F5E69CCAB95C4EAC18C1")
     public void set(Rect src) {
         this.left = src.left;
@@ -322,6 +326,7 @@ public final class Rect implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.226 -0400", hash_original_method = "5356F6810442AA542632B0339DB7C305", hash_generated_method = "85B76985DADCB0A7983590638C87AF89")
     public void offset(int dx, int dy) {
         left += dx;
@@ -336,6 +341,7 @@ public final class Rect implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.227 -0400", hash_original_method = "8125F9BA37E5C002EA31C052E4601FA7", hash_generated_method = "11F610A3D4AAB96200B2606CD0B389C6")
     public void offsetTo(int newLeft, int newTop) {
         right += newLeft - left;
@@ -350,6 +356,7 @@ public final class Rect implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.228 -0400", hash_original_method = "17525FCBE008AE0BAFD476B05D2391E6", hash_generated_method = "E9D59EB893ED213C1E58369A5D9B2ED1")
     public void inset(int dx, int dy) {
         left += dx;
@@ -364,6 +371,7 @@ public final class Rect implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.230 -0400", hash_original_method = "FB3474DF9F8E4515A45B7C6979EE4374", hash_generated_method = "40A098CB9DC4BC9E8B5DEF4EE7237278")
     public boolean contains(int x, int y) {
         addTaint(x);
@@ -376,6 +384,7 @@ public final class Rect implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.231 -0400", hash_original_method = "8D2675A9B64D6291A491AF0B37B18FE8", hash_generated_method = "6D8CBAEEF58BB5CAEDC0FECADB102B4A")
     public boolean contains(int left, int top, int right, int bottom) {
         addTaint(left);
@@ -391,6 +400,7 @@ public final class Rect implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.231 -0400", hash_original_method = "126108FF3C2D2BC5CF3ED1DC63A4E5F7", hash_generated_method = "23649B50FC2990D00732CD209878AC24")
     public boolean contains(Rect r) {
         addTaint(r.getTaint());
@@ -403,6 +413,7 @@ public final class Rect implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.232 -0400", hash_original_method = "658EB75DC95440C8FB1EDDAF8D29E614", hash_generated_method = "22D24FE95442028B4AC5FB3585D01B45")
     public boolean intersect(int left, int top, int right, int bottom) {
         {
@@ -478,6 +489,7 @@ public final class Rect implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.234 -0400", hash_original_method = "27E106C10E914B3FBF244200C2037DFC", hash_generated_method = "9A654ACC2A62F056498B9A1608A3DCFE")
     public boolean intersects(int left, int top, int right, int bottom) {
         addTaint(left);
@@ -492,12 +504,14 @@ public final class Rect implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean intersects(Rect a, Rect b) {
         return a.left < b.right && b.left < a.right
                && a.top < b.bottom && b.top < a.bottom;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.235 -0400", hash_original_method = "7C2B05BF5AFBBC7EA864CF62C0597A8B", hash_generated_method = "487D42E7934C7ED1627AB5B6A0DC958D")
     public void union(int left, int top, int right, int bottom) {
         {
@@ -545,6 +559,7 @@ public final class Rect implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.236 -0400", hash_original_method = "D9CAB332D4713CB79486AC2C819BD66A", hash_generated_method = "9656ABB612559B27BB41E081BEE83314")
     public void union(int x, int y) {
         {
@@ -573,6 +588,7 @@ public final class Rect implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.237 -0400", hash_original_method = "B19A72EC4CF8FCC2B6266E5066EB04CB", hash_generated_method = "9330732E3C1FC9E97F04A1F64099E090")
     public void sort() {
         {
@@ -599,6 +615,7 @@ public final class Rect implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.238 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E637B31C2D22839C8DDB11144F469ECE")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_962081949 = getTaintInt();
@@ -640,6 +657,7 @@ public final class Rect implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.241 -0400", hash_original_method = "D8CF57D437DDADABC72AE60A50BB50F2", hash_generated_method = "331F5C6D8E9D078E441F31A1BEFF3C30")
     public void scale(float scale) {
         {

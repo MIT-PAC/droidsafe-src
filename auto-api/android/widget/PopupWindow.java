@@ -308,6 +308,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.473 -0400", hash_original_method = "63340AE07D2726BC056EFE5BE3E2FF29", hash_generated_method = "4CED1556E83FE59CD9090F293C2ED9F9")
     public Drawable getBackground() {
         Drawable varB4EAC82CA7396A68D541C85D26508E83_214629488 = null; 
@@ -319,6 +320,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.474 -0400", hash_original_method = "96D2484B6380046D33AB8470E20080B0", hash_generated_method = "D16C3A30D1BEDA85C77BADB55334CCBB")
     public void setBackgroundDrawable(Drawable background) {
         mBackground = background;
@@ -327,6 +329,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.474 -0400", hash_original_method = "41CA7DA63F7D92402D2B673FD03355D6", hash_generated_method = "02B661EC3FEBDF214102D6CE61027A06")
     public int getAnimationStyle() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1264121511 = getTaintInt();
@@ -336,6 +339,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.474 -0400", hash_original_method = "A2D9F7F5158A57BAC36D16E33D2F221F", hash_generated_method = "BCC06A2E85690E757FF10740FDE4D8C7")
     public void setIgnoreCheekPress() {
         mIgnoreCheekPress = true;
@@ -344,6 +348,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.474 -0400", hash_original_method = "46489C40917944BA93E8F6D8658EE802", hash_generated_method = "30E663249BFF81A95B0EE39AF735EB89")
     public void setAnimationStyle(int animationStyle) {
         mAnimationStyle = animationStyle;
@@ -352,6 +357,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.475 -0400", hash_original_method = "1FBDC8A7B1B2CCF1CAFCE9F94E1B072D", hash_generated_method = "E7068C2D6DAA1F9E1BAE1F3559B974DA")
     public View getContentView() {
         View varB4EAC82CA7396A68D541C85D26508E83_1382502687 = null; 
@@ -390,6 +396,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.476 -0400", hash_original_method = "DE25D00870282EA3EAE9EBB02519A2CA", hash_generated_method = "130FE76FE298B90583B66B9C1E8E1782")
     public void setTouchInterceptor(OnTouchListener l) {
         mTouchInterceptor = l;
@@ -398,6 +405,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.476 -0400", hash_original_method = "40BB85E3EB9B026A95FA1376FB5C6D2D", hash_generated_method = "6DA916D325FB6D0B4A489A984AFC3F4E")
     public boolean isFocusable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_791949288 = getTaintBoolean();
@@ -407,6 +415,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.476 -0400", hash_original_method = "ABAB7A7DE4A915B0505D233953D72C47", hash_generated_method = "73B30D7B6EF00BF878189A326F3284C3")
     public void setFocusable(boolean focusable) {
         mFocusable = focusable;
@@ -415,6 +424,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.476 -0400", hash_original_method = "01F2BFCF39394BA4008813FFB1127C10", hash_generated_method = "DD4D1092668FAD7A08BF6605166FDD67")
     public int getInputMethodMode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_640921705 = getTaintInt();
@@ -424,6 +434,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.476 -0400", hash_original_method = "960CEBA1FA646F0DDCC5CA21C9FFA47A", hash_generated_method = "A6E33B617E3054749700BA5054FB5936")
     public void setInputMethodMode(int mode) {
         mInputMethodMode = mode;
@@ -432,6 +443,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.477 -0400", hash_original_method = "4B11C5E74D17332CC7C67B3F22EF8E33", hash_generated_method = "1D7C1083F51FF0DA3819F794F94DE227")
     public void setSoftInputMode(int mode) {
         mSoftInputMode = mode;
@@ -440,6 +452,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.477 -0400", hash_original_method = "76888AB414E08DF2E7D12678F406D7A5", hash_generated_method = "E76FBB7ABA3CAECC8D3B790552C99288")
     public int getSoftInputMode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1140495938 = getTaintInt();
@@ -449,6 +462,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.477 -0400", hash_original_method = "AE839D196CDFD95E127ACD4470F67375", hash_generated_method = "C19757448390ABF9EB8843E4C12335B1")
     public boolean isTouchable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1065562055 = getTaintBoolean();
@@ -458,6 +472,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.477 -0400", hash_original_method = "BEB1F63A70D555DEE12C0C7D4BDF7831", hash_generated_method = "53CC1C5C2E5530440B2CCE60DCC9D428")
     public void setTouchable(boolean touchable) {
         mTouchable = touchable;
@@ -466,6 +481,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.477 -0400", hash_original_method = "FF3CAF88B8F1C23DC4869C5AECE8973C", hash_generated_method = "30A36BE99C1DDC955BF4CA37D9707030")
     public boolean isOutsideTouchable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_219687657 = getTaintBoolean();
@@ -475,6 +491,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.478 -0400", hash_original_method = "8E0154BCB2D650E765619E048D3C66EA", hash_generated_method = "FE2AEFBB8C4EEBABE5D6E1A098A60CB0")
     public void setOutsideTouchable(boolean touchable) {
         mOutsideTouchable = touchable;
@@ -483,6 +500,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.478 -0400", hash_original_method = "5D90AAFBBA18C52B8D43E4274612DFE0", hash_generated_method = "265B1936ED9759106771BF3F84C1E5AF")
     public boolean isClippingEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2126399105 = getTaintBoolean();
@@ -492,6 +510,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.478 -0400", hash_original_method = "C644B67739A8A92EE97D978CC897DC79", hash_generated_method = "684E85C82CBEB4AB4A8C43DA093096AD")
     public void setClippingEnabled(boolean enabled) {
         mClippingEnabled = enabled;
@@ -511,6 +530,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.478 -0400", hash_original_method = "AB712E1EFFE4EAE7A80987CD7E1E8D4B", hash_generated_method = "FE43850C7268C6EE8DB37340BB239900")
      void setAllowScrollingAnchorParent(boolean enabled) {
         mAllowScrollingAnchorParent = enabled;
@@ -535,6 +555,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.479 -0400", hash_original_method = "8E279F2F2689369B00326EC855CADBF3", hash_generated_method = "16FCD3DA62C4843F4FE76768308439EA")
     public void setSplitTouchEnabled(boolean enabled) {
         mSplitTouchEnabled = enabled ? 1 : 0;
@@ -543,6 +564,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.479 -0400", hash_original_method = "10EB43954998F08298066292E6DC8079", hash_generated_method = "C198CA95A1DAFA0394DB786F6204F617")
     public boolean isLayoutInScreenEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1973640217 = getTaintBoolean();
@@ -552,6 +574,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.479 -0400", hash_original_method = "181FE02772B59DB435AF1D6C410875BB", hash_generated_method = "223E785F0B8E3AC353A80B21D7B051A2")
     public void setLayoutInScreenEnabled(boolean enabled) {
         mLayoutInScreen = enabled;
@@ -560,6 +583,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.479 -0400", hash_original_method = "FEA07B591038B9982257E6B6F9EA89DD", hash_generated_method = "B17F3787A243E7C34D946849ECA3B77D")
     public void setLayoutInsetDecor(boolean enabled) {
         mLayoutInsetDecor = enabled;
@@ -568,6 +592,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.480 -0400", hash_original_method = "7DF3C488F6920E6663FDD36E5737A8E3", hash_generated_method = "86D8C382E8DE29516140D730E3EA62C0")
     public void setWindowLayoutType(int layoutType) {
         mWindowLayoutType = layoutType;
@@ -576,6 +601,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.480 -0400", hash_original_method = "B0A202A53A476A9F6F2E7DEE1AC7BFD5", hash_generated_method = "92C6DE06B1CA9FB1425B0D82DE9D32E5")
     public int getWindowLayoutType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_785262525 = getTaintInt();
@@ -585,6 +611,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.480 -0400", hash_original_method = "B8930E34962345C50EA9D19D5D77CFE8", hash_generated_method = "19AEA7D6541C507D6EB32AC9EE42DBE9")
     public void setTouchModal(boolean touchModal) {
         mNotTouchModal = !touchModal;
@@ -593,6 +620,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.480 -0400", hash_original_method = "756D1E68507199C9976BFEB56A60134A", hash_generated_method = "386434F8D6065CAF3B8B583908DED42B")
     public void setWindowLayoutMode(int widthSpec, int heightSpec) {
         mWidthMode = widthSpec;
@@ -603,6 +631,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.480 -0400", hash_original_method = "0304EDCF78FF45B68A7EB91BFEAAA2CD", hash_generated_method = "BCD27078FAEB96D09B868B159AA0BA04")
     public int getHeight() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_662561799 = getTaintInt();
@@ -612,6 +641,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.481 -0400", hash_original_method = "BA89F279BB207625BAE694FF1E8671B8", hash_generated_method = "5421EB99FBB05FB66E8A75CFDF238048")
     public void setHeight(int height) {
         mHeight = height;
@@ -620,6 +650,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.481 -0400", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "A55729CD55C0DD8E3B604C61499B803F")
     public int getWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1894461080 = getTaintInt();
@@ -629,6 +660,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.481 -0400", hash_original_method = "684C7FEA8A4B53DA843B69F25AEC8ECA", hash_generated_method = "708EDDEF80D7966FCCE04921295DE407")
     public void setWidth(int width) {
         mWidth = width;
@@ -637,6 +669,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.481 -0400", hash_original_method = "2222AA4AEDF5C752B222A7F4E8915559", hash_generated_method = "EC3D3D793AC46821161456E19285B89B")
     public boolean isShowing() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_624697422 = getTaintBoolean();
@@ -789,6 +822,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.485 -0400", hash_original_method = "3CCA39FA6959E2A6CCCA2648E4E5EA51", hash_generated_method = "7C4870F06E3A3610A70012858D95F734")
     public boolean isAboveAnchor() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_243125681 = getTaintBoolean();
@@ -941,6 +975,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.488 -0400", hash_original_method = "2B29575EF3002A68968C6947831DCCDB", hash_generated_method = "13EA4061FB252C77BF738981DB6E8EF9")
     private int computeAnimationResource() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1535112619 = getTaintInt();
@@ -1127,6 +1162,7 @@ public class PopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.491 -0400", hash_original_method = "93E9EBCE36575249CB74D4FBEF26A1CF", hash_generated_method = "8A15ECA68636163A82E11179DEBF050D")
     public void setOnDismissListener(OnDismissListener onDismissListener) {
         mOnDismissListener = onDismissListener;

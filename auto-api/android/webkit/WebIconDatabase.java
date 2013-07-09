@@ -172,28 +172,34 @@ public final class WebIconDatabase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeOpen(String path) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeClose() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeRemoveAllIcons() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Bitmap nativeIconForPageUrl(String url) {
     	Bitmap bm = BitmapFactory.decodeByteArray(new byte[1], 0, 0);
     	return bm; 
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeRetainIconForPageUrl(String url) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeReleaseIconForPageUrl(String url) {
     }
 

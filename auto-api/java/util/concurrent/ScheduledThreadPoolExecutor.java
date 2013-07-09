@@ -470,6 +470,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.853 -0400", hash_original_method = "23365684DD383694198E6F21D088C23A", hash_generated_method = "46967B27822EF90038B597E42A9CBE93")
     public boolean getContinueExistingPeriodicTasksAfterShutdownPolicy() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_554083894 = getTaintBoolean();
@@ -494,6 +495,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.853 -0400", hash_original_method = "691F6AED1700735267010AB69287CBB5", hash_generated_method = "6236E9B8D9F828EF2DC27250D422B78B")
     public boolean getExecuteExistingDelayedTasksAfterShutdownPolicy() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1670859320 = getTaintBoolean();
@@ -503,6 +505,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.854 -0400", hash_original_method = "C989154112CE4F835859D145255931FC", hash_generated_method = "8187F71188C5442EF4B01CC9510CDCEB")
      void setRemoveOnCancelPolicy(boolean value) {
         removeOnCancel = value;
@@ -511,6 +514,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.854 -0400", hash_original_method = "3215CF4E7E81ACD4FCE62CEA9B692D35", hash_generated_method = "576254FDCE925C58D6FAB357278AD1F3")
      boolean getRemoveOnCancelPolicy() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_449686062 = getTaintBoolean();

@@ -82,6 +82,7 @@ public class SAXException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.793 -0400", hash_original_method = "DEACD8BC5F5C015493740DB375DC8E7E", hash_generated_method = "A9E41A6A259E2A592F62F48C0B4EE3E1")
     public Exception getException() {
         Exception varB4EAC82CA7396A68D541C85D26508E83_395645073 = null; 

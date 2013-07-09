@@ -42,6 +42,7 @@ public class Proxy {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.660 -0400", hash_original_method = "78A2D2ADD0266F75C3E71E2673988A41", hash_generated_method = "311BBE421E277D64A3E1ED54EF67FE81")
     public Proxy.Type type() {
         Proxy.Type varB4EAC82CA7396A68D541C85D26508E83_1378392362 = null; 
@@ -53,6 +54,7 @@ public class Proxy {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.661 -0400", hash_original_method = "9D457D33A5E2F2EF090CABC1273126C2", hash_generated_method = "3C4A40EFE0F51C68456C13F9533F0F1B")
     public SocketAddress address() {
         SocketAddress varB4EAC82CA7396A68D541C85D26508E83_1241199309 = null; 

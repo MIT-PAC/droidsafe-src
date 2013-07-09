@@ -45,6 +45,7 @@ public class ParametersWithIV implements CipherParameters {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.121 -0400", hash_original_method = "D19EA42446BC5DC2CC45B356827C0DC7", hash_generated_method = "C5B657E9160F0121FA7D5A36E4C4A9EA")
     public byte[] getIV() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_502560606 = {getTaintByte()};
@@ -54,6 +55,7 @@ public class ParametersWithIV implements CipherParameters {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.121 -0400", hash_original_method = "4D76F2EFD1EF9C1CA864824F06254E67", hash_generated_method = "BCB80A170F07E107F09CD76E075B4246")
     public CipherParameters getParameters() {
         CipherParameters varB4EAC82CA7396A68D541C85D26508E83_31278944 = null; 

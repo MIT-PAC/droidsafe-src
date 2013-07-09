@@ -332,6 +332,7 @@ public class ProgressBar extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.594 -0400", hash_original_method = "E5E4BC7A2B363BE6E2FBD0B5C26F4050", hash_generated_method = "8DA820DB7B007C068BE9D230A5110A34")
     private void initProgressBar() {
         mMax = 100;
@@ -360,6 +361,7 @@ public class ProgressBar extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.595 -0400", hash_original_method = "3387FD7633AB5B9FD9EC30B2946E89DA", hash_generated_method = "3A4665BBFE070CB69AD5C68728A615EF")
     @ViewDebug.ExportedProperty(category = "progress")
     public synchronized boolean isIndeterminate() {
@@ -399,6 +401,7 @@ public class ProgressBar extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.596 -0400", hash_original_method = "460B65565106BA0615FD22E30B040519", hash_generated_method = "5797C2CE34036CF7CD0BD3CC350E9391")
     public Drawable getIndeterminateDrawable() {
         Drawable varB4EAC82CA7396A68D541C85D26508E83_1199923706 = null; 
@@ -433,6 +436,7 @@ public class ProgressBar extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.596 -0400", hash_original_method = "6C8C8D805DC88A29293BE605923D5590", hash_generated_method = "231D1443A0E6E8821EC3D838B9BDE5CA")
     public Drawable getProgressDrawable() {
         Drawable varB4EAC82CA7396A68D541C85D26508E83_670353992 = null; 
@@ -479,6 +483,7 @@ public class ProgressBar extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.597 -0400", hash_original_method = "BC108B758414D6B13292C41A47E0F703", hash_generated_method = "FF0390842AE779B1F7A7646C8AAA37AE")
      Drawable getCurrentDrawable() {
         Drawable varB4EAC82CA7396A68D541C85D26508E83_527005955 = null; 
@@ -711,6 +716,7 @@ public class ProgressBar extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.601 -0400", hash_original_method = "BF818051FE207A57D09CC2C24E2066F6", hash_generated_method = "B8416EA916CA62D2877CF1BB4D872A6F")
     @ViewDebug.ExportedProperty(category = "progress")
     public synchronized int getProgress() {
@@ -721,6 +727,7 @@ public class ProgressBar extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.601 -0400", hash_original_method = "0E2189FB3CB300C00977FC2C3BDB4D4B", hash_generated_method = "0224026D8D307F7CF285735117FF72F2")
     @ViewDebug.ExportedProperty(category = "progress")
     public synchronized int getSecondaryProgress() {
@@ -731,6 +738,7 @@ public class ProgressBar extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.602 -0400", hash_original_method = "6E6A982D82D781B4C4E0B14E6160A2E7", hash_generated_method = "574C9047695E4B53366063E70DB538D6")
     @ViewDebug.ExportedProperty(category = "progress")
     public synchronized int getMax() {
@@ -865,6 +873,7 @@ public class ProgressBar extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.605 -0400", hash_original_method = "7D5A9A852D608ADF508B994526BF9EAC", hash_generated_method = "305B3174980281AD6A6C4213980CE615")
     public void setInterpolator(Interpolator interpolator) {
         mInterpolator = interpolator;
@@ -873,6 +882,7 @@ public class ProgressBar extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.606 -0400", hash_original_method = "8AA04851FFB5BE49EA5890940035B142", hash_generated_method = "EF5AE69949960795980477E687E0A6F8")
     public Interpolator getInterpolator() {
         Interpolator varB4EAC82CA7396A68D541C85D26508E83_1523373600 = null; 

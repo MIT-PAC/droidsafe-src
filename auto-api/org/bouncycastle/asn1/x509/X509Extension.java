@@ -46,6 +46,7 @@ public class X509Extension {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.103 -0400", hash_original_method = "99E720A5A58C8C8AC266D5DB5489BE5B", hash_generated_method = "958373CF9FD748CACC8DD1DB6FFB7B4F")
     public boolean isCritical() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1381057271 = getTaintBoolean();
@@ -55,6 +56,7 @@ public class X509Extension {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.103 -0400", hash_original_method = "EB9162E88B2ECD208428A8DA5B61CEE8", hash_generated_method = "B93DF8BE8EDACBE4AA5E46AD16FACD9F")
     public ASN1OctetString getValue() {
         ASN1OctetString varB4EAC82CA7396A68D541C85D26508E83_320003661 = null; 

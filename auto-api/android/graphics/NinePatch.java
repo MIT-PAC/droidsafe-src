@@ -59,6 +59,7 @@ public class NinePatch {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.693 -0400", hash_original_method = "D0981A681D74F230E15D58DC6CAB4B12", hash_generated_method = "6C5BAF6F2F11B93DFDBE2A7B4FA1E0F5")
     public void setPaint(Paint p) {
         mPaint = p;
@@ -157,6 +158,7 @@ public class NinePatch {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.695 -0400", hash_original_method = "27EBBFC0A49FBB6B32AE88535DB257BA", hash_generated_method = "78A12A68DAB2BD35237B19F5CDCC5A93")
     public int getDensity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1680660388 = getTaintInt();
@@ -212,27 +214,32 @@ public class NinePatch {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isNinePatchChunk(byte[] chunk) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void validateNinePatchChunk(int bitmap, byte[] chunk) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeDraw(int canvas_instance, RectF loc, int bitmap_instance,
                                           byte[] c, int paint_instance_or_null,
                                           int destDensity, int srcDensity) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeDraw(int canvas_instance, Rect loc, int bitmap_instance,
                                           byte[] c, int paint_instance_or_null,
                                           int destDensity, int srcDensity) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeGetTransparentRegion(
             int bitmap, byte[] chunk, Rect location) {
         return DSUtils.UNKNOWN_INT;

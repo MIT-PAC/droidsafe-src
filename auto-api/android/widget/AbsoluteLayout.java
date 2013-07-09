@@ -155,6 +155,7 @@ public class AbsoluteLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.238 -0400", hash_original_method = "E121C7CF679CE7DED988221EA3AFEDE0", hash_generated_method = "6616F43EB52DDEEF019A3683226701A9")
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
@@ -179,6 +180,7 @@ public class AbsoluteLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.239 -0400", hash_original_method = "9DA99B4E01A506E72BA59AF598A3C38D", hash_generated_method = "498D55670143CDC5597FC71B673ECE80")
     @Override
     public boolean shouldDelayChildPressedState() {

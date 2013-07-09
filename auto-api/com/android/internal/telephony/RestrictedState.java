@@ -32,6 +32,7 @@ public class RestrictedState {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.514 -0400", hash_original_method = "27DE2A90C603578F7F1B28DAC20D7FD4", hash_generated_method = "5EDC4446D159F9F100BFF111EDE92E39")
     public void setCsEmergencyRestricted(boolean csEmergencyRestricted) {
         mCsEmergencyRestricted = csEmergencyRestricted;
@@ -40,6 +41,7 @@ public class RestrictedState {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.514 -0400", hash_original_method = "E70F2CED961B3AE42815150E2A56A25A", hash_generated_method = "D36F3FB6578436A52417B06F15A3F559")
     public boolean isCsEmergencyRestricted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1847882731 = getTaintBoolean();
@@ -49,6 +51,7 @@ public class RestrictedState {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.515 -0400", hash_original_method = "ED07CBE0923251FA30E92E9584BA6081", hash_generated_method = "5F169B3D65E3795B3F157B4F56AFCEB2")
     public void setCsNormalRestricted(boolean csNormalRestricted) {
         mCsNormalRestricted = csNormalRestricted;
@@ -57,6 +60,7 @@ public class RestrictedState {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.515 -0400", hash_original_method = "7084FFBE63D8E09FA65D7F421E8A0E5B", hash_generated_method = "281C17986D2A1E81DB68AD9D8F0E5127")
     public boolean isCsNormalRestricted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_783672807 = getTaintBoolean();
@@ -66,6 +70,7 @@ public class RestrictedState {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.515 -0400", hash_original_method = "B4DDDAAC651436E7B51C408529D49F83", hash_generated_method = "B2F8AA07C1EB864385C4B23E12FD8407")
     public void setPsRestricted(boolean psRestricted) {
         mPsRestricted = psRestricted;
@@ -74,6 +79,7 @@ public class RestrictedState {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.515 -0400", hash_original_method = "D79EC17B35D08659B1A4F8082F3FAB11", hash_generated_method = "D6F026B01553C20EA124C11CE1E30CB8")
     public boolean isPsRestricted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_657453210 = getTaintBoolean();
@@ -83,6 +89,7 @@ public class RestrictedState {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.515 -0400", hash_original_method = "4F1D7B7A2DBB2113F9985BF8231B2F2E", hash_generated_method = "10EFCD0E0F07248FFC59F48FF662980E")
     public boolean isCsRestricted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1972974800 = getTaintBoolean();
@@ -92,6 +99,7 @@ public class RestrictedState {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.516 -0400", hash_original_method = "782C42F453BEB7FFF6E7C3BB3C51E5DF", hash_generated_method = "35D3ED20E697EA9ED1ECF40ED750CD2F")
     @Override
     public boolean equals(Object o) {

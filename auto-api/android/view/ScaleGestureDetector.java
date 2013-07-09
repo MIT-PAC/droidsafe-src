@@ -516,6 +516,7 @@ public class ScaleGestureDetector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.785 -0400", hash_original_method = "898B0555390D80294F48D1832D7CA7F1", hash_generated_method = "2AF3BA1D9C49CFAF3F244C02E3BDF39A")
     public boolean isInProgress() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_292601368 = getTaintBoolean();
@@ -525,6 +526,7 @@ public class ScaleGestureDetector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.785 -0400", hash_original_method = "5AA73E7030B433A4A506EA714645F254", hash_generated_method = "6F0356CCBB110AC8DE1C640C1B34EA0A")
     public float getFocusX() {
         float var546ADE640B6EDFBC8A086EF31347E768_1832640479 = getTaintFloat();
@@ -534,6 +536,7 @@ public class ScaleGestureDetector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.785 -0400", hash_original_method = "1634272865979B530C4105679871001B", hash_generated_method = "BF1146DEED444AAC5DBE2375B9041188")
     public float getFocusY() {
         float var546ADE640B6EDFBC8A086EF31347E768_603968210 = getTaintFloat();
@@ -562,6 +565,7 @@ public class ScaleGestureDetector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.786 -0400", hash_original_method = "96703DCF80F0F42B9182D748E24B5F12", hash_generated_method = "FE4B775B508B99878607543790A43AC2")
     public float getCurrentSpanX() {
         float var546ADE640B6EDFBC8A086EF31347E768_925133810 = getTaintFloat();
@@ -571,6 +575,7 @@ public class ScaleGestureDetector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.786 -0400", hash_original_method = "46ABD98E7ABFBBE92F1E1C8C1A82F921", hash_generated_method = "3F48B267CF1B92136AA9E7B177083336")
     public float getCurrentSpanY() {
         float var546ADE640B6EDFBC8A086EF31347E768_1253594037 = getTaintFloat();
@@ -599,6 +604,7 @@ public class ScaleGestureDetector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.787 -0400", hash_original_method = "0AFCA4EC344BB39A6FBEFCC5BD88D7B6", hash_generated_method = "AE13141CAC1B843FCAABB49BF54FDD27")
     public float getPreviousSpanX() {
         float var546ADE640B6EDFBC8A086EF31347E768_1502447716 = getTaintFloat();
@@ -608,6 +614,7 @@ public class ScaleGestureDetector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.787 -0400", hash_original_method = "F0E427EE2F15CB9D89F340FD227EA8BF", hash_generated_method = "935A6DF27BAC37E7A2B059545E10DC5A")
     public float getPreviousSpanY() {
         float var546ADE640B6EDFBC8A086EF31347E768_1182573078 = getTaintFloat();
@@ -632,6 +639,7 @@ public class ScaleGestureDetector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.788 -0400", hash_original_method = "478681CCF9BA4A844274161522001BDE", hash_generated_method = "0FD527671D72B5DF68AE4DA7ADD536DB")
     public long getTimeDelta() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1992878315 = getTaintLong();

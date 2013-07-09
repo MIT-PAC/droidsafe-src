@@ -147,6 +147,7 @@ public class GsmConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.406 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     public void dispose() {
         
@@ -173,6 +174,7 @@ public class GsmConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.407 -0400", hash_original_method = "1A89DAB454CED0757504258169B34CDA", hash_generated_method = "B0028875E3030F1584A0FF4B8170789D")
     public String getAddress() {
         String varB4EAC82CA7396A68D541C85D26508E83_26097192 = null; 
@@ -184,6 +186,7 @@ public class GsmConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.407 -0400", hash_original_method = "B5FB9A2BDC3179E224BACAD787EF2D05", hash_generated_method = "C7C919829B4EF2E5F827FBCF2C9AA5D7")
     public GsmCall getCall() {
         GsmCall varB4EAC82CA7396A68D541C85D26508E83_49278227 = null; 
@@ -195,6 +198,7 @@ public class GsmConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.408 -0400", hash_original_method = "A8956DD6ACAC2731E62816490C646631", hash_generated_method = "3F5ACD259C2D9D40A28274469DD9DE8E")
     public long getCreateTime() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1321048319 = getTaintLong();
@@ -204,6 +208,7 @@ public class GsmConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.408 -0400", hash_original_method = "540CF01EF64CF5C6BAC1246743ECA8F1", hash_generated_method = "51A7200CB909330E3E9A3D1B8B77873B")
     public long getConnectTime() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1549413093 = getTaintLong();
@@ -213,6 +218,7 @@ public class GsmConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.409 -0400", hash_original_method = "D17BC9E58BABC2D5CE1B7492B59E2165", hash_generated_method = "BD5969CA7C8593B3852FEEE7B61F9FB4")
     public long getDisconnectTime() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_562884294 = getTaintLong();
@@ -261,6 +267,7 @@ public class GsmConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.410 -0400", hash_original_method = "217FE2B36472CD2DEDDE3A4CE2A1C951", hash_generated_method = "61AC7FB572203112B5152AEAC5536597")
     public DisconnectCause getDisconnectCause() {
         DisconnectCause varB4EAC82CA7396A68D541C85D26508E83_332809121 = null; 
@@ -272,6 +279,7 @@ public class GsmConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.410 -0400", hash_original_method = "7EA17727186891EE64F6BAA03D5CD808", hash_generated_method = "1E836B1F0BDBD0707E5A3944C73C9664")
     public boolean isIncoming() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1556644800 = getTaintBoolean();
@@ -347,6 +355,7 @@ public class GsmConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.411 -0400", hash_original_method = "4EE87D2E41D94C18F614BA2D1494AD36", hash_generated_method = "31E23CA5C39B41340221B629A1A9B443")
     public PostDialState getPostDialState() {
         PostDialState varB4EAC82CA7396A68D541C85D26508E83_142706111 = null; 
@@ -428,6 +437,7 @@ public class GsmConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.413 -0400", hash_original_method = "1D26914F95E4E8CAB857832B14C412F2", hash_generated_method = "AF613E28B4B81657ADA567229F15BFC2")
      void onHangupLocal() {
         
@@ -874,6 +884,7 @@ public class GsmConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.429 -0400", hash_original_method = "42A83CA5C5D82F280A6650571B6091DC", hash_generated_method = "CB3704591E8F88212D9CCB002F59DAA2")
     private boolean isConnectingInOrOut() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_627513387 = getTaintBoolean();
@@ -1017,6 +1028,7 @@ public class GsmConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.434 -0400", hash_original_method = "B2C780D7BF03A84FC8B3CC6F33ADADA1", hash_generated_method = "44CBF151E70ACFEE20E353B4EAE4F043")
     @Override
     public int getNumberPresentation() {
@@ -1027,6 +1039,7 @@ public class GsmConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.435 -0400", hash_original_method = "00708DAD150C484ADEE163A005CDF57B", hash_generated_method = "C529868A8077690456AE91BAB5898357")
     @Override
     public UUSInfo getUUSInfo() {

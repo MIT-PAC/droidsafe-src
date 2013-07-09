@@ -89,6 +89,7 @@ public class Binder implements IBinder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.884 -0400", hash_original_method = "FF7CD905415FB665DAB37EF33B177901", hash_generated_method = "5BF695834ED1F4897E138948DA6E35F1")
     public void attachInterface(IInterface owner, String descriptor) {
         mOwner = owner;
@@ -99,6 +100,7 @@ public class Binder implements IBinder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.885 -0400", hash_original_method = "D3E904DAC6E3F35A0A15305E093649D7", hash_generated_method = "DAB8A0A5500D2396D10A4A8BD3067425")
     public String getInterfaceDescriptor() {
         String varB4EAC82CA7396A68D541C85D26508E83_721499694 = null; 
@@ -110,6 +112,7 @@ public class Binder implements IBinder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.885 -0400", hash_original_method = "A88E99F5157D576DA956A58D2E3E5765", hash_generated_method = "089FF23EE3C2D7E7C3E78B9A062BD3E6")
     public boolean pingBinder() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_443702916 = getTaintBoolean();
@@ -119,6 +122,7 @@ public class Binder implements IBinder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.885 -0400", hash_original_method = "7D2EC13EC2CD5238366DCA3903BB993E", hash_generated_method = "7B8286C4C454E3B80695A5FE4F635D2D")
     public boolean isBinderAlive() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1300462126 = getTaintBoolean();
@@ -262,6 +266,7 @@ public class Binder implements IBinder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.888 -0400", hash_original_method = "8E1D6FEDF1AFEDBCDCF9E63EFF23CA00", hash_generated_method = "7073B447CA06FAFA3E27794A988AC9A2")
     protected void dump(FileDescriptor fd, PrintWriter fout, String[] args) {
         addTaint(fd.getTaint());
@@ -300,6 +305,7 @@ public class Binder implements IBinder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.888 -0400", hash_original_method = "5287A3990077935C24A2BD79FED1C6A1", hash_generated_method = "CC167B5BFB7B85B7310E9B2758108566")
     public void linkToDeath(DeathRecipient recipient, int flags) {
         addTaint(recipient.getTaint());
@@ -308,6 +314,7 @@ public class Binder implements IBinder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.889 -0400", hash_original_method = "1A3BA6E0CCE3FB8650C7F390300799F7", hash_generated_method = "82E2D3CE0FBFA95164C72DA48BED8390")
     public boolean unlinkToDeath(DeathRecipient recipient, int flags) {
         addTaint(recipient.getTaint());
@@ -436,6 +443,7 @@ final class BinderProxy implements IBinder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.891 -0400", hash_original_method = "3AAC7144F281FBB542DFC7EF6106B5C9", hash_generated_method = "53C41F6175ECAFB4E32532524F4C27C6")
     public boolean pingBinder() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1847222688 = getTaintBoolean();
@@ -443,6 +451,7 @@ final class BinderProxy implements IBinder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.891 -0400", hash_original_method = "ACDA4E684B1D0EE78316DF741FE72AF5", hash_generated_method = "2BE357C5049267C370620D25CED8E7E3")
     public boolean isBinderAlive() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2058012275 = getTaintBoolean();
@@ -450,6 +459,7 @@ final class BinderProxy implements IBinder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.892 -0400", hash_original_method = "B707B72714522D5F23CBE8D4C77B554B", hash_generated_method = "F2297C22615DBC70547AD1480FF3CB52")
     public IInterface queryLocalInterface(String descriptor) {
         IInterface varB4EAC82CA7396A68D541C85D26508E83_900193361 = null; 
@@ -462,6 +472,7 @@ final class BinderProxy implements IBinder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.892 -0400", hash_original_method = "6A74CDB8273CEC1C9569965EF003EFCB", hash_generated_method = "EA4B3F54BFD9578B1A4BA99DF2C0FDB9")
     public String getInterfaceDescriptor() throws RemoteException {
         String s = new String();
@@ -470,6 +481,7 @@ final class BinderProxy implements IBinder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.892 -0400", hash_original_method = "2DB55944420A41A5CEDC8BE2777F8B50", hash_generated_method = "2B3465173A61C82029167190CABE60E3")
     public boolean transact(int code, Parcel data, Parcel reply,
             int flags) throws RemoteException {
@@ -478,11 +490,13 @@ final class BinderProxy implements IBinder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.892 -0400", hash_original_method = "9A12D44BC0A4F3509826AD7E16FA0EA1", hash_generated_method = "DD1A10A47FDF07625AD61BD782250D7D")
     public void linkToDeath(DeathRecipient recipient, int flags) throws RemoteException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.893 -0400", hash_original_method = "C682342F842ADE74AC6BCB96B6CECF17", hash_generated_method = "CBE1217C5334D90E5C1642B4A36A9EA4")
     public boolean unlinkToDeath(DeathRecipient recipient, int flags) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_370646914 = getTaintBoolean();

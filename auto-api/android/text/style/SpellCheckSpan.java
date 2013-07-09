@@ -32,6 +32,7 @@ public class SpellCheckSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.877 -0400", hash_original_method = "712093FDA6926C8B5E44D517F24CE2ED", hash_generated_method = "7790FF52440767842592CC146F06EEF2")
     public void setSpellCheckInProgress(boolean inProgress) {
         mSpellCheckInProgress = inProgress;
@@ -40,6 +41,7 @@ public class SpellCheckSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.877 -0400", hash_original_method = "DF88C425EC6702745B81C07A898C5194", hash_generated_method = "6029CDB4110A48C52FDD06006ED8A09B")
     public boolean isSpellCheckInProgress() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_489675145 = getTaintBoolean();
@@ -49,6 +51,7 @@ public class SpellCheckSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.877 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "5D5CF29B80D8694CCE626CF149A759B0")
     @Override
     public int describeContents() {
@@ -71,6 +74,7 @@ public class SpellCheckSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.878 -0400", hash_original_method = "8BC137FF3CFAC8D1FC70CD10E3E0E733", hash_generated_method = "7B863D99AD31C84E2A0A8174E34AB34D")
     @Override
     public int getSpanTypeId() {

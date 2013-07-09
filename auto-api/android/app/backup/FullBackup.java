@@ -28,6 +28,7 @@ public class FullBackup {
     }
 
 
+    @DSModeled(DSC.SAFE)
     static public int backupToTar(String packageName, String domain,
             String linkdomain, String rootpath, String path, BackupDataOutput output) {
         return DSUtils.UNKNOWN_INT;

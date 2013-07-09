@@ -40,6 +40,7 @@ public abstract class DynamicDrawableSpan extends ReplacementSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.732 -0400", hash_original_method = "613CAAD12B2914F4036D9034966EEECA", hash_generated_method = "9D75668AFB69D58146E30CDAF7174A50")
     public int getVerticalAlignment() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_684068051 = getTaintInt();

@@ -83,6 +83,7 @@ public abstract class AuthenticationHeader extends ParametersHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.086 -0400", hash_original_method = "855C75AA7A25318520BDD2BB747F87D1", hash_generated_method = "9FFE68DB2BC797370DD296B8F23D1704")
     public void setChallenge(Challenge challenge) {
         this.scheme = challenge.scheme;
@@ -107,6 +108,7 @@ public abstract class AuthenticationHeader extends ParametersHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.087 -0400", hash_original_method = "12283BFE3BE1F2D48F088D181A48BB59", hash_generated_method = "F7F89B7A7F4E4526442680C88997CE5D")
     public void setScheme(String scheme) {
         this.scheme = scheme;
@@ -115,6 +117,7 @@ public abstract class AuthenticationHeader extends ParametersHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.087 -0400", hash_original_method = "C01635CAE84CEFF188CA85B1E841E2AF", hash_generated_method = "35A1A18B057F5BE41F9FD58FB5852DE2")
     public String getScheme() {
         String varB4EAC82CA7396A68D541C85D26508E83_339065880 = null; 

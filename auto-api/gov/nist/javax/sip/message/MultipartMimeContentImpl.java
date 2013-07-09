@@ -53,6 +53,7 @@ public class MultipartMimeContentImpl implements MultipartMimeContent {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.872 -0400", hash_original_method = "4590DD0C77A768FED1E8ACE7CF0313E8", hash_generated_method = "B11A61E4DD0E2261A0627BFA5212E68A")
     public ContentTypeHeader getContentTypeHeader() {
         ContentTypeHeader varB4EAC82CA7396A68D541C85D26508E83_116858198 = null; 

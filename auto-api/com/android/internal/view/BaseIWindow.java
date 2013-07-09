@@ -31,6 +31,7 @@ public class BaseIWindow extends IWindow.Stub {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.099 -0400", hash_original_method = "DDDF8BE863F51F4784FBED4F44364C1D", hash_generated_method = "5C18C6F8866A52B959AE5703CF9BE0CA")
     public void setSession(IWindowSession session) {
         mSession = session;
@@ -66,6 +67,7 @@ public class BaseIWindow extends IWindow.Stub {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.100 -0400", hash_original_method = "BE0716F4AD0CF82E07CDF7A02946EA01", hash_generated_method = "8DFBCE56B7B4A7917AC4BEE9870F8E58")
     public void dispatchAppVisibility(boolean visible) {
         addTaint(visible);
@@ -73,12 +75,14 @@ public class BaseIWindow extends IWindow.Stub {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.100 -0400", hash_original_method = "772CEEEC7D5AEF0AF70740664444DBC4", hash_generated_method = "DFC4B13DC642E23ADDFEF747CDDDFBCC")
     public void dispatchGetNewSurface() {
         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.100 -0400", hash_original_method = "D905966528548D16DAB92D4F551B9EC2", hash_generated_method = "E7E6E5729CF2AEADF9A696DAA3942486")
     public void windowFocusChanged(boolean hasFocus, boolean touchEnabled) {
         addTaint(hasFocus);
@@ -87,6 +91,7 @@ public class BaseIWindow extends IWindow.Stub {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.101 -0400", hash_original_method = "FFE9D2CBC83B323644FA8C6DFE6F40CA", hash_generated_method = "2DA19C290949804107091EF7511AD672")
     public void executeCommand(String command, String parameters, ParcelFileDescriptor out) {
         addTaint(command.getTaint());
@@ -96,6 +101,7 @@ public class BaseIWindow extends IWindow.Stub {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.101 -0400", hash_original_method = "829D6830743782B159BBDA8D0B21AA05", hash_generated_method = "C351D757C39B19E87F3410EB56CC398B")
     public void closeSystemDialogs(String reason) {
         addTaint(reason.getTaint());
@@ -128,6 +134,7 @@ public class BaseIWindow extends IWindow.Stub {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.101 -0400", hash_original_method = "3961AB29F0B7DEEA47B4CBEA679C2606", hash_generated_method = "C6A1E92761703C898F3F7552B458E17F")
     public void dispatchDragEvent(DragEvent event) {
         addTaint(event.getTaint());
@@ -135,6 +142,7 @@ public class BaseIWindow extends IWindow.Stub {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.101 -0400", hash_original_method = "0828E805F96F67CD22A73377A61D4574", hash_generated_method = "87F05D610A6CAE918555EF7B86391FA4")
     public void dispatchSystemUiVisibilityChanged(int seq, int globalUi,
             int localValue, int localChanges) {

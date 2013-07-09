@@ -839,6 +839,7 @@ public class StaticLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.664 -0400", hash_original_method = "98509D881029C8DC6B023EB0DACF92F5", hash_generated_method = "60B5FAD11CA4360EB9AA4AFBB5F48DC5")
     @Override
     public int getLineForVertical(int vertical) {
@@ -879,6 +880,7 @@ public class StaticLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.664 -0400", hash_original_method = "DCA25DE9CB635243C23A0D258AEAA6C9", hash_generated_method = "2AC3320F42A8D97E428FC5283661B190")
     @Override
     public int getLineCount() {
@@ -931,6 +933,7 @@ public class StaticLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.665 -0400", hash_original_method = "839417F6B69B5423927C3B8DBF7A6F42", hash_generated_method = "FB5193C03B8582CE3E5BCA6BB408401D")
     @Override
     public int getLineStart(int line) {
@@ -942,6 +945,7 @@ public class StaticLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.666 -0400", hash_original_method = "4D44D66A6DA9E0A8739F807A61ABAF65", hash_generated_method = "1F6DE5EEEF37E1918C6FF46CA7037D13")
     @Override
     public int getParagraphDirection(int line) {
@@ -953,6 +957,7 @@ public class StaticLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.666 -0400", hash_original_method = "F549BE615B108927B3399A138AFD2460", hash_generated_method = "119DCC7EDB7003E2A43BB8D8797E108D")
     @Override
     public boolean getLineContainsTab(int line) {
@@ -977,6 +982,7 @@ public class StaticLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.668 -0400", hash_original_method = "0410F05B3F48387C42DB277B8067D4A9", hash_generated_method = "A010D79711BF4301062ADD113770817A")
     @Override
     public int getTopPadding() {
@@ -987,6 +993,7 @@ public class StaticLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.668 -0400", hash_original_method = "A7597317BC8A3102F80AD4E9AD038652", hash_generated_method = "4153B48FCB32EEF63B363BA4770F679E")
     @Override
     public int getBottomPadding() {
@@ -997,6 +1004,7 @@ public class StaticLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.669 -0400", hash_original_method = "7EEFC0E209C4C423B00930C7C3F48104", hash_generated_method = "6541155CE17559164F1F818C42DC9E3C")
     @Override
     public int getEllipsisCount(int line) {
@@ -1011,6 +1019,7 @@ public class StaticLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.670 -0400", hash_original_method = "3E84E442932041329DEDBD7573FAD5F7", hash_generated_method = "E994FF1C4703E7EA1794A2E79DF100BC")
     @Override
     public int getEllipsisStart(int line) {
@@ -1025,6 +1034,7 @@ public class StaticLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.670 -0400", hash_original_method = "5CA9F8625BABB74DD57E485BAAAC3103", hash_generated_method = "4B6A9E29D029216A64C9FC7D73773096")
     @Override
     public int getEllipsizedWidth() {

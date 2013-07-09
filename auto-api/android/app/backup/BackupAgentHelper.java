@@ -51,6 +51,7 @@ public class BackupAgentHelper extends BackupAgent {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.395 -0400", hash_original_method = "846FCA7C7B95F7683BAEC473D9697583", hash_generated_method = "B5C819C1D50F4A00152A944C82527AAD")
     public BackupHelperDispatcher getDispatcher() {
         BackupHelperDispatcher varB4EAC82CA7396A68D541C85D26508E83_775410918 = null; 

@@ -370,6 +370,7 @@ public class ElementImpl extends InnerNodeImpl implements Element {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.076 -0400", hash_original_method = "006A1593C2EDDFD80B5C8C9A0B08E49A", hash_generated_method = "CDDD2B4581B9D0B051DAF736B2AF33AF")
     @Override
     public String getLocalName() {
@@ -382,6 +383,7 @@ public class ElementImpl extends InnerNodeImpl implements Element {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.076 -0400", hash_original_method = "1455FE8FE34AF373D39E8278191439A8", hash_generated_method = "1A32068F9825023BCBCF731D2FB7C6FE")
     @Override
     public String getNamespaceURI() {
@@ -407,6 +409,7 @@ public class ElementImpl extends InnerNodeImpl implements Element {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.077 -0400", hash_original_method = "8EDB6CFF77634EC46F3FE6E39D5C4072", hash_generated_method = "66937C125D3D0BB6BE074299A2B9454C")
     public short getNodeType() {
         short var4F09DAA9D95BCB166A302407A0E0BABE_174434107 = getTaintShort();
@@ -416,6 +419,7 @@ public class ElementImpl extends InnerNodeImpl implements Element {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.078 -0400", hash_original_method = "FA5CE5A0FCC0C736D9446FFEBD0CAB9D", hash_generated_method = "D471E703EB4AE1959067A8F3B2F9F963")
     @Override
     public String getPrefix() {
@@ -688,6 +692,7 @@ public class ElementImpl extends InnerNodeImpl implements Element {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.084 -0400", hash_original_method = "C51D6ACA797563231B3A9D05774313B4", hash_generated_method = "A19BF1623A20CF1B068DF12D427C17D6")
     public TypeInfo getSchemaTypeInfo() {
         TypeInfo varB4EAC82CA7396A68D541C85D26508E83_2114622202 = null; 
@@ -743,6 +748,7 @@ public class ElementImpl extends InnerNodeImpl implements Element {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.085 -0400", hash_original_method = "D45D107EAB7744EE0777BE918C2E0DD2", hash_generated_method = "E2B7E4981C910FE7A405E777C907172A")
     public void setIdAttributeNode(Attr idAttr, boolean isId) throws DOMException {
         ((AttrImpl) idAttr).isId = isId;

@@ -49,6 +49,7 @@ public class DownloadManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.639 -0400", hash_original_method = "93AAF1C0A18C9EFC24526B178CE628E3", hash_generated_method = "4B3277B5958759FC38CEC345308879B2")
     public void setAccessAllDownloads(boolean accessAllDownloads) {
         {
@@ -170,6 +171,7 @@ public class DownloadManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.645 -0400", hash_original_method = "82FD0DABBA6B80B8B4BA3DF76B66A3D1", hash_generated_method = "46C03490D7809AD2D19525D4E55B0F4B")
     public Uri getUriForDownloadedFile(long id) {
         Uri varB4EAC82CA7396A68D541C85D26508E83_481965130 = null; 
@@ -404,6 +406,7 @@ public class DownloadManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.650 -0400", hash_original_method = "D1EE950396677328804F68406B4587AE", hash_generated_method = "187E43201E8E30BE5DA030213E301268")
      Uri getDownloadUri(long id) {
         Uri varB4EAC82CA7396A68D541C85D26508E83_1658615084 = null; 

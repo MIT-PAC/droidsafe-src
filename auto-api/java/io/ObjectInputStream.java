@@ -189,6 +189,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.233 -0400", hash_original_method = "970A975ADDA1CD42A4A6880D40629922", hash_generated_method = "F7A5039DDB0B3B8D6D35A849A3E393A2")
     protected boolean enableResolveObject(boolean enable) {
         boolean originalValue = enableResolve;
@@ -202,6 +203,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.234 -0400", hash_original_method = "BEEE4D4B01DB5401D5A386ECF8653C53", hash_generated_method = "A44287D3FB9D1A0DB960AFCD45B85E1C")
     private int nextHandle() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_163298897 = getTaintInt();
@@ -232,6 +234,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.234 -0400", hash_original_method = "056AB6ECFECE1087CD6299233C3046CF", hash_generated_method = "1AA917BD8C0785A0A281D56B178CD348")
     private void pushbackTC() {
         hasPushbackTC = true;
@@ -1952,6 +1955,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
     }
 
     
+    @DSModeled(DSC.BAN)
     private static ClassLoader getClosestUserClassLoader() {
         Class<?>[] stackClasses = VMStack.getClasses(-1);
         for (Class<?> stackClass : stackClasses) {
@@ -2200,6 +2204,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.356 -0400", hash_original_method = "8BE1D9D2C1A8227AC3DEAA12C63F6442", hash_generated_method = "A2FA7910B209C71A00F17B5294F78AF1")
     protected Object resolveObject(Object object) throws IOException {
         Object varB4EAC82CA7396A68D541C85D26508E83_982106410 = null; 

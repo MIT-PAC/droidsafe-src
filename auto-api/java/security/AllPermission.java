@@ -26,6 +26,7 @@ public final class AllPermission extends Permission {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.100 -0400", hash_original_method = "1D3A92DE09AD9A3275C68C126C1F0E4E", hash_generated_method = "837970CFC803FE870A7ABCD854E71E6E")
     @Override
     public String getActions() {
@@ -38,6 +39,7 @@ public final class AllPermission extends Permission {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.100 -0400", hash_original_method = "15107D2478EB5CA607140B3E4F96BD4D", hash_generated_method = "9B300B27A389040D81A36373E7628162")
     @Override
     public boolean implies(Permission permission) {

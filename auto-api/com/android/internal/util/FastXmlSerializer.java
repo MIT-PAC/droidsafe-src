@@ -569,6 +569,7 @@ public class FastXmlSerializer implements XmlSerializer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.684 -0400", hash_original_method = "66C59149F26C5606D1058F17E91C2E36", hash_generated_method = "19FF5C74DB405E85A6CA055D58E4DA60")
     public void setOutput(Writer writer) throws IOException, IllegalArgumentException,
             IllegalStateException {

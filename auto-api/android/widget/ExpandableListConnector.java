@@ -618,6 +618,7 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.635 -0400", hash_original_method = "5DCA730791D083145030F1469300702C", hash_generated_method = "ADF6079EFB27B709D59795A65482C88A")
     public void setMaxExpGroupCount(int maxExpGroupCount) {
         mMaxExpGroupCount = maxExpGroupCount;
@@ -626,6 +627,7 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.636 -0400", hash_original_method = "473155659E1950E1738B6CCA8650B997", hash_generated_method = "C0099983E3D658185182660626BEC3B0")
      ExpandableListAdapter getAdapter() {
         ExpandableListAdapter varB4EAC82CA7396A68D541C85D26508E83_1508893619 = null; 

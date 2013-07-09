@@ -199,6 +199,7 @@ abstract class SpannableStringInternal {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.513 -0400", hash_original_method = "2C34546685C4DD853C66A09CEFBD0C65", hash_generated_method = "A5A248395CA5AA6D39623F42A8C7B602")
     public int getSpanStart(Object what) {
         int count = mSpanCount;
@@ -223,6 +224,7 @@ abstract class SpannableStringInternal {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.514 -0400", hash_original_method = "D299E1841C6A6AC66FA9181AA7F112ED", hash_generated_method = "2DCB7B0A0AC1063ED793E26668611A6C")
     public int getSpanEnd(Object what) {
         int count = mSpanCount;
@@ -247,6 +249,7 @@ abstract class SpannableStringInternal {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.514 -0400", hash_original_method = "0BC2A6452DDDFB33D1E74093A43A22EC", hash_generated_method = "47628FF56FE29F7673B004C0FA40BFF7")
     public int getSpanFlags(Object what) {
         int count = mSpanCount;

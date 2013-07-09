@@ -26,6 +26,7 @@ public class PemHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.355 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "F15F196DD9E2CCFF718B701C05053E2D")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_968662581 = null; 
@@ -37,6 +38,7 @@ public class PemHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.356 -0400", hash_original_method = "CFCF943D36987E569CAB72593E604904", hash_generated_method = "A8956300D9EC40D1827A4019C3197F8E")
     public String getValue() {
         String varB4EAC82CA7396A68D541C85D26508E83_2110070608 = null; 

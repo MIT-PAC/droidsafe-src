@@ -154,6 +154,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isRequestHeader(SIPHeader sipHeader) {
         return sipHeader instanceof AlertInfo || sipHeader instanceof InReplyTo
                 || sipHeader instanceof Authorization || sipHeader instanceof MaxForwards
@@ -165,6 +166,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isResponseHeader(SIPHeader sipHeader) {
         return sipHeader instanceof ErrorInfo || sipHeader instanceof ProxyAuthenticate
                 || sipHeader instanceof Server || sipHeader instanceof Unsupported
@@ -955,6 +957,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.201 -0400", hash_original_method = "0B4068F7FDD81C59C44EF10BE948C047", hash_generated_method = "303B4C4F5102201DDEC55B57F40418F9")
     public boolean hasContent() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_558974681 = getTaintBoolean();
@@ -1045,6 +1048,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.206 -0400", hash_original_method = "E10DCB9A2200DABE5E8DE063DD5342F3", hash_generated_method = "86D901E1EC837592B3ACE70844279167")
     public FromHeader getFrom() {
         FromHeader varB4EAC82CA7396A68D541C85D26508E83_947488625 = null; 
@@ -1188,6 +1192,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.210 -0400", hash_original_method = "734B287C3C9508BBD63962A2764D9C01", hash_generated_method = "C7C14E5F21C42D5136790BA1997593EC")
     public CSeqHeader getCSeq() {
         CSeqHeader varB4EAC82CA7396A68D541C85D26508E83_1983163023 = null; 
@@ -1211,6 +1216,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.212 -0400", hash_original_method = "1941B7A53D19F77542CA45C05AFF9884", hash_generated_method = "3A0DA7F6B984F2CB8DF247EA9D350E3A")
     public MaxForwardsHeader getMaxForwards() {
         MaxForwardsHeader varB4EAC82CA7396A68D541C85D26508E83_874365190 = null; 
@@ -1244,6 +1250,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.216 -0400", hash_original_method = "9DA69A74904D39D3267E3E1010C409F3", hash_generated_method = "104AE596E2528299882AD142A180DE2F")
     public CallIdHeader getCallId() {
         CallIdHeader varB4EAC82CA7396A68D541C85D26508E83_300239921 = null; 
@@ -1293,6 +1300,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.221 -0400", hash_original_method = "D2F3523F315E42C3CDB78FE4D7DBD860", hash_generated_method = "D5786EF36E652D81B17F539AFCB53F1E")
     public ToHeader getTo() {
         ToHeader varB4EAC82CA7396A68D541C85D26508E83_2022589340 = null; 
@@ -1324,6 +1332,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.222 -0400", hash_original_method = "BF14C97BBADF5B6B3DD1A606FFB97154", hash_generated_method = "10F1EF4BD6022F88F5D46CCCCF2F13CA")
     public ContentLengthHeader getContentLength() {
         ContentLengthHeader varB4EAC82CA7396A68D541C85D26508E83_338696003 = null; 
@@ -1460,6 +1469,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.226 -0400", hash_original_method = "54FC52177A1CB92C02565C30A4F8CE94", hash_generated_method = "154672A36D2B021AB27D4A01FB6AD01A")
     public Object getContent() {
         Object varB4EAC82CA7396A68D541C85D26508E83_594875671 = null; 
@@ -2185,6 +2195,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.251 -0400", hash_original_method = "B722E58F0DD8E1CBC622964AAF1F9B26", hash_generated_method = "2BDE89A0FF22729ECAFC892EB96A087D")
     public void setSize(int size) {
         this.size = size;
@@ -2193,6 +2204,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.252 -0400", hash_original_method = "54E84843E0EEE275508F3EB8305B3F4F", hash_generated_method = "2AB5424ED6C893010883E49A88B66FE7")
     public int getSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1926547048 = getTaintInt();
@@ -2286,6 +2298,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.254 -0400", hash_original_method = "552E0456C33D24CD63C8EBCDAC1D019B", hash_generated_method = "E17DD994BC845C3BDBBD70ECC432242E")
     public void setApplicationData(Object applicationData) {
         this.applicationData = applicationData;
@@ -2294,6 +2307,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.254 -0400", hash_original_method = "5F924FC61375970A4DC758380BEBFF0F", hash_generated_method = "4C5BD4B86D2936C2E8F1446DCAE440FE")
     public Object getApplicationData() {
         Object varB4EAC82CA7396A68D541C85D26508E83_1270932841 = null; 
@@ -2363,6 +2377,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.255 -0400", hash_original_method = "6A8980AC46BDEC47E118DEA889F580E2", hash_generated_method = "CA44DDDBE6A206C6BFA597E51EDD5065")
     public CallIdHeader getCallIdHeader() {
         CallIdHeader varB4EAC82CA7396A68D541C85D26508E83_579212860 = null; 
@@ -2374,6 +2389,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.255 -0400", hash_original_method = "616E19996CDDFB660618161B80D5BB27", hash_generated_method = "A7EDF163887268AF3CF3932D19719714")
     public FromHeader getFromHeader() {
         FromHeader varB4EAC82CA7396A68D541C85D26508E83_2132990893 = null; 
@@ -2385,6 +2401,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.256 -0400", hash_original_method = "9C43D5663CBD78C15545690BFB01C4BF", hash_generated_method = "811DD2F4666A7EA6485FACE0DB275D13")
     public ToHeader getToHeader() {
         ToHeader varB4EAC82CA7396A68D541C85D26508E83_1152676785 = null; 
@@ -2408,6 +2425,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.257 -0400", hash_original_method = "2CE1B7EDE28DB048E923E7FFD28A72BE", hash_generated_method = "2D3CD1F72FD8576EFEA158ECC936381E")
     public CSeqHeader getCSeqHeader() {
         CSeqHeader varB4EAC82CA7396A68D541C85D26508E83_1758080438 = null; 
@@ -2449,6 +2467,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.258 -0400", hash_original_method = "F8575631397F30A77B6575B01C9E50F5", hash_generated_method = "2C3F179048D9115C51C521DEAB3F2B46")
     public boolean isNullRequest() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1618306153 = getTaintBoolean();
@@ -2458,6 +2477,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.258 -0400", hash_original_method = "76987385F34084CF4A8C6AA1CD858E63", hash_generated_method = "9270889C04904F8C78507597689FCBFB")
     public void setNullRequest() {
         this.nullRequest = true;

@@ -328,6 +328,7 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.217 -0400", hash_original_method = "EF99002349D3FD6EFA7BC51A1FE3E619", hash_generated_method = "17D71EBFFA33201E231325284ED57E58")
     public boolean canConference() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_316712262 = getTaintBoolean();
@@ -387,6 +388,7 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.218 -0400", hash_original_method = "FB85D9DE1C816CCA93C5FDAD3D9D0A31", hash_generated_method = "4DFB3570894F546712C58BC236029158")
     public boolean canTransfer() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_529589030 = getTaintBoolean();
@@ -396,6 +398,7 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.218 -0400", hash_original_method = "6F3E620B44779BFD9D290EDD6A721C13", hash_generated_method = "1802EA65B8D1F27F1F2A77F464C12952")
     public void explicitCallTransfer() throws CallStateException {
         
@@ -470,6 +473,7 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.219 -0400", hash_original_method = "1D5D5FD426DB2358E4E86A174C44532E", hash_generated_method = "28A2AD6EB5F0534AB0CED744A3051E3F")
     public void stopDtmf() {
         
@@ -577,6 +581,7 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.222 -0400", hash_original_method = "9DE1B547D23B96DA44E5E5850535D15C", hash_generated_method = "45030E18E21F26D17D7DF3D9CA712DF9")
     public Call getForegroundCall() {
         Call varB4EAC82CA7396A68D541C85D26508E83_1040871099 = null; 
@@ -588,6 +593,7 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.222 -0400", hash_original_method = "EADE59B65D242AA2A5BCB126522780FD", hash_generated_method = "F58D84E90C21836FF206B727ED4BFA10")
     public Call getBackgroundCall() {
         Call varB4EAC82CA7396A68D541C85D26508E83_2053132370 = null; 
@@ -599,6 +605,7 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.223 -0400", hash_original_method = "3A1E9C8D795C10065E3EA9FCAA0EB60D", hash_generated_method = "CD498EBB48D248E1EDB01530C3C36E01")
     public Call getRingingCall() {
         Call varB4EAC82CA7396A68D541C85D26508E83_1213290136 = null; 

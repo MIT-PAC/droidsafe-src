@@ -136,6 +136,7 @@ public class CertificateRequest extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.688 -0400", hash_original_method = "B8B86D3685160AFFAE5E6FB9770B1A60", hash_generated_method = "441A33537A00212AF1F25A5A668C155F")
     @Override
     public int getType() {

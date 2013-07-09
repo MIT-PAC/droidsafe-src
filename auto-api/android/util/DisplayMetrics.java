@@ -56,6 +56,7 @@ public class DisplayMetrics {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.249 -0400", hash_original_method = "D037FDEFC3DBB26170014E91328ECE75", hash_generated_method = "6DE88EBBD112C6976B1E762E9C4AF96A")
     public void setTo(DisplayMetrics o) {
         widthPixels = o.widthPixels;
@@ -88,6 +89,7 @@ public class DisplayMetrics {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.250 -0400", hash_original_method = "31EFDB43C431C1F23D54785D2F7319F2", hash_generated_method = "0FE93195343B6E74E337464525C71129")
     public void setToDefaults() {
         widthPixels = 0;

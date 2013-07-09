@@ -43,6 +43,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.191 -0400", hash_original_method = "51DFD52266A16587BB1D688A25EC9E53", hash_generated_method = "A2DB8A29644DD90FF2902FE2085D4F9E")
     public boolean isActive() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1614527430 = getTaintBoolean();

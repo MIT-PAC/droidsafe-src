@@ -185,6 +185,7 @@ public class LocalBroadcastManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.334 -0400", hash_original_method = "D242868C7C53E8784BBDECD4F038DC32", hash_generated_method = "C01D458A7C2FB6FF8B31B38234FA4A42")
     public boolean sendBroadcast(Intent intent) {
         {
@@ -261,6 +262,7 @@ public class LocalBroadcastManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.334 -0400", hash_original_method = "6A77C49D1FDA5F97149304A23CA19549", hash_generated_method = "30796E330C6ADE66EC5A9DCC74A083D0")
     public void sendBroadcastSync(Intent intent) {
         {

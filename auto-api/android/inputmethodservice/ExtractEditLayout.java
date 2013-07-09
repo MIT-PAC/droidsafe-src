@@ -93,6 +93,7 @@ public class ExtractEditLayout extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.532 -0400", hash_original_method = "587B198236267AC63B96064EC21D7789", hash_generated_method = "8BB4873FDBB3329A7C62FB48029190D7")
     public boolean isActionModeStarted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_32126435 = getTaintBoolean();

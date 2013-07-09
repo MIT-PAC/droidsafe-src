@@ -85,6 +85,7 @@ public final class MemoryMappedFile implements AutoCloseable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.281 -0400", hash_original_method = "EA3441215E7ACDF721D34D006EDC791B", hash_generated_method = "CEEFD32CA299451C93941D5BD1B280C3")
     public long size() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_390646114 = getTaintLong();

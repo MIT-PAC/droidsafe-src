@@ -363,7 +363,8 @@ public final class AndroidHttpClient implements HttpClient {
     }
 
     
-        public static long getMinGzipSize(ContentResolver resolver) {
+        @DSModeled(DSC.SAFE)
+    public static long getMinGzipSize(ContentResolver resolver) {
         return DEFAULT_SYNC_MIN_GZIP_BYTES;
     }
 
@@ -391,6 +392,7 @@ public final class AndroidHttpClient implements HttpClient {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.511 -0400", hash_original_method = "ACD8C6EB71D9F6C325AF8CC21E8A00EF", hash_generated_method = "C4593E5AA16D43E72F368F7DD199C333")
     public void disableCurlLogging() {
         curlConfiguration = null;

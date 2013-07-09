@@ -225,6 +225,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.561 -0400", hash_original_method = "595F433D4A540AB9FD57454DFC2D00CA", hash_generated_method = "161B4DAC8B04D836A398F00E21D31B83")
     public Currency getCurrency() {
         Currency varB4EAC82CA7396A68D541C85D26508E83_158424018 = null; 
@@ -236,6 +237,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.561 -0400", hash_original_method = "9A7223B2A10801087A5753E160EB5AD9", hash_generated_method = "98ABC964F2C41B499AF19BA3A3A2976E")
     public String getInternationalCurrencySymbol() {
         String varB4EAC82CA7396A68D541C85D26508E83_662662496 = null; 
@@ -247,6 +249,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.562 -0400", hash_original_method = "44BA6DF186734A9129EE433C5393A649", hash_generated_method = "BAB452F36968053E0E26BE7E31CAE74E")
     public String getCurrencySymbol() {
         String varB4EAC82CA7396A68D541C85D26508E83_1047879653 = null; 
@@ -258,6 +261,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.562 -0400", hash_original_method = "C908C2BC77C07C5C3074706ADD440EBB", hash_generated_method = "3BEFEBCFA329C9E283C87042EF5FB27C")
     public char getDecimalSeparator() {
         char varA87DEB01C5F539E6BDA34829C8EF2368_22708522 = getTaintChar();
@@ -267,6 +271,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.562 -0400", hash_original_method = "4E80424FBB82914FDC63C744E843DFA5", hash_generated_method = "137A339B8C797CFA2EF99EDDC34EED9B")
     public char getDigit() {
         char varA87DEB01C5F539E6BDA34829C8EF2368_1385966201 = getTaintChar();
@@ -276,6 +281,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.562 -0400", hash_original_method = "0D8DAB63E4E740341CDDC10B95F6771D", hash_generated_method = "24BAEE356FA33668E42516115B6A8A66")
     public char getGroupingSeparator() {
         char varA87DEB01C5F539E6BDA34829C8EF2368_1076797795 = getTaintChar();
@@ -285,6 +291,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.563 -0400", hash_original_method = "195513F858098AF1B8C98F122DD853CE", hash_generated_method = "7430C95471777321F3CCEA8668367A13")
     public String getInfinity() {
         String varB4EAC82CA7396A68D541C85D26508E83_788412296 = null; 
@@ -296,6 +303,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.563 -0400", hash_original_method = "B02DD985FFD3C706D5501C97C0FC9E68", hash_generated_method = "4EC2D48F2C98CA0F7DD1598453AFA871")
     public char getMinusSign() {
         char varA87DEB01C5F539E6BDA34829C8EF2368_211133014 = getTaintChar();
@@ -305,6 +313,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.563 -0400", hash_original_method = "C02AEBD6916CB8991D4B6D1CCA4BA867", hash_generated_method = "FBAF5C066F3F8F449030E280E44A46EE")
     public char getMonetaryDecimalSeparator() {
         char varA87DEB01C5F539E6BDA34829C8EF2368_1269208985 = getTaintChar();
@@ -314,6 +323,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.563 -0400", hash_original_method = "A7A5B5565C9E586C08E861055D3F830D", hash_generated_method = "893CBCE79885A1B18E074A86722AB949")
     public String getNaN() {
         String varB4EAC82CA7396A68D541C85D26508E83_1895637939 = null; 
@@ -325,6 +335,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.564 -0400", hash_original_method = "D38F7AE8E1369570AEDB785398752C04", hash_generated_method = "1F8BF0F16587431597D982E5AA461230")
     public char getPatternSeparator() {
         char varA87DEB01C5F539E6BDA34829C8EF2368_1353945212 = getTaintChar();
@@ -334,6 +345,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.564 -0400", hash_original_method = "0F05A385A7483224A3B3B115F4941DEA", hash_generated_method = "34028938F95FAA394EADAB47941E2DFE")
     public char getPercent() {
         char varA87DEB01C5F539E6BDA34829C8EF2368_427130503 = getTaintChar();
@@ -343,6 +355,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.564 -0400", hash_original_method = "DDC83740D050E65F948D715CA46AA4E6", hash_generated_method = "80198693D9A60DE286439CA4237206B9")
     public char getPerMill() {
         char varA87DEB01C5F539E6BDA34829C8EF2368_809002115 = getTaintChar();
@@ -352,6 +365,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.564 -0400", hash_original_method = "5E609E25361E12310E119A02851AA08C", hash_generated_method = "C4F52ED0AE6AE22C57E1CFB07307D17A")
     public char getZeroDigit() {
         char varA87DEB01C5F539E6BDA34829C8EF2368_1272175217 = getTaintChar();
@@ -361,6 +375,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.564 -0400", hash_original_method = "819A49232B9C4BF84239DF8CB1CAA3C1", hash_generated_method = "95C8202A9DD804391F5F0C560557286C")
     public String getExponentSeparator() {
         String varB4EAC82CA7396A68D541C85D26508E83_1732979443 = null; 
@@ -474,6 +489,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.567 -0400", hash_original_method = "29E8104D01D46C7E9FE837881A4B811D", hash_generated_method = "A1B254E664FC163A6D6D66EE9051B9E5")
     public void setCurrencySymbol(String value) {
         this.currencySymbol = value;
@@ -482,6 +498,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.568 -0400", hash_original_method = "9AC8CCC4F998C35713D40EA8501A574C", hash_generated_method = "4539C6F9693002CBFA4139FAA5A10266")
     public void setDecimalSeparator(char value) {
         this.decimalSeparator = value;
@@ -490,6 +507,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.568 -0400", hash_original_method = "D6FAF1D38DB7E623F52AE4E3C83BC924", hash_generated_method = "7711FAE92BC9F01A058CFEF49755A394")
     public void setDigit(char value) {
         this.digit = value;
@@ -498,6 +516,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.569 -0400", hash_original_method = "9D270588D20ED0589BF78FE9A748D06B", hash_generated_method = "C292B529EBE5F04DB57AE205EC3B991A")
     public void setGroupingSeparator(char value) {
         this.groupingSeparator = value;
@@ -506,6 +525,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.569 -0400", hash_original_method = "253C85BF9C056E30DB4FF21631672E45", hash_generated_method = "ABF5584BEC1CA4A91D70149ED70C9A27")
     public void setInfinity(String value) {
         this.infinity = value;
@@ -514,6 +534,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.570 -0400", hash_original_method = "D3F4D7B2767531D5CB8D7EDFAA19A0F0", hash_generated_method = "97F2E98A9053428A52AC61901D7A6FEA")
     public void setMinusSign(char value) {
         this.minusSign = value;
@@ -522,6 +543,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.570 -0400", hash_original_method = "5DC5988EDD7C3CC1FE974B80FD913370", hash_generated_method = "37C329CB534FCBA848ADC17C5247D834")
     public void setMonetaryDecimalSeparator(char value) {
         this.monetarySeparator = value;
@@ -530,6 +552,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.570 -0400", hash_original_method = "6A48D24176C36753AA1CCB849BDA297D", hash_generated_method = "AA33C8D18B728D340C95D0AD4D935FA8")
     public void setNaN(String value) {
         this.NaN = value;
@@ -538,6 +561,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.571 -0400", hash_original_method = "F9CB88FF85D83DD076D59F9C65C2F022", hash_generated_method = "3017D9D53BF3860D543CEE81C7ED5A22")
     public void setPatternSeparator(char value) {
         this.patternSeparator = value;
@@ -546,6 +570,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.571 -0400", hash_original_method = "82CC4266781153E2E37AE97635E76BF7", hash_generated_method = "4EDEC5C156FF56FDE2BCE58452EA9BAA")
     public void setPercent(char value) {
         this.percent = value;
@@ -554,6 +579,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.572 -0400", hash_original_method = "A113C8FE00852B00BE817507D877FFEC", hash_generated_method = "2304401BB8B19A673A86CB5806CCD958")
     public void setPerMill(char value) {
         this.perMill = value;
@@ -562,6 +588,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.573 -0400", hash_original_method = "1F31C9A94279CEAA9BC58336D0C15AE7", hash_generated_method = "0DC2F198C5C3860518C6B4FFDAA37AED")
     public void setZeroDigit(char value) {
         this.zeroDigit = value;

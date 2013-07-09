@@ -128,6 +128,7 @@ public final class DeviceAdminInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.835 -0400", hash_original_method = "15D7F1C05476F5ABD61BE7FA06DD15FF", hash_generated_method = "2E85565EF34E340C0C2FD73AF5B4111B")
     public String getPackageName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1300015829 = null; 
@@ -139,6 +140,7 @@ public final class DeviceAdminInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.836 -0400", hash_original_method = "DA104755B25D83C27775D5E8DE9A1BBA", hash_generated_method = "40A515F80D6ED29E6A0AF6FCB2AB1D6C")
     public String getReceiverName() {
         String varB4EAC82CA7396A68D541C85D26508E83_578242418 = null; 
@@ -150,6 +152,7 @@ public final class DeviceAdminInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.837 -0400", hash_original_method = "841DC64081A3A73FAF123BE852CFB557", hash_generated_method = "C4DE542067D3B85A52FDB894FDD9F9DE")
     public ActivityInfo getActivityInfo() {
         ActivityInfo varB4EAC82CA7396A68D541C85D26508E83_1932643556 = null; 
@@ -234,6 +237,7 @@ public final class DeviceAdminInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.842 -0400", hash_original_method = "5E5A2EDE31F4C9B537E19F3E9904B493", hash_generated_method = "116561B8AB5301A4EBE4DFD20B2ACDEB")
     public boolean isVisible() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_534638715 = getTaintBoolean();
@@ -243,6 +247,7 @@ public final class DeviceAdminInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.842 -0400", hash_original_method = "E08C907F6F855F797C3DCE0727348F6B", hash_generated_method = "257A38FA2E443E305E88E9BF0C43540A")
     public boolean usesPolicy(int policyIdent) {
         addTaint(policyIdent);
@@ -359,6 +364,7 @@ public final class DeviceAdminInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.850 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "88C13ED1AE7E78BC5B78447A7AA7DE74")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_935234763 = getTaintInt();

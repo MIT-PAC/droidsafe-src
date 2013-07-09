@@ -436,6 +436,7 @@ public class SyncManager implements OnAccountsUpdateListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.974 -0400", hash_original_method = "BC7A6B22ABBE0EBF148B37C3B72645F0", hash_generated_method = "C01B1CDB8E12CD80591068BFEB712391")
     public SyncStorageEngine getSyncStorageEngine() {
         SyncStorageEngine varB4EAC82CA7396A68D541C85D26508E83_1233003677 = null; 
@@ -1179,6 +1180,7 @@ public class SyncManager implements OnAccountsUpdateListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.999 -0400", hash_original_method = "C2F823D43F1684BB9B7871B7A13E4AFA", hash_generated_method = "DCE9069535DCD31724F56B174010582E")
     private String getLastFailureMessage(int code) {
         String varB4EAC82CA7396A68D541C85D26508E83_1244034384 = null; 

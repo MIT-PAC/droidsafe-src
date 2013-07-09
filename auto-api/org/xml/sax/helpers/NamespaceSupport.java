@@ -283,6 +283,7 @@ public class NamespaceSupport {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.942 -0400", hash_original_method = "704394E46FC1A63E6F1F5F09E7A57B00", hash_generated_method = "BB524FFBC96D0C89512EC5DE1C4D8AF8")
     public boolean isNamespaceDeclUris() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_592357278 = getTaintBoolean();

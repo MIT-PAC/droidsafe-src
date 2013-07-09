@@ -135,6 +135,7 @@ public class DERApplicationSpecific extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.249 -0400", hash_original_method = "61F856A6747C3DB85AB853DB99D560A7", hash_generated_method = "E44B4376E506897A0B21E43957AEBDA6")
     private int getLengthOfLength(byte[] data) {
         int count = 2;
@@ -151,6 +152,7 @@ public class DERApplicationSpecific extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.249 -0400", hash_original_method = "4AFA588B499059410429802033BA5ED0", hash_generated_method = "FCB9BBF983714717105D81094DA51FA4")
     public boolean isConstructed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_485649454 = getTaintBoolean();
@@ -160,6 +162,7 @@ public class DERApplicationSpecific extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.250 -0400", hash_original_method = "1D312847F188B0EEDCC8340737DDA9DA", hash_generated_method = "9C8462F33821AE516A769A7E13EEB1CE")
     public byte[] getContents() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1050940010 = {getTaintByte()};
@@ -169,6 +172,7 @@ public class DERApplicationSpecific extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.250 -0400", hash_original_method = "8070D9796AF3020498C0A81362041E60", hash_generated_method = "8FE5AD8A47FEBD8525F6891340982664")
     public int getApplicationTag() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1564550740 = getTaintInt();

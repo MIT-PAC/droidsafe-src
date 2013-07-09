@@ -25,6 +25,7 @@ public abstract class HttpEntityEnclosingRequestBase extends HttpRequestBase imp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.752 -0400", hash_original_method = "FCFC1A07171F7DE920C85D2DD77008FA", hash_generated_method = "37985E92BB51DE92BFCB2799FF6BB13B")
     public HttpEntity getEntity() {
         HttpEntity varB4EAC82CA7396A68D541C85D26508E83_941716885 = null; 

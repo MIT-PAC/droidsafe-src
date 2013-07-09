@@ -37,6 +37,7 @@ public class KeyParameter implements CipherParameters {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.115 -0400", hash_original_method = "4D0869BDED080E6228BF118F17313DFD", hash_generated_method = "32CDB00834EE5BCCC134D5D4AB138BB0")
     public byte[] getKey() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1848153888 = {getTaintByte()};

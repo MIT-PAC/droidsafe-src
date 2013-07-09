@@ -73,6 +73,7 @@ public class HeaderIterator implements ListIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.629 -0400", hash_original_method = "0B45A065656087279C8F30222D1F6A91", hash_generated_method = "41C42CFBF099FD848EAA5C44E292CD31")
     public int nextIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_292667271 = getTaintInt();
@@ -82,6 +83,7 @@ public class HeaderIterator implements ListIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.630 -0400", hash_original_method = "A86688C47AAA2CAB26A2462BDF3B71EF", hash_generated_method = "1D77E3B2DD91B8A23D81862B7443AD12")
     public int previousIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1858398969 = getTaintInt();
@@ -134,6 +136,7 @@ public class HeaderIterator implements ListIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.631 -0400", hash_original_method = "4022889478A9417F354658DD9E31C17D", hash_generated_method = "17D58114F99226768E9D3C6F73C90C9D")
     public boolean hasNext() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1037491560 = getTaintBoolean();
@@ -143,6 +146,7 @@ public class HeaderIterator implements ListIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.631 -0400", hash_original_method = "F16A855901EB074320480EE478FDC075", hash_generated_method = "F4C96C2B807E2E582019961A50E7CFA3")
     public boolean hasPrevious() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_323457041 = getTaintBoolean();

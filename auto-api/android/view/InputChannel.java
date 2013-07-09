@@ -22,6 +22,7 @@ public final class InputChannel implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static InputChannel[] nativeOpenInputChannelPair(String name) {
     	InputChannel i = new InputChannel();
     	i.addTaint(name.getTaint());
@@ -30,26 +31,31 @@ public final class InputChannel implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.949 -0400", hash_original_method = "94154519B1A6EA4BB0BB640C85BD9A02", hash_generated_method = "6C7C0E61BCDFCC694DC91C268DE99361")
     private void nativeDispose(boolean finalized) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.949 -0400", hash_original_method = "799DA83596ED16E96D78A1B89899E0CA", hash_generated_method = "43DD19AFEED002ACDDA5EE5C126D0199")
     private void nativeTransferTo(InputChannel other) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.949 -0400", hash_original_method = "CB18D1AF1302EC392F144D01425C9ED8", hash_generated_method = "2C38BCBB39AFEAF9135E868F8C4B1983")
     private void nativeReadFromParcel(Parcel parcel) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.950 -0400", hash_original_method = "0C3EF2E831F019E30F5E266ABBEB1FCD", hash_generated_method = "29CBDFA8F1245A477428080B155FEC70")
     private void nativeWriteToParcel(Parcel parcel) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.950 -0400", hash_original_method = "CA39384861C04125EB204839D7970E78", hash_generated_method = "55C683646032EAF5E4A7B598D440C2F0")
     private String nativeGetName() {
     	String s = new String();
@@ -129,6 +135,7 @@ public final class InputChannel implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.953 -0400", hash_original_method = "5C5A30224996A2D414D9176559E683A9", hash_generated_method = "93A6C76E0293539434C49F72269B2347")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_981650059 = getTaintInt();

@@ -30,6 +30,7 @@ class SelectActionModeCallback implements ActionMode.Callback {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.503 -0400", hash_original_method = "2B5F8950C4750F957BA2CE7A16E0E578", hash_generated_method = "3E39CDF9FDEC82BE13585E703DC3AFD8")
      void setWebView(WebView webView) {
         mWebView = webView;
@@ -92,6 +93,7 @@ class SelectActionModeCallback implements ActionMode.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.504 -0400", hash_original_method = "E3574021502A1E90BCF4C46DB1841054", hash_generated_method = "65CAEA7C910F01E3530E725B6630D48A")
     @Override
     public boolean onPrepareActionMode(ActionMode mode, Menu menu) {

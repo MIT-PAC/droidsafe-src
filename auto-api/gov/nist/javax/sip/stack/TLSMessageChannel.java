@@ -137,6 +137,7 @@ public final class TLSMessageChannel extends MessageChannel implements SIPMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.945 -0400", hash_original_method = "16D0E6CF226A4618D75D1B422CC8FCDF", hash_generated_method = "CD0E13DBB915E9A420D6E7367F334DEB")
     public boolean isReliable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_538126117 = getTaintBoolean();
@@ -177,6 +178,7 @@ public final class TLSMessageChannel extends MessageChannel implements SIPMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.947 -0400", hash_original_method = "4789C177AC8ECE60B231BA8A866F9D66", hash_generated_method = "08D61EB3B25A9F188E4EE3E3803DCBB8")
     public SIPTransactionStack getSIPStack() {
         SIPTransactionStack varB4EAC82CA7396A68D541C85D26508E83_2120091892 = null; 
@@ -188,6 +190,7 @@ public final class TLSMessageChannel extends MessageChannel implements SIPMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.948 -0400", hash_original_method = "00B4B3FBB10028B216605159EFB81D52", hash_generated_method = "5910AC690AD7AF0ED47D2343B072E5E6")
     public String getTransport() {
         String varB4EAC82CA7396A68D541C85D26508E83_1225445936 = null; 
@@ -227,6 +230,7 @@ public final class TLSMessageChannel extends MessageChannel implements SIPMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.949 -0400", hash_original_method = "1F29EC3BC94C3E0863F530FCD37A61F3", hash_generated_method = "450AABC71D6ACEF598179D5FF848F9BE")
     protected InetAddress getPeerInetAddress() {
         InetAddress varB4EAC82CA7396A68D541C85D26508E83_1479548503 = null; 
@@ -238,6 +242,7 @@ public final class TLSMessageChannel extends MessageChannel implements SIPMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.949 -0400", hash_original_method = "DB79607DA3ACB5FA2D24428DF2713F98", hash_generated_method = "E18C82EB5BEDC917701FD2A4C005D886")
     public String getPeerProtocol() {
         String varB4EAC82CA7396A68D541C85D26508E83_1507891770 = null; 
@@ -766,6 +771,7 @@ public final class TLSMessageChannel extends MessageChannel implements SIPMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.959 -0400", hash_original_method = "11E5C6A8F9691D7C5E18B4FE0A22A301", hash_generated_method = "044EF05D5F19C3A9442D7E9D9A511A48")
     public String getViaHost() {
         String varB4EAC82CA7396A68D541C85D26508E83_273080565 = null; 
@@ -777,6 +783,7 @@ public final class TLSMessageChannel extends MessageChannel implements SIPMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.959 -0400", hash_original_method = "97574FAF366AF2CA74D034931ECBD71B", hash_generated_method = "3F696FB860BE945317F10415C06381F8")
     public int getViaPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1586432045 = getTaintInt();
@@ -786,6 +793,7 @@ public final class TLSMessageChannel extends MessageChannel implements SIPMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.960 -0400", hash_original_method = "356711D154A2D021F9E9DF4BCD609AF2", hash_generated_method = "ACF13DBA146035F0FA91873B9179D5A4")
     public int getPeerPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_273581222 = getTaintInt();
@@ -795,6 +803,7 @@ public final class TLSMessageChannel extends MessageChannel implements SIPMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.961 -0400", hash_original_method = "B210BD4A713B5B982D229CB138437A53", hash_generated_method = "E079B48FC05ED97F0DE4E4DF247B9AF8")
     public int getPeerPacketSourcePort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_744584815 = getTaintInt();
@@ -804,6 +813,7 @@ public final class TLSMessageChannel extends MessageChannel implements SIPMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.964 -0400", hash_original_method = "97EAFF51EEE94208DA244D522468157C", hash_generated_method = "DBB4A3D43B962BB6F433FF0128E414D0")
     public InetAddress getPeerPacketSourceAddress() {
         InetAddress varB4EAC82CA7396A68D541C85D26508E83_923939581 = null; 
@@ -815,6 +825,7 @@ public final class TLSMessageChannel extends MessageChannel implements SIPMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.966 -0400", hash_original_method = "57D47F2F9FCDF87C613C3BEA50BCDEDC", hash_generated_method = "D2234EF1C6CD14961EDDCCD0E768E7DB")
     public boolean isSecure() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1961208835 = getTaintBoolean();
@@ -824,6 +835,7 @@ public final class TLSMessageChannel extends MessageChannel implements SIPMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.967 -0400", hash_original_method = "17DB109E74C9C419B95A49BDAE918BA7", hash_generated_method = "58C9BB24EBB7523196DDC479C0D53915")
     public void setHandshakeCompletedListener(
             HandshakeCompletedListener handshakeCompletedListenerImpl) {
@@ -833,6 +845,7 @@ public final class TLSMessageChannel extends MessageChannel implements SIPMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.968 -0400", hash_original_method = "6CFE0616A7B6D8A833DC048924F270CA", hash_generated_method = "C37A0B2630EBC090927143B6E6678D3E")
     public HandshakeCompletedListenerImpl getHandshakeCompletedListener() {
         HandshakeCompletedListenerImpl varB4EAC82CA7396A68D541C85D26508E83_586145877 = null; 

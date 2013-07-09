@@ -146,6 +146,7 @@ public class MemInfoReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.743 -0400", hash_original_method = "3434AB33F130B66E857E66B11D583682", hash_generated_method = "236E513568196EA53F67028D32C1D45B")
     public long getTotalSize() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1107853020 = getTaintLong();
@@ -155,6 +156,7 @@ public class MemInfoReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.745 -0400", hash_original_method = "FACB48AE3A5EF9A0F8A782DC112E6801", hash_generated_method = "917692B8383BE4493EDCDF5FB091C133")
     public long getFreeSize() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1095878691 = getTaintLong();
@@ -164,6 +166,7 @@ public class MemInfoReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.745 -0400", hash_original_method = "67C7373745CA2083B77127FB7F7EF9BE", hash_generated_method = "89459EFDF3AD8C89437A1027CAC50E9B")
     public long getCachedSize() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_863836822 = getTaintLong();

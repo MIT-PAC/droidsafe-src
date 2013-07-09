@@ -280,6 +280,7 @@ public class NetworkStats implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.612 -0400", hash_original_method = "F3360ADB8E6D37C5AD6714A1DBEA3C2C", hash_generated_method = "52AA155F88BF8BA6E3CE7F5E9CB731F6")
     public long getElapsedRealtime() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1830170570 = getTaintLong();
@@ -300,6 +301,7 @@ public class NetworkStats implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.613 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "B26BABFDC84ADA35CB993BD104E2A440")
     public int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1461562043 = getTaintInt();
@@ -309,6 +311,7 @@ public class NetworkStats implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.613 -0400", hash_original_method = "2B99B673BBD8E75B3053CAA25E99CAA5", hash_generated_method = "5C7D365A34F3559570719125B46A2AB3")
     public int internalSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_990190257 = getTaintInt();
@@ -919,6 +922,7 @@ public class NetworkStats implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String setToString(int set) {
         switch (set) {
             case SET_ALL:
@@ -956,6 +960,7 @@ public class NetworkStats implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.645 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "9BF9D07DCDAB267EE0AE4AE48E596F3D")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_519752076 = getTaintInt();

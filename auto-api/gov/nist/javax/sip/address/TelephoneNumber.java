@@ -39,6 +39,7 @@ public class TelephoneNumber extends NetObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.529 -0400", hash_original_method = "52800C2C905EEB817404225ADBC057C1", hash_generated_method = "580875D4DCEBDCA687491970632FC9DE")
     public String getPhoneNumber() {
         String varB4EAC82CA7396A68D541C85D26508E83_437266796 = null; 
@@ -108,6 +109,7 @@ public class TelephoneNumber extends NetObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.531 -0400", hash_original_method = "26808293282132329FBEA070B2AD722D", hash_generated_method = "119B96D9FA0A7226931CA17471E3A0BB")
     public boolean isGlobal() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_275235545 = getTaintBoolean();
@@ -135,6 +137,7 @@ public class TelephoneNumber extends NetObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.532 -0400", hash_original_method = "779B73549EB95AA1112D17D4BD37698F", hash_generated_method = "959236CB1F720298C9BF15740EF84153")
     public void setParameters(NameValueList p) {
         parameters = p;
@@ -143,6 +146,7 @@ public class TelephoneNumber extends NetObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.532 -0400", hash_original_method = "AC69D7A5F7431BD993B4E02357C1C328", hash_generated_method = "8AE7A45CDBFC0F972181147E0F3ACDEE")
     public void setGlobal(boolean g) {
         isglobal = g;
@@ -186,6 +190,7 @@ public class TelephoneNumber extends NetObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.533 -0400", hash_original_method = "0D906AA6E6C51748158DF0E26B379B98", hash_generated_method = "5792C7D29465A82AFE011B3B06F20683")
     public void setPhoneNumber(String num) {
         phoneNumber = num;
@@ -323,6 +328,7 @@ public class TelephoneNumber extends NetObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.537 -0400", hash_original_method = "3F9E254F8A6DAF7B33BDD77A0CAB2530", hash_generated_method = "E7025CDD3145EF153A8F08EF4BE691AD")
     public NameValueList getParameters() {
         NameValueList varB4EAC82CA7396A68D541C85D26508E83_860718743 = null; 

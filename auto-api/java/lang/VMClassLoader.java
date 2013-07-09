@@ -21,6 +21,7 @@ class VMClassLoader {
     }
 
 
+    @DSModeled(DSC.SPEC)
     static URL getResource(String name) {
         int numEntries = getBootClassPathSize();
         for (int i = 0; i < numEntries; i++) {
@@ -55,6 +56,7 @@ class VMClassLoader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static Class loadClass(String name, boolean resolve) throws ClassNotFoundException {
                 
     	Class ret = (Class)new Object();
@@ -64,6 +66,7 @@ class VMClassLoader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static Class getPrimitiveClass(char type) {
                 
     	Class ret = (Class)new Object();
@@ -74,6 +77,7 @@ class VMClassLoader {
     }
 
     
+    @DSModeled(DSC.BAN)
     static Class defineClass(ClassLoader cl, String name, byte[] data, int offset, int len) throws ClassFormatError {
                 
     	Class ret = (Class)new Object();
@@ -86,6 +90,7 @@ class VMClassLoader {
     }
 
     
+    @DSModeled(DSC.BAN)
     static Class defineClass(ClassLoader cl, byte[] data, int offset, int len) throws ClassFormatError {
                 
     	Class ret = (Class)new Object();
@@ -98,6 +103,7 @@ class VMClassLoader {
     }
 
     
+    @DSModeled(DSC.BAN)
     static Class findLoadedClass(ClassLoader cl, String name) {
                 
     	Class ret = (Class)new Object();
@@ -107,12 +113,14 @@ class VMClassLoader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int getBootClassPathSize() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1375923467 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1375923467;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String getBootClassPathResource(String name, int index) {
                 
     	String ret = new String();

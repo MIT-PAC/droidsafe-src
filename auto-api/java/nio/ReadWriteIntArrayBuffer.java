@@ -94,6 +94,7 @@ final class ReadWriteIntArrayBuffer extends IntArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.211 -0400", hash_original_method = "19E9B6B291778F8D7BAF6F9BA6FE7EDF", hash_generated_method = "3B79C9D8F6513D271F2451836E624189")
     @Override
     public boolean isReadOnly() {
@@ -104,6 +105,7 @@ final class ReadWriteIntArrayBuffer extends IntArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.212 -0400", hash_original_method = "A905887CE8C7700C79178CD7C8EB8B1A", hash_generated_method = "0B810079AF099441BF0B14F56EF1E453")
     @Override
     protected int[] protectedArray() {
@@ -114,6 +116,7 @@ final class ReadWriteIntArrayBuffer extends IntArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.212 -0400", hash_original_method = "F848F07A68FC53238B1B56C46C388C04", hash_generated_method = "57DD2888FA862D349AA22E72E4C542AE")
     @Override
     protected int protectedArrayOffset() {
@@ -124,6 +127,7 @@ final class ReadWriteIntArrayBuffer extends IntArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.212 -0400", hash_original_method = "504D4244F3E9BA0CFC7CEE21DED3336C", hash_generated_method = "61FDC4DEE05C4EF86290B3F5A5F20C0E")
     @Override
     protected boolean protectedHasArray() {

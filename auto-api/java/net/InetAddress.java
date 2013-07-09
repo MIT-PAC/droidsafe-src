@@ -332,16 +332,19 @@ public class InetAddress implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static InetAddress[] loopbackAddresses() {
         return new InetAddress[] { Inet6Address.LOOPBACK, Inet4Address.LOOPBACK };
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static InetAddress getLoopbackAddress() {
         return Inet6Address.LOOPBACK;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.312 -0400", hash_original_method = "0DFB661E6E123FAAEACDB840E13652D3", hash_generated_method = "AE97447B0ED1BFED4B90BDC9BD0FE393")
     public boolean isAnyLocalAddress() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_162807180 = getTaintBoolean();
@@ -351,6 +354,7 @@ public class InetAddress implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.312 -0400", hash_original_method = "C2C85D69F5C8114C53B505B2C48FBA38", hash_generated_method = "0AF11685BA819A62E3D04678E3E0CE0E")
     public boolean isLinkLocalAddress() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_64687892 = getTaintBoolean();
@@ -360,6 +364,7 @@ public class InetAddress implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.313 -0400", hash_original_method = "F4A838CB0E6897A23081D395162E9DA1", hash_generated_method = "0EF4AF4323EDF2198986676B60DB586D")
     public boolean isLoopbackAddress() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_55812026 = getTaintBoolean();
@@ -369,6 +374,7 @@ public class InetAddress implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.313 -0400", hash_original_method = "FDE6DFC941C3F6CDB3A8E59F11467602", hash_generated_method = "55F0CE456D6466A8C7A57080AAA9CC84")
     public boolean isMCGlobal() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_220491909 = getTaintBoolean();
@@ -378,6 +384,7 @@ public class InetAddress implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.313 -0400", hash_original_method = "633857E8ABB2714E861E7CC407521B8A", hash_generated_method = "0797BAE18A7ACB0DBBED5DF33FE94975")
     public boolean isMCLinkLocal() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_895852998 = getTaintBoolean();
@@ -387,6 +394,7 @@ public class InetAddress implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.313 -0400", hash_original_method = "B0B42DF39D7CC893DB97C3031173A44B", hash_generated_method = "2537EABB11F60963D6C582C69D2092EF")
     public boolean isMCNodeLocal() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1400633899 = getTaintBoolean();
@@ -396,6 +404,7 @@ public class InetAddress implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.313 -0400", hash_original_method = "8083E84E7FB8B51C8E4E9091B5CE2BBD", hash_generated_method = "8432B77EB7691F15A5C7915620E701D4")
     public boolean isMCOrgLocal() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_787574688 = getTaintBoolean();
@@ -405,6 +414,7 @@ public class InetAddress implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.314 -0400", hash_original_method = "5286F1AFCB89409D5250A9F370D7AC47", hash_generated_method = "9B39E6D3546533B46B93EAB43B997610")
     public boolean isMCSiteLocal() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_27933923 = getTaintBoolean();
@@ -414,6 +424,7 @@ public class InetAddress implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.314 -0400", hash_original_method = "93032F84680D1BDFF6DF524AE8984C63", hash_generated_method = "547AE1E6C24D460CD086960D8A1E6D8F")
     public boolean isMulticastAddress() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_965899403 = getTaintBoolean();
@@ -423,6 +434,7 @@ public class InetAddress implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.314 -0400", hash_original_method = "34E7BECA5A41D39726D6E4A4A4838C8A", hash_generated_method = "DC31856B194A6A910603A7BA5207A7F9")
     public boolean isSiteLocalAddress() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_513391450 = getTaintBoolean();
@@ -604,7 +616,8 @@ public class InetAddress implements Serializable {
     }
 
     
-        private static boolean isIPv4MappedAddress(byte[] ipAddress) {
+        @DSModeled(DSC.SAFE)
+    private static boolean isIPv4MappedAddress(byte[] ipAddress) {
         if (ipAddress == null || ipAddress.length != 16) {
             return false;
         }
@@ -620,7 +633,8 @@ public class InetAddress implements Serializable {
     }
 
     
-        private static byte[] ipv4MappedToIPv4(byte[] mappedAddress) {
+        @DSModeled(DSC.SAFE)
+    private static byte[] ipv4MappedToIPv4(byte[] mappedAddress) {
         byte[] ipv4Address = new byte[4];
         for (int i = 0; i < 4; i++) {
             ipv4Address[i] = mappedAddress[12 + i];

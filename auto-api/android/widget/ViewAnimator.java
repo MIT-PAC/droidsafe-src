@@ -139,6 +139,7 @@ public class ViewAnimator extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.235 -0400", hash_original_method = "EEFA4D3ABF985412351A1BD0CB5D6161", hash_generated_method = "1C445427D9515249211689BFD87C1AA6")
     public int getDisplayedChild() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1415159083 = getTaintInt();
@@ -379,6 +380,7 @@ public class ViewAnimator extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.240 -0400", hash_original_method = "9649A93AAEAC388E07F52DE503C0F001", hash_generated_method = "E6860471D6CBB4F6606EA5494AB28772")
     public Animation getInAnimation() {
         Animation varB4EAC82CA7396A68D541C85D26508E83_829004710 = null; 
@@ -390,6 +392,7 @@ public class ViewAnimator extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.240 -0400", hash_original_method = "3A3CF51D7EEDC43DA48CCA94EBF1692F", hash_generated_method = "E7E7233C13774685AA7A36D3ECAD7F34")
     public void setInAnimation(Animation inAnimation) {
         mInAnimation = inAnimation;
@@ -398,6 +401,7 @@ public class ViewAnimator extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.240 -0400", hash_original_method = "966AEDC04CB1C3738AA44B09B913030C", hash_generated_method = "72794E1F23290A55BE370429AF796B4F")
     public Animation getOutAnimation() {
         Animation varB4EAC82CA7396A68D541C85D26508E83_321573323 = null; 
@@ -409,6 +413,7 @@ public class ViewAnimator extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.241 -0400", hash_original_method = "E7C95EC2E63D184B364637DD8AD18F73", hash_generated_method = "7702771938195AF2F91DFC7114BC7EB4")
     public void setOutAnimation(Animation outAnimation) {
         mOutAnimation = outAnimation;
@@ -439,6 +444,7 @@ public class ViewAnimator extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.241 -0400", hash_original_method = "8FC95409534ABC48E92905DC8C518CE2", hash_generated_method = "B8F320B30FC7DD41541BCFCAA6FCA367")
     public void setAnimateFirstView(boolean animate) {
         mAnimateFirstTime = animate;

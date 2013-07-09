@@ -29,6 +29,7 @@ public class MaskFilter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeDestructor(int native_filter) {
     }
 

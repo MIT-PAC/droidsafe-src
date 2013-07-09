@@ -46,6 +46,7 @@ public final class FileDescriptor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.912 -0400", hash_original_method = "1AD9601B3D5C4D14896E5C48E725B899", hash_generated_method = "D77745EBAEE38458064706CDEED6A100")
     public boolean valid() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_678729832 = getTaintBoolean();

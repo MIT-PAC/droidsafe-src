@@ -96,6 +96,7 @@ public class CSeq extends SIPHeader implements javax.sip.header.CSeqHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.230 -0400", hash_original_method = "A65B682B0B822D8527FBE88A2FCA60FC", hash_generated_method = "3210B6BD6941EBCD6566B534309AF665")
     public String getMethod() {
         String varB4EAC82CA7396A68D541C85D26508E83_566061136 = null; 

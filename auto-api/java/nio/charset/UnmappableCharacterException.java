@@ -21,6 +21,7 @@ public class UnmappableCharacterException extends CharacterCodingException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.036 -0400", hash_original_method = "99174ED6911F5F8CBB68A90343CD57CF", hash_generated_method = "202AD23BD5B4FBDCDD0925E23551913E")
     public int getInputLength() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1620621259 = getTaintInt();

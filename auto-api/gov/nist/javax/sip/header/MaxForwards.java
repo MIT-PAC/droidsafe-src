@@ -32,6 +32,7 @@ public class MaxForwards extends SIPHeader implements MaxForwardsHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.776 -0400", hash_original_method = "938FE465D8E1495DA17B5EBE827AE012", hash_generated_method = "DAB0444BCC2429A797EEB8C0A519BA55")
     public int getMaxForwards() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_968545441 = getTaintInt();
@@ -80,6 +81,7 @@ public class MaxForwards extends SIPHeader implements MaxForwardsHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.779 -0400", hash_original_method = "5954B7E2243EB0AA755A2C7023AF3E50", hash_generated_method = "D01FAE9617F1D879513B5CC4D78A0D1F")
     public boolean hasReachedZero() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1951288386 = getTaintBoolean();

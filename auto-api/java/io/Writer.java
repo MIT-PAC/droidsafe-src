@@ -170,6 +170,7 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.183 -0400", hash_original_method = "0FEA708DB7A5B3B6D16FEC9623D0EEF8", hash_generated_method = "2DF97D8A99F7165B7BAE2DBD862AE898")
      boolean checkError() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_640590744 = getTaintBoolean();

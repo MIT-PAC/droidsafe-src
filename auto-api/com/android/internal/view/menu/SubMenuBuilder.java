@@ -80,6 +80,7 @@ public class SubMenuBuilder extends MenuBuilder implements SubMenu {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.617 -0400", hash_original_method = "EFEC7F93A39736AF8130A49104B9A895", hash_generated_method = "9C645CF9AE962D7F6D81115C16BC134F")
     public Menu getParentMenu() {
         Menu varB4EAC82CA7396A68D541C85D26508E83_2108888541 = null; 
@@ -91,6 +92,7 @@ public class SubMenuBuilder extends MenuBuilder implements SubMenu {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.617 -0400", hash_original_method = "B68A5ADECB21212250B72B1DD0399FE9", hash_generated_method = "7D6A227157F4687D5BB58F6568967CC8")
     public MenuItem getItem() {
         MenuItem varB4EAC82CA7396A68D541C85D26508E83_1729967802 = null; 
@@ -113,6 +115,7 @@ public class SubMenuBuilder extends MenuBuilder implements SubMenu {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.618 -0400", hash_original_method = "DFDE0312E92BA6118839C252C79690F8", hash_generated_method = "5C5B60AF9493C81B425986F215AE4D48")
     @Override
     public MenuBuilder getRootMenu() {

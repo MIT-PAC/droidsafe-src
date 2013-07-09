@@ -38,6 +38,7 @@ public class X9ECPoint extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.451 -0400", hash_original_method = "D52AE13C55E681838944F7D6A70D7ED5", hash_generated_method = "16BA955F3670ADCC1B4F53F345049465")
     public ECPoint getPoint() {
         ECPoint varB4EAC82CA7396A68D541C85D26508E83_2088691219 = null; 

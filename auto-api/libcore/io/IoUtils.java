@@ -57,6 +57,7 @@ public final class IoUtils {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static void closeQuietly(Socket socket) {
         if (socket != null) {
             try {

@@ -466,6 +466,7 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.891 -0400", hash_original_method = "D61E1D458239E8CEF9B36F4B5C04FED9", hash_generated_method = "D256D41A914078146CE9E0B381CB8E5F")
      WebView getWebView() {
         WebView varB4EAC82CA7396A68D541C85D26508E83_2070735467 = null; 
@@ -477,37 +478,44 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.891 -0400", hash_original_method = "450372CEC4ACF74D667E8FE30D4758C3", hash_generated_method = "4F553D58F082C1728E8C193907AAEE2A")
     private void nativeOnPrepared(int duration, int width, int height, int nativePointer) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.891 -0400", hash_original_method = "69439EE53B1C4D974D568FFBF0847B4A", hash_generated_method = "606701CDB9ADB798998660283F8BB0CA")
     private void nativeOnEnded(int nativePointer) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.892 -0400", hash_original_method = "A4A54DE61D62E407521E72B4C5FDD860", hash_generated_method = "FCF75D98885EFEC14C33BE0CD19DDC1D")
     private void nativeOnPaused(int nativePointer) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.892 -0400", hash_original_method = "84652220F84E924B202B7575A6B0DB08", hash_generated_method = "244F590E15C6B3F7B8C744921F972E2E")
     private void nativeOnPosterFetched(Bitmap poster, int nativePointer) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.892 -0400", hash_original_method = "40EE80299CDDB294EE4D171341428EFD", hash_generated_method = "04ABF3516A1C313065D46866A8B341C6")
     private void nativeOnTimeupdate(int position, int nativePointer) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.892 -0400", hash_original_method = "73782D526ACC6162F582FA042F7A8C14", hash_generated_method = "1DA2104914209C6F0AED0256CC37B268")
     private void nativeOnStopFullscreen(int nativePointer) {
     }
 
     
-        private static boolean nativeSendSurfaceTexture(SurfaceTexture texture,
+        @DSModeled(DSC.SAFE)
+    private static boolean nativeSendSurfaceTexture(SurfaceTexture texture,
             int baseLayer, int videoLayerId, int textureName,
             int playerState) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1661271996 = DSUtils.UNKNOWN_BOOLEAN;

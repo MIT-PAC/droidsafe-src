@@ -109,6 +109,7 @@ public final class NdefMessage implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.037 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E2B75643688C6C69C5451FFFD9A98C65")
     @Override
     public int describeContents() {
@@ -133,6 +134,7 @@ public final class NdefMessage implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.038 -0400", hash_original_method = "58C82E5C0DBA98ED651A9002B9916229", hash_generated_method = "9398777C439B652B911DB44500CAE8C3")
     private int parseNdefMessage(byte[] data) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2021076147 = getTaintInt();

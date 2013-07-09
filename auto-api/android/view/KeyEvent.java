@@ -546,6 +546,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getMaxKeyCode() {
         return LAST_KEYCODE;
     }
@@ -824,11 +825,13 @@ public class KeyEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getModifierMetaStateMask() {
         return META_MODIFIER_MASK;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isModifierKey(int keyCode) {
         switch (keyCode) {
             case KEYCODE_SHIFT_LEFT:
@@ -849,6 +852,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int normalizeMetaState(int metaState) {
         if ((metaState & (META_SHIFT_LEFT_ON | META_SHIFT_RIGHT_ON)) != 0) {
             metaState |= META_SHIFT_ON;
@@ -1451,6 +1455,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.309 -0400", hash_original_method = "7ECA2477AC40357C7C5AFE00DC4BDA17", hash_generated_method = "BE0804942F300D6C5D8DBB1422F16855")
     private boolean native_isSystemKey(int keyCode) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1033012431 = getTaintBoolean();
@@ -1458,6 +1463,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.309 -0400", hash_original_method = "B29C954784C1F1FDE17D757BB04FDB3D", hash_generated_method = "51AEA24F882B2F3A301EEEFA15086F7D")
     private boolean native_hasDefaultAction(int keyCode) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1872248418 = getTaintBoolean();

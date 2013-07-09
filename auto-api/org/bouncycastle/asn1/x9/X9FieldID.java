@@ -89,6 +89,7 @@ public class X9FieldID extends ASN1Encodable implements X9ObjectIdentifiers {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.472 -0400", hash_original_method = "A03C04E1D63CA4FFA1D88D7678177C2A", hash_generated_method = "656A93224BA85030569699000E6F6538")
     public DERObjectIdentifier getIdentifier() {
         DERObjectIdentifier varB4EAC82CA7396A68D541C85D26508E83_1029093829 = null; 
@@ -100,6 +101,7 @@ public class X9FieldID extends ASN1Encodable implements X9ObjectIdentifiers {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.472 -0400", hash_original_method = "1898F00B5F10CC32C939404F88AE77E4", hash_generated_method = "80BF440BB7CA86AF2D8E2D53D00A1C3E")
     public DERObject getParameters() {
         DERObject varB4EAC82CA7396A68D541C85D26508E83_1447304803 = null; 

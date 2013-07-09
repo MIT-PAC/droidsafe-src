@@ -1255,6 +1255,7 @@ public class IntentFilter implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.341 -0400", hash_original_method = "FBEEEBAC37A62143C058604C825166BE", hash_generated_method = "FAA86961381098BE1F24D9CEF388576D")
     public boolean debugCheck() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_850689532 = getTaintBoolean();

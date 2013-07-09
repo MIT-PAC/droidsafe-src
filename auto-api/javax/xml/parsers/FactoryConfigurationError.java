@@ -80,6 +80,7 @@ public class FactoryConfigurationError extends Error {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.687 -0400", hash_original_method = "DEACD8BC5F5C015493740DB375DC8E7E", hash_generated_method = "86951BCD0057D83C1A0F0327D511DC6F")
     public Exception getException() {
         Exception varB4EAC82CA7396A68D541C85D26508E83_765876701 = null; 

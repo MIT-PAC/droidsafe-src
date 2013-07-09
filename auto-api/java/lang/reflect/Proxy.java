@@ -168,6 +168,7 @@ public class Proxy implements Serializable {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static Class generateProxy(String name, Class[] interfaces,
         ClassLoader loader) {
                 
@@ -180,6 +181,7 @@ public class Proxy implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void constructorPrototype(InvocationHandler h) {
     }
 

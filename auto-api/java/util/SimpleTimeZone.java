@@ -183,6 +183,7 @@ public class SimpleTimeZone extends TimeZone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.681 -0400", hash_original_method = "80F5C5F4A535ECB3386672D31D5CF9AA", hash_generated_method = "9D97BA4DD2819B6BE677A95F162BB738")
     @Override
     public int getDSTSavings() {
@@ -347,6 +348,7 @@ public class SimpleTimeZone extends TimeZone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.684 -0400", hash_original_method = "D90129E49D21D0E2F7EA4F6539F9D2CB", hash_generated_method = "8AEFF96ACCA79C956FC1E960C3D5A722")
     @Override
     public int getRawOffset() {
@@ -380,6 +382,7 @@ public class SimpleTimeZone extends TimeZone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.685 -0400", hash_original_method = "4BB4BBFFC89848EE3A9E98B493F95D5F", hash_generated_method = "9F195DEEB86BBD7EB2E0F80EB90EB86F")
     @Override
     public boolean hasSameRules(TimeZone zone) {
@@ -421,6 +424,7 @@ public class SimpleTimeZone extends TimeZone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.685 -0400", hash_original_method = "8AD8F18B8E2CE991A6AB313B3340B306", hash_generated_method = "9C4BAFF48E5092821609717299ADE873")
     private boolean isLeapYear(int year) {
         addTaint(year);
@@ -434,6 +438,7 @@ public class SimpleTimeZone extends TimeZone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.686 -0400", hash_original_method = "EABB822EA3A4CED689A420DE5F07AD18", hash_generated_method = "CDA3756AD03EAAAF7FD0AFFAC5ACD26D")
     private int mod7(int num1) {
         int rem = num1 % 7;
@@ -595,6 +600,7 @@ public class SimpleTimeZone extends TimeZone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.688 -0400", hash_original_method = "C8A257B93E1C51862FD9A30D6A75C66A", hash_generated_method = "565DCC6768A82C6D61497D0F194E6405")
     @Override
     public void setRawOffset(int offset) {
@@ -692,6 +698,7 @@ public class SimpleTimeZone extends TimeZone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.691 -0400", hash_original_method = "7CBF25AFDCF863C97C11F8D0CB7F66E7", hash_generated_method = "0EAB2221FE5CC0E50F7ABB3F73F14E8B")
     public void setStartYear(int year) {
         startYear = year;
@@ -738,6 +745,7 @@ public class SimpleTimeZone extends TimeZone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.694 -0400", hash_original_method = "7C1BE50DE9C29B43BADE36CF66AF8A96", hash_generated_method = "3ED8C8D1AA1118DC8BE132AF2D2081B5")
     @Override
     public boolean useDaylightTime() {

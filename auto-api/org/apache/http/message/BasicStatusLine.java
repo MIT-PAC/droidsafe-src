@@ -52,6 +52,7 @@ public class BasicStatusLine implements StatusLine, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.244 -0400", hash_original_method = "95EA9BAD16482D8308F9206838B315E7", hash_generated_method = "D893F0EA9B55B0D323FF74B843770B31")
     public int getStatusCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1726539549 = getTaintInt();
@@ -61,6 +62,7 @@ public class BasicStatusLine implements StatusLine, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.244 -0400", hash_original_method = "428750DB8A2FD05AED2F69E1D46A4B0B", hash_generated_method = "A57116ED8EB999866B7F16A0EFC8590A")
     public ProtocolVersion getProtocolVersion() {
         ProtocolVersion varB4EAC82CA7396A68D541C85D26508E83_207199453 = null; 
@@ -72,6 +74,7 @@ public class BasicStatusLine implements StatusLine, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.245 -0400", hash_original_method = "F68F7EAA9CC529FF206693909CBAA2FE", hash_generated_method = "AF6B2DEE56B074D121F8A071A645A693")
     public String getReasonPhrase() {
         String varB4EAC82CA7396A68D541C85D26508E83_673888634 = null; 

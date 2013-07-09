@@ -35,6 +35,7 @@ public abstract class FragmentPagerAdapter extends PagerAdapter {
     public abstract Fragment getItem(int position);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.982 -0400", hash_original_method = "40E78EFA38F0994EA71F26DADE781C52", hash_generated_method = "369CD737611E25F82302A46324A3B366")
     @Override
     public void startUpdate(ViewGroup container) {
@@ -165,6 +166,7 @@ public abstract class FragmentPagerAdapter extends PagerAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.986 -0400", hash_original_method = "9C10790C9B509FF6855ECD7BB4443BBC", hash_generated_method = "D349C03AC5240D44F65C535F02E19E3E")
     @Override
     public Parcelable saveState() {
@@ -177,6 +179,7 @@ public abstract class FragmentPagerAdapter extends PagerAdapter {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.986 -0400", hash_original_method = "17638DDA6DE27E971DE60A544D06348C", hash_generated_method = "39AEF52BF08FA84CF7C745447205D131")
     @Override
     public void restoreState(Parcelable state, ClassLoader loader) {

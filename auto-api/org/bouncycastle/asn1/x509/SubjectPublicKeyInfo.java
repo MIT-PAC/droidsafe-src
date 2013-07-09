@@ -100,6 +100,7 @@ public class SubjectPublicKeyInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.921 -0400", hash_original_method = "47532F5520D2937711F415E7F39EF8B8", hash_generated_method = "09CD2D0F6DFE341AACB12BFA10B759AE")
     public AlgorithmIdentifier getAlgorithmId() {
         AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_527963101 = null; 
@@ -125,6 +126,7 @@ public class SubjectPublicKeyInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.922 -0400", hash_original_method = "FD0FC1FA0D4AD47E47F52CC8C4964141", hash_generated_method = "A4D78C3AB379E888F370B8EC923A9A01")
     public DERBitString getPublicKeyData() {
         DERBitString varB4EAC82CA7396A68D541C85D26508E83_1478335887 = null; 

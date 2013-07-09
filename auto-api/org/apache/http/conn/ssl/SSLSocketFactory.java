@@ -147,6 +147,7 @@ public class SSLSocketFactory implements LayeredSocketFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SSLSocketFactory getSocketFactory() {
         return DEFAULT_FACTORY;
     }
@@ -174,6 +175,7 @@ public class SSLSocketFactory implements LayeredSocketFactory {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.458 -0400", hash_original_method = "63050927494CC5AD1D14809EA278FFBF", hash_generated_method = "B9AF274FBCAA990DD3DA8B302C011282")
     public Socket createSocket() throws IOException {
         Socket varB4EAC82CA7396A68D541C85D26508E83_845596091 = null; 
@@ -247,6 +249,7 @@ public class SSLSocketFactory implements LayeredSocketFactory {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.459 -0400", hash_original_method = "66B541002324CA4265A637C3F35D74A1", hash_generated_method = "37FA1034F12A4D0EAFF8FC9FA3ECA167")
     public boolean isSecure(Socket sock) throws IllegalArgumentException {
         {
@@ -329,6 +332,7 @@ public class SSLSocketFactory implements LayeredSocketFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.462 -0400", hash_original_method = "E4B056341E706F6A6ED43C64885CAEDA", hash_generated_method = "2724D5A3BF02BE0511658D8A5511035E")
     public X509HostnameVerifier getHostnameVerifier() {
         X509HostnameVerifier varB4EAC82CA7396A68D541C85D26508E83_2094135125 = null; 

@@ -50,6 +50,7 @@ public class Plugin {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.348 -0400", hash_original_method = "43BC08E1F7E5C666CAA2DF1AE267F887", hash_generated_method = "82BA4BBD90150800BC92B114227A965E")
     @Deprecated
     public String toString() {
@@ -62,6 +63,7 @@ public class Plugin {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.349 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "2F4AD37C25F7D0EE985A590124FAC0B8")
     @Deprecated
     public String getName() {
@@ -74,6 +76,7 @@ public class Plugin {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.349 -0400", hash_original_method = "F177C5B02553C0E0327F321BDDCEAFD5", hash_generated_method = "47B384FF0ED7EDD1FE3A495A1FC3BD7A")
     @Deprecated
     public String getPath() {
@@ -86,6 +89,7 @@ public class Plugin {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.350 -0400", hash_original_method = "893C26134B08FF7C2100195EAF1C3901", hash_generated_method = "911A6261E041D86C606DF1F321756764")
     @Deprecated
     public String getFileName() {
@@ -98,6 +102,7 @@ public class Plugin {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.350 -0400", hash_original_method = "177DD147D2F75620FD2B154278EC57FA", hash_generated_method = "3E557878D151BF31CD0F7A997419211F")
     @Deprecated
     public String getDescription() {
@@ -110,6 +115,7 @@ public class Plugin {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.350 -0400", hash_original_method = "78D9655716B683F94FF9836934A4E62F", hash_generated_method = "2801D43F1EEF02D42AA575BC5D0D1826")
     @Deprecated
     public void setName(String name) {
@@ -119,6 +125,7 @@ public class Plugin {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.351 -0400", hash_original_method = "33BABAA311E3F3938C433EAC08EFC3BD", hash_generated_method = "8BE7E7F4D87C25C2488A32AE6A9F8AD7")
     @Deprecated
     public void setPath(String path) {
@@ -128,6 +135,7 @@ public class Plugin {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.351 -0400", hash_original_method = "FADBE65C3B618F302C5F609E6BD9A536", hash_generated_method = "2CA8F8F699355A8FB34EE726CBFB218C")
     @Deprecated
     public void setFileName(String fileName) {
@@ -137,6 +145,7 @@ public class Plugin {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.351 -0400", hash_original_method = "7DA8CA555254FB07422E1E09F7168083", hash_generated_method = "5FAB393C51AB3F125A30A70FC6583651")
     @Deprecated
     public void setDescription(String description) {
@@ -146,6 +155,7 @@ public class Plugin {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.351 -0400", hash_original_method = "3DA107FCB8BA400992AD2CF017DE732E", hash_generated_method = "E830DB1AD9EE5F238838A7BD3DF4E35E")
     @Deprecated
     public void setClickHandler(PreferencesClickHandler handler) {

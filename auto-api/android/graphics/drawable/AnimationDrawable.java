@@ -115,6 +115,7 @@ public class AnimationDrawable extends DrawableContainer implements Runnable, An
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.577 -0400", hash_original_method = "58F8F26763BA19E1F1B373F32B389D6B", hash_generated_method = "ECB439A10E3DF978DA604F61EC63D0C2")
     public boolean isRunning() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1804452757 = getTaintBoolean();

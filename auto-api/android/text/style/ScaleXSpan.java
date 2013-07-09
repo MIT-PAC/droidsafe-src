@@ -33,6 +33,7 @@ public class ScaleXSpan extends MetricAffectingSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.869 -0400", hash_original_method = "305A59DEF4DC94D07B224B5DAB862393", hash_generated_method = "1F56113BF21C5A41FD5E2E89FA19BD02")
     public int getSpanTypeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_850449203 = getTaintInt();
@@ -42,6 +43,7 @@ public class ScaleXSpan extends MetricAffectingSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.869 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "F9572253427EF66A06D063D464DFD2A1")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_414620154 = getTaintInt();
@@ -61,6 +63,7 @@ public class ScaleXSpan extends MetricAffectingSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.869 -0400", hash_original_method = "EC544E0B7E0BD00BAC5AC8960BBAB7C7", hash_generated_method = "63190EBD4BF453345281EEB23842C977")
     public float getScaleX() {
         float var546ADE640B6EDFBC8A086EF31347E768_592127436 = getTaintFloat();

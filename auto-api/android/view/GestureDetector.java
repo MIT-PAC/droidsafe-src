@@ -177,6 +177,7 @@ public class GestureDetector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.373 -0400", hash_original_method = "571B39F87736E3994F3A317209D7E1C6", hash_generated_method = "8874C66605DB2FF6FE5F0E858C5BB080")
     public void setOnDoubleTapListener(OnDoubleTapListener onDoubleTapListener) {
         mDoubleTapListener = onDoubleTapListener;
@@ -185,6 +186,7 @@ public class GestureDetector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.373 -0400", hash_original_method = "14829325F18703625EF98BC2472601E3", hash_generated_method = "0B13C9500814A87A70F39F82D929A9E5")
     public void setIsLongpressEnabled(boolean isLongpressEnabled) {
         mIsLongpressEnabled = isLongpressEnabled;
@@ -193,6 +195,7 @@ public class GestureDetector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.374 -0400", hash_original_method = "880D3BB55D8069819877BA46CC6F055B", hash_generated_method = "90813D9C1757CFDBC0E60B10F3B32C9B")
     public boolean isLongpressEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2107876973 = getTaintBoolean();

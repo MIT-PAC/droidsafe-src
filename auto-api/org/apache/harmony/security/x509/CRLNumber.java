@@ -26,6 +26,7 @@ public final class CRLNumber extends ExtensionValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.689 -0400", hash_original_method = "ABBA63B4278019F3F838A8B1357B04F0", hash_generated_method = "AEB4E1358A230BF6CF85F353CE98F91C")
     public BigInteger getNumber() {
         BigInteger varB4EAC82CA7396A68D541C85D26508E83_1742149489 = null; 

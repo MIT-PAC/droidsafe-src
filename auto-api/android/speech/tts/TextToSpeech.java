@@ -121,6 +121,7 @@ public class TextToSpeech {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.313 -0400", hash_original_method = "B3E128BBA0564CAE955B890D71B1CE7C", hash_generated_method = "9D634CFE6F2CF4F7922198DF74498369")
     private String getPackageName() {
         String varB4EAC82CA7396A68D541C85D26508E83_141016466 = null; 
@@ -396,6 +397,7 @@ public class TextToSpeech {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.321 -0400", hash_original_method = "276BC175828DCE484EB0703A6A0D8E9B", hash_generated_method = "9C6B8397935C9DE309AFC40AC1B5BC3E")
     private Uri makeResourceUri(String packageName, int resourceId) {
         Uri varB4EAC82CA7396A68D541C85D26508E83_1914109783 = null; 
@@ -710,6 +712,7 @@ public class TextToSpeech {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.332 -0400", hash_original_method = "6F277B1B16E884F81974EA73065A64D8", hash_generated_method = "D45B9199FE5A820B40DA5B7DF2C6638A")
     public String getCurrentEngine() {
         String varB4EAC82CA7396A68D541C85D26508E83_2119437381 = null; 
@@ -1011,6 +1014,7 @@ public class TextToSpeech {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.351 -0400", hash_original_method = "98074E19965AB76BE23153F0217E2857", hash_generated_method = "E49C694EDAA32A66421B5D8B070F7DDD")
     public int setOnUtteranceProgressListener(UtteranceProgressListener listener) {
         mUtteranceProgressListener = listener;
@@ -1046,6 +1050,7 @@ public class TextToSpeech {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.354 -0400", hash_original_method = "FDBC18F088428D1AA4FA407CF8A38EB5", hash_generated_method = "0AD129853824954277A80DA30A4925BF")
     public boolean areDefaultsEnforced() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1664056272 = getTaintBoolean();

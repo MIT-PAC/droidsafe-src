@@ -124,6 +124,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.257 -0400", hash_original_method = "0048D9C1E27FFD1D482DB9672EA3AE03", hash_generated_method = "E996749B445568A36C63EB32C0DC252A")
     public boolean isIPv4CompatibleAddress() {
         {
@@ -141,6 +142,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.258 -0400", hash_original_method = "9F5F5CEBE580C822E7F3125E303D498E", hash_generated_method = "CBC937D973631DCEDCBAA9C65982F3B8")
     @Override
     public boolean isLinkLocalAddress() {
@@ -163,6 +165,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.258 -0400", hash_original_method = "54D483B8739F01A2815B2B8F656686DE", hash_generated_method = "99B996837D0E1471F129F6EA9CB792BC")
     @Override
     public boolean isMCGlobal() {
@@ -173,6 +176,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.258 -0400", hash_original_method = "DCFE2D7DF3B86ED730BA1C809E9E7D4A", hash_generated_method = "FA155C96A63B9C31A3BD497BAEA4ACE8")
     @Override
     public boolean isMCLinkLocal() {
@@ -183,6 +187,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.259 -0400", hash_original_method = "A2CA5CB23BE5DDD68CAA7DA2135DB2EA", hash_generated_method = "2BF3CC3B54F7126CE7F9582162433DED")
     @Override
     public boolean isMCNodeLocal() {
@@ -193,6 +198,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.259 -0400", hash_original_method = "54DE0BED5AB4157674DB2DAF2389E694", hash_generated_method = "5873676F8401FBD008BAA69E8905BF04")
     @Override
     public boolean isMCOrgLocal() {
@@ -203,6 +209,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.259 -0400", hash_original_method = "F3FC244CCF2BE8692CC93BDBE33FAF7E", hash_generated_method = "0527CA4264C38CF0C2851CA5DB36C5F8")
     @Override
     public boolean isMCSiteLocal() {
@@ -213,6 +220,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.259 -0400", hash_original_method = "421AE0BE80F642901B6D5A89B5DB9DC1", hash_generated_method = "48B357A5B257A2F2733A54EAFD07DB7C")
     @Override
     public boolean isMulticastAddress() {
@@ -223,6 +231,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.260 -0400", hash_original_method = "3C2D74882AEFA2EBBC23E3A728C5AE01", hash_generated_method = "22DCCD9D58194BF37A89A1E08EF0B125")
     @Override
     public boolean isSiteLocalAddress() {
@@ -233,6 +242,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.260 -0400", hash_original_method = "50E705BC98343A8115E00AFCB06615D7", hash_generated_method = "110DF6BEF3A887A6B00CE529839DC932")
     public int getScopeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_580578192 = getTaintInt();

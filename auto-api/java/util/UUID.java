@@ -54,6 +54,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.650 -0400", hash_original_method = "F8E8987A89D640EB2120FADDC9242C3F", hash_generated_method = "EA34B5FC32C0E91FAFEA789585BCD21B")
     private void init() {
         int msbHash = (int) (mostSigBits ^ (mostSigBits >>> 32));
@@ -147,6 +148,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.651 -0400", hash_original_method = "A0E7F1AB7FAB66E1A72A040241F18680", hash_generated_method = "FD77E7D8105EBE2C657A864E861363AE")
     public long getLeastSignificantBits() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1560314480 = getTaintLong();
@@ -156,6 +158,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.651 -0400", hash_original_method = "6EF0A7C64F608CC6275528428E67572B", hash_generated_method = "5553977392AC76F36849E5D675AFD529")
     public long getMostSignificantBits() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_803654449 = getTaintLong();
@@ -165,6 +168,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.651 -0400", hash_original_method = "33CA23C03592D558650D6881FB39BD17", hash_generated_method = "FD015E6CA3684776FE9817DC5AAA2219")
     public int version() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_206058045 = getTaintInt();
@@ -174,6 +178,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.652 -0400", hash_original_method = "F3E55A7ADD1B924C0020F2B2D27D2CBA", hash_generated_method = "FFA4D9857780F3B10559A06AEFCADA38")
     public int variant() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1468216556 = getTaintInt();
@@ -256,6 +261,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.655 -0400", hash_original_method = "A38435ECE2C3D40D1AE6B3B8E9BB77AD", hash_generated_method = "B2D9CC3B800ACA8613CE46209D92E641")
     @Override
     public boolean equals(Object object) {
@@ -279,6 +285,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.655 -0400", hash_original_method = "2C05F06EE2A592A2D5972AF8C500920F", hash_generated_method = "96527A99F4BEBE4849005DD54F3298FD")
     @Override
     public int hashCode() {

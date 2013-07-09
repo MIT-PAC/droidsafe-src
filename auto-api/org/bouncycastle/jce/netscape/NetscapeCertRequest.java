@@ -134,6 +134,7 @@ public class NetscapeCertRequest extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.239 -0400", hash_original_method = "ED4D5D58119D3F853ED82C63E0533A7D", hash_generated_method = "F23B40E94EAC5CD7FF3A7C76B5D29AD1")
     public String getChallenge() {
         String varB4EAC82CA7396A68D541C85D26508E83_828940168 = null; 
@@ -145,6 +146,7 @@ public class NetscapeCertRequest extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.240 -0400", hash_original_method = "301D77BA94E757D10A3FA603DC1F3204", hash_generated_method = "ED44293D30BFB95C03F13A1DC78A5455")
     public void setChallenge(String value) {
         challenge = value;
@@ -153,6 +155,7 @@ public class NetscapeCertRequest extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.240 -0400", hash_original_method = "DEA71583AADCBA6F6FCA4AF03E02FF7E", hash_generated_method = "8941894CF24608738B7B86B69F0ED40C")
     public AlgorithmIdentifier getSigningAlgorithm() {
         AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_1619768650 = null; 
@@ -164,6 +167,7 @@ public class NetscapeCertRequest extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.240 -0400", hash_original_method = "8DECC6DE401A18CABE51772A2768CD3E", hash_generated_method = "4234E9F4B9918E8F387A0E2A48DC8A2C")
     public void setSigningAlgorithm(AlgorithmIdentifier value) {
         sigAlg = value;
@@ -172,6 +176,7 @@ public class NetscapeCertRequest extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.241 -0400", hash_original_method = "FE7B6AD2AAFCEFF19EF5259C1AEF0E0B", hash_generated_method = "214EC3D206DA8AF096F660AB641946F3")
     public AlgorithmIdentifier getKeyAlgorithm() {
         AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_976882324 = null; 
@@ -183,6 +188,7 @@ public class NetscapeCertRequest extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.241 -0400", hash_original_method = "A707B494F7BE2B273065A846BD08233F", hash_generated_method = "3EAE43A81A989F21379DEDADCC255BDB")
     public void setKeyAlgorithm(AlgorithmIdentifier value) {
         keyAlg = value;
@@ -191,6 +197,7 @@ public class NetscapeCertRequest extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.241 -0400", hash_original_method = "B14D7737A8CCC155007C211714C134B9", hash_generated_method = "FE11604D382D10902A9430C3E766CADA")
     public PublicKey getPublicKey() {
         PublicKey varB4EAC82CA7396A68D541C85D26508E83_410208591 = null; 
@@ -202,6 +209,7 @@ public class NetscapeCertRequest extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.241 -0400", hash_original_method = "524BDADC1CE3625FA3734945CD591C94", hash_generated_method = "2D5D732B22E00431248C23383E075117")
     public void setPublicKey(PublicKey value) {
         pubkey = value;

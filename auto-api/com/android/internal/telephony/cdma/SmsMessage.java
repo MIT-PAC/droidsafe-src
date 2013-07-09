@@ -231,6 +231,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.646 -0400", hash_original_method = "B638C86EC79B8E5FA2D28FA811D2BCF0", hash_generated_method = "C9DB344D24D3B10F1C2A36284A77ED07")
     public boolean isMWIClearMessage() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1148995368 = getTaintBoolean();
@@ -240,6 +241,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.646 -0400", hash_original_method = "E19020FF854A35A2375E0A8AE070BF97", hash_generated_method = "5D508267E047CFEADDA3F44A186EE7BD")
     public boolean isMWISetMessage() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_110683430 = getTaintBoolean();
@@ -249,6 +251,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.646 -0400", hash_original_method = "2F5A490D5EB0B5469046C11BA63EC135", hash_generated_method = "AC5B301B3929984ECB67EE16D9DDDF2D")
     public boolean isMwiDontStore() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_914405766 = getTaintBoolean();
@@ -260,6 +263,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.647 -0400", hash_original_method = "03B5EE24FC37A73D7F31FE2BAB3C2BFD", hash_generated_method = "59FF5C0461C6B644F53ABB0545F85259")
     public int getStatus() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1324277217 = getTaintInt();
@@ -269,6 +273,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.647 -0400", hash_original_method = "A75C98E30CFF18DAC25DE4B33918A3F4", hash_generated_method = "7C2A014947407D824C37D730ABEF59A9")
     public boolean isStatusReportMessage() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1353852256 = getTaintBoolean();
@@ -296,6 +301,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.648 -0400", hash_original_method = "BA17728EC06E4E9670ACA616D9E29C12", hash_generated_method = "BD1075BE8ECF02328955F6B9DBBBD855")
      int getTeleService() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1904586488 = getTaintInt();
@@ -305,6 +311,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.648 -0400", hash_original_method = "1BE3451C0D43919E5115D33DA4A62DB3", hash_generated_method = "F8A955DCE19CCD908CED41F50FAB891C")
      int getMessageType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1727326277 = getTaintInt();
@@ -577,6 +584,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.653 -0400", hash_original_method = "7EF6A65398433E9B1CBF5DF28BDBF834", hash_generated_method = "108DD8899CED5E83E256F776CBBD3555")
     public MessageClass getMessageClass() {
         MessageClass varB4EAC82CA7396A68D541C85D26508E83_229254385 = null; 
@@ -712,6 +720,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.655 -0400", hash_original_method = "A11C498F23B8370C7C5D04AE2A0C173A", hash_generated_method = "BE841F22619666F99E1C3BC7DCA21A98")
     private byte convertDtmfToAscii(byte dtmfDigit) {
         byte asciiDigit;
@@ -774,6 +783,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.655 -0400", hash_original_method = "D8D3E4C6269124C18E32B3734994B647", hash_generated_method = "48544C8A9E9F0E6199943D6CCAADCC38")
      int getNumOfVoicemails() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2106661654 = getTaintInt();

@@ -19,6 +19,7 @@ public final class Permissions extends PermissionCollection implements Serializa
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.423 -0400", hash_original_method = "4200EBEC7A86784BE2F7368AF2D9C4EB", hash_generated_method = "ECE2B96F5A9914468145E1A1BFE50E5E")
     public void add(Permission permission) {
         addTaint(permission.getTaint());
@@ -38,6 +39,7 @@ public final class Permissions extends PermissionCollection implements Serializa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.424 -0400", hash_original_method = "15107D2478EB5CA607140B3E4F96BD4D", hash_generated_method = "9D03B976E3475A7EDB57F21C7C193C1F")
     public boolean implies(Permission permission) {
         addTaint(permission.getTaint());

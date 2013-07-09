@@ -87,6 +87,7 @@ public class Time {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.826 -0400", hash_original_method = "7DE92E5F5A39A244E977EE497A88E369", hash_generated_method = "230C11CA4ABABF5FBBACEB49AB241BDF")
     public long normalize(boolean ignoreDst) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1147118568 = getTaintLong();
@@ -94,6 +95,7 @@ public class Time {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.826 -0400", hash_original_method = "13E8DE21AE4CB3AA83156EE3A5950ED3", hash_generated_method = "D76B3D1C69C48ED15F43AFBE3183BFB6")
     public void switchTimezone(String timezone) {
     }
@@ -177,6 +179,7 @@ public class Time {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeCompare(Time a, Time b) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_450183953 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_450183953;
@@ -271,6 +274,7 @@ public class Time {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.831 -0400", hash_original_method = "751765C8BBD19CCE2EF370E3AB9D4D19", hash_generated_method = "CC9E7C3FAB0B3C60FBFB40FF6979F754")
     private String format1(String format) {
     	String s = new String();
@@ -280,6 +284,7 @@ public class Time {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.831 -0400", hash_original_method = "D4E4943029EE450E10D723A13B21ADBA", hash_generated_method = "93A7BDD7A073B21936AAAC2D97F258FB")
     @Override
     public String toString() {
@@ -310,6 +315,7 @@ public class Time {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.832 -0400", hash_original_method = "715F84C962A7921497F55D5349A2140A", hash_generated_method = "545CA5371FA20D66D4D12AD6DD91B7E9")
     private boolean nativeParse(String s) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_781189062 = getTaintBoolean();
@@ -338,6 +344,7 @@ public class Time {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.832 -0400", hash_original_method = "57499E6D502331FE1EE9DA37E2D15CA3", hash_generated_method = "A684D31353A00752FFF90B6CEA663DEA")
     private boolean nativeParse3339(String s) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_520263965 = getTaintBoolean();
@@ -351,11 +358,13 @@ public class Time {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.833 -0400", hash_original_method = "6CDA1CA0525F04C652EDF79AA26F0E90", hash_generated_method = "0DE05A8FA6CB506B4E2313C7C1218631")
     public void setToNow() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.833 -0400", hash_original_method = "C1956449864825DE1FCC969EAC519409", hash_generated_method = "0BC38B542EDC4C3F2E36E00C8F60CFA8")
     public long toMillis(boolean ignoreDst) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_416694944 = getTaintLong();
@@ -363,11 +372,13 @@ public class Time {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.833 -0400", hash_original_method = "934B6518FEFEB3D5C2DEFA32BEB78382", hash_generated_method = "8657361F6180A2504388BAF20D08B3C7")
     public void set(long millis) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.834 -0400", hash_original_method = "41A869EF339B8E1FD69184435BC2AFF4", hash_generated_method = "80016ED483EF4736E85C065EFF5B1D3A")
     public String format2445() {
     	String s = new String();
@@ -376,6 +387,7 @@ public class Time {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.834 -0400", hash_original_method = "F960E973DC6F4E791CEC3120624756A7", hash_generated_method = "F3630183AFFC264D42CFEAC437A98BBF")
     public void set(Time that) {
         this.timezone = that.timezone;
@@ -406,6 +418,7 @@ public class Time {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.835 -0400", hash_original_method = "667ED0F0E30647AFF648664194B11038", hash_generated_method = "92D1427CCBADBE4F26EBE19367B4E729")
     public void set(int second, int minute, int hour, int monthDay, int month, int year) {
         this.allDay = false;
@@ -434,6 +447,7 @@ public class Time {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.835 -0400", hash_original_method = "C60C1B5EF923FFCA596CDB2EA96B61D3", hash_generated_method = "EAC3BE484C3CAD4661E56F149A905065")
     public void set(int monthDay, int month, int year) {
         this.allDay = true;
@@ -570,6 +584,7 @@ public class Time {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getJulianDay(long millis, long gmtoff) {
         long offsetMillis = gmtoff * 1000;
         long julianDay = (millis + offsetMillis) / DateUtils.DAY_IN_MILLIS;
@@ -606,6 +621,7 @@ public class Time {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getWeeksSinceEpochFromJulianDay(int julianDay, int firstDayOfWeek) {
         int diff = THURSDAY - firstDayOfWeek;
         if (diff < 0) {
@@ -616,6 +632,7 @@ public class Time {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getJulianMondayFromWeeksSinceEpoch(int week) {
         return MONDAY_BEFORE_JULIAN_EPOCH + week * 7;
     }

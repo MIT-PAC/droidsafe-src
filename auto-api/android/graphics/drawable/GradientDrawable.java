@@ -286,6 +286,7 @@ public class GradientDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.057 -0400", hash_original_method = "0886E73CB45EE282B3AFC0BE37F5BE6C", hash_generated_method = "12372C13552DB274975401E8D751F840")
     private int modulateAlpha(int alpha) {
         int scale = mAlpha + (mAlpha >> 7);
@@ -547,6 +548,7 @@ public class GradientDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.063 -0400", hash_original_method = "AB3D570DA2A917C408AB4F7D8FCD7103", hash_generated_method = "6FA936DE312471392C2A8920D4CE0E4A")
     @Override
     public int getOpacity() {
@@ -1017,6 +1019,7 @@ public class GradientDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.073 -0400", hash_original_method = "312782D78F9C32949C3B038C307C5C9C", hash_generated_method = "16D4A8856F789CC5592B7205678A572B")
     @Override
     public int getIntrinsicWidth() {
@@ -1027,6 +1030,7 @@ public class GradientDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.073 -0400", hash_original_method = "A19A1B01925414A773BB5AE9FBB4894A", hash_generated_method = "1B8644C87993C258C364236FEB469C23")
     @Override
     public int getIntrinsicHeight() {

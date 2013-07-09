@@ -30,6 +30,7 @@ public final class PolicyInformation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.294 -0400", hash_original_method = "012FFA67DCC82ECD3E1505D0CB12E6E1", hash_generated_method = "22937885C5320E3FF8408418A04C8D41")
     public String getPolicyIdentifier() {
         String varB4EAC82CA7396A68D541C85D26508E83_1652091486 = null; 

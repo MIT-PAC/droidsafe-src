@@ -957,6 +957,7 @@ public class ActionBarImpl extends ActionBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.736 -0400", hash_original_method = "2AD2D5B38A8D730799170A69D020CCD7", hash_generated_method = "3DDDAFFE94EBD8101823D57E30B4B1C3")
     @Override
     public Tab getSelectedTab() {

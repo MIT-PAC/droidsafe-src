@@ -109,6 +109,7 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
             }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.920 -0400", hash_original_method = "85D93BA99AF40F5CDC3F42570A89C9FC", hash_generated_method = "BE619D13CAF85822181B65989DC845A9")
     private void computeMaxSize() {
         threshold = (int) ((long) elementData.length * loadFactor / 10000);

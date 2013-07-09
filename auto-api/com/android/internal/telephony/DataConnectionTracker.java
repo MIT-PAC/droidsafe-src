@@ -294,6 +294,7 @@ public abstract class DataConnectionTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.974 -0400", hash_original_method = "838D9E0EFB087A153045FCBAD3FD613D", hash_generated_method = "420C74BA32C8BCCF992E6DC739618A6F")
     protected void onActionIntentReconnectAlarm(Intent intent) {
         
@@ -320,6 +321,7 @@ public abstract class DataConnectionTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.975 -0400", hash_original_method = "A1F89C02319CA5D605879D459A1AC731", hash_generated_method = "3FEAEA4575AE79EF12AD9D0E66CF0B9A")
     protected void onActionIntentDataStallAlarm(Intent intent) {
         
@@ -375,6 +377,7 @@ public abstract class DataConnectionTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.980 -0400", hash_original_method = "3F17133E8D63AE8C7414DC58966291E3", hash_generated_method = "1F3DDD83CBF5CBBC35A161C22AB7F759")
     public Activity getActivity() {
         Activity varB4EAC82CA7396A68D541C85D26508E83_2042793680 = null; 
@@ -447,6 +450,7 @@ public abstract class DataConnectionTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.982 -0400", hash_original_method = "F0E40F922DBB5D19CCBEC497FB284EC5", hash_generated_method = "97C457D1AA99D998A83D8C843739C4E5")
     public String[] getActiveApnTypes() {
         String[] varB4EAC82CA7396A68D541C85D26508E83_1387878627 = null; 
@@ -473,6 +477,7 @@ public abstract class DataConnectionTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.982 -0400", hash_original_method = "8A278F7563F3F2CC899D3E200DD135CD", hash_generated_method = "158B12FADC11F2E727F9EBC562EA31CB")
     public String getActiveApnString(String apnType) {
         String varB4EAC82CA7396A68D541C85D26508E83_692480548 = null; 
@@ -1138,6 +1143,7 @@ public abstract class DataConnectionTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.003 -0400", hash_original_method = "453A43A7EADEB97159250F7F1E9B04E5", hash_generated_method = "9ADA56ECE75BF75145F58F5F4F8829A1")
     protected synchronized boolean isApnIdEnabled(int id) {
         addTaint(id);
@@ -1316,6 +1322,7 @@ public abstract class DataConnectionTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.006 -0400", hash_original_method = "FBAA4A80E4538BA497646C5AED60D911", hash_generated_method = "32D68D2D8870859115DE7BFCF2679FE7")
     protected void onEnableNewApn() {
         
@@ -1456,6 +1463,7 @@ public abstract class DataConnectionTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.010 -0400", hash_original_method = "CE2949FE6361D634BBA79ED70CC5EAE2", hash_generated_method = "2FE2F2DA1817B656777C8A5B772A6D15")
     protected void onSetDependencyMet(String apnType, boolean met) {
         

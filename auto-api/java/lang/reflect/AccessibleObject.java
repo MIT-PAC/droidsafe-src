@@ -29,7 +29,8 @@ public class AccessibleObject implements AnnotatedElement {
 		}
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.644 -0400", hash_original_method = "66D52F3844786BE4BB43647AC248F3A6", hash_generated_method = "95A33A80B780C0E612E35DA78F4A3A7D")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.644 -0400", hash_original_method = "66D52F3844786BE4BB43647AC248F3A6", hash_generated_method = "95A33A80B780C0E612E35DA78F4A3A7D")
 	public boolean isAccessible() {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1040446533 = getTaintBoolean();
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1040446533;
@@ -37,7 +38,8 @@ public class AccessibleObject implements AnnotatedElement {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.644 -0400", hash_original_method = "1000999C704703264C7A249C905DEAE6", hash_generated_method = "D0859DDEC273DE0EC754854BC0CB46EB")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.644 -0400", hash_original_method = "1000999C704703264C7A249C905DEAE6", hash_generated_method = "D0859DDEC273DE0EC754854BC0CB46EB")
 	public void setAccessible(boolean flag) {
 		this.flag = flag;
 		
@@ -190,7 +192,8 @@ public class AccessibleObject implements AnnotatedElement {
 		return StringUtils.combineStrings(annotation);
 	}
 
-	private static Object[] getClassSignatureAnnotation(Class clazz) {
+	@DSModeled(DSC.SAFE)
+    private static Object[] getClassSignatureAnnotation(Class clazz) {
 		
 		Object[] ret = new Object[0];
 		ret[0].addTaint(clazz.taint);

@@ -23,11 +23,13 @@ public final class BlockGuard {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static Policy getThreadPolicy() {
         return threadPolicy.get();
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void setThreadPolicy(Policy policy) {
         if (policy == null) {
             throw new NullPointerException("policy == null");

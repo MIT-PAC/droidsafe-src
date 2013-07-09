@@ -26,6 +26,7 @@ public class SIPDuplicateHeaderException extends ParseException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.916 -0400", hash_original_method = "33B1FEC769A0D2DAFD3ECF3DA486EB50", hash_generated_method = "1CC67C8B8D0FCAC62933BF5AA07188C5")
     public SIPMessage getSIPMessage() {
         SIPMessage varB4EAC82CA7396A68D541C85D26508E83_2133794409 = null; 
@@ -37,6 +38,7 @@ public class SIPDuplicateHeaderException extends ParseException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.918 -0400", hash_original_method = "41260058ED6F5F8ADF876F4D655653A8", hash_generated_method = "910459DB729A1833869B18181F5D4296")
     public SIPHeader getSIPHeader() {
         SIPHeader varB4EAC82CA7396A68D541C85D26508E83_151271386 = null; 
@@ -48,6 +50,7 @@ public class SIPDuplicateHeaderException extends ParseException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.918 -0400", hash_original_method = "E64CE5D80349BACB9139631838659CEE", hash_generated_method = "54A8AC61F5E0FDF2C9E9E70D47DD6023")
     public void setSIPHeader(SIPHeader sipHeader) {
         this.sipHeader = sipHeader;
@@ -56,6 +59,7 @@ public class SIPDuplicateHeaderException extends ParseException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.919 -0400", hash_original_method = "04933E08E06609AAF868A53B1081ADDB", hash_generated_method = "F27364F03913DE15CDB0E9D8906CEC34")
     public void setSIPMessage(SIPMessage sipMessage) {
         this.sipMessage = sipMessage;

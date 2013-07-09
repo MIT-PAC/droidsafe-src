@@ -27,6 +27,7 @@ public class MissingFormatWidthException extends IllegalFormatException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.307 -0400", hash_original_method = "4D96301902AD0649417B90D095E1EDFD", hash_generated_method = "155FFDE7D58CE115755D28F5B305A738")
     public String getFormatSpecifier() {
         String varB4EAC82CA7396A68D541C85D26508E83_1429950432 = null; 
@@ -38,6 +39,7 @@ public class MissingFormatWidthException extends IllegalFormatException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.308 -0400", hash_original_method = "0A4C8E3EAB801D8800E3A2D920D74C80", hash_generated_method = "5561D18DB695BA591E1D045B01774B3C")
     @Override
     public String getMessage() {

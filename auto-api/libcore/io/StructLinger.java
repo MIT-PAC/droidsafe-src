@@ -26,6 +26,7 @@ public final class StructLinger {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.487 -0400", hash_original_method = "9E5D902293FF11591147857F4F3E0D72", hash_generated_method = "2C3C5EA3E23F526C27FAE4B834771888")
     public boolean isOn() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1266621199 = getTaintBoolean();

@@ -134,11 +134,13 @@ public class FileFilterUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static IOFileFilter directoryFileFilter() {
         return DirectoryFileFilter.DIRECTORY;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static IOFileFilter fileFileFilter() {
         return FileFileFilter.FILE;
     }
@@ -189,11 +191,13 @@ public class FileFilterUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static IOFileFilter trueFileFilter() {
         return TrueFileFilter.TRUE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static IOFileFilter falseFileFilter() {
         return FalseFileFilter.FALSE;
     }

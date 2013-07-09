@@ -463,6 +463,7 @@ public abstract class Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.950 -0400", hash_original_method = "90F96A059D406483E44444E82D555D1F", hash_generated_method = "782E3AA121973F6AE0E5AF0FF90B3D16")
     public int getEllipsizedWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_462555178 = getTaintInt();

@@ -82,6 +82,7 @@ public final class StackTraceElement implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.726 -0400", hash_original_method = "BE14A042BD1289020FF0D183A63A0F88", hash_generated_method = "6DCB562C4080FC172D413F72C786B157")
     public String getClassName() {
         String varB4EAC82CA7396A68D541C85D26508E83_2063411066 = null; 
@@ -93,6 +94,7 @@ public final class StackTraceElement implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.727 -0400", hash_original_method = "0038085273B4122A69DA20E0B00D2EF2", hash_generated_method = "555C11F2145F6F71F4C3E8E933858192")
     public String getFileName() {
         String varB4EAC82CA7396A68D541C85D26508E83_2107724463 = null; 
@@ -104,6 +106,7 @@ public final class StackTraceElement implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.727 -0400", hash_original_method = "0B737233CC5342C14C595BEE1A87604B", hash_generated_method = "F4D75020FBC4683FCF4D3DC76D986641")
     public int getLineNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1619354063 = getTaintInt();
@@ -113,6 +116,7 @@ public final class StackTraceElement implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.727 -0400", hash_original_method = "B15DF5174FD0E5C814CD72B1EE2ECDA2", hash_generated_method = "9C9685FAEA5D2531D2A3229ED10BB3A1")
     public String getMethodName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1436852254 = null; 
@@ -139,6 +143,7 @@ public final class StackTraceElement implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.728 -0400", hash_original_method = "9234CE459C30A5F4896C026CB51E3A9C", hash_generated_method = "97EEC24C1E5F3E483B0338B28788F9EE")
     public boolean isNativeMethod() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_581675613 = getTaintBoolean();

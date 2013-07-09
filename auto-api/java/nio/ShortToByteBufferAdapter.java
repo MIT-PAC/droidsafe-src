@@ -244,6 +244,7 @@ final class ShortToByteBufferAdapter extends ShortBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.471 -0400", hash_original_method = "22273AD75DCD1D369E6F6089E4C15AAA", hash_generated_method = "012159E25DBB61BD6636768CFEFC89BC")
     @Override
     protected boolean protectedHasArray() {

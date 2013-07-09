@@ -26,6 +26,7 @@ public class AccessibilityDelegateCompat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:02.818 -0400", hash_original_method = "29194344028099349300BA7E9C8229CD", hash_generated_method = "D95A343C69B35190E2DC986D56B10747")
      Object getBridge() {
         Object varB4EAC82CA7396A68D541C85D26508E83_823429421 = null; 

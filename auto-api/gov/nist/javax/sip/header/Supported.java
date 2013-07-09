@@ -52,6 +52,7 @@ public class Supported extends SIPHeader implements SupportedHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.724 -0400", hash_original_method = "CAE88651ED9FF39412B77E9D96C77B38", hash_generated_method = "3CA599FE6FF3858459A85AB8F19AA4B1")
     public String encodeBody() {
         String varB4EAC82CA7396A68D541C85D26508E83_689296663 = null; 
@@ -79,6 +80,7 @@ public class Supported extends SIPHeader implements SupportedHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.726 -0400", hash_original_method = "CE304AE728C556B979775346D4C5B456", hash_generated_method = "28CC56A8CBA2DD2359EE17D5F59297AF")
     public String getOptionTag() {
         String varB4EAC82CA7396A68D541C85D26508E83_2038567944 = null; 

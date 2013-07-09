@@ -331,6 +331,7 @@ class IconLoader extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int bitToBnW(int bit) {
         if(bit == 1){
             return Color.WHITE;
@@ -376,6 +377,7 @@ class IconLoader extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int getMask(int numOfBits) {
         int mask = 0x00;
         switch (numOfBits) {

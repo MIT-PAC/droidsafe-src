@@ -66,6 +66,7 @@ public final class NetworkInterface extends Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.518 -0400", hash_original_method = "BFC291A64FD07504405088442BFF58AA", hash_generated_method = "15AE5EA2A1175878C7CF627B21154C85")
     public int getIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1712544714 = getTaintInt();
@@ -75,6 +76,7 @@ public final class NetworkInterface extends Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.520 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "E4B32443A9781B477043B22AE6420253")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1883473351 = null; 
@@ -98,6 +100,7 @@ public final class NetworkInterface extends Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.523 -0400", hash_original_method = "8EA44302895F236212D41E0DDEBDF9A7", hash_generated_method = "78E4CA2B0768D9721CBD4929E9153E1E")
     public String getDisplayName() {
         String varB4EAC82CA7396A68D541C85D26508E83_699340897 = null; 
@@ -384,6 +387,7 @@ public final class NetworkInterface extends Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.531 -0400", hash_original_method = "0171D836B0B5DAF8B2EBF67B786C53D8", hash_generated_method = "C12FD99125C8C3A419F348B5529521F1")
     public NetworkInterface getParent() {
         NetworkInterface varB4EAC82CA7396A68D541C85D26508E83_1242423314 = null; 
@@ -505,6 +509,7 @@ public final class NetworkInterface extends Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.535 -0400", hash_original_method = "8D88E2F84D40F104BBA78B3610BC12B1", hash_generated_method = "55086F6ECF6B73B471A2CA88BAFC24CF")
     public boolean isVirtual() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_696045750 = getTaintBoolean();

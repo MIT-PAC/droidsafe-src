@@ -88,6 +88,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.043 -0400", hash_original_method = "95F8746C49CE2A7FBF7EA83DF206E003", hash_generated_method = "583A1DFAF8BEA0E16BDAD2325E13062D")
     public Locale getLocale() {
         Locale varB4EAC82CA7396A68D541C85D26508E83_1892572234 = null; 
@@ -99,6 +100,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.044 -0400", hash_original_method = "E1E6237F606789C7A5294059179DF025", hash_generated_method = "FA97E55A4BCAC0A65D70D7CE81BFC464")
     public int getMaxAddressLineIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1308890304 = getTaintInt();
@@ -171,6 +173,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.052 -0400", hash_original_method = "D108F727B4ED1E44A68F4DDDAA8864A4", hash_generated_method = "4348A2575492890C5BC181D3A743CA01")
     public String getFeatureName() {
         String varB4EAC82CA7396A68D541C85D26508E83_2091858008 = null; 
@@ -182,6 +185,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.052 -0400", hash_original_method = "49225B599976EB86160DDAF83CE5BC7F", hash_generated_method = "1D26184E4D899C0F02D8A649DE7F872A")
     public void setFeatureName(String featureName) {
         mFeatureName = featureName;
@@ -190,6 +194,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.053 -0400", hash_original_method = "EDE4D65E7936029E84B8376D150F4DDE", hash_generated_method = "53896020E7C505BD34F5E4C99DBD42E3")
     public String getAdminArea() {
         String varB4EAC82CA7396A68D541C85D26508E83_1389697085 = null; 
@@ -201,6 +206,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.053 -0400", hash_original_method = "C8D449D9A4FBB2AF83806F488A8CAC1C", hash_generated_method = "40C7CFB20A367AD4F7EDC68C1A3AAE86")
     public void setAdminArea(String adminArea) {
         this.mAdminArea = adminArea;
@@ -209,6 +215,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.054 -0400", hash_original_method = "84D73E83BF1D1209648491141222963A", hash_generated_method = "7D6ECD4A7756C8C87A0E3DEDEE7A0170")
     public String getSubAdminArea() {
         String varB4EAC82CA7396A68D541C85D26508E83_797919420 = null; 
@@ -220,6 +227,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.054 -0400", hash_original_method = "4DF91F489D35ACCA2DC2AF8A5398BD9E", hash_generated_method = "10C6DC9E5F0955108CDE6840819AD482")
     public void setSubAdminArea(String subAdminArea) {
         this.mSubAdminArea = subAdminArea;
@@ -228,6 +236,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.055 -0400", hash_original_method = "3743C626E0A5809CC359BBE60C0BEF8D", hash_generated_method = "25BF1B64BD1EFA7E7700CC90AE5B7308")
     public String getLocality() {
         String varB4EAC82CA7396A68D541C85D26508E83_2019560404 = null; 
@@ -239,6 +248,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.055 -0400", hash_original_method = "E848A60937105A6FB0F90F11784FAFAB", hash_generated_method = "09FAEAEF3CAB423AAFFFED8A05988A88")
     public void setLocality(String locality) {
         mLocality = locality;
@@ -247,6 +257,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.056 -0400", hash_original_method = "4565445A715D9E082E3330822780EE14", hash_generated_method = "72758C8363185923F5FED9989F63A7EF")
     public String getSubLocality() {
         String varB4EAC82CA7396A68D541C85D26508E83_1039512067 = null; 
@@ -258,6 +269,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.056 -0400", hash_original_method = "FBC28BB3F834CBCC388544379D8FF1EB", hash_generated_method = "88524407E6F13730692BB0EC0929F8BE")
     public void setSubLocality(String sublocality) {
         mSubLocality = sublocality;
@@ -266,6 +278,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.057 -0400", hash_original_method = "1512262039F5521B933A04882815530C", hash_generated_method = "8425E4752DD2BF4D3814B5A75DF431D7")
     public String getThoroughfare() {
         String varB4EAC82CA7396A68D541C85D26508E83_45765256 = null; 
@@ -277,6 +290,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.059 -0400", hash_original_method = "30509B10242C2769144E7C2C070721FD", hash_generated_method = "4924718659371C7461941D134860D04A")
     public void setThoroughfare(String thoroughfare) {
         this.mThoroughfare = thoroughfare;
@@ -285,6 +299,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.060 -0400", hash_original_method = "8EFF44F66BA44D813DFBCA9FC34B8EF5", hash_generated_method = "6A6E7C949FAA5978AF74859FD5B2BD37")
     public String getSubThoroughfare() {
         String varB4EAC82CA7396A68D541C85D26508E83_895390590 = null; 
@@ -296,6 +311,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.061 -0400", hash_original_method = "ED99ECE32AF3E65AA637AE926CEFB8FE", hash_generated_method = "58B1784B4A68782244F8452AC42B65F4")
     public void setSubThoroughfare(String subthoroughfare) {
         this.mSubThoroughfare = subthoroughfare;
@@ -304,6 +320,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.062 -0400", hash_original_method = "C1BF40685BD6E248364BFB485F611555", hash_generated_method = "C96B947FDD52AC20ECEB50DB8AC5AC3D")
     public String getPremises() {
         String varB4EAC82CA7396A68D541C85D26508E83_1138712909 = null; 
@@ -315,6 +332,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.063 -0400", hash_original_method = "C9E9B1B8FA21E47AD4B139D64075E36A", hash_generated_method = "2B0B3FE07B8F5EE8C21070FE09BD962A")
     public void setPremises(String premises) {
         mPremises = premises;
@@ -323,6 +341,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.063 -0400", hash_original_method = "9B5379769D21EFABDDB2785674C4DE4D", hash_generated_method = "407A4374F075718503289C7D34A8A909")
     public String getPostalCode() {
         String varB4EAC82CA7396A68D541C85D26508E83_753764440 = null; 
@@ -334,6 +353,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.064 -0400", hash_original_method = "21CF31250DB9EF4FD9B8F171A3FE8B16", hash_generated_method = "E8E05B86D22C4A96EB105D8DBDEA25E7")
     public void setPostalCode(String postalCode) {
         mPostalCode = postalCode;
@@ -342,6 +362,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.064 -0400", hash_original_method = "E8D66F74FB4E1AF79CCB258931950FBE", hash_generated_method = "33DDAAF6AAD307BFEA144C7600C5DC1A")
     public String getCountryCode() {
         String varB4EAC82CA7396A68D541C85D26508E83_589988971 = null; 
@@ -353,6 +374,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.065 -0400", hash_original_method = "DD5F97427C040B47F9123BA4F8DC93A2", hash_generated_method = "10F64B2D94AD623FDE15BD4D4699264C")
     public void setCountryCode(String countryCode) {
         mCountryCode = countryCode;
@@ -361,6 +383,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.065 -0400", hash_original_method = "A82A5DCEE67796EF014C1F79656EFD25", hash_generated_method = "8DC4DC7FA77FC95A7038B1F1CAE40017")
     public String getCountryName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1554775331 = null; 
@@ -372,6 +395,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.066 -0400", hash_original_method = "F7767E8D2EF25B1D1399497900992B14", hash_generated_method = "5F6A05EA0BAE2D22145C166C84A758DE")
     public void setCountryName(String countryName) {
         mCountryName = countryName;
@@ -380,6 +404,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.066 -0400", hash_original_method = "AB4D7FB4B745E9B023209032D37DF18F", hash_generated_method = "9DD03650A29573F637D1DDCFDF1DAD86")
     public boolean hasLatitude() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1979497311 = getTaintBoolean();
@@ -406,6 +431,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.069 -0400", hash_original_method = "E7EB84DA300898C528161A7CBF9FB7F9", hash_generated_method = "4ABFA5E2D8A978A1DF296206A6637849")
     public void setLatitude(double latitude) {
         mLatitude = latitude;
@@ -416,6 +442,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.070 -0400", hash_original_method = "4BCAF53DCD4CF7BB362561C1B9A79F13", hash_generated_method = "A8538AF0D6CB924252483A3546F1E7D2")
     public void clearLatitude() {
         mHasLatitude = false;
@@ -424,6 +451,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.070 -0400", hash_original_method = "44F26BDA1ACBDD9862A3D8D8968B3507", hash_generated_method = "BE5C2EC9433082EAD54B03FE90DA3BBA")
     public boolean hasLongitude() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_582084041 = getTaintBoolean();
@@ -450,6 +478,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.071 -0400", hash_original_method = "C4D556739F3557653F6C8D616289AA29", hash_generated_method = "C5F4A24BBD737E53F906B0B4B1241A26")
     public void setLongitude(double longitude) {
         mLongitude = longitude;
@@ -460,6 +489,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.071 -0400", hash_original_method = "D5786F30716C18CE0A0AB74556D12A22", hash_generated_method = "72D8B7051AF8F5D8AF738740565981D0")
     public void clearLongitude() {
         mHasLongitude = false;
@@ -468,6 +498,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.072 -0400", hash_original_method = "EB9EE516F482EB01602422E9FA56CA5C", hash_generated_method = "66942A445FBD0EB0672AFD74C8E1D489")
     public String getPhone() {
         String varB4EAC82CA7396A68D541C85D26508E83_2140135837 = null; 
@@ -479,6 +510,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.072 -0400", hash_original_method = "5023DDC820B0F6BE06303CFCE3A71EDF", hash_generated_method = "DE0BAA2F1475B12EBE7D57B9B6E7D336")
     public void setPhone(String phone) {
         mPhone = phone;
@@ -487,6 +519,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.073 -0400", hash_original_method = "13CE30FBE362EA44FDCE282CA01E7BBC", hash_generated_method = "8915952DE1BEE4801EFB9D5D8B49BD58")
     public String getUrl() {
         String varB4EAC82CA7396A68D541C85D26508E83_263987308 = null; 
@@ -498,6 +531,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.073 -0400", hash_original_method = "A94A57C3BD4A508E7FC3D69DE1774EEC", hash_generated_method = "4D2F926217B6FA5CE5A195400B3E7118")
     public void setUrl(String Url) {
         mUrl = Url;
@@ -506,6 +540,7 @@ public class Address implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.074 -0400", hash_original_method = "CF33C86C13BFD55DE499066ECC955562", hash_generated_method = "0FE4EE274FF4B86EBE30D5980EA4C54F")
     public Bundle getExtras() {
         Bundle varB4EAC82CA7396A68D541C85D26508E83_526724047 = null; 

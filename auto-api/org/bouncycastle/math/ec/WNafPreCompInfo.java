@@ -23,6 +23,7 @@ class WNafPreCompInfo implements PreCompInfo {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.903 -0400", hash_original_method = "D9023A1799AEA4DA2F04E7A2DE742CF8", hash_generated_method = "AF2D80EC1B64E276BAAA2CC628006B7F")
     protected ECPoint[] getPreComp() {
         ECPoint[] varB4EAC82CA7396A68D541C85D26508E83_1541061018 = null; 
@@ -34,6 +35,7 @@ class WNafPreCompInfo implements PreCompInfo {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.904 -0400", hash_original_method = "C67EBD723D4A70E1A75A9F3EFC0063F4", hash_generated_method = "D55E81ECBEFB01EAAA7954B26FDAEF2B")
     protected void setPreComp(ECPoint[] preComp) {
         this.preComp = preComp;
@@ -42,6 +44,7 @@ class WNafPreCompInfo implements PreCompInfo {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.905 -0400", hash_original_method = "8FA27C115153E08156D836A98C0EB130", hash_generated_method = "38A70F5EF8EF807687CF899187F78E9E")
     protected ECPoint getTwiceP() {
         ECPoint varB4EAC82CA7396A68D541C85D26508E83_546570530 = null; 
@@ -53,6 +56,7 @@ class WNafPreCompInfo implements PreCompInfo {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.906 -0400", hash_original_method = "C2D01FDCF5EDDC5BF3E92E30C339DC39", hash_generated_method = "2CF280202E0FED6BCCF80174D23321DC")
     protected void setTwiceP(ECPoint twiceThis) {
         this.twiceP = twiceThis;

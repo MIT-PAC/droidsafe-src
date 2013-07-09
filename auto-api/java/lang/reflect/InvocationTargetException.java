@@ -39,6 +39,7 @@ public class InvocationTargetException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.794 -0400", hash_original_method = "F1F2316177C546F546EA483459CFF30B", hash_generated_method = "CB0CAFA11986B952859FEB90A5269121")
     public Throwable getTargetException() {
         Throwable varB4EAC82CA7396A68D541C85D26508E83_211408762 = null; 
@@ -50,6 +51,7 @@ public class InvocationTargetException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.795 -0400", hash_original_method = "D8C22D14C73496EF517FF8FC6C6B2CD8", hash_generated_method = "9A1D832B00122B7A1A59A1B191076A85")
     @Override
     public Throwable getCause() {

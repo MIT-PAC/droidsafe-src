@@ -286,6 +286,7 @@ public class TimePicker extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.155 -0400", hash_original_method = "FE60B57F2ECB259E877433DACC7AAC95", hash_generated_method = "94430C0B335831B8F840720DDA8A29AC")
     @Override
     public boolean isEnabled() {
@@ -357,6 +358,7 @@ public class TimePicker extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.156 -0400", hash_original_method = "6B3D4A5E94F1256617D4C5854135F89F", hash_generated_method = "06C44235EEE3C2E117DCBAA9E871B4B2")
     public void setOnTimeChangedListener(OnTimeChangedListener onTimeChangedListener) {
         mOnTimeChangedListener = onTimeChangedListener;
@@ -477,6 +479,7 @@ public class TimePicker extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.158 -0400", hash_original_method = "4F4BA9CD8FF557544935EB979BB43706", hash_generated_method = "968CCF9BCDF65861A59577D973C26A13")
     public boolean is24HourView() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1416345219 = getTaintBoolean();

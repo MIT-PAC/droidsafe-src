@@ -24,6 +24,7 @@ public final class NativeConverter {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static int decode(long converterHandle, byte[] input, int inEnd,
             char[] output, int outEnd, int[] data, boolean flush) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1734718063 = DSUtils.UNKNOWN_INT;
@@ -31,6 +32,7 @@ public final class NativeConverter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int encode(long converterHandle, char[] input, int inEnd,
             byte[] output, int outEnd, int[] data, boolean flush) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1482483034 = DSUtils.UNKNOWN_INT;
@@ -38,66 +40,78 @@ public final class NativeConverter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long openConverter(String encoding) {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1093574736 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1093574736;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void closeConverter(long converterHandle) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void resetByteToChar(long converterHandle) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void resetCharToByte(long converterHandle) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] getSubstitutionBytes(long converterHandle) {
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2075683128 = {DSUtils.UNKNOWN_BYTE};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_2075683128;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getMaxBytesPerChar(long converterHandle) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_485540835 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_485540835;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getMinBytesPerChar(long converterHandle) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_295075292 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_295075292;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float getAveBytesPerChar(long converterHandle) {
                 float var546ADE640B6EDFBC8A086EF31347E768_65193943 = DSUtils.UNKNOWN_FLOAT;
         return var546ADE640B6EDFBC8A086EF31347E768_65193943;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float getAveCharsPerByte(long converterHandle) {
                 float var546ADE640B6EDFBC8A086EF31347E768_293980650 = DSUtils.UNKNOWN_FLOAT;
         return var546ADE640B6EDFBC8A086EF31347E768_293980650;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean contains(String converterName1, String converterName2) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_181634740 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_181634740;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean canEncode(long converterHandle, int codeUnit) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1751980040 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1751980040;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] getAvailableCharsetNames() {
     	String [] ret = new String[1];
     	ret[0] = new String();
@@ -105,6 +119,7 @@ public final class NativeConverter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Charset charsetForName(String charsetName) {
     	return new Charset(charsetName, null) {
 			
@@ -205,6 +220,7 @@ public final class NativeConverter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int setCallbackDecode(long converterHandle, int onMalformedInput, int onUnmappableInput, String subChars) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1385874043 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1385874043;
@@ -220,6 +236,7 @@ public final class NativeConverter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int setCallbackEncode(long converterHandle, int onMalformedInput, int onUnmappableInput, byte[] subBytes) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_89262015 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_89262015;

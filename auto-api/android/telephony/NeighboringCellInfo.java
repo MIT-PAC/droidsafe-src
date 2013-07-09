@@ -127,6 +127,7 @@ public class NeighboringCellInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.441 -0400", hash_original_method = "EAA2EB56C456A75F6A36236287457095", hash_generated_method = "0EEFDA4CDBDFFC7B80AC3EC7A591DC11")
     public int getRssi() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1126705208 = getTaintInt();
@@ -136,6 +137,7 @@ public class NeighboringCellInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.441 -0400", hash_original_method = "9D27DA83295DE88E54D1A14DE01D13B2", hash_generated_method = "DBF219C52ECED7F90795799A89DECD69")
     public int getLac() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1489756530 = getTaintInt();
@@ -145,6 +147,7 @@ public class NeighboringCellInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.442 -0400", hash_original_method = "03F3B6133F275A943C2D43BD3469FDB7", hash_generated_method = "1820564E075D2DEC0D49CE200CE1065E")
     public int getCid() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1650670349 = getTaintInt();
@@ -154,6 +157,7 @@ public class NeighboringCellInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.442 -0400", hash_original_method = "0E29DC7205E312820087B8B417C09B13", hash_generated_method = "326BD6F4BAC0D61BD4CC5A4D6DB753EB")
     public int getPsc() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_253757157 = getTaintInt();
@@ -163,6 +167,7 @@ public class NeighboringCellInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.442 -0400", hash_original_method = "BA8FF13D9B34325771E51CDF8D4F958D", hash_generated_method = "945252BB79E4F873B2D9E30B4B2893D1")
     public int getNetworkType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_166494144 = getTaintInt();
@@ -172,6 +177,7 @@ public class NeighboringCellInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.443 -0400", hash_original_method = "6316D6CF1176EA8E415E44B17DEEB68F", hash_generated_method = "797F050B3EBE62F935630D664E238E38")
     @Deprecated
     public void setCid(int cid) {
@@ -181,6 +187,7 @@ public class NeighboringCellInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.443 -0400", hash_original_method = "DC61695B2550927FEF6924BD6DCCD37F", hash_generated_method = "0E2A4B21AE2C4AC464A8CE307DEBA552")
     @Deprecated
     public void setRssi(int rssi) {
@@ -226,6 +233,7 @@ public class NeighboringCellInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.444 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "FE072517594D6B67A0C6DF396FBAE482")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1350922717 = getTaintInt();

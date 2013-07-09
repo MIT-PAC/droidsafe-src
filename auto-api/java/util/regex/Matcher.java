@@ -335,6 +335,7 @@ public final class Matcher implements MatchResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.613 -0400", hash_original_method = "29D81214171EEBB46568323FF70F06B8", hash_generated_method = "5CC93A7A441F76740E1B94CB69306B79")
     public Pattern pattern() {
         Pattern varB4EAC82CA7396A68D541C85D26508E83_2108706940 = null; 
@@ -585,6 +586,7 @@ public final class Matcher implements MatchResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.618 -0400", hash_original_method = "56179EEEB1BB6D253C6C82DD4DB81ED5", hash_generated_method = "C4C49B428893A45308DCD8EF06D07636")
     public boolean hasAnchoringBounds() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1332558461 = getTaintBoolean();
@@ -623,6 +625,7 @@ public final class Matcher implements MatchResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.619 -0400", hash_original_method = "935CF82B5FBC95B795356ABD430E53CE", hash_generated_method = "A2458E676C16D273391B81EB4544A9EA")
     public boolean hasTransparentBounds() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1247485869 = getTaintBoolean();
@@ -632,6 +635,7 @@ public final class Matcher implements MatchResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.620 -0400", hash_original_method = "1309D9DA3902B8EF77EAE3BBEDE0D6E3", hash_generated_method = "F71C3955DE0112FA13AECA4C2D64A73A")
     public int regionStart() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2020081873 = getTaintInt();
@@ -641,6 +645,7 @@ public final class Matcher implements MatchResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.620 -0400", hash_original_method = "A2DEE293E79DD1E070648045D7A01545", hash_generated_method = "8C3DF3847BFAFF567FF5045D49C16AE2")
     public int regionEnd() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_580445114 = getTaintInt();
@@ -693,58 +698,70 @@ public final class Matcher implements MatchResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void closeImpl(int addr) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean findImpl(int addr, String s, int startIndex, int[] offsets) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean findNextImpl(int addr, String s, int[] offsets) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int groupCountImpl(int addr) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean hitEndImpl(int addr) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean lookingAtImpl(int addr, String s, int[] offsets) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean matchesImpl(int addr, String s, int[] offsets) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int openImpl(int patternAddr) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean requireEndImpl(int addr) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void setInputImpl(int addr, String s, int start, int end) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void useAnchoringBoundsImpl(int addr, boolean value) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void useTransparentBoundsImpl(int addr, boolean value) {
     }
 

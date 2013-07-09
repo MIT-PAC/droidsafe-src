@@ -149,6 +149,7 @@ public class LocalActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.593 -0400", hash_original_method = "0A59627F0C289533278C9C6F1CF55EF3", hash_generated_method = "068466D677A2B16E77773E36348D6F99")
     public Window startActivity(String id, Intent intent) {
         Window varB4EAC82CA7396A68D541C85D26508E83_1263750331 = null; 
@@ -322,6 +323,7 @@ public class LocalActivityManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.604 -0400", hash_original_method = "DDB5384220B4A60C69552CE8336AA299", hash_generated_method = "66F91732485FF4527E9AF2B4839E462B")
     public Activity getCurrentActivity() {
         Activity varB4EAC82CA7396A68D541C85D26508E83_844261286 = null; 
@@ -333,6 +335,7 @@ public class LocalActivityManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.607 -0400", hash_original_method = "4729520AC64C6CA5B20AE92550B34CDA", hash_generated_method = "FD5F50F852AB2A1D38B440511348EAD7")
     public String getCurrentId() {
         String varB4EAC82CA7396A68D541C85D26508E83_2086518604 = null; 

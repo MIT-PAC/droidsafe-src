@@ -35,6 +35,7 @@ public final class BulkCursorToCursorAdaptor extends AbstractWindowedCursor {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.637 -0400", hash_original_method = "BDEAB060DBF06B617753E5FD68DF3DA6", hash_generated_method = "C4BF3C1490A19F47820FA1CE7FB8BFA7")
     public void initialize(IBulkCursor bulkCursor, int count, int idIndex,
             boolean wantsAllOnMoveCalls) {

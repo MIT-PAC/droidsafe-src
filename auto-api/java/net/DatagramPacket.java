@@ -101,6 +101,7 @@ public final class DatagramPacket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.065 -0400", hash_original_method = "F0319BA9B19AC93124B00C2891893A52", hash_generated_method = "9B1055BD2C32B22A0FBB1E74D6723790")
     public synchronized InetAddress getAddress() {
         InetAddress varB4EAC82CA7396A68D541C85D26508E83_479657345 = null; 
@@ -112,6 +113,7 @@ public final class DatagramPacket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.066 -0400", hash_original_method = "B9E74D06348E60D6DDB9FA9E07D464F9", hash_generated_method = "3A181AA994FD36056C3380CC11E49625")
     public synchronized byte[] getData() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2106106450 = {getTaintByte()};
@@ -121,6 +123,7 @@ public final class DatagramPacket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.067 -0400", hash_original_method = "A993727E7D5DC0CA2BB581135F7F678B", hash_generated_method = "8B5A11FDE3F5DFA17ADC31D0AF83DD3E")
     public synchronized int getLength() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1246254601 = getTaintInt();
@@ -130,6 +133,7 @@ public final class DatagramPacket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.068 -0400", hash_original_method = "ACEB13DAA855070296BA592FB1ADADA1", hash_generated_method = "AC2E9696B0D7A37936415A74D8533E58")
     public synchronized int getOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1947219239 = getTaintInt();
@@ -139,6 +143,7 @@ public final class DatagramPacket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.068 -0400", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "2B138488205F5D62DF061F9365F2473A")
     public synchronized int getPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1765328963 = getTaintInt();
@@ -148,6 +153,7 @@ public final class DatagramPacket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.069 -0400", hash_original_method = "C8080B968BD32815251343303FD7866E", hash_generated_method = "D8DF36BE09A5C0C183F7A65469BFBDCD")
     public synchronized void setAddress(InetAddress addr) {
         address = addr;
@@ -177,6 +183,7 @@ public final class DatagramPacket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.071 -0400", hash_original_method = "90578DC03777F39E5EBE6643D9CBD4FE", hash_generated_method = "F1FEFC07A80B686715A77B87B4CF8AB9")
     public synchronized void setData(byte[] buf) {
         length = buf.length;
@@ -191,6 +198,7 @@ public final class DatagramPacket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.071 -0400", hash_original_method = "59C864B14A0070866D297CD091E1F29D", hash_generated_method = "F027F96F5EDC076DF97DA7E55E236AE1")
     synchronized int getCapacity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1679010460 = getTaintInt();

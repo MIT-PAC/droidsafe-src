@@ -409,6 +409,7 @@ public class DynamicLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.647 -0400", hash_original_method = "0410F05B3F48387C42DB277B8067D4A9", hash_generated_method = "AECCC6DBDFCDB72C05F45F2F710584FB")
     @Override
     public int getTopPadding() {
@@ -419,6 +420,7 @@ public class DynamicLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.647 -0400", hash_original_method = "A7597317BC8A3102F80AD4E9AD038652", hash_generated_method = "1D7283F22FA7995824E83CB78876AE1B")
     @Override
     public int getBottomPadding() {
@@ -429,6 +431,7 @@ public class DynamicLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.647 -0400", hash_original_method = "5CA9F8625BABB74DD57E485BAAAC3103", hash_generated_method = "15C87F6399AE453F5381890EFA9955E2")
     @Override
     public int getEllipsizedWidth() {

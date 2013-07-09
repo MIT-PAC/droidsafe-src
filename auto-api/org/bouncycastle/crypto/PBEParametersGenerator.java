@@ -26,6 +26,7 @@ public abstract class PBEParametersGenerator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.567 -0400", hash_original_method = "456931D8AD64BF8B12B053CDCE877455", hash_generated_method = "01B1CD85345AB39CEDE2B8C2C414A255")
     public void init(
         byte[]  password,
@@ -41,6 +42,7 @@ public abstract class PBEParametersGenerator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.567 -0400", hash_original_method = "FF883C507377D40DD9B6A3EE36BF823C", hash_generated_method = "F5DFF2ADF587708CA4217B7A2A5DADC8")
     public byte[] getPassword() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_113277090 = {getTaintByte()};
@@ -50,6 +52,7 @@ public abstract class PBEParametersGenerator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.567 -0400", hash_original_method = "440AD26E5D605624C1EF028F9AB658FA", hash_generated_method = "35C4CC7909BEEBAB8D1B41616E04876F")
     public byte[] getSalt() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_238604180 = {getTaintByte()};
@@ -59,6 +62,7 @@ public abstract class PBEParametersGenerator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.568 -0400", hash_original_method = "3E24EA64DC831AAEDCCD9EAD88FFC369", hash_generated_method = "C99A6BE7BDB74F3519917C359A665FD1")
     public int getIterationCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_314119425 = getTaintInt();
@@ -77,6 +81,7 @@ public abstract class PBEParametersGenerator {
     public abstract CipherParameters generateDerivedMacParameters(int keySize);
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] PKCS5PasswordToBytes(
         char[]  password) {
         byte[]  bytes = new byte[password.length];
@@ -95,6 +100,7 @@ public abstract class PBEParametersGenerator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] PKCS12PasswordToBytes(
         char[]  password) {
         if (password != null && password.length > 0)

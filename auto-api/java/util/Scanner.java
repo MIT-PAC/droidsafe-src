@@ -245,6 +245,7 @@ public final class Scanner implements Iterator<String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.842 -0400", hash_original_method = "E452C40637B7AD54EC03E79C646861D9", hash_generated_method = "32D362A4C6A03D97F5A4143F663B035C")
     public Pattern delimiter() {
         Pattern varB4EAC82CA7396A68D541C85D26508E83_1706587435 = null; 
@@ -938,6 +939,7 @@ public final class Scanner implements Iterator<String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.863 -0400", hash_original_method = "AF5FE6AF92A07FF4E461FEC03ECD4D84", hash_generated_method = "ACAB7BC4D2F58189D28902F093BB90BF")
     public IOException ioException() {
         IOException varB4EAC82CA7396A68D541C85D26508E83_1473010313 = null; 
@@ -949,6 +951,7 @@ public final class Scanner implements Iterator<String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.864 -0400", hash_original_method = "21C822C4BC15A6F74D874095878E5501", hash_generated_method = "D5A5FFC0F57CB2941388242FAC0DA252")
     public Locale locale() {
         Locale varB4EAC82CA7396A68D541C85D26508E83_1403391931 = null; 
@@ -1589,6 +1592,7 @@ public final class Scanner implements Iterator<String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.882 -0400", hash_original_method = "108FFB02BFAD84F212F542E44C9F6CE4", hash_generated_method = "C0C437E0A50A062540F18446F1AB63F1")
     public int radix() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_753443048 = getTaintInt();
@@ -1674,6 +1678,7 @@ public final class Scanner implements Iterator<String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.887 -0400", hash_original_method = "E89CBE82FDB8B0CDDF4705672288D942", hash_generated_method = "D1867655D2976B1381A7EC00019F1430")
     public Scanner useDelimiter(Pattern pattern) {
         Scanner varB4EAC82CA7396A68D541C85D26508E83_807527613 = null; 
@@ -1819,6 +1824,7 @@ public final class Scanner implements Iterator<String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.891 -0400", hash_original_method = "8767C8E3B92497CDD5E1C8E3E9AF12A5", hash_generated_method = "246DF741A54CA564E3597B59F5BC86C1")
     private void saveCurrentStatus() {
         preStartIndex = findStartIndex;
@@ -1827,6 +1833,7 @@ public final class Scanner implements Iterator<String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.891 -0400", hash_original_method = "C4EDF4CCA1B99C808834619656C45D45", hash_generated_method = "25DC76BF381C9B535A67870FCCE6C2E3")
     private void recoverPreviousStatus() {
         findStartIndex = preStartIndex;

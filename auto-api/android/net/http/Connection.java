@@ -71,6 +71,7 @@ abstract class Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.738 -0400", hash_original_method = "9B5E41A5FF20333698838F3F6DF6BCD6", hash_generated_method = "89D3868FA6362532F4470FABC20B30C2")
      HttpHost getHost() {
         HttpHost varB4EAC82CA7396A68D541C85D26508E83_641425320 = null; 
@@ -93,6 +94,7 @@ abstract class Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.739 -0400", hash_original_method = "7F448377575EC929DDEDD2BF1EB435C4", hash_generated_method = "FFD8F74B71756455FA9B9A1BCF38AADD")
      SslCertificate getCertificate() {
         SslCertificate varB4EAC82CA7396A68D541C85D26508E83_83625497 = null; 
@@ -437,6 +439,7 @@ abstract class Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.744 -0400", hash_original_method = "510B2315D285A4B8D2701F50BEED692F", hash_generated_method = "6D38A5BAF759D5C74E4EE325143BEC49")
      HttpContext getHttpContext() {
         HttpContext varB4EAC82CA7396A68D541C85D26508E83_2137880008 = null; 
@@ -502,6 +505,7 @@ abstract class Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.745 -0400", hash_original_method = "948404D3184D15107ABD2526F5DFBFE0", hash_generated_method = "C987B1689B3761BB7765A463FADF77BA")
      void setCanPersist(boolean canPersist) {
         mCanPersist = canPersist;
@@ -510,6 +514,7 @@ abstract class Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.746 -0400", hash_original_method = "5B21A605E2B59BE630988FE4FC055560", hash_generated_method = "A93E750E0583FEA252A61B89B916E61E")
      boolean getCanPersist() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2008601195 = getTaintBoolean();
@@ -540,6 +545,7 @@ abstract class Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.747 -0400", hash_original_method = "ED2ED37A31E0A6859AF61C011936FDA1", hash_generated_method = "A8ACDE5C7D8671C433CA31846CA9D4E3")
      byte[] getBuf() {
         mBuf = new byte[8192];

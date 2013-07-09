@@ -64,6 +64,7 @@ public class ListActivity extends Activity {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.075 -0400", hash_original_method = "BF490B4BB4BD29ACC689E0297B614061", hash_generated_method = "3805C5145656BF072B093F0A06FA3650")
     protected void onListItemClick(ListView l, View v, int position, long id) {
         
@@ -208,6 +209,7 @@ public class ListActivity extends Activity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.080 -0400", hash_original_method = "6C199B6FBEC38BDF6D031387113C1DD5", hash_generated_method = "BB48F866D11A671928A56D19A38D5727")
     public ListAdapter getListAdapter() {
         ListAdapter varB4EAC82CA7396A68D541C85D26508E83_1402945806 = null; 

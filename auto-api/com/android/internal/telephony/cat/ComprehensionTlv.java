@@ -44,6 +44,7 @@ class ComprehensionTlv {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.519 -0400", hash_original_method = "F4331D0775C023B121D08D63B25AAACE", hash_generated_method = "20643E4B28FFE359DDD5ADCB3B500668")
     public int getTag() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_25727994 = getTaintInt();
@@ -53,6 +54,7 @@ class ComprehensionTlv {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.519 -0400", hash_original_method = "BBBB347994ECBB1AA0023AC2A90F5AE7", hash_generated_method = "63D2BEF68862FA6578B92403FAE652ED")
     public boolean isComprehensionRequired() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1316570368 = getTaintBoolean();
@@ -62,6 +64,7 @@ class ComprehensionTlv {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.519 -0400", hash_original_method = "6E6502D65176BC2328E9B790ED2B205C", hash_generated_method = "08D6A75A69E42EFC91A81A547F0E726E")
     public int getLength() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1586041862 = getTaintInt();
@@ -71,6 +74,7 @@ class ComprehensionTlv {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.519 -0400", hash_original_method = "6B24631B893BC9498B1E30027D9EDCB1", hash_generated_method = "0692B5A6D0CD00404DA72EB87F90C0FF")
     public int getValueIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_382481416 = getTaintInt();
@@ -80,6 +84,7 @@ class ComprehensionTlv {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.520 -0400", hash_original_method = "2E1D90837620CE8C27D1ADC653AC7836", hash_generated_method = "043D95350E397ACA179B519EC1477106")
     public byte[] getRawValue() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_468862714 = {getTaintByte()};

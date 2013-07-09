@@ -47,6 +47,7 @@ public class GenericURI extends NetObject implements javax.sip.address.URI {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.227 -0400", hash_original_method = "82D33A5986E24A5B49AA621812B7822B", hash_generated_method = "89A2A5C8B28223A55248BCB088FA2261")
     public String encode() {
         String varB4EAC82CA7396A68D541C85D26508E83_120070843 = null; 
@@ -83,6 +84,7 @@ public class GenericURI extends NetObject implements javax.sip.address.URI {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.229 -0400", hash_original_method = "C01635CAE84CEFF188CA85B1E841E2AF", hash_generated_method = "BDDE8A1A99F2AE723A221CC44A22A101")
     public String getScheme() {
         String varB4EAC82CA7396A68D541C85D26508E83_1659999446 = null; 
@@ -94,6 +96,7 @@ public class GenericURI extends NetObject implements javax.sip.address.URI {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.229 -0400", hash_original_method = "B3806A07425B89767F09A244B77901C0", hash_generated_method = "5C18B2DFDD88CE4A112474965D85822C")
     public boolean isSipURI() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_808680855 = getTaintBoolean();

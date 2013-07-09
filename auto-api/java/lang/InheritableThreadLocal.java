@@ -29,6 +29,7 @@ public class InheritableThreadLocal<T> extends ThreadLocal<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.115 -0400", hash_original_method = "5F640D0B7D2E60FEE01A049AD8233DEB", hash_generated_method = "947D2C144F8969B96FD8FD475874E342")
     @Override
      Values values(Thread current) {

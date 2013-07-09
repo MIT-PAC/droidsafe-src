@@ -231,6 +231,7 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.284 -0400", hash_original_method = "A7E02D03E9AB7CF614DD169102D03FAF", hash_generated_method = "7B286C8C34C0CB912482A9582E50ADC8")
     public void onSpanAdded(Spannable s, Object what, int start, int end) {
         
@@ -242,6 +243,7 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.284 -0400", hash_original_method = "2C716670C272F54C9EB4064D90DB3C4E", hash_generated_method = "F033A2BD7F1AB312500D2F37A623D63A")
     public void onSpanRemoved(Spannable s, Object what, int start, int end) {
         

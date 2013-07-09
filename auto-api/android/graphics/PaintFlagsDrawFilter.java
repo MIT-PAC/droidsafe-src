@@ -20,6 +20,7 @@ public class PaintFlagsDrawFilter extends DrawFilter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeConstructor(int clearBits, int setBits) {
         return DSUtils.UNKNOWN_INT;
     }

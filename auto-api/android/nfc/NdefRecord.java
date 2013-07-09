@@ -109,6 +109,7 @@ public final class NdefRecord implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.068 -0400", hash_original_method = "57FC26158D8D678057BEA3A3771FCDE7", hash_generated_method = "D491ABFBCD13A628D187F60018BAF702")
     public short getTnf() {
         short var4F09DAA9D95BCB166A302407A0E0BABE_1606068127 = getTaintShort();
@@ -151,6 +152,7 @@ public final class NdefRecord implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Uri parseWellKnownUriRecord(NdefRecord record) throws FormatException {
         byte[] payload = record.getPayload();
         if (payload.length < 2) {
@@ -174,6 +176,7 @@ public final class NdefRecord implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static NdefRecord createUri(Uri uri) {
         return createUri(uri.toString());
     }
@@ -223,6 +226,7 @@ public final class NdefRecord implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.071 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "57550EE4A2746BE3B5C50E979CED6652")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1368668954 = getTaintInt();
@@ -257,6 +261,7 @@ public final class NdefRecord implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.072 -0400", hash_original_method = "D593336128142C3B83A1F96FE0DB1162", hash_generated_method = "F6D47F50201658D2991A7CBCE1370EFC")
     private int parseNdefRecord(byte[] data) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_754892842 = getTaintInt();
@@ -264,6 +269,7 @@ public final class NdefRecord implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.073 -0400", hash_original_method = "D4618511B086F2DC6D5A6E1B49747B83", hash_generated_method = "EADDD20DEC405BA1EC97E7B4C48BDD89")
     private byte[] generate(short flags, short tnf, byte[] type, byte[] id, byte[] data) {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1546610709 = {getTaintByte()};

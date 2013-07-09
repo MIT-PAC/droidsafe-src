@@ -125,6 +125,7 @@ final class SAXParserImpl extends SAXParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.540 -0400", hash_original_method = "2EF684CE098290C07222DD88BA41AEFB", hash_generated_method = "D3DF418F96DD2D5371271C9BDE22F065")
     @Override
     public XMLReader getXMLReader() {
@@ -158,6 +159,7 @@ final class SAXParserImpl extends SAXParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.541 -0400", hash_original_method = "BC62268279A4D4DB4B44A495D4290EBF", hash_generated_method = "71C52B5462E860BF830DB60FADBE0F78")
     @Override
     public boolean isValidating() {

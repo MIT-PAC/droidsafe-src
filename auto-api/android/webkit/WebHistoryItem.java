@@ -84,6 +84,7 @@ public class WebHistoryItem implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.772 -0400", hash_original_method = "849E83C6BA01C72387E236CA4FAA38B9", hash_generated_method = "6481B367B62AB0648EDBFFD76AFA6E7D")
     @Deprecated
     public int getId() {
@@ -94,6 +95,7 @@ public class WebHistoryItem implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.773 -0400", hash_original_method = "13CE30FBE362EA44FDCE282CA01E7BBC", hash_generated_method = "58A0A33BA1AF923A4C1DD0D4A4C4BF7C")
     public String getUrl() {
         String varB4EAC82CA7396A68D541C85D26508E83_1455498106 = null; 
@@ -105,6 +107,7 @@ public class WebHistoryItem implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.773 -0400", hash_original_method = "DDE089EE8228BAF5D6A93FF1955EAFD7", hash_generated_method = "C4FFDF6AE43C6BCE3BDDAAECA0F928FD")
     public String getOriginalUrl() {
         String varB4EAC82CA7396A68D541C85D26508E83_564943595 = null; 
@@ -116,6 +119,7 @@ public class WebHistoryItem implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.774 -0400", hash_original_method = "B92C3DBC46CE7C1B39B851F67F02433E", hash_generated_method = "E550F7FA9E629B68C58D4E1565292477")
     public String getTitle() {
         String varB4EAC82CA7396A68D541C85D26508E83_259155355 = null; 
@@ -127,6 +131,7 @@ public class WebHistoryItem implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.774 -0400", hash_original_method = "41724C0C6385C3C7BA168B7F37B3B669", hash_generated_method = "7DB0E7326ACC0BF8E5C18CB55E2F9444")
     public Bitmap getFavicon() {
         Bitmap varB4EAC82CA7396A68D541C85D26508E83_880601183 = null; 
@@ -196,6 +201,7 @@ public class WebHistoryItem implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.776 -0400", hash_original_method = "910685AC0FAB997B808A2261BF18CB41", hash_generated_method = "3F5F068884472E787AF572DEFBC7C957")
     public Object getCustomData() {
         Object varB4EAC82CA7396A68D541C85D26508E83_388985637 = null; 
@@ -207,6 +213,7 @@ public class WebHistoryItem implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.777 -0400", hash_original_method = "C3DB27902C6D683426C80DDC02D99EDF", hash_generated_method = "7B907F8F0821BBEC90CC8C8215767869")
     public void setCustomData(Object data) {
         mCustomData = data;
@@ -215,6 +222,7 @@ public class WebHistoryItem implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.777 -0400", hash_original_method = "151983BF7C4C69CD96BA6E3E58A2C1A8", hash_generated_method = "0494E26BA7F51A745B44375FBAD2A06E")
      void setFavicon(Bitmap icon) {
         mFavicon = icon;
@@ -223,6 +231,7 @@ public class WebHistoryItem implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.777 -0400", hash_original_method = "6AEC6A0521F7371C54A3BE7086F783A3", hash_generated_method = "7B60D731396CB13026BA8562C58C80AD")
      void setTouchIconUrl(String url, boolean precomposed) {
         {
@@ -236,6 +245,7 @@ public class WebHistoryItem implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.778 -0400", hash_original_method = "B1D43F529CC26FA65E203DF01CCD077E", hash_generated_method = "D9112CF536296DECB1AE2F451478CA34")
      byte[] getFlattenedData() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_485831031 = {getTaintByte()};
@@ -266,11 +276,13 @@ public class WebHistoryItem implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.778 -0400", hash_original_method = "546433AD896626257E1507E5593DD29B", hash_generated_method = "FEF51972CCD31A428DC3491EB29897E5")
     private void inflate(int nativeFrame, byte[] data) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.779 -0400", hash_original_method = "54E9940C94044B5E33255DF6DC9264D1", hash_generated_method = "7A1731F51705F4FE6D7F3BFC2429EDDD")
     private void update(String url, String originalUrl, String title, 
             Bitmap favicon, byte[] data) {

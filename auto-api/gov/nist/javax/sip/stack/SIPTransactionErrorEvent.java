@@ -26,6 +26,7 @@ public class SIPTransactionErrorEvent extends EventObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.305 -0400", hash_original_method = "0519EBFB6DA70B425C38921D23DA7A64", hash_generated_method = "49F050575769B85408E6A27B5CD63CC3")
     public int getErrorID() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_466790168 = getTaintInt();

@@ -305,6 +305,7 @@ public class ViewPager extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.800 -0400", hash_original_method = "F7E052C477B11777DA7EBFEE8452F40F", hash_generated_method = "ACB94D56AB7A7353028CF6EF8C33F916")
     public PagerAdapter getAdapter() {
         PagerAdapter varB4EAC82CA7396A68D541C85D26508E83_1884748645 = null; 
@@ -316,6 +317,7 @@ public class ViewPager extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.801 -0400", hash_original_method = "36FAA41620F55873E46894195D62C0FE", hash_generated_method = "64B5029EE6627AF5DA8D33AFBF5EB153")
      void setOnAdapterChangeListener(OnAdapterChangeListener listener) {
         mAdapterChangeListener = listener;
@@ -347,6 +349,7 @@ public class ViewPager extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.804 -0400", hash_original_method = "A82ABDE9609B8643904FAA59A05D3729", hash_generated_method = "C44E7210C4D7EE35840F4DFCC47EA880")
     public int getCurrentItem() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1989134782 = getTaintInt();
@@ -431,6 +434,7 @@ public class ViewPager extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.812 -0400", hash_original_method = "FA06973225A603572F4FD6150255295F", hash_generated_method = "8762A57EBF81138B887037B32512FF60")
     public void setOnPageChangeListener(OnPageChangeListener listener) {
         mOnPageChangeListener = listener;
@@ -439,6 +443,7 @@ public class ViewPager extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.813 -0400", hash_original_method = "BEC1D9D7EF0862149EE21D17618B274F", hash_generated_method = "7DC63B29E68293BEDF9A398ADD41F340")
      OnPageChangeListener setInternalPageChangeListener(OnPageChangeListener listener) {
         OnPageChangeListener varB4EAC82CA7396A68D541C85D26508E83_1680763602 = null; 
@@ -454,6 +459,7 @@ public class ViewPager extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.814 -0400", hash_original_method = "3F35BC951292D9FB1DF42BFA6208CE75", hash_generated_method = "4DB8F8D340EAC8319A5C4EE48B919CF9")
     public int getOffscreenPageLimit() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_372994476 = getTaintInt();
@@ -501,6 +507,7 @@ public class ViewPager extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.818 -0400", hash_original_method = "C374880A4C36BA236EE3B5602129BC09", hash_generated_method = "293842908FF458870EC23EB766652722")
     public int getPageMargin() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_960206824 = getTaintInt();
@@ -1823,6 +1830,7 @@ public class ViewPager extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.033 -0400", hash_original_method = "A453849F99C417376DDBB8B219E48B12", hash_generated_method = "E37B40B7F4DA86408D7608512914772E")
     public boolean isFakeDragging() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_392790862 = getTaintBoolean();
@@ -1878,6 +1886,7 @@ public class ViewPager extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.039 -0400", hash_original_method = "2B073E6A9B3015E7E6D245BDA0374ADD", hash_generated_method = "BA8AE9524F40074FC128C9BB4F8CECEB")
     private void setScrollingCacheEnabled(boolean enabled) {
         {

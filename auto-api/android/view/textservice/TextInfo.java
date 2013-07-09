@@ -79,6 +79,7 @@ public final class TextInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.473 -0400", hash_original_method = "2FFFCC59A442EF1196B854805331F3A7", hash_generated_method = "ADDAD6483D1914F86C58E6D8B6617FF1")
     public String getText() {
         String varB4EAC82CA7396A68D541C85D26508E83_454889189 = null; 
@@ -90,6 +91,7 @@ public final class TextInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.473 -0400", hash_original_method = "AC1EDA43FC7023F4D4E1DFBFEFAF3924", hash_generated_method = "0B7927217413FF3FF2C67FCCD5D65CEC")
     public int getCookie() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_577957400 = getTaintInt();
@@ -99,6 +101,7 @@ public final class TextInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.474 -0400", hash_original_method = "FE2AB8ECE26FD7A4F1B7769F13B3F465", hash_generated_method = "D80408A34BB7EE218CACF4771DA4CA6A")
     public int getSequence() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_251029164 = getTaintInt();
@@ -108,6 +111,7 @@ public final class TextInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.474 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E6FCC0F326E007BAC8E5F769C7C1CCAE")
     @Override
     public int describeContents() {

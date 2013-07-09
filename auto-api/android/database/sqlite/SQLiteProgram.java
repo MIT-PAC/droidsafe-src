@@ -164,6 +164,7 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.767 -0400", hash_original_method = "76820A9DAA0EF4EAA60C4E690E9DF41D", hash_generated_method = "064667B7C26B419B9045E41247E7E515")
      int getSqlStatementId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1559170426 = getTaintInt();
@@ -175,6 +176,7 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.767 -0400", hash_original_method = "D92A66541C65863AB0B524498A872E5D", hash_generated_method = "E83FED7309E50EB6CD5FE5C7C262A370")
      String getSqlString() {
         String varB4EAC82CA7396A68D541C85D26508E83_2117573509 = null; 
@@ -186,6 +188,7 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.768 -0400", hash_original_method = "B49B29A59D94DA04C289B1136BB98967", hash_generated_method = "AFFB24A97E7B835AB0D12D6BB202A60F")
     @Deprecated
     protected void compile(String sql, boolean forceCompilation) {

@@ -184,6 +184,7 @@ public class CatCmdMessage implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.165 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D3FA9CBA353C431B56ABB180B0F5B013")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1204360083 = getTaintInt();
@@ -204,6 +205,7 @@ public class CatCmdMessage implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.166 -0400", hash_original_method = "B2B8DF93D41CD214F77DE42BB625BB9F", hash_generated_method = "B8112A00B937154CA4B007DE355BB9A2")
     public Menu getMenu() {
         Menu varB4EAC82CA7396A68D541C85D26508E83_589191472 = null; 
@@ -215,6 +217,7 @@ public class CatCmdMessage implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.166 -0400", hash_original_method = "C85A9B2343174A665E1C349326B79E38", hash_generated_method = "ACA82EE8AAE924DB7A8CE1EA6439858C")
     public Input geInput() {
         Input varB4EAC82CA7396A68D541C85D26508E83_1618955143 = null; 
@@ -226,6 +229,7 @@ public class CatCmdMessage implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.167 -0400", hash_original_method = "036B73CC89055059C138E5824D02BCAD", hash_generated_method = "F0C3BFBA3F18AE984065B2132DFCE9CE")
     public TextMessage geTextMessage() {
         TextMessage varB4EAC82CA7396A68D541C85D26508E83_85001012 = null; 
@@ -237,6 +241,7 @@ public class CatCmdMessage implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.167 -0400", hash_original_method = "C25A9BA40FBC0B8B0A069261C5A04294", hash_generated_method = "6B720845FFFCE1F13A9838858F88A43F")
     public BrowserSettings getBrowserSettings() {
         BrowserSettings varB4EAC82CA7396A68D541C85D26508E83_565476183 = null; 
@@ -248,6 +253,7 @@ public class CatCmdMessage implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.168 -0400", hash_original_method = "7E3240C4BE07A52ADC96DFEAA4674C6F", hash_generated_method = "B5953564E238C7D6F8D3E33C417C64CF")
     public ToneSettings getToneSettings() {
         ToneSettings varB4EAC82CA7396A68D541C85D26508E83_65790701 = null; 
@@ -259,6 +265,7 @@ public class CatCmdMessage implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.168 -0400", hash_original_method = "7782D77E1F5CCB427C450A93C0BFB1C1", hash_generated_method = "34BDA4ACDF8CEC9F56E920DEDCD0A79E")
     public CallSettings getCallSettings() {
         CallSettings varB4EAC82CA7396A68D541C85D26508E83_698712767 = null; 

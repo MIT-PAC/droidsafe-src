@@ -120,6 +120,7 @@ public class SSLSocketFactoryImpl extends SSLSocketFactory {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.988 -0400", hash_original_method = "770FADDB251D7948083EF0D02F3938EE", hash_generated_method = "FAD2653110DCF6F8774F82CE3F90D81A")
     @Override
     public Socket createSocket(Socket s, String host, int port,
@@ -145,6 +146,7 @@ public class SSLSocketFactoryImpl extends SSLSocketFactory {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.989 -0400", hash_original_method = "0CDA18BD18854D909AC84115F509C8F0", hash_generated_method = "FC465B8BEC0ED5703D263BC2B0C5690B")
     @Override
     public Socket createSocket() throws IOException {
@@ -163,6 +165,7 @@ public class SSLSocketFactoryImpl extends SSLSocketFactory {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.989 -0400", hash_original_method = "F68AAAAA9B8D61B174802E7029AF7953", hash_generated_method = "896E0B1161F7D9BB33369FB6B4215C1D")
     @Override
     public Socket createSocket(String host, int port) throws IOException, UnknownHostException {
@@ -185,6 +188,7 @@ public class SSLSocketFactoryImpl extends SSLSocketFactory {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.990 -0400", hash_original_method = "53A1989EA3FBEE45809A2C11EADE957A", hash_generated_method = "E2A5BFD0CDB95A0E8BA60735C7195400")
     @Override
     public Socket createSocket(String host, int port,
@@ -211,6 +215,7 @@ public class SSLSocketFactoryImpl extends SSLSocketFactory {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.990 -0400", hash_original_method = "FD8C4D4ADA3C87BB97218603199064D4", hash_generated_method = "4D31D568E1648AA052907F3929F921C6")
     @Override
     public Socket createSocket(InetAddress host, int port) throws IOException {
@@ -233,6 +238,7 @@ public class SSLSocketFactoryImpl extends SSLSocketFactory {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.991 -0400", hash_original_method = "3B16D41EDAC8F54354185F57BF630F58", hash_generated_method = "E4EB49E4C19A383263BE2EC115C29262")
     @Override
     public Socket createSocket(InetAddress address, int port,

@@ -144,6 +144,7 @@ public class Resources {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int selectSystemTheme(int curTheme, int targetSdkVersion,
             int orig, int holo, int deviceDefault) {
         if (curTheme != 0) {
@@ -265,6 +266,7 @@ public class Resources {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int attrForQuantityCode(int quantityCode) {
         switch (quantityCode) {
             case NativePluralRules.ZERO: return 0x01000005;
@@ -277,6 +279,7 @@ public class Resources {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String stringForQuantityCode(int quantityCode) {
         switch (quantityCode) {
             case NativePluralRules.ZERO: return "zero";
@@ -1179,6 +1182,7 @@ public class Resources {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.094 -0400", hash_original_method = "7F0483A9A445222C6F2291914FFD169A", hash_generated_method = "E73716B3467A0F6EAF992767631D5364")
     public DisplayMetrics getDisplayMetrics() {
         DisplayMetrics varB4EAC82CA7396A68D541C85D26508E83_468165093 = null; 
@@ -1192,6 +1196,7 @@ public class Resources {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.095 -0400", hash_original_method = "11CE3ED49D23B920A1DF6398548CD42B", hash_generated_method = "568C08AACF2061E3E055331DC2070462")
     public Configuration getConfiguration() {
         Configuration varB4EAC82CA7396A68D541C85D26508E83_857336594 = null; 
@@ -1203,6 +1208,7 @@ public class Resources {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.095 -0400", hash_original_method = "5C840D5EBF5D0071E35FFCF10BAAC7BF", hash_generated_method = "E7196BA4071014B0F77C2608872D5C3C")
     public CompatibilityInfo getCompatibilityInfo() {
         CompatibilityInfo varB4EAC82CA7396A68D541C85D26508E83_2126251590 = null; 

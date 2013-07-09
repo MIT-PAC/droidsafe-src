@@ -95,6 +95,7 @@ public abstract class ResourceCursorAdapter extends CursorAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.235 -0400", hash_original_method = "D5BDA165ADCD99BE26CEA9E8AC3FEB13", hash_generated_method = "1A4A3AE74ACD1FAC94DDB52DB24657BB")
     public void setViewResource(int layout) {
         mLayout = layout;
@@ -103,6 +104,7 @@ public abstract class ResourceCursorAdapter extends CursorAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.235 -0400", hash_original_method = "62C4D5A7D859DBC1B997DA83ECA5AEBB", hash_generated_method = "B6434D367B58893890DAD8DEC2EDE7DC")
     public void setDropDownViewResource(int dropDownLayout) {
         mDropDownLayout = dropDownLayout;

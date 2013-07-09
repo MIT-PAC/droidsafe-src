@@ -128,6 +128,7 @@ public final class WallpaperInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.647 -0400", hash_original_method = "0C90B853C75D6A321E7BDA40C2595177", hash_generated_method = "B52407B2C5865734055A78B3EE9A242E")
     public String getPackageName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1308905164 = null; 
@@ -139,6 +140,7 @@ public final class WallpaperInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.649 -0400", hash_original_method = "E07B8397F26D2C3A4747E56AC8F0D204", hash_generated_method = "6952DA0C37AD643FD76D146596A8D70E")
     public String getServiceName() {
         String varB4EAC82CA7396A68D541C85D26508E83_88135324 = null; 
@@ -150,6 +152,7 @@ public final class WallpaperInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.650 -0400", hash_original_method = "543F99CB65CBDD66082E6D4B92910AC5", hash_generated_method = "E75B6B1BDEBC2079BAA4F0E601DC142A")
     public ServiceInfo getServiceInfo() {
         ServiceInfo varB4EAC82CA7396A68D541C85D26508E83_1006189050 = null; 
@@ -304,6 +307,7 @@ public final class WallpaperInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.664 -0400", hash_original_method = "EE56873026FFE7A9D4435487CEBA8D19", hash_generated_method = "1B447F66B2920AAAA7F79519A24BADE6")
     public String getSettingsActivity() {
         String varB4EAC82CA7396A68D541C85D26508E83_280989164 = null; 
@@ -366,6 +370,7 @@ public final class WallpaperInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.671 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D1AE93A9088C53C09A0C85C637E8C6FA")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_534232932 = getTaintInt();

@@ -355,6 +355,7 @@ public class ActionBarView extends AbsActionBarView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.068 -0400", hash_original_method = "3A6246ABFAB05CB7EB83E9ECE73695AD", hash_generated_method = "6E28EC11FE705A7FCC9A34CE65DD4AA2")
     public void setWindowCallback(Window.Callback cb) {
         mWindowCallback = cb;
@@ -384,6 +385,7 @@ public class ActionBarView extends AbsActionBarView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.068 -0400", hash_original_method = "9DA99B4E01A506E72BA59AF598A3C38D", hash_generated_method = "8EC49622929109DFBCC5294D2E004D82")
     @Override
     public boolean shouldDelayChildPressedState() {
@@ -472,6 +474,7 @@ public class ActionBarView extends AbsActionBarView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.070 -0400", hash_original_method = "D1A0823C6A31D8186A466BCCCE11ADAA", hash_generated_method = "4AF7CA7D468030887AC75F4E4CC1007A")
     public boolean isSplitActionBar() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1721867697 = getTaintBoolean();
@@ -481,6 +484,7 @@ public class ActionBarView extends AbsActionBarView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.070 -0400", hash_original_method = "24672C2D43139828573B39E460E47DBC", hash_generated_method = "63DA9E0D0FB61E7F7C80254635893BA1")
     public boolean hasEmbeddedTabs() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2081088059 = getTaintBoolean();
@@ -521,6 +525,7 @@ public class ActionBarView extends AbsActionBarView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.071 -0400", hash_original_method = "0457D3AD4F802E9E3CD470071939A6F3", hash_generated_method = "1D5D0E55A3097020CCF1A8E557F79F64")
     public void setCallback(OnNavigationListener callback) {
         mCallback = callback;
@@ -622,6 +627,7 @@ public class ActionBarView extends AbsActionBarView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.072 -0400", hash_original_method = "8730ED187B27F4DCB92C97E3B6342387", hash_generated_method = "53A058F9F072ECF09145C15BEECB6557")
     public boolean hasExpandedActionView() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_884752106 = getTaintBoolean();
@@ -673,6 +679,7 @@ public class ActionBarView extends AbsActionBarView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.074 -0400", hash_original_method = "7D691BCB64236E7B5AF8F6CB0399C091", hash_generated_method = "3EA868018C75773A0DE79685E1AFD523")
     public CharSequence getTitle() {
         CharSequence varB4EAC82CA7396A68D541C85D26508E83_1851737564 = null; 
@@ -739,6 +746,7 @@ public class ActionBarView extends AbsActionBarView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.075 -0400", hash_original_method = "8334E54E49A430BB5E2CB9D01857CDC7", hash_generated_method = "1078D1AD0C8BFE5F2464FF696667EFB3")
     public CharSequence getSubtitle() {
         CharSequence varB4EAC82CA7396A68D541C85D26508E83_796165947 = null; 
@@ -996,6 +1004,7 @@ public class ActionBarView extends AbsActionBarView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.088 -0400", hash_original_method = "1A4098174F41A05D8E016C60876697BD", hash_generated_method = "FD769F48DE08B71C913024293A7915E1")
     public SpinnerAdapter getDropdownAdapter() {
         SpinnerAdapter varB4EAC82CA7396A68D541C85D26508E83_570435392 = null; 
@@ -1028,6 +1037,7 @@ public class ActionBarView extends AbsActionBarView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.090 -0400", hash_original_method = "1544DDF36E6082443A2EF4ED7A4DF538", hash_generated_method = "F9DF4EF2FE7AF8FE21211B0DE26A4974")
     public View getCustomNavigationView() {
         View varB4EAC82CA7396A68D541C85D26508E83_295992441 = null; 
@@ -1039,6 +1049,7 @@ public class ActionBarView extends AbsActionBarView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.090 -0400", hash_original_method = "14AA191B691A51A87445A62103C542CB", hash_generated_method = "D79AD504D6AB127BA9352704A254BE2F")
     public int getNavigationMode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_724435597 = getTaintInt();
@@ -1048,6 +1059,7 @@ public class ActionBarView extends AbsActionBarView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.091 -0400", hash_original_method = "7126F05C057CF7F499EBFF9A1F4C4A02", hash_generated_method = "58B91ADFB34E0A37C28CE732A579EE2E")
     public int getDisplayOptions() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1077400203 = getTaintInt();
@@ -1145,6 +1157,7 @@ public class ActionBarView extends AbsActionBarView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.093 -0400", hash_original_method = "F623B40982707A8AF90610858040ED3E", hash_generated_method = "D4BCFE83BC3C16939B58F9C8F60CB578")
     public void setContextView(ActionBarContextView view) {
         mContextView = view;
@@ -1153,6 +1166,7 @@ public class ActionBarView extends AbsActionBarView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.094 -0400", hash_original_method = "4C7B7DAEF91C23BA8E2CF63957DDD2D5", hash_generated_method = "D1B4B964836E41A41374E901B2F6E0A6")
     public void setCollapsable(boolean collapsable) {
         mIsCollapsable = collapsable;
@@ -1161,6 +1175,7 @@ public class ActionBarView extends AbsActionBarView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.094 -0400", hash_original_method = "85F70991FC3EED5A4EDF0B8F79DFC73E", hash_generated_method = "26AF4B6AF43473744F0D278376D408FD")
     public boolean isCollapsed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_300620894 = getTaintBoolean();

@@ -304,6 +304,7 @@ public final class StrictMode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static VmPolicy getVmPolicy() {
         synchronized (StrictMode.class) {
             return sVmPolicy;
@@ -324,11 +325,13 @@ public final class StrictMode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean vmSqliteObjectLeaksEnabled() {
         return (sVmPolicyMask & DETECT_VM_CURSOR_LEAKS) != 0;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean vmClosableObjectLeaksEnabled() {
         return (sVmPolicyMask & DETECT_VM_CLOSABLE_LEAKS) != 0;
     }

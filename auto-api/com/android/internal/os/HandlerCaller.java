@@ -98,6 +98,7 @@ public class HandlerCaller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.499 -0400", hash_original_method = "E4D2DD64F276F5C1793412D257C8C8A2", hash_generated_method = "94FB33DE5CFCE949A978443A9476C797")
     public void recycleArgs(SomeArgs args) {
         {

@@ -86,6 +86,7 @@ public class DefaultClientConnection extends SocketHttpClientConnection implemen
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.420 -0400", hash_original_method = "DA5079B0FADB5957D7F2D5BE061C8D7D", hash_generated_method = "9495B63F7C19D500192B03E4F4F3E347")
     public void opening(Socket sock, HttpHost target) throws IOException {
         assertNotOpen();
@@ -249,6 +250,7 @@ public class DefaultClientConnection extends SocketHttpClientConnection implemen
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.429 -0400", hash_original_method = "9118767905DEE596C55572AB6CA12E81", hash_generated_method = "DC74FF541565A7F1A9C71A9873AD8045")
     public void update(Socket sock, HttpHost target,
                        boolean secure, HttpParams params) throws IOException {

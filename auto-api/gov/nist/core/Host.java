@@ -125,6 +125,7 @@ public class Host extends GenericObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.456 -0400", hash_original_method = "01D438C7CBE6320DFE75C4BCB8CCFBCD", hash_generated_method = "23BE554520BC05729536EA2F3947E1F7")
     public String getHostname() {
         String varB4EAC82CA7396A68D541C85D26508E83_1397215784 = null; 
@@ -136,6 +137,7 @@ public class Host extends GenericObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.457 -0400", hash_original_method = "4A9CAFF1CF2BA97BC04195E67D0EDAE7", hash_generated_method = "62B541DCA4A703C28F547BFF50C91E6F")
     public String getAddress() {
         String varB4EAC82CA7396A68D541C85D26508E83_1126931659 = null; 
@@ -271,6 +273,7 @@ public class Host extends GenericObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.466 -0400", hash_original_method = "E77AF8452BCCF2463D33B3FB98136CBC", hash_generated_method = "47BA503BD97B1BB9265D6425D12EEBF3")
     public boolean isHostname() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_718856582 = getTaintBoolean();
@@ -280,6 +283,7 @@ public class Host extends GenericObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.466 -0400", hash_original_method = "99CC342CC6A41D10B099489516EB4814", hash_generated_method = "A939A95544521719ECA0F55250BAF566")
     public boolean isIPAddress() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1448127924 = getTaintBoolean();

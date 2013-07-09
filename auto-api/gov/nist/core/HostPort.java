@@ -78,6 +78,7 @@ public final class HostPort extends GenericObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.544 -0400", hash_original_method = "46CD61CB12D2C2108CCC2BF62B36641B", hash_generated_method = "A2A100D50C4C3C2AEC985F6986E49F2B")
     public Host getHost() {
         Host varB4EAC82CA7396A68D541C85D26508E83_1981536243 = null; 
@@ -89,6 +90,7 @@ public final class HostPort extends GenericObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.544 -0400", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "310C04C45CB2973BB2611AE9093D55DE")
     public int getPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_937626789 = getTaintInt();
@@ -98,6 +100,7 @@ public final class HostPort extends GenericObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.544 -0400", hash_original_method = "B050407BAA043C3F798F83BEFE766D07", hash_generated_method = "DFF3CA5EB67CCBA887566D8D96E1DE0A")
     public boolean hasPort() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2020254390 = getTaintBoolean();
@@ -107,6 +110,7 @@ public final class HostPort extends GenericObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.545 -0400", hash_original_method = "7FD66A68FF224A3837669EDD9AB43DAE", hash_generated_method = "A49641C3828C7BB69086DC31891642EB")
     public void removePort() {
         port = -1;
@@ -115,6 +119,7 @@ public final class HostPort extends GenericObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.545 -0400", hash_original_method = "7261FADCCAAD2D84DAF8700A574E33AD", hash_generated_method = "249F4BE40025E097F2B0AD1D7907074A")
     public void setHost(Host h) {
         host = h;
@@ -123,6 +128,7 @@ public final class HostPort extends GenericObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.545 -0400", hash_original_method = "77F84B839458179E7DBAF505404F4852", hash_generated_method = "5F6FC0322C192F3D12450D7AA899E4D1")
     public void setPort(int p) {
         port = p;

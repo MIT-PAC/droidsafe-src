@@ -31,6 +31,7 @@ public class UnsupportedCallbackException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.784 -0400", hash_original_method = "C52CB6D8F1111BAF8BAA5D6F66319767", hash_generated_method = "29360BAD49C42B95952E5BB80D12112D")
     public Callback getCallback() {
         Callback varB4EAC82CA7396A68D541C85D26508E83_493065021 = null; 

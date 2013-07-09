@@ -26,6 +26,7 @@ public abstract class SmsAddress {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.865 -0400", hash_original_method = "EAD8B5BB0DBAF5034E5C9FE6C7B0909A", hash_generated_method = "B9927172AA47F54BE0D99235F50888B7")
     public String getAddressString() {
         String varB4EAC82CA7396A68D541C85D26508E83_1850055276 = null; 
@@ -37,6 +38,7 @@ public abstract class SmsAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.866 -0400", hash_original_method = "364284D6387231DFE8BEB00860E244AE", hash_generated_method = "71497536A5072CBA97F756E444C167EB")
     public boolean isAlphanumeric() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1625470722 = getTaintBoolean();
@@ -46,6 +48,7 @@ public abstract class SmsAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.866 -0400", hash_original_method = "9A297062C2D2EDFA0EA27742D0F1F520", hash_generated_method = "AC726019DF782906A02E228E9551FECD")
     public boolean isNetworkSpecific() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_265942568 = getTaintBoolean();

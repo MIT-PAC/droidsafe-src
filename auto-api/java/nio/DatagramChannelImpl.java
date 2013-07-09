@@ -109,6 +109,7 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.033 -0400", hash_original_method = "FA10E9C7778335E6674967F36CF6493F", hash_generated_method = "94E51C26E85BE019DA5BBC3F70B770B3")
     @Override
     synchronized public boolean isConnected() {
@@ -783,6 +784,7 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.046 -0400", hash_original_method = "A16D8AC033B12AF5E337D988C94AB7BA", hash_generated_method = "98539D5FCF59AB2FA4781E549E66D57D")
     public FileDescriptor getFD() {
         FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_381586323 = null; 

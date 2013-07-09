@@ -123,6 +123,7 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.120 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "1F0D40463F58DC161E750DE4824E2D5C")
     @Override
     public int describeContents() {
@@ -176,6 +177,7 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.123 -0400", hash_original_method = "15923319AE2A6D9E076B860EB8423C19", hash_generated_method = "224180F65674C6CF8BDBF23E028A59DC")
     public Address getSipAddress() {
         Address varB4EAC82CA7396A68D541C85D26508E83_1314682442 = null; 
@@ -211,6 +213,7 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.125 -0400", hash_original_method = "95E3B173DEC08F5D485CDBF035AFC6AC", hash_generated_method = "B3A99E7023D9237C86B4776E8FDC9B2F")
     public String getAuthUserName() {
         String varB4EAC82CA7396A68D541C85D26508E83_622337314 = null; 
@@ -222,6 +225,7 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.125 -0400", hash_original_method = "352B20CA8286B4BCFAD735A80A162186", hash_generated_method = "3F726842851DE59137BD60C7D98D0D49")
     public String getPassword() {
         String varB4EAC82CA7396A68D541C85D26508E83_890576971 = null; 
@@ -233,6 +237,7 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.126 -0400", hash_original_method = "B8163CA1BE0927DF0B70D99008321B49", hash_generated_method = "FD4F38F9ACE3C1F402C663CF59269D2E")
     public String getSipDomain() {
         String varB4EAC82CA7396A68D541C85D26508E83_958770494 = null; 
@@ -244,6 +249,7 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.126 -0400", hash_original_method = "D8DAED2CD8A0984A9202198C71DA9D83", hash_generated_method = "155B2EA03094341B03C70A7C6DFEFB86")
     public int getPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1108389174 = getTaintInt();
@@ -253,6 +259,7 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.127 -0400", hash_original_method = "259570BEE3678204ECD026726561CF7F", hash_generated_method = "C0E4224287A2783BCF3A7E4F37E40E0A")
     public String getProtocol() {
         String varB4EAC82CA7396A68D541C85D26508E83_1732300069 = null; 
@@ -264,6 +271,7 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.127 -0400", hash_original_method = "3AA5E492CF333F83039FEED9B349A3B0", hash_generated_method = "2795F163D9E63C2BA6DEA2413D988EA7")
     public String getProxyAddress() {
         String varB4EAC82CA7396A68D541C85D26508E83_648439619 = null; 
@@ -275,6 +283,7 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.127 -0400", hash_original_method = "9B8D5C45DA02E326FD388B2D1055F434", hash_generated_method = "67A76036AC45F4FE9D2063D790598A5C")
     public String getProfileName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1231878443 = null; 
@@ -286,6 +295,7 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.128 -0400", hash_original_method = "0FCF61873B0EC3A9D19B7E99B4FC0FAA", hash_generated_method = "1012813C06AE5E6AC44884D117F18650")
     public boolean getSendKeepAlive() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1696636592 = getTaintBoolean();
@@ -295,6 +305,7 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.128 -0400", hash_original_method = "BE11F0672CD5463C56A90C5E0BC73CFE", hash_generated_method = "5700190DC480A536356DBAA4FBED96A6")
     public boolean getAutoRegistration() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1723279837 = getTaintBoolean();
@@ -304,6 +315,7 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.128 -0400", hash_original_method = "24890DFC4ECCC257FBD9D683C57D0141", hash_generated_method = "0A7C123223C7B04C699C67D459550FF6")
     public void setCallingUid(int uid) {
         mCallingUid = uid;
@@ -312,6 +324,7 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.128 -0400", hash_original_method = "1B2206C44B78A8BBFEDFDFC351FB4749", hash_generated_method = "4F9C4F41B082744E66DC982CCC30D47A")
     public int getCallingUid() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1368288063 = getTaintInt();
@@ -321,6 +334,7 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.129 -0400", hash_original_method = "0A3380549EECCCE1451002357806ED2B", hash_generated_method = "E0AACA21A4F78096225C87222E95798A")
     private Object readResolve() throws ObjectStreamException {
         Object varB4EAC82CA7396A68D541C85D26508E83_1599043347 = null; 

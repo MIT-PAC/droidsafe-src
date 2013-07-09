@@ -45,6 +45,7 @@ final class SelectionKeyImpl extends AbstractSelectionKey {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.270 -0400", hash_original_method = "882667334549B80F71299B2D55BDD68C", hash_generated_method = "E2E3437B6497838133E1298B707C0727")
     @Override
     public SelectableChannel channel() {
@@ -72,6 +73,7 @@ final class SelectionKeyImpl extends AbstractSelectionKey {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.271 -0400", hash_original_method = "0E5852722D76AA650E985E5327BEB666", hash_generated_method = "5A36CB8CBB3397911D73E5658562C363")
      int interestOpsNoCheck() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_427893964 = getTaintInt();
@@ -126,6 +128,7 @@ final class SelectionKeyImpl extends AbstractSelectionKey {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.272 -0400", hash_original_method = "4899CDE2873B162644661E5D73296ACA", hash_generated_method = "987FCDF6C4274543684F392314DEEFF5")
     @Override
     public Selector selector() {
@@ -138,6 +141,7 @@ final class SelectionKeyImpl extends AbstractSelectionKey {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.273 -0400", hash_original_method = "9A32477274F9217DE646A1A1CD8308E4", hash_generated_method = "E8E8564E22AE6A9CE6C9C6D694C9BEC6")
      void setReadyOps(int readyOps) {
         this.readyOps = readyOps;

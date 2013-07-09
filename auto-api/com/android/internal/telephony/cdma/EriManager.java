@@ -93,12 +93,14 @@ public final class EriManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.435 -0400", hash_original_method = "F319D2CF7E3E715B8D39AE2FABF6BF7B", hash_generated_method = "E557464B9F1CB4500DE84483A9542396")
     private void loadEriFileFromModem() {
         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.435 -0400", hash_original_method = "A745E0763E42351C9DE31AD2579A5B7C", hash_generated_method = "E7A0D2EF52E0D62B1AC03B9954F84BEF")
     private void loadEriFileFromFileSystem() {
         
@@ -197,6 +199,7 @@ public final class EriManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.437 -0400", hash_original_method = "C9469B68514D99711DF201C8FE7DFBA7", hash_generated_method = "C36FEC4137EB0E8D452C32CF93B49039")
     public int getEriFileVersion() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1677688634 = getTaintInt();
@@ -206,6 +209,7 @@ public final class EriManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.437 -0400", hash_original_method = "61A833F46D3B8953A540625C42A0EB37", hash_generated_method = "3B7668F37DB3D9E3FB7E2E61797946D8")
     public int getEriNumberOfEntries() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_11966921 = getTaintInt();
@@ -215,6 +219,7 @@ public final class EriManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.438 -0400", hash_original_method = "1FA8D7F59FB6C59B7F4FF404D7CADD99", hash_generated_method = "4338A98036BAF8698AED63AAE68BA403")
     public int getEriFileType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2090584144 = getTaintInt();
@@ -224,6 +229,7 @@ public final class EriManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.438 -0400", hash_original_method = "82EFBDE53CEDFA09C7F551715591238A", hash_generated_method = "8FDB32BEBEC0513E605ACEDB639DC0BD")
     public boolean isEriFileLoaded() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1461918942 = getTaintBoolean();

@@ -213,6 +213,7 @@ public class ChoiceFormat extends NumberFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.573 -0400", hash_original_method = "989D9CABCA800EE4DFA0CFCD3DE77FA9", hash_generated_method = "C3B37C7EAD5EF0D8FB2FECDF1F2EFD57")
     public Object[] getFormats() {
         Object[] varB4EAC82CA7396A68D541C85D26508E83_148008514 = null; 
@@ -224,6 +225,7 @@ public class ChoiceFormat extends NumberFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.574 -0400", hash_original_method = "290809530CC76A10C33738C53A5176B9", hash_generated_method = "A7DE174286B56DDA9F067B9ADDC3EDA9")
     public double[] getLimits() {
         double[] var74D44D7D9EE6FE6C3433D694F869E521_906407038 = {getTaintDouble()};

@@ -76,6 +76,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.692 -0400", hash_original_method = "D517197DC7BA53960E7471B1FA197117", hash_generated_method = "580560D142C0CD8EEA5AC831F856A095")
     private Object[] getSignatureAnnotation() {
     	Object[] foo = new Object[0];
@@ -312,6 +313,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.698 -0400", hash_original_method = "3030130FFB93A0C1BBA3E92339DE84EE", hash_generated_method = "D74A7938E49DD87E8948A41E18E9A2A2")
     public ClassLoader getClassLoader() {
         ClassLoader varB4EAC82CA7396A68D541C85D26508E83_1603149560 = null; 
@@ -350,6 +352,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.698 -0400", hash_original_method = "CA71AD82665CF5FC19F2861C6018C612", hash_generated_method = "C22B9DD8D635AED9FF67605473D8C013")
      ClassLoader getClassLoaderImpl() {
         ClassLoader varB4EAC82CA7396A68D541C85D26508E83_550581525 = null; 
@@ -520,6 +523,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.710 -0400", hash_original_method = "2A0D770C788AFD3292AC02E319E3DDE7", hash_generated_method = "DB9C61E181111C55768DF3409E22B2FA")
     public Annotation[] getDeclaredAnnotations() {
     	Annotation[] ret = new Annotation[0];
@@ -636,6 +640,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.714 -0400", hash_original_method = "8A682798BA4F3E7A7CABB0F16EFFEE4D", hash_generated_method = "23D33270CB547CC35C96184FE40DDA8D")
     public Field getDeclaredField(String name) throws NoSuchFieldException {
         Field varB4EAC82CA7396A68D541C85D26508E83_792623338 = null; 
@@ -662,6 +667,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.714 -0400", hash_original_method = "AA99B76B619CDC6E346F586A8911140C", hash_generated_method = "6C2C0184C266A602A7FDF841E4932595")
     public Field[] getDeclaredFields() {
         Field[] varB4EAC82CA7396A68D541C85D26508E83_519434362 = null; 
@@ -714,6 +720,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.716 -0400", hash_original_method = "76B8AECB3C8722E0C9050BEEFD88DA1C", hash_generated_method = "094BDFE715FA7F43CB67CE5A3F276AED")
     public Method[] getDeclaredMethods() {
         Method[] varB4EAC82CA7396A68D541C85D26508E83_1222789881 = null; 
@@ -735,6 +742,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.BAN)
     static Member getDeclaredConstructorOrMethod(Class clazz, String name, Class[] args) {
                 
     	Method ret = new Method();
@@ -772,6 +780,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.717 -0400", hash_original_method = "D4C604D782CFEF7F67F7383F824B8549", hash_generated_method = "42F609F6A3577ECAA8EE5F0164C83C69")
     public Method getEnclosingMethod() {
         
@@ -812,6 +821,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.719 -0400", hash_original_method = "FA8DAD805A6C401E4747A9C743D605D2", hash_generated_method = "E94B810F9CEFF058980538B3F4FC71E1")
     public Field getField(String name) throws NoSuchFieldException {
         Field varB4EAC82CA7396A68D541C85D26508E83_1110633585 = null; 
@@ -838,6 +848,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.729 -0400", hash_original_method = "5B7CAA69F62F801E9329410682C5B334", hash_generated_method = "BFF6806013DBCA394A4C44FA652A7DCE")
     private Field getPublicFieldRecursive(String name) {
         Field varB4EAC82CA7396A68D541C85D26508E83_764784757 = null; 
@@ -909,6 +920,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.732 -0400", hash_original_method = "EE852D72665161D6434FA53D37832A51", hash_generated_method = "D5170549BE401A42DCCB5E9D7436B247")
     public Field[] getFields() {
         Field[] varB4EAC82CA7396A68D541C85D26508E83_1553434824 = null; 
@@ -968,6 +980,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.740 -0400", hash_original_method = "A82263350C71E60DCD37A3953DD0C780", hash_generated_method = "60311FB62B1E8E45FCD3FFF4941B7230")
     public Type[] getGenericInterfaces() {
         Type[] varB4EAC82CA7396A68D541C85D26508E83_1450689875 = null; 
@@ -983,6 +996,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.741 -0400", hash_original_method = "F49B4034A49DCE93E76B5D95ACE6523A", hash_generated_method = "E5DEE202FCD8D8758E2DEFBA0384E163")
     public Type getGenericSuperclass() {
         Type varB4EAC82CA7396A68D541C85D26508E83_1829067052 = null; 
@@ -1028,6 +1042,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.742 -0400", hash_original_method = "C97EB7E8DB296134D4BC8E9F9CBD0F21", hash_generated_method = "F7E615CAD1E7DB823CCBBE09F7B3429A")
     public Method[] getMethods() {
         Method[] varB4EAC82CA7396A68D541C85D26508E83_671429982 = null; 
@@ -1119,6 +1134,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.755 -0400", hash_original_method = "31D33A7314A957E536E7D171A57CAB24", hash_generated_method = "D2A1F2570A688E342CB66374B5D563FA")
     private String getNameNative() {
         
@@ -1198,6 +1214,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.757 -0400", hash_original_method = "0DFF052FEDA74158169D3F5C3A6A31A3", hash_generated_method = "E15F8A7CFFBAA6A8E91B4004366ED98B")
     private String getInnerClassName() {
         
@@ -1206,6 +1223,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.758 -0400", hash_original_method = "82F23D377D0B35BD25A884E70716090D", hash_generated_method = "6AD6524253815947B43A04D461B38C42")
     public ProtectionDomain getProtectionDomain() {
         ProtectionDomain varB4EAC82CA7396A68D541C85D26508E83_2072828871 = null; 
@@ -1217,6 +1235,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.760 -0400", hash_original_method = "98759567E5146872E262AEC3A30D35ED", hash_generated_method = "EB54F132698F109A009E475B07E54629")
     public URL getResource(String resName) {
         URL varB4EAC82CA7396A68D541C85D26508E83_2099622185 = null; 
@@ -1342,6 +1361,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.761 -0400", hash_original_method = "23E1DD471F041FCBD863FD07CDFD9C50", hash_generated_method = "E7462F1BDCA341B5DCB08DA1E75C3FB1")
     public Object[] getSigners() {
         Object[] varB4EAC82CA7396A68D541C85D26508E83_355299679 = null; 
@@ -1437,6 +1457,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.763 -0400", hash_original_method = "0B2F9CB5B3D3F1E238437E8B96C9A5C6", hash_generated_method = "2AF25431B992ECAA074CC8C120705518")
     public boolean isAnonymousClass() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_766824952 = getTaintBoolean();
@@ -1474,6 +1495,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.764 -0400", hash_original_method = "D7FA1612842AB24E73A4821AC9A1116F", hash_generated_method = "AE8AD508E3233CB4C53DD90BDB5A3FB2")
     public boolean isInstance(Object object) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1220066417 = getTaintBoolean();
@@ -1481,6 +1503,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.764 -0400", hash_original_method = "FC0FA8D38BCF14F0E529954D267C8D44", hash_generated_method = "1D9671C5ACCB264876BDED285E661700")
     public boolean isInterface() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1365506430 = getTaintBoolean();
@@ -1514,6 +1537,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.765 -0400", hash_original_method = "8FF8B3D321E9B47A5AC7E5D4DF30BFE3", hash_generated_method = "79586B2EEA7716888A12A00449ED0D6D")
     public boolean isPrimitive() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2044177983 = getTaintBoolean();
@@ -1625,6 +1649,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.767 -0400", hash_original_method = "979945A4786597A7E7ECDDD9487DBA25", hash_generated_method = "1C2D310A9A2856D40F4163E9CB4EC999")
     public boolean desiredAssertionStatus() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_108875613 = getTaintBoolean();

@@ -43,6 +43,7 @@ class GLES20TextureLayer extends GLES20Layer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.296 -0400", hash_original_method = "11B63BDC356D1B06476790C8BA000825", hash_generated_method = "31A17DA24374A3D0231EE362C9ED8A3F")
     @Override
      boolean isValid() {
@@ -53,6 +54,7 @@ class GLES20TextureLayer extends GLES20Layer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.297 -0400", hash_original_method = "E6D4E5987C63DC0417A704140ED92009", hash_generated_method = "05C20B5E0F7AFA380884E666AA3D8601")
     @Override
      void resize(int width, int height) {
@@ -62,6 +64,7 @@ class GLES20TextureLayer extends GLES20Layer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.297 -0400", hash_original_method = "FE3F18C4DF5FFEAAB94B6C71D2FF4AC1", hash_generated_method = "70E98F674CFB6E939CE29EED10957BF2")
     @Override
      HardwareCanvas getCanvas() {
@@ -74,6 +77,7 @@ class GLES20TextureLayer extends GLES20Layer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.298 -0400", hash_original_method = "2311903AB2BF759F2AF64EC85ECFCD74", hash_generated_method = "E08CF8B27E2309E0F114628D46B0257A")
     @Override
      HardwareCanvas start(Canvas currentCanvas) {
@@ -87,6 +91,7 @@ class GLES20TextureLayer extends GLES20Layer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.298 -0400", hash_original_method = "8A4AD7636F89A9F2F6FF510EF4082BAC", hash_generated_method = "99E4F141B60ED953D3D1624851C86C2F")
     @Override
      void end(Canvas currentCanvas) {

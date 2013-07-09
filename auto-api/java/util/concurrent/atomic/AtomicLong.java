@@ -28,6 +28,7 @@ public class AtomicLong extends Number implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean VMSupportsCS8() {
         return DSUtils.UNKNOWN_BOOLEAN;
     }

@@ -219,6 +219,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
 
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.611 -0400", hash_original_method = "AD027B7B58A4A2F151CC138FB7B23244", hash_generated_method = "40D882F3A1186DBAAD3CDA8FF3538DB4")
     public Intent getIntent() {
         Intent varB4EAC82CA7396A68D541C85D26508E83_772984976 = null; 
@@ -230,6 +231,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.612 -0400", hash_original_method = "CC61C883982068788EAC9DED2F81C9E5", hash_generated_method = "B79BA4B24A70D57CC8AC980D0B341130")
     public void setIntent(Intent newIntent) {
         mIntent = newIntent;
@@ -269,6 +271,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.617 -0400", hash_original_method = "1DCFADD2C71F0E408EA049F81A8ACDED", hash_generated_method = "734D2A98F408233E136423BA63024E34")
     public WindowManager getWindowManager() {
         WindowManager varB4EAC82CA7396A68D541C85D26508E83_988565730 = null; 
@@ -280,6 +283,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.618 -0400", hash_original_method = "51ACB33F24592F8ED3FAFF9D96DEAF2A", hash_generated_method = "DC96C9C2C834AA730EBE613A81D9C0F5")
     public Window getWindow() {
         Window varB4EAC82CA7396A68D541C85D26508E83_60546631 = null; 
@@ -564,6 +568,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.636 -0400", hash_original_method = "9551F017AAC8568C86A29525E7DD6889", hash_generated_method = "BFAD3826B369FB60CEBE705C5D3DE3AF")
     protected void onRestart() {
         
@@ -599,6 +604,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.638 -0400", hash_original_method = "ECA12E6FCFF6C8E6301C9A23FD34F5BD", hash_generated_method = "55BB01BD8178596262072C6AD03D450A")
     protected void onNewIntent(Intent intent) {
         
@@ -693,6 +699,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.642 -0400", hash_original_method = "F09D1B8D5CADCA3B5931B472B638BC48", hash_generated_method = "E9DC8D666FB72967F203DDC8123D3668")
     protected void onUserLeaveHint() {
         
@@ -700,6 +707,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.642 -0400", hash_original_method = "88BB0202BF6BAEB771096BFB80D04435", hash_generated_method = "EFB33BA577C239CCA9926E0018AFE5A7")
     public boolean onCreateThumbnail(Bitmap outBitmap, Canvas canvas) {
         
@@ -712,6 +720,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.644 -0400", hash_original_method = "ABF3FC9B35FB67DA4650457E79D2DAE8", hash_generated_method = "B1FAF3BEF87509889186D7CD9A91F683")
     public CharSequence onCreateDescription() {
         
@@ -803,6 +812,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.649 -0400", hash_original_method = "60C5D0D9DB2F726CCDEA80A841C2981A", hash_generated_method = "513CD76529F712D34B94D067D8195797")
     public int getChangingConfigurations() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_328452037 = getTaintInt();
@@ -812,6 +822,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.649 -0400", hash_original_method = "A4ED76D57E3C56C838C9F6AEF3843C6C", hash_generated_method = "EBCBEE219C98A0AA3850CB34D38E85B9")
     @Deprecated
     public Object getLastNonConfigurationInstance() {
@@ -826,6 +837,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.650 -0400", hash_original_method = "1AAF173FB42EFD7F047F27F49A93F1B0", hash_generated_method = "4937D66C19EF3B6B4E926D37DEF06C1D")
     public Object onRetainNonConfigurationInstance() {
         
@@ -937,6 +949,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.660 -0400", hash_original_method = "C5EB33D6873EE026D87972F02E8EBD4B", hash_generated_method = "6B80D7DC013E9118FAECABE177B75EEE")
     public FragmentManager getFragmentManager() {
         FragmentManager varB4EAC82CA7396A68D541C85D26508E83_1592188508 = null; 
@@ -970,6 +983,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.662 -0400", hash_original_method = "28C2B4CF762BABC0F8C194FDD6A98E77", hash_generated_method = "7BA62512AFE4BD6BB2D807B17B09B3A6")
     public void onAttachFragment(Fragment fragment) {
         
@@ -1075,6 +1089,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.668 -0400", hash_original_method = "14D9F664592BF6CD2790F336C855BE58", hash_generated_method = "C1728DB8A9348DEE6C39624FD13930AC")
     @Deprecated
     public void setPersistent(boolean isPersistent) {
@@ -1291,6 +1306,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.681 -0400", hash_original_method = "2A75FF2C44C4D96068DDAFC2643F0C8B", hash_generated_method = "58C6E056456A330A3C2B9AAAA27750D7")
     public boolean onKeyLongPress(int keyCode, KeyEvent event) {
         
@@ -1336,6 +1352,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.682 -0400", hash_original_method = "E364C67ED15F0AA31C6DCFFA6137C8C0", hash_generated_method = "D0BF1D7F38071ED301D9BACE63141C7A")
     public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event) {
         
@@ -1366,6 +1383,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.684 -0400", hash_original_method = "2ECF3E4914B4B3BE2238F799B7435A51", hash_generated_method = "0A9FA12DD5D45229BE322BAE6DB4F0C1")
     public boolean onKeyShortcut(int keyCode, KeyEvent event) {
         
@@ -1399,6 +1417,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.686 -0400", hash_original_method = "4A983FDB3FF481E2165B7D8D641CDD48", hash_generated_method = "E6E784766C2C78561C3D9BC14947E78C")
     public boolean onTrackballEvent(MotionEvent event) {
         
@@ -1410,6 +1429,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.687 -0400", hash_original_method = "0E59A005881F30C798F764BCF32D89A3", hash_generated_method = "8EE29DC24EE268CD9D5608088D77EFD6")
     public boolean onGenericMotionEvent(MotionEvent event) {
         
@@ -1421,6 +1441,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.688 -0400", hash_original_method = "787C037504CBD45EADF1B222AFA073D0", hash_generated_method = "A806D85F6475EA9E3D8F95C8B0E85BF8")
     public void onUserInteraction() {
         
@@ -1451,6 +1472,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.690 -0400", hash_original_method = "32D7339793DCE0D5AEFE6621981EC978", hash_generated_method = "15CE33052F85E41C1BB65E1E6B2C108A")
     public void onContentChanged() {
         
@@ -1458,6 +1480,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.690 -0400", hash_original_method = "C7622FC561A602386C2112BC0445F7C6", hash_generated_method = "EEF2114A935228AD19BFEE6FAB48379F")
     public void onWindowFocusChanged(boolean hasFocus) {
         
@@ -1466,6 +1489,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.691 -0400", hash_original_method = "D6E949EE9F0768F47016EEA4FC0347A8", hash_generated_method = "0E08FFA9282E502085CC6973CB60CDA1")
     public void onAttachedToWindow() {
         
@@ -1473,6 +1497,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.691 -0400", hash_original_method = "E592299EBB4DE1D6696EB8C4009A9EF4", hash_generated_method = "1328510831112E7A424EFCA8583CA87C")
     public void onDetachedFromWindow() {
         
@@ -1648,6 +1673,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.700 -0400", hash_original_method = "8FB2859FE43E0606E21921E291A18BDA", hash_generated_method = "54D145B10C486CF2BD6821254ADFD193")
     public View onCreatePanelView(int featureId) {
         
@@ -1912,6 +1938,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.712 -0400", hash_original_method = "85F2A519B2781A30F4BC68DB47459C98", hash_generated_method = "170D9A5A5BFA1A654CA19943D4D0F496")
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
         
@@ -1990,6 +2017,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.719 -0400", hash_original_method = "5C4ABBE5E4F27E10ACC00467798D80D8", hash_generated_method = "20335D8710FF0308CB9DA68CDAEA9927")
     @Deprecated
     protected Dialog onCreateDialog(int id) {
@@ -2331,6 +2359,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.740 -0400", hash_original_method = "30D6BE1E6EC7F84FBEF609A16BE7CA4B", hash_generated_method = "B137FC071652C17D355793D1C802296C")
     public void startActivityForResult(Intent intent, int requestCode) {
     	
@@ -2363,6 +2392,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.741 -0400", hash_original_method = "97600DFB6FE5B26D9938AA60DE8024CD", hash_generated_method = "FA10EF31903F88D2581DE195777EC527")
     public void startIntentSenderForResult(IntentSender intent, int requestCode,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags) throws IntentSender.SendIntentException {
@@ -2391,6 +2421,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.742 -0400", hash_original_method = "5FAE47F5C92447A2EE7F29A0B33663DC", hash_generated_method = "6076DC73DF003AE18ABB9D43185D5999")
     private void startIntentSenderForResultInner(IntentSender intent, int requestCode,
             Intent fillInIntent, int flagsMask, int flagsValues, Activity activity) throws IntentSender.SendIntentException {
@@ -2426,6 +2457,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.743 -0400", hash_original_method = "496A47C2900A9596F27A50B4876A4F74", hash_generated_method = "7E32BC9F71CA50B44AEBBB0B32CF0606")
     @Override
     public void startActivity(Intent intent) {
@@ -2449,6 +2481,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.744 -0400", hash_original_method = "9F69F403C1C5722F41E10FF600B75C73", hash_generated_method = "53FC79B0A90985C80375B1F1564CCE14")
     public void startIntentSender(IntentSender intent,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags) throws IntentSender.SendIntentException {
@@ -2465,6 +2498,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.745 -0400", hash_original_method = "190134DCA27346A23C03C3693BD2B9AA", hash_generated_method = "FEF7AB2718A479A765F7905B1944DF06")
     public boolean startActivityIfNeeded(Intent intent, int requestCode) {
         {
@@ -2498,6 +2532,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.746 -0400", hash_original_method = "BA57A0705EEE92F3B7079102E9F6CF18", hash_generated_method = "E86915256498B9979F0E7B227B9B4FB2")
     public boolean startNextMatchingActivity(Intent intent) {
         {
@@ -2530,6 +2565,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.746 -0400", hash_original_method = "DF04C3C173E07E956B29F2B3DAB7E481", hash_generated_method = "43291160E6EFA260EBAB369A49CF904D")
     public void startActivityFromChild(Activity child, Intent intent, 
             int requestCode) {
@@ -2557,6 +2593,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.747 -0400", hash_original_method = "5E733A6053D527FE1D06898E4868AC5B", hash_generated_method = "93A849EB613BABF66E8A458C106D7466")
     public void startActivityFromFragment(Fragment fragment, Intent intent, 
             int requestCode) {
@@ -2584,6 +2621,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.749 -0400", hash_original_method = "39BD7073F28230B53A756B456127D77C", hash_generated_method = "03BC87FA40B57EECC467DABFFB2B357D")
     public void startIntentSenderFromChild(Activity child, IntentSender intent,
             int requestCode, Intent fillInIntent, int flagsMask, int flagsValues,
@@ -2756,6 +2794,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.756 -0400", hash_original_method = "43D5EE376AB6A31BE07F9DEA063A3A15", hash_generated_method = "1C1CD86412F03F0408132364FBE77A25")
     public boolean isFinishing() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_7499186 = getTaintBoolean();
@@ -2765,6 +2804,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.757 -0400", hash_original_method = "FE2E80A11740332998069879BC688861", hash_generated_method = "DD38BFFF03E373BAB04C671679FBDD82")
     public boolean isChangingConfigurations() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1770471603 = getTaintBoolean();
@@ -2911,6 +2951,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.762 -0400", hash_original_method = "6D8F676326F7C192A2903AC6F4C36AC9", hash_generated_method = "FA2BB58664560B8B761B02F0C8FA09C1")
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         
@@ -2921,6 +2962,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.764 -0400", hash_original_method = "724A566EB4440BBE32F479663ADACFA1", hash_generated_method = "E5D116A5A06D9E976CB315D1559302BE")
     public PendingIntent createPendingResult(int requestCode, Intent data,
             int flags) {
@@ -3135,6 +3177,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.772 -0400", hash_original_method = "6C1D36E28C0C97736EA4779A7FB1715C", hash_generated_method = "08D60F3A3965E609E8438BBF769C11E7")
     public ComponentName getComponentName() {
         ComponentName varB4EAC82CA7396A68D541C85D26508E83_1575296692 = null; 
@@ -3315,6 +3358,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.782 -0400", hash_original_method = "7A7CC5A839395F1C996BC46DE28C9533", hash_generated_method = "47D28BBF002CF6FFA1CB46B0EBB355C9")
     protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
         
@@ -3417,6 +3461,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.789 -0400", hash_original_method = "C11741BEACAA4DD4B803A04296254194", hash_generated_method = "5C9323AC93E7C00DB5C4479E0B1F8E78")
     public View onCreateView(String name, Context context, AttributeSet attrs) {
         
@@ -3647,6 +3692,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.800 -0400", hash_original_method = "255BA88D048ED7CA66014BFC1FF334C0", hash_generated_method = "5C31F22675E6C5EC34FEE649E89B1DA7")
     public void onActionModeStarted(ActionMode mode) {
         
@@ -3655,6 +3701,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.801 -0400", hash_original_method = "731D5E497065CC7A99050B1E6205CD2C", hash_generated_method = "8341400BB35382A7F4737BEFC40A4A06")
     public void onActionModeFinished(ActionMode mode) {
         
@@ -4019,6 +4066,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.816 -0400", hash_original_method = "9EF1B69B76655E6A901B5D291A25C28E", hash_generated_method = "93930EA3CE14432F6ED8F1A73D44877E")
      void dispatchActivityResult(String who, int requestCode, 
         int resultCode, Intent data) {

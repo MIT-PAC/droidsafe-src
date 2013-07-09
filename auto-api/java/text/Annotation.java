@@ -21,6 +21,7 @@ public class Annotation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.240 -0400", hash_original_method = "B4F085CF9776332A868AEA05C2B06886", hash_generated_method = "B669F6BF83FD31BF891E2C8A93F1946B")
     public Object getValue() {
         Object varB4EAC82CA7396A68D541C85D26508E83_2038562884 = null; 

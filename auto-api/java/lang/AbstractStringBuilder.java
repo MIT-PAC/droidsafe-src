@@ -270,6 +270,7 @@ abstract class AbstractStringBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.255 -0400", hash_original_method = "4EDD82B1AA77527A58B2DDD935211532", hash_generated_method = "D89A583CE4B32501794224AF095C9707")
     public int capacity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_350138849 = getTaintInt();
@@ -558,6 +559,7 @@ abstract class AbstractStringBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.260 -0400", hash_original_method = "A4F75F4D0C7ABF3196500E489B73A8D4", hash_generated_method = "3D2E00475EEBB65E299EA251CF2638FD")
     public int length() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_900160039 = getTaintInt();

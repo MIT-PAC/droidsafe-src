@@ -72,6 +72,7 @@ public final class HttpResponseCache extends ResponseCache {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.027 -0400", hash_original_method = "BDF5FA5DFC6F094E24DB34D390FA0AF5", hash_generated_method = "A46361AF1CE03437A9CE844300BA3AF0")
     private String uriToKey(URI uri) {
         String varB4EAC82CA7396A68D541C85D26508E83_331402793 = null; 
@@ -200,6 +201,7 @@ public final class HttpResponseCache extends ResponseCache {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.031 -0400", hash_original_method = "B60E0E98B4938597A03FCCE829FCA215", hash_generated_method = "EF6D541749D3B59D22A5531C1958C976")
     @Override
     public CacheRequest put(URI uri, URLConnection urlConnection) throws IOException {
@@ -350,6 +352,7 @@ public final class HttpResponseCache extends ResponseCache {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.032 -0400", hash_original_method = "B64C7BD7AB99F4603E597D8D8E01D294", hash_generated_method = "E13184C6F309B6A75D18224670E6991B")
     public DiskLruCache getCache() {
         DiskLruCache varB4EAC82CA7396A68D541C85D26508E83_1004198486 = null; 
@@ -361,6 +364,7 @@ public final class HttpResponseCache extends ResponseCache {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.032 -0400", hash_original_method = "584B91EB5EE577F8A207E65218FB5240", hash_generated_method = "4763632EABC3502EED258528F747A1D1")
     public synchronized int getWriteAbortCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_139572372 = getTaintInt();
@@ -370,6 +374,7 @@ public final class HttpResponseCache extends ResponseCache {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.033 -0400", hash_original_method = "2EA3BABAF279B90BEBA0727537DCC414", hash_generated_method = "C60BF8E20CDF90A7CF63BDC1AD822930")
     public synchronized int getWriteSuccessCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_754916957 = getTaintInt();
@@ -397,6 +402,7 @@ public final class HttpResponseCache extends ResponseCache {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.033 -0400", hash_original_method = "456F1C16A4D586B3084074761F46B903", hash_generated_method = "2CBB05F2719F07329394083BF14747F7")
     synchronized void trackConditionalCacheHit() {
         
@@ -404,6 +410,7 @@ public final class HttpResponseCache extends ResponseCache {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.033 -0400", hash_original_method = "43B20B4C5A2152AB1A746223212EFB79", hash_generated_method = "0DF4FDB25EC52C041D1C1B89B71B7896")
     public synchronized int getNetworkCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1136306906 = getTaintInt();
@@ -413,6 +420,7 @@ public final class HttpResponseCache extends ResponseCache {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.034 -0400", hash_original_method = "F60E9424D0F277AC3F88D95186713E51", hash_generated_method = "07BEF94A2B1E425A93B8DF96C67BF596")
     public synchronized int getHitCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1867840339 = getTaintInt();
@@ -422,6 +430,7 @@ public final class HttpResponseCache extends ResponseCache {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.034 -0400", hash_original_method = "B572A7BCEFA26365FDB2542BDB35291E", hash_generated_method = "B155755E2226FEBABA5A3FDBA85F1854")
     public synchronized int getRequestCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_652262504 = getTaintInt();

@@ -183,6 +183,7 @@ public class Semaphore implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.921 -0400", hash_original_method = "6835E283E5F9E7FBD3FF7844476992AD", hash_generated_method = "9B78ADFC94E8E33D9149534FCA150C00")
     public boolean isFair() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2124490506 = getTaintBoolean();

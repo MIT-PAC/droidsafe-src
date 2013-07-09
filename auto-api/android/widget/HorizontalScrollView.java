@@ -168,6 +168,7 @@ public class HorizontalScrollView extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.637 -0400", hash_original_method = "F72D9B4700B8FCB550AB26E9792E603C", hash_generated_method = "AE5C10BB16A9BE731BC69DCE43DF4AFB")
     public int getMaxScrollAmount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1085696579 = getTaintInt();
@@ -306,6 +307,7 @@ public class HorizontalScrollView extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.641 -0400", hash_original_method = "801E6F065AC6A60CFB0DADB1E074F98E", hash_generated_method = "726E30375762DCC42D3526056CA7699C")
     public boolean isFillViewport() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_199603871 = getTaintBoolean();
@@ -330,6 +332,7 @@ public class HorizontalScrollView extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.642 -0400", hash_original_method = "D26C58327C0CB18AC1F62B7629FD16B1", hash_generated_method = "2346A65BA82F9D3EEFEEDDD702F8600A")
     public boolean isSmoothScrollingEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_103136818 = getTaintBoolean();
@@ -339,6 +342,7 @@ public class HorizontalScrollView extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.642 -0400", hash_original_method = "63C96CE84D9CD60CA1FF4EF87D7FF4F5", hash_generated_method = "5C7F23BB3E765786BEE5D256B048D32A")
     public void setSmoothScrollingEnabled(boolean smoothScrollingEnabled) {
         mSmoothScrollingEnabled = smoothScrollingEnabled;
@@ -843,6 +847,7 @@ public class HorizontalScrollView extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.649 -0400", hash_original_method = "C2F251AFC67F9C484131CB8CA191D5D9", hash_generated_method = "2A890713EF0FB94CFE15DEE89BF63F00")
     @Override
     public boolean shouldDelayChildPressedState() {
@@ -1928,6 +1933,7 @@ public class HorizontalScrollView extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.670 -0400", hash_original_method = "10E81B579101690AB90AC933866D5438", hash_generated_method = "FC36480D74B9C21CD10EC394FC544D7F")
     private int clamp(int n, int my, int child) {
         addTaint(n);

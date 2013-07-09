@@ -750,6 +750,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.204 -0400", hash_original_method = "4789C177AC8ECE60B231BA8A866F9D66", hash_generated_method = "D15A757F2439A67057432D9923B0CA36")
     public SIPTransactionStack getSIPStack() {
         SIPTransactionStack varB4EAC82CA7396A68D541C85D26508E83_1346939470 = null; 
@@ -761,6 +762,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.205 -0400", hash_original_method = "B7A5D479C43293000A9EAFE6F93DF6D0", hash_generated_method = "BBE1B1FEDB80D2EBD8ADBE466D21C3E8")
     public String getTransport() {
         String varB4EAC82CA7396A68D541C85D26508E83_1595420409 = null; 
@@ -819,6 +821,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.207 -0400", hash_original_method = "1F29EC3BC94C3E0863F530FCD37A61F3", hash_generated_method = "646FE009F96DC048404C87E93C7C5F06")
     protected InetAddress getPeerInetAddress() {
         InetAddress varB4EAC82CA7396A68D541C85D26508E83_1065294393 = null; 
@@ -873,6 +876,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.208 -0400", hash_original_method = "66F44212C04D4B032E5D57BC9126F4FF", hash_generated_method = "D91722B9838E20F1407D14A322903798")
     public int getPeerPacketSourcePort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_529275511 = getTaintInt();
@@ -882,6 +886,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.208 -0400", hash_original_method = "DC065FB3DE06142DBC04F100FD01BCF3", hash_generated_method = "27B8326DF1C71F9E80B08EB3E7EF9D84")
     public InetAddress getPeerPacketSourceAddress() {
         InetAddress varB4EAC82CA7396A68D541C85D26508E83_1210079930 = null; 
@@ -893,6 +898,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.209 -0400", hash_original_method = "B7C8CBECE48532207EA3107C3752BABB", hash_generated_method = "B281B307C37ECAF7EDFF2442E8AC2A00")
     public String getViaHost() {
         String varB4EAC82CA7396A68D541C85D26508E83_1549251639 = null; 
@@ -904,6 +910,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.209 -0400", hash_original_method = "F69C682C43E3A7CF8FCB14E212CB7049", hash_generated_method = "D753CAD28977A0B2B0776349CFA868AF")
     public int getViaPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1803576829 = getTaintInt();
@@ -913,6 +920,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.209 -0400", hash_original_method = "457243F9D7A1AB9FD34866D85709C85D", hash_generated_method = "D7A5DC0B6DC404AC8B6CDC3CD8934526")
     public boolean isReliable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1359349484 = getTaintBoolean();
@@ -922,6 +930,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.209 -0400", hash_original_method = "51201694E0EE76265BF39848EF10BE9C", hash_generated_method = "C5834A0C348D6890EEA1FD2DB0BE9B80")
     public boolean isSecure() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1980457439 = getTaintBoolean();
@@ -931,6 +940,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.209 -0400", hash_original_method = "356711D154A2D021F9E9DF4BCD609AF2", hash_generated_method = "F2C30B6C2ADC2341A30AA048E4BBCF05")
     public int getPeerPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1740695797 = getTaintInt();
@@ -940,6 +950,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.210 -0400", hash_original_method = "DB79607DA3ACB5FA2D24428DF2713F98", hash_generated_method = "FAB39294323B309808FA1E9AE4F7F768")
     public String getPeerProtocol() {
         String varB4EAC82CA7396A68D541C85D26508E83_10869145 = null; 
@@ -951,6 +962,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.210 -0400", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "1CF5A5DB4E3FE1187B00A561217E4793")
     public void close() {
         

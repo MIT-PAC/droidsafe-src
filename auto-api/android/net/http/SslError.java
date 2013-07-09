@@ -79,6 +79,7 @@ public class SslError {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.446 -0400", hash_original_method = "7F448377575EC929DDEDD2BF1EB435C4", hash_generated_method = "4F5C7F5C930D4AADDEC9EFA13D0625BB")
     public SslCertificate getCertificate() {
         SslCertificate varB4EAC82CA7396A68D541C85D26508E83_1943418116 = null; 
@@ -90,6 +91,7 @@ public class SslError {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.447 -0400", hash_original_method = "13CE30FBE362EA44FDCE282CA01E7BBC", hash_generated_method = "E6A0F7ABADC1164363DA2B29FB8C4A07")
     public String getUrl() {
         String varB4EAC82CA7396A68D541C85D26508E83_576852814 = null; 
@@ -101,6 +103,7 @@ public class SslError {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.447 -0400", hash_original_method = "AE664F52BD7226DBAA3D1D1034C9653E", hash_generated_method = "E226A0F136F324C46CB6F2562BC84688")
     public boolean addError(int error) {
         boolean rval = (0 <= error && error < SslError.SSL_MAX_ERROR);
@@ -118,6 +121,7 @@ public class SslError {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.448 -0400", hash_original_method = "B3A224AA064D57107491E8991A407E79", hash_generated_method = "C01617BAF399197C8B0C79ED1200EA4E")
     public boolean hasError(int error) {
         boolean rval = (0 <= error && error < SslError.SSL_MAX_ERROR);

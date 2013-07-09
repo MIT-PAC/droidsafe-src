@@ -1505,6 +1505,7 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.399 -0400", hash_original_method = "E5A0BEEECFDAB0EB24F23ED92FDA1EE0", hash_generated_method = "B6983E356137F29A716B5E5FE8607627")
     public BigDecimal plus() {
         BigDecimal varB4EAC82CA7396A68D541C85D26508E83_255472821 = null; 
@@ -1546,6 +1547,7 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.401 -0400", hash_original_method = "F3E74BAAEB162D78F28E445308393563", hash_generated_method = "35B5AD9FF4AC51F4AF0E2B71F7FE6132")
     private boolean isZero() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1756055764 = getTaintBoolean();
@@ -1555,6 +1557,7 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.401 -0400", hash_original_method = "5F6F67A9AE4AEECC5BD64D7ACC145B6A", hash_generated_method = "6FB1914216B1AB965B96667CD3C5C996")
     public int scale() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_905334894 = getTaintInt();
@@ -2579,6 +2582,7 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int longCompareTo(long value1, long value2) {
         return value1 > value2 ? 1 : (value1 < value2 ? -1 : 0);
     }
@@ -2679,6 +2683,7 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.443 -0400", hash_original_method = "610DE3E95388579A8DD4E22BDEDE3C6E", hash_generated_method = "5BDAB296920962FB0F06AF3B7AF21DA9")
     private int approxPrecision() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1470008315 = getTaintInt();

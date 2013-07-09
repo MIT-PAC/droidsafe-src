@@ -41,6 +41,7 @@ public final class PendingIntent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static PendingIntent getActivity(Context context, int requestCode,
             Intent intent, int flags) {
         String packageName = context.getPackageName();
@@ -80,6 +81,7 @@ public final class PendingIntent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static PendingIntent getBroadcast(Context context, int requestCode,
             Intent intent, int flags) {
         String packageName = context.getPackageName();
@@ -99,6 +101,7 @@ public final class PendingIntent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static PendingIntent getService(Context context, int requestCode,
             Intent intent, int flags) {
         String packageName = context.getPackageName();
@@ -162,6 +165,7 @@ public final class PendingIntent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.887 -0400", hash_original_method = "43E1DC288109C397E82F23215BE8AF8A", hash_generated_method = "96BF866CF267060392A8C342BFDBE8ED")
     public void send(Context context, int code, Intent intent) throws CanceledException {
         send(context, code, intent, null, null, null);
@@ -184,6 +188,7 @@ public final class PendingIntent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.888 -0400", hash_original_method = "CFAA4D7DA67BDF756999EA8ECE28296B", hash_generated_method = "C0AAA8512D2F01C3A133D8BC7B82C282")
     public void send(Context context, int code, Intent intent,
             OnFinished onFinished, Handler handler) throws CanceledException {
@@ -198,6 +203,7 @@ public final class PendingIntent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.889 -0400", hash_original_method = "A238DB61CDFFE1A49966C7738AE7C6E1", hash_generated_method = "5BF29A16F2A775DD2BC05B3EF5F8CC3A")
     public void send(Context context, int code, Intent intent,
             OnFinished onFinished, Handler handler, String requiredPermission) throws CanceledException {
@@ -353,6 +359,7 @@ public final class PendingIntent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.893 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "2977ACE42629E1D860B7A09BC06BE565")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1423390996 = getTaintInt();
@@ -385,6 +392,7 @@ public final class PendingIntent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.895 -0400", hash_original_method = "5A73019C5B7699A011E114A766F68ECD", hash_generated_method = "B7F48630E4517D85DF06725089E92DA9")
     public IIntentSender getTarget() {
         IIntentSender varB4EAC82CA7396A68D541C85D26508E83_2127171575 = null; 

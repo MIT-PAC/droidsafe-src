@@ -49,6 +49,7 @@ public class Reason extends ParametersHeader implements javax.sip.header.ReasonH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.988 -0400", hash_original_method = "70E0561C3515B6199EF81B19035663E5", hash_generated_method = "4C76BB115A08F7A5B416485065695A07")
     public void setProtocol(String protocol) throws ParseException {
         this.protocol = protocol;
@@ -57,6 +58,7 @@ public class Reason extends ParametersHeader implements javax.sip.header.ReasonH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.989 -0400", hash_original_method = "5EF709A41590C5E9760EDEDCACA5AD40", hash_generated_method = "52326A5535B8A7259D2E0D25C54FA463")
     public String getProtocol() {
         String varB4EAC82CA7396A68D541C85D26508E83_622568544 = null; 
@@ -99,6 +101,7 @@ public class Reason extends ParametersHeader implements javax.sip.header.ReasonH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.991 -0400", hash_original_method = "58D1ADCDFA9509486623D4E556DE8E64", hash_generated_method = "8D2440B3A389921172A9D0E4CD21AF11")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_909370621 = null; 

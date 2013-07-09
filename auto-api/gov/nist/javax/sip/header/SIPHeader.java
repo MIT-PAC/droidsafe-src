@@ -27,6 +27,7 @@ public abstract class SIPHeader extends SIPObject implements SIPHeaderNames, jav
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.336 -0400", hash_original_method = "62BB7D98AC3AE2D1B44BF4A9C83BFCEA", hash_generated_method = "1625E0E0E490C151EB22C2BBF3C38A5B")
     public String getHeaderName() {
         String varB4EAC82CA7396A68D541C85D26508E83_717913317 = null; 
@@ -38,6 +39,7 @@ public abstract class SIPHeader extends SIPObject implements SIPHeaderNames, jav
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.336 -0400", hash_original_method = "5A8D65821D08B5534EF9F59F256EB0ED", hash_generated_method = "08721D10C5D0FE35F50124BE019790D2")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_745260868 = null; 
@@ -49,6 +51,7 @@ public abstract class SIPHeader extends SIPObject implements SIPHeaderNames, jav
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.336 -0400", hash_original_method = "B4EB4BB0337C6A7359D4335CEE5552C5", hash_generated_method = "6CE49BAD21B0CDF875F602FC403D818D")
     public void setHeaderName(String hdrname) {
         headerName = hdrname;
@@ -111,6 +114,7 @@ public abstract class SIPHeader extends SIPObject implements SIPHeaderNames, jav
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.337 -0400", hash_original_method = "1CB55F4681FA88A1D00C1CC7A8265E42", hash_generated_method = "649D75E39EE5F9697C21E0BEEA4D32FB")
     public boolean isHeaderList() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_261456481 = getTaintBoolean();

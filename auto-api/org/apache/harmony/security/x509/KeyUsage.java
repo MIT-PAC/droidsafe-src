@@ -25,6 +25,7 @@ public final class KeyUsage extends ExtensionValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.170 -0400", hash_original_method = "14A58386ABBA8977CF43289C95A15404", hash_generated_method = "547327C96360678EB5534FAAC2A721B5")
     public boolean[] getKeyUsage() {
         boolean[] var503EB2F420079C4024483971CE5EDEA8_1909673826 = {getTaintBoolean()};

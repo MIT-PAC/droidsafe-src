@@ -666,168 +666,205 @@ public class Path {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int init1() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int init2(int nPath) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_reset(int nPath) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_rewind(int nPath) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_set(int native_dst, int native_src) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int native_getFillType(int nPath) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_setFillType(int nPath, int ft) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_isEmpty(int nPath) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_isRect(int nPath, RectF rect) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_computeBounds(int nPath, RectF bounds) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_incReserve(int nPath, int extraPtCount) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_moveTo(int nPath, float x, float y) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_rMoveTo(int nPath, float dx, float dy) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_lineTo(int nPath, float x, float y) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_rLineTo(int nPath, float dx, float dy) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_quadTo(int nPath, float x1, float y1,
                                              float x2, float y2) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_rQuadTo(int nPath, float dx1, float dy1,
                                               float dx2, float dy2) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_cubicTo(int nPath, float x1, float y1,
                                         float x2, float y2, float x3, float y3) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_rCubicTo(int nPath, float x1, float y1,
                                         float x2, float y2, float x3, float y3) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_arcTo(int nPath, RectF oval,
                     float startAngle, float sweepAngle, boolean forceMoveTo) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_close(int nPath) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_addRect(int nPath, RectF rect, int dir) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_addRect(int nPath, float left, float top,
                                             float right, float bottom, int dir) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_addOval(int nPath, RectF oval, int dir) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_addCircle(int nPath, float x, float y,
                                                 float radius, int dir) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_addArc(int nPath, RectF oval,
                                             float startAngle, float sweepAngle) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_addRoundRect(int nPath, RectF rect,
                                                    float rx, float ry, int dir) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_addRoundRect(int nPath, RectF r,
                                                    float[] radii, int dir) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_addPath(int nPath, int src, float dx,
                                               float dy) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_addPath(int nPath, int src) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_addPath(int nPath, int src, int matrix) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_offset(int nPath, float dx, float dy,
                                              int dst_path) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_offset(int nPath, float dx, float dy) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_setLastPoint(int nPath, float dx, float dy) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_transform(int nPath, int matrix,
                                                 int dst_path) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_transform(int nPath, int matrix) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void finalizer(int nPath) {
     }
 

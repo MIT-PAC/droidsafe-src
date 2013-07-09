@@ -154,6 +154,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.004 -0400", hash_original_method = "9A172AFBEDC6074FE36DA0C4940853DE", hash_generated_method = "F16D814F134B57BFBDADF78473C2B965")
     public boolean isEmpty() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_908829458 = getTaintBoolean();
@@ -163,6 +164,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.004 -0400", hash_original_method = "F4586E3A64B5D10DEB709A723C85E55E", hash_generated_method = "31CC15D2CE17E50879707D917243A276")
     public int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1917326936 = getTaintInt();
@@ -172,6 +174,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.004 -0400", hash_original_method = "859254362B8CFD4ECD77710B77AC10ED", hash_generated_method = "482AAAFCA043EBF1EA9E98424D41259B")
     public int remainingCapacity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1275207293 = getTaintInt();
@@ -181,12 +184,14 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.029 -0400", hash_original_method = "CAFED8DEE3108243325B67F5797719ED", hash_generated_method = "62E208A158681C1F982FD616252404DD")
     public void clear() {
         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.029 -0400", hash_original_method = "133415712E6841A0903588DC5D4862AA", hash_generated_method = "A802766551CEC030BD53B80E85B5D2B8")
     public boolean contains(Object o) {
         addTaint(o.getTaint());
@@ -197,6 +202,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.029 -0400", hash_original_method = "6081257F3AE1D633C77BCA63D6F77CB7", hash_generated_method = "6E498D6246C661EBD3965F409A9CF6A5")
     public boolean remove(Object o) {
         addTaint(o.getTaint());
@@ -265,6 +271,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.030 -0400", hash_original_method = "AAA5D1CBE91ADDEA174F65821E23BE58", hash_generated_method = "DD67ABE9352AEDFC51547780C336B864")
     public Object[] toArray() {
         Object[] varB4EAC82CA7396A68D541C85D26508E83_1945801827 = null; 

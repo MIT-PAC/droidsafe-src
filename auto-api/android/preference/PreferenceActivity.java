@@ -363,6 +363,7 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.356 -0400", hash_original_method = "3D3F0DDAE644689D05411BA38FC63FD0", hash_generated_method = "7DFC9735717E5D2380FA525F13DC49FA")
     public Header onGetNewHeader() {
         
@@ -676,6 +677,7 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.361 -0400", hash_original_method = "BC5669EA98C9095AD4591AFCBD99CE20", hash_generated_method = "2AEBE14919F34D41BF0961BCD39F29A4")
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -779,6 +781,7 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.365 -0400", hash_original_method = "B5DA23DDC47E44587D99F550083B256B", hash_generated_method = "48A99DC9419C503EF497AECBFE83D560")
     public Intent onBuildStartFragmentIntent(String fragmentName, Bundle args,
             int titleRes, int shortTitleRes) {
@@ -1187,6 +1190,7 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.374 -0400", hash_original_method = "35CCCF58010C828A125388DBAAB260E2", hash_generated_method = "6204A7BE7AF4C35F6D9CAB69B4FAB057")
     public void finishPreferencePanel(Fragment caller, int resultCode, Intent resultData) {
         {
@@ -1278,6 +1282,7 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.376 -0400", hash_original_method = "002FC5CEE5BE5B5D1FE36CEDBC1DEB65", hash_generated_method = "FDB48B8C54349F6D86C6A73008EF5547")
     @Deprecated
     public PreferenceManager getPreferenceManager() {
@@ -1368,6 +1373,7 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.378 -0400", hash_original_method = "5674CE8C214451535BFAB18211614C8C", hash_generated_method = "93A4A732934FD8FFA0ABE2E40CF5EAA5")
     @Deprecated
     public void addPreferencesFromIntent(Intent intent) {
@@ -1395,6 +1401,7 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.378 -0400", hash_original_method = "ADC2C8250ACD9F9573CD9A45AF1661C3", hash_generated_method = "D3582C85661738A4289F0C23DC4A69E4")
     @Deprecated
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
@@ -1438,6 +1445,7 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.380 -0400", hash_original_method = "5A6127558FF9D60C52821F59A1A351C3", hash_generated_method = "F6066D2E4DA28AFE4FDCE25F8D97A89C")
     @Override
     protected void onNewIntent(Intent intent) {
@@ -1453,6 +1461,7 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.380 -0400", hash_original_method = "BC54EB6D436D19F86F3C9657BD0BE1AA", hash_generated_method = "134494D7DDB9B30DCB7FEE3BEAF43CCC")
     protected boolean hasNextButton() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1253747436 = getTaintBoolean();
@@ -1462,6 +1471,7 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.380 -0400", hash_original_method = "CC6F0F14612F322772A46478BA75E81F", hash_generated_method = "E918EA6CDAF50A53479FBE18823F68DE")
     protected Button getNextButton() {
         Button varB4EAC82CA7396A68D541C85D26508E83_414962954 = null; 

@@ -32,6 +32,7 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.497 -0400", hash_original_method = "506AD561617E231B7466C0A7229483CE", hash_generated_method = "C1F04AF8CD2705A782E70C75ED2D2BBF")
     public KeyEvent.DispatcherState getKeyDispatcherState() {
         KeyEvent.DispatcherState varB4EAC82CA7396A68D541C85D26508E83_23775478 = null; 
@@ -49,6 +50,7 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
     public abstract AbstractInputMethodSessionImpl onCreateInputMethodSessionInterface();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.498 -0400", hash_original_method = "8E1D6FEDF1AFEDBCDCF9E63EFF23CA00", hash_generated_method = "1D10734FE092C816735A266BA81DD94D")
     @Override
     protected void dump(FileDescriptor fd, PrintWriter fout, String[] args) {
@@ -79,6 +81,7 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.500 -0400", hash_original_method = "4A983FDB3FF481E2165B7D8D641CDD48", hash_generated_method = "B32F1567D3AE8FB6B44A93C2115F9EA9")
     public boolean onTrackballEvent(MotionEvent event) {
         

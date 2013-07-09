@@ -18,6 +18,7 @@ public final class NioUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getDirectBufferAddress(Buffer buffer) {
         return buffer.effectiveDirectAddress;
     }
@@ -50,11 +51,13 @@ public final class NioUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] unsafeArray(ByteBuffer b) {
         return ((HeapByteBuffer) b).backingArray;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int unsafeArrayOffset(ByteBuffer b) {
         return ((HeapByteBuffer) b).offset;
     }

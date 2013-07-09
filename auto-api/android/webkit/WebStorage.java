@@ -463,37 +463,44 @@ public final class WebStorage {
     }
 
     
-        private static Set nativeGetOrigins() {
+        @DSModeled(DSC.SAFE)
+    private static Set nativeGetOrigins() {
         	return new HashSet();
         	
     }
 
     
-        private static long nativeGetUsageForOrigin(String origin) {
+        @DSModeled(DSC.SAFE)
+    private static long nativeGetUsageForOrigin(String origin) {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1902901200 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1902901200;
     }
 
     
-        private static long nativeGetQuotaForOrigin(String origin) {
+        @DSModeled(DSC.SAFE)
+    private static long nativeGetQuotaForOrigin(String origin) {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_752076961 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_752076961;
     }
 
     
-        private static void nativeSetQuotaForOrigin(String origin, long quota) {
+        @DSModeled(DSC.SAFE)
+    private static void nativeSetQuotaForOrigin(String origin, long quota) {
     }
 
     
-        private static void nativeDeleteOrigin(String origin) {
+        @DSModeled(DSC.SAFE)
+    private static void nativeDeleteOrigin(String origin) {
     }
 
     
-        private static void nativeDeleteAllData() {
+        @DSModeled(DSC.SAFE)
+    private static void nativeDeleteAllData() {
     }
 
     
-        private static void nativeSetAppCacheMaximumSize(long size) {
+        @DSModeled(DSC.SAFE)
+    private static void nativeSetAppCacheMaximumSize(long size) {
     }
 
     

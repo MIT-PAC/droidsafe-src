@@ -26,16 +26,19 @@ public final class ByteOrder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean isLittleEndian() {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ByteOrder nativeOrder() {
         return NATIVE_ORDER;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.817 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "4CDE331DF1AFFDFE906279B5FDFA0AC6")
     @Override
     public String toString() {

@@ -74,6 +74,7 @@ final class CdmaSMSDispatcher extends SMSDispatcher {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.111 -0400", hash_original_method = "77401C8F23584A16465C2C7060977D74", hash_generated_method = "16AF466DE7CC04B7C0A5EE90E8CD2E28")
     @Override
     protected String getFormat() {
@@ -424,6 +425,7 @@ final class CdmaSMSDispatcher extends SMSDispatcher {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int resultToCause(int rc) {
         switch (rc) {
         case Activity.RESULT_OK:

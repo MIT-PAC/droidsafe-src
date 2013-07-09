@@ -100,6 +100,7 @@ public class V2Form extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.067 -0400", hash_original_method = "55884F30CB8A32C82BBC3BF8E06EF566", hash_generated_method = "76967F7A58310DEC4C5EFAA2F889C213")
     public GeneralNames getIssuerName() {
         GeneralNames varB4EAC82CA7396A68D541C85D26508E83_1939101871 = null; 
@@ -111,6 +112,7 @@ public class V2Form extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.068 -0400", hash_original_method = "0056368CFDBAD05E126455DF61F0B2E7", hash_generated_method = "C827D773FA23BDF876CB658686AC02E6")
     public IssuerSerial getBaseCertificateID() {
         IssuerSerial varB4EAC82CA7396A68D541C85D26508E83_2073747773 = null; 
@@ -122,6 +124,7 @@ public class V2Form extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.070 -0400", hash_original_method = "BF432F04B889EC14E618C49342356E7A", hash_generated_method = "3B7E3C47D3CA1961E87B858BBA5E7649")
     public ObjectDigestInfo getObjectDigestInfo() {
         ObjectDigestInfo varB4EAC82CA7396A68D541C85D26508E83_1461075167 = null; 

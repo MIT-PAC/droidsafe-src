@@ -33,6 +33,7 @@ public class FormatFlagsConversionMismatchException extends IllegalFormatExcepti
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.275 -0400", hash_original_method = "3582970EABB5B296536802E98213C512", hash_generated_method = "30346867C0A11F8129C4F73E6C57D18E")
     public String getFlags() {
         String varB4EAC82CA7396A68D541C85D26508E83_58595478 = null; 
@@ -44,6 +45,7 @@ public class FormatFlagsConversionMismatchException extends IllegalFormatExcepti
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.276 -0400", hash_original_method = "FF899ECAAB1B8C040FEF5324FAB8D93B", hash_generated_method = "5E3FE3483D842B7A6CA51AEEA0612FBB")
     public char getConversion() {
         char varA87DEB01C5F539E6BDA34829C8EF2368_371597137 = getTaintChar();

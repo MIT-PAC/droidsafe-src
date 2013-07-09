@@ -58,11 +58,13 @@ public class TrafficStats {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static void tagSocket(Socket socket) throws SocketException {
         SocketTagger.get().tag(socket);
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static void untagSocket(Socket socket) throws SocketException {
         SocketTagger.get().untag(socket);
     }
@@ -117,121 +119,145 @@ public class TrafficStats {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getMobileTxPackets() {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getMobileRxPackets() {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getMobileTxBytes() {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getMobileRxBytes() {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getTxPackets(String iface) {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getRxPackets(String iface) {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getTxBytes(String iface) {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getRxBytes(String iface) {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getTotalTxPackets() {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getTotalRxPackets() {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getTotalTxBytes() {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getTotalRxBytes() {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getUidTxBytes(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getUidRxBytes(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getUidTxPackets(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getUidRxPackets(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getUidTcpTxBytes(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getUidTcpRxBytes(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getUidUdpTxBytes(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getUidUdpRxBytes(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getUidTcpTxSegments(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getUidTcpRxSegments(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getUidUdpTxPackets(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getUidUdpRxPackets(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }

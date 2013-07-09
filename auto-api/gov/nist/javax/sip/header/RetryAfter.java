@@ -55,6 +55,7 @@ public class RetryAfter extends ParametersHeader implements RetryAfterHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.126 -0400", hash_original_method = "B8E38931A483485D5D42DADC8F66AFA1", hash_generated_method = "B700AAFF75D30A6CE937828B065749BD")
     public boolean hasComment() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_496488243 = getTaintBoolean();
@@ -64,6 +65,7 @@ public class RetryAfter extends ParametersHeader implements RetryAfterHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.126 -0400", hash_original_method = "2FDA3671927B417EA64F28FFDD680773", hash_generated_method = "61BD4B46829E380C1561798A83B14603")
     public void removeComment() {
         comment = null;
@@ -106,6 +108,7 @@ public class RetryAfter extends ParametersHeader implements RetryAfterHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.130 -0400", hash_original_method = "D7C1F8AAD3D2F40DD04B72C74A7D0B69", hash_generated_method = "E3DFD2960BBE3ED7DD4034E2D1CBD346")
     public String getComment() {
         String varB4EAC82CA7396A68D541C85D26508E83_1740124245 = null; 

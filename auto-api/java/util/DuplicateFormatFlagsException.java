@@ -27,6 +27,7 @@ public class DuplicateFormatFlagsException extends IllegalFormatException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.844 -0400", hash_original_method = "29D28F2D87A5BF440E9E6F54EB537F58", hash_generated_method = "52BEC6C29D1DDF2DDC3A910BEF273619")
     public String getFlags() {
         String varB4EAC82CA7396A68D541C85D26508E83_350409926 = null; 
@@ -38,6 +39,7 @@ public class DuplicateFormatFlagsException extends IllegalFormatException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.845 -0400", hash_original_method = "EC94AFCF80AA730DDC49A1A93BB12591", hash_generated_method = "4EEC83B94D133AFF8AD962900AD782B7")
     @Override
     public String getMessage() {

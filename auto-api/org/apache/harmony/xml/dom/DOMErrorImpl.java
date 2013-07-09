@@ -29,6 +29,7 @@ public final class DOMErrorImpl implements DOMError {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.878 -0400", hash_original_method = "486D9FD618449ECBCAAA947A01B6396E", hash_generated_method = "2E2FA91A6CCD9357FDD3E8AF45E8DCBD")
     public short getSeverity() {
         short var4F09DAA9D95BCB166A302407A0E0BABE_905718940 = getTaintShort();
@@ -38,6 +39,7 @@ public final class DOMErrorImpl implements DOMError {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.879 -0400", hash_original_method = "736EB773CAD78737D003DEF14371364B", hash_generated_method = "7C51036A55D9079DA3FD6404A349A090")
     public String getMessage() {
         String varB4EAC82CA7396A68D541C85D26508E83_1469760418 = null; 
@@ -49,6 +51,7 @@ public final class DOMErrorImpl implements DOMError {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.879 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "469F0720F67FC140EFE140CF1E2A4C2E")
     public String getType() {
         String varB4EAC82CA7396A68D541C85D26508E83_1470449931 = null; 
@@ -60,6 +63,7 @@ public final class DOMErrorImpl implements DOMError {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.880 -0400", hash_original_method = "69DC7C3C45CF145B81BFA491DBEA3D67", hash_generated_method = "71FEF7FDC7FFB6C6D642199AFD9AC691")
     public Object getRelatedException() {
         Object varB4EAC82CA7396A68D541C85D26508E83_612102527 = null; 
@@ -71,6 +75,7 @@ public final class DOMErrorImpl implements DOMError {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.880 -0400", hash_original_method = "2E051F1CC67E124CEB94F15E64801D89", hash_generated_method = "D8A7540938A42CE4047883F9829BC106")
     public Object getRelatedData() {
         Object varB4EAC82CA7396A68D541C85D26508E83_1402651769 = null; 
@@ -82,6 +87,7 @@ public final class DOMErrorImpl implements DOMError {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.880 -0400", hash_original_method = "5FDC1F3E63CCD7CD3042D9A19CD94FF4", hash_generated_method = "7C212B1DADE41DD6E034CBC57517CDE4")
     public DOMLocator getLocation() {
         DOMLocator varB4EAC82CA7396A68D541C85D26508E83_396124574 = null; 

@@ -96,6 +96,7 @@ class ExpatParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.663 -0400", hash_original_method = "650F081790BC185B19FA56BA8A79A45A", hash_generated_method = "C8B5A00DF70BD77FEC5075E2BB199C65")
     private int initialize(String encoding, boolean namespacesEnabled) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1482767621 = getTaintInt();
@@ -467,6 +468,7 @@ class ExpatParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int createEntityParser(int parentPointer, String context) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -492,6 +494,7 @@ class ExpatParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.672 -0400", hash_original_method = "9EF978047B32CC4B7F73DD218F12B5B2", hash_generated_method = "0CB3CD0452C02B8947B440EA2E3A4CB7")
     private void appendString(int pointer, String xml, boolean isFinal) throws SAXException, ExpatException {
     }
@@ -519,6 +522,7 @@ class ExpatParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.673 -0400", hash_original_method = "49A4641A93DAB70A1876B4EB02B18B5D", hash_generated_method = "B6F7ED5CE0B1C737647F06F2C3F6738B")
     private void appendChars(int pointer, char[] xml, int offset,
             int length) throws SAXException, ExpatException {
@@ -556,6 +560,7 @@ class ExpatParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.674 -0400", hash_original_method = "F0951DAA750D508CD972B921A6749C41", hash_generated_method = "5BC4C72BC665C8EA47A950E46B17C0AF")
     private void appendBytes(int pointer, byte[] xml, int offset,
             int length) throws SAXException, ExpatException {
@@ -737,15 +742,18 @@ class ExpatParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.678 -0400", hash_original_method = "B8FAFDCBEF6ED1DBF49858CA951E344D", hash_generated_method = "FD20D872DD983AFC02175B6A41CA789F")
     private void release(int pointer) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void releaseParser(int pointer) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void staticInitialize(String emptyString) {
     }
 
@@ -761,6 +769,7 @@ class ExpatParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int line(int pointer) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -777,6 +786,7 @@ class ExpatParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int column(int pointer) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -818,6 +828,7 @@ class ExpatParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int cloneAttributes(int pointer, int attributeCount) {
         return DSUtils.UNKNOWN_INT;
     }

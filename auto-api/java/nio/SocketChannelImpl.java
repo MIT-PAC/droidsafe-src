@@ -87,6 +87,7 @@ class SocketChannelImpl extends SocketChannel implements FileDescriptorChannel {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.515 -0400", hash_original_method = "3F3C938694E8E43B39A86772053FE6F3", hash_generated_method = "3FD68AA550B8B6EA4E0C6364FAF5FD3B")
     @Override
     synchronized public Socket socket() {
@@ -138,6 +139,7 @@ class SocketChannelImpl extends SocketChannel implements FileDescriptorChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.516 -0400", hash_original_method = "E73B250252340190221059BC9BBB0CEA", hash_generated_method = "4D30B4A67A1031DEA6C5343A8CAF5B99")
     @Override
     synchronized public boolean isConnected() {
@@ -148,6 +150,7 @@ class SocketChannelImpl extends SocketChannel implements FileDescriptorChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.516 -0400", hash_original_method = "18A2FCE579B69612BF9446C66CFB3DF7", hash_generated_method = "5D3DA2D559AD2203AFF1C673C3E7CE27")
     synchronized void setConnected() {
         status = SOCKET_STATUS_CONNECTED;
@@ -156,6 +159,7 @@ class SocketChannelImpl extends SocketChannel implements FileDescriptorChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.516 -0400", hash_original_method = "F9CE278FD490C297CB59C718AF3342C0", hash_generated_method = "2B429B88376943DA3612015A73DC81DF")
      void setBound(boolean flag) {
         isBound = flag;
@@ -164,6 +168,7 @@ class SocketChannelImpl extends SocketChannel implements FileDescriptorChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.517 -0400", hash_original_method = "69EAA9B42272F648401C29FF5A206BD4", hash_generated_method = "CBE1653029359D940352FFAD578CB3DC")
     @Override
     synchronized public boolean isConnectionPending() {
@@ -633,6 +638,7 @@ class SocketChannelImpl extends SocketChannel implements FileDescriptorChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.525 -0400", hash_original_method = "C580647FE4D156BB3A20DD6B3069A7D0", hash_generated_method = "FFE8D88BA6F896401B2292C489E6A8A4")
     public InetAddress getLocalAddress() throws UnknownHostException {
         InetAddress varB4EAC82CA7396A68D541C85D26508E83_863733222 = null; 
@@ -688,6 +694,7 @@ class SocketChannelImpl extends SocketChannel implements FileDescriptorChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.526 -0400", hash_original_method = "A16D8AC033B12AF5E337D988C94AB7BA", hash_generated_method = "B6B2429633F8B2B8FBDE987E0E069814")
     public FileDescriptor getFD() {
         FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1242523496 = null; 

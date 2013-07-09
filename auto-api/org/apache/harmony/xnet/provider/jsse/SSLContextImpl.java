@@ -162,6 +162,7 @@ public class SSLContextImpl extends SSLContextSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.704 -0400", hash_original_method = "D250F9B5B60A63355C4DD3366841F3DE", hash_generated_method = "8A610170A85BB5CC2F4D9999AF582097")
     @Override
     public ServerSessionContext engineGetServerSessionContext() {
@@ -174,6 +175,7 @@ public class SSLContextImpl extends SSLContextSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.705 -0400", hash_original_method = "F7A52ACBCF1ABAC2A6697027AD059F72", hash_generated_method = "A5A4A63E111BF3C53D720DA16326E992")
     @Override
     public ClientSessionContext engineGetClientSessionContext() {

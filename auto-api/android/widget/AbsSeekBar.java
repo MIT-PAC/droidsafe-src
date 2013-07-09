@@ -138,6 +138,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.076 -0400", hash_original_method = "55BCE64F6AB8A7FA94D80EC71DE6965C", hash_generated_method = "CA42D94FFCA371F9B5740693A5C58548")
     public int getThumbOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2075720579 = getTaintInt();
@@ -158,6 +159,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.077 -0400", hash_original_method = "47EA7303B3E1A2D7511BD2240E8B9AF2", hash_generated_method = "23FC38C564F6AB4BEDBEB8AF8AF33262")
     public void setKeyProgressIncrement(int increment) {
         mKeyProgressIncrement = increment < 0 ? -increment : increment;
@@ -166,6 +168,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.077 -0400", hash_original_method = "1305A27F8447A6D05AC7D82E2D035BB9", hash_generated_method = "A63933CF5721107DB17A75CDBE5D9ED4")
     public int getKeyProgressIncrement() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1038652567 = getTaintInt();
@@ -569,6 +572,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.083 -0400", hash_original_method = "81C3D3C536033DCEF00354E775EF2F98", hash_generated_method = "7CAEA821CD5CFD558839E482944A4FF3")
      void onStartTrackingTouch() {
         
@@ -578,6 +582,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.084 -0400", hash_original_method = "E756AFD9567E2119FB96458DFE00C6A9", hash_generated_method = "28194EE71D53A1717F5B76FA4AF6B1F3")
      void onStopTrackingTouch() {
         
@@ -587,6 +592,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.084 -0400", hash_original_method = "F04551903C4B751B14DE46074D4BB62C", hash_generated_method = "335DF8C256CE085A3A9253CFE15462AB")
      void onKeyChange() {
         

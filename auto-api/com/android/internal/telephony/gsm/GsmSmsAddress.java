@@ -48,6 +48,7 @@ public class GsmSmsAddress extends SmsAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.760 -0400", hash_original_method = "EAD8B5BB0DBAF5034E5C9FE6C7B0909A", hash_generated_method = "5EC4B64933FA111B79263CB3CDC0067D")
     public String getAddressString() {
         String varB4EAC82CA7396A68D541C85D26508E83_93090444 = null; 
@@ -59,6 +60,7 @@ public class GsmSmsAddress extends SmsAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.761 -0400", hash_original_method = "364284D6387231DFE8BEB00860E244AE", hash_generated_method = "7227E9C640A054E3DCAFCF105C6A0E0C")
     public boolean isAlphanumeric() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1885820562 = getTaintBoolean();
@@ -68,6 +70,7 @@ public class GsmSmsAddress extends SmsAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.761 -0400", hash_original_method = "9A297062C2D2EDFA0EA27742D0F1F520", hash_generated_method = "F7536202E4C43E37371E681418C371E2")
     public boolean isNetworkSpecific() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_277590462 = getTaintBoolean();

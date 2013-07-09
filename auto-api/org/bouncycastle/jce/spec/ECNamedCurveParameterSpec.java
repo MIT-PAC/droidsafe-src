@@ -70,6 +70,7 @@ public class ECNamedCurveParameterSpec extends ECParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.272 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "994C1C87BCEB6FCBF7EEDEB802AE4640")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_756216905 = null; 

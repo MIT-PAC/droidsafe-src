@@ -527,6 +527,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.121 -0400", hash_original_method = "5881C9F5255DAD71BFE55D2C48CC4082", hash_generated_method = "98B7BC1CBD62F20E0076F8631D376ECA")
     public int compareTo(URI uri) {
         int ret;
@@ -564,6 +565,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static URI create(String uri) {
         try {
             return new URI(uri);
@@ -573,6 +575,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.124 -0400", hash_original_method = "A98420F05D15A307D401E461EEAC37D0", hash_generated_method = "006210AB8EE444DC69EB9EA78D301E3E")
     private URI duplicate() {
         URI varB4EAC82CA7396A68D541C85D26508E83_2100206278 = null; 
@@ -764,6 +767,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.131 -0400", hash_original_method = "C01635CAE84CEFF188CA85B1E841E2AF", hash_generated_method = "FD268BE32633FDD201B649D1E56D4CD2")
     public String getScheme() {
         String varB4EAC82CA7396A68D541C85D26508E83_1173058395 = null; 
@@ -787,6 +791,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.132 -0400", hash_original_method = "86531F78EA1B0DD0E474B0280C353B39", hash_generated_method = "20D206DF32E187BE702D94A62E3E8065")
     public String getRawSchemeSpecificPart() {
         String varB4EAC82CA7396A68D541C85D26508E83_741246032 = null; 
@@ -810,6 +815,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.132 -0400", hash_original_method = "D7819D822B599F6322BA89A8602769F8", hash_generated_method = "FECCA2CFB685F5C560DAE641F6317306")
     public String getRawAuthority() {
         String varB4EAC82CA7396A68D541C85D26508E83_1103661474 = null; 
@@ -833,6 +839,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.133 -0400", hash_original_method = "DAA16275F755FA7272E7A6BF143307B3", hash_generated_method = "A68BC8AA11BB4E19AF07FCCDF26EC5DD")
     public String getRawUserInfo() {
         String varB4EAC82CA7396A68D541C85D26508E83_253722547 = null; 
@@ -844,6 +851,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.133 -0400", hash_original_method = "2F2AEDD17A97DC05E80343AAC323BA28", hash_generated_method = "8861E8905D667BF71FE1E05946AF577E")
     public String getHost() {
         String varB4EAC82CA7396A68D541C85D26508E83_1491565030 = null; 
@@ -855,6 +863,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.134 -0400", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "4035B0F777121FA78F78DEC5A49ABE69")
     public int getPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_736187878 = getTaintInt();
@@ -902,6 +911,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.135 -0400", hash_original_method = "C60E164890B13C98164350819EFAF732", hash_generated_method = "49A5D0CF329D8D44A9DBE21CFD324F66")
     public String getRawPath() {
         String varB4EAC82CA7396A68D541C85D26508E83_1005410485 = null; 
@@ -925,6 +935,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.136 -0400", hash_original_method = "1B73FD5BF97DE0B30570BEC9088948AD", hash_generated_method = "DD945598FEFC5EE132DD3781C8DD5BA7")
     public String getRawQuery() {
         String varB4EAC82CA7396A68D541C85D26508E83_1275486503 = null; 
@@ -948,6 +959,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.137 -0400", hash_original_method = "7B682CDC9E7215B6CAB5B55C992B88A5", hash_generated_method = "89756866266388B86D654DDBE736000F")
     public String getRawFragment() {
         String varB4EAC82CA7396A68D541C85D26508E83_1806915368 = null; 
@@ -976,6 +988,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.138 -0400", hash_original_method = "D85A39136D4004ABB79E6EE2109136C5", hash_generated_method = "E97E3B2D904A98776BE6240EFF3CC893")
     public boolean isAbsolute() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_567045015 = getTaintBoolean();
@@ -985,6 +998,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.138 -0400", hash_original_method = "E927F529D329E66C9C89B04CCA4C92BD", hash_generated_method = "0F6D3D8A3BDC9DB33A67ED2952C33F31")
     public boolean isOpaque() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1260990830 = getTaintBoolean();
@@ -1022,6 +1036,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.139 -0400", hash_original_method = "516FFF274D5A3C3904BD2A35075D82E5", hash_generated_method = "ADF0C4E1A568527AC721AC3CFE249DAF")
     public URI normalize() {
         URI varB4EAC82CA7396A68D541C85D26508E83_1216712369 = null; 
@@ -1070,6 +1085,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.141 -0400", hash_original_method = "561A780B99BF7A4044A2E8788BD03387", hash_generated_method = "DF852AB46E71FD06166993C01CED13EC")
     public URI parseServerAuthority() throws URISyntaxException {
         URI varB4EAC82CA7396A68D541C85D26508E83_1095445451 = null; 
@@ -1087,6 +1103,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.144 -0400", hash_original_method = "BFE2EB4322D518CCAA638FC4B16C8964", hash_generated_method = "828ED8063689A74C57E1A8CAB50854D9")
     public URI relativize(URI relative) {
         URI varB4EAC82CA7396A68D541C85D26508E83_1365834865 = null; 
@@ -1160,6 +1177,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.149 -0400", hash_original_method = "0C14666D7307A46BF860740DE5247B99", hash_generated_method = "EA6B27CF0CADE2BB99584E2DE7E23832")
     public URI resolve(URI relative) {
         URI varB4EAC82CA7396A68D541C85D26508E83_266558614 = null; 
@@ -1259,6 +1277,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.153 -0400", hash_original_method = "9168A9B8145DCA1D2A5ADCFF78018EA4", hash_generated_method = "86C116C74A74A3D7EA03F0642493797A")
     public URI resolve(String relative) {
         URI varB4EAC82CA7396A68D541C85D26508E83_1576134098 = null; 
@@ -1400,6 +1419,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.161 -0400", hash_original_method = "61498548735D8100B59ED3B549CA2D7D", hash_generated_method = "1644FD5B13CE85449A9E647216C258BC")
     public URL toURL() throws MalformedURLException {
         URL varB4EAC82CA7396A68D541C85D26508E83_118950948 = null; 

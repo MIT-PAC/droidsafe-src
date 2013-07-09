@@ -24,6 +24,7 @@ public class DialogTerminatedEvent extends EventObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.008 -0400", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "66528B83E0F4BB854340D4B1E6B5F7DD")
     public Dialog getDialog() {
         Dialog varB4EAC82CA7396A68D541C85D26508E83_367898960 = null; 

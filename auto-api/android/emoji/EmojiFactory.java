@@ -51,7 +51,8 @@ public final class EmojiFactory {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.134 -0400", hash_original_method = "61A4CE5E0B45509C63F06179C920C9C2", hash_generated_method = "DF39247D3E5BA7E18EA866F31EA81CBB")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.134 -0400", hash_original_method = "61A4CE5E0B45509C63F06179C920C9C2", hash_generated_method = "DF39247D3E5BA7E18EA866F31EA81CBB")
 	public String name() {
 		String varB4EAC82CA7396A68D541C85D26508E83_784923669 = null; 
 																		
@@ -334,11 +335,13 @@ public final class EmojiFactory {
 		
 	}
 
-	public static EmojiFactory newInstance(String class_name) {
+	@DSModeled(DSC.SAFE)
+    public static EmojiFactory newInstance(String class_name) {
 		return new EmojiFactory(0, class_name);
 	}
 
-	public static EmojiFactory newAvailableInstance() {
+	@DSModeled(DSC.SAFE)
+    public static EmojiFactory newAvailableInstance() {
 		return new EmojiFactory(0, "");
 	}
 
@@ -362,60 +365,70 @@ public final class EmojiFactory {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.143 -0400", hash_original_method = "996F154EA43AB1D5A4C151D656C37CF1", hash_generated_method = "306E1F6D8D2B1E2FAFA21FC83BAC450E")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.143 -0400", hash_original_method = "996F154EA43AB1D5A4C151D656C37CF1", hash_generated_method = "306E1F6D8D2B1E2FAFA21FC83BAC450E")
 	private void nativeDestructor(int factory) {
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.143 -0400", hash_original_method = "3AA105C3169886A719F2BF7A3237E4A3", hash_generated_method = "1FEDBE13E2C3435ECCCBB1756DB5C9E3")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.143 -0400", hash_original_method = "3AA105C3169886A719F2BF7A3237E4A3", hash_generated_method = "1FEDBE13E2C3435ECCCBB1756DB5C9E3")
 	private Bitmap nativeGetBitmapFromAndroidPua(int nativeEmojiFactory, int AndroidPua) {
 		Bitmap bm = new Bitmap();
 		bm.addTaint(this.taint);
 		return bm;
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.144 -0400", hash_original_method = "3A1554F06CC9CCAF25F7BBE93248CE83", hash_generated_method = "024A4F7E074CCA637606B0AAEE9997FE")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.144 -0400", hash_original_method = "3A1554F06CC9CCAF25F7BBE93248CE83", hash_generated_method = "024A4F7E074CCA637606B0AAEE9997FE")
 	private int nativeGetAndroidPuaFromVendorSpecificSjis(int nativeEmojiFactory, char sjis) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1973003923 = getTaintInt();
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1973003923;
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.144 -0400", hash_original_method = "C302C3634C2FA6E6CA4CF2CF66D12101", hash_generated_method = "E24C97FA03F1A6F7FD296BE6A65A98FA")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.144 -0400", hash_original_method = "C302C3634C2FA6E6CA4CF2CF66D12101", hash_generated_method = "E24C97FA03F1A6F7FD296BE6A65A98FA")
 	private int nativeGetVendorSpecificSjisFromAndroidPua(int nativeEmojiFactory, int pua) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1464973851 = getTaintInt();
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1464973851;
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.144 -0400", hash_original_method = "75FE7601C9BA865A32982CD0867F654C", hash_generated_method = "97C72E41FBCE79CE6CB3CC4B020B8163")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.144 -0400", hash_original_method = "75FE7601C9BA865A32982CD0867F654C", hash_generated_method = "97C72E41FBCE79CE6CB3CC4B020B8163")
 	private int nativeGetAndroidPuaFromVendorSpecificPua(int nativeEmojiFactory, int vsp) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1144551433 = getTaintInt();
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1144551433;
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.145 -0400", hash_original_method = "B406416ABF41BEA242E5A40B8BA7386A", hash_generated_method = "70F27FA5240E55D36824312018BDCDF3")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.145 -0400", hash_original_method = "B406416ABF41BEA242E5A40B8BA7386A", hash_generated_method = "70F27FA5240E55D36824312018BDCDF3")
 	private int nativeGetVendorSpecificPuaFromAndroidPua(int nativeEmojiFactory, int pua) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1065149731 = getTaintInt();
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1065149731;
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.145 -0400", hash_original_method = "5A805426DAFA5C3640F25323B1C3B8F5", hash_generated_method = "4662032D57F799662C66FEAE75C1E3F5")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.145 -0400", hash_original_method = "5A805426DAFA5C3640F25323B1C3B8F5", hash_generated_method = "4662032D57F799662C66FEAE75C1E3F5")
 	private int nativeGetMaximumVendorSpecificPua(int nativeEmojiFactory) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1579659992 = getTaintInt();
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1579659992;
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.146 -0400", hash_original_method = "0FF4320BBE7657B90285375F65F4DF9D", hash_generated_method = "DD5CE30082CF6A49B29B054F0B5FC890")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.146 -0400", hash_original_method = "0FF4320BBE7657B90285375F65F4DF9D", hash_generated_method = "DD5CE30082CF6A49B29B054F0B5FC890")
 	private int nativeGetMinimumVendorSpecificPua(int nativeEmojiFactory) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1362804657 = getTaintInt();
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1362804657;
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.146 -0400", hash_original_method = "800100FBB9205E441349161A70ADF047", hash_generated_method = "ABBD3E3CD285BA26DA18ADDAF4C2F2CE")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.146 -0400", hash_original_method = "800100FBB9205E441349161A70ADF047", hash_generated_method = "ABBD3E3CD285BA26DA18ADDAF4C2F2CE")
 	private int nativeGetMaximumAndroidPua(int nativeEmojiFactory) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1456716692 = getTaintInt();
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1456716692;
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.146 -0400", hash_original_method = "5875EE70D8D47117F3D06FA307D98BB5", hash_generated_method = "7445C83CCCC183B9A7177DA991C91CAB")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.146 -0400", hash_original_method = "5875EE70D8D47117F3D06FA307D98BB5", hash_generated_method = "7445C83CCCC183B9A7177DA991C91CAB")
 	private int nativeGetMinimumAndroidPua(int nativeEmojiFactory) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_673692276 = getTaintInt();
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_673692276;

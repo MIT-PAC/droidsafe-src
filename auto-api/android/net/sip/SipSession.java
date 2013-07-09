@@ -230,6 +230,7 @@ public final class SipSession {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.176 -0400", hash_original_method = "DF1CB7C0481108A53612C7FB72F6204A", hash_generated_method = "B57A845A372FD6A039C823BE04B31497")
     public void setListener(Listener listener) {
         mListener = listener;
@@ -355,6 +356,7 @@ public final class SipSession {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.179 -0400", hash_original_method = "457DE503669A22F9796CDD5163AC081E", hash_generated_method = "E28EAFBAECD6702A8AF2FE62D771F45C")
      ISipSession getRealSession() {
         ISipSession varB4EAC82CA7396A68D541C85D26508E83_1541542798 = null; 

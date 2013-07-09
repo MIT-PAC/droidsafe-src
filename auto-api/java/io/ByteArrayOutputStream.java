@@ -69,6 +69,7 @@ public class ByteArrayOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.543 -0400", hash_original_method = "D84F167B372983A8A32E17B936FA6E9B", hash_generated_method = "400ADB088DB2A9073490DD652F495E0B")
     public synchronized void reset() {
         count = 0;
@@ -77,6 +78,7 @@ public class ByteArrayOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.545 -0400", hash_original_method = "F417CE3385B772AADA134FBE4FF63C9E", hash_generated_method = "86AA859A0A651A960F285CB946739EA2")
     public int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1842394613 = getTaintInt();

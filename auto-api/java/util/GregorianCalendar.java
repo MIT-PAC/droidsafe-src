@@ -748,6 +748,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.825 -0400", hash_original_method = "975CAA178CB1C52E2022FF53CD13129C", hash_generated_method = "32BA60B33D6BB08B7D37FCE7037A5E8B")
     private long daysFromBaseYear(int iyear) {
         long year = iyear;
@@ -806,6 +807,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.826 -0400", hash_original_method = "F030460418FCB84947C9AD9647C8CF35", hash_generated_method = "556D49699516E5C48AAD9AF651A507F5")
     private int daysInMonth(boolean leapYear, int month) {
         addTaint(leapYear);
@@ -848,6 +850,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.827 -0400", hash_original_method = "7E255F605E98F52E53144D7126E773F6", hash_generated_method = "0B20CDFB3920D449B7CA27EE8F28F4B0")
     private int daysInYear(boolean leapYear, int month) {
         addTaint(leapYear);
@@ -987,6 +990,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.830 -0400", hash_original_method = "F3CD156C4D2759DEA34A15A000EAB551", hash_generated_method = "D1B24774E771B83161F76A6B99CCF8C8")
     @Override
     public int getGreatestMinimum(int field) {
@@ -1035,6 +1039,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.832 -0400", hash_original_method = "80794FF1ED1E8F2177114BCAA53EED59", hash_generated_method = "24F66A9C15374AEA37D2D26E4DA8644D")
     @Override
     public int getMaximum(int field) {
@@ -1046,6 +1051,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.832 -0400", hash_original_method = "1A09A14EE8971B3B0503081305AF18CB", hash_generated_method = "7983453E20028E0F739C9D95B12A4A09")
     @Override
     public int getMinimum(int field) {
@@ -1124,6 +1130,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.833 -0400", hash_original_method = "FD1210B9D1DAC87CC2975B1EB57E42AE", hash_generated_method = "483A1BB5B3572D50906458EF4A03969B")
     public boolean isLeapYear(int year) {
         addTaint(year);
@@ -1137,6 +1144,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.834 -0400", hash_original_method = "6792E5EC134CCE3576D348D7664F192E", hash_generated_method = "386AB4995445972875C10F2FC6073B4F")
     private int julianError() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2127128610 = getTaintInt();
@@ -1146,6 +1154,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.834 -0400", hash_original_method = "C7B77E5A8B6CB394A26ACFDB4CA2A34C", hash_generated_method = "004B91AE78BB22667422DF1D487F8028")
     private int mod(int value, int mod) {
         int rem = value % mod;
@@ -1162,6 +1171,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.834 -0400", hash_original_method = "B5B6FCF50F48D18673AA227255C5F0A5", hash_generated_method = "89BD5AB55BCC7C7700EBF2934CFF8526")
     private int mod7(long num1) {
         int rem = (int) (num1 % 7);

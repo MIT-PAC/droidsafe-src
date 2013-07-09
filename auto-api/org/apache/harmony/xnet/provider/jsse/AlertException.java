@@ -28,6 +28,7 @@ public class AlertException extends RuntimeException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.608 -0400", hash_original_method = "5B702ECC4BAE0D4CD4DED59A097CDBFC", hash_generated_method = "4BF4513777C1A6397E71EB3384BB30C5")
     protected SSLException getReason() {
         SSLException varB4EAC82CA7396A68D541C85D26508E83_384046058 = null; 
@@ -39,6 +40,7 @@ public class AlertException extends RuntimeException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.609 -0400", hash_original_method = "4016638ED8025AA5C043B11675AF3321", hash_generated_method = "03F94A107DDC7332BFF3B2E718D11CB1")
     protected byte getDescriptionCode() {
         byte var40EA57D3EE3C07BF1C102B466E1C3091_1451878417 = getTaintByte();

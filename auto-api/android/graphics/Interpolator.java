@@ -215,27 +215,33 @@ public class Interpolator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeConstructor(int valueCount, int frameCount) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeDestructor(int native_instance) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeReset(int native_instance, int valueCount, int frameCount) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeSetKeyFrame(int native_instance, int index, int msec, float[] values, float[] blend) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeSetRepeatMirror(int native_instance, float repeatCount, boolean mirror) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeTimeToValues(int native_instance, int msec, float[] values) {
         return DSUtils.UNKNOWN_INT;
     }

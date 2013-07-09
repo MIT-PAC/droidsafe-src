@@ -190,6 +190,7 @@ public class TtsEngines {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.450 -0400", hash_original_method = "096C3576F274D5610E35106CC045EF53", hash_generated_method = "7983B7022CC8422F8943622F260715C4")
     private boolean isSystemEngine(ServiceInfo info) {
         final ApplicationInfo appInfo = info.applicationInfo;
@@ -217,6 +218,7 @@ public class TtsEngines {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.451 -0400", hash_original_method = "081B98AA3A6A550A7C51DCB59AD3D4CC", hash_generated_method = "7B28501A83D77AA53442E7E83AFA2B61")
     public Intent getSettingsIntent(String engine) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_650323356 = null; 

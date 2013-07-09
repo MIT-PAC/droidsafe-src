@@ -23,6 +23,7 @@ public class Token {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.927 -0400", hash_original_method = "F8E0993DCB6F03EA51553585BFE853D1", hash_generated_method = "7414FB24D2DBACFBC1AC8A4219EA0919")
     public String getTokenValue() {
         String varB4EAC82CA7396A68D541C85D26508E83_1422635454 = null; 
@@ -34,6 +35,7 @@ public class Token {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.927 -0400", hash_original_method = "2E47E29049C2BF1025243EAE8896F2F1", hash_generated_method = "FA6C27AEF745DCD0E22EFE169E45C218")
     public int getTokenType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_351736190 = getTaintInt();

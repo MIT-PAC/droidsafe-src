@@ -72,6 +72,7 @@ public final class TBSCertList {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.494 -0400", hash_original_method = "00A0A81AB162D0816192A8848BD6F0D6", hash_generated_method = "A39B16F526FF94EE3D1A6D03E2AD3D36")
     public int getVersion() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_123170073 = getTaintInt();
@@ -81,6 +82,7 @@ public final class TBSCertList {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.494 -0400", hash_original_method = "DD6542667BFDE70B879F723105C92A71", hash_generated_method = "BF66DD1B97D7FBCEA23F86F5048DBBA4")
     public AlgorithmIdentifier getSignature() {
         AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_1896364740 = null; 
@@ -92,6 +94,7 @@ public final class TBSCertList {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.495 -0400", hash_original_method = "EBC299B5141657B108909E991892F54F", hash_generated_method = "812EA015505A412EBB9D123CB1594DF8")
     public Name getIssuer() {
         Name varB4EAC82CA7396A68D541C85D26508E83_610698688 = null; 
@@ -103,6 +106,7 @@ public final class TBSCertList {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.495 -0400", hash_original_method = "3F952D48E5C3F549E0CF72E297E1768F", hash_generated_method = "AC9656C6CE5D410A5360818183ACF8D6")
     public Date getThisUpdate() {
         Date varB4EAC82CA7396A68D541C85D26508E83_1664954174 = null; 
@@ -114,6 +118,7 @@ public final class TBSCertList {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.495 -0400", hash_original_method = "F86AAF1D9B4DCB96185947A392CE29B0", hash_generated_method = "AB085744D996BCE05BA58866EE2883F9")
     public Date getNextUpdate() {
         Date varB4EAC82CA7396A68D541C85D26508E83_1142762070 = null; 
@@ -137,6 +142,7 @@ public final class TBSCertList {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.497 -0400", hash_original_method = "24898D069ADDF2B72D4CC75EC979A933", hash_generated_method = "7AE8A3667E7AF19D55A2ECF850699BC9")
     public Extensions getCrlExtensions() {
         Extensions varB4EAC82CA7396A68D541C85D26508E83_1710947609 = null; 

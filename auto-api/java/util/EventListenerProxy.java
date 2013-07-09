@@ -21,6 +21,7 @@ public abstract class EventListenerProxy implements EventListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.257 -0400", hash_original_method = "544CEBD256D91351395433E8E1959E7F", hash_generated_method = "B60EBCE8EFC5813D670E09177C76AE0F")
     public EventListener getListener() {
         EventListener varB4EAC82CA7396A68D541C85D26508E83_1127403205 = null; 

@@ -25,6 +25,7 @@ public class UnsafeByteSequence {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.469 -0400", hash_original_method = "F417CE3385B772AADA134FBE4FF63C9E", hash_generated_method = "8F3C182DD0E18974912B75D064345B35")
     public int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_428496409 = getTaintInt();
@@ -34,6 +35,7 @@ public class UnsafeByteSequence {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.469 -0400", hash_original_method = "CD6FA0D10C84692422449C0C5D320E8A", hash_generated_method = "37A38F7B043D44D70AC23E12C0B9583A")
     public void rewind() {
         count = 0;

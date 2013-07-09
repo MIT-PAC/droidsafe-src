@@ -519,6 +519,7 @@ public final class CookieManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.335 -0400", hash_original_method = "3D00699F37AF6D5720F5926DFEED864B", hash_generated_method = "48E8F9DDFD7E31FC7FD0C53F18A2E40C")
     private synchronized void signalCookieOperationsStart() {
         
@@ -799,6 +800,7 @@ public final class CookieManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.341 -0400", hash_original_method = "23D0913407E37C8868B97CA5EA461217", hash_generated_method = "E870E684A572A3835743B7C29096A760")
     synchronized void syncedACookie(Cookie cookie) {
         cookie.mode = Cookie.MODE_NORMAL;
@@ -1199,56 +1201,67 @@ public final class CookieManager {
     }
 
     
-        private static boolean nativeAcceptCookie() {
+        @DSModeled(DSC.SAFE)
+    private static boolean nativeAcceptCookie() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_69788974 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_69788974;
     }
 
     
-        private static String nativeGetCookie(String url, boolean privateBrowsing) {
+        @DSModeled(DSC.SAFE)
+    private static String nativeGetCookie(String url, boolean privateBrowsing) {
         	String s = new String();
         	s.addTaint(url.getTaint());
         	return s;
     }
 
     
-        private static boolean nativeHasCookies(boolean privateBrowsing) {
+        @DSModeled(DSC.SAFE)
+    private static boolean nativeHasCookies(boolean privateBrowsing) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_281785784 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_281785784;
     }
 
     
-        private static void nativeRemoveAllCookie() {
+        @DSModeled(DSC.SAFE)
+    private static void nativeRemoveAllCookie() {
     }
 
     
-        private static void nativeRemoveExpiredCookie() {
+        @DSModeled(DSC.SAFE)
+    private static void nativeRemoveExpiredCookie() {
     }
 
     
-        private static void nativeRemoveSessionCookie() {
+        @DSModeled(DSC.SAFE)
+    private static void nativeRemoveSessionCookie() {
     }
 
     
-        private static void nativeSetAcceptCookie(boolean accept) {
+        @DSModeled(DSC.SAFE)
+    private static void nativeSetAcceptCookie(boolean accept) {
     }
 
     
-        private static void nativeSetCookie(String url, String value, boolean privateBrowsing) {
+        @DSModeled(DSC.SAFE)
+    private static void nativeSetCookie(String url, String value, boolean privateBrowsing) {
     }
 
     
-        private static void nativeFlushCookieStore() {
+        @DSModeled(DSC.SAFE)
+    private static void nativeFlushCookieStore() {
     }
 
     
-        private static boolean nativeAcceptFileSchemeCookies() {
+        @DSModeled(DSC.SAFE)
+    private static boolean nativeAcceptFileSchemeCookies() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_842509513 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_842509513;
     }
 
     
-        private static void nativeSetAcceptFileSchemeCookies(boolean accept) {
+        @DSModeled(DSC.SAFE)
+    private static void nativeSetAcceptFileSchemeCookies(boolean accept) {
     }
 
     

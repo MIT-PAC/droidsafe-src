@@ -29,6 +29,7 @@ public class MissingResourceException extends RuntimeException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.312 -0400", hash_original_method = "8415940D3A1E5651F883E391EC68DA41", hash_generated_method = "565E51378338EC67D87BE74B62B4B958")
     public String getClassName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1389940222 = null; 
@@ -40,6 +41,7 @@ public class MissingResourceException extends RuntimeException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.312 -0400", hash_original_method = "C39C8C9D5BC81C2FE68967748762171F", hash_generated_method = "7985A5E37C4CF05FAA2FB521F8B20725")
     public String getKey() {
         String varB4EAC82CA7396A68D541C85D26508E83_1481355447 = null; 

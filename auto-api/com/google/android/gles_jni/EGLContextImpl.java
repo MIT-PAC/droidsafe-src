@@ -28,6 +28,7 @@ public class EGLContextImpl extends EGLContext {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.361 -0400", hash_original_method = "128F5F8CB79090E8F4914FDDEA205182", hash_generated_method = "4AD6270DE60E305DDD50A5484430ED9B")
     @Override
     public GL getGL() {
@@ -58,6 +59,7 @@ public class EGLContextImpl extends EGLContext {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.362 -0400", hash_original_method = "64133BD5554848E690D4A8A4234F010E", hash_generated_method = "1AE3439D821D31B63B8FEE00A6A7E54F")
     @Override
     public int hashCode() {

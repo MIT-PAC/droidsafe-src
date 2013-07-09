@@ -22,6 +22,7 @@ public class FullBackupDataOutput {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.576 -0400", hash_original_method = "F187747EE8138E5AF15EC08135568EB6", hash_generated_method = "2BA1E2F78264D8ACB56A4574D7B8577B")
     public BackupDataOutput getData() {
         BackupDataOutput varB4EAC82CA7396A68D541C85D26508E83_1743960793 = null; 

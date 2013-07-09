@@ -21,22 +21,26 @@ public class DdmHandleAppName extends ChunkHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void register() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.923 -0400", hash_original_method = "FF1AB110B94FCC8AEFA697D75FFC57DD", hash_generated_method = "234EA70F7C5F3B8EA6891C34DC4DD59D")
     public void connected() {
         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.923 -0400", hash_original_method = "7ECE87C8E0B6AC612BF4B05EB3BE89DA", hash_generated_method = "A03BB8B8FD980F77D1775E26C3251D60")
     public void disconnected() {
         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.924 -0400", hash_original_method = "9322B8B253BE8A74DE6E5A2942EC5C84", hash_generated_method = "C3A2C55BF215A183BAA6EFDE93A78993")
     public Chunk handleChunk(Chunk request) {
         Chunk varB4EAC82CA7396A68D541C85D26508E83_1104552883 = null; 
@@ -58,6 +62,7 @@ public class DdmHandleAppName extends ChunkHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getAppName() {
         return mAppName;
     }

@@ -296,6 +296,7 @@ abstract class ExpatAttributes implements Attributes {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String getURI(int pointer, int attributePointer, int index) {
                 
     	String ret = new String();
@@ -306,6 +307,7 @@ abstract class ExpatAttributes implements Attributes {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String getLocalName(int pointer, int attributePointer, int index) {
                 
     	String ret = new String();
@@ -316,6 +318,7 @@ abstract class ExpatAttributes implements Attributes {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String getQName(int pointer, int attributePointer, int index) {
                 
     	String ret = new String();
@@ -326,6 +329,7 @@ abstract class ExpatAttributes implements Attributes {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String getValueByIndex(int attributePointer, int index) {
                 
     	String ret = new String();
@@ -335,18 +339,21 @@ abstract class ExpatAttributes implements Attributes {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int getIndex(int attributePointer, String uri, String localName) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2003081945 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2003081945;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int getIndexForQName(int attributePointer, String qName) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_824428906 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_824428906;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String getValue(int attributePointer, String uri, String localName) {
                 
     	String ret = new String();
@@ -357,6 +364,7 @@ abstract class ExpatAttributes implements Attributes {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String getValueForQName(int attributePointer, String qName) {
                 
     	String ret = new String();
@@ -366,6 +374,7 @@ abstract class ExpatAttributes implements Attributes {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.613 -0400", hash_original_method = "9C2FF3514BF1A56FDD02B5A5C31F714B", hash_generated_method = "89627B71E85340B676FC2D21222B8514")
     protected void freeAttributes(int pointer) {
     }

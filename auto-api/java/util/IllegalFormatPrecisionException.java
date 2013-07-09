@@ -21,6 +21,7 @@ public class IllegalFormatPrecisionException extends IllegalFormatException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.521 -0400", hash_original_method = "B9EA1DC143DCBA676654F6DE1FED4BDB", hash_generated_method = "2F8A150B19B7AC9B264ACED44018F162")
     public int getPrecision() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1129345460 = getTaintInt();

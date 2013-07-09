@@ -25,6 +25,7 @@ public class AlertProtocol {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.627 -0400", hash_original_method = "4783F18A2AEFB1BF115D21F8D4F4E6FF", hash_generated_method = "A9742893573022675C3B4131750B59FD")
     protected void setRecordProtocol(SSLRecordProtocol recordProtocol) {
         this.recordProtocol = recordProtocol;
@@ -50,6 +51,7 @@ public class AlertProtocol {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.628 -0400", hash_original_method = "5D3BF0EC0666EBF860C9DC61576F480B", hash_generated_method = "E829819F802C7B8617C2ADCD8E752CBE")
     protected byte getDescriptionCode() {
         byte var40EA57D3EE3C07BF1C102B466E1C3091_1022690214 = getTaintByte();
@@ -74,6 +76,7 @@ public class AlertProtocol {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.629 -0400", hash_original_method = "45A2D96003EBC85CF21133EEF592859F", hash_generated_method = "63015832395A39DFF7E1E79947DB0488")
     protected boolean hasAlert() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2089065041 = getTaintBoolean();
@@ -83,6 +86,7 @@ public class AlertProtocol {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.630 -0400", hash_original_method = "7F9DD2505076B3CAC6687DC8D86BE7DC", hash_generated_method = "875C64833AD1DED646F8B2A188C52997")
     protected boolean isFatalAlert() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1816096502 = getTaintBoolean();
@@ -92,6 +96,7 @@ public class AlertProtocol {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.632 -0400", hash_original_method = "4ED335C5479EFEAB65BE48D985C7B953", hash_generated_method = "EC54FD78E82494EB794701B3DA7F554D")
     protected String getAlertDescription() {
         String varB4EAC82CA7396A68D541C85D26508E83_1372583317 = null; 
@@ -282,6 +287,7 @@ public class AlertProtocol {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.633 -0400", hash_original_method = "18F927F44CECC98A241CC5D3FE86DBCB", hash_generated_method = "F942F8E12961415D1B4D2C24C8077619")
     protected void shutdown() {
         alert[0] = 0;

@@ -166,26 +166,31 @@ public final class GLUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeClassInit() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int native_getInternalFormat(Bitmap bitmap) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int native_getType(Bitmap bitmap) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int native_texImage2D(int target, int level, int internalformat,
             Bitmap bitmap, int type, int border) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int native_texSubImage2D(int target, int level, int xoffset, int yoffset,
             Bitmap bitmap, int format, int type) {
         return DSUtils.UNKNOWN_INT;

@@ -150,6 +150,7 @@ public class SecureRandom extends Random {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.704 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "A7B62048EBE740D4D0E138CF2E5598C0")
     public String getAlgorithm() {
         String varB4EAC82CA7396A68D541C85D26508E83_655793597 = null; 

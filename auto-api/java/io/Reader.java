@@ -50,6 +50,7 @@ public abstract class Reader implements Readable, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.001 -0400", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "5502B5398ED130CD434E436AF21F333D")
     public boolean markSupported() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_225643605 = getTaintBoolean();
@@ -96,6 +97,7 @@ public abstract class Reader implements Readable, Closeable {
     public abstract int read(char[] buf, int offset, int count) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.003 -0400", hash_original_method = "D41EE0434E50B3C6E1AA0E42EDD44E0B", hash_generated_method = "D56D18E1FAF8B82A6B6E8DF692151BFA")
     public boolean ready() throws IOException {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1562622863 = getTaintBoolean();

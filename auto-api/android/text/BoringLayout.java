@@ -356,6 +356,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.553 -0400", hash_original_method = "9C145AF64C7D263F1721F68F7FF83F17", hash_generated_method = "1F6335FA9ECA714BF6E4A712A48239C3")
     @Override
     public int getHeight() {
@@ -366,6 +367,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.554 -0400", hash_original_method = "2D16E05C4EC39BC67C8A172C64094881", hash_generated_method = "30FC50ABA81BA38F8B343CD4C255C799")
     @Override
     public int getLineCount() {
@@ -376,6 +378,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.554 -0400", hash_original_method = "FC2E2A347EB554C00B43E510002C6FE3", hash_generated_method = "CD9C5FAEA8764D32ACEA329CCD9AAEEF")
     @Override
     public int getLineTop(int line) {
@@ -390,6 +393,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.554 -0400", hash_original_method = "CEFD06A93AC917501D80ABE3ADC321FA", hash_generated_method = "26452164A85A59A1D83AEFDC95C3FE52")
     @Override
     public int getLineDescent(int line) {
@@ -417,6 +421,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.555 -0400", hash_original_method = "C13A8C90111FE51B6C5C9E4F734C2F1E", hash_generated_method = "227A40786FB559A9C9D6A50E011A0526")
     @Override
     public int getParagraphDirection(int line) {
@@ -428,6 +433,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.556 -0400", hash_original_method = "26D4049A2082A20A88CBFE67C9B7B59C", hash_generated_method = "7A6345E4E3E14F66B6C87609272D52F5")
     @Override
     public boolean getLineContainsTab(int line) {
@@ -439,6 +445,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.556 -0400", hash_original_method = "B75E83FBFEF77E240A9CDC2AC2A1C8A4", hash_generated_method = "356AB4CD2E89487E962D112E943B341A")
     @Override
     public float getLineMax(int line) {
@@ -463,6 +470,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.557 -0400", hash_original_method = "0410F05B3F48387C42DB277B8067D4A9", hash_generated_method = "1E8483C7B57D7727C4E8AD717F0A4E9D")
     @Override
     public int getTopPadding() {
@@ -473,6 +481,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.557 -0400", hash_original_method = "A7597317BC8A3102F80AD4E9AD038652", hash_generated_method = "D75E3BCC167DCCF58E67E0A421700F66")
     @Override
     public int getBottomPadding() {
@@ -483,6 +492,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.557 -0400", hash_original_method = "BD15B39FEBBFBBCAB07017E8474F5CA3", hash_generated_method = "866E61DAEA81C26224F4D366D6B9D91E")
     @Override
     public int getEllipsisCount(int line) {
@@ -494,6 +504,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.558 -0400", hash_original_method = "414A86D89277DC065BB670E3078E25DD", hash_generated_method = "F0B97E822656AC441F0F34E0512724B6")
     @Override
     public int getEllipsisStart(int line) {
@@ -505,6 +516,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.558 -0400", hash_original_method = "5CA9F8625BABB74DD57E485BAAAC3103", hash_generated_method = "E1BFEAE49CBACB11B37DF2923BD8C03D")
     @Override
     public int getEllipsizedWidth() {
@@ -539,6 +551,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.558 -0400", hash_original_method = "C8834FD4CE389B3AEF157EF49CB23721", hash_generated_method = "3908F2E0EC97B329D0B6E5A4EAB40C7A")
     public void ellipsized(int start, int end) {
         mEllipsizedStart = start;

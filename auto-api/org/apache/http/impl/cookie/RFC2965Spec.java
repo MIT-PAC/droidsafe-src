@@ -282,6 +282,7 @@ public class RFC2965Spec extends RFC2109Spec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.503 -0400", hash_original_method = "48398E54A721F2ABBD2AD2C5ED75FBF5", hash_generated_method = "2C19428A78044BCEA1DF839955B3D13F")
     @Override
     public int getVersion() {

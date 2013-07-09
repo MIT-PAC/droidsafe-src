@@ -18,6 +18,7 @@ public class ASN1Oid extends ASN1Primitive {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ASN1Oid getInstance() {
         return ASN1;
     }
@@ -54,6 +55,7 @@ public class ASN1Oid extends ASN1Primitive {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.592 -0400", hash_original_method = "F2E30F5A7FF0BD89B1DBA25737A1DD6D", hash_generated_method = "B427C4888E0AA29F6FF209F6B3544B26")
     @Override
     public Object getDecodedObject(BerInputStream in) throws IOException {
@@ -119,6 +121,7 @@ public class ASN1Oid extends ASN1Primitive {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.594 -0400", hash_original_method = "EFEF2EC121CF26DF89AF9E72AC4EE02E", hash_generated_method = "20BA670D1328AD5E018A06311CBB63D5")
     public void setEncodingContent(BerOutputStream out) {
         int[] oid = (int[]) out.content;
@@ -167,6 +170,7 @@ public class ASN1Oid extends ASN1Primitive {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ASN1Oid getInstanceForString() {
         return STRING_OID;
     }
@@ -178,7 +182,8 @@ public class ASN1Oid extends ASN1Primitive {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.597 -0400", hash_original_field = "A17235E1E62013241F58D7FEA3397ABE", hash_generated_field = "7C71E1FAB479FEB541AEBE0F6A00EF0D")
 
     private static final ASN1Oid STRING_OID = new ASN1Oid() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.596 -0400", hash_original_method = "EDD14D755051A488C2BFB6BEA216DB71", hash_generated_method = "AC1548FB73DFF4CDEBD6C8414C8C66BC")
+        @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.596 -0400", hash_original_method = "EDD14D755051A488C2BFB6BEA216DB71", hash_generated_method = "AC1548FB73DFF4CDEBD6C8414C8C66BC")
         @Override
         public Object getDecodedObject(BerInputStream in) throws IOException {
             Object varB4EAC82CA7396A68D541C85D26508E83_1332120319 = null; 
@@ -222,7 +227,8 @@ public class ASN1Oid extends ASN1Primitive {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.596 -0400", hash_original_method = "CDC9ED6FAB1ED0D19929BE7F36D72557", hash_generated_method = "1BFE9E939832A0646316571B458221A0")
+        @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.596 -0400", hash_original_method = "CDC9ED6FAB1ED0D19929BE7F36D72557", hash_generated_method = "1BFE9E939832A0646316571B458221A0")
         @Override
         public void setEncodingContent(BerOutputStream out) {
             out.content = ObjectIdentifier.toIntArray((String) out.content);

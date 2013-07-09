@@ -686,6 +686,7 @@ final class HttpsURLConnectionImpl extends HttpsURLConnection {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.234 -0400", hash_original_method = "F4484503A21727E01861772B7BDC0B42", hash_generated_method = "76AAEBC746EF931ADE7EAC6EB043BF0C")
     @Override
     public URL getURL() {

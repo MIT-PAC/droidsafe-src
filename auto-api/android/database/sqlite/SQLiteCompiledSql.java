@@ -76,6 +76,7 @@ class SQLiteCompiledSql {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.146 -0400", hash_original_method = "C3D2A814A65F76D9CB9F5D4B410FE699", hash_generated_method = "CF9E242F967A7C651E52B13B79B6ADD2")
     synchronized boolean acquire() {
         mInUse = true;
@@ -90,6 +91,7 @@ class SQLiteCompiledSql {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.146 -0400", hash_original_method = "3B98FAB5CC48492CB208B835B8A64CFB", hash_generated_method = "1D65CE2608C808F3D02CFA088AEF5382")
     synchronized void release() {
         mInUse = false;

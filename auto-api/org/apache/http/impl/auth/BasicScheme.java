@@ -33,6 +33,7 @@ public class BasicScheme extends RFC2617Scheme {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.779 -0400", hash_original_method = "456652B0A19A82DBC909302CFB2200F1", hash_generated_method = "EFDB29AD9C5D4A9E1818DC99826B363E")
     public String getSchemeName() {
         String varB4EAC82CA7396A68D541C85D26508E83_512928584 = null; 
@@ -57,6 +58,7 @@ public class BasicScheme extends RFC2617Scheme {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.779 -0400", hash_original_method = "2000A91F89DD442E06AD762821BFEEA3", hash_generated_method = "4E9CD7796E7B08FDC1CFC68675D4EF9F")
     public boolean isComplete() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2140833588 = getTaintBoolean();
@@ -66,6 +68,7 @@ public class BasicScheme extends RFC2617Scheme {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.780 -0400", hash_original_method = "52FB523EE33548A5337713590AB1DF72", hash_generated_method = "6A7B1DEE023F585B878F92247FC26899")
     public boolean isConnectionBased() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1961880810 = getTaintBoolean();

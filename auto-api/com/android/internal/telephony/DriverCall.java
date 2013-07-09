@@ -144,6 +144,7 @@ public class DriverCall implements Comparable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.147 -0400", hash_original_method = "7A57313C9AA4F0F08ECFF99E7B6FC0B1", hash_generated_method = "5FDE10F70836D38D82E87CA0B80BF6B3")
     public int compareTo(Object o) {
         DriverCall dc;

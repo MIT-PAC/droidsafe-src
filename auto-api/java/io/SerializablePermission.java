@@ -29,6 +29,7 @@ public final class SerializablePermission extends BasicPermission {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.030 -0400", hash_original_method = "1D3A92DE09AD9A3275C68C126C1F0E4E", hash_generated_method = "C89855D7E49168C3373CF796D92D26CF")
     @Override
     public String getActions() {
@@ -41,6 +42,7 @@ public final class SerializablePermission extends BasicPermission {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.030 -0400", hash_original_method = "15107D2478EB5CA607140B3E4F96BD4D", hash_generated_method = "9709B7971C39C71C39F292D80441DFDF")
     @Override
     public boolean implies(Permission permission) {

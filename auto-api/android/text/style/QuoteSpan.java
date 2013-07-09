@@ -45,6 +45,7 @@ public class QuoteSpan implements LeadingMarginSpan, ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.829 -0400", hash_original_method = "91516A2AC14E144F9D08D31960E0CDBA", hash_generated_method = "B2E4A97E5DA93AD973C98AA7AF143943")
     public int getSpanTypeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1237637471 = getTaintInt();
@@ -54,6 +55,7 @@ public class QuoteSpan implements LeadingMarginSpan, ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.830 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "DEBD72EEA29758CCAF758BBC12DACBCC")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1877672294 = getTaintInt();
@@ -73,6 +75,7 @@ public class QuoteSpan implements LeadingMarginSpan, ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.831 -0400", hash_original_method = "43BEB8B89AD2425C976FAD6ED1828A38", hash_generated_method = "3FE1F51A0A211C0D05C0C43C33DF2ABB")
     public int getColor() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_369484337 = getTaintInt();
@@ -82,6 +85,7 @@ public class QuoteSpan implements LeadingMarginSpan, ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.831 -0400", hash_original_method = "0C0816FE65D1CAB7203AAB3FE043AC6B", hash_generated_method = "B7CA3553AEC1523B010F08DED8F510CE")
     public int getLeadingMargin(boolean first) {
         addTaint(first);

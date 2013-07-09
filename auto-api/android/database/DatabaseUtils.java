@@ -160,6 +160,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getTypeOfObject(Object obj) {
         if (obj == null) {
             return Cursor.FIELD_TYPE_NULL;
@@ -309,6 +310,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int getKeyLen(byte[] arr) {
         if (arr[arr.length - 1] != 0) {
             return arr.length;

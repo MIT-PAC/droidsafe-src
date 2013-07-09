@@ -272,6 +272,7 @@ public class DefaultRouter implements Router {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.281 -0400", hash_original_method = "4C71B768C5A06ACD6891DA2692157012", hash_generated_method = "798D0D140ECFAF8DE69F1AEF115FF384")
     public javax.sip.address.Hop getOutboundProxy() {
         javax.sip.address.Hop varB4EAC82CA7396A68D541C85D26508E83_2075189023 = null; 

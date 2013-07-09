@@ -149,6 +149,7 @@ public class LocalSocket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.212 -0400", hash_original_method = "E608923787A6482FF0ABAB03074C01F6", hash_generated_method = "EADD4E6F4BDE8B7AB6DBA310ADC03B89")
     public LocalSocketAddress getLocalSocketAddress() {
         LocalSocketAddress varB4EAC82CA7396A68D541C85D26508E83_1897809491 = null; 
@@ -293,6 +294,7 @@ public class LocalSocket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.216 -0400", hash_original_method = "B1255CDE181FFAAB8CB434FB98B99FFF", hash_generated_method = "E886AA4C63FB7579580D1E432AC34033")
     public synchronized boolean isConnected() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1247944973 = getTaintBoolean();
@@ -313,6 +315,7 @@ public class LocalSocket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.218 -0400", hash_original_method = "589AFDD4CA6BF38ABB5F59E26BB3DC6D", hash_generated_method = "3A48729D58213FCF5080FFBD552BDAE0")
     public synchronized boolean isBound() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_273484646 = getTaintBoolean();

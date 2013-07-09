@@ -37,6 +37,7 @@ public class ClientSessionContext extends AbstractSessionContext {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.917 -0400", hash_original_method = "FA4F1A172590244BE031F2E8797E17F3", hash_generated_method = "A79C5685284AC076EFF257C20CDA7F14")
     public void setPersistentCache(SSLClientSessionCache persistentCache) {
         this.persistentCache = persistentCache;

@@ -28,6 +28,7 @@ public class Rasterizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void finalizer(int native_instance) {
     }
 

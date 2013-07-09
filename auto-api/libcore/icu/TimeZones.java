@@ -53,12 +53,14 @@ public final class TimeZones {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String[] forCountryCode(String countryCode) {
     	String [] ret = {new String()};
     	return ret;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String[][] getZoneStringsImpl(String locale, String[] timeZoneIds) {
     	String [][] ret = {{new String()}};
     	return ret;

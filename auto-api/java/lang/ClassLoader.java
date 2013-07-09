@@ -58,17 +58,20 @@ public abstract class ClassLoader {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static ClassLoader createSystemClassLoader() {
         String classPath = System.getProperty("java.class.path", ".");
         return new PathClassLoader(classPath, BootClassLoader.getInstance());
     }
 
     
+    @DSModeled(DSC.BAN)
     public static ClassLoader getSystemClassLoader() {
         return SystemClassLoader.loader;
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static URL getSystemResource(String resName) {
         return SystemClassLoader.loader.getResource(resName);
     }
@@ -208,6 +211,7 @@ public abstract class ClassLoader {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.832 -0400", hash_original_method = "51B198FC24245E471F59AEE285D4917F", hash_generated_method = "F29D93C4E1214827BE5DA9D1F92AA211")
     public URL getResource(String resName) {
         URL varB4EAC82CA7396A68D541C85D26508E83_798311009 = null; 
@@ -341,6 +345,7 @@ public abstract class ClassLoader {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.838 -0400", hash_original_method = "A0771382989D9347D13AB7091421D08A", hash_generated_method = "C18F77D8B1704C1AA360CFB762E16113")
     protected URL findResource(String resName) {
         URL varB4EAC82CA7396A68D541C85D26508E83_2073059668 = null; 
@@ -369,6 +374,7 @@ public abstract class ClassLoader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.840 -0400", hash_original_method = "77218157254CA1D97E6FAA91981AFD35", hash_generated_method = "EAA8EDFE133F98030A5D1D23AD3F317D")
     protected String findLibrary(String libName) {
         String varB4EAC82CA7396A68D541C85D26508E83_1195000074 = null; 
@@ -420,6 +426,7 @@ public abstract class ClassLoader {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.842 -0400", hash_original_method = "A43EE12FE4CCED7FFCD5E4E6E6B7450E", hash_generated_method = "EEF65BD3E4B20AC8E02AE0D3B28B9BA2")
     protected Package definePackage(String name, String specTitle, String specVersion,
             String specVendor, String implTitle, String implVersion, String implVendor, URL sealBase) throws IllegalArgumentException {
@@ -467,6 +474,7 @@ public abstract class ClassLoader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.844 -0400", hash_original_method = "0651223F404879984496AF2BE37D7C48", hash_generated_method = "9552549080184D933A18FAE2024809E7")
     public void setClassAssertionStatus(String cname, boolean enable) {
         addTaint(cname.getTaint());
@@ -475,6 +483,7 @@ public abstract class ClassLoader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.844 -0400", hash_original_method = "2F6CF0A6D7DAAB50984CC8577E0B6ED7", hash_generated_method = "DE2C1361DEB1CC3CD98E704C0E124F3C")
     public void setPackageAssertionStatus(String pname, boolean enable) {
         addTaint(pname.getTaint());
@@ -483,6 +492,7 @@ public abstract class ClassLoader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.845 -0400", hash_original_method = "F3C67BF009E262C5EF85B89EAEA54A8D", hash_generated_method = "9CCCF9B831F31B11857410609390EEBD")
     public void setDefaultAssertionStatus(boolean enable) {
         addTaint(enable);
@@ -490,6 +500,7 @@ public abstract class ClassLoader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.845 -0400", hash_original_method = "0F2B38C73B2795A58A5B8AC7764225D2", hash_generated_method = "E762A3660EF9111F915B372BD46E7E77")
     public void clearAssertionStatus() {
         
@@ -543,6 +554,7 @@ class TwoEnumerationsInOne implements Enumeration<URL> {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.847 -0400", hash_original_method = "CE040DB5C31CF9231E1B46430147AEAF", hash_generated_method = "1D979CFCC85907229BBEA2C6F771F356")
     public URL nextElement() {
         URL varB4EAC82CA7396A68D541C85D26508E83_205357243 = null; 
@@ -587,6 +599,7 @@ class BootClassLoader extends ClassLoader {
     }
 
     
+    @DSModeled(DSC.BAN)
     @FindBugsSuppressWarnings("DP_CREATE_CLASSLOADER_INSIDE_DO_PRIVILEGED")
     public static synchronized BootClassLoader getInstance() {
         if (instance == null) {
@@ -610,6 +623,7 @@ class BootClassLoader extends ClassLoader {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.854 -0400", hash_original_method = "917FC7483F620F58EBF15901F64E5CCB", hash_generated_method = "A4BA171992C8A5E323C6A1A8ADE347CE")
     @Override
     protected URL findResource(String name) {
@@ -685,6 +699,7 @@ class BootClassLoader extends ClassLoader {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.860 -0400", hash_original_method = "7C22470B48203835E4FECF5A2AF64904", hash_generated_method = "494FBA341643FC56AF503AE2EB74008C")
     @Override
     public URL getResource(String resName) {

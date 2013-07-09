@@ -50,6 +50,7 @@ public abstract class Schema {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.114 -0400", hash_original_method = "7A084406CC3B18F733E08ECB30CF0A86", hash_generated_method = "FFF5D132E9AED5BC24C21CB48F5EC7ED")
     public ElementType rootElementType() {
         ElementType varB4EAC82CA7396A68D541C85D26508E83_266662191 = null; 
@@ -153,6 +154,7 @@ public abstract class Schema {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.117 -0400", hash_original_method = "1798242D281A34B11A86AFDBABA0D18C", hash_generated_method = "245533B97BB8EBCE34AEFD56A53190C2")
     public String getURI() {
         String varB4EAC82CA7396A68D541C85D26508E83_1166021776 = null; 
@@ -164,6 +166,7 @@ public abstract class Schema {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.118 -0400", hash_original_method = "ED82F113C378B68FF5FAC6A19F5F47F3", hash_generated_method = "743FCFF3EE9FB918348ACD80F06E274D")
     public String getPrefix() {
         String varB4EAC82CA7396A68D541C85D26508E83_788175290 = null; 
@@ -175,6 +178,7 @@ public abstract class Schema {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.118 -0400", hash_original_method = "234E680F6FA8586452A8BF7CCF48759A", hash_generated_method = "69EEF406ACDC114BD475EB03C2469E2B")
     public void setURI(String uri) {
         theURI = uri;
@@ -183,6 +187,7 @@ public abstract class Schema {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.118 -0400", hash_original_method = "4CEDB742D62DCBE17383ACF000150A0B", hash_generated_method = "A94536348B3AA801BFBCDF0F0F6703FC")
     public void setPrefix(String prefix) {
         thePrefix = prefix;

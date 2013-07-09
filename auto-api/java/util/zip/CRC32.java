@@ -24,6 +24,7 @@ public class CRC32 implements Checksum {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.711 -0400", hash_original_method = "854FE5E27AD17353F420BE5FB492E27A", hash_generated_method = "28942AFDDBF3661EAC48D0C13EB80ED7")
     public long getValue() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_192360321 = getTaintLong();
@@ -33,6 +34,7 @@ public class CRC32 implements Checksum {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.711 -0400", hash_original_method = "3C94069B7580B83ACAD9A7049BA1E3DA", hash_generated_method = "1BE2E86E9BDD5C182F7FDC8F08658625")
     public void reset() {
         tbytes = crc = 0;
@@ -73,6 +75,7 @@ public class CRC32 implements Checksum {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.712 -0400", hash_original_method = "680551833B0F700FD9FEA4D72A9561BF", hash_generated_method = "2EF4462D474FA579B95F705D76BADED3")
     private long updateImpl(byte[] buf, int offset, int byteCount, long crc1) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_2029074782 = getTaintLong();
@@ -80,6 +83,7 @@ public class CRC32 implements Checksum {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.712 -0400", hash_original_method = "90348FBF3DF8B04612B506AE017DBA82", hash_generated_method = "6B860846384077599640689C1C82E728")
     private long updateByteImpl(byte val, long crc1) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1080907703 = getTaintLong();

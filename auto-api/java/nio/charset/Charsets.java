@@ -16,24 +16,28 @@ public class Charsets {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] toAsciiBytes(char[] chars, int offset, int length) {
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_709532227 = {DSUtils.UNKNOWN_BYTE};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_709532227;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] toIsoLatin1Bytes(char[] chars, int offset, int length) {
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1419875334 = {DSUtils.UNKNOWN_BYTE};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1419875334;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] toUtf8Bytes(char[] chars, int offset, int length) {
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_938529096 = {DSUtils.UNKNOWN_BYTE};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_938529096;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] toBigEndianUtf16Bytes(char[] chars, int offset, int length) {
         byte[] result = new byte[length * 2];
         int end = offset + length;
@@ -47,10 +51,12 @@ public class Charsets {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void asciiBytesToChars(byte[] bytes, int offset, int length, char[] chars) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void isoLatin1BytesToChars(byte[] bytes, int offset, int length, char[] chars) {
     }
 

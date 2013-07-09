@@ -29,6 +29,7 @@ class Indentation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.765 -0400", hash_original_method = "9806D9C99234026338307AC4AA946059", hash_generated_method = "818A7C48DABABA79D2F3477B550CF52A")
     protected void setIndentation(int initval) {
         indentation = initval;
@@ -37,6 +38,7 @@ class Indentation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.765 -0400", hash_original_method = "8C516A01A1E7AEB883F43E447DEEB28B", hash_generated_method = "E772607379FC19199F3910089A190FB1")
     protected int getCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_449056566 = getTaintInt();
@@ -46,6 +48,7 @@ class Indentation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.766 -0400", hash_original_method = "6FB962D7C77F4582D7627B370471C9FF", hash_generated_method = "D1D1D4D3EB0E78DBB1B871A9BBD597B4")
     protected void increment() {
         
@@ -53,6 +56,7 @@ class Indentation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.766 -0400", hash_original_method = "54F21AAA256E1C615958DA1382F121C5", hash_generated_method = "8B1F7F1094E96DC5ECE2EECE01021145")
     protected void decrement() {
         

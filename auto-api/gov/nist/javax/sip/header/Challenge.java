@@ -45,6 +45,7 @@ public class Challenge extends SIPObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.316 -0400", hash_original_method = "C01635CAE84CEFF188CA85B1E841E2AF", hash_generated_method = "76CD8EC1F4EDB1C740A2A927ACD5A4E4")
     public String getScheme() {
         String varB4EAC82CA7396A68D541C85D26508E83_747024416 = null; 
@@ -56,6 +57,7 @@ public class Challenge extends SIPObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.316 -0400", hash_original_method = "7AB044197F27131A6F832759E545093F", hash_generated_method = "D440BDCDAACAB89A0A5A39B23F9EA185")
     public NameValueList getAuthParams() {
         NameValueList varB4EAC82CA7396A68D541C85D26508E83_1910501683 = null; 
@@ -254,6 +256,7 @@ public class Challenge extends SIPObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.336 -0400", hash_original_method = "E1049E827E0E0A74C671FFCF89FB5B30", hash_generated_method = "44A54ADA8EFE6F94707DC70FCF165FA5")
     public void setScheme(String s) {
         scheme = s;
@@ -262,6 +265,7 @@ public class Challenge extends SIPObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.336 -0400", hash_original_method = "82B720F7CD11140D4D4B228FFF7C7395", hash_generated_method = "62BD294171889153A614E164F2AAC8BB")
     public void setAuthParams(NameValueList a) {
         authParams = a;

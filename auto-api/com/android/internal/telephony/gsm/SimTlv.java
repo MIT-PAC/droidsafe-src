@@ -62,6 +62,7 @@ public class SimTlv {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.484 -0400", hash_original_method = "6E8A16A8DAAB3D52539EED38524C3D56", hash_generated_method = "DD7EEA43D76C84EBF339F340C626DA79")
     public boolean isValidObject() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_435600097 = getTaintBoolean();
@@ -71,6 +72,7 @@ public class SimTlv {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.484 -0400", hash_original_method = "6A87500957D7F16920BD9A3282060AAA", hash_generated_method = "103E8E22724A0949C593A05B894870E0")
     public int getTag() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1062013759 = getTaintInt();
@@ -96,6 +98,7 @@ public class SimTlv {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.485 -0400", hash_original_method = "F0FED94C714DCB7A0D654E5FF6165803", hash_generated_method = "DF8E411E3A4900701697A083B33F942D")
     private boolean parseCurrentTlvObject() {
         try 

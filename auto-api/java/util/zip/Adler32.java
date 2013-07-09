@@ -21,6 +21,7 @@ public class Adler32 implements Checksum {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.702 -0400", hash_original_method = "7548992455680731B7C95F9AA9AA74C4", hash_generated_method = "9EA2E79104AF3C4DFB1E3E3B7C851593")
     public long getValue() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_306479454 = getTaintLong();
@@ -30,6 +31,7 @@ public class Adler32 implements Checksum {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.703 -0400", hash_original_method = "1433914DD19ED8527D865BA07D38D783", hash_generated_method = "A833C721B36C9DD33845C86043BAF555")
     public void reset() {
         adler = 1;
@@ -68,6 +70,7 @@ public class Adler32 implements Checksum {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.704 -0400", hash_original_method = "26D22C50972EAA3B6C38F09F454AF8CC", hash_generated_method = "249A985ACB6DCBF87342501D010A0A77")
     private long updateImpl(byte[] buf, int offset, int byteCount, long adler1) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_133518606 = getTaintLong();
@@ -75,6 +78,7 @@ public class Adler32 implements Checksum {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.704 -0400", hash_original_method = "259D32F9E4CE523F9078FA0D9CF43194", hash_generated_method = "585DE88476A68071905588163709590C")
     private long updateByteImpl(int val, long adler1) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1449465643 = getTaintLong();

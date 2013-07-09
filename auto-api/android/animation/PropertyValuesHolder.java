@@ -561,6 +561,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.842 -0400", hash_original_method = "748680E3CF42F5BF312929F3A98BA3E4", hash_generated_method = "FF84DEB99D9BF13141DD024987B0DB4E")
     public void setPropertyName(String propertyName) {
         mPropertyName = propertyName;
@@ -569,6 +570,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.843 -0400", hash_original_method = "8FEFD1E6365C919A12E22D83DCF12A7D", hash_generated_method = "C7C8013F4ECEE98331FB456D99BFC828")
     public void setProperty(Property property) {
         mProperty = property;
@@ -577,6 +579,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.847 -0400", hash_original_method = "53B20749B4CEAC5C134A85897865D0FE", hash_generated_method = "E85C808B5792FA356D8CA289B4BFD34F")
     public String getPropertyName() {
         String varB4EAC82CA7396A68D541C85D26508E83_994990327 = null; 
@@ -588,6 +591,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.849 -0400", hash_original_method = "7EED53883B814F7F8B112CE8FF982C26", hash_generated_method = "CF442C3F8E83FF5DDF62EAB99AAC4987")
      Object getAnimatedValue() {
         Object varB4EAC82CA7396A68D541C85D26508E83_1150295307 = null; 
@@ -623,20 +627,24 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static private int nGetIntMethod(Class targetClass, String methodName) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     static private int nGetFloatMethod(Class targetClass, String methodName) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     static private void nCallIntMethod(Object target, int methodID, int arg) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static private void nCallFloatMethod(Object target, int methodID, float arg) {
     }
 

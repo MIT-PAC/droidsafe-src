@@ -46,6 +46,7 @@ public class WriteAbortedException extends ObjectStreamException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.167 -0400", hash_original_method = "CA6C7AF43E4792C258E5E6922F45606C", hash_generated_method = "1517EB7C680E499E7695516D4CC0136C")
     @Override
     public Throwable getCause() {

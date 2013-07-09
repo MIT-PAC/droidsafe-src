@@ -74,6 +74,7 @@ public final class AcceptEncoding extends ParametersHeader implements AcceptEnco
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.796 -0400", hash_original_method = "EF1274C134CEA0B72E03DC392C09F299", hash_generated_method = "4321E496F9EC6E91FBC20C569DAC3C24")
     public String getEncoding() {
         String varB4EAC82CA7396A68D541C85D26508E83_1835607606 = null; 

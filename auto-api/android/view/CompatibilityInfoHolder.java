@@ -44,6 +44,7 @@ public class CompatibilityInfoHolder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.858 -0400", hash_original_method = "2844201B11A6D03D93C5B2DA2F70B8EA", hash_generated_method = "629C28B37F9144BA90322D62017C0D74")
     public CompatibilityInfo get() {
         CompatibilityInfo varB4EAC82CA7396A68D541C85D26508E83_1051355409 = null; 
@@ -55,6 +56,7 @@ public class CompatibilityInfoHolder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.858 -0400", hash_original_method = "1E806FB90B93A5B9B671B556A0C9FEA7", hash_generated_method = "41C0645CDF0F940AB0A5174D1295C686")
     public CompatibilityInfo getIfNeeded() {
         CompatibilityInfo varB4EAC82CA7396A68D541C85D26508E83_118254106 = null; 

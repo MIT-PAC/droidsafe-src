@@ -71,6 +71,7 @@ public class WorkSource implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.454 -0400", hash_original_method = "FA15A7D9EE41DC68B6DF2C6C4250D26C", hash_generated_method = "B7C66B4B4CD30AA50A635B997C8519A3")
     public int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_370521782 = getTaintInt();
@@ -80,6 +81,7 @@ public class WorkSource implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.454 -0400", hash_original_method = "2BE27D9B96D07A7F769CE0AAEC8A3019", hash_generated_method = "16325A26267F1CFC70B4C1F395D35799")
     public int get(int index) {
         addTaint(index);
@@ -90,6 +92,7 @@ public class WorkSource implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.454 -0400", hash_original_method = "FEFE1B40777B5F58606593D185335D3A", hash_generated_method = "1EAEB237ED25FBCAA4FB93E520500649")
     public void clear() {
         mNum = 0;
@@ -98,6 +101,7 @@ public class WorkSource implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.455 -0400", hash_original_method = "2F8EB035FA41CD52820ED0B16262B2FB", hash_generated_method = "942DC45A7BD3830136A8A073E825DF9A")
     public boolean diff(WorkSource other) {
         int N = mNum;
@@ -161,6 +165,7 @@ public class WorkSource implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.456 -0400", hash_original_method = "7924E91892F2F47DFBA42DC07794F83E", hash_generated_method = "43B6F6A796D183939A9CD97942DF4639")
     public void set(int uid) {
         mNum = 1;
@@ -437,6 +442,7 @@ public class WorkSource implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.465 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "66CF402C1AC9465ABEE574C1C0AEC852")
     @Override
     public int describeContents() {

@@ -110,6 +110,7 @@ public final class RawHeaders {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.365 -0400", hash_original_method = "A2AF11C5A8C661AB11C9AC7FDCDD9C73", hash_generated_method = "CDD42C0EA70D694FBE5DA0A4E5EE6C7B")
     public String getStatusLine() {
         String varB4EAC82CA7396A68D541C85D26508E83_1962484270 = null; 
@@ -121,6 +122,7 @@ public final class RawHeaders {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.365 -0400", hash_original_method = "DB8BE97BE5124EB81D65BC5698249D9B", hash_generated_method = "432AB2AFC794BA7A27DBA0F182A7AD37")
     public int getHttpMinorVersion() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_798960957 = getTaintInt();
@@ -130,6 +132,7 @@ public final class RawHeaders {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.365 -0400", hash_original_method = "9E4A5E9FF258EB24BD25F51C84D6D494", hash_generated_method = "7CCD45934791980CA96478E3E34CC5BF")
     public int getResponseCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_257883827 = getTaintInt();
@@ -139,6 +142,7 @@ public final class RawHeaders {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.365 -0400", hash_original_method = "84763A1C87A993ECD4976A3E0463024E", hash_generated_method = "FCA1D51799F78492175299B42ABC8E16")
     public String getResponseMessage() {
         String varB4EAC82CA7396A68D541C85D26508E83_2115850207 = null; 

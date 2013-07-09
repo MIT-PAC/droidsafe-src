@@ -764,6 +764,7 @@ public final class ContentValues implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.201 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "1EA906F4C985FFFC5AFA6C0FBF189D5B")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1977078194 = getTaintInt();

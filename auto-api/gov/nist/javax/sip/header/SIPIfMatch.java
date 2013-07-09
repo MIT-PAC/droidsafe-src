@@ -32,6 +32,7 @@ public class SIPIfMatch extends SIPHeader implements SIPIfMatchHeader, Extension
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.519 -0400", hash_original_method = "D71FCA65B3027CF0021F4CC3EAA91DA7", hash_generated_method = "FB892F017D6B3B228CA16114B7D3B0A7")
     public String encodeBody() {
         String varB4EAC82CA7396A68D541C85D26508E83_1341785774 = null; 
@@ -43,6 +44,7 @@ public class SIPIfMatch extends SIPHeader implements SIPIfMatchHeader, Extension
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.520 -0400", hash_original_method = "3D6890113704CA3A689BE5D16088DA64", hash_generated_method = "354685B29C17620B27508CF5F7855B93")
     public String getETag() {
         String varB4EAC82CA7396A68D541C85D26508E83_1131914147 = null; 

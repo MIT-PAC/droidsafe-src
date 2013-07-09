@@ -231,6 +231,7 @@ public class TableRow extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.440 -0400", hash_original_method = "6310895A2EAB860DC48C590959484D6D", hash_generated_method = "7AB90473703397ECA48C4AA381709085")
     @Override
      int measureNullChild(int childIndex) {
@@ -434,6 +435,7 @@ public class TableRow extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.444 -0400", hash_original_method = "22EE87D9951BB7D40E63D16DD0B3F806", hash_generated_method = "EC40DA1B26CFBC0C91F2E301018B992D")
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {

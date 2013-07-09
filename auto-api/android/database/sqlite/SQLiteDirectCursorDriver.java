@@ -88,6 +88,7 @@ public class SQLiteDirectCursorDriver implements SQLiteCursorDriver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.693 -0400", hash_original_method = "67DCFB7C009E95C4CA139AFBDECCF9F8", hash_generated_method = "A1AA2B64527670EF10F61F806A35135D")
     public void cursorClosed() {
         mCursor = null;
@@ -106,12 +107,14 @@ public class SQLiteDirectCursorDriver implements SQLiteCursorDriver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.694 -0400", hash_original_method = "C0D6246B55C05B36F128E1AEE4043F0F", hash_generated_method = "E84BDFE4FD59019EC4205EE197615B17")
     public void cursorDeactivated() {
         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.694 -0400", hash_original_method = "64CFA7C751D35BBE7676514D93F7ECE6", hash_generated_method = "B0873AF2C7C5639BDF0E5508CCA466C2")
     public void cursorRequeried(Cursor cursor) {
         addTaint(cursor.getTaint());

@@ -61,15 +61,18 @@ public final class NativePluralRules {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void finalizeImpl(int address) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int forLocaleImpl(String localeName) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int quantityForIntImpl(int address, int value) {
         return DSUtils.UNKNOWN_INT;
     }

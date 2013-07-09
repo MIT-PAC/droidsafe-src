@@ -56,6 +56,7 @@ public class DdmServer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeSendChunk(int type, byte[] data,
         int offset, int length) {
     }

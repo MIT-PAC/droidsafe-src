@@ -106,6 +106,7 @@ public class DERGeneralizedTime extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.490 -0400", hash_original_method = "FFD2475F957538109629A734D2087930", hash_generated_method = "6C790844BE7A3F7F70DE42AB01392ACF")
     public String getTimeString() {
         String varB4EAC82CA7396A68D541C85D26508E83_1550651086 = null; 

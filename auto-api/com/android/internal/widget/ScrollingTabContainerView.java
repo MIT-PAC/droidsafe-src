@@ -147,6 +147,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.237 -0400", hash_original_method = "E654067D8A391E646F927D11468DA221", hash_generated_method = "3CC7274A44B95F0704BA216FDB666531")
     public void setAllowCollapse(boolean allowCollapse) {
         mAllowCollapse = allowCollapse;

@@ -197,6 +197,7 @@ public class ClientParamsStack extends AbstractHttpParams {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.036 -0400", hash_original_method = "EA9D71906AA8F5EAFC46BDFADD14632A", hash_generated_method = "DA21EE9AF7DAA0E3E67A32941F8E2BE7")
     public HttpParams copy() {
         HttpParams varB4EAC82CA7396A68D541C85D26508E83_978475016 = null; 

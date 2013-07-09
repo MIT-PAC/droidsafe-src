@@ -152,6 +152,7 @@ public class ClientKeyExchange extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.896 -0400", hash_original_method = "689E42FE01D543BF62D87A0EDA5093F1", hash_generated_method = "9C0A34E57F3E9B5D1AF2AD0FF9832391")
     @Override
     public int getType() {
@@ -162,6 +163,7 @@ public class ClientKeyExchange extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.896 -0400", hash_original_method = "A6E948E5B249A2FAEF42B96B088122ED", hash_generated_method = "9A6B4C663A0AF916AE9B28BC967639E6")
     public boolean isEmpty() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1988076504 = getTaintBoolean();

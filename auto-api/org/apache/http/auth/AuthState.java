@@ -26,6 +26,7 @@ public class AuthState {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.626 -0400", hash_original_method = "2D3305654C6E379145E705984DE22DF2", hash_generated_method = "A55C2F4BEB1F546A14687031FC4380AC")
     public void invalidate() {
         this.authScheme = null;
@@ -38,6 +39,7 @@ public class AuthState {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.627 -0400", hash_original_method = "62DF5636D6479423C69AE868EF58D0CB", hash_generated_method = "8DDA4F48F27A88B7F4B74D394EF30643")
     public boolean isValid() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1393569238 = getTaintBoolean();
@@ -62,6 +64,7 @@ public class AuthState {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.628 -0400", hash_original_method = "C7CF977B6EF3E7F983B2AE16A4014379", hash_generated_method = "531AC3D9CBA0AAA3A0C0BDA94C666006")
     public AuthScheme getAuthScheme() {
         AuthScheme varB4EAC82CA7396A68D541C85D26508E83_1920624008 = null; 
@@ -73,6 +76,7 @@ public class AuthState {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.628 -0400", hash_original_method = "57CD79A3968806BAC032754AA40A41DA", hash_generated_method = "393D7361805C4D11099EB654619A560E")
     public Credentials getCredentials() {
         Credentials varB4EAC82CA7396A68D541C85D26508E83_1198666106 = null; 
@@ -92,6 +96,7 @@ public class AuthState {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.629 -0400", hash_original_method = "BF313F23BCC888676D9F0166A2639A73", hash_generated_method = "3B95D00C3E82BE92151B923B64FD1E45")
     public AuthScope getAuthScope() {
         AuthScope varB4EAC82CA7396A68D541C85D26508E83_283640859 = null; 

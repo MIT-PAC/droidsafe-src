@@ -233,6 +233,7 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.494 -0400", hash_original_method = "28ECC4752D5D2759E8F75423B7F304E1", hash_generated_method = "85DC27B70EC2B768C744122A7207BA7A")
     private void init(SSLParametersImpl sslParameters,
                       String[] enabledProtocols,
@@ -1062,6 +1063,7 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.592 -0400", hash_original_method = "1BC96C488FBD7622E9D1B33430C794F4", hash_generated_method = "9069498A56026D20FD8A09727B7034AD")
     public void setUseSessionTickets(boolean useSessionTickets) {
         this.useSessionTickets = useSessionTickets;
@@ -1070,6 +1072,7 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.593 -0400", hash_original_method = "A3C6DFBE0DD33FFBDB883F2D56D0E9E8", hash_generated_method = "7F6DB2623DC2C5039EF0AE7949EDDAF7")
     public void setHostname(String hostname) {
         this.hostname = hostname;
@@ -1189,6 +1192,7 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.596 -0400", hash_original_method = "5DC72E2D363A272A051BD7C43DA762A2", hash_generated_method = "94143637A2C9649BE750DFDB48AE5696")
     @Override
     public int getSoTimeout() throws SocketException {
@@ -1199,6 +1203,7 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.596 -0400", hash_original_method = "CE465C7A533FEAB3164F103F1DBDF364", hash_generated_method = "6671F89B44C6C2B43F432B4E79ACC3F2")
     public void setHandshakeTimeout(int timeoutMilliseconds) throws SocketException {
         this.handshakeTimeoutMilliseconds = timeoutMilliseconds;

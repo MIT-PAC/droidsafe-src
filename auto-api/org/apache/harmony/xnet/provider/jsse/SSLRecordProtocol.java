@@ -66,6 +66,7 @@ public class SSLRecordProtocol {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.875 -0400", hash_original_method = "19D70A4F8DD7A34083C18DBEE5C3AF9E", hash_generated_method = "B12ED7FC75CC5D30025E2395CDA42B81")
     protected SSLSessionImpl getSession() {
         SSLSessionImpl varB4EAC82CA7396A68D541C85D26508E83_725349344 = null; 
@@ -425,6 +426,7 @@ public class SSLRecordProtocol {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.882 -0400", hash_original_method = "DE69782F4CD99CC5C5DEED4E3A6B9F4E", hash_generated_method = "8F61383BC58CF2000382CEE86F416B66")
     protected void setVersion(byte[] ver) {
         this.version = ver;

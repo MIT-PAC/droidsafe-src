@@ -100,6 +100,7 @@ class RILRequest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.292 -0400", hash_original_method = "E7EE736E24A2BE53AC107C249FFB0880", hash_generated_method = "2CC4C29F04564704D254356C451809E3")
      void release() {
         {
@@ -121,6 +122,7 @@ class RILRequest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void resetSerial() {
         synchronized(sSerialMonitor) {
             sNextSerial = 0;
@@ -1430,6 +1432,7 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.320 -0400", hash_original_method = "0D77FBD1C1F349CB6A533B80F899FC6F", hash_generated_method = "D2B49F63E92039B606510A526214D0A9")
     private int translateStatus(int status) {
         addTaint(status);
@@ -3750,6 +3753,7 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.438 -0400", hash_original_method = "F83E9E0330A999E5D5277EA606DEC7ED", hash_generated_method = "0741AC9BDA370933B2D228D0415043F5")
     private Object responseVoid(Parcel p) {
         Object varB4EAC82CA7396A68D541C85D26508E83_177349079 = null; 
@@ -4656,7 +4660,8 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     }
 
     
-        static String requestToString(int request) {
+        @DSModeled(DSC.SAFE)
+    static String requestToString(int request) {
         switch(request) {
             case RIL_REQUEST_GET_SIM_STATUS: return "GET_SIM_STATUS";
             case RIL_REQUEST_ENTER_SIM_PIN: return "ENTER_SIM_PIN";
@@ -4770,7 +4775,8 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     }
 
     
-        static String responseToString(int request) {
+        @DSModeled(DSC.SAFE)
+    static String responseToString(int request) {
         switch(request) {
             case RIL_UNSOL_RESPONSE_RADIO_STATE_CHANGED: return "UNSOL_RESPONSE_RADIO_STATE_CHANGED";
             case RIL_UNSOL_RESPONSE_CALL_STATE_CHANGED: return "UNSOL_RESPONSE_CALL_STATE_CHANGED";

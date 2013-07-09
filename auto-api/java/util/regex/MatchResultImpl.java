@@ -37,6 +37,7 @@ class MatchResultImpl implements MatchResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.567 -0400", hash_original_method = "65429E9FFFA86BB606D2EED833A40ABB", hash_generated_method = "3641E0A590073CFFB4071C9803D1E9FB")
     public int end(int group) {
         addTaint(group);
@@ -95,6 +96,7 @@ class MatchResultImpl implements MatchResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.568 -0400", hash_original_method = "F1AEADA2600B81876C4282B5C0543134", hash_generated_method = "C2F70F19D0CA116AE9B293E77FFC861A")
     public int groupCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1895524672 = getTaintInt();
@@ -115,6 +117,7 @@ class MatchResultImpl implements MatchResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.569 -0400", hash_original_method = "AECCCC3B75C18CF3285FB395DF7917FC", hash_generated_method = "1ED1A7AFA2BDEB8377B9A0BBDC0D84E8")
     public int start(int group) {
         addTaint(group);

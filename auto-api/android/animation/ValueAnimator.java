@@ -213,6 +213,7 @@ public class ValueAnimator extends Animator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.081 -0400", hash_original_method = "78A6AA7AD01513781B120BCE5DC9E156", hash_generated_method = "383DA4E88D3FB9E1B08D85A5B5E108DA")
     public PropertyValuesHolder[] getValues() {
         PropertyValuesHolder[] varB4EAC82CA7396A68D541C85D26508E83_828221140 = null; 
@@ -269,6 +270,7 @@ public class ValueAnimator extends Animator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.085 -0400", hash_original_method = "5E13B5E872677B59408FA3E6BB94A9F6", hash_generated_method = "8B5AC97D3630595D0AE8FC15689DBFFD")
     public long getDuration() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_475523095 = getTaintLong();
@@ -315,6 +317,7 @@ public class ValueAnimator extends Animator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.090 -0400", hash_original_method = "36807B48FC1321C96D3D559AECDD954B", hash_generated_method = "C14CE2CF306DCD050B27A2BC433F0AA8")
     public long getStartDelay() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1361706133 = getTaintLong();
@@ -324,6 +327,7 @@ public class ValueAnimator extends Animator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.091 -0400", hash_original_method = "84D20D1DEBEAE9C7FDE98EA5D287F4D2", hash_generated_method = "FAC2ECF430C77C663A5F61FD6D4BD7CA")
     public void setStartDelay(long startDelay) {
         this.mStartDelay = startDelay;
@@ -332,11 +336,13 @@ public class ValueAnimator extends Animator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getFrameDelay() {
         return sFrameDelay;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setFrameDelay(long frameDelay) {
         sFrameDelay = frameDelay;
     }
@@ -404,6 +410,7 @@ public class ValueAnimator extends Animator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.101 -0400", hash_original_method = "4F2FB0A315DAA7A8B07A49F4FCE27399", hash_generated_method = "7098540AE96AF889E34ED53706CB0331")
     public void setRepeatCount(int value) {
         mRepeatCount = value;
@@ -412,6 +419,7 @@ public class ValueAnimator extends Animator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.102 -0400", hash_original_method = "4FE747AC8B0667617AE307ECFC6ED74A", hash_generated_method = "55EEFD10FF6456409F1D1F8DC66E44DA")
     public int getRepeatCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1159349195 = getTaintInt();
@@ -421,6 +429,7 @@ public class ValueAnimator extends Animator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.104 -0400", hash_original_method = "C33D7F87842C98944308EC1438B3A8A7", hash_generated_method = "57CCF83DF3B3AF7C69315FCAF2E9D050")
     public void setRepeatMode(int value) {
         mRepeatMode = value;
@@ -429,6 +438,7 @@ public class ValueAnimator extends Animator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.105 -0400", hash_original_method = "081205714C0DCBE8DC8471C6BC7C6458", hash_generated_method = "9DDE16180D7ADB5A666DC202AA824476")
     public int getRepeatMode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1679855463 = getTaintInt();
@@ -509,6 +519,7 @@ public class ValueAnimator extends Animator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.113 -0400", hash_original_method = "69CBD09EBE4A4B5ECD6AD8540DB7CFD0", hash_generated_method = "8CCB516995DB3FC108FA9643E6A0A4C6")
     public TimeInterpolator getInterpolator() {
         TimeInterpolator varB4EAC82CA7396A68D541C85D26508E83_654057754 = null; 
@@ -659,6 +670,7 @@ public class ValueAnimator extends Animator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.135 -0400", hash_original_method = "80FBC5A625B4BAB80C578CF39CB5DA5B", hash_generated_method = "3D9F78705CB2FBEB3B1123F061EFFFAE")
     @Override
     public boolean isRunning() {
@@ -669,6 +681,7 @@ public class ValueAnimator extends Animator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.136 -0400", hash_original_method = "4FF549E03853BC8FE3FDFAEBF99B8097", hash_generated_method = "5A70E88C0A890EA8421888DCA3CC5EE6")
     @Override
     public boolean isStarted() {
@@ -771,6 +784,7 @@ public class ValueAnimator extends Animator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.142 -0400", hash_original_method = "33DF90BAA846BB88E01B9C85165D068C", hash_generated_method = "5A16433024F0F37F461CCF8B869BEEBF")
     private boolean delayedAnimationFrame(long currentTime) {
         {
@@ -860,6 +874,7 @@ public class ValueAnimator extends Animator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.144 -0400", hash_original_method = "7C3735DD08F0E37DA76BAA97A1C3802E", hash_generated_method = "20DCDADBDCEC2ABF868B1B6A2AAD0B08")
     public float getAnimatedFraction() {
         float var546ADE640B6EDFBC8A086EF31347E768_612922690 = getTaintFloat();

@@ -189,6 +189,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isEqual(byte[] digesta, byte[] digestb) {
         if (digesta.length != digestb.length) {
             return false;

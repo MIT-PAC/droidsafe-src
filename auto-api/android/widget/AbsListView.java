@@ -496,6 +496,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.863 -0400", hash_original_method = "5DFF60E6C611266C8D61B940778B8222", hash_generated_method = "F48516B66B1EF2E32EDEC41E1872DBF4")
     public int getCheckedItemCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2051337871 = getTaintInt();
@@ -539,6 +540,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.865 -0400", hash_original_method = "DD9B0503EDD82432AE0B7C0599D4B447", hash_generated_method = "2682EFD7D59A5C8BC46815D4DF93706D")
     public SparseBooleanArray getCheckedItemPositions() {
         SparseBooleanArray varB4EAC82CA7396A68D541C85D26508E83_2105680336 = null; 
@@ -743,6 +745,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.867 -0400", hash_original_method = "8E2D8E05EEC3041F2430430C00E99F2E", hash_generated_method = "65DC33E45ACF388333C20B22D11B0636")
     public int getChoiceMode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1619918388 = getTaintInt();
@@ -908,6 +911,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.870 -0400", hash_original_method = "0BC112ABD3166320C6B43E3AFC3B6D61", hash_generated_method = "30517E6E39767602AA96A0E14D653C33")
     @ViewDebug.ExportedProperty
     public boolean isFastScrollEnabled() {
@@ -945,6 +949,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.871 -0400", hash_original_method = "1698DB675ADDAA62665F2F04BB6F72CB", hash_generated_method = "D64E9DF10E031F8E4DDF09544BB4BA0A")
     public void setSmoothScrollbarEnabled(boolean enabled) {
         mSmoothScrollbarEnabled = enabled;
@@ -953,6 +958,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.872 -0400", hash_original_method = "475C5FFCF382FD26204BCB75E2B77D7D", hash_generated_method = "0F701411362B8ADE67F43262DBD09CBE")
     @ViewDebug.ExportedProperty
     public boolean isSmoothScrollbarEnabled() {
@@ -1022,6 +1028,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.873 -0400", hash_original_method = "9414D347741A5DD8E57796525BCE5898", hash_generated_method = "3A26F14536B132D99C11AD7ECC0C623F")
     @ViewDebug.ExportedProperty
     public boolean isScrollingCacheEnabled() {
@@ -1046,6 +1053,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.874 -0400", hash_original_method = "8476047A74E8C2792EEAD35F27B63501", hash_generated_method = "264A2BADB5D79F4C262375A12D707EBE")
     public void setTextFilterEnabled(boolean textFilterEnabled) {
         mTextFilterEnabled = textFilterEnabled;
@@ -1054,6 +1062,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.876 -0400", hash_original_method = "D536B611E01E5CFE1F666765CAB03290", hash_generated_method = "504962D4DBBAB2E86E5840A24D08E869")
     @ViewDebug.ExportedProperty
     public boolean isTextFilterEnabled() {
@@ -1100,6 +1109,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.877 -0400", hash_original_method = "991365D9D991378A506E868734A0B0D2", hash_generated_method = "D6CE2681604589238D239A2A80B18647")
     @ViewDebug.ExportedProperty
     public boolean isStackFromBottom() {
@@ -1679,6 +1689,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.889 -0400", hash_original_method = "402FE2CFEE98322FA56302826EFCFBC7", hash_generated_method = "7C7456ED8D2FB5B664E2AB60CCD22125")
     protected void layoutChildren() {
         
@@ -1748,6 +1759,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.891 -0400", hash_original_method = "3B697574C47153B82BC97C5C46624F2C", hash_generated_method = "625F664B45BF2EE19F13F2B62FC3B902")
     public int getListPaddingTop() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1964102039 = getTaintInt();
@@ -1757,6 +1769,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.891 -0400", hash_original_method = "CEE980D8545C78DFB596AE8650DBF797", hash_generated_method = "09141E14779C68FC6E73F5EFC296BAF7")
     public int getListPaddingBottom() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1046398980 = getTaintInt();
@@ -1766,6 +1779,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.891 -0400", hash_original_method = "C8B939C15FBE7011BDF7672B6F924B56", hash_generated_method = "600C47AA6F15030A08A5335A02366C79")
     public int getListPaddingLeft() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_419565941 = getTaintInt();
@@ -1775,6 +1789,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.891 -0400", hash_original_method = "1F1F9379D690EBB0F58C075805935B4C", hash_generated_method = "2AB4D39E8754890235F61A41518E6377")
     public int getListPaddingRight() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1496482954 = getTaintInt();
@@ -1929,6 +1944,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.895 -0400", hash_original_method = "E1295B3F3CD2AED842AA5266ED41ED1A", hash_generated_method = "156CC2712538545003D659ED3D79CF9A")
     @Override
     protected boolean isPaddingOffsetRequired() {
@@ -1939,6 +1955,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.895 -0400", hash_original_method = "C31A372B11969057E398197BABCC2FB9", hash_generated_method = "9562C6F5E5F8D26FB7190D33AF4852A9")
     @Override
     protected int getLeftPaddingOffset() {
@@ -1949,6 +1966,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.896 -0400", hash_original_method = "F0F07013F187EA8DBDDCF030EEADD0A0", hash_generated_method = "5A8850D597655677505D2DDF807E7AF2")
     @Override
     protected int getTopPaddingOffset() {
@@ -1959,6 +1977,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.897 -0400", hash_original_method = "D64BFD9DD2CC0187FA2BCDAC4D5056C0", hash_generated_method = "1784D8D8A889E1F1909CD00F2C3E9CE9")
     @Override
     protected int getRightPaddingOffset() {
@@ -1969,6 +1988,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.897 -0400", hash_original_method = "A76EA354621A97D061AF35F7F0E022AA", hash_generated_method = "47B0E5EA7A278853AC63AE71039F02D1")
     @Override
     protected int getBottomPaddingOffset() {
@@ -2008,6 +2028,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.898 -0400", hash_original_method = "E2B9A99414FF2EE03BB0A755AC5DBB16", hash_generated_method = "9A732E7792C6518F029140CA4FBB1006")
      boolean touchModeDrawsInPressedState() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_499568531 = getTaintBoolean();
@@ -2053,6 +2074,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.899 -0400", hash_original_method = "E224CB1DBFEAEB35D4CBDCEA1ACB7063", hash_generated_method = "C23273762128D8B0257C96DB47B6A628")
     public void setDrawSelectorOnTop(boolean onTop) {
         mDrawSelectorOnTop = onTop;
@@ -2102,6 +2124,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.901 -0400", hash_original_method = "021D90A72F3883D0847A93B24BC54541", hash_generated_method = "D8F2052080E4C0C5FCB8633731C39CC9")
     public Drawable getSelector() {
         Drawable varB4EAC82CA7396A68D541C85D26508E83_1369922638 = null; 
@@ -2157,6 +2180,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.902 -0400", hash_original_method = "130833F22A002ECC6A8AECA69F90873D", hash_generated_method = "21A7C287E27C4D3CE4CA7765A0F74054")
     public void setScrollIndicators(View up, View down) {
         mScrollUp = up;
@@ -2451,6 +2475,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.909 -0400", hash_original_method = "9F181134B78CDA48AEB577EDC6EC32D7", hash_generated_method = "B423DB2F5B1B99570C15A3607CE4F411")
     @Override
     protected ContextMenuInfo getContextMenuInfo() {
@@ -2537,6 +2562,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.911 -0400", hash_original_method = "9B8E7EBB8FE64DE94387A936F5D592CB", hash_generated_method = "1E552177A1EF875F2281F499DBF9DE4D")
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -2603,6 +2629,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.912 -0400", hash_original_method = "AF011537E523E131D566F09FD5E6C732", hash_generated_method = "083281D026E9BBF12BAB21E0084CD5D6")
     @Override
     protected void dispatchSetPressed(boolean pressed) {
@@ -3441,6 +3468,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.923 -0400", hash_original_method = "9FFFDAFD9442A3DE6BE69946897AC2B3", hash_generated_method = "763087F4905BF1A44B4D70DFA37C4F6C")
     public void setOverScrollEffectPadding(int leftPadding, int rightPadding) {
         mGlowPaddingLeft = leftPadding;
@@ -3688,6 +3716,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.928 -0400", hash_original_method = "0A97F6C2B71DEE1A9A851FDFBE6F2171", hash_generated_method = "22912162971CDA2675BA2D8F41874A24")
     public void setVelocityScale(float scale) {
         mVelocityScale = scale;
@@ -4047,6 +4076,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.935 -0400", hash_original_method = "D1E5D38495D64541AC6B328A03DDBBE5", hash_generated_method = "6BF73E02079C728D976373AAF012B968")
      int getHeaderViewsCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_298792419 = getTaintInt();
@@ -4056,6 +4086,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.936 -0400", hash_original_method = "0C261F26A2F08E82991D35E703E8BFEF", hash_generated_method = "D28EFF1E85533B568D7394C248609196")
      int getFooterViewsCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_352040655 = getTaintInt();
@@ -4572,6 +4603,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.945 -0400", hash_original_method = "E53786E832898AFD8F3D1858C7ADFC0B", hash_generated_method = "F54B0739DECC462B1E547F02A0E321D6")
     @Override
     protected boolean isInFilterMode() {
@@ -4739,6 +4771,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.951 -0400", hash_original_method = "44BA525DE8B7DBBB72825E23CC2BB1F6", hash_generated_method = "BDC7C36613BFBC82EB8729A8D60F4958")
     @Override
     public boolean checkInputConnectionProxy(View view) {
@@ -4809,6 +4842,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.953 -0400", hash_original_method = "65ACBB1BC8C4B28B951746B0589E48B4", hash_generated_method = "FC67E8F6EAB56D69E49FEDB528E0ABED")
     public boolean hasTextFilter() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1213258062 = getTaintBoolean();
@@ -4853,6 +4887,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.954 -0400", hash_original_method = "46932DA0618614AAF15434EFCC9FAF04", hash_generated_method = "D46551DFD7C1F01B7CC6C2850BBA7577")
     public void beforeTextChanged(CharSequence s, int start, int count, int after) {
         addTaint(s.getTaint());
@@ -4900,6 +4935,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.955 -0400", hash_original_method = "2B62725FCE5BAC340D42F3403AAE31A5", hash_generated_method = "B1E73F6E6A3A9E89AEF9681CB19F89E5")
     public void afterTextChanged(Editable s) {
         addTaint(s.getTaint());
@@ -4949,6 +4985,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.958 -0400", hash_original_method = "7C8047E4E7C938CA1D7BE889EE17D059", hash_generated_method = "BD24FB81695A51A6F35802F1708A76E0")
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
@@ -4960,6 +4997,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.958 -0400", hash_original_method = "1385B81082A7F6F42283DE7C72A352C9", hash_generated_method = "EDB13FA3924957A0F3CE2B87C521F371")
     public void setTranscriptMode(int mode) {
         mTranscriptMode = mode;
@@ -4968,6 +5006,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.959 -0400", hash_original_method = "EADF20E51473F5B82FC89B630E89BCE7", hash_generated_method = "77ACA101D36DEA315CB9E2AF248CF933")
     public int getTranscriptMode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1242184388 = getTaintInt();
@@ -4977,6 +5016,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.959 -0400", hash_original_method = "3A641BF6273957C36676C590B4CC3444", hash_generated_method = "2A9426135A9B325C82545C0DE5C17246")
     @Override
     public int getSolidColor() {
@@ -5012,6 +5052,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.960 -0400", hash_original_method = "75945C93CA5A574EC2A11912410CB0E0", hash_generated_method = "136EA61FA16D056B7CE8DA1B87BA289C")
     @ViewDebug.ExportedProperty(category = "drawing")
     public int getCacheColorHint() {
@@ -5172,6 +5213,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.962 -0400", hash_original_method = "C1CCFF5C419F753BE2BE6DDA2ACFD3CA", hash_generated_method = "03F25D29CCB11E2CC644BAEB152E7A8F")
     public void setRemoteViewsAdapter(Intent intent) {
         {
@@ -5198,6 +5240,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.962 -0400", hash_original_method = "0410210FC7BC336B3896BEA7510AAE3D", hash_generated_method = "9D38AC80197E9738EE138974F1EA14DE")
     public void deferNotifyDataSetChanged() {
         mDeferNotifyDataSetChanged = true;
@@ -5237,6 +5280,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.963 -0400", hash_original_method = "062C10606C6763A75AEC213E65863835", hash_generated_method = "64085B2EAF9EA39B9EA364A5E4CA7F63")
     public void onRemoteAdapterDisconnected() {
         

@@ -134,6 +134,7 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListene
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.144 -0400", hash_original_method = "7E34E1FAECF41C65A10194A4E061AD6D", hash_generated_method = "C864B094F1586B649248412EF85B9AC7")
     public void setQueryRefinement(int refineWhat) {
         mQueryRefinement = refineWhat;
@@ -142,6 +143,7 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListene
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.145 -0400", hash_original_method = "986E9EFF340372ED6B6AF1389D87F9A0", hash_generated_method = "59BC632D7521BCBAFC94EECA9EE35518")
     public int getQueryRefinement() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_192588840 = getTaintInt();
@@ -151,6 +153,7 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListene
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.145 -0400", hash_original_method = "715CB29FF3CEE320E11EC1BD997C9D63", hash_generated_method = "31165B2940BE98D6586BAB70D0DD67B7")
     @Override
     public boolean hasStableIds() {
@@ -783,6 +786,7 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListene
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.159 -0400", hash_original_method = "3801EEB25227B54F215AA02CEF91B89D", hash_generated_method = "8D832724488DCF3F96159B7B06D65744")
     private Drawable getDrawable(Uri uri) {
         Drawable varB4EAC82CA7396A68D541C85D26508E83_204283167 = null; 

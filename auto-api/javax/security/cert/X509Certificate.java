@@ -82,7 +82,8 @@ public abstract class X509Certificate extends Certificate {
             public PublicKey getPublicKey() {
                 return cert.getPublicKey();
             }
-            public void checkValidity() throws CertificateExpiredException,
+            @DSModeled(DSC.SAFE)
+    public void checkValidity() throws CertificateExpiredException,
                                    CertificateNotYetValidException {
                 try {
                     cert.checkValidity();
@@ -92,7 +93,8 @@ public abstract class X509Certificate extends Certificate {
                     throw new CertificateExpiredException(e.getMessage());
                 }
             }
-            public void checkValidity(Date date)
+            @DSModeled(DSC.SAFE)
+    public void checkValidity(Date date)
                             throws CertificateExpiredException,
                                    CertificateNotYetValidException {
                 try {
@@ -103,31 +105,40 @@ public abstract class X509Certificate extends Certificate {
                     throw new CertificateExpiredException(e.getMessage());
                 }
             }
-            public int getVersion() {
+            @DSModeled(DSC.SAFE)
+    public int getVersion() {
                 return 2;
             }
-            public BigInteger getSerialNumber() {
+            @DSModeled(DSC.SAFE)
+    public BigInteger getSerialNumber() {
                 return cert.getSerialNumber();
             }
-            public Principal getIssuerDN() {
+            @DSModeled(DSC.SAFE)
+    public Principal getIssuerDN() {
                 return cert.getIssuerDN();
             }
-            public Principal getSubjectDN() {
+            @DSModeled(DSC.SAFE)
+    public Principal getSubjectDN() {
                 return cert.getSubjectDN();
             }
-            public Date getNotBefore() {
+            @DSModeled(DSC.SAFE)
+    public Date getNotBefore() {
                 return cert.getNotBefore();
             }
-            public Date getNotAfter() {
+            @DSModeled(DSC.SAFE)
+    public Date getNotAfter() {
                 return cert.getNotAfter();
             }
-            public String getSigAlgName() {
+            @DSModeled(DSC.SAFE)
+    public String getSigAlgName() {
                 return cert.getSigAlgName();
             }
-            public String getSigAlgOID() {
+            @DSModeled(DSC.SAFE)
+    public String getSigAlgOID() {
                 return cert.getSigAlgOID();
             }
-            public byte[] getSigAlgParams() {
+            @DSModeled(DSC.SAFE)
+    public byte[] getSigAlgParams() {
                 return cert.getSigAlgParams();
             }
         };

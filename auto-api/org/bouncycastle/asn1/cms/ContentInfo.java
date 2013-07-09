@@ -92,6 +92,7 @@ public class ContentInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.917 -0400", hash_original_method = "53E059E7B37D744FA8DA51063C1D9E4B", hash_generated_method = "36F390D31E7D937F1F830898A1D2745F")
     public ASN1ObjectIdentifier getContentType() {
         ASN1ObjectIdentifier varB4EAC82CA7396A68D541C85D26508E83_239549259 = null; 
@@ -103,6 +104,7 @@ public class ContentInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.917 -0400", hash_original_method = "188E73C2A8286EF39F391EFEF33436C4", hash_generated_method = "B1124B25B311CACCB88856CC7AD38453")
     public DEREncodable getContent() {
         DEREncodable varB4EAC82CA7396A68D541C85D26508E83_1725085792 = null; 

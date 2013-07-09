@@ -24,6 +24,7 @@ public class TelURLImpl extends GenericURI implements javax.sip.address.TelURL {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.501 -0400", hash_original_method = "C9EB332176FD96276A0692D7B71B3B1C", hash_generated_method = "D0138740D84BA72C2DE0294C938C714D")
     public void setTelephoneNumber(TelephoneNumber telephoneNumber) {
         this.telephoneNumber = telephoneNumber;
@@ -56,6 +57,7 @@ public class TelURLImpl extends GenericURI implements javax.sip.address.TelURL {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.503 -0400", hash_original_method = "76031D31C1CA528B8F038117D6808811", hash_generated_method = "DC1DDAB6DFA66BEBBB125FD011BB5BEC")
     public String getScheme() {
         String varB4EAC82CA7396A68D541C85D26508E83_1281568264 = null; 
@@ -78,6 +80,7 @@ public class TelURLImpl extends GenericURI implements javax.sip.address.TelURL {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.504 -0400", hash_original_method = "317E4D17172E12E605B8E6C02B3A9523", hash_generated_method = "45FA7D0743EFB57F5CEDCAD87E2D206D")
     public boolean isSipURI() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_831405094 = getTaintBoolean();

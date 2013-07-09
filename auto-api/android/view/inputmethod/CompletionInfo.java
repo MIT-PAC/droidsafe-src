@@ -67,6 +67,7 @@ public final class CompletionInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.906 -0400", hash_original_method = "6AF16C815DE6FE4144432EF99CDC825B", hash_generated_method = "A43A5748CCE31D41E2B10D5B359BC7DA")
     public long getId() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1834914577 = getTaintLong();
@@ -76,6 +77,7 @@ public final class CompletionInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.906 -0400", hash_original_method = "88750DD9C7394A9CF6B657A7AF77F3EB", hash_generated_method = "B7D7D2229B6E2A573BC489FC6BC93BA3")
     public int getPosition() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_786718752 = getTaintInt();
@@ -85,6 +87,7 @@ public final class CompletionInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.907 -0400", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "3969F22C53BB7233763312270F08C4FA")
     public CharSequence getText() {
         CharSequence varB4EAC82CA7396A68D541C85D26508E83_162814130 = null; 
@@ -96,6 +99,7 @@ public final class CompletionInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.907 -0400", hash_original_method = "4A1E1E1996A16BAAC783C4D4608DA412", hash_generated_method = "C66B1301877B6CD9D59D9F99C103342C")
     public CharSequence getLabel() {
         CharSequence varB4EAC82CA7396A68D541C85D26508E83_762962375 = null; 
@@ -139,6 +143,7 @@ public final class CompletionInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.908 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "2E3E9FA03CC0B8C73AE292F667A4641D")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1461801309 = getTaintInt();

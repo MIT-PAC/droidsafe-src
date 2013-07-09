@@ -143,6 +143,7 @@ public class ZipEntry implements ZipConstants, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.894 -0400", hash_original_method = "D7C1F8AAD3D2F40DD04B72C74A7D0B69", hash_generated_method = "49D118935F1D12B565BCFE1A717925CB")
     public String getComment() {
         String varB4EAC82CA7396A68D541C85D26508E83_1279957971 = null; 
@@ -154,6 +155,7 @@ public class ZipEntry implements ZipConstants, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.895 -0400", hash_original_method = "BD185E24018FAED136FF653216A88FC6", hash_generated_method = "8E01983F834F989080DC74BB3984968F")
     public long getCompressedSize() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_114711603 = getTaintLong();
@@ -163,6 +165,7 @@ public class ZipEntry implements ZipConstants, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.895 -0400", hash_original_method = "9F9CC7112652CAA1DD447640E3933AED", hash_generated_method = "E776324E689B99E0971D5D6ED03A571D")
     public long getCrc() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1084042774 = getTaintLong();
@@ -172,6 +175,7 @@ public class ZipEntry implements ZipConstants, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.896 -0400", hash_original_method = "12884DA1C8E953155933C9EDA5E5913F", hash_generated_method = "FA883AA05CDF74268D26BE69D74C19DF")
     public byte[] getExtra() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1754260426 = {getTaintByte()};
@@ -181,6 +185,7 @@ public class ZipEntry implements ZipConstants, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.896 -0400", hash_original_method = "5D6E0D5CF72121589416F8E200760163", hash_generated_method = "7FD8AB8DFA486CD36EE7A38F55E33EC0")
     public int getMethod() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1040386280 = getTaintInt();
@@ -190,6 +195,7 @@ public class ZipEntry implements ZipConstants, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.896 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "A2E413946FA10216E9FD2520A7BE8479")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_966213024 = null; 
@@ -201,6 +207,7 @@ public class ZipEntry implements ZipConstants, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.897 -0400", hash_original_method = "25EF411BA02CBCB0F772C5374653B5E7", hash_generated_method = "D9397827F16C352687767C5867897C8C")
     public long getSize() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_87940551 = getTaintLong();
@@ -268,6 +275,7 @@ public class ZipEntry implements ZipConstants, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.898 -0400", hash_original_method = "24AF7AE4A55FD751B6B8B8E36C8E6668", hash_generated_method = "334A47E452019AA69BE98A99FED4C96B")
     public void setCompressedSize(long value) {
         compressedSize = value;
@@ -382,6 +390,7 @@ public class ZipEntry implements ZipConstants, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.901 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "60A3DF06D9186AFE7626ED7781A09D46")
     @Override
     public String toString() {

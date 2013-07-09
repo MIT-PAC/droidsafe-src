@@ -129,6 +129,7 @@ public class SocketHttpClientConnection extends AbstractHttpClientConnection imp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.741 -0400", hash_original_method = "38867CD3C8042DC0E4B0EAE08D88273F", hash_generated_method = "1BDF3AD6A5DAAAA17F5D3F49176FBEEE")
     public boolean isOpen() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1517000668 = getTaintBoolean();
@@ -138,6 +139,7 @@ public class SocketHttpClientConnection extends AbstractHttpClientConnection imp
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.742 -0400", hash_original_method = "B12AAA9EA995C0C9BE2466476E8BAC96", hash_generated_method = "63259D95CC39229DFA0489306BE28644")
     protected Socket getSocket() {
         Socket varB4EAC82CA7396A68D541C85D26508E83_129504617 = null; 

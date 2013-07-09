@@ -118,6 +118,7 @@ class PackedIntVector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.095 -0400", hash_original_method = "339196B1319A98FF890A6A44D9B8F936", hash_generated_method = "78A2B288FD81E57E73E67B7FF7E3CB91")
     private void setValueInternal(int row, int column, int value) {
         {
@@ -254,6 +255,7 @@ class PackedIntVector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.098 -0400", hash_original_method = "A7F055B05F3BF0E7B9EF67A5904EF45B", hash_generated_method = "2A18A8D5D1F53B07B2F6B23AC619592D")
     public int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1904220146 = getTaintInt();
@@ -263,6 +265,7 @@ class PackedIntVector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.098 -0400", hash_original_method = "00C81AD9ACCD847707085D62472884FD", hash_generated_method = "DEA8D037CBC794FC559C71BE85C8A37C")
     public int width() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_106351143 = getTaintInt();

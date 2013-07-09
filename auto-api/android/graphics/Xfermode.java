@@ -40,6 +40,7 @@ public class Xfermode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void finalizer(int native_instance) {
     }
 

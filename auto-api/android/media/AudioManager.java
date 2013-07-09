@@ -298,7 +298,8 @@ public class AudioManager {
     }
 
     
-        public static boolean isValidRingerMode(int ringerMode) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isValidRingerMode(int ringerMode) {
         if (ringerMode < 0 || ringerMode > RINGER_MODE_MAX) {
             return false;
         }
@@ -496,6 +497,7 @@ public class AudioManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.996 -0400", hash_original_method = "7B6A5349C22F082B0BD2BFA86A0EB11D", hash_generated_method = "F0344FF33A696923D229AEAEBE4CF048")
     public void forceVolumeControlStream(int streamType) {
         mVolumeControlStream = streamType;
@@ -715,6 +717,7 @@ public class AudioManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.000 -0400", hash_original_method = "6E721A6BE84D0B991FC9D97F8410EE50", hash_generated_method = "A22C4661A6A1CFE6E9E75075FF7C7D3F")
     @Deprecated
     public void setBluetoothA2dpOn(boolean on) {
@@ -742,6 +745,7 @@ public class AudioManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.001 -0400", hash_original_method = "9CDD23DC97597F87B0409849BA69DD8F", hash_generated_method = "0DF92E1DD80E7C02712C4E6F80598AED")
     @Deprecated
     public void setWiredHeadsetOn(boolean on) {
@@ -838,6 +842,7 @@ public class AudioManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.005 -0400", hash_original_method = "646817F3B93E4871A7A7D1BE098C87AE", hash_generated_method = "E1D8B1DBD2FE79C7D2D08E3E6E28C662")
     @Deprecated
     public void setRouting(int mode, int routes, int mask) {
@@ -848,6 +853,7 @@ public class AudioManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.005 -0400", hash_original_method = "6C4959DBE0B2C4B0BA15108AAD8EE45D", hash_generated_method = "0D2E214A6C928D38EA00888801BB0804")
     @Deprecated
     public int getRouting(int mode) {

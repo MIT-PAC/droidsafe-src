@@ -143,6 +143,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.071 -0400", hash_original_method = "D6B19F05A1BF219922EA06A43EF822A3", hash_generated_method = "B94BF88443EF1EF5878B6F5EB0B1B141")
     public String getPackage() {
         String varB4EAC82CA7396A68D541C85D26508E83_1217100516 = null; 
@@ -154,6 +155,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.072 -0400", hash_original_method = "613C00C60CA896BC5001BD5561015459", hash_generated_method = "E4F28B085810BD7F259AD4491DC102B3")
     public int getLayoutId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_882902467 = getTaintInt();
@@ -163,6 +165,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.072 -0400", hash_original_method = "B2E01CE5E210E0306AAEDD7A25572B15", hash_generated_method = "C504A5E5F8CCD8C6A31C201D44889892")
      void setIsWidgetCollectionChild(boolean isWidgetCollectionChild) {
         mIsWidgetCollectionChild = isWidgetCollectionChild;
@@ -308,6 +311,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.076 -0400", hash_original_method = "433DFD276FBB02E0D7A2B8DA3B0F08D8", hash_generated_method = "4886F826B42973C5B36780910CDD3442")
     public void setImageViewUri(int viewId, Uri uri) {
         setUri(viewId, "setImageURI", uri);
@@ -401,6 +405,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.078 -0400", hash_original_method = "899E714C9944265097024FA544BB7AC2", hash_generated_method = "FC803D3084FEE4BFE925B42BC2E4AD8E")
     public void setOnClickFillInIntent(int viewId, Intent fillInIntent) {
         addAction(new SetOnClickFillInIntent(viewId, fillInIntent));
@@ -439,6 +444,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.078 -0400", hash_original_method = "F3196C5DB537F18A0B70CAAF74A09A0A", hash_generated_method = "1ED880BC8B6C456181055C17BF0482BF")
     @Deprecated
     public void setRemoteAdapter(int appWidgetId, int viewId, Intent intent) {
@@ -451,6 +457,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.078 -0400", hash_original_method = "9F000F17F0336123DB5D1DD3E4F67BE6", hash_generated_method = "209EBF5096E4DFFB4FF13A86D14D2276")
     public void setRemoteAdapter(int viewId, Intent intent) {
         addAction(new SetRemoteViewsAdapterIntent(viewId, intent));
@@ -603,6 +610,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.081 -0400", hash_original_method = "33EE202B45F16FA5012E7C802B1E1162", hash_generated_method = "B4BED6EF95554EFA166211946117B443")
     public void setUri(int viewId, String methodName, Uri value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.URI, value));
@@ -638,6 +646,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.082 -0400", hash_original_method = "1536FDACAD3B90F5944D61240D2247D6", hash_generated_method = "46565EF22497645D3884804BB0A6D419")
     public void setIntent(int viewId, String methodName, Intent value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.INTENT, value));
@@ -782,6 +791,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.087 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "0EAD812F99D54B72296837C5EA7F938C")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_315381495 = getTaintInt();

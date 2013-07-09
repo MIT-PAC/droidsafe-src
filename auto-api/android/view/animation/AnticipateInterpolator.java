@@ -50,6 +50,7 @@ public class AnticipateInterpolator implements Interpolator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.431 -0400", hash_original_method = "708C87963D95E01AE56D23D7408FFDE5", hash_generated_method = "6A8307AC1FD18055818FFBB10C601264")
     public float getInterpolation(float t) {
         addTaint(t);

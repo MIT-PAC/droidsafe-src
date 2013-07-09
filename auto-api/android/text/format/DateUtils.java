@@ -360,6 +360,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static char toDigitChar(long digit) {
         return (char) (digit + '0');
     }

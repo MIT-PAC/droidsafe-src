@@ -46,6 +46,7 @@ public final class CorrectionInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.919 -0400", hash_original_method = "FB2FFBF84EFDF3FAC1DB07E1BCD653F5", hash_generated_method = "AD0248F8B2C1AD00DBF07775643E02A8")
     public int getOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1733526352 = getTaintInt();
@@ -55,6 +56,7 @@ public final class CorrectionInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.920 -0400", hash_original_method = "B5F6375A5B3C1F7513E2C762D0A387DE", hash_generated_method = "0898CFB659FE71E1B16A3F19FBF2D950")
     public CharSequence getOldText() {
         CharSequence varB4EAC82CA7396A68D541C85D26508E83_1677416625 = null; 
@@ -66,6 +68,7 @@ public final class CorrectionInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.921 -0400", hash_original_method = "A44877BB52BDCF0EDD87983832FB9E30", hash_generated_method = "126F4259E2E8E235338145A5360D33EF")
     public CharSequence getNewText() {
         CharSequence varB4EAC82CA7396A68D541C85D26508E83_151021876 = null; 
@@ -105,6 +108,7 @@ public final class CorrectionInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.922 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "5375867FEE97CDBEA781A848B79844AC")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_569039665 = getTaintInt();

@@ -173,6 +173,7 @@ public class RetryManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.560 -0400", hash_original_method = "74B9CFC0074F7A248036F63581582633", hash_generated_method = "057720B78E9DAC77C90E2D30E032C51F")
     public boolean isRetryNeeded() {
         boolean retVal = mRetryForever || (mRetryCount < mMaxRetryCount);
@@ -230,6 +231,7 @@ public class RetryManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.561 -0400", hash_original_method = "7864A3188C49B1562B5127F41B9781EB", hash_generated_method = "EF3CB49A25BDC6FC3EF303E4AFAE07FD")
     public int getRetryCount() {
         log("getRetryCount: " + mRetryCount);
@@ -241,6 +243,7 @@ public class RetryManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.561 -0400", hash_original_method = "BFFEAAE12F87E8C46DFE1D4E07480604", hash_generated_method = "513E87EF89BD62C1D7581FD8F0315BAB")
     public void increaseRetryCount() {
         {
@@ -256,6 +259,7 @@ public class RetryManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.562 -0400", hash_original_method = "A052AF31F22F35CA9E6DDD61D99CA6EF", hash_generated_method = "EEEEC2462540C8289BB533E286F508F9")
     public void setRetryCount(int count) {
         mRetryCount = count;
@@ -280,6 +284,7 @@ public class RetryManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.562 -0400", hash_original_method = "17739E86F508FAF2AC931D73653ADB87", hash_generated_method = "A474A3FF7ED71869BD513B625B6A6532")
     public void resetRetryCount() {
         mRetryCount = 0;
@@ -290,6 +295,7 @@ public class RetryManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.562 -0400", hash_original_method = "28FA3A141006A5A6B2A507757230F8F2", hash_generated_method = "E66F8E8B1014C2C9C269FF7B86BB85A4")
     public void retryForeverUsingLastTimeout() {
         mRetryCount = mMaxRetryCount;
@@ -302,6 +308,7 @@ public class RetryManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.562 -0400", hash_original_method = "A096FCFC79F5CC1E2EDA08CBC5F004E8", hash_generated_method = "F501870BD10DF94D55BA3CADF63B8A9A")
     public boolean isRetryForever() {
         log("isRetryForever: " + mRetryForever);

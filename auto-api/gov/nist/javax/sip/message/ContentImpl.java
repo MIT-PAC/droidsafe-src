@@ -35,6 +35,7 @@ public class ContentImpl implements Content {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.618 -0400", hash_original_method = "AC1A4D9E7F01819C7360E12D70B398EB", hash_generated_method = "62E9489CB1A97725F62EAECCA3AE3630")
     public void setContent(Object content) {
         this.content = content;
@@ -43,6 +44,7 @@ public class ContentImpl implements Content {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.619 -0400", hash_original_method = "F9A2B83B00823C4E5AAD796119B409F3", hash_generated_method = "3480DD208511B96C390483183CFDA03C")
     public ContentTypeHeader getContentTypeHeader() {
         ContentTypeHeader varB4EAC82CA7396A68D541C85D26508E83_1449695506 = null; 
@@ -54,6 +56,7 @@ public class ContentImpl implements Content {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.619 -0400", hash_original_method = "29FF4E0F65DE2DF21CD886ED55A6EE33", hash_generated_method = "2DA9AFAD49587B8AF6E5F7BE2F517C8F")
     public Object getContent() {
         Object varB4EAC82CA7396A68D541C85D26508E83_1192920590 = null; 
@@ -113,6 +116,7 @@ public class ContentImpl implements Content {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.620 -0400", hash_original_method = "A92668968F751E368038351A92419F09", hash_generated_method = "40CCBC8DEE7734D4E6DB8D46E7E773A4")
     public void setContentDispositionHeader(ContentDispositionHeader contentDispositionHeader) {
         this.contentDispositionHeader = contentDispositionHeader;
@@ -121,6 +125,7 @@ public class ContentImpl implements Content {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.621 -0400", hash_original_method = "5BF192DF8194E4DCDCE4203B3764CB73", hash_generated_method = "5983099A2EC5A2605FEB547088E32D2A")
     public ContentDispositionHeader getContentDispositionHeader() {
         ContentDispositionHeader varB4EAC82CA7396A68D541C85D26508E83_1908874335 = null; 
@@ -132,6 +137,7 @@ public class ContentImpl implements Content {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.621 -0400", hash_original_method = "F204171925CED35F8176E327AB67DEA9", hash_generated_method = "5D04E291BFBB988E3B375A1F60C5A2D0")
     public void setContentTypeHeader(ContentTypeHeader contentTypeHeader) {
         this.contentTypeHeader = contentTypeHeader;

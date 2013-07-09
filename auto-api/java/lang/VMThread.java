@@ -24,35 +24,42 @@ class VMThread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void create(Thread t, long stackSize) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static Thread currentThread() {
                 
     	return new Thread();
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean interrupted() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1527386262 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1527386262;
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void sleep(long msec, int nsec) throws InterruptedException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void yield() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.498 -0400", hash_original_method = "72EE977944BFE2711990DF062DD76748", hash_generated_method = "94B6702A412D748369A93518D1439045")
      void interrupt() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.498 -0400", hash_original_method = "52F72D61B7E8A4F0C857BD363070E325", hash_generated_method = "C0048033A2077FC7D44EC217ECA4718D")
      boolean isInterrupted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1989784656 = getTaintBoolean();
@@ -69,6 +76,7 @@ class VMThread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.498 -0400", hash_original_method = "E049D119A7B4A553F02CF8223BDECCF5", hash_generated_method = "0665D9236A1B7D87F72867974F20C98F")
      boolean holdsLock(Object object) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2076884891 = getTaintBoolean();
@@ -76,11 +84,13 @@ class VMThread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.499 -0400", hash_original_method = "7C8E9A670D06C8AE48DAFFA12CDF6628", hash_generated_method = "A11F7437771887EBEDB3015231AB3F04")
      void setPriority(int newPriority) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.499 -0400", hash_original_method = "133516DDD0D787C1D7D737647A15F491", hash_generated_method = "DBCF976F78690075D21E9D906EC72998")
      int getStatus() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1658562 = getTaintInt();
@@ -88,6 +98,7 @@ class VMThread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.499 -0400", hash_original_method = "E4C63287FA81E5CD749A3DF00B7871AE", hash_generated_method = "FD1E9D6CA0E361F0092CB029A4E0F83F")
      void nameChanged(String newName) {
     }

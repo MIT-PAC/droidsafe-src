@@ -74,6 +74,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
     }
 
     
+    @DSModeled(DSC.SPEC)
     static public void broadcastStickyIntent(Intent intent, String permission) {
         try {
             getDefault().broadcastIntent(
@@ -1590,6 +1591,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.713 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "E0D2808812E9BCDEA036007062F416F1")
     public IBinder asBinder() {
         IBinder varB4EAC82CA7396A68D541C85D26508E83_1452716243 = null; 
@@ -1644,6 +1646,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.718 -0400", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "131DB90B148ED0416D3B26B2D72204FA")
     public IBinder asBinder() {
         IBinder varB4EAC82CA7396A68D541C85D26508E83_26581125 = null; 
@@ -1830,6 +1833,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.725 -0400", hash_original_method = "FD56EAF7591CCE02A2449EB3C30AEF02", hash_generated_method = "892043C62F99A56DE1CA2F8913A3E285")
     public int startActivityIntentSender(IApplicationThread caller,
             IntentSender intent, Intent fillInIntent, String resolvedType,
@@ -1874,6 +1878,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.727 -0400", hash_original_method = "A532370FCCB6C359BF27FA22D92F73F5", hash_generated_method = "E7D0C5B873D5927DBB0446F66AF418AB")
     public boolean startNextMatchingActivity(IBinder callingActivity,
             Intent intent) throws RemoteException {
@@ -1906,6 +1911,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.728 -0400", hash_original_method = "91E82D39E0DA0BAF3D9668B58FD8BE2D", hash_generated_method = "3E0DD3A3F6DAC5EB50953AF264E7260B")
     public boolean finishActivity(IBinder token, int resultCode, Intent resultData) throws RemoteException {
         Parcel data = Parcel.obtain();
@@ -2010,6 +2016,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.731 -0400", hash_original_method = "D0EC9750E66DC0864B7AF9A5D43ED043", hash_generated_method = "CFC9E057595F36DE3F559E1E58F40EAC")
     public Intent registerReceiver(IApplicationThread caller, String packageName,
             IIntentReceiver receiver,
@@ -2087,6 +2094,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.733 -0400", hash_original_method = "189D2A1B1A14BF35BFCC0BB8AD6C1CE5", hash_generated_method = "A7544DD71064409CAC2F5F828086DA82")
     public int broadcastIntent(IApplicationThread caller,
             Intent intent, String resolvedType,  IIntentReceiver resultTo,
@@ -2146,6 +2154,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.734 -0400", hash_original_method = "84F4ECE33F63E245917246490F7877AA", hash_generated_method = "C97679BE9143C8BC694A6F655043BCC4")
     public void unbroadcastIntent(IApplicationThread caller, Intent intent) throws RemoteException {
         Parcel data = Parcel.obtain();
@@ -3039,6 +3048,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.773 -0400", hash_original_method = "A683CF3BA039B3B97AA6ADC23E6FBDCC", hash_generated_method = "ABF70C2CFEB58B0F967832EE82F5B2B1")
     public ComponentName startService(IApplicationThread caller, Intent service,
             String resolvedType) throws RemoteException {
@@ -3076,6 +3086,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.774 -0400", hash_original_method = "B5D9E3A4F6ABA893303F2F02B64751B8", hash_generated_method = "6945C90B60A09442A712A97A9D4016DF")
     public int stopService(IApplicationThread caller, Intent service,
             String resolvedType) throws RemoteException {
@@ -3195,6 +3206,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.778 -0400", hash_original_method = "A1E6D6F237E88697017FA79FBE451840", hash_generated_method = "44483827CE605D905485BDA7B5ADADDB")
     public int bindService(IApplicationThread caller, IBinder token,
             Intent service, String resolvedType, IServiceConnection connection,
@@ -3269,6 +3281,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.780 -0400", hash_original_method = "87A207496B270585D5EEA34C1AF57170", hash_generated_method = "30AF06877D6BC7326710CBA6D98DC13A")
     public void publishService(IBinder token,
             Intent intent, IBinder service) throws RemoteException {
@@ -3299,6 +3312,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.781 -0400", hash_original_method = "3796516624A8D493E471933ECF7A3CD3", hash_generated_method = "AC3214644F45436391463545376ECCAE")
     public void unbindFinished(IBinder token, Intent intent, boolean doRebind) throws RemoteException {
         Parcel data = Parcel.obtain();
@@ -3362,6 +3376,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.783 -0400", hash_original_method = "BEF476EE5F43517187661CDC39F2A448", hash_generated_method = "B40A5E7DAAA7F2FD7A4C334D8E367510")
     public IBinder peekService(Intent service, String resolvedType) throws RemoteException {
         IBinder varB4EAC82CA7396A68D541C85D26508E83_1839642893 = null; 
@@ -3989,6 +4004,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.807 -0400", hash_original_method = "FEF4F93E5B02F55707A11B36638BBB59", hash_generated_method = "0CFCD7C644D52C867ECCDFB5D57E7F3D")
     public int checkUriPermission(Uri uri, int pid, int uid, int mode) throws RemoteException {
         Parcel data = Parcel.obtain();
@@ -4026,6 +4042,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.808 -0400", hash_original_method = "2CEB2CA82A36297F49BF5DB3286E579B", hash_generated_method = "E0B0443AF34F8976F423832A18B17035")
     public void grantUriPermission(IApplicationThread caller, String targetPkg,
             Uri uri, int mode) throws RemoteException {
@@ -4059,6 +4076,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.809 -0400", hash_original_method = "84D534ABCBC85608735C63399D2C9E1E", hash_generated_method = "DCF3C8CC898EAF268FB92CEBF2A31A9A")
     public void revokeUriPermission(IApplicationThread caller, Uri uri,
             int mode) throws RemoteException {
@@ -4160,6 +4178,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.816 -0400", hash_original_method = "1E46E6C9628834765008140B25990D23", hash_generated_method = "0A29B8CF5AC4171D2B21A011F520A106")
     public ParcelFileDescriptor openContentUri(Uri uri) throws RemoteException {
         ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_947562326 = null; 
@@ -4418,6 +4437,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.829 -0400", hash_original_method = "6C8B2FE75A3BFFE16EADA916F678A09D", hash_generated_method = "A333E7F4DF1D67C523E65A1CFB8010EA")
     public boolean testIsSystemReady() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1180145843 = getTaintBoolean();
@@ -4814,6 +4834,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.852 -0400", hash_original_method = "C65F778BCD540838D47FE4E4412CD25E", hash_generated_method = "A5FA4DEF60F70306B165438398E98B81")
     public int startActivityInPackage(int uid,
             Intent intent, String resolvedType, IBinder resultTo,
@@ -5167,6 +5188,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.872 -0400", hash_original_method = "CF06029063749F4266D5EFBB16694E04", hash_generated_method = "DC6DD31D9DD6938C340473AD242AABDB")
     public String getProviderMimeType(Uri uri) throws RemoteException {
         String varB4EAC82CA7396A68D541C85D26508E83_1057168529 = null; 
@@ -5228,6 +5250,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.879 -0400", hash_original_method = "1C35FE424D422C73471D9ECEE35C4093", hash_generated_method = "01A79DC53A326F359C3BB92C5DF194B4")
     public void grantUriPermissionFromOwner(IBinder owner, int fromUid, String targetPkg,
             Uri uri, int mode) throws RemoteException {
@@ -5264,6 +5287,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.881 -0400", hash_original_method = "D07898A73558FBA66858F774589B082E", hash_generated_method = "04C4B416116EA48200E0ACDDC6113B19")
     public void revokeUriPermissionFromOwner(IBinder owner, Uri uri,
             int mode) throws RemoteException {
@@ -5305,6 +5329,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.882 -0400", hash_original_method = "3DAB9C9F42020370AD19E1FE0AC1BDCE", hash_generated_method = "9C62F6C894FC8ECECDE4D0C7A2D1C6BC")
     public int checkGrantUriPermission(int callingUid, String targetPkg,
             Uri uri, int modeFlags) throws RemoteException {
