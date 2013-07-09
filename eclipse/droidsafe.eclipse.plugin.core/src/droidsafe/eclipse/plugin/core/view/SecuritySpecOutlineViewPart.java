@@ -267,7 +267,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
             int lineNumber = line.getLine();
             String className = line.getClz();
             String classPath = DroidsafePluginUtilities.classNamePath(className);
-            IFile file = getSelectedProject().getFile(classPath);
+            IFile file = getProject().getFile(classPath);
             if (file != null) {
               try {
                 IWorkbenchPage page =
