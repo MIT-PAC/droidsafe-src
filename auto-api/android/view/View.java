@@ -363,10 +363,6 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         
         
         
-        
-        
-        
-        
     }
 
     
@@ -1194,12 +1190,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             } 
         } 
         getListenerInfo().mOnClickListener = l;
+        performClick();
         addTaint(l.getTaint());
-        
-        
-            
-        
-        
     }
 
     
