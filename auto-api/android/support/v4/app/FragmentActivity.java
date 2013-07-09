@@ -128,6 +128,7 @@ public class FragmentActivity extends Activity {
     }
 
 
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.739 -0400", hash_original_method = "AE8D2F77597464B24506681CBB435A18", hash_generated_method = "1959681C830DB30762AED39BD167799D")
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -727,6 +728,7 @@ public class FragmentActivity extends Activity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.752 -0400", hash_original_method = "F55A4C6A01F3D0AB15650B3080E9EF76", hash_generated_method = "DE559D86CCE183E8F824016D2AB4BCF5")
     public Object onRetainCustomNonConfigurationInstance() {
         
@@ -969,6 +971,7 @@ public class FragmentActivity extends Activity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.756 -0400", hash_original_method = "28C2B4CF762BABC0F8C194FDD6A98E77", hash_generated_method = "7BA62512AFE4BD6BB2D807B17B09B3A6")
     public void onAttachFragment(Fragment fragment) {
         
@@ -977,6 +980,7 @@ public class FragmentActivity extends Activity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.756 -0400", hash_original_method = "A30369BEE359642894950823DFC915CE", hash_generated_method = "D7EFDC0EF0403ED6A154386F4CBE0655")
     public FragmentManager getSupportFragmentManager() {
         FragmentManager varB4EAC82CA7396A68D541C85D26508E83_21361763 = null; 
@@ -988,6 +992,7 @@ public class FragmentActivity extends Activity {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.757 -0400", hash_original_method = "5BE63D387764C79BADD7265D6253130D", hash_generated_method = "814CA2E1FF69D2569FF984822D3F52AA")
     @Override
     public void startActivityForResult(Intent intent, int requestCode) {
@@ -1005,6 +1010,7 @@ public class FragmentActivity extends Activity {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.757 -0400", hash_original_method = "62E7172DD8437600599EFB859FBECAC1", hash_generated_method = "FAFAF89BBF44057AB8C563B2900D79C8")
     public void startActivityFromFragment(Fragment fragment, Intent intent, 
             int requestCode) {

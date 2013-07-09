@@ -92,6 +92,7 @@ public class DERNumericString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.557 -0400", hash_original_method = "3CB977BE316CAC9520A0E1ADE8D338F7", hash_generated_method = "2429D317FA604346FCCBF9F0126D0E5D")
     public String getString() {
         String varB4EAC82CA7396A68D541C85D26508E83_1552915533 = null; 
@@ -103,6 +104,7 @@ public class DERNumericString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.557 -0400", hash_original_method = "A7AD745E242BD88C36EC3708384A50C0", hash_generated_method = "E80A3190CD77450494AA041DB665C439")
     public String toString() {
         String varB4EAC82CA7396A68D541C85D26508E83_1268632315 = null; 
@@ -138,6 +140,7 @@ public class DERNumericString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.558 -0400", hash_original_method = "9CAFE2F99C4AA1A810005CA2021DBA5F", hash_generated_method = "35A32FE8EBB6FD07F8E3CC34B44D1432")
      void encode(
         DEROutputStream  out) throws IOException {
@@ -159,6 +162,7 @@ public class DERNumericString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.560 -0400", hash_original_method = "8BA017E030540263DAC8EBF952EA3B45", hash_generated_method = "9FE1CB70DC62E0B00B2CE0668602F484")
      boolean asn1Equals(
         DERObject  o) {

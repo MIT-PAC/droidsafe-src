@@ -355,6 +355,7 @@ public class PhoneNumberUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static synchronized void resetInstance() {
         instance = null;
     }

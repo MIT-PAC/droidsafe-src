@@ -42,6 +42,7 @@ public class RAck extends SIPHeader implements javax.sip.header.RAckHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.963 -0400", hash_original_method = "717B64217AB1BDBD09BA8111F0B019A1", hash_generated_method = "53FE4F2D27CB95DAA4B7DF52F824A195")
     public int getCSeqNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_487547808 = getTaintInt();
@@ -51,6 +52,7 @@ public class RAck extends SIPHeader implements javax.sip.header.RAckHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.963 -0400", hash_original_method = "718B34DE34C00921F3D0FF08E153D08E", hash_generated_method = "17493BF73D778F5F30E35329A3477553")
     public long getCSeqNumberLong() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1044394604 = getTaintLong();
@@ -60,6 +62,7 @@ public class RAck extends SIPHeader implements javax.sip.header.RAckHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.964 -0400", hash_original_method = "691C5451C67574E660997BC2056A5F23", hash_generated_method = "8C9B74321C2F57B50BD7767BB4E96388")
     public String getMethod() {
         String varB4EAC82CA7396A68D541C85D26508E83_343281912 = null; 
@@ -71,6 +74,7 @@ public class RAck extends SIPHeader implements javax.sip.header.RAckHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.964 -0400", hash_original_method = "F18C054E96BBFC72C2FB4D9E194B171A", hash_generated_method = "7C593E925FF47F9045AE92D83E17BA4E")
     public int getRSeqNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_365031310 = getTaintInt();
@@ -90,6 +94,7 @@ public class RAck extends SIPHeader implements javax.sip.header.RAckHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.965 -0400", hash_original_method = "417A86B1B77116D6C3275A494BFCD4D5", hash_generated_method = "E85DCEE65E2288E3D9797383EC01CCC2")
     public void setMethod(String method) throws ParseException {
         this.method = method;
@@ -98,6 +103,7 @@ public class RAck extends SIPHeader implements javax.sip.header.RAckHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.965 -0400", hash_original_method = "BF53D6931E1144BDB37994BD814B2F3D", hash_generated_method = "9D0C5E88E2DFEC697CD6E1B1AB6A745D")
     public long getCSequenceNumber() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1292498435 = getTaintLong();
@@ -107,6 +113,7 @@ public class RAck extends SIPHeader implements javax.sip.header.RAckHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.965 -0400", hash_original_method = "5B686B97AD60967CB1F8F2531F7AE87D", hash_generated_method = "2A836C6FB5C54D4722CFE673A324E9BB")
     public long getRSequenceNumber() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_297382354 = getTaintLong();

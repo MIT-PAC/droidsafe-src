@@ -73,6 +73,7 @@ public final class CodeSigner implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.130 -0400", hash_original_method = "30F2DDB76579221F80A186A0F4D6B0C1", hash_generated_method = "4D91B981C5963E6024507CBD76781020")
     public CertPath getSignerCertPath() {
         CertPath varB4EAC82CA7396A68D541C85D26508E83_1058464365 = null; 
@@ -84,6 +85,7 @@ public final class CodeSigner implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.130 -0400", hash_original_method = "F117DFA1A6EB777CC4A763885DD30F8B", hash_generated_method = "D9BDA99A6790427C1063EAA0C2500B77")
     public Timestamp getTimestamp() {
         Timestamp varB4EAC82CA7396A68D541C85D26508E83_992708654 = null; 

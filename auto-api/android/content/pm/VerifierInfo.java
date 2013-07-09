@@ -53,6 +53,7 @@ public class VerifierInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.296 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "458150CCDE56699DB1F11C464BAE5B45")
     @Override
     public int describeContents() {

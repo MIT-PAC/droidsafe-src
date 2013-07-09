@@ -211,6 +211,7 @@ public class TransitionDrawable extends LayerDrawable implements Drawable.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.660 -0400", hash_original_method = "2CD6D3E73358D8CBD280E6EE92F2D07C", hash_generated_method = "2A0623106A5089E5FAC47F6638E31C5E")
     public void setCrossFadeEnabled(boolean enabled) {
         mCrossFade = enabled;
@@ -219,6 +220,7 @@ public class TransitionDrawable extends LayerDrawable implements Drawable.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.660 -0400", hash_original_method = "CD2EAE34D95290C8C0E6CBB8BD3A8C00", hash_generated_method = "3E0913A7DB5C388DBBD0858387DFFDE2")
     public boolean isCrossFadeEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_50661179 = getTaintBoolean();

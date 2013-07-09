@@ -104,6 +104,7 @@ public class Throwable implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.416 -0400", hash_original_method = "DB11282615D634E343F956A1D91DEDE9", hash_generated_method = "299E60C8C6EF5B379A7C278D7CEDCE45")
     public String getMessage() {
         String varB4EAC82CA7396A68D541C85D26508E83_953089931 = null; 
@@ -369,6 +370,7 @@ public class Throwable implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.432 -0400", hash_original_method = "22464C579A8BDBBA630699F5CFE21CE6", hash_generated_method = "F6A096B41285DF0CF25C09BE30B239BE")
     public Throwable getCause() {
         Throwable varB4EAC82CA7396A68D541C85D26508E83_287783676 = null; 
@@ -470,12 +472,14 @@ public class Throwable implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Object nativeFillInStackTrace() {
                 
     	return new Object();
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static StackTraceElement[] nativeGetStackTrace(Object stackState) {
                 
     	StackTraceElement[] ret = new StackTraceElement[0];

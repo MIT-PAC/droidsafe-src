@@ -865,6 +865,7 @@ public final class CdmaCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.307 -0400", hash_original_method = "CA7F8E55CA885F7D7A3A262DD3D03608", hash_generated_method = "8D8FEDE533EFA98513B912F55875A470")
      void hangup(CdmaConnection conn) throws CallStateException {
         {
@@ -944,6 +945,7 @@ public final class CdmaCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.310 -0400", hash_original_method = "11907D6A9C6D8F23B8C0FECA1425D0D1", hash_generated_method = "0785A021BD75FFD6A841E76B8682ADB7")
      boolean getMute() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_388691073 = getTaintBoolean();
@@ -1141,6 +1143,7 @@ public final class CdmaCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.336 -0400", hash_original_method = "65CD53B5AAA831AF61B9937ED3D66C8B", hash_generated_method = "550BEF38F261823B8BC2F14DD181DC92")
     private Phone.SuppService getFailedService(int what) {
         Phone.SuppService varB4EAC82CA7396A68D541C85D26508E83_2070204624 = null; 
@@ -1459,6 +1462,7 @@ public final class CdmaCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.355 -0400", hash_original_method = "1842D0C2283B311B2A29E474687D9235", hash_generated_method = "256D7CB90EC79DC0D1D3A3701B9F75EA")
      boolean isInEmergencyCall() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1047868665 = getTaintBoolean();

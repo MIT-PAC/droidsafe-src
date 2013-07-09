@@ -64,6 +64,7 @@ public class StreamResult implements Result {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.048 -0400", hash_original_method = "817A5A0ADE99B2865B232C517A9FCF0D", hash_generated_method = "F857F15E184B65891F5640F76C952DBE")
     public void setOutputStream(OutputStream outputStream) {
         this.outputStream = outputStream;
@@ -72,6 +73,7 @@ public class StreamResult implements Result {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.048 -0400", hash_original_method = "05E68097FF3105B2AAABD34E89C7728F", hash_generated_method = "102EB8640192E00915BD71D5403A9EF2")
     public OutputStream getOutputStream() {
         OutputStream varB4EAC82CA7396A68D541C85D26508E83_1884614436 = null; 
@@ -83,6 +85,7 @@ public class StreamResult implements Result {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.049 -0400", hash_original_method = "5911383E76829BA237C0C98FFA879183", hash_generated_method = "5A42584FF7D14E5EEE57ABF668EF394C")
     public void setWriter(Writer writer) {
         this.writer = writer;
@@ -91,6 +94,7 @@ public class StreamResult implements Result {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.049 -0400", hash_original_method = "F0F74844AEEC9ABE14D7628D5DF26AE9", hash_generated_method = "BBA1AC37DBABF8504B2E299E3019DD9E")
     public Writer getWriter() {
         Writer varB4EAC82CA7396A68D541C85D26508E83_2110064569 = null; 
@@ -102,6 +106,7 @@ public class StreamResult implements Result {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.049 -0400", hash_original_method = "77F5337B905F22D1C71F7C949FEF5117", hash_generated_method = "DE20300D341EFA9D9888E5637810608B")
     public void setSystemId(String systemId) {
         this.systemId = systemId;
@@ -119,6 +124,7 @@ public class StreamResult implements Result {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.050 -0400", hash_original_method = "8088708D8DEEE6054468B7FD77400E50", hash_generated_method = "0392CFFB14BF527ADFCD313DB58D3F72")
     public String getSystemId() {
         String varB4EAC82CA7396A68D541C85D26508E83_1379588557 = null; 

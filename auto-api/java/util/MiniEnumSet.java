@@ -42,6 +42,7 @@ final class MiniEnumSet<E extends Enum<E>> extends EnumSet<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.290 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "671E39F5DF2AC9C278F4F63AE5529965")
     @Override
     public int size() {
@@ -52,6 +53,7 @@ final class MiniEnumSet<E extends Enum<E>> extends EnumSet<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.290 -0400", hash_original_method = "025226B2883D32895649213F93C1A199", hash_generated_method = "3713CFA0CB1A568F7EA76D80B212B858")
     @Override
     public void clear() {
@@ -341,6 +343,7 @@ final class MiniEnumSet<E extends Enum<E>> extends EnumSet<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.295 -0400", hash_original_method = "34C2A46ACE6140E33D58771C1EEACFB4", hash_generated_method = "6F1899A8331862B6AAAFE7081C3AC22F")
     @Override
      void complement() {

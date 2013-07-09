@@ -80,6 +80,7 @@ public final class HttpHost implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.453 -0400", hash_original_method = "FF0006634ABBE2C97788D559B23C884A", hash_generated_method = "AC62A580BEE147C3678C1F2CF609B72B")
     public String getHostName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1013516313 = null; 
@@ -91,6 +92,7 @@ public final class HttpHost implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.453 -0400", hash_original_method = "1804D4B8ED6914D43C8BF926A65BA4F9", hash_generated_method = "E7EA0C8DE2518BC93C0B35CD5EC22A21")
     public int getPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_516529367 = getTaintInt();
@@ -100,6 +102,7 @@ public final class HttpHost implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.454 -0400", hash_original_method = "C6F0B2E3DB0F6FEAB7513E486FF6DA80", hash_generated_method = "06358C712030A88615A00D12E710CD22")
     public String getSchemeName() {
         String varB4EAC82CA7396A68D541C85D26508E83_2016116216 = null; 

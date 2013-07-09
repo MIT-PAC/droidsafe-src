@@ -106,6 +106,7 @@ public abstract class ThresholdingOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.795 -0400", hash_original_method = "D74160AE6FC7C2C8DE051989EE60B0B3", hash_generated_method = "1C6F4C57ABAEFDA2D9AE6DAE54CCACFA")
     public int getThreshold() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_756687547 = getTaintInt();
@@ -115,6 +116,7 @@ public abstract class ThresholdingOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.795 -0400", hash_original_method = "406CBD57F94439414A20EAD4F95AFAE5", hash_generated_method = "64B476F24EB47A128C2F18E3CD291736")
     public long getByteCount() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_881428555 = getTaintLong();
@@ -124,6 +126,7 @@ public abstract class ThresholdingOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.795 -0400", hash_original_method = "1EA9299850929B3D5FCE42AA4C38FE08", hash_generated_method = "4289DC490B2B9A05A6DAC165976F1693")
     public boolean isThresholdExceeded() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_625081790 = getTaintBoolean();
@@ -150,6 +153,7 @@ public abstract class ThresholdingOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.796 -0400", hash_original_method = "30120E8670CD410900DBC3B4D1B240BE", hash_generated_method = "27A32EB1C009ED9E66461A03B0F831A0")
     protected void resetByteCount() {
         this.thresholdExceeded = false;

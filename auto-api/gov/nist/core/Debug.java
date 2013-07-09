@@ -17,6 +17,7 @@ public class Debug {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static void setStackLogger(StackLogger stackLogger) {
         Debug.stackLogger = stackLogger;
     }

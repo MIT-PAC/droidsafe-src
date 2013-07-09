@@ -44,6 +44,7 @@ public class LocatorImpl implements Locator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.895 -0400", hash_original_method = "C19BBE926A67132A1C6BC386100A3E69", hash_generated_method = "B87707470CD76FD995676C048972187B")
     public String getPublicId() {
         String varB4EAC82CA7396A68D541C85D26508E83_1749091360 = null; 
@@ -55,6 +56,7 @@ public class LocatorImpl implements Locator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.896 -0400", hash_original_method = "8088708D8DEEE6054468B7FD77400E50", hash_generated_method = "D3C71BB52BB19E5C23AF44B4B2413189")
     public String getSystemId() {
         String varB4EAC82CA7396A68D541C85D26508E83_1923043759 = null; 
@@ -66,6 +68,7 @@ public class LocatorImpl implements Locator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.896 -0400", hash_original_method = "0B737233CC5342C14C595BEE1A87604B", hash_generated_method = "8C385C760C81C8E262F17E5B0660003D")
     public int getLineNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2088793443 = getTaintInt();
@@ -75,6 +78,7 @@ public class LocatorImpl implements Locator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.896 -0400", hash_original_method = "50401770B079F9FC2B373BD150CB3B15", hash_generated_method = "168AC914765F50C02EAE01D7D0085049")
     public int getColumnNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1761373546 = getTaintInt();
@@ -84,6 +88,7 @@ public class LocatorImpl implements Locator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.897 -0400", hash_original_method = "0C418225BFB03C04E3636F3891B47A3E", hash_generated_method = "784431903087FA4FFEF9763F16480709")
     public void setPublicId(String publicId) {
         this.publicId = publicId;
@@ -92,6 +97,7 @@ public class LocatorImpl implements Locator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.897 -0400", hash_original_method = "77F5337B905F22D1C71F7C949FEF5117", hash_generated_method = "DE20300D341EFA9D9888E5637810608B")
     public void setSystemId(String systemId) {
         this.systemId = systemId;
@@ -100,6 +106,7 @@ public class LocatorImpl implements Locator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.897 -0400", hash_original_method = "57105994EF91DD2584057988497ACBF5", hash_generated_method = "07212E907D790DC6F7BB6A6C3A61B057")
     public void setLineNumber(int lineNumber) {
         this.lineNumber = lineNumber;
@@ -108,6 +115,7 @@ public class LocatorImpl implements Locator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.897 -0400", hash_original_method = "4B7308C11003E2EBA4BF69C9D8266B60", hash_generated_method = "92DC60B83C9715659F4A09690400C6C8")
     public void setColumnNumber(int columnNumber) {
         this.columnNumber = columnNumber;

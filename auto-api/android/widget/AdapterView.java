@@ -129,6 +129,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.656 -0400", hash_original_method = "3AA164DD2030E1BF06F3CA1CD9427DA1", hash_generated_method = "A196844E345185ADD2A42B24D8C435A9")
     public void setOnItemClickListener(OnItemClickListener listener) {
         mOnItemClickListener = listener;
@@ -203,6 +204,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.659 -0400", hash_original_method = "9092AD2A5F83CE601E3913D803C386F2", hash_generated_method = "3770EE67FA344D6B0564B2ED3CB34217")
     public void setOnItemSelectedListener(OnItemSelectedListener listener) {
         mOnItemSelectedListener = listener;
@@ -320,6 +322,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.662 -0400", hash_original_method = "40CA9E4E71293F3BC1D33E874AD305A1", hash_generated_method = "3656A4BD094B8D766CDC277268B48D82")
     @ViewDebug.CapturedViewProperty
     public int getSelectedItemPosition() {
@@ -330,6 +333,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.662 -0400", hash_original_method = "52C80BDBAB2E8D6D945028E83F843260", hash_generated_method = "E0FFADFE16DEF8697855AAC434A6F934")
     @ViewDebug.CapturedViewProperty
     public long getSelectedItemId() {
@@ -380,6 +384,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.663 -0400", hash_original_method = "C515244CDC30F9529A71B0CAA70231C3", hash_generated_method = "F6E1BF723D4FAB19492B011A4A6B54C6")
     @ViewDebug.CapturedViewProperty
     public int getCount() {
@@ -437,6 +442,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.664 -0400", hash_original_method = "3F582E36FEB434C42F8F2A7A83CA506D", hash_generated_method = "27754E7CB6B75E7B132D5A3B22B01EEE")
     public int getFirstVisiblePosition() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_836518183 = getTaintInt();
@@ -474,6 +480,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.665 -0400", hash_original_method = "1914B98508B1C21B71F42F5D07F0BF47", hash_generated_method = "58200381F95EE06C721FBAEBA51CDA61")
     public View getEmptyView() {
         View varB4EAC82CA7396A68D541C85D26508E83_978037219 = null; 
@@ -485,6 +492,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.665 -0400", hash_original_method = "FD285526E2677013E6DDAFB01C953F85", hash_generated_method = "86D12ECC1FDC46303CAE019F0AA55EBF")
      boolean isInFilterMode() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_920754135 = getTaintBoolean();
@@ -973,6 +981,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.677 -0400", hash_original_method = "63DA3BDCCF3458E05F2C2D5853C22A6D", hash_generated_method = "9BF9CFEFD32A051DE3DE39CF390F35F1")
      int lookForSelectablePosition(int position, boolean lookDown) {
         addTaint(position);

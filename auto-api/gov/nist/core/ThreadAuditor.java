@@ -24,6 +24,7 @@ public class ThreadAuditor {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.908 -0400", hash_original_method = "E626588797C11F0AE30EE2336DDF5DDE", hash_generated_method = "636F2B59043DF57D20C7B31C7B2FC975")
     public long getPingIntervalInMillisecs() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_827917271 = getTaintLong();
@@ -33,6 +34,7 @@ public class ThreadAuditor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.908 -0400", hash_original_method = "7A7DF1118EDC7A81CF310DAEDEA2CA24", hash_generated_method = "4EE6AECCAFAC51D47EC18DF5AFAFA65C")
     public void setPingIntervalInMillisecs(long value) {
         pingIntervalInMillisecs = value;
@@ -41,6 +43,7 @@ public class ThreadAuditor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.908 -0400", hash_original_method = "3383EC0356978E6A8A0873AB5EB0F6B5", hash_generated_method = "B0B8AA330144BB4C299862E811629891")
     public boolean isEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1425852766 = getTaintBoolean();

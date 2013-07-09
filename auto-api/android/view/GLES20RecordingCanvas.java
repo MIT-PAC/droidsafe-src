@@ -660,6 +660,7 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.270 -0400", hash_original_method = "9CAF97A102D33FFCF9C056A4D55F3569", hash_generated_method = "440ADC15360C595FC02E525CBEBF8774")
     @Override
     public GLES20RecordingCanvas getNextPoolable() {
@@ -672,6 +673,7 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.271 -0400", hash_original_method = "7B44EE8A9B50CDC1F4718A77AC31B644", hash_generated_method = "2EC27BE1EC2F279F97DC352220AC5CA9")
     @Override
     public void setNextPoolable(GLES20RecordingCanvas element) {
@@ -681,6 +683,7 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.272 -0400", hash_original_method = "4CB4F04617162A1F2BEBBAC63163A5FB", hash_generated_method = "376D67711F329E553B777E5EB531CEC9")
     @Override
     public boolean isPooled() {
@@ -691,6 +694,7 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.273 -0400", hash_original_method = "CCE0492C3FBB65D8A1644633FE9AA3DF", hash_generated_method = "340F14801E8F39C4D5683CC10C769565")
     @Override
     public void setPooled(boolean isPooled) {

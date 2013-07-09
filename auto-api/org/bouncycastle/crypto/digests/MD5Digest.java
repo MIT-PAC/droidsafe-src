@@ -55,6 +55,7 @@ public class MD5Digest extends GeneralDigest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.839 -0400", hash_original_method = "D54FFA3F0B368E98533F0D87F68E98DA", hash_generated_method = "5772DAF8C032D1EC28CC12DCD7796371")
     public String getAlgorithmName() {
         String varB4EAC82CA7396A68D541C85D26508E83_234962593 = null; 
@@ -66,6 +67,7 @@ public class MD5Digest extends GeneralDigest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.840 -0400", hash_original_method = "3039C1E557EE9A1557E064C50078D361", hash_generated_method = "8572BE258AC787B88A023BF6DEDD5F8A")
     public int getDigestSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_198121104 = getTaintInt();
@@ -114,6 +116,7 @@ public class MD5Digest extends GeneralDigest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.841 -0400", hash_original_method = "C095FEC528E22D3933584D069B5AEBEC", hash_generated_method = "078E671EEBCA6AF6F9BD309B4AA3F4DE")
     private void unpackWord(
         int     word,
@@ -189,6 +192,7 @@ public class MD5Digest extends GeneralDigest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.843 -0400", hash_original_method = "A078642CC72A2F738FA96A2966371333", hash_generated_method = "727073C4A38E2E47AD095547A22A196B")
     private int rotateLeft(
         int x,
@@ -202,6 +206,7 @@ public class MD5Digest extends GeneralDigest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.844 -0400", hash_original_method = "38D2A24ABE645695148EECE5A1633407", hash_generated_method = "F50CFE51A68C7A3937091BCC01DDB490")
     private int F(
         int u,
@@ -217,6 +222,7 @@ public class MD5Digest extends GeneralDigest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.844 -0400", hash_original_method = "F823417414ECF2428B5CBDD347B9FAAC", hash_generated_method = "DFE9DA09DA4672E582CC7E1B70A6686A")
     private int G(
         int u,
@@ -232,6 +238,7 @@ public class MD5Digest extends GeneralDigest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.844 -0400", hash_original_method = "83C9F03736BB5BDF54EC87B24EC05890", hash_generated_method = "28AA6A2973D326B5F3583A394C21BF42")
     private int H(
         int u,
@@ -247,6 +254,7 @@ public class MD5Digest extends GeneralDigest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.844 -0400", hash_original_method = "23BAA908E549D3D7165335B8EBDAA412", hash_generated_method = "A6309AE19F09903714042C0C1C8C10CF")
     private int K(
         int u,

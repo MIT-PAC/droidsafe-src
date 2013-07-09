@@ -27,6 +27,7 @@ final class CertTool {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String[] getKeyStrengthList() {
         return new String[] {"High Grade", "Medium Grade"};
     }

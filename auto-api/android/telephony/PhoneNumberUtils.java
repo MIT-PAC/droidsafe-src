@@ -40,6 +40,7 @@ public class PhoneNumberUtils {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static boolean isISODigit(char c) {
         return c >= '0' && c <= '9';
     }
@@ -71,11 +72,13 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean isPause(char c) {
         return c == 'p'||c == 'P';
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean isToneWait(char c) {
         return c == 'w'||c == 'W';
     }
@@ -87,6 +90,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static String getNumberFromIntent(Intent intent, Context context) {
         String number = null;
         Uri uri = intent.getData();
@@ -212,6 +216,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static private int minPositive(int a, int b) {
         if (a >= 0 && b >= 0) {
             return (a < b) ? a : b;
@@ -623,6 +628,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static char bcdToChar(byte b) {
         if (b < 0xa) {
             return (char)('0' + b);
@@ -1183,6 +1189,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean isTwoToNine(char c) {
         if (c >= '2' && c <= '9') {
             return true;
@@ -1398,12 +1405,14 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean isCountryCallingCode(int countryCallingCodeCandidate) {
         return countryCallingCodeCandidate > 0 && countryCallingCodeCandidate < CCC_LENGTH &&
                 COUNTRY_CALLING_CALL[countryCallingCodeCandidate];
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int tryGetISODigit(char ch) {
         if ('0' <= ch && ch <= '9') {
             return ch - '0';

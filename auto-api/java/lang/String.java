@@ -512,6 +512,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.850 -0400", hash_original_method = "87185450AF15BAF9DFFE5741D5928D9B", hash_generated_method = "A4ED9DA0653F0B326D209330EB1583DD")
     public char charAt(int index) {
         char varA87DEB01C5F539E6BDA34829C8EF2368_1935859544 = getTaintChar();
@@ -573,6 +574,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.852 -0400", hash_original_method = "E601A465E2566ECC4B972E253D5CFD79", hash_generated_method = "2C2E73128CEBD9260730547B605C63BE")
     public int compareTo(String string) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1188905946 = getTaintInt();
@@ -681,6 +683,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.860 -0400", hash_original_method = "84733F87EF08EE029ED9292B40928CC1", hash_generated_method = "6DC370F55DF4B5442913B03A7564721E")
     @Override
     public boolean equals(Object object) {
@@ -873,6 +876,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.865 -0400", hash_original_method = "19D1106FC463FB90112A6C6293D6F5CF", hash_generated_method = "1FD8E27C2A94C89C9BC94D04CAF577A7")
     @Override
     public int hashCode() {
@@ -944,6 +948,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.868 -0400", hash_original_method = "158E0BDE7178D291CA067E7481407A6C", hash_generated_method = "5FBBB9859C36B9B73AA06D44C1802DC9")
     private int fastIndexOf(int c, int start) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_37896317 = getTaintInt();
@@ -1031,6 +1036,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.870 -0400", hash_original_method = "8D834ED1699A050AD62397187973DE2A", hash_generated_method = "D27768EE08A87AC5AC201AAF7BA53F8D")
     public String intern() {
         
@@ -1038,6 +1044,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.870 -0400", hash_original_method = "9B1CCC3AB82A9C7B7A46C788921405FB", hash_generated_method = "8D0482BCB2FBF60F3F9DEB0A7AB7D0E6")
     public boolean isEmpty() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_655754125 = getTaintBoolean();
@@ -1183,6 +1190,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.872 -0400", hash_original_method = "026D3AE6EA7284BA85CF864429138595", hash_generated_method = "C6CEABF0BC7A98FDD37374EA809B1FFA")
     public int length() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_471119927 = getTaintInt();
@@ -1542,6 +1550,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.887 -0400", hash_original_method = "068E2EE4236B85776135405F1B66AD49", hash_generated_method = "8A75BB9BFE89E7BE3D0F0B8F4362174F")
     @Override
     public String toString() {
@@ -1673,6 +1682,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String valueOf(boolean value) {
         return value ? "true" : "false";
     }

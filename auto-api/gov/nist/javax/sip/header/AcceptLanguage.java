@@ -53,6 +53,7 @@ public final class AcceptLanguage extends ParametersHeader implements AcceptLang
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.822 -0400", hash_original_method = "BF687A0020C7B3DE806879972780BD44", hash_generated_method = "0A4CC33F464518518EE79309A1E7DC4A")
     public String getLanguageRange() {
         String varB4EAC82CA7396A68D541C85D26508E83_1100655132 = null; 

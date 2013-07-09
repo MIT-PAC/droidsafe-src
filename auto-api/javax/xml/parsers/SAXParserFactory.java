@@ -33,6 +33,7 @@ public abstract class SAXParserFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static SAXParserFactory newInstance(String factoryClassName,
             ClassLoader classLoader) {
         if (factoryClassName == null) {
@@ -60,6 +61,7 @@ public abstract class SAXParserFactory {
         throws ParserConfigurationException, SAXException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.876 -0400", hash_original_method = "6A0A7EFC1E675DD90B546C7A4C9B47EE", hash_generated_method = "98A9EE2B3964663F64D1613FA6F20ABE")
     public void setNamespaceAware(boolean awareness) {
         this.namespaceAware = awareness;
@@ -68,6 +70,7 @@ public abstract class SAXParserFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.876 -0400", hash_original_method = "55B714FD0DC17953A4D0F6C9203268D6", hash_generated_method = "599F2B5B61FB8B7D3C2CD0C1E871774F")
     public void setValidating(boolean validating) {
         this.validating = validating;
@@ -76,6 +79,7 @@ public abstract class SAXParserFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.876 -0400", hash_original_method = "550ADB90AA897C85DDC99A20E85473AF", hash_generated_method = "AA828B3B426AFF6822788E39D7EDC931")
     public boolean isNamespaceAware() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1545975173 = getTaintBoolean();
@@ -85,6 +89,7 @@ public abstract class SAXParserFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.876 -0400", hash_original_method = "758653C6211E875508A2CE7C0CB7DC93", hash_generated_method = "C0213D29268180E2CF5BF79CAE59805C")
     public boolean isValidating() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1608512977 = getTaintBoolean();

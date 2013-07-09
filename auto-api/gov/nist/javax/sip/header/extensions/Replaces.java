@@ -75,6 +75,7 @@ public class Replaces extends ParametersHeader implements ExtensionHeader, Repla
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.072 -0400", hash_original_method = "EEE15C2182CFD7EA9CBDBFC60D7CEB59", hash_generated_method = "838150AD0DEDF5182D61BF1DA28BF86C")
     public String getCallId() {
         String varB4EAC82CA7396A68D541C85D26508E83_1452977651 = null; 
@@ -86,6 +87,7 @@ public class Replaces extends ParametersHeader implements ExtensionHeader, Repla
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.073 -0400", hash_original_method = "B5581A57A5C5C2AEBCF8449C03245AE9", hash_generated_method = "BA9D97B03B4B879A1032B792EE0836FC")
     public CallIdentifier getCallIdentifer() {
         CallIdentifier varB4EAC82CA7396A68D541C85D26508E83_900227208 = null; 
@@ -97,6 +99,7 @@ public class Replaces extends ParametersHeader implements ExtensionHeader, Repla
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.073 -0400", hash_original_method = "18B0F6F776471BD79AF2D65BB23B3FDC", hash_generated_method = "6992A879D69ED0B331E4999AE9EC11CE")
     public void setCallId(String cid) {
         callId = cid;
@@ -105,6 +108,7 @@ public class Replaces extends ParametersHeader implements ExtensionHeader, Repla
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.073 -0400", hash_original_method = "76D6B9E3FB2D7381056714796D175A19", hash_generated_method = "BC500CAB746BFEA9CABDC759AB4FDB6D")
     public void setCallIdentifier(CallIdentifier cid) {
         callIdentifier = cid;

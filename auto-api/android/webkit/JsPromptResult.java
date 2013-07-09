@@ -32,6 +32,7 @@ public class JsPromptResult extends JsResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.986 -0400", hash_original_method = "A6887DA895C48DFEB95F5B019D028B73", hash_generated_method = "E73D290A4C60961A6BD4AE61AD0CCB3F")
      String getStringResult() {
         String varB4EAC82CA7396A68D541C85D26508E83_1902675282 = null; 

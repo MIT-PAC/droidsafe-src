@@ -1863,6 +1863,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.565 -0400", hash_original_method = "A3344B5915DA0C5B05591E12A62D4610", hash_generated_method = "D109914A108C9D16B349773E442D53A2")
     public NetworkLayer getNetworkLayer() {
         NetworkLayer varB4EAC82CA7396A68D541C85D26508E83_1976105327 = null; 
@@ -1906,6 +1907,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.567 -0400", hash_original_method = "ACBC713DDCF210EE591047F9A9A515DC", hash_generated_method = "9EAEE7902FD7AB5F895E61A59CB9A86D")
     public StackLogger getStackLogger() {
         StackLogger varB4EAC82CA7396A68D541C85D26508E83_378207168 = null; 
@@ -1917,6 +1919,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.568 -0400", hash_original_method = "01705032DE3FE074C7E055A3A8A4FEE3", hash_generated_method = "8C7AE494B221088180927BCC1E6F9095")
     public ServerLogger getServerLogger() {
         ServerLogger varB4EAC82CA7396A68D541C85D26508E83_1754883774 = null; 
@@ -1928,6 +1931,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.568 -0400", hash_original_method = "9DA0FD5646924F30F0B4568C00D20E6E", hash_generated_method = "4BB4E911AECFE935E256510829406BB0")
     public int getMaxMessageSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_621593667 = getTaintInt();
@@ -1937,6 +1941,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.569 -0400", hash_original_method = "F7820D79676ABCB839F961B1893B47B1", hash_generated_method = "EA170E890B9C35B538B5CB86A786F5AF")
     public void setSingleThreaded() {
         this.threadPoolSize = 1;
@@ -1945,6 +1950,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.570 -0400", hash_original_method = "E9690233252AAFA4C640E8F4D35D05EB", hash_generated_method = "65BB9FFF7A846847510EF99A4FA089FF")
     public void setThreadPoolSize(int size) {
         this.threadPoolSize = size;
@@ -1953,6 +1959,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.570 -0400", hash_original_method = "71AE725926CCD09A123AE8B2DA17A3F2", hash_generated_method = "BDCFBBD8A7091C0AC8289D984C7F139F")
     public void setMaxConnections(int nconnections) {
         this.maxConnections = nconnections;
@@ -2023,6 +2030,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.572 -0400", hash_original_method = "F49E7F0B68A71227FAAC90E58DC1BBF8", hash_generated_method = "0DCFD4017235BFA0DF5839F534EAAED3")
     public void setStackName(String stackName) {
         this.stackName = stackName;
@@ -2051,6 +2059,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.573 -0400", hash_original_method = "54480DAD55477A9080CEE058FAAB32DE", hash_generated_method = "8CBE0F379645B4EAEFF503FA9B94258D")
     public String getHostAddress() {
         String varB4EAC82CA7396A68D541C85D26508E83_1177408321 = null; 
@@ -2062,6 +2071,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.574 -0400", hash_original_method = "76950F41C787A5DB271675B8BBBB662A", hash_generated_method = "1E92BF9F05330CC7F9733D97887E55BC")
     protected void setRouter(Router router) {
         this.router = router;
@@ -2140,6 +2150,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.575 -0400", hash_original_method = "A48D8CFCA0D4EF991F0CE4AA0090BC89", hash_generated_method = "24D5600D9455DB81214CCED290E97C99")
     public Router getRouter() {
         Router varB4EAC82CA7396A68D541C85D26508E83_1878305328 = null; 
@@ -2151,6 +2162,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.575 -0400", hash_original_method = "DA20B42A9F145510C718334C692F5A76", hash_generated_method = "892A04214AC3824FBFBE453DBC29D5DD")
     public boolean isAlive() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_986618344 = getTaintBoolean();
@@ -2300,6 +2312,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.580 -0400", hash_original_method = "B67F8BF0F619BF3DA8779F834D136A31", hash_generated_method = "A19418B518D97C741239C5FFDF8C7894")
     protected void setMessageFactory(StackMessageFactory messageFactory) {
         this.sipMessageFactory = messageFactory;
@@ -2391,6 +2404,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.585 -0400", hash_original_method = "8980F34FD4722FAAB08CBB90B3E36CA2", hash_generated_method = "BD1C230420E77AA7D250FC4AED38EA90")
     public AddressResolver getAddressResolver() {
         AddressResolver varB4EAC82CA7396A68D541C85D26508E83_586739317 = null; 
@@ -2402,6 +2416,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.585 -0400", hash_original_method = "3C1DAA52D018FB69E50FF9E6B399590F", hash_generated_method = "AB8878E125C4CAD1D1B4691B2D6499BB")
     public void setAddressResolver(AddressResolver addressResolver) {
         this.addressResolver = addressResolver;
@@ -2410,6 +2425,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.586 -0400", hash_original_method = "906B74670BE04C4A719BBC503CD663E5", hash_generated_method = "1BD4BE3CB90C933E977E9F9E4FB6AE5F")
     public void setLogRecordFactory(LogRecordFactory logRecordFactory) {
         this.logRecordFactory = logRecordFactory;
@@ -2418,6 +2434,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.588 -0400", hash_original_method = "2953BF87EC3C3B721F79C36C05ACD684", hash_generated_method = "09B06D818E606B60EBFF1DD1683CF702")
     public ThreadAuditor getThreadAuditor() {
         ThreadAuditor varB4EAC82CA7396A68D541C85D26508E83_825620908 = null; 
@@ -2584,6 +2601,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.598 -0400", hash_original_method = "216776ED7A95FC4D69FC6626B7475336", hash_generated_method = "E8608B8CC182F06B0236B85EC551D976")
     public void setNon2XXAckPassedToListener(boolean passToListener) {
         this.non2XXAckPassedToListener = passToListener;
@@ -2592,6 +2610,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.598 -0400", hash_original_method = "6286CBBFF5CE6322EC732C5543B43EDA", hash_generated_method = "956004C810B1F94C5E868217463E9354")
     public boolean isNon2XXAckPassedToListener() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_901172501 = getTaintBoolean();
@@ -2612,6 +2631,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.599 -0400", hash_original_method = "2D01936677D6715578D012ACFAF4D8A9", hash_generated_method = "323FBA11D49CF2ACCA99F4E56E4500FD")
     public boolean isRfc2543Supported() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1647426297 = getTaintBoolean();
@@ -2621,6 +2641,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.600 -0400", hash_original_method = "71493EE5805AD2AB9A60D51292B7773D", hash_generated_method = "446CBA1B37751D7618DF0913C947AA01")
     public boolean isCancelClientTransactionChecked() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2078044533 = getTaintBoolean();
@@ -2630,6 +2651,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.600 -0400", hash_original_method = "45004C11584D234E2C0351030C5C7691", hash_generated_method = "8E65FDA63B7436ACA940A7D49D6FFEF3")
     public boolean isRemoteTagReassignmentAllowed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1535984478 = getTaintBoolean();
@@ -2787,6 +2809,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.623 -0400", hash_original_method = "69B105104758CF3A0416D8C1D4F4DE0D", hash_generated_method = "7B24205D066AECCFC783C5A7FE5B727D")
     public void setTimer(Timer timer) {
         this.timer = timer;
@@ -2795,6 +2818,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.624 -0400", hash_original_method = "8E3D165A90C48C9C43C8115575D5D434", hash_generated_method = "3C7BA3AEECF7B3906DAF5707696DC68B")
     public Timer getTimer() {
         Timer varB4EAC82CA7396A68D541C85D26508E83_1410638884 = null; 
@@ -2806,6 +2830,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.624 -0400", hash_original_method = "535D845393F6631B713A5EAFAC15730B", hash_generated_method = "B7D87D124454272AA1E5192A4A706B5F")
     public int getReceiveUdpBufferSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_519978930 = getTaintInt();
@@ -2815,6 +2840,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.625 -0400", hash_original_method = "AD9781079D581597B87998F87481A2EF", hash_generated_method = "3CB289800444473A5EA7A106AC8D0F2E")
     public void setReceiveUdpBufferSize(int receiveUdpBufferSize) {
         this.receiveUdpBufferSize = receiveUdpBufferSize;
@@ -2823,6 +2849,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.626 -0400", hash_original_method = "7F1E49D75F179129A028D4152C30D3F6", hash_generated_method = "97DC3333C66508DCF49990849AC64F30")
     public int getSendUdpBufferSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1905871720 = getTaintInt();
@@ -2832,6 +2859,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.627 -0400", hash_original_method = "085E2E0AF6AC7C34DFF993E649718D81", hash_generated_method = "5FF890F4499E7F2DC05E16AEF2E489BA")
     public void setSendUdpBufferSize(int sendUdpBufferSize) {
         this.sendUdpBufferSize = sendUdpBufferSize;
@@ -2840,6 +2868,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.628 -0400", hash_original_method = "3649FCA00F1F012AB31400D887FE5668", hash_generated_method = "25F9CE48BE3D8A2B81401FE81559ECB5")
     public void setStackLogger(StackLogger stackLogger) {
         this.stackLogger = stackLogger;
@@ -2848,6 +2877,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.629 -0400", hash_original_method = "3A00FD245E091565EAC4D2A0BF135C63", hash_generated_method = "53E76278C34AE54D7BF5A13B88AB8627")
     public boolean checkBranchId() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_32177203 = getTaintBoolean();
@@ -2857,6 +2887,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.629 -0400", hash_original_method = "4B576FDEB92FCE56B4004D51F27F133D", hash_generated_method = "9045EE09E5612A4BCB84191DDFF57B6F")
     public void setLogStackTraceOnMessageSend(boolean logStackTraceOnMessageSend) {
         this.logStackTraceOnMessageSend = logStackTraceOnMessageSend;
@@ -2865,6 +2896,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.630 -0400", hash_original_method = "6EA33CFFB30E0EA85B4B3B5316E0B073", hash_generated_method = "EDB4D38320B7F631A7819C71704D1F37")
     public boolean isLogStackTraceOnMessageSend() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_479022387 = getTaintBoolean();
@@ -2874,6 +2906,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.630 -0400", hash_original_method = "BBC3144A1CF9CB1C9F37A775F293720F", hash_generated_method = "1AB264FBAA3C1AD042F7B5A0A41EB0AF")
     public void setDeliverDialogTerminatedEventForNullDialog() {
         this.isDialogTerminatedEventDeliveredForNullDialog = true;

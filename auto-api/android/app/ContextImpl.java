@@ -102,6 +102,7 @@ class ReceiverRestrictedContext extends ContextWrapper {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.185 -0400", hash_original_method = "E79FC2581462A23AEE3B4180EBBDA608", hash_generated_method = "FBFA414C98D405147A0179DC0A8F74B7")
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
@@ -117,6 +118,7 @@ class ReceiverRestrictedContext extends ContextWrapper {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.115 -0400", hash_original_method = "7DBE869AA37665F34E0D6939DBC75DAB", hash_generated_method = "52484D3785B6DCFDA27B7D982337EBBC")
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter,
@@ -129,6 +131,7 @@ class ReceiverRestrictedContext extends ContextWrapper {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.186 -0400", hash_original_method = "E81E60407BE1AC3446285185653F6DEC", hash_generated_method = "5CE268051E73CF7050E246EB70F1A251")
     @Override
     public boolean bindService(Intent service, ServiceConnection conn, int flags) {
@@ -276,6 +279,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.193 -0400", hash_original_method = "9FEC9CB1792EB215E49CBF732B0DBF5B", hash_generated_method = "BEB56DE7B7F7D926437BD7E4BF1C8EA8")
     @Override
     public Resources getResources() {
@@ -329,6 +333,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.195 -0400", hash_original_method = "E4195DED98361134A039FE4C88A6F4B6", hash_generated_method = "AC856441B3773DA0EBF20989860B3450")
     @Override
     public ContentResolver getContentResolver() {
@@ -369,6 +374,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.200 -0400", hash_original_method = "B9D345E863E2753C5A0BB0CFD009BEA6", hash_generated_method = "DAC2322817B2898A8DBFE4A50CECD38D")
     @Override
     public void setTheme(int resid) {
@@ -378,6 +384,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.201 -0400", hash_original_method = "AE4733E1C9FA88CFC00EFC04FF1EA93F", hash_generated_method = "D5516450D56C47D15D8B0BA5845E0FDD")
     @Override
     public int getThemeResId() {
@@ -412,6 +419,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.203 -0400", hash_original_method = "E4AD06E2DE5640E33DD0DE83076841CC", hash_generated_method = "482C30E6D69A65C418BEC1DD36D84A73")
     @Override
     public ClassLoader getClassLoader() {
@@ -1200,6 +1208,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.244 -0400", hash_original_method = "C279CF6F1AD260899DD449A44D934DDE", hash_generated_method = "CB62F330ABB7AA88641D95F82681909B")
     @Override
     public void startActivity(Intent intent) {
@@ -1259,6 +1268,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.245 -0400", hash_original_method = "C8E02424AE63F5F49E1852E1F77F5819", hash_generated_method = "4F0C823802F5D6CCDE15AD336928E8CF")
     @Override
     public void startIntentSender(IntentSender intent,
@@ -1306,6 +1316,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.246 -0400", hash_original_method = "A60EBABFFFCFDD737FB1FDCFE05C44F2", hash_generated_method = "139225D4047699D4B430D8DCE500AA1E")
     @Override
     public void sendBroadcast(Intent intent) {
@@ -1332,6 +1343,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.246 -0400", hash_original_method = "D592FFEA5E7229A3F68F56DC823D9A2C", hash_generated_method = "E035DAD44BBB6CBB437D0C7C80636D74")
     @Override
     public void sendBroadcast(Intent intent, String receiverPermission) {
@@ -1359,6 +1371,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.247 -0400", hash_original_method = "1B45A83FF6806414FEA9DF50022B81FD", hash_generated_method = "A1491939235E670CEDD54A4297AB7FD5")
     @Override
     public void sendOrderedBroadcast(Intent intent,
@@ -1387,6 +1400,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.248 -0400", hash_original_method = "75D722FF40A3D746C01E744F45F69CB7", hash_generated_method = "2C878867E0D7E8D7CE514FA7581E0186")
     @Override
     public void sendOrderedBroadcast(Intent intent,
@@ -1434,6 +1448,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.250 -0400", hash_original_method = "A9DD8A9FF695328B63C944596A4EDBF3", hash_generated_method = "44D82FE6E69256F506073E39DD610BFB")
     @Override
     public void sendStickyBroadcast(Intent intent) {
@@ -1460,6 +1475,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.251 -0400", hash_original_method = "5A5C4F9500968E8C5F0A5BF45BC32927", hash_generated_method = "29752737B2249089365D5B73B008E1B6")
     @Override
     public void sendStickyOrderedBroadcast(Intent intent,
@@ -1506,6 +1522,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.252 -0400", hash_original_method = "F1371F3418D2B98EF62AEAB9A1FB12D9", hash_generated_method = "A04BC1DAFE9A8CFD1B863CDFC8FAB153")
     @Override
     public void removeStickyBroadcast(Intent intent) {
@@ -1538,6 +1555,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.253 -0400", hash_original_method = "E79FC2581462A23AEE3B4180EBBDA608", hash_generated_method = "9F83FA7ADCD62B5C86A6702E4092E9EC")
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
@@ -1553,6 +1571,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.254 -0400", hash_original_method = "185009C7B52864D361FCA1A63F57A4A0", hash_generated_method = "CEE014D7BAD6EA774D7A3ADFFE10759C")
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter,
@@ -1573,6 +1592,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.255 -0400", hash_original_method = "22E75A5CFB9DB3D3B6EDA1829895EA59", hash_generated_method = "09F9B76BA352273CE5E92C2C7AE73447")
     private Intent registerReceiverInternal(BroadcastReceiver receiver,
             IntentFilter filter, String broadcastPermission,
@@ -1660,6 +1680,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.257 -0400", hash_original_method = "9B31F5C57DE16C0FCBD62EA4E59CD86B", hash_generated_method = "AEDE146786DE35134C7BAF149E9C9021")
     @Override
     public ComponentName startService(Intent service) {
@@ -1715,6 +1736,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.258 -0400", hash_original_method = "3FB64CBED2328D4F85F81CBC4C681900", hash_generated_method = "779CE997A2EBD581C3646A824E4DC1E8")
     @Override
     public boolean stopService(Intent service) {
@@ -1751,6 +1773,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.260 -0400", hash_original_method = "96A08A27D9E82A40B6EBDC8137646365", hash_generated_method = "2FCDC158FDB8162F691521D72F01D606")
     @Override
     public boolean bindService(Intent service, ServiceConnection conn,
@@ -2087,6 +2110,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.272 -0400", hash_original_method = "482617D8CF55E6FF0FA0E9B04256EFBF", hash_generated_method = "705590421E266ACE219C9F1FBD249610")
     @Override
     public void grantUriPermission(String toPackage, Uri uri, int modeFlags) {
@@ -2111,6 +2135,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.272 -0400", hash_original_method = "F750735697FFE8FE8985E9218A8D8CF6", hash_generated_method = "23DE65B58A88974A4DC027D2A87330B6")
     @Override
     public void revokeUriPermission(Uri uri, int modeFlags) {
@@ -2134,6 +2159,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.273 -0400", hash_original_method = "A8F29D130C6713A956C80075096D4067", hash_generated_method = "544AD34B4AD1ED286F5D326CFC9C18A0")
     @Override
     public int checkUriPermission(Uri uri, int pid, int uid, int modeFlags) {
@@ -2160,6 +2186,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.274 -0400", hash_original_method = "F1471C24A57D163C01E766B9D19A4C37", hash_generated_method = "69B840C8786A0FC58E40166EDEDFE080")
     @Override
     public int checkCallingUriPermission(Uri uri, int modeFlags) {
@@ -2185,6 +2212,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.274 -0400", hash_original_method = "92EE95457F7ED1F3B819760C77B2C515", hash_generated_method = "21F5411E87919E56244A7364E5F03785")
     @Override
     public int checkCallingOrSelfUriPermission(Uri uri, int modeFlags) {
@@ -2200,6 +2228,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.276 -0400", hash_original_method = "A80C4E19DF7618048E1ED051566AC69E", hash_generated_method = "D86B811A1595117E1F6FA3B93B4B5E06")
     @Override
     public int checkUriPermission(Uri uri, String readPermission,
@@ -2281,6 +2310,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.277 -0400", hash_original_method = "6A9FD3C401F0CEC7314A7CD25AD534A9", hash_generated_method = "8CFA06DC20027CBEB43917E502B19401")
     private void enforceForUri(
             int modeFlags, int resultOfCheck, boolean selfToo,
@@ -2317,6 +2347,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.278 -0400", hash_original_method = "E9EAEBDE16DA8C22A5B7F64130CC6C00", hash_generated_method = "49B991110E26670EAF291BA89E5B0D03")
     public void enforceUriPermission(
             Uri uri, int pid, int uid, int modeFlags, String message) {
@@ -2335,6 +2366,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.279 -0400", hash_original_method = "6F0B74751E74AFB2005E6D12F19CB27E", hash_generated_method = "328D75B611B7291D0B4370DD352EA9F2")
     public void enforceCallingUriPermission(
             Uri uri, int modeFlags, String message) {
@@ -2351,6 +2383,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.280 -0400", hash_original_method = "886A3C8614D2CB5B8B7CB50793F1366D", hash_generated_method = "6CD0DED0D5BFE3583BD6DC38552CD2EC")
     public void enforceCallingOrSelfUriPermission(
             Uri uri, int modeFlags, String message) {
@@ -2369,6 +2402,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.282 -0400", hash_original_method = "68131D896D42419119F62C3A9452D081", hash_generated_method = "7429D411895773CBB69129A3CE8AB0B8")
     public void enforceUriPermission(
             Uri uri, String readPermission, String writePermission,
@@ -2454,6 +2488,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.285 -0400", hash_original_method = "190E6158FD0788E25F3E34C2C0D2C33E", hash_generated_method = "4E0B0A785C831A28157C39EA9DB90462")
     @Override
     public boolean isRestricted() {

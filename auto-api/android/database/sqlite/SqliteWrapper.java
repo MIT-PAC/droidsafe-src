@@ -41,6 +41,7 @@ public final class SqliteWrapper {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Cursor query(Context context, ContentResolver resolver, Uri uri,
             String[] projection, String selection, String[] selectionArgs, String sortOrder) {
         try {
@@ -65,6 +66,7 @@ public final class SqliteWrapper {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static int update(Context context, ContentResolver resolver, Uri uri,
             ContentValues values, String where, String[] selectionArgs) {
         try {
@@ -77,6 +79,7 @@ public final class SqliteWrapper {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static int delete(Context context, ContentResolver resolver, Uri uri,
             String where, String[] selectionArgs) {
         try {
@@ -89,6 +92,7 @@ public final class SqliteWrapper {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Uri insert(Context context, ContentResolver resolver,
             Uri uri, ContentValues values) {
         try {

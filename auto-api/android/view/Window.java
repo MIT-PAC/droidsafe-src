@@ -128,6 +128,7 @@ public abstract class Window {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.701 -0400", hash_original_method = "8852F0C837DC7060948A60A90C2A9042", hash_generated_method = "E250BA6D33AD65C94C4A991CE067550C")
     public void setContainer(Window container) {
         mContainer = container;
@@ -219,6 +220,7 @@ public abstract class Window {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.704 -0400", hash_original_method = "1DCFADD2C71F0E408EA049F81A8ACDED", hash_generated_method = "5B46D961940B4B21EC0C0868D41B84B6")
     public WindowManager getWindowManager() {
         WindowManager varB4EAC82CA7396A68D541C85D26508E83_1664370324 = null; 
@@ -230,6 +232,7 @@ public abstract class Window {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.704 -0400", hash_original_method = "DD1DEB01F922CA329B6B6BD86F551D46", hash_generated_method = "C7938EB55EEAA39F9972B5240A5CA9B0")
     public void setCallback(Callback callback) {
         mCallback = callback;
@@ -493,6 +496,7 @@ public abstract class Window {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.711 -0400", hash_original_method = "A665A75B43AC6644089B2FAB21289091", hash_generated_method = "0CBE03D8878DA6B3055F2BC397378281")
     public void setCloseOnTouchOutside(boolean close) {
         mCloseOnTouchOutside = close;
@@ -503,6 +507,7 @@ public abstract class Window {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.711 -0400", hash_original_method = "585D2A4E90DC505694C50AFA60811C60", hash_generated_method = "0EC79A2B09531FBB24F9C814E3056C5C")
     public void setCloseOnTouchOutsideIfNotSet(boolean close) {
         {
@@ -563,6 +568,7 @@ public abstract class Window {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.713 -0400", hash_original_method = "56D6FF40FC7BCA35CBE5379E385EA86C", hash_generated_method = "2992D0FF5DB91FABD700B7E639870FCE")
     public boolean requestFeature(int featureId) {
         final int flag = 1<<featureId;
@@ -579,6 +585,7 @@ public abstract class Window {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.713 -0400", hash_original_method = "24AB1A47189F5640F802580999D5EF0B", hash_generated_method = "35B087575FB95788FEF1C9C9DE1615FD")
     protected void removeFeature(int featureId) {
         final int flag = 1<<featureId;
@@ -802,6 +809,7 @@ public abstract class Window {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.722 -0400", hash_original_method = "765B449347DE858F4538165B748C680A", hash_generated_method = "916A40344D08B796BF7F6A9BA1FFA5F0")
     protected boolean haveDimAmount() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1555621882 = getTaintBoolean();
@@ -826,6 +834,7 @@ public abstract class Window {
     public abstract int getVolumeControlStream();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.724 -0400", hash_original_method = "5C7A5DC825C127CAEB67314627C1344D", hash_generated_method = "41402CC6B89BFAB78A866C7788612094")
     public void setUiOptions(int uiOptions) {
         addTaint(uiOptions);
@@ -833,6 +842,7 @@ public abstract class Window {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.724 -0400", hash_original_method = "DD14EAF3AEC819DEC25B96FED2D2DF84", hash_generated_method = "A85B7CE3B9E7D30483728C2281655FB0")
     public void setUiOptions(int uiOptions, int mask) {
         addTaint(uiOptions);

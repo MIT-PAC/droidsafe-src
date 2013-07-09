@@ -227,6 +227,7 @@ public class CursorLoader extends AsyncTaskLoader<Cursor> {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.279 -0400", hash_original_method = "225259AA593B6A59F476A2C569F1B075", hash_generated_method = "370B9292BEB0A5F6C29FF2FE4F1EECC4")
     public Uri getUri() {
         Uri varB4EAC82CA7396A68D541C85D26508E83_191022837 = null; 
@@ -238,6 +239,7 @@ public class CursorLoader extends AsyncTaskLoader<Cursor> {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.279 -0400", hash_original_method = "9C60EE9BABBE4846A09E69FDD9525C9D", hash_generated_method = "1565E698950E459B40FC6B1A30301330")
     public void setUri(Uri uri) {
         mUri = uri;
@@ -246,6 +248,7 @@ public class CursorLoader extends AsyncTaskLoader<Cursor> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.280 -0400", hash_original_method = "F735C138868E0AFA154B3EDF3AAC6C8C", hash_generated_method = "12C3BAF14D9B73B7FE0802146E5506F5")
     public String[] getProjection() {
         String[] varB4EAC82CA7396A68D541C85D26508E83_184820510 = null; 
@@ -257,6 +260,7 @@ public class CursorLoader extends AsyncTaskLoader<Cursor> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.280 -0400", hash_original_method = "1FD0FB2AA6253DF2D0DE4351259B7D6A", hash_generated_method = "2307E179C952E8EDFB6BBB5646F927A1")
     public void setProjection(String[] projection) {
         mProjection = projection;
@@ -265,6 +269,7 @@ public class CursorLoader extends AsyncTaskLoader<Cursor> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.281 -0400", hash_original_method = "E01933AA37B8BF932A93A806A1D37FFC", hash_generated_method = "0F3B3B5E58D85AB148D10471130970BD")
     public String getSelection() {
         String varB4EAC82CA7396A68D541C85D26508E83_471828305 = null; 
@@ -276,6 +281,7 @@ public class CursorLoader extends AsyncTaskLoader<Cursor> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.281 -0400", hash_original_method = "0D04EAE992D5BEBB5A3775930987740E", hash_generated_method = "8D0C01BC2FD4DA64EC5DFEE4B4BFFFB5")
     public void setSelection(String selection) {
         mSelection = selection;
@@ -284,6 +290,7 @@ public class CursorLoader extends AsyncTaskLoader<Cursor> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.282 -0400", hash_original_method = "9B3363CD5FA3C0407FC101CCC97AC74F", hash_generated_method = "7AAA43E3F7AB509DB713503772F65AE9")
     public String[] getSelectionArgs() {
         String[] varB4EAC82CA7396A68D541C85D26508E83_1257188655 = null; 
@@ -295,6 +302,7 @@ public class CursorLoader extends AsyncTaskLoader<Cursor> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.282 -0400", hash_original_method = "5DE6373B4434A7D0B0150E5FA1A41F4D", hash_generated_method = "2749EDEF8949EF1FF35A2BA90D360659")
     public void setSelectionArgs(String[] selectionArgs) {
         mSelectionArgs = selectionArgs;
@@ -303,6 +311,7 @@ public class CursorLoader extends AsyncTaskLoader<Cursor> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.284 -0400", hash_original_method = "E54D82A1039D474135177094E296D0BE", hash_generated_method = "8123D8B527F47260114246251AA7E108")
     public String getSortOrder() {
         String varB4EAC82CA7396A68D541C85D26508E83_9961698 = null; 
@@ -314,6 +323,7 @@ public class CursorLoader extends AsyncTaskLoader<Cursor> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.284 -0400", hash_original_method = "5BFD82EE872F667FB5FE226A7761A7D3", hash_generated_method = "C543040F89A1BDC3496BD90EA95223A3")
     public void setSortOrder(String sortOrder) {
         mSortOrder = sortOrder;

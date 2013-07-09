@@ -55,6 +55,7 @@ public class EGLSurfaceImpl extends EGLSurface {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.424 -0400", hash_original_method = "688B514F649E9FC55EF131746A1254F0", hash_generated_method = "C87468A291A99A0C5420D91B6C367CC3")
     @Override
     public int hashCode() {

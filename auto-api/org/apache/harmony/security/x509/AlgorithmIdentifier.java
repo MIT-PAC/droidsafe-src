@@ -59,6 +59,7 @@ public final class AlgorithmIdentifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.599 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "67D741ADA5D36D228128D8ED8F46F9EE")
     public String getAlgorithm() {
         String varB4EAC82CA7396A68D541C85D26508E83_1657842179 = null; 
@@ -94,6 +95,7 @@ public final class AlgorithmIdentifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.600 -0400", hash_original_method = "360B58AAED509D402161560B83FBF1AD", hash_generated_method = "107EE91623BAD0213DDF6D1B58B693C3")
     public byte[] getParameters() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_92678527 = {getTaintByte()};

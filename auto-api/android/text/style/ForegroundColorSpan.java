@@ -33,6 +33,7 @@ public class ForegroundColorSpan extends CharacterStyle implements UpdateAppeara
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.743 -0400", hash_original_method = "8155995CA89F113B2E7BEC17CF09D49D", hash_generated_method = "4618688A465CA157BA921858B86D23AB")
     public int getSpanTypeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1117520752 = getTaintInt();
@@ -42,6 +43,7 @@ public class ForegroundColorSpan extends CharacterStyle implements UpdateAppeara
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.743 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8F2AB1C99768CA0FAD03F8E23A70FC20")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1007819904 = getTaintInt();
@@ -61,6 +63,7 @@ public class ForegroundColorSpan extends CharacterStyle implements UpdateAppeara
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.744 -0400", hash_original_method = "7DE99734F4F039B37C58D21552D08DBC", hash_generated_method = "30BF266DBFA96F3F6BFA9FCEC897E750")
     public int getForegroundColor() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1884282762 = getTaintInt();

@@ -60,6 +60,7 @@ public final class Log {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isLoggable(String tag, int level) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
@@ -131,6 +132,7 @@ public final class Log {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int println_native(int bufID,
             int priority, String tag, String msg) {
         return DSUtils.UNKNOWN_INT;

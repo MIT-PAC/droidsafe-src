@@ -28,6 +28,7 @@ public class EventObject implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.264 -0400", hash_original_method = "9C6E9403B2BCB843296731DEDAEEBBC7", hash_generated_method = "91BDB2853B01DBD9311156A7C3710D8B")
     public Object getSource() {
         Object varB4EAC82CA7396A68D541C85D26508E83_2021324665 = null; 

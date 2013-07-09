@@ -80,6 +80,7 @@ public class Picture {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.026 -0400", hash_original_method = "D4E7715F32876041521BE16EC8E1C0AC", hash_generated_method = "3219A56FFE3CE9A86C23747FABFFFD46")
     public int getWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_19961746 = getTaintInt();
@@ -87,6 +88,7 @@ public class Picture {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.027 -0400", hash_original_method = "E09BF3A531DEFF54888EDA3B98EB9CFF", hash_generated_method = "E707A5A984B2F406617CD9714B5A7DA7")
     public int getHeight() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_146062055 = getTaintInt();
@@ -160,37 +162,44 @@ public class Picture {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeConstructor(int nativeSrcOr0) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeCreateFromStream(InputStream stream,
                                                 byte[] storage) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeBeginRecording(int nativeCanvas,
                                                     int w, int h) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeEndRecording(int nativeCanvas) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeDraw(int nativeCanvas, int nativePicture) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativeWriteToStream(int nativePicture,
                                            OutputStream stream, byte[] storage) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeDestructor(int nativePicture) {
     }
 

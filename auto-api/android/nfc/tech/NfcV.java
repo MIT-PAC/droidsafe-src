@@ -45,6 +45,7 @@ public final class NfcV extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.508 -0400", hash_original_method = "19D3A3646C1C2655B316DC5413F4466A", hash_generated_method = "9F2F97423E37E48218773C56670CFAF8")
     public byte getResponseFlags() {
         byte var40EA57D3EE3C07BF1C102B466E1C3091_1099395670 = getTaintByte();
@@ -54,6 +55,7 @@ public final class NfcV extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.509 -0400", hash_original_method = "9F53E6713A0959247C46979AAE2F100E", hash_generated_method = "4C67113E984181E48997E81A6D09D85F")
     public byte getDsfId() {
         byte var40EA57D3EE3C07BF1C102B466E1C3091_1818461374 = getTaintByte();

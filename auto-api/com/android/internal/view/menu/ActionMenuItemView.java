@@ -115,6 +115,7 @@ public class ActionMenuItemView extends LinearLayout implements MenuView.ItemVie
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.831 -0400", hash_original_method = "F39E0849ABCF707480ABC0B9D2EE2311", hash_generated_method = "29A019C1E15588FA35AD13959826574A")
     public MenuItemImpl getItemData() {
         MenuItemImpl varB4EAC82CA7396A68D541C85D26508E83_1340516338 = null; 
@@ -176,6 +177,7 @@ public class ActionMenuItemView extends LinearLayout implements MenuView.ItemVie
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.833 -0400", hash_original_method = "D4B10D907261C4745939FD5942191820", hash_generated_method = "270FC8FDA3818D246FF2F1F090AA616A")
     public void setItemInvoker(MenuBuilder.ItemInvoker invoker) {
         mItemInvoker = invoker;
@@ -184,6 +186,7 @@ public class ActionMenuItemView extends LinearLayout implements MenuView.ItemVie
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.833 -0400", hash_original_method = "A2F62AB27113ADE9EE493677370BEC6F", hash_generated_method = "FDD66F3F659EFFC81FC4CD381B808155")
     public boolean prefersCondensedTitle() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_674418462 = getTaintBoolean();
@@ -193,6 +196,7 @@ public class ActionMenuItemView extends LinearLayout implements MenuView.ItemVie
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.834 -0400", hash_original_method = "206C9D092F8D2CE8A945E1A45B818CB4", hash_generated_method = "BA66FBB494F3C28FF06B59EB6EC283AE")
     public void setCheckable(boolean checkable) {
         addTaint(checkable);
@@ -200,6 +204,7 @@ public class ActionMenuItemView extends LinearLayout implements MenuView.ItemVie
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.834 -0400", hash_original_method = "98D5E38367DB01B2323D3E891737183A", hash_generated_method = "E13CE4DF4F9AB654448A696784A01853")
     public void setChecked(boolean checked) {
         addTaint(checked);
@@ -275,6 +280,7 @@ public class ActionMenuItemView extends LinearLayout implements MenuView.ItemVie
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.837 -0400", hash_original_method = "85A41D343B47A7443CFB0CEF90E94BCA", hash_generated_method = "601A0A10221E619A1CAEB4BBE66EF7F8")
     public void setShortcut(boolean showShortcut, char shortcutKey) {
         addTaint(showShortcut);
@@ -348,6 +354,7 @@ public class ActionMenuItemView extends LinearLayout implements MenuView.ItemVie
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.839 -0400", hash_original_method = "C76AE16CD3DCE07A39A065D6C2B5EB3F", hash_generated_method = "77B4F8811C1335687C4BF5E2111C730B")
     public boolean showsIcon() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1707566635 = getTaintBoolean();

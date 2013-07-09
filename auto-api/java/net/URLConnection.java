@@ -66,6 +66,7 @@ public abstract class URLConnection {
     public abstract void connect() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.569 -0400", hash_original_method = "C67DC5C525139049127B216E3212E5BD", hash_generated_method = "552C3CF9125B99C08A281BE8A610BC7A")
     public boolean getAllowUserInteraction() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1709553062 = getTaintBoolean();
@@ -304,17 +305,20 @@ public abstract class URLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean getDefaultAllowUserInteraction() {
         return defaultAllowUserInteraction;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static String getDefaultRequestProperty(String field) {
         return null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.585 -0400", hash_original_method = "08FC81CB612F586F4ABF44BAE872E3A8", hash_generated_method = "8427144F0FF24D77643926F59917DB02")
     public boolean getDefaultUseCaches() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1586553024 = getTaintBoolean();
@@ -324,6 +328,7 @@ public abstract class URLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.585 -0400", hash_original_method = "CCCD690FEDEDD1DE3F70C92A661DD993", hash_generated_method = "45F424780015F749C3EB4210F26ECB64")
     public boolean getDoInput() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1617617299 = getTaintBoolean();
@@ -333,6 +338,7 @@ public abstract class URLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.585 -0400", hash_original_method = "15D6FCAAE0989BD58186FF458E57106D", hash_generated_method = "2D73A8C26B1C5D06E76F6B7DFEE07E95")
     public boolean getDoOutput() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1193382046 = getTaintBoolean();
@@ -364,6 +370,7 @@ public abstract class URLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.586 -0400", hash_original_method = "4AACA905FA1278AAB35ED38439896081", hash_generated_method = "0AA51F02842F934CCE17F0D6E0FC103A")
     public String getHeaderField(int pos) {
         String varB4EAC82CA7396A68D541C85D26508E83_1494215719 = null; 
@@ -430,6 +437,7 @@ public abstract class URLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.588 -0400", hash_original_method = "565CBD8C4BDCB5C201FDE1F2CB76B55D", hash_generated_method = "BDB25A187652701AA946F1111B66ADAF")
     public String getHeaderField(String key) {
         String varB4EAC82CA7396A68D541C85D26508E83_1670257374 = null; 
@@ -492,6 +500,7 @@ public abstract class URLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.590 -0400", hash_original_method = "2E9FACF1BA93288E38DBB8CED1C2CF00", hash_generated_method = "0C274481E3725565E851F905440C30FF")
     public String getHeaderFieldKey(int posn) {
         String varB4EAC82CA7396A68D541C85D26508E83_299397538 = null; 
@@ -504,6 +513,7 @@ public abstract class URLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.590 -0400", hash_original_method = "3D630E318477F0341CC679CD7D029C3F", hash_generated_method = "41BB9027B2C12BFB5501392C75940480")
     public long getIfModifiedSince() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1848046317 = getTaintLong();
@@ -571,6 +581,7 @@ public abstract class URLConnection {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.593 -0400", hash_original_method = "2F8DA67F8DE7FED0345BBAE8C82F68E5", hash_generated_method = "162D109E7E3D0993DEB71383AE54821B")
     public URL getURL() {
         URL varB4EAC82CA7396A68D541C85D26508E83_266496338 = null; 
@@ -582,6 +593,7 @@ public abstract class URLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.594 -0400", hash_original_method = "2F69889B76EEFF99FBB9977BF19C64FC", hash_generated_method = "511F30DDCBCAA5F0E9B0B4066B56D002")
     public boolean getUseCaches() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_48350055 = getTaintBoolean();
@@ -722,16 +734,19 @@ public abstract class URLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setDefaultAllowUserInteraction(boolean allows) {
         defaultAllowUserInteraction = allows;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static void setDefaultRequestProperty(String field, String value) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.597 -0400", hash_original_method = "850171EE0F333E1246D13E7B06ED7B4A", hash_generated_method = "451885C4EADF39859E8E5B4EC3B3696F")
     public void setDefaultUseCaches(boolean newValue) {
         defaultUseCaches = newValue;
@@ -763,6 +778,7 @@ public abstract class URLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setFileNameMap(FileNameMap map) {
         synchronized (URLConnection.class) {
             fileNameMap = map;
@@ -824,6 +840,7 @@ public abstract class URLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.603 -0400", hash_original_method = "70B18BFD6BA7B76980125453BE48C7D1", hash_generated_method = "14AD623DC48FFFE20643628FD72918F8")
     public int getConnectTimeout() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1908066799 = getTaintInt();
@@ -848,6 +865,7 @@ public abstract class URLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.604 -0400", hash_original_method = "D3F0467D6BAB1E0CB8F37756E837EDFD", hash_generated_method = "B982DA41E3EAA6109A942A5972E98DCD")
     public int getReadTimeout() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1023481801 = getTaintInt();

@@ -81,6 +81,7 @@ public class QName implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.521 -0400", hash_original_method = "1455FE8FE34AF373D39E8278191439A8", hash_generated_method = "23CAEB1E2A2DD99A7EC7AB784C9E2815")
     public String getNamespaceURI() {
         String varB4EAC82CA7396A68D541C85D26508E83_999716980 = null; 
@@ -92,6 +93,7 @@ public class QName implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.521 -0400", hash_original_method = "859D888619C719D6166AE581FCA9B720", hash_generated_method = "3E57DE9F4513D5A29907BE8B998ED51E")
     public String getLocalPart() {
         String varB4EAC82CA7396A68D541C85D26508E83_642960122 = null; 
@@ -103,6 +105,7 @@ public class QName implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.522 -0400", hash_original_method = "FA5CE5A0FCC0C736D9446FFEBD0CAB9D", hash_generated_method = "1D2F9DA0EED4DA1E405CCF619237C8EA")
     public String getPrefix() {
         String varB4EAC82CA7396A68D541C85D26508E83_498838324 = null; 

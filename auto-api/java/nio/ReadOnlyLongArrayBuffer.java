@@ -67,6 +67,7 @@ final class ReadOnlyLongArrayBuffer extends LongArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.974 -0400", hash_original_method = "D0F583BEFACE4F70BE4011CED42FF4E6", hash_generated_method = "F13D0C4F494F7A076880C75BE42353B8")
     @Override
     public boolean isReadOnly() {
@@ -101,6 +102,7 @@ final class ReadOnlyLongArrayBuffer extends LongArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.974 -0400", hash_original_method = "22273AD75DCD1D369E6F6089E4C15AAA", hash_generated_method = "9B4118D01938D6B742E5AC7C44F1C40E")
     @Override
     protected boolean protectedHasArray() {

@@ -111,6 +111,7 @@ public class DERUniversalString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.799 -0400", hash_original_method = "C5326C1D0359BDCEF8241B3A70DD591D", hash_generated_method = "5AA44B645FF0D575DC7780BBCD0466AD")
     public byte[] getOctets() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_416927746 = {getTaintByte()};

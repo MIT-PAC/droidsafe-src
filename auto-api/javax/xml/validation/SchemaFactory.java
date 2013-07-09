@@ -43,6 +43,7 @@ public abstract class SchemaFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static SchemaFactory newInstance(String schemaLanguage, String factoryClassName,
             ClassLoader classLoader) {
         if (schemaLanguage == null || factoryClassName == null) {
@@ -134,6 +135,7 @@ public abstract class SchemaFactory {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public Schema newSchema(URL schema) throws SAXException {
         return newSchema(new StreamSource(schema.toExternalForm()));
     }

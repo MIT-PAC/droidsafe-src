@@ -31,6 +31,7 @@ public final class ProcessingInstructionImpl extends LeafNodeImpl implements Pro
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.393 -0400", hash_original_method = "CA0E91FD462850CF9A2412442DB68D19", hash_generated_method = "7D75EC400001E9A9CCA94483130429CD")
     public String getData() {
         String varB4EAC82CA7396A68D541C85D26508E83_2145186498 = null; 
@@ -42,6 +43,7 @@ public final class ProcessingInstructionImpl extends LeafNodeImpl implements Pro
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.393 -0400", hash_original_method = "44DCC451FA6F3CA18022A718FA0AE60D", hash_generated_method = "2163DBB8EC77C7A93E04143F89630CB2")
     @Override
     public String getNodeName() {
@@ -54,6 +56,7 @@ public final class ProcessingInstructionImpl extends LeafNodeImpl implements Pro
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.394 -0400", hash_original_method = "3B7DB8AF476DCFC46150583715993452", hash_generated_method = "B719B73781DC5934299FB737F87C5506")
     @Override
     public short getNodeType() {
@@ -64,6 +67,7 @@ public final class ProcessingInstructionImpl extends LeafNodeImpl implements Pro
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.394 -0400", hash_original_method = "26741C8FC3CFA5C9E2871448A384408A", hash_generated_method = "B57330AC1C6BEC955B1BD8146E03CF5A")
     @Override
     public String getNodeValue() {
@@ -76,6 +80,7 @@ public final class ProcessingInstructionImpl extends LeafNodeImpl implements Pro
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.395 -0400", hash_original_method = "067DF5651A33C6E6A710DDDF2900842F", hash_generated_method = "B2B53FB9EE8B89D522C3AEFE5DA31857")
     public String getTarget() {
         String varB4EAC82CA7396A68D541C85D26508E83_1152832683 = null; 
@@ -87,6 +92,7 @@ public final class ProcessingInstructionImpl extends LeafNodeImpl implements Pro
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.395 -0400", hash_original_method = "985529340F1B642B4E22D59984257994", hash_generated_method = "764D2C61447051DD6595F6AB31D89D3E")
     public void setData(String data) throws DOMException {
         this.data = data;

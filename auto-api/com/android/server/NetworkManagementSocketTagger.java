@@ -150,21 +150,25 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int native_tagSocketFd(FileDescriptor fd, int tag, int uid) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int native_untagSocketFd(FileDescriptor fd) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int native_setCounterSet(int uid, int counterSetNum) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int native_deleteTagData(int tag, int uid) {
         return DSUtils.UNKNOWN_INT;
     }

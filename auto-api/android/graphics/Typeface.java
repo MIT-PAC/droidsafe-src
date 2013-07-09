@@ -76,6 +76,7 @@ public class Typeface {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Typeface defaultFromStyle(int style) {
         return sDefaults[style];
     }
@@ -110,35 +111,42 @@ public class Typeface {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeCreate(String familyName, int style) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeCreateFromTypeface(int native_instance, int style) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeUnref(int native_instance) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeGetStyle(int native_instance) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeCreateFromAsset(AssetManager mgr, String path) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeCreateFromFile(String path) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setGammaForText(float blackGamma, float whiteGamma) {
     }
 

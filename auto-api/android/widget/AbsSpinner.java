@@ -410,6 +410,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.175 -0400", hash_original_method = "0B2662100CCA74662649DCCD28954A76", hash_generated_method = "14D27C6525BFD7EB7D696933C008D797")
     @Override
     public SpinnerAdapter getAdapter() {
@@ -422,6 +423,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.175 -0400", hash_original_method = "C515244CDC30F9529A71B0CAA70231C3", hash_generated_method = "24B8E7D6A585CE032ADF2DE141429E1C")
     @Override
     public int getCount() {

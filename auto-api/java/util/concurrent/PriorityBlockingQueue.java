@@ -548,6 +548,7 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.684 -0400", hash_original_method = "E7CDD1D543D1F61B1D969765A4629893", hash_generated_method = "FF49EC73A4F5DEB7897BEC0CB48E4F11")
     public int remainingCapacity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1154554417 = getTaintInt();

@@ -147,6 +147,7 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.119 -0400", hash_original_method = "D8A614357C6F3F0E863735D7939D36DF", hash_generated_method = "000029833D7B44F7160178B4662C1051")
     public void setForceShowIcon(boolean forceShow) {
         mPreserveIconSpacing = mForceShowIcon = forceShow;
@@ -182,6 +183,7 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.119 -0400", hash_original_method = "F39E0849ABCF707480ABC0B9D2EE2311", hash_generated_method = "BEA34F7CFC8AA3B868F4EFE2DF93EA22")
     public MenuItemImpl getItemData() {
         MenuItemImpl varB4EAC82CA7396A68D541C85D26508E83_1331852646 = null; 
@@ -429,6 +431,7 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.126 -0400", hash_original_method = "D007E81C6798ACEA5420D15C2FEE6142", hash_generated_method = "CC1D79F6A05D8108896DB85D6A80C4AF")
     public boolean prefersCondensedTitle() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2051272448 = getTaintBoolean();
@@ -438,6 +441,7 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.127 -0400", hash_original_method = "21090C746FF264700C0D2226436C9966", hash_generated_method = "1FE053ABEA1D09D1C7A5F819EF9ADDF8")
     public boolean showsIcon() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_330789058 = getTaintBoolean();

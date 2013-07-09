@@ -24,6 +24,7 @@ public abstract class SQLiteClosable {
     protected abstract void onAllReferencesReleased();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.131 -0400", hash_original_method = "E024C98C9CCE430E2F2A96AB4D1C1206", hash_generated_method = "3847CCA86EF22D8030ACE2211D68342D")
     protected void onAllReferencesReleasedFromContainer() {
         

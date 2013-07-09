@@ -25,6 +25,7 @@ public class TunnelRefusedException extends HttpException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.322 -0400", hash_original_method = "3C5BCF9DD6B811984123D054EF330499", hash_generated_method = "E513FEADBC73829BA57D39622419E271")
     public HttpResponse getResponse() {
         HttpResponse varB4EAC82CA7396A68D541C85D26508E83_1792164881 = null; 

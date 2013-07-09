@@ -75,6 +75,7 @@ public class Join extends ParametersHeader implements ExtensionHeader, JoinHeade
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.005 -0400", hash_original_method = "EEE15C2182CFD7EA9CBDBFC60D7CEB59", hash_generated_method = "5C5092CE414EAA1B23E74DA362D5EB48")
     public String getCallId() {
         String varB4EAC82CA7396A68D541C85D26508E83_447799118 = null; 
@@ -86,6 +87,7 @@ public class Join extends ParametersHeader implements ExtensionHeader, JoinHeade
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.005 -0400", hash_original_method = "B5581A57A5C5C2AEBCF8449C03245AE9", hash_generated_method = "368DBD28BA71FA13152B5B68AFFECD14")
     public CallIdentifier getCallIdentifer() {
         CallIdentifier varB4EAC82CA7396A68D541C85D26508E83_56064719 = null; 
@@ -97,6 +99,7 @@ public class Join extends ParametersHeader implements ExtensionHeader, JoinHeade
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.006 -0400", hash_original_method = "18B0F6F776471BD79AF2D65BB23B3FDC", hash_generated_method = "6992A879D69ED0B331E4999AE9EC11CE")
     public void setCallId(String cid) {
         callId = cid;
@@ -105,6 +108,7 @@ public class Join extends ParametersHeader implements ExtensionHeader, JoinHeade
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.006 -0400", hash_original_method = "76D6B9E3FB2D7381056714796D175A19", hash_generated_method = "BC500CAB746BFEA9CABDC759AB4FDB6D")
     public void setCallIdentifier(CallIdentifier cid) {
         callIdentifier = cid;

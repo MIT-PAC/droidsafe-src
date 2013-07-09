@@ -107,6 +107,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.768 -0400", hash_original_method = "7CF138C6ADBDA7579D8D5CA6B783C43E", hash_generated_method = "3CDA51D872B97E384848CD976488CA27")
     public boolean isLayoutSizeAtLeast(int size) {
         int cur = screenLayout&SCREENLAYOUT_SIZE_MASK;
@@ -400,6 +401,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.774 -0400", hash_original_method = "147ACC888212AB34BF4DFBA0C89EE45F", hash_generated_method = "C9CB6755A580929C7AAF213990A1EEFA")
     public void setToDefaults() {
         fontScale = 1;
@@ -602,11 +604,13 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean needNewResources(int configChanges, int interestingChanges) {
         return (configChanges & (interestingChanges|ActivityInfo.CONFIG_FONT_SCALE)) != 0;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.779 -0400", hash_original_method = "B2BFCC713F7EA940A38F0F416218BA87", hash_generated_method = "2AFB22299F37B02B5686EA848192EDD3")
     public boolean isOtherSeqNewer(Configuration other) {
         int diff = other.seq - seq;
@@ -631,6 +635,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.780 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "28E3218F137F8C24AF626509F067E1FA")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_571915781 = getTaintInt();

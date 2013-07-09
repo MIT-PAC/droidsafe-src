@@ -17,6 +17,7 @@ public class DHParameters {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static byte[] getPrime() {
         return prime;
     }

@@ -41,6 +41,7 @@ public final class BasicConstraints extends ExtensionValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.637 -0400", hash_original_method = "BA19E2BECC620F0A37756A3C3C0D942D", hash_generated_method = "FD0A4C9A11EC32E0180330493C23EC16")
     public int getPathLenConstraint() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1104926690 = getTaintInt();

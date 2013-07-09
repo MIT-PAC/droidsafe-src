@@ -50,6 +50,7 @@ public class PasswordCallback implements Callback, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.777 -0400", hash_original_method = "9CD919A2E5CE4DE3A8693DD7DF368A07", hash_generated_method = "39781FD10F52EF196E6BCC756440A633")
     public String getPrompt() {
         String varB4EAC82CA7396A68D541C85D26508E83_1557250766 = null; 
@@ -61,6 +62,7 @@ public class PasswordCallback implements Callback, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.777 -0400", hash_original_method = "A27AE4B1B247F3C75C8013A45B07AFAD", hash_generated_method = "4176186D21719A98C7C2E037E17BB229")
     public boolean isEchoOn() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_714035029 = getTaintBoolean();

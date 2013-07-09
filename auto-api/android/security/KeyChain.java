@@ -42,6 +42,7 @@ public final class KeyChain {
     }
 
 
+    @DSModeled(DSC.SPEC)
     public static Intent createInstallIntent() {
         Intent intent = new Intent(ACTION_INSTALL);
         intent.setClassName("com.android.certinstaller",

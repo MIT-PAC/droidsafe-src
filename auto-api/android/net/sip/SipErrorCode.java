@@ -16,6 +16,7 @@ public class SipErrorCode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toString(int errorCode) {
         switch (errorCode) {
             case NO_ERROR:

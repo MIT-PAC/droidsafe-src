@@ -558,6 +558,7 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.926 -0400", hash_original_method = "1CF42BC1A6BA86440BF6AECA28532C33", hash_generated_method = "6FDBC162ACD08E6A956281D4EBB8553D")
     @Override
     public boolean canSelectArbitrarily() {

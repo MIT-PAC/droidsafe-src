@@ -24,7 +24,8 @@ class DefaultSSLServerSocketFactory extends SSLServerSocketFactory {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.494 -0400", hash_original_method = "12108FA96648EC8E1683C3067260A382", hash_generated_method = "3BB9E149ED59E44F6450B89AF1DBF54B")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.494 -0400", hash_original_method = "12108FA96648EC8E1683C3067260A382", hash_generated_method = "3BB9E149ED59E44F6450B89AF1DBF54B")
 	@Override
 	public String[] getDefaultCipherSuites() {
 		String[] varB4EAC82CA7396A68D541C85D26508E83_414223024 = null; 
@@ -41,7 +42,8 @@ class DefaultSSLServerSocketFactory extends SSLServerSocketFactory {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.494 -0400", hash_original_method = "02FB44E3332A242283DAD5FC179FF843", hash_generated_method = "7285268C58ED952A7B8C931CACFD59A6")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.494 -0400", hash_original_method = "02FB44E3332A242283DAD5FC179FF843", hash_generated_method = "7285268C58ED952A7B8C931CACFD59A6")
 	@Override
 	public String[] getSupportedCipherSuites() {
 		String[] varB4EAC82CA7396A68D541C85D26508E83_978683070 = null; 

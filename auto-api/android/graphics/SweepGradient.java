@@ -59,17 +59,20 @@ public class SweepGradient extends Shader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeCreate2(float x, float y, int color0, int color1) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativePostCreate1(int native_shader, float cx, float cy,
             int[] colors, float[] positions) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativePostCreate2(int native_shader, float cx, float cy,
             int color0, int color1) {
         return DSUtils.UNKNOWN_INT;

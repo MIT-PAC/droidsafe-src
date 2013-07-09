@@ -132,6 +132,7 @@ public class ThreadLocal<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.379 -0400", hash_original_method = "303C743BABF91BBE1D2B949725040AC0", hash_generated_method = "1385597D92C37614AA6B4981A7074875")
      Values values(Thread current) {
         Values varB4EAC82CA7396A68D541C85D26508E83_1636084739 = null; 

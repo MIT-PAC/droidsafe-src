@@ -116,6 +116,7 @@ public class ObjectDigestInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.889 -0400", hash_original_method = "6F0ED6AFEE9055594DCEF2A3E1A2F111", hash_generated_method = "E8371BFBF1FF93DDC63B315557947B9F")
     public DEREnumerated getDigestedObjectType() {
         DEREnumerated varB4EAC82CA7396A68D541C85D26508E83_1083914246 = null; 
@@ -127,6 +128,7 @@ public class ObjectDigestInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.889 -0400", hash_original_method = "ED88D29FA12F8D28E30CF15EC0719828", hash_generated_method = "6CEB4331D7C2DBC6D6E8DCDF1262285D")
     public DERObjectIdentifier getOtherObjectTypeID() {
         DERObjectIdentifier varB4EAC82CA7396A68D541C85D26508E83_1659388549 = null; 
@@ -138,6 +140,7 @@ public class ObjectDigestInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.890 -0400", hash_original_method = "80A095D2CD5C912E5290805C4F2E95A6", hash_generated_method = "96232E5FCF4C563D230942DAA11BBC1C")
     public AlgorithmIdentifier getDigestAlgorithm() {
         AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_1410955927 = null; 
@@ -149,6 +152,7 @@ public class ObjectDigestInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.890 -0400", hash_original_method = "591AAD603948030260B8B2B98E27FE31", hash_generated_method = "22D0C8E40C7D9F7CEDBD164FDA0D69B2")
     public DERBitString getObjectDigest() {
         DERBitString varB4EAC82CA7396A68D541C85D26508E83_1544294810 = null; 

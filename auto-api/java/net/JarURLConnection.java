@@ -113,6 +113,7 @@ public abstract class JarURLConnection extends URLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.414 -0400", hash_original_method = "DAD1125851C16B3E7BCEFC2CE4B21F94", hash_generated_method = "74FC6FD862F51A6653FB2F653F693510")
     public String getEntryName() {
         String varB4EAC82CA7396A68D541C85D26508E83_2077694413 = null; 
@@ -173,6 +174,7 @@ public abstract class JarURLConnection extends URLConnection {
     public abstract JarFile getJarFile() throws java.io.IOException;
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.419 -0400", hash_original_method = "35923E0EC1A4B6746505AC2CF9BCB1E8", hash_generated_method = "A971E0535D680B5AA41EF4EE611B439B")
     public URL getJarFileURL() {
         URL varB4EAC82CA7396A68D541C85D26508E83_2122332115 = null; 

@@ -175,15 +175,18 @@ public class BackupDataInput {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int ctor(FileDescriptor fd) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void dtor(int mBackupReader) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.415 -0400", hash_original_method = "067EEAAC3A307CF566E8560CEDE5923E", hash_generated_method = "EF3ACE6DF6D4DE56CC55829FB3510031")
     private int readNextHeader_native(int mBackupReader, EntityHeader entity) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1468655632 = getTaintInt();
@@ -191,6 +194,7 @@ public class BackupDataInput {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.416 -0400", hash_original_method = "F563013799B99B7F96D96C08DD61A38F", hash_generated_method = "AF341C99A6E64C0BCFD9CA5D9D0E21B6")
     private int readEntityData_native(int mBackupReader, byte[] data, int offset, int size) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1977155269 = getTaintInt();
@@ -198,6 +202,7 @@ public class BackupDataInput {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.416 -0400", hash_original_method = "13C96EB578BECC22D2FF8487AD4702B6", hash_generated_method = "136789547CAA82F4C33483A19CB11E8F")
     private int skipEntityData_native(int mBackupReader) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1354991879 = getTaintInt();

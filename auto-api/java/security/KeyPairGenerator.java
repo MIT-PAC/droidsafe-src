@@ -26,6 +26,7 @@ public abstract class KeyPairGenerator extends KeyPairGeneratorSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.217 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "D72B66E90A33BC80E5466E6F33957F6E")
     public String getAlgorithm() {
         String varB4EAC82CA7396A68D541C85D26508E83_1111127461 = null; 
@@ -130,6 +131,7 @@ public abstract class KeyPairGenerator extends KeyPairGeneratorSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.220 -0400", hash_original_method = "7972015D8BC3BAE6F8655706849D6EC4", hash_generated_method = "DB534B2E4FF83A37E2935C759F7995E5")
     @Override
     public KeyPair generateKeyPair() {
@@ -142,6 +144,7 @@ public abstract class KeyPairGenerator extends KeyPairGeneratorSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.220 -0400", hash_original_method = "C1E2700C4D7C78BCD077B4B9FB70A89A", hash_generated_method = "0CF416521974AB781EEB36947D155320")
     @Override
     public void initialize(int keysize, SecureRandom random) {
@@ -151,6 +154,7 @@ public abstract class KeyPairGenerator extends KeyPairGeneratorSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.221 -0400", hash_original_method = "3E787A500B01324B444CF13BE7390B3D", hash_generated_method = "36F7E76B48F224D711E2BB416DA5F19B")
     @Override
     public void initialize(AlgorithmParameterSpec param, SecureRandom random) throws InvalidAlgorithmParameterException {

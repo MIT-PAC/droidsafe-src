@@ -22,6 +22,7 @@ public class Priority extends SIPHeader implements PriorityHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.890 -0400", hash_original_method = "275A06F50E7B2077A23380B094FCE956", hash_generated_method = "6E4D272C3F7479DA34081527667BAB25")
     public String encodeBody() {
         String varB4EAC82CA7396A68D541C85D26508E83_1948976386 = null; 
@@ -33,6 +34,7 @@ public class Priority extends SIPHeader implements PriorityHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.891 -0400", hash_original_method = "6DFC1BDF5FFE5EB6A183C3674CCE0974", hash_generated_method = "796E9E52B1AE89494396DAE260708B4A")
     public String getPriority() {
         String varB4EAC82CA7396A68D541C85D26508E83_1652557494 = null; 

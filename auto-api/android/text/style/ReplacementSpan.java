@@ -30,6 +30,7 @@ public abstract class ReplacementSpan extends MetricAffectingSpan {
                      int top, int y, int bottom, Paint paint);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.864 -0400", hash_original_method = "A699A8F3838B8D034AE05CD71CC1E03F", hash_generated_method = "6E00101E00426EF68AD26810595FA873")
     public void updateMeasureState(TextPaint p) {
         addTaint(p.getTaint());
@@ -37,6 +38,7 @@ public abstract class ReplacementSpan extends MetricAffectingSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.865 -0400", hash_original_method = "38B7676DEF6A1A947DFBA6BCAE88FB2B", hash_generated_method = "A99FCE9C339DBD7365B6728543F91927")
     public void updateDrawState(TextPaint ds) {
         addTaint(ds.getTaint());

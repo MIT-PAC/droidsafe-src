@@ -92,6 +92,7 @@ public final class SyncResult implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.300 -0400", hash_original_method = "BBFDB64A99265F3C16497008E73E4C9A", hash_generated_method = "E2E78C4900BDDB0AD9D9868D561635CF")
     public boolean hasHardError() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_280139990 = getTaintBoolean();
@@ -106,6 +107,7 @@ public final class SyncResult implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.301 -0400", hash_original_method = "E6525D3C6B30E4EB9644C9103954127F", hash_generated_method = "3105F572E3B2399B6C6A15C9A9CAA736")
     public boolean hasSoftError() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1628564786 = getTaintBoolean();
@@ -126,6 +128,7 @@ public final class SyncResult implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.303 -0400", hash_original_method = "8205DB1BC4B4653595BD73EDC8C83B31", hash_generated_method = "D59F3A82D7D896517A74B708D873CC5A")
     public boolean madeSomeProgress() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1100167191 = getTaintBoolean();
@@ -168,6 +171,7 @@ public final class SyncResult implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.305 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "85235340F67F811D22A87989780AFBF1")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1318702163 = getTaintInt();

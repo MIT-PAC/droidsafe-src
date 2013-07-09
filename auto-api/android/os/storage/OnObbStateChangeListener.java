@@ -17,6 +17,7 @@ public abstract class OnObbStateChangeListener {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.594 -0400", hash_original_method = "8D4DBCB92EE624B36C1D9B80653BEEEA", hash_generated_method = "E6C0C687AA94AEBED94DE2777E36583A")
     public void onObbStateChange(String path, int state) {
         

@@ -81,6 +81,7 @@ public class WspTypeDecoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.107 -0400", hash_original_method = "83D32C5BCB0549BFFFB2F2ED18850933", hash_generated_method = "1800DCBB9B545C8423E58BE7551D5BBB")
     public boolean decodeShortInteger(int startIndex) {
         unsigned32bit = wspData[startIndex] & 0x7f;
@@ -97,6 +98,7 @@ public class WspTypeDecoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.108 -0400", hash_original_method = "B3FA7CC1597D63764316082CF6F63FFB", hash_generated_method = "A723270A7D779533B3C06EECA98AF400")
     public boolean decodeLongInteger(int startIndex) {
         int lengthMultiOctet = wspData[startIndex] & 0xff;
@@ -142,6 +144,7 @@ public class WspTypeDecoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.111 -0400", hash_original_method = "C4B929220DC6CCE2C4298A937E6A511E", hash_generated_method = "C63B8D8C521C0D60548350C4910CC0D8")
     public boolean decodeUintvarInteger(int startIndex) {
         int index = startIndex;
@@ -398,6 +401,7 @@ public class WspTypeDecoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.114 -0400", hash_original_method = "7291D1B6F4C3ED0E6F576F289818668E", hash_generated_method = "E537D4C57D2E0D1D5ECA9B3ED70639BD")
     private boolean decodeNoValue(int startIndex) {
         {
@@ -560,6 +564,7 @@ public class WspTypeDecoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.117 -0400", hash_original_method = "097EE97643EAEF3891CA5DC97464AC94", hash_generated_method = "F4A90DC5B6F2AD84CB32E64B2F3249BB")
     public int getDecodedDataLength() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1083479113 = getTaintInt();
@@ -569,6 +574,7 @@ public class WspTypeDecoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.117 -0400", hash_original_method = "222353B4CE9A8EDC30DC1C12168B96BB", hash_generated_method = "38F7105509A2976587FAE0B217D98B62")
     public long getValue32() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_529973461 = getTaintLong();
@@ -578,6 +584,7 @@ public class WspTypeDecoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.118 -0400", hash_original_method = "8109E4DB1588BAB17F9AEE1B35CA6B07", hash_generated_method = "983732ABBABBC98FDEF2E410C9C367CF")
     public String getValueString() {
         String varB4EAC82CA7396A68D541C85D26508E83_368507124 = null; 

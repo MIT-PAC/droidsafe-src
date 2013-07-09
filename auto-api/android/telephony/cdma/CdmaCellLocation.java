@@ -59,6 +59,7 @@ public class CdmaCellLocation extends CellLocation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.434 -0400", hash_original_method = "5BA2DB973405907BCB7576020C4BB767", hash_generated_method = "0238199D9A9181605F9A18396326CED1")
     public int getBaseStationId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1130406288 = getTaintInt();
@@ -68,6 +69,7 @@ public class CdmaCellLocation extends CellLocation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.435 -0400", hash_original_method = "8D32771FFADF2E37F4C4C4E7BB2945F8", hash_generated_method = "15F8AFA7427509920F7E4430AB578565")
     public int getBaseStationLatitude() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1875209524 = getTaintInt();
@@ -77,6 +79,7 @@ public class CdmaCellLocation extends CellLocation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.435 -0400", hash_original_method = "B2E759A184D0C15083668122E08B0641", hash_generated_method = "4EE4DC93E773A496CAB4AF19762B3A18")
     public int getBaseStationLongitude() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_855010917 = getTaintInt();
@@ -86,6 +89,7 @@ public class CdmaCellLocation extends CellLocation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.435 -0400", hash_original_method = "E5E4F22C1EB64E5BA2863333F6C891A3", hash_generated_method = "55DC39B9988B22952B4D3E6DD9EED266")
     public int getSystemId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1485266775 = getTaintInt();
@@ -95,6 +99,7 @@ public class CdmaCellLocation extends CellLocation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.436 -0400", hash_original_method = "909C93F66AD557988A123F548D8C31FC", hash_generated_method = "D9A27B7FD6BD479B1D05DD87B80F3F91")
     public int getNetworkId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2144259091 = getTaintInt();
@@ -104,6 +109,7 @@ public class CdmaCellLocation extends CellLocation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.436 -0400", hash_original_method = "0C9042B8D6AE69440E11B69CE7953639", hash_generated_method = "677DCE7DC5322BDEF3694C512B2DB3B9")
     public void setStateInvalid() {
         this.mBaseStationId = -1;
@@ -120,6 +126,7 @@ public class CdmaCellLocation extends CellLocation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.437 -0400", hash_original_method = "61B794D65EE283C3FD04A14E94D0946D", hash_generated_method = "95DF98EF65A56ED2B9C5F0DB04FA3610")
     public void setCellLocationData(int baseStationId, int baseStationLatitude,
          int baseStationLongitude) {
@@ -133,6 +140,7 @@ public class CdmaCellLocation extends CellLocation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.437 -0400", hash_original_method = "4013196C0844C1883550E95EB904B1DA", hash_generated_method = "8A3DA43B0D301E0F9071C09FBAB3053B")
     public void setCellLocationData(int baseStationId, int baseStationLatitude,
          int baseStationLongitude, int systemId, int networkId) {
@@ -150,6 +158,7 @@ public class CdmaCellLocation extends CellLocation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.438 -0400", hash_original_method = "E85418559CBFBFDF0470CD6A904DEAD1", hash_generated_method = "86E93F4E3296EC5ABA45616F067C8317")
     @Override
     public int hashCode() {
@@ -245,6 +254,7 @@ public class CdmaCellLocation extends CellLocation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.440 -0400", hash_original_method = "8DF1697B3E0EEA68CA131C0067500EBA", hash_generated_method = "8F9336626DEB27BA383510841780F3A1")
     public boolean isEmpty() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_678018322 = getTaintBoolean();

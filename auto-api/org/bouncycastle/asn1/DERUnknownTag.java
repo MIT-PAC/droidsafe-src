@@ -47,6 +47,7 @@ public class DERUnknownTag extends DERObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.824 -0400", hash_original_method = "4AFA588B499059410429802033BA5ED0", hash_generated_method = "12BF1976319733202B4351BC43E29A0B")
     public boolean isConstructed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1500622125 = getTaintBoolean();
@@ -56,6 +57,7 @@ public class DERUnknownTag extends DERObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.824 -0400", hash_original_method = "749703D76C1808D33D4CAAFA8A986840", hash_generated_method = "1BCA7758926A3197BD6EAE849C737DD9")
     public int getTag() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1344177878 = getTaintInt();
@@ -65,6 +67,7 @@ public class DERUnknownTag extends DERObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.824 -0400", hash_original_method = "B9E74D06348E60D6DDB9FA9E07D464F9", hash_generated_method = "1295DB232613D7CE0CA0DDDD566FC149")
     public byte[] getData() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1828843077 = {getTaintByte()};

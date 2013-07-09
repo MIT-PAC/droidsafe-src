@@ -92,6 +92,7 @@ public class DERPrintableString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.663 -0400", hash_original_method = "3CB977BE316CAC9520A0E1ADE8D338F7", hash_generated_method = "F857F7950F098FDB398AEACF6D98AB2E")
     public String getString() {
         String varB4EAC82CA7396A68D541C85D26508E83_1820370419 = null; 
@@ -166,6 +167,7 @@ public class DERPrintableString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.666 -0400", hash_original_method = "A7AD745E242BD88C36EC3708384A50C0", hash_generated_method = "F88A03B6240AD8594CCCE7EAC06F9151")
     public String toString() {
         String varB4EAC82CA7396A68D541C85D26508E83_664832721 = null; 

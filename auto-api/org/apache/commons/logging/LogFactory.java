@@ -260,6 +260,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void release(ClassLoader classLoader) {
         if (isDiagnosticsEnabled()) {
             logDiagnostic("Releasing factory for classloader " + objectId(classLoader));
@@ -301,6 +302,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     protected static ClassLoader getClassLoader(Class clazz) {
         try {
             return clazz.getClassLoader();
@@ -315,6 +317,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     protected static ClassLoader getContextClassLoader() throws LogConfigurationException {
         return (ClassLoader)AccessController.doPrivileged(
             new PrivilegedAction() {
@@ -325,6 +328,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     protected static ClassLoader directGetContextClassLoader() throws LogConfigurationException {
         ClassLoader classLoader = null;
         try {
@@ -351,6 +355,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static LogFactory getCachedFactory(ClassLoader contextClassLoader) {
         LogFactory factory = null;
         if (contextClassLoader == null) {
@@ -362,6 +367,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void cacheFactory(ClassLoader classLoader, LogFactory factory) {
         if (factory != null) {
             if (classLoader == null) {
@@ -406,6 +412,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     protected static Object createFactory(String factoryClass, ClassLoader classLoader) {
         Class logFactoryClass = null;
         try {
@@ -718,6 +725,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected static boolean isDiagnosticsEnabled() {
         return diagnosticsStream != null;
     }
@@ -767,6 +775,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void logHierarchy(String prefix, ClassLoader classLoader) {
         if (!isDiagnosticsEnabled()) {
             return;

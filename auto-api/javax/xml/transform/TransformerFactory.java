@@ -27,6 +27,7 @@ public abstract class TransformerFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static TransformerFactory newInstance(String factoryClassName, ClassLoader classLoader) throws TransformerFactoryConfigurationError {
         if (factoryClassName == null) {
             throw new TransformerFactoryConfigurationError("factoryClassName == null");

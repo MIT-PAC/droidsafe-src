@@ -57,6 +57,7 @@ public class Warning extends SIPHeader implements WarningHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.978 -0400", hash_original_method = "0DCDBA7E30E559B2571A09070ED05380", hash_generated_method = "FFC54302418368DA1E41FE1D2D418141")
     public int getCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1464857820 = getTaintInt();
@@ -66,6 +67,7 @@ public class Warning extends SIPHeader implements WarningHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.979 -0400", hash_original_method = "7B2F86C2E403FA4426A7AF0306AE1B67", hash_generated_method = "031E64AD3BF50FF76C055EB726ADB840")
     public String getAgent() {
         String varB4EAC82CA7396A68D541C85D26508E83_518355566 = null; 
@@ -77,6 +79,7 @@ public class Warning extends SIPHeader implements WarningHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.979 -0400", hash_original_method = "C0F9B3C9D6FFAEB2F99491C721442157", hash_generated_method = "516DC96E7EE79D64340C679A085127AB")
     public String getText() {
         String varB4EAC82CA7396A68D541C85D26508E83_465976906 = null; 

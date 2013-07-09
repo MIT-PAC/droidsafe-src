@@ -199,6 +199,7 @@ public class Logger {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Logger getGlobal() {
         return global;
     }
@@ -318,6 +319,7 @@ public class Logger {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.500 -0400", hash_original_method = "D58C134707557B2D24085330800528E0", hash_generated_method = "37948C8546A701AE19917D7C4FD2F366")
     public Filter getFilter() {
         Filter varB4EAC82CA7396A68D541C85D26508E83_32573778 = null; 
@@ -344,6 +346,7 @@ public class Logger {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.502 -0400", hash_original_method = "3F355CE89E0EE57A0DB84D006A07C845", hash_generated_method = "E9B9694E48612DFB230CB306AD13D65D")
     public Level getLevel() {
         Level varB4EAC82CA7396A68D541C85D26508E83_184262851 = null; 
@@ -373,6 +376,7 @@ public class Logger {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.503 -0400", hash_original_method = "CCA5825C72A21AC8149EE8CEDF71F9CA", hash_generated_method = "820104404D17408939C1DFCDE2F7818E")
     public boolean getUseParentHandlers() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_183205564 = getTaintBoolean();
@@ -399,6 +403,7 @@ public class Logger {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.506 -0400", hash_original_method = "D6DD5625D7FB63425531FBDC14C2C588", hash_generated_method = "A03A917361DF99CCB5AB0A5EEDB2746D")
     public Logger getParent() {
         Logger varB4EAC82CA7396A68D541C85D26508E83_1706282341 = null; 
@@ -430,6 +435,7 @@ public class Logger {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.507 -0400", hash_original_method = "6F5A80252F54E883F3837DA0C6833E69", hash_generated_method = "BB3FB3F2DFA5651DFD714BE768D4482D")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_512623683 = null; 
@@ -441,6 +447,7 @@ public class Logger {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.507 -0400", hash_original_method = "F4E0ADD33B644C89C9AC3464A381F4B1", hash_generated_method = "A709836388C62F55C55893A1CF4CF001")
     public ResourceBundle getResourceBundle() {
         ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_610597469 = null; 
@@ -452,6 +459,7 @@ public class Logger {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.508 -0400", hash_original_method = "6DEDF515FC3DFB06F00973FF806B7B79", hash_generated_method = "12BB20747F71FE08E4CCE3CD906C7177")
     public String getResourceBundleName() {
         String varB4EAC82CA7396A68D541C85D26508E83_783097066 = null; 

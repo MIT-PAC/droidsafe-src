@@ -66,6 +66,7 @@ public class EncryptedPrivateKeyInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.018 -0400", hash_original_method = "742117C3F9E40BA83B51D9D3C5056A2D", hash_generated_method = "5C80102CBB1E2BFABE428F40ADEC6377")
     public AlgorithmIdentifier getEncryptionAlgorithm() {
         AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_246731451 = null; 

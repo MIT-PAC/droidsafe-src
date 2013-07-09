@@ -62,6 +62,7 @@ public class CodeSource implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.137 -0400", hash_original_method = "4B9CE524AB17149E2583F1CD133D00E2", hash_generated_method = "A0433CE29F19DFD6EC5FD49B3E4325E6")
     public boolean implies(CodeSource cs) {
         addTaint(cs.getTaint());

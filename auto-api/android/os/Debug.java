@@ -74,6 +74,7 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean waitingForDebugger() {
         return mWaiting;
     }
@@ -91,6 +92,7 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static void changeDebugPort(int port) {
     }
@@ -243,24 +245,28 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static int getGlobalExternalAllocCount() {
         return 0;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static int getGlobalExternalAllocSize() {
         return 0;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static int getGlobalExternalFreedCount() {
         return 0;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static int getGlobalExternalFreedSize() {
         return 0;
@@ -285,12 +291,14 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static int getThreadExternalAllocCount() {
         return 0;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static int getThreadExternalAllocSize() {
         return 0;
@@ -339,21 +347,25 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static void resetGlobalExternalAllocCount() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static void resetGlobalExternalAllocSize() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static void resetGlobalExternalFreedCount() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static void resetGlobalExternalFreedSize() {
     }
@@ -377,11 +389,13 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static void resetThreadExternalAllocCount() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static void resetThreadExternalAllocSize() {
     }
@@ -399,45 +413,54 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getNativeHeapSize() {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getNativeHeapAllocatedSize() {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getNativeHeapFreeSize() {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void getMemoryInfo(MemoryInfo memoryInfo) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void getMemoryInfo(int pid, MemoryInfo memoryInfo) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getPss() {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getPss(int pid) {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static int setAllocationLimit(int limit) {
         return -1;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static int setGlobalAllocationLimit(int limit) {
         return -1;
@@ -474,6 +497,7 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void dumpNativeHeap(FileDescriptor fd) {
     }
 
@@ -484,11 +508,13 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getBinderSentTransactions() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getBinderReceivedTransactions() {
         return DSUtils.UNKNOWN_INT;
     }

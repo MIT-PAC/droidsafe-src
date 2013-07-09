@@ -40,6 +40,7 @@ public abstract class ECCurve {
     public abstract ECPoint getInfinity();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.378 -0400", hash_original_method = "E518DFD3A1B52E4C2FA641AF9C8BD0EA", hash_generated_method = "5BC65537E066A1BA82DECA88629348B5")
     public ECFieldElement getA() {
         ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1565236589 = null; 
@@ -51,6 +52,7 @@ public abstract class ECCurve {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.378 -0400", hash_original_method = "E3D5F4BB1EEF47030E7E58DC1A7D0CBC", hash_generated_method = "F037F9DB289B067114A86D5C521E685C")
     public ECFieldElement getB() {
         ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1496616872 = null; 

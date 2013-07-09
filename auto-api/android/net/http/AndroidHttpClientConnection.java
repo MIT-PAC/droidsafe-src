@@ -624,6 +624,7 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.586 -0400", hash_original_method = "B4ACF96912B4372C3DFCBFF37024F952", hash_generated_method = "BD842E13242B861D57F4A619080B7C10")
     public HttpConnectionMetrics getMetrics() {
         HttpConnectionMetrics varB4EAC82CA7396A68D541C85D26508E83_449433136 = null; 

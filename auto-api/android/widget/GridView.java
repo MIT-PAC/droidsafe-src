@@ -110,6 +110,7 @@ public class GridView extends AbsListView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.319 -0400", hash_original_method = "0E1A05724C497F45D7FB6AC34C501814", hash_generated_method = "59AA1769A3E3A043C96BA3F7E798640B")
     @Override
     public ListAdapter getAdapter() {
@@ -122,6 +123,7 @@ public class GridView extends AbsListView {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.320 -0400", hash_original_method = "8AB2C6958FD7CEC3A8A71FE59763D6A4", hash_generated_method = "D18E7401555F2345B6B780E77B86E39C")
     @android.view.RemotableViewMethod
     public void setRemoteViewsAdapter(Intent intent) {
@@ -769,6 +771,7 @@ public class GridView extends AbsListView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.332 -0400", hash_original_method = "3B93521E4F8B514C6E0E966E64E45808", hash_generated_method = "71A351A25512F80A49A58098E4DBABC1")
     private int getBottomSelectionPixel(int childrenBottom, int fadingEdgeLength,
             int numColumns, int rowStart) {
@@ -791,6 +794,7 @@ public class GridView extends AbsListView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.333 -0400", hash_original_method = "D0A32123B024D3BD3B829FD608C467F8", hash_generated_method = "5D8E98B1B2AA91287EF4F8D4DCF3E556")
     private int getTopSelectionPixel(int childrenTop, int fadingEdgeLength, int rowStart) {
         int topSelectionPixel = childrenTop;
@@ -959,6 +963,7 @@ public class GridView extends AbsListView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.340 -0400", hash_original_method = "971C7C8872B1F8EEBA5FB107FC6F8364", hash_generated_method = "8101D679ADA3F1E5EFCA9E3A2E9DE7CB")
     private boolean determineColumns(int availableSpace) {
         final int requestedHorizontalSpacing = mRequestedHorizontalSpacing;
@@ -2071,6 +2076,7 @@ public class GridView extends AbsListView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.362 -0400", hash_original_method = "B323AFE5AE5939BBDA58166A4DF4B096", hash_generated_method = "C20E393CB238B5AAEB390A75DB0A9483")
     public int getStretchMode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1597822350 = getTaintInt();
@@ -2110,6 +2116,7 @@ public class GridView extends AbsListView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.364 -0400", hash_original_method = "B011FDCEBE38F0939F62249D6B5BC711", hash_generated_method = "0E25B2B5F1569A4F0FCDB9596849D23C")
     @ViewDebug.ExportedProperty
     public int getNumColumns() {

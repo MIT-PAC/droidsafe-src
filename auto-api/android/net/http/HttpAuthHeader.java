@@ -53,6 +53,7 @@ public class HttpAuthHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.875 -0400", hash_original_method = "E3B47ECF178F55BDD1E428FED9536544", hash_generated_method = "C29C21A06D1027B95299BF7F1EEB1440")
     public boolean isProxy() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1283225826 = getTaintBoolean();
@@ -62,6 +63,7 @@ public class HttpAuthHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.875 -0400", hash_original_method = "F484596B8E11A4861D504E7FDD37DA10", hash_generated_method = "DD3E3DD04D17DDB30604953E8A9252B1")
     public void setProxy() {
         mIsProxy = true;
@@ -70,6 +72,7 @@ public class HttpAuthHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.875 -0400", hash_original_method = "DC420B5834A563247800515BC4094ADD", hash_generated_method = "C15D5B05C42B729D87BEB70BBAAFF4F2")
     public String getUsername() {
         String varB4EAC82CA7396A68D541C85D26508E83_55713467 = null; 
@@ -81,6 +84,7 @@ public class HttpAuthHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.876 -0400", hash_original_method = "0E33D9E279BEDC5DAB4D3AD6DE953552", hash_generated_method = "3955AB7BA77A651158545815C33BA20C")
     public void setUsername(String username) {
         mUsername = username;
@@ -89,6 +93,7 @@ public class HttpAuthHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.876 -0400", hash_original_method = "352B20CA8286B4BCFAD735A80A162186", hash_generated_method = "B6D564C3995D1C80ADE103B2D4BD186D")
     public String getPassword() {
         String varB4EAC82CA7396A68D541C85D26508E83_166547581 = null; 
@@ -100,6 +105,7 @@ public class HttpAuthHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.877 -0400", hash_original_method = "5BECAD2A732AB83E1664BF3A6C903529", hash_generated_method = "0844A0EC752FFDF12DBAC561F066925A")
     public void setPassword(String password) {
         mPassword = password;
@@ -108,6 +114,7 @@ public class HttpAuthHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.877 -0400", hash_original_method = "C2242C4025DD65A560A889E41F117AB7", hash_generated_method = "C78BA6C27883BB2D78B213CA74D2B346")
     public boolean isBasic() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1456732216 = getTaintBoolean();
@@ -117,6 +124,7 @@ public class HttpAuthHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.878 -0400", hash_original_method = "C6AFC1E0D0B142E9C4DE27602A4BC054", hash_generated_method = "4A2B5802220DBF4805184DA262DAED3C")
     public boolean isDigest() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_418170681 = getTaintBoolean();
@@ -126,6 +134,7 @@ public class HttpAuthHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.878 -0400", hash_original_method = "29E6CF58C110B66305B7C71C00259314", hash_generated_method = "8B9EA35A7DE540645274A1B194AB86DD")
     public int getScheme() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_387870854 = getTaintInt();
@@ -135,6 +144,7 @@ public class HttpAuthHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.878 -0400", hash_original_method = "3E3CDB0E616B9E56522984F92CB979FB", hash_generated_method = "C3C43B915B3770B954D17743CE87F344")
     public boolean getStale() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2074589569 = getTaintBoolean();
@@ -144,6 +154,7 @@ public class HttpAuthHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.879 -0400", hash_original_method = "E61C0128BAAE9B474452BFCEF0497CDD", hash_generated_method = "9BEB6494428159CE71FA8733E39EC41A")
     public String getRealm() {
         String varB4EAC82CA7396A68D541C85D26508E83_737938622 = null; 
@@ -155,6 +166,7 @@ public class HttpAuthHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.879 -0400", hash_original_method = "B08110B485A4DA24A232A0CC9BEA47F4", hash_generated_method = "EC307AADA62B90BA4562F999EA8C457D")
     public String getNonce() {
         String varB4EAC82CA7396A68D541C85D26508E83_335173798 = null; 
@@ -166,6 +178,7 @@ public class HttpAuthHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.880 -0400", hash_original_method = "40DED5E91C6F5AFDC12D505952D89AC1", hash_generated_method = "393688E85452EFBA269691166E93AD4C")
     public String getOpaque() {
         String varB4EAC82CA7396A68D541C85D26508E83_1608850622 = null; 
@@ -177,6 +190,7 @@ public class HttpAuthHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.880 -0400", hash_original_method = "7F9926D57780B6A835584FF0B4884044", hash_generated_method = "C436855635BE6C66E4A637DB2CE513C3")
     public String getQop() {
         String varB4EAC82CA7396A68D541C85D26508E83_583702095 = null; 
@@ -188,6 +202,7 @@ public class HttpAuthHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.881 -0400", hash_original_method = "0FF39221585FBFD96D2157CC36F75665", hash_generated_method = "28CE7A9757227CEDF0CA2D5B97D588B0")
     public String getAlgorithm() {
         String varB4EAC82CA7396A68D541C85D26508E83_1694083880 = null; 

@@ -46,6 +46,7 @@ public class Expires extends SIPHeader implements javax.sip.header.ExpiresHeader
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.516 -0400", hash_original_method = "47881175D7C463BCCB25030D767AD658", hash_generated_method = "D88AA3DCD42802FE9425AA485A41376F")
     public int getExpires() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_181969183 = getTaintInt();

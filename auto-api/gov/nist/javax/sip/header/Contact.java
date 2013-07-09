@@ -123,6 +123,7 @@ public final class Contact extends AddressParametersHeader implements javax.sip.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.362 -0400", hash_original_method = "1B424E93D6F15660DA959554DF30A2C0", hash_generated_method = "3057F687892413FFCB26A8BE654C4F4F")
     public ContactList getContactList() {
         ContactList varB4EAC82CA7396A68D541C85D26508E83_1427333944 = null; 
@@ -134,6 +135,7 @@ public final class Contact extends AddressParametersHeader implements javax.sip.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.362 -0400", hash_original_method = "B792A1C78C2262E486AC16BC668CCB6D", hash_generated_method = "20B3CC80E4907C5A607ABB0545E16696")
     public boolean getWildCardFlag() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_160381066 = getTaintBoolean();
@@ -143,6 +145,7 @@ public final class Contact extends AddressParametersHeader implements javax.sip.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.362 -0400", hash_original_method = "569FFD65B001A83BF27BFBDAD6B4F486", hash_generated_method = "746D4CF4A3C156520F273ECC87268A6E")
     public javax.sip.address.Address getAddress() {
         javax.sip.address.Address varB4EAC82CA7396A68D541C85D26508E83_1561394333 = null; 
@@ -154,6 +157,7 @@ public final class Contact extends AddressParametersHeader implements javax.sip.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.363 -0400", hash_original_method = "4240C3A651BA1AB39E9A42DB8D1F003A", hash_generated_method = "6B8CB6E8FDCCEE1E4D7BCB65FD483C84")
     public NameValueList getContactParms() {
         NameValueList varB4EAC82CA7396A68D541C85D26508E83_1070688939 = null; 
@@ -199,6 +203,7 @@ public final class Contact extends AddressParametersHeader implements javax.sip.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.364 -0400", hash_original_method = "395F7CDC4269F17B37AD1CEF3C00E158", hash_generated_method = "F406E6A3D3ADCD0A3AC23AB6EA1E1A36")
     public void setContactList(ContactList cl) {
         contactList = cl;

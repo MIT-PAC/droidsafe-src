@@ -91,6 +91,7 @@ public abstract class Provider extends Properties {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.604 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "BE01B038A23644FF74C9E9923606E094")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1670595863 = null; 
@@ -102,6 +103,7 @@ public abstract class Provider extends Properties {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.604 -0400", hash_original_method = "849DADC9512AC29CFF5A5EB4D1517425", hash_generated_method = "59338BDDFD799C01306411A0DAC59183")
     public double getVersion() {
         double varE8CD7DA078A86726031AD64F35F5A6C0_803023441 = getTaintDouble();
@@ -111,6 +113,7 @@ public abstract class Provider extends Properties {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.604 -0400", hash_original_method = "90F1C2C1B854E8544A3CF05D4B3BD6E7", hash_generated_method = "2ADDEEBA7395246246A69A45FCE15FAC")
     public String getInfo() {
         String varB4EAC82CA7396A68D541C85D26508E83_181584505 = null; 
@@ -475,6 +478,7 @@ public abstract class Provider extends Properties {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.612 -0400", hash_original_method = "6418C82159D4FAB251CB16B6C408D61D", hash_generated_method = "BA9FDE46C0F8402C6FB4936CC36C7FAA")
      void setProviderNumber(int n) {
         providerNumber = n;
@@ -483,6 +487,7 @@ public abstract class Provider extends Properties {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.612 -0400", hash_original_method = "6209D7B36FBC76163C52BAAF1CE53C35", hash_generated_method = "816C65685015F47E4AA208DACCCDAC39")
      int getProviderNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_373272808 = getTaintInt();
@@ -1046,6 +1051,7 @@ public abstract class Provider extends Properties {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.641 -0400", hash_original_method = "FD7619437CD0960F1AEBA32A154F0328", hash_generated_method = "9C6A342A2081A7D73BA214C115FEC8EA")
     private void servicesChanged() {
         lastServicesByType = null;

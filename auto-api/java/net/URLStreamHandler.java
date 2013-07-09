@@ -23,6 +23,7 @@ public abstract class URLStreamHandler {
     protected abstract URLConnection openConnection(URL u) throws IOException;
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.669 -0400", hash_original_method = "E25BD4FE17DCB1FC5CA1FF6A9FF13CCB", hash_generated_method = "235086DD597D7F1149FEF0E40FBBBF03")
     protected URLConnection openConnection(URL u, Proxy proxy) throws IOException {
     	throw new UnsupportedOperationException();
@@ -31,6 +32,7 @@ public abstract class URLStreamHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.671 -0400", hash_original_method = "5B20F12B631910788308FABDC13B25A0", hash_generated_method = "55BD37E80D1C44E22D625B4B23C21402")
     protected void parseURL(URL url, String spec, int start, int end) {
         {
@@ -164,6 +166,7 @@ public abstract class URLStreamHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.672 -0400", hash_original_method = "9ADA0257B485782D9CE22060B8B1EC7F", hash_generated_method = "A49F6FA388F40A960402A4D32793391F")
     @Deprecated
     protected void setURL(URL u, String protocol, String host, int port,
@@ -186,6 +189,7 @@ public abstract class URLStreamHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.672 -0400", hash_original_method = "CB2D373AEC994000865666F394E860FE", hash_generated_method = "7F9780E78C86DA90CCEF66488000D14C")
     protected void setURL(URL u, String protocol, String host, int port,
             String authority, String userInfo, String path, String query,
@@ -211,6 +215,7 @@ public abstract class URLStreamHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.676 -0400", hash_original_method = "D96D9FB5C1BC6194BEC4A07D1C2B48A4", hash_generated_method = "7F26CA652E30D7F74610948B9499E25B")
     protected String toExternalForm(URL url) {
         String varB4EAC82CA7396A68D541C85D26508E83_1751096096 = null; 
@@ -223,6 +228,7 @@ public abstract class URLStreamHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.678 -0400", hash_original_method = "629852CED0E76D3D83A14B3CB57F0652", hash_generated_method = "4C2A9D467EEFCFB8C84AE0B429B15407")
      String toExternalForm(URL url, boolean escapeIllegalCharacters) {
         String varB4EAC82CA7396A68D541C85D26508E83_964297640 = null; 
@@ -268,6 +274,7 @@ public abstract class URLStreamHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.679 -0400", hash_original_method = "5273434A62CED7D2FFF6F02112157609", hash_generated_method = "4A09208C6C658C7D40902CA921F39479")
     protected boolean equals(URL a, URL b) {
         boolean var2605B69A8297093AF445A28C99C6DA19_1638402319 = (sameFile(a, b)
@@ -284,6 +291,7 @@ public abstract class URLStreamHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.679 -0400", hash_original_method = "8D2F4C3352F1FCC45C0A9BA0F2D59609", hash_generated_method = "1B675B76DBAF1A7BBAA3BE811A4334CC")
     protected int getDefaultPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_659048355 = getTaintInt();
@@ -293,6 +301,7 @@ public abstract class URLStreamHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.680 -0400", hash_original_method = "788D5B882334646F933829D465387DFF", hash_generated_method = "997A30195CA2394C1B9FA1EEAEEF4BF0")
     protected InetAddress getHostAddress(URL url) {
         InetAddress varB4EAC82CA7396A68D541C85D26508E83_668314281 = null; 
@@ -341,6 +350,7 @@ public abstract class URLStreamHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.682 -0400", hash_original_method = "1FF09FFC26156931BD17C23B3B706502", hash_generated_method = "902AAC850ED69B19E7E3A4EAEA45C386")
     protected int hashCode(URL url) {
         int var48425AB4600D15902F703B9031278502_1933047303 = (toExternalForm(url).hashCode());
@@ -352,6 +362,7 @@ public abstract class URLStreamHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.682 -0400", hash_original_method = "41623183DD090D045D5E8C150A9F330D", hash_generated_method = "76A0FDDCBA2BA9EA09B3BDBFFAC9D1D2")
     protected boolean hostsEqual(URL a, URL b) {
         String aHost = a.getHost();
@@ -368,6 +379,7 @@ public abstract class URLStreamHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.683 -0400", hash_original_method = "995D235EB42F12C8FDC3FCC0E24D4349", hash_generated_method = "CC97C212AF2CE7BF085A2A6CFD7C624F")
     protected boolean sameFile(URL a, URL b) {
         boolean var58D8CC8800DB2F4FEEA36EE340F18B83_1209310462 = (Objects.equal(a.getProtocol(), b.getProtocol())

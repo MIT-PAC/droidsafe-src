@@ -35,6 +35,7 @@ public abstract class AddressParametersHeader extends ParametersHeader implement
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.858 -0400", hash_original_method = "9472CD13980FF331A1EC2B82F4638C6F", hash_generated_method = "15F8FC3170395C816112F32B4DAD34C8")
     public Address getAddress() {
         Address varB4EAC82CA7396A68D541C85D26508E83_1148285677 = null; 
@@ -46,6 +47,7 @@ public abstract class AddressParametersHeader extends ParametersHeader implement
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.858 -0400", hash_original_method = "AAE5DCDD86A2817DB3BE7BA0761992E2", hash_generated_method = "114975CEFB9215316F16FA0E0D004896")
     public void setAddress(Address address) {
         this.address = (AddressImpl) address;

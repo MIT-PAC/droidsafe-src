@@ -164,6 +164,7 @@ public class GeneralName extends ASN1Encodable implements ASN1Choice {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.764 -0400", hash_original_method = "50B74CB2E4EBFF1B331EE5025ECA03E2", hash_generated_method = "8323C50A29F6AEA0316226F2F49807EE")
     public int getTagNo() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1236927510 = getTaintInt();
@@ -173,6 +174,7 @@ public class GeneralName extends ASN1Encodable implements ASN1Choice {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.766 -0400", hash_original_method = "2A79ACAAF65B843006F5215944D07A13", hash_generated_method = "5ADE078EA69165D764079C80D894B22D")
     public DEREncodable getName() {
         DEREncodable varB4EAC82CA7396A68D541C85D26508E83_1515446050 = null; 
@@ -357,6 +359,7 @@ public class GeneralName extends ASN1Encodable implements ASN1Choice {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.773 -0400", hash_original_method = "C5093ABFF769462F7C38A897D6D20C09", hash_generated_method = "2342F0ABD78E42F5CBC16860025CA34E")
     private void copyInts(int[] parsedIp, byte[] addr, int offSet) {
         {

@@ -27,6 +27,7 @@ public class IndexedPropertyChangeEvent extends PropertyChangeEvent {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.286 -0400", hash_original_method = "398BD1DDC3618561F914960ED7D21764", hash_generated_method = "939658672C000FE27BBA430B44B32A99")
     public int getIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_370718512 = getTaintInt();

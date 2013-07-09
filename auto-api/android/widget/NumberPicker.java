@@ -811,6 +811,7 @@ public class NumberPicker extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.123 -0400", hash_original_method = "A5D52728D322EA76B9FE19A001AC2619", hash_generated_method = "7D496F24A17DF3DCCB83D8BB1AACFB64")
     @Override
     public int getSolidColor() {
@@ -821,6 +822,7 @@ public class NumberPicker extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.123 -0400", hash_original_method = "B8FD740B950D37D2ACEC32CDC9BBCB3E", hash_generated_method = "D55BA1C0A2CC4BCD0E3EE7C50853AF06")
     public void setOnValueChangedListener(OnValueChangeListener onValueChangedListener) {
         mOnValueChangeListener = onValueChangedListener;
@@ -829,6 +831,7 @@ public class NumberPicker extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.123 -0400", hash_original_method = "E07C1A1F4DD9D0D02072D75B16D4DB8B", hash_generated_method = "8D444529148A09F38F528175C920BB2D")
     public void setOnScrollListener(OnScrollListener onScrollListener) {
         mOnScrollListener = onScrollListener;
@@ -931,6 +934,7 @@ public class NumberPicker extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.125 -0400", hash_original_method = "0DE9A61E4C9F0206942BD1BD5DBB2993", hash_generated_method = "EEE9A5F6BC6D54265D1854A086DA380D")
     public boolean getWrapSelectorWheel() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_186941862 = getTaintBoolean();
@@ -960,6 +964,7 @@ public class NumberPicker extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.126 -0400", hash_original_method = "8C354EDC01FB7FE8E35D5D03601EF310", hash_generated_method = "A112829F0E2370B87C41F6E6B0002254")
     public void setOnLongPressUpdateInterval(long intervalMillis) {
         mLongPressUpdateInterval = intervalMillis;
@@ -968,6 +973,7 @@ public class NumberPicker extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.126 -0400", hash_original_method = "873C7D38131A035B7F6055170D432634", hash_generated_method = "18D5BAEB5F18EE4C09C3D2CD9981CF66")
     public int getValue() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_923464426 = getTaintInt();
@@ -977,6 +983,7 @@ public class NumberPicker extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.126 -0400", hash_original_method = "734B6103B2E180B236F243E5AD573634", hash_generated_method = "9D6A53A358415FB47DE01760DAA09458")
     public int getMinValue() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1819007585 = getTaintInt();
@@ -1019,6 +1026,7 @@ public class NumberPicker extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.128 -0400", hash_original_method = "D9333690652DA8538B4523261E9BBD48", hash_generated_method = "03A450C185D6C1A636E7C52CE4B13528")
     public int getMaxValue() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_940875307 = getTaintInt();
@@ -1061,6 +1069,7 @@ public class NumberPicker extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.129 -0400", hash_original_method = "7D8D8A804F018648196BF68A974CA568", hash_generated_method = "9FEF4992136699016317723E3AD49FF5")
     public String[] getDisplayedValues() {
         String[] varB4EAC82CA7396A68D541C85D26508E83_1231773705 = null; 
@@ -1102,6 +1111,7 @@ public class NumberPicker extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.130 -0400", hash_original_method = "26009EEE98735F9AF4C2D76E4A1AFAB0", hash_generated_method = "9B65194E632F24B050E6A2AD936330BC")
     @Override
     protected float getTopFadingEdgeStrength() {
@@ -1112,6 +1122,7 @@ public class NumberPicker extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.130 -0400", hash_original_method = "A0CE61C0CAF5846D2D470684E7070854", hash_generated_method = "FF0B164F2F02E5F48779105E80626A70")
     @Override
     protected float getBottomFadingEdgeStrength() {
@@ -1151,6 +1162,7 @@ public class NumberPicker extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.131 -0400", hash_original_method = "0296ECFD4FBB578ABFB3DEE9D2F54084", hash_generated_method = "8827C1FA31E6998965C439129AE20899")
     @Override
     protected void dispatchDraw(Canvas canvas) {
@@ -1242,6 +1254,7 @@ public class NumberPicker extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.132 -0400", hash_original_method = "F557CD251A66C23831BE55ECFE0FD6EB", hash_generated_method = "6A09BD8EA53A915AB5F822E12CBC5F98")
     @Override
     public void sendAccessibilityEvent(int eventType) {
@@ -1665,6 +1678,7 @@ public class NumberPicker extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.141 -0400", hash_original_method = "98EC96D2E9172670F87F406C69617E1C", hash_generated_method = "1D17103CAA0C28E4261CD2D4CEE20B32")
     private int getWrappedSelectorIndex(int selectorIndex) {
         addTaint(selectorIndex);

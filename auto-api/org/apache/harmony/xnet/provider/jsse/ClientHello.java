@@ -203,6 +203,7 @@ public class ClientHello extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.885 -0400", hash_original_method = "EDD7E5211887C4E217154E276BC2B61E", hash_generated_method = "2B6CFFC1725BAC857D96065DA5E6BD90")
     public byte[] getRandom() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1740665797 = {getTaintByte()};
@@ -212,6 +213,7 @@ public class ClientHello extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.885 -0400", hash_original_method = "CF19DA1ECE12A56ABD61504AAFBBFE23", hash_generated_method = "BC6AA7BA21BD59684C76A21EF481FD17")
     @Override
     public int getType() {

@@ -345,6 +345,7 @@ public abstract class Calendar implements Serializable, Cloneable, Comparable<Ca
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:01.127 -0400", hash_original_method = "2210DC8BCE617C61AD2F9503CE7923B1", hash_generated_method = "D80489CC70F728C1856F0499BAE69ECB")
     public int getFirstDayOfWeek() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_269256693 = getTaintInt();
@@ -387,6 +388,7 @@ public abstract class Calendar implements Serializable, Cloneable, Comparable<Ca
     public abstract int getMaximum(int field);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:01.128 -0400", hash_original_method = "104647FF062CF5167F06DB549E6DD4EB", hash_generated_method = "211532FAE8AB75DB6C26CDA2CFB7827F")
     public int getMinimalDaysInFirstWeek() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_261378220 = getTaintInt();
@@ -428,6 +430,7 @@ public abstract class Calendar implements Serializable, Cloneable, Comparable<Ca
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:01.129 -0400", hash_original_method = "A62BA7A8B3AE52F44B15929DB0809596", hash_generated_method = "4C194E76E5B6C49DE43CDA20DF22DCE7")
     public TimeZone getTimeZone() {
         TimeZone varB4EAC82CA7396A68D541C85D26508E83_1727161588 = null; 
@@ -463,6 +466,7 @@ public abstract class Calendar implements Serializable, Cloneable, Comparable<Ca
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:01.130 -0400", hash_original_method = "5DB017D3EE054B32EA01614D92601D4D", hash_generated_method = "92DA01D386000C38A351810B05B6442F")
     public boolean isLenient() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1406174127 = getTaintBoolean();
@@ -509,6 +513,7 @@ public abstract class Calendar implements Serializable, Cloneable, Comparable<Ca
     public abstract void roll(int field, boolean increment);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:01.131 -0400", hash_original_method = "41A9E001F522D5852F11FBD319F3A5A6", hash_generated_method = "5AD459A02884BD1AB55AFA548E0373B8")
     public void set(int field, int value) {
         fields[field] = value;
@@ -589,6 +594,7 @@ public abstract class Calendar implements Serializable, Cloneable, Comparable<Ca
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:01.132 -0400", hash_original_method = "9CEC56E07503C11B5926FEE82FE32939", hash_generated_method = "A3F69F8954E7C273CD6DF8888940CD88")
     public void setFirstDayOfWeek(int value) {
         firstDayOfWeek = value;
@@ -597,6 +603,7 @@ public abstract class Calendar implements Serializable, Cloneable, Comparable<Ca
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:01.133 -0400", hash_original_method = "769D5CCA341B85723A2FDFB2D353BC44", hash_generated_method = "28CC1D5E16959D01C7BF084614507B78")
     public void setLenient(boolean value) {
         lenient = value;
@@ -605,6 +612,7 @@ public abstract class Calendar implements Serializable, Cloneable, Comparable<Ca
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:01.133 -0400", hash_original_method = "ABF413A19C063DF72268F54419071447", hash_generated_method = "2BBA47AEAE7F0EBBCFCC90A1297DA654")
     public void setMinimalDaysInFirstWeek(int value) {
         minimalDaysInFirstWeek = value;
@@ -641,6 +649,7 @@ public abstract class Calendar implements Serializable, Cloneable, Comparable<Ca
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:01.134 -0400", hash_original_method = "C71A9CD315A030E06030733CE10A6247", hash_generated_method = "227A37CC71E14E244267359E7E425B06")
     public void setTimeZone(TimeZone timezone) {
         zone = timezone;

@@ -177,6 +177,7 @@ public abstract class TimeZone implements Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.871 -0400", hash_original_method = "6351E64C485F9179F5E10C6B44486847", hash_generated_method = "5AC9EA0F5AE08F107D77E01E746CFB8B")
     public String getID() {
         String varB4EAC82CA7396A68D541C85D26508E83_2047828245 = null; 

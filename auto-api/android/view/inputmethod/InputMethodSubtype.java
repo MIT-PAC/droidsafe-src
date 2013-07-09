@@ -120,6 +120,7 @@ public final class InputMethodSubtype implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.309 -0400", hash_original_method = "C7E80880FBF7E5F0758D048854BC1B6A", hash_generated_method = "CCAD0FE8730DB214C5EBB9D487F4DE81")
     public int getNameResId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2118858909 = getTaintInt();
@@ -129,6 +130,7 @@ public final class InputMethodSubtype implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.309 -0400", hash_original_method = "6A7C5EEB38C0091C7A516BA3C0FACD8B", hash_generated_method = "26D66CADB610F19BC5477320DE843B90")
     public int getIconResId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1177979212 = getTaintInt();
@@ -138,6 +140,7 @@ public final class InputMethodSubtype implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.310 -0400", hash_original_method = "945286B5D069547CEB4FBAF8F8B7964A", hash_generated_method = "2E2C73DBC5965751BCCCF754CE33A943")
     public String getLocale() {
         String varB4EAC82CA7396A68D541C85D26508E83_151532589 = null; 
@@ -149,6 +152,7 @@ public final class InputMethodSubtype implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.311 -0400", hash_original_method = "960AAB243B4CAAAE714C0B1CB581C452", hash_generated_method = "7660170892ED5C4A6722893C11297E81")
     public String getMode() {
         String varB4EAC82CA7396A68D541C85D26508E83_781565961 = null; 
@@ -160,6 +164,7 @@ public final class InputMethodSubtype implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.311 -0400", hash_original_method = "253C17894C35FFAF30C08472F23E48B8", hash_generated_method = "0753F999D02A38C55D19F259ED27FF7A")
     public String getExtraValue() {
         String varB4EAC82CA7396A68D541C85D26508E83_610797158 = null; 
@@ -171,6 +176,7 @@ public final class InputMethodSubtype implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.312 -0400", hash_original_method = "5D42329342BA940BF0C680758D792174", hash_generated_method = "252A70E067EBEE55A57B0A65DCDC9077")
     public boolean isAuxiliary() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_988612886 = getTaintBoolean();
@@ -180,6 +186,7 @@ public final class InputMethodSubtype implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.312 -0400", hash_original_method = "77DDEB2A23977DBB23EB90699D4CDB8E", hash_generated_method = "C0FABFBDA891B3AC52C76F90829A3F1E")
     public boolean overridesImplicitlyEnabledSubtype() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1313823225 = getTaintBoolean();
@@ -316,6 +323,7 @@ public final class InputMethodSubtype implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.314 -0400", hash_original_method = "BAAF551B86708907A8B178A5447B667E", hash_generated_method = "484F41F9F9247A691725B55034CA1957")
     @Override
     public int hashCode() {
@@ -358,6 +366,7 @@ public final class InputMethodSubtype implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.315 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "74859040AA224BC3A928144E94A3E15B")
     @Override
     public int describeContents() {

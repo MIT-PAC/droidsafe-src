@@ -17,12 +17,14 @@ public class Zygote {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void preFork() {
         Daemons.stop();
         waitUntilAllThreadsStopped();
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void waitUntilAllThreadsStopped() {
         File tasks = new File("/proc/self/task");
         while (tasks.list().length > 1) {
@@ -34,11 +36,13 @@ public class Zygote {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void postFork() {
         Daemons.start();
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int fork() {
         preFork();
         int pid = nativeFork();
@@ -47,11 +51,13 @@ public class Zygote {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int nativeFork() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int forkAndSpecialize(int uid, int gid, int[] gids,
             int debugFlags, int[][] rlimits) {
         preFork();
@@ -61,12 +67,14 @@ public class Zygote {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int nativeForkAndSpecialize(int uid, int gid,
             int[] gids, int debugFlags, int[][] rlimits) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.BAN)
     @Deprecated
     public static int forkAndSpecialize(int uid, int gid, int[] gids,
             boolean enableDebugger, int[][] rlimits) {
@@ -75,6 +83,7 @@ public class Zygote {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int forkSystemServer(int uid, int gid, int[] gids,
             int debugFlags, int[][] rlimits,
             long permittedCapabilities, long effectiveCapabilities) {
@@ -87,6 +96,7 @@ public class Zygote {
     }
 
     
+    @DSModeled(DSC.BAN)
     @Deprecated
     public static int forkSystemServer(int uid, int gid, int[] gids,
             boolean enableDebugger, int[][] rlimits) {
@@ -95,6 +105,7 @@ public class Zygote {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int nativeForkSystemServer(int uid, int gid,
             int[] gids, int debugFlags, int[][] rlimits,
             long permittedCapabilities, long effectiveCapabilities) {
@@ -102,11 +113,13 @@ public class Zygote {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void execShell(String command) {
         nativeExecShell(command);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void appendQuotedShellArgs(StringBuilder command, String[] args) {
         for (String arg : args) {
             command.append(" '").append(arg.replace("'", "'\\''")).append("'");
@@ -114,6 +127,7 @@ public class Zygote {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void nativeExecShell(String command) {
     }
 

@@ -81,6 +81,7 @@ public class ResultReceiver implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.115 -0400", hash_original_method = "BDE6DE984C100A6F17C2FEFAD669078A", hash_generated_method = "228AE6C9966C94D839DBDEFCF2C90EF6")
     protected void onReceiveResult(int resultCode, Bundle resultData) {
         
@@ -90,6 +91,7 @@ public class ResultReceiver implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.115 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "B49EA032408F97928FA3166A15946224")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1893308297 = getTaintInt();

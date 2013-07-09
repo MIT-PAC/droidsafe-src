@@ -88,6 +88,7 @@ public class CountingInputStream extends ProxyInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.114 -0400", hash_original_method = "D4B641936093CD491A905A89AC9170C1", hash_generated_method = "6FC8329DC59178B09642F9900B37EA97")
     public synchronized long getByteCount() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_383574755 = getTaintLong();
@@ -97,6 +98,7 @@ public class CountingInputStream extends ProxyInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.114 -0400", hash_original_method = "B4FA3AE06204AB7289DB84225F541AF1", hash_generated_method = "2E8234B420297944B11C9DD76B615C87")
     public synchronized long resetByteCount() {
         long tmp = this.count;

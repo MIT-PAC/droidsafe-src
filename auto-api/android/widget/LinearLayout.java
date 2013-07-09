@@ -162,6 +162,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.126 -0400", hash_original_method = "9DA99B4E01A506E72BA59AF598A3C38D", hash_generated_method = "A8970A942128317C9B5756399C19F605")
     @Override
     public boolean shouldDelayChildPressedState() {
@@ -172,6 +173,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.126 -0400", hash_original_method = "81C750B99B14EF38CA21D36808CD7086", hash_generated_method = "D23F80949338E3DD5C3F715F1D4EAD0C")
     public int getShowDividers() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_960727119 = getTaintInt();
@@ -212,6 +214,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.127 -0400", hash_original_method = "E2E4F4C3D603F5F2D62C3F5CBAFDCC06", hash_generated_method = "21B19108F063ADDE197FAB8209A2015F")
     public void setDividerPadding(int padding) {
         mDividerPadding = padding;
@@ -220,6 +223,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.128 -0400", hash_original_method = "2F70F7AA30D3819DCD53286185A1CA49", hash_generated_method = "6BBF11D7B10A88F5D556E33F116A08E7")
     public int getDividerPadding() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1818156713 = getTaintInt();
@@ -229,6 +233,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.128 -0400", hash_original_method = "4DCD95C01B6B6891D72266EBA61909DF", hash_generated_method = "E877DF13029BEE630454A5949751ABCA")
     public int getDividerWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1311804881 = getTaintInt();
@@ -376,6 +381,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.131 -0400", hash_original_method = "F54465AC5542CF519D3902E7BAEA3188", hash_generated_method = "239FA2275BD61819866D402374D7249B")
     public boolean isBaselineAligned() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1825660688 = getTaintBoolean();
@@ -385,6 +391,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.131 -0400", hash_original_method = "8643C35E200A9ECC6F4D083B3C632ADD", hash_generated_method = "F5B36677A19813656057576482BE895F")
     @android.view.RemotableViewMethod
     public void setBaselineAligned(boolean baselineAligned) {
@@ -394,6 +401,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.131 -0400", hash_original_method = "49EB4E4C3BC63D2BEAA8F5D24053BB96", hash_generated_method = "6E66F23750181DBD9810FC8FEEFA45EF")
     public boolean isMeasureWithLargestChildEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1173309808 = getTaintBoolean();
@@ -403,6 +411,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.132 -0400", hash_original_method = "55BFE46AC305D5ECEC6F564C443E4CAB", hash_generated_method = "F0D8B5D04B16B58DE2D6932713E4CAD4")
     @android.view.RemotableViewMethod
     public void setMeasureWithLargestChildEnabled(boolean enabled) {
@@ -453,6 +462,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.133 -0400", hash_original_method = "90F550BFDC49A6587A7A8440E339A132", hash_generated_method = "919C7E7A37C11D011DDEFAB3F4BF6E96")
     public int getBaselineAlignedChildIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_235599574 = getTaintInt();
@@ -505,6 +515,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.134 -0400", hash_original_method = "131E7E20664E8B649BC33F0915A0DE0D", hash_generated_method = "08182987288632DC7EA854E6D5B8B5B0")
     public float getWeightSum() {
         float var546ADE640B6EDFBC8A086EF31347E768_1520484905 = getTaintFloat();
@@ -1186,6 +1197,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.145 -0400", hash_original_method = "64CDF538399E47C38C21DACEFC8C1E08", hash_generated_method = "FE59B5355FA2EAA6921EE3476C588226")
      int getChildrenSkipCount(View child, int index) {
         addTaint(child.getTaint());
@@ -1197,6 +1209,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.145 -0400", hash_original_method = "0C791DFCDA5E7DFE7963EF393BDBDA11", hash_generated_method = "0025997AD10A8F16E73E3F3789E74D36")
      int measureNullChild(int childIndex) {
         addTaint(childIndex);
@@ -1225,6 +1238,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.146 -0400", hash_original_method = "BA69BAE2E1D7A163D53D02D47016A6D7", hash_generated_method = "120A45A2634B44862FD3AEEFFFB2D287")
      int getLocationOffset(View child) {
         addTaint(child.getTaint());
@@ -1235,6 +1249,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.146 -0400", hash_original_method = "6D7A4F846C7E828D32B84605EE3B545F", hash_generated_method = "9B6810446AE5464BDDFED4F715B4A2A1")
      int getNextLocationOffset(View child) {
         addTaint(child.getTaint());
@@ -1469,6 +1484,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.152 -0400", hash_original_method = "6BA82D6B625174A8AC80664141F0D361", hash_generated_method = "9A63CD788C6CD7949F03F50917C08314")
     public int getOrientation() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1730145335 = getTaintInt();
@@ -1609,6 +1625,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.155 -0400", hash_original_method = "1F2E8350C10FBDB8051DCF8E5479411B", hash_generated_method = "D44F2E81C7A43A209D0E5D0856C5594E")
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {

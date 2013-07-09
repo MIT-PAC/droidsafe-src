@@ -245,6 +245,7 @@ public final class InputMethodInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.116 -0400", hash_original_method = "89A68E81BC93C5F428177630DB2A624A", hash_generated_method = "8AAC170F5A9580AE8F730981B5627A2A")
     public String getId() {
         String varB4EAC82CA7396A68D541C85D26508E83_491624549 = null; 
@@ -256,6 +257,7 @@ public final class InputMethodInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.116 -0400", hash_original_method = "0C90B853C75D6A321E7BDA40C2595177", hash_generated_method = "4FF8199AFBBCA9CB06A08103320D4F57")
     public String getPackageName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1186263226 = null; 
@@ -267,6 +269,7 @@ public final class InputMethodInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.117 -0400", hash_original_method = "E07B8397F26D2C3A4747E56AC8F0D204", hash_generated_method = "231EBB64A56911FBBEB402EBF649E02D")
     public String getServiceName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1318661863 = null; 
@@ -278,6 +281,7 @@ public final class InputMethodInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.117 -0400", hash_original_method = "543F99CB65CBDD66082E6D4B92910AC5", hash_generated_method = "9941E6315694AA5FF10E95654CD2B949")
     public ServiceInfo getServiceInfo() {
         ServiceInfo varB4EAC82CA7396A68D541C85D26508E83_977818660 = null; 
@@ -329,6 +333,7 @@ public final class InputMethodInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.119 -0400", hash_original_method = "EE56873026FFE7A9D4435487CEBA8D19", hash_generated_method = "B483EF1ECB6F5E79EE683D3DEF2838A5")
     public String getSettingsActivity() {
         String varB4EAC82CA7396A68D541C85D26508E83_358803926 = null; 
@@ -364,6 +369,7 @@ public final class InputMethodInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.120 -0400", hash_original_method = "D40E950149CD5654CB7133AFB587F871", hash_generated_method = "19F8E759F64A76FDECFF3604D330384B")
     public int getIsDefaultResourceId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1528394842 = getTaintInt();
@@ -444,6 +450,7 @@ public final class InputMethodInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.122 -0400", hash_original_method = "14EC3F96E0FE12EE22A064553C434BBF", hash_generated_method = "A259026E9B8AD2D58AF03E3294F38E5D")
     public boolean isAuxiliaryIme() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1602551623 = getTaintBoolean();
@@ -475,6 +482,7 @@ public final class InputMethodInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.122 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "C47DBC87D8AE9099275D15958816097E")
     @Override
     public int describeContents() {

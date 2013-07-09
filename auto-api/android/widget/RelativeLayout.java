@@ -115,6 +115,7 @@ public class RelativeLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.836 -0400", hash_original_method = "9DA99B4E01A506E72BA59AF598A3C38D", hash_generated_method = "024322D40697AF21FF21A7DEE5B29C5E")
     @Override
     public boolean shouldDelayChildPressedState() {
@@ -125,6 +126,7 @@ public class RelativeLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.836 -0400", hash_original_method = "4B00B99E3D4A35B389EB4D3ED9BF824A", hash_generated_method = "2B6D5ACAF56866BE8DAC45848378F798")
     @android.view.RemotableViewMethod
     public void setIgnoreGravity(int viewId) {
@@ -1072,6 +1074,7 @@ public class RelativeLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.878 -0400", hash_original_method = "7AAD3A1C062434D08215151012F2CF47", hash_generated_method = "511D8DDB5F1486ED5A736C70D3C8ED56")
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {

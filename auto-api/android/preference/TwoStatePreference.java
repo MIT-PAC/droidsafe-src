@@ -104,6 +104,7 @@ public abstract class TwoStatePreference extends Preference {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.663 -0400", hash_original_method = "1057BD246BBC96B40BF6B862055C5AB8", hash_generated_method = "90CFFD491A586F710F023C01E03E9D79")
     public boolean isChecked() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1102617705 = getTaintBoolean();
@@ -157,6 +158,7 @@ public abstract class TwoStatePreference extends Preference {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.666 -0400", hash_original_method = "53022197E36EDF9F1FD4F6F19ADFC277", hash_generated_method = "DDC9952A9D9688DCE2F38B340F196BA6")
     public CharSequence getSummaryOn() {
         CharSequence varB4EAC82CA7396A68D541C85D26508E83_1012230162 = null; 
@@ -196,6 +198,7 @@ public abstract class TwoStatePreference extends Preference {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.667 -0400", hash_original_method = "71CAEB9E0C109885D80E1240FC68BC2D", hash_generated_method = "CD0A83CDC630628268BFE18FBBD09410")
     public CharSequence getSummaryOff() {
         CharSequence varB4EAC82CA7396A68D541C85D26508E83_926936691 = null; 
@@ -207,6 +210,7 @@ public abstract class TwoStatePreference extends Preference {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.667 -0400", hash_original_method = "3884E74D45C3003321F5E57E22265849", hash_generated_method = "7B933C31A82BC2AC569A6172F2CD44CB")
     public boolean getDisableDependentsState() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_196723899 = getTaintBoolean();
@@ -216,6 +220,7 @@ public abstract class TwoStatePreference extends Preference {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.667 -0400", hash_original_method = "DD37671E97B19E2FAA5E6DF537625889", hash_generated_method = "74CF59A9D65521DE993E4BF0B8B81534")
     public void setDisableDependentsState(boolean disableDependentsState) {
         mDisableDependentsState = disableDependentsState;

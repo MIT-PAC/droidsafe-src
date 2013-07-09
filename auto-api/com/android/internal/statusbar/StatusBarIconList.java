@@ -116,6 +116,7 @@ public class StatusBarIconList implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.088 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "6E6393EDE0EB395C5E7DF8A7B06ADAD2")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1250380587 = getTaintInt();
@@ -125,6 +126,7 @@ public class StatusBarIconList implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.089 -0400", hash_original_method = "0586E09C5C5185E1B5D07A28F24AD5B7", hash_generated_method = "02BE0730BB5FE5EF997E9B542A38FCA1")
     public void defineSlots(String[] slots) {
         final int N = slots.length;
@@ -173,6 +175,7 @@ public class StatusBarIconList implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.089 -0400", hash_original_method = "18E8290E0FC9CEC842564D5A893D75F8", hash_generated_method = "86A5742C1C2DA354E2B7AD236D111C6A")
     public int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1720134170 = getTaintInt();
@@ -191,6 +194,7 @@ public class StatusBarIconList implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.090 -0400", hash_original_method = "5EB075B9B4A8FCAA3C94C3EC3DFC81DD", hash_generated_method = "84A66CD0BE0474DA3AABDED324FB9352")
     public void removeIcon(int index) {
         mIcons[index] = null;
@@ -199,6 +203,7 @@ public class StatusBarIconList implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.091 -0400", hash_original_method = "28B506564CF04E7E4762309FF5F1124B", hash_generated_method = "F492D242D4F2426E1C808F3305687BDC")
     public String getSlot(int index) {
         String varB4EAC82CA7396A68D541C85D26508E83_89955962 = null; 
@@ -211,6 +216,7 @@ public class StatusBarIconList implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.091 -0400", hash_original_method = "6B1D8C3B652540022F161D426C6FAB9E", hash_generated_method = "1A455A2246BAE3A6E7B389AA809B404C")
     public StatusBarIcon getIcon(int index) {
         StatusBarIcon varB4EAC82CA7396A68D541C85D26508E83_1284863368 = null; 
@@ -223,6 +229,7 @@ public class StatusBarIconList implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.091 -0400", hash_original_method = "3DC98D18577B41896086CB1A25B66967", hash_generated_method = "6FF3612A6623385CD006ECDA2168ABA5")
     public int getViewIndex(int index) {
         int count = 0;

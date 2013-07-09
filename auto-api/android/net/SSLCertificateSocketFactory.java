@@ -99,6 +99,7 @@ public class SSLCertificateSocketFactory extends SSLSocketFactory {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static void verifyHostname(Socket socket, String hostname) throws IOException {
         if (!(socket instanceof SSLSocket)) {
             throw new IllegalArgumentException("Attempt to verify non-SSL socket");
@@ -243,6 +244,7 @@ public class SSLCertificateSocketFactory extends SSLSocketFactory {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.013 -0400", hash_original_method = "4304AB31317AB234B33A24A3097FC48A", hash_generated_method = "E707050FD6562CCE9D9CF40885EDC233")
     @Override
     public Socket createSocket(Socket k, String host, int port, boolean close) throws IOException {
@@ -269,6 +271,7 @@ public class SSLCertificateSocketFactory extends SSLSocketFactory {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.014 -0400", hash_original_method = "A93A66D768B2246423C7BE25AD8A2DA8", hash_generated_method = "2D2907823180B060CC47408F351F0499")
     @Override
     public Socket createSocket() throws IOException {
@@ -285,6 +288,7 @@ public class SSLCertificateSocketFactory extends SSLSocketFactory {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.014 -0400", hash_original_method = "B1DE7D9F10AA772C2BD2AA45E50C7AB6", hash_generated_method = "A3EAB3B54948E4A471BBD581C0285DA9")
     @Override
     public Socket createSocket(InetAddress addr, int port, InetAddress localAddr, int localPort) throws IOException {
@@ -307,6 +311,7 @@ public class SSLCertificateSocketFactory extends SSLSocketFactory {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.015 -0400", hash_original_method = "FFBF9F2950A9BB08EFE61A5F32F42B11", hash_generated_method = "CAC22F2BAB0A14D1E095CE7B27C20A2A")
     @Override
     public Socket createSocket(InetAddress addr, int port) throws IOException {
@@ -325,6 +330,7 @@ public class SSLCertificateSocketFactory extends SSLSocketFactory {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.016 -0400", hash_original_method = "1DBE2FFA1790A1D0791947337B43D86B", hash_generated_method = "99BAD785792FD41CC41AEC5EB5DCD09C")
     @Override
     public Socket createSocket(String host, int port, InetAddress localAddr, int localPort) throws IOException {
@@ -353,6 +359,7 @@ public class SSLCertificateSocketFactory extends SSLSocketFactory {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.016 -0400", hash_original_method = "29FB194599A9B20E43B819582316EFA2", hash_generated_method = "0229BE65AFC5EF49F417B0AAFC7F857C")
     @Override
     public Socket createSocket(String host, int port) throws IOException {

@@ -163,26 +163,31 @@ public class ContentProviderOperation implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Builder newInsert(Uri uri) {
         return new Builder(TYPE_INSERT, uri);
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Builder newUpdate(Uri uri) {
         return new Builder(TYPE_UPDATE, uri);
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Builder newDelete(Uri uri) {
         return new Builder(TYPE_DELETE, uri);
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Builder newAssertQuery(Uri uri) {
         return new Builder(TYPE_ASSERT, uri);
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.602 -0400", hash_original_method = "225259AA593B6A59F476A2C569F1B075", hash_generated_method = "2A847D9111F9E2C1B2CE412DD2B3F8E6")
     public Uri getUri() {
         Uri varB4EAC82CA7396A68D541C85D26508E83_127000116 = null; 
@@ -194,6 +199,7 @@ public class ContentProviderOperation implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.603 -0400", hash_original_method = "0D76D2BF4F9E314AF3AEB01067FC98E0", hash_generated_method = "CA07F422481CCC7A5F95DB4D522EC080")
     public boolean isYieldAllowed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1560480394 = getTaintBoolean();
@@ -203,6 +209,7 @@ public class ContentProviderOperation implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.603 -0400", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "54AE9755DB3368EDE672B9634400A9D1")
     public int getType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_86064863 = getTaintInt();
@@ -212,6 +219,7 @@ public class ContentProviderOperation implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.604 -0400", hash_original_method = "94452D9A7E20FFB1CE97B24DC927192A", hash_generated_method = "1188A9817E746FFE394812CA82FB3463")
     public boolean isWriteOperation() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1140999050 = getTaintBoolean();
@@ -221,6 +229,7 @@ public class ContentProviderOperation implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.605 -0400", hash_original_method = "BBB0424C7EB706D24B64E8DBE01BF66B", hash_generated_method = "E84FCAB07C814DCBAD34A30B3F2AD26F")
     public boolean isReadOperation() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2107558911 = getTaintBoolean();
@@ -506,6 +515,7 @@ public class ContentProviderOperation implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.666 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "DDEAD8BC2044D6F1E87F73B17A38B5F2")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_105246934 = getTaintInt();

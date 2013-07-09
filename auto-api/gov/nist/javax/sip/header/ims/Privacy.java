@@ -34,6 +34,7 @@ public class Privacy extends SIPHeader implements PrivacyHeader, SIPHeaderNamesI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.465 -0400", hash_original_method = "C66B8514DBF734E1693DCAFADDDE494C", hash_generated_method = "4EA1C004BE5279516F96420C7CAF3A76")
     public String encodeBody() {
         String varB4EAC82CA7396A68D541C85D26508E83_613717358 = null; 
@@ -45,6 +46,7 @@ public class Privacy extends SIPHeader implements PrivacyHeader, SIPHeaderNamesI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.465 -0400", hash_original_method = "1BCFC01DA9502F608C910A07D4A75A00", hash_generated_method = "DA1ACB660FF6479A6D057FD136AC9A85")
     public String getPrivacy() {
         String varB4EAC82CA7396A68D541C85D26508E83_1280528763 = null; 

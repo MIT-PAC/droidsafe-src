@@ -89,6 +89,7 @@ public class GsmDataConnection extends DataConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.478 -0400", hash_original_method = "A22DEA53C24C8CD549338E7FA6E130EF", hash_generated_method = "727F58AE6FDA84B9FCAE25982BC0A444")
     public void setProfileId(int profileId) {
         mProfileId = profileId;
@@ -97,6 +98,7 @@ public class GsmDataConnection extends DataConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.479 -0400", hash_original_method = "F4D053905D2BF654ACB2CC18D573B985", hash_generated_method = "BC8949FC77D0DCF041C3003CD53677F5")
     public int getProfileId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1571366755 = getTaintInt();
@@ -106,6 +108,7 @@ public class GsmDataConnection extends DataConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.479 -0400", hash_original_method = "49E60EF07FF1E574F2B5B752F6A3111C", hash_generated_method = "6098E4E3C54C8A106210FF605DE9D6C0")
     public void setActiveApnType(String apnType) {
         mActiveApnType = apnType;

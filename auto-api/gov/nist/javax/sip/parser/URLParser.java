@@ -40,6 +40,7 @@ public class URLParser extends Parser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected static boolean isMark(char next) {
         switch (next) {
             case '-':
@@ -64,6 +65,7 @@ public class URLParser extends Parser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected static boolean isReservedNoSlash(char next) {
         switch (next) {
             case ';':
@@ -81,6 +83,7 @@ public class URLParser extends Parser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected static boolean isUserUnreserved(char la) {
         switch (la) {
             case '&':
@@ -245,6 +248,7 @@ public class URLParser extends Parser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected static boolean isReserved(char next) {
         switch (next) {
             case ';':

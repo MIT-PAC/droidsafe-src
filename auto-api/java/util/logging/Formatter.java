@@ -84,6 +84,7 @@ public abstract class Formatter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.237 -0400", hash_original_method = "07107B089EAE5612AD155B7D9F923109", hash_generated_method = "D841A9F33054B45235203F6BA93A9743")
     public String getHead(Handler h) {
         String varB4EAC82CA7396A68D541C85D26508E83_2143951007 = null; 
@@ -96,6 +97,7 @@ public abstract class Formatter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.237 -0400", hash_original_method = "C189C1A511189A9AF799AA8C081148A1", hash_generated_method = "CA02B11144CC12D93C72F1AF75E9020B")
     public String getTail(Handler h) {
         String varB4EAC82CA7396A68D541C85D26508E83_255721624 = null; 

@@ -273,6 +273,7 @@ public class CipherSuite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static CipherSuite getCipherSuiteByCode(int i1, int i2, int i3) {
         CipherSuite[] cipherSuites;
         if (i1 == 0x00 && i2 == 0x00) {
@@ -289,6 +290,7 @@ public class CipherSuite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.754 -0400", hash_original_method = "92638E1F733B540A4060D31FD00C2E43", hash_generated_method = "EB9FA41535A2F8A0376924D0FC0779D5")
     public boolean isAnonymous() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1470914953 = getTaintBoolean();
@@ -303,6 +305,7 @@ public class CipherSuite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CipherSuite[] getSupported() {
         return SUPPORTED_CIPHER_SUITES;
     }
@@ -314,6 +317,7 @@ public class CipherSuite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.755 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "42D2B7A65F9670D0062FB5C42367CA02")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1197030239 = null; 
@@ -325,6 +329,7 @@ public class CipherSuite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.755 -0400", hash_original_method = "914B5E2C4522C674B906D3A88195AF81", hash_generated_method = "DA1741508EDAAF0C1FFD2CAC793ECE0B")
     public byte[] toBytes() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_202849441 = {getTaintByte()};
@@ -347,6 +352,7 @@ public class CipherSuite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.756 -0400", hash_original_method = "7D208669D7EDDA60D0FD344147D9AAD6", hash_generated_method = "B52BAB92A1A1AA8E6890599D267F8294")
     public String getBulkEncryptionAlgorithm() {
         String varB4EAC82CA7396A68D541C85D26508E83_991485250 = null; 
@@ -358,6 +364,7 @@ public class CipherSuite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.756 -0400", hash_original_method = "E03DB665D968D86F8F6FEC0B3CE97B35", hash_generated_method = "B43BEF57CD3B7E4A2CC6B75D06BB3530")
     public int getBlockSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1760284684 = getTaintInt();
@@ -367,6 +374,7 @@ public class CipherSuite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.757 -0400", hash_original_method = "58CBEDAB9C64FBF2F046D83798145AD9", hash_generated_method = "C3B2EBB9F656E27D2650C36257123436")
     public String getHmacName() {
         String varB4EAC82CA7396A68D541C85D26508E83_303817713 = null; 
@@ -378,6 +386,7 @@ public class CipherSuite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.757 -0400", hash_original_method = "D391A3C678BDD6A89326831F4F051E38", hash_generated_method = "4413062CF177536E9B28E81758C16007")
     public String getHashName() {
         String varB4EAC82CA7396A68D541C85D26508E83_2020559691 = null; 
@@ -389,6 +398,7 @@ public class CipherSuite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.757 -0400", hash_original_method = "5CA4B8D3CBACCFD69EE0CC1B72A2F92B", hash_generated_method = "A486C0C4EE8C23C5A1D27FFC0A592931")
     public int getMACLength() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_697612875 = getTaintInt();
@@ -398,6 +408,7 @@ public class CipherSuite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.758 -0400", hash_original_method = "3DD67552ED8C1FF65B79535A2E5F00F8", hash_generated_method = "0D13E3B3C72C054BBF7F629A41E3C3FA")
     public boolean isExportable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1639167809 = getTaintBoolean();
@@ -458,6 +469,7 @@ public class CipherSuite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getClientKeyType(byte keyType) {
         switch (keyType) {
             case TLS_CT_RSA_SIGN:

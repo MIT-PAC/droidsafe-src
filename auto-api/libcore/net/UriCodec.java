@@ -207,6 +207,7 @@ public abstract class UriCodec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int hexToInt(char c) {
         if ('0' <= c && c <= '9') {
             return c - '0';

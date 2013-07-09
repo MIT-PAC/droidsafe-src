@@ -66,6 +66,7 @@ public final class MifareUltralight extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.375 -0400", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "380BF9F96A3FCC92898A510EC9CAAF6E")
     public int getType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1045848532 = getTaintInt();

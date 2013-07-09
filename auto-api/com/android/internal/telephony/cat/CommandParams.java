@@ -33,6 +33,7 @@ class CommandParams {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.335 -0400", hash_original_method = "A8568713BEFC46F9EECE865CBC0E3B85", hash_generated_method = "EDDA25DF7FE7034240C5C7E7E47A4380")
      boolean setIcon(Bitmap icon) {
         addTaint(icon.getTaint());
@@ -60,6 +61,7 @@ class DisplayTextParams extends CommandParams {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.336 -0400", hash_original_method = "21525D99FCC45F45CD5434385C40E277", hash_generated_method = "C9CE0F451C05E93DC4EC2CB9A59E3778")
      boolean setIcon(Bitmap icon) {
         {
@@ -104,6 +106,7 @@ class LaunchBrowserParams extends CommandParams {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.338 -0400", hash_original_method = "14C8B1CAE4AF3E3922E99E945859BFE8", hash_generated_method = "C0D7C0E55168E0F06745BC83A2522337")
      boolean setIcon(Bitmap icon) {
         {
@@ -143,6 +146,7 @@ class PlayToneParams extends CommandParams {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.340 -0400", hash_original_method = "21525D99FCC45F45CD5434385C40E277", hash_generated_method = "1A710EF8F07CEC5CF9D2FB19F6C9B933")
      boolean setIcon(Bitmap icon) {
         {
@@ -182,6 +186,7 @@ class CallSetupParams extends CommandParams {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.341 -0400", hash_original_method = "7CBBFD719CD54FED6A95014430B0D13E", hash_generated_method = "64FC0336454AD787C15541931C4C4106")
      boolean setIcon(Bitmap icon) {
         {
@@ -284,6 +289,7 @@ class GetInputParams extends CommandParams {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.345 -0400", hash_original_method = "0D1B780F5B7D1ED973494BE2C3910B90", hash_generated_method = "1D6BC64B448241807D50518E94EE6FFA")
      boolean setIcon(Bitmap icon) {
         {

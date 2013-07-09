@@ -95,6 +95,7 @@ final class ReadWriteShortArrayBuffer extends ShortArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.255 -0400", hash_original_method = "19E9B6B291778F8D7BAF6F9BA6FE7EDF", hash_generated_method = "2A916CF82053C105C8D07F491237EF9F")
     @Override
     public boolean isReadOnly() {
@@ -105,6 +106,7 @@ final class ReadWriteShortArrayBuffer extends ShortArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.255 -0400", hash_original_method = "085A06B6EDE16089D63E0B4E0858AD77", hash_generated_method = "1F68BB4A2523ACAC4832D0645A7A3A93")
     @Override
     protected short[] protectedArray() {
@@ -115,6 +117,7 @@ final class ReadWriteShortArrayBuffer extends ShortArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.255 -0400", hash_original_method = "F848F07A68FC53238B1B56C46C388C04", hash_generated_method = "42A12EB7DF5CB97CC45F8F24A92FB1D8")
     @Override
     protected int protectedArrayOffset() {
@@ -125,6 +128,7 @@ final class ReadWriteShortArrayBuffer extends ShortArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.256 -0400", hash_original_method = "504D4244F3E9BA0CFC7CEE21DED3336C", hash_generated_method = "DE776F7A1DC374EA76BD2E1D0AF1BE81")
     @Override
     protected boolean protectedHasArray() {

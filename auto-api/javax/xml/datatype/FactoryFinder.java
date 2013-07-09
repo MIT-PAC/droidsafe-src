@@ -36,6 +36,7 @@ final class FactoryFinder {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static ClassLoader findClassLoader() throws ConfigurationError {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         if (debug) debugPrintln(
@@ -51,6 +52,7 @@ final class FactoryFinder {
     }
 
     
+    @DSModeled(DSC.BAN)
     static Object newInstance(
         String className,
         ClassLoader classLoader) throws ConfigurationError {

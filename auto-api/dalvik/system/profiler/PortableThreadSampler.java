@@ -21,6 +21,7 @@ class PortableThreadSampler implements ThreadSampler {
     }
 
 
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.100 -0400", hash_original_method = "7E87B9040AF172D5ADB37F7AF7F75CA6", hash_generated_method = "3A4056680CF8761630C703B1A5197ADD")
     @Override
     public void setDepth(int depth) {
@@ -30,6 +31,7 @@ class PortableThreadSampler implements ThreadSampler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.101 -0400", hash_original_method = "E8C7A5DFD07B28248405DFC9E0C75853", hash_generated_method = "60EE944416D8FB17E41A29C32CF7A71B")
     @Override
     public StackTraceElement[] getStackTrace(Thread thread) {

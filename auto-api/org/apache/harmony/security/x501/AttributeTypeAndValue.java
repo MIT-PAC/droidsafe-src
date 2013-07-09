@@ -166,6 +166,7 @@ public final class AttributeTypeAndValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.427 -0400", hash_original_method = "FA85FF96313B2EEDB4486C871DCE0458", hash_generated_method = "E71F61440821969A96EF0C2112770DF8")
     public ObjectIdentifier getType() {
         ObjectIdentifier varB4EAC82CA7396A68D541C85D26508E83_1748245164 = null; 
@@ -210,6 +211,7 @@ public final class AttributeTypeAndValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int hashIntArray(int[] oid) {
         int intHash = 0;
         for (int i = 0; i < oid.length && i < 4; i++) {

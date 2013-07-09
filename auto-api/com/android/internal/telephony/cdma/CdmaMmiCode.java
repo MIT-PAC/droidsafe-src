@@ -93,6 +93,7 @@ public final class CdmaMmiCode extends Handler implements MmiCode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.055 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "ED4E448A4711263BA83E0398D0A720EB")
     public State getState() {
         State varB4EAC82CA7396A68D541C85D26508E83_904418833 = null; 
@@ -104,6 +105,7 @@ public final class CdmaMmiCode extends Handler implements MmiCode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.058 -0400", hash_original_method = "570FEAA437E41D0252DA00ACF07950A0", hash_generated_method = "5786300863EC0311E5678678FF4B5416")
     public CharSequence getMessage() {
         CharSequence varB4EAC82CA7396A68D541C85D26508E83_829080566 = null; 
@@ -129,6 +131,7 @@ public final class CdmaMmiCode extends Handler implements MmiCode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.059 -0400", hash_original_method = "ABB2058860BEBFF25C4A9C7B954D0A37", hash_generated_method = "1394463026A86776E6AD6EF2AF11D4F9")
     public boolean isCancelable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_130021299 = getTaintBoolean();

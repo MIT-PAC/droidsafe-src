@@ -115,6 +115,7 @@ public final class AdnRecordCache extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.226 -0400", hash_original_method = "0198A12501638F8F5669817EF7B81F42", hash_generated_method = "9E83AB5F3642CAE68BE364C58A075BDB")
      int extensionEfForEf(int efid) {
         addTaint(efid);

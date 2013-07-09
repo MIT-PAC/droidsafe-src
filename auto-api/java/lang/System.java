@@ -51,15 +51,18 @@ public final class System {
 		setFieldImpl("err", "Ljava/io/PrintStream;", newErr);
 	}
 
-	public static void arraycopy(Object src, int srcPos, Object dst, int dstPos, int length) {
+	@DSModeled(DSC.SAFE)
+    public static void arraycopy(Object src, int srcPos, Object dst, int dstPos, int length) {
 	}
 
-	public static long currentTimeMillis() {
+	@DSModeled(DSC.SAFE)
+    public static long currentTimeMillis() {
 		long var0F5264038205EDFB1AC05FBB0E8C5E94_1308733048 = DSUtils.UNKNOWN_LONG;
 		return var0F5264038205EDFB1AC05FBB0E8C5E94_1308733048;
 	}
 
-	public static long nanoTime() {
+	@DSModeled(DSC.SAFE)
+    public static long nanoTime() {
 		long var0F5264038205EDFB1AC05FBB0E8C5E94_1522069111 = DSUtils.UNKNOWN_LONG;
 		return var0F5264038205EDFB1AC05FBB0E8C5E94_1522069111;
 	}
@@ -88,7 +91,8 @@ public final class System {
 		return (value != null) ? value : defaultValue;
 	}
 
-	private static String getEnvByName(String name) {
+	@DSModeled(DSC.SAFE)
+    private static String getEnvByName(String name) {
 		
 		return new String();
 	}
@@ -165,7 +169,8 @@ public final class System {
 		systemProperties = p;
 	}
 
-	private static String[] specialProperties() {
+	@DSModeled(DSC.SAFE)
+    private static String[] specialProperties() {
 		
 		return new String[0];
 	}
@@ -217,16 +222,19 @@ public final class System {
 		return Console.getConsole();
 	}
 
-	public static SecurityManager getSecurityManager() {
+	@DSModeled(DSC.SAFE)
+    public static SecurityManager getSecurityManager() {
 		return null;
 	}
 
-	public static int identityHashCode(Object anObject) {
+	@DSModeled(DSC.SAFE)
+    public static int identityHashCode(Object anObject) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_396439638 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_396439638;
 	}
 
-	public static String lineSeparator() {
+	@DSModeled(DSC.SAFE)
+    public static String lineSeparator() {
 		return lineSeparator;
 	}
 
@@ -270,7 +278,8 @@ public final class System {
 		log('W', message, th);
 	}
 
-	private static void log(char type, String message, Throwable th) {
+	@DSModeled(DSC.SAFE)
+    private static void log(char type, String message, Throwable th) {
 	}
 
 	@DSModeled(DSC.SAFE)
@@ -285,7 +294,8 @@ public final class System {
 		Runtime.runFinalizersOnExit(flag);
 	}
 
-	public static void setProperties(Properties p) {
+	@DSModeled(DSC.SAFE)
+    public static void setProperties(Properties p) {
 		systemProperties = p;
 	}
 
@@ -296,14 +306,16 @@ public final class System {
 		}
 	}
 
-	public static String mapLibraryName(String userLibName) {
+	@DSModeled(DSC.SAFE)
+    public static String mapLibraryName(String userLibName) {
 		
 		String ret = new String();
 		ret.addTaint(userLibName.taint);
 		return ret;
 	}
 
-	private static void setFieldImpl(String fieldName, String signature, Object stream) {
+	@DSModeled(DSC.SAFE)
+    private static void setFieldImpl(String fieldName, String signature, Object stream) {
 	}
 
 	static class SystemEnvironment extends AbstractMap<String, String> {

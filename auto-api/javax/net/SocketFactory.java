@@ -30,6 +30,7 @@ public abstract class SocketFactory {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.429 -0400", hash_original_method = "237BDA73790E5091959E59275734231E", hash_generated_method = "66E219A0BEBC15795219872F319501DD")
     public Socket createSocket() throws IOException {
         if (DroidSafeAndroidRuntime.control) throw new SocketException("Unconnected sockets not implemented");

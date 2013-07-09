@@ -90,6 +90,7 @@ class HttpConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.905 -0400", hash_original_method = "F65A3585D6DFE09EE931E3CB8D7B855F", hash_generated_method = "3D03B196C0054FDF260344F57DB44DDC")
      void restartConnection(boolean abort) {
         addTaint(abort);
@@ -97,6 +98,7 @@ class HttpConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.906 -0400", hash_original_method = "28A13316B46B35CCB565BDA96B57339B", hash_generated_method = "EF3535413166AF956867FE3F2B61BE6B")
      String getScheme() {
         String varB4EAC82CA7396A68D541C85D26508E83_1907829731 = null; 

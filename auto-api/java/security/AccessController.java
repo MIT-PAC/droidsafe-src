@@ -58,6 +58,7 @@ public final class AccessController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void checkPermission(Permission permission) throws AccessControlException {
     }
 

@@ -57,6 +57,7 @@ public class AttributeTypeAndValue extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.381 -0400", hash_original_method = "55F928B5E605E2163AD3D5D479C3E067", hash_generated_method = "5AF0244B0C48140D4687E23AC9A4CC4A")
     public ASN1ObjectIdentifier getType() {
         ASN1ObjectIdentifier varB4EAC82CA7396A68D541C85D26508E83_220021689 = null; 
@@ -68,6 +69,7 @@ public class AttributeTypeAndValue extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.382 -0400", hash_original_method = "C951B7A7C5D7EABF1F828E9D0FE876A9", hash_generated_method = "165317CC741B8AEEF1BD233F9F95565D")
     public ASN1Encodable getValue() {
         ASN1Encodable varB4EAC82CA7396A68D541C85D26508E83_367111025 = null; 

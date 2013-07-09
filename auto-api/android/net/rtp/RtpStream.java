@@ -42,6 +42,7 @@ public class RtpStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.538 -0400", hash_original_method = "215B56CAD65C08D01C00FD356B52B803", hash_generated_method = "E2B824DECAE9792B5B9F795EF79D345A")
     private int create(String address) throws SocketException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1162291491 = getTaintInt();
@@ -49,6 +50,7 @@ public class RtpStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.539 -0400", hash_original_method = "F28BFDFF195309DBD86E5144551EE7AD", hash_generated_method = "BD8C257E484D29AA6A55E3E75BB4F56B")
     public InetAddress getLocalAddress() {
         InetAddress varB4EAC82CA7396A68D541C85D26508E83_565946382 = null; 
@@ -60,6 +62,7 @@ public class RtpStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.539 -0400", hash_original_method = "7C31E9E70AC59EA03FD32B04D9A6DCA9", hash_generated_method = "D0A7008695ABF8D003796EBC3089986A")
     public int getLocalPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_325022697 = getTaintInt();
@@ -69,6 +72,7 @@ public class RtpStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.539 -0400", hash_original_method = "DA9171B440EA3ADB706340063F8102C7", hash_generated_method = "17A7034DC633F706CC18A37D3C2C7012")
     public InetAddress getRemoteAddress() {
         InetAddress varB4EAC82CA7396A68D541C85D26508E83_20712062 = null; 
@@ -80,6 +84,7 @@ public class RtpStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.540 -0400", hash_original_method = "B0A2085CD61C2E0240384F40F555D7FA", hash_generated_method = "2018B9FE43418556A58079A23C8EC3D3")
     public int getRemotePort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_713448295 = getTaintInt();
@@ -89,6 +94,7 @@ public class RtpStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.540 -0400", hash_original_method = "4ACBB08C3FA83B75B554974AB7F8953B", hash_generated_method = "75B432915B2D0E23308C13EB719B04E3")
     public boolean isBusy() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_612941414 = getTaintBoolean();
@@ -98,6 +104,7 @@ public class RtpStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.540 -0400", hash_original_method = "46CDEAEE57FC46504BB8BB611AFCF88D", hash_generated_method = "469E9C03203281CC827CEF5F850A28BF")
     public int getMode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1570861956 = getTaintInt();
@@ -164,6 +171,7 @@ public class RtpStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.542 -0400", hash_original_method = "CADBAA67E59C58F3A263DE6FDC241D82", hash_generated_method = "AAFCF1C0E948822C96AA34E0A83EBE76")
     synchronized int dup() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1456487291 = getTaintInt();
@@ -189,6 +197,7 @@ public class RtpStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.542 -0400", hash_original_method = "D50D7BA65C2BEB3EB436584B5735F108", hash_generated_method = "9DCF3C990963C60F39E50E126C7A13BB")
     private synchronized void close() {
     }

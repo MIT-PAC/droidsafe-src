@@ -104,6 +104,7 @@ public class ParcelFileDescriptor implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static FileDescriptor getFileDescriptorFromFd(int fd) throws IOException {
     	return new FileDescriptor();
     }
@@ -116,11 +117,13 @@ public class ParcelFileDescriptor implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static FileDescriptor getFileDescriptorFromFdNoDup(int fd) {
     	return new FileDescriptor();
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static ParcelFileDescriptor fromSocket(Socket socket) {
         FileDescriptor fd = socket.getFileDescriptor$();
         return fd != null ? new ParcelFileDescriptor(fd) : null;
@@ -145,6 +148,7 @@ public class ParcelFileDescriptor implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void createPipeNative(FileDescriptor[] outFds) throws IOException {
     }
 
@@ -163,6 +167,7 @@ public class ParcelFileDescriptor implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.869 -0400", hash_original_method = "949276D2764A2C9DACACDE44898698C8", hash_generated_method = "81B2C01F95111840AFF626401A6B9D61")
     public FileDescriptor getFileDescriptor() {
         FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_735870705 = null; 
@@ -174,6 +179,7 @@ public class ParcelFileDescriptor implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.869 -0400", hash_original_method = "77F816B0B1C349FF3A8882E701737452", hash_generated_method = "C981594F427539FFDDED8184BFA5429B")
     public long getStatSize() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1921677362 = getTaintLong();
@@ -181,6 +187,7 @@ public class ParcelFileDescriptor implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.869 -0400", hash_original_method = "0F9A3950A7A9E5BB31D919F8BB19673E", hash_generated_method = "306FF4C037CFBB17D9AF117D8E0F5FAA")
     public long seekTo(long pos) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_2092852791 = getTaintLong();
@@ -205,6 +212,7 @@ public class ParcelFileDescriptor implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.870 -0400", hash_original_method = "48F8D374A617845984C88F484B28408C", hash_generated_method = "799DFD1DC96C2E8E03BB949B49D98303")
     private int getFdNative() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1836281088 = getTaintInt();
@@ -306,6 +314,7 @@ public class ParcelFileDescriptor implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.872 -0400", hash_original_method = "5C5A30224996A2D414D9176559E683A9", hash_generated_method = "94F36844B5C38BB4D5F2304749BD2B8F")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_117493792 = getTaintInt();

@@ -41,6 +41,7 @@ abstract class HardwareLayer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.440 -0400", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "46A1425B231EDE8E92845766E27A7714")
      int getWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2041915769 = getTaintInt();
@@ -50,6 +51,7 @@ abstract class HardwareLayer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.441 -0400", hash_original_method = "0304EDCF78FF45B68A7EB91BFEAAA2CD", hash_generated_method = "125232FC4E438AE3A34907D0B08F2FA9")
      int getHeight() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_119803600 = getTaintInt();
@@ -59,6 +61,7 @@ abstract class HardwareLayer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.441 -0400", hash_original_method = "AB6C012A4EC234C0DA96929A7EE984CD", hash_generated_method = "A4D8C87FCF7DB0905141D3A2E679884E")
      boolean isOpaque() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_207739376 = getTaintBoolean();
@@ -89,6 +92,7 @@ abstract class HardwareLayer {
     abstract boolean copyInto(Bitmap bitmap);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.442 -0400", hash_original_method = "5ABA86D5BFEB1909CF7BF3A4764A9281", hash_generated_method = "CA074DCC936D440D7E2E186DB523EB09")
      void update(int width, int height, boolean isOpaque) {
         mWidth = width;

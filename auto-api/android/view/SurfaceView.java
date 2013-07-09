@@ -487,6 +487,7 @@ public class SurfaceView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.964 -0400", hash_original_method = "11B3726B61DA4E45A86A0978E3D5B1EE", hash_generated_method = "BD18A36C24A687E90C8B26879AD01F11")
     public SurfaceHolder getHolder() {
         SurfaceHolder varB4EAC82CA7396A68D541C85D26508E83_809269549 = null; 
@@ -753,6 +754,7 @@ public class SurfaceView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.970 -0400", hash_original_method = "FB26E6D2AB831E35DDA7A9ED4DEF2DCC", hash_generated_method = "3A11010F1FE7203445373F74FB7FA109")
     public void setZOrderMediaOverlay(boolean isMediaOverlay) {
         mWindowType = isMediaOverlay
@@ -765,6 +767,7 @@ public class SurfaceView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.971 -0400", hash_original_method = "001C3D591DD99644CBE6444F60EBCCA2", hash_generated_method = "7ED7B8EFB3FAAE4763A6E09578939BBF")
     public void setZOrderOnTop(boolean onTop) {
         {
@@ -787,6 +790,7 @@ public class SurfaceView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.971 -0400", hash_original_method = "1670DE99B4A30E6D116E6931C42E66D0", hash_generated_method = "038066FDD6533F376555CE67954F9E82")
     public void setWindowType(int type) {
         mWindowType = type;
@@ -1001,6 +1005,7 @@ public class SurfaceView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:55.153 -0400", hash_original_method = "A4CE5F54BDA2367531BCEA3F1517BC09", hash_generated_method = "835D8423D64AFB4962EB8E1FC6B6AE85")
     public boolean isFixedSize() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_368507075 = getTaintBoolean();

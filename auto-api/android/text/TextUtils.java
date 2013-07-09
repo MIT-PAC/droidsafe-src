@@ -728,6 +728,7 @@ public class TextUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean doesNotNeedBidi(char[] text, int start, int len) {
         for (int i = start, e = i + len; i < e; i++) {
             if (text[i] >= FIRST_RIGHT_TO_LEFT) {
@@ -750,6 +751,7 @@ public class TextUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void recycle(char[] temp) {
         if (temp.length > 1000)
             return;

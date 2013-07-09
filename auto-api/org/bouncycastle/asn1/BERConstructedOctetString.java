@@ -78,6 +78,7 @@ public class BERConstructedOctetString extends DEROctetString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.115 -0400", hash_original_method = "C5326C1D0359BDCEF8241B3A70DD591D", hash_generated_method = "50849FF11DF56C9CBD83C0625878C089")
     public byte[] getOctets() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_240017991 = {getTaintByte()};

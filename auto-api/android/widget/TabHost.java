@@ -181,6 +181,7 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.219 -0400", hash_original_method = "F557CD251A66C23831BE55ECFE0FD6EB", hash_generated_method = "6A09BD8EA53A915AB5F822E12CBC5F98")
     @Override
     public void sendAccessibilityEvent(int eventType) {
@@ -311,6 +312,7 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.222 -0400", hash_original_method = "43D996FE1B0AF9FB74C6533DD719F381", hash_generated_method = "9DC335C2F35CB2610C4506BE8B4259BB")
     public TabWidget getTabWidget() {
         TabWidget varB4EAC82CA7396A68D541C85D26508E83_1406338043 = null; 
@@ -322,6 +324,7 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.222 -0400", hash_original_method = "715443AB3E5984F89EAA89C58AA4B1A0", hash_generated_method = "80A77691D95382621EEAA5BDBF95B64B")
     public int getCurrentTab() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_639384749 = getTaintInt();
@@ -393,6 +396,7 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.223 -0400", hash_original_method = "EEE501665EA90FABC7BF921A8CA32190", hash_generated_method = "8E55AC697593877F0240F34A70CD29BA")
     public View getCurrentView() {
         View varB4EAC82CA7396A68D541C85D26508E83_733001547 = null; 
@@ -432,6 +436,7 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.224 -0400", hash_original_method = "14B19444D2789515B31F45C4D21A2D48", hash_generated_method = "FFAA260224DE2CA49CBEBBC5CE29503A")
     public FrameLayout getTabContentView() {
         FrameLayout varB4EAC82CA7396A68D541C85D26508E83_414497025 = null; 
@@ -532,6 +537,7 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.226 -0400", hash_original_method = "CAD2636558BA92FD3B25434077F437FA", hash_generated_method = "81BDC8026576E158152F1D6A433CB82E")
     public void setOnTabChangedListener(OnTabChangeListener l) {
         mOnTabChangeListener = l;

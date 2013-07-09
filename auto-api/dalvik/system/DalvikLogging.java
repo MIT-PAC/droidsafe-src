@@ -16,6 +16,7 @@ public final class DalvikLogging {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String loggerNameToTag(String loggerName) {
         if (loggerName == null) {
             return "null";

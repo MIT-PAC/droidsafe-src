@@ -201,6 +201,7 @@ public final class CdmaDataConnectionTracker extends DataConnectionTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.690 -0400", hash_original_method = "477FAE9A0F7056536F0C43A4344C1E00", hash_generated_method = "6D1D3C34D18E8312020C9D9EAB9A7D81")
     @Override
     protected String getActionIntentReconnectAlarm() {
@@ -213,6 +214,7 @@ public final class CdmaDataConnectionTracker extends DataConnectionTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.691 -0400", hash_original_method = "BBE23E9137760572C0B9E85F7DE2F87D", hash_generated_method = "2557FE477B4FA3EA6862A9FA633B887A")
     @Override
     protected String getActionIntentDataStallAlarm() {
@@ -246,6 +248,7 @@ public final class CdmaDataConnectionTracker extends DataConnectionTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.692 -0400", hash_original_method = "53DA179904795C28B8C89E7D1C885E11", hash_generated_method = "F24D9A2A9B245FD12206C5749B40249A")
     @Override
     public synchronized State getState(String apnType) {
@@ -548,6 +551,7 @@ public final class CdmaDataConnectionTracker extends DataConnectionTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.711 -0400", hash_original_method = "4334EC28628BC2618150E7F73B49358F", hash_generated_method = "CA71E84F421FB531DEE0DB608D05FC5A")
     private void resetPollStats() {
         mTxPkts = -1;
@@ -616,6 +620,7 @@ public final class CdmaDataConnectionTracker extends DataConnectionTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.717 -0400", hash_original_method = "7D555C87655E096A1AB206CCF6046FBB", hash_generated_method = "331F3E2AE6DCF6DE891818BCB0F97F54")
     private boolean shouldPostNotification(FailCause cause) {
         addTaint(cause.getTaint());
@@ -1358,6 +1363,7 @@ public final class CdmaDataConnectionTracker extends DataConnectionTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.734 -0400", hash_original_method = "40E4BCBCB488969F7D8EBF5CAA1BFE5A", hash_generated_method = "2FFD0454B38995749CC68A4ED2F6A6D4")
     @Override
     public boolean isDisconnected() {

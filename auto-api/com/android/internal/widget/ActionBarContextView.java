@@ -177,6 +177,7 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.803 -0400", hash_original_method = "2AF53FC77EF46E1AB46FFEE70D9B4BD3", hash_generated_method = "B605154034957D668B9E756F3C9F46CD")
     public void setContentHeight(int height) {
         mContentHeight = height;
@@ -239,6 +240,7 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.806 -0400", hash_original_method = "7D691BCB64236E7B5AF8F6CB0399C091", hash_generated_method = "CE98308AC8FC8DE5A7C5E01D4F0FB7A4")
     public CharSequence getTitle() {
         CharSequence varB4EAC82CA7396A68D541C85D26508E83_1900230383 = null; 
@@ -250,6 +252,7 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.806 -0400", hash_original_method = "8334E54E49A430BB5E2CB9D01857CDC7", hash_generated_method = "96577F10E51CA4F966917D2D96D5C1AE")
     public CharSequence getSubtitle() {
         CharSequence varB4EAC82CA7396A68D541C85D26508E83_1666504528 = null; 
@@ -686,6 +689,7 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.815 -0400", hash_original_method = "B990D1A680B01C8A5486D22741D7E96B", hash_generated_method = "B2B2A92B36E552BECB72262238AEF578")
     @Override
     public void onAnimationStart(Animator animation) {
@@ -713,6 +717,7 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.816 -0400", hash_original_method = "16FF962612CA0CC38B4765F38064800C", hash_generated_method = "87B148FBA6A6D3270D8BD7F9EEB4C6C1")
     @Override
     public void onAnimationCancel(Animator animation) {
@@ -722,6 +727,7 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.817 -0400", hash_original_method = "FA58700A4888ED9E658B43737D17A966", hash_generated_method = "4BE2C3EAC3B10B8BD5CE86F0E3077935")
     @Override
     public void onAnimationRepeat(Animator animation) {
@@ -731,6 +737,7 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.817 -0400", hash_original_method = "9DA99B4E01A506E72BA59AF598A3C38D", hash_generated_method = "CAF40E2F6CCD5179F3BB3C091F55A466")
     @Override
     public boolean shouldDelayChildPressedState() {

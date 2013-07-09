@@ -39,6 +39,7 @@ public class IccCardStatus {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.830 -0400", hash_original_method = "FA0602D88E7C21991E0740ABD82BDA04", hash_generated_method = "0EB1CA1150DC1C6E828468E164C3AC82")
     public CardState getCardState() {
         CardState varB4EAC82CA7396A68D541C85D26508E83_1307153303 = null; 
@@ -83,6 +84,7 @@ public class IccCardStatus {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.831 -0400", hash_original_method = "EAD880236056BC0FED4A918911F5B846", hash_generated_method = "D9EB8333E4A9F980D4CC2AEC3B2F15BF")
     public PinState getUniversalPinState() {
         PinState varB4EAC82CA7396A68D541C85D26508E83_1816383170 = null; 
@@ -145,6 +147,7 @@ public class IccCardStatus {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.832 -0400", hash_original_method = "BB106B954443B302CECFC313EF7CB395", hash_generated_method = "6B387E2464718125797360AE55868CB7")
     public int getGsmUmtsSubscriptionAppIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1044677459 = getTaintInt();
@@ -154,6 +157,7 @@ public class IccCardStatus {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.833 -0400", hash_original_method = "08BD9E6DFC873F65C3F784287907D5E3", hash_generated_method = "03968C0784B0953DB1DC116AD2BB207A")
     public void setGsmUmtsSubscriptionAppIndex(int gsmUmtsSubscriptionAppIndex) {
         mGsmUmtsSubscriptionAppIndex = gsmUmtsSubscriptionAppIndex;
@@ -162,6 +166,7 @@ public class IccCardStatus {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.833 -0400", hash_original_method = "2A192AC2BA1E64618C17CC6A1074F688", hash_generated_method = "658ACF9240068FDF8D5C5109F33FE8C1")
     public int getCdmaSubscriptionAppIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_866603563 = getTaintInt();
@@ -171,6 +176,7 @@ public class IccCardStatus {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.834 -0400", hash_original_method = "891E989E2EC1A38AF8B37DBC8E8322CF", hash_generated_method = "6D1B0649C9CFAF249D62B999C50E4C43")
     public void setCdmaSubscriptionAppIndex(int cdmaSubscriptionAppIndex) {
         mCdmaSubscriptionAppIndex = cdmaSubscriptionAppIndex;
@@ -179,6 +185,7 @@ public class IccCardStatus {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.835 -0400", hash_original_method = "66775E00E5C07C014B4CD9717DAD3963", hash_generated_method = "966414EF21ACE5B3DA20999D9930B290")
     public int getImsSubscriptionAppIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_922580674 = getTaintInt();
@@ -188,6 +195,7 @@ public class IccCardStatus {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.835 -0400", hash_original_method = "F62298652BB86C33D896C0D398774EF1", hash_generated_method = "EDDFA44F41288CFC56DC7BAF3703C59D")
     public void setImsSubscriptionAppIndex(int imsSubscriptionAppIndex) {
         mImsSubscriptionAppIndex = imsSubscriptionAppIndex;
@@ -196,6 +204,7 @@ public class IccCardStatus {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.836 -0400", hash_original_method = "73A878FBCD525FA581932F7C6A7C55D4", hash_generated_method = "0E2892425140F61416B67B01BB4E452E")
     public int getNumApplications() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2100150484 = getTaintInt();
@@ -205,6 +214,7 @@ public class IccCardStatus {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.837 -0400", hash_original_method = "6F974EA3499D29038B295A1FDDF2D7B1", hash_generated_method = "E0EE19C0A0A8F7AD8CB842C7430E7BAA")
     public void setNumApplications(int numApplications) {
         mNumApplications = numApplications;

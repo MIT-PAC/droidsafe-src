@@ -87,6 +87,7 @@ public class ContentType extends ParametersHeader implements javax.sip.header.Co
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.461 -0400", hash_original_method = "95EC1B8E6B4FF94ADCA4E5294FD4A8E3", hash_generated_method = "495449F88ADD21BE05AA0B632960D728")
     public MediaRange getMediaRange() {
         MediaRange varB4EAC82CA7396A68D541C85D26508E83_1511246957 = null; 
@@ -98,6 +99,7 @@ public class ContentType extends ParametersHeader implements javax.sip.header.Co
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.462 -0400", hash_original_method = "71A8EC95A25C2B8732F46A6E9FE1A552", hash_generated_method = "5A0AF379912301D1F7895E2B626B0DFE")
     public String getMediaType() {
         String varB4EAC82CA7396A68D541C85D26508E83_1584093506 = null; 
@@ -109,6 +111,7 @@ public class ContentType extends ParametersHeader implements javax.sip.header.Co
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.462 -0400", hash_original_method = "EEE1854610A538C776591DF3242D2F30", hash_generated_method = "3E8B3268B8EF035F4C91A6F1C5A08577")
     public String getMediaSubType() {
         String varB4EAC82CA7396A68D541C85D26508E83_894083819 = null; 
@@ -156,6 +159,7 @@ public class ContentType extends ParametersHeader implements javax.sip.header.Co
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.463 -0400", hash_original_method = "E4AF328E0ACDB3837FCDCFA232CB922B", hash_generated_method = "D4B8159947A4E1D723FD3764612CBB21")
     public void setMediaRange(MediaRange m) {
         mediaRange = m;

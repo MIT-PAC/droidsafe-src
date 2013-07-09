@@ -134,6 +134,7 @@ final class CharSequenceAdapter extends CharBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.936 -0400", hash_original_method = "5B6C9F359344527666A57577F107BCAE", hash_generated_method = "31B4CDD043BD122CD33B2F180548B140")
     @Override
     public boolean isDirect() {
@@ -144,6 +145,7 @@ final class CharSequenceAdapter extends CharBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.937 -0400", hash_original_method = "D0F583BEFACE4F70BE4011CED42FF4E6", hash_generated_method = "EFAE219194ADC2DD329F6ACF9F28FB01")
     @Override
     public boolean isReadOnly() {
@@ -191,6 +193,7 @@ final class CharSequenceAdapter extends CharBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.939 -0400", hash_original_method = "22273AD75DCD1D369E6F6089E4C15AAA", hash_generated_method = "7DEB5630D20E73688E73C77A037E1D19")
     @Override
     protected boolean protectedHasArray() {

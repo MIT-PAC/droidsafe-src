@@ -27,6 +27,7 @@ public class HandshakeCompletedEvent extends EventObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.513 -0400", hash_original_method = "2F35DBDDEE25D44180770FC68EA02FBF", hash_generated_method = "3F637C019E322463294623E66CF3A2FA")
     public SSLSession getSession() {
         SSLSession varB4EAC82CA7396A68D541C85D26508E83_1017571735 = null; 
@@ -110,6 +111,7 @@ public class HandshakeCompletedEvent extends EventObject {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.518 -0400", hash_original_method = "D59F011BF3B2DFBF72B84D897263E8E1", hash_generated_method = "670A2D73913A02E08740FED46D27EAE5")
     public SSLSocket getSocket() {
         SSLSocket varB4EAC82CA7396A68D541C85D26508E83_1383165719 = null; 

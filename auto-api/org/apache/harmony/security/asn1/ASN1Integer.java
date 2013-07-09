@@ -19,6 +19,7 @@ public final class ASN1Integer extends ASN1Primitive {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ASN1Integer getInstance() {
         return ASN1;
     }
@@ -84,6 +85,7 @@ public final class ASN1Integer extends ASN1Primitive {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.544 -0400", hash_original_method = "9FE1E04620BBFE07A0C8F71EADD10582", hash_generated_method = "28412896F17AF4B874C6F607DA4D2993")
     public void setEncodingContent(BerOutputStream out) {
         out.length = ((byte[]) out.content).length;

@@ -47,6 +47,7 @@ public class DataConnectionAc extends AsyncChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.819 -0400", hash_original_method = "D508FA29014931CB6CD29F8DFC756262", hash_generated_method = "C73B53CBCE8350E9D3DB2870D165D9B4")
     public boolean rspIsInactive(Message response) {
         boolean retVal = response.arg1 == 1;
@@ -95,6 +96,7 @@ public class DataConnectionAc extends AsyncChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.820 -0400", hash_original_method = "FF57B3B0C583923138679674F4E2FE25", hash_generated_method = "3D5B4A8F93A55076C14DCA5EFA5AC530")
     public int rspCid(Message response) {
         int retVal = response.arg1;
@@ -143,6 +145,7 @@ public class DataConnectionAc extends AsyncChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.821 -0400", hash_original_method = "AFE421B2404E9D3449EC1EC9B786EEAC", hash_generated_method = "6BB4CA4DE3B6A02BBB60EFE5CC6B7D0F")
     public int rspRefCount(Message response) {
         int retVal = response.arg1;
@@ -191,6 +194,7 @@ public class DataConnectionAc extends AsyncChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.823 -0400", hash_original_method = "95D7FBD84C6C38BA2D84311C3C9BEF51", hash_generated_method = "0391E6BD1613D59F451C8E3690B5DC41")
     public ApnSetting rspApnSetting(Message response) {
         ApnSetting varB4EAC82CA7396A68D541C85D26508E83_866852571 = null; 
@@ -253,6 +257,7 @@ public class DataConnectionAc extends AsyncChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.824 -0400", hash_original_method = "61AC833B412EB853D23C85E2B80FFC12", hash_generated_method = "BD01DE614065EA6AFCDC315C36723C95")
     public LinkProperties rspLinkProperties(Message response) {
         LinkProperties varB4EAC82CA7396A68D541C85D26508E83_1689631426 = null; 
@@ -350,6 +355,7 @@ public class DataConnectionAc extends AsyncChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.826 -0400", hash_original_method = "FF09E9AE970C8576F47A284FF7FFCA6D", hash_generated_method = "3550779B69419F5DBD65D89087E7396C")
     public UpdateLinkPropertyResult rspUpdateLinkPropertiesDataCallState(Message response) {
         UpdateLinkPropertyResult varB4EAC82CA7396A68D541C85D26508E83_585844325 = null; 
@@ -415,6 +421,7 @@ public class DataConnectionAc extends AsyncChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.828 -0400", hash_original_method = "F187911F3801DAE69287AC09EDB743FA", hash_generated_method = "3A06F51CB2F85B91E105DA0551121344")
     public LinkCapabilities rspLinkCapabilities(Message response) {
         LinkCapabilities varB4EAC82CA7396A68D541C85D26508E83_1261503501 = null; 
@@ -673,6 +680,7 @@ public class DataConnectionAc extends AsyncChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.842 -0400", hash_original_method = "9555B3D0DB27D43CC0B0BA451DA1A9D5", hash_generated_method = "E2D5E9531FCEF32EE970E59440681914")
     public PendingIntent rspReconnectIntent(Message response) {
         PendingIntent varB4EAC82CA7396A68D541C85D26508E83_970435745 = null; 

@@ -50,6 +50,7 @@ public class NetworkConfig {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.282 -0400", hash_original_method = "474B729266EEB37673AA204F699AE5C3", hash_generated_method = "3B2733000FFAE26FB3A4EAFA808D9B5D")
     public boolean isDefault() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1361430182 = getTaintBoolean();

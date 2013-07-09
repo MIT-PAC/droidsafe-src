@@ -71,6 +71,7 @@ public class DERBMPString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.266 -0400", hash_original_method = "3CB977BE316CAC9520A0E1ADE8D338F7", hash_generated_method = "C6EF03ECCD38A0004D00370754358FC0")
     public String getString() {
         String varB4EAC82CA7396A68D541C85D26508E83_566341592 = null; 
@@ -82,6 +83,7 @@ public class DERBMPString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.266 -0400", hash_original_method = "A7AD745E242BD88C36EC3708384A50C0", hash_generated_method = "E9F92D67CC98B5295EABC559E41021AA")
     public String toString() {
         String varB4EAC82CA7396A68D541C85D26508E83_92677208 = null; 

@@ -58,12 +58,14 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeCopy(int destNativePtr, int sourceNativePtr,
             boolean keepHistory) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeDispose(int nativePtr) {
     }
 
@@ -74,161 +76,194 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeGetDeviceId(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeGetSource(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeSetSource(int nativePtr, int source) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeGetAction(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeSetAction(int nativePtr, int action) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativeIsTouchEvent(int nativePtr) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeGetFlags(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeSetFlags(int nativePtr, int flags) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeGetEdgeFlags(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeSetEdgeFlags(int nativePtr, int action) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeGetMetaState(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeGetButtonState(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeOffsetLocation(int nativePtr, float deltaX, float deltaY) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static float nativeGetXOffset(int nativePtr) {
         return DSUtils.UNKNOWN_FLOAT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static float nativeGetYOffset(int nativePtr) {
         return DSUtils.UNKNOWN_FLOAT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static float nativeGetXPrecision(int nativePtr) {
         return DSUtils.UNKNOWN_FLOAT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static float nativeGetYPrecision(int nativePtr) {
         return DSUtils.UNKNOWN_FLOAT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static long nativeGetDownTimeNanos(int nativePtr) {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeSetDownTimeNanos(int nativePtr, long downTime) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeGetPointerCount(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeGetPointerId(int nativePtr, int pointerIndex) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeGetToolType(int nativePtr, int pointerIndex) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeFindPointerIndex(int nativePtr, int pointerId) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeGetHistorySize(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static long nativeGetEventTimeNanos(int nativePtr, int historyPos) {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static float nativeGetRawAxisValue(int nativePtr,
             int axis, int pointerIndex, int historyPos) {
         return DSUtils.UNKNOWN_FLOAT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static float nativeGetAxisValue(int nativePtr,
             int axis, int pointerIndex, int historyPos) {
         return DSUtils.UNKNOWN_FLOAT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeGetPointerCoords(int nativePtr,
             int pointerIndex, int historyPos, PointerCoords outPointerCoords) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeGetPointerProperties(int nativePtr,
             int pointerIndex, PointerProperties outPointerProperties) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeScale(int nativePtr, float scale) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeTransform(int nativePtr, Matrix matrix) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeReadFromParcel(int nativePtr, Parcel parcel) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeWriteToParcel(int nativePtr, Parcel parcel) {
     }
 

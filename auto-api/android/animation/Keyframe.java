@@ -65,6 +65,7 @@ public abstract class Keyframe implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:11.900 -0400", hash_original_method = "6BBC2B3892833CAF7F05465AB80866BD", hash_generated_method = "3201E82FA2D061AF2B7F3C53486F73F0")
     public boolean hasValue() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1163981829 = getTaintBoolean();
@@ -80,6 +81,7 @@ public abstract class Keyframe implements Cloneable {
     public abstract void setValue(Object value);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:11.903 -0400", hash_original_method = "35C097CFF55F90D1886F0C54195244F1", hash_generated_method = "D30161CB12C58F0B7B9CE26CD4E840F4")
     public float getFraction() {
         float var546ADE640B6EDFBC8A086EF31347E768_1599421637 = getTaintFloat();
@@ -89,6 +91,7 @@ public abstract class Keyframe implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:11.904 -0400", hash_original_method = "D865B000D8DE764D2EF6EBC1ED2A153F", hash_generated_method = "B828439CB960C667E31928238589D41F")
     public void setFraction(float fraction) {
         mFraction = fraction;
@@ -97,6 +100,7 @@ public abstract class Keyframe implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:11.907 -0400", hash_original_method = "69CBD09EBE4A4B5ECD6AD8540DB7CFD0", hash_generated_method = "5B95913439B78948EA52355990C897E8")
     public TimeInterpolator getInterpolator() {
         TimeInterpolator varB4EAC82CA7396A68D541C85D26508E83_351683649 = null; 
@@ -108,6 +112,7 @@ public abstract class Keyframe implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:11.910 -0400", hash_original_method = "DFEEC0662B39CED0069D1B2AE05648AB", hash_generated_method = "47F1226E1202976956E07A77F6CEA7FC")
     public void setInterpolator(TimeInterpolator interpolator) {
         mInterpolator = interpolator;
@@ -116,6 +121,7 @@ public abstract class Keyframe implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:11.914 -0400", hash_original_method = "464D9B25E7EBB7EEA5039E323C745893", hash_generated_method = "80AEBD5608B30580E1D83A5CAF5CE7E2")
     public Class getType() {
         Class varB4EAC82CA7396A68D541C85D26508E83_824081716 = null; 

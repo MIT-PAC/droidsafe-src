@@ -84,6 +84,7 @@ public class RouteSpecificPool {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.775 -0400", hash_original_method = "177416E45C86DBFDF7EC5AE9EA15CB02", hash_generated_method = "FA3F7C709650CA4758C4F104551E28D0")
     public int getCapacity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_306534461 = getTaintInt();

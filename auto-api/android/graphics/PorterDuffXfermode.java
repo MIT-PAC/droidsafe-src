@@ -23,6 +23,7 @@ public class PorterDuffXfermode extends Xfermode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeCreateXfermode(int mode) {
         return DSUtils.UNKNOWN_INT;
     }

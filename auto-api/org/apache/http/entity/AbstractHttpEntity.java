@@ -31,6 +31,7 @@ public abstract class AbstractHttpEntity implements HttpEntity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.559 -0400", hash_original_method = "DA5232C01B88DD776A78D6C1E0EF7DB4", hash_generated_method = "07112480FF2865763DB5810BC08C9A28")
     public Header getContentType() {
         Header varB4EAC82CA7396A68D541C85D26508E83_1232197752 = null; 
@@ -42,6 +43,7 @@ public abstract class AbstractHttpEntity implements HttpEntity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.560 -0400", hash_original_method = "0300179EF34C28254565E1D29B0088D9", hash_generated_method = "B48AA0BE1396BC1973BA98B6FBB4A228")
     public Header getContentEncoding() {
         Header varB4EAC82CA7396A68D541C85D26508E83_1926877715 = null; 
@@ -53,6 +55,7 @@ public abstract class AbstractHttpEntity implements HttpEntity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.560 -0400", hash_original_method = "A2E32B99DD6261F3B5CB31D5FA7FC0FC", hash_generated_method = "821985E0A61B89B70A4C5322796BCABE")
     public boolean isChunked() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1829288661 = getTaintBoolean();
@@ -112,6 +115,7 @@ public abstract class AbstractHttpEntity implements HttpEntity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.562 -0400", hash_original_method = "1B88FA65FDF60169F373F298E33E777E", hash_generated_method = "31F89D88E68A040DC2DABC5362BEB7BE")
     public void setChunked(boolean b) {
         this.chunked = b;

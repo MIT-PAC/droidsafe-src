@@ -67,6 +67,7 @@ public class Protocol extends SIPObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.907 -0400", hash_original_method = "0EA6E7D3A9B59E59CEEBB8D3EE9D071C", hash_generated_method = "9349E67D59714C7CF6BF9A3A291B04C0")
     public String getProtocolName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1846244041 = null; 
@@ -78,6 +79,7 @@ public class Protocol extends SIPObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.908 -0400", hash_original_method = "B8FA221EC0DA8944EFD0CEB861346936", hash_generated_method = "62D207042B1A6A27F153E8138AE5B411")
     public String getProtocolVersion() {
         String varB4EAC82CA7396A68D541C85D26508E83_82582625 = null; 
@@ -119,6 +121,7 @@ public class Protocol extends SIPObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.911 -0400", hash_original_method = "43848E528F960D9C1F3B13D7D65AA4A4", hash_generated_method = "E283E5D9798CD2D1B7A0CC9E129671FA")
     public String getTransport() {
         String varB4EAC82CA7396A68D541C85D26508E83_823648470 = null; 
@@ -130,6 +133,7 @@ public class Protocol extends SIPObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.912 -0400", hash_original_method = "D424701D0BAFF5CEC55A80344E30BD30", hash_generated_method = "B4D21ACCA657B794F87AC481BEFA63A6")
     public void setProtocolName(String p) {
         protocolName = p;
@@ -138,6 +142,7 @@ public class Protocol extends SIPObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.912 -0400", hash_original_method = "2A792840748FAB978DAA68C8F2495344", hash_generated_method = "3746DD0FB723CD5F349A9341429551FC")
     public void setProtocolVersion(String p) {
         protocolVersion = p;
@@ -146,6 +151,7 @@ public class Protocol extends SIPObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.912 -0400", hash_original_method = "2F1F81EB1D8D9B12E2B4CE0AEE6CB155", hash_generated_method = "6E2B7DAB33C44857128202FB176B4870")
     public void setTransport(String t) {
         transport = t;

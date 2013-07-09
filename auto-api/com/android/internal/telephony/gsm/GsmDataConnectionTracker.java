@@ -179,6 +179,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.850 -0400", hash_original_method = "DABEDBF19FEC4514BE5AAA6475C962EB", hash_generated_method = "EEC4162771D5533D7FBA6E6BCE4494AE")
     @Override
     protected void onActionIntentReconnectAlarm(Intent intent) {
@@ -317,6 +318,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.852 -0400", hash_original_method = "477FAE9A0F7056536F0C43A4344C1E00", hash_generated_method = "C8F9430F9EF2FC28C3742D6D05304117")
     @Override
     protected String getActionIntentReconnectAlarm() {
@@ -329,6 +331,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.852 -0400", hash_original_method = "BBE23E9137760572C0B9E85F7DE2F87D", hash_generated_method = "395763765494C591DB663FB33C425E39")
     @Override
     protected String getActionIntentDataStallAlarm() {
@@ -1997,6 +2000,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.015 -0400", hash_original_method = "E0A0A9601ED58F14AFBBF23896E64411", hash_generated_method = "B15AEEE94D49A3A4F6A6C846243A9553")
     private void resetPollStats() {
         mTxPkts = -1;
@@ -2285,6 +2289,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.023 -0400", hash_original_method = "2F0F0316C5E4D930E75010F1BAA9D392", hash_generated_method = "66928921EF1471CDD56DCE065C6CC60B")
     private boolean shouldPostNotification(GsmDataConnection.FailCause  cause) {
         addTaint(cause.getTaint());

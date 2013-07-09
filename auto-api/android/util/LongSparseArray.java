@@ -160,6 +160,7 @@ public class LongSparseArray<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.385 -0400", hash_original_method = "A9D8FA819E144A31281F443F869190B4", hash_generated_method = "7B62E9757C5DB4A6BFD1D3137D287BDF")
     private void gc() {
         int n = mSize;
@@ -346,6 +347,7 @@ public class LongSparseArray<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.388 -0400", hash_original_method = "43C05B8A0FF5CBFFF8E027DF94B104CB", hash_generated_method = "A99674D52ED0A179724028E7A97AAE26")
     public void clear() {
         int n = mSize;
@@ -415,6 +417,7 @@ public class LongSparseArray<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int binarySearch(long[] a, int start, int len, long key) {
         int high = start + len, low = start - 1, guess;
         while (high - low > 1) {

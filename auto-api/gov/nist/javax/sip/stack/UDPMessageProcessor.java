@@ -68,6 +68,7 @@ public class UDPMessageProcessor extends MessageProcessor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.256 -0400", hash_original_method = "1804D4B8ED6914D43C8BF926A65BA4F9", hash_generated_method = "DB37D0616C8A0CE34B3C06042E2C066B")
     public int getPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1777791535 = getTaintInt();
@@ -213,6 +214,7 @@ public class UDPMessageProcessor extends MessageProcessor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.259 -0400", hash_original_method = "026D790579A301E1D49F85E52A57E43F", hash_generated_method = "BA17D630F68A96E79DD85188A6DBFD1D")
     public String getTransport() {
         String varB4EAC82CA7396A68D541C85D26508E83_1375721119 = null; 
@@ -224,6 +226,7 @@ public class UDPMessageProcessor extends MessageProcessor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.259 -0400", hash_original_method = "4789C177AC8ECE60B231BA8A866F9D66", hash_generated_method = "6791ABDF8BE113CE37EDA8DAF1054689")
     public SIPTransactionStack getSIPStack() {
         SIPTransactionStack varB4EAC82CA7396A68D541C85D26508E83_941541027 = null; 
@@ -264,6 +267,7 @@ public class UDPMessageProcessor extends MessageProcessor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.261 -0400", hash_original_method = "549BD73BE1E8477C39668DF3AD0A0CF5", hash_generated_method = "0F4E8D9F9DE28227B32457B47595666B")
     public int getDefaultTargetPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1920985104 = getTaintInt();
@@ -273,6 +277,7 @@ public class UDPMessageProcessor extends MessageProcessor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.261 -0400", hash_original_method = "51201694E0EE76265BF39848EF10BE9C", hash_generated_method = "4C7DD5987CAF749015029BF7B5261BC2")
     public boolean isSecure() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2006106903 = getTaintBoolean();
@@ -282,6 +287,7 @@ public class UDPMessageProcessor extends MessageProcessor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.261 -0400", hash_original_method = "DB826EFA52B3A7F2C697730E780269B9", hash_generated_method = "129DDBB3AAFD952ACDC574A1A776B05F")
     public int getMaximumMessageSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2083800168 = getTaintInt();

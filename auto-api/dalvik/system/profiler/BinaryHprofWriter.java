@@ -50,11 +50,13 @@ public final class BinaryHprofWriter {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void write(HprofData data, OutputStream outputStream) throws IOException {
         new BinaryHprofWriter(data, outputStream).write();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.885 -0400", hash_original_method = "6C7AC0DF0B31CD08E559C12305128F3F", hash_generated_method = "A7259672CA800AD8EC10D351C90CE478")
     private void write() throws IOException {
         try 
@@ -106,6 +108,7 @@ public final class BinaryHprofWriter {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.885 -0400", hash_original_method = "C85B61C59E3F834AB2B5E220076F97DE", hash_generated_method = "309CBD5602C849BC5E57B886A266C33C")
     private void writeHeader(long dumpTimeInMilliseconds) throws IOException {
         out.writeBytes(BinaryHprof.MAGIC + "1.0.2");
@@ -121,6 +124,7 @@ public final class BinaryHprofWriter {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.886 -0400", hash_original_method = "FDE35A19003ED22B657F91A2F0E06CCE", hash_generated_method = "DF4BAF35069C74F3F635C5AF381B8F69")
     private void writeControlSettings(int flags, int depth) throws IOException {
         {
@@ -147,6 +151,7 @@ public final class BinaryHprofWriter {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.886 -0400", hash_original_method = "1F5D47BDA1DF5C3350AF092C7A31D89B", hash_generated_method = "0F2DE3230EC283F197093DE4A687E2FD")
     private void writeThreadEvent(HprofData.ThreadEvent e) throws IOException {
         
@@ -170,6 +175,7 @@ public final class BinaryHprofWriter {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.887 -0400", hash_original_method = "8E01CAF6795D5E83C54B68F6912FFEBF", hash_generated_method = "0903111945E53A5BE6B6BBDD8395A117")
     private void writeStartThread(HprofData.ThreadEvent e) throws IOException {
         int threadNameId = writeString(e.threadName);
@@ -201,6 +207,7 @@ public final class BinaryHprofWriter {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.887 -0400", hash_original_method = "22EC0A4C26BDEF90544F91DCC7CD0649", hash_generated_method = "42F889CD6216B33A9528B3493A8EF14C")
     private void writeStopThread(HprofData.ThreadEvent e) throws IOException {
         writeRecordHeader(BinaryHprof.Tag.END_THREAD,
@@ -216,6 +223,7 @@ public final class BinaryHprofWriter {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.888 -0400", hash_original_method = "676873B3FD0126014DC640E27218ACDD", hash_generated_method = "AB5B28C39CA7F351FC3EF72C947A7877")
     private void writeRecordHeader(BinaryHprof.Tag hprofTag,
                                    int timeDeltaInMicroseconds,
@@ -241,6 +249,7 @@ public final class BinaryHprofWriter {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.889 -0400", hash_original_method = "444AE2A435FAF86B0F2CBA448766AD4E", hash_generated_method = "C4A51450BBCA14F0C5623683FB3F2463")
     private void writeId(int id) throws IOException {
         out.writeInt(id);
@@ -250,6 +259,7 @@ public final class BinaryHprofWriter {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.889 -0400", hash_original_method = "F126C5267DAD0F96A8C03752944B8779", hash_generated_method = "67DFBBB8DAB5CD727D482D19AB166E9D")
     private int writeString(String string) throws IOException {
         Integer identifier = stringToId.get(string);
@@ -316,6 +326,7 @@ public final class BinaryHprofWriter {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.897 -0400", hash_original_method = "AA7BB7F509E670C633C84E0D44DE5DDB", hash_generated_method = "57FC0A8387204205F5E87EFE734DD608")
     private void writeStackTrace(HprofData.StackTrace stackTrace) throws IOException {
         int frames = stackTrace.stackFrames.length;
@@ -357,6 +368,7 @@ public final class BinaryHprofWriter {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.898 -0400", hash_original_method = "564218335BC7BDEEE42DF1829D6316AF", hash_generated_method = "F63C920E3A0137209C93FFDF742F651E")
     private int writeLoadClass(String className) throws IOException {
         Integer identifier = classNameToId.get(className);
@@ -392,6 +404,7 @@ public final class BinaryHprofWriter {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.899 -0400", hash_original_method = "0C83F2A39C21D86EF68CFCB925D16EF6", hash_generated_method = "796A3BB994F60D41E475438057D00C6C")
     private int writeStackFrame(StackTraceElement stackFrame) throws IOException {
         Integer identifier = stackFrameToId.get(stackFrame);

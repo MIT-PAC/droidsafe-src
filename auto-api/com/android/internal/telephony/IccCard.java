@@ -466,6 +466,7 @@ public abstract class IccCard {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.736 -0400", hash_original_method = "BCA6EFC1210C838BF4CD916790946AA6", hash_generated_method = "1149DA1872DC2B6317BFB0297FA773D1")
     public boolean getIccLockEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_803592406 = getTaintBoolean();
@@ -475,6 +476,7 @@ public abstract class IccCard {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.736 -0400", hash_original_method = "F2BBF6EB30564DA8841F6D4A48D01D80", hash_generated_method = "CFDB16D396D47350C30F8B8931AA7F49")
     public boolean getIccFdnEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1952738526 = getTaintBoolean();
@@ -951,6 +953,7 @@ public abstract class IccCard {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.750 -0400", hash_original_method = "292BB37BE4996383C23DC23B1670D1D7", hash_generated_method = "0967111C8C9555A735D517E5C2D5E99D")
     private State getConsolidatedState(State left, State right, State preferredState) {
         State varB4EAC82CA7396A68D541C85D26508E83_271235761 = null; 

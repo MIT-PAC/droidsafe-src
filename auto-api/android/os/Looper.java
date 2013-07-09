@@ -54,11 +54,13 @@ public class Looper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private synchronized static void setMainLooper(Looper looper) {
         mMainLooper = looper;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public synchronized static Looper getMainLooper() {
         return mMainLooper;
     }
@@ -118,6 +120,7 @@ public class Looper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.432 -0400", hash_original_method = "46140967D8D75055A47353664A71B7EC", hash_generated_method = "3C77C8DE8680E0A60FA1F4CB39038FA7")
     public void setMessageLogging(Printer printer) {
         mLogging = printer;
@@ -143,6 +146,7 @@ public class Looper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.434 -0400", hash_original_method = "10A14FF061E08E67689F0F5686D6176F", hash_generated_method = "C7CA577FCBC8E716D9EECE351A1D18A7")
     public Thread getThread() {
         Thread varB4EAC82CA7396A68D541C85D26508E83_1095803762 = null; 
@@ -154,6 +158,7 @@ public class Looper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.435 -0400", hash_original_method = "9CC180E1B870A467FDD64311213EECB9", hash_generated_method = "084E3268C6E0439336059AFCECB6750E")
     public MessageQueue getQueue() {
         MessageQueue varB4EAC82CA7396A68D541C85D26508E83_395779020 = null; 

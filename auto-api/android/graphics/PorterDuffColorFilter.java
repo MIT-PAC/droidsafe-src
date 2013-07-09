@@ -22,11 +22,13 @@ public class PorterDuffColorFilter extends ColorFilter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int native_CreatePorterDuffFilter(int srcColor, int porterDuffMode) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nCreatePorterDuffFilter(int nativeFilter, int srcColor,
             int porterDuffMode) {
         return DSUtils.UNKNOWN_INT;

@@ -183,6 +183,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.735 -0400", hash_original_method = "DD1AE1F8EA98D3605FDD193E0651B9D6", hash_generated_method = "0B028296284412CE40D49226F2D80821")
     public synchronized int capacity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_513365483 = getTaintInt();
@@ -635,6 +636,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.750 -0400", hash_original_method = "0D33E0C5C56D3A9FC9F5E73253A3A2D0", hash_generated_method = "58815CB51F1D7B440102812F13D51AFF")
     @Override
     public synchronized boolean isEmpty() {
@@ -791,6 +793,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.753 -0400", hash_original_method = "B99CB02C0986A5ACE1171E44B2E88FC0", hash_generated_method = "5330FE2E74493E3618E66F0B127A6CEB")
     public synchronized void removeAllElements() {
         {
@@ -986,6 +989,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.760 -0400", hash_original_method = "81BBFD456B62650530A643B4CB14DC43", hash_generated_method = "97B413752CD80B9C6234B1C5DFDA813B")
     @Override
     public synchronized int size() {

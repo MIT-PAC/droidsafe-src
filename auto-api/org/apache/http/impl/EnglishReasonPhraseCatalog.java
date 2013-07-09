@@ -50,6 +50,7 @@ public class EnglishReasonPhraseCatalog implements ReasonPhraseCatalog {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void setReason(int status, String reason) {
         final int category = status / 100;
         final int subcode  = status - 100*category;

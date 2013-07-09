@@ -26,6 +26,7 @@ public final class InvalidityDate extends ExtensionValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.144 -0400", hash_original_method = "0B806974B94533A41261B38C9B34792D", hash_generated_method = "5142F612E7A8424A19356C46716E001E")
     public Date getDate() {
         Date varB4EAC82CA7396A68D541C85D26508E83_972241890 = null; 

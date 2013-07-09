@@ -161,6 +161,7 @@ public class UsbDeviceConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.345 -0400", hash_original_method = "9E62342DA92A170CFD59DE9144D49504", hash_generated_method = "2375F1F6976CB7021E9FFA1A979500D3")
     private boolean native_open(String deviceName, FileDescriptor pfd) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_651611843 = getTaintBoolean();
@@ -168,11 +169,13 @@ public class UsbDeviceConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.345 -0400", hash_original_method = "6753B93585F19A7AC1519FB4DFF90D14", hash_generated_method = "2E0BD664A18EDEE4C394D0A3A394EB28")
     private void native_close() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.346 -0400", hash_original_method = "A13B1C2D71E358422B30B2068556F978", hash_generated_method = "B7DDBE81393343A4F2116894E704F6BC")
     private int native_get_fd() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2008924712 = getTaintInt();
@@ -180,6 +183,7 @@ public class UsbDeviceConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.347 -0400", hash_original_method = "6CA261B8E8A3305819062B147F5E1387", hash_generated_method = "BAEB35B0FB12C153B83C339698A2B043")
     private byte[] native_get_desc() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1259264284 = {getTaintByte()};
@@ -187,6 +191,7 @@ public class UsbDeviceConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.348 -0400", hash_original_method = "391F7A5C89801BBAF6BA75AC34FFB355", hash_generated_method = "3E75F5C5D09900971478DEF8BD12B2CB")
     private boolean native_claim_interface(int interfaceID, boolean force) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1652440848 = getTaintBoolean();
@@ -194,6 +199,7 @@ public class UsbDeviceConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.350 -0400", hash_original_method = "0891BD3C52B455B725F54E6AE146CA4B", hash_generated_method = "7068D165BD82E402894AD00FA4E32922")
     private boolean native_release_interface(int interfaceID) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_40136050 = getTaintBoolean();
@@ -201,6 +207,7 @@ public class UsbDeviceConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.352 -0400", hash_original_method = "F086403F8994814C82D251244C9D0D13", hash_generated_method = "1E92127F9A675787A3ACC21276CCA3C5")
     private int native_control_request(int requestType, int request, int value,
             int index, byte[] buffer, int length, int timeout) {
@@ -209,6 +216,7 @@ public class UsbDeviceConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.353 -0400", hash_original_method = "BF7603948EC97A6C2A6FF162EAFF5EC5", hash_generated_method = "41D59253531284C6033EF59CD19FBA65")
     private int native_bulk_request(int endpoint, byte[] buffer, int length, int timeout) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1395408171 = getTaintInt();
@@ -216,12 +224,14 @@ public class UsbDeviceConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:16.960 -0400", hash_original_method = "88959A018189FD60E12A8554B278AF72", hash_generated_method = "3CB7E68BF025980C89AAE00C7D02E8F5")
     private UsbRequest native_request_wait() {
     	return new UsbRequest();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:16.960 -0400", hash_original_method = "7798A12605DD56CE252D35CCA7400682", hash_generated_method = "ABC78903D368E3A02775041EDC3A80F9")
     private String native_get_serial() {
     	return DSUtils.UNKNOWN_STRING;

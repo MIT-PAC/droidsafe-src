@@ -148,6 +148,7 @@ public abstract class DateFormat extends Format {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.731 -0400", hash_original_method = "AC2D491D0E9EF49D1E9DF4E35BBACC3B", hash_generated_method = "B13F1499DDE273D4774564DC713E9436")
     public Calendar getCalendar() {
         Calendar varB4EAC82CA7396A68D541C85D26508E83_363760473 = null; 
@@ -202,6 +203,7 @@ public abstract class DateFormat extends Format {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.732 -0400", hash_original_method = "303CF4BDA8F6551FE38CF841A2AE86A7", hash_generated_method = "D87DB035B2CC2497139387C272C22BD4")
     public NumberFormat getNumberFormat() {
         NumberFormat varB4EAC82CA7396A68D541C85D26508E83_1653557882 = null; 
@@ -319,6 +321,7 @@ public abstract class DateFormat extends Format {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.735 -0400", hash_original_method = "6C57FEC8F5EF28EFDF88DCA370317E90", hash_generated_method = "E802D086EAB4F0F67AA7535AB9302E52")
     public void setCalendar(Calendar cal) {
         calendar = cal;
@@ -337,6 +340,7 @@ public abstract class DateFormat extends Format {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.735 -0400", hash_original_method = "DB316F58F9072942395CFF97FB7F9BCE", hash_generated_method = "16CBA8285F39434CB2D8444A821C6283")
     public void setNumberFormat(NumberFormat format) {
         numberFormat = format;

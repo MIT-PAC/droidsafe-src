@@ -66,6 +66,7 @@ public class SSLEngineDataStream implements DataStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.727 -0400", hash_original_method = "12974A5B538247B78E89825F62815487", hash_generated_method = "E9554EA62D60FD78A60721D8A5D9E6F1")
     public int available() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2066266707 = getTaintInt();
@@ -75,6 +76,7 @@ public class SSLEngineDataStream implements DataStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.727 -0400", hash_original_method = "B6667DC9436017993F0441DE39A68018", hash_generated_method = "2FE7B8789550A10CF567BA07FA52E1C7")
     public boolean hasData() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1834136272 = getTaintBoolean();
@@ -125,6 +127,7 @@ public class SSLEngineDataStream implements DataStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.728 -0400", hash_original_method = "7DD74A3F0F5CC57B45BB73D025A428F5", hash_generated_method = "194FE11CA0E1333D98D9F59050529628")
     protected int consumed() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_435941877 = getTaintInt();

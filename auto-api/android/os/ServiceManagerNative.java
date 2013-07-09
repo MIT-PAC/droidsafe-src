@@ -91,6 +91,7 @@ public abstract class ServiceManagerNative extends Binder implements IServiceMan
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.148 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "8957AB38CC860FC946B755A1E93D34FA")
     public IBinder asBinder() {
         IBinder varB4EAC82CA7396A68D541C85D26508E83_1730003894 = null; 
@@ -117,6 +118,7 @@ class ServiceManagerProxy implements IServiceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.149 -0400", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "5178151E91FF5782A01C3A0741FFD50B")
     public IBinder asBinder() {
         IBinder varB4EAC82CA7396A68D541C85D26508E83_445949865 = null; 

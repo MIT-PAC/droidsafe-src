@@ -30,6 +30,7 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.341 -0400", hash_original_method = "F26012F420AB2CB381204FD30DBE0B24", hash_generated_method = "5C24CFEFF7E1CA4F71BECC60E0F05426")
     public boolean booleanValue() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1004204767 = getTaintBoolean();
@@ -39,6 +40,7 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.341 -0400", hash_original_method = "28AC409B4210D4AB015BA8660C651D82", hash_generated_method = "BCF086E3CFEEBA770A0B03CD0CC1D45E")
     @Override
     @FindBugsSuppressWarnings("RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN")
@@ -64,11 +66,13 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int compare(boolean lhs, boolean rhs) {
         return lhs == rhs ? 0 : lhs ? 1 : -1;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.342 -0400", hash_original_method = "EE015B9251F7CEAD272805E74A0AD6CD", hash_generated_method = "D0FAB5333E430E6AEEC0E5A9A21E61BD")
     @Override
     public int hashCode() {
@@ -119,6 +123,7 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Boolean valueOf(boolean b) {
         return b ? Boolean.TRUE : Boolean.FALSE;
     }

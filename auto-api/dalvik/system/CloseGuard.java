@@ -19,6 +19,7 @@ public final class CloseGuard {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static CloseGuard get() {
         if (!ENABLED) {
             return NOOP;
@@ -27,11 +28,13 @@ public final class CloseGuard {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void setEnabled(boolean enabled) {
         ENABLED = enabled;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void setReporter(Reporter reporter) {
         if (reporter == null) {
             throw new NullPointerException("reporter == null");
@@ -40,11 +43,13 @@ public final class CloseGuard {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static Reporter getReporter() {
         return REPORTER;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.626 -0400", hash_original_method = "CFE7FE2A946B79A92C3DD646F9FF1E18", hash_generated_method = "192B6FE54DDCDC63DFF0DE4A09529E7F")
     public void open(String closer) {
         {
@@ -65,6 +70,7 @@ public final class CloseGuard {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.626 -0400", hash_original_method = "E7BB2570D728B9A5CD21AC75D54C0108", hash_generated_method = "81B1FE4E6BB63DD2B6DF9A82CBBAEB20")
     public void close() {
         allocationSite = null;
@@ -73,6 +79,7 @@ public final class CloseGuard {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.626 -0400", hash_original_method = "DF59B79C33BF4141D53B378215072C22", hash_generated_method = "9DAD168D6ED1BC6AB293D7C5D67124D6")
     public void warnIfOpen() {
         String message = ("A resource was acquired at attached stack trace but never released. "

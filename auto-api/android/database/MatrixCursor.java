@@ -239,6 +239,7 @@ public class MatrixCursor extends AbstractCursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.033 -0400", hash_original_method = "3C738FD66B9E4F046395F2884F1D431C", hash_generated_method = "27741CF3911FA61B950DBA4F2F68AF34")
     @Override
     public int getCount() {
@@ -249,6 +250,7 @@ public class MatrixCursor extends AbstractCursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.033 -0400", hash_original_method = "438CBE048C14BFF65A950EB22F18A5DC", hash_generated_method = "6BBF4487990CBE39816E89BCD530D258")
     @Override
     public String[] getColumnNames() {

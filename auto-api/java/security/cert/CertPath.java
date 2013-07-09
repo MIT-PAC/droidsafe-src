@@ -28,6 +28,7 @@ public abstract class CertPath implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.932 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "14E52E951FCDCF195AD444E9BEF3B81F")
     public String getType() {
         String varB4EAC82CA7396A68D541C85D26508E83_1859497746 = null; 

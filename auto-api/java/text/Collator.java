@@ -198,6 +198,7 @@ public abstract int hashCode();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.616 -0400", hash_original_method = "221AF1495063A31B1C807B8FB0041DE6", hash_generated_method = "B12A2B404B4F5740D90CD4FF3A89902E")
     private int decompositionMode_ICU_Java(int mode) {
         int javaMode = mode;
@@ -246,6 +247,7 @@ public abstract int hashCode();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.616 -0400", hash_original_method = "28CE8F975C7774291F421ACF5AFE6047", hash_generated_method = "973674BC0026E33E6D40FB9DF2E643D8")
     private int strength_ICU_Java(int value) {
         int javaValue = value;

@@ -548,12 +548,7 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.008 -0400", hash_original_method = "C92C5C24967E99B8B02E357BFAE9005B", hash_generated_method = "C00144D5DCA6285335E7B413BD1D76B1")
     @Override
     public String toString() {
-    	/*
-        String varB4EAC82CA7396A68D541C85D26508E83_456902460 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_456902460 = super.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_456902460.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_456902460;
-        */
+    	
         String str = new String();
         str.addTaint(getTaint());
         return str;

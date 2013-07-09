@@ -129,6 +129,7 @@ public class TCPMessageProcessor extends MessageProcessor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.816 -0400", hash_original_method = "8ED81941CDC62D91B3E3601661099BB4", hash_generated_method = "035274D99F914720078E6E6E2A9405CF")
     public String getTransport() {
         String varB4EAC82CA7396A68D541C85D26508E83_1666443436 = null; 
@@ -140,6 +141,7 @@ public class TCPMessageProcessor extends MessageProcessor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.816 -0400", hash_original_method = "4789C177AC8ECE60B231BA8A866F9D66", hash_generated_method = "1E34CECDA1F4695B59A4AB472A4C715E")
     public SIPTransactionStack getSIPStack() {
         SIPTransactionStack varB4EAC82CA7396A68D541C85D26508E83_2076088320 = null; 
@@ -387,6 +389,7 @@ public class TCPMessageProcessor extends MessageProcessor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.821 -0400", hash_original_method = "248B80D43EBE2633D052A5A2C5B180CB", hash_generated_method = "8AC2E37889159D3B656908D43FAEF827")
     public int getMaximumMessageSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1799684157 = getTaintInt();
@@ -396,6 +399,7 @@ public class TCPMessageProcessor extends MessageProcessor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.821 -0400", hash_original_method = "C4E752535BCB329601986DF8A32049BD", hash_generated_method = "36D83C593C36C8E1E7AC3249617E2C09")
     public boolean inUse() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_998092561 = getTaintBoolean();
@@ -405,6 +409,7 @@ public class TCPMessageProcessor extends MessageProcessor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.822 -0400", hash_original_method = "549BD73BE1E8477C39668DF3AD0A0CF5", hash_generated_method = "05AE8A2AC8E34A3CBFA8D1DF35135759")
     public int getDefaultTargetPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1313626852 = getTaintInt();
@@ -414,6 +419,7 @@ public class TCPMessageProcessor extends MessageProcessor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.822 -0400", hash_original_method = "51201694E0EE76265BF39848EF10BE9C", hash_generated_method = "0530AFC8A893C81E1F85183E0F6F8733")
     public boolean isSecure() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1768534608 = getTaintBoolean();

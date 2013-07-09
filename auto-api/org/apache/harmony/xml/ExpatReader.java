@@ -203,6 +203,7 @@ public class ExpatReader implements XMLReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.716 -0400", hash_original_method = "4AC4E6C4007D28BC651CD7E6B362DD6C", hash_generated_method = "63D835E03E7F509982E0571C1C9770D9")
     public void setEntityResolver(EntityResolver resolver) {
         this.entityResolver = resolver;
@@ -211,6 +212,7 @@ public class ExpatReader implements XMLReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.718 -0400", hash_original_method = "3D81AADF9B7990F38C11DFC7B847459D", hash_generated_method = "A3B71CA876C0A6CE56C7E30D4441D069")
     public EntityResolver getEntityResolver() {
         EntityResolver varB4EAC82CA7396A68D541C85D26508E83_1641188363 = null; 
@@ -222,6 +224,7 @@ public class ExpatReader implements XMLReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.718 -0400", hash_original_method = "C5C8FE4AAF9C21A7CE3D34FBCBA58D65", hash_generated_method = "8B0F5ED3687EC3A90BA8E74AD080DCEE")
     public void setDTDHandler(DTDHandler dtdHandler) {
         this.dtdHandler = dtdHandler;
@@ -230,6 +233,7 @@ public class ExpatReader implements XMLReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.719 -0400", hash_original_method = "0F3DB0A89C47F7E5E68CDAECBE47BDA3", hash_generated_method = "755264D1A858AB5677781ED172934E56")
     public DTDHandler getDTDHandler() {
         DTDHandler varB4EAC82CA7396A68D541C85D26508E83_1217399113 = null; 
@@ -241,6 +245,7 @@ public class ExpatReader implements XMLReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.720 -0400", hash_original_method = "2FAFDB8E70CAAF64BA45E64983BDD69F", hash_generated_method = "A94027FF3EBB8EC2D5A71E5B3D4DF058")
     public void setContentHandler(ContentHandler handler) {
         this.contentHandler = handler;
@@ -249,6 +254,7 @@ public class ExpatReader implements XMLReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.721 -0400", hash_original_method = "E04698427463FF6147E1A918B2D0CE2E", hash_generated_method = "C38B33171D7751F1DCC9A5F0C0B92B6C")
     public ContentHandler getContentHandler() {
         ContentHandler varB4EAC82CA7396A68D541C85D26508E83_1989351412 = null; 
@@ -260,6 +266,7 @@ public class ExpatReader implements XMLReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.722 -0400", hash_original_method = "7B962796A6AC5EDA23D64E3C68EF714F", hash_generated_method = "6F05662BE8FCA118F2F6EF361C757A69")
     public void setErrorHandler(ErrorHandler handler) {
         this.errorHandler = handler;
@@ -268,6 +275,7 @@ public class ExpatReader implements XMLReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.722 -0400", hash_original_method = "96333264931FDEA89262C2A3168E5DDE", hash_generated_method = "7542871F71FA59878E635BE3AE25FCD6")
     public ErrorHandler getErrorHandler() {
         ErrorHandler varB4EAC82CA7396A68D541C85D26508E83_1535499726 = null; 
@@ -279,6 +287,7 @@ public class ExpatReader implements XMLReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.724 -0400", hash_original_method = "6DC1F08FFDA197EBCFE51BBDA6091085", hash_generated_method = "652FF48FC4B5DE4FD5FD09E2B1E1C3F7")
     public LexicalHandler getLexicalHandler() {
         LexicalHandler varB4EAC82CA7396A68D541C85D26508E83_1198848589 = null; 
@@ -290,6 +299,7 @@ public class ExpatReader implements XMLReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.726 -0400", hash_original_method = "46969CCBA4951230BBEE4D65C754FA21", hash_generated_method = "453F77C804B47DFB6BD13C7EAAB6638F")
     public void setLexicalHandler(LexicalHandler lexicalHandler) {
         this.lexicalHandler = lexicalHandler;
@@ -298,6 +308,7 @@ public class ExpatReader implements XMLReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.727 -0400", hash_original_method = "8B578359B2B86A936D64E613060A616F", hash_generated_method = "BE57FFFDC4607ACCBFAC18228FCC9916")
     public boolean isNamespaceProcessingEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_126671670 = getTaintBoolean();
@@ -307,6 +318,7 @@ public class ExpatReader implements XMLReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.728 -0400", hash_original_method = "B86489F53C66FA94BF60F43E844ECD38", hash_generated_method = "7BDAE2666FC1C25E8AEF559C34924293")
     public void setNamespaceProcessingEnabled(boolean processNamespaces) {
         this.processNamespaces = processNamespaces;

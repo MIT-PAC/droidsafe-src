@@ -74,6 +74,7 @@ public class PushbackReader extends FilterReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.923 -0400", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "AECD2C31BF3979432DF20D9CD686214B")
     @Override
     public boolean markSupported() {

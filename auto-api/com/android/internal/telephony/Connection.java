@@ -24,6 +24,7 @@ public abstract class Connection {
     public abstract String getAddress();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.586 -0400", hash_original_method = "2C38CD1ADD524A252486CD5B36783C9F", hash_generated_method = "0E0FBA74502C7DA94591AADEEBD6027F")
     public String getCnapName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1687641244 = null; 
@@ -35,6 +36,7 @@ public abstract class Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.587 -0400", hash_original_method = "451C5F2C0CC4276FE6380FF80081B9A6", hash_generated_method = "F1B34B94E096011761524156BBB021FE")
     public String getOrigDialString() {
         String varB4EAC82CA7396A68D541C85D26508E83_1592321629 = null; 
@@ -46,6 +48,7 @@ public abstract class Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.587 -0400", hash_original_method = "2E0374E6F9E8D6BE31ABEC176AD57E5E", hash_generated_method = "D572B3BD831046C9F906B3B6BEA5A21F")
     public int getCnapNamePresentation() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2119075926 = getTaintInt();
@@ -135,6 +138,7 @@ public abstract class Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.591 -0400", hash_original_method = "E65D3701CFC74E9E6B255CE6C7739495", hash_generated_method = "CF7FC5D2341341CB9CC3E3F56E9ECC6A")
     public Object getUserData() {
         Object varB4EAC82CA7396A68D541C85D26508E83_1878166527 = null; 
@@ -146,6 +150,7 @@ public abstract class Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.592 -0400", hash_original_method = "02A60C1B56AFD4C316BCBE2C50A969C7", hash_generated_method = "DA96F33A9905D9C28F1D373D4DFB95DB")
     public void setUserData(Object userdata) {
         this.userData = userdata;
@@ -160,6 +165,7 @@ public abstract class Connection {
     public abstract void separate() throws CallStateException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.592 -0400", hash_original_method = "46262E10525A1E414BE5248C4690B238", hash_generated_method = "6791C272C5B27827C93CE851BE8811EA")
     public void clearUserData() {
         userData = null;

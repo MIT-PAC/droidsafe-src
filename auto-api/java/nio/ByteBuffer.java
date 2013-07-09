@@ -328,6 +328,7 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.796 -0400", hash_original_method = "00AA16AC102512E5E69E8EC846E58DBE", hash_generated_method = "08E106664A5456E01256652C9F2EC95A")
      void orderImpl(ByteOrder byteOrder) {
         {

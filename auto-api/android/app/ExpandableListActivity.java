@@ -39,6 +39,7 @@ public class ExpandableListActivity extends Activity implements OnCreateContextM
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.741 -0400", hash_original_method = "85F2A519B2781A30F4BC68DB47459C98", hash_generated_method = "EF5273206446CE58A67FA48842F38A9C")
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
@@ -50,6 +51,7 @@ public class ExpandableListActivity extends Activity implements OnCreateContextM
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.742 -0400", hash_original_method = "148B1F725EE0240ACB0F014B88EF7B7D", hash_generated_method = "623D57167DF44B7078A5BD300B12430A")
     public boolean onChildClick(ExpandableListView parent, View v, int groupPosition,
             int childPosition, long id) {
@@ -66,6 +68,7 @@ public class ExpandableListActivity extends Activity implements OnCreateContextM
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.742 -0400", hash_original_method = "2841CE4526AD3DDF27C3902DF7F1E509", hash_generated_method = "450666481CA5602827D87A6CF40F4A36")
     public void onGroupCollapse(int groupPosition) {
         
@@ -74,6 +77,7 @@ public class ExpandableListActivity extends Activity implements OnCreateContextM
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.743 -0400", hash_original_method = "78995B15C7B4DD7E0C829C6483E342E9", hash_generated_method = "C709029D167B3D1FE7AEB11441234665")
     public void onGroupExpand(int groupPosition) {
         
@@ -172,6 +176,7 @@ public class ExpandableListActivity extends Activity implements OnCreateContextM
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.748 -0400", hash_original_method = "0DEBB462BC2A68BA86FC192DC719C116", hash_generated_method = "DADE37D4B14134E5D74449CAB12D98B9")
     public ExpandableListAdapter getExpandableListAdapter() {
         ExpandableListAdapter varB4EAC82CA7396A68D541C85D26508E83_559791915 = null; 

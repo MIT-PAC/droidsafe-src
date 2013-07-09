@@ -73,7 +73,8 @@ final class ReadOnlyDoubleArrayBuffer extends DoubleArrayBuffer {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.911 -0400", hash_original_method = "D0F583BEFACE4F70BE4011CED42FF4E6", hash_generated_method = "1FD3DB8E45181B6F69DAF45C660A3B9B")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.911 -0400", hash_original_method = "D0F583BEFACE4F70BE4011CED42FF4E6", hash_generated_method = "1FD3DB8E45181B6F69DAF45C660A3B9B")
 	@Override
 	public boolean isReadOnly() {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_822433220 = getTaintBoolean();
@@ -106,7 +107,8 @@ final class ReadOnlyDoubleArrayBuffer extends DoubleArrayBuffer {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.913 -0400", hash_original_method = "22273AD75DCD1D369E6F6089E4C15AAA", hash_generated_method = "3E8264BC905A5D8A34DA54B6ACA457C8")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.913 -0400", hash_original_method = "22273AD75DCD1D369E6F6089E4C15AAA", hash_generated_method = "3E8264BC905A5D8A34DA54B6ACA457C8")
 	@Override
 	protected boolean protectedHasArray() {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_902291719 = getTaintBoolean();

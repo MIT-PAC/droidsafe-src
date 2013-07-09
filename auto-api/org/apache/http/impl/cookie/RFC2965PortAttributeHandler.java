@@ -45,6 +45,7 @@ public class RFC2965PortAttributeHandler implements CookieAttributeHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean portMatch(int port, int[] ports) {
         boolean portInList = false;
         for (int i = 0, len = ports.length; i < len; i++) {

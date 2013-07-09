@@ -29,6 +29,7 @@ public class HexEncoder implements Encoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.325 -0400", hash_original_method = "7253B636544E47F410015D46451276E0", hash_generated_method = "F4F2ACFF26AE53B01B3E571EB8BEB286")
     protected void initialiseDecodingTable() {
         {
@@ -89,6 +90,7 @@ public class HexEncoder implements Encoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.326 -0400", hash_original_method = "1B2A7D609CA1F47FC87AA118398B5C86", hash_generated_method = "F5F888AEE1E583C027E6C8403C15C245")
     private boolean ignore(
         char    c) {

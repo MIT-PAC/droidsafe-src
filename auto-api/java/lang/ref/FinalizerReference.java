@@ -41,6 +41,7 @@ public final class FinalizerReference<T> extends Reference<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.574 -0400", hash_original_method = "B5E36D5C5E2E18FD73C503842BC207C6", hash_generated_method = "AA79A11271518D347BCB1CB74D552364")
     @Override
     public void clear() {
@@ -64,6 +65,7 @@ public final class FinalizerReference<T> extends Reference<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void remove(FinalizerReference reference) {
         synchronized (FinalizerReference.class) {
             FinalizerReference next = reference.next;

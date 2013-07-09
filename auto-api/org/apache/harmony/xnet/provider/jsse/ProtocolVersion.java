@@ -27,6 +27,7 @@ public class ProtocolVersion {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isSupported(byte[] version) {
         if (version[0] != 3 || (version[1] != 0 && version[1] != 1)) {
             return false;
@@ -35,6 +36,7 @@ public class ProtocolVersion {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ProtocolVersion getByVersion(byte[] version) {
         if (version[0] == 3) {
             if (version[1] == 1) {

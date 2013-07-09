@@ -30,6 +30,7 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.793 -0400", hash_original_method = "EC510198678EBDAFC45D82B058FF4015", hash_generated_method = "C6177A909B65F45400E04967CBC68CBF")
     public void setStrict(boolean strict) {
         this.strict = strict;
@@ -38,6 +39,7 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.793 -0400", hash_original_method = "4DD923E2326A355154686E3A31C60072", hash_generated_method = "5E20E9296F487C26CA8E7594FEC2C6CF")
     public void setTest(boolean flag) {
         this.testing = flag;
@@ -669,6 +671,7 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.813 -0400", hash_original_method = "F6370A15361A54B6EDEFA955061D514D", hash_generated_method = "D99C4B413F6525F8354FC26B58F4490C")
     public void setDefaultUserAgentHeader(UserAgentHeader userAgent) {
         MessageFactoryImpl.userAgent = userAgent;
@@ -678,6 +681,7 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.815 -0400", hash_original_method = "86783F390E61522F639FC7DF78604B5D", hash_generated_method = "7101A99E0E3F47ED3CED2E9A54AB561C")
     public void setDefaultServerHeader(ServerHeader server) {
         MessageFactoryImpl.server = server;
@@ -687,11 +691,13 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static UserAgentHeader getDefaultUserAgentHeader() {
         return userAgent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ServerHeader getDefaultServerHeader() {
         return server;
     }
@@ -710,6 +716,7 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getDefaultContentEncodingCharset() {
         return MessageFactoryImpl.defaultContentEncodingCharset;
     }

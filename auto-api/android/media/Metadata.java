@@ -265,16 +265,19 @@ public class Metadata {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int lastSytemId() {
         return LAST_SYSTEM;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int firstCustomId() {
         return FIRST_CUSTOM;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int lastType() {
         return LAST_TYPE;
     }

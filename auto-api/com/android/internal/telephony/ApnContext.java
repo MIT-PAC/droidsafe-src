@@ -67,6 +67,7 @@ public class ApnContext {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.286 -0400", hash_original_method = "0F76476B5A4DDD20A8502B6237356474", hash_generated_method = "C47F02FC41844D3030C5CA5BAF355C08")
     public String getApnType() {
         String varB4EAC82CA7396A68D541C85D26508E83_1755106436 = null; 
@@ -78,6 +79,7 @@ public class ApnContext {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.287 -0400", hash_original_method = "D5BD92E96A7D4915CF46215470E9C147", hash_generated_method = "998DE8305A97428D0B6DF2688B401826")
     public synchronized DataConnection getDataConnection() {
         DataConnection varB4EAC82CA7396A68D541C85D26508E83_807891407 = null; 
@@ -89,6 +91,7 @@ public class ApnContext {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.287 -0400", hash_original_method = "DF99AB9AA9AC235054504D7946927384", hash_generated_method = "A407EBF6D7D499CA05EFD164B9F07CF3")
     public synchronized void setDataConnection(DataConnection dataConnection) {
         mDataConnection = dataConnection;
@@ -97,6 +100,7 @@ public class ApnContext {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.287 -0400", hash_original_method = "5BBBEC6A4F77592BB47CD138BBF3A7B6", hash_generated_method = "C32B8174299CADEFF339D26649F29189")
     public synchronized DataConnectionAc getDataConnectionAc() {
         DataConnectionAc varB4EAC82CA7396A68D541C85D26508E83_1942728691 = null; 
@@ -128,6 +132,7 @@ public class ApnContext {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.288 -0400", hash_original_method = "2BB406053D6E60D1A0AB6AAF52F2E2C8", hash_generated_method = "E6D3DA18C2A59346BEBC1DD93B7CCD39")
     public synchronized ApnSetting getApnSetting() {
         ApnSetting varB4EAC82CA7396A68D541C85D26508E83_498812577 = null; 
@@ -139,6 +144,7 @@ public class ApnContext {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.288 -0400", hash_original_method = "C7A08CF02723304D4F2917AE84902158", hash_generated_method = "339FAA179B3F5AFAA3CBA867B9C33852")
     public synchronized void setApnSetting(ApnSetting apnSetting) {
         mApnSetting = apnSetting;
@@ -259,6 +265,7 @@ public class ApnContext {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.292 -0400", hash_original_method = "CA444B740CFD8145F25D1C527A80F346", hash_generated_method = "EF92219C061F1A2B17899D270BEAE990")
     public synchronized DataConnectionTracker.State getState() {
         DataConnectionTracker.State varB4EAC82CA7396A68D541C85D26508E83_1634035166 = null; 
@@ -298,6 +305,7 @@ public class ApnContext {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.294 -0400", hash_original_method = "2809EBE4FEE36399CFA439CAAE81BBAE", hash_generated_method = "66530F9CCDA2251BBCBBB487ADF998C0")
     public synchronized String getReason() {
         String varB4EAC82CA7396A68D541C85D26508E83_1951802594 = null; 

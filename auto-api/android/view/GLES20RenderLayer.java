@@ -53,6 +53,7 @@ class GLES20RenderLayer extends GLES20Layer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.285 -0400", hash_original_method = "27637E49BAB94EC056B8444376552B7F", hash_generated_method = "92E2C85AC4B2093C9742D8FA6CDC74B7")
     @Override
      boolean isValid() {
@@ -63,6 +64,7 @@ class GLES20RenderLayer extends GLES20Layer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.286 -0400", hash_original_method = "63622532C5FA451BFFE13D4E08C1E4DD", hash_generated_method = "1F26589510BB29AC61CAD1667D230245")
     @Override
      void resize(int width, int height) {
@@ -92,6 +94,7 @@ class GLES20RenderLayer extends GLES20Layer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.287 -0400", hash_original_method = "03525402B3DC937D128A720724E320B3", hash_generated_method = "174F256C294640F991B2F098DE3A08F7")
     @Override
      HardwareCanvas getCanvas() {
@@ -104,6 +107,7 @@ class GLES20RenderLayer extends GLES20Layer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.287 -0400", hash_original_method = "3C804CAC1F48115A32BF6D1258E6260C", hash_generated_method = "CDD1DE47C8569F8431D88C9F20B7E9CB")
     @Override
      void end(Canvas currentCanvas) {
@@ -118,6 +122,7 @@ class GLES20RenderLayer extends GLES20Layer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.289 -0400", hash_original_method = "C87B2ED046DB5084DDAC583F9566C531", hash_generated_method = "682C053B7F701B25954F20C49306CA20")
     @Override
      HardwareCanvas start(Canvas currentCanvas) {
@@ -137,6 +142,7 @@ class GLES20RenderLayer extends GLES20Layer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.289 -0400", hash_original_method = "4B8F7BEEB4E6A31727A7AE50B1045BA3", hash_generated_method = "D84BFEAF1F7F2DD612ECDA04718E2436")
     @Override
      void setTransform(Matrix matrix) {

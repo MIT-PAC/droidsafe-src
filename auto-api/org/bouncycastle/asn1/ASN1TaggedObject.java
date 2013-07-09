@@ -146,6 +146,7 @@ public abstract class ASN1TaggedObject extends ASN1Object implements ASN1TaggedO
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.078 -0400", hash_original_method = "CB42AFB8AF1DB9A93243A50229C66A0D", hash_generated_method = "263FCFE21662FC6D53A708FBAF70DD74")
     public int getTagNo() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1544024373 = getTaintInt();
@@ -155,6 +156,7 @@ public abstract class ASN1TaggedObject extends ASN1Object implements ASN1TaggedO
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.078 -0400", hash_original_method = "AF6534B2BC536C6B2446F0C361A4EC15", hash_generated_method = "F67C9ACA528E350F7199036AB933BFC3")
     public boolean isExplicit() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2041612922 = getTaintBoolean();
@@ -164,6 +166,7 @@ public abstract class ASN1TaggedObject extends ASN1Object implements ASN1TaggedO
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.078 -0400", hash_original_method = "A3A283EA275283949A16122176F95537", hash_generated_method = "48EDE9EF98AC1BA64062FD5DF5B62966")
     public boolean isEmpty() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_900468864 = getTaintBoolean();

@@ -271,6 +271,7 @@ public class OpenSSLServerSocketImpl extends javax.net.ssl.SSLServerSocket {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.315 -0400", hash_original_method = "99974EADFE56BC36D8DB1EC28EC422DC", hash_generated_method = "5201226330DF32ED302042E42FC830C5")
     @Override
     public Socket accept() throws IOException {

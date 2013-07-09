@@ -172,6 +172,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.367 -0400", hash_original_method = "C91EF993CFF3E980A5E5083D47787FE2", hash_generated_method = "AF7C3125F68AA064C2F3AB379345F3AF")
     public CellLocation getCellLocation() {
         CellLocation varB4EAC82CA7396A68D541C85D26508E83_339165204 = null; 
@@ -183,6 +184,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.369 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "DC48C28F99D0DC9ED04FC19F08620CCA")
     public State getState() {
         State varB4EAC82CA7396A68D541C85D26508E83_1122051522 = null; 
@@ -194,6 +196,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.369 -0400", hash_original_method = "D156A16780F70B18E54D7E31D2F4A731", hash_generated_method = "5997531833241ED4CC2B678E3C9942CF")
     public int getPhoneType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1658989358 = getTaintInt();
@@ -214,6 +217,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.371 -0400", hash_original_method = "332EA67793D49A8F39F395B80A31DE07", hash_generated_method = "06C58FB3C70CDDC4D4C26DBEC8FF6A0D")
     public boolean getMessageWaitingIndicator() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1372805183 = getTaintBoolean();
@@ -223,6 +227,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.371 -0400", hash_original_method = "782A19718CB82C89C99C92A22851D5F3", hash_generated_method = "F7CE3F30C6E5A321CCEAD23E9574AC23")
     public boolean getCallForwardingIndicator() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_901373640 = getTaintBoolean();
@@ -243,6 +248,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.373 -0400", hash_original_method = "0F892B00FA6A5B20BECAADA8E432F7C8", hash_generated_method = "E043C271606CFF4996D920CD40E3808C")
     public DataState getDataConnectionState() {
         DataState varB4EAC82CA7396A68D541C85D26508E83_1095321771 = null; 
@@ -254,6 +260,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.373 -0400", hash_original_method = "82D10B1571239AFF33F8F34F4897802A", hash_generated_method = "1CBF1323B1E0AB371729BB5587758A92")
     public DataState getDataConnectionState(String apnType) {
         DataState varB4EAC82CA7396A68D541C85D26508E83_2021024909 = null; 
@@ -266,6 +273,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.374 -0400", hash_original_method = "EEB8511A7AB7307508BCD88B52DF7E31", hash_generated_method = "E112FB0F361C5C7A4B06A378AA42E9FB")
     public DataActivityState getDataActivityState() {
         DataActivityState varB4EAC82CA7396A68D541C85D26508E83_1090638851 = null; 
@@ -365,6 +373,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.378 -0400", hash_original_method = "AD21B61A3B2BD5EA1D1607592E76FC09", hash_generated_method = "C6BA48DAF62FCA909EC08173C610F09B")
     public boolean handleInCallMmiCommands(String dialString) throws CallStateException {
         addTaint(dialString.getTaint());
@@ -393,6 +402,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.379 -0400", hash_original_method = "0E5C04DF5C1FBCC1441C38B04202BEC5", hash_generated_method = "78F305AC73DF358B329E16898733141F")
     public boolean handlePinMmi(String dialString) {
         addTaint(dialString.getTaint());
@@ -403,6 +413,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.379 -0400", hash_original_method = "B280D27D3796215AB318AF69FF45963B", hash_generated_method = "0E82E3280320EEE46382188B2A583AEA")
     public void sendUssdResponse(String ussdMessge) {
         addTaint(ussdMessge.getTaint());
@@ -410,6 +421,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.380 -0400", hash_original_method = "5655DD58A9DF1FD4E03BA723869217B5", hash_generated_method = "FC12D40C72BA4A183C0B5D48AE76566B")
     public void registerForSuppServiceNotification(
             Handler h, int what, Object obj) {
@@ -421,6 +433,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.380 -0400", hash_original_method = "9DA9E14B4FBAF78A158AD0B6D1F89071", hash_generated_method = "F7B5A057E05A4D68894B34176419F52F")
     public void unregisterForSuppServiceNotification(Handler h) {
         addTaint(h.getTaint());
@@ -428,6 +441,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.380 -0400", hash_original_method = "9D0C0D8BE9BABAF1D8DDD00147E9B8A0", hash_generated_method = "3325DDA12C43C65FA68D146972A2FB67")
     public void setRadioPower(boolean power) {
         addTaint(power);
@@ -435,6 +449,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.381 -0400", hash_original_method = "5B36EC3545EA7D9B6D580B9CA25FD98C", hash_generated_method = "5E1D4DC7297E4DD5F4FEA85470190E9D")
     public String getVoiceMailNumber() {
         String varB4EAC82CA7396A68D541C85D26508E83_501329207 = null; 
@@ -446,6 +461,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.381 -0400", hash_original_method = "5CB47C1B0C4CAD738C12EF7E7C4FF126", hash_generated_method = "7A23CA0426DCC004ADA5584C50E1AB17")
     public String getVoiceMailAlphaTag() {
         String varB4EAC82CA7396A68D541C85D26508E83_988621367 = null; 
@@ -457,6 +473,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.381 -0400", hash_original_method = "8F5D46AA6CE6A507D46D45F56FAFD011", hash_generated_method = "F3665304C16ED91D6B948D2C2961AD90")
     public String getDeviceId() {
         String varB4EAC82CA7396A68D541C85D26508E83_1270532142 = null; 
@@ -468,6 +485,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.382 -0400", hash_original_method = "BD6A647949BDC26954FD7A78B410A165", hash_generated_method = "6FA888CEABA87530F90B0DB25D86D45F")
     public String getDeviceSvn() {
         String varB4EAC82CA7396A68D541C85D26508E83_1459945478 = null; 
@@ -479,6 +497,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.382 -0400", hash_original_method = "68C1ACAFE7C37B5C0545508E507F3DEE", hash_generated_method = "C5E38EBFEFD75E0353806FC447C6B6B7")
     public String getImei() {
         String varB4EAC82CA7396A68D541C85D26508E83_1794964933 = null; 
@@ -516,6 +535,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.384 -0400", hash_original_method = "73B16FD7D870CD30970A04ADEBAD50EE", hash_generated_method = "9C7DA93CD6A523E5FBBF98D683964F37")
     public String getSubscriberId() {
         String varB4EAC82CA7396A68D541C85D26508E83_737223990 = null; 
@@ -527,6 +547,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.384 -0400", hash_original_method = "12198439B6CEAB4301B79A5259D1390B", hash_generated_method = "972843AC835A53159A9E1126F7E1F4FA")
     public String getIccSerialNumber() {
         String varB4EAC82CA7396A68D541C85D26508E83_2054249449 = null; 
@@ -538,6 +559,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.385 -0400", hash_original_method = "7D0BF3EB57A409FDD3185CD55F336518", hash_generated_method = "FAFF44654301ED82ACA0437923FEF21D")
     public String getLine1Number() {
         String varB4EAC82CA7396A68D541C85D26508E83_1647164057 = null; 
@@ -549,6 +571,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.385 -0400", hash_original_method = "01896056554D538EFB47B84E1123E5B1", hash_generated_method = "F16E4251945C7BE14555B7F05D0A5EF7")
     public String getLine1AlphaTag() {
         String varB4EAC82CA7396A68D541C85D26508E83_1556348537 = null; 
@@ -589,6 +612,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.386 -0400", hash_original_method = "66256E1852F019E47C97B93A992ABB2C", hash_generated_method = "0DFCFA3601E2A0515241B0283FF66642")
     public void getCallForwardingOption(int commandInterfaceCFReason, Message onComplete) {
         addTaint(commandInterfaceCFReason);
@@ -597,6 +621,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.386 -0400", hash_original_method = "F46C9631F861B0FCDE0E6FCDDDABC58E", hash_generated_method = "DC0BAAB09D7351EFC9DDD9DB87828606")
     public void setCallForwardingOption(int commandInterfaceCFAction,
             int commandInterfaceCFReason, String dialingNumber,
@@ -658,6 +683,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.387 -0400", hash_original_method = "27BD0473BFC5D98F668462A42EC01A2F", hash_generated_method = "9D4FC1B73CB5C7C54FB0E2D0D5F44BB0")
     public boolean getIccRecordsLoaded() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1659154468 = getTaintBoolean();
@@ -667,6 +693,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.388 -0400", hash_original_method = "C16BAA9E30FD06D2E3848915A1670617", hash_generated_method = "DED451FBD425CE7FC6B01BB5BADBBA7C")
     public IccCard getIccCard() {
         IccCard varB4EAC82CA7396A68D541C85D26508E83_546202649 = null; 
@@ -678,6 +705,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.388 -0400", hash_original_method = "F3D2B6350F8E1C278AFA7ECA9187C8D7", hash_generated_method = "8DE8805B27756ABC38F4FA4C3F7580C2")
     public void getAvailableNetworks(Message response) {
         addTaint(response.getTaint());
@@ -685,6 +713,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.388 -0400", hash_original_method = "958A118B1D6DEAAC3F2CD7A0471E8E5A", hash_generated_method = "7A56B99868460FC0089A1CFE78EAEABC")
     public void setNetworkSelectionModeAutomatic(Message response) {
         addTaint(response.getTaint());
@@ -692,6 +721,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.388 -0400", hash_original_method = "7ACE1B8AEA90F1CDB1FDECFA2DA5C6BD", hash_generated_method = "D70D0855C7853683A027B152D06162C0")
     public void selectNetworkManually(
             OperatorInfo network,
@@ -702,6 +732,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.389 -0400", hash_original_method = "1E1F359D4473F2441E02E8FE890DEF1C", hash_generated_method = "803A54BA31E9F8CEE7211DF5B414A74F")
     public void getNeighboringCids(Message response) {
         addTaint(response.getTaint());
@@ -709,6 +740,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.389 -0400", hash_original_method = "D72E95BA671FD1DF5E112C634C709C22", hash_generated_method = "C9F8D14931A4D7088B1CE18BE7613590")
     public void setOnPostDialCharacter(Handler h, int what, Object obj) {
         addTaint(h.getTaint());
@@ -718,6 +750,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.389 -0400", hash_original_method = "01526CFA42A67B736429D6885814543E", hash_generated_method = "19C4A5329B71F92A665F281EBF3A1024")
     public void getDataCallList(Message response) {
         addTaint(response.getTaint());
@@ -737,24 +770,28 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.390 -0400", hash_original_method = "4C059DF7C7D69ACF7A40492B141C0E0E", hash_generated_method = "D7E6004C1DEBD5A2CEFE043CA7249D9E")
     public void updateServiceLocation() {
         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.390 -0400", hash_original_method = "5881AE4FC70280DEC942C9EA7D28599B", hash_generated_method = "F02F2190EA3201DB366C413C2A586A1E")
     public void enableLocationUpdates() {
         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.390 -0400", hash_original_method = "735D1391D95196F0FDC1BE41DDFF045E", hash_generated_method = "E000C34487E62E94C959CF881716F440")
     public void disableLocationUpdates() {
         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.390 -0400", hash_original_method = "1FA99E0FD5CBC0C7E23E4562022C6C7B", hash_generated_method = "3854339CEBE918656A085A036E9872E2")
     public boolean getDataRoamingEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1822172579 = getTaintBoolean();
@@ -764,6 +801,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.391 -0400", hash_original_method = "D7864742ED28BB1025A64DF25F9573F2", hash_generated_method = "5388CC5174D0767861415AFF9F866AE3")
     public void setDataRoamingEnabled(boolean enable) {
         addTaint(enable);
@@ -771,6 +809,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.391 -0400", hash_original_method = "ED02158A4D2C2891FD4DF19755FFC21E", hash_generated_method = "3AE0CA609E32A9539A255E895F537D4F")
     public boolean enableDataConnectivity() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_644792529 = getTaintBoolean();
@@ -780,6 +819,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.392 -0400", hash_original_method = "6C7C764BC0409F3779A8035A74DD7498", hash_generated_method = "8C063D41050635C4562BA438DBEF6A27")
     public boolean disableDataConnectivity() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1887383215 = getTaintBoolean();
@@ -789,6 +829,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.392 -0400", hash_original_method = "4163B9D7D88469B6B3262F63C99CA67D", hash_generated_method = "B5AEE04150840C596C8BE84C0CB84E06")
     public boolean isDataConnectivityPossible() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_923123394 = getTaintBoolean();
@@ -798,6 +839,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.392 -0400", hash_original_method = "7A2F4DC26C7BCEF3EFD92AA765E71F2C", hash_generated_method = "A830C68176AF49C2915ADA927E290191")
      boolean updateCurrentCarrierInProvider() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_681482036 = getTaintBoolean();
@@ -807,6 +849,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.393 -0400", hash_original_method = "9C23BB5EE7564DC165411E2240D9C48B", hash_generated_method = "234D97846E2DB5B89AE8A0AA0A7F606D")
     public void saveClirSetting(int commandInterfaceCLIRMode) {
         addTaint(commandInterfaceCLIRMode);
@@ -814,6 +857,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.393 -0400", hash_original_method = "EC804499C6B57F7E869E59DC08B6DF4A", hash_generated_method = "DAEFCE25BAB679DBA8E0033424EB44CF")
     public PhoneSubInfo getPhoneSubInfo() {
         PhoneSubInfo varB4EAC82CA7396A68D541C85D26508E83_300123373 = null; 
@@ -825,6 +869,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.394 -0400", hash_original_method = "812193F93806F59ED749922B050DF10F", hash_generated_method = "7067E1AE7FD8589C3884E3A4A2A56810")
     public IccSmsInterfaceManager getIccSmsInterfaceManager() {
         IccSmsInterfaceManager varB4EAC82CA7396A68D541C85D26508E83_505080913 = null; 
@@ -836,6 +881,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.395 -0400", hash_original_method = "86B1FE249C1D5498C35312B21CC1C136", hash_generated_method = "A6EC53283E07D498CCEFBA2B2C0B8A44")
     public IccPhoneBookInterfaceManager getIccPhoneBookInterfaceManager() {
         IccPhoneBookInterfaceManager varB4EAC82CA7396A68D541C85D26508E83_1014691376 = null; 
@@ -847,6 +893,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.395 -0400", hash_original_method = "A0048838E294262C3DA3F1BBED334947", hash_generated_method = "D67231CC7D6FA41BAA2B8837EE41BCC9")
     public IccFileHandler getIccFileHandler() {
         IccFileHandler varB4EAC82CA7396A68D541C85D26508E83_466112469 = null; 
@@ -887,6 +934,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.396 -0400", hash_original_method = "08A6E4B71FA09531A80AE7640F0ED8FC", hash_generated_method = "2B1C4174477ADC18DFF2E0321A33D81A")
     public boolean needsOtaServiceProvisioning() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2128811438 = getTaintBoolean();
@@ -896,6 +944,7 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.396 -0400", hash_original_method = "49CCE355DDA22C6F211BF19B00C3D5D9", hash_generated_method = "AF4EE66A9397B53E233A6EE389D5ED4C")
     public LinkProperties getLinkProperties(String apnType) {
         LinkProperties varB4EAC82CA7396A68D541C85D26508E83_1051206435 = null; 

@@ -44,6 +44,7 @@ class GsmCall extends Call {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.124 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     public void dispose() {
         
@@ -62,6 +63,7 @@ class GsmCall extends Call {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.125 -0400", hash_original_method = "3D84383237FBED33FD2CE3B737BA6B20", hash_generated_method = "0C4EFCE49C1DA0FD426B54BAAABAACE4")
     public Phone getPhone() {
         Phone varB4EAC82CA7396A68D541C85D26508E83_1108675872 = null; 

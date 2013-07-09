@@ -29,6 +29,7 @@ public final class NetPermission extends BasicPermission {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.474 -0400", hash_original_method = "1D3A92DE09AD9A3275C68C126C1F0E4E", hash_generated_method = "F67A0A637137C1C649489B9626772E02")
     @Override
     public String getActions() {
@@ -41,6 +42,7 @@ public final class NetPermission extends BasicPermission {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.475 -0400", hash_original_method = "15107D2478EB5CA607140B3E4F96BD4D", hash_generated_method = "8A3B1C8993E22AD6A0C1C68C1B1427DB")
     @Override
     public boolean implies(Permission permission) {

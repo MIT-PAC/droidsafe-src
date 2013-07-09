@@ -115,6 +115,7 @@ public final class AccessibilityEvent extends AccessibilityRecord implements Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.931 -0400", hash_original_method = "4F017DE4F3DB5F93E271E04CA9550DB1", hash_generated_method = "108A38C6FA6AFB94B67E1C2E2626035F")
     public int getEventType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1432077052 = getTaintInt();
@@ -135,6 +136,7 @@ public final class AccessibilityEvent extends AccessibilityRecord implements Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.932 -0400", hash_original_method = "9909149D86C7172035BFD4D31C880F99", hash_generated_method = "FD825AB0D05731BBA77177B6BECF80C2")
     public long getEventTime() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1858758736 = getTaintLong();
@@ -155,6 +157,7 @@ public final class AccessibilityEvent extends AccessibilityRecord implements Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.933 -0400", hash_original_method = "6D18CADAD3BE855C953B6A82043EA347", hash_generated_method = "A78C21011CC7012B60C966FD5104D048")
     public CharSequence getPackageName() {
         CharSequence varB4EAC82CA7396A68D541C85D26508E83_1364307638 = null; 
@@ -406,6 +409,7 @@ public final class AccessibilityEvent extends AccessibilityRecord implements Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.937 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "6920304E3BDB275214CDD4F7BCD45AA3")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_678539426 = getTaintInt();
@@ -471,6 +475,7 @@ public final class AccessibilityEvent extends AccessibilityRecord implements Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String eventTypeToString(int eventType) {
         switch (eventType) {
             case TYPE_VIEW_CLICKED:

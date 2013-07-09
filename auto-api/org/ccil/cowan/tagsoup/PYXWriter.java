@@ -92,6 +92,7 @@ public class PYXWriter implements ScanHandler, ContentHandler, LexicalHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.933 -0400", hash_original_method = "0C74769D0F9D1592330B85E57E53C137", hash_generated_method = "5806BA8BE7EDEC28C9427613BF7C460A")
     public void entity(char[] buff, int offset, int length) throws SAXException {
         addTaint(buff[0]);
@@ -101,6 +102,7 @@ public class PYXWriter implements ScanHandler, ContentHandler, LexicalHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.934 -0400", hash_original_method = "3C08B6E043A6E028BC79049543201CA8", hash_generated_method = "2345776F734AAE34ED37465A399EF780")
     public int getEntity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_337955242 = getTaintInt();
@@ -138,6 +140,7 @@ public class PYXWriter implements ScanHandler, ContentHandler, LexicalHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.936 -0400", hash_original_method = "D7373B13D97F6239D6FE9A75A6C3C4CD", hash_generated_method = "B4A3E12EAA1D2812561576A28AA2C0D3")
     public void decl(char[] buff, int offset, int length) throws SAXException {
         addTaint(buff[0]);
@@ -278,6 +281,7 @@ public class PYXWriter implements ScanHandler, ContentHandler, LexicalHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.938 -0400", hash_original_method = "96E02538AF8972317DC22DC52C9FCA89", hash_generated_method = "3D5BE493515BE99DFDD5F719299ECEFB")
     public void stagc(char[] buff, int offset, int length) throws SAXException {
         addTaint(buff[0]);
@@ -339,6 +343,7 @@ public class PYXWriter implements ScanHandler, ContentHandler, LexicalHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.939 -0400", hash_original_method = "0E90E85A66154559EA3C98CC7177C34F", hash_generated_method = "5B3A24B5853AE441BDBBB759C4F775AE")
     public void endPrefixMapping(String prefix) throws SAXException {
         addTaint(prefix.getTaint());
@@ -375,6 +380,7 @@ public class PYXWriter implements ScanHandler, ContentHandler, LexicalHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.940 -0400", hash_original_method = "764EC710ED4FDFB68C9E6FE9ED249649", hash_generated_method = "8982242C86C53DDD9F8374B3C93C1CFB")
     public void setDocumentLocator(Locator locator) {
         addTaint(locator.getTaint());
@@ -382,6 +388,7 @@ public class PYXWriter implements ScanHandler, ContentHandler, LexicalHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.940 -0400", hash_original_method = "1616136BE44E483876717F8A446FD8E6", hash_generated_method = "78177C3306D49108B776A6C694C380AB")
     public void skippedEntity(String name) throws SAXException {
         addTaint(name.getTaint());
@@ -389,6 +396,7 @@ public class PYXWriter implements ScanHandler, ContentHandler, LexicalHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.940 -0400", hash_original_method = "FAA725B72A2ADC391C781CAB49B849AD", hash_generated_method = "F5ABC17320CB17FAFC02F6F62510312E")
     public void startDocument() throws SAXException {
         
@@ -440,6 +448,7 @@ public class PYXWriter implements ScanHandler, ContentHandler, LexicalHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.941 -0400", hash_original_method = "9A8DBFCDD6673580DBBCEDB8AE69733A", hash_generated_method = "D2DEDFEF366F67889D9FA3A94A552C63")
     public void startPrefixMapping(String prefix, String uri) throws SAXException {
         addTaint(prefix.getTaint());
@@ -460,18 +469,21 @@ public class PYXWriter implements ScanHandler, ContentHandler, LexicalHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.941 -0400", hash_original_method = "B026A18FCF4D46E60EDFCDEA2654D91E", hash_generated_method = "B842EEA0DE9052ECF61866BD9EB9FFB0")
     public void endCDATA() throws SAXException {
         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.942 -0400", hash_original_method = "3D36862B53F533617A1DD5C66B985713", hash_generated_method = "84D215898BE9C8AA399821A662E8380F")
     public void endDTD() throws SAXException {
         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.942 -0400", hash_original_method = "A799CD2136F4389F2AB6AC2E97C1C7E3", hash_generated_method = "2EAC67D67612A09592B6D4AE3BE5EB34")
     public void endEntity(String name) throws SAXException {
         addTaint(name.getTaint());
@@ -479,12 +491,14 @@ public class PYXWriter implements ScanHandler, ContentHandler, LexicalHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.942 -0400", hash_original_method = "E4BBD9A45ED517D6BA1A0F40E8CDD7AD", hash_generated_method = "1EFEFFE32283B3B2E0EFBC09815C5A15")
     public void startCDATA() throws SAXException {
         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.942 -0400", hash_original_method = "AAB7E6DA97E949BBCF227EF9A66B4F67", hash_generated_method = "531E4E0E99A590313617911952C91A43")
     public void startDTD(String name, String publicId, String systemId) throws SAXException {
         addTaint(name.getTaint());
@@ -494,6 +508,7 @@ public class PYXWriter implements ScanHandler, ContentHandler, LexicalHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.942 -0400", hash_original_method = "DCC3E349AFEA1A7195E89C47AA33A3E4", hash_generated_method = "CD87BEA40ED554D51CC2691C961E2B5E")
     public void startEntity(String name) throws SAXException {
         addTaint(name.getTaint());

@@ -211,6 +211,7 @@ public class DefaultClientConnectionOperator implements ClientConnectionOperator
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.462 -0400", hash_original_method = "EEE63DC836F5AA81B1ECC566DDEA88C5", hash_generated_method = "AC5AD7692653F1F52E7DF426050C3497")
     protected void prepareSocket(Socket sock, HttpContext context,
                                  HttpParams params) throws IOException {

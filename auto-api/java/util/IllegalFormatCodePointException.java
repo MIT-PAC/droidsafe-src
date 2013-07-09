@@ -22,6 +22,7 @@ public class IllegalFormatCodePointException extends IllegalFormatException impl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.477 -0400", hash_original_method = "D5B710B3F21DF9B84478D362C18B2C11", hash_generated_method = "8EDE3B98C9430FF73186DDD864F7754D")
     public int getCodePoint() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_621590837 = getTaintInt();

@@ -79,6 +79,7 @@ public class DERBitString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static protected int getPadBits(
         int bitString) {
         int val = 0;
@@ -114,6 +115,7 @@ public class DERBitString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static protected byte[] getBytes(int bitString) {
         int bytes = 4;
         for (int i = 3; i >= 1; i--)
@@ -160,6 +162,7 @@ public class DERBitString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.290 -0400", hash_original_method = "A347A6B90A5D4D940F0721005973D58D", hash_generated_method = "1A50A944E7429D264333C054E95D6D0D")
     public byte[] getBytes() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_319508305 = {getTaintByte()};
@@ -169,6 +172,7 @@ public class DERBitString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.290 -0400", hash_original_method = "417B58F84A036F27149A8DCAE574FCD8", hash_generated_method = "C8982E9ACB60868ECE26A6D8EADFE241")
     public int getPadBits() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_62986654 = getTaintInt();
@@ -178,6 +182,7 @@ public class DERBitString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.290 -0400", hash_original_method = "4C040E65E95E154142FD7B39A853E86F", hash_generated_method = "9552C8B9B25F00836D292019D4D3AF6A")
     public int intValue() {
         int value = 0;

@@ -205,6 +205,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.821 -0400", hash_original_method = "FE87C901FEC48725BE9A00E5A7A6B389", hash_generated_method = "65DAA8A5EE46BC1D8654515C5A086EBA")
     public boolean getAutostart() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_735263658 = getTaintBoolean();
@@ -214,6 +215,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.821 -0400", hash_original_method = "83FF2150FEBE6917B81E8E4D5EFDEDB8", hash_generated_method = "688B8DDFE3ACB15FBB5655787E9B88BF")
     public boolean getPauseDuringPreparing() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1080390284 = getTaintBoolean();
@@ -360,6 +362,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.824 -0400", hash_original_method = "4F2E24A50F82208E59877C3E2625C348", hash_generated_method = "E0DD67D73CA30EA690453E45563D3779")
     public int getVideoLayerId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_314399285 = getTaintInt();
@@ -430,6 +433,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.826 -0400", hash_original_method = "9BC7893A1A30D65DD41983AD520ABA24", hash_generated_method = "7C0719220EB3C998D5CEFEC1C7EAFAFC")
     public void enterFullScreenVideoState(int layerId,
             HTML5VideoViewProxy proxy, WebView webView) {
@@ -440,6 +444,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.826 -0400", hash_original_method = "040F96FADC077BA4992C03214586310A", hash_generated_method = "2F95FAC613D0893AAFDAE27FD536DFDE")
     public boolean isFullScreenMode() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_266915888 = getTaintBoolean();
@@ -449,12 +454,14 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.826 -0400", hash_original_method = "576D7BAAE83D7D96FC7F76762AF5D519", hash_generated_method = "72B0C98E60E0E0F576CB0E078AC7C55A")
     public void decideDisplayMode() {
         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.826 -0400", hash_original_method = "C9A7CF84D371C51EADC63585245E2DF8", hash_generated_method = "A69B612FA6466A7F9D1DF9A8CC76244F")
     public boolean getReadyToUseSurfTex() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1669448545 = getTaintBoolean();
@@ -464,6 +471,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.827 -0400", hash_original_method = "EB4C543379CBB61A7D197317729D4B81", hash_generated_method = "0430CCEF009B5D4BB2F802DD6CDC3ED5")
     public SurfaceTexture getSurfaceTexture(int videoLayerId) {
         SurfaceTexture varB4EAC82CA7396A68D541C85D26508E83_2100117504 = null; 
@@ -476,12 +484,14 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.827 -0400", hash_original_method = "F878AB9D8B307F7725C7D90E69C96D89", hash_generated_method = "07BFA0BF77B7C18AD06224A1226A429A")
     public void deleteSurfaceTexture() {
         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.827 -0400", hash_original_method = "4BDE667A00FC91D9C95E5191E09A54C3", hash_generated_method = "9B31C412CC064822FE49579B94BCEDAE")
     public int getTextureName() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_544171868 = getTaintInt();
@@ -491,6 +501,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.827 -0400", hash_original_method = "BA6BA92F877820EFB4A7324F8FF815C7", hash_generated_method = "A7F6BF0C27E45FA3C29B004EA3DCD883")
     public boolean getPlayerBuffering() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_11212410 = getTaintBoolean();
@@ -511,6 +522,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.828 -0400", hash_original_method = "D1649F9781058EFE73B80767CB5DBB7F", hash_generated_method = "78654B15F1DDD1BB483C8E3622ECF5B9")
     protected void switchProgressView(boolean playerBuffering) {
         addTaint(playerBuffering);
@@ -518,6 +530,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.828 -0400", hash_original_method = "620458B5B8BB9506BFC901A9D3B27999", hash_generated_method = "F8FD31B02228AA4455DF5199F099DB47")
     public boolean surfaceTextureDeleted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1275947276 = getTaintBoolean();
@@ -527,6 +540,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.828 -0400", hash_original_method = "8A279E58756D4B031794A7C12A636619", hash_generated_method = "9FC91A60BFB63DBD412637DC9AE0E632")
     public boolean fullScreenExited() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1482386285 = getTaintBoolean();

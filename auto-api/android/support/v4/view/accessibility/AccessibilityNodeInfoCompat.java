@@ -27,6 +27,7 @@ public class AccessibilityNodeInfoCompat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.615 -0400", hash_original_method = "180B11831FF091AFD58918B491DA5734", hash_generated_method = "0FEFC318914C76792234B19DF0FC6855")
     public Object getImpl() {
         Object varB4EAC82CA7396A68D541C85D26508E83_1186166230 = null; 

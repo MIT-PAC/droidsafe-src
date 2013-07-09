@@ -140,6 +140,7 @@ public class TextAppearanceSpan extends MetricAffectingSpan implements Parcelabl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.006 -0400", hash_original_method = "06416282EB1641FCC18F44A861BC9EFB", hash_generated_method = "1D7541A061FA0EAE2464AA1F14799173")
     public int getSpanTypeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1899362422 = getTaintInt();
@@ -149,6 +150,7 @@ public class TextAppearanceSpan extends MetricAffectingSpan implements Parcelabl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.006 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "3C3BE694BD0F076E32CF8009F5B53301")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_676189865 = getTaintInt();
@@ -199,6 +201,7 @@ public class TextAppearanceSpan extends MetricAffectingSpan implements Parcelabl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.007 -0400", hash_original_method = "15042A588BD36B3AABC957E25B6ABB68", hash_generated_method = "77306610B3FABBC47F4083E858ECD295")
     public String getFamily() {
         String varB4EAC82CA7396A68D541C85D26508E83_1672642297 = null; 
@@ -210,6 +213,7 @@ public class TextAppearanceSpan extends MetricAffectingSpan implements Parcelabl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.008 -0400", hash_original_method = "BEF77474BA0C11C6EB44F1454E52790F", hash_generated_method = "55847672DD5D6DE79CE5A481517ED7AA")
     public ColorStateList getTextColor() {
         ColorStateList varB4EAC82CA7396A68D541C85D26508E83_1614513163 = null; 
@@ -221,6 +225,7 @@ public class TextAppearanceSpan extends MetricAffectingSpan implements Parcelabl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.008 -0400", hash_original_method = "9E3E27CD0F13B768F4263E5569C857AD", hash_generated_method = "023D41609D9B502BCD87B214519F4353")
     public ColorStateList getLinkTextColor() {
         ColorStateList varB4EAC82CA7396A68D541C85D26508E83_932639708 = null; 
@@ -232,6 +237,7 @@ public class TextAppearanceSpan extends MetricAffectingSpan implements Parcelabl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.009 -0400", hash_original_method = "AB3DB1BB0D199EBBBA8548C5EC0C310E", hash_generated_method = "0AF52B3B28D54ED666FBB5FBF6801CB6")
     public int getTextSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2022199432 = getTaintInt();
@@ -241,6 +247,7 @@ public class TextAppearanceSpan extends MetricAffectingSpan implements Parcelabl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.009 -0400", hash_original_method = "3C882FE9CECBB039C8EAD0BA2E56F794", hash_generated_method = "41E6E4A40006C1D3CE6D2CFB84A1A859")
     public int getTextStyle() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_829543102 = getTaintInt();

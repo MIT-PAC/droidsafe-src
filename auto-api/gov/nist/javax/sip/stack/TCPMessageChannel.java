@@ -154,6 +154,7 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.768 -0400", hash_original_method = "16D0E6CF226A4618D75D1B422CC8FCDF", hash_generated_method = "B40BBF6F6F49465994FB41D8E100ACC2")
     public boolean isReliable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1405753501 = getTaintBoolean();
@@ -199,6 +200,7 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.769 -0400", hash_original_method = "4789C177AC8ECE60B231BA8A866F9D66", hash_generated_method = "69A0FFABA6DE1DE6091223129363894D")
     public SIPTransactionStack getSIPStack() {
         SIPTransactionStack varB4EAC82CA7396A68D541C85D26508E83_1887019512 = null; 
@@ -210,6 +212,7 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.770 -0400", hash_original_method = "0D1837A773C1185791E8B7504B01CB2E", hash_generated_method = "6E0FF273F69BD2B1A642DAEA4CB0FCDF")
     public String getTransport() {
         String varB4EAC82CA7396A68D541C85D26508E83_1554796013 = null; 
@@ -249,6 +252,7 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.771 -0400", hash_original_method = "1F29EC3BC94C3E0863F530FCD37A61F3", hash_generated_method = "9B22F4A0CD2BA75DA5CB666CF3943CE6")
     protected InetAddress getPeerInetAddress() {
         InetAddress varB4EAC82CA7396A68D541C85D26508E83_1342283009 = null; 
@@ -260,6 +264,7 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.771 -0400", hash_original_method = "DB79607DA3ACB5FA2D24428DF2713F98", hash_generated_method = "C88B2246A17D78D1A60286E550F74DA6")
     public String getPeerProtocol() {
         String varB4EAC82CA7396A68D541C85D26508E83_369532891 = null; 
@@ -802,6 +807,7 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.780 -0400", hash_original_method = "11E5C6A8F9691D7C5E18B4FE0A22A301", hash_generated_method = "25DC6D601F50A885E38789AE9E3FD23F")
     public String getViaHost() {
         String varB4EAC82CA7396A68D541C85D26508E83_1957019293 = null; 
@@ -813,6 +819,7 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.780 -0400", hash_original_method = "97574FAF366AF2CA74D034931ECBD71B", hash_generated_method = "AE18FEB6E6B21C5A84520FC4A48F0F15")
     public int getViaPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2112362397 = getTaintInt();
@@ -822,6 +829,7 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.781 -0400", hash_original_method = "356711D154A2D021F9E9DF4BCD609AF2", hash_generated_method = "39FE9E50106DFA2A31EEB656C091B9D8")
     public int getPeerPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_62299708 = getTaintInt();
@@ -831,6 +839,7 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.781 -0400", hash_original_method = "B210BD4A713B5B982D229CB138437A53", hash_generated_method = "66EDDFED514BD91BEBE9FF7C952FF42A")
     public int getPeerPacketSourcePort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1184355345 = getTaintInt();
@@ -840,6 +849,7 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.781 -0400", hash_original_method = "97EAFF51EEE94208DA244D522468157C", hash_generated_method = "6C3E2E0D9E57DAE31191AB2C9460BE4C")
     public InetAddress getPeerPacketSourceAddress() {
         InetAddress varB4EAC82CA7396A68D541C85D26508E83_1993746136 = null; 
@@ -851,6 +861,7 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.782 -0400", hash_original_method = "51201694E0EE76265BF39848EF10BE9C", hash_generated_method = "4644EB773EBF93C68803F4A4AF5FCE81")
     public boolean isSecure() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_136544888 = getTaintBoolean();

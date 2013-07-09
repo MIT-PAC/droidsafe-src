@@ -319,6 +319,7 @@ class SimpleBigDecimal {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.739 -0400", hash_original_method = "555259738C76709D8C0A4CEB0BA4F05B", hash_generated_method = "A2B67806E201C15AD8FAA25B51E8DE98")
     public int getScale() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1002872957 = getTaintInt();

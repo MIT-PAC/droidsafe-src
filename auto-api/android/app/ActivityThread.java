@@ -239,6 +239,7 @@ public final class ActivityThread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.776 -0400", hash_original_method = "FA5B9DB827774258D426805F82794E0D", hash_generated_method = "EBE4AC8FA18D0885A3E86BAFC9F27611")
     private void dumpGraphicsInfo(FileDescriptor fd) {
     }
@@ -609,6 +610,7 @@ public final class ActivityThread {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.798 -0400", hash_original_method = "F2A25E301DE436DC300B56B48A365596", hash_generated_method = "F25035221DAB39944B2B666075A80FE5")
     private LoadedApk getPackageInfo(ApplicationInfo aInfo, CompatibilityInfo compatInfo,
             ClassLoader baseLoader, boolean securityViolation, boolean includeCode) {
@@ -656,6 +658,7 @@ public final class ActivityThread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.799 -0400", hash_original_method = "F0BED1934E92681B3C0E496CA2259BFD", hash_generated_method = "B00ACA88AB4FE899E6C24B66D2A67128")
     public ApplicationThread getApplicationThread() {
         ApplicationThread varB4EAC82CA7396A68D541C85D26508E83_1207824696 = null; 
@@ -667,6 +670,7 @@ public final class ActivityThread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.800 -0400", hash_original_method = "84F87CEBEDE5D31C88CD24E066F68A95", hash_generated_method = "582BF1A0E0DCAA201B854F3B0DB112F1")
     public Instrumentation getInstrumentation() {
         Instrumentation varB4EAC82CA7396A68D541C85D26508E83_1280331690 = null; 
@@ -678,6 +682,7 @@ public final class ActivityThread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.802 -0400", hash_original_method = "9032A5E826B7A6BB9A1848729A4BF06F", hash_generated_method = "BB4C654E4D1BD497CB43E8F2B01313EA")
     public Configuration getConfiguration() {
         Configuration varB4EAC82CA7396A68D541C85D26508E83_1493239654 = null; 
@@ -689,6 +694,7 @@ public final class ActivityThread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.803 -0400", hash_original_method = "BB8D8D9198132B7570723812CBBB4B98", hash_generated_method = "DC7EEAB38085A79D9136B0F242889899")
     public boolean isProfiling() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1955620312 = getTaintBoolean();
@@ -699,6 +705,7 @@ public final class ActivityThread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.805 -0400", hash_original_method = "DE9E88BCF6C439479F5E5429ED790EB6", hash_generated_method = "2605915698528AA453E9E0F2BCA5CF3B")
     public String getProfileFilePath() {
         String varB4EAC82CA7396A68D541C85D26508E83_820669047 = null; 
@@ -710,6 +717,7 @@ public final class ActivityThread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.806 -0400", hash_original_method = "6CA5860A95ACD9BB8C844ECC1E567192", hash_generated_method = "F5FEB144ABC31A4213F476A394C00E05")
     public Looper getLooper() {
         Looper varB4EAC82CA7396A68D541C85D26508E83_1805840381 = null; 
@@ -721,6 +729,7 @@ public final class ActivityThread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.807 -0400", hash_original_method = "BED0801CDE1100B1F268B3031343DFA4", hash_generated_method = "CC2E687B79D2BD0FC198A3EBA50A4A46")
     public Application getApplication() {
         Application varB4EAC82CA7396A68D541C85D26508E83_1296548014 = null; 
@@ -732,6 +741,7 @@ public final class ActivityThread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.808 -0400", hash_original_method = "5878D065A1BC5C9B3897192B88F09BB5", hash_generated_method = "EC4032152C99C6577518E4148A2A7C59")
     public String getProcessName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1162913230 = null; 
@@ -1083,6 +1093,7 @@ public final class ActivityThread {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.829 -0400", hash_original_method = "C9C4D84CF5E4E5BEF4E002420AA42B4A", hash_generated_method = "8EDEE8F6A6EB08C83136727C80F440A5")
     private Activity performLaunchActivity(ActivityClientRecord r, Intent customIntent) {
         Activity varB4EAC82CA7396A68D541C85D26508E83_1852405061 = null; 
@@ -1201,6 +1212,7 @@ public final class ActivityThread {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.831 -0400", hash_original_method = "483F7FDC9359FE0D21A4FBFB307EF0CA", hash_generated_method = "B51D7E38CFFEDF88D2777AF7682B65F0")
     private void handleLaunchActivity(ActivityClientRecord r, Intent customIntent) {
         unscheduleGcIdler();
@@ -1333,6 +1345,7 @@ public final class ActivityThread {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Intent getIntentBeingBroadcast() {
         return sCurrentBroadcastIntent.get();
     }
@@ -2429,6 +2442,7 @@ public final class ActivityThread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.872 -0400", hash_original_method = "E4614A97277DCEBAE71CAB13BCF3AEA6", hash_generated_method = "4309DE4D4EAD7AE9AC86B020D9DAC4E6")
     private void handleSetCoreSettings(Bundle coreSettings) {
         {
@@ -2698,6 +2712,7 @@ public final class ActivityThread {
     }
 
     
+    @DSModeled(DSC.SPEC)
     private static String safeToComponentShortString(Intent intent) {
         ComponentName component = intent.getComponent();
         return component == null ? "[Unknown]" : component.toShortString();

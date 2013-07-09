@@ -36,34 +36,41 @@ public final class SQLiteDebug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void getPagerStats(PagerStats stats) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getHeapSize() {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getHeapAllocatedSize() {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long getHeapFreeSize() {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void getHeapDirtyPages(int[] pages) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getNumActiveCursorsFinalized() {
         return sNumActiveCursorsFinalized;
     }
 
     
+    @DSModeled(DSC.SAFE)
     static synchronized void notifyActiveCursorFinalized() {
         sNumActiveCursorsFinalized++;
     }

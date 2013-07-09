@@ -36,6 +36,7 @@ public class UndeclaredThrowableException extends RuntimeException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.957 -0400", hash_original_method = "01FF2A365C1FC09F8BDCAF7FAA2D9177", hash_generated_method = "E117D2F32C41F7DB1AA1D3FD3C4B0321")
     public Throwable getUndeclaredThrowable() {
         Throwable varB4EAC82CA7396A68D541C85D26508E83_170412318 = null; 
@@ -47,6 +48,7 @@ public class UndeclaredThrowableException extends RuntimeException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.958 -0400", hash_original_method = "1E11CE865934C875382AA6A691DB2EF1", hash_generated_method = "8B83D48C28A89FECB8B12B87C40E7A49")
     @Override
     public Throwable getCause() {

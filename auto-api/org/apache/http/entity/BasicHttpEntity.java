@@ -31,6 +31,7 @@ public class BasicHttpEntity extends AbstractHttpEntity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.570 -0400", hash_original_method = "120309BFFDD6935F8B30886147626A04", hash_generated_method = "6F21A530234F69B3A057B48A94915702")
     public long getContentLength() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1019542469 = getTaintLong();
@@ -66,6 +67,7 @@ public class BasicHttpEntity extends AbstractHttpEntity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.571 -0400", hash_original_method = "731D88F5D8865617BA362DCED4C30896", hash_generated_method = "8D95DA0C687045A78A6E9CD0CBF9B0CA")
     public boolean isRepeatable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1210150284 = getTaintBoolean();
@@ -75,6 +77,7 @@ public class BasicHttpEntity extends AbstractHttpEntity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.571 -0400", hash_original_method = "7EB1D34B8B79AC60227ACAB040078324", hash_generated_method = "727B385E1B6CC2143FAFA858B4B3D854")
     public void setContentLength(long len) {
         this.length = len;
@@ -121,6 +124,7 @@ public class BasicHttpEntity extends AbstractHttpEntity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.572 -0400", hash_original_method = "12B60AB15F5876110075CCE154554A33", hash_generated_method = "B6A5FFBEAD884E50FB82380C31CCB88B")
     public boolean isStreaming() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1647121247 = getTaintBoolean();

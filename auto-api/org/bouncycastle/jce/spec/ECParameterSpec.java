@@ -89,6 +89,7 @@ public class ECParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.299 -0400", hash_original_method = "C3733AEA1B7056ED3896C5DBEA3E645D", hash_generated_method = "5974A360A2F103DC37EE4022ED427FAC")
     public ECCurve getCurve() {
         ECCurve varB4EAC82CA7396A68D541C85D26508E83_857884025 = null; 
@@ -100,6 +101,7 @@ public class ECParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.301 -0400", hash_original_method = "ED03A647C1E8B017F749575ECBD102C0", hash_generated_method = "1FFE506BEEA93C99D193C7B2CF769195")
     public ECPoint getG() {
         ECPoint varB4EAC82CA7396A68D541C85D26508E83_1084240981 = null; 
@@ -111,6 +113,7 @@ public class ECParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.303 -0400", hash_original_method = "30674A850FAA3528D3976F32A0E4EE43", hash_generated_method = "0FC54570E42F3D3BED5A80200496559D")
     public BigInteger getN() {
         BigInteger varB4EAC82CA7396A68D541C85D26508E83_596284261 = null; 
@@ -122,6 +125,7 @@ public class ECParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.304 -0400", hash_original_method = "A75824F76318CCD34CB8B7E35601A9FC", hash_generated_method = "491D0A19C2A6859B25385F03444BEC28")
     public BigInteger getH() {
         BigInteger varB4EAC82CA7396A68D541C85D26508E83_577693525 = null; 
@@ -133,6 +137,7 @@ public class ECParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.304 -0400", hash_original_method = "B051A8408593F9E1275AB818DE8E2A80", hash_generated_method = "BE82B8D9254BC9913C9DBA694F08DF25")
     public byte[] getSeed() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2071792630 = {getTaintByte()};

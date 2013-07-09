@@ -199,6 +199,7 @@ public class SslCertificate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.417 -0400", hash_original_method = "2E4F61534C62139557AB31E5631377F2", hash_generated_method = "521FF4812263795D210FE618EA7F124A")
     public DName getIssuedTo() {
         DName varB4EAC82CA7396A68D541C85D26508E83_176587257 = null; 
@@ -210,6 +211,7 @@ public class SslCertificate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.417 -0400", hash_original_method = "82F93F0D2EB1DC97DAB6C30DC54F99BE", hash_generated_method = "A95298429E4DCEF0952D4D0AE40EE8FA")
     public DName getIssuedBy() {
         DName varB4EAC82CA7396A68D541C85D26508E83_4246429 = null; 

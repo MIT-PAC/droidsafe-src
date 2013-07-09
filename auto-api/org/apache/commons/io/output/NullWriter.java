@@ -61,6 +61,7 @@ public class NullWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.738 -0400", hash_original_method = "CB9AED790CD954117728F46FA7B99DE8", hash_generated_method = "0A11CD08F4DDFF096E73C93FC3A3EE98")
     @Override
     public void write(int idx) {
@@ -69,6 +70,7 @@ public class NullWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.739 -0400", hash_original_method = "223F529506D3BF44A149C901A5D55A6B", hash_generated_method = "0A93000A54999BEEC8A2AE5DB2FA9E38")
     @Override
     public void write(char[] chr) {
@@ -77,6 +79,7 @@ public class NullWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.739 -0400", hash_original_method = "1256300F7D5F2E3F918226B727F42637", hash_generated_method = "D612F51A0FFCA0599730406D11E5F8C6")
     @Override
     public void write(char[] chr, int st, int end) {
@@ -87,6 +90,7 @@ public class NullWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.739 -0400", hash_original_method = "44D5CA24014EE7A19866ABFBD1E3495E", hash_generated_method = "887222692CBDAEBF654392A9E74A0A8F")
     @Override
     public void write(String str) {
@@ -95,6 +99,7 @@ public class NullWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.739 -0400", hash_original_method = "24E1254AF0599ABF4B37852E6EA59286", hash_generated_method = "A8448EE10969160C01504DD4790E2932")
     @Override
     public void write(String str, int st, int end) {
@@ -105,6 +110,7 @@ public class NullWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.740 -0400", hash_original_method = "336EB9AA03C5B902D3CE726BD69F433F", hash_generated_method = "4A4713C8ADAF7778CF4E4BBDA39355C2")
     @Override
     public void flush() {
@@ -112,6 +118,7 @@ public class NullWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.740 -0400", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "1A3F8C083102602A57FB2D0CBE40EA76")
     @Override
     public void close() {

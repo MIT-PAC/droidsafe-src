@@ -144,6 +144,7 @@ public class ComponentInfo extends PackageItemInfo {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.058 -0400", hash_original_method = "CF29F8673A9FD20E39B97C12C8CE0496", hash_generated_method = "3D67D361C55DCD4F2428AB5E3719CA93")
     public boolean isEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1993975420 = getTaintBoolean();
@@ -256,6 +257,7 @@ public class ComponentInfo extends PackageItemInfo {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.062 -0400", hash_original_method = "6586F246687FA42890C123804417F38B", hash_generated_method = "406CB90F4FC74735F6A5B4F9B4D23067")
     @Override
     protected ApplicationInfo getApplicationInfo() {

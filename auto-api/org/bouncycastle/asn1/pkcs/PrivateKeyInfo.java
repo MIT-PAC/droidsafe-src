@@ -134,6 +134,7 @@ public class PrivateKeyInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.130 -0400", hash_original_method = "47532F5520D2937711F415E7F39EF8B8", hash_generated_method = "BC851B90FB10226C66BCD24640986004")
     public AlgorithmIdentifier getAlgorithmId() {
         AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_1658375251 = null; 
@@ -145,6 +146,7 @@ public class PrivateKeyInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.131 -0400", hash_original_method = "3451C7D0A2D2ACAC16D97B5B3003A0C1", hash_generated_method = "828AF04CCDF50AE5BB2471CA0EC1E6FC")
     public DERObject getPrivateKey() {
         DERObject varB4EAC82CA7396A68D541C85D26508E83_875844780 = null; 
@@ -156,6 +158,7 @@ public class PrivateKeyInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.131 -0400", hash_original_method = "2B5879FE48F35BA3284D87B378AFE5E1", hash_generated_method = "5557510495B5483B1C6FC2D0AC1F457D")
     public ASN1Set getAttributes() {
         ASN1Set varB4EAC82CA7396A68D541C85D26508E83_68727965 = null; 

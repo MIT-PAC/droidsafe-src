@@ -150,6 +150,7 @@ public class PlainSocketImpl extends SocketImpl {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.613 -0400", hash_original_method = "71A74E49E6970F91549D0885CC2DD805", hash_generated_method = "D998F7F07537A927CF5120B78C2E8180")
     public void initLocalPort(int localPort) {
         this.localport = localPort;
@@ -159,6 +160,7 @@ public class PlainSocketImpl extends SocketImpl {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.613 -0400", hash_original_method = "2FB3C28FA9096CEDAB5697B9A14F4A6D", hash_generated_method = "3BBA8F8B26AC86F52B7CFD41A6C93C0D")
     public void initRemoteAddressAndPort(InetAddress remoteAddress, int remotePort) {
         this.address = remoteAddress;
@@ -685,6 +687,7 @@ public class PlainSocketImpl extends SocketImpl {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.629 -0400", hash_original_method = "C84277CCCCD515C678DD8E297690CF63", hash_generated_method = "4CED57B41B70146B37776EF1CC5CF9A6")
     @Override
     protected boolean supportsUrgentData() {

@@ -452,6 +452,7 @@ public class SSLEngineImpl extends SSLEngine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.785 -0400", hash_original_method = "FEA3CA8E78DB1766A0752130C49C073D", hash_generated_method = "508D18C8B676B118FE04D4DF1D1C9B3E")
     @Override
     public SSLSession getSession() {
@@ -480,6 +481,7 @@ public class SSLEngineImpl extends SSLEngine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.785 -0400", hash_original_method = "93B7BEFDB685497BB8E88252AEDDD652", hash_generated_method = "1200B74E783AD56A7E15788655FB96CC")
     @Override
     public boolean isInboundDone() {
@@ -490,6 +492,7 @@ public class SSLEngineImpl extends SSLEngine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.785 -0400", hash_original_method = "120A166126F4C5B7FB727570FC11E1A2", hash_generated_method = "33D451E759F5E88C6E43A746F0A1BFC4")
     @Override
     public boolean isOutboundDone() {
@@ -962,6 +965,7 @@ public class SSLEngineImpl extends SSLEngine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.794 -0400", hash_original_method = "C6B39897E63E44773E5CEE8467983722", hash_generated_method = "A93A457CD03CACD2BAD5B332ECB6E386")
     private SSLEngineResult.Status getEngineStatus() {
         SSLEngineResult.Status varB4EAC82CA7396A68D541C85D26508E83_929342818 = null; 

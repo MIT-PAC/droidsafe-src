@@ -50,6 +50,7 @@ public class StringEntity extends AbstractHttpEntity implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.651 -0400", hash_original_method = "8850B92ED3324DB77471CF2A1052D726", hash_generated_method = "144256EF7F3202792413B5908A91DD67")
     public boolean isRepeatable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_268298577 = getTaintBoolean();
@@ -59,6 +60,7 @@ public class StringEntity extends AbstractHttpEntity implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.651 -0400", hash_original_method = "161FF0185286748984501E39486F36ED", hash_generated_method = "47B048B984B639FE377ABF2D070F0E0E")
     public long getContentLength() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1015390081 = getTaintLong();
@@ -97,6 +99,7 @@ public class StringEntity extends AbstractHttpEntity implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.652 -0400", hash_original_method = "1C9916E491D93B6DAF758D3D738C6EEB", hash_generated_method = "0FC9616E36DAABD20643A5352B16F6A9")
     public boolean isStreaming() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1554588338 = getTaintBoolean();

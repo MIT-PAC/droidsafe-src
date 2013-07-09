@@ -140,6 +140,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int capacityForInitSize(int size) {
         int result = (size >> 1) + size;
         return (result & ~(MAXIMUM_CAPACITY-1))==0 ? result : MAXIMUM_CAPACITY;
@@ -191,12 +192,14 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.963 -0400", hash_original_method = "417EF77086319CE91314CCF850ADA61E", hash_generated_method = "2067003B6622767497B839D408201FF1")
      void init() {
         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.963 -0400", hash_original_method = "186376BCBF1440029A4A8EF9D3327AB7", hash_generated_method = "8D695823F6F1D90B768FC1C9033E16D8")
     @Override
     public boolean isEmpty() {
@@ -207,6 +210,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.963 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "BAD1DC5A4EACD17E86B591589B0E031B")
     @Override
     public int size() {
@@ -1019,12 +1023,14 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int secondaryHash(int h) {
         h ^= (h >>> 20) ^ (h >>> 12);
         return h ^ (h >>> 7) ^ (h >>> 4);
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int roundUpToPowerOfTwo(int i) {
         i--;
         i |= i >>>  1;

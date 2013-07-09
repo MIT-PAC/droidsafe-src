@@ -35,6 +35,7 @@ public class PEMException extends IOException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.008 -0400", hash_original_method = "8D4B98C08FC53F956480CC6A65685E20", hash_generated_method = "C650DD616A8E6BBC649DB00C8D3A6459")
     public Exception getUnderlyingException() {
         Exception varB4EAC82CA7396A68D541C85D26508E83_1555947144 = null; 
@@ -46,6 +47,7 @@ public class PEMException extends IOException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.008 -0400", hash_original_method = "F2813220852B09056C9C149C0538BE80", hash_generated_method = "BF94770209F8EE90C1EF649C8347BFDB")
     public Throwable getCause() {
         Throwable varB4EAC82CA7396A68D541C85D26508E83_822698260 = null; 

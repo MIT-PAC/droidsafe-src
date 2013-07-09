@@ -113,6 +113,7 @@ public class VerifierDeviceIdentity implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.282 -0400", hash_original_method = "A24AB6F6393E3B1D0D15482B7A9B6B3D", hash_generated_method = "0A11EFCE5CE745DC499E673D9C99F180")
     @Override
     public int hashCode() {
@@ -123,6 +124,7 @@ public class VerifierDeviceIdentity implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.284 -0400", hash_original_method = "C98AD9093350C34D0EE60C856A2859EF", hash_generated_method = "CD8F475057DF0A7D74CE5209FE1C3729")
     @Override
     public boolean equals(Object other) {
@@ -139,6 +141,7 @@ public class VerifierDeviceIdentity implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.285 -0400", hash_original_method = "515E509B017A25F880CBE7C878F2607B", hash_generated_method = "D5DF4C20B16ED870F6311078FBD90BC7")
     @Override
     public String toString() {
@@ -163,6 +166,7 @@ public class VerifierDeviceIdentity implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.286 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "C4A21A059304F8AE0626CE7751EE5C3A")
     @Override
     public int describeContents() {

@@ -171,6 +171,7 @@ public class SIMRecords extends IccRecords {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.879 -0400", hash_original_method = "3D26DD60574339032566256F631F5DB8", hash_generated_method = "DC3BF66C3E0B0A7B072A54FD2C43AE57")
     @Override
     public String getIMSI() {
@@ -183,6 +184,7 @@ public class SIMRecords extends IccRecords {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.880 -0400", hash_original_method = "9D42E73ED1AA846035EF94EBFAAEA8F6", hash_generated_method = "ED1701BFFCA032A6099F4C40973EBF36")
     public String getMsisdnNumber() {
         String varB4EAC82CA7396A68D541C85D26508E83_768962132 = null; 
@@ -194,6 +196,7 @@ public class SIMRecords extends IccRecords {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.881 -0400", hash_original_method = "F96F62208A76C85F8691E193053EFC74", hash_generated_method = "757447D5198DCEACFDA593E927809AD4")
     @Override
     public UsimServiceTable getUsimServiceTable() {
@@ -229,6 +232,7 @@ public class SIMRecords extends IccRecords {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.882 -0400", hash_original_method = "E32EFED28CC433860D178485CFB4EEE4", hash_generated_method = "CA1449A6BA0CF18F5ECB4F5DA716BEBA")
     public String getMsisdnAlphaTag() {
         String varB4EAC82CA7396A68D541C85D26508E83_1141984702 = null; 
@@ -240,6 +244,7 @@ public class SIMRecords extends IccRecords {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.883 -0400", hash_original_method = "77FFC0D98CD3CB2629C7F6A7D27E6FFF", hash_generated_method = "9CBF5276134A7217DB4EF34052C70ED4")
     public String getVoiceMailNumber() {
         String varB4EAC82CA7396A68D541C85D26508E83_464295153 = null; 
@@ -289,6 +294,7 @@ public class SIMRecords extends IccRecords {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.884 -0400", hash_original_method = "5A91F4662DCD8CEE6B5E6A046B7A4ABC", hash_generated_method = "91A4A3399403859059A739256592860D")
     public String getVoiceMailAlphaTag() {
         String varB4EAC82CA7396A68D541C85D26508E83_1844780881 = null; 
@@ -342,6 +348,7 @@ public class SIMRecords extends IccRecords {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.885 -0400", hash_original_method = "2A8D94361FF074096EDCA291A7FA986D", hash_generated_method = "144CEDB00C1499D9FEC296ABD8FE7BA2")
     @Override
     public boolean getVoiceCallForwardingFlag() {
@@ -1540,6 +1547,7 @@ public class SIMRecords extends IccRecords {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.295 -0400", hash_original_method = "3EE42FFEB0B4A779D022FF2A029DBC31", hash_generated_method = "C9BC17C9B138CB806D6E74D3F458CB0E")
     private boolean isCphsMailboxEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1399925829 = getTaintBoolean();
@@ -1569,6 +1577,7 @@ public class SIMRecords extends IccRecords {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.296 -0400", hash_original_method = "545A7868DCB44F353BBAB91C69F027BF", hash_generated_method = "1F0140305939BCE44F5D3909A2443E7C")
     public boolean isCspPlmnEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_153257505 = getTaintBoolean();

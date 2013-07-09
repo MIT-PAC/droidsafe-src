@@ -253,6 +253,7 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.876 -0400", hash_original_method = "49747860C8C48A5B3F7CFA7B7258A693", hash_generated_method = "D9958AF130AC6B51E35E614556E391CE")
     public NameValueList getParameters() {
         NameValueList varB4EAC82CA7396A68D541C85D26508E83_1098970334 = null; 
@@ -274,6 +275,7 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.876 -0400", hash_original_method = "4B4FC4972A60A318528A3B65D835B0D7", hash_generated_method = "4804A4F492C9506D4B5EB3825EC6EDA1")
     public void setParameters(NameValueList parameters) {
         this.parameters = parameters;
@@ -601,6 +603,7 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.881 -0400", hash_original_method = "5A021F5792300443FECC73E0DD310EC6", hash_generated_method = "C97E10D5759B39FC6F80DBCD7C116457")
     public DuplicateNameValueList getMultiParameters() {
         DuplicateNameValueList varB4EAC82CA7396A68D541C85D26508E83_1908038532 = null; 

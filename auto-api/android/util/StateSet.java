@@ -17,6 +17,7 @@ public class StateSet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isWildCard(int[] stateSetOrSpec) {
         return stateSetOrSpec.length == 0 || stateSetOrSpec[0] == 0;
     }
@@ -68,6 +69,7 @@ public class StateSet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean stateSetMatches(int[] stateSpec, int state) {
         int stateSpecSize = stateSpec.length;
         for (int i = 0; i < stateSpecSize; i++) {

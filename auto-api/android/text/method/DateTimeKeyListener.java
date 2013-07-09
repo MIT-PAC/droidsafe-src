@@ -19,6 +19,7 @@ public class DateTimeKeyListener extends NumberKeyListener {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.099 -0400", hash_original_method = "25727FE9AFE9AFBCFB0652DF45BFCF89", hash_generated_method = "C4038243DAFB326B588EEAAD291E7FE1")
     public int getInputType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1273757891 = getTaintInt();
@@ -29,6 +30,7 @@ public class DateTimeKeyListener extends NumberKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.099 -0400", hash_original_method = "EEC77EA89700D9A449D9FC8461D61396", hash_generated_method = "5D2BCB14A9E7257382CB28EB6072C601")
     @Override
     protected char[] getAcceptedChars() {

@@ -468,6 +468,7 @@ public abstract class CharsetEncoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.951 -0400", hash_original_method = "A9BF2BD565E7966B3C6B16D11959F2CA", hash_generated_method = "E525C3DE9EE3F07285FA14432C97553A")
     protected CoderResult implFlush(ByteBuffer out) {
         CoderResult varB4EAC82CA7396A68D541C85D26508E83_1739099312 = null; 
@@ -480,6 +481,7 @@ public abstract class CharsetEncoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.951 -0400", hash_original_method = "E03D9D5B6C40FD58B1EEECF43C9BC127", hash_generated_method = "C3493E75D383B088DEBB94344366E9DE")
     protected void implOnMalformedInput(CodingErrorAction newAction) {
         addTaint(newAction.getTaint());
@@ -487,6 +489,7 @@ public abstract class CharsetEncoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.951 -0400", hash_original_method = "33D941D09604A3F698502AE892B2B2F1", hash_generated_method = "4B30141303236D37DE62574A267B9AF0")
     protected void implOnUnmappableCharacter(CodingErrorAction newAction) {
         addTaint(newAction.getTaint());
@@ -494,6 +497,7 @@ public abstract class CharsetEncoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.952 -0400", hash_original_method = "BBBD9A68869312EDB40CCAE9146777D7", hash_generated_method = "C9C5333A73F363FD625EC04BC5CF9C82")
     protected void implReplaceWith(byte[] newReplacement) {
         addTaint(newReplacement[0]);
@@ -501,6 +505,7 @@ public abstract class CharsetEncoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.952 -0400", hash_original_method = "B1E265ECD4B779BE3343E27B901DC354", hash_generated_method = "2A58666B59F850117B41A249C7AD97D2")
     protected void implReset() {
         
@@ -535,6 +540,7 @@ public abstract class CharsetEncoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.953 -0400", hash_original_method = "14FFD5293B4145E0D4BC6D81F9598816", hash_generated_method = "0E8756548871145894F95708FFD131E3")
     public CodingErrorAction malformedInputAction() {
         CodingErrorAction varB4EAC82CA7396A68D541C85D26508E83_1799371272 = null; 
@@ -670,6 +676,7 @@ public abstract class CharsetEncoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.957 -0400", hash_original_method = "01254405DC3888434A269A87FF2AF4FB", hash_generated_method = "FA898BF704CBFF227B0D7BDB230ECF9B")
     public CodingErrorAction unmappableCharacterAction() {
         CodingErrorAction varB4EAC82CA7396A68D541C85D26508E83_1761182742 = null; 

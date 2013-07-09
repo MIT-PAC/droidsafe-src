@@ -114,6 +114,7 @@ public class BufferedReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.477 -0400", hash_original_method = "1E545822701FEAEF52AB68BFB73351A8", hash_generated_method = "6DF917CD2C511329468212ABAE69B1DD")
     private boolean isClosed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_17590545 = getTaintBoolean();
@@ -163,6 +164,7 @@ public class BufferedReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.479 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "179F95D673BD5051E67F67020C03F1A2")
     @Override
     public boolean markSupported() {

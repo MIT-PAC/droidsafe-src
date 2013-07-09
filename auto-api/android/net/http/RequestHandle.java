@@ -144,6 +144,7 @@ public class RequestHandle {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.198 -0400", hash_original_method = "1E2E2512E5F173592E2117FB4C479261", hash_generated_method = "A8BF3B15B58738688C23D859445DA48C")
     public boolean isRedirectMax() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1791136718 = getTaintBoolean();
@@ -153,6 +154,7 @@ public class RequestHandle {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.198 -0400", hash_original_method = "3AC7970B74E2F8214DB13CA8BCAB44BF", hash_generated_method = "07FA6F1BA059CB85A6159BA68581AE0E")
     public int getRedirectCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_921492774 = getTaintInt();
@@ -162,6 +164,7 @@ public class RequestHandle {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.199 -0400", hash_original_method = "FFEBE76B00A2A9B427C3877CD59FFD71", hash_generated_method = "75F6E6041180F5755B1072705080BEBF")
     public void setRedirectCount(int count) {
         mRedirectCount = count;
@@ -333,6 +336,7 @@ public class RequestHandle {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.202 -0400", hash_original_method = "E02C2F0EA498C425350A019498EEA751", hash_generated_method = "8EE319F5B53344699D8733CC7777BC84")
     public String getMethod() {
         String varB4EAC82CA7396A68D541C85D26508E83_1465553042 = null; 
@@ -422,6 +426,7 @@ public class RequestHandle {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String authorizationHeader(boolean isProxy) {
         if (!isProxy) {
             return AUTHORIZATION_HEADER;

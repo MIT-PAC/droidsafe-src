@@ -27,6 +27,7 @@ public class UnderlineSpan extends CharacterStyle implements UpdateAppearance, P
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.034 -0400", hash_original_method = "98FDD0C5C920ADC9B5642E26AAA3CBE6", hash_generated_method = "10F0C8BA65B2DD0B1A00B09FB482ACA9")
     public int getSpanTypeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_258255344 = getTaintInt();
@@ -36,6 +37,7 @@ public class UnderlineSpan extends CharacterStyle implements UpdateAppearance, P
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.034 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "1BFDCC94E6CFD845F56CE2CE468C7FEF")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_664829520 = getTaintInt();
@@ -45,6 +47,7 @@ public class UnderlineSpan extends CharacterStyle implements UpdateAppearance, P
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.034 -0400", hash_original_method = "36081754C4A09732AEC95BB21FA0BDE7", hash_generated_method = "E7DBC20584A55C26974D54383A48E9F7")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(dest.getTaint());

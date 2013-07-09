@@ -94,6 +94,7 @@ public class ServerSocket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.741 -0400", hash_original_method = "847F07D140851DC7DF04F3DA230B7EED", hash_generated_method = "B155776CABA4580D7775D3A9B2EC3485")
     public SocketImpl getImpl$() {
         SocketImpl varB4EAC82CA7396A68D541C85D26508E83_1316014577 = null; 
@@ -105,6 +106,7 @@ public class ServerSocket {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.742 -0400", hash_original_method = "DE0153D2AABFEE83527E2EAC5D1F68DF", hash_generated_method = "AEA4ED584D3135959878D35659B56203")
     public Socket accept() throws IOException {
         Socket varB4EAC82CA7396A68D541C85D26508E83_720255953 = null; 
@@ -405,6 +407,7 @@ public class ServerSocket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.753 -0400", hash_original_method = "589AFDD4CA6BF38ABB5F59E26BB3DC6D", hash_generated_method = "3465E11F0F4BE51D7DF199E93A4456EA")
     public boolean isBound() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_101753087 = getTaintBoolean();
@@ -414,6 +417,7 @@ public class ServerSocket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.754 -0400", hash_original_method = "2EEDDDEB8BA1CD500E3647BC397BF54F", hash_generated_method = "58519B4790B59DA47D9D9ADB2B77CAE4")
     public boolean isClosed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1492444945 = getTaintBoolean();
@@ -495,6 +499,7 @@ public class ServerSocket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.757 -0400", hash_original_method = "3D28E6253835634FC7711C1CE3F0C48B", hash_generated_method = "48C3635551DC6AFC2606B0EA90054CF4")
     public ServerSocketChannel getChannel() {
         ServerSocketChannel varB4EAC82CA7396A68D541C85D26508E83_1619111911 = null; 
@@ -506,6 +511,7 @@ public class ServerSocket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.758 -0400", hash_original_method = "EE4DCDA11944F25F3B6AAA6A92D8AD2F", hash_generated_method = "5BDBFA2FBDAEAD861B5CE7312955EF38")
     public void setPerformancePreferences(int connectionTime, int latency, int bandwidth) {
         addTaint(connectionTime);

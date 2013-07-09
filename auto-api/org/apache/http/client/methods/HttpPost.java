@@ -38,6 +38,7 @@ public class HttpPost extends HttpEntityEnclosingRequestBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.772 -0400", hash_original_method = "E4A43B2F65721A683997A037549396C3", hash_generated_method = "37A3AA428B53352A8F676854B7CF6E73")
     @Override
     public String getMethod() {

@@ -97,6 +97,7 @@ public class Via extends ParametersHeader implements javax.sip.header.ViaHeader,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.920 -0400", hash_original_method = "07C91BB13E357235D0646F9B1302A813", hash_generated_method = "1E5B3B963DDB845EFAD56EC088E915BD")
     public Protocol getSentProtocol() {
         Protocol varB4EAC82CA7396A68D541C85D26508E83_752525077 = null; 
@@ -108,6 +109,7 @@ public class Via extends ParametersHeader implements javax.sip.header.ViaHeader,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.920 -0400", hash_original_method = "834E4BBD7298D05AE3719FD543779099", hash_generated_method = "7D99C078893DB521528061346A7CEA1A")
     public HostPort getSentBy() {
         HostPort varB4EAC82CA7396A68D541C85D26508E83_1224016957 = null; 
@@ -135,6 +137,7 @@ public class Via extends ParametersHeader implements javax.sip.header.ViaHeader,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.922 -0400", hash_original_method = "50080B5B5AC1614DCB7B006B51F53E3F", hash_generated_method = "81A9331E44F879FFC51E64A0CDDA29D0")
     public NameValueList getViaParms() {
         NameValueList varB4EAC82CA7396A68D541C85D26508E83_255014516 = null; 
@@ -146,6 +149,7 @@ public class Via extends ParametersHeader implements javax.sip.header.ViaHeader,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.923 -0400", hash_original_method = "D7C1F8AAD3D2F40DD04B72C74A7D0B69", hash_generated_method = "431A92BF021FF93C90AB41B75F31C96F")
     public String getComment() {
         String varB4EAC82CA7396A68D541C85D26508E83_101412362 = null; 
@@ -168,6 +172,7 @@ public class Via extends ParametersHeader implements javax.sip.header.ViaHeader,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.924 -0400", hash_original_method = "B8E38931A483485D5D42DADC8F66AFA1", hash_generated_method = "F189816C6A3825C449808DF420E8142B")
     public boolean hasComment() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_945616086 = getTaintBoolean();
@@ -186,6 +191,7 @@ public class Via extends ParametersHeader implements javax.sip.header.ViaHeader,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.924 -0400", hash_original_method = "2FDA3671927B417EA64F28FFDD680773", hash_generated_method = "61BD4B46829E380C1561798A83B14603")
     public void removeComment() {
         comment = null;
@@ -223,6 +229,7 @@ public class Via extends ParametersHeader implements javax.sip.header.ViaHeader,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.926 -0400", hash_original_method = "F4FB101A445D5E49EE8B10DCE47E32FC", hash_generated_method = "5256462B357CC08BC06E273F7E8B63C4")
     public void setSentProtocol(Protocol s) {
         sentProtocol = s;
@@ -231,6 +238,7 @@ public class Via extends ParametersHeader implements javax.sip.header.ViaHeader,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.926 -0400", hash_original_method = "543B4EA18E4F8858630BB59B262697DA", hash_generated_method = "63DB9B02D21F6151DDBE43BA55FA92E9")
     public void setSentBy(HostPort s) {
         sentBy = s;
@@ -239,6 +247,7 @@ public class Via extends ParametersHeader implements javax.sip.header.ViaHeader,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.926 -0400", hash_original_method = "DE8908B9CA5447E854A0D06D0B1B9195", hash_generated_method = "23ECBD58C40560F298AA32A25976DB82")
     public void setComment(String c) {
         comment = c;
@@ -381,6 +390,7 @@ public class Via extends ParametersHeader implements javax.sip.header.ViaHeader,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.930 -0400", hash_original_method = "524778E64DA2B969E2ED4D2BD7E92B55", hash_generated_method = "7B6A17B05EF5967791C55E81D8F72366")
     public void setRPort() {
         rPortFlag = true;

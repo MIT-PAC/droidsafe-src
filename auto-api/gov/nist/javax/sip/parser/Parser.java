@@ -39,6 +39,7 @@ public abstract class Parser extends ParserCore implements TokenTypes {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.342 -0400", hash_original_method = "46F79D05E02F5C322F83A2BCE13C7B55", hash_generated_method = "1E6EFC366BFB141EAEB2D21E694DB673")
     protected Lexer getLexer() {
         Lexer varB4EAC82CA7396A68D541C85D26508E83_450833309 = null; 

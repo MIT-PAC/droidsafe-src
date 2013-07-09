@@ -57,6 +57,7 @@ public class Loader<D> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.412 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "072BBBD3784274849EC8ECF6C2405117")
     public Context getContext() {
         Context varB4EAC82CA7396A68D541C85D26508E83_88931971 = null; 
@@ -68,6 +69,7 @@ public class Loader<D> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.412 -0400", hash_original_method = "849E83C6BA01C72387E236CA4FAA38B9", hash_generated_method = "854B457B7520AD5A10143D2BD4C1A542")
     public int getId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_988589053 = getTaintInt();
@@ -115,6 +117,7 @@ public class Loader<D> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.415 -0400", hash_original_method = "4FF549E03853BC8FE3FDFAEBF99B8097", hash_generated_method = "F8F21B1897999F6861EEA1E2C7F6E5E7")
     public boolean isStarted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_472531593 = getTaintBoolean();
@@ -124,6 +127,7 @@ public class Loader<D> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.416 -0400", hash_original_method = "A2FBF2FF6E2191DA1A91C50D7F722DEF", hash_generated_method = "78AF32450DFD695FDA11DAF8B1510A65")
     public boolean isAbandoned() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_594726574 = getTaintBoolean();
@@ -133,6 +137,7 @@ public class Loader<D> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.416 -0400", hash_original_method = "6F78AC76FABAE5B00729D2DF0B0C81EB", hash_generated_method = "4933A334B15832EF36D9F3B62AEF1710")
     public boolean isReset() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1489705586 = getTaintBoolean();
@@ -156,6 +161,7 @@ public class Loader<D> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.417 -0400", hash_original_method = "DA06EE0B2F861EB56F065785FCE355AD", hash_generated_method = "0909BE96C0F99143CB2CE82AF27A625E")
     protected void onStartLoading() {
         
@@ -171,6 +177,7 @@ public class Loader<D> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.418 -0400", hash_original_method = "FE3F333F9E40E18C50A63599879C8FC2", hash_generated_method = "488FAE86043081AFB0979733155F08FD")
     protected void onForceLoad() {
         
@@ -188,6 +195,7 @@ public class Loader<D> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.418 -0400", hash_original_method = "61C04D3A0F64307AA142FA0229BCD9C9", hash_generated_method = "716B7303C3FA40378FDE0D93ABB3AD37")
     protected void onStopLoading() {
         
@@ -205,6 +213,7 @@ public class Loader<D> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.419 -0400", hash_original_method = "A161936916B264DFAEE5DB9D8DEA7F5D", hash_generated_method = "2DF6972E38BFCEC8C4E59AA3458EA32B")
     protected void onAbandon() {
         
@@ -228,6 +237,7 @@ public class Loader<D> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.420 -0400", hash_original_method = "16611E3F48156A317644CA113F750BCD", hash_generated_method = "506FAD418C46C1799155951AA1376B27")
     protected void onReset() {
         
@@ -235,6 +245,7 @@ public class Loader<D> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.421 -0400", hash_original_method = "C55C1C662CB28045D31932504C1021C3", hash_generated_method = "8818390A43E147CB4192B5233D898040")
     public boolean takeContentChanged() {
         boolean res = mContentChanged;

@@ -229,6 +229,7 @@ public class PackageItemInfo {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.787 -0400", hash_original_method = "790329C099FCB9AD7C46A077CBE50219", hash_generated_method = "316D5F65B39AC5EA15A37158C4DD1A6F")
     protected Drawable loadDefaultLogo(PackageManager pm) {
         Drawable varB4EAC82CA7396A68D541C85D26508E83_1720411762 = null; 
@@ -304,6 +305,7 @@ public class PackageItemInfo {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.789 -0400", hash_original_method = "B7061250601C1EA92C43E5184BBC6241", hash_generated_method = "D8B099546B41237AE2233D8866941249")
     protected void dumpBack(Printer pw, String prefix) {
         addTaint(pw.getTaint());
@@ -335,6 +337,7 @@ public class PackageItemInfo {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.790 -0400", hash_original_method = "3C095FBE28E1D0A5D79820831D5573F9", hash_generated_method = "F524BBB97562F4218AC234124D490912")
     protected ApplicationInfo getApplicationInfo() {
         ApplicationInfo varB4EAC82CA7396A68D541C85D26508E83_965782225 = null; 

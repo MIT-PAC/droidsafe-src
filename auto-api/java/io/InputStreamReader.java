@@ -274,6 +274,7 @@ public class InputStreamReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.101 -0400", hash_original_method = "2814A675517787CC2FFF66E2663BBAA6", hash_generated_method = "49D874379D0E719E8EB172AC835AF759")
     private boolean isOpen() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_910724077 = getTaintBoolean();

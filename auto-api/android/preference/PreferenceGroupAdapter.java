@@ -280,6 +280,7 @@ class PreferenceGroupAdapter extends BaseAdapter implements OnPreferenceChangeIn
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.489 -0400", hash_original_method = "19954EF3B060E791A26DF845CEE18A7B", hash_generated_method = "B0026A257632DA2EE5376DEF854D700A")
     @Override
     public boolean areAllItemsEnabled() {
@@ -314,6 +315,7 @@ class PreferenceGroupAdapter extends BaseAdapter implements OnPreferenceChangeIn
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.490 -0400", hash_original_method = "047E07C1992C7400A48E08BF432AD584", hash_generated_method = "56373E5A99B4B09A3B8497611BDB75CA")
     @Override
     public boolean hasStableIds() {

@@ -602,6 +602,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
 	
+	@DSModeled(DSC.SAFE)
 	View(){
 		mResources = null;
 		/*

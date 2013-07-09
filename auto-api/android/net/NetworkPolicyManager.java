@@ -226,6 +226,7 @@ public class NetworkPolicyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isUidValidForPolicy(Context context, int uid) {
         if (uid < android.os.Process.FIRST_APPLICATION_UID
                 || uid > android.os.Process.LAST_APPLICATION_UID) {

@@ -83,6 +83,7 @@ public class Instrumentation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:18.943 -0400", hash_original_method = "4B024CDE66137DA3ED66BF57127A0E80", hash_generated_method = "618433C04A9C5C61D907C7BAF3E63003")
     public void onCreate(Bundle arguments) {
         
@@ -108,6 +109,7 @@ public class Instrumentation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:18.944 -0400", hash_original_method = "0451E38101EC2D69951E664FB36904F0", hash_generated_method = "C270D6AECB942165605F46F9C723CFA1")
     public void onStart() {
         
@@ -115,6 +117,7 @@ public class Instrumentation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:18.945 -0400", hash_original_method = "8DC9492B498FF3067475C41C79EEAB3B", hash_generated_method = "96FC526C982913C690CC586473556A88")
     public boolean onException(Object obj, Throwable e) {
         
@@ -220,6 +223,7 @@ public class Instrumentation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:18.948 -0400", hash_original_method = "7E0E89252855B3CDBF126F525B8DFC31", hash_generated_method = "E5C4FFF396F837C85A1D40A9B232BFA0")
     public void onDestroy() {
         
@@ -227,6 +231,7 @@ public class Instrumentation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:18.949 -0400", hash_original_method = "0612F59C08E6EE31E243F52D2CCB68AA", hash_generated_method = "3DDCD57A3409851492A8EA23FA22B677")
     public Context getContext() {
         Context varB4EAC82CA7396A68D541C85D26508E83_1567854033 = null; 
@@ -238,6 +243,7 @@ public class Instrumentation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:18.949 -0400", hash_original_method = "6C1D36E28C0C97736EA4779A7FB1715C", hash_generated_method = "7AFA0E70529C794AB1A5C17D9100D0B3")
     public ComponentName getComponentName() {
         ComponentName varB4EAC82CA7396A68D541C85D26508E83_1923153523 = null; 
@@ -249,6 +255,7 @@ public class Instrumentation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:18.950 -0400", hash_original_method = "D1026223DF11B7056861FB0AA4B64828", hash_generated_method = "C0C62B484AF91FDB6BF40FE5582635E7")
     public Context getTargetContext() {
         Context varB4EAC82CA7396A68D541C85D26508E83_637648277 = null; 
@@ -372,6 +379,7 @@ public class Instrumentation {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:18.959 -0400", hash_original_method = "834B647755C86ED587A771C499B38AF8", hash_generated_method = "29ED5F3D06B9852D8B69F2CA8A3C8094")
     public Activity startActivitySync(Intent intent) {
         Activity varB4EAC82CA7396A68D541C85D26508E83_1628660408 = null; 
@@ -794,6 +802,7 @@ public class Instrumentation {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:18.983 -0400", hash_original_method = "1A9EF24656896AC4FCE906BFB43593E0", hash_generated_method = "FE1A8E70921FF33EE11731AC18BC1C75")
     public Application newApplication(ClassLoader cl, String className, Context context) throws InstantiationException, IllegalAccessException, 
             ClassNotFoundException {
@@ -866,6 +875,7 @@ public class Instrumentation {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:18.987 -0400", hash_original_method = "67A9E29CAF7C169812898E8BB0812F51", hash_generated_method = "05D40FC2596C5E5C1771B72B76D3DFFB")
     public Activity newActivity(ClassLoader cl, String className,
             Intent intent) throws InstantiationException, IllegalAccessException,
@@ -977,6 +987,7 @@ public class Instrumentation {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:18.992 -0400", hash_original_method = "5C607C7DDC680DB12532E9DB6F9CBC1F", hash_generated_method = "0EEBC340D57C7E6518EB586C232BD876")
     public void callActivityOnNewIntent(Activity activity, Intent intent) {
         activity.onNewIntent(intent);
@@ -1189,6 +1200,7 @@ public class Instrumentation {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.004 -0400", hash_original_method = "2C6BFD417D58A73C3437D9BD22014CB6", hash_generated_method = "12DC5467C52538D1276CB5367582E1DB")
     public ActivityResult execStartActivity(
             Context who, IBinder contextThread, IBinder token, Activity target,
@@ -1303,6 +1315,7 @@ public class Instrumentation {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.008 -0400", hash_original_method = "D8D9B46CC68EC6EB44E02EECB84F8BB9", hash_generated_method = "1770B32238B890077964898AE012C218")
     public ActivityResult execStartActivity(
         Context who, IBinder contextThread, IBinder token, Fragment target,

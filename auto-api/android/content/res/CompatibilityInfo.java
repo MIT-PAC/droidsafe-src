@@ -187,6 +187,7 @@ public class CompatibilityInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.594 -0400", hash_original_method = "E2D07E7BFECA2D29A0CD39AB3E4AD2F4", hash_generated_method = "70CA2B42EAEB8864F1C1314241E5A455")
     public boolean isScalingRequired() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1845227384 = getTaintBoolean();
@@ -196,6 +197,7 @@ public class CompatibilityInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.594 -0400", hash_original_method = "AEF0832D3207872CC75E4AC6D7849C73", hash_generated_method = "830DE4E793977E4F3AEC3AA1EC102F6E")
     public boolean supportsScreen() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1543645364 = getTaintBoolean();
@@ -205,6 +207,7 @@ public class CompatibilityInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.595 -0400", hash_original_method = "BD11775B1F66D2736A032A6A37E2552F", hash_generated_method = "371B886A7A9FE2BA8BC2400A5440EED3")
     public boolean neverSupportsScreen() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1869638235 = getTaintBoolean();
@@ -214,6 +217,7 @@ public class CompatibilityInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.595 -0400", hash_original_method = "CFA6F9CFCD9588B682D5F07DFF385684", hash_generated_method = "1E7B3DDC4876956D2581A5F31E9635AD")
     public boolean alwaysSupportsScreen() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1529164691 = getTaintBoolean();
@@ -294,6 +298,7 @@ public class CompatibilityInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float computeCompatibleScaling(DisplayMetrics dm, DisplayMetrics outDm) {
         final int width = dm.noncompatWidthPixels;
         final int height = dm.noncompatHeightPixels;
@@ -333,6 +338,7 @@ public class CompatibilityInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.599 -0400", hash_original_method = "CD2E846E95D6DD1EBA23C219F15E8AAF", hash_generated_method = "47E46D7E07C29CBB7B289D49BEF0F58D")
     @Override
     public boolean equals(Object o) {
@@ -443,6 +449,7 @@ public class CompatibilityInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.601 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "03CC114A182804145E898D4EAA4A1407")
     @Override
     public int describeContents() {

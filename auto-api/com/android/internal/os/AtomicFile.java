@@ -33,6 +33,7 @@ public class AtomicFile {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.457 -0400", hash_original_method = "9A558AA4F639B650B9F7EAEB27AD7615", hash_generated_method = "C3D2ACEF9417A7EE9EA8A01C417C090B")
     public File getBaseFile() {
         File varB4EAC82CA7396A68D541C85D26508E83_1648011473 = null; 

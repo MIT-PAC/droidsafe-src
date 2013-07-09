@@ -143,6 +143,7 @@ class ComparableTimSort {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void reverseRange(Object[] a, int lo, int hi) {
         hi--;
         while (lo < hi) {
@@ -153,6 +154,7 @@ class ComparableTimSort {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int minRunLength(int n) {
         if (DEBUG) assert n >= 0;
         int r = 0;
@@ -164,6 +166,7 @@ class ComparableTimSort {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.575 -0400", hash_original_method = "4FF06135DA529EA5945D38DB9DEC9B0E", hash_generated_method = "FEFC76C70CAF77D41BBF6E81160EBCA3")
     private void pushRun(int runBase, int runLen) {
         this.runBase[stackSize] = runBase;

@@ -55,6 +55,7 @@ public class IccIoResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.950 -0400", hash_original_method = "E45E4CA02C1498571B14F8EF02CBA542", hash_generated_method = "2851E708BC48FD4F7EF7A79FE7FE0A23")
     public boolean success() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2146224837 = getTaintBoolean();

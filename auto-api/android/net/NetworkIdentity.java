@@ -116,6 +116,7 @@ public class NetworkIdentity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.309 -0400", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "6DBE1AD23085E7DFBC579428E3138DBF")
     public int getType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1029230281 = getTaintInt();
@@ -125,6 +126,7 @@ public class NetworkIdentity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.310 -0400", hash_original_method = "A4DDC328E17941CDB6FA9336B74814D9", hash_generated_method = "F450C8245920FB4A823D88F2EEE65927")
     public int getSubType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1947303700 = getTaintInt();
@@ -134,6 +136,7 @@ public class NetworkIdentity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.310 -0400", hash_original_method = "DC04D62E493D044F593223B75A4808C0", hash_generated_method = "7A346E59F055E04BBFC69A878C5023F1")
     public String getSubscriberId() {
         String varB4EAC82CA7396A68D541C85D26508E83_55726439 = null; 
@@ -145,6 +148,7 @@ public class NetworkIdentity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.311 -0400", hash_original_method = "27B48B56BD1E05F31D9E74CC53E25407", hash_generated_method = "85ED911FBD1187756699D448E2E9159A")
     public boolean getRoaming() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_313575061 = getTaintBoolean();

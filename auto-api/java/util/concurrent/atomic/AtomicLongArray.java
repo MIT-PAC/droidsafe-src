@@ -46,6 +46,7 @@ public class AtomicLongArray implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static long byteOffset(int i) {
         return ((long) i << shift) + base;
     }

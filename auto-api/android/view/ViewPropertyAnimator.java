@@ -113,6 +113,7 @@ public class ViewPropertyAnimator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.255 -0400", hash_original_method = "137A1F44FEDEF7DBAEA1EE8251F82E1F", hash_generated_method = "BDDBC26F0223F3F02A7556E3F594A158")
     public long getStartDelay() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_522337225 = getTaintLong();
@@ -150,6 +151,7 @@ public class ViewPropertyAnimator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.257 -0400", hash_original_method = "995017692E981832E150BE79F0CB8507", hash_generated_method = "B68484D0EA54B7EE3B1A21836DAE3075")
     public ViewPropertyAnimator setInterpolator(TimeInterpolator interpolator) {
         ViewPropertyAnimator varB4EAC82CA7396A68D541C85D26508E83_189114921 = null; 
@@ -165,6 +167,7 @@ public class ViewPropertyAnimator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.258 -0400", hash_original_method = "D3B983C6B8AF317CF4B7893570C39145", hash_generated_method = "0D0892058770E6EE12A8978AA6BAEEC1")
     public ViewPropertyAnimator setListener(Animator.AnimatorListener listener) {
         ViewPropertyAnimator varB4EAC82CA7396A68D541C85D26508E83_1695566237 = null; 
@@ -623,6 +626,7 @@ public class ViewPropertyAnimator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.285 -0400", hash_original_method = "543199367D6B4536DD4796BA994C91F7", hash_generated_method = "6DD304FEEAA04E06C3EEF0C48F5B8BBB")
     private void setValue(int propertyConstant, float value) {
         final View.TransformationInfo info = mView.mTransformationInfo;
@@ -663,6 +667,7 @@ public class ViewPropertyAnimator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.286 -0400", hash_original_method = "7CFF5C0EAB5A873E8FB7B3F0396E6B5F", hash_generated_method = "6A07F659F56364E7C156A86BB65AEDFE")
     private float getValue(int propertyConstant) {
         final View.TransformationInfo info = mView.mTransformationInfo;

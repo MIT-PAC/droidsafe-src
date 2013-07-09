@@ -33,6 +33,7 @@ public class NodeListImpl implements NodeList {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.385 -0400", hash_original_method = "3686ABB43FF3696F10F1056AA01C2579", hash_generated_method = "CB0E572162F21B0C5C964E256FE53E18")
      void add(NodeImpl node) {
         children.add(node);

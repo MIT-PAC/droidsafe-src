@@ -130,6 +130,7 @@ public class WifiP2pGroup implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.791 -0400", hash_original_method = "1F3206015C0D7A4CBD5E705EF1C23A0F", hash_generated_method = "C3736BDA5E3513723EA1A7ADFF8A9E4A")
     public void setNetworkName(String networkName) {
         mNetworkName = networkName;
@@ -138,6 +139,7 @@ public class WifiP2pGroup implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.791 -0400", hash_original_method = "32FF89F2A0087E1C62BF10B34EF6D932", hash_generated_method = "6832B4D510D19025123510BCB6C1ECD5")
     public String getNetworkName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1814204088 = null; 
@@ -149,6 +151,7 @@ public class WifiP2pGroup implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.792 -0400", hash_original_method = "389E55BA9756949E35517D77609F8AC0", hash_generated_method = "1F4E78E48BC1D398DE58B81C55D3C45B")
     public void setIsGroupOwner(boolean isGo) {
         mIsGroupOwner = isGo;
@@ -157,6 +160,7 @@ public class WifiP2pGroup implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.792 -0400", hash_original_method = "9599D1040188F59722C5FA5110991675", hash_generated_method = "A36D4DDDBD011CA28EA1D3BEF6E151A9")
     public boolean isGroupOwner() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1232236324 = getTaintBoolean();
@@ -166,6 +170,7 @@ public class WifiP2pGroup implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.792 -0400", hash_original_method = "3B8BEB5DE992C10464B29BB370E6A4AC", hash_generated_method = "D589400B616270F7EEBE396EDAAC71B7")
     public void setOwner(WifiP2pDevice device) {
         mOwner = device;
@@ -174,6 +179,7 @@ public class WifiP2pGroup implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.793 -0400", hash_original_method = "64A8053D0F0646F5E4AC8BED59B588ED", hash_generated_method = "EE2DDCB022F76CBB1BAB2C3A8DE175D9")
     public WifiP2pDevice getOwner() {
         WifiP2pDevice varB4EAC82CA7396A68D541C85D26508E83_366257545 = null; 
@@ -265,6 +271,7 @@ public class WifiP2pGroup implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.798 -0400", hash_original_method = "073EE8049BAF41A715DB20DDA5E00101", hash_generated_method = "319504402F46E1BA7BFF5B169057CFCB")
     public void setPassphrase(String passphrase) {
         mPassphrase = passphrase;
@@ -273,6 +280,7 @@ public class WifiP2pGroup implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.799 -0400", hash_original_method = "5EB5F9BABC374AD0DE2453D35DFCC36C", hash_generated_method = "FAFDE483AE7D90E6D0654F0F3FF0227B")
     public String getPassphrase() {
         String varB4EAC82CA7396A68D541C85D26508E83_279466375 = null; 
@@ -284,6 +292,7 @@ public class WifiP2pGroup implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.799 -0400", hash_original_method = "1BDFB331CB7F44520C6251E3C44B9A62", hash_generated_method = "29AC9DD1457A812822B9744217D2FCE6")
     public void setInterface(String intf) {
         mInterface = intf;
@@ -292,6 +301,7 @@ public class WifiP2pGroup implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.800 -0400", hash_original_method = "3F43528BD183AE40A353AE75903024B0", hash_generated_method = "1DF37952E1B090E082D4C3E1DC80D1D7")
     public String getInterface() {
         String varB4EAC82CA7396A68D541C85D26508E83_1066788262 = null; 
@@ -336,6 +346,7 @@ public class WifiP2pGroup implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.806 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "35BBDB3C17A18D276B8123705B575757")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1282711612 = getTaintInt();

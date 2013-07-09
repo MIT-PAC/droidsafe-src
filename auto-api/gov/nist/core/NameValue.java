@@ -70,6 +70,7 @@ public class NameValue extends GenericObject implements Entry<String,String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.748 -0400", hash_original_method = "8B5A99905EE1811A879B3378EE7C88B1", hash_generated_method = "BE8D7A91CF35C3CE4342E681E66ABB40")
     public void setSeparator(String sep) {
         separator = sep;
@@ -78,6 +79,7 @@ public class NameValue extends GenericObject implements Entry<String,String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.748 -0400", hash_original_method = "095AA0DB24FB99A12A6684BCE39B9F89", hash_generated_method = "E00E549B3C808990AAB42C9F832CF539")
     public void setQuotedValue() {
         isQuotedString = true;
@@ -88,6 +90,7 @@ public class NameValue extends GenericObject implements Entry<String,String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.748 -0400", hash_original_method = "D2172C6C42893F443ABBD625D7655BA2", hash_generated_method = "9EFBB36EAE9300F3916CB56D8FA74C85")
     public boolean isValueQuoted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_89517211 = getTaintBoolean();
@@ -97,6 +100,7 @@ public class NameValue extends GenericObject implements Entry<String,String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.750 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "A1CE8F2FB60E9F84AE15F6A51142DD61")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1130876933 = null; 
@@ -108,6 +112,7 @@ public class NameValue extends GenericObject implements Entry<String,String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.751 -0400", hash_original_method = "1D746EB97F79FD095C35B4AB5FADFB51", hash_generated_method = "5D9F97B15F39FF77C0BBB15CBF582DFA")
     public Object getValueAsObject() {
         Object varB4EAC82CA7396A68D541C85D26508E83_407361101 = null; 
@@ -119,6 +124,7 @@ public class NameValue extends GenericObject implements Entry<String,String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.752 -0400", hash_original_method = "48E6CC9DD98BCA4A1A1FF2D370B346E5", hash_generated_method = "EC3A808F65912EC4B397A06DEEEA4586")
     public void setName(String n) {
         name = n;
@@ -127,6 +133,7 @@ public class NameValue extends GenericObject implements Entry<String,String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.752 -0400", hash_original_method = "976564EFAA66565638B090B0BED90464", hash_generated_method = "C63631628A71855211E03B08E189AF38")
     public void setValueAsObject(Object v) {
         value = v;
@@ -310,6 +317,7 @@ public class NameValue extends GenericObject implements Entry<String,String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.756 -0400", hash_original_method = "2F0EB2DB361DE1F8D28986094D857BA0", hash_generated_method = "062BD4C5AB79A01D6BBF9F4FBC8FB18E")
     public String getKey() {
         String varB4EAC82CA7396A68D541C85D26508E83_990254074 = null; 
@@ -333,6 +341,7 @@ public class NameValue extends GenericObject implements Entry<String,String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.757 -0400", hash_original_method = "34CFBA77959CE5FB40B94FB25C9241AB", hash_generated_method = "804FDD958FCF3D185BBA180BAD80564D")
     public String setValue(String value) {
         String varB4EAC82CA7396A68D541C85D26508E83_719542919 = null; 

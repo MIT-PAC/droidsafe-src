@@ -183,6 +183,7 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.225 -0400", hash_original_method = "17B34AC990B7E085858AFAD80E625CEB", hash_generated_method = "710063584B909B97C782B20A8C1B6F1A")
     @Deprecated
     public boolean allowThreadSuspension(boolean b) {
@@ -445,6 +446,7 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.281 -0400", hash_original_method = "B936E1D4B92F105E0DF31A4819E36563", hash_generated_method = "0AD6437F320DE4BEAFD52ACA016C3245")
     public synchronized boolean isDestroyed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1268531986 = getTaintBoolean();

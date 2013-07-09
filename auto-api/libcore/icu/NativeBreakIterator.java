@@ -77,6 +77,7 @@ public final class NativeBreakIterator implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:26.942 -0400", hash_original_method = "F98DCBD8FE8A6074B159B4049EE2DA7B", hash_generated_method = "DDDAF2EB102405E253947E412E93579A")
     @Override
     public int hashCode() {
@@ -277,74 +278,89 @@ public final class NativeBreakIterator implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int getCharacterInstanceImpl(String locale) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int getWordInstanceImpl(String locale) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int getLineInstanceImpl(String locale) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int getSentenceInstanceImpl(String locale) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void closeBreakIteratorImpl(int address) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void setTextImpl(int address, String text) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int cloneImpl(int address) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int precedingImpl(int address, int offset) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean isBoundaryImpl(int address, int offset) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nextImpl(int address, int n) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int previousImpl(int address) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int currentImpl(int address) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int firstImpl(int address) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int followingImpl(int address, int offset) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int lastImpl(int address) {
         return DSUtils.UNKNOWN_INT;
     }

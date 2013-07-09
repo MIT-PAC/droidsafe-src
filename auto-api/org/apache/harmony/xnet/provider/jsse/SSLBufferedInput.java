@@ -27,6 +27,7 @@ public class SSLBufferedInput extends SSLInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.676 -0400", hash_original_method = "4BA9811A4EA68D06D9EBAD32A862938E", hash_generated_method = "E2127C5D16644089261CEF9729751A03")
     protected void setSourceBuffer(ByteBuffer in) {
         consumed = 0;
@@ -49,6 +50,7 @@ public class SSLBufferedInput extends SSLInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.676 -0400", hash_original_method = "7DD74A3F0F5CC57B45BB73D025A428F5", hash_generated_method = "81593C2374A7F6BD128D9FD6DA93AC84")
     protected int consumed() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1910509049 = getTaintInt();

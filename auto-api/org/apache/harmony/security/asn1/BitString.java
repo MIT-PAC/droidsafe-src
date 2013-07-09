@@ -62,6 +62,7 @@ public final class BitString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.819 -0400", hash_original_method = "286435896BFB2C2EB12779836BDE2B3F", hash_generated_method = "1371CCE63AF8AB34CBE1E12507A22882")
     public boolean getBit(int bit) {
         int offset = bit % 8;
@@ -76,6 +77,7 @@ public final class BitString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.819 -0400", hash_original_method = "64B37589A76FCD4AF41D04B8A51CCBFB", hash_generated_method = "1AFAEDF9C77D153125A3380E62FA9A3C")
     public void setBit(int bit, boolean value) {
         int offset = bit % 8;

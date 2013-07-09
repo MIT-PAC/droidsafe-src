@@ -52,6 +52,7 @@ public class SubscriptionState extends ParametersHeader implements SubscriptionS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.706 -0400", hash_original_method = "47881175D7C463BCCB25030D767AD658", hash_generated_method = "A8F2E647B2F271CED5F96BD2DEC7F6CF")
     public int getExpires() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1144172388 = getTaintInt();
@@ -77,6 +78,7 @@ public class SubscriptionState extends ParametersHeader implements SubscriptionS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.708 -0400", hash_original_method = "8B40198517FC200CD43F6E0235CB55DB", hash_generated_method = "BEE8CDEE9C2BEDC02C2E10F746F8D332")
     public int getRetryAfter() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_303232093 = getTaintInt();
@@ -86,6 +88,7 @@ public class SubscriptionState extends ParametersHeader implements SubscriptionS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.709 -0400", hash_original_method = "307A7F7469164C10B67FE98D6B3BB448", hash_generated_method = "5ED0723E18DED3C654FF8957B8879635")
     public String getReasonCode() {
         String varB4EAC82CA7396A68D541C85D26508E83_699739181 = null; 
@@ -113,6 +116,7 @@ public class SubscriptionState extends ParametersHeader implements SubscriptionS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.712 -0400", hash_original_method = "B507B0FDA436CA05802CD34EFC971C76", hash_generated_method = "F099959244FBB3C8F2E6D4F617248A18")
     public String getState() {
         String varB4EAC82CA7396A68D541C85D26508E83_466910985 = null; 

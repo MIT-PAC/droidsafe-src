@@ -106,17 +106,20 @@ public final class CollationElementIteratorICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int primaryOrder(int order) {
         return ((order & PRIMARY_ORDER_MASK_) >> PRIMARY_ORDER_SHIFT_) &
                 UNSIGNED_16_BIT_MASK_;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int secondaryOrder(int order) {
         return (order & SECONDARY_ORDER_MASK_) >> SECONDARY_ORDER_SHIFT_;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int tertiaryOrder(int order) {
         return order & TERTIARY_ORDER_MASK_;
     }

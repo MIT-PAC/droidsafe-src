@@ -81,6 +81,7 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.394 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D18BC6E96A788A750EE505FF74DC9A06")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_735756004 = getTaintInt();
@@ -90,6 +91,7 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.394 -0400", hash_original_method = "3B515BD8C18D4AA3426DE2CF748D864D", hash_generated_method = "18E023A7F9C7397EAEDD4B410262A422")
     public boolean isOverLimit(long totalBytes) {
         totalBytes += 2 * DEFAULT_MTU;
@@ -102,6 +104,7 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.395 -0400", hash_original_method = "94D3DEEA59ED3BCE504BE8B2D91F1F02", hash_generated_method = "7B53B50050537D704CDFF4DC0B9C5D4E")
     public int compareTo(NetworkPolicy another) {
         addTaint(another.getTaint());

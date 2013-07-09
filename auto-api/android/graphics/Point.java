@@ -44,6 +44,7 @@ public class Point implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.064 -0400", hash_original_method = "A893C7A3BDAFD0F68044E15122EF7C46", hash_generated_method = "64C0F70A319F472D57B0208C83061342")
     public void set(int x, int y) {
         this.x = x;
@@ -85,6 +86,7 @@ public class Point implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.067 -0400", hash_original_method = "DE06142D9B61B02A43CEA21E14E7D027", hash_generated_method = "44343190C6159C98959C9AAAC2FB2E63")
     @Override
     public boolean equals(Object o) {
@@ -103,6 +105,7 @@ public class Point implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.067 -0400", hash_original_method = "2AEEE1632B8FF7FECD208FC610B72FB6", hash_generated_method = "D2A2DF9A8D88576A7386C4E2768A4C53")
     @Override
     public int hashCode() {
@@ -126,6 +129,7 @@ public class Point implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.069 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BBBB4EBD7209350E3A58C4B4958BCF5C")
     @Override
     public int describeContents() {

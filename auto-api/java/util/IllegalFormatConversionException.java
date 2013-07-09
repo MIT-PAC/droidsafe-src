@@ -45,6 +45,7 @@ public class IllegalFormatConversionException extends IllegalFormatException imp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.486 -0400", hash_original_method = "FF899ECAAB1B8C040FEF5324FAB8D93B", hash_generated_method = "8A6676AD3A6EB74CE1A0897C0DAEBB79")
     public char getConversion() {
         char varA87DEB01C5F539E6BDA34829C8EF2368_1253277866 = getTaintChar();

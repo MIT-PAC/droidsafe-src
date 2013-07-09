@@ -215,6 +215,7 @@ public final class GsmCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.295 -0400", hash_original_method = "BBA59EE5F024CF032CB3FE359D476C6C", hash_generated_method = "61497C065462D40E5E112AB7C91AE291")
      Connection dial(String dialString, int clirMode, UUSInfo uusInfo) throws CallStateException {
         Connection varB4EAC82CA7396A68D541C85D26508E83_204185667 = null; 
@@ -897,6 +898,7 @@ public final class GsmCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.317 -0400", hash_original_method = "11907D6A9C6D8F23B8C0FECA1425D0D1", hash_generated_method = "5B5FB3D603CDA23EFD9063E6CB65C8B0")
      boolean getMute() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1567387063 = getTaintBoolean();
@@ -1081,6 +1083,7 @@ public final class GsmCallTracker extends CallTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.327 -0400", hash_original_method = "65CD53B5AAA831AF61B9937ED3D66C8B", hash_generated_method = "FBC6EBB3CB0540BBBBB2166262115D92")
     private Phone.SuppService getFailedService(int what) {
         Phone.SuppService varB4EAC82CA7396A68D541C85D26508E83_438747219 = null; 

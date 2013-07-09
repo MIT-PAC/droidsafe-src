@@ -44,6 +44,7 @@ public class BasicTokenIterator implements TokenIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.302 -0400", hash_original_method = "DAB37B2EA98FD1DE22306A8DB0E83A00", hash_generated_method = "D986B4A5DC34406D27D290137D499A66")
     public boolean hasNext() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1790327831 = getTaintBoolean();
@@ -273,6 +274,7 @@ public class BasicTokenIterator implements TokenIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.308 -0400", hash_original_method = "82ADC719B633E23931D943624F51E118", hash_generated_method = "11AD3A0DD9309668D38BA46762D14790")
     protected boolean isTokenSeparator(char ch) {
         addTaint(ch);

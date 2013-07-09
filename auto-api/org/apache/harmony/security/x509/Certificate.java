@@ -60,6 +60,7 @@ public final class Certificate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.702 -0400", hash_original_method = "FF2C12E3D498720C4C6A280928F0E345", hash_generated_method = "A06651FC0689D5034782185952D9C44F")
     public TBSCertificate getTbsCertificate() {
         TBSCertificate varB4EAC82CA7396A68D541C85D26508E83_296734477 = null; 

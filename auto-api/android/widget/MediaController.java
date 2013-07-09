@@ -659,6 +659,7 @@ public class MediaController extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.969 -0400", hash_original_method = "F21458EB6FE36A924A49B40493E1F9F8", hash_generated_method = "F98587780575D765D569BE3740241FD7")
     public boolean isShowing() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1150869009 = getTaintBoolean();

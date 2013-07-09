@@ -86,6 +86,7 @@ public class ShareActionProvider extends ActionProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.845 -0400", hash_original_method = "35CF29CD4DCA84D0FC63AC1A69E282B0", hash_generated_method = "1A42AEDC436DD0F1200D3F7B695874C4")
     @Override
     public boolean hasSubMenu() {
@@ -144,6 +145,7 @@ public class ShareActionProvider extends ActionProvider {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.846 -0400", hash_original_method = "0DAF31F3B630D54C36D98C14F5BC8D8F", hash_generated_method = "675072C6644576CF3CB8ED655719F437")
     public void setShareIntent(Intent shareIntent) {
         ActivityChooserModel dataModel = ActivityChooserModel.get(mContext,

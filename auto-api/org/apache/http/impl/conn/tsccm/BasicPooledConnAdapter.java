@@ -38,6 +38,7 @@ public class BasicPooledConnAdapter extends AbstractPooledConnAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.669 -0400", hash_original_method = "4F37F2CEFFC0BA6EAEA2353029E03EE6", hash_generated_method = "69B4AAFD047838E3EA775A8666198EA5")
     protected AbstractPoolEntry getPoolEntry() {
         AbstractPoolEntry varB4EAC82CA7396A68D541C85D26508E83_97731189 = null; 

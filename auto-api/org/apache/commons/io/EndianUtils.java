@@ -21,12 +21,14 @@ public class EndianUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static short swapShort(short value) {
         return (short) ( ( ( ( value >> 0 ) & 0xff ) << 8 ) +
             ( ( ( value >> 8 ) & 0xff ) << 0 ) );
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int swapInteger(int value) {
         return
             ( ( ( value >> 0 ) & 0xff ) << 24 ) +
@@ -36,6 +38,7 @@ public class EndianUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long swapLong(long value) {
         return
             ( ( ( value >> 0 ) & 0xff ) << 56 ) +
@@ -61,24 +64,28 @@ public class EndianUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeSwappedShort(byte[] data, int offset, short value) {
         data[ offset + 0 ] = (byte)( ( value >> 0 ) & 0xff );
         data[ offset + 1 ] = (byte)( ( value >> 8 ) & 0xff );
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static short readSwappedShort(byte[] data, int offset) {
         return (short)( ( ( data[ offset + 0 ] & 0xff ) << 0 ) +
             ( ( data[ offset + 1 ] & 0xff ) << 8 ) );
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int readSwappedUnsignedShort(byte[] data, int offset) {
         return ( ( ( data[ offset + 0 ] & 0xff ) << 0 ) +
             ( ( data[ offset + 1 ] & 0xff ) << 8 ) );
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeSwappedInteger(byte[] data, int offset, int value) {
         data[ offset + 0 ] = (byte)( ( value >> 0 ) & 0xff );
         data[ offset + 1 ] = (byte)( ( value >> 8 ) & 0xff );
@@ -87,6 +94,7 @@ public class EndianUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int readSwappedInteger(byte[] data, int offset) {
         return ( ( ( data[ offset + 0 ] & 0xff ) << 0 ) +
             ( ( data[ offset + 1 ] & 0xff ) << 8 ) +
@@ -95,6 +103,7 @@ public class EndianUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long readSwappedUnsignedInteger(byte[] data, int offset) {
         long low = ( ( ( data[ offset + 0 ] & 0xff ) << 0 ) +
                      ( ( data[ offset + 1 ] & 0xff ) << 8 ) +
@@ -104,6 +113,7 @@ public class EndianUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeSwappedLong(byte[] data, int offset, long value) {
         data[ offset + 0 ] = (byte)( ( value >> 0 ) & 0xff );
         data[ offset + 1 ] = (byte)( ( value >> 8 ) & 0xff );
@@ -116,6 +126,7 @@ public class EndianUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long readSwappedLong(byte[] data, int offset) {
         long low = 
             ( ( data[ offset + 0 ] & 0xff ) << 0 ) +

@@ -141,6 +141,7 @@ public class TLSMessageProcessor extends MessageProcessor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.001 -0400", hash_original_method = "4789C177AC8ECE60B231BA8A866F9D66", hash_generated_method = "0123E6E6FA10C29860314A6ED835101B")
     public SIPTransactionStack getSIPStack() {
         SIPTransactionStack varB4EAC82CA7396A68D541C85D26508E83_300285001 = null; 
@@ -387,6 +388,7 @@ public class TLSMessageProcessor extends MessageProcessor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.006 -0400", hash_original_method = "248B80D43EBE2633D052A5A2C5B180CB", hash_generated_method = "66AAA5EAB1E6C7A0063996F25AA640E3")
     public int getMaximumMessageSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1850558416 = getTaintInt();
@@ -396,6 +398,7 @@ public class TLSMessageProcessor extends MessageProcessor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.006 -0400", hash_original_method = "C4E752535BCB329601986DF8A32049BD", hash_generated_method = "144E9539FBAE8DC1AAA27E9738952997")
     public boolean inUse() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1170241179 = getTaintBoolean();
@@ -405,6 +408,7 @@ public class TLSMessageProcessor extends MessageProcessor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.007 -0400", hash_original_method = "B951ECFC8A9F13621942685951F4919F", hash_generated_method = "6ACCA199CECB55D21FEBE08E6605A4A0")
     public int getDefaultTargetPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1631097191 = getTaintInt();
@@ -414,6 +418,7 @@ public class TLSMessageProcessor extends MessageProcessor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.007 -0400", hash_original_method = "57D47F2F9FCDF87C613C3BEA50BCDEDC", hash_generated_method = "835B3259E7DAFC03BDC2F720F1907801")
     public boolean isSecure() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_501006809 = getTaintBoolean();

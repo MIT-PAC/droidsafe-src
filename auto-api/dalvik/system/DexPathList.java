@@ -71,6 +71,7 @@ final class DexPathList {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static File[] splitLibraryPath(String path) {
         ArrayList<File> result = splitPaths(
                 path, System.getProperty("java.library.path", "."), true);
@@ -150,6 +151,7 @@ final class DexPathList {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static DexFile loadDexFile(File file, File optimizedDirectory) throws IOException {
         if (optimizedDirectory == null) {
             return new DexFile(file);
@@ -160,6 +162,7 @@ final class DexPathList {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String optimizedPathFor(File path,
             File optimizedDirectory) {
         String fileName = path.getName();
@@ -179,6 +182,7 @@ final class DexPathList {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.735 -0400", hash_original_method = "D0077BF0C677FC7F0C28C59D93206805", hash_generated_method = "C1250A912C3EF85118854BE594634673")
     public Class findClass(String name) {
         Class varB4EAC82CA7396A68D541C85D26508E83_181365910 = null; 
@@ -222,6 +226,7 @@ final class DexPathList {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.742 -0400", hash_original_method = "5F5378C3BB7399B364C8BA4B56CD7FC5", hash_generated_method = "5D66804F717129F6272754A7352BD983")
     public URL findResource(String name) {
         URL varB4EAC82CA7396A68D541C85D26508E83_1811437228 = null; 
@@ -291,6 +296,7 @@ final class DexPathList {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.754 -0400", hash_original_method = "240DC3968F2BE784AD66FA40662DC8EC", hash_generated_method = "7698EFA0F10944C83F6F07F30584C7CB")
     public String findLibrary(String libraryName) {
         String varB4EAC82CA7396A68D541C85D26508E83_1286766049 = null; 

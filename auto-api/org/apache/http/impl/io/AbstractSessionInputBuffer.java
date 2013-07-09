@@ -124,6 +124,7 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.647 -0400", hash_original_method = "BAC6DE94AA32B94037307F5D6F9840B7", hash_generated_method = "EE566FA564BA7E0AC06602EAD1D1892F")
     protected boolean hasBufferedData() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_241729260 = getTaintBoolean();
@@ -212,6 +213,7 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.650 -0400", hash_original_method = "25E4831B40662E7C69D1371A042407AC", hash_generated_method = "CA8538EB471BF327B416B4D0C68302AC")
     private int locateLF() {
         {
@@ -408,6 +410,7 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.656 -0400", hash_original_method = "E82E77AA369AC2B118042C614F644F5C", hash_generated_method = "9178ED0A38597F636C9DD7F2949C743A")
     public HttpTransportMetrics getMetrics() {
         HttpTransportMetrics varB4EAC82CA7396A68D541C85D26508E83_263375463 = null; 

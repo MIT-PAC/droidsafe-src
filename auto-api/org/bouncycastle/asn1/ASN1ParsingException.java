@@ -31,6 +31,7 @@ public class ASN1ParsingException extends IllegalStateException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.946 -0400", hash_original_method = "CDBDBC1C44563A9D34649A0018341F0E", hash_generated_method = "36C737148F28C925EEF61EEB10240E15")
     public Throwable getCause() {
         Throwable varB4EAC82CA7396A68D541C85D26508E83_1600491280 = null; 

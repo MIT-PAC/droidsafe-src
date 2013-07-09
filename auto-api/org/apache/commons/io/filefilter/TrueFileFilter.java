@@ -18,6 +18,7 @@ public class TrueFileFilter implements IOFileFilter, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.973 -0400", hash_original_method = "E5F31B8C7E0E55836854007EF229F8F0", hash_generated_method = "4F97C913EF5D5B45428C8240F0A53D49")
     public boolean accept(File file) {
         addTaint(file.getTaint());
@@ -28,6 +29,7 @@ public class TrueFileFilter implements IOFileFilter, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.974 -0400", hash_original_method = "DC2C6FD0F14A1434DB9ECFEAE61B09B4", hash_generated_method = "758206EF5FE21243611E1D2C3BC0DDC9")
     public boolean accept(File dir, String name) {
         addTaint(dir.getTaint());

@@ -80,6 +80,7 @@ public class ListeningPointImpl implements javax.sip.ListeningPoint, gov.nist.ja
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:37.630 -0400", hash_original_method = "B5BA0F86714AE38D5B0FD7A4FCC59EE7", hash_generated_method = "67E4BC8870DD5E1F917EF85EF4D572B5")
     protected void setSipProvider(SipProviderImpl sipProviderImpl) {
         this.sipProvider = sipProviderImpl;
@@ -88,6 +89,7 @@ public class ListeningPointImpl implements javax.sip.ListeningPoint, gov.nist.ja
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:37.630 -0400", hash_original_method = "D12539CEE35D9C982852375BE20257EF", hash_generated_method = "74906DC351FFB2C8C9754469FB66B2C0")
     protected void removeSipProvider() {
         this.sipProvider = null;
@@ -136,6 +138,7 @@ public class ListeningPointImpl implements javax.sip.ListeningPoint, gov.nist.ja
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:37.633 -0400", hash_original_method = "AAD8E25C27C8721BC0F29D01F90B95A6", hash_generated_method = "4B0D91AD571CDC7F79847B0191A6E211")
     public SipProviderImpl getProvider() {
         SipProviderImpl varB4EAC82CA7396A68D541C85D26508E83_893696766 = null; 
@@ -204,6 +207,7 @@ public class ListeningPointImpl implements javax.sip.ListeningPoint, gov.nist.ja
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:37.636 -0400", hash_original_method = "B369445AF3BB32430CE637694E76219B", hash_generated_method = "AF22376EE7EFC3228FC25B2BAE2C3DCF")
     public MessageProcessor getMessageProcessor() {
         MessageProcessor varB4EAC82CA7396A68D541C85D26508E83_1501194128 = null; 

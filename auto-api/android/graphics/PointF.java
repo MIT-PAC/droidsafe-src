@@ -112,6 +112,7 @@ public class PointF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.087 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "744F641611A03764B05FFF7EF891C385")
     @Override
     public int describeContents() {

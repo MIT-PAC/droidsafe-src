@@ -17,11 +17,13 @@ final class StringToReal {
     }
 
 
+    @DSModeled(DSC.SAFE)
     private static double parseDblImpl(String s, int e) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static float parseFltImpl(String s, int e) {
         return DSUtils.UNKNOWN_FLOAT;
     }

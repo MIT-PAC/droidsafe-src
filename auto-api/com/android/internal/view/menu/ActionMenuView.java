@@ -68,6 +68,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.037 -0400", hash_original_method = "F8B2E0B9AF6B77951E8DA779DE9E37B4", hash_generated_method = "2D2E0A69D628FF0C713DCBD58D8FEF6B")
     public void setPresenter(ActionMenuPresenter presenter) {
         mPresenter = presenter;
@@ -76,6 +77,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.038 -0400", hash_original_method = "309FFF524EE8C98ED8919EC0ED593079", hash_generated_method = "DC80F32AB4238BE885FC58E013AB4876")
     public boolean isExpandedFormat() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1059515851 = getTaintBoolean();
@@ -448,6 +450,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.044 -0400", hash_original_method = "9F44211E52A7149BFED02520B6DEF800", hash_generated_method = "D058EB07BBDF1FA2BBF068585ED0D646")
     public boolean isOverflowReserved() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_76459072 = getTaintBoolean();
@@ -457,6 +460,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.044 -0400", hash_original_method = "F5103BD0EA93D884CF8413DB778005C1", hash_generated_method = "15B323109E8BF25E66710A01C5BEDE02")
     public void setOverflowReserved(boolean reserveOverflow) {
         mReserveOverflow = reserveOverflow;
@@ -535,6 +539,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.046 -0400", hash_original_method = "C7A39F9D75FC22971A40D0A54E61424A", hash_generated_method = "D197AEC158DF8BB7D28D908EEC4C4D43")
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
@@ -574,6 +579,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.047 -0400", hash_original_method = "DC1BDB1B98459EBD06B93B75A5D0D038", hash_generated_method = "6ED361B86F2FA2C49A1C30FBB41EB620")
     public int getWindowAnimations() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1314623281 = getTaintInt();
@@ -583,6 +589,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.047 -0400", hash_original_method = "EDB3B7E883C1486DD9AED3AB15C0E44B", hash_generated_method = "E50EB2D0FDCBBA00CCFEFF4A83375DDF")
     public void initialize(MenuBuilder menu) {
         mMenu = menu;
@@ -624,6 +631,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.048 -0400", hash_original_method = "87E5D39D1D82C11AB077A37A8786E27E", hash_generated_method = "E1ACE0FDBB74FC75D7A564996F2D5142")
     public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
         addTaint(event.getTaint());

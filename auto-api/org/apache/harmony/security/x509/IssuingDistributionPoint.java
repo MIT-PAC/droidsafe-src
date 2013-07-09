@@ -55,6 +55,7 @@ public final class IssuingDistributionPoint extends ExtensionValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.160 -0400", hash_original_method = "03922EAD5E2F9F2AB784075C187D5E70", hash_generated_method = "001164D0F86A35E6C0E014A195A52B2D")
     public void setOnlyContainsUserCerts(boolean onlyContainsUserCerts) {
         this.onlyContainsUserCerts = onlyContainsUserCerts;
@@ -63,6 +64,7 @@ public final class IssuingDistributionPoint extends ExtensionValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.160 -0400", hash_original_method = "6830D99EF8C3DC25A9447803CA3D9DFD", hash_generated_method = "5D96BEC6C002F45CA0C2532E084F39E9")
     public void setOnlyContainsCACerts(boolean onlyContainsCACerts) {
         this.onlyContainsCACerts = onlyContainsCACerts;
@@ -71,6 +73,7 @@ public final class IssuingDistributionPoint extends ExtensionValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.160 -0400", hash_original_method = "36EDEF780E7094A51B0A764BC2947568", hash_generated_method = "CD3096752BC07691383D6F71ADF7F0E6")
     public void setIndirectCRL(boolean indirectCRL) {
         this.indirectCRL = indirectCRL;
@@ -79,6 +82,7 @@ public final class IssuingDistributionPoint extends ExtensionValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.160 -0400", hash_original_method = "58BDD73BA57E97A28C9513E87278364E", hash_generated_method = "75AE7B67E9A4F59328BBA875F3CF861E")
     public void setOnlyContainsAttributeCerts(
             boolean onlyContainsAttributeCerts) {

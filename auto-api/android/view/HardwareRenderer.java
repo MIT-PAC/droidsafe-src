@@ -44,6 +44,7 @@ public abstract class HardwareRenderer {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static void disable(boolean system) {
         sRendererDisabled = true;
         if (system) {
@@ -97,6 +98,7 @@ public abstract class HardwareRenderer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nSetupShadersDiskCache(String cacheFile) {
     }
 
@@ -165,6 +167,7 @@ public abstract class HardwareRenderer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.515 -0400", hash_original_method = "B599CE9BD5CE6C0947F95A74F4693444", hash_generated_method = "78EEF655A16119B5F3221AB3F976C53D")
      boolean isEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2135924010 = getTaintBoolean();
@@ -174,6 +177,7 @@ public abstract class HardwareRenderer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.515 -0400", hash_original_method = "E431274334564F99DE06BE0647F24670", hash_generated_method = "C2CE1DB1D0D5E01CA74F489F1351598B")
      void setEnabled(boolean enabled) {
         mEnabled = enabled;
@@ -182,6 +186,7 @@ public abstract class HardwareRenderer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.516 -0400", hash_original_method = "2657035D37B57C6EB1FDEBFDEB2FC631", hash_generated_method = "864A0B5FE8CD78D08FB92C871911F3EC")
      boolean isRequested() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1945318717 = getTaintBoolean();
@@ -191,6 +196,7 @@ public abstract class HardwareRenderer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.516 -0400", hash_original_method = "5489F62162525BB08E1A950602557C7B", hash_generated_method = "6C5945B8EA5D67FB5159E094E21FF9C0")
      void setRequested(boolean requested) {
         mRequested = requested;

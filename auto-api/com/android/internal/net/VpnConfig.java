@@ -53,6 +53,7 @@ public class VpnConfig implements Parcelable {
     }
 
 
+    @DSModeled(DSC.SPEC)
     public static Intent getIntentForConfirmation() {
         Intent intent = new Intent();
         intent.setClassName("com.android.vpndialogs", "com.android.vpndialogs.ConfirmDialog");
@@ -72,6 +73,7 @@ public class VpnConfig implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.438 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "4266BCFA4554750F3D022327F81DB102")
     @Override
     public int describeContents() {

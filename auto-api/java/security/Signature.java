@@ -355,6 +355,7 @@ public abstract class Signature extends SignatureSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.848 -0400", hash_original_method = "C1A460A3B710FBA1ED28C52AC5BBE911", hash_generated_method = "F41208CCB380A3B85AFCC04ECFF83E3B")
     private String stateToString(int state) {
         String varB4EAC82CA7396A68D541C85D26508E83_1247721809 = null; 

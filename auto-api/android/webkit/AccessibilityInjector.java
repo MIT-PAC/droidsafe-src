@@ -383,6 +383,7 @@ class AccessibilityInjector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.564 -0400", hash_original_method = "6AB19E93948D2A1BBE98A475D0E38626", hash_generated_method = "5CF18E97F684D6062CFC6F0E540926C3")
     private boolean isEnterActionKey(int keyCode) {
         addTaint(keyCode);

@@ -119,6 +119,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.872 -0400", hash_original_method = "E04D2A000CEC20636ABEC5ED3DEE444A", hash_generated_method = "99DBB3029C52434B0C0947604E5DEF4A")
     protected void copyFrom(ServiceState s) {
         mState = s.mState;
@@ -194,6 +195,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.873 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8F638212707DF5F617E4CBD8A32BE3F2")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_703476978 = getTaintInt();
@@ -203,6 +205,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.874 -0400", hash_original_method = "10E9373648D5DF4EE43B4904732E3886", hash_generated_method = "60BF68306EA5019B87D1D650AE458CF8")
     public int getState() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1730089644 = getTaintInt();
@@ -212,6 +215,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.874 -0400", hash_original_method = "27B48B56BD1E05F31D9E74CC53E25407", hash_generated_method = "BF3EC7A8641A7F2A8DE89B6ACED64160")
     public boolean getRoaming() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1096050759 = getTaintBoolean();
@@ -221,6 +225,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.874 -0400", hash_original_method = "3DFEB66E744CCF30AC3F0251BA213E84", hash_generated_method = "F22CAD22081329AD357F4CA302EF3DFF")
     public boolean isEmergencyOnly() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1152298155 = getTaintBoolean();
@@ -230,6 +235,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.875 -0400", hash_original_method = "83FC91D4D13183AA7E425917DAA84866", hash_generated_method = "C3BE231D808F8B564A41D78FD82C6BFB")
     public int getCdmaRoamingIndicator() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1062669830 = getTaintInt();
@@ -239,6 +245,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.875 -0400", hash_original_method = "66A4F6EB11ADB385A490C7939EB92055", hash_generated_method = "4F3AAD37D5044B612DF9CDCBCD36133E")
     public int getCdmaDefaultRoamingIndicator() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_462441983 = getTaintInt();
@@ -248,6 +255,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.875 -0400", hash_original_method = "A86147562C8C2CE9187BA7AFC3028DA0", hash_generated_method = "E4A335F002DB70B660C00AF8ABA9ECE8")
     public int getCdmaEriIconIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1054355844 = getTaintInt();
@@ -257,6 +265,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.875 -0400", hash_original_method = "637A5E08A8AA09E09B00A7308F96EA32", hash_generated_method = "4FCE039EE6D36DC8EFE060666379C3C8")
     public int getCdmaEriIconMode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1358170952 = getTaintInt();
@@ -266,6 +275,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.876 -0400", hash_original_method = "550CF77EB1CEA79355B2985E6B5A4349", hash_generated_method = "891C3B562E45621C1C33FF01C1F57358")
     public String getOperatorAlphaLong() {
         String varB4EAC82CA7396A68D541C85D26508E83_2132909399 = null; 
@@ -277,6 +287,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.876 -0400", hash_original_method = "86619391C7B398160E7B9E543643DBB4", hash_generated_method = "D769B0D3E2D247AD49FAA00F21283113")
     public String getOperatorAlphaShort() {
         String varB4EAC82CA7396A68D541C85D26508E83_1618499084 = null; 
@@ -288,6 +299,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.877 -0400", hash_original_method = "608E7A84F718D26C8A9F8E19A83C0931", hash_generated_method = "A1E5E6A03B6C80226A568B5A80AC4BAF")
     public String getOperatorNumeric() {
         String varB4EAC82CA7396A68D541C85D26508E83_858484385 = null; 
@@ -299,6 +311,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.877 -0400", hash_original_method = "233C7A13AF785DA7BC75C18AF3C8DB71", hash_generated_method = "4B4C772C6401B13BF15F29BAEB8F49EA")
     public boolean getIsManualSelection() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_819978359 = getTaintBoolean();
@@ -467,6 +480,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.880 -0400", hash_original_method = "8ACC80A7889D35C4C641DEE09D896F76", hash_generated_method = "FD85B86F0ECF83F99FE09898A135D41E")
     private void setNullState(int state) {
         mState = state;
@@ -521,6 +535,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.881 -0400", hash_original_method = "B2257FFBD3B79161D70D00C92F5BABD5", hash_generated_method = "0A89A4D469AFE50CFD17E18CFACCA324")
     public void setState(int state) {
         mState = state;
@@ -529,6 +544,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.881 -0400", hash_original_method = "78DC27B1781D6001A1042BE9E193D14B", hash_generated_method = "7F27798B57A4E4A81DBFB88618240DFD")
     public void setRoaming(boolean roaming) {
         mRoaming = roaming;
@@ -537,6 +553,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.881 -0400", hash_original_method = "B2BA3AF9B92E65EA8B062AC201A0C0F0", hash_generated_method = "F2B108E944B0EDB88B7C5DF0C8DEE5B7")
     public void setEmergencyOnly(boolean emergencyOnly) {
         mIsEmergencyOnly = emergencyOnly;
@@ -545,6 +562,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.881 -0400", hash_original_method = "C5CC061ACF011623DDFD13C5F3F99CC3", hash_generated_method = "95FFD314FD0A0685BE1321CF3791396E")
     public void setCdmaRoamingIndicator(int roaming) {
         this.mCdmaRoamingIndicator = roaming;
@@ -553,6 +571,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.882 -0400", hash_original_method = "723EC448C9CB51F7110A335E414C4680", hash_generated_method = "A2BB49F52906E681CF96691F2251B042")
     public void setCdmaDefaultRoamingIndicator(int roaming) {
         this.mCdmaDefaultRoamingIndicator = roaming;
@@ -561,6 +580,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.882 -0400", hash_original_method = "270DF85E703DBBACE36CF343B8162562", hash_generated_method = "B0AACDB8E38F97633346B3B4835E8917")
     public void setCdmaEriIconIndex(int index) {
         this.mCdmaEriIconIndex = index;
@@ -569,6 +589,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.883 -0400", hash_original_method = "B583E3E822650F1B5214B53503BF1241", hash_generated_method = "0316BEBDF43E5B19472BA6E6AE128413")
     public void setCdmaEriIconMode(int mode) {
         this.mCdmaEriIconMode = mode;
@@ -577,6 +598,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.883 -0400", hash_original_method = "AB95572079513DCF8B19D191A4DD2824", hash_generated_method = "757C6454087C55B214646701A80C6257")
     public void setOperatorName(String longName, String shortName, String numeric) {
         mOperatorAlphaLong = longName;
@@ -589,6 +611,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.883 -0400", hash_original_method = "2932DCDD0502DE94804E9827964069D2", hash_generated_method = "E493DDC360F50CDDBDCC3FE4BB704447")
     public void setOperatorAlphaLong(String longName) {
         mOperatorAlphaLong = longName;
@@ -597,6 +620,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.884 -0400", hash_original_method = "C2D18251B53286CEC68F55BEC648A3A6", hash_generated_method = "68A7FEA8A4D1FF9B681DEA0096AE5AFA")
     public void setIsManualSelection(boolean isManual) {
         mIsManualNetworkSelection = isManual;
@@ -678,6 +702,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.886 -0400", hash_original_method = "C012C4DB079EEB33708722C3BF4101EF", hash_generated_method = "1F99DEEAD6AC0C2BC8FBC98190DF50ED")
     public void setRadioTechnology(int state) {
         this.mRadioTechnology = state;
@@ -686,6 +711,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.886 -0400", hash_original_method = "C1350CF85A5CAF49D330DF5D8BE50D5D", hash_generated_method = "62E7E29AB3EB805EBAD797E9DF58B733")
     public void setCssIndicator(int css) {
         this.mCssIndicator = (css != 0);
@@ -694,6 +720,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.887 -0400", hash_original_method = "A7D542E3F6857DF89C73ABBE482A1544", hash_generated_method = "9F8AA35149F291326BF5B14CCD791B63")
     public void setSystemAndNetworkId(int systemId, int networkId) {
         this.mSystemId = systemId;
@@ -704,6 +731,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.887 -0400", hash_original_method = "D4EB1377E20B241083847F14436F60D5", hash_generated_method = "44D44DBC6BC60B051C344BBA3C06123F")
     public int getRadioTechnology() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_614532155 = getTaintInt();
@@ -713,6 +741,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.887 -0400", hash_original_method = "5F3502ED7337480E1E948E539B84EEE6", hash_generated_method = "7DF8A3B6DA9ABE3AD25DEA97668070E7")
     public int getCssIndicator() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1844742896 = getTaintInt();
@@ -722,6 +751,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.888 -0400", hash_original_method = "909C93F66AD557988A123F548D8C31FC", hash_generated_method = "C49F53E0969FE23BA6B3B468535CC7E7")
     public int getNetworkId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_261343632 = getTaintInt();
@@ -731,6 +761,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.888 -0400", hash_original_method = "E5E4F22C1EB64E5BA2863333F6C891A3", hash_generated_method = "53180F9686FA7FD2B651319794391964")
     public int getSystemId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1976193806 = getTaintInt();

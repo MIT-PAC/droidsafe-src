@@ -74,6 +74,7 @@ public class CertificationRequest extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.986 -0400", hash_original_method = "1818E5C8C94900171F27F008E876A50C", hash_generated_method = "02031EF6820221F496E8064E3E5ED1DC")
     public CertificationRequestInfo getCertificationRequestInfo() {
         CertificationRequestInfo varB4EAC82CA7396A68D541C85D26508E83_1466456346 = null; 
@@ -85,6 +86,7 @@ public class CertificationRequest extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.986 -0400", hash_original_method = "D2F866B035500F031847DB89A72323B9", hash_generated_method = "C6B2A226E63DCB663C59B1BD5F04F1D5")
     public AlgorithmIdentifier getSignatureAlgorithm() {
         AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_2106399621 = null; 
@@ -96,6 +98,7 @@ public class CertificationRequest extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.986 -0400", hash_original_method = "FF80120581998E22D8FC69A9F1A1E26B", hash_generated_method = "B62AD92596F24E510DC5532943D9BAA6")
     public DERBitString getSignature() {
         DERBitString varB4EAC82CA7396A68D541C85D26508E83_268815789 = null; 

@@ -588,6 +588,7 @@ class HttpURLConnectionImpl extends HttpURLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.140 -0400", hash_original_method = "1D777298E2B9DEBB3E2DB7ADA4E2C95B", hash_generated_method = "4E84B2F726FF5FA3D3CE5BAAB552255C")
      HttpEngine getHttpEngine() {
         HttpEngine varB4EAC82CA7396A68D541C85D26508E83_413291152 = null; 

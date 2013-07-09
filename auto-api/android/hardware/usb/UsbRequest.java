@@ -86,6 +86,7 @@ public class UsbRequest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.481 -0400", hash_original_method = "11B9FE3CCFCADE645E006FF088DA13C2", hash_generated_method = "923419CC33A9029F6F745FAD31BACE72")
     public UsbEndpoint getEndpoint() {
         UsbEndpoint varB4EAC82CA7396A68D541C85D26508E83_2095759459 = null; 
@@ -97,6 +98,7 @@ public class UsbRequest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.481 -0400", hash_original_method = "B71E58093DB1269AF1945AD07DDB8F74", hash_generated_method = "24FBECC66116DE48794529119C3ABF73")
     public Object getClientData() {
         Object varB4EAC82CA7396A68D541C85D26508E83_580689915 = null; 
@@ -108,6 +110,7 @@ public class UsbRequest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.482 -0400", hash_original_method = "D9B34A9E5333EFBBF13F29A3015D9990", hash_generated_method = "886F50FCD9BFB9352373280B6BF2CFC1")
     public void setClientData(Object data) {
         mClientData = data;
@@ -197,6 +200,7 @@ public class UsbRequest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.484 -0400", hash_original_method = "088D546DD8E640FE6DF053A8179CD4B6", hash_generated_method = "493ABA7F1CEF72D5EE45DFE82754DF3A")
     private boolean native_init(UsbDeviceConnection connection, int ep_address,
             int ep_attributes, int ep_max_packet_size, int ep_interval) {
@@ -205,11 +209,13 @@ public class UsbRequest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.484 -0400", hash_original_method = "6753B93585F19A7AC1519FB4DFF90D14", hash_generated_method = "2E0BD664A18EDEE4C394D0A3A394EB28")
     private void native_close() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.485 -0400", hash_original_method = "7F13ABFE9FDE97F40DC7842504BAE184", hash_generated_method = "FC6ABF6825A630EFD4186D869F11CE26")
     private boolean native_queue_array(byte[] buffer, int length, boolean out) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1045739494 = getTaintBoolean();
@@ -217,11 +223,13 @@ public class UsbRequest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.486 -0400", hash_original_method = "3BDF4594393C8A1BD126F313DABD0D0F", hash_generated_method = "14C0D08C05C45945D5BFE9DE18F35A99")
     private void native_dequeue_array(byte[] buffer, int length, boolean out) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.487 -0400", hash_original_method = "E7AB577A437B8CBAAC35FF91F8C41F2B", hash_generated_method = "D423761E88F6B6665B8ACB86776E752C")
     private boolean native_queue_direct(ByteBuffer buffer, int length, boolean out) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1888346133 = getTaintBoolean();
@@ -229,11 +237,13 @@ public class UsbRequest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.487 -0400", hash_original_method = "558CB787B8354E17E879C85035FE4714", hash_generated_method = "567EC500351D45B790D82131561103CB")
     private void native_dequeue_direct() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.487 -0400", hash_original_method = "EF977425574389A96D73B721035A87F5", hash_generated_method = "8CD861A97F1C9EC125DC0E4AC4B08592")
     private boolean native_cancel() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_693355416 = getTaintBoolean();

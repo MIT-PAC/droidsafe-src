@@ -297,6 +297,7 @@ public class DERUTCTime extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.777 -0400", hash_original_method = "0230A74DF7F00CEFAD5D2184A68DC5A0", hash_generated_method = "272262DBD6ABB040891037D70FD71AF4")
     public String toString() {
         String varB4EAC82CA7396A68D541C85D26508E83_975428110 = null; 

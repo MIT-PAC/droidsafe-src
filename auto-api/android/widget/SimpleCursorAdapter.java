@@ -111,6 +111,7 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.865 -0400", hash_original_method = "E0E2C9BDE209838004B6CAB60CB87613", hash_generated_method = "FBC082D3EA224FA088D13355643C15C5")
     public ViewBinder getViewBinder() {
         ViewBinder varB4EAC82CA7396A68D541C85D26508E83_649235411 = null; 
@@ -122,6 +123,7 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.865 -0400", hash_original_method = "119DFC3ED073D5B4FB9A3C0337902379", hash_generated_method = "3E071F9EE6E9AEAADA16E4C43987A93F")
     public void setViewBinder(ViewBinder viewBinder) {
         mViewBinder = viewBinder;
@@ -163,6 +165,7 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.867 -0400", hash_original_method = "505C15BD7A524BAA123874B0B6BE7D4B", hash_generated_method = "20DFBC93ECD3C579E06692E3696FCDF1")
     public int getStringConversionColumn() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_526622660 = getTaintInt();
@@ -172,6 +175,7 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.867 -0400", hash_original_method = "CAA7C791E82A28ED194AFE600FF6DEEE", hash_generated_method = "394118E429FB1DEC632B04FC7B5FB220")
     public void setStringConversionColumn(int stringConversionColumn) {
         mStringConversionColumn = stringConversionColumn;
@@ -180,6 +184,7 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.867 -0400", hash_original_method = "80E6B5584C3F52CF90E7103CF53469C6", hash_generated_method = "E6E2ED613260209580B50E31503F5EB9")
     public CursorToStringConverter getCursorToStringConverter() {
         CursorToStringConverter varB4EAC82CA7396A68D541C85D26508E83_678350861 = null; 
@@ -191,6 +196,7 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.868 -0400", hash_original_method = "5D90B32B884A493C1622C9D829A83B10", hash_generated_method = "A9ACEF1EC294D60B7393749911E2426C")
     public void setCursorToStringConverter(CursorToStringConverter cursorToStringConverter) {
         mCursorToStringConverter = cursorToStringConverter;

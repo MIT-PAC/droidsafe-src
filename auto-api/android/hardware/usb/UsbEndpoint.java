@@ -39,6 +39,7 @@ public class UsbEndpoint implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.373 -0400", hash_original_method = "1ACE37C7AEF4979E99CF3DA88C3DB9F0", hash_generated_method = "6888967DBF0EBEDA6EC8E34F9065F621")
     public int getAddress() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1900465477 = getTaintInt();
@@ -48,6 +49,7 @@ public class UsbEndpoint implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.374 -0400", hash_original_method = "530E1C5174A47AC9C94137EACF355AFA", hash_generated_method = "B72509D43A8F3E79CD2637BE95FFA214")
     public int getEndpointNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_339024452 = getTaintInt();
@@ -57,6 +59,7 @@ public class UsbEndpoint implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.374 -0400", hash_original_method = "5E2273EF2E39AF02B90546F0D57EC6D9", hash_generated_method = "9B7EA1257585C0F50156E28C5F095980")
     public int getDirection() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1092962814 = getTaintInt();
@@ -66,6 +69,7 @@ public class UsbEndpoint implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.375 -0400", hash_original_method = "36DAD0B9D253F08C19BBEFC651F6D4C9", hash_generated_method = "FF8B975FFBC01671480793821D82E216")
     public int getAttributes() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2096460873 = getTaintInt();
@@ -75,6 +79,7 @@ public class UsbEndpoint implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.376 -0400", hash_original_method = "ED0BDC5BE5FF0D5E260DB90C1E62D731", hash_generated_method = "3A7874684BA1CA460C4BDF2864B1EAFB")
     public int getType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1154039486 = getTaintInt();
@@ -84,6 +89,7 @@ public class UsbEndpoint implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.377 -0400", hash_original_method = "E96412E34BF386D230BE1BA24C763C9C", hash_generated_method = "1705614052CEECC7EFC71575CDBC1B68")
     public int getMaxPacketSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2047697029 = getTaintInt();
@@ -93,6 +99,7 @@ public class UsbEndpoint implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.377 -0400", hash_original_method = "C237023D57B3F5BEEDC74CA45F45E95A", hash_generated_method = "383C9F47BB5D0F4AC643F746C53C7DE5")
     public int getInterval() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1280311219 = getTaintInt();
@@ -117,6 +124,7 @@ public class UsbEndpoint implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.382 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D03407A1CB78B3319F385CE772D5C007")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1585431158 = getTaintInt();

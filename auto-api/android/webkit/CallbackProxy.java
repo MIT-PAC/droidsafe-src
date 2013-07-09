@@ -82,6 +82,7 @@ class CallbackProxy extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.059 -0400", hash_original_method = "94198B28324F8EDCEFD396927CFF12D2", hash_generated_method = "DE4F5106C007BE6F57AC8D71C62F1D2E")
     public void setWebViewClient(WebViewClient client) {
         mWebViewClient = client;
@@ -90,6 +91,7 @@ class CallbackProxy extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.059 -0400", hash_original_method = "F1A871AF9A3B10055BFFA9DC06A940C2", hash_generated_method = "CE94183272D83791658EF6DF8428676D")
     public WebViewClient getWebViewClient() {
         WebViewClient varB4EAC82CA7396A68D541C85D26508E83_383810633 = null; 
@@ -101,6 +103,7 @@ class CallbackProxy extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.060 -0400", hash_original_method = "92EB7E506A2EF4886CBEC1480289BCB6", hash_generated_method = "4C169B04C3730379147B383EFDBF5622")
     public void setWebChromeClient(WebChromeClient client) {
         mWebChromeClient = client;
@@ -109,6 +112,7 @@ class CallbackProxy extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.060 -0400", hash_original_method = "578C7E32D2B540B07E657C95C84E837C", hash_generated_method = "B0FB1CC348036E8E87F51204DCBBF373")
     public WebChromeClient getWebChromeClient() {
         WebChromeClient varB4EAC82CA7396A68D541C85D26508E83_1469999128 = null; 
@@ -120,6 +124,7 @@ class CallbackProxy extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.060 -0400", hash_original_method = "36DD14932709DFA3D074F96EC9039EDA", hash_generated_method = "C93408E62641713A784F45E96AAF15BB")
     public void setDownloadListener(DownloadListener client) {
         mDownloadListener = client;
@@ -128,6 +133,7 @@ class CallbackProxy extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.061 -0400", hash_original_method = "2A97B39171573BABF631C9DB7E378DC9", hash_generated_method = "52771867E2A172D37F8F06784F428A26")
     public WebBackForwardList getBackForwardList() {
         WebBackForwardList varB4EAC82CA7396A68D541C85D26508E83_1182086074 = null; 
@@ -139,6 +145,7 @@ class CallbackProxy extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.061 -0400", hash_original_method = "69271AEE54C61C015B6B50CD212FE110", hash_generated_method = "13A4BC55EE14A943E04C92B28D85EE99")
      void setWebBackForwardListClient(WebBackForwardListClient client) {
         mWebBackForwardListClient = client;
@@ -147,6 +154,7 @@ class CallbackProxy extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.062 -0400", hash_original_method = "32023A06CFA84B93B3A0030ADE6E4A41", hash_generated_method = "F3118B3BBBD49613A79DA5FA5E6EAA73")
      WebBackForwardListClient getWebBackForwardListClient() {
         WebBackForwardListClient varB4EAC82CA7396A68D541C85D26508E83_865310417 = null; 
@@ -837,6 +845,7 @@ class CallbackProxy extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.075 -0400", hash_original_method = "F4FA55F4EB9CE414FB8C02AF96B11745", hash_generated_method = "78E1895197F875382402A67B11C8183D")
     public int getProgress() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2080931953 = getTaintInt();
@@ -948,6 +957,7 @@ class CallbackProxy extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.078 -0400", hash_original_method = "CAA94892A4D7B008F19D8BD2AD9FB2D3", hash_generated_method = "BE74632F1B3FA1B5D7F38007511162FF")
     public void onTooManyRedirects(Message cancelMsg, Message continueMsg) {
         
@@ -1937,6 +1947,7 @@ class CallbackProxy extends Handler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.098 -0400", hash_original_method = "FE04684AB3D72B8C190BB2063ADDA47F", hash_generated_method = "C5F3D3523CECEBE307D7F2E231D8ECFB")
      Uri openFileChooser(String acceptType) {
         Uri varB4EAC82CA7396A68D541C85D26508E83_1119002375 = null; 
@@ -2034,6 +2045,7 @@ class CallbackProxy extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.099 -0400", hash_original_method = "8DF8998B34FE58BC5486ECCDB22BE44D", hash_generated_method = "DA425DDC6ECB71CC2166F86D48A51D64")
      boolean canShowAlertDialog() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_510770182 = getTaintBoolean();

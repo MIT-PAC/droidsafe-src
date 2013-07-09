@@ -56,6 +56,7 @@ public abstract class LeafNodeImpl extends NodeImpl {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.188 -0400", hash_original_method = "B8A0C756618E449548951ECCC8542C8B", hash_generated_method = "2C7F3B301384E7EF8FC0560550673E62")
     public Node getParentNode() {
         Node varB4EAC82CA7396A68D541C85D26508E83_1432085404 = null; 
@@ -95,6 +96,7 @@ public abstract class LeafNodeImpl extends NodeImpl {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.189 -0400", hash_original_method = "4FE9AF789BEC71BD17F719913A9768F5", hash_generated_method = "AD748F93A7E45C04AE711A8C7755F4A4")
      boolean isParentOf(Node node) {
         addTaint(node.getTaint());

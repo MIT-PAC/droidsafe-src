@@ -29,6 +29,7 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.697 -0400", hash_original_method = "6B61312FC318A12A6B19178CA8B54E86", hash_generated_method = "95A400E9436A3FAF7BF4D8B90709190E")
     @Override
     public byte byteValue() {
@@ -51,6 +52,7 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int compare(long lhs, long rhs) {
         return lhs > rhs ? 1 : (lhs < rhs ? -1 : 0);
     }
@@ -67,6 +69,7 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.698 -0400", hash_original_method = "3D3B0AF18CC8081B7BB4A7DC662E1F07", hash_generated_method = "E2265EEB44DA6520EF70DC846AD61A23")
     @Override
     public double doubleValue() {
@@ -77,6 +80,7 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.699 -0400", hash_original_method = "0E7C562AADA4AAAABF3DA1440DB603BB", hash_generated_method = "25DE913DB92BE755BFB6E21CE2F6C929")
     @Override
     public boolean equals(Object object) {
@@ -88,6 +92,7 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.699 -0400", hash_original_method = "9E2C0918A44EC11D2232D0B603F66A6B", hash_generated_method = "2AC330685BC18B3DB389B0EF56889E6D")
     @Override
     public float floatValue() {
@@ -98,6 +103,7 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.699 -0400", hash_original_method = "961F210287166DF05D8915D632129E75", hash_generated_method = "B7EEC1FB73471CD2E847AD58E05F3B00")
     @Override
     public int hashCode() {
@@ -108,6 +114,7 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.699 -0400", hash_original_method = "4668226786F0223B69B1E8157F3C469B", hash_generated_method = "99A931A0E0D57F0FD71F90F5189C7728")
     @Override
     public int intValue() {
@@ -118,6 +125,7 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.700 -0400", hash_original_method = "ABF4FE035C950AC910A646D4B85E3F35", hash_generated_method = "5DC319D10E80FCEE9C00AE2DA88854AD")
     @Override
     public long longValue() {
@@ -145,6 +153,7 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.700 -0400", hash_original_method = "C4526A740A626A32E8FE5B0C1E7B83A6", hash_generated_method = "B74CA2CFEACD35722E46DC8268FAC1FC")
     @Override
     public short shortValue() {
@@ -186,6 +195,7 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static short reverseBytes(short s) {
         return (short) ((s << 8) | ((s >>> 8) & 0xFF));
     }

@@ -164,6 +164,7 @@ public final class SmsStorageMonitor extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.011 -0400", hash_original_method = "8AEABE91EB74288702D500EE9C97116A", hash_generated_method = "EA60C3415ED5A6B9C647106C08A9F0E0")
     public boolean isStorageAvailable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_252251103 = getTaintBoolean();

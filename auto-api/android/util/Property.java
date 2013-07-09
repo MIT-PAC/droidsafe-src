@@ -31,6 +31,7 @@ public abstract class Property<T, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.525 -0400", hash_original_method = "19E9B6B291778F8D7BAF6F9BA6FE7EDF", hash_generated_method = "A6C6A5BC68591E6C973F50AC1EC70A50")
     public boolean isReadOnly() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1677059520 = getTaintBoolean();
@@ -54,6 +55,7 @@ public abstract class Property<T, V> {
     public abstract V get(T object);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.526 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "4707546506C70AEDA4A1CE601837A224")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_302999802 = null; 

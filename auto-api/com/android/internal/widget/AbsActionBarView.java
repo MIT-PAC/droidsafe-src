@@ -109,6 +109,7 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.652 -0400", hash_original_method = "D4ADA7B8094B8C24856ACB21A2F3F966", hash_generated_method = "2774B4992A13F924AB31013753167D87")
     public void setSplitActionBar(boolean split) {
         mSplitActionBar = split;
@@ -117,6 +118,7 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.653 -0400", hash_original_method = "68FCF08F15ACE8E4E864370710ECF8B3", hash_generated_method = "EFC04914301CDD5999164CC812B627A5")
     public void setSplitWhenNarrow(boolean splitWhenNarrow) {
         mSplitWhenNarrow = splitWhenNarrow;
@@ -136,6 +138,7 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.654 -0400", hash_original_method = "AB5D9AC478BBA1C6AA700AA7486698D8", hash_generated_method = "120AC417F74EDDB1530ACB56CE8F4F85")
     public int getContentHeight() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1180382397 = getTaintInt();
@@ -145,6 +148,7 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.654 -0400", hash_original_method = "3A09CE20A6543F8D9E8109683BD6E731", hash_generated_method = "1A26F6E86D020C5E2F245C84AB51C6BF")
     public void setSplitView(ActionBarContainer splitView) {
         mSplitView = splitView;

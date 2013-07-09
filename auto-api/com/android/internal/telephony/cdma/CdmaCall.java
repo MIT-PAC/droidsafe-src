@@ -48,6 +48,7 @@ public final class CdmaCall extends Call {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.099 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     public void dispose() {
         
@@ -66,6 +67,7 @@ public final class CdmaCall extends Call {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.100 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "359BE96B13E2AF54C70329954DC7DE7E")
     public State getState() {
         State varB4EAC82CA7396A68D541C85D26508E83_1252590909 = null; 
@@ -77,6 +79,7 @@ public final class CdmaCall extends Call {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.100 -0400", hash_original_method = "3D84383237FBED33FD2CE3B737BA6B20", hash_generated_method = "51BE27924AC59A892E6FA66361AF5DFD")
     public Phone getPhone() {
         Phone varB4EAC82CA7396A68D541C85D26508E83_1295562254 = null; 

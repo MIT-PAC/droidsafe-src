@@ -161,6 +161,7 @@ public class Holder extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.853 -0400", hash_original_method = "00A0A81AB162D0816192A8848BD6F0D6", hash_generated_method = "D19B5DB0CBD75F0980D41D7727A895A2")
     public int getVersion() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1005920754 = getTaintInt();
@@ -170,6 +171,7 @@ public class Holder extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.853 -0400", hash_original_method = "0056368CFDBAD05E126455DF61F0B2E7", hash_generated_method = "36BD6B0BFB4C3649CF6F24AF427448E1")
     public IssuerSerial getBaseCertificateID() {
         IssuerSerial varB4EAC82CA7396A68D541C85D26508E83_121060454 = null; 
@@ -181,6 +183,7 @@ public class Holder extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.854 -0400", hash_original_method = "9B56B1F6A71C567F065DB4ADA2DE9246", hash_generated_method = "7E4F66A8841BE42E4E91B5CEA9CB845D")
     public GeneralNames getEntityName() {
         GeneralNames varB4EAC82CA7396A68D541C85D26508E83_829796973 = null; 
@@ -192,6 +195,7 @@ public class Holder extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.855 -0400", hash_original_method = "BF432F04B889EC14E618C49342356E7A", hash_generated_method = "F08C5C84CBBDC850C8520237C3271807")
     public ObjectDigestInfo getObjectDigestInfo() {
         ObjectDigestInfo varB4EAC82CA7396A68D541C85D26508E83_101783206 = null; 

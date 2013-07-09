@@ -176,6 +176,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.309 -0400", hash_original_method = "7CC61A3797371517F86E3D676D22847C", hash_generated_method = "CE87A26F1F31625F1A82E312F687DB1A")
     public void setPromptPosition(int position) {
         mPromptPosition = position;
@@ -184,6 +185,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.309 -0400", hash_original_method = "DF9D97B46096A1E4CCF9033CE8B43A47", hash_generated_method = "7434BEED001C6256EF266C41169D2719")
     public int getPromptPosition() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2076169326 = getTaintInt();
@@ -205,6 +207,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.309 -0400", hash_original_method = "195244B0122E9C532D039816F791192C", hash_generated_method = "11C80E1E5F1D78A55D1A4F715989B465")
     public boolean isModal() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1449386719 = getTaintBoolean();
@@ -214,6 +217,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.310 -0400", hash_original_method = "B51F6D3B2B582EB2529861E286FFBDAA", hash_generated_method = "C259F7A19612B2ACBFCE0BD237FE9AAB")
     public void setForceIgnoreOutsideTouch(boolean forceIgnoreOutsideTouch) {
         mForceIgnoreOutsideTouch = forceIgnoreOutsideTouch;
@@ -222,6 +226,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.310 -0400", hash_original_method = "0D7558B683A811B4FB459E3A92DCFACB", hash_generated_method = "6C5818E602B53931F3E1B0DBF55A9DBB")
     public void setDropDownAlwaysVisible(boolean dropDownAlwaysVisible) {
         mDropDownAlwaysVisible = dropDownAlwaysVisible;
@@ -230,6 +235,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.310 -0400", hash_original_method = "452BC62A357E5A143092E81C66B09D6A", hash_generated_method = "9352573F9A21D2912334D835FF02AF95")
     public boolean isDropDownAlwaysVisible() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_634429333 = getTaintBoolean();
@@ -260,6 +266,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.311 -0400", hash_original_method = "00D6E099D8DC922D12B17B03F893B884", hash_generated_method = "FF67F34E40E9A65B6F576056899652DB")
     public void setListSelector(Drawable selector) {
         mDropDownListHighlight = selector;
@@ -311,6 +318,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.313 -0400", hash_original_method = "875C75F19631B214BE64A011FD6A41E4", hash_generated_method = "BCD62A5BA0C845990A3E38AE220F9F1E")
     public View getAnchorView() {
         View varB4EAC82CA7396A68D541C85D26508E83_367212713 = null; 
@@ -322,6 +330,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.313 -0400", hash_original_method = "91753F7FEC6E3180927B7B9D55B8E090", hash_generated_method = "63EE2FBCA0AADA3A31B95FC73D9580CE")
     public void setAnchorView(View anchor) {
         mDropDownAnchorView = anchor;
@@ -330,6 +339,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.313 -0400", hash_original_method = "2C5F7D64A15BDC64E0A7D1677E996184", hash_generated_method = "F5BC61D68DDBC90AF51AE19DCA81209A")
     public int getHorizontalOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_619298921 = getTaintInt();
@@ -339,6 +349,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.313 -0400", hash_original_method = "37914D7AC2B7A80AA5FE528B058A9DBC", hash_generated_method = "C126BA21DD750A9AFE1BD084B715A818")
     public void setHorizontalOffset(int offset) {
         mDropDownHorizontalOffset = offset;
@@ -347,6 +358,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.313 -0400", hash_original_method = "06BDE5646BE562A7D86252C676418C82", hash_generated_method = "68156A531BCBA3E671497BE58B49138D")
     public int getVerticalOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1103405322 = getTaintInt();
@@ -359,6 +371,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.314 -0400", hash_original_method = "F61671411958DBF85FB58F84EEE162C4", hash_generated_method = "2B910F94073C3EC07961DBEFFADDA58F")
     public void setVerticalOffset(int offset) {
         mDropDownVerticalOffset = offset;
@@ -369,6 +382,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.314 -0400", hash_original_method = "6205F90E667ADE4444482E9AC195FB48", hash_generated_method = "5BD08E1F3C54234B0AA89E9F1C2C5B1C")
     public int getWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1688136883 = getTaintInt();
@@ -378,6 +392,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.314 -0400", hash_original_method = "1FDBBF009B47D57DAE1EE309EAA8DA19", hash_generated_method = "9D744DA174B0219B1092FF60AD2FCB92")
     public void setWidth(int width) {
         mDropDownWidth = width;
@@ -408,6 +423,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.315 -0400", hash_original_method = "2B0617362C23A2A1F29E0E83641579F9", hash_generated_method = "15102EDB6ED2F2F1245D2DAD7077BB5E")
     public int getHeight() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1508233350 = getTaintInt();
@@ -417,6 +433,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.315 -0400", hash_original_method = "CAA84DCA25312E828BE740B15493FB25", hash_generated_method = "4DA8EB017D81399AC9FA9C78A28822F1")
     public void setHeight(int height) {
         mDropDownHeight = height;
@@ -425,6 +442,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.315 -0400", hash_original_method = "500645EE5CDA87E171AAE4D175AC763E", hash_generated_method = "2D5D314BA37B280C0EC1EB015FA6FF32")
     public void setOnItemClickListener(AdapterView.OnItemClickListener clickListener) {
         mItemClickListener = clickListener;
@@ -433,6 +451,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.315 -0400", hash_original_method = "77C1F384A6316C978289202E5719DEEE", hash_generated_method = "9F10FF9A076A5EE31B9093767F0F184A")
     public void setOnItemSelectedListener(AdapterView.OnItemSelectedListener selectedListener) {
         mItemSelectedListener = selectedListener;
@@ -829,6 +848,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.323 -0400", hash_original_method = "D21142DAF85C899FDAA3783E4BBEC12E", hash_generated_method = "38CA2881FC39D5B01C368EA0EDCD0505")
     public ListView getListView() {
         ListView varB4EAC82CA7396A68D541C85D26508E83_29458922 = null; 
@@ -840,6 +860,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.324 -0400", hash_original_method = "21262ED785FC4787FB1F1DE7107BCA92", hash_generated_method = "7D6D8AA3A24EB925896215A339982186")
      void setListItemExpandMax(int max) {
         mListItemExpandMaximum = max;

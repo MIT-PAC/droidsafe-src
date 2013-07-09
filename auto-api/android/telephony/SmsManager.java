@@ -195,6 +195,7 @@ public final class SmsManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SmsManager getDefault() {
         return sInstance;
     }

@@ -146,6 +146,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.708 -0400", hash_original_method = "51AEDFDDD323C78EE2EC4A6DE568B8D1", hash_generated_method = "E532E4CBBEBFF44C610D0F95E73E8319")
     private void setHead(Node node) {
         head = node;
@@ -850,6 +851,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.724 -0400", hash_original_method = "18818CB637EBC5CF82DC4C50B37FB17C", hash_generated_method = "32B11DD8B096F0D416A698B4F9745DF9")
     private Thread fullGetFirstQueuedThread() {
         Thread varB4EAC82CA7396A68D541C85D26508E83_375213537 = null; 
@@ -1107,6 +1109,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.736 -0400", hash_original_method = "E84A510853D9F9659F34649D5E631E14", hash_generated_method = "DC85BACD481B1DC5DB6F6213A720D1CA")
     private boolean findNodeFromTail(Node node) {
         Node t = tail;

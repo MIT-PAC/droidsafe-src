@@ -63,12 +63,14 @@ class ViewStateSerializer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativeSerializeViewState(int baseLayer,
             OutputStream stream, byte[] storage) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeDeserializeViewState(
             InputStream stream, byte[] storage) {
         return DSUtils.UNKNOWN_INT;

@@ -67,6 +67,7 @@ public final class DocumentTypeImpl extends LeafNodeImpl implements DocumentType
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.019 -0400", hash_original_method = "E9049B6D3137F3441BE811CFF59C0D40", hash_generated_method = "8C874AF13B774A5BC0F1E3CBF51CF94F")
     @Override
     public String getNodeName() {
@@ -79,6 +80,7 @@ public final class DocumentTypeImpl extends LeafNodeImpl implements DocumentType
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.019 -0400", hash_original_method = "7D99CB31F2E6992AF80C8FC45EE7DFBE", hash_generated_method = "30FDE7FEC8452C43C0934031445EEBF1")
     @Override
     public short getNodeType() {
@@ -89,6 +91,7 @@ public final class DocumentTypeImpl extends LeafNodeImpl implements DocumentType
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.020 -0400", hash_original_method = "B18563406FBA7004CBA96EE0AEED3600", hash_generated_method = "76DFCB8599593A63E9AC0510634ED99D")
     public NamedNodeMap getEntities() {
         NamedNodeMap varB4EAC82CA7396A68D541C85D26508E83_1393750691 = null; 
@@ -100,6 +103,7 @@ public final class DocumentTypeImpl extends LeafNodeImpl implements DocumentType
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.021 -0400", hash_original_method = "1ACC60D85C446C7470ADF2E2CD7BECFD", hash_generated_method = "F304B333DEA86FA83A311DD8F1885C30")
     public String getInternalSubset() {
         String varB4EAC82CA7396A68D541C85D26508E83_1003687019 = null; 
@@ -111,6 +115,7 @@ public final class DocumentTypeImpl extends LeafNodeImpl implements DocumentType
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.022 -0400", hash_original_method = "4B51CCD327B7473965DE5BE67319C7E7", hash_generated_method = "943D8758E558EB92ADD76AE189966AC6")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_4659300 = null; 
@@ -122,6 +127,7 @@ public final class DocumentTypeImpl extends LeafNodeImpl implements DocumentType
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.022 -0400", hash_original_method = "521EA3163F33B14ADC5EA4FB49D4CB7E", hash_generated_method = "684894B499715BBB9312FB8D67DC68F1")
     public NamedNodeMap getNotations() {
         NamedNodeMap varB4EAC82CA7396A68D541C85D26508E83_870185502 = null; 
@@ -133,6 +139,7 @@ public final class DocumentTypeImpl extends LeafNodeImpl implements DocumentType
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.024 -0400", hash_original_method = "C19BBE926A67132A1C6BC386100A3E69", hash_generated_method = "0DBE326AF07AAA32BAA1BF55F105050E")
     public String getPublicId() {
         String varB4EAC82CA7396A68D541C85D26508E83_1445518278 = null; 
@@ -144,6 +151,7 @@ public final class DocumentTypeImpl extends LeafNodeImpl implements DocumentType
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.026 -0400", hash_original_method = "8088708D8DEEE6054468B7FD77400E50", hash_generated_method = "2AEB1EBEFE3DA15ECB49F69E270FAA73")
     public String getSystemId() {
         String varB4EAC82CA7396A68D541C85D26508E83_685603914 = null; 
@@ -155,6 +163,7 @@ public final class DocumentTypeImpl extends LeafNodeImpl implements DocumentType
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.027 -0400", hash_original_method = "76D2ADCA92D33C128096DC8FD3BC4D92", hash_generated_method = "206286D64BDEFE2E160E158AE39E1280")
     @Override
     public String getTextContent() throws DOMException {

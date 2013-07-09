@@ -87,6 +87,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.778 -0400", hash_original_method = "6BB18A84F76469D7C771F36F9E0BA9AF", hash_generated_method = "B45A5D7A1E3BCA4FD85953AD13DAF36B")
     public void setDialogTitle(CharSequence dialogTitle) {
         mDialogTitle = dialogTitle;
@@ -105,6 +106,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.779 -0400", hash_original_method = "883D8EFBB9B8BAD9BC22F78B210BA75B", hash_generated_method = "7AA7993C77A81B3DDFD47C560C2F151E")
     public CharSequence getDialogTitle() {
         CharSequence varB4EAC82CA7396A68D541C85D26508E83_1021678320 = null; 
@@ -116,6 +118,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.780 -0400", hash_original_method = "C3473A1ED58058061356CFFBC848D9C9", hash_generated_method = "41887350F118ACBC0863E2AD4EC64C3B")
     public void setDialogMessage(CharSequence dialogMessage) {
         mDialogMessage = dialogMessage;
@@ -134,6 +137,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.781 -0400", hash_original_method = "1C9FE66F99F199ED8416C6E4CD3A4269", hash_generated_method = "93FDC31353500AFCB0E0BD0756BF5D58")
     public CharSequence getDialogMessage() {
         CharSequence varB4EAC82CA7396A68D541C85D26508E83_411669991 = null; 
@@ -145,6 +149,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.781 -0400", hash_original_method = "B73A337DDB013C24C0D62280ED30F9C6", hash_generated_method = "94B3A71D2448291EB1B536AD4A297F55")
     public void setDialogIcon(Drawable dialogIcon) {
         mDialogIcon = dialogIcon;
@@ -162,6 +167,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.782 -0400", hash_original_method = "03DB966CB140533ECF1D4BDC15FA7B76", hash_generated_method = "6FB46E8567B337FD45FB9B260A0DDC14")
     public Drawable getDialogIcon() {
         Drawable varB4EAC82CA7396A68D541C85D26508E83_830025985 = null; 
@@ -173,6 +179,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.782 -0400", hash_original_method = "6BE23B5D358DB766161BE60C1550EF9B", hash_generated_method = "15FCDB24219E94DB21B0A8028B4E9D51")
     public void setPositiveButtonText(CharSequence positiveButtonText) {
         mPositiveButtonText = positiveButtonText;
@@ -191,6 +198,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.783 -0400", hash_original_method = "82AFC23D5F7BC4989211310BE2784E8E", hash_generated_method = "F99163BEFD5A8F9B91D0079C0C7E819A")
     public CharSequence getPositiveButtonText() {
         CharSequence varB4EAC82CA7396A68D541C85D26508E83_1181964201 = null; 
@@ -202,6 +210,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.783 -0400", hash_original_method = "4C31EAF97C896EDBAD876498CF3B2FF0", hash_generated_method = "3FA9845BDDD93E5FC8996CE304918DDD")
     public void setNegativeButtonText(CharSequence negativeButtonText) {
         mNegativeButtonText = negativeButtonText;
@@ -220,6 +229,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.784 -0400", hash_original_method = "AAC926564B2F61079BFED9FEE51EB7E4", hash_generated_method = "A78A54A552CC44F0BF0C583BA00F7315")
     public CharSequence getNegativeButtonText() {
         CharSequence varB4EAC82CA7396A68D541C85D26508E83_1001104361 = null; 
@@ -231,6 +241,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.785 -0400", hash_original_method = "6047D08B9E02F6650B39EE0CB2356C47", hash_generated_method = "8C3214F68C80F820797B01AD29A03A7C")
     public void setDialogLayoutResource(int dialogLayoutResId) {
         mDialogLayoutResId = dialogLayoutResId;
@@ -239,6 +250,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.785 -0400", hash_original_method = "6161E3D2B6291A2C05BBD55D42C3AED0", hash_generated_method = "F2F2FF105B8731599F8F712E9B01B25E")
     public int getDialogLayoutResource() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1689513878 = getTaintInt();
@@ -248,6 +260,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.785 -0400", hash_original_method = "9A579D55B073C910524B0A138ED58992", hash_generated_method = "3FE15FCBE90C74B4FDE26391C79AD091")
     protected void onPrepareDialogBuilder(AlertDialog.Builder builder) {
         
@@ -305,6 +318,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.786 -0400", hash_original_method = "E61813EC392C6A7361FD971C8A66C42E", hash_generated_method = "7DF1F824B9B3CFFBC531DFFF547BB767")
     protected boolean needInputMethod() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_125553877 = getTaintBoolean();
@@ -400,6 +414,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.789 -0400", hash_original_method = "C7A96C6C4A9A6F7800567BF8395F95D4", hash_generated_method = "97AEC77CFC989B38A65EAAB93DA39550")
     public void onClick(DialogInterface dialog, int which) {
         
@@ -425,6 +440,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.790 -0400", hash_original_method = "C2C4DECBB4816C085EA1FCA9996FF5B6", hash_generated_method = "F839090159E8D268DD09FFE754CE51F0")
     protected void onDialogClosed(boolean positiveResult) {
         
@@ -433,6 +449,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.791 -0400", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "D4DFCE7551CD4D58AB597D5210E6E626")
     public Dialog getDialog() {
         Dialog varB4EAC82CA7396A68D541C85D26508E83_1438374305 = null; 

@@ -141,6 +141,7 @@ public abstract class ASN1Type implements ASN1Constants {
     public abstract boolean checkTag(int identifier);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.678 -0400", hash_original_method = "C98349FCBC509D9B5E2186CE1C87C57F", hash_generated_method = "36D8D0DBFE153E9423EFA4879EE51F95")
     protected Object getDecodedObject(BerInputStream in) throws IOException {
         Object varB4EAC82CA7396A68D541C85D26508E83_2109154481 = null; 
@@ -162,6 +163,7 @@ public abstract class ASN1Type implements ASN1Constants {
     public abstract void setEncodingContent(BerOutputStream out);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.679 -0400", hash_original_method = "FA7F24CC02CDE7C91DB883C7C7C15F71", hash_generated_method = "26236998063BC70AD56B408213F73C82")
     public int getEncodedLength(BerOutputStream out) {
         int len = 1;

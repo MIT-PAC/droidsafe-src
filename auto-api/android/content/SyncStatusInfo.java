@@ -142,6 +142,7 @@ public class SyncStatusInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.360 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "B7BCF5741930AA8AE74E923AC422DF57")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1962513902 = getTaintInt();

@@ -48,6 +48,7 @@ class DefiniteLengthInputStream extends LimitedInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.858 -0400", hash_original_method = "D30FA562EE05AC3CB636487C62BCEE80", hash_generated_method = "34DE4FAD9A1AF476B38DC696F5144CB4")
      int getRemaining() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2061908548 = getTaintInt();

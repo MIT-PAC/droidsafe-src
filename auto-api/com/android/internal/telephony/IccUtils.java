@@ -63,6 +63,7 @@ public class IccUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int gsmBcdByteToInt(byte b) {
         int ret = 0;
         if ((b & 0xf0) <= 0x90) {
@@ -75,6 +76,7 @@ public class IccUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int cdmaBcdByteToInt(byte b) {
         int ret = 0;
         if ((b & 0xf0) <= 0x90) {
@@ -253,6 +255,7 @@ public class IccUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int bitToRGB(int bit) {
         if(bit == 1){
             return Color.WHITE;
@@ -340,6 +343,7 @@ public class IccUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int[] getCLUT(byte[] rawData, int offset, int number) {
         if (null == rawData) {
             return null;

@@ -66,6 +66,7 @@ public class StringTokenizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.874 -0400", hash_original_method = "CE3ED718DBD97A207FB6B56A3D84C961", hash_generated_method = "F5D8FA92BE1FD26B03FA089AA54200E6")
     public boolean hasMoreChars() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1350158486 = getTaintBoolean();
@@ -216,6 +217,7 @@ public class StringTokenizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.878 -0400", hash_original_method = "5C7E03ECFF7AB12146D632F9E4D67AA3", hash_generated_method = "2A55CB0583276391A21A96648042B85C")
     public void consume() {
         ptr = savedPtr;
@@ -224,6 +226,7 @@ public class StringTokenizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.878 -0400", hash_original_method = "4CE3B95DEACD36E71CE4EC6691FB056B", hash_generated_method = "3D8CF103538B45433DCFDACE276082D3")
     public void consume(int k) {
         ptr += k;

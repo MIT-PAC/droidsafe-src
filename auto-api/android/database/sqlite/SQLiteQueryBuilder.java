@@ -48,6 +48,7 @@ public class SQLiteQueryBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.856 -0400", hash_original_method = "9A9512BC3B93773BE1B8C3DEAB4EDCF7", hash_generated_method = "04E5D28A4FA7008D9677964C6DA606F3")
     public void setDistinct(boolean distinct) {
         mDistinct = distinct;
@@ -56,6 +57,7 @@ public class SQLiteQueryBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.857 -0400", hash_original_method = "71A35CB8526DF402EA58F5074639A5D5", hash_generated_method = "F3F82535287144C4539002ECAB7346D5")
     public String getTables() {
         String varB4EAC82CA7396A68D541C85D26508E83_153606899 = null; 
@@ -67,6 +69,7 @@ public class SQLiteQueryBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.857 -0400", hash_original_method = "3D5C8D5A2DF23857F8B36CBC126449F5", hash_generated_method = "8A78A70CC3C87FBE05086EC3C4609F92")
     public void setTables(String inTables) {
         mTables = inTables;
@@ -132,6 +135,7 @@ public class SQLiteQueryBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.860 -0400", hash_original_method = "9A5AF21719138D1250197FB20CA33704", hash_generated_method = "1239112BA6697D38A5EBA247B91110D9")
     public void setCursorFactory(SQLiteDatabase.CursorFactory factory) {
         mFactory = factory;
@@ -140,6 +144,7 @@ public class SQLiteQueryBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.861 -0400", hash_original_method = "20B77E17A7BDAD72AFE7C926EABDA9FA", hash_generated_method = "42BC386A940F34BA3758B62F79108296")
     public void setStrict(boolean flag) {
         mStrict = flag;

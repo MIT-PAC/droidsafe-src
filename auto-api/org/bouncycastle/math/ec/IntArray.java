@@ -114,6 +114,7 @@ class IntArray {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.682 -0400", hash_original_method = "B507EE9C677C6BEF8443BBEED19F5F42", hash_generated_method = "70EDD67A77302502467C5FBC59B25DA7")
     public int getUsedLength() {
         int highestIntPos = m_ints.length;
@@ -431,6 +432,7 @@ class IntArray {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.688 -0400", hash_original_method = "690E47F400DCE7124DE7B026A4F32194", hash_generated_method = "B981EE27D11C085DE298A2CC8400EF34")
     public int getLength() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1561164626 = getTaintInt();
@@ -440,6 +442,7 @@ class IntArray {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.688 -0400", hash_original_method = "FE79684DF1E438A3896471D5404784E8", hash_generated_method = "D90D18B7528CD53C9E0DD61B60EFED11")
     public boolean testBit(int n) {
         int theInt = n >> 5;
@@ -456,6 +459,7 @@ class IntArray {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.689 -0400", hash_original_method = "FC348D5A638DB94C0F8ADD1343AE7EDF", hash_generated_method = "9FD7E562FCBE28AB03A3D2E3D9E52559")
     public void flipBit(int n) {
         int theInt = n >> 5;
@@ -471,6 +475,7 @@ class IntArray {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.689 -0400", hash_original_method = "F9C9D5AAA5BDCC63A2223BBDEFA54345", hash_generated_method = "D78066049BD287B642C3DF828B7E0780")
     public void setBit(int n) {
         int theInt = n >> 5;

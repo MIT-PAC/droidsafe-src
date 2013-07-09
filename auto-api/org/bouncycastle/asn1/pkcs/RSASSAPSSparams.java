@@ -117,6 +117,7 @@ public class RSASSAPSSparams extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.187 -0400", hash_original_method = "987E7AACB66963F632D7C499003CC870", hash_generated_method = "7E472A3693BBAE32F11690930E57A7B0")
     public AlgorithmIdentifier getHashAlgorithm() {
         AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_1442401704 = null; 
@@ -128,6 +129,7 @@ public class RSASSAPSSparams extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.188 -0400", hash_original_method = "299D9F86E5DBB3444D94BB106A959A17", hash_generated_method = "CE7E2DB91683BCAB8E3EC58D12C400F4")
     public AlgorithmIdentifier getMaskGenAlgorithm() {
         AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_925821948 = null; 
@@ -139,6 +141,7 @@ public class RSASSAPSSparams extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.188 -0400", hash_original_method = "DDACDA0D7B5CB6E5558758D456678E3E", hash_generated_method = "895252323325DA0DBFE2B4999C8E230A")
     public DERInteger getSaltLength() {
         DERInteger varB4EAC82CA7396A68D541C85D26508E83_632761408 = null; 
@@ -150,6 +153,7 @@ public class RSASSAPSSparams extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.188 -0400", hash_original_method = "EA52051AAE4EFBA3513689CA3A308153", hash_generated_method = "3538EB9ECDFF3EDEA2361F68CEC440A4")
     public DERInteger getTrailerField() {
         DERInteger varB4EAC82CA7396A68D541C85D26508E83_1575625940 = null; 

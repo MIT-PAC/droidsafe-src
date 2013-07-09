@@ -123,6 +123,7 @@ public final class SSLSessionImpl implements SSLSession, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.961 -0400", hash_original_method = "A8B8393BBD8B21276043F8F436BCE41F", hash_generated_method = "820C78AC42B4C32E3667D008D422B1F4")
     public int getApplicationBufferSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_337876333 = getTaintInt();
@@ -144,6 +145,7 @@ public final class SSLSessionImpl implements SSLSession, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.962 -0400", hash_original_method = "09A0842085DDEEEFFBE4843237FA7655", hash_generated_method = "197852CC1BD7FEF43BE9B255A00D0F89")
     public long getCreationTime() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1381341135 = getTaintLong();
@@ -153,6 +155,7 @@ public final class SSLSessionImpl implements SSLSession, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.963 -0400", hash_original_method = "6FF1AD4C2D68C6B37F5B643FEDAC8BE4", hash_generated_method = "6A88275EB786E25B6D286293D37CA757")
     public byte[] getId() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1706514840 = {getTaintByte()};
@@ -162,6 +165,7 @@ public final class SSLSessionImpl implements SSLSession, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.963 -0400", hash_original_method = "79FEA1654BACC0D1C8F52D94037731AA", hash_generated_method = "A379EA917B5EEFDCD356A202FDED83B7")
     public long getLastAccessedTime() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_282665336 = getTaintLong();
@@ -171,6 +175,7 @@ public final class SSLSessionImpl implements SSLSession, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.964 -0400", hash_original_method = "00176E7E524F828990985588910F48EC", hash_generated_method = "AF97B7777EA94E43B7FE09CE70C91AF0")
     public Certificate[] getLocalCertificates() {
         Certificate[] varB4EAC82CA7396A68D541C85D26508E83_2061702148 = null; 
@@ -210,6 +215,7 @@ public final class SSLSessionImpl implements SSLSession, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.965 -0400", hash_original_method = "D48FD6D531D6586277314A5CB11C610B", hash_generated_method = "6AE182729DC0F56AD6ECCA8D576DDE09")
     public int getPacketBufferSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1760054620 = getTaintInt();
@@ -278,6 +284,7 @@ public final class SSLSessionImpl implements SSLSession, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.967 -0400", hash_original_method = "686621F471AF14AF505B60419214318E", hash_generated_method = "4A1B641C06CB998AF21FD3F467DEC229")
     public String getPeerHost() {
         String varB4EAC82CA7396A68D541C85D26508E83_1876404003 = null; 
@@ -289,6 +296,7 @@ public final class SSLSessionImpl implements SSLSession, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.967 -0400", hash_original_method = "356711D154A2D021F9E9DF4BCD609AF2", hash_generated_method = "1E631F7B4F6486AB3DFCCAE70CE19042")
     public int getPeerPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_283539918 = getTaintInt();
@@ -316,6 +324,7 @@ public final class SSLSessionImpl implements SSLSession, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.968 -0400", hash_original_method = "70FFC4864CFD3FC7BC69978E71944D24", hash_generated_method = "0C38BF7014BB58ACE4DDA6A79EA7DEF1")
     public String getProtocol() {
         String varB4EAC82CA7396A68D541C85D26508E83_1888007716 = null; 
@@ -327,6 +336,7 @@ public final class SSLSessionImpl implements SSLSession, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.968 -0400", hash_original_method = "E54F5411F9B3E4DD60F47670618D45C7", hash_generated_method = "896F3D95B046B6F4B25149EFB0FE6BE0")
     public SSLSessionContext getSessionContext() {
         SSLSessionContext varB4EAC82CA7396A68D541C85D26508E83_1710478183 = null; 
@@ -369,6 +379,7 @@ public final class SSLSessionImpl implements SSLSession, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.969 -0400", hash_original_method = "81658CAC0BD01D20DC226803375A1EFC", hash_generated_method = "1607D36240D420C7B62C0493DECE3B97")
     public void invalidate() {
         isValid = false;
@@ -477,6 +488,7 @@ public final class SSLSessionImpl implements SSLSession, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.971 -0400", hash_original_method = "1B64858E0F9CF91B520A55B4E94E3F8D", hash_generated_method = "0E66339A36DC0FF9D4F6EB65322A02EE")
      void setPeer(String peerHost, int peerPort) {
         this.peerHost = peerHost;

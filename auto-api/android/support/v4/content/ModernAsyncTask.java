@@ -110,7 +110,8 @@ abstract class ModernAsyncTask<Params, Progress, Result> {
     }
 
     
-        public static void setDefaultExecutor(Executor exec) {
+        @DSModeled(DSC.SAFE)
+    public static void setDefaultExecutor(Executor exec) {
         sDefaultExecutor = exec;
     }
 
@@ -164,6 +165,7 @@ abstract class ModernAsyncTask<Params, Progress, Result> {
     protected abstract Result doInBackground(Params... params);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.351 -0400", hash_original_method = "D1C6308395AB600921F20543E51EAD98", hash_generated_method = "C0199AA9BD1E0917DA5290FDB264C17A")
     protected void onPreExecute() {
         
@@ -202,6 +204,7 @@ abstract class ModernAsyncTask<Params, Progress, Result> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.353 -0400", hash_original_method = "50EA6C215817530416AC66D7F05F78C0", hash_generated_method = "71F6D962409DFEB2E35ECE3ED38075C4")
     protected void onCancelled() {
         

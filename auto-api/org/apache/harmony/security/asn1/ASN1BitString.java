@@ -19,6 +19,7 @@ public class ASN1BitString extends ASN1StringType {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ASN1BitString getInstance() {
         return ASN1;
     }
@@ -87,6 +88,7 @@ public class ASN1BitString extends ASN1StringType {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.405 -0400", hash_original_method = "FF34851DE63579E10DEA6E02E8081017", hash_generated_method = "B9F78BD4A9B3EDC7CEE6D40504E08AA1")
     @Override
     public void setEncodingContent(BerOutputStream out) {

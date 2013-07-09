@@ -35,26 +35,31 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean getFileStatusNative(String path, FileStatus status) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int setPermissions(String file, int mode, int uid, int gid) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getPermissions(String file, int[] outPermissions) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int setUMask(int mask) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getFatVolumeId(String mountPoint) {
         return DSUtils.UNKNOWN_INT;
     }

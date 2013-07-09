@@ -36,6 +36,7 @@ public class CatResponseMessage {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.182 -0400", hash_original_method = "F48E3F317137773EE74DBBA707FC1847", hash_generated_method = "300FB1BC0AF88E29C6EEDB6706F8BB62")
     public void setResultCode(ResultCode resCode) {
         this.resCode = resCode;
@@ -44,6 +45,7 @@ public class CatResponseMessage {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.182 -0400", hash_original_method = "2E34FF1D06310BCA5A707F04A208D5E3", hash_generated_method = "EB11734060F982B157F2E43DCE44E425")
     public void setMenuSelection(int selection) {
         this.usersMenuSelection = selection;
@@ -52,6 +54,7 @@ public class CatResponseMessage {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.182 -0400", hash_original_method = "D6F0022EFC9B658375DA0AA4AF0678E5", hash_generated_method = "D9E9470C122C4DF3BE456085635E50F8")
     public void setInput(String input) {
         this.usersInput = input;
@@ -60,6 +63,7 @@ public class CatResponseMessage {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.183 -0400", hash_original_method = "6FEC3BD938C12B7F4A8404538ED69073", hash_generated_method = "CAB5F8FD14C650217CBA8EB5E144F8DE")
     public void setYesNo(boolean yesNo) {
         usersYesNoSelection = yesNo;
@@ -68,6 +72,7 @@ public class CatResponseMessage {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.183 -0400", hash_original_method = "EFA8BA2D7BACB7DB3D12098D0C022296", hash_generated_method = "DC26A7408DB624436E1DBB4F84C1827A")
     public void setConfirmation(boolean confirm) {
         usersConfirm = confirm;
@@ -76,6 +81,7 @@ public class CatResponseMessage {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.183 -0400", hash_original_method = "09210AE6CE37D89E5644571273FE7BA3", hash_generated_method = "AC899F9CBE7A13DAEFFF57B06F2AAC83")
      CommandDetails getCmdDetails() {
         CommandDetails varB4EAC82CA7396A68D541C85D26508E83_744047041 = null; 

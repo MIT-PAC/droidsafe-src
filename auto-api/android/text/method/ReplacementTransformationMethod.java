@@ -105,6 +105,7 @@ public abstract class ReplacementTransformationMethod implements TransformationM
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.518 -0400", hash_original_method = "13D8211EBDC6D4196EF2DDB70ED5CACD", hash_generated_method = "BBF679B18897E2BF5AC3F72CB72D0972")
     public void onFocusChanged(View view, CharSequence sourceText,
                                boolean focused, int direction,

@@ -380,6 +380,7 @@ public class NinePatchDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.386 -0400", hash_original_method = "6DB114FB8E950C38C4587167EE2392DA", hash_generated_method = "0658F96577C39818716637686F6CF859")
     @Override
     public int getIntrinsicWidth() {
@@ -390,6 +391,7 @@ public class NinePatchDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.386 -0400", hash_original_method = "391FEC77F059693D96A6B7B3AE926494", hash_generated_method = "72F4FF3426E5E1B7CFBC5AF1201FB02B")
     @Override
     public int getIntrinsicHeight() {
@@ -400,6 +402,7 @@ public class NinePatchDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.387 -0400", hash_original_method = "F677AE1ECA1CBA7AB5A76B8BE368A72F", hash_generated_method = "8BAE8A230607E3EB1A262A808F9F82CB")
     @Override
     public int getMinimumWidth() {
@@ -410,6 +413,7 @@ public class NinePatchDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.387 -0400", hash_original_method = "0C368C2268B0130C3ACD75434C6C4889", hash_generated_method = "7E2ACDA9C6BC1B4D9748352EBCA61BAB")
     @Override
     public int getMinimumHeight() {

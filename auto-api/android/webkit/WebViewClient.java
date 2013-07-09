@@ -21,6 +21,7 @@ public class WebViewClient {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.390 -0400", hash_original_method = "B25B5EE312C01437108EEEF8D289ECD3", hash_generated_method = "0D5B8FD4A01DBB8C0EE6E54E314EF412")
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
         addTaint(view.getTaint());
@@ -32,6 +33,7 @@ public class WebViewClient {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.390 -0400", hash_original_method = "5314B6B2031A7AB7127460792C15BEA8", hash_generated_method = "8CF19BF8AB58A2E9400D25D274F7E0F5")
     public void onPageStarted(WebView view, String url, Bitmap favicon) {
         
@@ -42,6 +44,7 @@ public class WebViewClient {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.390 -0400", hash_original_method = "3C74EFC6CC5DEEE74470BD61275572DD", hash_generated_method = "F3EEDF32F8F97D52AE282E549FFDECB4")
     public void onPageFinished(WebView view, String url) {
         
@@ -51,6 +54,7 @@ public class WebViewClient {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.390 -0400", hash_original_method = "854E1155516A65D2A0AC69045B4275C1", hash_generated_method = "301A2E56108AABAD3D657642C28C094D")
     public void onLoadResource(WebView view, String url) {
         
@@ -60,6 +64,7 @@ public class WebViewClient {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.391 -0400", hash_original_method = "B5801BDD799BA7062410BD396AAB4B71", hash_generated_method = "14BB939FD225B539B2E7E8B9C49B2892")
     public WebResourceResponse shouldInterceptRequest(WebView view,
             String url) {
@@ -89,6 +94,7 @@ public class WebViewClient {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.391 -0400", hash_original_method = "12ABA78EBE10E417F0C1B2A97120946D", hash_generated_method = "8E08FC52ED5F8697EB4ABC241E570844")
     public void onReceivedError(WebView view, int errorCode,
             String description, String failingUrl) {
@@ -115,6 +121,7 @@ public class WebViewClient {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.392 -0400", hash_original_method = "17353DC9A8A29F2A1F6857B45DCA3F35", hash_generated_method = "F1AE5CC1814E2CBD1B8153CFBB33397A")
     public void doUpdateVisitedHistory(WebView view, String url,
             boolean isReload) {
@@ -139,6 +146,7 @@ public class WebViewClient {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.392 -0400", hash_original_method = "B2EE2F5677BCC95DB5D614A683A4C62D", hash_generated_method = "C21C7E62F36C4232D664A6E0E0C16B22")
     public void onProceededAfterSslError(WebView view, SslError error) {
         
@@ -177,6 +185,7 @@ public class WebViewClient {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.393 -0400", hash_original_method = "1014277FB075F3AB2B83403F67794F88", hash_generated_method = "4FFF6551BA260EB5DE60261D5BE88A1B")
     public boolean shouldOverrideKeyEvent(WebView view, KeyEvent event) {
         addTaint(view.getTaint());
@@ -188,6 +197,7 @@ public class WebViewClient {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.393 -0400", hash_original_method = "0A322E8BE1639A0DBED358F3919BFB99", hash_generated_method = "82FA2AA75F185AEA1F1C538A3CC5C338")
     public void onUnhandledKeyEvent(WebView view, KeyEvent event) {
         
@@ -197,6 +207,7 @@ public class WebViewClient {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.393 -0400", hash_original_method = "E786223707BD58A877E8AD07E09750F2", hash_generated_method = "165D8F6DF52EF43FE5A9D14E430D9375")
     public void onScaleChanged(WebView view, float oldScale, float newScale) {
         
@@ -207,6 +218,7 @@ public class WebViewClient {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.394 -0400", hash_original_method = "61AD7355C99E5A8A7ACA8AE385985070", hash_generated_method = "0919EFD4F655A6F89A1711FDD34B5AF5")
     public void onReceivedLoginRequest(WebView view, String realm,
             String account, String args) {

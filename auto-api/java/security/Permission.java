@@ -29,6 +29,7 @@ public abstract class Permission implements Guard, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.408 -0400", hash_original_method = "C84962AC42FE97CD37014EB04A226348", hash_generated_method = "7B46358E0B69DA0AB94C3564AB046E79")
     public void checkGuard(Object obj) throws SecurityException {
         addTaint(obj.getTaint());

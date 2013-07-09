@@ -162,6 +162,7 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static long translateLockLength(long byteCount) {
         return (byteCount == Long.MAX_VALUE) ? 0 : byteCount;
     }
@@ -833,6 +834,7 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.291 -0400", hash_original_method = "A16D8AC033B12AF5E337D988C94AB7BA", hash_generated_method = "4A8F7204D34A1935309932D385ADBB14")
     public FileDescriptor getFD() {
         FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1406524811 = null; 

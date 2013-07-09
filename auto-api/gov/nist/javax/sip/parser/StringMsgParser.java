@@ -53,6 +53,7 @@ public class StringMsgParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.633 -0400", hash_original_method = "E7BB96D94C72A71CC55D419208731E5E", hash_generated_method = "20F944E1A059060117121AD4A329ED73")
     public void setParseExceptionListener(ParseExceptionListener pexhandler) {
         parseExceptionListener = pexhandler;
@@ -576,6 +577,7 @@ public class StringMsgParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setComputeContentLengthFromMessage(
             boolean computeContentLengthFromMessage) {
         StringMsgParser.computeContentLengthFromMessage = computeContentLengthFromMessage;
@@ -652,6 +654,7 @@ public class StringMsgParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.656 -0400", hash_original_method = "EC510198678EBDAFC45D82B058FF4015", hash_generated_method = "C6177A909B65F45400E04967CBC68CBF")
     public void setStrict(boolean strict) {
         this.strict = strict;

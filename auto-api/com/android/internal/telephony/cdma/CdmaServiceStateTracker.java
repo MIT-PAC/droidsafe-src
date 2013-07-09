@@ -577,6 +577,7 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.336 -0400", hash_original_method = "A0DE0F5E4F4D4787509D60C270D17835", hash_generated_method = "284CA33FA4D8508586DB084A046F5842")
     @Override
     protected Phone getPhone() {
@@ -1348,6 +1349,7 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.353 -0400", hash_original_method = "2F7466C178280C26D6BC47DE1AFB7432", hash_generated_method = "16829C31E96ED70AC051081267DCB24B")
     public int getCurrentDataConnectionState() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_102943184 = getTaintInt();
@@ -1357,6 +1359,7 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.354 -0400", hash_original_method = "19036A7D1DADA943DC912DAB6396B9AD", hash_generated_method = "C551F4BAB2DE101C685C7297F132308D")
     private boolean regCodeIsRoaming(int code) {
         addTaint(code);
@@ -1609,6 +1612,7 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.365 -0400", hash_original_method = "AC4D6B705E7065D39BD6B0621414F077", hash_generated_method = "89E6488BB9B703C7CA9BBABF73A30618")
     private void saveNitzTimeZone(String zoneId) {
         mSavedTimeZone = zoneId;
@@ -1706,6 +1710,7 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.371 -0400", hash_original_method = "32C0C58A5E03F7E404DD21382316ACEF", hash_generated_method = "7CC345D5D7C9224C3BD49A704CA44B81")
     protected boolean isSidsAllZeros() {
         {
@@ -1727,6 +1732,7 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.372 -0400", hash_original_method = "D3D57AE588662EF8725CB60FCA1C3072", hash_generated_method = "443757D458DE1D99A2E08E5D1DCAE0EC")
     private boolean isHomeSid(int sid) {
         {
@@ -1749,6 +1755,7 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.373 -0400", hash_original_method = "5C4C41F870A905A307BF05376EE79383", hash_generated_method = "466E5A3D41A5F23CA936A834A2D15B31")
     public boolean isConcurrentVoiceAndDataAllowed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_174189654 = getTaintBoolean();
@@ -1758,6 +1765,7 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.374 -0400", hash_original_method = "A5028D79B927656E45CDFA536F16F5AB", hash_generated_method = "BDB18B661E1A31B27C82DE5ACAD6D454")
     public String getMdnNumber() {
         String varB4EAC82CA7396A68D541C85D26508E83_700157978 = null; 
@@ -1769,6 +1777,7 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.374 -0400", hash_original_method = "133C132C72A1734541959456CF27FF0A", hash_generated_method = "90714EF9E05309E269C98E1217B3AFEE")
     public String getCdmaMin() {
         String varB4EAC82CA7396A68D541C85D26508E83_2047227656 = null; 
@@ -1780,6 +1789,7 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.375 -0400", hash_original_method = "B5AD5686CB21B47DB5A2223CCDBB4F42", hash_generated_method = "0DC74FE9352E97A8D2D4E6BF89FA744C")
     public String getPrlVersion() {
         String varB4EAC82CA7396A68D541C85D26508E83_590134224 = null; 
@@ -1828,6 +1838,7 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.376 -0400", hash_original_method = "8F0255C2E086694196AF7CFC36B7EF43", hash_generated_method = "D0200A390CE0043F7EB0F8D2E8FB9089")
     public boolean isMinInfoReady() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_522257301 = getTaintBoolean();

@@ -76,6 +76,7 @@ public final class SignerInfo {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.045 -0400", hash_original_method = "4521AB691538FE3E0581DA96E2D306DA", hash_generated_method = "45E650695C29C4C68F3579A218E8675A")
     public X500Principal getIssuer() {
         X500Principal varB4EAC82CA7396A68D541C85D26508E83_1716758961 = null; 
@@ -87,6 +88,7 @@ public final class SignerInfo {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.045 -0400", hash_original_method = "9420C2CEA2A6F47D515C0AB0605412CD", hash_generated_method = "AA630CF109D49293EBC74B8584B4440A")
     public BigInteger getSerialNumber() {
         BigInteger varB4EAC82CA7396A68D541C85D26508E83_1589928042 = null; 
@@ -164,6 +166,7 @@ public final class SignerInfo {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.047 -0400", hash_original_method = "14A08E1AF72E02B64CEDF5DA67544611", hash_generated_method = "FA147E16AD65B0D80B579BCCF25D462C")
     public byte[] getEncryptedDigest() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_389235682 = {getTaintByte()};

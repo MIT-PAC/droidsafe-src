@@ -88,6 +88,7 @@ class FrameLoader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.658 -0400", hash_original_method = "D2C8C4DED03F288D6E8AB32DB5451075", hash_generated_method = "AFA899BAAE4627D629483619DC707622")
     public void setPostData(byte[] postData) {
         mPostData = postData;
@@ -96,6 +97,7 @@ class FrameLoader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.658 -0400", hash_original_method = "E910F46151D172102331975C2568BBCE", hash_generated_method = "FA7AB8F86BB414F666064016C84E824E")
     public void setContentTypeForPost(String postContentType) {
         mContentType = postContentType;
@@ -104,6 +106,7 @@ class FrameLoader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.658 -0400", hash_original_method = "4FD1C5F2E68FCD3B6425DADD4042F496", hash_generated_method = "07CDE86C3243F89B692735454AED33C1")
     public void setCacheMode(int cacheMode) {
         mCacheMode = cacheMode;
@@ -112,6 +115,7 @@ class FrameLoader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.659 -0400", hash_original_method = "E0E34456BA61E1D94659FB0013B44B13", hash_generated_method = "E4CBCEFCEF3480884B759040661DF0A4")
     public void setHeaders(HashMap headers) {
         mHeaders = headers;
@@ -120,6 +124,7 @@ class FrameLoader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.659 -0400", hash_original_method = "C430EEAE75F5C9BA4DF5580B50F4FE67", hash_generated_method = "2A694849A7E940804A3621185415FC20")
     public LoadListener getLoadListener() {
         LoadListener varB4EAC82CA7396A68D541C85D26508E83_1225903357 = null; 

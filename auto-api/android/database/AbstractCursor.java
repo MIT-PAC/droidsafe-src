@@ -97,6 +97,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     abstract public boolean isNull(int column);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.524 -0400", hash_original_method = "DA5F8C1E79CBE35B90A3C92DA2B8F28D", hash_generated_method = "2CB3C810892890834251F3CC8D72BF22")
     public int getType(int column) {
         addTaint(column);
@@ -119,6 +120,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.525 -0400", hash_original_method = "DD0E28415E6C930BA9DBA04095F3A7EA", hash_generated_method = "0029F0F0E1123928D21EAF9DDC845DF3")
     public CursorWindow getWindow() {
         CursorWindow varB4EAC82CA7396A68D541C85D26508E83_2144457490 = null; 
@@ -188,6 +190,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.527 -0400", hash_original_method = "B825EEA007B34E9E28068D61BE8C7018", hash_generated_method = "CD4327318B9B9216F6971BCD64798A9B")
     public boolean isClosed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_194471006 = getTaintBoolean();
@@ -210,6 +213,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.528 -0400", hash_original_method = "316C43B210EB72CE31C6D4E542FB15C5", hash_generated_method = "540E7B9EE06F399D3ABDB057B294BCBB")
     public boolean onMove(int oldPosition, int newPosition) {
         
@@ -546,6 +550,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.539 -0400", hash_original_method = "9CE71984FA039D61518575C1361CCA79", hash_generated_method = "7FA1F01B6B8C82295C0802EA56CC00F7")
     protected DataSetObservable getDataSetObservable() {
         DataSetObservable varB4EAC82CA7396A68D541C85D26508E83_1069310559 = null; 
@@ -599,6 +604,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.540 -0400", hash_original_method = "265F32C67EE2A711D5C4BAD496137660", hash_generated_method = "E3AB4642C1A122863411A22FBA701D35")
     public void setNotificationUri(ContentResolver cr, Uri notifyUri) {
         {
@@ -625,6 +631,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.541 -0400", hash_original_method = "DDB9421669E815EA51C0F68469B23471", hash_generated_method = "CA0058844C2468EAFED73F3EBCC11E94")
     public Uri getNotificationUri() {
         Uri varB4EAC82CA7396A68D541C85D26508E83_1181710834 = null; 
@@ -636,6 +643,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.542 -0400", hash_original_method = "95EB5F956072F4428350A5713DB4F16C", hash_generated_method = "C9C9D89B2483FEA67800DDB570D20673")
     public boolean getWantsAllOnMoveCalls() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1287267999 = getTaintBoolean();
@@ -645,6 +653,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.542 -0400", hash_original_method = "FFD927D835EC033CA0D5789154520D3B", hash_generated_method = "598746C945848452E29BDC82DB3737FA")
     public void setExtras(Bundle extras) {
         mExtras = (extras == null) ? Bundle.EMPTY : extras;
@@ -653,6 +662,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.543 -0400", hash_original_method = "CF33C86C13BFD55DE499066ECC955562", hash_generated_method = "859F1D4A65D1757E58CBAD4911110C77")
     public Bundle getExtras() {
         Bundle varB4EAC82CA7396A68D541C85D26508E83_1118957285 = null; 
@@ -664,6 +674,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.544 -0400", hash_original_method = "0DCA3EA5579BB07DA7E61D916C230104", hash_generated_method = "738D94E5FA67E7280E53B5131DF36FDD")
     public Bundle respond(Bundle extras) {
         Bundle varB4EAC82CA7396A68D541C85D26508E83_591538936 = null; 
@@ -676,6 +687,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.544 -0400", hash_original_method = "038210FB7F6D7350A83F25D9DA43B6B8", hash_generated_method = "F4FFD4FE1B38D038D318BBDDC648D34B")
     @Deprecated
     protected boolean isFieldUpdated(int columnIndex) {
@@ -687,6 +699,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.546 -0400", hash_original_method = "C12342D6451FF7A0A51B2EFC9932FDFD", hash_generated_method = "588AD344A56845C38727697D6B56F797")
     @Deprecated
     protected Object getUpdatedField(int columnIndex) {

@@ -117,7 +117,8 @@ public class File implements Serializable, Comparable<File> {
 		return haveSlash ? (prefix + suffix) : (prefix + separatorChar + suffix);
 	}
 
-	private static void checkURI(URI uri) {
+	@DSModeled(DSC.SPEC)
+    private static void checkURI(URI uri) {
 		if (!uri.isAbsolute()) {
 			throw new IllegalArgumentException("URI is not absolute: " + uri);
 		} else if (!uri.getRawSchemeSpecificPart().startsWith("/")) {
@@ -333,11 +334,13 @@ public class File implements Serializable, Comparable<File> {
 		
 	}
 
-	private static String realpath(String path) {
+	@DSModeled(DSC.SAFE)
+    private static String realpath(String path) {
 		return new String();
 	}
 
-	private static String readlink(String path) {
+	@DSModeled(DSC.SAFE)
+    private static String readlink(String path) {
 		return new String();
 	}
 
@@ -490,7 +493,8 @@ public class File implements Serializable, Comparable<File> {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.839 -0400", hash_original_method = "F862A3BA81BCB206C83E79C3BEB01336", hash_generated_method = "6D78852A968D972C0D68D3EB6169D447")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.839 -0400", hash_original_method = "F862A3BA81BCB206C83E79C3BEB01336", hash_generated_method = "6D78852A968D972C0D68D3EB6169D447")
 	public String getPath() {
 		String varB4EAC82CA7396A68D541C85D26508E83_1141077551 = null; 
 																		
@@ -615,7 +619,8 @@ public class File implements Serializable, Comparable<File> {
 		
 	}
 
-	private static boolean setLastModifiedImpl(String path, long time) {
+	@DSModeled(DSC.SAFE)
+    private static boolean setLastModifiedImpl(String path, long time) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_916883677 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_916883677;
 	}
@@ -782,7 +787,8 @@ public class File implements Serializable, Comparable<File> {
 		
 	}
 
-	private static String[] listImpl(String path) {
+	@DSModeled(DSC.SAFE)
+    private static String[] listImpl(String path) {
 		return new String[0];
 	}
 
@@ -1110,7 +1116,8 @@ public class File implements Serializable, Comparable<File> {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.903 -0400", hash_original_method = "2B0DBB93241DF37011E39BE4D10F6879", hash_generated_method = "F3C7AAD0E7C859A9F07F7B6C878A999F")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.903 -0400", hash_original_method = "2B0DBB93241DF37011E39BE4D10F6879", hash_generated_method = "F3C7AAD0E7C859A9F07F7B6C878A999F")
 	@Override
 	public String toString() {
 		String varB4EAC82CA7396A68D541C85D26508E83_490867933 = null; 
@@ -1127,7 +1134,8 @@ public class File implements Serializable, Comparable<File> {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.904 -0400", hash_original_method = "700C756497BE64476D6C692FA75956E5", hash_generated_method = "EC945AC40E9B48CB4370DC683EF1438D")
+	@DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.904 -0400", hash_original_method = "700C756497BE64476D6C692FA75956E5", hash_generated_method = "EC945AC40E9B48CB4370DC683EF1438D")
 	public URI toURI() {
 		URI varB4EAC82CA7396A68D541C85D26508E83_392482504 = null; 
 																	
@@ -1194,7 +1202,8 @@ public class File implements Serializable, Comparable<File> {
 		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.904 -0400", hash_original_method = "A697C8A8DDF3EFD4E15B0A56A47ADC60", hash_generated_method = "0A35A2341F7DE53096049C2B60060E87")
+	@DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.904 -0400", hash_original_method = "A697C8A8DDF3EFD4E15B0A56A47ADC60", hash_generated_method = "0A35A2341F7DE53096049C2B60060E87")
 	@Deprecated
 	public URL toURL() throws java.net.MalformedURLException {
 		URL varB4EAC82CA7396A68D541C85D26508E83_1612919315 = null; 

@@ -132,6 +132,7 @@ public class SSLParameters {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.666 -0400", hash_original_method = "0562A9D6063DDE1E14D46646F3CBBD06", hash_generated_method = "136E0A1D7D80505AFD8214707DC5FD33")
     public boolean getNeedClientAuth() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_632136104 = getTaintBoolean();
@@ -141,6 +142,7 @@ public class SSLParameters {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.666 -0400", hash_original_method = "22A4FDEF203263AAF8FD895025373324", hash_generated_method = "7190D12EE7B69134109AE618F466102E")
     public void setNeedClientAuth(boolean needClientAuth) {
         this.needClientAuth = needClientAuth;
@@ -151,6 +153,7 @@ public class SSLParameters {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.667 -0400", hash_original_method = "B012F9400DE611969BC8B2969D6766E0", hash_generated_method = "FE319F9450D2D010475D1CE49949F7A5")
     public boolean getWantClientAuth() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_242622702 = getTaintBoolean();
@@ -160,6 +163,7 @@ public class SSLParameters {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.667 -0400", hash_original_method = "363F6F59B4A070AED132C2E96BCCEA5B", hash_generated_method = "9B8353396C409A957C3BF33E58027F47")
     public void setWantClientAuth(boolean wantClientAuth) {
         this.wantClientAuth = wantClientAuth;

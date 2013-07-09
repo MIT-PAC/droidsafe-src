@@ -621,6 +621,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.024 -0400", hash_original_method = "CC8B7F3C56C4BD3E79E20E40E6BC7183", hash_generated_method = "B1C47515DF4380EC2E00EEA4CF22D73A")
     public void profile() {
         mProfile = true;
@@ -900,6 +901,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.028 -0400", hash_original_method = "23562CAF30DEA91689886E5D0DFB3D0F", hash_generated_method = "03A8AABC5B6938420897250301477AD6")
     public View getView() {
         View varB4EAC82CA7396A68D541C85D26508E83_693826588 = null; 
@@ -987,6 +989,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.033 -0400", hash_original_method = "13F945759D2C310C5D0BB68B6FB1E2B8", hash_generated_method = "F42D1EB9DCFCA8A713EDB14D86B0A8E3")
     public boolean isLayoutRequested() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_770965368 = getTaintBoolean();
@@ -1062,6 +1065,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.035 -0400", hash_original_method = "DCC308262D5800610A000228CF8970A4", hash_generated_method = "A40FBF3A0AAFE3ABD2C5BCB3C996382E")
     public ViewParent getParent() {
         ViewParent varB4EAC82CA7396A68D541C85D26508E83_1909148550 = null; 
@@ -1107,6 +1111,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.036 -0400", hash_original_method = "57451ED91AC07EA69FA21499971D2B45", hash_generated_method = "AC406F6D5A6EF83824A653E030726C19")
     public void bringChildToFront(View child) {
         addTaint(child.getTaint());
@@ -2406,6 +2411,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.247 -0400", hash_original_method = "FAD7953F436A3C038802D5DE07F19E9E", hash_generated_method = "2973AC653CF38E6A75AE9EC455B50579")
      boolean scrollToRectOrFocus(Rect rectangle, boolean immediate) {
         final View.AttachInfo attachInfo = mAttachInfo;
@@ -3707,7 +3713,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-        private static int joystickAxisValueToDirection(float value) {
+        @DSModeled(DSC.SAFE)
+    private static int joystickAxisValueToDirection(float value) {
         if (value >= 0.5f) {
             return 1;
         } else if (value <= -0.5f) {
@@ -4045,6 +4052,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.275 -0400", hash_original_method = "0FF9C383AA2E451EDBB7C2A5CA6E3F80", hash_generated_method = "12BE574BF3F1201CE287FC107D86E1D9")
      void setLocalDragState(Object obj) {
         mLocalDragState = obj;
@@ -4155,6 +4163,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.277 -0400", hash_original_method = "45F97324DFA9B47BC7B47DB7731173BB", hash_generated_method = "785C4186E4B16928BF21E5D2656A38D5")
     public void getLastTouchPoint(Point outLocation) {
         outLocation.x = (int) mLastTouchPoint.x;
@@ -4166,6 +4175,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.277 -0400", hash_original_method = "D8987F1AD41DCFCEC13505B3421C8BB0", hash_generated_method = "051B467B5AE36D1DCA8729F3237D117F")
     public void setDragFocus(View newDragTarget) {
         {
@@ -4892,6 +4902,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.294 -0400", hash_original_method = "3A017950A97502A630256434B0EBF7E8", hash_generated_method = "8A6052FAEFEE4A6C389CD1C9F3B88CB8")
     public boolean showContextMenuForChild(View originalView) {
         addTaint(originalView.getTaint());
@@ -4902,6 +4913,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.295 -0400", hash_original_method = "492AE6A9C9C6F2F7E659E19901E3E487", hash_generated_method = "EE8504237A9A6C085080EF40421553A7")
     public ActionMode startActionModeForChild(View originalView, ActionMode.Callback callback) {
         ActionMode varB4EAC82CA7396A68D541C85D26508E83_1678552509 = null; 
@@ -4915,6 +4927,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.295 -0400", hash_original_method = "FB735C9133B887C07751FC797F168B65", hash_generated_method = "A7DA1CFB4829C8E1B84DF1FFE066706B")
     public void createContextMenu(ContextMenu menu) {
         addTaint(menu.getTaint());
@@ -4922,6 +4935,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.295 -0400", hash_original_method = "C40FC95C25B6655ACCA9227D471DC892", hash_generated_method = "FB4FD2CE39B9A19ED55CF997B56E8AAD")
     public void childDrawableStateChanged(View child) {
         addTaint(child.getTaint());
@@ -4963,6 +4977,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.296 -0400", hash_original_method = "F9834E22E1AF22274F19B27CD50E21E5", hash_generated_method = "8C6445ECC283015C0E55FA20D0DB11D5")
     public void requestDisallowInterceptTouchEvent(boolean disallowIntercept) {
         addTaint(disallowIntercept);

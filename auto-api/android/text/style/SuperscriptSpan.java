@@ -27,6 +27,7 @@ public class SuperscriptSpan extends MetricAffectingSpan implements ParcelableSp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.966 -0400", hash_original_method = "0CB176122CE000C44267FEA34CA341C1", hash_generated_method = "881F400A3473CAD3E16CDAAD0F80784C")
     public int getSpanTypeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_771701365 = getTaintInt();
@@ -36,6 +37,7 @@ public class SuperscriptSpan extends MetricAffectingSpan implements ParcelableSp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.967 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "0E6909CEAB17CB936CDF8A222698C2E9")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1125345807 = getTaintInt();
@@ -45,6 +47,7 @@ public class SuperscriptSpan extends MetricAffectingSpan implements ParcelableSp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.967 -0400", hash_original_method = "36081754C4A09732AEC95BB21FA0BDE7", hash_generated_method = "E7DBC20584A55C26974D54383A48E9F7")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(dest.getTaint());

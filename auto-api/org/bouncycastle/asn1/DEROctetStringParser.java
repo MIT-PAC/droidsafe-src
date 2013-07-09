@@ -24,6 +24,7 @@ public class DEROctetStringParser implements ASN1OctetStringParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.623 -0400", hash_original_method = "18DABC7937263BD98D8856E466803052", hash_generated_method = "AE2A9848D1B9B552DFB5159F351E6D87")
     public InputStream getOctetStream() {
         InputStream varB4EAC82CA7396A68D541C85D26508E83_434998445 = null; 

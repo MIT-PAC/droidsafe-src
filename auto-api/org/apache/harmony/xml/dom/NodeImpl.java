@@ -59,6 +59,7 @@ public abstract class NodeImpl implements Node {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.320 -0400", hash_original_method = "E2D79625FBECAF1E43447A0BEFC228B9", hash_generated_method = "7083E0E1FAD6E5EEB14CA9F4F78E70FC")
     public NamedNodeMap getAttributes() {
         NamedNodeMap varB4EAC82CA7396A68D541C85D26508E83_25270632 = null; 
@@ -70,6 +71,7 @@ public abstract class NodeImpl implements Node {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.324 -0400", hash_original_method = "1F381BCE8228355FEE86D697E02DDE0B", hash_generated_method = "BBEA9B1B0E3432A88B5E6A88A4E0198B")
     public NodeList getChildNodes() {
         NodeList varB4EAC82CA7396A68D541C85D26508E83_1694326888 = null; 
@@ -81,6 +83,7 @@ public abstract class NodeImpl implements Node {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.329 -0400", hash_original_method = "DB31E0DD76C8C1947AB843730A5D8205", hash_generated_method = "FCE072637AF8B35109A542937392C42B")
     public Node getFirstChild() {
         Node varB4EAC82CA7396A68D541C85D26508E83_2005833182 = null; 
@@ -92,6 +95,7 @@ public abstract class NodeImpl implements Node {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.331 -0400", hash_original_method = "6070A4A9C5DDD0223B459D45F6FD5CBB", hash_generated_method = "B7672BBDCB8E76A0797AF42E21ED72B8")
     public Node getLastChild() {
         Node varB4EAC82CA7396A68D541C85D26508E83_2070987715 = null; 
@@ -103,6 +107,7 @@ public abstract class NodeImpl implements Node {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.332 -0400", hash_original_method = "DEB04882A70946FEC78DD7AD3ABDE01B", hash_generated_method = "42A3FB4234316E0830CBC893344D2C13")
     public String getLocalName() {
         String varB4EAC82CA7396A68D541C85D26508E83_945844083 = null; 
@@ -114,6 +119,7 @@ public abstract class NodeImpl implements Node {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.332 -0400", hash_original_method = "4D95F58ABD4076A5B25FED87E28A6FD8", hash_generated_method = "6F6ED3FDF559E754148952792C727991")
     public String getNamespaceURI() {
         String varB4EAC82CA7396A68D541C85D26508E83_902808528 = null; 
@@ -125,6 +131,7 @@ public abstract class NodeImpl implements Node {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.333 -0400", hash_original_method = "D23B45CE7514A5E8C576F43815BA5C75", hash_generated_method = "4105A5654FE1E1B488FB342A9B507F2D")
     public Node getNextSibling() {
         Node varB4EAC82CA7396A68D541C85D26508E83_1005290027 = null; 
@@ -136,6 +143,7 @@ public abstract class NodeImpl implements Node {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.334 -0400", hash_original_method = "FDA68CAC7DBE692AD654EACCAEB8ADF4", hash_generated_method = "0D30319D683D51EE46F255C11F8FAC8F")
     public String getNodeName() {
         String varB4EAC82CA7396A68D541C85D26508E83_504579303 = null; 
@@ -150,6 +158,7 @@ public abstract class NodeImpl implements Node {
     public abstract short getNodeType();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.334 -0400", hash_original_method = "5D533F6B29FA017DED37EB54506CEFCE", hash_generated_method = "C4E2F275144E81F163E226F14D258087")
     public String getNodeValue() throws DOMException {
         String varB4EAC82CA7396A68D541C85D26508E83_1447824436 = null; 
@@ -172,6 +181,7 @@ public abstract class NodeImpl implements Node {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.336 -0400", hash_original_method = "2F661FBCA438408BEACED1A87A3CFAEE", hash_generated_method = "23AD83EFE0F5E05E09FD99115F57B887")
     public Node getParentNode() {
         Node varB4EAC82CA7396A68D541C85D26508E83_721086599 = null; 
@@ -183,6 +193,7 @@ public abstract class NodeImpl implements Node {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.337 -0400", hash_original_method = "727413C23E49E727D2327332BBC1F81A", hash_generated_method = "D0E8D1B9C86600CCCA1D9A62BF0A5780")
     public String getPrefix() {
         String varB4EAC82CA7396A68D541C85D26508E83_1266334662 = null; 
@@ -194,6 +205,7 @@ public abstract class NodeImpl implements Node {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.338 -0400", hash_original_method = "70F44FC98E437F8103C8C034DB4ECB33", hash_generated_method = "F5D9F5A32D244CD186CC509A4ED9A0C0")
     public Node getPreviousSibling() {
         Node varB4EAC82CA7396A68D541C85D26508E83_305574671 = null; 
@@ -205,6 +217,7 @@ public abstract class NodeImpl implements Node {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.338 -0400", hash_original_method = "B7795536C66ABB4718F9ED686281788D", hash_generated_method = "C2AEE9885C3DB478548982DD15FF3E5A")
     public boolean hasAttributes() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1751044796 = getTaintBoolean();
@@ -214,6 +227,7 @@ public abstract class NodeImpl implements Node {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.338 -0400", hash_original_method = "75BC1F0CD3DD7ADF1C7C374A2270CAC3", hash_generated_method = "9153324F668D6B4A5C43AEB8BD88BB41")
     public boolean hasChildNodes() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1179075846 = getTaintBoolean();
@@ -247,6 +261,7 @@ public abstract class NodeImpl implements Node {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.339 -0400", hash_original_method = "6E21C006D39E2D7D2AB395E9723D1D3D", hash_generated_method = "AAB79EA75709AFAC418FB3A2AD6C8459")
     public void normalize() {
         
@@ -298,6 +313,7 @@ public abstract class NodeImpl implements Node {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.341 -0400", hash_original_method = "534A727E4FDB6CDBB5DC8BBEFB80CC50", hash_generated_method = "6394A903E9072527732E970BA56A5453")
     public void setPrefix(String prefix) throws DOMException {
         addTaint(prefix.getTaint());
@@ -636,6 +652,7 @@ public abstract class NodeImpl implements Node {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.352 -0400", hash_original_method = "CDCF2BEBCB3DF8B0191B82144C39E4E3", hash_generated_method = "C11F0F39A3CC08D08EA36A3A47347532")
     public boolean isSameNode(Node other) {
         addTaint(other.getTaint());

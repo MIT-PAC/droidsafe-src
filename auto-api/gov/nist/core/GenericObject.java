@@ -44,6 +44,7 @@ public abstract class GenericObject implements Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.344 -0400", hash_original_method = "5F1EBA3A7EC51605C965562331E40E61", hash_generated_method = "62E0B5DFD3A6040BF185DB339B59E47D")
     public Match getMatcher() {
         Match varB4EAC82CA7396A68D541C85D26508E83_1309026868 = null; 

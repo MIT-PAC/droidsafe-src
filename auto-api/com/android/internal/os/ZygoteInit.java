@@ -40,6 +40,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.BAN)
     static void invokeStaticMain(ClassLoader loader,
             String className, String[] argv) throws ZygoteInit.MethodAndArgsCaller {
         Class<?> cl;
@@ -461,57 +462,67 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int setreuid(int ruid, int euid) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_21444046 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_21444046;
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int setregid(int rgid, int egid) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1792758307 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1792758307;
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int setpgid(int pid, int pgid) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1270716942 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1270716942;
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int getpgid(int pid) throws IOException {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1260756067 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1260756067;
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void reopenStdio(FileDescriptor in,
             FileDescriptor out, FileDescriptor err) throws IOException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void setCloseOnExec(FileDescriptor fd, boolean flag) throws IOException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static long capgetPermitted(int pid) throws IOException {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1659405050 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1659405050;
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void setCapabilities(
             long permittedCapabilities,
             long effectiveCapabilities) throws IOException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int selectReadable(FileDescriptor[] fds) throws IOException {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1197257160 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1197257160;
     }
 
     
+    @DSModeled(DSC.SAFE)
     static FileDescriptor createFileDescriptor(int fd) throws IOException {
     	return new FileDescriptor();
     }

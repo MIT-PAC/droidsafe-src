@@ -32,6 +32,7 @@ public final class X509PublicKey implements PublicKey {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.585 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "B3E551C33F8962C41C0E758926929516")
     public String getAlgorithm() {
         String varB4EAC82CA7396A68D541C85D26508E83_1546525319 = null; 
@@ -43,6 +44,7 @@ public final class X509PublicKey implements PublicKey {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.585 -0400", hash_original_method = "52CFE6084CDA819966418EDF944DBC96", hash_generated_method = "A1216957777543E4F71423276566D585")
     public String getFormat() {
         String varB4EAC82CA7396A68D541C85D26508E83_1292836088 = null; 
@@ -54,6 +56,7 @@ public final class X509PublicKey implements PublicKey {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.586 -0400", hash_original_method = "4EC4E5E78B7F57FB746895217115C4A0", hash_generated_method = "36566AB59C5F9E78A7CAC603BB1A6910")
     public byte[] getEncoded() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_275848615 = {getTaintByte()};

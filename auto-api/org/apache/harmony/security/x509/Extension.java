@@ -145,6 +145,7 @@ public final class Extension {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.885 -0400", hash_original_method = "369AB9F41A626798BB3BCC89236BACDA", hash_generated_method = "8C61353C739D7010128C2945B2CE9000")
     public boolean getCritical() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_241056588 = getTaintBoolean();
@@ -154,6 +155,7 @@ public final class Extension {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.886 -0400", hash_original_method = "F9C60F4D31E709EEBAC29B8CD2952B48", hash_generated_method = "E0ADE0FD3A0025AFA8D60F08967854D0")
     public byte[] getExtnValue() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_307075818 = {getTaintByte()};

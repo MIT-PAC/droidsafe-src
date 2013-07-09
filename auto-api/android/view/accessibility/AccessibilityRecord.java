@@ -145,6 +145,7 @@ public class AccessibilityRecord {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.595 -0400", hash_original_method = "0167B817243C7300A3E7B07356FC6F77", hash_generated_method = "25D8E9BB530ADBD0D12CC9D77E1D7112")
     public int getWindowId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1189478772 = getTaintInt();
@@ -269,6 +270,7 @@ public class AccessibilityRecord {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.599 -0400", hash_original_method = "5653D3A6C559AE9B846DF6E2B5CE39F8", hash_generated_method = "98E500A87E3A1E4D4B9F73E04582FE33")
     public int getItemCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_867528022 = getTaintInt();
@@ -289,6 +291,7 @@ public class AccessibilityRecord {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.600 -0400", hash_original_method = "C835140CBE8B50DDD89D13B9DB62A1BF", hash_generated_method = "C5EF661D66B0037C1104C4E021166A3B")
     public int getCurrentItemIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2143735908 = getTaintInt();
@@ -309,6 +312,7 @@ public class AccessibilityRecord {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.601 -0400", hash_original_method = "67718C1B588EB57EF05CD90DC3F200D7", hash_generated_method = "1A4B15CBB34A8FF2BB56DC214CA28540")
     public int getFromIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2081620487 = getTaintInt();
@@ -329,6 +333,7 @@ public class AccessibilityRecord {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.601 -0400", hash_original_method = "579D16111E248F454AD7B48F20E18451", hash_generated_method = "FB2C3DBF81192BAA5EFE3AEACA4FBBAC")
     public int getToIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1486197499 = getTaintInt();
@@ -349,6 +354,7 @@ public class AccessibilityRecord {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.602 -0400", hash_original_method = "37E422003D62C4BD4746E9CFAAF79E84", hash_generated_method = "9B9C505317CB81C9A33A38F480002FA9")
     public int getScrollX() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_216177546 = getTaintInt();
@@ -369,6 +375,7 @@ public class AccessibilityRecord {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.602 -0400", hash_original_method = "1E7AE64F8D32210A6E2C97F4869FB31A", hash_generated_method = "22DC8A935BAD7A44CEBD887A88125E66")
     public int getScrollY() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_82840062 = getTaintInt();
@@ -389,6 +396,7 @@ public class AccessibilityRecord {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.603 -0400", hash_original_method = "C4A2F5E4142D8D5EA688446E7513363C", hash_generated_method = "D2A2709B7C5151E46A2AF0FA4DF9B97B")
     public int getMaxScrollX() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2003991263 = getTaintInt();
@@ -409,6 +417,7 @@ public class AccessibilityRecord {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.603 -0400", hash_original_method = "A3ECA44A0D4150097FAA989997DF13C5", hash_generated_method = "645A902FC1FAD89703A47BF25D989811")
     public int getMaxScrollY() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1222532958 = getTaintInt();
@@ -429,6 +438,7 @@ public class AccessibilityRecord {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.605 -0400", hash_original_method = "49E2E44D8419AC51B09A77AC8668D279", hash_generated_method = "EF90F18C9434CE1719521CA770DE678D")
     public int getAddedCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1068458 = getTaintInt();
@@ -449,6 +459,7 @@ public class AccessibilityRecord {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.606 -0400", hash_original_method = "EBD9E1156BBECE10FD62678D5B5AE958", hash_generated_method = "41BF52B9C8B696F808E4DE8D07960A56")
     public int getRemovedCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1353100465 = getTaintInt();
@@ -469,6 +480,7 @@ public class AccessibilityRecord {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.607 -0400", hash_original_method = "3625856433EBE1C9C9A90132A3C58D3F", hash_generated_method = "5E5774B7DE5C760FA902A53F09A48DAF")
     public CharSequence getClassName() {
         CharSequence varB4EAC82CA7396A68D541C85D26508E83_1741534038 = null; 
@@ -503,6 +515,7 @@ public class AccessibilityRecord {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.608 -0400", hash_original_method = "FE2FD614296585A25D259709588FAD5E", hash_generated_method = "74377981EC1C792970442FD70D7D7D27")
     public CharSequence getBeforeText() {
         CharSequence varB4EAC82CA7396A68D541C85D26508E83_499519202 = null; 
@@ -525,6 +538,7 @@ public class AccessibilityRecord {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.610 -0400", hash_original_method = "6DAFF86A43A6BABA543C66C7DDAE7D00", hash_generated_method = "75948F203E5951C75572FF7CF9C7B03F")
     public CharSequence getContentDescription() {
         CharSequence varB4EAC82CA7396A68D541C85D26508E83_680510953 = null; 
@@ -547,6 +561,7 @@ public class AccessibilityRecord {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.611 -0400", hash_original_method = "336F04D02E102717408E8DD7ED329D8E", hash_generated_method = "ED2E0E227139A989CB2225458A09EEC0")
     public Parcelable getParcelableData() {
         Parcelable varB4EAC82CA7396A68D541C85D26508E83_293081954 = null; 
@@ -580,6 +595,7 @@ public class AccessibilityRecord {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.612 -0400", hash_original_method = "7730BDD0DFF4FE8B243CA8BC305ED86E", hash_generated_method = "0D7B5E4D59CD0A6DD9DDC234474696D4")
     public void setSealed(boolean sealed) {
         mSealed = sealed;
@@ -588,6 +604,7 @@ public class AccessibilityRecord {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.612 -0400", hash_original_method = "AF3422E1C079F6B2A15130B45797502F", hash_generated_method = "EB385377ECCE9688D29944ADBB741190")
      boolean isSealed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_742815652 = getTaintBoolean();
@@ -631,6 +648,7 @@ public class AccessibilityRecord {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.613 -0400", hash_original_method = "4FB14FE7E8FA7F40071202FB709EF8E4", hash_generated_method = "EA2253694B454986ECFD20C74E40FC25")
     private boolean getBooleanProperty(int property) {
         addTaint(property);
@@ -641,6 +659,7 @@ public class AccessibilityRecord {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.613 -0400", hash_original_method = "1E3C58B2EEBD5BD671884B4ADC3ACB2F", hash_generated_method = "A5B03B4F4EA654785C16AC47CD8C3419")
     private void setBooleanProperty(int property, boolean value) {
         {

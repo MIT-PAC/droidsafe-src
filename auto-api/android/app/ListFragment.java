@@ -138,6 +138,7 @@ public class ListFragment extends Fragment {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.109 -0400", hash_original_method = "BF490B4BB4BD29ACC689E0297B614061", hash_generated_method = "EF64D58407ED8252E2CE18DD4AFFAEF4")
     public void onListItemClick(ListView l, View v, int position, long id) {
         
@@ -311,6 +312,7 @@ public class ListFragment extends Fragment {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.118 -0400", hash_original_method = "6C199B6FBEC38BDF6D031387113C1DD5", hash_generated_method = "7573F662E6BF79F7BD5BE5F5EED6EE77")
     public ListAdapter getListAdapter() {
         ListAdapter varB4EAC82CA7396A68D541C85D26508E83_1540230223 = null; 

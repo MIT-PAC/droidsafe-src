@@ -80,6 +80,7 @@ public final class Pattern implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.642 -0400", hash_original_method = "266BA96807DA041E9813A92F169CCF9C", hash_generated_method = "3352ED04AE57CA42A5382433C9524721")
     public String pattern() {
         String varB4EAC82CA7396A68D541C85D26508E83_1201324713 = null; 
@@ -91,6 +92,7 @@ public final class Pattern implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.642 -0400", hash_original_method = "78D8A2FB7B521C80E554EF489653C471", hash_generated_method = "45798BDC91D3C3547C03C754288F2876")
     @Override
     public String toString() {
@@ -103,6 +105,7 @@ public final class Pattern implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.642 -0400", hash_original_method = "2653DED91010C405DFA7C9A961BBF2C3", hash_generated_method = "213E3F6BC17F8EA0005C97982AD8C5B4")
     public int flags() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_749339072 = getTaintInt();
@@ -202,10 +205,12 @@ public final class Pattern implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void closeImpl(int addr) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int compileImpl(String regex, int flags) {
         return DSUtils.UNKNOWN_INT;
     }

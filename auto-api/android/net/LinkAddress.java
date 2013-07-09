@@ -97,6 +97,7 @@ public class LinkAddress implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.953 -0400", hash_original_method = "F0319BA9B19AC93124B00C2891893A52", hash_generated_method = "AA94BB13A196744F514C5F1845CD8A6A")
     public InetAddress getAddress() {
         InetAddress varB4EAC82CA7396A68D541C85D26508E83_821840497 = null; 
@@ -108,6 +109,7 @@ public class LinkAddress implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.953 -0400", hash_original_method = "2E2106DAF5193DB540436A7E1AE68959", hash_generated_method = "09C392EA1755B244DC0B43E15991A34A")
     public int getNetworkPrefixLength() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1362953849 = getTaintInt();
@@ -117,6 +119,7 @@ public class LinkAddress implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.954 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "606ECBE415FF6B15A0B8162B844BC763")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_711123670 = getTaintInt();

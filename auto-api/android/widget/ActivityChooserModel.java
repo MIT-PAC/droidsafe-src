@@ -118,6 +118,7 @@ public class ActivityChooserModel extends DataSetObservable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.456 -0400", hash_original_method = "E9FF7BF71184D5918A5528B39387C05B", hash_generated_method = "0EBAA750D81BBC07F15435DF8D3CFF9F")
     public void setIntent(Intent intent) {
         {
@@ -135,6 +136,7 @@ public class ActivityChooserModel extends DataSetObservable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.457 -0400", hash_original_method = "27A17A1D87D77EAA50C2FB6DFA94EC7A", hash_generated_method = "61FEA511DDC01F31EACEAD012B094E27")
     public Intent getIntent() {
         Intent varB4EAC82CA7396A68D541C85D26508E83_2032346325 = null; 
@@ -206,6 +208,7 @@ public class ActivityChooserModel extends DataSetObservable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.459 -0400", hash_original_method = "2E1571A22B1C1279902BA9C2D35CCDAC", hash_generated_method = "458C27889FDAFBB63D99D1DBC0F7ACC9")
     public Intent chooseActivity(int index) {
         Intent varB4EAC82CA7396A68D541C85D26508E83_143201409 = null; 
@@ -245,6 +248,7 @@ public class ActivityChooserModel extends DataSetObservable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.459 -0400", hash_original_method = "56E3863DC4DFDE24EBD2068470DB48E1", hash_generated_method = "502DB08B7514528D4C4579AC10A6BA23")
     public void setOnChooseActivityListener(OnChooseActivityListener listener) {
         mActivityChoserModelPolicy = listener;
@@ -442,6 +446,7 @@ public class ActivityChooserModel extends DataSetObservable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.463 -0400", hash_original_method = "EBCBD4C754CE0391425067ED25453667", hash_generated_method = "2DFAD9DF92F47A328C34E3910423904C")
     public int getHistoryMaxSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_450147795 = getTaintInt();

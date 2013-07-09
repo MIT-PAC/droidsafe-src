@@ -21,6 +21,7 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
     }
 
 
+    @DSModeled(DSC.SAFE)
     private static boolean isBase64(byte octect) {
         if (octect == PAD) {
             return true;

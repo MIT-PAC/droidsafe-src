@@ -58,6 +58,7 @@ public class BitSet implements Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:01.000 -0400", hash_original_method = "2E0FE194508C45AD5184DCF0A152D7A0", hash_generated_method = "2824BBF287F92F88C53D065A3A219FAA")
     private void shrinkSize() {
         int i = longCount - 1;
@@ -71,6 +72,7 @@ public class BitSet implements Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static long[] arrayForBits(int bitCount) {
         return new long[(bitCount + 63)/ 64];
     }
@@ -106,6 +108,7 @@ public class BitSet implements Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:01.001 -0400", hash_original_method = "82791B0EBFB6ED23064857D8180EA65E", hash_generated_method = "62D41601C9E208390B38E437A9C6B132")
     @Override
     public boolean equals(Object o) {
@@ -155,6 +158,7 @@ public class BitSet implements Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:01.003 -0400", hash_original_method = "4E772724E1A92C93EB62C933BC27FE7C", hash_generated_method = "43815A1C6DD5CA4D23B95FE95739FC43")
     @Override
     public int hashCode() {
@@ -691,6 +695,7 @@ public class BitSet implements Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:01.012 -0400", hash_original_method = "F33E07354BDEEAA3CDE5DA5EA8779C95", hash_generated_method = "5C29DFE5FAD71394FE1C67B3A4D6F88D")
     public int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_938297180 = getTaintInt();
@@ -895,6 +900,7 @@ public class BitSet implements Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:01.017 -0400", hash_original_method = "F34A10F6A3FF7AEAC6E09DDBD9741E2B", hash_generated_method = "E98ED5BC872B1092A7421DB966EABC37")
     public boolean isEmpty() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1927466425 = getTaintBoolean();

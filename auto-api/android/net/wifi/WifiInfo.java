@@ -100,6 +100,7 @@ public class WifiInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.550 -0400", hash_original_method = "89967329215A273EB27CD79E5BB8124F", hash_generated_method = "1F59F6132E892235B3AF5FC05C1DB6B9")
      void setSSID(String SSID) {
         mSSID = SSID;
@@ -110,6 +111,7 @@ public class WifiInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.550 -0400", hash_original_method = "79B89773022C9616E7A28BB8F338ADFD", hash_generated_method = "2EB1296DA2D1D72D359E7698CEBAC887")
     public String getSSID() {
         String varB4EAC82CA7396A68D541C85D26508E83_429088246 = null; 
@@ -121,6 +123,7 @@ public class WifiInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.550 -0400", hash_original_method = "66D619B3A9C00436F0EA6225848F76E2", hash_generated_method = "BD548F6E82AB5618699240A24DE36BEC")
      void setBSSID(String BSSID) {
         mBSSID = BSSID;
@@ -129,6 +132,7 @@ public class WifiInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.551 -0400", hash_original_method = "4164893247FD5E84E98B26376E6216D7", hash_generated_method = "668B135CF69C46E1C243E9731194CF7E")
     public String getBSSID() {
         String varB4EAC82CA7396A68D541C85D26508E83_68314963 = null; 
@@ -140,6 +144,7 @@ public class WifiInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.552 -0400", hash_original_method = "EAA2EB56C456A75F6A36236287457095", hash_generated_method = "7946E83E5025CD5AD75E0C02B139A136")
     public int getRssi() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1984152014 = getTaintInt();
@@ -149,6 +154,7 @@ public class WifiInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.552 -0400", hash_original_method = "DC61695B2550927FEF6924BD6DCCD37F", hash_generated_method = "E19A60BAC9A9678F7738ECF74A703A1A")
      void setRssi(int rssi) {
         mRssi = rssi;
@@ -157,6 +163,7 @@ public class WifiInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.553 -0400", hash_original_method = "78D01A80334309441C41F6B9CC957D2A", hash_generated_method = "9CB1C41B439D03B243FC3C663506A19C")
     public int getLinkSpeed() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_111307434 = getTaintInt();
@@ -166,6 +173,7 @@ public class WifiInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.553 -0400", hash_original_method = "BE3FF818F2C5FDEDBAE4E9D0AB590378", hash_generated_method = "3D5209C2A702486DC92F36B939583D1F")
      void setLinkSpeed(int linkSpeed) {
         this.mLinkSpeed = linkSpeed;
@@ -174,6 +182,7 @@ public class WifiInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.554 -0400", hash_original_method = "D01D60678F7B1D8F273F61CB3F3E57D7", hash_generated_method = "A3E9B719E887830890CD4DD14E0AD494")
      void setMacAddress(String macAddress) {
         this.mMacAddress = macAddress;
@@ -182,6 +191,7 @@ public class WifiInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.554 -0400", hash_original_method = "3C8E67358ACD99AD783D244CA0276ACD", hash_generated_method = "288A64ED75CB45EED885536873B8E4DC")
     public String getMacAddress() {
         String varB4EAC82CA7396A68D541C85D26508E83_1330646586 = null; 
@@ -193,6 +203,7 @@ public class WifiInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.555 -0400", hash_original_method = "9EA9BCBB38651D2FFE57E5088D2224E9", hash_generated_method = "F5B7D15D1F9FA86D48D303046B1BC4C0")
      void setNetworkId(int id) {
         mNetworkId = id;
@@ -201,6 +212,7 @@ public class WifiInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.555 -0400", hash_original_method = "1123FC1D4BB4576127DCFBEFE95B45B2", hash_generated_method = "876B08664828F4AC04600AE178871318")
     public boolean isExplicitConnect() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1568255997 = getTaintBoolean();
@@ -210,6 +222,7 @@ public class WifiInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.555 -0400", hash_original_method = "3A4A87F80F04538D566E1F3D87FB9121", hash_generated_method = "419BFD214B5C4008C8900EF6C9DFFFC6")
     public void setExplicitConnect(boolean explicitConnect) {
         this.mExplicitConnect = explicitConnect;
@@ -218,6 +231,7 @@ public class WifiInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.555 -0400", hash_original_method = "B76AAD80CE4B08426894CE7F5D58A537", hash_generated_method = "87E828B0E4825BA6975513370D710F72")
     public int getNetworkId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1617455763 = getTaintInt();
@@ -227,6 +241,7 @@ public class WifiInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.556 -0400", hash_original_method = "8E3F1F3B329B69F39A487C61B59EF2C9", hash_generated_method = "4C1CE48DF47F8137F4C4393F9BD9F0DF")
     public SupplicantState getSupplicantState() {
         SupplicantState varB4EAC82CA7396A68D541C85D26508E83_1295043881 = null; 
@@ -238,6 +253,7 @@ public class WifiInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.556 -0400", hash_original_method = "D88102438CF5144569D4601488BE4027", hash_generated_method = "6FA517D61A9E3825E9AD9449126434D5")
      void setSupplicantState(SupplicantState state) {
         mSupplicantState = state;
@@ -246,6 +262,7 @@ public class WifiInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.556 -0400", hash_original_method = "34F62DC8D94CF645975CE5993EA04307", hash_generated_method = "1DF1B64E8A2F4E71966A2BDAA44D73EC")
      void setInetAddress(InetAddress address) {
         mIpAddress = address;
@@ -266,6 +283,7 @@ public class WifiInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.557 -0400", hash_original_method = "C4A754B6DCF0E16A6381A21399FCB1B9", hash_generated_method = "C87C5D9CA5C465972A984094F9F27815")
     public boolean getHiddenSSID() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1467803716 = getTaintBoolean();
@@ -275,6 +293,7 @@ public class WifiInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.557 -0400", hash_original_method = "FC84BEFBD9B7D8BF135E20B2EE1BDB16", hash_generated_method = "86ED33E9FF91B448E715AC8EE3AB36F5")
     public void setHiddenSSID(boolean hiddenSSID) {
         mHiddenSSID = hiddenSSID;
@@ -346,6 +365,7 @@ public class WifiInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.560 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "594C59D107D20053C2BA32A248E7706A")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1950386410 = getTaintInt();

@@ -205,6 +205,7 @@ public final class LoadedApk {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.243 -0400", hash_original_method = "510D23D8CF054FDAE1D1426C6A1A1500", hash_generated_method = "1C75351472D06FD2D3A957BA5BFD2C2A")
      Application getApplication() {
         Application varB4EAC82CA7396A68D541C85D26508E83_1209050606 = null; 
@@ -216,6 +217,7 @@ public final class LoadedApk {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.245 -0400", hash_original_method = "B3E128BBA0564CAE955B890D71B1CE7C", hash_generated_method = "3922CF01D131ABD1F15B9B2C8FD1AD1F")
     public String getPackageName() {
         String varB4EAC82CA7396A68D541C85D26508E83_1346707764 = null; 
@@ -227,6 +229,7 @@ public final class LoadedApk {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.245 -0400", hash_original_method = "69D4795DAE5563DBA773DE992713BBC9", hash_generated_method = "7EFCE06F3B338DFDAE07A1E4AD5E1926")
     public ApplicationInfo getApplicationInfo() {
         ApplicationInfo varB4EAC82CA7396A68D541C85D26508E83_1856727724 = null; 
@@ -238,6 +241,7 @@ public final class LoadedApk {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.246 -0400", hash_original_method = "1023CFFB5794A83B41C0A52D163AA3AF", hash_generated_method = "B5C14DB39B53EBC51462B833BAD35867")
     public boolean isSecurityViolation() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1862550088 = getTaintBoolean();
@@ -295,6 +299,7 @@ public final class LoadedApk {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.248 -0400", hash_original_method = "98BA13F46ABDF03C557DAF40D6E3FC88", hash_generated_method = "E994287469F9B943ECFDD9A370D7D34D")
     public ClassLoader getClassLoader() {
         ClassLoader varB4EAC82CA7396A68D541C85D26508E83_1649068289 = null; 
@@ -410,6 +415,7 @@ public final class LoadedApk {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.250 -0400", hash_original_method = "DDE558C6C52D26591497F8CCA19E2D11", hash_generated_method = "719E717183EB4CEA394F18ED4D0F53F1")
     public String getAppDir() {
         String varB4EAC82CA7396A68D541C85D26508E83_1277895520 = null; 
@@ -421,6 +427,7 @@ public final class LoadedApk {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.252 -0400", hash_original_method = "1158BD50BBC4E4D9C9B8EC24E43A83EF", hash_generated_method = "FEC9A1A53CE932A0A215ECF26FE097FE")
     public String getResDir() {
         String varB4EAC82CA7396A68D541C85D26508E83_1798899831 = null; 
@@ -432,6 +439,7 @@ public final class LoadedApk {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.254 -0400", hash_original_method = "5486D8CB07A0A494A33FE28373C3B14E", hash_generated_method = "C1D42C5BE7E8C86F9FA6BD084E3632DB")
     public String getDataDir() {
         String varB4EAC82CA7396A68D541C85D26508E83_899661439 = null; 
@@ -443,6 +451,7 @@ public final class LoadedApk {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.255 -0400", hash_original_method = "6FB19B7083E51C6FD4891C3DDE1600A5", hash_generated_method = "7B2BEE0626EAAC8B4F5D47CFE9D83E20")
     public File getDataDirFile() {
         File varB4EAC82CA7396A68D541C85D26508E83_1158039098 = null; 

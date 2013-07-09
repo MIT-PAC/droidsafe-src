@@ -65,6 +65,7 @@ public class UsernamePasswordCredentials implements Credentials {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.669 -0400", hash_original_method = "BB172E7710F2C6896B8F9EADD44CB225", hash_generated_method = "6E35974BD256DE407BE463B8AD5D6F86")
     public Principal getUserPrincipal() {
         Principal varB4EAC82CA7396A68D541C85D26508E83_934480254 = null; 
@@ -88,6 +89,7 @@ public class UsernamePasswordCredentials implements Credentials {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.671 -0400", hash_original_method = "9DBD0BEF507048073F2256BD69D03A45", hash_generated_method = "E822F85E657BA7AB1A612E424DCDCBB6")
     public String getPassword() {
         String varB4EAC82CA7396A68D541C85D26508E83_985749785 = null; 

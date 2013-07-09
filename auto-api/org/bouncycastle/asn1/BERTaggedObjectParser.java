@@ -49,6 +49,7 @@ public class BERTaggedObjectParser implements ASN1TaggedObjectParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.209 -0400", hash_original_method = "E640F7F01BC858A63ED48B7251E0457D", hash_generated_method = "4E6603367CC3D5D905A01A9BDF5127DD")
     public boolean isConstructed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_333552959 = getTaintBoolean();
@@ -58,6 +59,7 @@ public class BERTaggedObjectParser implements ASN1TaggedObjectParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.209 -0400", hash_original_method = "B35ABF3B77036668E0072FBBE52EC3E8", hash_generated_method = "A120B7B0D3B5AB37F11F2AE70C68FA53")
     public int getTagNo() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_305198053 = getTaintInt();

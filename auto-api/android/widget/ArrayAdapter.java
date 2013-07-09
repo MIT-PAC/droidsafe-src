@@ -304,6 +304,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.851 -0400", hash_original_method = "B014C1A32626DBADC83EC827393C5854", hash_generated_method = "DF16B68FF23EAD56FA4255B3D48770B3")
     public void setNotifyOnChange(boolean notifyOnChange) {
         mNotifyOnChange = notifyOnChange;
@@ -329,6 +330,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.852 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "D924872DDDDEBEFD12E5AC3AE981E104")
     public Context getContext() {
         Context varB4EAC82CA7396A68D541C85D26508E83_696610950 = null; 
@@ -376,6 +378,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.854 -0400", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "3FAA52821ABF959A3414CE6BB097D52B")
     public long getItemId(int position) {
         addTaint(position);
@@ -447,6 +450,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.855 -0400", hash_original_method = "614355FA33E2A17CA6280A34FDBFFDC0", hash_generated_method = "166D468151E808B5172814612FD9B5A0")
     public void setDropDownViewResource(int resource) {
         this.mDropDownResource = resource;

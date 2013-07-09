@@ -122,6 +122,7 @@ public class DERObjectIdentifier extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.594 -0400", hash_original_method = "9387C33D0DE26CACBA5D2CF5AB6F5FB6", hash_generated_method = "3FEE000BEC774A34156CC35984238DFF")
     public String getId() {
         String varB4EAC82CA7396A68D541C85D26508E83_1707507182 = null; 

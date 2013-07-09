@@ -87,6 +87,7 @@ class GLES20DisplayList extends DisplayList {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.226 -0400", hash_original_method = "3D6474677C8929AA6741081CA86616E2", hash_generated_method = "00E0D4538D560A971DCD2BDFA25FE3FE")
     @Override
      boolean isValid() {

@@ -386,6 +386,7 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.974 -0400", hash_original_method = "9B5434C347C8B5979021C04F4F7D3AC0", hash_generated_method = "DFB13462564472F3EBFF4A8C10854D60")
     @Override
     public int size() {

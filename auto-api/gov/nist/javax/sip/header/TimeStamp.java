@@ -145,6 +145,7 @@ public class TimeStamp extends SIPHeader implements TimeStampHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.751 -0400", hash_original_method = "085907F485A51FAD6B2086211DEE0B83", hash_generated_method = "EE5F7CB8F37AF713887DD10AAC7C1A6C")
     public boolean hasDelay() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_345334830 = getTaintBoolean();
@@ -154,6 +155,7 @@ public class TimeStamp extends SIPHeader implements TimeStampHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.752 -0400", hash_original_method = "EEC7FFF2C35A5C091F00D880A66433E4", hash_generated_method = "4957208ED2900548BE9C2858F9A52B7B")
     public void removeDelay() {
         delay = -1;
@@ -225,6 +227,7 @@ public class TimeStamp extends SIPHeader implements TimeStampHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.756 -0400", hash_original_method = "21D089BD1FDC44EC84A18CFADDD04289", hash_generated_method = "08DF6D48DE4993DE5AD307D05036C528")
     public long getTime() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1034402375 = getTaintLong();
@@ -234,6 +237,7 @@ public class TimeStamp extends SIPHeader implements TimeStampHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.756 -0400", hash_original_method = "BF53496596C6E194CBAA97C816B19B22", hash_generated_method = "FE2A2332699F4F9E0D3864ACC2146F3D")
     public int getTimeDelay() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1998123920 = getTaintInt();

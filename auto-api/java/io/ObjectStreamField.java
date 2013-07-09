@@ -106,6 +106,7 @@ public class ObjectStreamField implements Comparable<Object> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.713 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "80B736505AFF6165C2DFF2471BF64D02")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_457026815 = null; 
@@ -117,6 +118,7 @@ public class ObjectStreamField implements Comparable<Object> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.713 -0400", hash_original_method = "ACEB13DAA855070296BA592FB1ADADA1", hash_generated_method = "CB4FFBDD544804541029D12450902735")
     public int getOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_92631546 = getTaintInt();
@@ -307,6 +309,7 @@ public class ObjectStreamField implements Comparable<Object> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.715 -0400", hash_original_method = "7A66A074CFBB1A834E24DFB5B3A643D5", hash_generated_method = "4305F7EB15B8D74A66017D2CC764F457")
     protected void setOffset(int newValue) {
         this.offset = newValue;
@@ -328,6 +331,7 @@ public class ObjectStreamField implements Comparable<Object> {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.716 -0400", hash_original_method = "48E3281BF72BF66E5E96F9E4056E97FC", hash_generated_method = "F705BBFB1F57D2094A6BD64D825A3094")
      void resolve(ClassLoader loader) {
         {
@@ -380,6 +384,7 @@ public class ObjectStreamField implements Comparable<Object> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.717 -0400", hash_original_method = "F21E97E0131CF96F90294027D325F2F1", hash_generated_method = "A62862AE56F07593181F21E5923DDC1A")
     public boolean isUnshared() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2098507411 = getTaintBoolean();
@@ -389,6 +394,7 @@ public class ObjectStreamField implements Comparable<Object> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.717 -0400", hash_original_method = "68701E3ED15FAA74732CE575E0F04E5E", hash_generated_method = "78989AD0A169EB11A9E371D43CF1C2E1")
      void setUnshared(boolean unshared) {
         this.unshared = unshared;

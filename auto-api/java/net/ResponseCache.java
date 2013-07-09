@@ -20,11 +20,13 @@ public abstract class ResponseCache {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static ResponseCache getDefault() {
         return defaultResponseCache;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setDefault(ResponseCache responseCache) {
         defaultResponseCache = responseCache;
     }

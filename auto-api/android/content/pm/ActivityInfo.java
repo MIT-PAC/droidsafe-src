@@ -103,6 +103,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int activityInfoConfigToNative(int input) {
         int output = 0;
         for (int i=0; i<CONFIG_NATIVE_BITS.length; i++) {
@@ -114,6 +115,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.971 -0400", hash_original_method = "2220B48CFCD1F70E454B4F27BFE80BE1", hash_generated_method = "E4512BCE434A79B20DEDA1CF4478BDC3")
     public int getRealConfigChanged() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1895520956 = getTaintInt();
@@ -181,6 +183,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.974 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D339E193E56AB8ACE7CDA50D9260FF4B")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_762481206 = getTaintInt();

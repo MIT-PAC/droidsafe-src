@@ -66,6 +66,7 @@ public final class SpellCheckerSubtype implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.428 -0400", hash_original_method = "C7E80880FBF7E5F0758D048854BC1B6A", hash_generated_method = "319174AA90FD630D84FCA7B4EA7DD7F5")
     public int getNameResId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1178787360 = getTaintInt();
@@ -75,6 +76,7 @@ public final class SpellCheckerSubtype implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.429 -0400", hash_original_method = "945286B5D069547CEB4FBAF8F8B7964A", hash_generated_method = "DF4B442544914F130EFC2238EB2DD498")
     public String getLocale() {
         String varB4EAC82CA7396A68D541C85D26508E83_906748603 = null; 
@@ -86,6 +88,7 @@ public final class SpellCheckerSubtype implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.429 -0400", hash_original_method = "253C17894C35FFAF30C08472F23E48B8", hash_generated_method = "717B5FF7A957D694E3D90DA573FB92D1")
     public String getExtraValue() {
         String varB4EAC82CA7396A68D541C85D26508E83_1227683657 = null; 
@@ -97,6 +100,7 @@ public final class SpellCheckerSubtype implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.430 -0400", hash_original_method = "BAAF551B86708907A8B178A5447B667E", hash_generated_method = "B3E072097D5E0183DE239DDF3B19FE86")
     @Override
     public int hashCode() {
@@ -207,6 +211,7 @@ public final class SpellCheckerSubtype implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.432 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "46204327F298FBDCBDBE5678F579F817")
     @Override
     public int describeContents() {

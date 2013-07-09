@@ -210,6 +210,7 @@ public class RemoteCallbackList<E extends IInterface> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.099 -0400", hash_original_method = "25A2DBE745AB094B33E63C6F1B03FB52", hash_generated_method = "B061D4B541699FFBF691675D48857237")
     public Object getBroadcastCookie(int index) {
         Object varB4EAC82CA7396A68D541C85D26508E83_1525616545 = null; 

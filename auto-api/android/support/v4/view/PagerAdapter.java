@@ -86,6 +86,7 @@ public abstract class PagerAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.559 -0400", hash_original_method = "FA1E5F7C2B2EB1EE6744E074AA1F10AB", hash_generated_method = "2AD025258BA808635F28BA1BF2B444F8")
     public void startUpdate(View container) {
         addTaint(container.getTaint());
@@ -117,6 +118,7 @@ public abstract class PagerAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.563 -0400", hash_original_method = "BBAFE0B2C7FC305268C2EE6C04F35275", hash_generated_method = "CEA8EBC13644FFA35AB96D24A3AB6665")
     public void setPrimaryItem(View container, int position, Object object) {
         addTaint(container.getTaint());
@@ -126,6 +128,7 @@ public abstract class PagerAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.564 -0400", hash_original_method = "140CF544DAB4E9753AD13C5C6F7AF228", hash_generated_method = "948CEEC952AF21DF136FE0405AB0883D")
     public void finishUpdate(View container) {
         addTaint(container.getTaint());
@@ -136,6 +139,7 @@ public abstract class PagerAdapter {
     public abstract boolean isViewFromObject(View view, Object object);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.566 -0400", hash_original_method = "9C10790C9B509FF6855ECD7BB4443BBC", hash_generated_method = "22AE52290065EF6F15569DBB8B9CDFC0")
     public Parcelable saveState() {
         Parcelable varB4EAC82CA7396A68D541C85D26508E83_1306609286 = null; 
@@ -147,6 +151,7 @@ public abstract class PagerAdapter {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.567 -0400", hash_original_method = "17638DDA6DE27E971DE60A544D06348C", hash_generated_method = "6AB167AF42206126083AB281296F5839")
     public void restoreState(Parcelable state, ClassLoader loader) {
         addTaint(state.getTaint());
@@ -155,6 +160,7 @@ public abstract class PagerAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.568 -0400", hash_original_method = "A005A760A98AF47FB8E2DAD0B5F81664", hash_generated_method = "603C99B670ABE1C414370A34D1B720B2")
     public int getItemPosition(Object object) {
         addTaint(object.getTaint());
@@ -193,6 +199,7 @@ public abstract class PagerAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.578 -0400", hash_original_method = "D33F5CC8812E682744289E753AD4C997", hash_generated_method = "DEFF940ACE206D24063CAA77661582A8")
     public CharSequence getPageTitle(int position) {
         CharSequence varB4EAC82CA7396A68D541C85D26508E83_885770857 = null; 

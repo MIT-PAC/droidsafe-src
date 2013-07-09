@@ -111,6 +111,7 @@ public abstract class CallTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.525 -0400", hash_original_method = "D0619E60C8BD0CE46928E7D6B87D3BBB", hash_generated_method = "701BD19CEAC77AF107C89831CBF1295B")
     private boolean checkNoOperationsPending() {
         log("checkNoOperationsPending: pendingOperations=" +

@@ -128,6 +128,7 @@ public class RouteInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.974 -0400", hash_original_method = "1DFF4C9A700CC3886F6C70CFCDBFA85F", hash_generated_method = "8FAAFFE04F176A878FE96503DC7A23BE")
     public LinkAddress getDestination() {
         LinkAddress varB4EAC82CA7396A68D541C85D26508E83_1208230535 = null; 
@@ -139,6 +140,7 @@ public class RouteInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.974 -0400", hash_original_method = "EBF08E83FF9E78B73EDA9A9990BB8494", hash_generated_method = "9BF800A707FA7867B8444ECEE6F3903F")
     public InetAddress getGateway() {
         InetAddress varB4EAC82CA7396A68D541C85D26508E83_1224171908 = null; 
@@ -150,6 +152,7 @@ public class RouteInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.975 -0400", hash_original_method = "E1C93CD9EE24D2AA8F06A9C7E7B28049", hash_generated_method = "6ACBC1270967F204A4AF39088727CF7A")
     public boolean isDefaultRoute() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1929579596 = getTaintBoolean();
@@ -159,6 +162,7 @@ public class RouteInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.975 -0400", hash_original_method = "2A05D2869C11595F53C52D7E29A06E41", hash_generated_method = "9296F1421719C7BD49EA85CD6F3F0AEA")
     public boolean isHostRoute() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_954543082 = getTaintBoolean();
@@ -186,6 +190,7 @@ public class RouteInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.976 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "C0EDA5604A0A128FFD3FB752C828B4B7")
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1585638789 = getTaintInt();

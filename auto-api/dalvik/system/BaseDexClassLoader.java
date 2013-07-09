@@ -56,6 +56,7 @@ public class BaseDexClassLoader extends ClassLoader {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.550 -0400", hash_original_method = "7470A380EF1D93E773CA71CCC45CC5DC", hash_generated_method = "7D063D6F882AAF31C374A4AC95A3207F")
     @Override
     protected URL findResource(String name) {
@@ -83,6 +84,7 @@ public class BaseDexClassLoader extends ClassLoader {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.551 -0400", hash_original_method = "C00307207743233EB6F3CC5C62BA4C3A", hash_generated_method = "A6C520D03DF31E7E1078662FBFBA1B46")
     @Override
     public String findLibrary(String name) {
@@ -96,6 +98,7 @@ public class BaseDexClassLoader extends ClassLoader {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.552 -0400", hash_original_method = "CA22ACC2BBED318A2E853CC270258DF9", hash_generated_method = "5E66C37F8D50D8A4DA25F5B9A6D79E2A")
     @Override
     protected synchronized Package getPackage(String name) {
@@ -138,6 +141,7 @@ public class BaseDexClassLoader extends ClassLoader {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.552 -0400", hash_original_method = "A4316A3AABC51F9CE057485DF0B501BC", hash_generated_method = "E50E1E0539A777DBB5DB62C55863A0F9")
     @Override
     public String toString() {

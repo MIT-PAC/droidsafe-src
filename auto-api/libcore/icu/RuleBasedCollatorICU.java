@@ -241,6 +241,7 @@ public final class RuleBasedCollatorICU implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.744 -0400", hash_original_method = "F98DCBD8FE8A6074B159B4049EE2DA7B", hash_generated_method = "EF196BB36B3359E56DD7D5979558B6C4")
     @Override
     public int hashCode() {

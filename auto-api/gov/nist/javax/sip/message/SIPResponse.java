@@ -46,6 +46,7 @@ public final class SIPResponse extends SIPMessage implements javax.sip.message.R
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getReasonPhrase(int rc) {
         String retval = null;
         switch (rc) {
@@ -231,6 +232,7 @@ public final class SIPResponse extends SIPMessage implements javax.sip.message.R
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.587 -0400", hash_original_method = "A01A6E14359F44471B36FBE20B7B7D3C", hash_generated_method = "BBDB869F1CF49438C74278BDD2C74899")
     public StatusLine getStatusLine() {
         StatusLine varB4EAC82CA7396A68D541C85D26508E83_2067069094 = null; 
@@ -298,6 +300,7 @@ public final class SIPResponse extends SIPMessage implements javax.sip.message.R
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isFinalResponse(int rc) {
         return rc >= 200 && rc < 700;
     }
@@ -314,6 +317,7 @@ public final class SIPResponse extends SIPMessage implements javax.sip.message.R
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.590 -0400", hash_original_method = "7D2F1602DEBC36BCE0009AF9416F7471", hash_generated_method = "78471822E05FC292C5738D1D96B9B746")
     public void setStatusLine(StatusLine sl) {
         statusLine = sl;

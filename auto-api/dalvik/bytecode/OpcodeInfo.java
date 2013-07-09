@@ -16,6 +16,7 @@ public final class OpcodeInfo {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean isInvoke(int packedOpcode) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }

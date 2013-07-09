@@ -75,6 +75,7 @@ public class HttpConnectionMetricsImpl implements HttpConnectionMetrics {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.724 -0400", hash_original_method = "B8865720333D029C5CF85A9B740C8D79", hash_generated_method = "8AACACB0BC2E784CB360BC54D1BDC115")
     public long getRequestCount() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1090015363 = getTaintLong();
@@ -84,6 +85,7 @@ public class HttpConnectionMetricsImpl implements HttpConnectionMetrics {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.724 -0400", hash_original_method = "6C45A6D8B86DB0070BDE4B1C1CEA64D7", hash_generated_method = "4BCF63E7C4DD947BD3DAA974233584E9")
     public void incrementRequestCount() {
         
@@ -91,6 +93,7 @@ public class HttpConnectionMetricsImpl implements HttpConnectionMetrics {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.725 -0400", hash_original_method = "49B98A48C56AB67D4EF8CDF6CC198706", hash_generated_method = "D84EEF59E81EC533060E25B0C2800C99")
     public long getResponseCount() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_364164760 = getTaintLong();
@@ -100,6 +103,7 @@ public class HttpConnectionMetricsImpl implements HttpConnectionMetrics {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.725 -0400", hash_original_method = "6B43C475A149C70A7E71BE6915C4E68E", hash_generated_method = "486B4FDA9D1AED4176A5CF3EA04DF9FE")
     public void incrementResponseCount() {
         

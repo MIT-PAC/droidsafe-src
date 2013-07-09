@@ -31,6 +31,7 @@ public final class Entity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 15:37:52.294 -0400", hash_original_method = "9F7798ADCC4D95B2412D7A9959C9D6A8", hash_generated_method = "31206EA52D71C2AAE119741FB69AFC90")
     public ContentValues getEntityValues() {
         ContentValues var0B3F26AA9B0B1F6439612E31660CBF58_1397921823; 
@@ -56,6 +57,7 @@ public final class Entity {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 15:37:52.303 -0400", hash_original_method = "449CDF61C26C702D333F5FFE04D80FB4", hash_generated_method = "85E31631BE5378DEF6F4D769C07CF941")
     public void addSubValue(Uri uri, ContentValues values) {
         mSubValues.add(new Entity.NamedContentValues(uri, values));

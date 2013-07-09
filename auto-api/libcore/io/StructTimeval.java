@@ -34,6 +34,7 @@ public final class StructTimeval {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.511 -0400", hash_original_method = "D7D8FCD49C11BCD20431CC831BF1CCDC", hash_generated_method = "23280047FF266B73CBD0B30BC665D470")
     public long toMillis() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1426884787 = getTaintLong();

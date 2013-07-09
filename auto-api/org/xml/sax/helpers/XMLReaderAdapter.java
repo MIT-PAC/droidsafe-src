@@ -98,6 +98,7 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.073 -0400", hash_original_method = "066AA0855CEAF16F5A4DD1498A9898AE", hash_generated_method = "0F2ADD0F92A8C507A348EECB68D8069E")
     public void setDocumentHandler(DocumentHandler handler) {
         documentHandler = handler;
@@ -192,6 +193,7 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.075 -0400", hash_original_method = "A4FE8368A0813DB39B9B2D62745BDC50", hash_generated_method = "26B34CEF29F83A3ACCC2EBCD25AB979E")
     public void startPrefixMapping(String prefix, String uri) {
         addTaint(prefix.getTaint());
@@ -200,6 +202,7 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.075 -0400", hash_original_method = "6288457D9104DBA73FF5F77796A5069B", hash_generated_method = "398A8D091F972C52779202B902D2C498")
     public void endPrefixMapping(String prefix) {
         addTaint(prefix.getTaint());
@@ -279,6 +282,7 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.077 -0400", hash_original_method = "1616136BE44E483876717F8A446FD8E6", hash_generated_method = "78177C3306D49108B776A6C694C380AB")
     public void skippedEntity(String name) throws SAXException {
         addTaint(name.getTaint());

@@ -86,6 +86,7 @@ public class PackageParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.586 -0400", hash_original_method = "65A62D9388B66A4D9595CDAEE2873A09", hash_generated_method = "103DD5B4DFB0483919E33AB133A239C0")
     public void setSeparateProcesses(String[] procs) {
         mSeparateProcesses = procs;
@@ -94,6 +95,7 @@ public class PackageParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.586 -0400", hash_original_method = "14C9699FDDD05F8B9AF1818DB0942037", hash_generated_method = "109C581621376AE52DD74733E1366244")
     public void setOnlyCoreApps(boolean onlyCoreApps) {
         mOnlyCoreApps = onlyCoreApps;
@@ -307,6 +309,7 @@ public class PackageParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.589 -0400", hash_original_method = "043AC7F11A9C5FD11FB43AEF955AD87D", hash_generated_method = "4925C2D2BBC488D9B1A7326622F65BD2")
     public int getParseError() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_329076799 = getTaintInt();
@@ -3216,6 +3219,7 @@ public class PackageParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean copyNeeded(int flags, Package p, Bundle metaData) {
         if (p.mSetEnabled != PackageManager.COMPONENT_ENABLED_STATE_DEFAULT) {
             boolean enabled = p.mSetEnabled == PackageManager.COMPONENT_ENABLED_STATE_ENABLED;
@@ -3354,6 +3358,7 @@ public class PackageParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setCompatibilityModeEnabled(boolean compatibilityModeEnabled) {
         sCompatibilityModeEnabled = compatibilityModeEnabled;
     }

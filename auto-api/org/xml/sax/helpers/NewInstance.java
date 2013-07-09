@@ -19,6 +19,7 @@ class NewInstance {
     }
 
 
+    @DSModeled(DSC.BAN)
     static Object newInstance(ClassLoader classLoader, String className) throws ClassNotFoundException, IllegalAccessException,
             InstantiationException {
         Class driverClass;
@@ -31,6 +32,7 @@ class NewInstance {
     }
 
     
+    @DSModeled(DSC.BAN)
     static ClassLoader getClassLoader() {
         Method m = null;
         try {

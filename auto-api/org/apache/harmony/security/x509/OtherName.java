@@ -47,6 +47,7 @@ public final class OtherName {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.273 -0400", hash_original_method = "7B542DE43DC21978E6F04336AAB05EBD", hash_generated_method = "9A1B0736C4E955834DC017E7C6DF41B5")
     public byte[] getValue() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_574106168 = {getTaintByte()};

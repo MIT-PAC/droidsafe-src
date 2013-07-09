@@ -181,6 +181,7 @@ public class Time extends ASN1Encodable implements ASN1Choice {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.050 -0400", hash_original_method = "4A8C4B62F84A5603FDAAD94F25A110A4", hash_generated_method = "BD0AD406E5A6466284837A738B0FAF4E")
     public DERObject toASN1Object() {
         DERObject varB4EAC82CA7396A68D541C85D26508E83_1694385997 = null; 

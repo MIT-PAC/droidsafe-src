@@ -47,6 +47,7 @@ public class XmlPullParserException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.118 -0400", hash_original_method = "94BA5080D380911C58CAC3733D4C69AF", hash_generated_method = "309F9176AC836BE21A9B19E0834C91A5")
     public Throwable getDetail() {
         Throwable varB4EAC82CA7396A68D541C85D26508E83_1212704699 = null; 
@@ -58,6 +59,7 @@ public class XmlPullParserException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.118 -0400", hash_original_method = "0760FB4E162E5971E2E765B2D1FE0093", hash_generated_method = "ED79BDD18F232C9A7903B6A1CD6B7047")
     public int getLineNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_599705852 = getTaintInt();
@@ -67,6 +69,7 @@ public class XmlPullParserException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.119 -0400", hash_original_method = "52272B3AE5723072E22E93854866B927", hash_generated_method = "A27C417950D7F6CA057495C2617913A2")
     public int getColumnNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2147107571 = getTaintInt();

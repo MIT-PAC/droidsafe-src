@@ -88,6 +88,7 @@ public class PSSParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.112 -0400", hash_original_method = "B164C3A01C2D5FB8FE5C16711A461B38", hash_generated_method = "EC1498F19B42BA02C577FA61211BC852")
     public int getSaltLength() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1503555562 = getTaintInt();
@@ -97,6 +98,7 @@ public class PSSParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.114 -0400", hash_original_method = "F76E00B788282743E863E8A91477E027", hash_generated_method = "7CDF333F78EFCB89B8285B4A9D9D78EC")
     public String getDigestAlgorithm() {
         String varB4EAC82CA7396A68D541C85D26508E83_2072457039 = null; 
@@ -108,6 +110,7 @@ public class PSSParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.117 -0400", hash_original_method = "11682E81B271E60CD76F4E3CFB1D831D", hash_generated_method = "9D4F0151E3C5368BAB9228458B2E3D8B")
     public String getMGFAlgorithm() {
         String varB4EAC82CA7396A68D541C85D26508E83_466000623 = null; 
@@ -119,6 +122,7 @@ public class PSSParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.119 -0400", hash_original_method = "79BC41FB5304035884EA00639B685A6D", hash_generated_method = "65195582D1EC56C105BF6552597CFDB0")
     public AlgorithmParameterSpec getMGFParameters() {
         AlgorithmParameterSpec varB4EAC82CA7396A68D541C85D26508E83_1943738111 = null; 
@@ -130,6 +134,7 @@ public class PSSParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.120 -0400", hash_original_method = "61A230854EAEDDEEB7E5A3E90232200C", hash_generated_method = "6094C338D9522431A70D3B3F6DFC32AB")
     public int getTrailerField() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1585043499 = getTaintInt();

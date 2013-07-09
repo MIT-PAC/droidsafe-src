@@ -96,6 +96,7 @@ public final class InputEventConsistencyVerifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isInstrumentationEnabled() {
         return IS_ENG_BUILD;
     }
@@ -638,6 +639,7 @@ public final class InputEventConsistencyVerifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.105 -0400", hash_original_method = "4D608F0C62317EB539D3EDD1A5B0BBF8", hash_generated_method = "F6293A1351A0BA831415CFF159382A21")
     private boolean startEvent(InputEvent event, int nestingLevel, String eventType) {
         {
@@ -768,6 +770,7 @@ public final class InputEventConsistencyVerifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.107 -0400", hash_original_method = "98F44F7E9C89F442263CA208119E2058", hash_generated_method = "454091B39206E4B0121CA7A45CD923EB")
     private KeyState findKeyState(int deviceId, int source, int keyCode, boolean remove) {
         KeyState varB4EAC82CA7396A68D541C85D26508E83_876023940 = null; 

@@ -168,7 +168,8 @@ public abstract class SMSDispatcher extends Handler {
     }
 
     
-        protected static int getNextConcatenatedRef() {
+        @DSModeled(DSC.SAFE)
+    protected static int getNextConcatenatedRef() {
         sConcatenatedRef += 1;
         return sConcatenatedRef;
     }
@@ -309,6 +310,7 @@ public abstract class SMSDispatcher extends Handler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.799 -0400", hash_original_method = "6F7A6F4FA235882A4AAAEA7C85F33B76", hash_generated_method = "CBEBFB95F57569990B186E5B60113793")
      void dispatch(Intent intent, String permission) {
         mWakeLock.acquire(WAKE_LOCK_TIMEOUT);

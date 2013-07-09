@@ -104,25 +104,30 @@ public class BackupDataOutput {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int ctor(FileDescriptor fd) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void dtor(int mBackupWriter) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int writeEntityHeader_native(int mBackupWriter, String key, int dataSize) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int writeEntityData_native(int mBackupWriter, byte[] data, int size) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void setKeyPrefix_native(int mBackupWriter, String keyPrefix) {
     }
 

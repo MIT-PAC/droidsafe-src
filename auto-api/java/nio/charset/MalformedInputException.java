@@ -21,6 +21,7 @@ public class MalformedInputException extends CharacterCodingException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.019 -0400", hash_original_method = "99174ED6911F5F8CBB68A90343CD57CF", hash_generated_method = "BE1361377169A785DC45C26E47C4121C")
     public int getInputLength() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1191934043 = getTaintInt();

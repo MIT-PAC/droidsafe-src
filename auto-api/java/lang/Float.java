@@ -49,6 +49,7 @@ public final class Float extends Number implements Comparable<Float> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.014 -0400", hash_original_method = "6B61312FC318A12A6B19178CA8B54E86", hash_generated_method = "5FB4EEF55BD54BB3009B0F0855388C0B")
     @Override
     public byte byteValue() {
@@ -59,6 +60,7 @@ public final class Float extends Number implements Comparable<Float> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.014 -0400", hash_original_method = "3D3B0AF18CC8081B7BB4A7DC662E1F07", hash_generated_method = "2275BC278034EDA843200824D54ABC74")
     @Override
     public double doubleValue() {
@@ -84,16 +86,19 @@ public final class Float extends Number implements Comparable<Float> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int floatToIntBits(float value) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int floatToRawIntBits(float value) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.015 -0400", hash_original_method = "9E2C0918A44EC11D2232D0B603F66A6B", hash_generated_method = "BABE58C0EE1256124D6023D4762E8833")
     @Override
     public float floatValue() {
@@ -116,11 +121,13 @@ public final class Float extends Number implements Comparable<Float> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float intBitsToFloat(int bits) {
         return DSUtils.UNKNOWN_FLOAT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.016 -0400", hash_original_method = "138584002FB2DE9D0E5B5F8DAEDB3270", hash_generated_method = "4B00FC56553B6609F361A97E4382CA95")
     @Override
     public int intValue() {
@@ -142,6 +149,7 @@ public final class Float extends Number implements Comparable<Float> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isInfinite(float f) {
         return (f == POSITIVE_INFINITY) || (f == NEGATIVE_INFINITY);
     }
@@ -158,11 +166,13 @@ public final class Float extends Number implements Comparable<Float> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isNaN(float f) {
         return f != f;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.016 -0400", hash_original_method = "C9BB01BEFAD51CB3D65FBCA00F38E36E", hash_generated_method = "0BDB79D98F4EF748DE2BA565864C0A1A")
     @Override
     public long longValue() {
@@ -179,6 +189,7 @@ public final class Float extends Number implements Comparable<Float> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.017 -0400", hash_original_method = "8E8C16CBE89F9837B346C9544C9B6BCC", hash_generated_method = "250B3E93076E061B62637084F48EAFD4")
     @Override
     public short shortValue() {

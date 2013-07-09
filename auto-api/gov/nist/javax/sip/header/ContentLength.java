@@ -89,6 +89,7 @@ public class ContentLength extends SIPHeader implements javax.sip.header.Content
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.439 -0400", hash_original_method = "9921BFF09FACC23B6D23BD0D026EB023", hash_generated_method = "A4F3182160FF8CBD19D4E6CA50690D7C")
     public boolean match(Object other) {
         addTaint(other.getTaint());

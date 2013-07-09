@@ -251,11 +251,13 @@ public final class IoBridge {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean booleanFromInt(int i) {
         return (i != 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int booleanToInt(boolean b) {
         return b ? 1 : 0;
     }

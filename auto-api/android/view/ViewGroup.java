@@ -312,6 +312,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.947 -0400", hash_original_method = "9DEFF27CA0C7CA0A646DEBC837B35971", hash_generated_method = "E1BE5E0BBABC330ABFF8FF8CAE2F4B3C")
     @ViewDebug.ExportedProperty(category = "focus", mapping = {
         @ViewDebug.IntToString(from = FOCUS_BEFORE_DESCENDANTS, to = "FOCUS_BEFORE_DESCENDANTS"),
@@ -497,6 +498,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.951 -0400", hash_original_method = "1A209ACB79681B08302166E2C48344A2", hash_generated_method = "909498A7E4E60D47B5C18FE62929BD6C")
     public boolean requestChildRectangleOnScreen(View child, Rect rectangle, boolean immediate) {
         addTaint(child.getTaint());
@@ -555,6 +557,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.952 -0400", hash_original_method = "F0DFCA5DE1F330F511BBFF62182D5BD4", hash_generated_method = "FDDE49DFC1DD5DFDA960E159BBDE623A")
      boolean onRequestSendAccessibilityEventInternal(View child, AccessibilityEvent event) {
         
@@ -644,6 +647,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.953 -0400", hash_original_method = "F6AEE91365C496A95D4F4B1572422CF5", hash_generated_method = "3A34C49C7D005CEB466185F73C2DC6D8")
     public View getFocusedChild() {
         View varB4EAC82CA7396A68D541C85D26508E83_248650730 = null; 
@@ -655,6 +659,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.954 -0400", hash_original_method = "3D9AAFDE8E8826B256A10D32D774D94B", hash_generated_method = "7E7C656BFB261A26A25B9D59C0895A81")
     @Override
     public boolean hasFocus() {
@@ -1720,6 +1725,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.987 -0400", hash_original_method = "CAF0CE39145036A2F3E98F46F45FF397", hash_generated_method = "A053B7C659FDF036E00E31B7D20BEE7F")
     @Override
     protected boolean hasHoveredChild() {
@@ -1730,6 +1736,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.987 -0400", hash_original_method = "039A9532EA6933A3F4F8681C30CC9E2B", hash_generated_method = "EBE3C9A9867079705C5FD4010E146071")
     public boolean onInterceptHoverEvent(MotionEvent event) {
         
@@ -2019,6 +2026,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.991 -0400", hash_original_method = "B31FF6D343B2149E4D841C0A7CD04309", hash_generated_method = "9B73F88F38CF5120FDB7B551D23DF7FD")
     private boolean resetCancelNextUpFlag(View view) {
         {
@@ -2109,6 +2117,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.993 -0400", hash_original_method = "1855BFFFC59D88D1613C9B59C4B43D4C", hash_generated_method = "05BDB93C0270959602BA3AB8A4DDF518")
     private TouchTarget getTouchTarget(View child) {
         TouchTarget varB4EAC82CA7396A68D541C85D26508E83_991662398 = null; 
@@ -2333,6 +2342,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.997 -0400", hash_original_method = "2F47BE30FCD7EA97F91B7B6F74081615", hash_generated_method = "5B0B3D2D8A64B687DB9F0C5A1C0D4AE4")
     public void setMotionEventSplittingEnabled(boolean split) {
         {
@@ -2351,6 +2361,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.998 -0400", hash_original_method = "F89425D39488194D486F55EA5F8582C3", hash_generated_method = "D598414A104828757F896739FF3D7EF4")
     public boolean isMotionEventSplittingEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_649526292 = getTaintBoolean();
@@ -2388,6 +2399,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.998 -0400", hash_original_method = "2FB27FC0FD3119EC0BB03A9B8DB1F75C", hash_generated_method = "BE8D52658AEC274625CECCCADCC2F544")
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         
@@ -3058,6 +3070,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.010 -0400", hash_original_method = "314AC469B646186EB8E30D4AB123CD56", hash_generated_method = "5CD0697E864F90DA4DA7FFAFBCEEC015")
     protected int getChildDrawingOrder(int childCount, int i) {
         addTaint(childCount);
@@ -3597,6 +3610,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.017 -0400", hash_original_method = "767004ADA8C3853AF520B9D176A534BE", hash_generated_method = "84F2DC0C67BEEAE6BD9D2341933B84AD")
     protected boolean getChildStaticTransformation(View child, Transformation t) {
         addTaint(child.getTaint());
@@ -3906,6 +3920,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.023 -0400", hash_original_method = "C2EE5015ED0F9B04763A6A0F4C905EDB", hash_generated_method = "78D8D8A9F01E64F878B4E3ABC24C0D1F")
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
         addTaint(p.getTaint());
@@ -3916,6 +3931,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.024 -0400", hash_original_method = "2EFEB52353D2008493D1621282A03886", hash_generated_method = "7C3C20C1075C2C96B31EA398AE09593A")
     public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
         mOnHierarchyChangeListener = listener;
@@ -3985,6 +4001,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.026 -0400", hash_original_method = "156A75B155CF89ADA3C99A75E911D53A", hash_generated_method = "F7447FAC479522D7F2DD4257603BD30D")
     protected void cleanupLayoutState(View child) {
         child.mPrivateFlags &= ~View.FORCE_LAYOUT;
@@ -4363,6 +4380,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.033 -0400", hash_original_method = "33E35321C94CA74A9D9819C2C9739D2F", hash_generated_method = "06392D28E22B097227DC208FC0135457")
     public LayoutTransition getLayoutTransition() {
         LayoutTransition varB4EAC82CA7396A68D541C85D26508E83_1464901344 = null; 
@@ -4574,6 +4592,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.039 -0400", hash_original_method = "FD3027623927AF219788395D1D83AA06", hash_generated_method = "E1C8CC9917C1C829E56744D2FCBF632A")
     protected void detachAllViewsFromParent() {
         final int count = mChildrenCount;
@@ -4885,6 +4904,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.044 -0400", hash_original_method = "7A1B0B3F062F0EF6FC199DD0C643A517", hash_generated_method = "0B90DB87631D075649326F1C92128CE9")
     public void offsetChildrenTopAndBottom(int offset) {
         final int count = mChildrenCount;
@@ -4989,6 +5009,7 @@ protected abstract void onLayout(boolean changed,
             int l, int t, int r, int b);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.045 -0400", hash_original_method = "74094E4283ACC987205CEBE8397B866C", hash_generated_method = "BE74298C95F92D1FEE181988D74813DF")
     protected boolean canAnimate() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2099598494 = getTaintBoolean();
@@ -5012,6 +5033,7 @@ protected abstract void onLayout(boolean changed,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.046 -0400", hash_original_method = "06C0C7BBCCF19FA4957838E03EE331C8", hash_generated_method = "79A372FB31048C6468EBF3B2058D214E")
     public void scheduleLayoutAnimation() {
         mGroupFlags |= FLAG_RUN_ANIMATION;
@@ -5020,6 +5042,7 @@ protected abstract void onLayout(boolean changed,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.046 -0400", hash_original_method = "76D54B6C61296EF04870B520A219B087", hash_generated_method = "A1A99CD2FAC536BDE2BCA98A2647D6A3")
     public void setLayoutAnimation(LayoutAnimationController controller) {
         mLayoutAnimationController = controller;
@@ -5034,6 +5057,7 @@ protected abstract void onLayout(boolean changed,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.047 -0400", hash_original_method = "BD382B237F964A42E5B6E00A5B3A23FD", hash_generated_method = "9BEA79C5E369BCE61004A9B8B47F0348")
     public LayoutAnimationController getLayoutAnimation() {
         LayoutAnimationController varB4EAC82CA7396A68D541C85D26508E83_1928464835 = null; 
@@ -5045,6 +5069,7 @@ protected abstract void onLayout(boolean changed,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.047 -0400", hash_original_method = "91C32769C37DCC6F9F6B4528E4A57D15", hash_generated_method = "D8217961AED8E0042F4A5F743C051416")
     @ViewDebug.ExportedProperty
     public boolean isAnimationCacheEnabled() {
@@ -5064,6 +5089,7 @@ protected abstract void onLayout(boolean changed,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.049 -0400", hash_original_method = "B9ACD8DAE870BEF4EFBF779A704F6EA0", hash_generated_method = "BD018985EC2FD2221501313AA009BC0A")
     @ViewDebug.ExportedProperty(category = "drawing")
     public boolean isAlwaysDrawnWithCacheEnabled() {
@@ -5083,6 +5109,7 @@ protected abstract void onLayout(boolean changed,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.050 -0400", hash_original_method = "4364C0D051F178DD0E8ADCB73D61750A", hash_generated_method = "86A23B089671A191991046DA36D83CEE")
     @ViewDebug.ExportedProperty(category = "drawing")
     protected boolean isChildrenDrawnWithCacheEnabled() {
@@ -5102,6 +5129,7 @@ protected abstract void onLayout(boolean changed,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.050 -0400", hash_original_method = "5166D8925764E3FCE51BAB9F8B82BB83", hash_generated_method = "B3983ECB46B5058360D3510FFC40407D")
     @ViewDebug.ExportedProperty(category = "drawing")
     protected boolean isChildrenDrawingOrderEnabled() {
@@ -5121,6 +5149,7 @@ protected abstract void onLayout(boolean changed,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.051 -0400", hash_original_method = "DAA9F10BF0EA997E391E78BA1DF6ABEE", hash_generated_method = "CFB6787502AB266B454D58F45F25A34C")
     private void setBooleanFlag(int flag, boolean value) {
         {
@@ -5139,6 +5168,7 @@ protected abstract void onLayout(boolean changed,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.051 -0400", hash_original_method = "944A8E363FECEAC5FA18188B2A82EEA9", hash_generated_method = "E4E5820829167D497655ECA022DE06FF")
     @ViewDebug.ExportedProperty(category = "drawing", mapping = {
         @ViewDebug.IntToString(from = PERSISTENT_NO_CACHE,        to = "NONE"),
@@ -5154,6 +5184,7 @@ protected abstract void onLayout(boolean changed,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.051 -0400", hash_original_method = "E1A853399F91DFB847E7C25FCC355E2E", hash_generated_method = "8158E6575E5BC3B0CF39A9A0E9990C3F")
     public void setPersistentDrawingCache(int drawingCacheToKeep) {
         mPersistentDrawingCache = drawingCacheToKeep & PERSISTENT_ALL_CACHES;
@@ -5174,6 +5205,7 @@ protected abstract void onLayout(boolean changed,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.053 -0400", hash_original_method = "732F05B425275E63BD87B7814AB2A9CD", hash_generated_method = "ECA42C90F79AF8B206E28F17438C95AD")
     protected LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
         LayoutParams varB4EAC82CA7396A68D541C85D26508E83_282164468 = null; 
@@ -5325,6 +5357,7 @@ protected abstract void onLayout(boolean changed,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.058 -0400", hash_original_method = "A3819F4FC73AAB74FEBE19CD2546FBCA", hash_generated_method = "BC1DAE6F01A8AF6045F023814A2EDADC")
     public int indexOfChild(View child) {
         final int count = mChildrenCount;
@@ -5347,6 +5380,7 @@ protected abstract void onLayout(boolean changed,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.059 -0400", hash_original_method = "7030903D0CFC3D101159E57E177A8D82", hash_generated_method = "6ADA900C446B825FE7AA43F0B303FB44")
     public int getChildCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1060367866 = getTaintInt();
@@ -5356,6 +5390,7 @@ protected abstract void onLayout(boolean changed,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.060 -0400", hash_original_method = "DC55A008910617641F1AE978A0E895D4", hash_generated_method = "B31F32B6A39DF12D51BEA828A9618B58")
     public View getChildAt(int index) {
         View varB4EAC82CA7396A68D541C85D26508E83_238295834 = null; 
@@ -5741,6 +5776,7 @@ protected abstract void onLayout(boolean changed,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.066 -0400", hash_original_method = "B3B3B12C071F8F31617EDB75C1351CBC", hash_generated_method = "8A90E36BA25E7DD373E9954363EF02B6")
     public Animation.AnimationListener getLayoutAnimationListener() {
         Animation.AnimationListener varB4EAC82CA7396A68D541C85D26508E83_1012811494 = null; 
@@ -5888,6 +5924,7 @@ protected abstract void onLayout(boolean changed,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.070 -0400", hash_original_method = "026C4CEB09DFE602F5C11A5652FC3C1F", hash_generated_method = "D11D03BF518823A922E808E2E426B369")
     public boolean addStatesFromChildren() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1725745348 = getTaintBoolean();
@@ -5910,6 +5947,7 @@ protected abstract void onLayout(boolean changed,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.071 -0400", hash_original_method = "CCA9986B4D287F2F006BAE825941ECAA", hash_generated_method = "28A9F6F2C654D2AA771EAFD01C6ECAA2")
     public void setLayoutAnimationListener(Animation.AnimationListener animationListener) {
         mAnimationListener = animationListener;
@@ -5991,6 +6029,7 @@ protected abstract void onLayout(boolean changed,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.073 -0400", hash_original_method = "C2F251AFC67F9C484131CB8CA191D5D9", hash_generated_method = "B6BE81D433D62228E9EF5FDA149813C5")
     public boolean shouldDelayChildPressedState() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1913787253 = getTaintBoolean();

@@ -184,6 +184,7 @@ public class BerOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.803 -0400", hash_original_method = "51F7D06C1A64E7B90214CEB0BC04A311", hash_generated_method = "62E6645ADF82552AC0D0959C5E2E3883")
     public void encodeOID() {
         int[] oid = (int[]) content;

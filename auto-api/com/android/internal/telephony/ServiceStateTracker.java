@@ -86,6 +86,7 @@ public abstract class ServiceStateTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.832 -0400", hash_original_method = "34F755352C02DF9FD9E8CDE125547BA1", hash_generated_method = "18D3349B17AD328A91216188F20E1707")
     public boolean getDesiredPowerState() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1648508118 = getTaintBoolean();
@@ -529,6 +530,7 @@ public abstract class ServiceStateTracker extends Handler {
     protected abstract void hangupAndPowerOff();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.845 -0400", hash_original_method = "CCBC34A7562606F2023BFC5649B6E19A", hash_generated_method = "F6D15879E1DF2FFC771820A47AF4ACD6")
     protected void cancelPollState() {
         pollingContext = new int[1];

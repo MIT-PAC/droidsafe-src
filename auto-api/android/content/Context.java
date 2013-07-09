@@ -118,6 +118,7 @@ public abstract class Context {
     public abstract void setTheme(int resid);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.267 -0400", hash_original_method = "50CDF7EE4EA4E2BC75FC99DEA1DDCB11", hash_generated_method = "9CD9500D4AAF30276C1E4E112D707E07")
     public int getThemeResId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_273798573 = getTaintInt();
@@ -426,6 +427,7 @@ public abstract void clearWallpaper() throws IOException;
             int flags) throws PackageManager.NameNotFoundException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.295 -0400", hash_original_method = "83D5E01B4EA95EAE9203A12A4E27AA18", hash_generated_method = "F4D5771D3E4F0C3B1396982D380C44B3")
     public boolean isRestricted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_687825251 = getTaintBoolean();

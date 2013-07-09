@@ -124,6 +124,7 @@ public final class Field extends AccessibleObject implements Member {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.759 -0400", hash_original_method = "5161131687230E0D7EE89383FDDF9117", hash_generated_method = "F1BBACEA836E9C65FE0E5D9A22FF7006")
     private Object[] getSignatureAnnotation(Class declaringClass, int slot) {
         
@@ -212,6 +213,7 @@ public final class Field extends AccessibleObject implements Member {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Annotation[] getDeclaredAnnotations(Class declaringClass, int slot) {
                 
     	Annotation[] ret = new Annotation[0];
@@ -422,6 +424,7 @@ public final class Field extends AccessibleObject implements Member {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.770 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "209B49888A1806B55E71A2E50FF12041")
     public String getName() {
         String varB4EAC82CA7396A68D541C85D26508E83_659216699 = null; 

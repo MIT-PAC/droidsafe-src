@@ -91,6 +91,7 @@ public class CallID extends SIPHeader implements javax.sip.header.CallIdHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.245 -0400", hash_original_method = "B5581A57A5C5C2AEBCF8449C03245AE9", hash_generated_method = "24EBC74BB20574D4485978E989C144BF")
     public CallIdentifier getCallIdentifer() {
         CallIdentifier varB4EAC82CA7396A68D541C85D26508E83_655184808 = null; 
@@ -122,6 +123,7 @@ public class CallID extends SIPHeader implements javax.sip.header.CallIdHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.246 -0400", hash_original_method = "76D6B9E3FB2D7381056714796D175A19", hash_generated_method = "BC500CAB746BFEA9CABDC759AB4FDB6D")
     public void setCallIdentifier(CallIdentifier cid) {
         callIdentifier = cid;

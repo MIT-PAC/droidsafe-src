@@ -23,6 +23,7 @@ public class HttpResponseException extends ClientProtocolException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.714 -0400", hash_original_method = "95EA9BAD16482D8308F9206838B315E7", hash_generated_method = "2ACE5F6AF3744C1EB7C7A5B84CC3F595")
     public int getStatusCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1564789016 = getTaintInt();

@@ -49,6 +49,7 @@ public abstract class BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.011 -0400", hash_original_method = "891D062EE6B5DF300B0D5F817EBA802C", hash_generated_method = "E6DDDB9EA9707758BCE4FA30A552C688")
     public IBinder peekService(Context myContext, Intent service) {
         IBinder varB4EAC82CA7396A68D541C85D26508E83_1972393225 = null; 

@@ -132,6 +132,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.368 -0400", hash_original_method = "9A6AB9CE1EAE128DD9B2405D2B37CA46", hash_generated_method = "7604081A1F809AC694C51107424AB097")
     public int length() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1989121063 = getTaintInt();
@@ -742,6 +743,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.383 -0400", hash_original_method = "DD4C166AC7D5C475EE46AC767DBD33EB", hash_generated_method = "FB42624A0950155131E7E54FBAF3D7DF")
     public int getSpanStart(Object what) {
         int count = mSpanCount;
@@ -773,6 +775,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.383 -0400", hash_original_method = "1CAC5A6045B202B1FC928510B17AEEDD", hash_generated_method = "711EC640B024F2E69F7E38B077AD7F23")
     public int getSpanEnd(Object what) {
         int count = mSpanCount;
@@ -804,6 +807,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.384 -0400", hash_original_method = "DA0589F2510DDCCEED97B90C9189C1B9", hash_generated_method = "721014F249BA1C0450E9F2C4BC473896")
     public int getSpanFlags(Object what) {
         int count = mSpanCount;
@@ -1586,6 +1590,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.401 -0400", hash_original_method = "E0010D0DD1DD8F03E408AEE972028B3D", hash_generated_method = "CC27201A365D838C62385A79AC8D8F28")
     public InputFilter[] getFilters() {
         InputFilter[] varB4EAC82CA7396A68D541C85D26508E83_1168719714 = null; 
