@@ -89,6 +89,9 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import droidsafe.concrete.DroidSafeContentResolver;
+import android.telephony.TelephonyManager;
+
 class ReceiverRestrictedContext extends ContextWrapper {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.184 -0400", hash_original_method = "7FD4094CD16832D548D3CEFA622075F6", hash_generated_method = "26ACA97A400E372B38EB9A675A8132FB")
@@ -209,10 +212,15 @@ public class ContextImpl extends Context {
 
     final ArrayList<Object> mServiceCache = new ArrayList<Object>();
     
+    private DroidSafeContentResolver contentResolver;
+    private SensorManager sensorManager;
+    
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.190 -0400", hash_original_method = "D626E4F654DE4449ACE9581A8359F0B3", hash_generated_method = "EE67F93CB8AD578637611B4EAAB10CB4")
     public ContextImpl() {
         mOuterContext = this;
-        
+        contentResolver = new DroidSafeContentResolver(this);
+        sensorManager = new SensorManager(null);
         
     }
 
@@ -1857,13 +1865,23 @@ public class ContextImpl extends Context {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.263 -0400", hash_original_method = "321D04A4EEFC063A6FECB18E3640022A", hash_generated_method = "2D1739FB44EDDDE6D9462F37E7C27F9E")
     @Override
     public Object getSystemService(String name) {
+    	if (Context.SENSOR_SERVICE.equals(name)) {
+    		return sensorManager;
+    	} else if ("Service".equals(name)) {
+    		return new LocationManager(null);
+    	} else if (Context.TELEPHONY_SERVICE.equals(name)) {
+            return new TelephonyManager(this);
+        }
+        else 
+    		return new Object();
+    	/*
         Object varB4EAC82CA7396A68D541C85D26508E83_972857920 = null; 
         ServiceFetcher fetcher = SYSTEM_SERVICE_MAP.get(name);
         varB4EAC82CA7396A68D541C85D26508E83_972857920 = fetcher == null ? null : fetcher.getService(this);
         addTaint(name.getTaint());
         varB4EAC82CA7396A68D541C85D26508E83_972857920.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_972857920;
-        
+        */
         
         
     }

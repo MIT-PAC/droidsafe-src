@@ -785,7 +785,7 @@ public class Thread implements Runnable {
         } 
         hasBeenStarted = true;
         VMThread.create(this, stackSize);
-        
+        this.run();
         
             
         
