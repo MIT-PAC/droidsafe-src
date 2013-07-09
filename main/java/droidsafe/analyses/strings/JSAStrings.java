@@ -1,11 +1,13 @@
 package droidsafe.analyses.strings;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -51,6 +53,14 @@ public class JSAStrings {
   /** boolean that determines whether the analysis has run */
   private boolean hasRun = false;
 
+
+  /**
+   * Map to keep track of defined hotspots. Maps the method signature used to create the hotspot to
+   * an object containing more details about the hotSspot.
+   */
+  Map<String, List<Hotspot>> signatureToHotspotMap;
+
+
   /**
    * Singleton accessor.
    * 
@@ -72,6 +82,7 @@ public class JSAStrings {
     hotspots = new LinkedList<ValueBox>();
     nonterminals = new HashMap<Value, Nonterminal>();
     gv = null;
+    signatureToHotspotMap = new HashMap<String, List<Hotspot>>();
   }
 
   /**
@@ -90,6 +101,18 @@ public class JSAStrings {
     return hotspots;
   }
 
+
+  /**
+   * Return true if this value is a hotspot that was resolved by JSA.
+   */
+  public boolean isHotspotValue(Value v) {
+      return this.hasRun && nonterminals.containsKey(v);
+  }
+  
+  public Map<String, List<Hotspot>> getSignatureToHotspotMap() {
+    return this.signatureToHotspotMap;
+  }
+
   /**
    * Initialize and configure.
    * 
@@ -100,10 +123,12 @@ public class JSAStrings {
     soot.options.Options.v().set_allow_phantom_refs(true);
 
     try {
-
       StringAnalysis.loadDirectory(config.APP_ROOT_DIR + "/bin/classes/");
-      StringAnalysis.addJarsToClassPath(config.APP_ROOT_DIR + "/libs/");
-
+      String libDir = config.APP_ROOT_DIR + "/libs/";
+      File lib = new File(libDir);
+      if (lib.exists()) {
+        StringAnalysis.addJarsToClassPath(libDir);
+      }
     } catch (IOException e) {
       logger.debug("JSA got an exception.");
       return;
@@ -139,6 +164,21 @@ public class JSAStrings {
   }
 
   /**
+   * Auxiliar method to add an element to the hotspot map.
+   * 
+   * @param signature The soot signature if the method.
+   * @param hotspot The hot
+   */
+  private void addSignatureToHotspotMap(String signature, Hotspot hotspot){
+    List<Hotspot> hotspots = this.signatureToHotspotMap.get(signature);
+    if (hotspots == null){
+      hotspots = new ArrayList<Hotspot>();
+      this.signatureToHotspotMap.put(signature, hotspots);      
+    }
+    hotspots.add(hotspot);
+  }
+  
+  /**
    * Add a hotspot for matching calls.
    * 
    * @param signature The signature of the method.
@@ -146,8 +186,12 @@ public class JSAStrings {
    */
   public void addArgumentHotspots(String signature, int arg) {
     List<ValueBox> sigSpots = StringAnalysis.getArgumentExpressions(signature, arg);
-    logger.debug("For signature " + signature + " got " + sigSpots.size() + "hotspots.");
-    hotspots.addAll(sigSpots);
+    logger.debug("For signature " + signature + " got " + sigSpots.size() + " hotspots.");
+
+    if (!sigSpots.isEmpty()) {
+      addSignatureToHotspotMap(signature, new Hotspot(signature, arg, sigSpots));
+      hotspots.addAll(sigSpots);
+    }
   }
 
   /**
@@ -157,13 +201,18 @@ public class JSAStrings {
    */
   public void addReturnHotspot(String signature) {
     List<ValueBox> sigSpots = StringAnalysis.getReturnExpressions(signature);
-    hotspots.addAll(sigSpots);
+    logger.debug("For signature " + signature + " got " + sigSpots.size() + " hotspots.");
+    
+    if (!sigSpots.isEmpty()) {
+      addSignatureToHotspotMap(signature, new Hotspot(signature, sigSpots));
+      hotspots.addAll(sigSpots);
+    }
   }
 
   /**
    * Get the regular expression inferred for the given Value.
    * 
-   * @param v The Soot Value assocatied with the hotspot.
+   * @param v The Soot Value associated with the hotspot.
    * @return
    */
   public String getRegex(Value v) {
@@ -185,6 +234,27 @@ public class JSAStrings {
   public String getSourceFile(ValueBox v) {
     return sa.getSourceFile(v);
   }
+
+  /**
+   * Get the class name associated with the parameter hotspot.
+   * 
+   * @param v The hotspot.
+   * @return
+   */
+  public String getClassName(ValueBox v) {
+    return sa.getClassName(v);
+  }
+
+  /**
+   * Get the method name associated with the parameter hotspot.
+   * 
+   * @param v The hotspot.
+   * @return
+   */
+  public String getMetodName(ValueBox v) {
+    return sa.getMethodName(v);
+  }
+
 
   /**
    * Get the source line associated with the parameter hotspot.
@@ -250,4 +320,58 @@ public class JSAStrings {
    * getSourceFile(vb); getSourceLine(vb); getRegex(vb.getValue()); } }
    */
 
+
+  /**
+   * Auxiliary class to help keep track of hotspots.
+   * 
+   */
+  public class Hotspot {
+    /**
+     * The signature of the method added as a hotspot.
+     */
+    String methodSignature;
+
+    /**
+     * The position of the argument added as a hotspot. 0 is the first method argument. -1 is a
+     * method return value added as a hotspot.
+     */
+    int argumentPosition = -1;
+
+    /**
+     * The list of hotspots identified for the method signature.
+     */
+    List<ValueBox> hotspots;
+
+    public Hotspot(String signature, int position, List<ValueBox> values) {
+      this.methodSignature = signature;
+      this.argumentPosition = position;
+      this.hotspots = values;
+    }
+
+    public Hotspot(String signature, List<ValueBox> values) {
+      this.methodSignature = signature;
+      this.hotspots = values;
+    }
+
+    /**
+     * @return the methodSignature
+     */
+    public String getMethodSignature() {
+      return methodSignature;
+    }
+
+    /**
+     * @return the argumentPosition
+     */
+    public int getArgumentPosition() {
+      return argumentPosition;
+    }
+
+    /**
+     * @return the hotspots
+     */
+    public List<ValueBox> getHotspots() {
+      return hotspots;
+    }
+  }
 }

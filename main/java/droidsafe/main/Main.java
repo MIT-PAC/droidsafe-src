@@ -1,7 +1,39 @@
 package droidsafe.main;
 
+import droidsafe.analyses.value.ValueAnalysis;
+import droidsafe.analyses.EntryPointCGEdges;
+import droidsafe.analyses.GeoPTA;
+import droidsafe.analyses.infoflow.InformationFlowAnalysis;
+import droidsafe.analyses.infoflow.InjectedSourceFlows;
+import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
+import droidsafe.analyses.rcfg.RCFG;
+import droidsafe.analyses.RCFGToSSL;
+import droidsafe.analyses.RequiredModeling;
+import droidsafe.analyses.strings.JSAStrings;
+import droidsafe.analyses.strings.JSAUtils;
+
+import droidsafe.android.app.EntryPoints;
+import droidsafe.android.app.Harness;
+import droidsafe.android.app.Project;
+import droidsafe.android.app.resources.Resources;
+import droidsafe.android.app.TagImplementedSystemMethods;
+import droidsafe.android.system.API;
+import droidsafe.android.system.Permissions;
+//import droidsafe.eclipse.plugin.core.specmodel.SecuritySpecModel;
+
+import droidsafe.speclang.SecuritySpecification;
+import droidsafe.transforms.AddAllocsForAPICalls;
+import droidsafe.transforms.InsertDSTaintAllocs;
+import droidsafe.transforms.IntegrateXMLLayouts;
+import droidsafe.transforms.LocalForStringConstantArguments;
+import droidsafe.transforms.ResolveStringConstants;
+import droidsafe.transforms.ScalarAppOptimizations;
+
+import droidsafe.utils.SootUtils;
+
 import java.io.File;
 import java.io.IOException;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -9,31 +41,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.Scene;
+
 import soot.SootClass;
+
 import soot.SootMethod;
-import droidsafe.analyses.attr.AttributeModeling;
-import droidsafe.analyses.EntryPointCGEdges;
-import droidsafe.analyses.GeoPTA;
-import droidsafe.analyses.RCFGToSSL;
-import droidsafe.analyses.RequiredModeling;
-import droidsafe.analyses.infoflow.InformationFlowAnalysis;
-import droidsafe.analyses.infoflow.InjectedSourceFlows;
-import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
-import droidsafe.analyses.rcfg.RCFG;
-import droidsafe.analyses.strings.JSAStrings;
-import droidsafe.android.app.EntryPoints;
-import droidsafe.android.app.Harness;
-import droidsafe.android.app.Project;
-import droidsafe.android.app.TagImplementedSystemMethods;
-import droidsafe.android.app.resources.Resources;
-import droidsafe.android.system.API;
-import droidsafe.android.system.Permissions;
-import droidsafe.transforms.AddAllocsForAPICalls;
-import droidsafe.transforms.IntegrateXMLLayouts;
-import droidsafe.transforms.LocalForStringConstantArguments;
-import droidsafe.transforms.ResolveStringConstants;
-import droidsafe.transforms.ScalarAppOptimizations;
-import droidsafe.utils.SootUtils;
 
 /**
  * Main entry class for DroidSafe analysis.
@@ -87,57 +98,16 @@ public class Main {
         logger.info("Setting Harness Main as entry point.");
         setHarnessMainAsEntryPoint();
 
-        // The JSA analysis fails if it follows AddAllocsForAPICalls.run()
+        // JSA analysis fails if it follows AddAllocsForAPICalls.run()
+        // Set up the analysis object no matter what. 
+        JSAStrings.init(Config.v());
         if (Config.v().runStringAnalysis) {
-
-            JSAStrings.init(Config.v());
-
-            // Predefined hotspots. Should be removed.
-            JSAStrings.v().addArgumentHotspots("<android.content.Intent: " +
-                    "void <init>(java.lang.String)>",
-                    0);
-            JSAStrings.v().addArgumentHotspots(
-                "<android.content.Intent: android.content.Intent addCategory(java.lang.String)>", 
-                0);
-
-            JSAStrings.v().addArgumentHotspots(
-                "<android.content.Intent: android.content.Intent setAction(java.lang.String)>", 0);
-
-            JSAStrings.v().addArgumentHotspots("<java.net.URI: void <init>(java.lang.String)>", 0);
-            JSAStrings.v().addArgumentHotspots(
-                "<android.content.Intent: android.content.Intent setType(java.lang.String)>", 0);
-
-            JSAStrings
-            .v()
-            .addArgumentHotspots(
-                "<android.widget.Toast: android.widget.Toast " +
-                        "makeText(android.content.Context,java.lang.CharSequence,int)>",
-                        1);
-
-            JSAStrings
-            .v()
-            .addArgumentHotspots(
-                "<com.example.android.apis.content.PickContact$ResultDisplayer: " +
-                        "void <init>(com.example.android.apis.content.PickContact," +
-                        "java.lang.String,java.lang.String)>",
-                        1);
-            JSAStrings
-            .v()
-            .addArgumentHotspots(
-                "<com.example.android.apis.content.PickContact$ResultDisplayer: " +
-                        "void <init>(com.example.android.apis.content.PickContact," +
-                        "java.lang.String,java.lang.String)>",
-                        2);
-
-            JSAStrings.v().addArgumentHotspots(
-                "<android.app.Activity: void setTitle(java.lang.CharSequence)>", 0);
-            JSAStrings.run();
-
-
-            // Debugging.
-            JSAStrings.v().log();
+            jsaAnalysis();
         }
 
+        logger.info("Inserting DSTaintObject allocations at each new expression...");
+        InsertDSTaintAllocs.run();
+        
         AddAllocsForAPICalls.run();
 
         logger.info("Starting PTA...");
@@ -159,12 +129,14 @@ public class Main {
         if (Config.v().writeJimpleAppClasses) {
             writeAllAppClasses();
         }
-
-        RCFG.generate();
        
         logger.info("Starting Attribute Modeling");
-        AttributeModeling.run();
+        ValueAnalysis.run();
         logger.info("Finished Attribute Modeling");
+        
+        logger.info("Starting Generate RCFG...");
+        RCFG.generate();
+        logger.info("Finished Generating RCFG.");
 
         // print out what modeling is required for this application
         RequiredModeling.run();
@@ -194,13 +166,34 @@ public class Main {
         }
 
         if (Config.v().target.equals("specdump")) {
-            RCFGToSSL.run();
+            logger.info("Converting RCFG to SSL and dumping...");
+            RCFGToSSL.run(false);
+            SecuritySpecification spec = RCFGToSSL.v().getSpec();
+/*
+            if (spec != null) {
+              SecuritySpecModel securitySpecModel = new SecuritySpecModel(spec, Config.v().APP_ROOT_DIR);
+              SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
+            }
+            */
+
 
         } else if (Config.v().target.equals("confcheck")) {
+            logger.info("Converting RCFG to SSL ...");
+            RCFGToSSL.run(true);
             logger.error("Not implemented yet!");
         }
 
         // System.out.print(RCFG.v().toString());
+    }
+   
+    /**
+     * Run the JSA analysis
+     */ 
+    private static void jsaAnalysis() {
+        JSAUtils.setUpHotspots();
+        JSAStrings.run();
+        // Debugging.
+        JSAStrings.v().log();
     }
 
     /**
@@ -225,4 +218,17 @@ public class Main {
         }
     }
 
+    /**
+     * Handles the error in the analysis. If the flag Config.callSystemExitOnError is true, the
+     * application will exit, otherwise it will just throw an exception. 
+     * 
+     * @param status
+     */
+    public static void exit(int status) {
+      if (Config.v().getCallSystehExitOnError()) {
+        System.exit(1);
+      } else {
+        throw new IllegalStateException();
+      }
+    }
 }

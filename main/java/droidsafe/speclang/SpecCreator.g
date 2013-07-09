@@ -256,7 +256,7 @@ event_block
     ^(EVENT_BLOCK input_event ^(STMT_LIST statement_list?)) 
         {
             if ($statement_list.value != null)
-                spec.addToInputEvent($input_event.value, $statement_list.value);
+                spec.addOutputEventToInputEvent($input_event.value, $statement_list.value);
         }
 
   	;

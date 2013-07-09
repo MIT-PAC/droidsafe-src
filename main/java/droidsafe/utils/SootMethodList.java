@@ -98,7 +98,8 @@ public class SootMethodList implements Iterable<SootMethod>{
 		SootClass clazz = method.getDeclaringClass();
 		
 		if (clazz == null) {
-			Utils.logErrorAndExit(logger,"Cannot get declaring class for method {}", method);
+			logger.error("Cannot get declaring class for method {}", method);
+			droidsafe.main.Main.exit(1);
 		}
 
 		List<SootMethod> possibleMethods = SootUtils.findPossibleInheritedMethods(clazz, method.getName(), 

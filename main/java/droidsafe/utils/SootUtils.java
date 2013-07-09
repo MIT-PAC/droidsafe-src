@@ -1,9 +1,5 @@
 package droidsafe.utils;
 
-import com.google.common.collect.Sets;
-
-import droidsafe.android.app.Project;
-
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
@@ -42,7 +38,6 @@ import soot.Hierarchy;
 
 import soot.IntType;
 
-import soot.jimple.ClassConstant;
 import soot.jimple.DoubleConstant;
 import soot.jimple.FloatConstant;
 import soot.jimple.InstanceInvokeExpr;
@@ -52,7 +47,6 @@ import soot.jimple.LongConstant;
 import soot.jimple.NullConstant;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
-import soot.jimple.StringConstant;
 
 import soot.LongType;
 
@@ -101,35 +95,6 @@ public class SootUtils {
 
     public static final Pattern sigRE = Pattern.compile("<(\\S+): (\\S+) (\\S+)\\((.*)\\)>");
 
-    /**
-     * Returns a boxed primitive of the value of the passed-in soot constant
-     *
-     * @param sootValue   a Soot Value that must be a subclass of soot.jimple.Constant 
-     * @return boxed primitive of the value of the soot constant. 
-     *         If Value is an instanceof NullConstant, returns null.
-     */
-    public static Object constantValueToObject(Value sootValue) throws ClassNotFoundException {
-        if(sootValue instanceof NullConstant) {
-            return null;
-        } else if (sootValue instanceof IntConstant) {
-            return new Integer(((IntConstant)sootValue).value);
-        } else if (sootValue instanceof StringConstant) {
-            String strVal = new String(((StringConstant)sootValue).value);
-            return Sets.newHashSet(strVal);
-        } else if (sootValue instanceof LongConstant) {
-            return new Long(((LongConstant)sootValue).value);
-        } else if (sootValue instanceof DoubleConstant) {
-            return new Double(((DoubleConstant)sootValue).value);
-        } else if (sootValue instanceof FloatConstant) {
-            return new Float(((FloatConstant)sootValue).value);
-        } else if (sootValue instanceof ClassConstant) {
-            String className = ((ClassConstant)sootValue).value.replace("/", ".");
-            return Project.v().getAppJavaClass(className);
-        }
-
-        throw new RuntimeException("Unhandled java primitive sootValue: " + sootValue);
-    }
-
     /*
      * Given a string representing a type in soot, (ex: int, java.lang.Class[]), return 
      * the appropriate Soot type for the object. 
@@ -161,7 +126,8 @@ public class SootUtils {
             Matcher matcher = typeSig.matcher(str);
             boolean b = matcher.matches();
             if (!b || matcher.groupCount() != 2) {
-                Utils.logErrorAndExit(logger, "Something very wrong with parsing type: {}", str);
+                logger.error("Something very wrong with parsing type: {}", str);
+                droidsafe.main.Main.exit(1);
             }
 
             String baseType = matcher.group(1);
@@ -176,7 +142,8 @@ public class SootUtils {
                 //class type
                 return RefType.v(baseType);
             } else {
-                Utils.logErrorAndExit(logger, "Cannot parse type: {}", str);
+                logger.error("Cannot parse type: {}", str);
+                droidsafe.main.Main.exit(1);
                 return null;
             }
         }
@@ -225,7 +192,7 @@ public class SootUtils {
 
             if (!curr.isInterface()) {
                 logger.error("getSuperInterfacesOf inspecting non interface: {}", curr);
-                System.exit(1);
+                droidsafe.main.Main.exit(1);
             }
 
             ret.add(curr);
@@ -422,8 +389,10 @@ public class SootUtils {
         Matcher matcher = sigRE.matcher(signature);
         boolean b = matcher.matches();
 
-        if (!b && matcher.groupCount() != 4)
-            Utils.logErrorAndExit(logger,"Cannot create Method from DroidBlaze Signature");
+        if (!b && matcher.groupCount() != 4) {
+            logger.error("Cannot create Method from DroidBlaze Signature");
+            droidsafe.main.Main.exit(1);
+        }
 
         return matcher.group(2);
 
@@ -558,8 +527,10 @@ public class SootUtils {
      * Return a concrete implementor of a given interface.  Try to find direct implementors first
      */
     public static SootClass getCloseSubclass(SootClass clz) {
-        if (!clz.isAbstract() && !clz.isInterface())
-            Utils.logErrorAndExit(logger, "Trying to get close subclass of a non abstract class: {}", clz);
+        if (!clz.isAbstract() && !clz.isInterface()) {
+            logger.error("Trying to get close subclass of a non abstract class: {}", clz);
+            droidsafe.main.Main.exit(1);
+        }
 
         logger.debug("Trying to get direct subclasses for: {}", clz);
         //try to get direct implementors by adding them first
@@ -581,8 +552,10 @@ public class SootUtils {
      * Return a concrete implementor of a given interface.  Try to find direct implementors first
      */
     public static SootClass getCloseImplementor(SootClass clz) {
-        if (!clz.isInterface())
-            Utils.logErrorAndExit(logger, "Trying to get implementor of a non interface: {}", clz);
+        if (!clz.isInterface()) {
+            logger.error("Trying to get implementor of a non interface: {}", clz);
+            droidsafe.main.Main.exit(1);
+        }
 
         //try to get direct implementors by adding them first
         List<SootClass> implementors = new LinkedList<SootClass>();
@@ -696,7 +669,7 @@ public class SootUtils {
      * have one, return null.
      */
     public static InstanceInvokeExpr getInstanceInvokeExpr(Stmt stmt) {
-        if (!stmt.containsInvokeExpr()) 
+        if (stmt == null || !stmt.containsInvokeExpr()) 
             return null;
 
         InvokeExpr expr = (InvokeExpr)stmt.getInvokeExpr();
@@ -732,7 +705,7 @@ public class SootUtils {
 
         if (c1.isInterface() && c2.isInterface()) {
             logger.error("Cannot find a narrower concrete class for {} and {}", c1, c2);
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
 
         if (c1.isInterface())

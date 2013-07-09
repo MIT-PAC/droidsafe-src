@@ -43,9 +43,11 @@ public class Config {
   public static final String ANDROID_LIB_DIR_REL = "android-lib";
 
   /** location of configuration files */
-  public static final String SYSTEM_CLASSES_FILE = "config-files/system_class_files.txt";
+  public static final String SYSTEM_CLASSES_FILE = "config-files" + File.separator
+      + "system_class_files.txt";
 
-  public static final String SYSTEM_METHODS_FILE = "config-files/android-api-methods.txt";
+  public static final String SYSTEM_METHODS_FILE = "config-files" + File.separator
+      + "android-api-methods.txt";
   /** location of api modeling base directory relative to apac_home */
 
   public static final String API_MODELING_DIR_REL = "modeling" + File.separator + "api";
@@ -81,15 +83,27 @@ public class Config {
 
   public boolean dumpCallGraph = false;
 
-  /** 
-   * If true, run string analysis on app classes.
-   * true by default 
+  /**
+   * If true, run string analysis on app classes. true by default
    */
   public boolean runStringAnalysis = true;
 
-  /** if true, string analysis is done for all soot application classes.  Otherwise, it is
-   only done for the source classes of the project. */
+  /**
+   * if true, string analysis is done for all soot application classes. Otherwise, it is only done
+   * for the source classes of the project.
+   */
   public boolean unfilteredStringAnalysis = false;
+
+  /**
+   * Flag to control what to do when Main.exit(int) is called. The default value is true, forcing
+   * the application to System.exit(int) when Main.exit() is called. We use this option when running
+   * droidsafe from the command line.
+   * 
+   * When running using the eclipse plugin, we set this flag to false to Main.exit() only throws an
+   * exception and do not kill the running eclipse.
+   * 
+   */
+  public boolean callSystemExitOnError = true;
 
   public static Config v() {
     return config;
@@ -103,6 +117,23 @@ public class Config {
     this.apacHome = apacHome;
   }
 
+  /**
+   * Getter for callSystemExitOnError
+   * 
+   * @return The current value of boolean flag callSystemExitOnError.
+   */
+  public boolean getCallSystehExitOnError() {
+    return this.callSystemExitOnError;
+  }
+
+  /**
+   * Setter for callSystemErrorOnExit
+   * 
+   * @param value The new value to be setS
+   */
+  public void setCallSystemExitOnError(boolean value) {
+    this.callSystemExitOnError = value;
+  }
 
   private static Options setOptions() {
     Options options = new Options();
@@ -118,13 +149,16 @@ public class Config {
         new Option("debuglog", "Print debug log to current ./droidsafe/droidsafe.log");
     options.addOption(debugLog);
 
+    Option jsa = new Option("nojsa", "Do not use JSA");
+    options.addOption(jsa);
+
     Option writeJimple =
         new Option("jimple", "Dump readable jimple files for all app classes in /droidsafe.");
     options.addOption(writeJimple);
 
     Option runStringAnalysisUnfiltered =
         new Option("analyzestrings_unfiltered",
-                   "Run string analysis with no application class filtering.");
+            "Run string analysis with no application class filtering.");
     options.addOption(runStringAnalysisUnfiltered);
 
     Option pta = new Option("ptadump", "Dump pta to ./droidsafe/pta.txt");
@@ -181,7 +215,7 @@ public class Config {
   private void setVars(Options options, CommandLine cmd) {
     if (cmd.hasOption("help")) {
       printOptions(options);
-      System.exit(0);
+      droidsafe.main.Main.exit(0);
     }
 
     if (cmd.hasOption("target")) {
@@ -190,7 +224,7 @@ public class Config {
 
     if (!Config.TARGETS.contains(target)) {
       logger.error("Unsupported Target: {}.", target);
-      System.exit(1);
+      droidsafe.main.Main.exit(1);
     }
 
     if (cmd.hasOption("nosourceinfo")) {
@@ -199,6 +233,9 @@ public class Config {
 
     if (cmd.hasOption("jimple")) this.writeJimpleAppClasses = true;
 
+    if (cmd.hasOption("nojsa")) {
+      this.runStringAnalysis = false;
+    }
 
     if (cmd.hasOption("infoflow")) {
       this.infoFlow = true;
@@ -271,12 +308,12 @@ public class Config {
       fpath = new File(fpath.getCanonicalPath());
     } catch (Exception e) {
       logger.error("Error getting canonical path for app root", e);
-      System.exit(1);
+      droidsafe.main.Main.exit(1);
     }
 
     if (!fpath.exists()) {
       logger.error("App root directory does not exist: {}", ret);
-      System.exit(1);
+      droidsafe.main.Main.exit(1);
     }
 
     return fpath.toString();
@@ -297,13 +334,13 @@ public class Config {
     logger.info("APAC_HOME = {}", apacHome);
     if (this.apacHome == null) {
       logger.error("Environment variable $APAC_HOME not set!");
-      System.exit(1);
+      droidsafe.main.Main.exit(1);
     }
 
     this.ANDROID_LIB_DIR = new File(this.apacHome + File.separator + ANDROID_LIB_DIR_REL);
     if (!this.ANDROID_LIB_DIR.exists()) {
       logger.error("Android library directory for DroidSafe {} does not exist.", ANDROID_LIB_DIR);
-      System.exit(1);
+      droidsafe.main.Main.exit(1);
     }
 
     Options options = setOptions();
@@ -314,7 +351,7 @@ public class Config {
     } catch (Exception e) {
       logger.error("Error parsing command line options", e);
       printOptions(e.getMessage(), options);
-      System.exit(1);
+      droidsafe.main.Main.exit(1);
     }
   }
 

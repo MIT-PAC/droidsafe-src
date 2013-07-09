@@ -14,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.eclipse.plugin.core.specmodel.CodeLocationModel;
+import droidsafe.eclipse.plugin.core.specmodel.HotspotModel;
 import droidsafe.eclipse.plugin.core.specmodel.IModelChangeSupport;
 import droidsafe.eclipse.plugin.core.specmodel.MethodModel;
 import droidsafe.eclipse.plugin.core.specmodel.SecuritySpecModel;
@@ -130,18 +131,6 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
    */
   private void updatePropertyChangeListener(IModelChangeSupport modelObject,
       TreeElement<?, ?> newTreeElement) {
-    // TreeElement<?, ?> oldTreeElement = this.treeElementMap.get(modelObject);
-    // if (oldTreeElement != null) {
-    // Object data = oldTreeElement.getData();
-    // if (data != modelObject) {
-    // logger.debug(
-    // "OLD TreeElement {} has Data {} but current model is {}",
-    // new String[] {oldTreeElement.toString(), Integer.toString(data.hashCode()),
-    // Integer.toString(modelObject.hashCode())});
-    // }
-    // }
-    // this.treeElementMap.put(modelObject, newTreeElement);
-
     modelObject.addPropertyChangeListener(newTreeElement);
     newTreeElement.addPropertyChangeListener(this);
     treeElementList.add(newTreeElement);
@@ -167,14 +156,6 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
 
   @SuppressWarnings("unused")
   private void printPropertyChangeListenersForTreeElements() {
-    // for (TreeElement<?, ?> element : this.treeElementMap.values()) {
-    // PropertyChangeListener[] listeners = element.getPropertyChangeListeners();
-    // if (listeners == null || listeners.length == 0) {
-    // logger.debug("No listeners defined for node " + element);
-    // }
-    // logger.debug("Listeners for " + element + " == " + listeners);
-    // }
-
     for (TreeElement<?, ?> element : this.treeElementList) {
       PropertyChangeListener[] listeners = element.getPropertyChangeListeners();
       if (listeners == null || listeners.length == 0) {
@@ -196,20 +177,19 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
    * 
    * @param root The TreeElement corresponding to security spec model.
    */
-
   private void createModelWithApiAsTopParent(TreeElement<SecuritySpecModel, Object> root) {
     Map<MethodModel, Map<MethodModel, List<CodeLocationModel>>> outputEventBlocks =
         this.model.getOutputEventBlocks();
     if (outputEventBlocks != null) {
       for (MethodModel apiMethod : outputEventBlocks.keySet()) {
         TreeElement<Object, MethodModel> apiElement =
-            new TreeElement<Object, MethodModel>(apiMethod.getSignature(), apiMethod,
+            new TreeElement<Object, MethodModel>(apiMethod.getShortSignature(), apiMethod,
                 MethodModel.class);
         root.addChild(apiElement);
         updatePropertyChangeListener(apiMethod, apiElement);
         for (MethodModel inputMethod : outputEventBlocks.get(apiMethod).keySet()) {
           TreeElement<MethodModel, CodeLocationModel> inputElement =
-              new TreeElement<MethodModel, CodeLocationModel>(inputMethod.getSignature(),
+              new TreeElement<MethodModel, CodeLocationModel>(inputMethod.getShortSignature(),
                   inputMethod, CodeLocationModel.class);
           apiElement.addChild(inputElement);
           updatePropertyChangeListener(inputMethod, inputElement);
@@ -217,11 +197,19 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
           List<CodeLocationModel> locations = outputEventBlocks.get(apiMethod).get(inputMethod);
           if (locations != null) {
             for (CodeLocationModel location : locations) {
-              TreeElement<CodeLocationModel, Object> locationElement =
-                  new TreeElement<CodeLocationModel, Object>(location.toString(), location,
-                      Object.class);
+              TreeElement<CodeLocationModel, HotspotModel> locationElement =
+                  new TreeElement<CodeLocationModel, HotspotModel>(location.toString(), location,
+                      HotspotModel.class);
               inputElement.addChild(locationElement);
               updatePropertyChangeListener(location, locationElement);
+              
+              List<HotspotModel> hotspots = location.getHotspots();
+              for (HotspotModel hotspot : hotspots) {
+                TreeElement<HotspotModel, Object> hotspotElement =
+                    new TreeElement<HotspotModel, Object>(hotspot.toString(), hotspot, Object.class);
+                locationElement.addChild(hotspotElement);
+                updatePropertyChangeListener(hotspot, hotspotElement);
+              }
             }
           }
         }
@@ -255,8 +243,8 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
 
         for (MethodModel inputMethod : codeLocationEventBlocks.get(location).keySet()) {
           TreeElement<MethodModel, MethodModel> inputElement =
-              new TreeElement<MethodModel, MethodModel>(inputMethod.getSignature(), inputMethod,
-                  MethodModel.class);
+              new TreeElement<MethodModel, MethodModel>(inputMethod.getShortSignature(),
+                  inputMethod, MethodModel.class);
           locationElement.addChild(inputElement);
           updatePropertyChangeListener(inputMethod, inputElement);
 
@@ -264,8 +252,8 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
           if (outputMethods != null) {
             for (MethodModel outputMethod : outputMethods) {
               TreeElement<MethodModel, Object> outputElement =
-                  new TreeElement<MethodModel, Object>(outputMethod.getSignature(), outputMethod,
-                      Object.class);
+                  new TreeElement<MethodModel, Object>(outputMethod.getShortSignature(),
+                      outputMethod, Object.class);
               inputElement.addChild(outputElement);
               updatePropertyChangeListener(outputMethod, outputElement);
             }
@@ -290,14 +278,58 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
     if (inputEventBlocks != null) {
       for (MethodModel inputMethod : inputEventBlocks.keySet()) {
         TreeElement<Object, MethodModel> inputElement =
-            new TreeElement<Object, MethodModel>(inputMethod.getSignature(), inputMethod,
+            new TreeElement<Object, MethodModel>(inputMethod.getShortSignature(), inputMethod,
                 MethodModel.class);
         root.addChild(inputElement);
         updatePropertyChangeListener(inputMethod, inputElement);
 
         for (MethodModel outputMethod : inputEventBlocks.get(inputMethod)) {
           TreeElement<MethodModel, CodeLocationModel> outputElement =
-              new TreeElement<MethodModel, CodeLocationModel>(outputMethod.getSignature(),
+              new TreeElement<MethodModel, CodeLocationModel>(outputMethod.getShortSignature(),
+                  outputMethod, CodeLocationModel.class);
+          inputElement.addChild(outputElement);
+          updatePropertyChangeListener(outputMethod, outputElement);
+
+          List<CodeLocationModel> locations = outputMethod.getLines();
+          if (locations != null) {
+            for (CodeLocationModel location : locations) {
+              TreeElement<CodeLocationModel, HotspotModel> locationElement =
+                  new TreeElement<CodeLocationModel, HotspotModel>(location.toString(), location,
+                      HotspotModel.class);
+              outputElement.addChild(locationElement);
+              updatePropertyChangeListener(location, locationElement);
+
+              List<HotspotModel> hotspots = location.getHotspots();
+              for (HotspotModel hotspot : hotspots) {
+                TreeElement<HotspotModel, Object> hotspotElement =
+                    new TreeElement<HotspotModel, Object>(hotspot.toString(), hotspot, Object.class);
+                locationElement.addChild(hotspotElement);
+                updatePropertyChangeListener(hotspot, hotspotElement);
+              }
+
+            }
+          }
+        }
+      }
+    }
+    // printPropertyChangeListenersForTreeElements();
+  }
+
+  @SuppressWarnings("unused")
+  private void createModelWithEntryPointAsTopParent_Original(
+      TreeElement<SecuritySpecModel, Object> root) {
+    Map<MethodModel, List<MethodModel>> inputEventBlocks = this.model.getInputEventBlocks();
+    if (inputEventBlocks != null) {
+      for (MethodModel inputMethod : inputEventBlocks.keySet()) {
+        TreeElement<Object, MethodModel> inputElement =
+            new TreeElement<Object, MethodModel>(inputMethod.getShortSignature(), inputMethod,
+                MethodModel.class);
+        root.addChild(inputElement);
+        updatePropertyChangeListener(inputMethod, inputElement);
+
+        for (MethodModel outputMethod : inputEventBlocks.get(inputMethod)) {
+          TreeElement<MethodModel, CodeLocationModel> outputElement =
+              new TreeElement<MethodModel, CodeLocationModel>(outputMethod.getShortSignature(),
                   outputMethod, CodeLocationModel.class);
           inputElement.addChild(outputElement);
           updatePropertyChangeListener(outputMethod, outputElement);
@@ -318,7 +350,6 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
     // printPropertyChangeListenersForTreeElements();
   }
 
-
   /**
    * Initializes the entire hierarchy of the model tree. It creates TreeElements for each element in
    * the Whitelist, and calls one of the model creation methods to add the model elements in the
@@ -336,7 +367,7 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
     root.addChild(whitelist);
     for (MethodModel m : this.model.getWhitelist()) {
       TreeElement<MethodModel, Object> mTreeElement =
-          new TreeElement<MethodModel, Object>(m.getSignature(), m, Object.class);
+          new TreeElement<MethodModel, Object>(m.getShortSignature(), m, Object.class);
       whitelist.addChild(mTreeElement);
       updatePropertyChangeListener(m, mTreeElement);
     }
@@ -358,7 +389,7 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
   @Override
   public void propertyChange(PropertyChangeEvent evt) {
     Object source = evt.getSource();
-    //logger.debug("Updating node {}", source);
+    // logger.debug("Updating node {}", source);
     if (this.viewer != null) {
       this.viewer.update(source, null);
     }

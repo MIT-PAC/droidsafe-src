@@ -102,7 +102,7 @@ public class API {
 
         } catch (Exception e) {
             logger.error("Error loading android.jar", e);
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
 
         loadDroidSafeCalls();
@@ -134,7 +134,7 @@ public class API {
         } catch (Exception e) {
             logger.error("Error creating android api methods file {}", e);
         }
-        System.exit(1);
+        droidsafe.main.Main.exit(1);
     }
 
     /** 
@@ -179,7 +179,7 @@ public class API {
 
         } catch (Exception e) {
             logger.error("Error reading android api methods file: {}", e);
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
     }
 
@@ -232,7 +232,7 @@ public class API {
                     method.retrieveActiveBody();
                     if (!method.hasActiveBody()) {
                         logger.error("Modeled api method has no active body: {}", method);
-                        System.exit(1);
+                        droidsafe.main.Main.exit(1);
                     }
                 }
 
@@ -272,7 +272,8 @@ public class API {
             SootUtils.loadClassesFromJar(dsJar, true, new LinkedHashSet<String>());
             all_sys_methods.addAllMethods(dsJar);			
         } catch (Exception e) {
-            Utils.logErrorAndExit(logger, "Error loading droidsafe call jar (maybe it does not exist).");
+            logger.error("Error loading droidsafe call jar (maybe it does not exist).");
+            droidsafe.main.Main.exit(1);
         }
     }
 
@@ -385,7 +386,7 @@ public class API {
             out.close();
         } catch (Exception e) {
             logger.error("Error writing unclassified methods file", e);
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
 
     }
@@ -472,7 +473,7 @@ public class API {
     public SootMethod getClosestOverridenAPIMethod(SootMethod method) {
         if (this.isSystemClass(method.getDeclaringClass())) {
             logger.error("Calling getClosestOverridenAPIMethod() on API method: {}", method);
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
         return all_sys_methods.getClosestOverriddenMethod(method);
     }
