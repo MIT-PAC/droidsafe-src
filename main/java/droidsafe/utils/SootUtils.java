@@ -580,10 +580,10 @@ public class SootUtils {
         String fileName = filePrefix + ".class";
         String methodThatFailed = "";        
         try {
-            OutputStream streamOut = new JasminOutputStream(
-                    new FileOutputStream(fileName));
-            PrintWriter writerOut = new PrintWriter(
-                    new OutputStreamWriter(streamOut));
+            FileOutputStream fos = new FileOutputStream(fileName);
+            OutputStream streamOut = new JasminOutputStream(fos);
+            OutputStreamWriter osw = new OutputStreamWriter(streamOut);
+            PrintWriter writerOut = new PrintWriter(osw);
 
             for (SootMethod method : clz.getMethods()) {
                 methodThatFailed = method.getName();
@@ -602,6 +602,9 @@ public class SootUtils {
             writerOut = new PrintWriter(new OutputStreamWriter(streamOut));
             Printer.v().printTo(clz, writerOut);
             writerOut.flush();
+            writerOut.close();
+            fos.close();
+            osw.close();
             streamOut.close();
 
         } catch (Exception e) {
