@@ -389,7 +389,7 @@ public class ContextWrapper extends Context {
     }
 
     @Override
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     public Object getSystemService(String name) {
         return mBase.getSystemService(name);
     }

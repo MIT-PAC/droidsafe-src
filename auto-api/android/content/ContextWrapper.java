@@ -845,7 +845,7 @@ public class ContextWrapper extends Context {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.372 -0400", hash_original_method = "4DFF381EBA248BD85BCC25FEFAAD92DA", hash_generated_method = "6158BE5D37894D769D2699C90885D038")
     @Override
     public Object getSystemService(String name) {

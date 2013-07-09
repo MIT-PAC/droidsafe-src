@@ -70,6 +70,8 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
         0x2000, 
     };
 	
+	public String parentActivityName;
+	
 	public static int activityInfoConfigToNative(int input){
 		return input;
 		// Original method

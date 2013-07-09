@@ -33,6 +33,11 @@ public class SensorManager {
 
     @SuppressWarnings("deprecation") private HashMap<SensorListener, LegacyListener> mLegacyListenersMap = new HashMap<SensorListener, LegacyListener>();
     
+    // Made public by DS Modeling, should not be called by application
+ 	@DSModeled(DSC.BAN)
+ 	public SensorManager() {
+ 	}
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.005 -0400", hash_original_method = "D89BA857D2DFC071EE5A857E0568AFCF", hash_generated_method = "84B64F0F51C0586B48C6D2C308267F6B")
     public  SensorManager(Looper mainLooper) {
         mMainLooper = mainLooper;

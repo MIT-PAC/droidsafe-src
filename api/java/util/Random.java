@@ -17,11 +17,13 @@ public class Random implements Serializable {
 		//setSeed(System.currentTimeMillis() + System.identityHashCode(this));
 	}
 	
+	@DSModeled(DSC.SAFE)
 	public int nextInt() {
 		return getTaintInt();
 		// return next(32);
 	}
 	
+	@DSModeled(DSC.SAFE)
 	public int nextInt(int n) {
         addTaint(n);
 		return getTaintInt();
@@ -41,6 +43,7 @@ public class Random implements Serializable {
         */
 	}
 	
+	@DSModeled(DSC.SAFE)
 	public boolean nextBoolean() {
         return next(1) != 0;
     }
