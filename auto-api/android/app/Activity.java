@@ -2362,7 +2362,20 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.740 -0400", hash_original_method = "30D6BE1E6EC7F84FBEF609A16BE7CA4B", hash_generated_method = "B137FC071652C17D355793D1C802296C")
     public void startActivityForResult(Intent intent, int requestCode) {
-    	
+    	/*
+        The modeling required here will create the call to onActivityResult that 
+        could be called as an effect of this call.  onActivityResult will have
+        a new Intent.  We are modeling this Intent as a copy of the intent 
+        passed to this method.  Of course, we cannot model the response intent
+        perfectly, but grab as many fields as we can.
+		*/
+		Intent resultIntent = new Intent();
+
+		droidsafe.helpers.DSUtils.translateIntent(intent, resultIntent);
+
+		this.onActivityResult(requestCode, /* just make this up */ -1,
+				resultIntent);
+    	/*
     	Intent resultIntent = new Intent();
 
 		droidsafe.helpers.DSUtils.translateIntent(intent, resultIntent);
@@ -2372,7 +2385,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		
         addTaint(intent.getTaint());
         addTaint(requestCode);
-        
+        */
         
             
                 

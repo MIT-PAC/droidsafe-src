@@ -101,6 +101,8 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
         
         
     }
+    
+    public String parentActivityName;
 
     
     @DSModeled(DSC.SAFE)

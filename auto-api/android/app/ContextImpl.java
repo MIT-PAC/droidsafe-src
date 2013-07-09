@@ -223,7 +223,7 @@ public class ContextImpl extends Context {
     public ContextImpl() {
         mOuterContext = this;
         contentResolver = new DroidSafeContentResolver(this);
-        sensorManager = new SensorManager(null);
+        sensorManager = new SensorManager();
         
     }
 
