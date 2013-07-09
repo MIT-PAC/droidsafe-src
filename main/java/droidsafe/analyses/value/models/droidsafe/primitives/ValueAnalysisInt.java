@@ -13,4 +13,21 @@ public class ValueAnalysisInt extends ValueAnalysisModeledObject {
     public ValueAnalysisInt(int valueParam) {
         this.value = valueParam;
     }
+
+    @Override
+    public int hashCode() {
+      return this.value;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+       if (obj == this) {
+           return true;
+                        }
+       if (obj == null || obj.getClass() != this.getClass())
+           return false;
+      
+       ValueAnalysisInt valueAnalysisInt = (ValueAnalysisInt)obj;
+       return valueAnalysisInt.value == this.value;
+    }
 }
