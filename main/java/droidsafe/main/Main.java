@@ -98,7 +98,9 @@ public class Main {
         logger.info("Setting Harness Main as entry point.");
         setHarnessMainAsEntryPoint();
 
-        // The JSA analysis fails if it follows AddAllocsForAPICalls.run()
+        // JSA analysis fails if it follows AddAllocsForAPICalls.run()
+        // Set up the analysis object no matter what. 
+        JSAStrings.init(Config.v());
         if (Config.v().runStringAnalysis) {
             jsaAnalysis();
         }
@@ -188,7 +190,6 @@ public class Main {
      * Run the JSA analysis
      */ 
     private static void jsaAnalysis() {
-        JSAStrings.init(Config.v());
         JSAUtils.setUpHotspots();
         JSAStrings.run();
         // Debugging.
@@ -217,7 +218,17 @@ public class Main {
         }
     }
 
+    /**
+     * Handles the error in the analysis. If the flag Config.callSystemExitOnError is true, the
+     * application will exit, otherwise it will just throw an exception. 
+     * 
+     * @param status
+     */
     public static void exit(int status) {
+      if (Config.v().getCallSystehExitOnError()) {
         System.exit(1);
+      } else {
+        throw new IllegalStateException();
+      }
     }
 }

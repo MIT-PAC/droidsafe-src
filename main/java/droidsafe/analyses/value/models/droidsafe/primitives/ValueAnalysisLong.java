@@ -7,7 +7,7 @@ public class ValueAnalysisLong extends ValueAnalysisModeledObject {
     long value;
 
     public ValueAnalysisLong() {
-        this.invalidated = true;
+        this.__ds__invalidated = true;
     }
 
     public ValueAnalysisLong(long valueParam) {

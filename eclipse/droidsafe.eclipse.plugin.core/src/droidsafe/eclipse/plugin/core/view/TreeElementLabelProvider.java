@@ -1,6 +1,7 @@
 package droidsafe.eclipse.plugin.core.view;
 
 import java.net.URL;
+import java.util.Set;
 
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
@@ -8,8 +9,11 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.StyledCellLabelProvider;
 import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.jface.viewers.ViewerCell;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.TextStyle;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.PlatformUI;
 import org.osgi.framework.Bundle;
@@ -102,7 +106,17 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
       TreeElement<?, ?> element = (TreeElement<?, ?>) obj;
       Object data = element.getData();
       if (data instanceof MethodModel) {
-        return ((MethodModel) data).getSignature();
+        MethodModel method = (MethodModel) data;
+        StringBuffer sb = new StringBuffer(method.getSignature());
+        Set<String> permissions = method.getPermissions();
+        if (permissions != null) {
+          for (String permission : permissions) {
+            sb.append("\n");
+            sb.append("Permission: ");
+            sb.append(permission);
+          }
+        }
+        return sb.toString();
       }
     }
     return null;
@@ -155,6 +169,19 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
     }
   };
 
+  private static final Color RED = Display.getDefault().getSystemColor(SWT.COLOR_RED);
+
+  /**
+   * A styler to allow the label of the node to be bold.
+   */
+  private static StyledString.Styler BOLD = new StyledString.Styler() {
+
+    @Override
+    public void applyStyles(TextStyle textStyle) {
+      textStyle.foreground = RED;
+    }
+  };
+
   /**
    * The method that provides the desired style for the Tree node label.
    * 
@@ -168,8 +195,14 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
     if (obj instanceof TreeElement<?, ?>) {
       TreeElement<?, ?> element = (TreeElement<?, ?>) obj;
       Object data = element.getData();
-      if (data instanceof MethodModel && ((MethodModel) data).isSafe()) {
-        styledString.setStyle(0, styledString.length(), STRIKEOUT);
+      if (data instanceof MethodModel) {
+        MethodModel method = (MethodModel) data;
+        if (method.isSafe()) {
+          styledString.setStyle(0, styledString.length(), STRIKEOUT);
+        } else if (!method.getPermissions().isEmpty()) {
+          styledString.setStyle(0, styledString.length(), BOLD);
+          // cell.setForeground(RED);
+        }
       } else if (data instanceof CodeLocationModel && ((CodeLocationModel) data).isSafe()) {
         styledString.setStyle(0, styledString.length(), STRIKEOUT);
       }

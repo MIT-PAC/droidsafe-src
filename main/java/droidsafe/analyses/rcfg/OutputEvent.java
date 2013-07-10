@@ -96,8 +96,7 @@ public class OutputEvent implements PTAMethodInformation {
             droidsafe.main.Main.exit(1);
         }
         if (invokeExpr instanceof SpecialInvokeExpr && !hasReceiver()) {
-            logger.error("Found special invoke expr without a receiver {}", invokeExpr);
-            droidsafe.main.Main.exit(1);
+            logger.info("Found special invoke expr without a receiver {}", invokeExpr);
         }
 
         //ever instance invoke should have a receiver, unless something wrong with user code or with modeling or with

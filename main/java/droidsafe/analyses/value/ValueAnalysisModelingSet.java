@@ -32,26 +32,26 @@ public class ValueAnalysisModelingSet<E> extends ForwardingSet<E> {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /** 
-     * Wrapper around the add method that checks whether the element to be added is already in the set and modifies
-     * ValueAnalysis's "changed" global accordingly. Used to run ValueAnalysis to fixed-point. If something
-     * new is added to a set, then the analysis has not reached fixed point yet.
+     * Wrapper around the add method that checks whether the element to be added is already in the set. If not, then the
+     * value analysis has not yet reached a fixed point and should be run again.
      */
     @Override
     public boolean add(E e) {
         if(!this.getSet().contains(e)){
-            ValueAnalysis.changed = true;
+            ValueAnalysis.runAgain();
         }
         return super.add(e);
     }
 
     /**
-     * Forwarding method
+     * Wrapper around the addAll method that checks whether the elemetns to be added are already in the set. If not,
+     * then the analysis has not yet reached a fixed point and should be run again.
      */
     public boolean addAll(Collection<? extends E> c)
     {
         for(E e : c) {
             if(!this.getSet().contains(e)){
-                ValueAnalysis.changed = true;
+                ValueAnalysis.runAgain();
             }
         }
         return super.addAll(c);

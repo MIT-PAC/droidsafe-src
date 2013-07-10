@@ -178,9 +178,11 @@ public class Project {
      */
     private void setGenClasses() {
         genClasses = new LinkedHashSet<String>();
-        for (File clazz : FileUtils.listFiles(this.appGenDir, new String[]{"class"}, true)) {
+        for (File clazz : FileUtils.listFiles(this.appGenDir, new String[]{"java"}, true)) {
 
-            String clzName = Utils.fromFileToClass(clazz.toString().substring(this.appGenDir.toString().length() + 1));
+            
+            String closeName = clazz.toString().substring(this.appGenDir.toString().length() + 1);
+            String clzName = closeName.substring(0, closeName.length() - 5).replace(File.separatorChar, '.');
             logger.info("Generated class: {}", clzName);
             genClasses.add(clzName);
         }
@@ -303,5 +305,13 @@ public class Project {
      */
     public boolean isGenClass(String clz) {
         return genClasses.contains(clz);
+    }
+    
+    
+    /**
+     * Return the set of generated classe names.
+     */
+    public Set<String> getGenClasses() {
+        return genClasses;
     }
 }

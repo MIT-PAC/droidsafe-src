@@ -29,14 +29,14 @@ public abstract class ValueAnalysisModeledObject {
      * These models have a one-to-one correspondence with the allocNodes.
      * Some models may not have an allocNode.
      */
-    protected AllocNode allocNode;
+    protected AllocNode __ds__allocNode;
 
     /**
      * Attribute that determines whether we know the values of the attributes of a partucular object of a modeled
      * Android class. Whenever we are unable to simulate a method that may modify an object, the corresponding model
      * is invalidated.
      */
-    protected boolean invalidated;
+    protected boolean __ds__invalidated;
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Constructors
@@ -46,7 +46,7 @@ public abstract class ValueAnalysisModeledObject {
      * All models are not invalidated by default.
      */  
     public ValueAnalysisModeledObject(){
-        this.invalidated = false;
+        this.__ds__invalidated = false;
     }
 
     /**
@@ -54,7 +54,7 @@ public abstract class ValueAnalysisModeledObject {
      */
     public ValueAnalysisModeledObject(AllocNode allocNodeParam){
         this();
-        this.allocNode = allocNodeParam;
+        this.__ds__allocNode = allocNodeParam;
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -62,10 +62,10 @@ public abstract class ValueAnalysisModeledObject {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     /**
-     * Invalidates the model by setting this.invalidated to true.
+     * Invalidates the model by setting this.__ds__invalidated to true.
      */
-    public void invalidate(){
-        this.invalidated = true;
+    public void  __ds__invalidate(){
+        this.__ds__invalidated = true;
     }
 
     /**
@@ -73,19 +73,19 @@ public abstract class ValueAnalysisModeledObject {
      * Determined by the value of the "invalidated" attribute.
      * @returns whether the model is invalidated or not as a boolean
      */
-    public boolean invalidated() {
-        return this.invalidated;
+    public boolean __ds__invalidated() {
+        return this.__ds__invalidated;
     }
 
     /**
      * Returns the id of the AllocNode if the model has one.
      * @returns id as String
      */
-    public String getId() {
+    public String __ds__getId() {
         String id = "";
-        if (this.allocNode != null) {
+        if (this.__ds__allocNode != null) {
             Pattern p = Pattern.compile("\\d+");
-            Matcher m = p.matcher(this.allocNode.toString());
+            Matcher m = p.matcher(this.__ds__allocNode.toString());
             if(m.find()) {
                 id += " #" + m.group();
             }
@@ -97,8 +97,8 @@ public abstract class ValueAnalysisModeledObject {
      * Getter for the allocNode attribute.
      * @returns AllocNode that corresponds to this model
      */
-    public AllocNode getAllocNode(){
-        return this.allocNode;
+    public AllocNode __ds__getAllocNode(){
+        return this.__ds__allocNode;
     }
 
     /**
@@ -107,8 +107,8 @@ public abstract class ValueAnalysisModeledObject {
     public String __ds__toString() {
         Class cls = this.getClass();
         String str = "<" + cls.getName().substring(ValueAnalysis.MODEL_PACKAGE_PREFIX.length()) + ": "; 
-        if (!this.invalidated())
-            str += "{" + fieldsString() + "}";
+        if (!this.__ds__invalidated())
+            str += "{" + this.__ds__fieldsString() + "}";
         else
             str += "INV";
         return str + ">";
@@ -117,11 +117,11 @@ public abstract class ValueAnalysisModeledObject {
     /**
      * Return a string of just the resolved field values for this modeled object.
      */
-    private String fieldsString() {
+    private String __ds__fieldsString() {
         Class cls = this.getClass();
         
         String str = "";
-        if (this.invalidated) {
+        if (this.__ds__invalidated) {
             str += "invalidated";
         } else {
             ArrayList<String> attrs = new ArrayList();
@@ -135,7 +135,7 @@ public abstract class ValueAnalysisModeledObject {
                         }
                         String newAttr = field.getName() + ": ";
                         if(value instanceof ValueAnalysisModeledObject) {
-                          newAttr += ((ValueAnalysisModeledObject)value).dsDisplay();
+                          newAttr += ((ValueAnalysisModeledObject)value).__ds__display();
                         } else {
                           newAttr += value;
                         }
@@ -155,10 +155,10 @@ public abstract class ValueAnalysisModeledObject {
      * 
      * @returns model description as a String
      */
-    public String dsDisplay(){
+    public String __ds__display(){
         Class cls = this.getClass();
-        String str = "<modeled " + cls.getSimpleName() +  this.getId() + "> {";
-        str += fieldsString();
+        String str = "<modeled " + cls.getSimpleName() +  this.__ds__getId() + "> {";
+        str += this.__ds__fieldsString();
         return str + "}";
     }
 }

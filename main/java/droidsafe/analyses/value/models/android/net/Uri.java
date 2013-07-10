@@ -27,4 +27,7 @@ public class Uri extends ValueAnalysisModeledObject {
     public void _init_(Set<String> uriStringParam){
         this.uriString.addAll(uriStringParam);
     }
+    
+    public void _init_(){
+    }
 }

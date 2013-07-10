@@ -25,8 +25,11 @@ import soot.SootMethodRef;
 public class Hierarchy {
 	
 	private static Hierarchy v;
+	/** Set of classes that implement an Android component class */
 	private List<SootClass> appComponents;
+	/** Set of activities in the application */
 	private Set<SootClass> activities;
+	
 	
 	/**
 	 * Return the singleton hierarchy object for this application.
@@ -56,11 +59,40 @@ public class Hierarchy {
 		}
 	}
 		
-
-	// Returns true if cn is class android/app/Activity or is a class
-	// that inherits from android/app/Activity
+	/**
+	 * Given a application class (either from src/ or lib/) return a set of all methods
+	 * defined in the class, plus all methods defined in application superclasses.
+	 * 
+	 * This set will not include methods that are overriden by child classes
+	 */
+	public Set<SootMethod> getAllInheritedAppMethodsIncluded(SootClass sc) {
+	    LinkedHashSet<SootMethod> methods = new LinkedHashSet<SootMethod>();
+	    Set<String> subSigs = new LinkedHashSet<String>();
+	    
+	    //this should stop at the first system class encountered (java.lang.object worst case)
+	    while (sc != null && !API.v().isSystemClass(sc)) {
+	        for (SootMethod m : sc.getMethods()) {
+	            if (!m.isStatic() && subSigs.contains(m.getSubSignature())) 
+	                continue;
+	            
+	            methods.add(m);
+	            subSigs.add(m.getSubSignature());
+	        }
+	        
+	        sc = sc.getSuperclass();
+	    }
+	    
+	    return methods;
+	}
+	
+	
+	/** 
+	 * Returns true if cn is class android/app/Activity or is a class
+	 * that inherits from android/app/Activity
+	 */
 	public boolean inheritsFromAndroidActivity(final SootClass cn) {
-		return Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(cn, Scene.v().getSootClass(Components.ACTIVITY_CLASS));
+		return Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(cn, 
+		    Scene.v().getSootClass(Components.ACTIVITY_CLASS));
 	}
 	
 	/**
@@ -109,7 +141,8 @@ public class Hierarchy {
 	
 	/**
 	 * Returns true if this class extends or implements from a class / interface
-	 * defined in the android.jar.
+	 * defined in the android.jar.  Note, this will return true if the class
+	 * inherits from java.lang.Object.
 	 */
 	public boolean inheritsFromAndroid(SootClass clz) {
 		return systemParents(clz).size() > 0;
