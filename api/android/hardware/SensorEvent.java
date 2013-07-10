@@ -1,41 +1,35 @@
-/*
- * Copyright (C) 2008 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package android.hardware;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
+
+
+import java.util.Iterator;
 
 public class SensorEvent {
-    public final float[] values;
-   
-    public Sensor sensor = new Sensor();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.728 -0400", hash_original_field = "F09CC7EE3A9A93273F4B80601CAFB00C", hash_generated_field = "08CDF65A917190C764B2D9069756F141")
+
+    public float[] values;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.728 -0400", hash_original_field = "A5FE26D5D09B736A77F4345E9F80B951", hash_generated_field = "E3EF17D4BA6CB4B7E422EA40D31F2B0F")
+
+    public Sensor sensor;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.728 -0400", hash_original_field = "5D6DB9A1DC722586187FC2DB530F8388", hash_generated_field = "7F2B820F3882E94A9556DB7409C1AD98")
 
     public int accuracy;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.728 -0400", hash_original_field = "D7E6D55BA379A13D08C25D15FAF2A23B", hash_generated_field = "37EA591B5E14A037995EF6FFB5E9C3F8")
 
     public long timestamp;
-
-    @DSModeled(DSC.SAFE)
-    public SensorEvent(int size) {
-        values = new float[size];
-    }
     
-    @DSModeled(DSC.SAFE)
-    public SensorEvent() {
-    	//Method doesn't exist in original implementation, needed for specdump
-    	this(0);  //Call the original constructor with a size of 0
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:16.642 -0400", hash_original_method = "70E99143ED23AB543A4BC023624913AA", hash_generated_method = "61F2DC68074AC669893F0BE5944FEDBC")
+	public
+      SensorEvent(int size) {
+        values = new float[size];
+        
+        
     }
+
+    
 }
+

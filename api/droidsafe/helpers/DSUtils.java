@@ -16,21 +16,18 @@ public class DSUtils {
 	public static final boolean UNKNOWN_BOOLEAN = false;
 	public static final char UNKNOWN_CHAR = 0;
 	
-	/**
-	 * Use this method to translate one intent to another in a way that is
-	 * dependent on the values resolved by attribute modeling.  This call is modeled 
-	 * in the attribute modeling pass as well.
-	 */
+	
 	@DSModeled(DSC.BAN)
 	public static void translateIntent(Intent orig, Intent result) {
 		result.setAction(orig.getAction());
 		result.setType(orig.getType());
-                result.setPackage(orig.getPackage());
+    result.setPackage(orig.getPackage());
 
-                result.setData(orig.getData());
-                //set the data field to the type field in the case there is no existing uri
-                result.setData(Uri.parse(orig.getType()));
+		if (orig.getData() == null)
+			result.setData(Uri.parse("UNKNOWN"));
+		else 
+			result.setData(orig.getData());
 		
-		//TODO: might need more here?
+		
 	}
 }
