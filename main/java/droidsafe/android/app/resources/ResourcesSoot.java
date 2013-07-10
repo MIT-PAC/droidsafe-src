@@ -321,16 +321,15 @@ public class ResourcesSoot {
             
             // add in fragment
             if (isFragmentType(fullTypeName)) {
-            	logger.warn("addGetFragment_ID with type:{}, id:{} ", 
+            	logger.info("addGetFragment_ID with type:{}, id:{} ", 
             				fullTypeName, String.format("%x", id));
             	return addGetFragment_ID(id);
             }
             
-            logger.warn("addGetView with type:{}, id:{} ", 
+            logger.info("addGetView with type:{}, id:{} ", 
             				fullTypeName, String.format("%x", id));
             return addGetView_ID(id);
 
-            //we need to determine if it is a view or a fragment that we need to add
         }
         return true;
     }

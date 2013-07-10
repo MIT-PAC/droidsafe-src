@@ -139,7 +139,7 @@ public class Layout {
 	      String newId = String.format("%s_%03d", nonameKey, count);
 	      cview.id = newId;
 	      
-	      logger.info("cview {} is no ID, create a new One {} ", cview.name, cview.id);
+	      logger.info("cview {} has no ID, create a new One {} ", cview.name, cview.id);
 	      
 	      ResourcesSoot.v().addNewNumberToStringEntry(newId);
 	  } 

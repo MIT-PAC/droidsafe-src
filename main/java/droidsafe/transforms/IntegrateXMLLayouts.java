@@ -86,11 +86,23 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			
 			// setcontentview list
 			for (String className: setContentViewClasses){
-			    String methodName = String.format("<%s: void setContentView(int)>",
-			                               className);
-			    SootMethod method = Scene.v().getMethod(methodName); 
-			    setContentViewList.add(method);			    
-			    logger.debug("setContentView: {} ", method);
+			    String methodName = String.format("<%s: void setContentView(int)>", className);
+			    try {
+			    	SootMethod method = Scene.v().getMethod(methodName); 
+			    	setContentViewList.add(method);			    
+			    	logger.debug("setContentView: {} ", method);
+			    } catch (Exception ex) {
+			    	
+			    }
+			    
+			    methodName = String.format("<%s: void setContentView(int, android.view.ViewGroup.LayoutParams)>", className);
+			    try {
+			    	SootMethod method = Scene.v().getMethod(methodName); 
+			    	setContentViewList.add(method);			    
+			    	logger.debug("setContentView: {} ", method);
+			    } catch (Exception ex) {
+			    	
+			    }
 			}
 			
 			// getString
