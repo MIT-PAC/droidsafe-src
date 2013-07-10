@@ -119,7 +119,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	ActionBarImpl mActionBar = null;
 	private CharSequence mTitle;
 	private int mTitleColor = 0;
-	final FragmentManagerImpl mFragments = new FragmentManagerImpl();
+	FragmentManagerImpl mFragments = new FragmentManagerImpl();
 	SparseArray<LoaderManagerImpl> mAllLoaderManagers;
 	LoaderManagerImpl mLoaderManager;
 	
@@ -685,6 +685,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		//Return nothing
 	}
 	
+	@DSModeled
 	public void onTrimMemory(int level){
 		mFragments.dispatchTrimMemory(level);
 		// Original method
@@ -697,7 +698,10 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		//Return nothing
 	}
 	
+	@DSModeled
 	public FragmentManager getFragmentManager(){
+		if (mFragments == null)
+			mFragments = new FragmentManagerImpl();
 		return mFragments;
 		
 		// Original method
