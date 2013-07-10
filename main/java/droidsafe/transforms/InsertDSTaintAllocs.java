@@ -139,7 +139,7 @@ public class InsertDSTaintAllocs extends BodyTransformer {
                 generatedStmts.add(assignStmt);
                 
                 RefType type = origNewExpr.getBaseType();
-                SootFieldRef dsTaintFieldRef = Scene.v().makeFieldRef(type.getSootClass(), "dsTaint", 
+                SootFieldRef dsTaintFieldRef = Scene.v().makeFieldRef(type.getSootClass(), "taint", 
                     dsTaintClassRef, false);
                 
                 InstanceFieldRef taintFieldAccess = 

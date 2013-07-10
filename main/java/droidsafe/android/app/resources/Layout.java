@@ -190,7 +190,7 @@ public class Layout {
 	  if (myView.getAttributes().size() > 0) {
 	      logger.info("Trying to add view {} ", myView.id);
 	      logger.debug("myView: {}", myView);
-	      ResourcesSoot.v().addViewAllocToInitLayout_ID(myView.id);
+	      ResourcesSoot.v().addUiAllocToInitLayout_ID(myView.id);
 	  }
   }
   

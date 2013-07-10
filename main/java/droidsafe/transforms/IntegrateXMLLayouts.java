@@ -230,7 +230,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				return;
 			}
 
-			SootMethod getViewMethod = ResourcesSoot.v().lookupGetView_ID(intId);
+			SootMethod getViewMethod = ResourcesSoot.v().lookupGetUi_ID(intId);
 
 			if (getViewMethod == null) {
 				logger.warn("NOT replacing {}, id={} ", stmt, String.format("0x%x", intId));
