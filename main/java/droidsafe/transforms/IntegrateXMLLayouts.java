@@ -358,6 +358,70 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			    logger.warn("with {} => NOT OK", lookupStmt);
 			}
 		}
+		
+		/**
+         * replaceFindFragment
+         *    replace findFragmentById invocation statement with replacement code that call getFragment_<id>
+         */
+		void replaceFindFragmentById(StmtBody stmtBody, Stmt stmt) {
+
+			// get body's unit as a chain
+			Chain<Unit> units = stmtBody.getUnits();
+
+			List<ValueBox> useBoxList = stmt.getUseBoxes();
+			List<ValueBox> defBoxList = stmt.getDefBoxes();
+
+			ValueBox callerObjectBox = useBoxList.get(0);
+			ValueBox idValueBox      = useBoxList.get(1);
+			ValueBox assignToBox = null;
+			
+			if (defBoxList != null && defBoxList.size() > 0)
+			    assignToBox = defBoxList.get(0);
+			
+			logger.debug("UseBoxes: {} ", stmt.getUseBoxes());
+			logger.debug("DefBoxes: {} ", stmt.getDefBoxes());
+
+			if (callerObjectBox == null || idValueBox == null) {
+				logger.warn("Couldnot get boxes for replacement "); 
+				return;
+			}
+
+			Integer intId;
+			
+			try {
+				intId = new Integer(idValueBox.getValue().toString());
+			}
+			catch (Exception ex) {
+				logger.warn("Couldn't replace {} ", stmt);
+				return;
+			}
+
+			SootMethod getViewMethod = ResourcesSoot.v().lookupGetView_ID(intId);
+
+			if (getViewMethod == null) {
+				logger.warn("NOT replacing {}, id={} ", stmt, String.format("0x%x", intId));
+				return;
+			}
+
+			Expr invokeExpr = Jimple.v().newStaticInvokeExpr(getViewMethod.makeRef(), callerObjectBox.getValue()); 
+			
+			Stmt lookupStmt; 
+			if (assignToBox != null)
+			    lookupStmt = Jimple.v().newAssignStmt(assignToBox.getValue(), invokeExpr);
+			else
+			    lookupStmt = Jimple.v().newInvokeStmt(invokeExpr);
+
+			try {
+			    units.swapWith(stmt, lookupStmt);
+			    logger.info("replacing {} ", stmt);
+			    logger.info("with {}, OK ", lookupStmt);
+			}
+			catch (Exception ex) {
+			    logger.warn("replacing {} ", stmt);
+			    logger.warn("with {} => NOT OK", lookupStmt);
+			}
+		}
+
 
 		/**
 		* This method is called by the v.transform() as part of soot framework
@@ -477,6 +541,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 						if (method.equals(resolved)) {
 							logger.warn(String.format("Found findFragmentById(): %s - %s\n", 
 									stmt, b.getMethod()));
+							replaceFindFragmentById(stmtBody, stmt);
 							break;
 						}
 					}

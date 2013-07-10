@@ -400,8 +400,8 @@ public class ResourcesSoot {
 
         // extract parameter
         mArgContext = 
-                Jimple.v().newLocal("paramContext",  RefType.v("android.app.Activity"));
-                //Jimple.v().newLocal("paramContext",  RefType.v("android.content.Context"));
+                //Jimple.v().newLocal("paramContext",  RefType.v("android.app.Activity"));
+                Jimple.v().newLocal("paramContext",  RefType.v("android.content.Context"));
         
         mViewLocal = Jimple.v().newLocal("view", RefType.v("android.view.View"));
         
