@@ -273,7 +273,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public int getCheckedItemCount(){
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 		
 		// Original method
 		/*
@@ -382,7 +382,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public int getChoiceMode(){
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 		
 		// Original method
 		/*
@@ -393,7 +393,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public void setChoiceMode(int choiceMode){
-		dsTaint.addTaint(choiceMode);
+		addTaint(choiceMode);
 		mChoiceMode = choiceMode;  //Preserved
 		
 		// Original method
@@ -453,7 +453,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public void setFastScrollEnabled(boolean enabled){
-		dsTaint.addTaint(enabled);
+		addTaint(enabled);
 		mFastScrollEnabled = enabled;  //Preserved
 		
 		// Original method
@@ -521,7 +521,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	@ViewDebug.ExportedProperty public boolean isFastScrollEnabled(){
-		return dsTaint.getTaintBoolean();
+		return getTaintBoolean();
 		
 		// Original method
 		/*
@@ -557,7 +557,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public void setSmoothScrollbarEnabled(boolean enabled){
-		dsTaint.addTaint(enabled);
+		addTaint(enabled);
 		mSmoothScrollbarEnabled = enabled;  //Preserved
 		
 		// Original method
@@ -570,7 +570,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	@ViewDebug.ExportedProperty public boolean isSmoothScrollbarEnabled(){
-		return dsTaint.getTaintBoolean();
+		return getTaintBoolean();
 		
 		// Original method
 		/*
@@ -637,7 +637,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	@ViewDebug.ExportedProperty public boolean isScrollingCacheEnabled(){
-		return dsTaint.getTaintBoolean();
+		return getTaintBoolean();
 		
 		// Original method
 		/*
@@ -648,7 +648,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public void setScrollingCacheEnabled(boolean enabled){
-		dsTaint.addTaint(enabled);
+		addTaint(enabled);
 		mScrollingCacheEnabled = enabled;  //Preserved
 		
 		// Original method
@@ -664,7 +664,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public void setTextFilterEnabled(boolean textFilterEnabled){
-		dsTaint.addTaint(textFilterEnabled);
+		addTaint(textFilterEnabled);
 		mTextFilterEnabled = textFilterEnabled;  //Preserved
 		
 		// Original method
@@ -677,7 +677,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	@ViewDebug.ExportedProperty public boolean isTextFilterEnabled(){
-		return dsTaint.getTaintBoolean();
+		return getTaintBoolean();
 		
 		// Original method
 		/*
@@ -720,7 +720,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	@ViewDebug.ExportedProperty public boolean isStackFromBottom(){
-		return dsTaint.getTaintBoolean();
+		return getTaintBoolean();
 		
 		// Original method
 		/*
@@ -1378,7 +1378,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public void setDrawSelectorOnTop(boolean onTop){
-		dsTaint.addTaint(onTop);
+		addTaint(onTop);
 		mDrawSelectorOnTop = onTop;  //Preserved
 		
 		// Original method
@@ -1426,14 +1426,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public Drawable getSelector(){
-		return (Drawable)dsTaint.getTaint();
-		
-		// Original method
-		/*
-		{
         return mSelector;
-    }
-		*/
 	}
 	
 	void keyPressed(){
@@ -1737,7 +1730,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	@Override protected ContextMenuInfo getContextMenuInfo(){
-		return (ContextMenuInfo)dsTaint.getTaint();
+		return (ContextMenuInfo)getTaint();
 		
 		// Original method
 		/*
@@ -1961,9 +1954,9 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public void setOverScrollEffectPadding(int leftPadding, int rightPadding){
-		dsTaint.addTaint(leftPadding);
+		addTaint(leftPadding);
 		mGlowPaddingLeft = leftPadding;  //Preserved
-		dsTaint.addTaint(rightPadding);
+		addTaint(rightPadding);
 		mGlowPaddingRight = rightPadding;  //Preserved
 		
 		// Original method
@@ -2288,7 +2281,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 		}
 		
 		void start(int position){
-			dsTaint.addTaint(position);
+			addTaint(position);
 			mTargetPos = position;  //Preserved
 			
 			// Original method
@@ -2297,9 +2290,9 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 		}
 		
 		void start(int position, int boundPosition){
-			dsTaint.addTaint(position);
+			addTaint(position);
 			mTargetPos = position;  //Preserved
-			dsTaint.addTaint(boundPosition);
+			addTaint(boundPosition);
 			mBoundPos = boundPosition;  //Preserved
 			
 			// Original method
@@ -2319,9 +2312,9 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 		}
 		
 		void startWithOffset(int position, int offset, int duration){
-			dsTaint.addTaint(position);
+			addTaint(position);
 			mTargetPos = position;  //Preserved
-			dsTaint.addTaint(offset);
+			addTaint(offset);
 			mOffsetFromTop = offset;  //Preserved
 			
 			// Original method
@@ -2364,7 +2357,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public void setVelocityScale(float scale){
-		dsTaint.addTaint(scale);
+		addTaint(scale);
 		mVelocityScale = scale;  //Preserved
 		
 		// Original method
@@ -2541,7 +2534,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	int reconcileSelectedPosition(){
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 		
 		// Original method
 		/*
@@ -2712,7 +2705,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	@Override protected boolean isInFilterMode(){
-		return dsTaint.getTaintBoolean();
+		return getTaintBoolean();
 		
 		// Original method
 		/*
@@ -2772,7 +2765,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public boolean hasTextFilter(){
-		return dsTaint.getTaintBoolean();
+		return getTaintBoolean();
 		
 		// Original method
 		/*
@@ -2879,7 +2872,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public void setTranscriptMode(int mode){
-		dsTaint.addTaint(mode);
+		addTaint(mode);
 		mTranscriptMode = mode;  //Preserved
 		
 		// Original method
@@ -2892,7 +2885,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public int getTranscriptMode(){
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 		
 		// Original method
 		/*
@@ -2903,7 +2896,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	@Override public int getSolidColor(){
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 		
 		// Original method
 		/*
@@ -2932,7 +2925,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	@ViewDebug.ExportedProperty(category="drawing") public int getCacheColorHint(){
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 		
 		// Original method
 		/*
@@ -3284,7 +3277,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 		private ArrayList<View> mCurrentScrap;
 		
 		public void setViewTypeCount(int viewTypeCount){
-			dsTaint.addTaint(viewTypeCount);
+			addTaint(viewTypeCount);
 			mViewTypeCount = viewTypeCount;  //Preserved
 			
 			// Original method
@@ -3370,7 +3363,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 		}
 		
 		void fillActiveViews(int childCount, int firstActivePosition){
-			dsTaint.addTaint(firstActivePosition);
+			addTaint(firstActivePosition);
 			mFirstActivePosition = firstActivePosition;  //Preserved
 			
 			// Original method

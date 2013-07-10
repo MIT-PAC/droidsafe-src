@@ -102,27 +102,26 @@ public class Intent implements Parcelable, Cloneable {
 	
 	@DSModeled(DSC.SAFE) // Marked as SPEC per the original implementation from MIT
 	public String getAction() {
-		return dsTaint.getTaintString();
-        //return mAction;
+		return mAction;
     }
 	
 	@DSModeled(value = DSC.SAFE)
 	public Intent setAction(String action) {
-		dsTaint.addTaint(action);
+		mAction = action;
         //mAction = action != null ? action.intern() : null;
         return this;
     }
 	
 	@DSModeled(value = DSC.SAFE)
 	public Intent addFlags(int flags) {
-        dsTaint.addTaint(flags);
+        addTaint(flags);
         return this;
     }
 	
 	@DSModeled(DSC.SAFE) // Marked as SPEC per the original implementation from MIT
 	public String getType() {
-            return mType;
-        }
+        return mType;
+    }
 	
 	@DSModeled(value = DSC.SAFE)
 	public Intent setType(String type) {
@@ -147,7 +146,7 @@ public class Intent implements Parcelable, Cloneable {
 	
 	@DSModeled(value = DSC.SAFE)
 	public ComponentName getComponent() {
-		return (ComponentName)dsTaint.getTaint();
+		return mComponent;
     }
 	
 	@DSModeled(value = DSC.SAFE)
@@ -159,7 +158,7 @@ public class Intent implements Parcelable, Cloneable {
 	@DSModeled(value = DSC.SAFE)
 	public void setAllowFds(boolean allowFds) {
 		// NOTE:  mExtras is a Bundle, perhaps it is best to push the taint down to that level
-		dsTaint.addTaint(allowFds);
+		addTaint(allowFds);
 		/*
         if (mExtras != null) {
             mExtras.setAllowFds(allowFds);
@@ -196,38 +195,26 @@ public class Intent implements Parcelable, Cloneable {
 	
 	@DSModeled(value = DSC.SAFE)
 	public String getPackage() {
-		//return mPackage;
-        return dsTaint.getTaintString();
+		return mPackage;
     }
 	
 	@DSModeled(value = DSC.SAFE)
 	public Intent setPackage(String packageName) {
-		dsTaint.addTaint(packageName);
-		/*
         if (packageName != null && mSelector != null) {
             throw new IllegalArgumentException(
                     "Can't set package name when selector is already set");
         }
         mPackage = packageName;
-        */
         return this;
     }
 	
 	@DSModeled(value = DSC.SAFE)
 	public Set<String> getCategories() {
-		/*
-		 * Since the initial tainting of the category data happens through
-		 * the controlled method "addCategory", this (hopefully) will produce
-		 * an effective model for a tainted string returned as a part of a Set
-		 * object
-		 */
-		HashSet<String> mCategories = new HashSet<String>();
-		mCategories.add(dsTaint.getTaintString());
 		return mCategories;
     }
 	
 	public Intent addCategory(String category) {
-		dsTaint.addTaint(category);
+		mCategories.addTaint(category.getTaint());
 		/*
         if (mCategories == null) {
             mCategories = new HashSet<String>();
@@ -246,7 +233,7 @@ public class Intent implements Parcelable, Cloneable {
 	
 	@DSModeled(value = DSC.SAFE)
 	public String getDataString() {
-		return dsTaint.getTaintString();
+		return mData.toString();
         //return mData != null ? mData.toString() : null;
     }
 }

@@ -134,9 +134,9 @@ public class Resources {
 	
 	public Resources(AssetManager assets, DisplayMetrics metrics,
             Configuration config, CompatibilityInfo compInfo){
-		//dsTaint.addTaint(assets);
+		//addTaint(assets.getTaint());
 		mAssets = assets;  //Preserved
-		//dsTaint.addTaint(compInfo);
+		//addTaint(compInfo.getTaint());
 		mCompatibilityInfo = compInfo;  //Preserved
 		/*
 		mAssets = assets;
@@ -942,7 +942,7 @@ public class Resources {
 	}
 	
 	public DisplayMetrics getDisplayMetrics(){
-		return (DisplayMetrics)dsTaint.getTaint();
+		return mMetrics;
 		
 		// Original method
 		/*
@@ -955,14 +955,7 @@ public class Resources {
 	}
 	
 	public Configuration getConfiguration(){
-		return (Configuration)dsTaint.getTaint();
-		
-		// Original method
-		/*
-		{
         return mConfiguration;
-    }
-		*/
 	}
 	
 	public CompatibilityInfo getCompatibilityInfo(){
@@ -978,7 +971,7 @@ public class Resources {
 	}
 	
 	public void setCompatibilityInfo(CompatibilityInfo ci){
-		//dsTaint.addTaint(ci);
+		//addTaint(ci.getTaint());
 		mCompatibilityInfo = ci;  //Preserved
 		
 		// Original method
@@ -1099,14 +1092,7 @@ public class Resources {
 	}
 	
 	public final AssetManager getAssets(){
-		return (AssetManager)dsTaint.getTaint();
-		
-		// Original method
-		/*
-		{
         return mAssets;
-    }
-		*/
 	}
 	
 	public final void flushLayoutCache(){

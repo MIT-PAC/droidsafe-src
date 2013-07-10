@@ -6,7 +6,9 @@ import droidsafe.annotations.DSModeled;
 public class Throwable implements java.io.Serializable {
 	
 	public String getMessage() {
-        return dsTaint.getTaintString();
+        String str = new String();
+        str.addTaint(getTaint());
+        return str;
     }
 	
 	@DSModeled(DSC.SAFE)
@@ -28,15 +30,15 @@ public class Throwable implements java.io.Serializable {
 	@DSModeled(DSC.SAFE)
 	public Throwable(String detailMessage) {
         this();
-        dsTaint.addTaint(detailMessage);
+        addTaint(detailMessage.getTaint());
         //this.detailMessage = detailMessage;
     }
 	
 	@DSModeled(DSC.SAFE)
 	public Throwable(String detailMessage, Throwable throwable) {
         this();
-        dsTaint.addTaint(detailMessage);
-        dsTaint.addTaint(throwable.getMessage());
+        addTaint(detailMessage.getTaint());
+        addTaint(throwable.getMessage().getTaint());
         //this.detailMessage = detailMessage;
         //cause = throwable;
     }

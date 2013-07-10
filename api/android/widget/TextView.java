@@ -141,8 +141,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
 	@DSModeled(DSC.SAFE)
 	private void setText(CharSequence text, BufferType type,
             boolean notifyBefore, int oldlen) {
-		dsTaint.addTaint(text.toString());
-		dsTaint.addTaint(type.toString());
+		addTaint(text.toString().getTaint());
+		addTaint(type.toString().getTaint());
 	}
 	
 	public enum BufferType {
@@ -163,6 +163,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
 	
 	@DSModeled(DSC.SAFE)
 	public CharSequence getText() {
-		return dsTaint.getTaintString();
+        String str = new String();
+        str.addTaint(getTaint());
+        return str;
     }
 }

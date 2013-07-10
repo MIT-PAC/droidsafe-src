@@ -1,0 +1,15 @@
+package java.lang;
+
+
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
+
+
+import java.util.Iterator;
+
+public interface Comparable<T> {
+
+    
+    int compareTo(T another);
+}

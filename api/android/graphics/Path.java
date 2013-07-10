@@ -38,19 +38,19 @@ public class Path {
         // within this object's mNativePath.  init2 is a native call,
         // so I conseratively assume this object's mNativePath is tainted 
         // with src.mNativePath 
-        dsTaint.addTaint(src.dsTaint);
+        addTaint(src.getTaint());
     }
    
     @DSModeled(DSC.SAFE) 
     public void arcTo(RectF oval, float startAngle, float sweepAngle) {
-        dsTaint.addTaint(oval.dsTaint);
-        dsTaint.addTaint(startAngle);
-        dsTaint.addTaint(sweepAngle);
+        addTaint(oval.getTaint());
+        addTaint(startAngle);
+        addTaint(sweepAngle);
     }
 
     @DSModeled()
     final int ni() {
-        return dsTaint.getTaintInt(); 
+        return getTaintInt(); 
     }
 
     @DSModeled(DSC.SAFE)

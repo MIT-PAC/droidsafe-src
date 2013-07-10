@@ -1,0 +1,116 @@
+package android.os;
+
+
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
+
+
+import java.util.Iterator;
+import android.util.Log;
+
+public abstract class CountDownTimer {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.067 -0400", hash_original_field = "941F81AFBDD565B8984476C31B2330CD", hash_generated_field = "55875BD3E9D866BEA2C437122061CD6E")
+
+    private long mMillisInFuture;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.067 -0400", hash_original_field = "0106771DE534CE1807699A3CEEBB34B8", hash_generated_field = "680815491847B69D8671F5F72C72E2CE")
+
+    private long mCountdownInterval;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.067 -0400", hash_original_field = "007FD2F712F3F4BB757AFA007EC35AB4", hash_generated_field = "6E03F58BFB699FC4A4C5B3CDD86B2F5D")
+
+    private long mStopTimeInFuture;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.068 -0400", hash_original_field = "5ACB42150E6910CF60F8ACA03F3FCF2B", hash_generated_field = "42F1EE03623FE9A5876F5AA26D4DF01A")
+
+    private Handler mHandler = new Handler() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.068 -0400", hash_original_method = "7B84927A7A341E4B7E3F8DD42DA9B8B6", hash_generated_method = "0C36A2A611F570EA11A2EE877F8B441B")
+        @Override
+        public void handleMessage(Message msg) {
+            {
+                Object var551173F8929BB98D218065CC95BB0441_260042709 = (CountDownTimer.this);
+                {
+                    final long millisLeft = mStopTimeInFuture - SystemClock.elapsedRealtime();
+                    {
+                        onFinish();
+                    } 
+                    {
+                        sendMessageDelayed(obtainMessage(MSG), millisLeft);
+                    } 
+                    {
+                        long lastTickStart = SystemClock.elapsedRealtime();
+                        onTick(millisLeft);
+                        long delay = lastTickStart + mCountdownInterval - SystemClock.elapsedRealtime();
+                        delay += mCountdownInterval;
+                        sendMessageDelayed(obtainMessage(MSG), delay);
+                    } 
+                } 
+            } 
+            addTaint(msg.getTaint());
+            
+            
+        }
+
+        
+};
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.068 -0400", hash_original_method = "64AD26CC4F853CBE40630E575971F568", hash_generated_method = "69D450A186CD7505D58D8F8FE3948720")
+    public  CountDownTimer(long millisInFuture, long countDownInterval) {
+        mMillisInFuture = millisInFuture;
+        mCountdownInterval = countDownInterval;
+        
+        
+        
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.068 -0400", hash_original_method = "668A5D3225CBBDE8895EF9129976DF1D", hash_generated_method = "CA4F31EEB98095DD1785A84FC0B8E1C5")
+    public final void cancel() {
+        mHandler.removeMessages(MSG);
+        
+        
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.069 -0400", hash_original_method = "9B88C24B384B8F4F3D5DCE994477E303", hash_generated_method = "339077580597F19C7A4E17CB5742BDE8")
+    public synchronized final CountDownTimer start() {
+        CountDownTimer varB4EAC82CA7396A68D541C85D26508E83_1314836445 = null; 
+        CountDownTimer varB4EAC82CA7396A68D541C85D26508E83_20643210 = null; 
+        {
+            onFinish();
+            varB4EAC82CA7396A68D541C85D26508E83_1314836445 = this;
+        } 
+        mStopTimeInFuture = SystemClock.elapsedRealtime() + mMillisInFuture;
+        mHandler.sendMessage(mHandler.obtainMessage(MSG));
+        varB4EAC82CA7396A68D541C85D26508E83_20643210 = this;
+        CountDownTimer varA7E53CE21691AB073D9660D615818899_1014187660; 
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: 
+                varA7E53CE21691AB073D9660D615818899_1014187660 = varB4EAC82CA7396A68D541C85D26508E83_1314836445;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1014187660 = varB4EAC82CA7396A68D541C85D26508E83_20643210;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1014187660.addTaint(getTaint()); 
+        return varA7E53CE21691AB073D9660D615818899_1014187660;
+        
+        
+            
+            
+        
+        
+        
+        
+    }
+
+    
+    public abstract void onTick(long millisUntilFinished);
+
+    
+    public abstract void onFinish();
+
+    
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.070 -0400", hash_original_field = "5892D4C854B350DEAD7AB30CDD2AB26D", hash_generated_field = "33207288B866F3DDE85211D1B4FA47BB")
+
+    private static final int MSG = 1;
+}
+

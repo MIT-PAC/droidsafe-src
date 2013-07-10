@@ -434,14 +434,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 	
 	public View getFocusedChild(){
-		return (View)dsTaint.getTaint();
-		
-		// Original method
-		/*
-		{
         return mFocused;
-    }
-		*/
 	}
 	
 	@Override public boolean hasFocus(){
@@ -2286,14 +2279,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 	
 	public LayoutTransition getLayoutTransition(){
-		return (LayoutTransition)dsTaint.getTaint();
-		
-		// Original method
-		/*
-		{
         return mTransition;
-    }
-		*/
 	}
 	
 	private void removeViewsInternal(int start, int count){
@@ -2570,14 +2556,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 	
 	public LayoutAnimationController getLayoutAnimation(){
-		return (LayoutAnimationController)dsTaint.getTaint();
-		
-		// Original method
-		/*
-		{
-        return mLayoutAnimationController;
-    }
-		*/
+		return mLayoutAnimationController;
 	}
 	
 	@ViewDebug.ExportedProperty public boolean isAnimationCacheEnabled(){
@@ -2684,7 +2663,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 	
 	@ViewDebug.ExportedProperty(category="drawing",mapping={@ViewDebug.IntToString(from=PERSISTENT_NO_CACHE,to="NONE"),@ViewDebug.IntToString(from=PERSISTENT_ANIMATION_CACHE,to="ANIMATION"),@ViewDebug.IntToString(from=PERSISTENT_SCROLLING_CACHE,to="SCROLLING"),@ViewDebug.IntToString(from=PERSISTENT_ALL_CACHES,to="ALL")}) public int getPersistentDrawingCache(){
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 		
 		// Original method
 		/*
@@ -2818,7 +2797,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	
 	@DSModeled(DSC.SAFE)
 	public int getChildCount(){
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 	}
 	
 	@DSModeled
@@ -3064,7 +3043,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 	
 	public Animation.AnimationListener getLayoutAnimationListener(){
-		return (Animation.AnimationListener)dsTaint.getTaint();
+		return (Animation.AnimationListener)getTaint();
 		
 		// Original method
 		/*
@@ -3412,13 +3391,13 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 		}
 		
 		public void setMargins(int left, int top, int right, int bottom){
-			dsTaint.addTaint(left);
+			addTaint(left);
 			leftMargin = left;  //Preserved
-			dsTaint.addTaint(top);
+			addTaint(top);
 			topMargin = top;  //Preserved
-			dsTaint.addTaint(right);
+			addTaint(right);
 			rightMargin = right;  //Preserved
-			dsTaint.addTaint(bottom);
+			addTaint(bottom);
 			bottomMargin = bottom;  //Preserved
 			
 			// Original method
@@ -3434,13 +3413,13 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 		}
 		
 		public void setMarginsRelative(int start, int top, int end, int bottom){
-			dsTaint.addTaint(start);
+			addTaint(start);
 			startMargin = start;  //Preserved
-			dsTaint.addTaint(top);
+			addTaint(top);
 			topMargin = top;  //Preserved
-			dsTaint.addTaint(end);
+			addTaint(end);
 			endMargin = end;  //Preserved
-			dsTaint.addTaint(bottom);
+			addTaint(bottom);
 			bottomMargin = bottom;  //Preserved
 			
 			// Original method
@@ -3456,7 +3435,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 		}
 		
 		public int getMarginStart(){
-			return dsTaint.getTaintInt();
+			return getTaintInt();
 			
 			// Original method
 			/*
@@ -3467,7 +3446,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 		}
 		
 		public int getMarginEnd(){
-			return dsTaint.getTaintInt();
+			return getTaintInt();
 			
 			// Original method
 			/*

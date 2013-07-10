@@ -17,14 +17,14 @@ public class ExifInterface {
 	
 	@DSModeled() //Decided to go with SPEC because in theory be used for covert data storage
 	private void loadAttributes() throws IOException {
-		dsTaint.addTaint("string attribute taint"); //Implicit taint for getAttribute
-		dsTaint.addTaint(-1); //Implicit taint for getAttributeInt
-		//dsTaint.addTaint(-2); //Implicit taint for getAttributeDouble
+		addTaint("string attribute taint".getTaint()); //Implicit taint for getAttribute
+		//addTaint(-1.getTaint()); //Implicit taint for getAttributeInt
+		//addTaint(-2.getTaint()); //Implicit taint for getAttributeDouble
 	}
 	
 	@DSModeled(value = DSC.SAFE)
 	public ExifInterface(String filename) throws IOException {
-		dsTaint.addTaint(filename);
+		addTaint(filename.getTaint());
         //mFilename = filename;
 		/*
 		 * DSFIXME:  loadAttributes will parse and load values obtained from a
@@ -41,19 +41,21 @@ public class ExifInterface {
 	
 	@DSModeled(value = DSC.SPEC)
 	public String getAttribute(String tag) {
-		return dsTaint.getTaintString();
+        String str = new String();
+        str.addTaint(getTaint());
+        return str;
         //return mAttributes.get(tag);
     }
 	
 	public int getAttributeInt(String tag, int defaultValue) {
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 	}
 	
 	/*
 	 * Not quite sure how to model this, but nothing is calling it (yet) so
 	 * we'll hold off on this.
 	public double getAttributeDouble(String tag, double defaultValue) {
-		return (double)dsTaint.getTaintInt();
+		return (double)getTaintInt();
 	}
 	*/
 }

@@ -141,7 +141,7 @@ public class MessageQueue {
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         //Message prev = null;
         nativeWake(mPtr);
-        return dsTaint.getTaintBoolean();
+        return getTaintBoolean();
 
         // Original method
         /* Original Method Too Long, Refer to Original Implementation */
@@ -161,7 +161,7 @@ public class MessageQueue {
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         //Message nn = n.next;
         n.recycle();
-        return dsTaint.getTaintBoolean();
+        return getTaintBoolean();
 
         // Original method
         /* Original Method Too Long, Refer to Original Implementation */

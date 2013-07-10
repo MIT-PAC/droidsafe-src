@@ -683,7 +683,7 @@ public class Matrix {
 	}
 	
 	final int ni(){
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 		
 		// Original method
 		/*
