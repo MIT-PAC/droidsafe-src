@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2006 The Android Open Source Project
+ * Copyright (C) 2007 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,21 +14,14 @@
  * limitations under the License.
  */
 
-package android.app;
+package droidsafe.concrete;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-
-import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.BroadcastReceiver;
 import android.content.IntentSender;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
@@ -40,56 +33,32 @@ import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
-import android.hardware.SensorManager;
-import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
-import droidsafe.concrete.DroidSafeContentResolver;
-import android.telephony.TelephonyManager;
 
-/**
- * A mock {@link android.content.Context} class.  All methods are non-functional and throw 
- * {@link java.lang.UnsupportedOperationException}.  You can use this to inject other dependencies,
- * mocks, or monitors into the classes you are testing.
- */
-public class ContextImpl extends Context {
-	private DroidSafeContentResolver contentResolver;
-	private SensorManager sensorManager;
-	
-	@DSModeled
-	public ContextImpl() {
-		contentResolver = new DroidSafeContentResolver(this);
-		sensorManager = new SensorManager();
-	}
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
+public class DroidSafeContext extends Context {
 
-	@Override
-	@DSModeled(value = DSC.SAFE)
-    public Object getSystemService(String name) {
-    	if (Context.SENSOR_SERVICE.equals(name)) {
-    		return sensorManager;
-    	} else if ("Service".equals(name)) {
-    		return new LocationManager(null);
-    	} else if (Context.TELEPHONY_SERVICE.equals(name)) {
-            return new TelephonyManager(this);
-        }
-        else 
-    		return new Object();
-	}
-    
+    public DroidSafeContext() {
+
+    }
+
     @Override
     public AssetManager getAssets() {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    @DSModeled()
     public Resources getResources() {
-        return Resources.getSystem();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -98,9 +67,8 @@ public class ContextImpl extends Context {
     }
 
     @Override
-    @DSModeled
     public ContentResolver getContentResolver() {
-        return contentResolver;
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -143,15 +111,14 @@ public class ContextImpl extends Context {
         throw new UnsupportedOperationException();
     }
 
-    /** @hide */
     @Override
-    public File getSharedPrefsFile(String name) {
+    public String getPackageCodePath() {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public String getPackageCodePath() {
-        throw new UnsupportedOperationException();
+    public File getSharedPrefsFile(String name) {
+        return null;
     }
 
     @Override
@@ -333,11 +300,9 @@ public class ContextImpl extends Context {
         throw new UnsupportedOperationException();
     }
 
-    @DSModeled(DSC.SPEC)
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
-    	receiver.onReceive(this, new Intent());
-    	return null; // no 'sticky' intents need to be modeled for coverage
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -375,7 +340,12 @@ public class ContextImpl extends Context {
     public boolean startInstrumentation(ComponentName className,
             String profileFile, Bundle arguments) {
         throw new UnsupportedOperationException();
-  }
+    }
+
+    @Override
+    public Object getSystemService(String name) {
+        throw new UnsupportedOperationException();
+    }
 
     @Override
     public int checkPermission(String permission, int pid, int uid) {

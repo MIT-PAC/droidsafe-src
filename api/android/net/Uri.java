@@ -43,9 +43,9 @@ public class Uri {
 	
 	 
 	@DSModeled(DSC.SAFE)
-    public static Uri parse(String uriString) {
-        return new Uri(uriString);
-    }
+        public static Uri parse(String uriString) {
+            return new Uri(uriString);
+        }
 
 	@DSModeled()
 	public int describeContents() {
