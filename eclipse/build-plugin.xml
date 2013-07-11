@@ -1,16 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project name="generateBuildFiles" default="build">
 
+
+  <!-- <property name="target.eclipse.platform"  value="/home/becker/eclipse42/eclipse"/>  -->
+  <!-- <property name="eclipse.plugin.location"  value="."/>  -->
+
   <condition property="properties.file.found">
     <available file="${eclipse.plugin.location}/build.properties" />
   </condition>
 
+  <target name="check-eclipse-home" description="Verify if needed eclipse files exist"
+          depends="load-build-properties">
+    <condition property="eclipse.home.available">
+        <available file="${target.eclipse.platform}" property="eclipse.folder.found"/>
+    </condition>
+    <echo> Eclipse Home Available = ${eclipse.home.available} </echo>
+    <echo> Eclipse Home           = ${target.eclipse.platform} </echo>
+  </target>
+
+
+ <target name="set-eclipse-build-path" description="Sets the paths for eclipse build files"
+          depends="check-eclipse-home" if="eclipse.home.available">
+   <fileset id="eclipse.launcher.jar" dir="${target.eclipse.platform}" includes="plugins/org.eclipse.equinox.launcher_*.jar"/>
+   <dirset id="eclipse.pde.build" dir="${target.eclipse.platform}"    includes="plugins/org.eclipse.pde.build*"/>
+   <pathconvert property="target.eclipse.ant.launcher" refid="eclipse.launcher.jar" />
+   <pathconvert property="target.eclipse.pde.plugin" refid="eclipse.pde.build" />
+   <echo> eclipse home      = ${target.eclipse.platform} </echo>
+   <echo> eclipse launcher  = ${target.eclipse.ant.launcher} </echo>
+   <echo> eclipse pde build = ${target.eclipse.pde.plugin} </echo>
+ </target>
+
 
   <target name="check-eclipse-build-files" description="Verify if needed eclipse files exist"
-          depends="load-build-properties">
+          depends="set-eclipse-build-path" if="eclipse.home.available">
     <condition property="eclipse.build.available">
       <and>
-        <available file="${target.eclipse.platform}" property="eclipse.folder.found"/>
         <available file="${target.eclipse.ant.launcher}" property="eclipse.launcher.found"/>
         <available file="${target.eclipse.pde.plugin}" property="eclipse.builder.found"/>
       </and>
@@ -33,24 +57,10 @@
     <echo>
       Build file missing correct paths to eclipse jar files and scripts needed to build and deploy the plugin. 
       Edit file APAC_HOME/src/eclipse/build.properties and make sure properties 
-      target.eclipse.platform, 
-      target.eclipse.ant.launcher, and
-      target.eclipse.pde.plugin point to the correct folder. 
+      target.eclipse.platform points to the correct folder where eclipse is installed.
 
       target.eclipse.platform should point to the root folder of your eclipse distribution. 
       This folder should have the plugins folder in it. 
-
-      target.eclipse.ant.launcher should point to the correct version of the equinox launcher. 
-      In the eclipse distribution plugin folder, look for org.eclipse.equinox.launcher* and 
-      copy that value with the correct version number to the build.properties file.
-      For example:
-      target.eclipse.ant.launcher=${target.eclipse.platform}/plugins/org.eclipse.equinox.launcher_1.3.0.v20120522-1813.jar
-
-      target.eclipse.pde.plugin should point to the location of the eclipse pde plugin folder. 
-      In the eclipse distribution plugin folder, look for org.eclipse.pde.buikd* and 
-      copy that value with the correct version number to the build.properties file.
-      For example:
-      target.eclipse.pde.plugin=${target.eclipse.platform}/plugins/org.eclipse.pde.build_3.8.2.v20121114-140810
     </echo>
   </target>
 

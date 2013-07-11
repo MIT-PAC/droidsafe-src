@@ -2,7 +2,8 @@
 <?eclipse version="3.4"?>
 <plugin>
 
-   <extension point="org.eclipse.ui.commands">
+   <extension
+         point="org.eclipse.ui.commands">
       <command
             defaultHandler="droidsafe.eclipse.plugin.core.commands.GenerateSecuritySpecHandler"
             description="Run the droidsafe analysis on selected Android project"
@@ -26,6 +27,12 @@
             description="Remove all droidsafe markers from project files"
             id="droidsafe.eclipse.plugin.core.commands.CleanMarkers"
             name="Clean Markers">
+      </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.AddMarkers"
+            description="Add droidsafe markers to project files"
+            id="droidsafe.eclipse.plugin.core.commands.AddMarkers"
+            name="Add Markers">
       </command>      
       <command
             defaultHandler="droidsafe.eclipse.plugin.core.commands.SortOutlineView"
@@ -114,6 +121,11 @@
             </class>
          </state>
       </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.OpenOutlineView"
+            id="droidsafe.eclipse.plugin.core.commands.OpenOutlineView"
+            name="Show Droidsafe View">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.menus">
@@ -138,6 +150,11 @@
             <command
                   commandId="droidsafe.eclipse.plugin.core.commands.CleanMarkers"
                   label="Remove Droidsafe Markers"
+                  style="push">
+            </command>
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.AddMarkers"
+                  label="Add Droidsafe Markers"
                   style="push">
             </command>            
          </menu>
@@ -359,6 +376,21 @@
                label="Refresh Outline View"
                style="push">
          </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar">
+         <toolbar
+               id="droidsafe.eclipse.plugin.core.main.toolbar"
+               label="Droidsafe Toolbar">
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.OpenOutlineView"
+                  icon="icons/android.png"
+                  label="Open Droidsafe View"
+                  style="push"
+                  tooltip="Open Droidsafe Spec Outline">
+            </command>
+         </toolbar>
       </menuContribution>
    </extension>
    <extension
