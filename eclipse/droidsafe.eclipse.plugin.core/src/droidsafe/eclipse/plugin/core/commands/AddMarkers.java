@@ -14,8 +14,8 @@ import org.slf4j.LoggerFactory;
 
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 
-public class CleanMarkers extends AbstractHandler {
-  private static final Logger logger = LoggerFactory.getLogger(CleanMarkers.class);
+public class AddMarkers extends AbstractHandler {
+  private static final Logger logger = LoggerFactory.getLogger(AddMarkers.class);
 
   @Override
   public Object execute(ExecutionEvent event) throws ExecutionException {
@@ -30,7 +30,7 @@ public class CleanMarkers extends AbstractHandler {
         IProject project = res.getProject();
         if (project != null) {
           logger.debug("Project found: " + project.getName());
-          DroidsafePluginUtilities.removeAllDroidsafeMarkers(project);
+          DroidsafePluginUtilities.generateMarkersForSecuritySpecification(project);
         }
       }
     }

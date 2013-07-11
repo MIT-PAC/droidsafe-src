@@ -52,7 +52,7 @@ public class SecuritySpecModel extends ModelChangeSupport
   /**
    * The logger object for this class.
    */
-  @SuppressWarnings("unused")
+  //@SuppressWarnings("unused")
   private static final Logger logger = LoggerFactory.getLogger(SecuritySpecModel.class);
 
   /**
