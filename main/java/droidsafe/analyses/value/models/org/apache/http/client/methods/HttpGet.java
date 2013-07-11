@@ -41,12 +41,12 @@ public class HttpGet extends HttpRequestBase {
          */
     }
 
-    //@Override
-    public String getMethod() {
-        __ds__invalidate();
-        return null;
-        /*
-        return METHOD_NAME;
-        */
-    }
+//    @Override
+//    public String getMethod() {
+//        __ds__invalidate();
+//        return null;
+//        /*
+//        return METHOD_NAME;
+//        */
+//    }
 }
