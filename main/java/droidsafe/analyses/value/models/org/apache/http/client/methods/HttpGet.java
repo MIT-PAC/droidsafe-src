@@ -33,7 +33,7 @@ public class HttpGet extends HttpRequestBase {
     public void _init_(final Set<String> uri) {
         super._init_();
         if (!this.uri.string.containsAll(uri)) {
-            setURI(URI.create(uri));
+            setURI(new URI(uri));
         }
         /*
         super();
