@@ -19,9 +19,11 @@ import java.util.Collection;
 import java.util.Enumeration;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.HashSet;
 
 import org.apache.commons.io.*;
 
@@ -77,6 +79,16 @@ public class Project {
     private Set<String> genClasses;
     /** Class loader for loading modeled classes */
     private ClassLoader javaAppClassLoader;
+    
+    /** 
+     * Any jar files in this list that are found in lib/ will not be loaded by droidsafe,
+     * thus any classes are not analyzed, it is used because we now consider
+     * these packages as part of the API.
+     */
+    private static final Set<String> IGNORE_LIB_JARS = new HashSet<String>() 
+        {{
+            add("android-support-v4.jar");                                      
+        }};
 
     static {
         project = new Project();
@@ -225,6 +237,14 @@ public class Project {
         Collection<File> appLibJars = new ArrayList<File>();
         if (this.appLibDir.exists())
             appLibJars = FileUtils.listFiles(this.appLibDir, new String[]{"jar"}, true);
+        
+        //filter out jar files that are modeled as api classes
+        for (Iterator<File> it = appLibJars.iterator(); it.hasNext(); ) {
+            File file = it.next();
+            if (IGNORE_LIB_JARS.contains(FilenameUtils.getName(file.toString()))) 
+                it.remove();
+        }
+        
         return appLibJars;
     }
 
