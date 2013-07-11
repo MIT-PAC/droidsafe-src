@@ -123,7 +123,7 @@ public class ValueAnalysis {
     //==================================================================================================================
 
     /** Set of methods to not invalidate */
-    private Set<String> signatureOfMethodsToStepThru = new HashSet<String>(
+    private Set<String> signaturesOfMethodsToStepThru = new HashSet<String>(
     Arrays.asList("<android.app.Activity: void startActivityForResult(android.content.Intent,int)>", 
                   "<android.app.Activity: void onActivityResult(int,int,android.content.Intent)>",
                   "<droidsafe.helpers.DSUtils: void translateIntent(android.content.Intent,android.content.Intent)>",
@@ -507,7 +507,7 @@ public class ValueAnalysis {
             // If we don't have the method market as one we will step through, that means we haven't modeled it at all
             // and thus the receiver and argument models 
            String methodSignature = sootMethod.getSignature();
-           if(!this.signatureOfMethodsToStepThru.contains(methodSignature)) {
+           if(!this.signaturesOfMethodsToStepThru.contains(methodSignature)) {
                 String error = "The InvokeExpr " + invokeExpr + this.sourceLocation + " hasn't been modeled: " 
                     + e.toString() + "\n";
                 error += Throwables.getStackTraceAsString(e);

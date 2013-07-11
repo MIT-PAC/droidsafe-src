@@ -110,6 +110,22 @@ To model a method, start by copying it's implementation in the [android
 source](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/4.0.3_r1/android). Then
 follow the set of rules below -
 
+### Factory Methods
+
+* Factory methods should not be modeled, but instead added to the set of methods that will be walked through, in 
+  ValueAnalysis.signaturesOfMethodsToStepThru.
+
+* Calls to factory methods in other modeled methods should be replaced by calls to the appropriate constructor.
+
+### Exceptions
+
+* Exceptions should be stripped, but their effects modeled conservatively. In other words, statements in try and catch 
+  blocks should simply follow one another.
+
+* "throws" statements on methods should be stripped.
+
+### Constructors
+
 * Constructors should be methods with return type void and name _init_
 
 * Only the parts of the method that modify a security-sensitive attribute of the model should be kept.
