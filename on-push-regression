@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-: ${APAC_HOME:?"Need to APAC_HOME"}
+: ${APAC_HOME:?"Need to define APAC_HOME"}
 
 $APAC_HOME/system-tests/regtest.py -threads 4 -timeout 3600 -file $APAC_HOME/system-tests/test-suites/on-commit.py
