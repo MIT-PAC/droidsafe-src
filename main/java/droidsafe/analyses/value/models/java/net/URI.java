@@ -25,7 +25,7 @@ public final class URI extends ValueAnalysisModeledObject {
 //    }
 
     // need this - called by the static method create(Set<String>) in this model
-    public URI(Set<String> spec) throws URISyntaxException {
+    public URI(Set<String> spec) {
         this.string.addAll(spec);
         /*
         parseURI(spec, false);
@@ -37,7 +37,7 @@ public final class URI extends ValueAnalysisModeledObject {
      *
      * @param spec a URI whose illegal characters have all been encoded.
      */
-    public void _init_(Set<String> spec) throws URISyntaxException {
+    public void _init_(Set<String> spec) {
         this.string.addAll(spec);
         /*
         parseURI(spec, false);
@@ -585,28 +585,6 @@ public final class URI extends ValueAnalysisModeledObject {
 //        return 0;
 //        */
 //    }
-
-    /**
-     * Returns the URI formed by parsing {@code uri}. This method behaves
-     * identically to the string constructor but throws a different exception
-     * on failure. The constructor fails with a checked {@link
-     * URISyntaxException}; this method fails with an unchecked {@link
-     * IllegalArgumentException}.
-     */
-    public static URI create(Set<String> uri) {
-        try {
-            return new URI(uri);
-        } catch (URISyntaxException e) {
-            throw new IllegalArgumentException(e.getMessage());
-        }
-        /*
-        try {
-            return new URI(uri);
-        } catch (URISyntaxException e) {
-            throw new IllegalArgumentException(e.getMessage());
-        }
-        */
-    }
 
 //    private URI duplicate() {
 //        __ds__invalidate();
