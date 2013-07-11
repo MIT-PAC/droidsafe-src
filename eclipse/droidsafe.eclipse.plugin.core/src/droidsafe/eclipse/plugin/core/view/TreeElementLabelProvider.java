@@ -89,6 +89,23 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
    */
   // @Override
   public String getText(Object element) {
+    if (element instanceof TreeElement<?, ?>) {
+      Object data = ((TreeElement<?, ?>) element).getData();
+      if (data instanceof MethodModel) {
+        MethodModel method = (MethodModel) data;
+        String receiver = (method.getReceiver() == null) ? "" : "\n" + method.getReceiver();
+        if (!useShortSignatureForMethods) {
+          return method.getSignature() + receiver;
+        } else {
+          return method.getShortSignature() + receiver;
+        }
+      }
+    }
+    return element.toString();
+  }
+
+
+  public String getText_Saved(Object element) {
     if (!useShortSignatureForMethods) {
       if (element instanceof TreeElement<?, ?>) {
         Object data = ((TreeElement<?, ?>) element).getData();
@@ -99,7 +116,6 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
     }
     return element.toString();
   }
-
 
   public String getToolTipText(Object obj) {
     if (obj instanceof TreeElement<?, ?>) {
@@ -199,7 +215,7 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
         MethodModel method = (MethodModel) data;
         if (method.isSafe()) {
           styledString.setStyle(0, styledString.length(), STRIKEOUT);
-        } else if (!method.getPermissions().isEmpty()) {
+        } else if (method.getPermissions() != null && !method.getPermissions().isEmpty()) {
           styledString.setStyle(0, styledString.length(), BOLD);
           // cell.setForeground(RED);
         }

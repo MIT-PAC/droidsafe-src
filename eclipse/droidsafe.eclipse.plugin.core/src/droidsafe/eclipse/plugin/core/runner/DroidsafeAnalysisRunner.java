@@ -78,6 +78,11 @@ import droidsafe.utils.SourceLocationTag;
 public class DroidsafeAnalysisRunner extends Main {
   private static final Logger logger = LoggerFactory.getLogger(DroidsafeAnalysisRunner.class);
 
+  /**
+   * Id for the markers to be added to the Android app files.
+   */
+  public final String DROIDSAFE_MARKER_ID = Activator.PLUGIN_ID + ".droidsafemarker";
+
   IProject project;
 
   public DroidsafeAnalysisRunner(IProject project) {
@@ -542,10 +547,10 @@ public class DroidsafeAnalysisRunner extends Main {
    * @param spec
    */
   private void generateMarkersForSecuritySpecification(SecuritySpecModel spec) {
-    String markerId = Activator.PLUGIN_ID + ".droidsafemarker";
+
     IMarker markers[];
     try {
-      markers = this.project.findMarkers(markerId, true, IResource.DEPTH_INFINITE);
+      markers = this.project.findMarkers(DROIDSAFE_MARKER_ID, true, IResource.DEPTH_INFINITE);
       for (IMarker marker : markers) {
         marker.delete();
       }
@@ -565,19 +570,32 @@ public class DroidsafeAnalysisRunner extends Main {
           int lineNbr = line.getLine() - 1;
           if (file.exists()) {
             try {
-              IMarker marker = file.createMarker(markerId);
-              marker.setAttribute(IMarker.LINE_NUMBER, lineNbr);
-              marker.setAttribute(IMarker.MESSAGE, inputMethod.getShortSignature());
-              marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_INFO);
-              marker.setAttribute("methodName", inputMethod.getMethodName());
-              marker.setAttribute("methodClass", inputMethod.getClassName());
+              addMarkerForMethod(inputMethod, file, inputMethod.getShortSignature(), lineNbr);
+              addMarkerForMethod(inputMethod, file, inputMethod.getSignature(), lineNbr);
+              if (inputMethod.getReceiver()!=null){
+                addMarkerForMethod(inputMethod, file, inputMethod.getReceiver(), lineNbr);
+              }
+              if (inputMethod.getPermissions() != null) {
+                for (String permission : inputMethod.getPermissions()) {
+                  String message = "Permission: " + permission;
+                  addMarkerForMethod(inputMethod, file, message, lineNbr);
+                }
+              }
 
-              marker = file.createMarker(markerId);
-              marker.setAttribute(IMarker.LINE_NUMBER, lineNbr);
-              marker.setAttribute(IMarker.MESSAGE, inputMethod.getSignature());
-              marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_INFO);
-              marker.setAttribute("methodName", inputMethod.getMethodName());
-              marker.setAttribute("methodClass", inputMethod.getClassName());
+
+              // IMarker marker = file.createMarker(DROIDSAFE_MARKER_ID);
+              // marker.setAttribute(IMarker.LINE_NUMBER, lineNbr);
+              // marker.setAttribute(IMarker.MESSAGE, inputMethod.getShortSignature());
+              // marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_INFO);
+              // marker.setAttribute("methodName", inputMethod.getMethodName());
+              // marker.setAttribute("methodClass", inputMethod.getClassName());
+              //
+              // marker = file.createMarker(DROIDSAFE_MARKER_ID);
+              // marker.setAttribute(IMarker.LINE_NUMBER, lineNbr);
+              // marker.setAttribute(IMarker.MESSAGE, inputMethod.getSignature());
+              // marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_INFO);
+              // marker.setAttribute("methodName", inputMethod.getMethodName());
+              // marker.setAttribute("methodClass", inputMethod.getClassName());
 
             } catch (CoreException ex) {
               ex.printStackTrace();
@@ -594,29 +612,45 @@ public class DroidsafeAnalysisRunner extends Main {
               int lineNbr = location.getLine();
               if (file.exists()) {
                 try {
-                  IMarker marker = file.createMarker(markerId);
-                  marker.setAttribute(IMarker.LINE_NUMBER, lineNbr);
-                  marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_INFO);
-                  marker.setAttribute("methodName", outputMethod.getMethodName());
-                  marker.setAttribute("methodClass", outputMethod.getClassName());
-                  marker.setAttribute(IMarker.MESSAGE, outputMethod.getShortSignature());
-
-                  marker = file.createMarker(markerId);
-                  marker.setAttribute(IMarker.LINE_NUMBER, lineNbr);
-                  marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_INFO);
-                  marker.setAttribute("methodName", inputMethod.getMethodName());
-                  marker.setAttribute("methodClass", inputMethod.getClassName());
-                  marker.setAttribute(IMarker.MESSAGE, outputMethod.getSignature());
-
+                  addMarkerForMethod(outputMethod, file, outputMethod.getShortSignature(), lineNbr);
+                  addMarkerForMethod(outputMethod, file, outputMethod.getSignature(), lineNbr);
+                  if (outputMethod.getPermissions() != null) {
+                    for (String permission : outputMethod.getPermissions()) {
+                      String message = "Permission: " + permission;
+                      addMarkerForMethod(outputMethod, file, message, lineNbr);
+                    }
+                  }
+                  if (outputMethod.getReceiver()!=null){
+                    addMarkerForMethod(outputMethod, file, outputMethod.getReceiver(), lineNbr);
+                  }
                   List<HotspotModel> hotspots = location.getHotspots();
                   for (HotspotModel hotspot : hotspots) {
-                    marker = file.createMarker(markerId);
-                    marker.setAttribute(IMarker.LINE_NUMBER, lineNbr);
-                    marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_INFO);
-                    marker.setAttribute("methodName", inputMethod.getMethodName());
-                    marker.setAttribute("methodClass", inputMethod.getClassName());
-                    marker.setAttribute(IMarker.MESSAGE, hotspot.toString());
+                    addMarkerForMethod(outputMethod, file, hotspot.toString(), lineNbr);
                   }
+                  
+                  // IMarker marker = file.createMarker(DROIDSAFE_MARKER_ID);
+                  // marker.setAttribute(IMarker.LINE_NUMBER, lineNbr);
+                  // marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_INFO);
+                  // marker.setAttribute("methodName", outputMethod.getMethodName());
+                  // marker.setAttribute("methodClass", outputMethod.getClassName());
+                  // marker.setAttribute(IMarker.MESSAGE, outputMethod.getShortSignature());
+                  //
+                  // marker = file.createMarker(DROIDSAFE_MARKER_ID);
+                  // marker.setAttribute(IMarker.LINE_NUMBER, lineNbr);
+                  // marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_INFO);
+                  // marker.setAttribute("methodName", outputMethod.getMethodName());
+                  // marker.setAttribute("methodClass", outputMethod.getClassName());
+                  // marker.setAttribute(IMarker.MESSAGE, outputMethod.getSignature());
+                  //
+                  // List<HotspotModel> hotspots = location.getHotspots();
+                  // for (HotspotModel hotspot : hotspots) {
+                  // marker = file.createMarker(DROIDSAFE_MARKER_ID);
+                  // marker.setAttribute(IMarker.LINE_NUMBER, lineNbr);
+                  // marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_INFO);
+                  // marker.setAttribute("methodName", outputMethod.getMethodName());
+                  // marker.setAttribute("methodClass", outputMethod.getClassName());
+                  // marker.setAttribute(IMarker.MESSAGE, hotspot.toString());
+                  // }
                 } catch (CoreException ex) {
                   ex.printStackTrace();
                 }
@@ -626,6 +660,16 @@ public class DroidsafeAnalysisRunner extends Main {
         }
       }
     }
+  }
+
+  private void addMarkerForMethod(MethodModel method, IFile file, String message, int lineNbr)
+      throws CoreException {
+    IMarker marker = file.createMarker(DROIDSAFE_MARKER_ID);
+    marker.setAttribute(IMarker.LINE_NUMBER, lineNbr);
+    marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_INFO);
+    marker.setAttribute("methodName", method.getMethodName());
+    marker.setAttribute("methodClass", method.getClassName());
+    marker.setAttribute(IMarker.MESSAGE, message);
   }
 
   public static void exit(int status) {

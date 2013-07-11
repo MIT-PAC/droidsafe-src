@@ -14,6 +14,7 @@ import soot.Type;
 import droidsafe.android.system.Permissions;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.speclang.ArgumentValue;
+import droidsafe.speclang.ConcreteListArgumentValue;
 import droidsafe.speclang.Method;
 import droidsafe.utils.SourceLocationTag;
 
@@ -108,6 +109,13 @@ public class MethodModel extends ModelChangeSupport
   private Set<String> permissions;
 
   /**
+   * The receiver of the method call.
+   */
+  private String receiver;
+
+
+
+  /**
    * Main constructor.
    * 
    * @param originalMethod The droidsafe method we are modeling.
@@ -121,6 +129,12 @@ public class MethodModel extends ModelChangeSupport
     this.declarationLocation = originalMethod.getDeclSourceLocation();
     this.methodShortSignature = computeShortSignature(originalMethod);
     this.permissions = Permissions.v().getPermissions(originalMethod.getSootMethod());
+    if (originalMethod.hasReceiver()) {
+      Object receiver = originalMethod.getReceiver();
+      if (receiver instanceof ConcreteListArgumentValue){
+      this.receiver = receiver.toString();
+      }
+    }
     for (SourceLocationTag line : originalMethod.getLines()) {
       this.lines.add(new CodeLocationModel(line));
     }
@@ -218,6 +232,14 @@ public class MethodModel extends ModelChangeSupport
    */
   public Set<String> getPermissions() {
     return this.permissions;
+  }
+
+
+  /**
+   * @return the receiver object string representation.
+   */
+  public String getReceiver() {
+    return this.receiver;
   }
 
   /**
