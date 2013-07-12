@@ -903,11 +903,11 @@ public class ResourcesSoot {
     }
     
     /**
-     * add getString_ID()
+     * add getStringOrText_ID()
      * @param intId
      * @return
      */
-    public SootMethod addGetString_ID(Integer intId) {
+    public SootMethod addGetCharSequence_ID(Integer intId) {
     	SootField sootField = createStringMember(intId); 
     	if (sootField == null)  {
     		logger.warn("Cannot create String field for {} ", String.format("%x", intId));
@@ -927,7 +927,7 @@ public class ResourcesSoot {
 
     	RefType returnType = (RefType) sootField.getType(); 
 
-    	String methodName = "getString_" + String.format("%x", intId);
+    	String methodName = "getCharSequence_" + String.format("%x", intId);
 
     	SootMethod method = null;
     	

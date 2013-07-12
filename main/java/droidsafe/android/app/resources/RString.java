@@ -29,4 +29,8 @@ public class RString extends BaseElement {
     this.source = source;
     this.value = value;
   }
+  
+  public RString(String value) {
+	  this.value = value;
+  }
 }

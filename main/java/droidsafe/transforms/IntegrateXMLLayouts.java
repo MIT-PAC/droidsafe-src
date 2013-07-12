@@ -59,7 +59,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 		        "android.app.Activity", "android.app.Dialog", "android.view.Window" 
 		    };
 		
-		private final String[] getStringClasses = new String[] {
+		private final String[] getStringAndGetTextClasses = new String[] {
 				"android.content.res.Resources", "android.app.Fragment",
 				"android.content.Context", "android.support.v4.app.Fragment"
 			};
@@ -106,8 +106,18 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			}
 			
 			// getString
-			for (String className: getStringClasses){
+			for (String className: getStringAndGetTextClasses){
 			    String methodName = String.format("<%s: java.lang.String getString(int)>",
+			                               className);
+			    try {
+			    	SootMethod method = Scene.v().getMethod(methodName); 
+			    	getStringList.add(method);			    
+			    	logger.debug("getString: {} ", method);
+			    } catch (Exception ex) {
+			    	logger.info("method {} not in soot scene ", methodName);
+			    }
+			    
+			    methodName = String.format("<%s: java.lang.CharSequence getText(int)>",
 			                               className);
 			    try {
 			    	SootMethod method = Scene.v().getMethod(methodName); 
@@ -230,7 +240,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 		 * @param stmtBody
 		 * @param stmt
 		 */
-		void replaceGetString(StmtBody stmtBody, Stmt stmt) {
+		void replaceGetCharSequence(StmtBody stmtBody, Stmt stmt) {
 
 			// get body's unit as a chain
 			Chain<Unit> units = stmtBody.getUnits();
@@ -264,10 +274,11 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				return;
 			}
 
-			SootMethod getStringMethod = ResourcesSoot.v().addGetString_ID(intId);
+			SootMethod getStringMethod = ResourcesSoot.v().addGetCharSequence_ID(intId);
 
 			if (getStringMethod == null) {
 				logger.warn("Could not replace {}, id={} ", stmt, String.format("%x", intId));
+				logger.warn("Class {} ", stmtBody.getMethod().getDeclaringClass());
 				return;
 			}
 			
@@ -508,7 +519,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 						if (method.equals(resolved))  {
 							logger.info(String.format("Found getString(): %s - %s\n", 
 									stmt, b.getMethod()));
-							replaceGetString(stmtBody, stmt);
+							replaceGetCharSequence(stmtBody, stmt);
 						}
 					}
 					
