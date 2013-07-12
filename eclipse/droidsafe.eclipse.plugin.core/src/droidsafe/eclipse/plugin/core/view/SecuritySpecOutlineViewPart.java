@@ -267,7 +267,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
             int lineNumber = line.getLine();
             String className = line.getClz();
             String classPath = DroidsafePluginUtilities.classNamePath(className);
-            IFile file = getSelectedProject().getFile(classPath);
+            IFile file = getProject().getFile(classPath);
             if (file != null) {
               try {
                 IWorkbenchPage page =
@@ -385,10 +385,12 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
     }
     if (selectedObject instanceof IAdaptable) {
       IResource res = (IResource) ((IAdaptable) selectedObject).getAdapter(IResource.class);
-      IProject project = res.getProject();
-      if (project != null) {
-        // logger.debug("Project found: " + project.getName());
-        return project;
+      if (res != null) {
+        IProject project = res.getProject();
+        if (project != null) {
+          // logger.debug("Project found: " + project.getName());
+          return project;
+        }
       }
     }
     return null;

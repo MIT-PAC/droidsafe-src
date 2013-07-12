@@ -7,7 +7,7 @@ public class ValueAnalysisFloat extends ValueAnalysisModeledObject {
     float value;
 
     public ValueAnalysisFloat() {
-        this.invalidated = true;
+        this.__ds__invalidated = true;
     }
 
     public ValueAnalysisFloat(float valueParam) {

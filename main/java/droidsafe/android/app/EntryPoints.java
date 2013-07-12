@@ -36,7 +36,7 @@ public class EntryPoints {
     /** Logger object */
 	private final static Logger logger = LoggerFactory.getLogger(EntryPoints.class);
 	/** Entry points in component classes */
-	private Set<SootMethod> appEntryPoints;
+	private Set<EntryPoint> appEntryPoints;
 	/** Have we calculated the entrypoints? */
 	private boolean calculated = false; 
 	/** Singleton object */
@@ -48,7 +48,7 @@ public class EntryPoints {
     private Set<SootClass> srcClzWithEntryPoints;
 	
 	private EntryPoints() {
-		appEntryPoints = new LinkedHashSet<SootMethod>();
+		appEntryPoints = new LinkedHashSet<EntryPoint>();
 		srcClzWithEntryPoints = new LinkedHashSet<SootClass>();
 		//build the set of source classes that have possible entry points
 		for (SootClass clz : Scene.v().getClasses()) {
@@ -56,7 +56,7 @@ public class EntryPoints {
                 continue;
 		    boolean hasEP = false;
 		    
-		    for (SootMethod m : clz.getMethods()) {
+		    for (SootMethod m : Hierarchy.v().getAllInheritedAppMethodsIncluded(clz)) {
 		        if (Hierarchy.v().isImplementedSystemMethod(m)) {
 		            hasEP = true;
 		            break;
@@ -79,7 +79,7 @@ public class EntryPoints {
 	/**
 	 * Return all entry points in component classes without respect to if they are modeled.
 	 */
-	public Set<SootMethod> getAppEntryPoints() {
+	public Set<EntryPoint> getAppEntryPoints() {
 		return appEntryPoints;
 	}
 	
@@ -112,7 +112,7 @@ public class EntryPoints {
      */
     public void calculate() {
     	calculated = true;
-    	this.appEntryPoints = new LinkedHashSet<SootMethod>();
+    	this.appEntryPoints = new LinkedHashSet<EntryPoint>();
     	for (SootClass clazz : Scene.v().getApplicationClasses()) {
     		if (clazz.isInterface() || clazz.getName().equals(Harness.HARNESS_CLASS_NAME))
     			continue;
@@ -135,25 +135,37 @@ public class EntryPoints {
     		//Messages.log("Checking class for missing modeling: " + clazz.getName());
     			    	
     		//now check which methods are overrides
-    		for (SootMethod method : clazz.getMethods()) {
+    		for (SootMethod method : Hierarchy.v().getAllInheritedAppMethodsIncluded(clazz)) {
     			//Messages.log("    Checking for method: " + method.getSignature());
-    			if (!clazz.declaresMethod(method.getSubSignature()))
-    				continue;
- 
+    			if (!method.isConcrete())
+    			    continue;
     			
     			if (Hierarchy.v().isImplementedSystemMethod(method)) {
-    				appEntryPoints.add(method);
+    				appEntryPoints.add(new EntryPoint(clazz, method));
     				logger.info("Found entry point as implemented system method: {}", method.toString());
     			} 
     		}
     	}
     	
     	for (SootMethod method : Resources.v().getAllHandlers()) {
-    		appEntryPoints.add(method);
+    		appEntryPoints.add(new EntryPoint(method.getDeclaringClass(), method));
     		logger.info("Found entry point as xml onclick: {}", method.toString());
     	}
     	
     	appEntryPoints = Collections.unmodifiableSet(appEntryPoints);
     }
+    
+    /**
+     * Container class representing an entry point.  
+     */
+   public class EntryPoint {
+       public SootClass clz;
+       public SootMethod method;
+       
+       public EntryPoint(SootClass sc, SootMethod m) {
+           this.clz = sc;
+           this.method = m;
+       }
+   }
     
 }

@@ -7,7 +7,7 @@ public class ValueAnalysisShort extends ValueAnalysisModeledObject {
     short value;
 
     public ValueAnalysisShort() {
-        this.invalidated = true;
+        this.__ds__invalidated = true;
     }
 
     public ValueAnalysisShort(short valueParam) {

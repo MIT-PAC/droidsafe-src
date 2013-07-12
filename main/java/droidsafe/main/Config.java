@@ -43,9 +43,11 @@ public class Config {
   public static final String ANDROID_LIB_DIR_REL = "android-lib";
 
   /** location of configuration files */
-  public static final String SYSTEM_CLASSES_FILE = "config-files" + File.separator + "system_class_files.txt";
+  public static final String SYSTEM_CLASSES_FILE = "config-files" + File.separator
+      + "system_class_files.txt";
 
-  public static final String SYSTEM_METHODS_FILE = "config-files" + File.separator + "android-api-methods.txt";
+  public static final String SYSTEM_METHODS_FILE = "config-files" + File.separator
+      + "android-api-methods.txt";
   /** location of api modeling base directory relative to apac_home */
 
   public static final String API_MODELING_DIR_REL = "modeling" + File.separator + "api";
@@ -81,12 +83,27 @@ public class Config {
 
   public boolean dumpCallGraph = false;
 
-  /** determines whether to use jsa or not */
+  /**
+   * If true, run string analysis on app classes. true by default
+   */
   public boolean runStringAnalysis = true;
 
-  /** if true, string analysis is done for all soot application classes.  Otherwise, it is
-   only done for the source classes of the project. */
+  /**
+   * if true, string analysis is done for all soot application classes. Otherwise, it is only done
+   * for the source classes of the project.
+   */
   public boolean unfilteredStringAnalysis = false;
+
+  /**
+   * Flag to control what to do when Main.exit(int) is called. The default value is true, forcing
+   * the application to System.exit(int) when Main.exit() is called. We use this option when running
+   * droidsafe from the command line.
+   * 
+   * When running using the eclipse plugin, we set this flag to false to Main.exit() only throws an
+   * exception and do not kill the running eclipse.
+   * 
+   */
+  public boolean callSystemExitOnError = true;
 
   public static Config v() {
     return config;
@@ -100,6 +117,23 @@ public class Config {
     this.apacHome = apacHome;
   }
 
+  /**
+   * Getter for callSystemExitOnError
+   * 
+   * @return The current value of boolean flag callSystemExitOnError.
+   */
+  public boolean getCallSystehExitOnError() {
+    return this.callSystemExitOnError;
+  }
+
+  /**
+   * Setter for callSystemErrorOnExit
+   * 
+   * @param value The new value to be setS
+   */
+  public void setCallSystemExitOnError(boolean value) {
+    this.callSystemExitOnError = value;
+  }
 
   private static Options setOptions() {
     Options options = new Options();
@@ -124,7 +158,7 @@ public class Config {
 
     Option runStringAnalysisUnfiltered =
         new Option("analyzestrings_unfiltered",
-                   "Run string analysis with no application class filtering.");
+            "Run string analysis with no application class filtering.");
     options.addOption(runStringAnalysisUnfiltered);
 
     Option pta = new Option("ptadump", "Dump pta to ./droidsafe/pta.txt");

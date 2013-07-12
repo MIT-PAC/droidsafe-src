@@ -55,7 +55,7 @@ public class InetAddress extends ValueAnalysisModeledObject {
      * @return the address in form of a byte array.
      */
 //    public byte[] getAddress() {
-//        invalidate();
+//        __ds__invalidate();
 //        return null;
 //    }
 
@@ -128,7 +128,7 @@ public class InetAddress extends ValueAnalysisModeledObject {
      * Returns the numeric representation of this IP address (such as "127.0.0.1").
      */
 //    public Set<String> getHostAddress() {
-//        invalidate();
+//        __ds__invalidate();
 //        return null;
 //    }
 
@@ -145,7 +145,7 @@ public class InetAddress extends ValueAnalysisModeledObject {
      * Returns the fully qualified hostname corresponding to this IP address.
      */
 //    public String getCanonicalHostName() {
-//        invalidate();
+//        __ds__invalidate();
 //        return null;
 //    }
 
@@ -197,7 +197,7 @@ public class InetAddress extends ValueAnalysisModeledObject {
      */
 //    @Override
 //    public int hashCode() {
-//        invalidate();
+//        __ds__invalidate();
 //        return 0;
 //    }
 
@@ -231,7 +231,7 @@ public class InetAddress extends ValueAnalysisModeledObject {
      */
 //    @Override
 //    public String toString() {
-//        invalidate();
+//        __ds__invalidate();
 //        return null;
 //    }
 
@@ -276,7 +276,7 @@ public class InetAddress extends ValueAnalysisModeledObject {
      * or the IPv4 "any" address, {@code 0.0.0.0}.
      */
     public boolean isAnyLocalAddress() {
-        invalidate();
+        __ds__invalidate();
         return false;
     }
 
@@ -293,7 +293,7 @@ public class InetAddress extends ValueAnalysisModeledObject {
      * to have link-local scope. That is: the IPv4 loopback address returns false.
      */
 //    public boolean isLinkLocalAddress() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //    }
 
@@ -305,7 +305,7 @@ public class InetAddress extends ValueAnalysisModeledObject {
      * <p>The only valid IPv6 loopback address is {@code ::1}.
      */
 //    public boolean isLoopbackAddress() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //    }
 
@@ -320,7 +320,7 @@ public class InetAddress extends ValueAnalysisModeledObject {
      * from {@code 224.0.1.0} to {@code 238.255.255.255}.
      */
 //    public boolean isMCGlobal() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //    }
 
@@ -334,7 +334,7 @@ public class InetAddress extends ValueAnalysisModeledObject {
      * <p>Valid IPv4 link-local multicast addresses have the prefix {@code 224.0.0/24}.
      */
 //    public boolean isMCLinkLocal() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //    }
 
@@ -348,7 +348,7 @@ public class InetAddress extends ValueAnalysisModeledObject {
      * <p>There are no valid IPv4 node-local multicast addresses.
      */
 //    public boolean isMCNodeLocal() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //    }
 
@@ -362,7 +362,7 @@ public class InetAddress extends ValueAnalysisModeledObject {
      * <p>Valid IPv4 organization-local multicast addresses have the prefix {@code 239.192/14}.
      */
 //    public boolean isMCOrgLocal() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //    }
 
@@ -376,7 +376,7 @@ public class InetAddress extends ValueAnalysisModeledObject {
      * <p>Valid IPv4 site-local multicast addresses have the prefix {@code 239.255/16}.
      */
 //    public boolean isMCSiteLocal() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //    }
 
@@ -388,7 +388,7 @@ public class InetAddress extends ValueAnalysisModeledObject {
      * <p>Valid IPv4 multicast addresses have the prefix {@code 224/4}.
      */
 //    public boolean isMulticastAddress() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //    }
 
@@ -410,7 +410,7 @@ public class InetAddress extends ValueAnalysisModeledObject {
      *         {@code false} otherwise.
      */
 //    public boolean isSiteLocalAddress() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //    }
 
@@ -430,7 +430,7 @@ public class InetAddress extends ValueAnalysisModeledObject {
      *             if timeout is less than zero.
      */
 //    public boolean isReachable(Set<ValueAnalysisInt> timeout) throws IOException {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //    }
 
@@ -455,12 +455,12 @@ public class InetAddress extends ValueAnalysisModeledObject {
      *             if ttl or timeout is less than zero.
      */
 //    public boolean isReachable(NetworkInterface networkInterface, final Set<ValueAnalysisInt> ttl, final Set<ValueAnalysisInt> timeout) throws IOException {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //    }
 
 //    private boolean isReachable(InetAddress destination, InetAddress source, Set<ValueAnalysisInt> timeout) throws IOException {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //    }
 
@@ -509,15 +509,15 @@ public class InetAddress extends ValueAnalysisModeledObject {
 //    }
 //
 //    private void writeObject(ObjectOutputStream stream) throws IOException {
-//        invalidate();
+//        __ds__invalidate();
 //    }
 //
 //    private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
-//        invalidate();
+//        __ds__invalidate();
 //    }
 //
 //    private Object readResolve() throws ObjectStreamException {
-//        invalidate();
+//        __ds__invalidate();
 //        return null;
 //    }
 }

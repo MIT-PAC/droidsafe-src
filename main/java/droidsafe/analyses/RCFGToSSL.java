@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.BooleanType;
+import soot.ByteType;
 import soot.CharType;
 import soot.IntType;
 import soot.Type;
@@ -32,6 +33,7 @@ import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.android.app.Project;
 import droidsafe.speclang.ArgumentValue;
 import droidsafe.speclang.BooleanValue;
+import droidsafe.speclang.ByteValue;
 import droidsafe.speclang.CharValue;
 import droidsafe.speclang.ClassValue;
 import droidsafe.speclang.ConcreteArgumentValue;
@@ -58,14 +60,6 @@ public class RCFGToSSL {
 	 * if true, ignore creating output events for the packages defined in IGNORE_OE_FROM_PACKAGES 
 	 */
 	public static final boolean IGNORE_OE_FROM_DEFINED_PACKAGES = false;
-	
-	/** List of packages to ignore from the android API, use only second level package name: 
-	 * android.something.
-	 */
-	public static final Set<String> IGNORE_OE_FROM_PACKAGES = new HashSet<String>(Arrays.asList(""
-			/*"android.graphics", "android.view","android.widget"*/
-			));
-	
 	
 	private static final Set<String> IGNORE_SYS_METHODS_WITH_SUBSIG = 
 			new HashSet<String>(Arrays.asList(
@@ -141,14 +135,10 @@ public class RCFGToSSL {
 	}
 	
 	private boolean shouldIgnore(OutputEvent oe) {	
-		String[] className = oe.getTarget().getDeclaringClass().getName().split("\\.");				
-		if (className.length < 2)
-			return false;
+		if (SafeAndroidClasses.v().isSafeClass(oe.getTarget().getDeclaringClass().getName()))
+		    return true;
 		
-		String packageStart = className[0] + "." + className[1];
-		
-		return (IGNORE_OE_FROM_PACKAGES.contains(packageStart) ||
-				IGNORE_SYS_METHODS_WITH_SUBSIG.contains(oe.getTarget().getSubSignature())); 
+		return (IGNORE_SYS_METHODS_WITH_SUBSIG.contains(oe.getTarget().getSubSignature())); 
 	}
 	
 	private List<Method> methodsFromOutputEvent(OutputEvent oe) {
@@ -299,8 +289,11 @@ public class RCFGToSSL {
 				listArg.add(new CharValue((char)intValue));
 			} else if (type instanceof IntType) {
 				listArg.add(new IntValue(intValue));
+			} else if (type instanceof ByteType) {
+			    listArg.add(new ByteValue((byte)intValue));
 			} else {
 				logger.error("Unknown type for int constant when converting to method: {}", type);
+				droidsafe.main.Main.exit(1);
 			}
 			return listArg;
 		} else if (value instanceof LongConstant) {

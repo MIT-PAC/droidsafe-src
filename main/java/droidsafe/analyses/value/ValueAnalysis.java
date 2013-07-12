@@ -119,6 +119,19 @@ import soot.Value;
 public class ValueAnalysis {
 
     //==================================================================================================================
+    // Methods to step through
+    //==================================================================================================================
+
+    /** Set of methods to not invalidate */
+    private Set<String> signaturesOfMethodsToStepThru = new HashSet<String>(
+    Arrays.asList("<android.app.Activity: void startActivityForResult(android.content.Intent,int)>", 
+                  "<android.app.Activity: void onActivityResult(int,int,android.content.Intent)>",
+                  "<droidsafe.helpers.DSUtils: void translateIntent(android.content.Intent,android.content.Intent)>",
+                  "<android.net.URI: android.net.Uri parse(java.lang.String)", 
+                  "<java.net.URI: java.lang.URI create(java.lang.String)>"));
+
+
+    //==================================================================================================================
     // Attributes
     //==================================================================================================================
 
@@ -137,16 +150,6 @@ public class ValueAnalysis {
 
     /** Set of methods we simulated and thus don't want to step through */
     private Set<SootMethod> simulatedMethods;
-
-    /** Set of methods to not invalidate */
-    private Set<String> sigsOfMethodsToNotInvalidate = new HashSet<String>(Arrays.asList("startActivityForResult", 
-                "onActivityResult",
-                "query",
-                "translateIntent",
-                "toString",
-                "<init>",
-                "_init_",
-                "parse"));
 
     /** FileWriter used to log what we still don't model but perhaps should */
     private FileWriter attrModelingTodoLog;
@@ -175,10 +178,9 @@ public class ValueAnalysis {
     public static final String MODEL_CLASS_BASE_DIR = "classes/main/droidsafe.analyses.value.models.";
 
     /** 
-     * Variable used to tell if any models changed on a run of the analysis. 
-     * Used to make sure the analysis runs to a fixed point.
-     * */
-    public static boolean changed = false;
+     * Determined whether the analysis should be run again. Used to make sure the analysis runs to a fixed point.
+     */
+    public static boolean runAgain = false;
 
     //==================================================================================================================
     // Constructors
@@ -219,7 +221,7 @@ public class ValueAnalysis {
      */
     public boolean hasResult(AllocNode node) {
         return this.objectToModelMap.containsKey(node) &&
-            !this.objectToModelMap.get(node).invalidated();
+            !this.objectToModelMap.get(node).__ds__invalidated();
     }
 
     /**
@@ -281,13 +283,23 @@ public class ValueAnalysis {
 
         // Now run the analysis to fixed point, not stepping through the methods that we simulate.
         do {
-            changed = false;
+            System.out.println("\nValue Analysis Progress: fixed point not reached, re-running");
+            runAgain = false;
             runOnce();
-        } while(changed);
-
-        runOnce();
+        } while(runAgain);
+ 
+        System.out.print("\n");
+ 
         // log the results and statistics    
         am.log();
+    }
+ 
+    /** Sets the global runAgain to true, meaning that the analysis will run again. Called when fixed points has been
+     *  determined to not have been reached yet.
+     */
+    public static void runAgain() {
+        logger.info("Value Analysis: runAgain got called");
+        runAgain = true;
     }
 
     /** run the full analysis once */ 
@@ -300,7 +312,11 @@ public class ValueAnalysis {
         Set<SootMethod> reachableMethods = GeoPTA.v().getAllReachableMethods();
 
         // loop over all code, creating models and simulating whichever invokeExprs we can as we go
-        for (SootClass clazz : Scene.v().getApplicationClasses()) {
+        Chain<SootClass> sootClasses = Scene.v().getApplicationClasses();
+        int progressCounter = 0; 
+        for (SootClass clazz : sootClasses) {
+            System.out.print("Value Analysis Progress: " + (int)Math.ceil(100*(double)progressCounter/sootClasses.size()) + "%\r");
+            progressCounter++;
             String className = clazz.getName();
             // We don't care about the harness or interfaces
             if (clazz.isInterface() || className.equals(Harness.HARNESS_CLASS_NAME))
@@ -311,12 +327,16 @@ public class ValueAnalysis {
                 continue;
             }
 
+            logger.info("Value Analysis: stepping through " + clazz);
+            
             // Get source filename that contains the class 
             SourceFileTag sourceFileTag = (SourceFileTag)clazz.getTag("SourceFileTag");
 
             for (SootMethod meth : clazz.getMethods()) {
                 if (meth.isConcrete() && reachableMethods.contains(meth) && !am.simulatedMethods.contains(meth)) {
-                    //am.logError("analyzing " + meth);
+                    
+                    logger.info("Value Analysis: stepping through " + meth);
+                    
                     StmtBody stmtBody = (StmtBody)meth.retrieveActiveBody();
 
                     // get body's unit as a chain
@@ -343,8 +363,9 @@ public class ValueAnalysis {
                         if (!stmt.containsInvokeExpr()) {
                             continue;
                         }
+                        
                         InvokeExpr invokeExpr = (InvokeExpr)stmt.getInvokeExpr();
-                        //am.logError("on invokeExpr " + invokeExpr);
+                        
                         SootMethod sootMethod = invokeExpr.getMethod();
                         SootClass sootClass = sootMethod.getDeclaringClass();
 
@@ -382,7 +403,7 @@ public class ValueAnalysis {
                                     } else {
                                         // We couldn't model one of the arguments so we can't simulate the call and 
                                         // have to invalidate the receiver
-                                        modeledReceiverObject.invalidate();
+                                        modeledReceiverObject.__ds__invalidate();
                                         am.logError("Couldn't model every parameter for " + iie + am.sourceLocation + 
                                                 "\n" + "> invalidating " + modeledReceiverObject + " as a result");
                                     }
@@ -438,7 +459,7 @@ public class ValueAnalysis {
                 for (Object object : paramObjectPermutation){
                     if(object instanceof ValueAnalysisModeledObject){
                         ValueAnalysisModeledObject modeledObject = (ValueAnalysisModeledObject)object;
-                        modeledObject.invalidate();
+                        modeledObject.__ds__invalidate();
                         this.logError("> invalidating argument " + modeledObject + " as a result");
                     }
                 }
@@ -456,11 +477,11 @@ public class ValueAnalysis {
         // objects returned by the simulation of the invoke exprs will be aggregated here
         ArrayList<Object> objectsToReturn = new ArrayList<Object>();
 
-        // get the name of the method we will simulate
-        String methodName = invokeExpr.getMethod().getName();
+        SootMethod sootMethod= invokeExpr.getMethod();
 
         // init methods are constructors
         // they can't have angled brackets in the name so we use underscores instead
+        String methodName = sootMethod.getName();
         if(methodName.equals("<init>")){
             methodName = "_init_";
         }
@@ -472,6 +493,9 @@ public class ValueAnalysis {
             // simulate the method using reflection for every permutation of parameter values, aggregating the returned
             // objects
             Object objectToReturn;
+
+            logger.info("Value Analysis: simulating " + invokeExpr);
+
             for (ArrayList paramObjectPermutation : paramObjectCartesianProduct) {
                 objectToReturn = method.invoke(modeledReceiverObject, paramObjectPermutation.toArray());
                 if (objectToReturn != null) {
@@ -480,14 +504,17 @@ public class ValueAnalysis {
             }
             this.simulatedMethods.add(invokeExpr.getMethod());
         } catch (Exception e) {
-            if(!this.sigsOfMethodsToNotInvalidate.contains(methodName)) {
+            // If we don't have the method market as one we will step through, that means we haven't modeled it at all
+            // and thus the receiver and argument models 
+           String methodSignature = sootMethod.getSignature();
+           if(!this.signaturesOfMethodsToStepThru.contains(methodSignature)) {
                 String error = "The InvokeExpr " + invokeExpr + this.sourceLocation + " hasn't been modeled: " 
                     + e.toString() + "\n";
                 error += Throwables.getStackTraceAsString(e);
 
                 // If this is an InstanceInvoke, also invalidate the receiver object
                 if (modeledReceiverObject != null){
-                    modeledReceiverObject.invalidate();
+                    modeledReceiverObject.__ds__invalidate();
                     error += "\n" + "> invalidating receiver " + modeledReceiverObject + " as a result";
                 }
                 this.logError(error);
@@ -600,17 +627,17 @@ public class ValueAnalysis {
 
             if (modeledObject instanceof droidsafe.analyses.value.models.android.content.Intent){
                 totalModeledIntentsNum++;
-                if (!((droidsafe.analyses.value.models.android.content.Intent)modeledObject).invalidated()){
+                if (!((droidsafe.analyses.value.models.android.content.Intent)modeledObject).__ds__invalidated()){
                     validModeledIntentsNum++;
                 }
             }
             if (modeledObject instanceof droidsafe.analyses.value.models.android.net.Uri){
                 totalModeledUriNum++;
-                if (!((droidsafe.analyses.value.models.android.net.Uri)modeledObject).invalidated()){
+                if (!((droidsafe.analyses.value.models.android.net.Uri)modeledObject).__ds__invalidated()){
                     validModeledUriNum++;
                 }
             }
-            logger.info("Finished Model: {}", modeledObject.dsDisplay());
+            logger.info("Finished Model: {}", modeledObject.__ds__display());
             logger.info("Corresponding AllocNode: {}", entry.getKey());
         }
         /*
@@ -755,7 +782,7 @@ public class ValueAnalysis {
                                     ValueAnalysis.this.logError("Couldn't convert constant value " + arg + " to object: "
                                             + cnfe + "\n");
                                     for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
-                                        modeledObject.invalidate();
+                                        modeledObject.__ds__invalidate();
                                     }
                                     return;
                                 }
@@ -828,7 +855,7 @@ public class ValueAnalysis {
                                             // We couldn't model the argument node, so invalidate any param models we've 
                                             // already created
                                             for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
-                                                modeledObject.invalidate();
+                                                modeledObject.__ds__invalidate();
                                             }
                                             ValueAnalysis.this.logError("Couldn't model argument " + i + " " + node 
                                                     + " for method" + invokeExpr 
@@ -843,7 +870,7 @@ public class ValueAnalysis {
                                     // invalidate any param models we've already created
                                     for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
                                         ValueAnalysis.this.logError("> invalidating argument model " + modeledObject);
-                                        modeledObject.invalidate();
+                                        modeledObject.__ds__invalidate();
                                     }
                                     return;
                                 }
@@ -895,7 +922,7 @@ public class ValueAnalysis {
                         // invalidate any param models we've already created
                         for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
                             ValueAnalysis.this.logError("> invalidating argument model " + modeledObject);
-                            modeledObject.invalidate();
+                            modeledObject.__ds__invalidate();
                         }
                         return;
                     }
