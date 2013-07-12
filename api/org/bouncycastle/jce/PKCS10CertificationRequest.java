@@ -1,6 +1,9 @@
 package org.bouncycastle.jce;
 
-
+// Droidsafe Imports
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 import java.io.IOException;
 import java.security.AlgorithmParameters;
 import java.security.GeneralSecurityException;
@@ -18,9 +21,7 @@ import java.security.spec.X509EncodedKeySpec;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Set;
-
 import javax.security.auth.x500.X500Principal;
-
 import org.bouncycastle.asn1.ASN1Encodable;
 import org.bouncycastle.asn1.ASN1InputStream;
 import org.bouncycastle.asn1.ASN1Object;
@@ -44,31 +45,27 @@ import org.bouncycastle.asn1.x9.X9ObjectIdentifiers;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.bouncycastle.util.Strings;
 
-import droidsafe.annotations.*;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
-
-
 public class PKCS10CertificationRequest extends CertificationRequest {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.180 -0400", hash_original_method = "3A41672F51C7647865E5A6F21420932E", hash_generated_method = "FF24829872F3AA31786B4DCB8CC254E0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.472 -0400", hash_original_method = "3A41672F51C7647865E5A6F21420932E", hash_generated_method = "FF24829872F3AA31786B4DCB8CC254E0")
     public  PKCS10CertificationRequest(
         byte[]  bytes) {
         super(toDERSequence(bytes));
         addTaint(bytes[0]);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.180 -0400", hash_original_method = "E80E9113023CB84AD6D915B7A5F597A7", hash_generated_method = "4ABCE1760383597C1301750287ADF3F7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.473 -0400", hash_original_method = "E80E9113023CB84AD6D915B7A5F597A7", hash_generated_method = "4ABCE1760383597C1301750287ADF3F7")
     public  PKCS10CertificationRequest(
         ASN1Sequence  sequence) {
         super(sequence);
         addTaint(sequence.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.180 -0400", hash_original_method = "DCC234DC4AA32AD53B9F45C5CD92E5AA", hash_generated_method = "AE53A31855CD9BBA949A92B259CCC902")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.473 -0400", hash_original_method = "DCC234DC4AA32AD53B9F45C5CD92E5AA", hash_generated_method = "D6258080ABBCD93337111577476C7AD9")
     public  PKCS10CertificationRequest(
         String              signatureAlgorithm,
         X509Name            subject,
@@ -77,16 +74,16 @@ public class PKCS10CertificationRequest extends CertificationRequest {
         PrivateKey          signingKey) throws NoSuchAlgorithmException, NoSuchProviderException,
                 InvalidKeyException, SignatureException {
         this(signatureAlgorithm, subject, key, attributes, signingKey, BouncyCastleProvider.PROVIDER_NAME);
-        addTaint(signatureAlgorithm.getTaint());
-        addTaint(subject.getTaint());
-        addTaint(key.getTaint());
-        addTaint(attributes.getTaint());
         addTaint(signingKey.getTaint());
-        
+        addTaint(attributes.getTaint());
+        addTaint(key.getTaint());
+        addTaint(subject.getTaint());
+        addTaint(signatureAlgorithm.getTaint());
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.180 -0400", hash_original_method = "8331D41600BE6136ABFAAFB9EC7881F5", hash_generated_method = "1D5500E13704FB13C5892001043D5470")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.474 -0400", hash_original_method = "8331D41600BE6136ABFAAFB9EC7881F5", hash_generated_method = "D6D6AE127A2EA6FF1A02E4C3D7F97044")
     public  PKCS10CertificationRequest(
         String              signatureAlgorithm,
         X500Principal       subject,
@@ -95,16 +92,16 @@ public class PKCS10CertificationRequest extends CertificationRequest {
         PrivateKey          signingKey) throws NoSuchAlgorithmException, NoSuchProviderException,
                 InvalidKeyException, SignatureException {
         this(signatureAlgorithm, convertName(subject), key, attributes, signingKey, BouncyCastleProvider.PROVIDER_NAME);
-        addTaint(signatureAlgorithm.getTaint());
-        addTaint(subject.getTaint());
-        addTaint(key.getTaint());
-        addTaint(attributes.getTaint());
         addTaint(signingKey.getTaint());
-        
+        addTaint(attributes.getTaint());
+        addTaint(key.getTaint());
+        addTaint(subject.getTaint());
+        addTaint(signatureAlgorithm.getTaint());
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.181 -0400", hash_original_method = "47F27C3C5B072C1921CEA8CD2618865D", hash_generated_method = "271E18C2D0AE6A0C5459868637A91871")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.474 -0400", hash_original_method = "47F27C3C5B072C1921CEA8CD2618865D", hash_generated_method = "6FDB8329B6328664E5F47F239FB24DF0")
     public  PKCS10CertificationRequest(
         String              signatureAlgorithm,
         X500Principal       subject,
@@ -114,17 +111,17 @@ public class PKCS10CertificationRequest extends CertificationRequest {
         String              provider) throws NoSuchAlgorithmException, NoSuchProviderException,
                 InvalidKeyException, SignatureException {
         this(signatureAlgorithm, convertName(subject), key, attributes, signingKey, provider);
-        addTaint(signatureAlgorithm.getTaint());
-        addTaint(subject.getTaint());
-        addTaint(key.getTaint());
-        addTaint(attributes.getTaint());
-        addTaint(signingKey.getTaint());
         addTaint(provider.getTaint());
-        
+        addTaint(signingKey.getTaint());
+        addTaint(attributes.getTaint());
+        addTaint(key.getTaint());
+        addTaint(subject.getTaint());
+        addTaint(signatureAlgorithm.getTaint());
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.182 -0400", hash_original_method = "9B8C4723941705C4AF87CD12244595BD", hash_generated_method = "69AFFF1101EF0D86DDC5D9A48B5C9D7A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.477 -0400", hash_original_method = "9B8C4723941705C4AF87CD12244595BD", hash_generated_method = "9F12AC674BE51675A8EF1697F331BB4B")
     public  PKCS10CertificationRequest(
         String              signatureAlgorithm,
         X509Name            subject,
@@ -133,78 +130,90 @@ public class PKCS10CertificationRequest extends CertificationRequest {
         PrivateKey          signingKey,
         String              provider) throws NoSuchAlgorithmException, NoSuchProviderException,
                 InvalidKeyException, SignatureException {
+        addTaint(provider.getTaint());
+        addTaint(signingKey.getTaint());
+        addTaint(attributes.getTaint());
+        addTaint(key.getTaint());
+        addTaint(subject.getTaint());
+        addTaint(signatureAlgorithm.getTaint());
         String algorithmName = Strings.toUpperCase(signatureAlgorithm);
         DERObjectIdentifier sigOID = (DERObjectIdentifier)algorithms.get(algorithmName);
+    if(sigOID == null)        
         {
             try 
             {
                 sigOID = new DERObjectIdentifier(algorithmName);
-            } 
+            } //End block
             catch (Exception e)
             {
-                if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Unknown signature type requested");
-            } 
-        } 
+                IllegalArgumentException varB18074A21B8B08497C53127CA4DD90CB_90475335 = new IllegalArgumentException("Unknown signature type requested");
+                varB18074A21B8B08497C53127CA4DD90CB_90475335.addTaint(taint);
+                throw varB18074A21B8B08497C53127CA4DD90CB_90475335;
+            } //End block
+        } //End block
+    if(subject == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("subject must not be null");
-        } 
+            IllegalArgumentException varF7E6557D5CD0EEE16A97877333591AF9_2025393035 = new IllegalArgumentException("subject must not be null");
+            varF7E6557D5CD0EEE16A97877333591AF9_2025393035.addTaint(taint);
+            throw varF7E6557D5CD0EEE16A97877333591AF9_2025393035;
+        } //End block
+    if(key == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("public key must not be null");
-        } 
+            IllegalArgumentException var7FA406A36111F20A2D59C5557337A99E_1767120896 = new IllegalArgumentException("public key must not be null");
+            var7FA406A36111F20A2D59C5557337A99E_1767120896.addTaint(taint);
+            throw var7FA406A36111F20A2D59C5557337A99E_1767120896;
+        } //End block
+    if(noParams.contains(sigOID))        
         {
-            boolean varA28C1CB3B01DBB9A9C719BFC6B8E784C_636167118 = (noParams.contains(sigOID));
-            {
-                this.sigAlgId = new AlgorithmIdentifier(sigOID);
-            } 
-            {
-                boolean var8B78123363DC47A262C8A044FF82B2D9_1745115382 = (params.containsKey(algorithmName));
-                {
-                    this.sigAlgId = new AlgorithmIdentifier(sigOID, (DEREncodable)params.get(algorithmName));
-                } 
-                {
-                    this.sigAlgId = new AlgorithmIdentifier(sigOID, DERNull.INSTANCE);
-                } 
-            } 
-        } 
+            this.sigAlgId = new AlgorithmIdentifier(sigOID);
+        } //End block
+        else
+    if(params.containsKey(algorithmName))        
+        {
+            this.sigAlgId = new AlgorithmIdentifier(sigOID, (DEREncodable)params.get(algorithmName));
+        } //End block
+        else
+        {
+            this.sigAlgId = new AlgorithmIdentifier(sigOID, DERNull.INSTANCE);
+        } //End block
         try 
         {
             ASN1Sequence seq = (ASN1Sequence)ASN1Object.fromByteArray(key.getEncoded());
             this.reqInfo = new CertificationRequestInfo(subject, new SubjectPublicKeyInfo(seq), attributes);
-        } 
+        } //End block
         catch (IOException e)
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("can't encode public key");
-        } 
+            IllegalArgumentException var19AFF07EBF0D285E6200B15847475545_1784027255 = new IllegalArgumentException("can't encode public key");
+            var19AFF07EBF0D285E6200B15847475545_1784027255.addTaint(taint);
+            throw var19AFF07EBF0D285E6200B15847475545_1784027255;
+        } //End block
         Signature sig;
+    if(provider == null)        
         {
             sig = Signature.getInstance(signatureAlgorithm);
-        } 
+        } //End block
+        else
         {
             sig = Signature.getInstance(signatureAlgorithm, provider);
-        } 
+        } //End block
         sig.initSign(signingKey);
         try 
         {
             sig.update(reqInfo.getEncoded(ASN1Encodable.DER));
-        } 
+        } //End block
         catch (Exception e)
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("exception encoding TBS cert request - " + e);
-        } 
+            IllegalArgumentException var28DBE1BCED21F9B7B371B30A4EA3167D_591765047 = new IllegalArgumentException("exception encoding TBS cert request - " + e);
+            var28DBE1BCED21F9B7B371B30A4EA3167D_591765047.addTaint(taint);
+            throw var28DBE1BCED21F9B7B371B30A4EA3167D_591765047;
+        } //End block
         this.sigBits = new DERBitString(sig.sign());
-        addTaint(signatureAlgorithm.getTaint());
-        addTaint(subject.getTaint());
-        addTaint(key.getTaint());
-        addTaint(attributes.getTaint());
-        addTaint(signingKey.getTaint());
-        addTaint(provider.getTaint());
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static RSASSAPSSparams creatPSSParams(AlgorithmIdentifier hashAlgId, int saltSize) {
+        private static RSASSAPSSparams creatPSSParams(AlgorithmIdentifier hashAlgId, int saltSize) {
         return new RSASSAPSSparams(
             hashAlgId,
             new AlgorithmIdentifier(PKCSObjectIdentifiers.id_mgf1, hashAlgId),
@@ -213,8 +222,7 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static ASN1Sequence toDERSequence(
+        private static ASN1Sequence toDERSequence(
         byte[]  bytes) {
         try
         {
@@ -228,8 +236,7 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static X509Name convertName(
+        private static X509Name convertName(
         X500Principal    name) {
         try
         {
@@ -242,27 +249,21 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.183 -0400", hash_original_method = "43324B511CA49EBF5AC84C5892E16660", hash_generated_method = "7FCC971105324C540EBEF026422056A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.478 -0400", hash_original_method = "43324B511CA49EBF5AC84C5892E16660", hash_generated_method = "F8D5CFFC3BCB25EAA4A031505A24D244")
     public PublicKey getPublicKey() throws NoSuchAlgorithmException, NoSuchProviderException, InvalidKeyException {
-        PublicKey varB4EAC82CA7396A68D541C85D26508E83_132513249 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_132513249 = getPublicKey(BouncyCastleProvider.PROVIDER_NAME);
-        varB4EAC82CA7396A68D541C85D26508E83_132513249.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_132513249;
-        
-        
+PublicKey varC3D0D1C56178EDDD777C8C53EF7F0CE9_1985376175 =         getPublicKey(BouncyCastleProvider.PROVIDER_NAME);
+        varC3D0D1C56178EDDD777C8C53EF7F0CE9_1985376175.addTaint(taint);
+        return varC3D0D1C56178EDDD777C8C53EF7F0CE9_1985376175;
+        // ---------- Original Method ----------
+        //return getPublicKey(BouncyCastleProvider.PROVIDER_NAME);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.185 -0400", hash_original_method = "B8875DFEFA5CEF760F6C887EECDEC741", hash_generated_method = "811310D8AB68DAD21469AF8E225CC627")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.478 -0400", hash_original_method = "B8875DFEFA5CEF760F6C887EECDEC741", hash_generated_method = "6C0A80D18407D5917819C773FAAC2D2D")
     public PublicKey getPublicKey(
         String  provider) throws NoSuchAlgorithmException, NoSuchProviderException,
                 InvalidKeyException {
-        PublicKey varB4EAC82CA7396A68D541C85D26508E83_760774053 = null; 
-        PublicKey varB4EAC82CA7396A68D541C85D26508E83_401729524 = null; 
-        PublicKey varB4EAC82CA7396A68D541C85D26508E83_1815009069 = null; 
-        PublicKey varB4EAC82CA7396A68D541C85D26508E83_1252848750 = null; 
+        addTaint(provider.getTaint());
         SubjectPublicKeyInfo subjectPKInfo = reqInfo.getSubjectPublicKeyInfo();
         X509EncodedKeySpec xspec = new X509EncodedKeySpec(new DERBitString(subjectPKInfo).getBytes());
         AlgorithmIdentifier keyAlg = subjectPKInfo.getAlgorithmId();
@@ -270,203 +271,200 @@ public class PKCS10CertificationRequest extends CertificationRequest {
         {
             try 
             {
+    if(provider == null)                
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_760774053 = KeyFactory.getInstance(keyAlg.getObjectId().getId()).generatePublic(xspec);
-                } 
+PublicKey var41DC99F01DD21ADDF0ABED61A14977D8_41528255 =                     KeyFactory.getInstance(keyAlg.getObjectId().getId()).generatePublic(xspec);
+                    var41DC99F01DD21ADDF0ABED61A14977D8_41528255.addTaint(taint);
+                    return var41DC99F01DD21ADDF0ABED61A14977D8_41528255;
+                } //End block
+                else
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_401729524 = KeyFactory.getInstance(keyAlg.getObjectId().getId(), provider).generatePublic(xspec);
-                } 
-            } 
+PublicKey varEBB5C620BE73D7C58524D5E2E4FDA5D2_1242368700 =                     KeyFactory.getInstance(keyAlg.getObjectId().getId(), provider).generatePublic(xspec);
+                    varEBB5C620BE73D7C58524D5E2E4FDA5D2_1242368700.addTaint(taint);
+                    return varEBB5C620BE73D7C58524D5E2E4FDA5D2_1242368700;
+                } //End block
+            } //End block
             catch (NoSuchAlgorithmException e)
             {
+    if(keyAlgorithms.get(keyAlg.getObjectId()) != null)                
                 {
-                    boolean varF13192E73622F69196A2A5B84CA0A3EF_705993668 = (keyAlgorithms.get(keyAlg.getObjectId()) != null);
+                    String keyAlgorithm = (String)keyAlgorithms.get(keyAlg.getObjectId());
+    if(provider == null)                    
                     {
-                        String keyAlgorithm = (String)keyAlgorithms.get(keyAlg.getObjectId());
-                        {
-                            varB4EAC82CA7396A68D541C85D26508E83_1815009069 = KeyFactory.getInstance(keyAlgorithm).generatePublic(xspec);
-                        } 
-                        {
-                            varB4EAC82CA7396A68D541C85D26508E83_1252848750 = KeyFactory.getInstance(keyAlgorithm, provider).generatePublic(xspec);
-                        } 
-                    } 
-                } 
-                if (DroidSafeAndroidRuntime.control) throw e;
-            } 
-        } 
+PublicKey var819053A5996B66C1588BC8CB811D91A6_1776736558 =                         KeyFactory.getInstance(keyAlgorithm).generatePublic(xspec);
+                        var819053A5996B66C1588BC8CB811D91A6_1776736558.addTaint(taint);
+                        return var819053A5996B66C1588BC8CB811D91A6_1776736558;
+                    } //End block
+                    else
+                    {
+PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142 =                         KeyFactory.getInstance(keyAlgorithm, provider).generatePublic(xspec);
+                        var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142.addTaint(taint);
+                        return var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142;
+                    } //End block
+                } //End block
+                e.addTaint(taint);
+                throw e;
+            } //End block
+        } //End block
         catch (InvalidKeySpecException e)
         {
-            if (DroidSafeAndroidRuntime.control) throw new InvalidKeyException("error decoding public key");
-        } 
-        addTaint(provider.getTaint());
-        PublicKey varA7E53CE21691AB073D9660D615818899_62321368; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_62321368 = varB4EAC82CA7396A68D541C85D26508E83_760774053;
-                break;
-            case 2: 
-                varA7E53CE21691AB073D9660D615818899_62321368 = varB4EAC82CA7396A68D541C85D26508E83_401729524;
-                break;
-            case 3: 
-                varA7E53CE21691AB073D9660D615818899_62321368 = varB4EAC82CA7396A68D541C85D26508E83_1815009069;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_62321368 = varB4EAC82CA7396A68D541C85D26508E83_1252848750;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_62321368.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_62321368;
-        
-        
+            InvalidKeyException varB47E630CF91EC6A257E24F063B634927_408904224 = new InvalidKeyException("error decoding public key");
+            varB47E630CF91EC6A257E24F063B634927_408904224.addTaint(taint);
+            throw varB47E630CF91EC6A257E24F063B634927_408904224;
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.185 -0400", hash_original_method = "76B4A35CDD087589FE1D86D8EB63F14C", hash_generated_method = "4352E378AC18B6631F6D11A01E3DF064")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.479 -0400", hash_original_method = "76B4A35CDD087589FE1D86D8EB63F14C", hash_generated_method = "5D90B6BCD7F7FF1B0C579FEBFDFEB9AE")
     public boolean verify() throws NoSuchAlgorithmException, NoSuchProviderException,
                 InvalidKeyException, SignatureException {
-        boolean varBBC1526DC53D6870A81DAC4F4EB06FE8_223325220 = (verify(BouncyCastleProvider.PROVIDER_NAME));
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_336778649 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_336778649;
-        
-        
+        boolean varDFDA2B739D43284084054634F274B202_468467013 = (verify(BouncyCastleProvider.PROVIDER_NAME));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_925372450 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_925372450;
+        // ---------- Original Method ----------
+        //return verify(BouncyCastleProvider.PROVIDER_NAME);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.186 -0400", hash_original_method = "EEEA1D6F83C84A4A1EBDD2FD7850BFFE", hash_generated_method = "61C176A0EABCFF0EA0A66E9D2A268A64")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.479 -0400", hash_original_method = "EEEA1D6F83C84A4A1EBDD2FD7850BFFE", hash_generated_method = "C07101070A2529D7D1FA605A36FCD047")
     public boolean verify(
         String provider) throws NoSuchAlgorithmException, NoSuchProviderException,
                 InvalidKeyException, SignatureException {
-        boolean varC3F2617EA9FD66C2C9E37A8F926AFFB2_111958133 = (verify(this.getPublicKey(provider), provider));
         addTaint(provider.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_292764231 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_292764231;
-        
-        
+        boolean var870A8DDE759B8F2968C7A4D4A7FE5FFC_536726346 = (verify(this.getPublicKey(provider), provider));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1266718583 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1266718583;
+        // ---------- Original Method ----------
+        //return verify(this.getPublicKey(provider), provider);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.186 -0400", hash_original_method = "23EDAE0C7E13C4B3F88052C2DB8B64F6", hash_generated_method = "1305AE8152E4FAE47EB15D58C8B16655")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.480 -0400", hash_original_method = "23EDAE0C7E13C4B3F88052C2DB8B64F6", hash_generated_method = "8B6AB92CD35DE9E8190DF43CC1B2E06B")
     public boolean verify(
         PublicKey pubKey,
         String provider) throws NoSuchAlgorithmException, NoSuchProviderException,
                 InvalidKeyException, SignatureException {
+        addTaint(provider.getTaint());
+        addTaint(pubKey.getTaint());
         Signature sig;
         try 
         {
+    if(provider == null)            
             {
                 sig = Signature.getInstance(getSignatureName(sigAlgId));
-            } 
+            } //End block
+            else
             {
                 sig = Signature.getInstance(getSignatureName(sigAlgId), provider);
-            } 
-        } 
+            } //End block
+        } //End block
         catch (NoSuchAlgorithmException e)
         {
+    if(oids.get(sigAlgId.getObjectId()) != null)            
             {
-                boolean var2FBBF84408608E08007E6EAD7710062C_1577594071 = (oids.get(sigAlgId.getObjectId()) != null);
+                String signatureAlgorithm = (String)oids.get(sigAlgId.getObjectId());
+    if(provider == null)                
                 {
-                    String signatureAlgorithm = (String)oids.get(sigAlgId.getObjectId());
-                    {
-                        sig = Signature.getInstance(signatureAlgorithm);
-                    } 
-                    {
-                        sig = Signature.getInstance(signatureAlgorithm, provider);
-                    } 
-                } 
+                    sig = Signature.getInstance(signatureAlgorithm);
+                } //End block
+                else
                 {
-                    if (DroidSafeAndroidRuntime.control) throw e;
-                } 
-            } 
-        } 
+                    sig = Signature.getInstance(signatureAlgorithm, provider);
+                } //End block
+            } //End block
+            else
+            {
+                e.addTaint(taint);
+                throw e;
+            } //End block
+        } //End block
         setSignatureParameters(sig, sigAlgId.getParameters());
         sig.initVerify(pubKey);
         try 
         {
             sig.update(reqInfo.getEncoded(ASN1Encodable.DER));
-        } 
+        } //End block
         catch (Exception e)
         {
-            if (DroidSafeAndroidRuntime.control) throw new SignatureException("exception encoding TBS cert request - " + e);
-        } 
-        boolean varBE1162AA5A476A71DD01CEAC62181655_297071227 = (sig.verify(sigBits.getBytes()));
-        addTaint(pubKey.getTaint());
-        addTaint(provider.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2108636905 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2108636905;
-        
-        
+            SignatureException var50132ED7A0D04A650E1E6822352B6B4F_1642859339 = new SignatureException("exception encoding TBS cert request - " + e);
+            var50132ED7A0D04A650E1E6822352B6B4F_1642859339.addTaint(taint);
+            throw var50132ED7A0D04A650E1E6822352B6B4F_1642859339;
+        } //End block
+        boolean var55FC8C227B44C450556E137AA201B486_69676156 = (sig.verify(sigBits.getBytes()));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2031655124 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2031655124;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.187 -0400", hash_original_method = "FFCAA10D74329AA15B8FE83335744F82", hash_generated_method = "FED4CAC1BEB07BFAF736E3AFF8EBF1B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.498 -0400", hash_original_method = "FFCAA10D74329AA15B8FE83335744F82", hash_generated_method = "3654BC0547305E30EAEFC3A85A49BF4D")
     public byte[] getEncoded() {
         try 
         {
-            byte[] var29AE989CF6B7F50AE5155A143357E72F_1885555404 = (this.getEncoded(ASN1Encodable.DER));
-        } 
+            byte[] var75679B9D6E0C3BD65FFE938E240A5B3B_886470249 = (this.getEncoded(ASN1Encodable.DER));
+                        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_765545549 = {getTaintByte()};
+            return var2F9C81BC6E497382285CD6B7A7E33DE1_765545549;
+        } //End block
         catch (IOException e)
         {
-            if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e.toString());
-        } 
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1321716258 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1321716258;
-        
-        
-        
-            
-        
-        
-        
-            
-        
+            RuntimeException var7731B7FAF9DB516E410EE38D728795B2_744515759 = new RuntimeException(e.toString());
+            var7731B7FAF9DB516E410EE38D728795B2_744515759.addTaint(taint);
+            throw var7731B7FAF9DB516E410EE38D728795B2_744515759;
+        } //End block
+        // ---------- Original Method ----------
+        //try
+        //{
+            //return this.getEncoded(ASN1Encodable.DER);
+        //}
+        //catch (IOException e)
+        //{
+            //throw new RuntimeException(e.toString());
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.187 -0400", hash_original_method = "572BCE240DBAD7E2FCA6B5178E7F9E48", hash_generated_method = "E2D9FF3C7D0CBC32965E41DADC411716")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.498 -0400", hash_original_method = "572BCE240DBAD7E2FCA6B5178E7F9E48", hash_generated_method = "8438FDB6F4BF08B60222EDD8A4138D05")
     private void setSignatureParameters(
         Signature signature,
         DEREncodable params) throws NoSuchAlgorithmException, SignatureException, InvalidKeyException {
+        addTaint(params.getTaint());
+        addTaint(signature.getTaint());
+    if(params != null && !DERNull.INSTANCE.equals(params))        
         {
-            boolean varE8057AF7C7F228EF7CA126281F5DED17_850994078 = (params != null && !DERNull.INSTANCE.equals(params));
+            AlgorithmParameters sigParams = AlgorithmParameters.getInstance(signature.getAlgorithm(), signature.getProvider());
+            try 
             {
-                AlgorithmParameters sigParams = AlgorithmParameters.getInstance(signature.getAlgorithm(), signature.getProvider());
+                sigParams.init(params.getDERObject().getDEREncoded());
+            } //End block
+            catch (IOException e)
+            {
+                SignatureException var4C6E34B998119F08550B28F7354D74CB_565667272 = new SignatureException("IOException decoding parameters: " + e.getMessage());
+                var4C6E34B998119F08550B28F7354D74CB_565667272.addTaint(taint);
+                throw var4C6E34B998119F08550B28F7354D74CB_565667272;
+            } //End block
+    if(signature.getAlgorithm().endsWith("MGF1"))            
+            {
                 try 
                 {
-                    sigParams.init(params.getDERObject().getDEREncoded());
-                } 
-                catch (IOException e)
+                    signature.setParameter(sigParams.getParameterSpec(PSSParameterSpec.class));
+                } //End block
+                catch (GeneralSecurityException e)
                 {
-                    if (DroidSafeAndroidRuntime.control) throw new SignatureException("IOException decoding parameters: " + e.getMessage());
-                } 
-                {
-                    boolean var5EE6B1BAB6A4EE2F23E1C61F3C4D4977_179236431 = (signature.getAlgorithm().endsWith("MGF1"));
-                    {
-                        try 
-                        {
-                            signature.setParameter(sigParams.getParameterSpec(PSSParameterSpec.class));
-                        } 
-                        catch (GeneralSecurityException e)
-                        {
-                            if (DroidSafeAndroidRuntime.control) throw new SignatureException("Exception extracting parameters: " + e.getMessage());
-                        } 
-                    } 
-                } 
-            } 
-        } 
-        addTaint(signature.getTaint());
-        addTaint(params.getTaint());
-        
-        
+                    SignatureException var1A8C4267253B70F3D11993580B705F98_2107686842 = new SignatureException("Exception extracting parameters: " + e.getMessage());
+                    var1A8C4267253B70F3D11993580B705F98_2107686842.addTaint(taint);
+                    throw var1A8C4267253B70F3D11993580B705F98_2107686842;
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static String getSignatureName(
+        static String getSignatureName(
         AlgorithmIdentifier sigAlgId) {
         DEREncodable params = sigAlgId.getParameters();
         if (params != null && !DERNull.INSTANCE.equals(params))
@@ -481,8 +479,7 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static String getDigestAlgName(
+        private static String getDigestAlgName(
         DERObjectIdentifier digestAlgOID) {
         if (PKCSObjectIdentifiers.md5.equals(digestAlgOID))
         {
@@ -511,19 +508,19 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.188 -0400", hash_original_field = "B39C3BE7546FA73A752B6C68B346E2B1", hash_generated_field = "2A7E0957EAD856B3315504481686A7DE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.498 -0400", hash_original_field = "B39C3BE7546FA73A752B6C68B346E2B1", hash_generated_field = "2A7E0957EAD856B3315504481686A7DE")
 
     private static Hashtable algorithms = new Hashtable();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.188 -0400", hash_original_field = "0D433ED6AA05239AA7FFA603AE52EAF9", hash_generated_field = "3580C2237188FBF88703AFC814D06B98")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.498 -0400", hash_original_field = "0D433ED6AA05239AA7FFA603AE52EAF9", hash_generated_field = "3580C2237188FBF88703AFC814D06B98")
 
     private static Hashtable params = new Hashtable();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.188 -0400", hash_original_field = "A13D3CE5CEDBFFEA1E23C07F3E99C13F", hash_generated_field = "C8FBF8B644E3B7297D2EC131F85F7B39")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.498 -0400", hash_original_field = "A13D3CE5CEDBFFEA1E23C07F3E99C13F", hash_generated_field = "C8FBF8B644E3B7297D2EC131F85F7B39")
 
     private static Hashtable keyAlgorithms = new Hashtable();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.188 -0400", hash_original_field = "E4322C1573762E02D6AC3A68C442E016", hash_generated_field = "6D958D15EBDB3005FA7CB66D7A014B22")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.499 -0400", hash_original_field = "E4322C1573762E02D6AC3A68C442E016", hash_generated_field = "6D958D15EBDB3005FA7CB66D7A014B22")
 
     private static Hashtable oids = new Hashtable();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.188 -0400", hash_original_field = "9599D5E70EEA113DAC00F7EA2B8AD147", hash_generated_field = "E222E546E7C245483C60E7B45F19B3A8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.499 -0400", hash_original_field = "9599D5E70EEA113DAC00F7EA2B8AD147", hash_generated_field = "E222E546E7C245483C60E7B45F19B3A8")
 
     private static Set noParams = new HashSet();
     static {

@@ -1,12 +1,9 @@
 package android.animation;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.Arrays;
 import android.animation.Keyframe.IntKeyframe;
@@ -14,26 +11,26 @@ import android.animation.Keyframe.FloatKeyframe;
 import android.animation.Keyframe.ObjectKeyframe;
 
 class KeyframeSet {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.099 -0400", hash_original_field = "8ABE62D0F4315FED9AFE09DF6C0B1969", hash_generated_field = "546EF363B5340CFFE8BC4CB61B7D7CDB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.520 -0400", hash_original_field = "8ABE62D0F4315FED9AFE09DF6C0B1969", hash_generated_field = "546EF363B5340CFFE8BC4CB61B7D7CDB")
 
     int mNumKeyframes;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.100 -0400", hash_original_field = "E48CE21BD60568B86C76E1FEB178AD19", hash_generated_field = "F25CCAD87898D140299C8AD61CC00E6F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.521 -0400", hash_original_field = "E48CE21BD60568B86C76E1FEB178AD19", hash_generated_field = "F25CCAD87898D140299C8AD61CC00E6F")
 
     Keyframe mFirstKeyframe;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.100 -0400", hash_original_field = "065059589B03CCB77854AA308BE2FD37", hash_generated_field = "FAFDAB3E74D0E176CA60E56E1C9BCFAE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.521 -0400", hash_original_field = "065059589B03CCB77854AA308BE2FD37", hash_generated_field = "FAFDAB3E74D0E176CA60E56E1C9BCFAE")
 
     Keyframe mLastKeyframe;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.100 -0400", hash_original_field = "DA3E6FC5A778B3C344EE09B26563FD22", hash_generated_field = "E4914FA8D762AE766FD60D6E9561C2E8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.522 -0400", hash_original_field = "DA3E6FC5A778B3C344EE09B26563FD22", hash_generated_field = "E4914FA8D762AE766FD60D6E9561C2E8")
 
     TimeInterpolator mInterpolator;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.100 -0400", hash_original_field = "2E64EE21B3126F8C2918F39C513A3742", hash_generated_field = "D35BC99293A28124030816692F50EE53")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.522 -0400", hash_original_field = "2E64EE21B3126F8C2918F39C513A3742", hash_generated_field = "D35BC99293A28124030816692F50EE53")
 
     ArrayList<Keyframe> mKeyframes;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.101 -0400", hash_original_field = "A5A16062C8CFDCD2D78B97324D59FBBD", hash_generated_field = "FEF5736B09891D2FD2D8C1BD6C28F3AE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.523 -0400", hash_original_field = "A5A16062C8CFDCD2D78B97324D59FBBD", hash_generated_field = "FEF5736B09891D2FD2D8C1BD6C28F3AE")
 
     TypeEvaluator mEvaluator;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.103 -0400", hash_original_method = "AC41B3CB583B4F8C00E3AFE9CCF7C554", hash_generated_method = "0033E58342FA6F951E2956BE1152FEB3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.528 -0400", hash_original_method = "AC41B3CB583B4F8C00E3AFE9CCF7C554", hash_generated_method = "0033E58342FA6F951E2956BE1152FEB3")
     public  KeyframeSet(Keyframe... keyframes) {
         mNumKeyframes = keyframes.length;
         mKeyframes = new ArrayList<Keyframe>();
@@ -41,17 +38,17 @@ class KeyframeSet {
         mFirstKeyframe = mKeyframes.get(0);
         mLastKeyframe = mKeyframes.get(mNumKeyframes - 1);
         mInterpolator = mLastKeyframe.getInterpolator();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mNumKeyframes = keyframes.length;
+        //mKeyframes = new ArrayList<Keyframe>();
+        //mKeyframes.addAll(Arrays.asList(keyframes));
+        //mFirstKeyframe = mKeyframes.get(0);
+        //mLastKeyframe = mKeyframes.get(mNumKeyframes - 1);
+        //mInterpolator = mLastKeyframe.getInterpolator();
     }
 
     
-    public static KeyframeSet ofInt(int... values) {
+        public static KeyframeSet ofInt(int... values) {
         int numKeyframes = values.length;
         IntKeyframe keyframes[] = new IntKeyframe[Math.max(numKeyframes,2)];
         if (numKeyframes == 1) {
@@ -67,7 +64,7 @@ class KeyframeSet {
     }
 
     
-    public static KeyframeSet ofFloat(float... values) {
+        public static KeyframeSet ofFloat(float... values) {
         int numKeyframes = values.length;
         FloatKeyframe keyframes[] = new FloatKeyframe[Math.max(numKeyframes,2)];
         if (numKeyframes == 1) {
@@ -83,7 +80,7 @@ class KeyframeSet {
     }
 
     
-    public static KeyframeSet ofKeyframe(Keyframe... keyframes) {
+        public static KeyframeSet ofKeyframe(Keyframe... keyframes) {
         int numKeyframes = keyframes.length;
         boolean hasFloat = false;
         boolean hasInt = false;
@@ -115,7 +112,7 @@ class KeyframeSet {
     }
 
     
-    public static KeyframeSet ofObject(Object... values) {
+        public static KeyframeSet ofObject(Object... values) {
         int numKeyframes = values.length;
         ObjectKeyframe keyframes[] = new ObjectKeyframe[Math.max(numKeyframes,2)];
         if (numKeyframes == 1) {
@@ -131,154 +128,133 @@ class KeyframeSet {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.109 -0400", hash_original_method = "EEDF4BFC49E3BB0A5C905B0E8446FBFF", hash_generated_method = "B27A43CC2EED297119DEAFB17EFEE8BB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.539 -0400", hash_original_method = "EEDF4BFC49E3BB0A5C905B0E8446FBFF", hash_generated_method = "B27A43CC2EED297119DEAFB17EFEE8BB")
     public void setEvaluator(TypeEvaluator evaluator) {
         mEvaluator = evaluator;
-        
-        
+        // ---------- Original Method ----------
+        //mEvaluator = evaluator;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.114 -0400", hash_original_method = "852EEF0AADF480969C7D66EC6180E295", hash_generated_method = "8D747ED419FCBCE3C5C4EBA582665734")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.542 -0400", hash_original_method = "852EEF0AADF480969C7D66EC6180E295", hash_generated_method = "D10290FC6A72B51DD15475A1E8C01AFE")
     @Override
     public KeyframeSet clone() {
-        KeyframeSet varB4EAC82CA7396A68D541C85D26508E83_50263845 = null; 
         ArrayList<Keyframe> keyframes = mKeyframes;
         int numKeyframes = mKeyframes.size();
         Keyframe[] newKeyframes = new Keyframe[numKeyframes];
+for(int i = 0;i < numKeyframes;++i)
         {
-            int i = 0;
-            {
-                newKeyframes[i] = keyframes.get(i).clone();
-            } 
-        } 
+            newKeyframes[i] = keyframes.get(i).clone();
+        } //End block
         KeyframeSet newSet = new KeyframeSet(newKeyframes);
-        varB4EAC82CA7396A68D541C85D26508E83_50263845 = newSet;
-        varB4EAC82CA7396A68D541C85D26508E83_50263845.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_50263845;
-        
-        
-        
-        
-        
-            
-        
-        
-        
+KeyframeSet var887F3F78AE0C9FB0CC98EDF99F492138_1983271124 =         newSet;
+        var887F3F78AE0C9FB0CC98EDF99F492138_1983271124.addTaint(taint);
+        return var887F3F78AE0C9FB0CC98EDF99F492138_1983271124;
+        // ---------- Original Method ----------
+        //ArrayList<Keyframe> keyframes = mKeyframes;
+        //int numKeyframes = mKeyframes.size();
+        //Keyframe[] newKeyframes = new Keyframe[numKeyframes];
+        //for (int i = 0; i < numKeyframes; ++i) {
+            //newKeyframes[i] = keyframes.get(i).clone();
+        //}
+        //KeyframeSet newSet = new KeyframeSet(newKeyframes);
+        //return newSet;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.131 -0400", hash_original_method = "80AFA2A1CA8ECB40318B145A78C4EE8C", hash_generated_method = "66C47B28622429BA1AA19F75BF02FEA9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.550 -0400", hash_original_method = "80AFA2A1CA8ECB40318B145A78C4EE8C", hash_generated_method = "871BFFA72E4A61ABADE21B075DBF22DA")
     public Object getValue(float fraction) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_446268573 = null; 
-        Object varB4EAC82CA7396A68D541C85D26508E83_667974857 = null; 
-        Object varB4EAC82CA7396A68D541C85D26508E83_2011659491 = null; 
-        Object varB4EAC82CA7396A68D541C85D26508E83_1964158152 = null; 
-        Object varB4EAC82CA7396A68D541C85D26508E83_1489095159 = null; 
+        addTaint(fraction);
+    if(mNumKeyframes == 2)        
         {
+    if(mInterpolator != null)            
             {
                 fraction = mInterpolator.getInterpolation(fraction);
-            } 
-            varB4EAC82CA7396A68D541C85D26508E83_446268573 = mEvaluator.evaluate(fraction, mFirstKeyframe.getValue(),
+            } //End block
+Object var34E4E058AF9CE8B969DF6DEF2537A537_1145486492 =             mEvaluator.evaluate(fraction, mFirstKeyframe.getValue(),
                     mLastKeyframe.getValue());
-        } 
+            var34E4E058AF9CE8B969DF6DEF2537A537_1145486492.addTaint(taint);
+            return var34E4E058AF9CE8B969DF6DEF2537A537_1145486492;
+        } //End block
+    if(fraction <= 0f)        
         {
             final Keyframe nextKeyframe = mKeyframes.get(1);
             final TimeInterpolator interpolator = nextKeyframe.getInterpolator();
+    if(interpolator != null)            
             {
                 fraction = interpolator.getInterpolation(fraction);
-            } 
+            } //End block
             final float prevFraction = mFirstKeyframe.getFraction();
             float intervalFraction = (fraction - prevFraction) /
                 (nextKeyframe.getFraction() - prevFraction);
-            varB4EAC82CA7396A68D541C85D26508E83_667974857 = mEvaluator.evaluate(intervalFraction, mFirstKeyframe.getValue(),
+Object varF00583FB3258D795DDC10D4FDA15B588_222020060 =             mEvaluator.evaluate(intervalFraction, mFirstKeyframe.getValue(),
                     nextKeyframe.getValue());
-        } 
+            varF00583FB3258D795DDC10D4FDA15B588_222020060.addTaint(taint);
+            return varF00583FB3258D795DDC10D4FDA15B588_222020060;
+        } //End block
+        else
+    if(fraction >= 1f)        
         {
             final Keyframe prevKeyframe = mKeyframes.get(mNumKeyframes - 2);
             final TimeInterpolator interpolator = mLastKeyframe.getInterpolator();
+    if(interpolator != null)            
             {
                 fraction = interpolator.getInterpolation(fraction);
-            } 
+            } //End block
             final float prevFraction = prevKeyframe.getFraction();
             float intervalFraction = (fraction - prevFraction) /
                 (mLastKeyframe.getFraction() - prevFraction);
-            varB4EAC82CA7396A68D541C85D26508E83_2011659491 = mEvaluator.evaluate(intervalFraction, prevKeyframe.getValue(),
+Object var740E31ABF97BAA5271118DBF805FBE8F_1379733917 =             mEvaluator.evaluate(intervalFraction, prevKeyframe.getValue(),
                     mLastKeyframe.getValue());
-        } 
+            var740E31ABF97BAA5271118DBF805FBE8F_1379733917.addTaint(taint);
+            return var740E31ABF97BAA5271118DBF805FBE8F_1379733917;
+        } //End block
         Keyframe prevKeyframe = mFirstKeyframe;
+for(int i = 1;i < mNumKeyframes;++i)
         {
-            int i = 1;
+            Keyframe nextKeyframe = mKeyframes.get(i);
+    if(fraction < nextKeyframe.getFraction())            
             {
-                Keyframe nextKeyframe = mKeyframes.get(i);
+                final TimeInterpolator interpolator = nextKeyframe.getInterpolator();
+    if(interpolator != null)                
                 {
-                    boolean var6EBE8138E05C6E6707EE379D88735F94_1382036768 = (fraction < nextKeyframe.getFraction());
-                    {
-                        final TimeInterpolator interpolator = nextKeyframe.getInterpolator();
-                        {
-                            fraction = interpolator.getInterpolation(fraction);
-                        } 
-                        final float prevFraction = prevKeyframe.getFraction();
-                        float intervalFraction = (fraction - prevFraction) /
+                    fraction = interpolator.getInterpolation(fraction);
+                } //End block
+                final float prevFraction = prevKeyframe.getFraction();
+                float intervalFraction = (fraction - prevFraction) /
                     (nextKeyframe.getFraction() - prevFraction);
-                        varB4EAC82CA7396A68D541C85D26508E83_1964158152 = mEvaluator.evaluate(intervalFraction, prevKeyframe.getValue(),
+Object varDD3A0D22802CF8E227E3E1110E0A0DC1_1974256520 =                 mEvaluator.evaluate(intervalFraction, prevKeyframe.getValue(),
                         nextKeyframe.getValue());
-                    } 
-                } 
-                prevKeyframe = nextKeyframe;
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1489095159 = mLastKeyframe.getValue();
-        addTaint(fraction);
-        Object varA7E53CE21691AB073D9660D615818899_1517767645; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1517767645 = varB4EAC82CA7396A68D541C85D26508E83_446268573;
-                break;
-            case 2: 
-                varA7E53CE21691AB073D9660D615818899_1517767645 = varB4EAC82CA7396A68D541C85D26508E83_667974857;
-                break;
-            case 3: 
-                varA7E53CE21691AB073D9660D615818899_1517767645 = varB4EAC82CA7396A68D541C85D26508E83_2011659491;
-                break;
-            case 4: 
-                varA7E53CE21691AB073D9660D615818899_1517767645 = varB4EAC82CA7396A68D541C85D26508E83_1964158152;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1517767645 = varB4EAC82CA7396A68D541C85D26508E83_1489095159;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1517767645.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1517767645;
-        
-        
+                varDD3A0D22802CF8E227E3E1110E0A0DC1_1974256520.addTaint(taint);
+                return varDD3A0D22802CF8E227E3E1110E0A0DC1_1974256520;
+            } //End block
+            prevKeyframe = nextKeyframe;
+        } //End block
+Object var91FB1B83987C58943E8A4DED27A29F6D_1437539521 =         mLastKeyframe.getValue();
+        var91FB1B83987C58943E8A4DED27A29F6D_1437539521.addTaint(taint);
+        return var91FB1B83987C58943E8A4DED27A29F6D_1437539521;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.139 -0400", hash_original_method = "5AFB3B0DBEF799B422062A71D978DCE0", hash_generated_method = "B99EE04504F4DDEFB1BEF67ADF49B848")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.554 -0400", hash_original_method = "5AFB3B0DBEF799B422062A71D978DCE0", hash_generated_method = "F46A4FF6B8CC17BEC8974E544200B509")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1102566748 = null; 
         String returnVal = " ";
+for(int i = 0;i < mNumKeyframes;++i)
         {
-            int i = 0;
-            {
-                returnVal += mKeyframes.get(i).getValue() + "  ";
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1102566748 = returnVal;
-        varB4EAC82CA7396A68D541C85D26508E83_1102566748.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1102566748;
-        
-        
-        
-            
-        
-        
+            returnVal += mKeyframes.get(i).getValue() + "  ";
+        } //End block
+String var74D8482D05AF02514EABC315066E6806_1821908998 =         returnVal;
+        var74D8482D05AF02514EABC315066E6806_1821908998.addTaint(taint);
+        return var74D8482D05AF02514EABC315066E6806_1821908998;
+        // ---------- Original Method ----------
+        //String returnVal = " ";
+        //for (int i = 0; i < mNumKeyframes; ++i) {
+            //returnVal += mKeyframes.get(i).getValue() + "  ";
+        //}
+        //return returnVal;
     }
 
     

@@ -1,12 +1,9 @@
 package android.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.net.ProxyProperties;
 import android.os.Parcelable;
 import android.os.Parcel;
@@ -18,637 +15,548 @@ import java.util.Collection;
 import java.util.Collections;
 
 public class LinkProperties implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.116 -0400", hash_original_field = "E6BA5CF0E40609A434B9830189A5C361", hash_generated_field = "6D2C834A0EA52BA031060A9E0AEE620E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.491 -0400", hash_original_field = "E6BA5CF0E40609A434B9830189A5C361", hash_generated_field = "6D2C834A0EA52BA031060A9E0AEE620E")
 
     String mIfaceName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.116 -0400", hash_original_field = "6AEFC7DC6659B9C6DA99F3CB40F9A569", hash_generated_field = "00DE8BD688F501E4FB5528A63461C364")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.491 -0400", hash_original_field = "6AEFC7DC6659B9C6DA99F3CB40F9A569", hash_generated_field = "00DE8BD688F501E4FB5528A63461C364")
 
     private Collection<LinkAddress> mLinkAddresses = new ArrayList<LinkAddress>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.116 -0400", hash_original_field = "FD91D9D1E504FC4A4ED4F0BB92CA1204", hash_generated_field = "D0EA13350ECE9796647D8145F3FB5864")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.491 -0400", hash_original_field = "FD91D9D1E504FC4A4ED4F0BB92CA1204", hash_generated_field = "D0EA13350ECE9796647D8145F3FB5864")
 
     private Collection<InetAddress> mDnses = new ArrayList<InetAddress>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.116 -0400", hash_original_field = "722D48B16FEB25182D36B7B66149CEE2", hash_generated_field = "2D860F9C91CB145D416269098C36EC63")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.491 -0400", hash_original_field = "722D48B16FEB25182D36B7B66149CEE2", hash_generated_field = "2D860F9C91CB145D416269098C36EC63")
 
     private Collection<RouteInfo> mRoutes = new ArrayList<RouteInfo>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.116 -0400", hash_original_field = "333D05D23A1925EB4A47F41C960FCCB0", hash_generated_field = "E6A788E6ED925BAD844282A07CD34FF9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.491 -0400", hash_original_field = "333D05D23A1925EB4A47F41C960FCCB0", hash_generated_field = "E6A788E6ED925BAD844282A07CD34FF9")
 
     private ProxyProperties mHttpProxy;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.117 -0400", hash_original_method = "A2AA1798C08A5590A3DB637A5B794F80", hash_generated_method = "61D49920A9252FA3879C7DD8F5F55E1D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.492 -0400", hash_original_method = "A2AA1798C08A5590A3DB637A5B794F80", hash_generated_method = "61D49920A9252FA3879C7DD8F5F55E1D")
     public  LinkProperties() {
         clear();
-        
-        
+        // ---------- Original Method ----------
+        //clear();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.124 -0400", hash_original_method = "836BF23A93C2D960D78EC02574131087", hash_generated_method = "AC566DDE17FDE3D6B0F97F08411F7373")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.492 -0400", hash_original_method = "836BF23A93C2D960D78EC02574131087", hash_generated_method = "F804DC29CB66E37CE1DE0BEA496C0816")
     public  LinkProperties(LinkProperties source) {
+    if(source != null)        
         {
             mIfaceName = source.getInterfaceName();
-            {
-                Iterator<LinkAddress> var59DB07A15473864E1C5588C8655CA6E3_27437227 = (source.getLinkAddresses()).iterator();
-                var59DB07A15473864E1C5588C8655CA6E3_27437227.hasNext();
-                LinkAddress l = var59DB07A15473864E1C5588C8655CA6E3_27437227.next();
-                mLinkAddresses.add(l);
-            } 
-            {
-                Iterator<InetAddress> varAF10DA590F783BAD26DEEDB471E7BD07_1778396313 = (source.getDnses()).iterator();
-                varAF10DA590F783BAD26DEEDB471E7BD07_1778396313.hasNext();
-                InetAddress i = varAF10DA590F783BAD26DEEDB471E7BD07_1778396313.next();
-                mDnses.add(i);
-            } 
-            {
-                Iterator<RouteInfo> var5AEB519FA22FBA3D61143458993DDC82_969178397 = (source.getRoutes()).iterator();
-                var5AEB519FA22FBA3D61143458993DDC82_969178397.hasNext();
-                RouteInfo r = var5AEB519FA22FBA3D61143458993DDC82_969178397.next();
-                mRoutes.add(r);
-            } 
+for(LinkAddress l : source.getLinkAddresses())
+            mLinkAddresses.add(l);
+for(InetAddress i : source.getDnses())
+            mDnses.add(i);
+for(RouteInfo r : source.getRoutes())
+            mRoutes.add(r);
             mHttpProxy = (source.getHttpProxy() == null)  ?
                 null : new ProxyProperties(source.getHttpProxy());
-        } 
-        
-        
-            
-            
-            
-            
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (source != null) {
+            //mIfaceName = source.getInterfaceName();
+            //for (LinkAddress l : source.getLinkAddresses()) mLinkAddresses.add(l);
+            //for (InetAddress i : source.getDnses()) mDnses.add(i);
+            //for (RouteInfo r : source.getRoutes()) mRoutes.add(r);
+            //mHttpProxy = (source.getHttpProxy() == null)  ?
+                //null : new ProxyProperties(source.getHttpProxy());
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.124 -0400", hash_original_method = "658C71C3CDAAE8BF2A6E808615EC0533", hash_generated_method = "D58C219F5C5992BE6A4B05BFFDE78502")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.493 -0400", hash_original_method = "658C71C3CDAAE8BF2A6E808615EC0533", hash_generated_method = "D58C219F5C5992BE6A4B05BFFDE78502")
     public void setInterfaceName(String iface) {
         mIfaceName = iface;
-        
-        
+        // ---------- Original Method ----------
+        //mIfaceName = iface;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.125 -0400", hash_original_method = "DE3FEB2907F1F43DDDDBA76FC2B5A592", hash_generated_method = "CFE0A869169EA27A27A7D5ADDC0B007E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.493 -0400", hash_original_method = "DE3FEB2907F1F43DDDDBA76FC2B5A592", hash_generated_method = "00DBDC025AE1C4F2B2711052096EE4DC")
     public String getInterfaceName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1157394690 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1157394690 = mIfaceName;
-        varB4EAC82CA7396A68D541C85D26508E83_1157394690.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1157394690;
-        
-        
+String varDBBF7F34FEA77D2F5A034B4E3366C61F_1175500303 =         mIfaceName;
+        varDBBF7F34FEA77D2F5A034B4E3366C61F_1175500303.addTaint(taint);
+        return varDBBF7F34FEA77D2F5A034B4E3366C61F_1175500303;
+        // ---------- Original Method ----------
+        //return mIfaceName;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.128 -0400", hash_original_method = "873086E492F590532E0F956B14530004", hash_generated_method = "F9BD768F673EA50EA0E0C2DC517948C5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.494 -0400", hash_original_method = "873086E492F590532E0F956B14530004", hash_generated_method = "46084C32BC0EA4A4E8FE44B084DB2542")
     public Collection<InetAddress> getAddresses() {
-        Collection<InetAddress> varB4EAC82CA7396A68D541C85D26508E83_438606716 = null; 
         Collection<InetAddress> addresses = new ArrayList<InetAddress>();
+for(LinkAddress linkAddress : mLinkAddresses)
         {
-            Iterator<LinkAddress> varDF96464DD29D4BD0B0137A05D67E51BB_2143689779 = (mLinkAddresses).iterator();
-            varDF96464DD29D4BD0B0137A05D67E51BB_2143689779.hasNext();
-            LinkAddress linkAddress = varDF96464DD29D4BD0B0137A05D67E51BB_2143689779.next();
-            {
-                addresses.add(linkAddress.getAddress());
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_438606716 = Collections.unmodifiableCollection(addresses);
-        varB4EAC82CA7396A68D541C85D26508E83_438606716.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_438606716;
-        
-        
-        
-            
-        
-        
+            addresses.add(linkAddress.getAddress());
+        } //End block
+Collection<InetAddress> var6419FF4782F380F3448977EB89A48275_1919595701 =         Collections.unmodifiableCollection(addresses);
+        var6419FF4782F380F3448977EB89A48275_1919595701.addTaint(taint);
+        return var6419FF4782F380F3448977EB89A48275_1919595701;
+        // ---------- Original Method ----------
+        //Collection<InetAddress> addresses = new ArrayList<InetAddress>();
+        //for (LinkAddress linkAddress : mLinkAddresses) {
+            //addresses.add(linkAddress.getAddress());
+        //}
+        //return Collections.unmodifiableCollection(addresses);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.129 -0400", hash_original_method = "1B49E50669A271748C7EE163D2678E87", hash_generated_method = "911CB430011BD1592676CF4A964808BA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.494 -0400", hash_original_method = "1B49E50669A271748C7EE163D2678E87", hash_generated_method = "B5C32F8523096D26414BC375B4BA9125")
     public void addLinkAddress(LinkAddress address) {
-        mLinkAddresses.add(address);
         addTaint(address.getTaint());
-        
-        
+    if(address != null)        
+        mLinkAddresses.add(address);
+        // ---------- Original Method ----------
+        //if (address != null) mLinkAddresses.add(address);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.131 -0400", hash_original_method = "72D86E86409333B5516C160027F12741", hash_generated_method = "CBF8E23998DA6C25B332046E2A3013D7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.495 -0400", hash_original_method = "72D86E86409333B5516C160027F12741", hash_generated_method = "1941AE18889B18A697099717EC7A2651")
     public Collection<LinkAddress> getLinkAddresses() {
-        Collection<LinkAddress> varB4EAC82CA7396A68D541C85D26508E83_963224493 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_963224493 = Collections.unmodifiableCollection(mLinkAddresses);
-        varB4EAC82CA7396A68D541C85D26508E83_963224493.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_963224493;
-        
-        
+Collection<LinkAddress> var27C4CB910FDED38F12DD8846316AB7F8_2005307710 =         Collections.unmodifiableCollection(mLinkAddresses);
+        var27C4CB910FDED38F12DD8846316AB7F8_2005307710.addTaint(taint);
+        return var27C4CB910FDED38F12DD8846316AB7F8_2005307710;
+        // ---------- Original Method ----------
+        //return Collections.unmodifiableCollection(mLinkAddresses);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.133 -0400", hash_original_method = "34CA5CC4558FA9428BD44173436D0F22", hash_generated_method = "D674353956780C7E1DEA381F7DF5875F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.495 -0400", hash_original_method = "34CA5CC4558FA9428BD44173436D0F22", hash_generated_method = "B21EEBA61233533A53DED90C5483E9C4")
     public void addDns(InetAddress dns) {
-        mDnses.add(dns);
         addTaint(dns.getTaint());
-        
-        
+    if(dns != null)        
+        mDnses.add(dns);
+        // ---------- Original Method ----------
+        //if (dns != null) mDnses.add(dns);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.134 -0400", hash_original_method = "71F7664B03379576DA51ED6043500785", hash_generated_method = "30588ABAC76185ECA5C3FAD39FF142A7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.495 -0400", hash_original_method = "71F7664B03379576DA51ED6043500785", hash_generated_method = "467C85ABF76119727FB9FE9EEBF686D2")
     public Collection<InetAddress> getDnses() {
-        Collection<InetAddress> varB4EAC82CA7396A68D541C85D26508E83_110210564 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_110210564 = Collections.unmodifiableCollection(mDnses);
-        varB4EAC82CA7396A68D541C85D26508E83_110210564.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_110210564;
-        
-        
+Collection<InetAddress> var403B15EFA3DEE7746142DD35B22D830C_2026083592 =         Collections.unmodifiableCollection(mDnses);
+        var403B15EFA3DEE7746142DD35B22D830C_2026083592.addTaint(taint);
+        return var403B15EFA3DEE7746142DD35B22D830C_2026083592;
+        // ---------- Original Method ----------
+        //return Collections.unmodifiableCollection(mDnses);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.134 -0400", hash_original_method = "D2F9F5371D010F9C9B4F83D9513356DD", hash_generated_method = "CF497BE7CA790421615629C6965AC22C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.495 -0400", hash_original_method = "D2F9F5371D010F9C9B4F83D9513356DD", hash_generated_method = "84C07B5B887C9A3C118E62B25E32A916")
     public void addRoute(RouteInfo route) {
-        mRoutes.add(route);
         addTaint(route.getTaint());
-        
-        
+    if(route != null)        
+        mRoutes.add(route);
+        // ---------- Original Method ----------
+        //if (route != null) mRoutes.add(route);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.135 -0400", hash_original_method = "A7B26240781BB7C0E135CB45CD0D9800", hash_generated_method = "5138431EB3DEAAE43C01B29EA83EED72")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.496 -0400", hash_original_method = "A7B26240781BB7C0E135CB45CD0D9800", hash_generated_method = "46DCAE447C5F05E9F3A1C774DE6A67B1")
     public Collection<RouteInfo> getRoutes() {
-        Collection<RouteInfo> varB4EAC82CA7396A68D541C85D26508E83_476212792 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_476212792 = Collections.unmodifiableCollection(mRoutes);
-        varB4EAC82CA7396A68D541C85D26508E83_476212792.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_476212792;
-        
-        
+Collection<RouteInfo> var5AD2DA20604AB9506F6623852FC9A803_533550709 =         Collections.unmodifiableCollection(mRoutes);
+        var5AD2DA20604AB9506F6623852FC9A803_533550709.addTaint(taint);
+        return var5AD2DA20604AB9506F6623852FC9A803_533550709;
+        // ---------- Original Method ----------
+        //return Collections.unmodifiableCollection(mRoutes);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.135 -0400", hash_original_method = "A3A7E4451F64D99820B4BAAEF1AFE8A2", hash_generated_method = "8C961CFF90F31516B337EDFD675E66E4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.496 -0400", hash_original_method = "A3A7E4451F64D99820B4BAAEF1AFE8A2", hash_generated_method = "8C961CFF90F31516B337EDFD675E66E4")
     public void setHttpProxy(ProxyProperties proxy) {
         mHttpProxy = proxy;
-        
-        
+        // ---------- Original Method ----------
+        //mHttpProxy = proxy;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.136 -0400", hash_original_method = "6E571D9EDF02B85B7F325367F981AC91", hash_generated_method = "BBE9062B195816AD73E0FB20AD065415")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.496 -0400", hash_original_method = "6E571D9EDF02B85B7F325367F981AC91", hash_generated_method = "352AD3DD3C4D13D8016303D99EFCA098")
     public ProxyProperties getHttpProxy() {
-        ProxyProperties varB4EAC82CA7396A68D541C85D26508E83_749956514 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_749956514 = mHttpProxy;
-        varB4EAC82CA7396A68D541C85D26508E83_749956514.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_749956514;
-        
-        
+ProxyProperties var8C1D00C1505CE1BA6F0EC413A8FF4F4A_1967034512 =         mHttpProxy;
+        var8C1D00C1505CE1BA6F0EC413A8FF4F4A_1967034512.addTaint(taint);
+        return var8C1D00C1505CE1BA6F0EC413A8FF4F4A_1967034512;
+        // ---------- Original Method ----------
+        //return mHttpProxy;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.136 -0400", hash_original_method = "4D86E4F145913ECB4C1EE8109466CAB3", hash_generated_method = "A8ED76BD4957AE90AC09315AE270F855")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.497 -0400", hash_original_method = "4D86E4F145913ECB4C1EE8109466CAB3", hash_generated_method = "A8ED76BD4957AE90AC09315AE270F855")
     public void clear() {
         mIfaceName = null;
         mLinkAddresses.clear();
         mDnses.clear();
         mRoutes.clear();
         mHttpProxy = null;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mIfaceName = null;
+        //mLinkAddresses.clear();
+        //mDnses.clear();
+        //mRoutes.clear();
+        //mHttpProxy = null;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.137 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E6D5C8C22AD917ECC1E99C23BA71CCD3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.497 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8827EB6ED5EE35586619A7AC08AEC4ED")
     public int describeContents() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_924922597 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_924922597;
-        
-        
+        int varCFCD208495D565EF66E7DFF9F98764DA_1484843669 = (0);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1152223887 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1152223887;
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.149 -0400", hash_original_method = "FDC9878366ECD283FC0D7411AB5ED4B7", hash_generated_method = "646EEBC5BD656540671F8BBBB543E121")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.498 -0400", hash_original_method = "FDC9878366ECD283FC0D7411AB5ED4B7", hash_generated_method = "4EC53AE83A89CFFD9A978BBFC6BC56F3")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1012469026 = null; 
         String ifaceName = (mIfaceName == null ? "" : "InterfaceName: " + mIfaceName + " ");
         String linkAddresses = "LinkAddresses: [";
-        {
-            Iterator<LinkAddress> varA54DF54142E944DE1695D23EA874915C_1847148649 = (mLinkAddresses).iterator();
-            varA54DF54142E944DE1695D23EA874915C_1847148649.hasNext();
-            LinkAddress addr = varA54DF54142E944DE1695D23EA874915C_1847148649.next();
-            linkAddresses += addr.toString() + ",";
-        } 
+for(LinkAddress addr : mLinkAddresses)
+        linkAddresses += addr.toString() + ",";
         linkAddresses += "] ";
         String dns = "DnsAddresses: [";
-        {
-            Iterator<InetAddress> varF82ABEA2736FEE01B3D433C6A400C80E_1545759248 = (mDnses).iterator();
-            varF82ABEA2736FEE01B3D433C6A400C80E_1545759248.hasNext();
-            InetAddress addr = varF82ABEA2736FEE01B3D433C6A400C80E_1545759248.next();
-            dns += addr.getHostAddress() + ",";
-        } 
+for(InetAddress addr : mDnses)
+        dns += addr.getHostAddress() + ",";
         dns += "] ";
         String routes = "Routes: [";
-        {
-            Iterator<RouteInfo> var884AA7CBDA9AFAD5F88BFEB52967F598_1845543427 = (mRoutes).iterator();
-            var884AA7CBDA9AFAD5F88BFEB52967F598_1845543427.hasNext();
-            RouteInfo route = var884AA7CBDA9AFAD5F88BFEB52967F598_1845543427.next();
-            routes += route.toString() + ",";
-        } 
+for(RouteInfo route : mRoutes)
+        routes += route.toString() + ",";
         routes += "] ";
         String proxy = (mHttpProxy == null ? "" : "HttpProxy: " + mHttpProxy.toString() + " ");
-        varB4EAC82CA7396A68D541C85D26508E83_1012469026 = ifaceName + linkAddresses + routes + dns + proxy;
-        varB4EAC82CA7396A68D541C85D26508E83_1012469026.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1012469026;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+String var430472DB386972AD2D3982D89089051C_863804347 =         ifaceName + linkAddresses + routes + dns + proxy;
+        var430472DB386972AD2D3982D89089051C_863804347.addTaint(taint);
+        return var430472DB386972AD2D3982D89089051C_863804347;
+        // ---------- Original Method ----------
+        //String ifaceName = (mIfaceName == null ? "" : "InterfaceName: " + mIfaceName + " ");
+        //String linkAddresses = "LinkAddresses: [";
+        //for (LinkAddress addr : mLinkAddresses) linkAddresses += addr.toString() + ",";
+        //linkAddresses += "] ";
+        //String dns = "DnsAddresses: [";
+        //for (InetAddress addr : mDnses) dns += addr.getHostAddress() + ",";
+        //dns += "] ";
+        //String routes = "Routes: [";
+        //for (RouteInfo route : mRoutes) routes += route.toString() + ",";
+        //routes += "] ";
+        //String proxy = (mHttpProxy == null ? "" : "HttpProxy: " + mHttpProxy.toString() + " ");
+        //return ifaceName + linkAddresses + routes + dns + proxy;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.149 -0400", hash_original_method = "48DB33246C86C278D2BAD545A88B9470", hash_generated_method = "33F2E7628C1FF2EF031659E1BF3CBF9B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.498 -0400", hash_original_method = "48DB33246C86C278D2BAD545A88B9470", hash_generated_method = "58746B84144008F348B058B8A34DD720")
     public boolean isIdenticalInterfaceName(LinkProperties target) {
-        boolean var6F2AB3D9835C0A270859893D0ED96986_920728677 = (TextUtils.equals(getInterfaceName(), target.getInterfaceName()));
         addTaint(target.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_376714369 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_376714369;
-        
-        
+        boolean varD20D30097790CAF68F9CE6536FAE7A8F_1731274473 = (TextUtils.equals(getInterfaceName(), target.getInterfaceName()));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_685383607 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_685383607;
+        // ---------- Original Method ----------
+        //return TextUtils.equals(getInterfaceName(), target.getInterfaceName());
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.150 -0400", hash_original_method = "D0F0B04B5ACB5FD8D13B5B828D9A160C", hash_generated_method = "C5E0561B9D6E7F30FB28B0C65506F772")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.499 -0400", hash_original_method = "D0F0B04B5ACB5FD8D13B5B828D9A160C", hash_generated_method = "0676051722CACADFC56DBFAC2F1A6EBD")
     public boolean isIdenticalAddresses(LinkProperties target) {
+        addTaint(target.getTaint());
         Collection<InetAddress> targetAddresses = target.getAddresses();
         Collection<InetAddress> sourceAddresses = getAddresses();
-        {
-            boolean var171F2F84DB8A7D85E1317944C116AFCC_714741760 = ((sourceAddresses.size() == targetAddresses.size()));
-            Object varC949C242E33C773B3451D3552B0945BC_1848852792 = (sourceAddresses.containsAll(targetAddresses));
-        } 
-        addTaint(target.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_771741495 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_771741495;
-        
-        
-        
-        
-                    
+        boolean var203BC4A5FC3DC79E520CB82BF00AC7E7_2140651018 = ((sourceAddresses.size() == targetAddresses.size()) ?
+                    sourceAddresses.containsAll(targetAddresses) : false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_249774975 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_249774975;
+        // ---------- Original Method ----------
+        //Collection<InetAddress> targetAddresses = target.getAddresses();
+        //Collection<InetAddress> sourceAddresses = getAddresses();
+        //return (sourceAddresses.size() == targetAddresses.size()) ?
+                    //sourceAddresses.containsAll(targetAddresses) : false;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.151 -0400", hash_original_method = "14A4F7F9C3E90075B30F314D9FCFE073", hash_generated_method = "D13918C2A5988D373EC20C97B5C3B4FF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.499 -0400", hash_original_method = "14A4F7F9C3E90075B30F314D9FCFE073", hash_generated_method = "B828E8842A9EA42900356A13801D0F55")
     public boolean isIdenticalDnses(LinkProperties target) {
+        addTaint(target.getTaint());
         Collection<InetAddress> targetDnses = target.getDnses();
-        {
-            boolean varE3CBC7C3F925563121730FFF5E3D651F_622014540 = ((mDnses.size() == targetDnses.size()));
-            Object var09E03C66279AC68D4F5A138A51FD11CA_1900105631 = (mDnses.containsAll(targetDnses));
-        } 
-        addTaint(target.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_335864488 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_335864488;
-        
-        
-        
-                    
+        boolean varAD75F03F5A5C47B5084FF92D7EA741A3_1750794053 = ((mDnses.size() == targetDnses.size()) ?
+                    mDnses.containsAll(targetDnses) : false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_24848705 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_24848705;
+        // ---------- Original Method ----------
+        //Collection<InetAddress> targetDnses = target.getDnses();
+        //return (mDnses.size() == targetDnses.size()) ?
+                    //mDnses.containsAll(targetDnses) : false;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.152 -0400", hash_original_method = "3C11F6A9D4CB5E313FF4392D544C8E01", hash_generated_method = "8CF0F2E883BDFD1EDBD3A8AB51766A1A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.499 -0400", hash_original_method = "3C11F6A9D4CB5E313FF4392D544C8E01", hash_generated_method = "FB292F40F62AFBCCD4F6471BE174BAEA")
     public boolean isIdenticalRoutes(LinkProperties target) {
+        addTaint(target.getTaint());
         Collection<RouteInfo> targetRoutes = target.getRoutes();
-        {
-            boolean var8A4690F8676279C4E003E24A9E634512_725827341 = ((mRoutes.size() == targetRoutes.size()));
-            Object varFC1EE2679A5375D5CE177F9337267C1C_249686213 = (mRoutes.containsAll(targetRoutes));
-        } 
-        addTaint(target.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_814505989 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_814505989;
-        
-        
-        
-                    
+        boolean varF82B5BD70A878FCD29A431DC790087FD_1362711118 = ((mRoutes.size() == targetRoutes.size()) ?
+                    mRoutes.containsAll(targetRoutes) : false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1373478115 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1373478115;
+        // ---------- Original Method ----------
+        //Collection<RouteInfo> targetRoutes = target.getRoutes();
+        //return (mRoutes.size() == targetRoutes.size()) ?
+                    //mRoutes.containsAll(targetRoutes) : false;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.153 -0400", hash_original_method = "DD4569AF6E08EF8065FD20A93C9D719F", hash_generated_method = "3C559BAF55DCA6F5583426384D3E08AD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.500 -0400", hash_original_method = "DD4569AF6E08EF8065FD20A93C9D719F", hash_generated_method = "BE9DD1A6EFD3A95A6EB3397B4189FFC8")
     public boolean isIdenticalHttpProxy(LinkProperties target) {
-        {
-            boolean varFBC502E80F6E2ED4131D5F3B922A0FAC_2117862390 = (getHttpProxy() == null);
-            Object var7FD26D8E5D9A81FA18A194614D9B2D1C_1059227754 = (target.getHttpProxy() == null);
-            Object var68066F11042D8854D996D502391CDF43_810206921 = (getHttpProxy().equals(target.getHttpProxy()));
-        } 
         addTaint(target.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1801284713 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1801284713;
-        
-        
-                    
+        boolean varC24E6D324D9440BD46B58A535186305B_601163263 = (getHttpProxy() == null ? target.getHttpProxy() == null :
+                    getHttpProxy().equals(target.getHttpProxy()));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_329138992 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_329138992;
+        // ---------- Original Method ----------
+        //return getHttpProxy() == null ? target.getHttpProxy() == null :
+                    //getHttpProxy().equals(target.getHttpProxy());
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.154 -0400", hash_original_method = "E1692DB8F3E9AF5A893AE4BBE4FFDED0", hash_generated_method = "814197BF3623759F40317D1698FBD80C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.500 -0400", hash_original_method = "E1692DB8F3E9AF5A893AE4BBE4FFDED0", hash_generated_method = "AAEFE7E5F236E51D93D2A9E0DB18C9BB")
     @Override
     public boolean equals(Object obj) {
+        addTaint(obj.getTaint());
+    if(this == obj)        
+        {
+        boolean varB326B5062B2F0E69046810717534CB09_846104035 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_819515845 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_819515845;
+        }
+    if(!(obj instanceof LinkProperties))        
+        {
+        boolean var68934A3E9455FA72420237EB05902327_1077306103 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1104906307 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1104906307;
+        }
         LinkProperties target = (LinkProperties) obj;
-        boolean var0154B8A40FDF40E2B692EE07A0C7B198_1198438886 = (isIdenticalInterfaceName(target) &&
+        boolean varAB87A44EA60FE1170ECBD60F0833B347_1468406450 = (isIdenticalInterfaceName(target) &&
                 isIdenticalAddresses(target) &&
                 isIdenticalDnses(target) &&
                 isIdenticalRoutes(target) &&
                 isIdenticalHttpProxy(target));
-        addTaint(obj.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1048994120 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1048994120;
-        
-        
-        
-        
-        
-                
-                
-                
-                
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_503640270 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_503640270;
+        // ---------- Original Method ----------
+        //if (this == obj) return true;
+        //if (!(obj instanceof LinkProperties)) return false;
+        //LinkProperties target = (LinkProperties) obj;
+        //return isIdenticalInterfaceName(target) &&
+                //isIdenticalAddresses(target) &&
+                //isIdenticalDnses(target) &&
+                //isIdenticalRoutes(target) &&
+                //isIdenticalHttpProxy(target);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.157 -0400", hash_original_method = "F16C063B63526E6739B6C0383B3231A3", hash_generated_method = "90F7973B6830B9A16ED2C6847C378622")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.501 -0400", hash_original_method = "F16C063B63526E6739B6C0383B3231A3", hash_generated_method = "1D78D4FF9F9840BFD962E4E9AD6F28D7")
     public CompareResult<LinkAddress> compareAddresses(LinkProperties target) {
-        CompareResult<LinkAddress> varB4EAC82CA7396A68D541C85D26508E83_1486377675 = null; 
+        addTaint(target.getTaint());
         CompareResult<LinkAddress> result = new CompareResult<LinkAddress>();
         result.removed = new ArrayList<LinkAddress>(mLinkAddresses);
         result.added.clear();
+    if(target != null)        
         {
+for(LinkAddress newAddress : target.getLinkAddresses())
             {
-                Iterator<LinkAddress> var1CF02BF0C3749BAA471402895ECF294B_1490894433 = (target.getLinkAddresses()).iterator();
-                var1CF02BF0C3749BAA471402895ECF294B_1490894433.hasNext();
-                LinkAddress newAddress = var1CF02BF0C3749BAA471402895ECF294B_1490894433.next();
+    if(! result.removed.remove(newAddress))                
                 {
-                    {
-                        boolean varCF42614A09F8D2355BF1BA86279EFF16_1870261143 = (! result.removed.remove(newAddress));
-                        {
-                            result.added.add(newAddress);
-                        } 
-                    } 
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1486377675 = result;
-        addTaint(target.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1486377675.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1486377675;
-        
-        
-        
-        
-        
-            
-                
-                    
-                
-            
-        
-        
+                    result.added.add(newAddress);
+                } //End block
+            } //End block
+        } //End block
+CompareResult<LinkAddress> varDC838461EE2FA0CA4C9BBB70A15456B0_1027406539 =         result;
+        varDC838461EE2FA0CA4C9BBB70A15456B0_1027406539.addTaint(taint);
+        return varDC838461EE2FA0CA4C9BBB70A15456B0_1027406539;
+        // ---------- Original Method ----------
+        //CompareResult<LinkAddress> result = new CompareResult<LinkAddress>();
+        //result.removed = new ArrayList<LinkAddress>(mLinkAddresses);
+        //result.added.clear();
+        //if (target != null) {
+            //for (LinkAddress newAddress : target.getLinkAddresses()) {
+                //if (! result.removed.remove(newAddress)) {
+                    //result.added.add(newAddress);
+                //}
+            //}
+        //}
+        //return result;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.160 -0400", hash_original_method = "C56C38D458207E713A2F639173CF494C", hash_generated_method = "754AF81545A12F12EEED817A3ECC0F38")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.502 -0400", hash_original_method = "C56C38D458207E713A2F639173CF494C", hash_generated_method = "18F9B3D1477E1BB3BA5C0A1F89EB3707")
     public CompareResult<InetAddress> compareDnses(LinkProperties target) {
-        CompareResult<InetAddress> varB4EAC82CA7396A68D541C85D26508E83_2124105650 = null; 
+        addTaint(target.getTaint());
         CompareResult<InetAddress> result = new CompareResult<InetAddress>();
         result.removed = new ArrayList<InetAddress>(mDnses);
         result.added.clear();
+    if(target != null)        
         {
+for(InetAddress newAddress : target.getDnses())
             {
-                Iterator<InetAddress> var5D025E9A74EF4251C9BAA6B2C125325C_1468420467 = (target.getDnses()).iterator();
-                var5D025E9A74EF4251C9BAA6B2C125325C_1468420467.hasNext();
-                InetAddress newAddress = var5D025E9A74EF4251C9BAA6B2C125325C_1468420467.next();
+    if(! result.removed.remove(newAddress))                
                 {
-                    {
-                        boolean varCF42614A09F8D2355BF1BA86279EFF16_1291810298 = (! result.removed.remove(newAddress));
-                        {
-                            result.added.add(newAddress);
-                        } 
-                    } 
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_2124105650 = result;
-        addTaint(target.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2124105650.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_2124105650;
-        
-        
-        
-        
-        
-            
-                
-                    
-                
-            
-        
-        
+                    result.added.add(newAddress);
+                } //End block
+            } //End block
+        } //End block
+CompareResult<InetAddress> varDC838461EE2FA0CA4C9BBB70A15456B0_439974277 =         result;
+        varDC838461EE2FA0CA4C9BBB70A15456B0_439974277.addTaint(taint);
+        return varDC838461EE2FA0CA4C9BBB70A15456B0_439974277;
+        // ---------- Original Method ----------
+        //CompareResult<InetAddress> result = new CompareResult<InetAddress>();
+        //result.removed = new ArrayList<InetAddress>(mDnses);
+        //result.added.clear();
+        //if (target != null) {
+            //for (InetAddress newAddress : target.getDnses()) {
+                //if (! result.removed.remove(newAddress)) {
+                    //result.added.add(newAddress);
+                //}
+            //}
+        //}
+        //return result;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.163 -0400", hash_original_method = "39063DDD1454993D1B4985089C8FABB6", hash_generated_method = "C98CA2066992355EC3ADEFB5EF488DBC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.502 -0400", hash_original_method = "39063DDD1454993D1B4985089C8FABB6", hash_generated_method = "F208902E0CF3AFF68EDD224A000C8133")
     public CompareResult<RouteInfo> compareRoutes(LinkProperties target) {
-        CompareResult<RouteInfo> varB4EAC82CA7396A68D541C85D26508E83_775986453 = null; 
+        addTaint(target.getTaint());
         CompareResult<RouteInfo> result = new CompareResult<RouteInfo>();
         result.removed = new ArrayList<RouteInfo>(mRoutes);
         result.added.clear();
+    if(target != null)        
         {
+for(RouteInfo r : target.getRoutes())
             {
-                Iterator<RouteInfo> var98E042D986256D5C143CD1D8775297CE_421953956 = (target.getRoutes()).iterator();
-                var98E042D986256D5C143CD1D8775297CE_421953956.hasNext();
-                RouteInfo r = var98E042D986256D5C143CD1D8775297CE_421953956.next();
+    if(! result.removed.remove(r))                
                 {
-                    {
-                        boolean varC873CBADB2439759A1631563A981C60B_1452793701 = (! result.removed.remove(r));
-                        {
-                            result.added.add(r);
-                        } 
-                    } 
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_775986453 = result;
-        addTaint(target.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_775986453.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_775986453;
-        
-        
-        
-        
-        
-            
-                
-                    
-                
-            
-        
-        
+                    result.added.add(r);
+                } //End block
+            } //End block
+        } //End block
+CompareResult<RouteInfo> varDC838461EE2FA0CA4C9BBB70A15456B0_718880752 =         result;
+        varDC838461EE2FA0CA4C9BBB70A15456B0_718880752.addTaint(taint);
+        return varDC838461EE2FA0CA4C9BBB70A15456B0_718880752;
+        // ---------- Original Method ----------
+        //CompareResult<RouteInfo> result = new CompareResult<RouteInfo>();
+        //result.removed = new ArrayList<RouteInfo>(mRoutes);
+        //result.added.clear();
+        //if (target != null) {
+            //for (RouteInfo r : target.getRoutes()) {
+                //if (! result.removed.remove(r)) {
+                    //result.added.add(r);
+                //}
+            //}
+        //}
+        //return result;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.165 -0400", hash_original_method = "28ECE8095E829F4615B9B35514C29B36", hash_generated_method = "0D28CEAEF25C1EFC9EC925C94C56FFA9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.503 -0400", hash_original_method = "28ECE8095E829F4615B9B35514C29B36", hash_generated_method = "957163436E843858A71185FDFF6E09B0")
     @Override
     public int hashCode() {
-        int varE71D32073B9D953373F280788B927A4F_2146705307 = (((null == mIfaceName) ? 0 : mIfaceName.hashCode()
+        int var27402B80DD6C8091D74B50D5808EB9A1_1547615973 = (((null == mIfaceName) ? 0 : mIfaceName.hashCode()
                 + mLinkAddresses.size() * 31
                 + mDnses.size() * 37
                 + mRoutes.size() * 41
-                + ((null == mHttpProxy) ? 0 : mHttpProxy.hashCode()))); 
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1744373893 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1744373893;
-        
-        
-                
-                
-                
-                
+                + ((null == mHttpProxy) ? 0 : mHttpProxy.hashCode())));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_894944891 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_894944891;
+        // ---------- Original Method ----------
+        //return ((null == mIfaceName) ? 0 : mIfaceName.hashCode()
+                //+ mLinkAddresses.size() * 31
+                //+ mDnses.size() * 37
+                //+ mRoutes.size() * 41
+                //+ ((null == mHttpProxy) ? 0 : mHttpProxy.hashCode()));
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.174 -0400", hash_original_method = "FA484CCA03B27F5C12EABAE629DE360A", hash_generated_method = "B43594A97BF9FC4C54025DCBEE0CD7BB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.503 -0400", hash_original_method = "FA484CCA03B27F5C12EABAE629DE360A", hash_generated_method = "B55B692B9637845F2A23BB664526EAEF")
     public void writeToParcel(Parcel dest, int flags) {
+        addTaint(flags);
+        addTaint(dest.getTaint());
         dest.writeString(getInterfaceName());
         dest.writeInt(mLinkAddresses.size());
+for(LinkAddress linkAddress : mLinkAddresses)
         {
-            Iterator<LinkAddress> varDF96464DD29D4BD0B0137A05D67E51BB_2056093521 = (mLinkAddresses).iterator();
-            varDF96464DD29D4BD0B0137A05D67E51BB_2056093521.hasNext();
-            LinkAddress linkAddress = varDF96464DD29D4BD0B0137A05D67E51BB_2056093521.next();
-            {
-                dest.writeParcelable(linkAddress, flags);
-            } 
-        } 
+            dest.writeParcelable(linkAddress, flags);
+        } //End block
         dest.writeInt(mDnses.size());
+for(InetAddress d : mDnses)
         {
-            Iterator<InetAddress> varD0C0A861F30CBF0FE56B8F003A69B034_1899379892 = (mDnses).iterator();
-            varD0C0A861F30CBF0FE56B8F003A69B034_1899379892.hasNext();
-            InetAddress d = varD0C0A861F30CBF0FE56B8F003A69B034_1899379892.next();
-            {
-                dest.writeByteArray(d.getAddress());
-            } 
-        } 
+            dest.writeByteArray(d.getAddress());
+        } //End block
         dest.writeInt(mRoutes.size());
+for(RouteInfo route : mRoutes)
         {
-            Iterator<RouteInfo> var884AA7CBDA9AFAD5F88BFEB52967F598_2032094106 = (mRoutes).iterator();
-            var884AA7CBDA9AFAD5F88BFEB52967F598_2032094106.hasNext();
-            RouteInfo route = var884AA7CBDA9AFAD5F88BFEB52967F598_2032094106.next();
-            {
-                dest.writeParcelable(route, flags);
-            } 
-        } 
+            dest.writeParcelable(route, flags);
+        } //End block
+    if(mHttpProxy != null)        
         {
             dest.writeByte((byte)1);
             dest.writeParcelable(mHttpProxy, flags);
-        } 
+        } //End block
+        else
         {
             dest.writeByte((byte)0);
-        } 
-        addTaint(dest.getTaint());
-        addTaint(flags);
-        
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //dest.writeString(getInterfaceName());
+        //dest.writeInt(mLinkAddresses.size());
+        //for(LinkAddress linkAddress : mLinkAddresses) {
+            //dest.writeParcelable(linkAddress, flags);
+        //}
+        //dest.writeInt(mDnses.size());
+        //for(InetAddress d : mDnses) {
+            //dest.writeByteArray(d.getAddress());
+        //}
+        //dest.writeInt(mRoutes.size());
+        //for(RouteInfo route : mRoutes) {
+            //dest.writeParcelable(route, flags);
+        //}
+        //if (mHttpProxy != null) {
+            //dest.writeByte((byte)1);
+            //dest.writeParcelable(mHttpProxy, flags);
+        //} else {
+            //dest.writeByte((byte)0);
+        //}
     }
 
     
     public static class CompareResult<T> {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.174 -0400", hash_original_field = "C4B1F39807DCA632860153E967535069", hash_generated_field = "656FE863E184B8E40AE962362C5E65EA")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.504 -0400", hash_original_field = "C4B1F39807DCA632860153E967535069", hash_generated_field = "656FE863E184B8E40AE962362C5E65EA")
 
         public Collection<T> removed = new ArrayList<T>();
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.174 -0400", hash_original_field = "CB13C543EE6E3E67C92366544BE592A7", hash_generated_field = "C6B74BD881B85CA2CE669431297F84E6")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.504 -0400", hash_original_field = "CB13C543EE6E3E67C92366544BE592A7", hash_generated_field = "C6B74BD881B85CA2CE669431297F84E6")
 
         public Collection<T> added = new ArrayList<T>();
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.174 -0400", hash_original_method = "8B9C887FE92C246DB85CDDBCEEBB2CF3", hash_generated_method = "8B9C887FE92C246DB85CDDBCEEBB2CF3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.504 -0400", hash_original_method = "8B9C887FE92C246DB85CDDBCEEBB2CF3", hash_generated_method = "8B9C887FE92C246DB85CDDBCEEBB2CF3")
         public CompareResult ()
         {
-            
+            //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.182 -0400", hash_original_method = "432CBAB98383F022B31745E1B8881CF6", hash_generated_method = "D5B78390E38AA71DA04E154217C70C04")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.505 -0400", hash_original_method = "432CBAB98383F022B31745E1B8881CF6", hash_generated_method = "7782EAC5742D9BC832725E88E427BBA3")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_18344896 = null; 
             String retVal = "removed=[";
-            {
-                Iterator<T> varC423D6E3AA0BA108FCAE25E1A62A868B_1121891572 = (removed).iterator();
-                varC423D6E3AA0BA108FCAE25E1A62A868B_1121891572.hasNext();
-                T addr = varC423D6E3AA0BA108FCAE25E1A62A868B_1121891572.next();
-                retVal += addr.toString() + ",";
-            } 
+for(T addr : removed)
+            retVal += addr.toString() + ",";
             retVal += "] added=[";
-            {
-                Iterator<T> var5AD5BD4A6E3B2EEAB3BA044D5B8651B9_1967917180 = (added).iterator();
-                var5AD5BD4A6E3B2EEAB3BA044D5B8651B9_1967917180.hasNext();
-                T addr = var5AD5BD4A6E3B2EEAB3BA044D5B8651B9_1967917180.next();
-                retVal += addr.toString() + ",";
-            } 
+for(T addr : added)
+            retVal += addr.toString() + ",";
             retVal += "]";
-            varB4EAC82CA7396A68D541C85D26508E83_18344896 = retVal;
-            varB4EAC82CA7396A68D541C85D26508E83_18344896.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_18344896;
-            
-            
-            
-            
-            
-            
-            
+String var906583DF257E5B26DD99AC8582D137B0_1476379577 =             retVal;
+            var906583DF257E5B26DD99AC8582D137B0_1476379577.addTaint(taint);
+            return var906583DF257E5B26DD99AC8582D137B0_1476379577;
+            // ---------- Original Method ----------
+            //String retVal = "removed=[";
+            //for (T addr : removed) retVal += addr.toString() + ",";
+            //retVal += "] added=[";
+            //for (T addr : added) retVal += addr.toString() + ",";
+            //retVal += "]";
+            //return retVal;
         }
 
         
@@ -656,7 +564,7 @@ public class LinkProperties implements Parcelable {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.182 -0400", hash_original_field = "AD9F190960A42BD6F0B1EE16B7E966B8", hash_generated_field = "24691869BF8BBA8F28BDB834441D45F0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.506 -0400", hash_original_field = "AD9F190960A42BD6F0B1EE16B7E966B8", hash_generated_field = "24691869BF8BBA8F28BDB834441D45F0")
 
     public static final Creator<LinkProperties> CREATOR =
         new Creator<LinkProperties>() {
@@ -694,7 +602,7 @@ public class LinkProperties implements Parcelable {
                 return new LinkProperties[size];
             }
         };
-    
+    // orphaned legacy method
     public LinkProperties createFromParcel(Parcel in) {
                 LinkProperties netProp = new LinkProperties();
                 String iface = in.readString();
@@ -725,7 +633,7 @@ public class LinkProperties implements Parcelable {
                 return netProp;
             }
     
-    
+    // orphaned legacy method
     public LinkProperties[] newArray(int size) {
                 return new LinkProperties[size];
             }

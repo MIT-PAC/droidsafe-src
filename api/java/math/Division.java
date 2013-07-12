@@ -1,23 +1,20 @@
 package java.math;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-
-import java.util.Iterator;
-
 class Division {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.699 -0400", hash_original_method = "1CA90C9F74D165C3A16F193EF3A664DD", hash_generated_method = "1CA90C9F74D165C3A16F193EF3A664DD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.018 -0400", hash_original_method = "1CA90C9F74D165C3A16F193EF3A664DD", hash_generated_method = "1CA90C9F74D165C3A16F193EF3A664DD")
     public Division ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    static int divideArrayByInt(int[] quotient, int[] dividend, final int dividendLength,
+        static int divideArrayByInt(int[] quotient, int[] dividend, final int dividendLength,
             final int divisor) {
         long rem = 0;
         long bLong = divisor & 0xffffffffL;

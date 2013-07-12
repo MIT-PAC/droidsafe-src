@@ -1,12 +1,9 @@
 package gov.nist.javax.sip.parser.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.text.ParseException;
 import gov.nist.core.Token;
 import gov.nist.javax.sip.address.GenericURI;
@@ -26,26 +23,25 @@ import gov.nist.javax.sip.parser.HeaderParser;
 
 public class PAssociatedURIParser extends AddressParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.106 -0400", hash_original_method = "0CDE275ECCBEF2889E9182D2465C2E20", hash_generated_method = "AAA76F953DE189B56CE0BA684D5A584B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.051 -0400", hash_original_method = "0CDE275ECCBEF2889E9182D2465C2E20", hash_generated_method = "AAA76F953DE189B56CE0BA684D5A584B")
     public  PAssociatedURIParser(String associatedURI) {
         super(associatedURI);
         addTaint(associatedURI.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.106 -0400", hash_original_method = "70EC41EF34A2E6E96E3702280780921E", hash_generated_method = "88BF51253EB3690D123C074323173C5F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.051 -0400", hash_original_method = "70EC41EF34A2E6E96E3702280780921E", hash_generated_method = "88BF51253EB3690D123C074323173C5F")
     protected  PAssociatedURIParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.106 -0400", hash_original_method = "DA45542244416E40599094AA9DB4C3E3", hash_generated_method = "73ECCF3F354DA69AA95A8D9FDB52CD6A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.052 -0400", hash_original_method = "DA45542244416E40599094AA9DB4C3E3", hash_generated_method = "9CE26E30342824C2E572B690003E11A0")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1103661305 = null; 
+    if(debug)        
         dbg_enter("PAssociatedURIParser.parse");
         PAssociatedURIList associatedURIList = new PAssociatedURIList();
         try 
@@ -56,29 +52,29 @@ public class PAssociatedURIParser extends AddressParametersParser {
             super.parse(associatedURI);
             associatedURIList.add(associatedURI);
             this.lexer.SPorHT();
+            while
+(lexer.lookAhead(0) == ',')            
             {
-                boolean var3D7F80AAA4BB4C7E5B5AFC820C1FE6A4_765099945 = (lexer.lookAhead(0) == ',');
-                {
-                    this.lexer.match(',');
-                    this.lexer.SPorHT();
-                    associatedURI = new PAssociatedURI();
-                    super.parse(associatedURI);
-                    associatedURIList.add(associatedURI);
-                    this.lexer.SPorHT();
-                } 
-            } 
+                this.lexer.match(',');
+                this.lexer.SPorHT();
+                associatedURI = new PAssociatedURI();
+                super.parse(associatedURI);
+                associatedURIList.add(associatedURI);
+                this.lexer.SPorHT();
+            } //End block
             this.lexer.SPorHT();
             this.lexer.match('\n');
-            varB4EAC82CA7396A68D541C85D26508E83_1103661305 = associatedURIList;
-        } 
+SIPHeader varDDC6C1063316592341175724BFC64CC4_543877935 =             associatedURIList;
+            varDDC6C1063316592341175724BFC64CC4_543877935.addTaint(taint);
+            return varDDC6C1063316592341175724BFC64CC4_543877935;
+        } //End block
         finally 
         {
+    if(debug)            
             dbg_leave("PAssociatedURIParser.parse");
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1103661305.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1103661305;
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

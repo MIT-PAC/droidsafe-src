@@ -1,12 +1,9 @@
 package com.android.internal.telephony.gsm;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -20,44 +17,43 @@ import android.util.Xml;
 import com.android.internal.util.XmlUtils;
 
 public class SpnOverride {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.829 -0400", hash_original_field = "EC9E01A29836BA5CE6B183DD96F1B4B9", hash_generated_field = "F996EF25CC658B6424004352EBB9DD6A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.866 -0400", hash_original_field = "EC9E01A29836BA5CE6B183DD96F1B4B9", hash_generated_field = "F996EF25CC658B6424004352EBB9DD6A")
 
     private HashMap<String, String> CarrierSpnMap;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.829 -0400", hash_original_method = "DBF3481E765E19045BAECAE6F7649C1E", hash_generated_method = "C3C49BF09C235732F87B2EBF2D0A93AF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.867 -0400", hash_original_method = "DBF3481E765E19045BAECAE6F7649C1E", hash_generated_method = "C3C49BF09C235732F87B2EBF2D0A93AF")
       SpnOverride() {
         CarrierSpnMap = new HashMap<String, String>();
         loadSpnOverrides();
-        
-        
-        
+        // ---------- Original Method ----------
+        //CarrierSpnMap = new HashMap<String, String>();
+        //loadSpnOverrides();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.830 -0400", hash_original_method = "F9DB25D793978B2E288A45309BFBD20E", hash_generated_method = "57B94B6D1FC0C69201D7DAAFE86D34E2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.867 -0400", hash_original_method = "F9DB25D793978B2E288A45309BFBD20E", hash_generated_method = "B2A3DEBEC72143BC6BB7EFE1C0DF7CC8")
      boolean containsCarrier(String carrier) {
-        boolean var2F632E0C4A768A347CCDB28A8E681D79_1030250764 = (CarrierSpnMap.containsKey(carrier));
         addTaint(carrier.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1920528651 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1920528651;
-        
-        
+        boolean var3E2E3D095BA2761DCABCAFC35B2AAA8A_1429863590 = (CarrierSpnMap.containsKey(carrier));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_305500923 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_305500923;
+        // ---------- Original Method ----------
+        //return CarrierSpnMap.containsKey(carrier);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.830 -0400", hash_original_method = "DEBF8ECBE1690451B3CAF7E732385AF7", hash_generated_method = "6E786F06E40A2833C498495321611ABF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.868 -0400", hash_original_method = "DEBF8ECBE1690451B3CAF7E732385AF7", hash_generated_method = "AE1C02C69F772303829F58D69DA2AB03")
      String getSpn(String carrier) {
-        String varB4EAC82CA7396A68D541C85D26508E83_255296767 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_255296767 = CarrierSpnMap.get(carrier);
         addTaint(carrier.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_255296767.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_255296767;
-        
-        
+String varA4F692C7E4CB5AD08C930C1C2050AB6F_132413375 =         CarrierSpnMap.get(carrier);
+        varA4F692C7E4CB5AD08C930C1C2050AB6F_132413375.addTaint(taint);
+        return varA4F692C7E4CB5AD08C930C1C2050AB6F_132413375;
+        // ---------- Original Method ----------
+        //return CarrierSpnMap.get(carrier);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.831 -0400", hash_original_method = "E85B5B045E56A81356A43AE2CD2F25CE", hash_generated_method = "20D9651B817EE9DC11508CDDCDB0C37A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.869 -0400", hash_original_method = "E85B5B045E56A81356A43AE2CD2F25CE", hash_generated_method = "930E5D7DFDBB1312A74B7E4998026AA9")
     private void loadSpnOverrides() {
         FileReader spnReader;
         final File spnFile = new File(Environment.getRootDirectory(),
@@ -65,38 +61,45 @@ public class SpnOverride {
         try 
         {
             spnReader = new FileReader(spnFile);
-        } 
+        } //End block
         catch (FileNotFoundException e)
-        { return;}
+        {
+            return;
+        } //End block
         try 
         {
             XmlPullParser parser = Xml.newPullParser();
             parser.setInput(spnReader);
             XmlUtils.beginDocument(parser, "spnOverrides");
+            while
+(true)            
             {
                 XmlUtils.nextElement(parser);
                 String name = parser.getName();
+    if(!"spnOverride".equals(name))                
                 {
-                    boolean varA14E9DACD961E914DC53CB3D797ACBE7_1925037687 = (!"spnOverride".equals(name));
-                } 
+                    break;
+                } //End block
                 String numeric = parser.getAttributeValue(null, "numeric");
                 String data = parser.getAttributeValue(null, "spn");
                 CarrierSpnMap.put(numeric, data);
-            } 
-        } 
+            } //End block
+        } //End block
         catch (XmlPullParserException e)
-        { }
+        {
+        } //End block
         catch (IOException e)
-        { }
-        
-        
+        {
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.831 -0400", hash_original_field = "41EBE7F32B96C1E2E9C209710486A443", hash_generated_field = "B8386CD6D900777C9D6A0A5CA1D0B217")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.869 -0400", hash_original_field = "41EBE7F32B96C1E2E9C209710486A443", hash_generated_field = "B8386CD6D900777C9D6A0A5CA1D0B217")
 
     static final String LOG_TAG = "GSM";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.831 -0400", hash_original_field = "7D1D57AD5214C5B06FBDB6AE50E36082", hash_generated_field = "571B447F908349646546615F3EBC7F9A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.869 -0400", hash_original_field = "7D1D57AD5214C5B06FBDB6AE50E36082", hash_generated_field = "571B447F908349646546615F3EBC7F9A")
 
     static final String PARTNER_SPN_OVERRIDE_PATH = "etc/spn-conf.xml";
 }

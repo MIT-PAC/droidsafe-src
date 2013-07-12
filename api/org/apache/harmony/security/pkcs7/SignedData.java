@@ -1,12 +1,9 @@
 package org.apache.harmony.security.pkcs7;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.util.List;
 import org.apache.harmony.security.asn1.ASN1Implicit;
 import org.apache.harmony.security.asn1.ASN1Integer;
@@ -19,26 +16,26 @@ import org.apache.harmony.security.x509.Certificate;
 import org.apache.harmony.security.x509.CertificateList;
 
 public final class SignedData {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.023 -0400", hash_original_field = "2AF72F100C356273D46284F6FD1DFC08", hash_generated_field = "605FE2D9A0C9E94D1E2D3DAEDB658980")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.126 -0400", hash_original_field = "2AF72F100C356273D46284F6FD1DFC08", hash_generated_field = "605FE2D9A0C9E94D1E2D3DAEDB658980")
 
     private int version;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.023 -0400", hash_original_field = "C695788DA0067E56F21C4D4787A45BF6", hash_generated_field = "24EB4DE16B60219F5B4B1A4A8853A314")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.126 -0400", hash_original_field = "C695788DA0067E56F21C4D4787A45BF6", hash_generated_field = "24EB4DE16B60219F5B4B1A4A8853A314")
 
     private List<?> digestAlgorithms;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.023 -0400", hash_original_field = "A3E2FE12F47E74149FD3DEA1E9CED58E", hash_generated_field = "AE3F5213A506E923E6FE7BDB355D2265")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.126 -0400", hash_original_field = "A3E2FE12F47E74149FD3DEA1E9CED58E", hash_generated_field = "AE3F5213A506E923E6FE7BDB355D2265")
 
     private ContentInfo contentInfo;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.023 -0400", hash_original_field = "3CC41D0F46073BA8D93EA9DB2412437F", hash_generated_field = "35B56F34A6EFCC0A8EBE1E2BF1E1853A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.126 -0400", hash_original_field = "3CC41D0F46073BA8D93EA9DB2412437F", hash_generated_field = "35B56F34A6EFCC0A8EBE1E2BF1E1853A")
 
     private List<Certificate> certificates;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.023 -0400", hash_original_field = "3DC1AE7D16A32AC445EE6E6D730742A4", hash_generated_field = "CF1C0D364AFC27B6CEFE4E39A3F0DAA8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.126 -0400", hash_original_field = "3DC1AE7D16A32AC445EE6E6D730742A4", hash_generated_field = "CF1C0D364AFC27B6CEFE4E39A3F0DAA8")
 
     private List<CertificateList> crls;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.023 -0400", hash_original_field = "D3475CD0C6A552244FFC3E64D91D5A88", hash_generated_field = "28723D91F47C17A811E3E22E9132A9AF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.126 -0400", hash_original_field = "D3475CD0C6A552244FFC3E64D91D5A88", hash_generated_field = "28723D91F47C17A811E3E22E9132A9AF")
 
     private List<SignerInfo> signerInfos;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.024 -0400", hash_original_method = "86716568313110DB160A45E25CDB2037", hash_generated_method = "A7163F81F2CB05006B0F1E02C351C027")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.128 -0400", hash_original_method = "86716568313110DB160A45E25CDB2037", hash_generated_method = "A7163F81F2CB05006B0F1E02C351C027")
     private  SignedData(int version, List<?> digestAlgorithms, ContentInfo contentInfo,
             List<Certificate> certificates, List<CertificateList> crls,
             List<SignerInfo> signerInfos) {
@@ -48,67 +45,59 @@ public final class SignedData {
         this.certificates = certificates;
         this.crls = crls;
         this.signerInfos = signerInfos;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.version = version;
+        //this.digestAlgorithms = digestAlgorithms;
+        //this.contentInfo = contentInfo;
+        //this.certificates = certificates;
+        //this.crls = crls;
+        //this.signerInfos = signerInfos;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.024 -0400", hash_original_method = "1A3C998CB17E3A8C920AD81B84D716FA", hash_generated_method = "1774731FE5BD67F7F3DCAC86D8C3166A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.128 -0400", hash_original_method = "1A3C998CB17E3A8C920AD81B84D716FA", hash_generated_method = "AEF10E3A1578B9923E48A97481329B98")
     public List<Certificate> getCertificates() {
-        List<Certificate> varB4EAC82CA7396A68D541C85D26508E83_1112840452 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1112840452 = certificates;
-        varB4EAC82CA7396A68D541C85D26508E83_1112840452.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1112840452;
-        
-        
+List<Certificate> varD990E2E05C44BAB0ED4D7DA357BC9641_1111347277 =         certificates;
+        varD990E2E05C44BAB0ED4D7DA357BC9641_1111347277.addTaint(taint);
+        return varD990E2E05C44BAB0ED4D7DA357BC9641_1111347277;
+        // ---------- Original Method ----------
+        //return certificates;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.025 -0400", hash_original_method = "3C90A6221E72080B8CAD1325BD108F88", hash_generated_method = "EE5124FC21B23BE51E03AA49ADD41798")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.128 -0400", hash_original_method = "3C90A6221E72080B8CAD1325BD108F88", hash_generated_method = "07931AB975D4174B4B2210E7ECE5968B")
     public List<CertificateList> getCRLs() {
-        List<CertificateList> varB4EAC82CA7396A68D541C85D26508E83_1149044377 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1149044377 = crls;
-        varB4EAC82CA7396A68D541C85D26508E83_1149044377.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1149044377;
-        
-        
+List<CertificateList> var2E0E0B1D9DF9C775250CA6863C9BD42A_1369666574 =         crls;
+        var2E0E0B1D9DF9C775250CA6863C9BD42A_1369666574.addTaint(taint);
+        return var2E0E0B1D9DF9C775250CA6863C9BD42A_1369666574;
+        // ---------- Original Method ----------
+        //return crls;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.025 -0400", hash_original_method = "4845FE90A50A204EC6BC5DCC20DC666F", hash_generated_method = "29C71028D73616365EA1C4F5B5E8E380")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.128 -0400", hash_original_method = "4845FE90A50A204EC6BC5DCC20DC666F", hash_generated_method = "C6696F190E2AE30DE65E8C928B4C1E9F")
     public List<SignerInfo> getSignerInfos() {
-        List<SignerInfo> varB4EAC82CA7396A68D541C85D26508E83_229835702 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_229835702 = signerInfos;
-        varB4EAC82CA7396A68D541C85D26508E83_229835702.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_229835702;
-        
-        
+List<SignerInfo> var7B0F5615FE64201092B96D782E134CD6_2001901246 =         signerInfos;
+        var7B0F5615FE64201092B96D782E134CD6_2001901246.addTaint(taint);
+        return var7B0F5615FE64201092B96D782E134CD6_2001901246;
+        // ---------- Original Method ----------
+        //return signerInfos;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.025 -0400", hash_original_method = "00A0A81AB162D0816192A8848BD6F0D6", hash_generated_method = "89142CC5F61117866E205E05489ACCCF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.129 -0400", hash_original_method = "00A0A81AB162D0816192A8848BD6F0D6", hash_generated_method = "C775DB713C5F736EB10EC46CBDCCFA37")
     public int getVersion() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_441484286 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_441484286;
-        
-        
+        int var2AF72F100C356273D46284F6FD1DFC08_1372719458 = (version);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1740710577 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1740710577;
+        // ---------- Original Method ----------
+        //return version;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.026 -0400", hash_original_method = "39B5111592E9C9F7E25B09890D35A8D3", hash_generated_method = "7DAA10B97DE8503F768428D79D5E5A1E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.129 -0400", hash_original_method = "39B5111592E9C9F7E25B09890D35A8D3", hash_generated_method = "55A0B2268ED591B9A2DF075638008F9C")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_964229476 = null; 
         StringBuilder res = new StringBuilder();
         res.append("---- SignedData:");
         res.append("\nversion: ");
@@ -118,44 +107,46 @@ public final class SignedData {
         res.append("\ncontentInfo: ");
         res.append(contentInfo.toString());
         res.append("\ncertificates: ");
+    if(certificates != null)        
         {
             res.append(certificates.toString());
-        } 
+        } //End block
         res.append("\ncrls: ");
+    if(crls != null)        
         {
             res.append(crls.toString());
-        } 
+        } //End block
         res.append("\nsignerInfos:\n");
         res.append(signerInfos.toString());
         res.append("\n---- SignedData End\n]");
-        varB4EAC82CA7396A68D541C85D26508E83_964229476 = res.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_964229476.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_964229476;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-        
-        
+String varEC7EB75EF3C7FA633C54FC66A0358174_751078197 =         res.toString();
+        varEC7EB75EF3C7FA633C54FC66A0358174_751078197.addTaint(taint);
+        return varEC7EB75EF3C7FA633C54FC66A0358174_751078197;
+        // ---------- Original Method ----------
+        //StringBuilder res = new StringBuilder();
+        //res.append("---- SignedData:");
+        //res.append("\nversion: ");
+        //res.append(version);
+        //res.append("\ndigestAlgorithms: ");
+        //res.append(digestAlgorithms.toString());
+        //res.append("\ncontentInfo: ");
+        //res.append(contentInfo.toString());
+        //res.append("\ncertificates: ");
+        //if (certificates != null) {
+            //res.append(certificates.toString());
+        //}
+        //res.append("\ncrls: ");
+        //if (crls != null) {
+            //res.append(crls.toString());
+        //}
+        //res.append("\nsignerInfos:\n");
+        //res.append(signerInfos.toString());
+        //res.append("\n---- SignedData End\n]");
+        //return res.toString();
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.026 -0400", hash_original_field = "66AD73A95F936B6DD0CB325A6F75C006", hash_generated_field = "7C30870EFF5611301CC32AE0B5790DCF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.129 -0400", hash_original_field = "66AD73A95F936B6DD0CB325A6F75C006", hash_generated_field = "7C30870EFF5611301CC32AE0B5790DCF")
 
     public static final ASN1Sequence ASN1 = new ASN1Sequence(new ASN1Type[] {
             ASN1Integer.getInstance(),
@@ -192,6 +183,5 @@ public final class SignedData {
                     );
         }
     };
-    
 }
 

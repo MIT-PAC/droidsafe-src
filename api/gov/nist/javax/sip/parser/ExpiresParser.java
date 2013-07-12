@@ -1,39 +1,35 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import java.text.ParseException;
 import javax.sip.*;
 
 public class ExpiresParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.955 -0400", hash_original_method = "A7328899640752C7683A3AAB5686C434", hash_generated_method = "91AD4A144E3219744EF95FFB87DA18A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.476 -0400", hash_original_method = "A7328899640752C7683A3AAB5686C434", hash_generated_method = "91AD4A144E3219744EF95FFB87DA18A5")
     public  ExpiresParser(String text) {
         super(text);
         addTaint(text.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.956 -0400", hash_original_method = "8C0F40C2F214AF533DDC04CFAC4ADA24", hash_generated_method = "01CE2D3D2FDBF84082EF3A8A9C12D81D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.476 -0400", hash_original_method = "8C0F40C2F214AF533DDC04CFAC4ADA24", hash_generated_method = "01CE2D3D2FDBF84082EF3A8A9C12D81D")
     protected  ExpiresParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.956 -0400", hash_original_method = "BF637AC6A5CBD4DC0512611361485C35", hash_generated_method = "351AC6D52E055CB4DD12105ADF80922E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.503 -0400", hash_original_method = "BF637AC6A5CBD4DC0512611361485C35", hash_generated_method = "24CE0BB2D2600B0C0AF5118FBB49845C")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_700434671 = null; 
         Expires expires = new Expires();
+    if(debug)        
         dbg_enter("parse");
         try 
         {
@@ -47,47 +43,52 @@ public class ExpiresParser extends HeaderParser {
             {
                 int delta = Integer.parseInt(nextId);
                 expires.setExpires(delta);
-                varB4EAC82CA7396A68D541C85D26508E83_700434671 = expires;
-            } 
+SIPHeader var1F40635C1A2E405B8C2A4BA335625EE0_1239197400 =                 expires;
+                var1F40635C1A2E405B8C2A4BA335625EE0_1239197400.addTaint(taint);
+                return var1F40635C1A2E405B8C2A4BA335625EE0_1239197400;
+            } //End block
             catch (NumberFormatException ex)
             {
-                if (DroidSafeAndroidRuntime.control) throw createParseException("bad integer format");
-            } 
+                java.text.ParseException var5FB99FE9B64E519E79EC6426B25925EC_1548211920 = createParseException("bad integer format");
+                var5FB99FE9B64E519E79EC6426B25925EC_1548211920.addTaint(taint);
+                throw var5FB99FE9B64E519E79EC6426B25925EC_1548211920;
+            } //End block
             catch (InvalidArgumentException ex)
             {
-                if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-            } 
-        } 
+                java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_1927037478 = createParseException(ex.getMessage());
+                varB8C80F72F95BF6A850D07F4EC5726C09_1927037478.addTaint(taint);
+                throw varB8C80F72F95BF6A850D07F4EC5726C09_1927037478;
+            } //End block
+        } //End block
         finally 
         {
+    if(debug)            
             dbg_leave("parse");
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_700434671.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_700434671;
-        
-        
-        
-            
-        
-            
-            
-            
-            
-            
-            
-            
-                
-                
-                
-            
-                
-            
-                
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Expires expires = new Expires();
+        //if (debug)
+            //dbg_enter("parse");
+        //try {
+            //lexer.match(TokenTypes.EXPIRES);
+            //lexer.SPorHT();
+            //lexer.match(':');
+            //lexer.SPorHT();
+            //String nextId = lexer.getNextId();
+            //lexer.match('\n');
+            //try {
+                //int delta = Integer.parseInt(nextId);
+                //expires.setExpires(delta);
+                //return expires;
+            //} catch (NumberFormatException ex) {
+                //throw createParseException("bad integer format");
+            //} catch (InvalidArgumentException ex) {
+                //throw createParseException(ex.getMessage());
+            //}
+        //} finally {
+            //if (debug)
+                //dbg_leave("parse");
+        //}
     }
 
     

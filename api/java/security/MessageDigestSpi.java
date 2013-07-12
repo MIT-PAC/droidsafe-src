@@ -1,30 +1,27 @@
 package java.security;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.nio.ByteBuffer;
 
 public abstract class MessageDigestSpi {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.389 -0400", hash_original_method = "1CC69EEF55221D742AA45996503C6E66", hash_generated_method = "1CC69EEF55221D742AA45996503C6E66")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.124 -0400", hash_original_method = "1CC69EEF55221D742AA45996503C6E66", hash_generated_method = "1CC69EEF55221D742AA45996503C6E66")
     public MessageDigestSpi ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.390 -0400", hash_original_method = "3B6B0B894EAF70FF02C9B2DD93EC82F9", hash_generated_method = "DCA6F1BF86D80C99692C231E86CAE3AE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.125 -0400", hash_original_method = "3B6B0B894EAF70FF02C9B2DD93EC82F9", hash_generated_method = "575BF4156FBCB64EC8AE6101C37A7754")
     protected int engineGetDigestLength() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1709903827 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1709903827;
-        
-        
+        int varCFCD208495D565EF66E7DFF9F98764DA_162752270 = (0);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_420354966 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_420354966;
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -34,116 +31,122 @@ public abstract class MessageDigestSpi {
     protected abstract void engineUpdate(byte[] input, int offset, int len);
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.391 -0400", hash_original_method = "63E93F26D259525D134C674633CD9D02", hash_generated_method = "D019E3038D111B5ACA05920A024889DE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.126 -0400", hash_original_method = "63E93F26D259525D134C674633CD9D02", hash_generated_method = "99A5066D1A75A8074D20D672E6DF8797")
     protected void engineUpdate(ByteBuffer input) {
-        {
-            boolean varE54245A319FB90E6E4BB7E9A96B716C3_1154623511 = (!input.hasRemaining());
-        } 
-        byte[] tmp;
-        {
-            boolean var011961AA1A198646CB962085FB0562D5_309677857 = (input.hasArray());
-            {
-                tmp = input.array();
-                int offset = input.arrayOffset();
-                int position = input.position();
-                int limit = input.limit();
-                engineUpdate(tmp, offset+position, limit - position);
-                input.position(limit);
-            } 
-            {
-                tmp = new byte[input.limit() - input.position()];
-                input.get(tmp);
-                engineUpdate(tmp, 0, tmp.length);
-            } 
-        } 
         addTaint(input.getTaint());
-        
-        
-            
-        
-        
-        
-            
-            
-            
-            
-            
-            
-        
-            
-            
-            
-        
+    if(!input.hasRemaining())        
+        {
+            return;
+        } //End block
+        byte[] tmp;
+    if(input.hasArray())        
+        {
+            tmp = input.array();
+            int offset = input.arrayOffset();
+            int position = input.position();
+            int limit = input.limit();
+            engineUpdate(tmp, offset+position, limit - position);
+            input.position(limit);
+        } //End block
+        else
+        {
+            tmp = new byte[input.limit() - input.position()];
+            input.get(tmp);
+            engineUpdate(tmp, 0, tmp.length);
+        } //End block
+        // ---------- Original Method ----------
+        //if (!input.hasRemaining()) {
+            //return;
+        //}
+        //byte[] tmp;
+        //if (input.hasArray()) {
+            //tmp = input.array();
+            //int offset = input.arrayOffset();
+            //int position = input.position();
+            //int limit = input.limit();
+            //engineUpdate(tmp, offset+position, limit - position);
+            //input.position(limit);
+        //} else {
+            //tmp = new byte[input.limit() - input.position()];
+            //input.get(tmp);
+            //engineUpdate(tmp, 0, tmp.length);
+        //}
     }
 
     
     protected abstract byte[] engineDigest();
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.391 -0400", hash_original_method = "D264912F1C73FF5788F885ED0FD28756", hash_generated_method = "0B0201CFDE8408E0CD86A3FC24DAFE06")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.127 -0400", hash_original_method = "D264912F1C73FF5788F885ED0FD28756", hash_generated_method = "E6BEBF1734CEB1C95D0EDB37B5A9DA9E")
     protected int engineDigest(byte[] buf, int offset, int len) throws DigestException {
-        {
-            boolean var0728C0E705DD9A0A8E1467295A1F681F_957845363 = (len < engineGetDigestLength());
-            {
-                engineReset();
-                if (DroidSafeAndroidRuntime.control) throw new DigestException("The value of len parameter is less than the actual digest length");
-            } 
-        } 
-        {
-            engineReset();
-            if (DroidSafeAndroidRuntime.control) throw new DigestException("offset < 0");
-        } 
-        {
-            engineReset();
-            if (DroidSafeAndroidRuntime.control) throw new DigestException("offset + len > buf.length");
-        } 
-        byte[] tmp = engineDigest();
-        {
-            if (DroidSafeAndroidRuntime.control) throw new DigestException("The value of len parameter is less than the actual digest length");
-        } 
-        System.arraycopy(tmp, 0, buf, offset, tmp.length);
-        addTaint(buf[0]);
-        addTaint(offset);
         addTaint(len);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1921695142 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1921695142;
-        
-        
-            
-            
-        
-        
-            
-            
-        
-        
-            
-            
-        
-        
-        
-            
-        
-        
-        
+        addTaint(offset);
+        addTaint(buf[0]);
+    if(len < engineGetDigestLength())        
+        {
+            engineReset();
+            DigestException varA0BDA52328B09E3FB89A55293F4862F3_2079483533 = new DigestException("The value of len parameter is less than the actual digest length");
+            varA0BDA52328B09E3FB89A55293F4862F3_2079483533.addTaint(taint);
+            throw varA0BDA52328B09E3FB89A55293F4862F3_2079483533;
+        } //End block
+    if(offset < 0)        
+        {
+            engineReset();
+            DigestException varB8AC5FF11332D8E89AA51B9A01353B36_829881684 = new DigestException("offset < 0");
+            varB8AC5FF11332D8E89AA51B9A01353B36_829881684.addTaint(taint);
+            throw varB8AC5FF11332D8E89AA51B9A01353B36_829881684;
+        } //End block
+    if(offset + len > buf.length)        
+        {
+            engineReset();
+            DigestException varCB8D15DFD12EED43A8175D5DB037C963_2133093671 = new DigestException("offset + len > buf.length");
+            varCB8D15DFD12EED43A8175D5DB037C963_2133093671.addTaint(taint);
+            throw varCB8D15DFD12EED43A8175D5DB037C963_2133093671;
+        } //End block
+        byte[] tmp = engineDigest();
+    if(len < tmp.length)        
+        {
+            DigestException varA0BDA52328B09E3FB89A55293F4862F3_1433512034 = new DigestException("The value of len parameter is less than the actual digest length");
+            varA0BDA52328B09E3FB89A55293F4862F3_1433512034.addTaint(taint);
+            throw varA0BDA52328B09E3FB89A55293F4862F3_1433512034;
+        } //End block
+        System.arraycopy(tmp, 0, buf, offset, tmp.length);
+        int varE4FA7AD586BA429F593A6E87F52C4CF3_1374917535 = (tmp.length);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1602319267 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1602319267;
+        // ---------- Original Method ----------
+        //if (len < engineGetDigestLength()) {
+            //engineReset();
+            //throw new DigestException("The value of len parameter is less than the actual digest length");
+        //}
+        //if (offset < 0) {
+            //engineReset();
+            //throw new DigestException("offset < 0");
+        //}
+        //if (offset + len > buf.length) {
+            //engineReset();
+            //throw new DigestException("offset + len > buf.length");
+        //}
+        //byte[] tmp = engineDigest();
+        //if (len < tmp.length) {
+            //throw new DigestException("The value of len parameter is less than the actual digest length");
+        //}
+        //System.arraycopy(tmp, 0, buf, offset, tmp.length);
+        //return tmp.length;
     }
 
     
     protected abstract void engineReset();
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.392 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "A7FE630CDA3F79E211E6A43001779F3F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.127 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "5B375CA84478ED722DB4E18BDDF03D6F")
     @Override
     public Object clone() throws CloneNotSupportedException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1315527177 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1315527177 = super.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_1315527177.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1315527177;
-        
-        
+Object var46F3A0D86742C1D6E099C2B166941A33_1622483562 =         super.clone();
+        var46F3A0D86742C1D6E099C2B166941A33_1622483562.addTaint(taint);
+        return var46F3A0D86742C1D6E099C2B166941A33_1622483562;
+        // ---------- Original Method ----------
+        //return super.clone();
     }
 
     

@@ -1,12 +1,9 @@
 package libcore.net.url;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.IOException;
 import java.net.Proxy;
 import java.net.URL;
@@ -15,93 +12,86 @@ import java.net.URLStreamHandler;
 
 public class FileHandler extends URLStreamHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.734 -0400", hash_original_method = "6784E94C0D30F3330B20FF566B070BF0", hash_generated_method = "6784E94C0D30F3330B20FF566B070BF0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.876 -0400", hash_original_method = "6784E94C0D30F3330B20FF566B070BF0", hash_generated_method = "6784E94C0D30F3330B20FF566B070BF0")
     public FileHandler ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.735 -0400", hash_original_method = "9E19C679A0152E7A481321FB9FD94041", hash_generated_method = "F0546E94D721ADC1F7C9BDEE72D95AC4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.876 -0400", hash_original_method = "9E19C679A0152E7A481321FB9FD94041", hash_generated_method = "F207C317A17D2D332F2E275C8F70CEDA")
     @Override
     public URLConnection openConnection(URL url) throws IOException {
-        URLConnection varB4EAC82CA7396A68D541C85D26508E83_806954959 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_806954959 = openConnection(url, null);
         addTaint(url.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_806954959.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_806954959;
-        
-        
+URLConnection varC7B56D70891864570C2950F90421920A_1270073662 =         openConnection(url, null);
+        varC7B56D70891864570C2950F90421920A_1270073662.addTaint(taint);
+        return varC7B56D70891864570C2950F90421920A_1270073662;
+        // ---------- Original Method ----------
+        //return openConnection(url, null);
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.735 -0400", hash_original_method = "3680F869AEF91A8B3F794811BFCF54E6", hash_generated_method = "8A5E3CFEA1DB9853485C98BA78F2CDCC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.876 -0400", hash_original_method = "3680F869AEF91A8B3F794811BFCF54E6", hash_generated_method = "5A88C10A7092050F255CD521F0127A7D")
     @Override
     public URLConnection openConnection(URL url, Proxy proxy) throws IOException {
-        URLConnection varB4EAC82CA7396A68D541C85D26508E83_373331398 = null; 
-        URLConnection varB4EAC82CA7396A68D541C85D26508E83_969208466 = null; 
-        {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("url == null");
-        } 
-        String host = url.getHost();
-        {
-            boolean var58FB74E7C7902299B2BF0C1488A5F499_1730985916 = (host == null || host.isEmpty() || host.equalsIgnoreCase("localhost"));
-            {
-                varB4EAC82CA7396A68D541C85D26508E83_373331398 = new FileURLConnection(url);
-            } 
-        } 
-        URL ftpURL = new URL("ftp", host, url.getFile());
-        varB4EAC82CA7396A68D541C85D26508E83_969208466 = (proxy == null) ? ftpURL.openConnection() : ftpURL.openConnection(proxy);
-        addTaint(url.getTaint());
         addTaint(proxy.getTaint());
-        URLConnection varA7E53CE21691AB073D9660D615818899_2011031290; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_2011031290 = varB4EAC82CA7396A68D541C85D26508E83_373331398;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_2011031290 = varB4EAC82CA7396A68D541C85D26508E83_969208466;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_2011031290.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_2011031290;
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
+        addTaint(url.getTaint());
+    if(url == null)        
+        {
+            IllegalArgumentException var51E90DD83A5055CB9B1F9A4E2C3BCFA1_304431799 = new IllegalArgumentException("url == null");
+            var51E90DD83A5055CB9B1F9A4E2C3BCFA1_304431799.addTaint(taint);
+            throw var51E90DD83A5055CB9B1F9A4E2C3BCFA1_304431799;
+        } //End block
+        String host = url.getHost();
+    if(host == null || host.isEmpty() || host.equalsIgnoreCase("localhost"))        
+        {
+URLConnection var3B440E203A7BBFEF602C7128B9D19C0D_1597475129 =             new FileURLConnection(url);
+            var3B440E203A7BBFEF602C7128B9D19C0D_1597475129.addTaint(taint);
+            return var3B440E203A7BBFEF602C7128B9D19C0D_1597475129;
+        } //End block
+        URL ftpURL = new URL("ftp", host, url.getFile());
+URLConnection varB1DC9B102F866A79AD790258FC9A0468_847516527 =         (proxy == null) ? ftpURL.openConnection() : ftpURL.openConnection(proxy);
+        varB1DC9B102F866A79AD790258FC9A0468_847516527.addTaint(taint);
+        return varB1DC9B102F866A79AD790258FC9A0468_847516527;
+        // ---------- Original Method ----------
+        //if (url == null) {
+            //throw new IllegalArgumentException("url == null");
+        //}
+        //String host = url.getHost();
+        //if (host == null || host.isEmpty() || host.equalsIgnoreCase("localhost")) {
+            //return new FileURLConnection(url);
+        //}
+        //URL ftpURL = new URL("ftp", host, url.getFile());
+        //return (proxy == null) ? ftpURL.openConnection() : ftpURL.openConnection(proxy);
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.736 -0400", hash_original_method = "F97A1055288731314CAAC8F3AEEE2191", hash_generated_method = "27F9C1FA91C4CBFBDEFA7A07001F56F9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.877 -0400", hash_original_method = "F97A1055288731314CAAC8F3AEEE2191", hash_generated_method = "567ACC7846469F94C9CDB182E0EC3830")
     @Override
     protected void parseURL(URL url, String spec, int start, int end) {
+        addTaint(end);
+        addTaint(start);
+        addTaint(spec.getTaint());
+        addTaint(url.getTaint());
+    if(end < start)        
+        {
+            return;
+        } //End block
         String parseString = "";
+    if(start < end)        
         {
             parseString = spec.substring(start, end).replace('\\', '/');
-        } 
+        } //End block
         super.parseURL(url, parseString, 0, parseString.length());
-        addTaint(url.getTaint());
-        addTaint(spec.getTaint());
-        addTaint(start);
-        addTaint(end);
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (end < start) {
+            //return;
+        //}
+        //String parseString = "";
+        //if (start < end) {
+            //parseString = spec.substring(start, end).replace('\\', '/');
+        //}
+        //super.parseURL(url, parseString, 0, parseString.length());
     }
 
     

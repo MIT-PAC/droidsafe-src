@@ -1,30 +1,28 @@
 package android.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 class ReflectiveProperty<T, V> extends Property<T, V> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.548 -0400", hash_original_field = "16EEDAABC5C1FB42003AA47180ED612B", hash_generated_field = "EEA8654E15111D59944789CA5B543C76")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.197 -0400", hash_original_field = "16EEDAABC5C1FB42003AA47180ED612B", hash_generated_field = "EEA8654E15111D59944789CA5B543C76")
 
     private Method mSetter;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.548 -0400", hash_original_field = "7107F73C17BAE03EC85BA17E62A26036", hash_generated_field = "6E8EC7297CA45290DB21D59C8AA7D832")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.197 -0400", hash_original_field = "7107F73C17BAE03EC85BA17E62A26036", hash_generated_field = "6E8EC7297CA45290DB21D59C8AA7D832")
 
     private Method mGetter;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.548 -0400", hash_original_field = "0CAB8BA8DDC27902A8770C3001E7D4DF", hash_generated_field = "0E3FF9C9FB2909B4EEFAB3A86E1A80E5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.197 -0400", hash_original_field = "0CAB8BA8DDC27902A8770C3001E7D4DF", hash_generated_field = "0E3FF9C9FB2909B4EEFAB3A86E1A80E5")
 
     private Field mField;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.549 -0400", hash_original_method = "4D5217EDB6A50C089202283FEC2465A8", hash_generated_method = "C41BBD637399E93211B18D67FBB42FE2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.198 -0400", hash_original_method = "4D5217EDB6A50C089202283FEC2465A8", hash_generated_method = "DB720BEB6FAE0E0B1958BCEBB7869F3C")
     public  ReflectiveProperty(Class<T> propertyHolder, Class<V> valueType, String name) {
         super(valueType, name);
+        addTaint(valueType.getTaint());
         char firstLetter = Character.toUpperCase(name.charAt(0));
         String theRest = name.substring(1);
         String capitalizedName = firstLetter + theRest;
@@ -32,208 +30,237 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
         try 
         {
             mGetter = propertyHolder.getMethod(getterName, (Class<?>[])null);
-        } 
+        } //End block
         catch (NoSuchMethodException e)
         {
             getterName = PREFIX_IS + capitalizedName;
             try 
             {
                 mGetter = propertyHolder.getMethod(getterName, (Class<?>[])null);
-            } 
+            } //End block
             catch (NoSuchMethodException e1)
             {
                 try 
                 {
                     mField = propertyHolder.getField(name);
                     Class fieldType = mField.getType();
+    if(!typesMatch(valueType, fieldType))                    
                     {
-                        boolean var9268CA5610FB5210C54887757616A17A_474163686 = (!typesMatch(valueType, fieldType));
-                        {
-                            if (DroidSafeAndroidRuntime.control) throw new NoSuchPropertyException("Underlying type (" + fieldType + ") " +
+                        NoSuchPropertyException var89739AF27078F6CF291E82A821220B64_1773208073 = new NoSuchPropertyException("Underlying type (" + fieldType + ") " +
                                 "does not match Property type (" + valueType + ")");
-                        } 
-                    } 
-                } 
+                        var89739AF27078F6CF291E82A821220B64_1773208073.addTaint(taint);
+                        throw var89739AF27078F6CF291E82A821220B64_1773208073;
+                    } //End block
+                    return;
+                } //End block
                 catch (NoSuchFieldException e2)
                 {
-                    if (DroidSafeAndroidRuntime.control) throw new NoSuchPropertyException("No accessor method or field found for"
+                    NoSuchPropertyException var858E788E5B1503FF62C58AD5D2C7E476_367665286 = new NoSuchPropertyException("No accessor method or field found for"
                             + " property with name " + name);
-                } 
-            } 
-        } 
+                    var858E788E5B1503FF62C58AD5D2C7E476_367665286.addTaint(taint);
+                    throw var858E788E5B1503FF62C58AD5D2C7E476_367665286;
+                } //End block
+            } //End block
+        } //End block
         Class getterType = mGetter.getReturnType();
+    if(!typesMatch(valueType, getterType))        
         {
-            boolean varE0F8B9103254BA81ACC9A19D1436928E_201144115 = (!typesMatch(valueType, getterType));
-            {
-                if (DroidSafeAndroidRuntime.control) throw new NoSuchPropertyException("Underlying type (" + getterType + ") " +
+            NoSuchPropertyException varEA57993FAB212A9EB3D78132E76DB573_1258559282 = new NoSuchPropertyException("Underlying type (" + getterType + ") " +
                     "does not match Property type (" + valueType + ")");
-            } 
-        } 
+            varEA57993FAB212A9EB3D78132E76DB573_1258559282.addTaint(taint);
+            throw varEA57993FAB212A9EB3D78132E76DB573_1258559282;
+        } //End block
         String setterName = PREFIX_SET + capitalizedName;
         try 
         {
             mSetter = propertyHolder.getMethod(setterName, getterType);
-        } 
+        } //End block
         catch (NoSuchMethodException ignored)
-        { }
-        addTaint(valueType.getTaint());
-        
-        
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.550 -0400", hash_original_method = "ED015CEE91613D6F524378162B530528", hash_generated_method = "F8F44CC9D5CEE8C11ADA23B9CB6A8750")
-    private boolean typesMatch(Class<V> valueType, Class getterType) {
         {
-            {
-                boolean var15116A97817E37F8F785F1AE4B1D8378_161625805 = (getterType.isPrimitive());
-            } 
-        } 
-        addTaint(valueType.getTaint());
-        addTaint(getterType.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_264735394 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_264735394;
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.550 -0400", hash_original_method = "9BC237A59BE2F86E825267381E38AEC8", hash_generated_method = "4D0CC7DEB5DFC49E01B15312CF58C810")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.200 -0400", hash_original_method = "ED015CEE91613D6F524378162B530528", hash_generated_method = "B8E679FCBA456BC27A8FE330139F42EF")
+    private boolean typesMatch(Class<V> valueType, Class getterType) {
+        addTaint(getterType.getTaint());
+        addTaint(valueType.getTaint());
+    if(getterType != valueType)        
+        {
+    if(getterType.isPrimitive())            
+            {
+                boolean var54AB7A359F2D3C3B11FDC409AD690B54_359950014 = ((getterType == float.class && valueType == Float.class) ||
+                        (getterType == int.class && valueType == Integer.class) ||
+                        (getterType == boolean.class && valueType == Boolean.class) ||
+                        (getterType == long.class && valueType == Long.class) ||
+                        (getterType == double.class && valueType == Double.class) ||
+                        (getterType == short.class && valueType == Short.class) ||
+                        (getterType == byte.class && valueType == Byte.class) ||
+                        (getterType == char.class && valueType == Character.class));
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1897435496 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1897435496;
+            } //End block
+            boolean var68934A3E9455FA72420237EB05902327_403520319 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2132985899 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2132985899;
+        } //End block
+        boolean varB326B5062B2F0E69046810717534CB09_1680301828 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1983024837 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1983024837;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.201 -0400", hash_original_method = "9BC237A59BE2F86E825267381E38AEC8", hash_generated_method = "A65AC38E0991ABDAB0D1D65A0195EAEC")
     @Override
     public void set(T object, V value) {
+        addTaint(value.getTaint());
+        addTaint(object.getTaint());
+    if(mSetter != null)        
         {
             try 
             {
                 mSetter.invoke(object, value);
-            } 
+            } //End block
             catch (IllegalAccessException e)
             {
-                if (DroidSafeAndroidRuntime.control) throw new AssertionError();
-            } 
+                AssertionError varA81442E36297E737EB908877E58260E8_1262174682 = new AssertionError();
+                varA81442E36297E737EB908877E58260E8_1262174682.addTaint(taint);
+                throw varA81442E36297E737EB908877E58260E8_1262174682;
+            } //End block
             catch (InvocationTargetException e)
             {
-                if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e.getCause());
-            } 
-        } 
+                RuntimeException var21A9144EB1856059FE4C4B9FF95E6F43_1322203866 = new RuntimeException(e.getCause());
+                var21A9144EB1856059FE4C4B9FF95E6F43_1322203866.addTaint(taint);
+                throw var21A9144EB1856059FE4C4B9FF95E6F43_1322203866;
+            } //End block
+        } //End block
+        else
+    if(mField != null)        
         {
             try 
             {
                 mField.set(object, value);
-            } 
+            } //End block
             catch (IllegalAccessException e)
             {
-                if (DroidSafeAndroidRuntime.control) throw new AssertionError();
-            } 
-        } 
+                AssertionError varA81442E36297E737EB908877E58260E8_1346433135 = new AssertionError();
+                varA81442E36297E737EB908877E58260E8_1346433135.addTaint(taint);
+                throw varA81442E36297E737EB908877E58260E8_1346433135;
+            } //End block
+        } //End block
+        else
         {
-            if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("Property " + getName() +" is read-only");
-        } 
-        addTaint(object.getTaint());
-        addTaint(value.getTaint());
-        
-        
-            
-                
-            
-                
-            
-                
-            
-        
-            
-                
-            
-                
-            
-        
-            
-        
+            UnsupportedOperationException var7C18E98A72208702C7C0661FD2550E26_1317381738 = new UnsupportedOperationException("Property " + getName() +" is read-only");
+            var7C18E98A72208702C7C0661FD2550E26_1317381738.addTaint(taint);
+            throw var7C18E98A72208702C7C0661FD2550E26_1317381738;
+        } //End block
+        // ---------- Original Method ----------
+        //if (mSetter != null) {
+            //try {
+                //mSetter.invoke(object, value);
+            //} catch (IllegalAccessException e) {
+                //throw new AssertionError();
+            //} catch (InvocationTargetException e) {
+                //throw new RuntimeException(e.getCause());
+            //}
+        //} else if (mField != null) {
+            //try {
+                //mField.set(object, value);
+            //} catch (IllegalAccessException e) {
+                //throw new AssertionError();
+            //}
+        //} else {
+            //throw new UnsupportedOperationException("Property " + getName() +" is read-only");
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.551 -0400", hash_original_method = "4070872B48CA952F40E8D9AD673A26AA", hash_generated_method = "AC7892B10E2D1E20782EE72A4165C9AD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.202 -0400", hash_original_method = "4070872B48CA952F40E8D9AD673A26AA", hash_generated_method = "7CC6699337DD41AF73580930944DD5D5")
     @Override
     public V get(T object) {
-        V varB4EAC82CA7396A68D541C85D26508E83_506606232 = null; 
-        V varB4EAC82CA7396A68D541C85D26508E83_1139843364 = null; 
+        addTaint(object.getTaint());
+    if(mGetter != null)        
         {
             try 
             {
-                varB4EAC82CA7396A68D541C85D26508E83_506606232 = (V) mGetter.invoke(object, (Object[])null);
-            } 
+V var6F170D17107151FFB1EB230D5CB4817D_185544340 =                 (V) mGetter.invoke(object, (Object[])null);
+                var6F170D17107151FFB1EB230D5CB4817D_185544340.addTaint(taint);
+                return var6F170D17107151FFB1EB230D5CB4817D_185544340;
+            } //End block
             catch (IllegalAccessException e)
             {
-                if (DroidSafeAndroidRuntime.control) throw new AssertionError();
-            } 
+                AssertionError varA81442E36297E737EB908877E58260E8_1975972058 = new AssertionError();
+                varA81442E36297E737EB908877E58260E8_1975972058.addTaint(taint);
+                throw varA81442E36297E737EB908877E58260E8_1975972058;
+            } //End block
             catch (InvocationTargetException e)
             {
-                if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e.getCause());
-            } 
-        } 
+                RuntimeException var21A9144EB1856059FE4C4B9FF95E6F43_1307336171 = new RuntimeException(e.getCause());
+                var21A9144EB1856059FE4C4B9FF95E6F43_1307336171.addTaint(taint);
+                throw var21A9144EB1856059FE4C4B9FF95E6F43_1307336171;
+            } //End block
+        } //End block
+        else
+    if(mField != null)        
         {
             try 
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1139843364 = (V) mField.get(object);
-            } 
+V varE396095FB568A116FDE56C12F3E74C0A_1336768383 =                 (V) mField.get(object);
+                varE396095FB568A116FDE56C12F3E74C0A_1336768383.addTaint(taint);
+                return varE396095FB568A116FDE56C12F3E74C0A_1336768383;
+            } //End block
             catch (IllegalAccessException e)
             {
-                if (DroidSafeAndroidRuntime.control) throw new AssertionError();
-            } 
-        } 
-        if (DroidSafeAndroidRuntime.control) throw new AssertionError();
-        addTaint(object.getTaint());
-        V varA7E53CE21691AB073D9660D615818899_1763632809; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1763632809 = varB4EAC82CA7396A68D541C85D26508E83_506606232;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1763632809 = varB4EAC82CA7396A68D541C85D26508E83_1139843364;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1763632809.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1763632809;
-        
-        
-            
-                
-            
-                
-            
-                
-            
-        
-            
-                
-            
-                
-            
-        
-        
+                AssertionError varA81442E36297E737EB908877E58260E8_972153670 = new AssertionError();
+                varA81442E36297E737EB908877E58260E8_972153670.addTaint(taint);
+                throw varA81442E36297E737EB908877E58260E8_972153670;
+            } //End block
+        } //End block
+        AssertionError varA81442E36297E737EB908877E58260E8_1995393566 = new AssertionError();
+        varA81442E36297E737EB908877E58260E8_1995393566.addTaint(taint);
+        throw varA81442E36297E737EB908877E58260E8_1995393566;
+        // ---------- Original Method ----------
+        //if (mGetter != null) {
+            //try {
+                //return (V) mGetter.invoke(object, (Object[])null);
+            //} catch (IllegalAccessException e) {
+                //throw new AssertionError();
+            //} catch (InvocationTargetException e) {
+                //throw new RuntimeException(e.getCause());
+            //}
+        //} else if (mField != null) {
+            //try {
+                //return (V) mField.get(object);
+            //} catch (IllegalAccessException e) {
+                //throw new AssertionError();
+            //}
+        //}
+        //throw new AssertionError();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.552 -0400", hash_original_method = "176D77E232A76459A0F514B7F2AA65DB", hash_generated_method = "70471920EF9581BA3FA23E2761761D47")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.203 -0400", hash_original_method = "176D77E232A76459A0F514B7F2AA65DB", hash_generated_method = "6D3FB7659584CE31C0E753556C93A188")
     @Override
     public boolean isReadOnly() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1802897594 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1802897594;
-        
-        
+        boolean var0CD26F59E51E95187630282130E31EE1_1856391403 = ((mSetter == null && mField == null));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_303079719 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_303079719;
+        // ---------- Original Method ----------
+        //return (mSetter == null && mField == null);
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.552 -0400", hash_original_field = "25304E0CA662AE83D08DBF98C8D49512", hash_generated_field = "DCD45C1BFB57F61F4FD82A59CD9038F7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.203 -0400", hash_original_field = "25304E0CA662AE83D08DBF98C8D49512", hash_generated_field = "DCD45C1BFB57F61F4FD82A59CD9038F7")
 
     private static final String PREFIX_GET = "get";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.552 -0400", hash_original_field = "833FCA24685BACBAAEB467CFFA681776", hash_generated_field = "BEF88240E4DBFFAA180B73F2B3351672")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.203 -0400", hash_original_field = "833FCA24685BACBAAEB467CFFA681776", hash_generated_field = "BEF88240E4DBFFAA180B73F2B3351672")
 
     private static final String PREFIX_IS = "is";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.552 -0400", hash_original_field = "A5A69007E412F74A05D61934014BBC10", hash_generated_field = "69FF23A6AF0F51D218A18A1112A00C6F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.203 -0400", hash_original_field = "A5A69007E412F74A05D61934014BBC10", hash_generated_field = "69FF23A6AF0F51D218A18A1112A00C6F")
 
     private static final String PREFIX_SET = "set";
 }

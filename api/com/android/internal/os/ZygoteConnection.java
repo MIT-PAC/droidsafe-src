@@ -1,12 +1,9 @@
 package com.android.internal.os;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.net.Credentials;
 import android.net.LocalSocket;
 import android.os.Build;
@@ -30,20 +27,20 @@ import libcore.io.IoUtils;
 import libcore.io.Libcore;
 
 class ZygoteConnection {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.777 -0400", hash_original_field = "ADAA094F2E9199B78AA3ADA013DBD64F", hash_generated_field = "9F88E22AD28B44C4F3ABF7860B4C458C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.209 -0400", hash_original_field = "ADAA094F2E9199B78AA3ADA013DBD64F", hash_generated_field = "9F88E22AD28B44C4F3ABF7860B4C458C")
 
     private LocalSocket mSocket;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.777 -0400", hash_original_field = "DAF0DD849774F07F7CC400FF46C053C7", hash_generated_field = "A0824D1C247F56564C11BA8205E8EB5E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.210 -0400", hash_original_field = "DAF0DD849774F07F7CC400FF46C053C7", hash_generated_field = "A0824D1C247F56564C11BA8205E8EB5E")
 
     private DataOutputStream mSocketOutStream;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.777 -0400", hash_original_field = "08D153294DEC10839B965F71B7AB13E6", hash_generated_field = "F0D2329C97964096148900E8F81E43EC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.210 -0400", hash_original_field = "08D153294DEC10839B965F71B7AB13E6", hash_generated_field = "F0D2329C97964096148900E8F81E43EC")
 
     private BufferedReader mSocketReader;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.777 -0400", hash_original_field = "F8FE68B4C4CBA197EFA9C8BBD45F144E", hash_generated_field = "B6123D5E946169D2772DFD87D959FEA7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.210 -0400", hash_original_field = "F8FE68B4C4CBA197EFA9C8BBD45F144E", hash_generated_field = "B6123D5E946169D2772DFD87D959FEA7")
 
     private Credentials peer;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.777 -0400", hash_original_method = "7184EAAE07D7B6F9BEC01EBE5F329335", hash_generated_method = "F3DF980F276C79A19AD29FC36BDC7D90")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.210 -0400", hash_original_method = "7184EAAE07D7B6F9BEC01EBE5F329335", hash_generated_method = "32172E099DE9BCF8575C851672103C15")
       ZygoteConnection(LocalSocket socket) throws IOException {
         mSocket = socket;
         mSocketOutStream
@@ -54,88 +51,104 @@ class ZygoteConnection {
         try 
         {
             peer = mSocket.getPeerCredentials();
-        } 
+        } //End block
         catch (IOException ex)
         {
-            if (DroidSafeAndroidRuntime.control) throw ex;
-        } 
-        
-        
-        
-                
-        
-                
-        
-        
-            
-        
-            
-            
-        
+            ex.addTaint(taint);
+            throw ex;
+        } //End block
+        // ---------- Original Method ----------
+        //mSocket = socket;
+        //mSocketOutStream
+                //= new DataOutputStream(socket.getOutputStream());
+        //mSocketReader = new BufferedReader(
+                //new InputStreamReader(socket.getInputStream()), 256);
+        //mSocket.setSoTimeout(CONNECTION_TIMEOUT_MILLIS);
+        //try {
+            //peer = mSocket.getPeerCredentials();
+        //} catch (IOException ex) {
+            //Log.e(TAG, "Cannot read peer credentials", ex);
+            //throw ex;
+        //}
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.778 -0400", hash_original_method = "D031047267A17F3FBDEAA6E5A25F7FEC", hash_generated_method = "4F188BB060B4775854BBD511A11EEE58")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.211 -0400", hash_original_method = "D031047267A17F3FBDEAA6E5A25F7FEC", hash_generated_method = "B4C229F3F85114521BCD63ECF867F555")
      FileDescriptor getFileDesciptor() {
-        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1227488671 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1227488671 = mSocket.getFileDescriptor();
-        varB4EAC82CA7396A68D541C85D26508E83_1227488671.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1227488671;
-        
-        
+FileDescriptor varB4DE187B48E9D304340996C59BDD1FA8_1484399033 =         mSocket.getFileDescriptor();
+        varB4DE187B48E9D304340996C59BDD1FA8_1484399033.addTaint(taint);
+        return varB4DE187B48E9D304340996C59BDD1FA8_1484399033;
+        // ---------- Original Method ----------
+        //return mSocket.getFileDescriptor();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.778 -0400", hash_original_method = "D83ED9D59CE4DAAE3BDA7C68EE854B3C", hash_generated_method = "3C1FA7EA140FBD5D4C97F27E7D6278DC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.211 -0400", hash_original_method = "D83ED9D59CE4DAAE3BDA7C68EE854B3C", hash_generated_method = "1C7CAD8C67BE94B6CD19899D9CA20F15")
      void run() throws ZygoteInit.MethodAndArgsCaller {
         int loopCount = ZygoteInit.GC_LOOP_COUNT;
+        while
+(true)        
         {
+    if(loopCount <= 0)            
             {
                 ZygoteInit.gc();
                 loopCount = ZygoteInit.GC_LOOP_COUNT;
-            } 
+            } //End block
+            else
             {
-                boolean var3956FC6BD84B33634CFE124145ABBD1D_1481866737 = (runOnce());
-            } 
-        } 
-        
-        
-        
-            
-                
-                
-            
-                
-            
-            
-                
-            
-        
+                loopCount--;
+            } //End block
+    if(runOnce())            
+            {
+                break;
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //int loopCount = ZygoteInit.GC_LOOP_COUNT;
+        //while (true) {
+            //if (loopCount <= 0) {
+                //ZygoteInit.gc();
+                //loopCount = ZygoteInit.GC_LOOP_COUNT;
+            //} else {
+                //loopCount--;
+            //}
+            //if (runOnce()) {
+                //break;
+            //}
+        //}
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.780 -0400", hash_original_method = "D76E963329652A6F2BCB5FE055E042D1", hash_generated_method = "99CCC71A757AF76F98305A4738065984")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.213 -0400", hash_original_method = "D76E963329652A6F2BCB5FE055E042D1", hash_generated_method = "BB94EE6BFBBE00BBE1D2A1FE3DFC3BA0")
      boolean runOnce() throws ZygoteInit.MethodAndArgsCaller {
-        String args[] = null;
+        String args[];
         Arguments parsedArgs = null;
-        FileDescriptor[] descriptors = null;
+        FileDescriptor[] descriptors;
         try 
         {
             args = readArgumentList();
             descriptors = mSocket.getAncillaryFileDescriptors();
-        } 
+        } //End block
         catch (IOException ex)
         {
             closeSocket();
-        } 
+            boolean varB326B5062B2F0E69046810717534CB09_876660246 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1746034647 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1746034647;
+        } //End block
+    if(args == null)        
         {
             closeSocket();
-        } 
+            boolean varB326B5062B2F0E69046810717534CB09_1424172976 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1047991731 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1047991731;
+        } //End block
         PrintStream newStderr = null;
+    if(descriptors != null && descriptors.length >= 3)        
         {
             newStderr = new PrintStream(
                     new FileOutputStream(descriptors[2]));
-        } 
+        } //End block
         int pid = -1;
         FileDescriptor childPipeFd = null;
         FileDescriptor serverPipeFd = null;
@@ -149,149 +162,153 @@ class ZygoteConnection {
             applyDebuggerSystemProperty(parsedArgs);
             applyInvokeWithSystemProperty(parsedArgs);
             int[][] rlimits = null;
+    if(parsedArgs.rlimits != null)            
             {
                 rlimits = parsedArgs.rlimits.toArray(intArray2d);
-            } 
+            } //End block
+    if(parsedArgs.runtimeInit && parsedArgs.invokeWith != null)            
             {
                 FileDescriptor[] pipeFds = Libcore.os.pipe();
                 childPipeFd = pipeFds[1];
                 serverPipeFd = pipeFds[0];
                 ZygoteInit.setCloseOnExec(serverPipeFd, true);
-            } 
+            } //End block
             pid = Zygote.forkAndSpecialize(parsedArgs.uid, parsedArgs.gid,
                     parsedArgs.gids, parsedArgs.debugFlags, rlimits);
-        } 
+        } //End block
         catch (IOException ex)
         {
             logAndPrintError(newStderr, "Exception creating pipe", ex);
-        } 
+        } //End block
         catch (ErrnoException ex)
         {
             logAndPrintError(newStderr, "Exception creating pipe", ex);
-        } 
+        } //End block
         catch (IllegalArgumentException ex)
         {
             logAndPrintError(newStderr, "Invalid zygote arguments", ex);
-        } 
+        } //End block
         catch (ZygoteSecurityException ex)
         {
             logAndPrintError(newStderr,
                     "Zygote security policy prevents request: ", ex);
-        } 
+        } //End block
         try 
         {
+    if(pid == 0)            
             {
                 IoUtils.closeQuietly(serverPipeFd);
                 serverPipeFd = null;
                 handleChildProc(parsedArgs, descriptors, childPipeFd, newStderr);
-            } 
+                boolean varB326B5062B2F0E69046810717534CB09_874424608 = (true);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_426830299 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_426830299;
+            } //End block
+            else
             {
                 IoUtils.closeQuietly(childPipeFd);
                 childPipeFd = null;
-                boolean var3BB28BDAA63918F5E760084AB2F56798_601688189 = (handleParentProc(pid, descriptors, serverPipeFd, parsedArgs));
-            } 
-        } 
+                boolean varC9454D8B2FD50A402C6425B646C1B138_65468694 = (handleParentProc(pid, descriptors, serverPipeFd, parsedArgs));
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1021912928 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1021912928;
+            } //End block
+        } //End block
         finally 
         {
             IoUtils.closeQuietly(childPipeFd);
             IoUtils.closeQuietly(serverPipeFd);
-        } 
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_914558066 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_914558066;
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.781 -0400", hash_original_method = "5A630DC8DA41E048830D803B657E049B", hash_generated_method = "42044CF4C6C378A3D5B1C19FAE943FED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.215 -0400", hash_original_method = "5A630DC8DA41E048830D803B657E049B", hash_generated_method = "BDBFC3193A46F7EDF42B929530CD44F3")
      void closeSocket() {
         try 
         {
             mSocket.close();
-        } 
+        } //End block
         catch (IOException ex)
-        { }
-        
-        
-            
-        
-            
-                    
-        
+        {
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mSocket.close();
+        //} catch (IOException ex) {
+            //Log.e(TAG, "Exception while closing command "
+                    //+ "socket in parent", ex);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.782 -0400", hash_original_method = "366F843C8FBE8BB09896187A9CDF1388", hash_generated_method = "932D6CB0DBA31031BD86597C019CF95E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.215 -0400", hash_original_method = "366F843C8FBE8BB09896187A9CDF1388", hash_generated_method = "1DC6A3E0AA0034F1CBD937111D70A206")
     private String[] readArgumentList() throws IOException {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_541729181 = null; 
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1294554178 = null; 
-        int argc = 0;
+        int argc;
         try 
         {
             String s = mSocketReader.readLine();
+    if(s == null)            
             {
-                varB4EAC82CA7396A68D541C85D26508E83_541729181 = null;
-            } 
+String[] var540C13E9E156B687226421B24F2DF178_120693395 =                 null;
+                var540C13E9E156B687226421B24F2DF178_120693395.addTaint(taint);
+                return var540C13E9E156B687226421B24F2DF178_120693395;
+            } //End block
             argc = Integer.parseInt(s);
-        } 
+        } //End block
         catch (NumberFormatException ex)
-        { 
-        	throw new IOException("invalid wire format");
-        } 
         {
-            if (DroidSafeAndroidRuntime.control) throw new IOException("max arg count exceeded");
-        } 
+            IOException var6C89B7A455FCE963F839DFAFC943A1BE_37881215 = new IOException("invalid wire format");
+            var6C89B7A455FCE963F839DFAFC943A1BE_37881215.addTaint(taint);
+            throw var6C89B7A455FCE963F839DFAFC943A1BE_37881215;
+        } //End block
+    if(argc > MAX_ZYGOTE_ARGC)        
+        {
+            IOException var1D1E79A74E5DE2797FA901986995986F_1180327689 = new IOException("max arg count exceeded");
+            var1D1E79A74E5DE2797FA901986995986F_1180327689.addTaint(taint);
+            throw var1D1E79A74E5DE2797FA901986995986F_1180327689;
+        } //End block
         String[] result = new String[argc];
+for(int i = 0;i < argc;i++)
         {
-            int i = 0;
+            result[i] = mSocketReader.readLine();
+    if(result[i] == null)            
             {
-                result[i] = mSocketReader.readLine();
-                {
-                    if (DroidSafeAndroidRuntime.control) throw new IOException("truncated request");
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1294554178 = result;
-        String[] varA7E53CE21691AB073D9660D615818899_864665360; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_864665360 = varB4EAC82CA7396A68D541C85D26508E83_541729181;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_864665360 = varB4EAC82CA7396A68D541C85D26508E83_1294554178;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_864665360.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_864665360;
-        
-        
-        
-            
-            
-                
-            
-            
-        
-            
-            
-        
-        
-            
-        
-        
-        
-            
-            
-                
-            
-        
-        
+                IOException varB43CBEE8C043A2E86ADF4FD06368D48D_781131251 = new IOException("truncated request");
+                varB43CBEE8C043A2E86ADF4FD06368D48D_781131251.addTaint(taint);
+                throw varB43CBEE8C043A2E86ADF4FD06368D48D_781131251;
+            } //End block
+        } //End block
+String[] varDC838461EE2FA0CA4C9BBB70A15456B0_119276507 =         result;
+        varDC838461EE2FA0CA4C9BBB70A15456B0_119276507.addTaint(taint);
+        return varDC838461EE2FA0CA4C9BBB70A15456B0_119276507;
+        // ---------- Original Method ----------
+        //int argc;
+        //try {
+            //String s = mSocketReader.readLine();
+            //if (s == null) {
+                //return null;
+            //}
+            //argc = Integer.parseInt(s);
+        //} catch (NumberFormatException ex) {
+            //Log.e(TAG, "invalid Zygote wire format: non-int at argc");
+            //throw new IOException("invalid wire format");
+        //}
+        //if (argc > MAX_ZYGOTE_ARGC) {   
+            //throw new IOException("max arg count exceeded");
+        //}
+        //String[] result = new String[argc];
+        //for (int i = 0; i < argc; i++) {
+            //result[i] = mSocketReader.readLine();
+            //if (result[i] == null) {
+                //throw new IOException("truncated request");
+            //}
+        //}
+        //return result;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static void applyUidSecurityPolicy(Arguments args, Credentials peer) throws ZygoteSecurityException {
+        private static void applyUidSecurityPolicy(Arguments args, Credentials peer) throws ZygoteSecurityException {
         int peerUid = peer.getUid();
         if (peerUid == 0) {
         } else if (peerUid == Process.SYSTEM_UID ) {
@@ -323,16 +340,14 @@ class ZygoteConnection {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void applyDebuggerSystemProperty(Arguments args) {
+        public static void applyDebuggerSystemProperty(Arguments args) {
         if ("1".equals(SystemProperties.get("ro.debuggable"))) {
             args.debugFlags |= Zygote.DEBUG_ENABLE_DEBUGGER;
         }
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static void applyRlimitSecurityPolicy(
+        private static void applyRlimitSecurityPolicy(
             Arguments args, Credentials peer) throws ZygoteSecurityException {
         int peerUid = peer.getUid();
         if (!(peerUid == 0 || peerUid == Process.SYSTEM_UID)) {
@@ -344,8 +359,7 @@ class ZygoteConnection {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static void applyCapabilitiesSecurityPolicy(
+        private static void applyCapabilitiesSecurityPolicy(
             Arguments args, Credentials peer) throws ZygoteSecurityException {
         if (args.permittedCapabilities == 0
                 && args.effectiveCapabilities == 0) {
@@ -373,8 +387,7 @@ class ZygoteConnection {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static void applyInvokeWithSecurityPolicy(Arguments args, Credentials peer) throws ZygoteSecurityException {
+        private static void applyInvokeWithSecurityPolicy(Arguments args, Credentials peer) throws ZygoteSecurityException {
         int peerUid = peer.getUid();
         if (args.invokeWith != null && peerUid != 0) {
             throw new ZygoteSecurityException("Peer is not permitted to specify "
@@ -383,8 +396,7 @@ class ZygoteConnection {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void applyInvokeWithSystemProperty(Arguments args) {
+        public static void applyInvokeWithSystemProperty(Arguments args) {
         if (args.invokeWith == null && args.niceName != null) {
             if (args.niceName != null) {
                 String property = "wrap." + args.niceName;
@@ -400,193 +412,222 @@ class ZygoteConnection {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.794 -0400", hash_original_method = "D56D87B601F5E5F24F9D8C0DB423B19E", hash_generated_method = "65CF7A551AF0CFE94BA1806122874E6B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.231 -0400", hash_original_method = "D56D87B601F5E5F24F9D8C0DB423B19E", hash_generated_method = "E1A23CA1BD482645DFD7BF20A908D27C")
     private void handleChildProc(Arguments parsedArgs,
             FileDescriptor[] descriptors, FileDescriptor pipeFd, PrintStream newStderr) throws ZygoteInit.MethodAndArgsCaller {
+        addTaint(newStderr.getTaint());
+        addTaint(pipeFd.getTaint());
+        addTaint(descriptors[0].getTaint());
+        addTaint(parsedArgs.getTaint());
+    if(parsedArgs.peerWait)        
         {
             try 
             {
                 ZygoteInit.setCloseOnExec(mSocket.getFileDescriptor(), true);
                 sPeerWaitSocket = mSocket;
-            } 
+            } //End block
             catch (IOException ex)
-            { }
-        } 
+            {
+            } //End block
+        } //End block
+        else
         {
             closeSocket();
             ZygoteInit.closeServerSocket();
-        } 
+        } //End block
+    if(descriptors != null)        
         {
             try 
             {
                 ZygoteInit.reopenStdio(descriptors[0],
                         descriptors[1], descriptors[2]);
+for(FileDescriptor fd : descriptors)
                 {
-                    FileDescriptor fd = descriptors[0];
-                    {
-                        IoUtils.closeQuietly(fd);
-                    } 
-                } 
+                    IoUtils.closeQuietly(fd);
+                } //End block
                 newStderr = System.err;
-            } 
+            } //End block
             catch (IOException ex)
-            { }
-        } 
+            {
+            } //End block
+        } //End block
+    if(parsedArgs.niceName != null)        
         {
             Process.setArgV0(parsedArgs.niceName);
-        } 
+        } //End block
+    if(parsedArgs.runtimeInit)        
         {
+    if(parsedArgs.invokeWith != null)            
             {
                 WrapperInit.execApplication(parsedArgs.invokeWith,
                         parsedArgs.niceName, parsedArgs.targetSdkVersion,
                         pipeFd, parsedArgs.remainingArgs);
-            } 
+            } //End block
+            else
             {
                 RuntimeInit.zygoteInit(parsedArgs.targetSdkVersion,
                         parsedArgs.remainingArgs);
-            } 
-        } 
+            } //End block
+        } //End block
+        else
         {
             String className;
             try 
             {
                 className = parsedArgs.remainingArgs[0];
-            } 
+            } //End block
             catch (ArrayIndexOutOfBoundsException ex)
             {
                 logAndPrintError(newStderr,
                         "Missing required class name argument", null);
                 return;
-            } 
+            } //End block
             String[] mainArgs = new String[parsedArgs.remainingArgs.length - 1];
             System.arraycopy(parsedArgs.remainingArgs, 1,
                     mainArgs, 0, mainArgs.length);
+    if(parsedArgs.invokeWith != null)            
             {
                 WrapperInit.execStandalone(parsedArgs.invokeWith,
                         parsedArgs.classpath, className, mainArgs);
-            } 
+            } //End block
+            else
             {
                 ClassLoader cloader;
+    if(parsedArgs.classpath != null)                
                 {
                     cloader = new PathClassLoader(parsedArgs.classpath,
                             ClassLoader.getSystemClassLoader());
-                } 
+                } //End block
+                else
                 {
                     cloader = ClassLoader.getSystemClassLoader();
-                } 
+                } //End block
                 try 
                 {
                     ZygoteInit.invokeStaticMain(cloader, className, mainArgs);
-                } 
+                } //End block
                 catch (RuntimeException ex)
                 {
                     logAndPrintError(newStderr, "Error starting.", ex);
-                } 
-            } 
-        } 
-        addTaint(parsedArgs.getTaint());
-        addTaint(descriptors[0].getTaint());
-        addTaint(pipeFd.getTaint());
-        addTaint(newStderr.getTaint());
-        
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.807 -0400", hash_original_method = "3D3F8EE18B5CE9AC13BB6381C124884E", hash_generated_method = "548E329BA411F417C6826CD0FEAA7FE9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.232 -0400", hash_original_method = "3D3F8EE18B5CE9AC13BB6381C124884E", hash_generated_method = "0AE4CE5E1D097DCD919D152D854A4AE3")
     private boolean handleParentProc(int pid,
             FileDescriptor[] descriptors, FileDescriptor pipeFd, Arguments parsedArgs) {
+        addTaint(parsedArgs.getTaint());
+        addTaint(pipeFd.getTaint());
+        addTaint(descriptors[0].getTaint());
+        addTaint(pid);
+    if(pid > 0)        
         {
             setChildPgid(pid);
-        } 
+        } //End block
+    if(descriptors != null)        
         {
+for(FileDescriptor fd : descriptors)
             {
-                FileDescriptor fd = descriptors[0];
-                {
-                    IoUtils.closeQuietly(fd);
-                } 
-            } 
-        } 
+                IoUtils.closeQuietly(fd);
+            } //End block
+        } //End block
         boolean usingWrapper = false;
+    if(pipeFd != null && pid > 0)        
         {
             DataInputStream is = new DataInputStream(new FileInputStream(pipeFd));
             int innerPid = -1;
             try 
             {
                 innerPid = is.readInt();
-            } 
+            } //End block
             catch (IOException ex)
-            { }
+            {
+            } //End block
             finally 
             {
                 try 
                 {
                     is.close();
-                } 
+                } //End block
                 catch (IOException ex)
-                { }
-            } 
+                {
+                } //End block
+            } //End block
+    if(innerPid > 0)            
             {
                 int parentPid = innerPid;
+                while
+(parentPid > 0 && parentPid != pid)                
                 {
                     parentPid = Process.getParentPid(parentPid);
-                } 
+                } //End block
+    if(parentPid > 0)                
                 {
                     pid = innerPid;
                     usingWrapper = true;
-                } 
-            } 
-        } 
+                } //End block
+                else
+                {
+                } //End block
+            } //End block
+        } //End block
         try 
         {
             mSocketOutStream.writeInt(pid);
             mSocketOutStream.writeBoolean(usingWrapper);
-        } 
+        } //End block
         catch (IOException ex)
-        { }
+        {
+            boolean varB326B5062B2F0E69046810717534CB09_1285480358 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_583393880 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_583393880;
+        } //End block
+    if(parsedArgs.peerWait)        
         {
             try 
             {
                 mSocket.close();
-            } 
+            } //End block
             catch (IOException ex)
-            { }
-        } 
-        addTaint(pid);
-        addTaint(descriptors[0].getTaint());
-        addTaint(pipeFd.getTaint());
-        addTaint(parsedArgs.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_349310165 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_349310165;
-        
-        
+            {
+            } //End block
+            boolean varB326B5062B2F0E69046810717534CB09_1502002904 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_363451806 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_363451806;
+        } //End block
+        boolean var68934A3E9455FA72420237EB05902327_1469748757 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1865500525 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1865500525;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.808 -0400", hash_original_method = "A5A16DB5966812C0B6C21E171E7DEF94", hash_generated_method = "890833DA3B7C6054EE7DA059DF81A371")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.232 -0400", hash_original_method = "A5A16DB5966812C0B6C21E171E7DEF94", hash_generated_method = "5BFB956212478E9B0A9275A55802037F")
     private void setChildPgid(int pid) {
+        addTaint(pid);
         try 
         {
             ZygoteInit.setpgid(pid, ZygoteInit.getpgid(peer.getPid()));
-        } 
+        } //End block
         catch (IOException ex)
-        { }
-        addTaint(pid);
-        
-        
-            
-        
-            
-                
-        
+        {
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //ZygoteInit.setpgid(pid, ZygoteInit.getpgid(peer.getPid()));
+        //} catch (IOException ex) {
+            //Log.i(TAG, "Zygote: setpgid failed. This is "
+                //+ "normal if peer is not in our session");
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static void logAndPrintError(PrintStream newStderr,
+        private static void logAndPrintError(PrintStream newStderr,
             String message, Throwable ex) {
         Log.e(TAG, message, ex);
         if (newStderr != null) {
@@ -596,270 +637,294 @@ class ZygoteConnection {
 
     
     static class Arguments {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.809 -0400", hash_original_field = "0CB100AF67BD2EB1F0E2A464C0F12B08", hash_generated_field = "8E7F39D78C11D0D620F5769854F95AD4")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.233 -0400", hash_original_field = "0CB100AF67BD2EB1F0E2A464C0F12B08", hash_generated_field = "8E7F39D78C11D0D620F5769854F95AD4")
 
         int uid = 0;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.809 -0400", hash_original_field = "8C752772BC3E7930653B65D1E22518B0", hash_generated_field = "FCC687D32DCADE2501DFF90534FB8EB3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.233 -0400", hash_original_field = "8C752772BC3E7930653B65D1E22518B0", hash_generated_field = "FCC687D32DCADE2501DFF90534FB8EB3")
 
         boolean uidSpecified;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.809 -0400", hash_original_field = "404F44BC9AAB75EF1799743675B1FBD1", hash_generated_field = "CD7DE07815123E8D5BDE5DC586F9E327")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.233 -0400", hash_original_field = "404F44BC9AAB75EF1799743675B1FBD1", hash_generated_field = "CD7DE07815123E8D5BDE5DC586F9E327")
 
         int gid = 0;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.809 -0400", hash_original_field = "398A5174EFB36BC0BF8DE762DA220023", hash_generated_field = "7F9C72C3971857F2F2424F2876DDCB37")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.233 -0400", hash_original_field = "398A5174EFB36BC0BF8DE762DA220023", hash_generated_field = "7F9C72C3971857F2F2424F2876DDCB37")
 
         boolean gidSpecified;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.809 -0400", hash_original_field = "77DBC042260703938C8CA627F28C6CF5", hash_generated_field = "54C577A65DD30DDDFB9215D4CF28DB70")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.233 -0400", hash_original_field = "77DBC042260703938C8CA627F28C6CF5", hash_generated_field = "54C577A65DD30DDDFB9215D4CF28DB70")
 
         int[] gids;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.809 -0400", hash_original_field = "2B754C222A01095B11299CC5E0B9E1CE", hash_generated_field = "DE4E6DC7B42CB6C9AA9043942BF17F86")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.233 -0400", hash_original_field = "2B754C222A01095B11299CC5E0B9E1CE", hash_generated_field = "DE4E6DC7B42CB6C9AA9043942BF17F86")
 
         boolean peerWait;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.809 -0400", hash_original_field = "003817FE41A79B41720958195F588744", hash_generated_field = "EE1851787F428E476E8277578F17E703")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.233 -0400", hash_original_field = "003817FE41A79B41720958195F588744", hash_generated_field = "EE1851787F428E476E8277578F17E703")
 
         int debugFlags;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.809 -0400", hash_original_field = "6099B90F1E5E8B48541E9B6E6B9E7C89", hash_generated_field = "6C1842C610E85CE5AAB422B21DE084EE")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.233 -0400", hash_original_field = "6099B90F1E5E8B48541E9B6E6B9E7C89", hash_generated_field = "6C1842C610E85CE5AAB422B21DE084EE")
 
         int targetSdkVersion;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.809 -0400", hash_original_field = "ABE8F3014224BEA06B50EEDE67F3D8ED", hash_generated_field = "13C1E04054F8153548EFE0154E96AF4F")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.233 -0400", hash_original_field = "ABE8F3014224BEA06B50EEDE67F3D8ED", hash_generated_field = "13C1E04054F8153548EFE0154E96AF4F")
 
         boolean targetSdkVersionSpecified;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.809 -0400", hash_original_field = "621F8FA91E380C78BD98880BE47DFC8A", hash_generated_field = "F6B99376C3175C909AAF68D121783067")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.233 -0400", hash_original_field = "621F8FA91E380C78BD98880BE47DFC8A", hash_generated_field = "F6B99376C3175C909AAF68D121783067")
 
         String classpath;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.809 -0400", hash_original_field = "BFB62C5307E4BCDA1B10795C274A1E70", hash_generated_field = "83B5575B50DE1C2A124BAC34BDE96481")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.233 -0400", hash_original_field = "BFB62C5307E4BCDA1B10795C274A1E70", hash_generated_field = "83B5575B50DE1C2A124BAC34BDE96481")
 
         boolean runtimeInit;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.809 -0400", hash_original_field = "24E312342380F3064032CB21B6D58823", hash_generated_field = "A9B0553B8BC7AA374068697DA246A7A6")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.233 -0400", hash_original_field = "24E312342380F3064032CB21B6D58823", hash_generated_field = "A9B0553B8BC7AA374068697DA246A7A6")
 
         String niceName;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.809 -0400", hash_original_field = "60CBE6FEE7FEEC6AE73BF4B02B6B81E0", hash_generated_field = "A6E797CB91748575747AFCEF1EFABE00")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.233 -0400", hash_original_field = "60CBE6FEE7FEEC6AE73BF4B02B6B81E0", hash_generated_field = "A6E797CB91748575747AFCEF1EFABE00")
 
         boolean capabilitiesSpecified;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.809 -0400", hash_original_field = "18DE92E733E3F8935E94E868D7001228", hash_generated_field = "1953FB01473D5608C92B58749337D80F")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.233 -0400", hash_original_field = "18DE92E733E3F8935E94E868D7001228", hash_generated_field = "1953FB01473D5608C92B58749337D80F")
 
         long permittedCapabilities;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.809 -0400", hash_original_field = "AA691C164A2FBAA688633A0E8F811EF1", hash_generated_field = "5B064209ACA1CCAE633A16D8D6ED5D7E")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.233 -0400", hash_original_field = "AA691C164A2FBAA688633A0E8F811EF1", hash_generated_field = "5B064209ACA1CCAE633A16D8D6ED5D7E")
 
         long effectiveCapabilities;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.809 -0400", hash_original_field = "41155B5DE35F5D4E67EF89201B7F5565", hash_generated_field = "6B6E7FE0066F3C40E26724314989FD1B")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.233 -0400", hash_original_field = "41155B5DE35F5D4E67EF89201B7F5565", hash_generated_field = "6B6E7FE0066F3C40E26724314989FD1B")
 
         ArrayList<int[]> rlimits;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.809 -0400", hash_original_field = "8E5E27F054987B84BB22F5307D0237B3", hash_generated_field = "452A5731BC14408AF85FDFEF2F034B9D")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.233 -0400", hash_original_field = "8E5E27F054987B84BB22F5307D0237B3", hash_generated_field = "452A5731BC14408AF85FDFEF2F034B9D")
 
         String invokeWith;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.809 -0400", hash_original_field = "3C8D8F8A1F0275D9C097D1CA5ADD856B", hash_generated_field = "88B6A06E0D43FBF96C1153AEAB5C29CA")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.233 -0400", hash_original_field = "3C8D8F8A1F0275D9C097D1CA5ADD856B", hash_generated_field = "88B6A06E0D43FBF96C1153AEAB5C29CA")
 
         String remainingArgs[];
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.810 -0400", hash_original_method = "35BDC5101A4DE38616FDCE6EF4D8CA10", hash_generated_method = "DFC605ACC3B8EA6D90580703C327FB9B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.233 -0400", hash_original_method = "35BDC5101A4DE38616FDCE6EF4D8CA10", hash_generated_method = "F181F5A7A31C345E3645C1582D1EBC3E")
           Arguments(String args[]) throws IllegalArgumentException {
-            parseArgs(args);
             addTaint(args[0].getTaint());
-            
-            
+            parseArgs(args);
+            // ---------- Original Method ----------
+            //parseArgs(args);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.813 -0400", hash_original_method = "12134C3215A59528551E59AC16868712", hash_generated_method = "AD862CA724B2E17A11DA361303129C1F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.235 -0400", hash_original_method = "12134C3215A59528551E59AC16868712", hash_generated_method = "742B8A4905318469366561EF0F45A675")
         private void parseArgs(String args[]) throws IllegalArgumentException {
             int curArg = 0;
+for(;curArg < args.length;curArg++)
             {
                 String arg = args[curArg];
+    if(arg.equals("--"))                
                 {
-                    boolean var566DD555814D764ED9A29C42F8874316_820637683 = (arg.equals("--"));
+                    curArg++;
+                    break;
+                } //End block
+                else
+    if(arg.startsWith("--setuid="))                
+                {
+    if(uidSpecified)                    
                     {
-                        boolean varB23576AD5E9EC539D85F6DF6FF560CA3_1295586044 = (arg.startsWith("--setuid="));
-                        {
-                            {
-                                if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
+                        IllegalArgumentException var41F501EC6FE3B8CCBEAAB484537CAE17_2100975099 = new IllegalArgumentException(
                                 "Duplicate arg specified");
-                            } 
-                            uidSpecified = true;
-                            uid = Integer.parseInt(
+                        var41F501EC6FE3B8CCBEAAB484537CAE17_2100975099.addTaint(taint);
+                        throw var41F501EC6FE3B8CCBEAAB484537CAE17_2100975099;
+                    } //End block
+                    uidSpecified = true;
+                    uid = Integer.parseInt(
                             arg.substring(arg.indexOf('=') + 1));
-                        } 
-                        {
-                            boolean var615818C78584CF4A74BFFF152C4BEFC2_1674073777 = (arg.startsWith("--setgid="));
-                            {
-                                {
-                                    if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
+                } //End block
+                else
+    if(arg.startsWith("--setgid="))                
+                {
+    if(gidSpecified)                    
+                    {
+                        IllegalArgumentException var41F501EC6FE3B8CCBEAAB484537CAE17_1666861104 = new IllegalArgumentException(
                                 "Duplicate arg specified");
-                                } 
-                                gidSpecified = true;
-                                gid = Integer.parseInt(
+                        var41F501EC6FE3B8CCBEAAB484537CAE17_1666861104.addTaint(taint);
+                        throw var41F501EC6FE3B8CCBEAAB484537CAE17_1666861104;
+                    } //End block
+                    gidSpecified = true;
+                    gid = Integer.parseInt(
                             arg.substring(arg.indexOf('=') + 1));
-                            } 
-                            {
-                                boolean var24763721E45D3CA4B8E6E1066D7BCF52_2128054974 = (arg.startsWith("--target-sdk-version="));
-                                {
-                                    {
-                                        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
+                } //End block
+                else
+    if(arg.startsWith("--target-sdk-version="))                
+                {
+    if(targetSdkVersionSpecified)                    
+                    {
+                        IllegalArgumentException varDAE300AAC3AF6B744E685129EC227019_64457881 = new IllegalArgumentException(
                                 "Duplicate target-sdk-version specified");
-                                    } 
-                                    targetSdkVersionSpecified = true;
-                                    targetSdkVersion = Integer.parseInt(
+                        varDAE300AAC3AF6B744E685129EC227019_64457881.addTaint(taint);
+                        throw varDAE300AAC3AF6B744E685129EC227019_64457881;
+                    } //End block
+                    targetSdkVersionSpecified = true;
+                    targetSdkVersion = Integer.parseInt(
                             arg.substring(arg.indexOf('=') + 1));
-                                } 
-                                {
-                                    boolean varF8C61B28A5711C2EA7983BBEA5459723_393348618 = (arg.equals("--enable-debugger"));
-                                    {
-                                        debugFlags |= Zygote.DEBUG_ENABLE_DEBUGGER;
-                                    } 
-                                    {
-                                        boolean var60CF783C1D3CC8B3A3B2A942F345BEF5_662629123 = (arg.equals("--enable-safemode"));
-                                        {
-                                            debugFlags |= Zygote.DEBUG_ENABLE_SAFEMODE;
-                                        } 
-                                        {
-                                            boolean var7BE4F9B0DD1B984250181EF453CE1295_1051239465 = (arg.equals("--enable-checkjni"));
-                                            {
-                                                debugFlags |= Zygote.DEBUG_ENABLE_CHECKJNI;
-                                            } 
-                                            {
-                                                boolean varDFB4DAD6D222A85617A52FF793FE9196_1174334693 = (arg.equals("--enable-jni-logging"));
-                                                {
-                                                    debugFlags |= Zygote.DEBUG_ENABLE_JNI_LOGGING;
-                                                } 
-                                                {
-                                                    boolean varC78F887AA1F638387C49BA1038BF2302_1304887556 = (arg.equals("--enable-assert"));
-                                                    {
-                                                        debugFlags |= Zygote.DEBUG_ENABLE_ASSERT;
-                                                    } 
-                                                    {
-                                                        boolean varD484FD677E695FABB55E459F08F42464_1679839538 = (arg.equals("--peer-wait"));
-                                                        {
-                                                            peerWait = true;
-                                                        } 
-                                                        {
-                                                            boolean varBF9C7EF5AA3D2A09214B59220EC60460_509570473 = (arg.equals("--runtime-init"));
-                                                            {
-                                                                runtimeInit = true;
-                                                            } 
-                                                            {
-                                                                boolean var81FD0E7377BC8C8914370AAA0942FD02_1930403718 = (arg.startsWith("--capabilities="));
-                                                                {
-                                                                    {
-                                                                        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
+                } //End block
+                else
+    if(arg.equals("--enable-debugger"))                
+                {
+                    debugFlags |= Zygote.DEBUG_ENABLE_DEBUGGER;
+                } //End block
+                else
+    if(arg.equals("--enable-safemode"))                
+                {
+                    debugFlags |= Zygote.DEBUG_ENABLE_SAFEMODE;
+                } //End block
+                else
+    if(arg.equals("--enable-checkjni"))                
+                {
+                    debugFlags |= Zygote.DEBUG_ENABLE_CHECKJNI;
+                } //End block
+                else
+    if(arg.equals("--enable-jni-logging"))                
+                {
+                    debugFlags |= Zygote.DEBUG_ENABLE_JNI_LOGGING;
+                } //End block
+                else
+    if(arg.equals("--enable-assert"))                
+                {
+                    debugFlags |= Zygote.DEBUG_ENABLE_ASSERT;
+                } //End block
+                else
+    if(arg.equals("--peer-wait"))                
+                {
+                    peerWait = true;
+                } //End block
+                else
+    if(arg.equals("--runtime-init"))                
+                {
+                    runtimeInit = true;
+                } //End block
+                else
+    if(arg.startsWith("--capabilities="))                
+                {
+    if(capabilitiesSpecified)                    
+                    {
+                        IllegalArgumentException var41F501EC6FE3B8CCBEAAB484537CAE17_814840265 = new IllegalArgumentException(
                                 "Duplicate arg specified");
-                                                                    } 
-                                                                    capabilitiesSpecified = true;
-                                                                    String capString = arg.substring(arg.indexOf('=')+1);
-                                                                    String[] capStrings = capString.split(",", 2);
-                                                                    {
-                                                                        effectiveCapabilities = Long.decode(capStrings[0]);
-                                                                        permittedCapabilities = effectiveCapabilities;
-                                                                    } 
-                                                                    {
-                                                                        permittedCapabilities = Long.decode(capStrings[0]);
-                                                                        effectiveCapabilities = Long.decode(capStrings[1]);
-                                                                    } 
-                                                                } 
-                                                                {
-                                                                    boolean varD0122AC3E6EE8080F6A63FB354B07667_1354700134 = (arg.startsWith("--rlimit="));
-                                                                    {
-                                                                        String[] limitStrings = arg.substring(arg.indexOf('=')+1).split(",");
-                                                                        {
-                                                                            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
+                        var41F501EC6FE3B8CCBEAAB484537CAE17_814840265.addTaint(taint);
+                        throw var41F501EC6FE3B8CCBEAAB484537CAE17_814840265;
+                    } //End block
+                    capabilitiesSpecified = true;
+                    String capString = arg.substring(arg.indexOf('=')+1);
+                    String[] capStrings = capString.split(",", 2);
+    if(capStrings.length == 1)                    
+                    {
+                        effectiveCapabilities = Long.decode(capStrings[0]);
+                        permittedCapabilities = effectiveCapabilities;
+                    } //End block
+                    else
+                    {
+                        permittedCapabilities = Long.decode(capStrings[0]);
+                        effectiveCapabilities = Long.decode(capStrings[1]);
+                    } //End block
+                } //End block
+                else
+    if(arg.startsWith("--rlimit="))                
+                {
+                    String[] limitStrings = arg.substring(arg.indexOf('=')+1).split(",");
+    if(limitStrings.length != 3)                    
+                    {
+                        IllegalArgumentException varA3A82844D5DED517944607DEF74964EF_348176929 = new IllegalArgumentException(
                                 "--rlimit= should have 3 comma-delimited ints");
-                                                                        } 
-                                                                        int[] rlimitTuple = new int[limitStrings.length];
-                                                                        {
-                                                                            int i = 0;
-                                                                            {
-                                                                                rlimitTuple[i] = Integer.parseInt(limitStrings[i]);
-                                                                            } 
-                                                                        } 
-                                                                        {
-                                                                            rlimits = new ArrayList();
-                                                                        } 
-                                                                        rlimits.add(rlimitTuple);
-                                                                    } 
-                                                                    {
-                                                                        boolean varFF9705365BEE70B07B6EFFB521D414AA_73114206 = (arg.equals("-classpath"));
-                                                                        {
-                                                                            {
-                                                                                if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
+                        varA3A82844D5DED517944607DEF74964EF_348176929.addTaint(taint);
+                        throw varA3A82844D5DED517944607DEF74964EF_348176929;
+                    } //End block
+                    int[] rlimitTuple = new int[limitStrings.length];
+for(int i=0;i < limitStrings.length;i++)
+                    {
+                        rlimitTuple[i] = Integer.parseInt(limitStrings[i]);
+                    } //End block
+    if(rlimits == null)                    
+                    {
+                        rlimits = new ArrayList();
+                    } //End block
+                    rlimits.add(rlimitTuple);
+                } //End block
+                else
+    if(arg.equals("-classpath"))                
+                {
+    if(classpath != null)                    
+                    {
+                        IllegalArgumentException var41F501EC6FE3B8CCBEAAB484537CAE17_550815925 = new IllegalArgumentException(
                                 "Duplicate arg specified");
-                                                                            } 
-                                                                            try 
-                                                                            {
-                                                                                classpath = args[++curArg];
-                                                                            } 
-                                                                            catch (IndexOutOfBoundsException ex)
-                                                                            {
-                                                                                if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
+                        var41F501EC6FE3B8CCBEAAB484537CAE17_550815925.addTaint(taint);
+                        throw var41F501EC6FE3B8CCBEAAB484537CAE17_550815925;
+                    } //End block
+                    try 
+                    {
+                        classpath = args[++curArg];
+                    } //End block
+                    catch (IndexOutOfBoundsException ex)
+                    {
+                        IllegalArgumentException var96548A85B722FC30CB777360AE3D089B_1311041273 = new IllegalArgumentException(
                                 "-classpath requires argument");
-                                                                            } 
-                                                                        } 
-                                                                        {
-                                                                            boolean var01A215526D08A822971F3966BC540C5C_1096960916 = (arg.startsWith("--setgroups="));
-                                                                            {
-                                                                                {
-                                                                                    if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
+                        var96548A85B722FC30CB777360AE3D089B_1311041273.addTaint(taint);
+                        throw var96548A85B722FC30CB777360AE3D089B_1311041273;
+                    } //End block
+                } //End block
+                else
+    if(arg.startsWith("--setgroups="))                
+                {
+    if(gids != null)                    
+                    {
+                        IllegalArgumentException var41F501EC6FE3B8CCBEAAB484537CAE17_460214072 = new IllegalArgumentException(
                                 "Duplicate arg specified");
-                                                                                } 
-                                                                                String[] params = arg.substring(arg.indexOf('=') + 1).split(",");
-                                                                                gids = new int[params.length];
-                                                                                {
-                                                                                    int i = params.length - 1;
-                                                                                    {
-                                                                                        gids[i] = Integer.parseInt(params[i]);
-                                                                                    } 
-                                                                                } 
-                                                                            } 
-                                                                            {
-                                                                                boolean varAB99EE29FAEDC9A537504420A8FE7C0C_624960670 = (arg.equals("--invoke-with"));
-                                                                                {
-                                                                                    {
-                                                                                        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
+                        var41F501EC6FE3B8CCBEAAB484537CAE17_460214072.addTaint(taint);
+                        throw var41F501EC6FE3B8CCBEAAB484537CAE17_460214072;
+                    } //End block
+                    String[] params = arg.substring(arg.indexOf('=') + 1).split(",");
+                    gids = new int[params.length];
+for(int i = params.length - 1;i >= 0;i--)
+                    {
+                        gids[i] = Integer.parseInt(params[i]);
+                    } //End block
+                } //End block
+                else
+    if(arg.equals("--invoke-with"))                
+                {
+    if(invokeWith != null)                    
+                    {
+                        IllegalArgumentException var41F501EC6FE3B8CCBEAAB484537CAE17_129419292 = new IllegalArgumentException(
                                 "Duplicate arg specified");
-                                                                                    } 
-                                                                                    try 
-                                                                                    {
-                                                                                        invokeWith = args[++curArg];
-                                                                                    } 
-                                                                                    catch (IndexOutOfBoundsException ex)
-                                                                                    {
-                                                                                        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
+                        var41F501EC6FE3B8CCBEAAB484537CAE17_129419292.addTaint(taint);
+                        throw var41F501EC6FE3B8CCBEAAB484537CAE17_129419292;
+                    } //End block
+                    try 
+                    {
+                        invokeWith = args[++curArg];
+                    } //End block
+                    catch (IndexOutOfBoundsException ex)
+                    {
+                        IllegalArgumentException varE2A51B3BCFADD77D07E9A0F9C05711D9_2012001535 = new IllegalArgumentException(
                                 "--invoke-with requires argument");
-                                                                                    } 
-                                                                                } 
-                                                                                {
-                                                                                    boolean varBB33221C616B9A2EF60ADA576E53C449_1411485315 = (arg.startsWith("--nice-name="));
-                                                                                    {
-                                                                                        {
-                                                                                            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
+                        varE2A51B3BCFADD77D07E9A0F9C05711D9_2012001535.addTaint(taint);
+                        throw varE2A51B3BCFADD77D07E9A0F9C05711D9_2012001535;
+                    } //End block
+                } //End block
+                else
+    if(arg.startsWith("--nice-name="))                
+                {
+    if(niceName != null)                    
+                    {
+                        IllegalArgumentException var41F501EC6FE3B8CCBEAAB484537CAE17_749659854 = new IllegalArgumentException(
                                 "Duplicate arg specified");
-                                                                                        } 
-                                                                                        niceName = arg.substring(arg.indexOf('=') + 1);
-                                                                                    } 
-                                                                                } 
-                                                                            } 
-                                                                        } 
-                                                                    } 
-                                                                } 
-                                                            } 
-                                                        } 
-                                                    } 
-                                                } 
-                                            } 
-                                        } 
-                                    } 
-                                } 
-                            } 
-                        } 
-                    } 
-                } 
-            } 
+                        var41F501EC6FE3B8CCBEAAB484537CAE17_749659854.addTaint(taint);
+                        throw var41F501EC6FE3B8CCBEAAB484537CAE17_749659854;
+                    } //End block
+                    niceName = arg.substring(arg.indexOf('=') + 1);
+                } //End block
+                else
+                {
+                    break;
+                } //End block
+            } //End block
+    if(runtimeInit && classpath != null)            
             {
-                if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
+                IllegalArgumentException varF8B1F16B216A25570E07F810842782D1_1050718260 = new IllegalArgumentException(
                         "--runtime-init and -classpath are incompatible");
-            } 
+                varF8B1F16B216A25570E07F810842782D1_1050718260.addTaint(taint);
+                throw varF8B1F16B216A25570E07F810842782D1_1050718260;
+            } //End block
             remainingArgs = new String[args.length - curArg];
             System.arraycopy(args, curArg, remainingArgs, 0,
                     remainingArgs.length);
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -867,19 +932,19 @@ class ZygoteConnection {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.813 -0400", hash_original_field = "07E71AB65C7C829BB9961A38207CC4B3", hash_generated_field = "2A664B91B7AF4DD6DD39F407BBDAB91B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.236 -0400", hash_original_field = "07E71AB65C7C829BB9961A38207CC4B3", hash_generated_field = "2A664B91B7AF4DD6DD39F407BBDAB91B")
 
     private static final String TAG = "Zygote";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.813 -0400", hash_original_field = "E0A6057357B310940FCD39CB93779051", hash_generated_field = "80CAE96E8C1B0DF29A980BF5109CC5BF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.236 -0400", hash_original_field = "E0A6057357B310940FCD39CB93779051", hash_generated_field = "80CAE96E8C1B0DF29A980BF5109CC5BF")
 
     private static final int[][] intArray2d = new int[0][0];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.813 -0400", hash_original_field = "60D62043D7F17FF5FDECBB860D085F6E", hash_generated_field = "F25FDE7970276014B50B25B9CC13AA49")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.236 -0400", hash_original_field = "60D62043D7F17FF5FDECBB860D085F6E", hash_generated_field = "F25FDE7970276014B50B25B9CC13AA49")
 
     private static final int CONNECTION_TIMEOUT_MILLIS = 1000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.813 -0400", hash_original_field = "1E48E792AF09046D0B312211C708BAD2", hash_generated_field = "B23BA5B642881C70E30A38B20D6C2EA9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.236 -0400", hash_original_field = "1E48E792AF09046D0B312211C708BAD2", hash_generated_field = "B23BA5B642881C70E30A38B20D6C2EA9")
 
     private static final int MAX_ZYGOTE_ARGC = 1024;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.813 -0400", hash_original_field = "2F11EEC42CD2936CFFEC0BB3C6C0C738", hash_generated_field = "4F9908C941A92E3CBBEB2EF6B2065848")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.236 -0400", hash_original_field = "2F11EEC42CD2936CFFEC0BB3C6C0C738", hash_generated_field = "4F9908C941A92E3CBBEB2EF6B2065848")
 
     private static LocalSocket sPeerWaitSocket = null;
 }

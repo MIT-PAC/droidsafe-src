@@ -1,78 +1,73 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.core.*;
 import java.text.ParseException;
 
 public class RequireParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.504 -0400", hash_original_method = "36FA164E6C8032C19B516E5C5C1FBE28", hash_generated_method = "F94E48DA9E197E682C0111A7C56DD74D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.667 -0400", hash_original_method = "36FA164E6C8032C19B516E5C5C1FBE28", hash_generated_method = "F94E48DA9E197E682C0111A7C56DD74D")
     public  RequireParser(String require) {
         super(require);
         addTaint(require.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.505 -0400", hash_original_method = "B3FB5559B13CB63E7EB6EFAD451D2F82", hash_generated_method = "6113F629CADCCB8D972C33ACD6FE44BA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.668 -0400", hash_original_method = "B3FB5559B13CB63E7EB6EFAD451D2F82", hash_generated_method = "6113F629CADCCB8D972C33ACD6FE44BA")
     protected  RequireParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.506 -0400", hash_original_method = "3025739AB5329DC0A390687D4C2BFD5B", hash_generated_method = "702315671FC993D565E11AD2D2A640C3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.669 -0400", hash_original_method = "3025739AB5329DC0A390687D4C2BFD5B", hash_generated_method = "36C80F73F51E0486EB3B4AEBFEC66440")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1028779979 = null; 
         RequireList requireList = new RequireList();
+    if(debug)        
         dbg_enter("RequireParser.parse");
         try 
         {
             headerName(TokenTypes.REQUIRE);
+            while
+(lexer.lookAhead(0) != '\n')            
             {
-                boolean varA38820C66B6BCE71087D920E2767FF09_584705187 = (lexer.lookAhead(0) != '\n');
+                Require r = new Require();
+                r.setHeaderName(SIPHeaderNames.REQUIRE);
+                this.lexer.match(TokenTypes.ID);
+                Token token = lexer.getNextToken();
+                r.setOptionTag(token.getTokenValue());
+                this.lexer.SPorHT();
+                requireList.add(r);
+                while
+(lexer.lookAhead(0) == ',')                
                 {
-                    Require r = new Require();
-                    r.setHeaderName(SIPHeaderNames.REQUIRE);
+                    this.lexer.match(',');
+                    this.lexer.SPorHT();
+                    r = new Require();
                     this.lexer.match(TokenTypes.ID);
-                    Token token = lexer.getNextToken();
+                    token = lexer.getNextToken();
                     r.setOptionTag(token.getTokenValue());
                     this.lexer.SPorHT();
                     requireList.add(r);
-                    {
-                        boolean var7DC6EF7D2962860F171D1CEF6887AFF5_1688147263 = (lexer.lookAhead(0) == ',');
-                        {
-                            this.lexer.match(',');
-                            this.lexer.SPorHT();
-                            r = new Require();
-                            this.lexer.match(TokenTypes.ID);
-                            token = lexer.getNextToken();
-                            r.setOptionTag(token.getTokenValue());
-                            this.lexer.SPorHT();
-                            requireList.add(r);
-                        } 
-                    } 
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         finally 
         {
+    if(debug)            
             dbg_leave("RequireParser.parse");
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1028779979 = requireList;
-        varB4EAC82CA7396A68D541C85D26508E83_1028779979.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1028779979;
-        
-        
+        } //End block
+SIPHeader varD3F029985BC4C44D5532864C73A6BF99_800773700 =         requireList;
+        varD3F029985BC4C44D5532864C73A6BF99_800773700.addTaint(taint);
+        return varD3F029985BC4C44D5532864C73A6BF99_800773700;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

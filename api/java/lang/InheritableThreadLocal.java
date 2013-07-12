@@ -1,58 +1,50 @@
 package java.lang;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-
-import java.util.Iterator;
-
 public class InheritableThreadLocal<T> extends ThreadLocal<T> {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.114 -0400", hash_original_method = "013FA75455B3B99BD273198992B6DC3D", hash_generated_method = "E069ECF21285DFACCB09CA4095DD4CD7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.906 -0400", hash_original_method = "013FA75455B3B99BD273198992B6DC3D", hash_generated_method = "E069ECF21285DFACCB09CA4095DD4CD7")
     public  InheritableThreadLocal() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.114 -0400", hash_original_method = "21950621664F241C91FE4E959BCE80F5", hash_generated_method = "E3303AD0DB6630111D771E15DA4DFF92")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.906 -0400", hash_original_method = "21950621664F241C91FE4E959BCE80F5", hash_generated_method = "D66A59D8DC0DC8E6E7F9EE0C8FC834A7")
     protected T childValue(T parentValue) {
-        T varB4EAC82CA7396A68D541C85D26508E83_1914217841 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1914217841 = parentValue;
         addTaint(parentValue.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1914217841.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1914217841;
-        
-        
+T var5B50CF7DCD7B0E8E9DCFB7F13A8B2F1B_2063967633 =         parentValue;
+        var5B50CF7DCD7B0E8E9DCFB7F13A8B2F1B_2063967633.addTaint(taint);
+        return var5B50CF7DCD7B0E8E9DCFB7F13A8B2F1B_2063967633;
+        // ---------- Original Method ----------
+        //return parentValue;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.115 -0400", hash_original_method = "5F640D0B7D2E60FEE01A049AD8233DEB", hash_generated_method = "947D2C144F8969B96FD8FD475874E342")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.907 -0400", hash_original_method = "5F640D0B7D2E60FEE01A049AD8233DEB", hash_generated_method = "B47E9E2CDFA56C159831499E5F6DF572")
     @Override
      Values values(Thread current) {
-        Values varB4EAC82CA7396A68D541C85D26508E83_2013309752 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_2013309752 = current.inheritableValues;
         addTaint(current.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2013309752.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_2013309752;
-        
-        
+Values varFD13BEAC833885316C9D98DFD25DC72D_1179740654 =         current.inheritableValues;
+        varFD13BEAC833885316C9D98DFD25DC72D_1179740654.addTaint(taint);
+        return varFD13BEAC833885316C9D98DFD25DC72D_1179740654;
+        // ---------- Original Method ----------
+        //return current.inheritableValues;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.115 -0400", hash_original_method = "198C51D572472BCFE1CF3566F6918855", hash_generated_method = "B29636AF7A3785FEADEB1AB67FA5134C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.908 -0400", hash_original_method = "198C51D572472BCFE1CF3566F6918855", hash_generated_method = "ECC1FFC584A7FF13350024783D1E65C9")
     @Override
      Values initializeValues(Thread current) {
-        Values varB4EAC82CA7396A68D541C85D26508E83_649213872 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_649213872 = current.inheritableValues = new Values();
         addTaint(current.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_649213872.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_649213872;
-        
-        
+Values varFA06F5287CC4CB6B390064F9EE6BF5A9_16292548 =         current.inheritableValues = new Values();
+        varFA06F5287CC4CB6B390064F9EE6BF5A9_16292548.addTaint(taint);
+        return varFA06F5287CC4CB6B390064F9EE6BF5A9_16292548;
+        // ---------- Original Method ----------
+        //return current.inheritableValues = new Values();
     }
 
     

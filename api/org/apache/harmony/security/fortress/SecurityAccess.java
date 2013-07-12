@@ -1,12 +1,9 @@
 package org.apache.harmony.security.fortress;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.security.Provider;
 import java.util.List;
 

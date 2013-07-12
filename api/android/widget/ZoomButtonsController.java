@@ -1,12 +1,9 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -30,61 +27,61 @@ import android.view.View.OnClickListener;
 import android.view.WindowManager.LayoutParams;
 
 public class ZoomButtonsController implements View.OnTouchListener {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "1CC5B944F91B1CAEF9E1C10ED13D1F97", hash_generated_field = "31366FBB195E6D4943166A1CF4E59210")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.200 -0400", hash_original_field = "1CC5B944F91B1CAEF9E1C10ED13D1F97", hash_generated_field = "31366FBB195E6D4943166A1CF4E59210")
 
     private int mTouchPaddingScaledSq;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.200 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
     private Context mContext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "306519E50E3A91B9733D09F5D8EB985C", hash_generated_field = "3C750A4AE06B71AF3A05B7797C7182A4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.200 -0400", hash_original_field = "306519E50E3A91B9733D09F5D8EB985C", hash_generated_field = "3C750A4AE06B71AF3A05B7797C7182A4")
 
     private WindowManager mWindowManager;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "FE8EE9D888F7779DD5F42BE5328C37C3", hash_generated_field = "E32C26221A599AF38CE047CEA9708612")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.200 -0400", hash_original_field = "FE8EE9D888F7779DD5F42BE5328C37C3", hash_generated_field = "E32C26221A599AF38CE047CEA9708612")
 
     private boolean mAutoDismissControls = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "9328FA61A62F4AFB2BABF8F19BE1C98A", hash_generated_field = "E5DC02A18C4817B413C22883E087C5E5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.200 -0400", hash_original_field = "9328FA61A62F4AFB2BABF8F19BE1C98A", hash_generated_field = "E5DC02A18C4817B413C22883E087C5E5")
 
     private View mOwnerView;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "4F5AE11A75135D267DFD11C03893C565", hash_generated_field = "778B5A3646480827509FB2BFB25E57EC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.200 -0400", hash_original_field = "4F5AE11A75135D267DFD11C03893C565", hash_generated_field = "778B5A3646480827509FB2BFB25E57EC")
 
     private final int[] mOwnerViewRawLocation = new int[2];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "C64165C1B15EB68FDC5E7135FFE5DF5B", hash_generated_field = "DE7D4566565DA445D3E9FC64F9F679E7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.200 -0400", hash_original_field = "C64165C1B15EB68FDC5E7135FFE5DF5B", hash_generated_field = "DE7D4566565DA445D3E9FC64F9F679E7")
 
     private FrameLayout mContainer;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "37DF3A2FD7F1A3950C59EB4236FC5193", hash_generated_field = "3C55C1D38F1D3A12D40650C5BEE8D028")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.200 -0400", hash_original_field = "37DF3A2FD7F1A3950C59EB4236FC5193", hash_generated_field = "3C55C1D38F1D3A12D40650C5BEE8D028")
 
     private LayoutParams mContainerLayoutParams;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "46F0BA02F06C8EB1652566BC7F9B4CFE", hash_generated_field = "E3C0FB2A785E1B8D5D1C914264C73BEA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.201 -0400", hash_original_field = "46F0BA02F06C8EB1652566BC7F9B4CFE", hash_generated_field = "E3C0FB2A785E1B8D5D1C914264C73BEA")
 
     private final int[] mContainerRawLocation = new int[2];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "8DA686741271C843AD84C8022C413C01", hash_generated_field = "EA1868BE7D996683F2989202D2AC4DDD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.201 -0400", hash_original_field = "8DA686741271C843AD84C8022C413C01", hash_generated_field = "EA1868BE7D996683F2989202D2AC4DDD")
 
     private ZoomControls mControls;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "02A61E15C056169827183200421D0E22", hash_generated_field = "4214AAFC096B21883792ABCE78232C36")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.201 -0400", hash_original_field = "02A61E15C056169827183200421D0E22", hash_generated_field = "4214AAFC096B21883792ABCE78232C36")
 
     private View mTouchTargetView;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "FF2E4B5120660D7EC9A7A9BCC5CD7106", hash_generated_field = "0F94F89170BE0719490D13F384546F40")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.201 -0400", hash_original_field = "FF2E4B5120660D7EC9A7A9BCC5CD7106", hash_generated_field = "0F94F89170BE0719490D13F384546F40")
 
     private final int[] mTouchTargetWindowLocation = new int[2];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "8E4AFED5ED55DE09DBF63202BD03FD89", hash_generated_field = "B050564438297A698F60861F546D1BDC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.201 -0400", hash_original_field = "8E4AFED5ED55DE09DBF63202BD03FD89", hash_generated_field = "B050564438297A698F60861F546D1BDC")
 
     private boolean mReleaseTouchListenerOnUp;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "3841FA617DC417560C9ACBBE88413EC6", hash_generated_field = "16B558D924DF2404F3A2E9E477E1C239")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.201 -0400", hash_original_field = "3841FA617DC417560C9ACBBE88413EC6", hash_generated_field = "16B558D924DF2404F3A2E9E477E1C239")
 
     private boolean mIsVisible;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "DF43B278CEE8933271AB3D9F9E312F86", hash_generated_field = "A498F2A4744F31D22F9C4ABEBB254F2F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.201 -0400", hash_original_field = "DF43B278CEE8933271AB3D9F9E312F86", hash_generated_field = "A498F2A4744F31D22F9C4ABEBB254F2F")
 
     private final Rect mTempRect = new Rect();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "F6FD3D6247A2F446133C6FE9981D05F5", hash_generated_field = "37699E1557DE199CB1E3D694670D31BB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.201 -0400", hash_original_field = "F6FD3D6247A2F446133C6FE9981D05F5", hash_generated_field = "37699E1557DE199CB1E3D694670D31BB")
 
     private final int[] mTempIntArray = new int[2];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "1804C5EC7AAE0B28B15CFDA061D25829", hash_generated_field = "69BC292DD0AFDA8A4F57DC4BCBE69348")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.201 -0400", hash_original_field = "1804C5EC7AAE0B28B15CFDA061D25829", hash_generated_field = "69BC292DD0AFDA8A4F57DC4BCBE69348")
 
     private OnZoomListener mCallback;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "C98BBC28C3ECC9AFA024709DA03CECB8", hash_generated_field = "1ED441E7D4D48C31070345ADC5874E3A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.201 -0400", hash_original_field = "C98BBC28C3ECC9AFA024709DA03CECB8", hash_generated_field = "1ED441E7D4D48C31070345ADC5874E3A")
 
     private Runnable mPostedVisibleInitializer;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "54942985B0978FF368CEED03D9313DD3", hash_generated_field = "314D614F45BCFBC7FD4D2764A847AE51")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.201 -0400", hash_original_field = "54942985B0978FF368CEED03D9313DD3", hash_generated_field = "314D614F45BCFBC7FD4D2764A847AE51")
 
     private final IntentFilter mConfigurationChangedFilter = new IntentFilter(Intent.ACTION_CONFIGURATION_CHANGED);
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.332 -0400", hash_original_field = "F7238A3294ACE5864BA2567DBF187A8E", hash_generated_field = "E4D2EB0B4308FE203FF175FADAC6AA6E")
@@ -150,7 +147,7 @@ public class ZoomButtonsController implements View.OnTouchListener {
         
 };
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.333 -0400", hash_original_method = "380DC2A7E4A728E8B8A622AB5FAF03E2", hash_generated_method = "0A58F7464A42BDD3A103DF6B2DF3EF11")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.202 -0400", hash_original_method = "380DC2A7E4A728E8B8A622AB5FAF03E2", hash_generated_method = "0A58F7464A42BDD3A103DF6B2DF3EF11")
     public  ZoomButtonsController(View ownerView) {
         mContext = ownerView.getContext();
         mWindowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
@@ -159,51 +156,46 @@ public class ZoomButtonsController implements View.OnTouchListener {
                 (ZOOM_CONTROLS_TOUCH_PADDING * mContext.getResources().getDisplayMetrics().density);
         mTouchPaddingScaledSq *= mTouchPaddingScaledSq;
         mContainer = createContainer();
-        
-        
-        
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //mContext = ownerView.getContext();
+        //mWindowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
+        //mOwnerView = ownerView;
+        //mTouchPaddingScaledSq = (int)
+                //(ZOOM_CONTROLS_TOUCH_PADDING * mContext.getResources().getDisplayMetrics().density);
+        //mTouchPaddingScaledSq *= mTouchPaddingScaledSq;
+        //mContainer = createContainer();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.333 -0400", hash_original_method = "3742E544F3AFD5F94AD689FCD74B6DD5", hash_generated_method = "5B5524A67352B23E546BDFBCDCF3BABB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.202 -0400", hash_original_method = "3742E544F3AFD5F94AD689FCD74B6DD5", hash_generated_method = "74919EB6329C560320100ABB815E0978")
     public void setZoomInEnabled(boolean enabled) {
+        addTaint(enabled);
         mControls.setIsZoomInEnabled(enabled);
-        addTaint(enabled);
-        
-        
+        // ---------- Original Method ----------
+        //mControls.setIsZoomInEnabled(enabled);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.333 -0400", hash_original_method = "1CF0D208E223466BFE0254465182BFD8", hash_generated_method = "C2B70333222D9B2089EBD0281528A3C2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.203 -0400", hash_original_method = "1CF0D208E223466BFE0254465182BFD8", hash_generated_method = "C8B6849187339F3B35B6D392F54382D4")
     public void setZoomOutEnabled(boolean enabled) {
-        mControls.setIsZoomOutEnabled(enabled);
         addTaint(enabled);
-        
-        
+        mControls.setIsZoomOutEnabled(enabled);
+        // ---------- Original Method ----------
+        //mControls.setIsZoomOutEnabled(enabled);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.334 -0400", hash_original_method = "18B39697A9CAB4F925A2FDB6BE61BBD8", hash_generated_method = "2C45338C4D3F860DD9834F9C40C14B9B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.203 -0400", hash_original_method = "18B39697A9CAB4F925A2FDB6BE61BBD8", hash_generated_method = "B76C315664C8C28690A88C781AC41B91")
     public void setZoomSpeed(long speed) {
-        mControls.setZoomSpeed(speed);
         addTaint(speed);
-        
-        
+        mControls.setZoomSpeed(speed);
+        // ---------- Original Method ----------
+        //mControls.setZoomSpeed(speed);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.336 -0400", hash_original_method = "4896FBB838EA68425CC17AB554E92B7B", hash_generated_method = "EDDC24707FF71AA105EA0C11F3805F3E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.205 -0400", hash_original_method = "4896FBB838EA68425CC17AB554E92B7B", hash_generated_method = "4F8F905EEA8995D765E2AD16EB119FAA")
     private FrameLayout createContainer() {
-        FrameLayout varB4EAC82CA7396A68D541C85D26508E83_1305403530 = null; 
         LayoutParams lp = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         lp.gravity = Gravity.TOP | Gravity.LEFT;
         lp.flags = LayoutParams.FLAG_NOT_TOUCHABLE |
@@ -223,213 +215,220 @@ public class ZoomButtonsController implements View.OnTouchListener {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(com.android.internal.R.layout.zoom_container, container);
         mControls = (ZoomControls) container.findViewById(com.android.internal.R.id.zoomControls);
-        mControls.setOnZoomInClickListener(new OnClickListener() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.336 -0400", hash_original_method = "C8D887B971B187EA9E40E1FCF6E6B11D", hash_generated_method = "F9D4F3B6846D05276EA8F4AB2A7DE190")
-            public void onClick(View v) {
-                
-                dismissControlsDelayed(ZOOM_CONTROLS_TIMEOUT);
-                mCallback.onZoom(true);
-                addTaint(v.getTaint());
-                
-                
-                
-            }
+        mControls.setOnZoomInClickListener(new OnClickListener() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.205 -0400", hash_original_method = "C8D887B971B187EA9E40E1FCF6E6B11D", hash_generated_method = "03612EFCD0339ACAF16A43992BF4E37B")
+        public void onClick(View v) {
+            //DSFIXME:  CODE0009: Possible callback target function detected
+            addTaint(v.getTaint());
+            dismissControlsDelayed(ZOOM_CONTROLS_TIMEOUT);
+    if(mCallback != null)            
+            mCallback.onZoom(true);
+            // ---------- Original Method ----------
+            //dismissControlsDelayed(ZOOM_CONTROLS_TIMEOUT);
+            //if (mCallback != null) mCallback.onZoom(true);
+        }
 });
-        mControls.setOnZoomOutClickListener(new OnClickListener() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.336 -0400", hash_original_method = "CBCA91EA6C5A6BFF58378B31FA0529F1", hash_generated_method = "B3CABA981A0915206EC38E80A85E32B5")
-            public void onClick(View v) {
-                
-                dismissControlsDelayed(ZOOM_CONTROLS_TIMEOUT);
-                mCallback.onZoom(false);
-                addTaint(v.getTaint());
-                
-                
-                
-            }
+        mControls.setOnZoomOutClickListener(new OnClickListener() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.205 -0400", hash_original_method = "CBCA91EA6C5A6BFF58378B31FA0529F1", hash_generated_method = "68BA6D6CFA3F46150FBF7899F2D04E9E")
+        public void onClick(View v) {
+            //DSFIXME:  CODE0009: Possible callback target function detected
+            addTaint(v.getTaint());
+            dismissControlsDelayed(ZOOM_CONTROLS_TIMEOUT);
+    if(mCallback != null)            
+            mCallback.onZoom(false);
+            // ---------- Original Method ----------
+            //dismissControlsDelayed(ZOOM_CONTROLS_TIMEOUT);
+            //if (mCallback != null) mCallback.onZoom(false);
+        }
 });
-        varB4EAC82CA7396A68D541C85D26508E83_1305403530 = container;
-        varB4EAC82CA7396A68D541C85D26508E83_1305403530.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1305403530;
-        
-        
+FrameLayout var9A7D772301F15796236447FE645B3608_1684334785 =         container;
+        var9A7D772301F15796236447FE645B3608_1684334785.addTaint(taint);
+        return var9A7D772301F15796236447FE645B3608_1684334785;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.337 -0400", hash_original_method = "B44D483F6F47563C2A0666A9C41723E6", hash_generated_method = "39466DB7BD80A5311AC75D7EF4F60C50")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.206 -0400", hash_original_method = "B44D483F6F47563C2A0666A9C41723E6", hash_generated_method = "39466DB7BD80A5311AC75D7EF4F60C50")
     public void setOnZoomListener(OnZoomListener listener) {
         mCallback = listener;
-        
-        
+        // ---------- Original Method ----------
+        //mCallback = listener;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.337 -0400", hash_original_method = "E1DA778FA5C81D94D4F0CBAFCCB18381", hash_generated_method = "5A67C1BBB3C0539FF3AD635528D08F49")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.206 -0400", hash_original_method = "E1DA778FA5C81D94D4F0CBAFCCB18381", hash_generated_method = "D81BF366B940EE33EF4DD576D4F8D2BA")
     public void setFocusable(boolean focusable) {
+        addTaint(focusable);
         int oldFlags = mContainerLayoutParams.flags;
+    if(focusable)        
         {
             mContainerLayoutParams.flags &= ~LayoutParams.FLAG_NOT_FOCUSABLE;
-        } 
+        } //End block
+        else
         {
             mContainerLayoutParams.flags |= LayoutParams.FLAG_NOT_FOCUSABLE;
-        } 
+        } //End block
+    if((mContainerLayoutParams.flags != oldFlags) && mIsVisible)        
         {
             mWindowManager.updateViewLayout(mContainer, mContainerLayoutParams);
-        } 
-        addTaint(focusable);
-        
-        
-        
-            
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int oldFlags = mContainerLayoutParams.flags;
+        //if (focusable) {
+            //mContainerLayoutParams.flags &= ~LayoutParams.FLAG_NOT_FOCUSABLE;
+        //} else {
+            //mContainerLayoutParams.flags |= LayoutParams.FLAG_NOT_FOCUSABLE;
+        //}
+        //if ((mContainerLayoutParams.flags != oldFlags) && mIsVisible) {
+            //mWindowManager.updateViewLayout(mContainer, mContainerLayoutParams);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.337 -0400", hash_original_method = "CDC5AD23EC463D7BB2411752926A03FA", hash_generated_method = "22E87F28B9FE3773C4E7248D48818487")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.207 -0400", hash_original_method = "CDC5AD23EC463D7BB2411752926A03FA", hash_generated_method = "882B65D6E8F2663F398B0A1F038649CA")
     public boolean isAutoDismissed() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_431469012 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_431469012;
-        
-        
+        boolean var7AA27D9B0360FEC25432CC2F487F7B06_1143266143 = (mAutoDismissControls);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_984121617 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_984121617;
+        // ---------- Original Method ----------
+        //return mAutoDismissControls;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.338 -0400", hash_original_method = "F5C09C601D97CCC2B78CB5FD3ABF9CB9", hash_generated_method = "0658DFBD9214CCF478A566E2F117C6C3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.207 -0400", hash_original_method = "F5C09C601D97CCC2B78CB5FD3ABF9CB9", hash_generated_method = "380CC679FD665B3A9DE867E005BC6643")
     public void setAutoDismissed(boolean autoDismiss) {
+    if(mAutoDismissControls == autoDismiss)        
+        return;
         mAutoDismissControls = autoDismiss;
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mAutoDismissControls == autoDismiss) return;
+        //mAutoDismissControls = autoDismiss;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.338 -0400", hash_original_method = "74E1901CABAC1FE9F1005B36E67FD276", hash_generated_method = "89547EF1BC8ABDC6AA887F84B5AA5A31")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.207 -0400", hash_original_method = "74E1901CABAC1FE9F1005B36E67FD276", hash_generated_method = "AC9683078C0B901D5CA860A9CB8A24D3")
     public boolean isVisible() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1813214079 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1813214079;
-        
-        
+        boolean var3841FA617DC417560C9ACBBE88413EC6_1274750337 = (mIsVisible);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_925141622 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_925141622;
+        // ---------- Original Method ----------
+        //return mIsVisible;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.339 -0400", hash_original_method = "E965560D7B92B1F08EBD9F8DCDBB0D54", hash_generated_method = "45DCC12D0565274522F102A2CDEDCFC8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.209 -0400", hash_original_method = "E965560D7B92B1F08EBD9F8DCDBB0D54", hash_generated_method = "BD9E4EB63692F9D9133F39C6D358C7AC")
     public void setVisible(boolean visible) {
+    if(visible)        
         {
+    if(mOwnerView.getWindowToken() == null)            
             {
-                boolean var2D6B4C7133C3E09470E253CD882AC4AE_1953970584 = (mOwnerView.getWindowToken() == null);
+    if(!mHandler.hasMessages(MSG_POST_SET_VISIBLE))                
                 {
-                    {
-                        boolean var9A4E95F470ACBC1003187D9BC10AE161_1424065401 = (!mHandler.hasMessages(MSG_POST_SET_VISIBLE));
-                        {
-                            mHandler.sendEmptyMessage(MSG_POST_SET_VISIBLE);
-                        } 
-                    } 
-                } 
-            } 
+                    mHandler.sendEmptyMessage(MSG_POST_SET_VISIBLE);
+                } //End block
+                return;
+            } //End block
             dismissControlsDelayed(ZOOM_CONTROLS_TIMEOUT);
-        } 
-        mIsVisible = visible;
+        } //End block
+    if(mIsVisible == visible)        
         {
+            return;
+        } //End block
+        mIsVisible = visible;
+    if(visible)        
+        {
+    if(mContainerLayoutParams.token == null)            
             {
                 mContainerLayoutParams.token = mOwnerView.getWindowToken();
-            } 
+            } //End block
             mWindowManager.addView(mContainer, mContainerLayoutParams);
+    if(mPostedVisibleInitializer == null)            
             {
-                mPostedVisibleInitializer = new Runnable() {                    
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.339 -0400", hash_original_method = "EAB472F3FC4942C1E0EBF0AC1701A96E", hash_generated_method = "10B0682055CC46BB4AF0F95C79CAE8B9")
-                    public void run() {
-                        refreshPositioningVariables();
-                        {
-                            mCallback.onVisibilityChanged(true);
-                        } 
-                        
-                        
-                        
-                            
-                        
-                    }
+                mPostedVisibleInitializer = new Runnable() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.208 -0400", hash_original_method = "EAB472F3FC4942C1E0EBF0AC1701A96E", hash_generated_method = "98C9A5B475D0C09A3D408B5F89D4EF84")
+        public void run() {
+            refreshPositioningVariables();
+    if(mCallback != null)            
+            {
+                mCallback.onVisibilityChanged(true);
+            } //End block
+            // ---------- Original Method ----------
+            //refreshPositioningVariables();
+            //if (mCallback != null) {
+                            //mCallback.onVisibilityChanged(true);
+                        //}
+        }
 };
-            } 
+            } //End block
             mHandler.post(mPostedVisibleInitializer);
             mContext.registerReceiver(mConfigurationChangedReceiver, mConfigurationChangedFilter);
             mOwnerView.setOnTouchListener(this);
             mReleaseTouchListenerOnUp = false;
-        } 
+        } //End block
+        else
         {
+    if(mTouchTargetView != null)            
             {
                 mReleaseTouchListenerOnUp = true;
-            } 
+            } //End block
+            else
             {
                 mOwnerView.setOnTouchListener(null);
-            } 
+            } //End block
             mContext.unregisterReceiver(mConfigurationChangedReceiver);
             mWindowManager.removeView(mContainer);
             mHandler.removeCallbacks(mPostedVisibleInitializer);
+    if(mCallback != null)            
             {
                 mCallback.onVisibilityChanged(false);
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.340 -0400", hash_original_method = "5F28A319C2D73660C6EEE12017C9EFC5", hash_generated_method = "C7B08934075EC6E0A9925D290294FCD1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.209 -0400", hash_original_method = "5F28A319C2D73660C6EEE12017C9EFC5", hash_generated_method = "31E8049667F7B46D64D007C1C17AA16B")
     public ViewGroup getContainer() {
-        ViewGroup varB4EAC82CA7396A68D541C85D26508E83_1146447410 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1146447410 = mContainer;
-        varB4EAC82CA7396A68D541C85D26508E83_1146447410.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1146447410;
-        
-        
+ViewGroup varCFF48C15085C1760829740A9CBEECBE6_1336305024 =         mContainer;
+        varCFF48C15085C1760829740A9CBEECBE6_1336305024.addTaint(taint);
+        return varCFF48C15085C1760829740A9CBEECBE6_1336305024;
+        // ---------- Original Method ----------
+        //return mContainer;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.340 -0400", hash_original_method = "7C1C4B956CF0AB08A097C4C4837C0B3D", hash_generated_method = "978FF6ACC2B7E2860EA02FD77F7B8163")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.209 -0400", hash_original_method = "7C1C4B956CF0AB08A097C4C4837C0B3D", hash_generated_method = "B260C278B8706CA54CA8EED749FDD18B")
     public View getZoomControls() {
-        View varB4EAC82CA7396A68D541C85D26508E83_1381706562 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1381706562 = mControls;
-        varB4EAC82CA7396A68D541C85D26508E83_1381706562.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1381706562;
-        
-        
+View var4BE15960FF1DC136D3D870EA1777142D_519639041 =         mControls;
+        var4BE15960FF1DC136D3D870EA1777142D_519639041.addTaint(taint);
+        return var4BE15960FF1DC136D3D870EA1777142D_519639041;
+        // ---------- Original Method ----------
+        //return mControls;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.340 -0400", hash_original_method = "9FC1F818AD77D871CBB70B150EF10183", hash_generated_method = "934674E6B4B6B9EC034599A9FD28A0D7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.210 -0400", hash_original_method = "9FC1F818AD77D871CBB70B150EF10183", hash_generated_method = "1EB452CE8F6E70923C38710D44317FE5")
     private void dismissControlsDelayed(int delay) {
+        addTaint(delay);
+    if(mAutoDismissControls)        
         {
             mHandler.removeMessages(MSG_DISMISS_ZOOM_CONTROLS);
             mHandler.sendEmptyMessageDelayed(MSG_DISMISS_ZOOM_CONTROLS, delay);
-        } 
-        addTaint(delay);
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mAutoDismissControls) {
+            //mHandler.removeMessages(MSG_DISMISS_ZOOM_CONTROLS);
+            //mHandler.sendEmptyMessageDelayed(MSG_DISMISS_ZOOM_CONTROLS, delay);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.341 -0400", hash_original_method = "AC8EA5B19015CD5AEB4699B6A0E359A3", hash_generated_method = "93D4DAA59BBDD94FBD37C4AE5C1C2B8E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.211 -0400", hash_original_method = "AC8EA5B19015CD5AEB4699B6A0E359A3", hash_generated_method = "99E365AE14BAFFFC3D4A9101BCBBD718")
     private void refreshPositioningVariables() {
-        {
-            boolean var2D4339CEF2CDEECF31246867A013F13B_323100371 = (mOwnerView.getWindowToken() == null);
-        } 
+    if(mOwnerView.getWindowToken() == null)        
+        return;
         int ownerHeight = mOwnerView.getHeight();
         int ownerWidth = mOwnerView.getWidth();
         int containerOwnerYOffset = ownerHeight - mContainer.getHeight();
@@ -441,154 +440,179 @@ public class ZoomButtonsController implements View.OnTouchListener {
         mContainerLayoutParams.x = ownerViewWindowLoc[0];
         mContainerLayoutParams.width = ownerWidth;
         mContainerLayoutParams.y = ownerViewWindowLoc[1] + containerOwnerYOffset;
+    if(mIsVisible)        
         {
             mWindowManager.updateViewLayout(mContainer, mContainerLayoutParams);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.341 -0400", hash_original_method = "378B3DC7088565C3BEBCF57941C87615", hash_generated_method = "E6F6D16E5E7C3C3E65E91F04EB5C47B1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.211 -0400", hash_original_method = "378B3DC7088565C3BEBCF57941C87615", hash_generated_method = "8B99559C1A41B1CBFD62A63A6CC23304")
     private boolean onContainerKey(KeyEvent event) {
-        int keyCode = event.getKeyCode();
-        {
-            boolean varD9C7815C9811CC574B958A7386252FC9_261391717 = (isInterestingKey(keyCode));
-            {
-                {
-                    {
-                        boolean varF456D875C94EFA50F4F83E456081D7DC_973454365 = (event.getAction() == KeyEvent.ACTION_DOWN
-                        && event.getRepeatCount() == 0);
-                        {
-                            {
-                                KeyEvent.DispatcherState ds = mOwnerView.getKeyDispatcherState();
-                                {
-                                    ds.startTracking(event, this);
-                                } 
-                            } 
-                        } 
-                        {
-                            boolean varEC493C69A44980199FBD06318B95FEEB_1855504593 = (event.getAction() == KeyEvent.ACTION_UP
-                        && event.isTracking() && !event.isCanceled());
-                            {
-                                setVisible(false);
-                            } 
-                        } 
-                    } 
-                } 
-                {
-                    dismissControlsDelayed(ZOOM_CONTROLS_TIMEOUT);
-                } 
-            } 
-            {
-                ViewRootImpl viewRoot = getOwnerViewRootImpl();
-                {
-                    viewRoot.dispatchKey(event);
-                } 
-            } 
-        } 
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1120011874 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1120011874;
-        
-        
+        int keyCode = event.getKeyCode();
+    if(isInterestingKey(keyCode))        
+        {
+    if(keyCode == KeyEvent.KEYCODE_BACK)            
+            {
+    if(event.getAction() == KeyEvent.ACTION_DOWN
+                        && event.getRepeatCount() == 0)                
+                {
+    if(mOwnerView != null)                    
+                    {
+                        KeyEvent.DispatcherState ds = mOwnerView.getKeyDispatcherState();
+    if(ds != null)                        
+                        {
+                            ds.startTracking(event, this);
+                        } //End block
+                    } //End block
+                    boolean varB326B5062B2F0E69046810717534CB09_166942015 = (true);
+                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1415378330 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1415378330;
+                } //End block
+                else
+    if(event.getAction() == KeyEvent.ACTION_UP
+                        && event.isTracking() && !event.isCanceled())                
+                {
+                    setVisible(false);
+                    boolean varB326B5062B2F0E69046810717534CB09_50397858 = (true);
+                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2064737679 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_2064737679;
+                } //End block
+            } //End block
+            else
+            {
+                dismissControlsDelayed(ZOOM_CONTROLS_TIMEOUT);
+            } //End block
+            boolean var68934A3E9455FA72420237EB05902327_1561567537 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1503927932 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1503927932;
+        } //End block
+        else
+        {
+            ViewRootImpl viewRoot = getOwnerViewRootImpl();
+    if(viewRoot != null)            
+            {
+                viewRoot.dispatchKey(event);
+            } //End block
+            boolean varB326B5062B2F0E69046810717534CB09_833025559 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1499686056 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1499686056;
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.342 -0400", hash_original_method = "1F6E6E50114A7831DEC27688067C55C8", hash_generated_method = "1760E1225F3682815C500655F0F27694")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.212 -0400", hash_original_method = "1F6E6E50114A7831DEC27688067C55C8", hash_generated_method = "1A1BC6B6182F6630FB07F3C1EDE8CF6C")
     private boolean isInterestingKey(int keyCode) {
         addTaint(keyCode);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1930105552 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1930105552;
-        
-        
-            
-            
-            
-            
-            
-            
-            
-                
-            
-                
-        
+switch(keyCode){
+        case KeyEvent.KEYCODE_DPAD_CENTER:
+        case KeyEvent.KEYCODE_DPAD_UP:
+        case KeyEvent.KEYCODE_DPAD_DOWN:
+        case KeyEvent.KEYCODE_DPAD_LEFT:
+        case KeyEvent.KEYCODE_DPAD_RIGHT:
+        case KeyEvent.KEYCODE_ENTER:
+        case KeyEvent.KEYCODE_BACK:
+        boolean varB326B5062B2F0E69046810717534CB09_1504765405 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1331319031 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1331319031;
+        default:
+        boolean var68934A3E9455FA72420237EB05902327_2054413120 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_84266823 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_84266823;
+}
+        // ---------- Original Method ----------
+        //switch (keyCode) {
+            //case KeyEvent.KEYCODE_DPAD_CENTER:
+            //case KeyEvent.KEYCODE_DPAD_UP:
+            //case KeyEvent.KEYCODE_DPAD_DOWN:
+            //case KeyEvent.KEYCODE_DPAD_LEFT:
+            //case KeyEvent.KEYCODE_DPAD_RIGHT:
+            //case KeyEvent.KEYCODE_ENTER:
+            //case KeyEvent.KEYCODE_BACK:
+                //return true;
+            //default:
+                //return false;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.342 -0400", hash_original_method = "682CD28D25D57C221683C84B731CBBF0", hash_generated_method = "4C6582A361E685D81C674A0C5EF66AB3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.212 -0400", hash_original_method = "682CD28D25D57C221683C84B731CBBF0", hash_generated_method = "F76E3C99A555B9A8878B44E2BB97DBE9")
     private ViewRootImpl getOwnerViewRootImpl() {
-        ViewRootImpl varB4EAC82CA7396A68D541C85D26508E83_1734630607 = null; 
-        ViewRootImpl varB4EAC82CA7396A68D541C85D26508E83_1941558748 = null; 
-        ViewRootImpl varB4EAC82CA7396A68D541C85D26508E83_1820123894 = null; 
         View rootViewOfOwner = mOwnerView.getRootView();
+    if(rootViewOfOwner == null)        
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1734630607 = null;
-        } 
+ViewRootImpl var540C13E9E156B687226421B24F2DF178_132143145 =             null;
+            var540C13E9E156B687226421B24F2DF178_132143145.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_132143145;
+        } //End block
         ViewParent parentOfRootView = rootViewOfOwner.getParent();
+    if(parentOfRootView instanceof ViewRootImpl)        
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1941558748 = (ViewRootImpl) parentOfRootView;
-        } 
+ViewRootImpl var5CEE5ADC2DE246F02A5203E98C4E81BF_1053516366 =             (ViewRootImpl) parentOfRootView;
+            var5CEE5ADC2DE246F02A5203E98C4E81BF_1053516366.addTaint(taint);
+            return var5CEE5ADC2DE246F02A5203E98C4E81BF_1053516366;
+        } //End block
+        else
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1820123894 = null;
-        } 
-        ViewRootImpl varA7E53CE21691AB073D9660D615818899_993390537; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_993390537 = varB4EAC82CA7396A68D541C85D26508E83_1734630607;
-                break;
-            case 2: 
-                varA7E53CE21691AB073D9660D615818899_993390537 = varB4EAC82CA7396A68D541C85D26508E83_1941558748;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_993390537 = varB4EAC82CA7396A68D541C85D26508E83_1820123894;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_993390537.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_993390537;
-        
-        
-        
-            
-        
-        
-        
-            
-        
-            
-        
+ViewRootImpl var540C13E9E156B687226421B24F2DF178_1165613707 =             null;
+            var540C13E9E156B687226421B24F2DF178_1165613707.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_1165613707;
+        } //End block
+        // ---------- Original Method ----------
+        //View rootViewOfOwner = mOwnerView.getRootView();
+        //if (rootViewOfOwner == null) {
+            //return null;
+        //}
+        //ViewParent parentOfRootView = rootViewOfOwner.getParent();
+        //if (parentOfRootView instanceof ViewRootImpl) {
+            //return (ViewRootImpl) parentOfRootView;
+        //} else {
+            //return null;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.343 -0400", hash_original_method = "AC268A3687D4D0CE3C71C1BC69224E9B", hash_generated_method = "E442132D3274BF1CDB53E1FD854C0BC0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.213 -0400", hash_original_method = "AC268A3687D4D0CE3C71C1BC69224E9B", hash_generated_method = "217CFBAB2E844DBEF30FC6AC9382BE26")
     public boolean onTouch(View v, MotionEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
+        addTaint(event.getTaint());
+        addTaint(v.getTaint());
         int action = event.getAction();
+    if(event.getPointerCount() > 1)        
         {
-            boolean var1AEB63FDD5BAA0960B45EA0BA88A4345_816783097 = (event.getPointerCount() > 1);
-        } 
+            boolean var68934A3E9455FA72420237EB05902327_2118940951 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1988526841 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1988526841;
+        } //End block
+    if(mReleaseTouchListenerOnUp)        
         {
+    if(action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_CANCEL)            
             {
                 mOwnerView.setOnTouchListener(null);
                 setTouchTargetView(null);
                 mReleaseTouchListenerOnUp = false;
-            } 
-        } 
+            } //End block
+            boolean varB326B5062B2F0E69046810717534CB09_651368284 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_931586967 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_931586967;
+        } //End block
         dismissControlsDelayed(ZOOM_CONTROLS_TIMEOUT);
         View targetView = mTouchTargetView;
-        
+switch(action){
+        case MotionEvent.ACTION_DOWN:
         targetView = findViewForTouch((int) event.getRawX(), (int) event.getRawY());
-        
-        
         setTouchTargetView(targetView);
-        
-        
+        break;
+        case MotionEvent.ACTION_UP:
+        case MotionEvent.ACTION_CANCEL:
         setTouchTargetView(null);
-        
+        break;
+}    if(targetView != null)        
         {
             int targetViewRawX = mContainerRawLocation[0] + mTouchTargetWindowLocation[0];
             int targetViewRawY = mContainerRawLocation[1] + mTouchTargetWindowLocation[1];
@@ -597,138 +621,134 @@ public class ZoomButtonsController implements View.OnTouchListener {
                     mOwnerViewRawLocation[1] - targetViewRawY);
             float containerX = containerEvent.getX();
             float containerY = containerEvent.getY();
+    if(containerX < 0 && containerX > -ZOOM_CONTROLS_TOUCH_PADDING)            
             {
                 containerEvent.offsetLocation(-containerX, 0);
-            } 
+            } //End block
+    if(containerY < 0 && containerY > -ZOOM_CONTROLS_TOUCH_PADDING)            
             {
                 containerEvent.offsetLocation(0, -containerY);
-            } 
+            } //End block
             boolean retValue = targetView.dispatchTouchEvent(containerEvent);
             containerEvent.recycle();
-        } 
-        addTaint(v.getTaint());
-        addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_185066121 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_185066121;
-        
-        
+            boolean var9C7BD17E8EB1C3D0F843684A79A18570_170601433 = (retValue);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_898070738 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_898070738;
+        } //End block
+        else
+        {
+            boolean var68934A3E9455FA72420237EB05902327_83732675 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_955442924 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_955442924;
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.344 -0400", hash_original_method = "5B47D11F01081A67B0DC801C22F3388C", hash_generated_method = "5F4FB54A418235009CE2C82EBDBF8503")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.214 -0400", hash_original_method = "5B47D11F01081A67B0DC801C22F3388C", hash_generated_method = "D28FE4B3DFC9DF5E6FF03450E82BB6BB")
     private void setTouchTargetView(View view) {
         mTouchTargetView = view;
+    if(view != null)        
         {
             view.getLocationInWindow(mTouchTargetWindowLocation);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mTouchTargetView = view;
+        //if (view != null) {
+            //view.getLocationInWindow(mTouchTargetWindowLocation);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.346 -0400", hash_original_method = "87725495631184F2D9436EB1CA8B8776", hash_generated_method = "AD3DBDCFE6537E89C910AC08D12F385A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.217 -0400", hash_original_method = "87725495631184F2D9436EB1CA8B8776", hash_generated_method = "4DC030F65589D473359B3C2DF30A13AF")
     private View findViewForTouch(int rawX, int rawY) {
-        View varB4EAC82CA7396A68D541C85D26508E83_2035623568 = null; 
-        View varB4EAC82CA7396A68D541C85D26508E83_143239815 = null; 
+        addTaint(rawY);
+        addTaint(rawX);
         int containerCoordsX = rawX - mContainerRawLocation[0];
         int containerCoordsY = rawY - mContainerRawLocation[1];
         Rect frame = mTempRect;
         View closestChild = null;
         int closestChildDistanceSq = Integer.MAX_VALUE;
+for(int i = mContainer.getChildCount() - 1;i >= 0;i--)
         {
-            int i = mContainer.getChildCount() - 1;
+            View child = mContainer.getChildAt(i);
+    if(child.getVisibility() != View.VISIBLE)            
             {
-                View child = mContainer.getChildAt(i);
-                {
-                    boolean varDC14093C8CD60D90554507229044E659_862333985 = (child.getVisibility() != View.VISIBLE);
-                } 
-                child.getHitRect(frame);
-                {
-                    boolean var066E484B2EAC769EC84C7D51A6C5B7CD_203343175 = (frame.contains(containerCoordsX, containerCoordsY));
-                    {
-                        varB4EAC82CA7396A68D541C85D26508E83_2035623568 = child;
-                    } 
-                } 
-                int distanceX;
-                {
-                    distanceX = 0;
-                } 
-                {
-                    distanceX = Math.min(Math.abs(frame.left - containerCoordsX),
+                continue;
+            } //End block
+            child.getHitRect(frame);
+    if(frame.contains(containerCoordsX, containerCoordsY))            
+            {
+View var73902FD3E151130B4329B76EF04D2A54_480904505 =                 child;
+                var73902FD3E151130B4329B76EF04D2A54_480904505.addTaint(taint);
+                return var73902FD3E151130B4329B76EF04D2A54_480904505;
+            } //End block
+            int distanceX;
+    if(containerCoordsX >= frame.left && containerCoordsX <= frame.right)            
+            {
+                distanceX = 0;
+            } //End block
+            else
+            {
+                distanceX = Math.min(Math.abs(frame.left - containerCoordsX),
                     Math.abs(containerCoordsX - frame.right));
-                } 
-                int distanceY;
-                {
-                    distanceY = 0;
-                } 
-                {
-                    distanceY = Math.min(Math.abs(frame.top - containerCoordsY),
+            } //End block
+            int distanceY;
+    if(containerCoordsY >= frame.top && containerCoordsY <= frame.bottom)            
+            {
+                distanceY = 0;
+            } //End block
+            else
+            {
+                distanceY = Math.min(Math.abs(frame.top - containerCoordsY),
                         Math.abs(containerCoordsY - frame.bottom));
-                } 
-                int distanceSq = distanceX * distanceX + distanceY * distanceY;
-                {
-                    closestChild = child;
-                    closestChildDistanceSq = distanceSq;
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_143239815 = closestChild;
-        addTaint(rawX);
-        addTaint(rawY);
-        View varA7E53CE21691AB073D9660D615818899_201136861; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_201136861 = varB4EAC82CA7396A68D541C85D26508E83_2035623568;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_201136861 = varB4EAC82CA7396A68D541C85D26508E83_143239815;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_201136861.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_201136861;
-        
-        
+            } //End block
+            int distanceSq = distanceX * distanceX + distanceY * distanceY;
+    if((distanceSq < mTouchPaddingScaledSq) &&
+                    (distanceSq < closestChildDistanceSq))            
+            {
+                closestChild = child;
+                closestChildDistanceSq = distanceSq;
+            } //End block
+        } //End block
+View varC364E3ABF5AB6B23AB1C8ACB044B06D1_156398806 =         closestChild;
+        varC364E3ABF5AB6B23AB1C8ACB044B06D1_156398806.addTaint(taint);
+        return varC364E3ABF5AB6B23AB1C8ACB044B06D1_156398806;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.347 -0400", hash_original_method = "17B14786F835EF976BE6949F1B3BDF94", hash_generated_method = "F20F1B1E54FFC0101AD0D428F6B397DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.217 -0400", hash_original_method = "17B14786F835EF976BE6949F1B3BDF94", hash_generated_method = "F20F1B1E54FFC0101AD0D428F6B397DF")
     private void onPostConfigurationChanged() {
         dismissControlsDelayed(ZOOM_CONTROLS_TIMEOUT);
         refreshPositioningVariables();
-        
-        
-        
+        // ---------- Original Method ----------
+        //dismissControlsDelayed(ZOOM_CONTROLS_TIMEOUT);
+        //refreshPositioningVariables();
     }
 
     
     private class Container extends FrameLayout {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.348 -0400", hash_original_method = "F501EF92597324297985E451C1487263", hash_generated_method = "6C7FE0A8EC88EB82037FA3CBCBCDAEFE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.218 -0400", hash_original_method = "F501EF92597324297985E451C1487263", hash_generated_method = "6C7FE0A8EC88EB82037FA3CBCBCDAEFE")
         public  Container(Context context) {
             super(context);
             addTaint(context.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.348 -0400", hash_original_method = "9ADB1F3C4E22FAC9B13C38DB47141BED", hash_generated_method = "649B03E93753D80B603EEFFC6E1D1D65")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.218 -0400", hash_original_method = "9ADB1F3C4E22FAC9B13C38DB47141BED", hash_generated_method = "A859B9E5503977CDEB2F184A3534127A")
         @Override
         public boolean dispatchKeyEvent(KeyEvent event) {
-            {
-                boolean var9DAF16109AC94402109430D71D88F9D2_132953447 = (onContainerKey(event));
-                Object varCEE2CC9A2E312DCEF21BEB8A1D3D2A74_1431555546 = (super.dispatchKeyEvent(event));
-            } 
             addTaint(event.getTaint());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_894169348 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_894169348;
-            
-            
+            boolean varA0B7F40777AAA5774BA39FF5D2D02708_607319382 = (onContainerKey(event) ? true : super.dispatchKeyEvent(event));
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_876243330 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_876243330;
+            // ---------- Original Method ----------
+            //return onContainerKey(event) ? true : super.dispatchKeyEvent(event);
         }
 
         
@@ -745,22 +765,22 @@ public class ZoomButtonsController implements View.OnTouchListener {
         void onZoom(boolean zoomIn);
     }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.348 -0400", hash_original_field = "788A21D54466EA345DF78A210F61BFDB", hash_generated_field = "87F8ED6A4B66277018F995319915D6F8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.218 -0400", hash_original_field = "788A21D54466EA345DF78A210F61BFDB", hash_generated_field = "87F8ED6A4B66277018F995319915D6F8")
 
     private static final String TAG = "ZoomButtonsController";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.348 -0400", hash_original_field = "5D6E37BCE72DAC569EA42869CC543F50", hash_generated_field = "19FF76A0C8B907CD835165D9C0A3D60D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.218 -0400", hash_original_field = "5D6E37BCE72DAC569EA42869CC543F50", hash_generated_field = "19FF76A0C8B907CD835165D9C0A3D60D")
 
     private static final int ZOOM_CONTROLS_TIMEOUT = (int) ViewConfiguration.getZoomControlsTimeout();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.348 -0400", hash_original_field = "28FE46A9CB38173700937CBF032F0465", hash_generated_field = "EB3746A9386522BF21631ADC5B5B668F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.218 -0400", hash_original_field = "28FE46A9CB38173700937CBF032F0465", hash_generated_field = "EB3746A9386522BF21631ADC5B5B668F")
 
     private static final int ZOOM_CONTROLS_TOUCH_PADDING = 20;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.348 -0400", hash_original_field = "DF4E4863EC3A9B2BAA55B086A497D764", hash_generated_field = "29D97A85E5F3DFC1C5D054BECA9FCF49")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.218 -0400", hash_original_field = "DF4E4863EC3A9B2BAA55B086A497D764", hash_generated_field = "29D97A85E5F3DFC1C5D054BECA9FCF49")
 
     private static final int MSG_POST_CONFIGURATION_CHANGED = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.349 -0400", hash_original_field = "9FD71970941437D96FFAD21A41D4DDF8", hash_generated_field = "D23053980B5F5589F5746F54AA99A519")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.218 -0400", hash_original_field = "9FD71970941437D96FFAD21A41D4DDF8", hash_generated_field = "D23053980B5F5589F5746F54AA99A519")
 
     private static final int MSG_DISMISS_ZOOM_CONTROLS = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.349 -0400", hash_original_field = "B1D6E8B124954621CBC6331033C52C66", hash_generated_field = "9FE51466CFB2AFD8319C533EAB3AA236")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.218 -0400", hash_original_field = "B1D6E8B124954621CBC6331033C52C66", hash_generated_field = "9FE51466CFB2AFD8319C533EAB3AA236")
 
     private static final int MSG_POST_SET_VISIBLE = 4;
 }

@@ -1,98 +1,116 @@
 package org.apache.http.impl.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.IOException;
 import java.io.InputStream;
 import org.apache.http.io.SessionInputBuffer;
 
 public class IdentityInputStream extends InputStream {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.843 -0400", hash_original_field = "13B5BFE96F3E2FE411C9F66F4A582ADF", hash_generated_field = "1D4C1FD37762DA513250BEA823E156F5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.225 -0400", hash_original_field = "13B5BFE96F3E2FE411C9F66F4A582ADF", hash_generated_field = "1D4C1FD37762DA513250BEA823E156F5")
 
     private SessionInputBuffer in;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.843 -0400", hash_original_field = "1E79543A888DE7BB0ADBB289A8F4251D", hash_generated_field = "AA98B16E301073717D23E903C6D6286D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.226 -0400", hash_original_field = "1E79543A888DE7BB0ADBB289A8F4251D", hash_generated_field = "AA98B16E301073717D23E903C6D6286D")
 
     private boolean closed = false;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.844 -0400", hash_original_method = "9BF2DB3D820A8A5E47D8F845957A3FBA", hash_generated_method = "88F7BD9068BD0CF87982753E78EF1E94")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.227 -0400", hash_original_method = "9BF2DB3D820A8A5E47D8F845957A3FBA", hash_generated_method = "E39418DB16E7D677F8FCED1939FCD6A3")
     public  IdentityInputStream(final SessionInputBuffer in) {
         super();
+    if(in == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Session input buffer may not be null");
-        } 
+            IllegalArgumentException varB3677395451B18A3F9262E9D7FE254B3_2047274465 = new IllegalArgumentException("Session input buffer may not be null");
+            varB3677395451B18A3F9262E9D7FE254B3_2047274465.addTaint(taint);
+            throw varB3677395451B18A3F9262E9D7FE254B3_2047274465;
+        } //End block
         this.in = in;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (in == null) {
+            //throw new IllegalArgumentException("Session input buffer may not be null");
+        //}
+        //this.in = in;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.844 -0400", hash_original_method = "DCB121D8842EB51547DBC31A4230EDC6", hash_generated_method = "6144D4DECE7E15C7EC4E83CF2313B86C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.227 -0400", hash_original_method = "DCB121D8842EB51547DBC31A4230EDC6", hash_generated_method = "0360B330F6D336E906EE1AA509E26DD5")
     public int available() throws IOException {
+    if(!this.closed && this.in.isDataAvailable(10))        
         {
-            boolean var746B940C8D4EFBE901778D2AAB8F79F7_2104797275 = (!this.closed && this.in.isDataAvailable(10));
-        } 
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1563848814 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1563848814;
-        
-        
-            
-        
-            
-        
+            int varC4CA4238A0B923820DCC509A6F75849B_1819049322 = (1);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_602588353 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_602588353;
+        } //End block
+        else
+        {
+            int varCFCD208495D565EF66E7DFF9F98764DA_1483201162 = (0);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_582013960 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_582013960;
+        } //End block
+        // ---------- Original Method ----------
+        //if (!this.closed && this.in.isDataAvailable(10)) {
+            //return 1;
+        //} else {
+            //return 0;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.844 -0400", hash_original_method = "311E5281CF91526FD2B39B7023BBB3B5", hash_generated_method = "189AC125925A0F1BC150A3E99E2798E2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.228 -0400", hash_original_method = "311E5281CF91526FD2B39B7023BBB3B5", hash_generated_method = "189AC125925A0F1BC150A3E99E2798E2")
     public void close() throws IOException {
         this.closed = true;
-        
-        
+        // ---------- Original Method ----------
+        //this.closed = true;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.844 -0400", hash_original_method = "F6A0760AFCA549A5825114F4EAC4FB8F", hash_generated_method = "84A153129EF29604B8D0D73A17E9C316")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.228 -0400", hash_original_method = "F6A0760AFCA549A5825114F4EAC4FB8F", hash_generated_method = "4F5921D4166363193380793F91C9712A")
     public int read() throws IOException {
+    if(this.closed)        
         {
-            int var737744DC8D1F0D5E4A51D264CDB60748_330868159 = (this.in.read());
-        } 
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1103769236 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1103769236;
-        
-        
-            
-        
-            
-        
+            int var6BB61E3B7BCE0931DA574D19D1D82C88_1816263114 = (-1);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_953563219 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_953563219;
+        } //End block
+        else
+        {
+            int var4B24E33D3D9F67DD13235F201B80A449_183597870 = (this.in.read());
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_814857171 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_814857171;
+        } //End block
+        // ---------- Original Method ----------
+        //if (this.closed) {
+            //return -1;
+        //} else {
+            //return this.in.read();
+        //}
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.845 -0400", hash_original_method = "E3ECD120B22D1F545DEC5B2DDE1C9AA2", hash_generated_method = "49CDF6B47342DA98806602AEDF122E43")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.229 -0400", hash_original_method = "E3ECD120B22D1F545DEC5B2DDE1C9AA2", hash_generated_method = "9E8D9B443E6C6C660430BEEA78C8B960")
     public int read(final byte[] b, int off, int len) throws IOException {
-        {
-            int varFFB206EE847AC72E4E154CE31485D922_608309558 = (this.in.read(b, off, len));
-        } 
-        addTaint(b[0]);
-        addTaint(off);
         addTaint(len);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2102595789 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2102595789;
-        
-        
-            
-        
-            
-        
+        addTaint(off);
+        addTaint(b[0]);
+    if(this.closed)        
+        {
+            int var6BB61E3B7BCE0931DA574D19D1D82C88_1120751677 = (-1);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1453391619 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1453391619;
+        } //End block
+        else
+        {
+            int varCFE585846710E20F72A2243C249191D6_149455141 = (this.in.read(b, off, len));
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1797386016 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1797386016;
+        } //End block
+        // ---------- Original Method ----------
+        //if (this.closed) {
+            //return -1;
+        //} else {
+            //return this.in.read(b, off, len);
+        //}
     }
 
     

@@ -1,12 +1,9 @@
 package com.android.internal.telephony.cat;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 
 public enum ResultCode {
     OK(0x00),
@@ -50,11 +47,9 @@ public enum ResultCode {
     ResultCode(int code) {
         mCode = code;
     }
-    @DSModeled(DSC.SAFE)
     public int value() {
         return mCode;
     }
-    @DSModeled(DSC.SAFE)
     public static ResultCode fromInt(int value) {
         for (ResultCode r : ResultCode.values()) {
             if (r.mCode == value) {

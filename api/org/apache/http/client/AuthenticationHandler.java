@@ -1,12 +1,9 @@
 package org.apache.http.client;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.util.Map;
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;

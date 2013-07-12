@@ -1,12 +1,9 @@
 package org.apache.http.impl.cookie;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.util.StringTokenizer;
 import org.apache.http.cookie.ClientCookie;
 import org.apache.http.cookie.Cookie;
@@ -18,14 +15,14 @@ import org.apache.http.cookie.SetCookie2;
 
 public class RFC2965PortAttributeHandler implements CookieAttributeHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.473 -0400", hash_original_method = "E334DF66885CCF73C2314DA776277136", hash_generated_method = "4761D766B683CA7DF86AA940A4C091A8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.865 -0400", hash_original_method = "E334DF66885CCF73C2314DA776277136", hash_generated_method = "4761D766B683CA7DF86AA940A4C091A8")
     public  RFC2965PortAttributeHandler() {
         super();
-        
+        // ---------- Original Method ----------
     }
 
     
-    private static int[] parsePortAttribute(final String portValue) throws MalformedCookieException {
+        private static int[] parsePortAttribute(final String portValue) throws MalformedCookieException {
         StringTokenizer st = new StringTokenizer(portValue, ",");
         int[] ports = new int[st.countTokens()];
         try {
@@ -45,8 +42,7 @@ public class RFC2965PortAttributeHandler implements CookieAttributeHandler {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static boolean portMatch(int port, int[] ports) {
+        private static boolean portMatch(int port, int[] ports) {
         boolean portInList = false;
         for (int i = 0, len = ports.length; i < len; i++) {
             if (port == ports[i]) {
@@ -58,124 +54,141 @@ public class RFC2965PortAttributeHandler implements CookieAttributeHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.475 -0400", hash_original_method = "681AF804F244AC355854B5C9066D8457", hash_generated_method = "E7A31D0833F986FD3A29A4E2EB5B973C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.866 -0400", hash_original_method = "681AF804F244AC355854B5C9066D8457", hash_generated_method = "59DA821BF406930AE460DEE8A8C5D8E5")
     public void parse(final SetCookie cookie, final String portValue) throws MalformedCookieException {
+        addTaint(portValue.getTaint());
+        addTaint(cookie.getTaint());
+    if(cookie == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie may not be null");
-        } 
+            IllegalArgumentException varFBA11BCFA12F6CB336E0E79489ED6755_247077293 = new IllegalArgumentException("Cookie may not be null");
+            varFBA11BCFA12F6CB336E0E79489ED6755_247077293.addTaint(taint);
+            throw varFBA11BCFA12F6CB336E0E79489ED6755_247077293;
+        } //End block
+    if(cookie instanceof SetCookie2)        
         {
             SetCookie2 cookie2 = (SetCookie2) cookie;
+    if(portValue != null && portValue.trim().length() > 0)            
             {
-                boolean var86A8FFF96C7F683CE3CBC2F88023AC58_1041204668 = (portValue != null && portValue.trim().length() > 0);
-                {
-                    int[] ports = parsePortAttribute(portValue);
-                    cookie2.setPorts(ports);
-                } 
-            } 
-        } 
-        addTaint(cookie.getTaint());
-        addTaint(portValue.getTaint());
-        
-        
-            
-        
-        
-            
-            
-                
-                
-            
-        
+                int[] ports = parsePortAttribute(portValue);
+                cookie2.setPorts(ports);
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (cookie == null) {
+            //throw new IllegalArgumentException("Cookie may not be null");
+        //}
+        //if (cookie instanceof SetCookie2) {
+            //SetCookie2 cookie2 = (SetCookie2) cookie;
+            //if (portValue != null && portValue.trim().length() > 0) {
+                //int[] ports = parsePortAttribute(portValue);
+                //cookie2.setPorts(ports);
+            //}
+        //}
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.477 -0400", hash_original_method = "9E12D702FFAE2715567401C9ACEBCA90", hash_generated_method = "9111D76DB5BD194E5EC27C79D484FA62")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.866 -0400", hash_original_method = "9E12D702FFAE2715567401C9ACEBCA90", hash_generated_method = "54B0A9CAF095FB2CE31D448DB1833CC3")
     public void validate(final Cookie cookie, final CookieOrigin origin) throws MalformedCookieException {
+        addTaint(origin.getTaint());
+        addTaint(cookie.getTaint());
+    if(cookie == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie may not be null");
-        } 
+            IllegalArgumentException varFBA11BCFA12F6CB336E0E79489ED6755_424908788 = new IllegalArgumentException("Cookie may not be null");
+            varFBA11BCFA12F6CB336E0E79489ED6755_424908788.addTaint(taint);
+            throw varFBA11BCFA12F6CB336E0E79489ED6755_424908788;
+        } //End block
+    if(origin == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie origin may not be null");
-        } 
+            IllegalArgumentException var4264914F0057BA70A0B3E6621821A095_671621279 = new IllegalArgumentException("Cookie origin may not be null");
+            var4264914F0057BA70A0B3E6621821A095_671621279.addTaint(taint);
+            throw var4264914F0057BA70A0B3E6621821A095_671621279;
+        } //End block
         int port = origin.getPort();
+    if(cookie instanceof ClientCookie 
+                && ((ClientCookie) cookie).containsAttribute(ClientCookie.PORT_ATTR))        
         {
-            boolean var5612C47998A5419B8EEB60E3F3947730_467023662 = (cookie instanceof ClientCookie 
-                && ((ClientCookie) cookie).containsAttribute(ClientCookie.PORT_ATTR));
+    if(!portMatch(port, cookie.getPorts()))            
             {
-                {
-                    boolean varE5D61C63A1F61CB1025C19159B89B5F3_1594700542 = (!portMatch(port, cookie.getPorts()));
-                    {
-                        if (DroidSafeAndroidRuntime.control) throw new MalformedCookieException(
+                MalformedCookieException varED3CE662B780B57CAE13C75D2F7FA436_1887598160 = new MalformedCookieException(
                         "Port attribute violates RFC 2965: "
                         + "Request port not found in cookie's port list.");
-                    } 
-                } 
-            } 
-        } 
-        addTaint(cookie.getTaint());
-        addTaint(origin.getTaint());
-        
-        
-            
-        
-        
-            
-        
-        
-        
-                
-            
-                
-                        
-                        
-            
-        
+                varED3CE662B780B57CAE13C75D2F7FA436_1887598160.addTaint(taint);
+                throw varED3CE662B780B57CAE13C75D2F7FA436_1887598160;
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (cookie == null) {
+            //throw new IllegalArgumentException("Cookie may not be null");
+        //}
+        //if (origin == null) {
+            //throw new IllegalArgumentException("Cookie origin may not be null");
+        //}
+        //int port = origin.getPort();
+        //if (cookie instanceof ClientCookie 
+                //&& ((ClientCookie) cookie).containsAttribute(ClientCookie.PORT_ATTR)) {
+            //if (!portMatch(port, cookie.getPorts())) {
+                //throw new MalformedCookieException(
+                        //"Port attribute violates RFC 2965: "
+                        //+ "Request port not found in cookie's port list.");
+            //}
+        //}
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.479 -0400", hash_original_method = "DF68EC2DBEDB1856460C90C9AF4C7622", hash_generated_method = "CBABEB14806DA100A7A623DCF78D1BD7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.867 -0400", hash_original_method = "DF68EC2DBEDB1856460C90C9AF4C7622", hash_generated_method = "FB2E7380F60392B7AC05A3F11665C0CF")
     public boolean match(final Cookie cookie, final CookieOrigin origin) {
-        {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie may not be null");
-        } 
-        {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie origin may not be null");
-        } 
-        int port = origin.getPort();
-        {
-            boolean var5612C47998A5419B8EEB60E3F3947730_1294767400 = (cookie instanceof ClientCookie 
-                && ((ClientCookie) cookie).containsAttribute(ClientCookie.PORT_ATTR));
-            {
-                {
-                    boolean var4EF3EE66FBE764604CEF811F8CF3E1EE_106334846 = (cookie.getPorts() == null);
-                } 
-                {
-                    boolean varE5D61C63A1F61CB1025C19159B89B5F3_696612248 = (!portMatch(port, cookie.getPorts()));
-                } 
-            } 
-        } 
-        addTaint(cookie.getTaint());
         addTaint(origin.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_46492116 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_46492116;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-                
-            
-                
-            
-            
-                
-            
-        
-        
+        addTaint(cookie.getTaint());
+    if(cookie == null)        
+        {
+            IllegalArgumentException varFBA11BCFA12F6CB336E0E79489ED6755_500366747 = new IllegalArgumentException("Cookie may not be null");
+            varFBA11BCFA12F6CB336E0E79489ED6755_500366747.addTaint(taint);
+            throw varFBA11BCFA12F6CB336E0E79489ED6755_500366747;
+        } //End block
+    if(origin == null)        
+        {
+            IllegalArgumentException var4264914F0057BA70A0B3E6621821A095_325809648 = new IllegalArgumentException("Cookie origin may not be null");
+            var4264914F0057BA70A0B3E6621821A095_325809648.addTaint(taint);
+            throw var4264914F0057BA70A0B3E6621821A095_325809648;
+        } //End block
+        int port = origin.getPort();
+    if(cookie instanceof ClientCookie 
+                && ((ClientCookie) cookie).containsAttribute(ClientCookie.PORT_ATTR))        
+        {
+    if(cookie.getPorts() == null)            
+            {
+                boolean var68934A3E9455FA72420237EB05902327_1592369321 = (false);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_676243910 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_676243910;
+            } //End block
+    if(!portMatch(port, cookie.getPorts()))            
+            {
+                boolean var68934A3E9455FA72420237EB05902327_887044309 = (false);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_157980597 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_157980597;
+            } //End block
+        } //End block
+        boolean varB326B5062B2F0E69046810717534CB09_880444334 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1860315874 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1860315874;
+        // ---------- Original Method ----------
+        //if (cookie == null) {
+            //throw new IllegalArgumentException("Cookie may not be null");
+        //}
+        //if (origin == null) {
+            //throw new IllegalArgumentException("Cookie origin may not be null");
+        //}
+        //int port = origin.getPort();
+        //if (cookie instanceof ClientCookie 
+                //&& ((ClientCookie) cookie).containsAttribute(ClientCookie.PORT_ATTR)) {
+            //if (cookie.getPorts() == null) {
+                //return false;
+            //}
+            //if (!portMatch(port, cookie.getPorts())) {
+                //return false;
+            //}
+        //}
+        //return true;
     }
 
     

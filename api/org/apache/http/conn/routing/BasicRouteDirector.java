@@ -1,147 +1,186 @@
 package org.apache.http.conn.routing;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-
-import java.util.Iterator;
-
 public class BasicRouteDirector implements HttpRouteDirector {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.107 -0400", hash_original_method = "AEF78390BB51E5E5DCB8CA44B8B94889", hash_generated_method = "AEF78390BB51E5E5DCB8CA44B8B94889")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.461 -0400", hash_original_method = "AEF78390BB51E5E5DCB8CA44B8B94889", hash_generated_method = "AEF78390BB51E5E5DCB8CA44B8B94889")
     public BasicRouteDirector ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.108 -0400", hash_original_method = "2D52A8A1F4F510CECBAF7D127E816999", hash_generated_method = "CBD26D137086F8F212F8F00EFD4A089B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.463 -0400", hash_original_method = "2D52A8A1F4F510CECBAF7D127E816999", hash_generated_method = "AE96B334629636C10C12D729BC03ED76")
     public int nextStep(RouteInfo plan, RouteInfo fact) {
+        addTaint(fact.getTaint());
+        addTaint(plan.getTaint());
+    if(plan == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
+            IllegalArgumentException varD18AAFD4D49E5C0AE7C21EBCCB2F15E3_161228701 = new IllegalArgumentException
                 ("Planned route may not be null.");
-        } 
+            varD18AAFD4D49E5C0AE7C21EBCCB2F15E3_161228701.addTaint(taint);
+            throw varD18AAFD4D49E5C0AE7C21EBCCB2F15E3_161228701;
+        } //End block
         int step = UNREACHABLE;
-        {
-            boolean varDC3AF8859148F01EC170674A8EE05D51_1141302470 = ((fact == null) || (fact.getHopCount() < 1));
-            step = firstStep(plan);
-            {
-                boolean var6046D6BBF10C8FA378ECE56FA7490721_1955263563 = (plan.getHopCount() > 1);
-                step = proxiedStep(plan, fact);
-                step = directStep(plan, fact);
-            } 
-        } 
-        addTaint(plan.getTaint());
-        addTaint(fact.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1101506497 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1101506497;
-        
-        
-            
-                
-        
-        
-        
-            
-        
-            
-        
-            
-        
+    if((fact == null) || (fact.getHopCount() < 1))        
+        step = firstStep(plan);
+        else
+    if(plan.getHopCount() > 1)        
+        step = proxiedStep(plan, fact);
+        else
+        step = directStep(plan, fact);
+        int var2764CA9D34E90313978D044F27AE433B_1409092420 = (step);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1978739048 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1978739048;
+        // ---------- Original Method ----------
+        //if (plan == null) {
+            //throw new IllegalArgumentException
+                //("Planned route may not be null.");
+        //}
+        //int step = UNREACHABLE;
+        //if ((fact == null) || (fact.getHopCount() < 1))
+            //step = firstStep(plan);
+        //else if (plan.getHopCount() > 1)
+            //step = proxiedStep(plan, fact);
+        //else
+            //step = directStep(plan, fact);
+        //return step;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.109 -0400", hash_original_method = "966B65B53C96D6B72CF4916A6633605B", hash_generated_method = "2998365C48B8C7E8312A6EA0E55D2D4D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.463 -0400", hash_original_method = "966B65B53C96D6B72CF4916A6633605B", hash_generated_method = "4AC12214541757CAE131EFC9E6990D0B")
     protected int firstStep(RouteInfo plan) {
-        {
-            boolean var9ADDBF903DE9AB1D6EDE2F86CE7C529E_210206520 = ((plan.getHopCount() > 1));
-        } 
         addTaint(plan.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_993153974 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_993153974;
-        
-        
-            
+        int var944F519AA24A9AB0CE12023A3FF4A30C_896728395 = ((plan.getHopCount() > 1) ?
+            CONNECT_PROXY : CONNECT_TARGET);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_372684638 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_372684638;
+        // ---------- Original Method ----------
+        //return (plan.getHopCount() > 1) ?
+            //CONNECT_PROXY : CONNECT_TARGET;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.109 -0400", hash_original_method = "B25ACDEED75919F7360EB24551217719", hash_generated_method = "CB01034D3D2EB811DD53D387CAEEAAC0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.464 -0400", hash_original_method = "B25ACDEED75919F7360EB24551217719", hash_generated_method = "362F4602D2CFAB2F358F80B4306EF5DB")
     protected int directStep(RouteInfo plan, RouteInfo fact) {
-        {
-            boolean varB66C84168A0A11E206DA97FC53EECE96_1195363202 = (fact.getHopCount() > 1);
-        } 
-        {
-            boolean var2095A840753C2371E56339B351F793C6_207926992 = (!plan.getTargetHost().equals(fact.getTargetHost()));
-        } 
-        {
-            boolean var2F5D2B4DC814CD5AA57F6335D676F360_642281353 = (plan.isSecure() != fact.isSecure());
-        } 
-        {
-            boolean varA6057D5451C00340B98B3FD151A1C736_63140282 = ((plan.getLocalAddress() != null) &&
-            !plan.getLocalAddress().equals(fact.getLocalAddress()));
-        } 
-        addTaint(plan.getTaint());
         addTaint(fact.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1238061603 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1238061603;
-        
-        
-            
-        
-            
-        
-            
-        
-            
-            
-            
-        
+        addTaint(plan.getTaint());
+    if(fact.getHopCount() > 1)        
+        {
+        int var58FD3B3B1F27606728077423EB21D8D6_2011904519 = (UNREACHABLE);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_393128986 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_393128986;
+        }
+    if(!plan.getTargetHost().equals(fact.getTargetHost()))        
+        {
+        int var58FD3B3B1F27606728077423EB21D8D6_1117182465 = (UNREACHABLE);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1985563729 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1985563729;
+        }
+    if(plan.isSecure() != fact.isSecure())        
+        {
+        int var58FD3B3B1F27606728077423EB21D8D6_1138581083 = (UNREACHABLE);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1484265185 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1484265185;
+        }
+    if((plan.getLocalAddress() != null) &&
+            !plan.getLocalAddress().equals(fact.getLocalAddress()))        
+        {
+        int var58FD3B3B1F27606728077423EB21D8D6_250863503 = (UNREACHABLE);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2049149049 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2049149049;
+        }
+        int var3DE44296982E58199AFC513A715B12BA_1677160235 = (COMPLETE);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1659735599 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1659735599;
+        // ---------- Original Method ----------
+        //if (fact.getHopCount() > 1)
+            //return UNREACHABLE;
+        //if (!plan.getTargetHost().equals(fact.getTargetHost()))
+            //return UNREACHABLE;
+        //if (plan.isSecure() != fact.isSecure())
+            //return UNREACHABLE;
+        //if ((plan.getLocalAddress() != null) &&
+            //!plan.getLocalAddress().equals(fact.getLocalAddress())
+            //)
+            //return UNREACHABLE;
+        //return COMPLETE;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.110 -0400", hash_original_method = "DAD47A54D3A856226CAD2FBA5A8D36F7", hash_generated_method = "0CF3261390F78E4237940527535B6669")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.465 -0400", hash_original_method = "DAD47A54D3A856226CAD2FBA5A8D36F7", hash_generated_method = "3C338E012F54B51990525DA27C05BDB6")
     protected int proxiedStep(RouteInfo plan, RouteInfo fact) {
+        addTaint(fact.getTaint());
+        addTaint(plan.getTaint());
+    if(fact.getHopCount() <= 1)        
         {
-            boolean var0C77C0B46B1BAF3E2E74D6F775BEA792_367499168 = (fact.getHopCount() <= 1);
-        } 
+        int var58FD3B3B1F27606728077423EB21D8D6_463225937 = (UNREACHABLE);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_817306699 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_817306699;
+        }
+    if(!plan.getTargetHost().equals(fact.getTargetHost()))        
         {
-            boolean var2095A840753C2371E56339B351F793C6_696389501 = (!plan.getTargetHost().equals(fact.getTargetHost()));
-        } 
+        int var58FD3B3B1F27606728077423EB21D8D6_280775493 = (UNREACHABLE);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1117668399 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1117668399;
+        }
         final int phc = plan.getHopCount();
         final int fhc = fact.getHopCount();
+    if(phc < fhc)        
         {
-            int i = 0;
+        int var58FD3B3B1F27606728077423EB21D8D6_1837722837 = (UNREACHABLE);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1871970814 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1871970814;
+        }
+for(int i=0;i<fhc-1;i++)
+        {
+    if(!plan.getHopTarget(i).equals(fact.getHopTarget(i)))            
             {
-                {
-                    boolean varE461F5C2A178940FC85BAACCD10142E5_1048327454 = (!plan.getHopTarget(i).equals(fact.getHopTarget(i)));
-                } 
-            } 
-        } 
+            int var58FD3B3B1F27606728077423EB21D8D6_973984709 = (UNREACHABLE);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1332877938 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1332877938;
+            }
+        } //End block
+    if(phc > fhc)        
         {
-            boolean varCAE15B57EF69EEDF96317B8246AAF65E_1636432734 = ((fact.isTunnelled() && !plan.isTunnelled()) ||
-            (fact.isLayered()   && !plan.isLayered()));
-        } 
+        int varBF531891E7568480D1039EF413BB779F_751516437 = (TUNNEL_PROXY);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1689331634 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1689331634;
+        }
+    if((fact.isTunnelled() && !plan.isTunnelled()) ||
+            (fact.isLayered()   && !plan.isLayered()))        
         {
-            boolean var57C09873B46E3C81C687C38273B9D183_1366886408 = (plan.isTunnelled() && !fact.isTunnelled());
-        } 
+        int var58FD3B3B1F27606728077423EB21D8D6_2080180033 = (UNREACHABLE);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1031268786 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1031268786;
+        }
+    if(plan.isTunnelled() && !fact.isTunnelled())        
         {
-            boolean var21E9BF7F869C4A09A03DCCBEB9F4B6AA_1860840896 = (plan.isLayered() && !fact.isLayered());
-        } 
+        int varF06A253D9F2F306E5723BDA6A76A8B25_555972311 = (TUNNEL_TARGET);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_160118153 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_160118153;
+        }
+    if(plan.isLayered() && !fact.isLayered())        
         {
-            boolean var2F5D2B4DC814CD5AA57F6335D676F360_1673254865 = (plan.isSecure() != fact.isSecure());
-        } 
-        addTaint(plan.getTaint());
-        addTaint(fact.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1160074302 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1160074302;
-        
-        
+        int var7F8125505602529376F2DAD8DB0E3E4C_1010012854 = (LAYER_PROTOCOL);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1942721844 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1942721844;
+        }
+    if(plan.isSecure() != fact.isSecure())        
+        {
+        int var58FD3B3B1F27606728077423EB21D8D6_1602675401 = (UNREACHABLE);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1776212021 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1776212021;
+        }
+        int var3DE44296982E58199AFC513A715B12BA_1096403672 = (COMPLETE);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1620213055 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1620213055;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

@@ -1,12 +1,9 @@
 package android.content.res;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
@@ -16,925 +13,976 @@ import com.android.internal.util.XmlUtils;
 import java.util.Arrays;
 
 public class TypedArray {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.335 -0400", hash_original_field = "0D8AC9B29D5FDF7FAC18EB1269D7F6D0", hash_generated_field = "8872E9F5EB468B447DB47434F2C2FEC9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.690 -0400", hash_original_field = "0D8AC9B29D5FDF7FAC18EB1269D7F6D0", hash_generated_field = "8872E9F5EB468B447DB47434F2C2FEC9")
 
     private Resources mResources;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.336 -0400", hash_original_field = "31B55396FDC1E462D428736AFE79C5F1", hash_generated_field = "5B0AA5083BE633511718F93F8CB95A91")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.690 -0400", hash_original_field = "31B55396FDC1E462D428736AFE79C5F1", hash_generated_field = "5B0AA5083BE633511718F93F8CB95A91")
 
     XmlBlock.Parser mXml;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.336 -0400", hash_original_field = "BCD13DEF7A649738D722B3798B729E0B", hash_generated_field = "A4F8D1E493616053569BD2AC1F0ABB08")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.690 -0400", hash_original_field = "BCD13DEF7A649738D722B3798B729E0B", hash_generated_field = "A4F8D1E493616053569BD2AC1F0ABB08")
 
     int[] mRsrcs;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.336 -0400", hash_original_field = "B7DE4FF1B7CCEFDA36733D8B6DFF2904", hash_generated_field = "8C2374D33A80477A0B3E51CE7EB85544")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.691 -0400", hash_original_field = "B7DE4FF1B7CCEFDA36733D8B6DFF2904", hash_generated_field = "8C2374D33A80477A0B3E51CE7EB85544")
 
     int[] mData;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.336 -0400", hash_original_field = "38E6D9E425A40CF7C8EF997F011F479F", hash_generated_field = "2BB4F4BFBD9E11898040581D9D99B4FA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.691 -0400", hash_original_field = "38E6D9E425A40CF7C8EF997F011F479F", hash_generated_field = "2BB4F4BFBD9E11898040581D9D99B4FA")
 
     int[] mIndices;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.336 -0400", hash_original_field = "429F431E8CD8AC287AA27460675EAEFE", hash_generated_field = "FC3D477E7B6A4ACE9A379E6E41129BD1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.691 -0400", hash_original_field = "429F431E8CD8AC287AA27460675EAEFE", hash_generated_field = "FC3D477E7B6A4ACE9A379E6E41129BD1")
 
     int mLength;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.336 -0400", hash_original_field = "89FC4D18C6865D9655DB03AE7EA21F19", hash_generated_field = "654366000D5436FE48B31EFBD0B3756D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.691 -0400", hash_original_field = "89FC4D18C6865D9655DB03AE7EA21F19", hash_generated_field = "654366000D5436FE48B31EFBD0B3756D")
 
     TypedValue mValue = new TypedValue();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.336 -0400", hash_original_method = "6BEE97C5D6D0C7FC7BA11425183A3047", hash_generated_method = "32DEAC4AB87004418452846E3F423055")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.692 -0400", hash_original_method = "6BEE97C5D6D0C7FC7BA11425183A3047", hash_generated_method = "32DEAC4AB87004418452846E3F423055")
       TypedArray(Resources resources, int[] data, int[] indices, int len) {
         mResources = resources;
         mData = data;
         mIndices = indices;
         mLength = len;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mResources = resources;
+        //mData = data;
+        //mIndices = indices;
+        //mLength = len;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.337 -0400", hash_original_method = "C0D624CC7CEFFAF650D54F4FB963FAF6", hash_generated_method = "98052EEA65E589320BDBB898234656CB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.693 -0400", hash_original_method = "C0D624CC7CEFFAF650D54F4FB963FAF6", hash_generated_method = "339E3E5DAFF848E35C2FE2F7C23E257D")
     public int length() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1607897145 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1607897145;
-        
-        
+        int var429F431E8CD8AC287AA27460675EAEFE_1384299439 = (mLength);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_92674839 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_92674839;
+        // ---------- Original Method ----------
+        //return mLength;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.337 -0400", hash_original_method = "E11A0D9421BCBF5642F2B23C8115E006", hash_generated_method = "46EE56A32966ABA5ABBF822B0D24026C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.693 -0400", hash_original_method = "E11A0D9421BCBF5642F2B23C8115E006", hash_generated_method = "9FECEAFC8ECC1A4C6198ABD3E6FAF6A4")
     public int getIndexCount() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_204443745 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_204443745;
-        
-        
+        int varCBCFD99B62F4085DE81B9C51AEF99317_1678511388 = (mIndices[0]);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2077411590 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2077411590;
+        // ---------- Original Method ----------
+        //return mIndices[0];
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.338 -0400", hash_original_method = "757B3D64706707A79AF98EFF90D4FA5D", hash_generated_method = "977771BB5D831DF1E8960DB278F2F3BB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.694 -0400", hash_original_method = "757B3D64706707A79AF98EFF90D4FA5D", hash_generated_method = "1268861A5FB745CFC1FCC11EAE9DB90C")
     public int getIndex(int at) {
         addTaint(at);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_116453767 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_116453767;
-        
-        
+        int var6A0A6F300283CFEE125F1300DD149243_744285628 = (mIndices[1+at]);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_905750004 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_905750004;
+        // ---------- Original Method ----------
+        //return mIndices[1+at];
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.339 -0400", hash_original_method = "9FEC9CB1792EB215E49CBF732B0DBF5B", hash_generated_method = "C41E40E509B9B1CBCCE3E521EC1C6699")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.694 -0400", hash_original_method = "9FEC9CB1792EB215E49CBF732B0DBF5B", hash_generated_method = "5268A35CD79309A892F5BE570F6F694E")
     public Resources getResources() {
-        Resources varB4EAC82CA7396A68D541C85D26508E83_1458871943 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1458871943 = mResources;
-        varB4EAC82CA7396A68D541C85D26508E83_1458871943.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1458871943;
-        
-        
+Resources var346B953D96D762F7FED561E83C1656CA_1086665936 =         mResources;
+        var346B953D96D762F7FED561E83C1656CA_1086665936.addTaint(taint);
+        return var346B953D96D762F7FED561E83C1656CA_1086665936;
+        // ---------- Original Method ----------
+        //return mResources;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.340 -0400", hash_original_method = "CED8EF4F9A9EB72D36D43738FFFAF872", hash_generated_method = "0FA684417D95400FA533B0D530FFF218")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.695 -0400", hash_original_method = "CED8EF4F9A9EB72D36D43738FFFAF872", hash_generated_method = "5154FA2632506526753064FE2D102CA9")
     public CharSequence getText(int index) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1208170909 = null; 
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_2079086690 = null; 
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_786175622 = null; 
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1886532498 = null; 
+        addTaint(index);
         index *= AssetManager.STYLE_NUM_ENTRIES;
         final int[] data = mData;
         final int type = data[index+AssetManager.STYLE_TYPE];
+    if(type == TypedValue.TYPE_NULL)        
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1208170909 = null;
-        } 
+CharSequence var540C13E9E156B687226421B24F2DF178_557612171 =             null;
+            var540C13E9E156B687226421B24F2DF178_557612171.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_557612171;
+        } //End block
+        else
+    if(type == TypedValue.TYPE_STRING)        
         {
-            varB4EAC82CA7396A68D541C85D26508E83_2079086690 = loadStringValueAt(index);
-        } 
+CharSequence varFE71F37E0231268B2ED63AD36D2E0D73_1794209829 =             loadStringValueAt(index);
+            varFE71F37E0231268B2ED63AD36D2E0D73_1794209829.addTaint(taint);
+            return varFE71F37E0231268B2ED63AD36D2E0D73_1794209829;
+        } //End block
         TypedValue v = mValue;
+    if(getValueAt(index, v))        
         {
-            boolean varC077D91E50ABAB34FC57F7B260E457C3_1103989105 = (getValueAt(index, v));
-            {
-                varB4EAC82CA7396A68D541C85D26508E83_786175622 = v.coerceToString();
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1886532498 = null;
-        addTaint(index);
-        CharSequence varA7E53CE21691AB073D9660D615818899_748570518; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_748570518 = varB4EAC82CA7396A68D541C85D26508E83_1208170909;
-                break;
-            case 2: 
-                varA7E53CE21691AB073D9660D615818899_748570518 = varB4EAC82CA7396A68D541C85D26508E83_2079086690;
-                break;
-            case 3: 
-                varA7E53CE21691AB073D9660D615818899_748570518 = varB4EAC82CA7396A68D541C85D26508E83_786175622;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_748570518 = varB4EAC82CA7396A68D541C85D26508E83_1886532498;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_748570518.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_748570518;
-        
-        
-        
-        
-        
-            
-        
-            
-        
-        
-        
-            
-            
-        
-        
-              
-        
+CharSequence var2C8E21343D2B0A4401FE2DCD0A0846DE_1219433951 =             v.coerceToString();
+            var2C8E21343D2B0A4401FE2DCD0A0846DE_1219433951.addTaint(taint);
+            return var2C8E21343D2B0A4401FE2DCD0A0846DE_1219433951;
+        } //End block
+CharSequence var540C13E9E156B687226421B24F2DF178_1045508302 =         null;
+        var540C13E9E156B687226421B24F2DF178_1045508302.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_1045508302;
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type == TypedValue.TYPE_NULL) {
+            //return null;
+        //} else if (type == TypedValue.TYPE_STRING) {
+            //return loadStringValueAt(index);
+        //}
+        //TypedValue v = mValue;
+        //if (getValueAt(index, v)) {
+            //Log.w(Resources.TAG, "Converting to string: " + v);
+            //return v.coerceToString();
+        //}
+        //Log.w(Resources.TAG, "getString of bad type: 0x"
+              //+ Integer.toHexString(type));
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.342 -0400", hash_original_method = "CD99FAD2F71E14195C02F12EEC83DB33", hash_generated_method = "A96E361C5061FA90D79AD345CB076FB1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.696 -0400", hash_original_method = "CD99FAD2F71E14195C02F12EEC83DB33", hash_generated_method = "547B2FCC30698F8C74A8B4D4BBCB566D")
     public String getString(int index) {
-        String varB4EAC82CA7396A68D541C85D26508E83_809079353 = null; 
-        String varB4EAC82CA7396A68D541C85D26508E83_1331182871 = null; 
-        String varB4EAC82CA7396A68D541C85D26508E83_1495013916 = null; 
-        String varB4EAC82CA7396A68D541C85D26508E83_1245063560 = null; 
+        addTaint(index);
         index *= AssetManager.STYLE_NUM_ENTRIES;
         final int[] data = mData;
         final int type = data[index+AssetManager.STYLE_TYPE];
+    if(type == TypedValue.TYPE_NULL)        
         {
-            varB4EAC82CA7396A68D541C85D26508E83_809079353 = null;
-        } 
+String var540C13E9E156B687226421B24F2DF178_1738622276 =             null;
+            var540C13E9E156B687226421B24F2DF178_1738622276.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_1738622276;
+        } //End block
+        else
+    if(type == TypedValue.TYPE_STRING)        
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1331182871 = loadStringValueAt(index).toString();
-        } 
+String var64A041B790F9314358723EB5F60631DA_1290507739 =             loadStringValueAt(index).toString();
+            var64A041B790F9314358723EB5F60631DA_1290507739.addTaint(taint);
+            return var64A041B790F9314358723EB5F60631DA_1290507739;
+        } //End block
         TypedValue v = mValue;
+    if(getValueAt(index, v))        
         {
-            boolean varC077D91E50ABAB34FC57F7B260E457C3_1268599391 = (getValueAt(index, v));
-            {
-                CharSequence cs = v.coerceToString();
-                varB4EAC82CA7396A68D541C85D26508E83_1495013916 = cs != null ? cs.toString() : null;
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1245063560 = null;
-        addTaint(index);
-        String varA7E53CE21691AB073D9660D615818899_1470792385; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1470792385 = varB4EAC82CA7396A68D541C85D26508E83_809079353;
-                break;
-            case 2: 
-                varA7E53CE21691AB073D9660D615818899_1470792385 = varB4EAC82CA7396A68D541C85D26508E83_1331182871;
-                break;
-            case 3: 
-                varA7E53CE21691AB073D9660D615818899_1470792385 = varB4EAC82CA7396A68D541C85D26508E83_1495013916;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1470792385 = varB4EAC82CA7396A68D541C85D26508E83_1245063560;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1470792385.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1470792385;
-        
-        
-        
-        
-        
-            
-        
-            
-        
-        
-        
-            
-            
-            
-        
-        
-              
-        
+            CharSequence cs = v.coerceToString();
+String var48C761D210B750355CBC7ACAC2081BD2_89565136 =             cs != null ? cs.toString() : null;
+            var48C761D210B750355CBC7ACAC2081BD2_89565136.addTaint(taint);
+            return var48C761D210B750355CBC7ACAC2081BD2_89565136;
+        } //End block
+String var540C13E9E156B687226421B24F2DF178_116365074 =         null;
+        var540C13E9E156B687226421B24F2DF178_116365074.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_116365074;
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type == TypedValue.TYPE_NULL) {
+            //return null;
+        //} else if (type == TypedValue.TYPE_STRING) {
+            //return loadStringValueAt(index).toString();
+        //}
+        //TypedValue v = mValue;
+        //if (getValueAt(index, v)) {
+            //Log.w(Resources.TAG, "Converting to string: " + v);
+            //CharSequence cs = v.coerceToString();
+            //return cs != null ? cs.toString() : null;
+        //}
+        //Log.w(Resources.TAG, "getString of bad type: 0x"
+              //+ Integer.toHexString(type));
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.343 -0400", hash_original_method = "F340A97CD447E0B03B345E238525B650", hash_generated_method = "9A5B00D9418E88AA86605A1462F37D05")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.696 -0400", hash_original_method = "F340A97CD447E0B03B345E238525B650", hash_generated_method = "B9B0DD0DA7FBDFBD294E54D6278E7866")
     public String getNonResourceString(int index) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1814947072 = null; 
-        String varB4EAC82CA7396A68D541C85D26508E83_1391593887 = null; 
+        addTaint(index);
         index *= AssetManager.STYLE_NUM_ENTRIES;
         final int[] data = mData;
         final int type = data[index+AssetManager.STYLE_TYPE];
+    if(type == TypedValue.TYPE_STRING)        
         {
             final int cookie = data[index+AssetManager.STYLE_ASSET_COOKIE];
+    if(cookie < 0)            
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1814947072 = mXml.getPooledString(
+String varB9449F2AA54F253D8A562BA43198C02C_1802089509 =                 mXml.getPooledString(
                     data[index+AssetManager.STYLE_DATA]).toString();
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1391593887 = null;
-        addTaint(index);
-        String varA7E53CE21691AB073D9660D615818899_2127429751; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_2127429751 = varB4EAC82CA7396A68D541C85D26508E83_1814947072;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_2127429751 = varB4EAC82CA7396A68D541C85D26508E83_1391593887;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_2127429751.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_2127429751;
-        
-        
-        
-        
-        
-            
-            
-                
-                    
-            
-        
-        
+                varB9449F2AA54F253D8A562BA43198C02C_1802089509.addTaint(taint);
+                return varB9449F2AA54F253D8A562BA43198C02C_1802089509;
+            } //End block
+        } //End block
+String var540C13E9E156B687226421B24F2DF178_44763598 =         null;
+        var540C13E9E156B687226421B24F2DF178_44763598.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_44763598;
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type == TypedValue.TYPE_STRING) {
+            //final int cookie = data[index+AssetManager.STYLE_ASSET_COOKIE];
+            //if (cookie < 0) {
+                //return mXml.getPooledString(
+                    //data[index+AssetManager.STYLE_DATA]).toString();
+            //}
+        //}
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.344 -0400", hash_original_method = "5032E8B6CD1C41C8B00D83016FACB488", hash_generated_method = "AD5B3CAD5F67A6440A8142B8D8E6AFDA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.697 -0400", hash_original_method = "5032E8B6CD1C41C8B00D83016FACB488", hash_generated_method = "B6EEAAF749DCC4FFA819DFE383C3ACA6")
     public String getNonConfigurationString(int index, int allowedChangingConfigs) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1761247781 = null; 
-        String varB4EAC82CA7396A68D541C85D26508E83_1906206505 = null; 
-        String varB4EAC82CA7396A68D541C85D26508E83_1485831924 = null; 
-        String varB4EAC82CA7396A68D541C85D26508E83_1550493659 = null; 
-        String varB4EAC82CA7396A68D541C85D26508E83_1288185803 = null; 
-        index *= AssetManager.STYLE_NUM_ENTRIES;
-        final int[] data = mData;
-        final int type = data[index+AssetManager.STYLE_TYPE];
-        {
-            varB4EAC82CA7396A68D541C85D26508E83_1761247781 = null;
-        } 
-        {
-            varB4EAC82CA7396A68D541C85D26508E83_1906206505 = null;
-        } 
-        {
-            varB4EAC82CA7396A68D541C85D26508E83_1485831924 = loadStringValueAt(index).toString();
-        } 
-        TypedValue v = mValue;
-        {
-            boolean varC077D91E50ABAB34FC57F7B260E457C3_637722876 = (getValueAt(index, v));
-            {
-                CharSequence cs = v.coerceToString();
-                varB4EAC82CA7396A68D541C85D26508E83_1550493659 = cs != null ? cs.toString() : null;
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1288185803 = null;
-        addTaint(index);
         addTaint(allowedChangingConfigs);
-        String varA7E53CE21691AB073D9660D615818899_2082757108; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_2082757108 = varB4EAC82CA7396A68D541C85D26508E83_1761247781;
-                break;
-            case 2: 
-                varA7E53CE21691AB073D9660D615818899_2082757108 = varB4EAC82CA7396A68D541C85D26508E83_1906206505;
-                break;
-            case 3: 
-                varA7E53CE21691AB073D9660D615818899_2082757108 = varB4EAC82CA7396A68D541C85D26508E83_1485831924;
-                break;
-            case 4: 
-                varA7E53CE21691AB073D9660D615818899_2082757108 = varB4EAC82CA7396A68D541C85D26508E83_1550493659;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_2082757108 = varB4EAC82CA7396A68D541C85D26508E83_1288185803;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_2082757108.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_2082757108;
-        
-        
+        addTaint(index);
+        index *= AssetManager.STYLE_NUM_ENTRIES;
+        final int[] data = mData;
+        final int type = data[index+AssetManager.STYLE_TYPE];
+    if((data[index+AssetManager.STYLE_CHANGING_CONFIGURATIONS]&~allowedChangingConfigs) != 0)        
+        {
+String var540C13E9E156B687226421B24F2DF178_1348867894 =             null;
+            var540C13E9E156B687226421B24F2DF178_1348867894.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_1348867894;
+        } //End block
+    if(type == TypedValue.TYPE_NULL)        
+        {
+String var540C13E9E156B687226421B24F2DF178_1797425493 =             null;
+            var540C13E9E156B687226421B24F2DF178_1797425493.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_1797425493;
+        } //End block
+        else
+    if(type == TypedValue.TYPE_STRING)        
+        {
+String var64A041B790F9314358723EB5F60631DA_448625258 =             loadStringValueAt(index).toString();
+            var64A041B790F9314358723EB5F60631DA_448625258.addTaint(taint);
+            return var64A041B790F9314358723EB5F60631DA_448625258;
+        } //End block
+        TypedValue v = mValue;
+    if(getValueAt(index, v))        
+        {
+            CharSequence cs = v.coerceToString();
+String var48C761D210B750355CBC7ACAC2081BD2_406654713 =             cs != null ? cs.toString() : null;
+            var48C761D210B750355CBC7ACAC2081BD2_406654713.addTaint(taint);
+            return var48C761D210B750355CBC7ACAC2081BD2_406654713;
+        } //End block
+String var540C13E9E156B687226421B24F2DF178_915011578 =         null;
+        var540C13E9E156B687226421B24F2DF178_915011578.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_915011578;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.345 -0400", hash_original_method = "A16CEE5167173C9433B0C8031B10442D", hash_generated_method = "659833F99229647C9B5B62E7F3D0E9D8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.698 -0400", hash_original_method = "A16CEE5167173C9433B0C8031B10442D", hash_generated_method = "3154F92B835341CACB1C95D078A2DEB3")
     public boolean getBoolean(int index, boolean defValue) {
+        addTaint(defValue);
+        addTaint(index);
         index *= AssetManager.STYLE_NUM_ENTRIES;
         final int[] data = mData;
         final int type = data[index+AssetManager.STYLE_TYPE];
-        TypedValue v = mValue;
+    if(type == TypedValue.TYPE_NULL)        
         {
-            boolean varC077D91E50ABAB34FC57F7B260E457C3_1866658769 = (getValueAt(index, v));
-            {
-                boolean var1DF74E45E6A82013BAA808D2A0B17270_370066922 = (XmlUtils.convertValueToBoolean(
+            boolean var0C005749B1246DFDB5F6909C34026193_1373940264 = (defValue);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1739129037 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1739129037;
+        } //End block
+        else
+    if(type >= TypedValue.TYPE_FIRST_INT
+            && type <= TypedValue.TYPE_LAST_INT)        
+        {
+            boolean var0CE8B984FD52D0D9D4884EBD54C45C32_1772918139 = (data[index+AssetManager.STYLE_DATA] != 0);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_323321367 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_323321367;
+        } //End block
+        TypedValue v = mValue;
+    if(getValueAt(index, v))        
+        {
+            boolean varB39FBB646575158FECB38BC18FF05BC9_1935672938 = (XmlUtils.convertValueToBoolean(
                 v.coerceToString(), defValue));
-            } 
-        } 
-        addTaint(index);
-        addTaint(defValue);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1985730357 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1985730357;
-        
-        
-        
-        
-        
-            
-        
-            
-            
-        
-        
-        
-            
-            
-                
-        
-        
-              
-        
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1432657887 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1432657887;
+        } //End block
+        boolean var0C005749B1246DFDB5F6909C34026193_166663975 = (defValue);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1450833324 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1450833324;
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type == TypedValue.TYPE_NULL) {
+            //return defValue;
+        //} else if (type >= TypedValue.TYPE_FIRST_INT
+            //&& type <= TypedValue.TYPE_LAST_INT) {
+            //return data[index+AssetManager.STYLE_DATA] != 0;
+        //}
+        //TypedValue v = mValue;
+        //if (getValueAt(index, v)) {
+            //Log.w(Resources.TAG, "Converting to boolean: " + v);
+            //return XmlUtils.convertValueToBoolean(
+                //v.coerceToString(), defValue);
+        //}
+        //Log.w(Resources.TAG, "getBoolean of bad type: 0x"
+              //+ Integer.toHexString(type));
+        //return defValue;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.346 -0400", hash_original_method = "CE7034C3BE6468015CD54232F0A8137A", hash_generated_method = "D53F16F4CCA0BEEA8D5195CA2587BCF8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.699 -0400", hash_original_method = "CE7034C3BE6468015CD54232F0A8137A", hash_generated_method = "06574403B829F2128F487C02223D4D69")
     public int getInt(int index, int defValue) {
+        addTaint(defValue);
+        addTaint(index);
         index *= AssetManager.STYLE_NUM_ENTRIES;
         final int[] data = mData;
         final int type = data[index+AssetManager.STYLE_TYPE];
-        TypedValue v = mValue;
+    if(type == TypedValue.TYPE_NULL)        
         {
-            boolean varC077D91E50ABAB34FC57F7B260E457C3_49311814 = (getValueAt(index, v));
-            {
-                int varC43D63FC76D52470B82B43CB94577892_590556764 = (XmlUtils.convertValueToInt(
+            int var0C005749B1246DFDB5F6909C34026193_1075288056 = (defValue);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2059963583 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2059963583;
+        } //End block
+        else
+    if(type >= TypedValue.TYPE_FIRST_INT
+            && type <= TypedValue.TYPE_LAST_INT)        
+        {
+            int varFDFFC91BD3522FF60D6A3BB8827668A7_2111406464 = (data[index+AssetManager.STYLE_DATA]);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1055912274 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1055912274;
+        } //End block
+        TypedValue v = mValue;
+    if(getValueAt(index, v))        
+        {
+            int var7C0F02E8C82C7DA46920D32043E092A8_1635618455 = (XmlUtils.convertValueToInt(
                 v.coerceToString(), defValue));
-            } 
-        } 
-        addTaint(index);
-        addTaint(defValue);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1025755347 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1025755347;
-        
-        
-        
-        
-        
-            
-        
-            
-            
-        
-        
-        
-            
-            
-                
-        
-        
-              
-        
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_875379980 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_875379980;
+        } //End block
+        int var0C005749B1246DFDB5F6909C34026193_1591891459 = (defValue);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1624895252 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1624895252;
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type == TypedValue.TYPE_NULL) {
+            //return defValue;
+        //} else if (type >= TypedValue.TYPE_FIRST_INT
+            //&& type <= TypedValue.TYPE_LAST_INT) {
+            //return data[index+AssetManager.STYLE_DATA];
+        //}
+        //TypedValue v = mValue;
+        //if (getValueAt(index, v)) {
+            //Log.w(Resources.TAG, "Converting to int: " + v);
+            //return XmlUtils.convertValueToInt(
+                //v.coerceToString(), defValue);
+        //}
+        //Log.w(Resources.TAG, "getInt of bad type: 0x"
+              //+ Integer.toHexString(type));
+        //return defValue;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.346 -0400", hash_original_method = "011758172267C9B5DEB37AE215F4E3BC", hash_generated_method = "DC29D919F258C5FB12680BCDC45D2885")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.700 -0400", hash_original_method = "011758172267C9B5DEB37AE215F4E3BC", hash_generated_method = "CD078B0C6BF4C67B1DFE130BE55F2ACA")
     public float getFloat(int index, float defValue) {
+        addTaint(defValue);
+        addTaint(index);
         index *= AssetManager.STYLE_NUM_ENTRIES;
         final int[] data = mData;
         final int type = data[index+AssetManager.STYLE_TYPE];
+    if(type == TypedValue.TYPE_NULL)        
         {
-            float var3E5427D1CBE86332C74CFA40E97B9984_765323630 = (Float.intBitsToFloat(data[index+AssetManager.STYLE_DATA]));
-        } 
+            float var0C005749B1246DFDB5F6909C34026193_1330309162 = (defValue);
+                        float var546ADE640B6EDFBC8A086EF31347E768_1655132645 = getTaintFloat();
+            return var546ADE640B6EDFBC8A086EF31347E768_1655132645;
+        } //End block
+        else
+    if(type == TypedValue.TYPE_FLOAT)        
+        {
+            float varA40169C04CC424FE29909E57764E1240_1368191697 = (Float.intBitsToFloat(data[index+AssetManager.STYLE_DATA]));
+                        float var546ADE640B6EDFBC8A086EF31347E768_1264190988 = getTaintFloat();
+            return var546ADE640B6EDFBC8A086EF31347E768_1264190988;
+        } //End block
+        else
+    if(type >= TypedValue.TYPE_FIRST_INT
+            && type <= TypedValue.TYPE_LAST_INT)        
+        {
+            float varFDFFC91BD3522FF60D6A3BB8827668A7_1309732580 = (data[index+AssetManager.STYLE_DATA]);
+                        float var546ADE640B6EDFBC8A086EF31347E768_1914167758 = getTaintFloat();
+            return var546ADE640B6EDFBC8A086EF31347E768_1914167758;
+        } //End block
         TypedValue v = mValue;
+    if(getValueAt(index, v))        
         {
-            boolean varC077D91E50ABAB34FC57F7B260E457C3_1317404886 = (getValueAt(index, v));
+            CharSequence str = v.coerceToString();
+    if(str != null)            
             {
-                CharSequence str = v.coerceToString();
-                {
-                    float varA095623FA4816C8D5F54F27B395BD813_174665741 = (Float.parseFloat(str.toString()));
-                } 
-            } 
-        } 
-        addTaint(index);
-        addTaint(defValue);
-        float var546ADE640B6EDFBC8A086EF31347E768_561456163 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_561456163;
-        
-        
+                float var7262E3EE64C63FD62BA0CAE0EA220541_275365929 = (Float.parseFloat(str.toString()));
+                                float var546ADE640B6EDFBC8A086EF31347E768_1871706499 = getTaintFloat();
+                return var546ADE640B6EDFBC8A086EF31347E768_1871706499;
+            } //End block
+        } //End block
+        float var0C005749B1246DFDB5F6909C34026193_643107852 = (defValue);
+                float var546ADE640B6EDFBC8A086EF31347E768_926986163 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_926986163;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.347 -0400", hash_original_method = "7882F59751F929311CA11EC559C5A65E", hash_generated_method = "56AF5BB8183C06F8BA576098EBA6943B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.701 -0400", hash_original_method = "7882F59751F929311CA11EC559C5A65E", hash_generated_method = "61F0E16577EC3B054811594BEAD5D814")
     public int getColor(int index, int defValue) {
+        addTaint(defValue);
+        addTaint(index);
         index *= AssetManager.STYLE_NUM_ENTRIES;
         final int[] data = mData;
         final int type = data[index+AssetManager.STYLE_TYPE];
+    if(type == TypedValue.TYPE_NULL)        
+        {
+            int var0C005749B1246DFDB5F6909C34026193_78749979 = (defValue);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1177695803 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1177695803;
+        } //End block
+        else
+    if(type >= TypedValue.TYPE_FIRST_INT
+            && type <= TypedValue.TYPE_LAST_INT)        
+        {
+            int varFDFFC91BD3522FF60D6A3BB8827668A7_1184527912 = (data[index+AssetManager.STYLE_DATA]);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1439973622 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1439973622;
+        } //End block
+        else
+    if(type == TypedValue.TYPE_STRING)        
         {
             final TypedValue value = mValue;
+    if(getValueAt(index, value))            
             {
-                boolean varA79D37EDC713ED72ECAC40127D9AD5BF_990003951 = (getValueAt(index, value));
-                {
-                    ColorStateList csl = mResources.loadColorStateList(
+                ColorStateList csl = mResources.loadColorStateList(
                         value, value.resourceId);
-                    int var9E880B265D1656C4842E5CF05322598D_645829682 = (csl.getDefaultColor());
-                } 
-            } 
-        } 
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("Can't convert to color: type=0x"
+                int var90DA607A89399855C664ACB81336CEB7_777874496 = (csl.getDefaultColor());
+                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1635790147 = getTaintInt();
+                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1635790147;
+            } //End block
+            int var0C005749B1246DFDB5F6909C34026193_965854290 = (defValue);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2017345169 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2017345169;
+        } //End block
+        UnsupportedOperationException var71470B063586A7B6099980B20674FC5B_1833430522 = new UnsupportedOperationException("Can't convert to color: type=0x"
                 + Integer.toHexString(type));
-        addTaint(index);
-        addTaint(defValue);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1260250688 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1260250688;
-        
-        
+        var71470B063586A7B6099980B20674FC5B_1833430522.addTaint(taint);
+        throw var71470B063586A7B6099980B20674FC5B_1833430522;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.348 -0400", hash_original_method = "1A4CBA2C97DB5340F77B643957B9F4A1", hash_generated_method = "DDC5AEF12FDDB9A104E9C5E5F349E97B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.702 -0400", hash_original_method = "1A4CBA2C97DB5340F77B643957B9F4A1", hash_generated_method = "5B2542027BC8A24EB577C2A9B41B6C7D")
     public ColorStateList getColorStateList(int index) {
-        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_1039996699 = null; 
-        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_1962507985 = null; 
+        addTaint(index);
         final TypedValue value = mValue;
+    if(getValueAt(index*AssetManager.STYLE_NUM_ENTRIES, value))        
         {
-            boolean var2E44B47547B27660D18B43B98A986F1E_1738918512 = (getValueAt(index*AssetManager.STYLE_NUM_ENTRIES, value));
-            {
-                varB4EAC82CA7396A68D541C85D26508E83_1039996699 = mResources.loadColorStateList(value, value.resourceId);
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1962507985 = null;
-        addTaint(index);
-        ColorStateList varA7E53CE21691AB073D9660D615818899_1689733581; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1689733581 = varB4EAC82CA7396A68D541C85D26508E83_1039996699;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1689733581 = varB4EAC82CA7396A68D541C85D26508E83_1962507985;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1689733581.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1689733581;
-        
-        
-        
-            
-        
-        
+ColorStateList var7C9C7C605F72EFD6C3AEEFB96F806FB5_1109317845 =             mResources.loadColorStateList(value, value.resourceId);
+            var7C9C7C605F72EFD6C3AEEFB96F806FB5_1109317845.addTaint(taint);
+            return var7C9C7C605F72EFD6C3AEEFB96F806FB5_1109317845;
+        } //End block
+ColorStateList var540C13E9E156B687226421B24F2DF178_586706768 =         null;
+        var540C13E9E156B687226421B24F2DF178_586706768.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_586706768;
+        // ---------- Original Method ----------
+        //final TypedValue value = mValue;
+        //if (getValueAt(index*AssetManager.STYLE_NUM_ENTRIES, value)) {
+            //return mResources.loadColorStateList(value, value.resourceId);
+        //}
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.349 -0400", hash_original_method = "79362C29C94DC5BFF9E1A7E9D64A3B8E", hash_generated_method = "2BB7F5A9ECFA05B50F60C82C1B2DF1AE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.703 -0400", hash_original_method = "79362C29C94DC5BFF9E1A7E9D64A3B8E", hash_generated_method = "D92C5044F085175EFF9FA37C389091E2")
     public int getInteger(int index, int defValue) {
+        addTaint(defValue);
+        addTaint(index);
         index *= AssetManager.STYLE_NUM_ENTRIES;
         final int[] data = mData;
         final int type = data[index+AssetManager.STYLE_TYPE];
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("Can't convert to integer: type=0x"
+    if(type == TypedValue.TYPE_NULL)        
+        {
+            int var0C005749B1246DFDB5F6909C34026193_2019616056 = (defValue);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_328708922 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_328708922;
+        } //End block
+        else
+    if(type >= TypedValue.TYPE_FIRST_INT
+            && type <= TypedValue.TYPE_LAST_INT)        
+        {
+            int varFDFFC91BD3522FF60D6A3BB8827668A7_799028881 = (data[index+AssetManager.STYLE_DATA]);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_762498537 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_762498537;
+        } //End block
+        UnsupportedOperationException var8C8AB64BD80FA7B626E771A9DDA3439B_895694037 = new UnsupportedOperationException("Can't convert to integer: type=0x"
                 + Integer.toHexString(type));
-        addTaint(index);
-        addTaint(defValue);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_75754416 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_75754416;
-        
-        
-        
-        
-        
-            
-        
-            
-            
-        
-        
-                
+        var8C8AB64BD80FA7B626E771A9DDA3439B_895694037.addTaint(taint);
+        throw var8C8AB64BD80FA7B626E771A9DDA3439B_895694037;
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type == TypedValue.TYPE_NULL) {
+            //return defValue;
+        //} else if (type >= TypedValue.TYPE_FIRST_INT
+            //&& type <= TypedValue.TYPE_LAST_INT) {
+            //return data[index+AssetManager.STYLE_DATA];
+        //}
+        //throw new UnsupportedOperationException("Can't convert to integer: type=0x"
+                //+ Integer.toHexString(type));
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.350 -0400", hash_original_method = "C0FC3CC7AE2D97843F00F5A6AEA9712A", hash_generated_method = "2AD105BAE89E9936898564E8DE84C769")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.704 -0400", hash_original_method = "C0FC3CC7AE2D97843F00F5A6AEA9712A", hash_generated_method = "53C23FCFA48B068A348067182848B6D6")
     public float getDimension(int index, float defValue) {
+        addTaint(defValue);
+        addTaint(index);
         index *= AssetManager.STYLE_NUM_ENTRIES;
         final int[] data = mData;
         final int type = data[index+AssetManager.STYLE_TYPE];
+    if(type == TypedValue.TYPE_NULL)        
         {
-            float varA1522486184585892ADD51886D88796F_310407762 = (TypedValue.complexToDimension(
+            float var0C005749B1246DFDB5F6909C34026193_522378277 = (defValue);
+                        float var546ADE640B6EDFBC8A086EF31347E768_388218885 = getTaintFloat();
+            return var546ADE640B6EDFBC8A086EF31347E768_388218885;
+        } //End block
+        else
+    if(type == TypedValue.TYPE_DIMENSION)        
+        {
+            float varC68BC678885371EC1DF2E25CF7D8D14C_1111411991 = (TypedValue.complexToDimension(
                 data[index+AssetManager.STYLE_DATA], mResources.mMetrics));
-        } 
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("Can't convert to dimension: type=0x"
+                        float var546ADE640B6EDFBC8A086EF31347E768_603785348 = getTaintFloat();
+            return var546ADE640B6EDFBC8A086EF31347E768_603785348;
+        } //End block
+        UnsupportedOperationException var60E90C7265C27F9135089FD1FAE1F298_2073365260 = new UnsupportedOperationException("Can't convert to dimension: type=0x"
                 + Integer.toHexString(type));
-        addTaint(index);
-        addTaint(defValue);
-        float var546ADE640B6EDFBC8A086EF31347E768_557794437 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_557794437;
-        
-        
-        
-        
-        
-            
-        
-            
-                
-        
-        
-                
+        var60E90C7265C27F9135089FD1FAE1F298_2073365260.addTaint(taint);
+        throw var60E90C7265C27F9135089FD1FAE1F298_2073365260;
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type == TypedValue.TYPE_NULL) {
+            //return defValue;
+        //} else if (type == TypedValue.TYPE_DIMENSION) {
+            //return TypedValue.complexToDimension(
+                //data[index+AssetManager.STYLE_DATA], mResources.mMetrics);
+        //}
+        //throw new UnsupportedOperationException("Can't convert to dimension: type=0x"
+                //+ Integer.toHexString(type));
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.351 -0400", hash_original_method = "77814E0587E00AA950C757CAE37F97F1", hash_generated_method = "08A0A988C20EF1A6A79FFC3605EB07FA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.705 -0400", hash_original_method = "77814E0587E00AA950C757CAE37F97F1", hash_generated_method = "8A66CFE2D14A101B3AEE6C2F3FCB823A")
     public int getDimensionPixelOffset(int index, int defValue) {
+        addTaint(defValue);
+        addTaint(index);
         index *= AssetManager.STYLE_NUM_ENTRIES;
         final int[] data = mData;
         final int type = data[index+AssetManager.STYLE_TYPE];
+    if(type == TypedValue.TYPE_NULL)        
         {
-            int var4A5F9DBCA23B6EA0EA6FDF95426DA4CC_1629085639 = (TypedValue.complexToDimensionPixelOffset(
+            int var0C005749B1246DFDB5F6909C34026193_1439705831 = (defValue);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1052386866 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1052386866;
+        } //End block
+        else
+    if(type == TypedValue.TYPE_DIMENSION)        
+        {
+            int varB51CE27A1C43B19BB608E3E6CF9DBA8B_571064892 = (TypedValue.complexToDimensionPixelOffset(
                 data[index+AssetManager.STYLE_DATA], mResources.mMetrics));
-        } 
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("Can't convert to dimension: type=0x"
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_503121637 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_503121637;
+        } //End block
+        UnsupportedOperationException var60E90C7265C27F9135089FD1FAE1F298_1128566817 = new UnsupportedOperationException("Can't convert to dimension: type=0x"
                 + Integer.toHexString(type));
-        addTaint(index);
-        addTaint(defValue);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1556417201 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1556417201;
-        
-        
-        
-        
-        
-            
-        
-            
-                
-        
-        
-                
+        var60E90C7265C27F9135089FD1FAE1F298_1128566817.addTaint(taint);
+        throw var60E90C7265C27F9135089FD1FAE1F298_1128566817;
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type == TypedValue.TYPE_NULL) {
+            //return defValue;
+        //} else if (type == TypedValue.TYPE_DIMENSION) {
+            //return TypedValue.complexToDimensionPixelOffset(
+                //data[index+AssetManager.STYLE_DATA], mResources.mMetrics);
+        //}
+        //throw new UnsupportedOperationException("Can't convert to dimension: type=0x"
+                //+ Integer.toHexString(type));
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.352 -0400", hash_original_method = "FEB58959DB31428B407FA8A9132D2CB5", hash_generated_method = "B6DA30F99C37A14DBAFD9FB47E7A60D4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.707 -0400", hash_original_method = "FEB58959DB31428B407FA8A9132D2CB5", hash_generated_method = "C3EDA9FFFE06964936D502D43591001C")
     public int getDimensionPixelSize(int index, int defValue) {
+        addTaint(defValue);
+        addTaint(index);
         index *= AssetManager.STYLE_NUM_ENTRIES;
         final int[] data = mData;
         final int type = data[index+AssetManager.STYLE_TYPE];
+    if(type == TypedValue.TYPE_NULL)        
         {
-            int var922D68BAEC7F02CD7AA1064E49243482_723795305 = (TypedValue.complexToDimensionPixelSize(
+            int var0C005749B1246DFDB5F6909C34026193_437539535 = (defValue);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1627016767 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1627016767;
+        } //End block
+        else
+    if(type == TypedValue.TYPE_DIMENSION)        
+        {
+            int var8E99B144C6D8C2AA2554740CD4F18B6B_1951406931 = (TypedValue.complexToDimensionPixelSize(
                 data[index+AssetManager.STYLE_DATA], mResources.mMetrics));
-        } 
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("Can't convert to dimension: type=0x"
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1640138413 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1640138413;
+        } //End block
+        UnsupportedOperationException var60E90C7265C27F9135089FD1FAE1F298_888784543 = new UnsupportedOperationException("Can't convert to dimension: type=0x"
                 + Integer.toHexString(type));
-        addTaint(index);
-        addTaint(defValue);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1314074862 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1314074862;
-        
-        
-        
-        
-        
-            
-        
-            
-                
-        
-        
-                
+        var60E90C7265C27F9135089FD1FAE1F298_888784543.addTaint(taint);
+        throw var60E90C7265C27F9135089FD1FAE1F298_888784543;
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type == TypedValue.TYPE_NULL) {
+            //return defValue;
+        //} else if (type == TypedValue.TYPE_DIMENSION) {
+            //return TypedValue.complexToDimensionPixelSize(
+                //data[index+AssetManager.STYLE_DATA], mResources.mMetrics);
+        //}
+        //throw new UnsupportedOperationException("Can't convert to dimension: type=0x"
+                //+ Integer.toHexString(type));
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.353 -0400", hash_original_method = "DB4A9B1FF17810BF297E37812D056BD1", hash_generated_method = "233A039EE7222465C2671E491366701D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.708 -0400", hash_original_method = "DB4A9B1FF17810BF297E37812D056BD1", hash_generated_method = "98565AE78BB69E4629174FB651203C99")
     public int getLayoutDimension(int index, String name) {
-        index *= AssetManager.STYLE_NUM_ENTRIES;
-        final int[] data = mData;
-        final int type = data[index+AssetManager.STYLE_TYPE];
-        {
-            int var922D68BAEC7F02CD7AA1064E49243482_484385695 = (TypedValue.complexToDimensionPixelSize(
-                data[index+AssetManager.STYLE_DATA], mResources.mMetrics));
-        } 
-        if (DroidSafeAndroidRuntime.control) throw new RuntimeException(getPositionDescription()
-                + ": You must supply a " + name + " attribute.");
-        addTaint(index);
         addTaint(name.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_685863323 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_685863323;
-        
-        
-        
-        
-        
-                
-            
-        
-            
-                
-        
-        
-                
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.354 -0400", hash_original_method = "A72B2EF9D0CF1F1E691D4D81DC434823", hash_generated_method = "0178B499486C88D81E1B9AA8CE52D196")
-    public int getLayoutDimension(int index, int defValue) {
+        addTaint(index);
         index *= AssetManager.STYLE_NUM_ENTRIES;
         final int[] data = mData;
         final int type = data[index+AssetManager.STYLE_TYPE];
+    if(type >= TypedValue.TYPE_FIRST_INT
+                && type <= TypedValue.TYPE_LAST_INT)        
         {
-            int var922D68BAEC7F02CD7AA1064E49243482_1931492170 = (TypedValue.complexToDimensionPixelSize(
+            int varFDFFC91BD3522FF60D6A3BB8827668A7_717683612 = (data[index+AssetManager.STYLE_DATA]);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_692684802 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_692684802;
+        } //End block
+        else
+    if(type == TypedValue.TYPE_DIMENSION)        
+        {
+            int var8E99B144C6D8C2AA2554740CD4F18B6B_1644955106 = (TypedValue.complexToDimensionPixelSize(
                 data[index+AssetManager.STYLE_DATA], mResources.mMetrics));
-        } 
-        addTaint(index);
-        addTaint(defValue);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1752657645 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1752657645;
-        
-        
-        
-        
-        
-                
-            
-        
-            
-                
-        
-        
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1612759390 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1612759390;
+        } //End block
+        RuntimeException var51FA9FB57E57B0746BFCE79AEF53EEAE_311218485 = new RuntimeException(getPositionDescription()
+                + ": You must supply a " + name + " attribute.");
+        var51FA9FB57E57B0746BFCE79AEF53EEAE_311218485.addTaint(taint);
+        throw var51FA9FB57E57B0746BFCE79AEF53EEAE_311218485;
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type >= TypedValue.TYPE_FIRST_INT
+                //&& type <= TypedValue.TYPE_LAST_INT) {
+            //return data[index+AssetManager.STYLE_DATA];
+        //} else if (type == TypedValue.TYPE_DIMENSION) {
+            //return TypedValue.complexToDimensionPixelSize(
+                //data[index+AssetManager.STYLE_DATA], mResources.mMetrics);
+        //}
+        //throw new RuntimeException(getPositionDescription()
+                //+ ": You must supply a " + name + " attribute.");
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.354 -0400", hash_original_method = "57D8AC3F2B2D48B77A0EB4868F247839", hash_generated_method = "A5649F49147E8EB474D14551072EBFC7")
-    public float getFraction(int index, int base, int pbase, float defValue) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.709 -0400", hash_original_method = "A72B2EF9D0CF1F1E691D4D81DC434823", hash_generated_method = "76796DDC442C6D789E1CD724E3760EFF")
+    public int getLayoutDimension(int index, int defValue) {
+        addTaint(defValue);
+        addTaint(index);
         index *= AssetManager.STYLE_NUM_ENTRIES;
         final int[] data = mData;
         final int type = data[index+AssetManager.STYLE_TYPE];
+    if(type >= TypedValue.TYPE_FIRST_INT
+                && type <= TypedValue.TYPE_LAST_INT)        
         {
-            float var783B7664A89710D9D988B33835D0AC9D_360235684 = (TypedValue.complexToFraction(
-                data[index+AssetManager.STYLE_DATA], base, pbase));
-        } 
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("Can't convert to fraction: type=0x"
-                + Integer.toHexString(type));
-        addTaint(index);
-        addTaint(base);
-        addTaint(pbase);
-        addTaint(defValue);
-        float var546ADE640B6EDFBC8A086EF31347E768_595773990 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_595773990;
-        
-        
-        
-        
-        
-            
-        
-            
-                
-        
-        
-                
+            int varFDFFC91BD3522FF60D6A3BB8827668A7_489746039 = (data[index+AssetManager.STYLE_DATA]);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_736818953 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_736818953;
+        } //End block
+        else
+    if(type == TypedValue.TYPE_DIMENSION)        
+        {
+            int var8E99B144C6D8C2AA2554740CD4F18B6B_626290657 = (TypedValue.complexToDimensionPixelSize(
+                data[index+AssetManager.STYLE_DATA], mResources.mMetrics));
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1222050305 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1222050305;
+        } //End block
+        int var0C005749B1246DFDB5F6909C34026193_547175916 = (defValue);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1474628389 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1474628389;
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type >= TypedValue.TYPE_FIRST_INT
+                //&& type <= TypedValue.TYPE_LAST_INT) {
+            //return data[index+AssetManager.STYLE_DATA];
+        //} else if (type == TypedValue.TYPE_DIMENSION) {
+            //return TypedValue.complexToDimensionPixelSize(
+                //data[index+AssetManager.STYLE_DATA], mResources.mMetrics);
+        //}
+        //return defValue;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.355 -0400", hash_original_method = "DF47714E2511EE2CB8E5736FC0D36FFE", hash_generated_method = "93E40159E4A91BC6FB375E14B7C0CED8")
-    public int getResourceId(int index, int defValue) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.710 -0400", hash_original_method = "57D8AC3F2B2D48B77A0EB4868F247839", hash_generated_method = "26800E39FD7D545F496382EE8065DF14")
+    public float getFraction(int index, int base, int pbase, float defValue) {
+        addTaint(defValue);
+        addTaint(pbase);
+        addTaint(base);
+        addTaint(index);
         index *= AssetManager.STYLE_NUM_ENTRIES;
         final int[] data = mData;
+        final int type = data[index+AssetManager.STYLE_TYPE];
+    if(type == TypedValue.TYPE_NULL)        
+        {
+            float var0C005749B1246DFDB5F6909C34026193_1331880292 = (defValue);
+                        float var546ADE640B6EDFBC8A086EF31347E768_1576880914 = getTaintFloat();
+            return var546ADE640B6EDFBC8A086EF31347E768_1576880914;
+        } //End block
+        else
+    if(type == TypedValue.TYPE_FRACTION)        
+        {
+            float var8A54764FBAFB3D02129FEF8A8E5CA579_2126315759 = (TypedValue.complexToFraction(
+                data[index+AssetManager.STYLE_DATA], base, pbase));
+                        float var546ADE640B6EDFBC8A086EF31347E768_1441441671 = getTaintFloat();
+            return var546ADE640B6EDFBC8A086EF31347E768_1441441671;
+        } //End block
+        UnsupportedOperationException varCF896F22EB53276BC9ADA3E6A43FC9FA_606060900 = new UnsupportedOperationException("Can't convert to fraction: type=0x"
+                + Integer.toHexString(type));
+        varCF896F22EB53276BC9ADA3E6A43FC9FA_606060900.addTaint(taint);
+        throw varCF896F22EB53276BC9ADA3E6A43FC9FA_606060900;
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type == TypedValue.TYPE_NULL) {
+            //return defValue;
+        //} else if (type == TypedValue.TYPE_FRACTION) {
+            //return TypedValue.complexToFraction(
+                //data[index+AssetManager.STYLE_DATA], base, pbase);
+        //}
+        //throw new UnsupportedOperationException("Can't convert to fraction: type=0x"
+                //+ Integer.toHexString(type));
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.711 -0400", hash_original_method = "DF47714E2511EE2CB8E5736FC0D36FFE", hash_generated_method = "663937278DC662A10D210FF72DFD7377")
+    public int getResourceId(int index, int defValue) {
+        addTaint(defValue);
+        addTaint(index);
+        index *= AssetManager.STYLE_NUM_ENTRIES;
+        final int[] data = mData;
+    if(data[index+AssetManager.STYLE_TYPE] != TypedValue.TYPE_NULL)        
         {
             final int resid = data[index+AssetManager.STYLE_RESOURCE_ID];
-        } 
-        addTaint(index);
-        addTaint(defValue);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_372971428 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_372971428;
-        
-        
-        
-        
-            
-            
-                
-            
-        
-        
+    if(resid != 0)            
+            {
+                int var9C5DC71F9C3AB4FEBAA17E7B42553A5B_812925222 = (resid);
+                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_608147271 = getTaintInt();
+                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_608147271;
+            } //End block
+        } //End block
+        int var0C005749B1246DFDB5F6909C34026193_550507397 = (defValue);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1799886684 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1799886684;
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //if (data[index+AssetManager.STYLE_TYPE] != TypedValue.TYPE_NULL) {
+            //final int resid = data[index+AssetManager.STYLE_RESOURCE_ID];
+            //if (resid != 0) {
+                //return resid;
+            //}
+        //}
+        //return defValue;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.356 -0400", hash_original_method = "4764631566003CBA3FBDF6AEC7E40184", hash_generated_method = "44A2BCC74BC114E453A16850DBD30985")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.712 -0400", hash_original_method = "4764631566003CBA3FBDF6AEC7E40184", hash_generated_method = "A1D6C151001CBE25CD3FFE7691B530D8")
     public Drawable getDrawable(int index) {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_340396536 = null; 
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1337540477 = null; 
+        addTaint(index);
         final TypedValue value = mValue;
+    if(getValueAt(index*AssetManager.STYLE_NUM_ENTRIES, value))        
         {
-            boolean var2E44B47547B27660D18B43B98A986F1E_764837824 = (getValueAt(index*AssetManager.STYLE_NUM_ENTRIES, value));
+    if(false)            
             {
-                {
-                    System.out.println("******************************************************************");
-                    System.out.println("Got drawable resource: type="
+                System.out.println("******************************************************************");
+                System.out.println("Got drawable resource: type="
                                    + value.type
                                    + " str=" + value.string
                                    + " int=0x" + Integer.toHexString(value.data)
                                    + " cookie=" + value.assetCookie);
-                    System.out.println("******************************************************************");
-                } 
-                varB4EAC82CA7396A68D541C85D26508E83_340396536 = mResources.loadDrawable(value, value.resourceId);
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1337540477 = null;
-        addTaint(index);
-        Drawable varA7E53CE21691AB073D9660D615818899_1197525932; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1197525932 = varB4EAC82CA7396A68D541C85D26508E83_340396536;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1197525932 = varB4EAC82CA7396A68D541C85D26508E83_1337540477;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1197525932.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1197525932;
-        
-        
-        
-            
-                
-                
-                                   
-                                   
-                                   
-                                   
-                
-            
-            
-        
-        
+                System.out.println("******************************************************************");
+            } //End block
+Drawable var9CD9F2C7F5CF532C97D6207826992225_997814796 =             mResources.loadDrawable(value, value.resourceId);
+            var9CD9F2C7F5CF532C97D6207826992225_997814796.addTaint(taint);
+            return var9CD9F2C7F5CF532C97D6207826992225_997814796;
+        } //End block
+Drawable var540C13E9E156B687226421B24F2DF178_199963215 =         null;
+        var540C13E9E156B687226421B24F2DF178_199963215.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_199963215;
+        // ---------- Original Method ----------
+        //final TypedValue value = mValue;
+        //if (getValueAt(index*AssetManager.STYLE_NUM_ENTRIES, value)) {
+            //if (false) {
+                //System.out.println("******************************************************************");
+                //System.out.println("Got drawable resource: type="
+                                   //+ value.type
+                                   //+ " str=" + value.string
+                                   //+ " int=0x" + Integer.toHexString(value.data)
+                                   //+ " cookie=" + value.assetCookie);
+                //System.out.println("******************************************************************");
+            //}
+            //return mResources.loadDrawable(value, value.resourceId);
+        //}
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.357 -0400", hash_original_method = "DE841974CEC89F1656E36D821FAC9EE9", hash_generated_method = "AF16DE4741F3AEDB7950CC6DD1797BB5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.713 -0400", hash_original_method = "DE841974CEC89F1656E36D821FAC9EE9", hash_generated_method = "3940C1082987545274339015724BC5AB")
     public CharSequence[] getTextArray(int index) {
-        CharSequence[] varB4EAC82CA7396A68D541C85D26508E83_1947935318 = null; 
-        CharSequence[] varB4EAC82CA7396A68D541C85D26508E83_1246120169 = null; 
+        addTaint(index);
         final TypedValue value = mValue;
+    if(getValueAt(index*AssetManager.STYLE_NUM_ENTRIES, value))        
         {
-            boolean var2E44B47547B27660D18B43B98A986F1E_515917503 = (getValueAt(index*AssetManager.STYLE_NUM_ENTRIES, value));
+    if(false)            
             {
-                {
-                    System.out.println("******************************************************************");
-                    System.out.println("Got drawable resource: type="
+                System.out.println("******************************************************************");
+                System.out.println("Got drawable resource: type="
                                    + value.type
                                    + " str=" + value.string
                                    + " int=0x" + Integer.toHexString(value.data)
                                    + " cookie=" + value.assetCookie);
-                    System.out.println("******************************************************************");
-                } 
-                varB4EAC82CA7396A68D541C85D26508E83_1947935318 = mResources.getTextArray(value.resourceId);
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1246120169 = null;
-        addTaint(index);
-        CharSequence[] varA7E53CE21691AB073D9660D615818899_1924226257; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1924226257 = varB4EAC82CA7396A68D541C85D26508E83_1947935318;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1924226257 = varB4EAC82CA7396A68D541C85D26508E83_1246120169;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1924226257.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1924226257;
-        
-        
-        
-            
-                
-                
-                                   
-                                   
-                                   
-                                   
-                
-            
-            
-        
-        
+                System.out.println("******************************************************************");
+            } //End block
+CharSequence[] var9B185D6E2C129A747CB021868828E1FB_1422932018 =             mResources.getTextArray(value.resourceId);
+            var9B185D6E2C129A747CB021868828E1FB_1422932018.addTaint(taint);
+            return var9B185D6E2C129A747CB021868828E1FB_1422932018;
+        } //End block
+CharSequence[] var540C13E9E156B687226421B24F2DF178_712422274 =         null;
+        var540C13E9E156B687226421B24F2DF178_712422274.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_712422274;
+        // ---------- Original Method ----------
+        //final TypedValue value = mValue;
+        //if (getValueAt(index*AssetManager.STYLE_NUM_ENTRIES, value)) {
+            //if (false) {
+                //System.out.println("******************************************************************");
+                //System.out.println("Got drawable resource: type="
+                                   //+ value.type
+                                   //+ " str=" + value.string
+                                   //+ " int=0x" + Integer.toHexString(value.data)
+                                   //+ " cookie=" + value.assetCookie);
+                //System.out.println("******************************************************************");
+            //}
+            //return mResources.getTextArray(value.resourceId);
+        //}
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.357 -0400", hash_original_method = "0C857F8AC76CD5CFBE7569B581103BDD", hash_generated_method = "71E092A2B596DE9E6476D4DD2D674A82")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.713 -0400", hash_original_method = "0C857F8AC76CD5CFBE7569B581103BDD", hash_generated_method = "C2C6655C93BFEFD4347418143DDA5F75")
     public boolean getValue(int index, TypedValue outValue) {
-        boolean varA337BC1324677280D08B6023F41FDF45_1615821093 = (getValueAt(index*AssetManager.STYLE_NUM_ENTRIES, outValue));
-        addTaint(index);
         addTaint(outValue.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2025373774 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2025373774;
-        
-        
+        addTaint(index);
+        boolean var22F6889BB5F70FB4653E25BBBCB03D57_1657321985 = (getValueAt(index*AssetManager.STYLE_NUM_ENTRIES, outValue));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1687830874 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1687830874;
+        // ---------- Original Method ----------
+        //return getValueAt(index*AssetManager.STYLE_NUM_ENTRIES, outValue);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.358 -0400", hash_original_method = "0EF762AB49E40F4FF6959DF2595733A2", hash_generated_method = "4765E56DC7E3EC32053A528C27D92236")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.714 -0400", hash_original_method = "0EF762AB49E40F4FF6959DF2595733A2", hash_generated_method = "EB4E6201FFC3FA3C784A4190BB714692")
     public boolean hasValue(int index) {
+        addTaint(index);
         index *= AssetManager.STYLE_NUM_ENTRIES;
         final int[] data = mData;
         final int type = data[index+AssetManager.STYLE_TYPE];
-        addTaint(index);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_408654732 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_408654732;
-        
-        
-        
-        
-        
+        boolean var8F37846CC3DB18B76C036D1B7DA857FE_1936973446 = (type != TypedValue.TYPE_NULL);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1867190933 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1867190933;
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //return type != TypedValue.TYPE_NULL;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.359 -0400", hash_original_method = "0D8F28067488CFE0F25A0D66713982F4", hash_generated_method = "4D7332CEEC75D74FDEA2DA7F6C9820EF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.716 -0400", hash_original_method = "0D8F28067488CFE0F25A0D66713982F4", hash_generated_method = "94184630EC6D41DAED2F23F55225ACD3")
     public TypedValue peekValue(int index) {
-        TypedValue varB4EAC82CA7396A68D541C85D26508E83_1971181427 = null; 
-        TypedValue varB4EAC82CA7396A68D541C85D26508E83_705222162 = null; 
-        final TypedValue value = mValue;
-        {
-            boolean var2E44B47547B27660D18B43B98A986F1E_520842803 = (getValueAt(index*AssetManager.STYLE_NUM_ENTRIES, value));
-            {
-                varB4EAC82CA7396A68D541C85D26508E83_1971181427 = value;
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_705222162 = null;
         addTaint(index);
-        TypedValue varA7E53CE21691AB073D9660D615818899_398717494; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_398717494 = varB4EAC82CA7396A68D541C85D26508E83_1971181427;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_398717494 = varB4EAC82CA7396A68D541C85D26508E83_705222162;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_398717494.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_398717494;
-        
-        
-        
-            
-        
-        
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.360 -0400", hash_original_method = "C2A30811E6FAA7EEAF3DDEC09CF05D3C", hash_generated_method = "C0FE64730ACDEE6DA01F203C88347E6B")
-    public String getPositionDescription() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1456736406 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1456736406 = mXml != null ? mXml.getPositionDescription() : "<internal>";
-        varB4EAC82CA7396A68D541C85D26508E83_1456736406.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1456736406;
-        
-        
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.361 -0400", hash_original_method = "A1E6C58584B412829C21C498310464D0", hash_generated_method = "2D007B4A750B585CF9353575EAB53146")
-    public void recycle() {
+        final TypedValue value = mValue;
+    if(getValueAt(index*AssetManager.STYLE_NUM_ENTRIES, value))        
         {
+TypedValue varAF280DA2BC37D8BE783D8499160168DE_1506727484 =             value;
+            varAF280DA2BC37D8BE783D8499160168DE_1506727484.addTaint(taint);
+            return varAF280DA2BC37D8BE783D8499160168DE_1506727484;
+        } //End block
+TypedValue var540C13E9E156B687226421B24F2DF178_334138567 =         null;
+        var540C13E9E156B687226421B24F2DF178_334138567.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_334138567;
+        // ---------- Original Method ----------
+        //final TypedValue value = mValue;
+        //if (getValueAt(index*AssetManager.STYLE_NUM_ENTRIES, value)) {
+            //return value;
+        //}
+        //return null;
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.717 -0400", hash_original_method = "C2A30811E6FAA7EEAF3DDEC09CF05D3C", hash_generated_method = "26CBBC5FF5C171548AD7EA018FF58972")
+    public String getPositionDescription() {
+String var71429891338B1C00981D47483975D6BA_1856794583 =         mXml != null ? mXml.getPositionDescription() : "<internal>";
+        var71429891338B1C00981D47483975D6BA_1856794583.addTaint(taint);
+        return var71429891338B1C00981D47483975D6BA_1856794583;
+        // ---------- Original Method ----------
+        //return mXml != null ? mXml.getPositionDescription() : "<internal>";
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.718 -0400", hash_original_method = "A1E6C58584B412829C21C498310464D0", hash_generated_method = "E2D95A3B760CCDC32B6CA5663CCFF342")
+    public void recycle() {
+        synchronized
+(mResources.mTmpValue)        {
             TypedArray cached = mResources.mCachedStyledAttributes;
+    if(cached == null || cached.mData.length < mData.length)            
             {
                 mXml = null;
                 mResources.mCachedStyledAttributes = this;
-            } 
-        } 
-        
-        
-            
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mResources.mTmpValue) {
+            //TypedArray cached = mResources.mCachedStyledAttributes;
+            //if (cached == null || cached.mData.length < mData.length) {
+                //mXml = null;
+                //mResources.mCachedStyledAttributes = this;
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.363 -0400", hash_original_method = "7C5221C979A46E52D6E71FCE8A161B4A", hash_generated_method = "B6E3C42040590E7E98FCB796D49D3259")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.720 -0400", hash_original_method = "7C5221C979A46E52D6E71FCE8A161B4A", hash_generated_method = "2EB6D70FBA7BC76BE30A66AC15D9DADE")
     private boolean getValueAt(int index, TypedValue outValue) {
+        addTaint(outValue.getTaint());
+        addTaint(index);
         final int[] data = mData;
         final int type = data[index+AssetManager.STYLE_TYPE];
+    if(type == TypedValue.TYPE_NULL)        
+        {
+            boolean var68934A3E9455FA72420237EB05902327_1815362009 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1881617096 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1881617096;
+        } //End block
         outValue.type = type;
         outValue.data = data[index+AssetManager.STYLE_DATA];
         outValue.assetCookie = data[index+AssetManager.STYLE_ASSET_COOKIE];
@@ -942,83 +990,70 @@ public class TypedArray {
         outValue.changingConfigurations = data[index+AssetManager.STYLE_CHANGING_CONFIGURATIONS];
         outValue.density = data[index+AssetManager.STYLE_DENSITY];
         outValue.string = (type == TypedValue.TYPE_STRING) ? loadStringValueAt(index) : null;
-        addTaint(index);
-        addTaint(outValue.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_205693754 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_205693754;
-        
-        
-        
-        
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        boolean varB326B5062B2F0E69046810717534CB09_325892382 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_905745811 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_905745811;
+        // ---------- Original Method ----------
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type == TypedValue.TYPE_NULL) {
+            //return false;
+        //}
+        //outValue.type = type;
+        //outValue.data = data[index+AssetManager.STYLE_DATA];
+        //outValue.assetCookie = data[index+AssetManager.STYLE_ASSET_COOKIE];
+        //outValue.resourceId = data[index+AssetManager.STYLE_RESOURCE_ID];
+        //outValue.changingConfigurations = data[index+AssetManager.STYLE_CHANGING_CONFIGURATIONS];
+        //outValue.density = data[index+AssetManager.STYLE_DENSITY];
+        //outValue.string = (type == TypedValue.TYPE_STRING) ? loadStringValueAt(index) : null;
+        //return true;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.364 -0400", hash_original_method = "9EED998F765658475A56DE41DA4AC13D", hash_generated_method = "13D4AA798E23F63E15AEAC76F001B133")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.721 -0400", hash_original_method = "9EED998F765658475A56DE41DA4AC13D", hash_generated_method = "F7D7719722A84A16AE889D496EC75E8A")
     private CharSequence loadStringValueAt(int index) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_625875813 = null; 
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_277196300 = null; 
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1766866579 = null; 
+        addTaint(index);
         final int[] data = mData;
         final int cookie = data[index+AssetManager.STYLE_ASSET_COOKIE];
+    if(cookie < 0)        
         {
+    if(mXml != null)            
             {
-                varB4EAC82CA7396A68D541C85D26508E83_625875813 = mXml.getPooledString(
+CharSequence var1909CA0A0B5F4C1B88AD901A4800961A_1446956895 =                 mXml.getPooledString(
                     data[index+AssetManager.STYLE_DATA]);
-            } 
-            varB4EAC82CA7396A68D541C85D26508E83_277196300 = null;
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1766866579 = mResources.mAssets.getPooledString(
+                var1909CA0A0B5F4C1B88AD901A4800961A_1446956895.addTaint(taint);
+                return var1909CA0A0B5F4C1B88AD901A4800961A_1446956895;
+            } //End block
+CharSequence var540C13E9E156B687226421B24F2DF178_2016971983 =             null;
+            var540C13E9E156B687226421B24F2DF178_2016971983.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_2016971983;
+        } //End block
+CharSequence var13AA805861FD730A1B588C60D1E7C7D9_942308515 =         mResources.mAssets.getPooledString(
             cookie, data[index+AssetManager.STYLE_DATA]);
-        addTaint(index);
-        CharSequence varA7E53CE21691AB073D9660D615818899_1018094364; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1018094364 = varB4EAC82CA7396A68D541C85D26508E83_625875813;
-                break;
-            case 2: 
-                varA7E53CE21691AB073D9660D615818899_1018094364 = varB4EAC82CA7396A68D541C85D26508E83_277196300;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1018094364 = varB4EAC82CA7396A68D541C85D26508E83_1766866579;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1018094364.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1018094364;
-        
-        
-        
-        
-            
-                
-                    
-            
-            
-        
-        
-            
+        var13AA805861FD730A1B588C60D1E7C7D9_942308515.addTaint(taint);
+        return var13AA805861FD730A1B588C60D1E7C7D9_942308515;
+        // ---------- Original Method ----------
+        //final int[] data = mData;
+        //final int cookie = data[index+AssetManager.STYLE_ASSET_COOKIE];
+        //if (cookie < 0) {
+            //if (mXml != null) {
+                //return mXml.getPooledString(
+                    //data[index+AssetManager.STYLE_DATA]);
+            //}
+            //return null;
+        //}
+        //return mResources.mAssets.getPooledString(
+            //cookie, data[index+AssetManager.STYLE_DATA]);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.364 -0400", hash_original_method = "D3700358536036842F849ADB987A26DD", hash_generated_method = "3D5C351CC63D3D4D0A971F9F563A5DE9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.721 -0400", hash_original_method = "D3700358536036842F849ADB987A26DD", hash_generated_method = "0A5BC28D4694D1264972E0175066A325")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1666970656 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1666970656 = Arrays.toString(mData);
-        varB4EAC82CA7396A68D541C85D26508E83_1666970656.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1666970656;
-        
-        
+String var4F18F58D2FA16042CB301516796544BC_778451210 =         Arrays.toString(mData);
+        var4F18F58D2FA16042CB301516796544BC_778451210.addTaint(taint);
+        return var4F18F58D2FA16042CB301516796544BC_778451210;
+        // ---------- Original Method ----------
+        //return Arrays.toString(mData);
     }
 
     

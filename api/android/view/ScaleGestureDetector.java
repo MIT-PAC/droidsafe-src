@@ -1,151 +1,156 @@
 package android.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.content.Context;
 import android.util.DisplayMetrics;
 import android.util.FloatMath;
 import android.util.Log;
 
 public class ScaleGestureDetector {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.699 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
     private Context mContext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "9B3DD33B99719CE65C53FA6749E2AD69", hash_generated_field = "A08AF84037A8352C0A5AC97B5C4711DA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.699 -0400", hash_original_field = "9B3DD33B99719CE65C53FA6749E2AD69", hash_generated_field = "A08AF84037A8352C0A5AC97B5C4711DA")
 
     private OnScaleGestureListener mListener;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "061B672487708A5F02C378E108FB2523", hash_generated_field = "503643741A4ED297FCB738F860325A5C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.699 -0400", hash_original_field = "061B672487708A5F02C378E108FB2523", hash_generated_field = "503643741A4ED297FCB738F860325A5C")
 
     private boolean mGestureInProgress;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "447D9F14ED3611B9294BA6E2AF3CD0C3", hash_generated_field = "3C7A422FE0E65BBDCD9090B91410FF41")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.699 -0400", hash_original_field = "447D9F14ED3611B9294BA6E2AF3CD0C3", hash_generated_field = "3C7A422FE0E65BBDCD9090B91410FF41")
 
     private MotionEvent mPrevEvent;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "382D89AF4BA3BBDD7BD85028FF0C04C2", hash_generated_field = "D61C81DE46CCD592C64D38B586C58E19")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.699 -0400", hash_original_field = "382D89AF4BA3BBDD7BD85028FF0C04C2", hash_generated_field = "D61C81DE46CCD592C64D38B586C58E19")
 
     private MotionEvent mCurrEvent;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "A0FE7B7E6572E9A5C03F808D583D21EF", hash_generated_field = "9E3ECCCE67853EF67D401BC85D54FCDD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.699 -0400", hash_original_field = "A0FE7B7E6572E9A5C03F808D583D21EF", hash_generated_field = "9E3ECCCE67853EF67D401BC85D54FCDD")
 
     private float mFocusX;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "E371837A8119A3AB321FC558BC169293", hash_generated_field = "E01C42CAE2152A2827127C5E1618E0BF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.699 -0400", hash_original_field = "E371837A8119A3AB321FC558BC169293", hash_generated_field = "E01C42CAE2152A2827127C5E1618E0BF")
 
     private float mFocusY;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "E0D70E96C315A6A926A5DF77407556F0", hash_generated_field = "9B5A74F081F5922B1785428D638AF7EB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.699 -0400", hash_original_field = "E0D70E96C315A6A926A5DF77407556F0", hash_generated_field = "9B5A74F081F5922B1785428D638AF7EB")
 
     private float mPrevFingerDiffX;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "3BCD82D8995452F8C4D8BC4D6958AFA9", hash_generated_field = "A4ECFDC00DFED0488AC11C35F6454D1A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.699 -0400", hash_original_field = "3BCD82D8995452F8C4D8BC4D6958AFA9", hash_generated_field = "A4ECFDC00DFED0488AC11C35F6454D1A")
 
     private float mPrevFingerDiffY;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "D797CF4A75F206359DDA7851042405DE", hash_generated_field = "0084D8F5F5AEBC86A46E65C48DD6EDDA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.699 -0400", hash_original_field = "D797CF4A75F206359DDA7851042405DE", hash_generated_field = "0084D8F5F5AEBC86A46E65C48DD6EDDA")
 
     private float mCurrFingerDiffX;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "F613F042D8B78098BEAE14BEDF4D7F31", hash_generated_field = "F58F567C97D8A5647C27000A75D3AF16")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.699 -0400", hash_original_field = "F613F042D8B78098BEAE14BEDF4D7F31", hash_generated_field = "F58F567C97D8A5647C27000A75D3AF16")
 
     private float mCurrFingerDiffY;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "8E973CE13F974C6D66FFB6DCB3A83421", hash_generated_field = "933BC37DA68F2A67EB299CEE160CB2FB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.699 -0400", hash_original_field = "8E973CE13F974C6D66FFB6DCB3A83421", hash_generated_field = "933BC37DA68F2A67EB299CEE160CB2FB")
 
     private float mCurrLen;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "CCB42BE0A7C21CD017DE96ACABD2762C", hash_generated_field = "1E334C6DA5FA5EB33F386FAD0E8F6E8B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.699 -0400", hash_original_field = "CCB42BE0A7C21CD017DE96ACABD2762C", hash_generated_field = "1E334C6DA5FA5EB33F386FAD0E8F6E8B")
 
     private float mPrevLen;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "43B25FDCBE078DC3DA65BC88CAA3AACD", hash_generated_field = "A57936439C19DE90F2AB86ED42237D31")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.699 -0400", hash_original_field = "43B25FDCBE078DC3DA65BC88CAA3AACD", hash_generated_field = "A57936439C19DE90F2AB86ED42237D31")
 
     private float mScaleFactor;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "D54820A21CA16B0D6974C6228C51B34A", hash_generated_field = "4CF3DF6E70478D8056347848EFB18503")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.699 -0400", hash_original_field = "D54820A21CA16B0D6974C6228C51B34A", hash_generated_field = "4CF3DF6E70478D8056347848EFB18503")
 
     private float mCurrPressure;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "95C49E098E3097DD95C24477EA21E4C5", hash_generated_field = "2E7516100A12B928A7F1D7C2C6815166")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.700 -0400", hash_original_field = "95C49E098E3097DD95C24477EA21E4C5", hash_generated_field = "2E7516100A12B928A7F1D7C2C6815166")
 
     private float mPrevPressure;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "D088DDA1C27B96429D7E4965433B26E2", hash_generated_field = "24C21D8C9544B70EF997F0DEE65D3C96")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.700 -0400", hash_original_field = "D088DDA1C27B96429D7E4965433B26E2", hash_generated_field = "24C21D8C9544B70EF997F0DEE65D3C96")
 
     private long mTimeDelta;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "7572292F9A0C0E3DA861F35B2F9EB690", hash_generated_field = "87E1CD70AA880AA0038E22EA3C795791")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.700 -0400", hash_original_field = "7572292F9A0C0E3DA861F35B2F9EB690", hash_generated_field = "87E1CD70AA880AA0038E22EA3C795791")
 
     private float mEdgeSlop;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "2FCB43D8487E22C85D26E570931ABDBA", hash_generated_field = "B70D199FA23802CA3820F738CE6BECA4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.700 -0400", hash_original_field = "2FCB43D8487E22C85D26E570931ABDBA", hash_generated_field = "B70D199FA23802CA3820F738CE6BECA4")
 
     private float mRightSlopEdge;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "9B40AAEFF1A30F2DB71620BF5079D6CB", hash_generated_field = "875320F67CC4A12055E0E780DF25AC3E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.700 -0400", hash_original_field = "9B40AAEFF1A30F2DB71620BF5079D6CB", hash_generated_field = "875320F67CC4A12055E0E780DF25AC3E")
 
     private float mBottomSlopEdge;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "EE5535D441FD37F5C1D45D0EE2A9289A", hash_generated_field = "F35E4D613A73F5F87B9D2DA4EE86D79A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.700 -0400", hash_original_field = "EE5535D441FD37F5C1D45D0EE2A9289A", hash_generated_field = "F35E4D613A73F5F87B9D2DA4EE86D79A")
 
     private boolean mSloppyGesture;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "F0C1B8EC1E31EA252FC6496124D03A56", hash_generated_field = "D40C9FA5D0FB38FD10587BC7707BC6F3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.700 -0400", hash_original_field = "F0C1B8EC1E31EA252FC6496124D03A56", hash_generated_field = "D40C9FA5D0FB38FD10587BC7707BC6F3")
 
     private boolean mInvalidGesture;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "716CFAB11C79FD5737D3D0DFD236254D", hash_generated_field = "5955F7D0EA4751A3620710E99C5064B8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.700 -0400", hash_original_field = "716CFAB11C79FD5737D3D0DFD236254D", hash_generated_field = "5955F7D0EA4751A3620710E99C5064B8")
 
     private int mActiveId0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "791345B6EFB2BD5450963ABCD5B9DACA", hash_generated_field = "6F4F186E958896A650E911389B88CCC0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.700 -0400", hash_original_field = "791345B6EFB2BD5450963ABCD5B9DACA", hash_generated_field = "6F4F186E958896A650E911389B88CCC0")
 
     private int mActiveId1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "56B3830B6EF16818B0AACCAEE2BD5D01", hash_generated_field = "78AA2DF7FA2FB872FE42414156BB2883")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.700 -0400", hash_original_field = "56B3830B6EF16818B0AACCAEE2BD5D01", hash_generated_field = "78AA2DF7FA2FB872FE42414156BB2883")
 
     private boolean mActive0MostRecent;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.778 -0400", hash_original_field = "EFB0BA2843C7293EEB82F8592A2A0298", hash_generated_field = "69B49DB79681808A97D2CCE1BF25440C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.700 -0400", hash_original_field = "EFB0BA2843C7293EEB82F8592A2A0298", hash_generated_field = "69B49DB79681808A97D2CCE1BF25440C")
 
     private final InputEventConsistencyVerifier mInputEventConsistencyVerifier = InputEventConsistencyVerifier.isInstrumentationEnabled() ?
                     new InputEventConsistencyVerifier(this, 0) : null;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.779 -0400", hash_original_method = "3F765CE5C3F1587A362200597A84993F", hash_generated_method = "A3091C337EBF2CBE7B369D82A6F832E3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.701 -0400", hash_original_method = "3F765CE5C3F1587A362200597A84993F", hash_generated_method = "A3091C337EBF2CBE7B369D82A6F832E3")
     public  ScaleGestureDetector(Context context, OnScaleGestureListener listener) {
         ViewConfiguration config = ViewConfiguration.get(context);
         mContext = context;
         mListener = listener;
         mEdgeSlop = config.getScaledEdgeSlop();
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //ViewConfiguration config = ViewConfiguration.get(context);
+        //mContext = context;
+        //mListener = listener;
+        //mEdgeSlop = config.getScaledEdgeSlop();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.782 -0400", hash_original_method = "3D0907AC17DE553CA8E37D6A8A0F580A", hash_generated_method = "E73F6B623ABC4F0A84304F425DA4593D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.711 -0400", hash_original_method = "3D0907AC17DE553CA8E37D6A8A0F580A", hash_generated_method = "6151C0364800B1AB77D23C7E00765D05")
     public boolean onTouchEvent(MotionEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
+    if(mInputEventConsistencyVerifier != null)        
         {
             mInputEventConsistencyVerifier.onTouchEvent(event, 0);
-        } 
+        } //End block
         final int action = event.getActionMasked();
+    if(action == MotionEvent.ACTION_DOWN)        
         {
             reset();
-        } 
+        } //End block
         boolean handled = true;
+    if(mInvalidGesture)        
         {
             handled = false;
-        } 
+        } //End block
+        else
+    if(!mGestureInProgress)        
         {
-            
+switch(action){
+            case MotionEvent.ACTION_DOWN:
             {
                 mActiveId0 = event.getPointerId(0);
                 mActive0MostRecent = true;
-            } 
-            
-            
+            } //End block
+            break;
+            case MotionEvent.ACTION_UP:
             reset();
-            
-            
+            break;
+            case MotionEvent.ACTION_POINTER_DOWN:
             {
                 DisplayMetrics metrics = mContext.getResources().getDisplayMetrics();
                 mRightSlopEdge = metrics.widthPixels - mEdgeSlop;
                 mBottomSlopEdge = metrics.heightPixels - mEdgeSlop;
+    if(mPrevEvent != null)                
                 mPrevEvent.recycle();
                 mPrevEvent = MotionEvent.obtain(event);
                 mTimeDelta = 0;
                 int index1 = event.getActionIndex();
                 int index0 = event.findPointerIndex(mActiveId0);
                 mActiveId1 = event.getPointerId(index1);
+    if(index0 < 0 || index0 == index1)                
                 {
                     index0 = findNewActiveIndex(event, index0 == index1 ? -1 : mActiveId1, index0);
                     mActiveId0 = event.getPointerId(index0);
-                } 
+                } //End block
                 mActive0MostRecent = false;
                 setContext(event);
                 final float edgeSlop = mEdgeSlop;
@@ -159,28 +164,35 @@ public class ScaleGestureDetector {
                         || x0 > rightSlop || y0 > bottomSlop;
                 boolean p1sloppy = x1 < edgeSlop || y1 < edgeSlop
                         || x1 > rightSlop || y1 > bottomSlop;
+    if(p0sloppy && p1sloppy)                
                 {
                     mFocusX = -1;
                     mFocusY = -1;
                     mSloppyGesture = true;
-                } 
+                } //End block
+                else
+    if(p0sloppy)                
                 {
                     mFocusX = event.getX(index1);
                     mFocusY = event.getY(index1);
                     mSloppyGesture = true;
-                } 
+                } //End block
+                else
+    if(p1sloppy)                
                 {
                     mFocusX = event.getX(index0);
                     mFocusY = event.getY(index0);
                     mSloppyGesture = true;
-                } 
+                } //End block
+                else
                 {
                     mSloppyGesture = false;
                     mGestureInProgress = mListener.onScaleBegin(this);
-                } 
-            } 
-            
-            
+                } //End block
+            } //End block
+            break;
+            case MotionEvent.ACTION_MOVE:
+    if(mSloppyGesture)            
             {
                 final float edgeSlop = mEdgeSlop;
                 final float rightSlop = mRightSlopEdge;
@@ -195,79 +207,105 @@ public class ScaleGestureDetector {
                             || x0 > rightSlop || y0 > bottomSlop;
                 boolean p1sloppy = x1 < edgeSlop || y1 < edgeSlop
                             || x1 > rightSlop || y1 > bottomSlop;
+    if(p0sloppy)                
                 {
                     int index = findNewActiveIndex(event, mActiveId1, index0);
+    if(index >= 0)                    
                     {
                         index0 = index;
                         mActiveId0 = event.getPointerId(index);
                         x0 = getRawX(event, index);
                         y0 = getRawY(event, index);
                         p0sloppy = false;
-                    } 
-                } 
+                    } //End block
+                } //End block
+    if(p1sloppy)                
                 {
                     int index = findNewActiveIndex(event, mActiveId0, index1);
+    if(index >= 0)                    
                     {
                         index1 = index;
                         mActiveId1 = event.getPointerId(index);
                         x1 = getRawX(event, index);
                         y1 = getRawY(event, index);
                         p1sloppy = false;
-                    } 
-                } 
+                    } //End block
+                } //End block
+    if(p0sloppy && p1sloppy)                
                 {
                     mFocusX = -1;
                     mFocusY = -1;
-                } 
+                } //End block
+                else
+    if(p0sloppy)                
                 {
                     mFocusX = event.getX(index1);
                     mFocusY = event.getY(index1);
-                } 
+                } //End block
+                else
+    if(p1sloppy)                
                 {
                     mFocusX = event.getX(index0);
                     mFocusY = event.getY(index0);
-                } 
+                } //End block
+                else
                 {
                     mSloppyGesture = false;
                     mGestureInProgress = mListener.onScaleBegin(this);
-                } 
-            } 
-            
-            
+                } //End block
+            } //End block
+            break;
+            case MotionEvent.ACTION_POINTER_UP:
+    if(mSloppyGesture)            
             {
                 final int pointerCount = event.getPointerCount();
                 final int actionIndex = event.getActionIndex();
                 final int actionId = event.getPointerId(actionIndex);
+    if(pointerCount > 2)                
                 {
+    if(actionId == mActiveId0)                    
                     {
                         final int newIndex = findNewActiveIndex(event, mActiveId1, actionIndex);
+    if(newIndex >= 0)                        
                         mActiveId0 = event.getPointerId(newIndex);
-                    } 
+                    } //End block
+                    else
+    if(actionId == mActiveId1)                    
                     {
                         final int newIndex = findNewActiveIndex(event, mActiveId0, actionIndex);
+    if(newIndex >= 0)                        
                         mActiveId1 = event.getPointerId(newIndex);
-                    } 
-                } 
+                    } //End block
+                } //End block
+                else
                 {
                     final int index = event.findPointerIndex(actionId == mActiveId0 ?
                                 mActiveId1 : mActiveId0);
+    if(index < 0)                    
                     {
                         mInvalidGesture = true;
+    if(mGestureInProgress)                        
                         {
                             mListener.onScaleEnd(this);
-                        } 
-                    } 
+                        } //End block
+                        boolean var68934A3E9455FA72420237EB05902327_2060208537 = (false);
+                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1198433356 = getTaintBoolean();
+                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1198433356;
+                    } //End block
                     mActiveId0 = event.getPointerId(index);
                     mActive0MostRecent = true;
                     mActiveId1 = -1;
                     mFocusX = event.getX(index);
                     mFocusY = event.getY(index);
-                } 
-            } 
-            
-        } 
+                } //End block
+            } //End block
+            break;
+}
+        } //End block
+        else
         {
-            
+switch(action){
+            case MotionEvent.ACTION_POINTER_DOWN:
             {
                 mListener.onScaleEnd(this);
                 final int oldActive0 = mActiveId0;
@@ -278,24 +316,28 @@ public class ScaleGestureDetector {
                 mActiveId1 = event.getPointerId(event.getActionIndex());
                 mActive0MostRecent = false;
                 int index0 = event.findPointerIndex(mActiveId0);
+    if(index0 < 0 || mActiveId0 == mActiveId1)                
                 {
                     index0 = findNewActiveIndex(event,
                                 mActiveId0 == mActiveId1 ? -1 : mActiveId1, index0);
                     mActiveId0 = event.getPointerId(index0);
-                } 
+                } //End block
                 setContext(event);
                 mGestureInProgress = mListener.onScaleBegin(this);
-            } 
-            
-            
+            } //End block
+            break;
+            case MotionEvent.ACTION_POINTER_UP:
             {
                 final int pointerCount = event.getPointerCount();
                 final int actionIndex = event.getActionIndex();
                 final int actionId = event.getPointerId(actionIndex);
                 boolean gestureEnded = false;
+    if(pointerCount > 2)                
                 {
+    if(actionId == mActiveId0)                    
                     {
                         final int newIndex = findNewActiveIndex(event, mActiveId1, actionIndex);
+    if(newIndex >= 0)                        
                         {
                             mListener.onScaleEnd(this);
                             mActiveId0 = event.getPointerId(newIndex);
@@ -303,13 +345,17 @@ public class ScaleGestureDetector {
                             mPrevEvent = MotionEvent.obtain(event);
                             setContext(event);
                             mGestureInProgress = mListener.onScaleBegin(this);
-                        } 
+                        } //End block
+                        else
                         {
                             gestureEnded = true;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
+                    else
+    if(actionId == mActiveId1)                    
                     {
                         final int newIndex = findNewActiveIndex(event, mActiveId0, actionIndex);
+    if(newIndex >= 0)                        
                         {
                             mListener.onScaleEnd(this);
                             mActiveId1 = event.getPointerId(newIndex);
@@ -317,23 +363,24 @@ public class ScaleGestureDetector {
                             mPrevEvent = MotionEvent.obtain(event);
                             setContext(event);
                             mGestureInProgress = mListener.onScaleBegin(this);
-                        } 
+                        } //End block
+                        else
                         {
                             gestureEnded = true;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     mPrevEvent.recycle();
                     mPrevEvent = MotionEvent.obtain(event);
                     setContext(event);
-                } 
+                } //End block
+                else
                 {
                     gestureEnded = true;
-                } 
+                } //End block
+    if(gestureEnded)                
                 {
                     setContext(event);
-                    int activeId;
-                    activeId = mActiveId1;
-                    activeId = mActiveId0;
+                    final int activeId = actionId == mActiveId0 ? mActiveId1 : mActiveId0;
                     final int index = event.findPointerIndex(activeId);
                     mFocusX = event.getX(index);
                     mFocusY = event.getY(index);
@@ -341,88 +388,93 @@ public class ScaleGestureDetector {
                     reset();
                     mActiveId0 = activeId;
                     mActive0MostRecent = true;
-                } 
-            } 
-            
-            
+                } //End block
+            } //End block
+            break;
+            case MotionEvent.ACTION_CANCEL:
             mListener.onScaleEnd(this);
-            
-            
             reset();
-            
-            
+            break;
+            case MotionEvent.ACTION_UP:
             reset();
-            
-            
+            break;
+            case MotionEvent.ACTION_MOVE:
             {
                 setContext(event);
+    if(mCurrPressure / mPrevPressure > PRESSURE_THRESHOLD)                
                 {
                     final boolean updatePrevious = mListener.onScale(this);
+    if(updatePrevious)                    
                     {
                         mPrevEvent.recycle();
                         mPrevEvent = MotionEvent.obtain(event);
-                    } 
-                } 
-            } 
-            
-        } 
+                    } //End block
+                } //End block
+            } //End block
+            break;
+}
+        } //End block
+    if(!handled && mInputEventConsistencyVerifier != null)        
         {
             mInputEventConsistencyVerifier.onUnhandledEvent(event, 0);
-        } 
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_641964623 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_641964623;
-        
-        
+        } //End block
+        boolean var98F0599AF776A1FE4101C199A40EEB8F_1418441295 = (handled);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1090289134 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1090289134;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.783 -0400", hash_original_method = "26EE043A8FDD34A9021E8F106FD508B5", hash_generated_method = "49BCE00B7119C46AE181C13F87B03734")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.714 -0400", hash_original_method = "26EE043A8FDD34A9021E8F106FD508B5", hash_generated_method = "7141A8A351C53369A49DCB789C180431")
     private int findNewActiveIndex(MotionEvent ev, int otherActiveId, int oldIndex) {
+        addTaint(oldIndex);
+        addTaint(otherActiveId);
+        addTaint(ev.getTaint());
         final int pointerCount = ev.getPointerCount();
         final int otherActiveIndex = ev.findPointerIndex(otherActiveId);
         int newActiveIndex = -1;
+for(int i = 0;i < pointerCount;i++)
         {
-            int i = 0;
+    if(i != oldIndex && i != otherActiveIndex)            
             {
+                final float edgeSlop = mEdgeSlop;
+                final float rightSlop = mRightSlopEdge;
+                final float bottomSlop = mBottomSlopEdge;
+                float x = getRawX(ev, i);
+                float y = getRawY(ev, i);
+    if(x >= edgeSlop && y >= edgeSlop && x <= rightSlop && y <= bottomSlop)                
                 {
-                    final float edgeSlop = mEdgeSlop;
-                    final float rightSlop = mRightSlopEdge;
-                    final float bottomSlop = mBottomSlopEdge;
-                    float x = getRawX(ev, i);
-                    float y = getRawY(ev, i);
-                    {
-                        newActiveIndex = i;
-                    } 
-                } 
-            } 
-        } 
-        addTaint(ev.getTaint());
-        addTaint(otherActiveId);
-        addTaint(oldIndex);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1613951334 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1613951334;
-        
-        
-        
-        
-        
-            
-                
-                
-                
-                
-                
-                
-                    
-                    
-                
-            
-        
-        
+                    newActiveIndex = i;
+                    break;
+                } //End block
+            } //End block
+        } //End block
+        int var211F54CDFC9A5C3404569D77056CA9F3_1332966577 = (newActiveIndex);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_636430778 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_636430778;
+        // ---------- Original Method ----------
+        //final int pointerCount = ev.getPointerCount();
+        //final int otherActiveIndex = ev.findPointerIndex(otherActiveId);
+        //int newActiveIndex = -1;
+        //for (int i = 0; i < pointerCount; i++) {
+            //if (i != oldIndex && i != otherActiveIndex) {
+                //final float edgeSlop = mEdgeSlop;
+                //final float rightSlop = mRightSlopEdge;
+                //final float bottomSlop = mBottomSlopEdge;
+                //float x = getRawX(ev, i);
+                //float y = getRawY(ev, i);
+                //if (x >= edgeSlop && y >= edgeSlop && x <= rightSlop && y <= bottomSlop) {
+                    //newActiveIndex = i;
+                    //break;
+                //}
+            //}
+        //}
+        //return newActiveIndex;
     }
 
     
-    private static float getRawX(MotionEvent event, int pointerIndex) {
+        private static float getRawX(MotionEvent event, int pointerIndex) {
         if (pointerIndex < 0) return Float.MIN_VALUE;
         if (pointerIndex == 0) return event.getRawX();
         float offset = event.getRawX() - event.getX();
@@ -430,7 +482,7 @@ public class ScaleGestureDetector {
     }
 
     
-    private static float getRawY(MotionEvent event, int pointerIndex) {
+        private static float getRawY(MotionEvent event, int pointerIndex) {
         if (pointerIndex < 0) return Float.MIN_VALUE;
         if (pointerIndex == 0) return event.getRawY();
         float offset = event.getRawY() - event.getY();
@@ -438,11 +490,12 @@ public class ScaleGestureDetector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.784 -0400", hash_original_method = "E851AC8F08388EEFFE10C17212886186", hash_generated_method = "1FCEB924D242022EC4521129F588E6FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.717 -0400", hash_original_method = "E851AC8F08388EEFFE10C17212886186", hash_generated_method = "CBDF072BFE5829B1D228F253F6D3C44C")
     private void setContext(MotionEvent curr) {
+    if(mCurrEvent != null)        
         {
             mCurrEvent.recycle();
-        } 
+        } //End block
         mCurrEvent = MotionEvent.obtain(curr);
         mCurrLen = -1;
         mPrevLen = -1;
@@ -452,12 +505,15 @@ public class ScaleGestureDetector {
         final int prevIndex1 = prev.findPointerIndex(mActiveId1);
         final int currIndex0 = curr.findPointerIndex(mActiveId0);
         final int currIndex1 = curr.findPointerIndex(mActiveId1);
+    if(prevIndex0 < 0 || prevIndex1 < 0 || currIndex0 < 0 || currIndex1 < 0)        
         {
             mInvalidGesture = true;
+    if(mGestureInProgress)            
             {
                 mListener.onScaleEnd(this);
-            } 
-        } 
+            } //End block
+            return;
+        } //End block
         final float px0 = prev.getX(prevIndex0);
         final float py0 = prev.getY(prevIndex0);
         final float px1 = prev.getX(prevIndex1);
@@ -479,225 +535,232 @@ public class ScaleGestureDetector {
         mTimeDelta = curr.getEventTime() - prev.getEventTime();
         mCurrPressure = curr.getPressure(currIndex0) + curr.getPressure(currIndex1);
         mPrevPressure = prev.getPressure(prevIndex0) + prev.getPressure(prevIndex1);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.784 -0400", hash_original_method = "F9E5E3809E5750745599790F573B8504", hash_generated_method = "13E97FC9D617B6DED16F5D4A448F71C6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.718 -0400", hash_original_method = "F9E5E3809E5750745599790F573B8504", hash_generated_method = "30E2C34A724FADA3EB87CED62FD583BA")
     private void reset() {
+    if(mPrevEvent != null)        
         {
             mPrevEvent.recycle();
             mPrevEvent = null;
-        } 
+        } //End block
+    if(mCurrEvent != null)        
         {
             mCurrEvent.recycle();
             mCurrEvent = null;
-        } 
+        } //End block
         mSloppyGesture = false;
         mGestureInProgress = false;
         mActiveId0 = -1;
         mActiveId1 = -1;
         mInvalidGesture = false;
-        
-        
-            
-            
-        
-        
-            
-            
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mPrevEvent != null) {
+            //mPrevEvent.recycle();
+            //mPrevEvent = null;
+        //}
+        //if (mCurrEvent != null) {
+            //mCurrEvent.recycle();
+            //mCurrEvent = null;
+        //}
+        //mSloppyGesture = false;
+        //mGestureInProgress = false;
+        //mActiveId0 = -1;
+        //mActiveId1 = -1;
+        //mInvalidGesture = false;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.785 -0400", hash_original_method = "898B0555390D80294F48D1832D7CA7F1", hash_generated_method = "2AF3BA1D9C49CFAF3F244C02E3BDF39A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.718 -0400", hash_original_method = "898B0555390D80294F48D1832D7CA7F1", hash_generated_method = "F84051EF4AE07616E094DC9CB46B0764")
     public boolean isInProgress() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_292601368 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_292601368;
-        
-        
+        boolean var061B672487708A5F02C378E108FB2523_941464235 = (mGestureInProgress);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1705231885 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1705231885;
+        // ---------- Original Method ----------
+        //return mGestureInProgress;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.785 -0400", hash_original_method = "5AA73E7030B433A4A506EA714645F254", hash_generated_method = "6F0356CCBB110AC8DE1C640C1B34EA0A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.718 -0400", hash_original_method = "5AA73E7030B433A4A506EA714645F254", hash_generated_method = "AC0381EF29B01CFF3C15EBF3D7B069C0")
     public float getFocusX() {
-        float var546ADE640B6EDFBC8A086EF31347E768_1832640479 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1832640479;
-        
-        
+        float varA0FE7B7E6572E9A5C03F808D583D21EF_1594995677 = (mFocusX);
+                float var546ADE640B6EDFBC8A086EF31347E768_677884285 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_677884285;
+        // ---------- Original Method ----------
+        //return mFocusX;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.785 -0400", hash_original_method = "1634272865979B530C4105679871001B", hash_generated_method = "BF1146DEED444AAC5DBE2375B9041188")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.718 -0400", hash_original_method = "1634272865979B530C4105679871001B", hash_generated_method = "3DDCA51F9D70ADEDAD280E48FAC62846")
     public float getFocusY() {
-        float var546ADE640B6EDFBC8A086EF31347E768_603968210 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_603968210;
-        
-        
+        float varE371837A8119A3AB321FC558BC169293_274762003 = (mFocusY);
+                float var546ADE640B6EDFBC8A086EF31347E768_1349063432 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_1349063432;
+        // ---------- Original Method ----------
+        //return mFocusY;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.785 -0400", hash_original_method = "AB0C6BF3BCA5EEB3D5CA8E031A94ABD9", hash_generated_method = "161C88A4F637A69702FBBD147156B4D2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.719 -0400", hash_original_method = "AB0C6BF3BCA5EEB3D5CA8E031A94ABD9", hash_generated_method = "A20021E559171DBFC11D0518DD85B86F")
     public float getCurrentSpan() {
+    if(mCurrLen == -1)        
         {
             final float cvx = mCurrFingerDiffX;
             final float cvy = mCurrFingerDiffY;
             mCurrLen = FloatMath.sqrt(cvx*cvx + cvy*cvy);
-        } 
-        float var546ADE640B6EDFBC8A086EF31347E768_689648084 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_689648084;
-        
-        
-            
-            
-            
-        
-        
+        } //End block
+        float var8E973CE13F974C6D66FFB6DCB3A83421_1730946218 = (mCurrLen);
+                float var546ADE640B6EDFBC8A086EF31347E768_909970464 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_909970464;
+        // ---------- Original Method ----------
+        //if (mCurrLen == -1) {
+            //final float cvx = mCurrFingerDiffX;
+            //final float cvy = mCurrFingerDiffY;
+            //mCurrLen = FloatMath.sqrt(cvx*cvx + cvy*cvy);
+        //}
+        //return mCurrLen;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.786 -0400", hash_original_method = "96703DCF80F0F42B9182D748E24B5F12", hash_generated_method = "FE4B775B508B99878607543790A43AC2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.719 -0400", hash_original_method = "96703DCF80F0F42B9182D748E24B5F12", hash_generated_method = "EE1543A06FC47C6D52BAF4F591067AF9")
     public float getCurrentSpanX() {
-        float var546ADE640B6EDFBC8A086EF31347E768_925133810 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_925133810;
-        
-        
+        float varD797CF4A75F206359DDA7851042405DE_1345950532 = (mCurrFingerDiffX);
+                float var546ADE640B6EDFBC8A086EF31347E768_871195543 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_871195543;
+        // ---------- Original Method ----------
+        //return mCurrFingerDiffX;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.786 -0400", hash_original_method = "46ABD98E7ABFBBE92F1E1C8C1A82F921", hash_generated_method = "3F48B267CF1B92136AA9E7B177083336")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.719 -0400", hash_original_method = "46ABD98E7ABFBBE92F1E1C8C1A82F921", hash_generated_method = "BC0019030010366467B8BFBA8B538F3C")
     public float getCurrentSpanY() {
-        float var546ADE640B6EDFBC8A086EF31347E768_1253594037 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1253594037;
-        
-        
+        float varF613F042D8B78098BEAE14BEDF4D7F31_1676932164 = (mCurrFingerDiffY);
+                float var546ADE640B6EDFBC8A086EF31347E768_1038550456 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_1038550456;
+        // ---------- Original Method ----------
+        //return mCurrFingerDiffY;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.787 -0400", hash_original_method = "61588E4085777CBFF7E61092314CDCD6", hash_generated_method = "C3E00DD59EA8260335D0A4FE391C0D69")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.720 -0400", hash_original_method = "61588E4085777CBFF7E61092314CDCD6", hash_generated_method = "E1D692E87E3F6931BCFA097C41AE4E2E")
     public float getPreviousSpan() {
+    if(mPrevLen == -1)        
         {
             final float pvx = mPrevFingerDiffX;
             final float pvy = mPrevFingerDiffY;
             mPrevLen = FloatMath.sqrt(pvx*pvx + pvy*pvy);
-        } 
-        float var546ADE640B6EDFBC8A086EF31347E768_1821094387 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1821094387;
-        
-        
-            
-            
-            
-        
-        
+        } //End block
+        float varCCB42BE0A7C21CD017DE96ACABD2762C_1766052128 = (mPrevLen);
+                float var546ADE640B6EDFBC8A086EF31347E768_1106717893 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_1106717893;
+        // ---------- Original Method ----------
+        //if (mPrevLen == -1) {
+            //final float pvx = mPrevFingerDiffX;
+            //final float pvy = mPrevFingerDiffY;
+            //mPrevLen = FloatMath.sqrt(pvx*pvx + pvy*pvy);
+        //}
+        //return mPrevLen;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.787 -0400", hash_original_method = "0AFCA4EC344BB39A6FBEFCC5BD88D7B6", hash_generated_method = "AE13141CAC1B843FCAABB49BF54FDD27")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.720 -0400", hash_original_method = "0AFCA4EC344BB39A6FBEFCC5BD88D7B6", hash_generated_method = "9A85C6A1735D5E9215A4E83978C6D841")
     public float getPreviousSpanX() {
-        float var546ADE640B6EDFBC8A086EF31347E768_1502447716 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1502447716;
-        
-        
+        float varE0D70E96C315A6A926A5DF77407556F0_1377267022 = (mPrevFingerDiffX);
+                float var546ADE640B6EDFBC8A086EF31347E768_971942460 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_971942460;
+        // ---------- Original Method ----------
+        //return mPrevFingerDiffX;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.787 -0400", hash_original_method = "F0E427EE2F15CB9D89F340FD227EA8BF", hash_generated_method = "935A6DF27BAC37E7A2B059545E10DC5A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.720 -0400", hash_original_method = "F0E427EE2F15CB9D89F340FD227EA8BF", hash_generated_method = "D53D118C8B62F6A4698B9E588716B118")
     public float getPreviousSpanY() {
-        float var546ADE640B6EDFBC8A086EF31347E768_1182573078 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1182573078;
-        
-        
+        float var3BCD82D8995452F8C4D8BC4D6958AFA9_186057030 = (mPrevFingerDiffY);
+                float var546ADE640B6EDFBC8A086EF31347E768_511540075 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_511540075;
+        // ---------- Original Method ----------
+        //return mPrevFingerDiffY;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.788 -0400", hash_original_method = "EF10CCD331D0CD8126F652B47BBB1296", hash_generated_method = "080C77722F2340C28A90D4F93A363F11")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.721 -0400", hash_original_method = "EF10CCD331D0CD8126F652B47BBB1296", hash_generated_method = "31FC32E977EB5C2C3C3925A69C0093DD")
     public float getScaleFactor() {
+    if(mScaleFactor == -1)        
         {
             mScaleFactor = getCurrentSpan() / getPreviousSpan();
-        } 
-        float var546ADE640B6EDFBC8A086EF31347E768_246806039 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_246806039;
-        
-        
-            
-        
-        
+        } //End block
+        float var43B25FDCBE078DC3DA65BC88CAA3AACD_950757768 = (mScaleFactor);
+                float var546ADE640B6EDFBC8A086EF31347E768_277547431 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_277547431;
+        // ---------- Original Method ----------
+        //if (mScaleFactor == -1) {
+            //mScaleFactor = getCurrentSpan() / getPreviousSpan();
+        //}
+        //return mScaleFactor;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.788 -0400", hash_original_method = "478681CCF9BA4A844274161522001BDE", hash_generated_method = "0FD527671D72B5DF68AE4DA7ADD536DB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.721 -0400", hash_original_method = "478681CCF9BA4A844274161522001BDE", hash_generated_method = "44F0F98CC8CA516D3A3FA2B5A287771A")
     public long getTimeDelta() {
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_1992878315 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1992878315;
-        
-        
+        long varD088DDA1C27B96429D7E4965433B26E2_937456004 = (mTimeDelta);
+                long var0F5264038205EDFB1AC05FBB0E8C5E94_608235079 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_608235079;
+        // ---------- Original Method ----------
+        //return mTimeDelta;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.788 -0400", hash_original_method = "93D380EA2FE2DB10568746F6E0FB3B8E", hash_generated_method = "FA5537EA0B935EBE6FE2BE3336EE3695")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.721 -0400", hash_original_method = "93D380EA2FE2DB10568746F6E0FB3B8E", hash_generated_method = "D7559844AA502F56E339BA71C4E7F71C")
     public long getEventTime() {
-        long var1C6AD87B9864EE888540D94E95CFDF79_171136254 = (mCurrEvent.getEventTime());
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_2136588200 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_2136588200;
-        
-        
+        long varF5CCD1CFF00A6AFC9E9CD33F09ACC5B7_1265989927 = (mCurrEvent.getEventTime());
+                long var0F5264038205EDFB1AC05FBB0E8C5E94_405925789 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_405925789;
+        // ---------- Original Method ----------
+        //return mCurrEvent.getEventTime();
     }
 
     
     public static class SimpleOnScaleGestureListener implements OnScaleGestureListener {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.788 -0400", hash_original_method = "AD1F4E6C43CD567296DC4B26B7E79B23", hash_generated_method = "AD1F4E6C43CD567296DC4B26B7E79B23")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.721 -0400", hash_original_method = "AD1F4E6C43CD567296DC4B26B7E79B23", hash_generated_method = "AD1F4E6C43CD567296DC4B26B7E79B23")
         public SimpleOnScaleGestureListener ()
         {
-            
+            //Synthesized constructor
         }
 
 
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.788 -0400", hash_original_method = "F1A51F1E1A44A60BDE5250CC79B6BF22", hash_generated_method = "438C189907AFC947701616D25DE070AE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.722 -0400", hash_original_method = "F1A51F1E1A44A60BDE5250CC79B6BF22", hash_generated_method = "926392105F005767D7567AB7A88C6C8A")
         public boolean onScale(ScaleGestureDetector detector) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(detector.getTaint());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_885217775 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_885217775;
-            
-            
+            boolean var68934A3E9455FA72420237EB05902327_1086159499 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1697101529 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1697101529;
+            // ---------- Original Method ----------
+            //return false;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.789 -0400", hash_original_method = "2018A466C052949DAB40F7C8547E8FA5", hash_generated_method = "05794F51D80370DD96E11460B6B6174F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.722 -0400", hash_original_method = "2018A466C052949DAB40F7C8547E8FA5", hash_generated_method = "407486EDB1AE6F4E57A76AD165FB63CC")
         public boolean onScaleBegin(ScaleGestureDetector detector) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(detector.getTaint());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_97792164 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_97792164;
-            
-            
+            boolean varB326B5062B2F0E69046810717534CB09_522310825 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_296394021 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_296394021;
+            // ---------- Original Method ----------
+            //return true;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.789 -0400", hash_original_method = "5B9499EAA38A4A49EE469DC4AE83A358", hash_generated_method = "60B04B78A4A04F6C7A1F2B5D39D8EB97")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.722 -0400", hash_original_method = "5B9499EAA38A4A49EE469DC4AE83A358", hash_generated_method = "60B04B78A4A04F6C7A1F2B5D39D8EB97")
         public void onScaleEnd(ScaleGestureDetector detector) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(detector.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -716,10 +779,10 @@ public class ScaleGestureDetector {
         public void onScaleEnd(ScaleGestureDetector detector);
     }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.789 -0400", hash_original_field = "8B2EF3D1B7CA751F5122A037B33DDFA9", hash_generated_field = "4649FA3572602ADAEA386A657BBBCE55")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.722 -0400", hash_original_field = "8B2EF3D1B7CA751F5122A037B33DDFA9", hash_generated_field = "4649FA3572602ADAEA386A657BBBCE55")
 
     private static final String TAG = "ScaleGestureDetector";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.789 -0400", hash_original_field = "98A2E9AEA633EA3E41254A788CD371FE", hash_generated_field = "1E49C39436E310C8A58BEAD71FF9190C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.722 -0400", hash_original_field = "98A2E9AEA633EA3E41254A788CD371FE", hash_generated_field = "1E49C39436E310C8A58BEAD71FF9190C")
 
     private static final float PRESSURE_THRESHOLD = 0.67f;
 }

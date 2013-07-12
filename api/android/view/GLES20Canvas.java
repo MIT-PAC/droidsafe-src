@@ -1,12 +1,9 @@
 package android.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
@@ -28,73 +25,75 @@ import android.text.SpannedString;
 import android.text.TextUtils;
 
 class GLES20Canvas extends HardwareCanvas {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.156 -0400", hash_original_field = "D57F412B2FBE34E5266AB85A3EC09555", hash_generated_field = "EB29C468CD6CC66BADB54A0F112750F9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.910 -0400", hash_original_field = "D57F412B2FBE34E5266AB85A3EC09555", hash_generated_field = "EB29C468CD6CC66BADB54A0F112750F9")
 
     private boolean mOpaque;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.156 -0400", hash_original_field = "D9CFA901A96C28EEA9DD412429CB9486", hash_generated_field = "29611ED2287CE69051FC2BCDB2E2FF9D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.910 -0400", hash_original_field = "D9CFA901A96C28EEA9DD412429CB9486", hash_generated_field = "29611ED2287CE69051FC2BCDB2E2FF9D")
 
     private int mRenderer;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.156 -0400", hash_original_field = "2D0BC5276619D20C917420C774FF5089", hash_generated_field = "8A3D5C4CB4C335D9AECD1C2651D2AAAF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.910 -0400", hash_original_field = "2D0BC5276619D20C917420C774FF5089", hash_generated_field = "8A3D5C4CB4C335D9AECD1C2651D2AAAF")
 
     @SuppressWarnings({"unused", "FieldCanBeLocal"}) private CanvasFinalizer mFinalizer;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.156 -0400", hash_original_field = "A3DB1626A190732E588FD0D14FC8FB31", hash_generated_field = "380984B6D3BA888BD05804A5D24041AE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.910 -0400", hash_original_field = "A3DB1626A190732E588FD0D14FC8FB31", hash_generated_field = "380984B6D3BA888BD05804A5D24041AE")
 
     private int mWidth;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.156 -0400", hash_original_field = "483542B05A951AA16D89C7F809C20811", hash_generated_field = "9A13F430E09A05B31C551CE62B9A37C1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.910 -0400", hash_original_field = "483542B05A951AA16D89C7F809C20811", hash_generated_field = "9A13F430E09A05B31C551CE62B9A37C1")
 
     private int mHeight;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.156 -0400", hash_original_field = "A71103FAF0A55FA79982ACB43DFBC49A", hash_generated_field = "6791C5CD1248B8A3047AAAB23F781F88")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.910 -0400", hash_original_field = "A71103FAF0A55FA79982ACB43DFBC49A", hash_generated_field = "6791C5CD1248B8A3047AAAB23F781F88")
 
     private final float[] mPoint = new float[2];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.156 -0400", hash_original_field = "8AF780D9E9617941A63F16F3D6400B2F", hash_generated_field = "BB2122C190B62908BBEDD5B8E43D320D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.910 -0400", hash_original_field = "8AF780D9E9617941A63F16F3D6400B2F", hash_generated_field = "BB2122C190B62908BBEDD5B8E43D320D")
 
     private final float[] mLine = new float[4];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.156 -0400", hash_original_field = "A51A4E6456596E09991D8FF2155CE00E", hash_generated_field = "49E49C9D9740E032CABA98DD5151CA56")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.911 -0400", hash_original_field = "A51A4E6456596E09991D8FF2155CE00E", hash_generated_field = "49E49C9D9740E032CABA98DD5151CA56")
 
     private final Rect mClipBounds = new Rect();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.156 -0400", hash_original_field = "C781ED17A87FBE09F8079C6EC63D1F26", hash_generated_field = "7E8B7E1A9144C0D301C8FE334261595B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.911 -0400", hash_original_field = "C781ED17A87FBE09F8079C6EC63D1F26", hash_generated_field = "7E8B7E1A9144C0D301C8FE334261595B")
 
     private DrawFilter mFilter;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.156 -0400", hash_original_method = "E61B8AD2F95A2B414E32399D6E0EB15F", hash_generated_method = "2AFB8DAA72D20488621230DD00C5A8A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.911 -0400", hash_original_method = "E61B8AD2F95A2B414E32399D6E0EB15F", hash_generated_method = "2AFB8DAA72D20488621230DD00C5A8A5")
       GLES20Canvas(boolean translucent) {
         this(false, translucent);
         addTaint(translucent);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.157 -0400", hash_original_method = "7F059AE8F3F932B35FF16ED888919AA8", hash_generated_method = "74FC0FA718B9D10E4233916A4857DF72")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.911 -0400", hash_original_method = "7F059AE8F3F932B35FF16ED888919AA8", hash_generated_method = "74FC0FA718B9D10E4233916A4857DF72")
       GLES20Canvas(int layer, boolean translucent) {
         mOpaque = !translucent;
         mRenderer = nCreateLayerRenderer(layer);
         setupFinalizer();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mOpaque = !translucent;
+        //mRenderer = nCreateLayerRenderer(layer);
+        //setupFinalizer();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.157 -0400", hash_original_method = "E76C4C3F056A713824BBE7237B891059", hash_generated_method = "121B835638D0788E10561D4E38D29C58")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.912 -0400", hash_original_method = "E76C4C3F056A713824BBE7237B891059", hash_generated_method = "71C01C0F92BAF29181A5B3B9E2729313")
     protected  GLES20Canvas(boolean record, boolean translucent) {
+        addTaint(record);
         mOpaque = !translucent;
+    if(record)        
         {
             mRenderer = nCreateDisplayListRenderer();
-        } 
+        } //End block
+        else
         {
             mRenderer = nCreateRenderer();
-        } 
+        } //End block
         setupFinalizer();
-        addTaint(record);
-        
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //mOpaque = !translucent;
+        //if (record) {
+            //mRenderer = nCreateDisplayListRenderer();
+        //} else {
+            //mRenderer = nCreateRenderer();
+        //}
+        //setupFinalizer();
     }
 
     
@@ -104,36 +103,37 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static boolean isAvailable() {
+        static boolean isAvailable() {
         return sIsAvailable;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.157 -0400", hash_original_method = "C5F1546049F1B2879B50EF00176E7660", hash_generated_method = "0C9C5F2865E1946BB687D321E4EF73B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.913 -0400", hash_original_method = "C5F1546049F1B2879B50EF00176E7660", hash_generated_method = "30D1F75DFEA72A742D251B10BA7A9CEA")
     private void setupFinalizer() {
+    if(mRenderer == 0)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Could not create GLES20Canvas renderer");
-        } 
+            IllegalStateException varC4B7F850A06E1E30E038C65FAC0396C6_713724507 = new IllegalStateException("Could not create GLES20Canvas renderer");
+            varC4B7F850A06E1E30E038C65FAC0396C6_713724507.addTaint(taint);
+            throw varC4B7F850A06E1E30E038C65FAC0396C6_713724507;
+        } //End block
+        else
         {
             mFinalizer = new CanvasFinalizer(mRenderer);
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mRenderer == 0) {
+            //throw new IllegalStateException("Could not create GLES20Canvas renderer");
+        //} else {
+            //mFinalizer = new CanvasFinalizer(mRenderer);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.158 -0400", hash_original_method = "DC942AC5C00E84A83A7A0337B1608CAB", hash_generated_method = "E424FF35B49ED518F1C9932756CF66A2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.913 -0400", hash_original_method = "DC942AC5C00E84A83A7A0337B1608CAB", hash_generated_method = "E424FF35B49ED518F1C9932756CF66A2")
     protected void resetDisplayListRenderer() {
         nResetDisplayListRenderer(mRenderer);
-        
-        
+        // ---------- Original Method ----------
+        //nResetDisplayListRenderer(mRenderer);
     }
 
     
@@ -209,60 +209,58 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.160 -0400", hash_original_method = "AB6C012A4EC234C0DA96929A7EE984CD", hash_generated_method = "3FCB0DD128C90CEA35255F0B5080335B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.916 -0400", hash_original_method = "AB6C012A4EC234C0DA96929A7EE984CD", hash_generated_method = "AC508C153357F6BF455B508D58C4CF1B")
     @Override
     public boolean isOpaque() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_413084162 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_413084162;
-        
-        
+        boolean varD57F412B2FBE34E5266AB85A3EC09555_160799839 = (mOpaque);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1780090105 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1780090105;
+        // ---------- Original Method ----------
+        //return mOpaque;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.160 -0400", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "A9B4B55E794271E12A332D37E44961C9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.916 -0400", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "E9BDF7E9B49382B999F7BC132DF5B7D1")
     @Override
     public int getWidth() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1685693592 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1685693592;
-        
-        
+        int varA3DB1626A190732E588FD0D14FC8FB31_1385267821 = (mWidth);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1186442747 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1186442747;
+        // ---------- Original Method ----------
+        //return mWidth;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.160 -0400", hash_original_method = "0304EDCF78FF45B68A7EB91BFEAAA2CD", hash_generated_method = "D20D691DF12B98D8AC596CAC4B187900")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.916 -0400", hash_original_method = "0304EDCF78FF45B68A7EB91BFEAAA2CD", hash_generated_method = "BED1021607230E7C912A1033EFBE215A")
     @Override
     public int getHeight() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2056217065 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2056217065;
-        
-        
+        int var483542B05A951AA16D89C7F809C20811_500943838 = (mHeight);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_959113900 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_959113900;
+        // ---------- Original Method ----------
+        //return mHeight;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.161 -0400", hash_original_method = "10F69D1300E55A44C724BA9496871588", hash_generated_method = "F2163ECF7DB82A059F6C7A64F6F17D44")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.917 -0400", hash_original_method = "10F69D1300E55A44C724BA9496871588", hash_generated_method = "680B418669E52985332B05E762B534C8")
     @Override
     public int getMaximumBitmapWidth() {
-        int var2F82E860F1E12659F23C0B40B403A9CB_285218816 = (nGetMaximumTextureWidth());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1262034345 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1262034345;
-        
-        
+        int varF7C147EB016379DF55ED470E94ECF0DE_177085495 = (nGetMaximumTextureWidth());
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_697630542 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_697630542;
+        // ---------- Original Method ----------
+        //return nGetMaximumTextureWidth();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.161 -0400", hash_original_method = "A5ADDC40BA4D92830B9288340B890F82", hash_generated_method = "5A3ED69E0DF22D1ABD8FF15E0EC98328")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.917 -0400", hash_original_method = "A5ADDC40BA4D92830B9288340B890F82", hash_generated_method = "35BA905F29D138FCA921F1B451BF7CC9")
     @Override
     public int getMaximumBitmapHeight() {
-        int var1BBF2D527FD9D576845B61C43DC1364E_340132767 = (nGetMaximumTextureHeight());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1365609133 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1365609133;
-        
-        
+        int varCC613ED1478CA0A4367B4D62BAD817EF_1545678667 = (nGetMaximumTextureHeight());
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1722556858 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1722556858;
+        // ---------- Original Method ----------
+        //return nGetMaximumTextureHeight();
     }
 
     
@@ -278,17 +276,16 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.162 -0400", hash_original_method = "3FE83BE893B91EF457CAAB97151B4DC3", hash_generated_method = "CC3C39D0D5C07B70A32E1D6BF9872BD0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.917 -0400", hash_original_method = "3FE83BE893B91EF457CAAB97151B4DC3", hash_generated_method = "CC3C39D0D5C07B70A32E1D6BF9872BD0")
     @Override
     public void setViewport(int width, int height) {
         mWidth = width;
         mHeight = height;
         nSetViewport(mRenderer, width, height);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mWidth = width;
+        //mHeight = height;
+        //nSetViewport(mRenderer, width, height);
     }
 
     
@@ -297,8 +294,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static boolean preserveBackBuffer() {
+        public static boolean preserveBackBuffer() {
         return nPreserveBackBuffer();
     }
 
@@ -309,8 +305,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static boolean isBackBufferPreserved() {
+        public static boolean isBackBufferPreserved() {
         return nIsBackBufferPreserved();
     }
 
@@ -321,8 +316,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void disableVsync() {
+        public static void disableVsync() {
         nDisableVsync();
     }
 
@@ -332,24 +326,25 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.163 -0400", hash_original_method = "9B095EEB0FC45774066EB055E8D05D05", hash_generated_method = "194D03C0C0802C77E17386DC78E96B57")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.918 -0400", hash_original_method = "9B095EEB0FC45774066EB055E8D05D05", hash_generated_method = "100AB8E0C00A37D158A2FA76AB777030")
     @Override
      void onPreDraw(Rect dirty) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
+        addTaint(dirty.getTaint());
+    if(dirty != null)        
         {
             nPrepareDirty(mRenderer, dirty.left, dirty.top, dirty.right, dirty.bottom, mOpaque);
-        } 
+        } //End block
+        else
         {
             nPrepare(mRenderer, mOpaque);
-        } 
-        addTaint(dirty.getTaint());
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (dirty != null) {
+            //nPrepareDirty(mRenderer, dirty.left, dirty.top, dirty.right, dirty.bottom, mOpaque);
+        //} else {
+            //nPrepare(mRenderer, mOpaque);
+        //}
     }
 
     
@@ -364,14 +359,13 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.163 -0400", hash_original_method = "7365F42EBD4B3D862109C8AFB45818F1", hash_generated_method = "D28DBD24898E379BFD423F6D4D12570A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.918 -0400", hash_original_method = "7365F42EBD4B3D862109C8AFB45818F1", hash_generated_method = "D28DBD24898E379BFD423F6D4D12570A")
     @Override
      void onPostDraw() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         nFinish(mRenderer);
-        
-        
+        // ---------- Original Method ----------
+        //nFinish(mRenderer);
     }
 
     
@@ -380,16 +374,15 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.164 -0400", hash_original_method = "D585DC5373E63EDA28C11B713D8E1A5B", hash_generated_method = "4D0D1BBC35FB0AD996AB6BB04CB27C07")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.918 -0400", hash_original_method = "D585DC5373E63EDA28C11B713D8E1A5B", hash_generated_method = "5A1BBF43FA068BD11FC29C388175F812")
     @Override
     public boolean callDrawGLFunction(int drawGLFunction) {
-        boolean varC4A19E2A6C6B767935A813F45844EA3B_2016554624 = (nCallDrawGLFunction(mRenderer, drawGLFunction));
         addTaint(drawGLFunction);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_471338397 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_471338397;
-        
-        
+        boolean var8BFFDBEAFF2EFDF3164312F2AB2AA207_1081947488 = (nCallDrawGLFunction(mRenderer, drawGLFunction));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1426725634 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1426725634;
+        // ---------- Original Method ----------
+        //return nCallDrawGLFunction(mRenderer, drawGLFunction);
     }
 
     
@@ -399,8 +392,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void flushCaches(int level) {
+        public static void flushCaches(int level) {
         nFlushCaches(level);
     }
 
@@ -410,8 +402,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void terminateCaches() {
+        public static void terminateCaches() {
         nTerminateCaches();
     }
 
@@ -421,8 +412,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void initCaches() {
+        public static void initCaches() {
         nInitCaches();
     }
 
@@ -432,15 +422,14 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.165 -0400", hash_original_method = "B6A785707CFBE1E38AD4FE8A1D6625FF", hash_generated_method = "AE9ACAC6704CE8E68DC6B9274FA358A9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.919 -0400", hash_original_method = "B6A785707CFBE1E38AD4FE8A1D6625FF", hash_generated_method = "CD61D784FC52230E0055C32832FC0E93")
      int getDisplayList(int displayList) {
-        int varCBB832023A69ED9BB808A7FE776E9BD9_636855390 = (nGetDisplayList(mRenderer, displayList));
         addTaint(displayList);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_257747366 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_257747366;
-        
-        
+        int varB0723F104765C12084C8EBEB7B27433A_601291597 = (nGetDisplayList(mRenderer, displayList));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1714780617 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1714780617;
+        // ---------- Original Method ----------
+        //return nGetDisplayList(mRenderer, displayList);
     }
 
     
@@ -450,8 +439,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static void destroyDisplayList(int displayList) {
+        static void destroyDisplayList(int displayList) {
         nDestroyDisplayList(displayList);
     }
 
@@ -461,8 +449,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static int getDisplayListSize(int displayList) {
+        static int getDisplayListSize(int displayList) {
         return nGetDisplayListSize(displayList);
     }
 
@@ -473,21 +460,20 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.166 -0400", hash_original_method = "444FDEED71E94CFCE2A65CC1E400505B", hash_generated_method = "3C6AA9F0736DBAF259835CE702F55B1B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.919 -0400", hash_original_method = "444FDEED71E94CFCE2A65CC1E400505B", hash_generated_method = "431EF806A9F313A3AE3F6F712ECBBCFA")
     @Override
     public boolean drawDisplayList(DisplayList displayList, int width, int height, Rect dirty) {
-        boolean var21370983C4F053CE0631C1001824FECB_1801497422 = (nDrawDisplayList(mRenderer,
-                ((GLES20DisplayList) displayList).getNativeDisplayList(), width, height, dirty));
-        addTaint(displayList.getTaint());
-        addTaint(width);
-        addTaint(height);
         addTaint(dirty.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_793106707 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_793106707;
-        
-        
-                
+        addTaint(height);
+        addTaint(width);
+        addTaint(displayList.getTaint());
+        boolean var0F7B0A94047C775A9CCA1688036BC62B_694528270 = (nDrawDisplayList(mRenderer,
+                ((GLES20DisplayList) displayList).getNativeDisplayList(), width, height, dirty));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_600416679 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_600416679;
+        // ---------- Original Method ----------
+        //return nDrawDisplayList(mRenderer,
+                //((GLES20DisplayList) displayList).getNativeDisplayList(), width, height, dirty);
     }
 
     
@@ -498,14 +484,13 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.166 -0400", hash_original_method = "5B863FAF56BDA796D9647970A297D545", hash_generated_method = "392FF023F6FF54515E49CD1513012D05")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.919 -0400", hash_original_method = "5B863FAF56BDA796D9647970A297D545", hash_generated_method = "9C6B91518F1334CB3C0EE8419B7A8557")
     @Override
      void outputDisplayList(DisplayList displayList) {
-        nOutputDisplayList(mRenderer, ((GLES20DisplayList) displayList).getNativeDisplayList());
         addTaint(displayList.getTaint());
-        
-        
+        nOutputDisplayList(mRenderer, ((GLES20DisplayList) displayList).getNativeDisplayList());
+        // ---------- Original Method ----------
+        //nOutputDisplayList(mRenderer, ((GLES20DisplayList) displayList).getNativeDisplayList());
     }
 
     
@@ -514,28 +499,24 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.169 -0400", hash_original_method = "34690C8D247D9A973C4DB94AE9D7C53D", hash_generated_method = "88557E4A99998A17E55C40247C390558")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.920 -0400", hash_original_method = "34690C8D247D9A973C4DB94AE9D7C53D", hash_generated_method = "997C1B2E0341F9D6C632E364FEF49B4A")
      void drawHardwareLayer(HardwareLayer layer, float x, float y, Paint paint) {
-        final GLES20Layer glLayer = (GLES20Layer) layer;
-        int modifier;
-        modifier = setupColorFilter(paint);
-        modifier = MODIFIER_NONE;
-        int nativePaint;
-        nativePaint = 0;
-        nativePaint = paint.mNativePaint;
-        nDrawLayer(mRenderer, glLayer.getLayer(), x, y, nativePaint);
-        nResetModifiers(mRenderer, modifier);
-        addTaint(layer.getTaint());
-        addTaint(x);
-        addTaint(y);
         addTaint(paint.getTaint());
-        
-        
-        
-        
-        
-        
+        addTaint(y);
+        addTaint(x);
+        addTaint(layer.getTaint());
+        final GLES20Layer glLayer = (GLES20Layer) layer;
+        int modifier = paint != null ? setupColorFilter(paint) : MODIFIER_NONE;
+        final int nativePaint = paint == null ? 0 : paint.mNativePaint;
+        nDrawLayer(mRenderer, glLayer.getLayer(), x, y, nativePaint);
+    if(modifier != MODIFIER_NONE)        
+        nResetModifiers(mRenderer, modifier);
+        // ---------- Original Method ----------
+        //final GLES20Layer glLayer = (GLES20Layer) layer;
+        //int modifier = paint != null ? setupColorFilter(paint) : MODIFIER_NONE;
+        //final int nativePaint = paint == null ? 0 : paint.mNativePaint;
+        //nDrawLayer(mRenderer, glLayer.getLayer(), x, y, nativePaint);
+        //if (modifier != MODIFIER_NONE) nResetModifiers(mRenderer, modifier);
     }
 
     
@@ -544,21 +525,19 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.170 -0400", hash_original_method = "2CAEF0DDE58BE10FAAA9AA0E667CCD64", hash_generated_method = "BA861453510B5BC8D04AD58E7A1553A0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.920 -0400", hash_original_method = "2CAEF0DDE58BE10FAAA9AA0E667CCD64", hash_generated_method = "BA861453510B5BC8D04AD58E7A1553A0")
      void interrupt() {
         nInterrupt(mRenderer);
-        
-        
+        // ---------- Original Method ----------
+        //nInterrupt(mRenderer);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.171 -0400", hash_original_method = "C365B4BBFEB4F0EDD5006A765220696B", hash_generated_method = "1C80A41B36E63E43CCFBDD0716C47088")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.920 -0400", hash_original_method = "C365B4BBFEB4F0EDD5006A765220696B", hash_generated_method = "1C80A41B36E63E43CCFBDD0716C47088")
      void resume() {
         nResume(mRenderer);
-        
-        
+        // ---------- Original Method ----------
+        //nResume(mRenderer);
     }
 
     
@@ -572,45 +551,43 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.172 -0400", hash_original_method = "CD9590925AA701F1E39AE88CF6AE97E7", hash_generated_method = "1D2D7F617ECB1C921E6A81819E30E250")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.920 -0400", hash_original_method = "CD9590925AA701F1E39AE88CF6AE97E7", hash_generated_method = "6BD801DCA2F9BEE81F3125D6CC83A696")
     @Override
     public boolean clipPath(Path path) {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         addTaint(path.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1475746647 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1475746647;
-        
-        
+        UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_156938152 = new UnsupportedOperationException();
+        var81FA7E299EEE7F062EBFBEEF08B0464D_156938152.addTaint(taint);
+        throw var81FA7E299EEE7F062EBFBEEF08B0464D_156938152;
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.172 -0400", hash_original_method = "A0322959331EF06FDECE706338820D13", hash_generated_method = "012E27128FB0410358418EDE9338AD65")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.920 -0400", hash_original_method = "A0322959331EF06FDECE706338820D13", hash_generated_method = "4825D00B1BD1F28498A552B6049E7E00")
     @Override
     public boolean clipPath(Path path, Region.Op op) {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        addTaint(path.getTaint());
         addTaint(op.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1249688425 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1249688425;
-        
-        
+        addTaint(path.getTaint());
+        UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1918576549 = new UnsupportedOperationException();
+        var81FA7E299EEE7F062EBFBEEF08B0464D_1918576549.addTaint(taint);
+        throw var81FA7E299EEE7F062EBFBEEF08B0464D_1918576549;
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.172 -0400", hash_original_method = "3AC948804DA1E718A76D8B221FEACE24", hash_generated_method = "CC4B71458FCB3147B4E27C4F134C22DB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.920 -0400", hash_original_method = "3AC948804DA1E718A76D8B221FEACE24", hash_generated_method = "4B05F0891684B1830D6D49ECDFF6C306")
     @Override
     public boolean clipRect(float left, float top, float right, float bottom) {
-        boolean var5AEDEF262D6E77628C31CFE063BA37CC_1599249841 = (nClipRect(mRenderer, left, top, right, bottom, Region.Op.INTERSECT.nativeInt));
-        addTaint(left);
-        addTaint(top);
-        addTaint(right);
         addTaint(bottom);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_636737380 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_636737380;
-        
-        
+        addTaint(right);
+        addTaint(top);
+        addTaint(left);
+        boolean var89B23FF280FFA824B378FE20F78CB7A5_1955463936 = (nClipRect(mRenderer, left, top, right, bottom, Region.Op.INTERSECT.nativeInt));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1248080549 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1248080549;
+        // ---------- Original Method ----------
+        //return nClipRect(mRenderer, left, top, right, bottom, Region.Op.INTERSECT.nativeInt);
     }
 
     
@@ -621,35 +598,34 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.173 -0400", hash_original_method = "CF0F08AE677C71FBDBDD5FF973518EEC", hash_generated_method = "0F0FF738955DCA7F6F912FC078F3181F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.921 -0400", hash_original_method = "CF0F08AE677C71FBDBDD5FF973518EEC", hash_generated_method = "924907C64CC5C0163F11807DC976CA6E")
     @Override
     public boolean clipRect(float left, float top, float right, float bottom, Region.Op op) {
-        boolean varEAE2AD84DDACC0D8F9E8CB54A9C56C43_560525834 = (nClipRect(mRenderer, left, top, right, bottom, op.nativeInt));
-        addTaint(left);
-        addTaint(top);
-        addTaint(right);
-        addTaint(bottom);
         addTaint(op.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_293114265 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_293114265;
-        
-        
+        addTaint(bottom);
+        addTaint(right);
+        addTaint(top);
+        addTaint(left);
+        boolean varE92DCB0A2C1A37C14D92C05CF2FCC325_1519545007 = (nClipRect(mRenderer, left, top, right, bottom, op.nativeInt));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2120342044 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2120342044;
+        // ---------- Original Method ----------
+        //return nClipRect(mRenderer, left, top, right, bottom, op.nativeInt);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.173 -0400", hash_original_method = "3911A8B4E2CBFCB889327A4F77A9CAF7", hash_generated_method = "5F31A7237319A9DACDF13C2F602568FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.921 -0400", hash_original_method = "3911A8B4E2CBFCB889327A4F77A9CAF7", hash_generated_method = "5132E2E8A54941055650A44DA3E95FB9")
     @Override
     public boolean clipRect(int left, int top, int right, int bottom) {
-        boolean var5AEDEF262D6E77628C31CFE063BA37CC_2129130905 = (nClipRect(mRenderer, left, top, right, bottom, Region.Op.INTERSECT.nativeInt));
-        addTaint(left);
-        addTaint(top);
-        addTaint(right);
         addTaint(bottom);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1429931325 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1429931325;
-        
-        
+        addTaint(right);
+        addTaint(top);
+        addTaint(left);
+        boolean var89B23FF280FFA824B378FE20F78CB7A5_2131284955 = (nClipRect(mRenderer, left, top, right, bottom, Region.Op.INTERSECT.nativeInt));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_690875928 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_690875928;
+        // ---------- Original Method ----------
+        //return nClipRect(mRenderer, left, top, right, bottom, Region.Op.INTERSECT.nativeInt);
     }
 
     
@@ -660,98 +636,94 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.174 -0400", hash_original_method = "C5507A7F3855C8C6C63565CD78400CEB", hash_generated_method = "AB17187B0FBF8642AEE187A2A0710C14")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.921 -0400", hash_original_method = "C5507A7F3855C8C6C63565CD78400CEB", hash_generated_method = "F34E2D3D74BF986B1940EA43A5F0FEA1")
     @Override
     public boolean clipRect(Rect rect) {
-        boolean var20B4B81DA2D8103CA7CA51BA49BE0DD0_1390661544 = (nClipRect(mRenderer, rect.left, rect.top, rect.right, rect.bottom,
-                Region.Op.INTERSECT.nativeInt));
         addTaint(rect.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1336024745 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1336024745;
-        
-        
-                
+        boolean var9E9D54F02CB180C00C7EDBC15A4FA604_1508078369 = (nClipRect(mRenderer, rect.left, rect.top, rect.right, rect.bottom,
+                Region.Op.INTERSECT.nativeInt));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1114301232 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1114301232;
+        // ---------- Original Method ----------
+        //return nClipRect(mRenderer, rect.left, rect.top, rect.right, rect.bottom,
+                //Region.Op.INTERSECT.nativeInt);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.174 -0400", hash_original_method = "CE1C58CF7145731A4EAE6ABB1C090975", hash_generated_method = "ADFBDA193CF2F8BCC8782CF64FA5FF44")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.921 -0400", hash_original_method = "CE1C58CF7145731A4EAE6ABB1C090975", hash_generated_method = "47DDAD4E7A9763CE4F98A355196B72CA")
     @Override
     public boolean clipRect(Rect rect, Region.Op op) {
-        boolean varF4CB4A50501C143AE1ED2F868AC9C184_998681062 = (nClipRect(mRenderer, rect.left, rect.top, rect.right, rect.bottom, op.nativeInt));
-        addTaint(rect.getTaint());
         addTaint(op.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_65061409 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_65061409;
-        
-        
+        addTaint(rect.getTaint());
+        boolean var883EAF71FB92F9F1F1A2153E07A28588_475278494 = (nClipRect(mRenderer, rect.left, rect.top, rect.right, rect.bottom, op.nativeInt));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1519054144 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1519054144;
+        // ---------- Original Method ----------
+        //return nClipRect(mRenderer, rect.left, rect.top, rect.right, rect.bottom, op.nativeInt);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.175 -0400", hash_original_method = "82CE8198F83847EB9950BBA97A14CB45", hash_generated_method = "2F68EEF01B029447F0A6D8E7D1AADC8B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.921 -0400", hash_original_method = "82CE8198F83847EB9950BBA97A14CB45", hash_generated_method = "5EE05B36D09A5BC9C68FCAEBDAAAA0F4")
     @Override
     public boolean clipRect(RectF rect) {
-        boolean var20B4B81DA2D8103CA7CA51BA49BE0DD0_1884066240 = (nClipRect(mRenderer, rect.left, rect.top, rect.right, rect.bottom,
-                Region.Op.INTERSECT.nativeInt));
         addTaint(rect.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1941651711 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1941651711;
-        
-        
-                
+        boolean var9E9D54F02CB180C00C7EDBC15A4FA604_249537471 = (nClipRect(mRenderer, rect.left, rect.top, rect.right, rect.bottom,
+                Region.Op.INTERSECT.nativeInt));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1689742373 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1689742373;
+        // ---------- Original Method ----------
+        //return nClipRect(mRenderer, rect.left, rect.top, rect.right, rect.bottom,
+                //Region.Op.INTERSECT.nativeInt);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.175 -0400", hash_original_method = "84F2B877854C623DFB4ED57554605946", hash_generated_method = "C82B400CD5FDAA6FDEA2996606403C98")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.921 -0400", hash_original_method = "84F2B877854C623DFB4ED57554605946", hash_generated_method = "C683738CBBC9AA81DE8CF1C9E23C3065")
     @Override
     public boolean clipRect(RectF rect, Region.Op op) {
-        boolean varF4CB4A50501C143AE1ED2F868AC9C184_1199319486 = (nClipRect(mRenderer, rect.left, rect.top, rect.right, rect.bottom, op.nativeInt));
-        addTaint(rect.getTaint());
         addTaint(op.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_743489815 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_743489815;
-        
-        
+        addTaint(rect.getTaint());
+        boolean var883EAF71FB92F9F1F1A2153E07A28588_801739401 = (nClipRect(mRenderer, rect.left, rect.top, rect.right, rect.bottom, op.nativeInt));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1421365551 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1421365551;
+        // ---------- Original Method ----------
+        //return nClipRect(mRenderer, rect.left, rect.top, rect.right, rect.bottom, op.nativeInt);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.175 -0400", hash_original_method = "668D615301DC55EDCE9C8FA044FF5F71", hash_generated_method = "F22259DEBB38649D5D284D0778F93460")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.922 -0400", hash_original_method = "668D615301DC55EDCE9C8FA044FF5F71", hash_generated_method = "195B5EE8204606047FEE2B234B63BB0B")
     @Override
     public boolean clipRegion(Region region) {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         addTaint(region.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1926656492 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1926656492;
-        
-        
+        UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1072203130 = new UnsupportedOperationException();
+        var81FA7E299EEE7F062EBFBEEF08B0464D_1072203130.addTaint(taint);
+        throw var81FA7E299EEE7F062EBFBEEF08B0464D_1072203130;
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.176 -0400", hash_original_method = "9554359F0ECC8D3364C9D02F1B6C0A6E", hash_generated_method = "3E8B192DD72648B20C5C245F4F182AAB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.922 -0400", hash_original_method = "9554359F0ECC8D3364C9D02F1B6C0A6E", hash_generated_method = "6573BFE731C43EBBF7CAEC87E9F28D13")
     @Override
     public boolean clipRegion(Region region, Region.Op op) {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        addTaint(region.getTaint());
         addTaint(op.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_725385203 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_725385203;
-        
-        
+        addTaint(region.getTaint());
+        UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1644350683 = new UnsupportedOperationException();
+        var81FA7E299EEE7F062EBFBEEF08B0464D_1644350683.addTaint(taint);
+        throw var81FA7E299EEE7F062EBFBEEF08B0464D_1644350683;
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.176 -0400", hash_original_method = "5A157FCBBF6BAEFB3D0D6DDEEF98EB76", hash_generated_method = "18C1EDBC49E92275B8CCF6AB2CCA20EE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.922 -0400", hash_original_method = "5A157FCBBF6BAEFB3D0D6DDEEF98EB76", hash_generated_method = "442DAF1851A949824EC2C9A86674A50A")
     @Override
     public boolean getClipBounds(Rect bounds) {
-        boolean varCA244AE61DE6F3A03B7536F19E7E331E_41204487 = (nGetClipBounds(mRenderer, bounds));
         addTaint(bounds.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1958428715 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1958428715;
-        
-        
+        boolean var39DFF8903C8DDE2FAE867DBC4A09CEF7_565398290 = (nGetClipBounds(mRenderer, bounds));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_352653282 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_352653282;
+        // ---------- Original Method ----------
+        //return nGetClipBounds(mRenderer, bounds);
     }
 
     
@@ -761,20 +733,19 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.176 -0400", hash_original_method = "0662E9735A64886F23067D669F3F560C", hash_generated_method = "09786DF15880665FCB676DC6E95B3455")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.922 -0400", hash_original_method = "0662E9735A64886F23067D669F3F560C", hash_generated_method = "253A86A21029D2B9AE88BEEC5EC096C0")
     @Override
     public boolean quickReject(float left, float top, float right, float bottom, EdgeType type) {
-        boolean var0F31BC06DBEC4B76A6CCB17691BE7DA8_1995503939 = (nQuickReject(mRenderer, left, top, right, bottom, type.nativeInt));
-        addTaint(left);
-        addTaint(top);
-        addTaint(right);
-        addTaint(bottom);
         addTaint(type.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_503063997 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_503063997;
-        
-        
+        addTaint(bottom);
+        addTaint(right);
+        addTaint(top);
+        addTaint(left);
+        boolean varD2C36748788BD5AD12C5DEAB4866E474_1555032827 = (nQuickReject(mRenderer, left, top, right, bottom, type.nativeInt));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_67362731 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_67362731;
+        // ---------- Original Method ----------
+        //return nQuickReject(mRenderer, left, top, right, bottom, type.nativeInt);
     }
 
     
@@ -785,43 +756,41 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.177 -0400", hash_original_method = "866F13730ACFD67020DA883631339738", hash_generated_method = "C6E06B7E503BD58D1870A1302D1E99CB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.922 -0400", hash_original_method = "866F13730ACFD67020DA883631339738", hash_generated_method = "BDA202C36F75871FCA0F05B2D06C1B16")
     @Override
     public boolean quickReject(Path path, EdgeType type) {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        addTaint(path.getTaint());
         addTaint(type.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_608953334 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_608953334;
-        
-        
+        addTaint(path.getTaint());
+        UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_2048402963 = new UnsupportedOperationException();
+        var81FA7E299EEE7F062EBFBEEF08B0464D_2048402963.addTaint(taint);
+        throw var81FA7E299EEE7F062EBFBEEF08B0464D_2048402963;
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.177 -0400", hash_original_method = "0E7313D794F0C2C284156675C98816BB", hash_generated_method = "5717607A43A52B4C43739B61D267BF1D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.922 -0400", hash_original_method = "0E7313D794F0C2C284156675C98816BB", hash_generated_method = "136C8B0E69AC0959175D50E95D4443FD")
     @Override
     public boolean quickReject(RectF rect, EdgeType type) {
-        boolean var446DE569437F7D1782E011E7DFACF532_1498934525 = (quickReject(rect.left, rect.top, rect.right, rect.bottom, type));
-        addTaint(rect.getTaint());
         addTaint(type.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1312354663 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1312354663;
-        
-        
+        addTaint(rect.getTaint());
+        boolean varBEEBA0E86EA880C0912462C1F2B0EDE7_1685734465 = (quickReject(rect.left, rect.top, rect.right, rect.bottom, type));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1439174653 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1439174653;
+        // ---------- Original Method ----------
+        //return quickReject(rect.left, rect.top, rect.right, rect.bottom, type);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.177 -0400", hash_original_method = "D702D49D0CBA8DAFFC483E145A7D155B", hash_generated_method = "062A0866B19ECB7D9AA9D0F734739CA3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.922 -0400", hash_original_method = "D702D49D0CBA8DAFFC483E145A7D155B", hash_generated_method = "9F1C4B541DA6BCF82C75E3E3336AD9EB")
     @Override
     public void translate(float dx, float dy) {
-        nTranslate(mRenderer, dx, dy);
-        addTaint(dx);
         addTaint(dy);
-        
-        
+        addTaint(dx);
+    if(dx != 0.0f || dy != 0.0f)        
+        nTranslate(mRenderer, dx, dy);
+        // ---------- Original Method ----------
+        //if (dx != 0.0f || dy != 0.0f) nTranslate(mRenderer, dx, dy);
     }
 
     
@@ -830,15 +799,14 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.178 -0400", hash_original_method = "B4BEAF66CD344F6FBAA1A7BCA9EAC51C", hash_generated_method = "C41495E494DF8278073AE0B77A7BB97D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.923 -0400", hash_original_method = "B4BEAF66CD344F6FBAA1A7BCA9EAC51C", hash_generated_method = "0212FAEA49320B139B41D8B1A3049035")
     @Override
     public void skew(float sx, float sy) {
-        nSkew(mRenderer, sx, sy);
-        addTaint(sx);
         addTaint(sy);
-        
-        
+        addTaint(sx);
+        nSkew(mRenderer, sx, sy);
+        // ---------- Original Method ----------
+        //nSkew(mRenderer, sx, sy);
     }
 
     
@@ -847,14 +815,13 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.179 -0400", hash_original_method = "088A2140F7946F7E1F87C60185C75E3A", hash_generated_method = "4AF01F5DBF73CFBC54957EE1B3783B33")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.923 -0400", hash_original_method = "088A2140F7946F7E1F87C60185C75E3A", hash_generated_method = "06F47DA2C4BC0BFD54CD0F55B50E8AA7")
     @Override
     public void rotate(float degrees) {
-        nRotate(mRenderer, degrees);
         addTaint(degrees);
-        
-        
+        nRotate(mRenderer, degrees);
+        // ---------- Original Method ----------
+        //nRotate(mRenderer, degrees);
     }
 
     
@@ -863,15 +830,14 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.179 -0400", hash_original_method = "407ACB57F0B4398889DAE0D23801B26B", hash_generated_method = "56D6F059A6DD46AE78E62B1AF24187AE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.923 -0400", hash_original_method = "407ACB57F0B4398889DAE0D23801B26B", hash_generated_method = "9C32413688507E5B3B4B5C43AA370798")
     @Override
     public void scale(float sx, float sy) {
-        nScale(mRenderer, sx, sy);
-        addTaint(sx);
         addTaint(sy);
-        
-        
+        addTaint(sx);
+        nScale(mRenderer, sx, sy);
+        // ---------- Original Method ----------
+        //nScale(mRenderer, sx, sy);
     }
 
     
@@ -880,14 +846,13 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.179 -0400", hash_original_method = "F6D59AD1FAE97EC22EF86A1DF6443B3F", hash_generated_method = "BB1A65239C3CCB84191C6CA107490B43")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.923 -0400", hash_original_method = "F6D59AD1FAE97EC22EF86A1DF6443B3F", hash_generated_method = "D26407292801951992231AE3DB5D5B76")
     @Override
     public void setMatrix(Matrix matrix) {
-        nSetMatrix(mRenderer, matrix.native_instance);
         addTaint(matrix.getTaint());
-        
-        
+        nSetMatrix(mRenderer, matrix.native_instance);
+        // ---------- Original Method ----------
+        //nSetMatrix(mRenderer, matrix.native_instance);
     }
 
     
@@ -896,14 +861,13 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.180 -0400", hash_original_method = "5C2AB9AC8E62FE145634A1140AF6AF7A", hash_generated_method = "163FA369562BC5B7C5810CBE2D11B663")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.923 -0400", hash_original_method = "5C2AB9AC8E62FE145634A1140AF6AF7A", hash_generated_method = "39F006588A5C3BDA9624B952E563867A")
     @Override
     public void getMatrix(Matrix matrix) {
-        nGetMatrix(mRenderer, matrix.native_instance);
         addTaint(matrix.getTaint());
-        
-        
+        nGetMatrix(mRenderer, matrix.native_instance);
+        // ---------- Original Method ----------
+        //nGetMatrix(mRenderer, matrix.native_instance);
     }
 
     
@@ -912,14 +876,13 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.181 -0400", hash_original_method = "D981C9A8CE9E8AB948A57E105C909748", hash_generated_method = "13B1CE8AB60D3EA26325CCF543DB0001")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.923 -0400", hash_original_method = "D981C9A8CE9E8AB948A57E105C909748", hash_generated_method = "DD56A9DE49EC546344D9FB1A6FA7C388")
     @Override
     public void concat(Matrix matrix) {
-        nConcatMatrix(mRenderer, matrix.native_instance);
         addTaint(matrix.getTaint());
-        
-        
+        nConcatMatrix(mRenderer, matrix.native_instance);
+        // ---------- Original Method ----------
+        //nConcatMatrix(mRenderer, matrix.native_instance);
     }
 
     
@@ -928,28 +891,26 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.181 -0400", hash_original_method = "7EFF2592C3C6BD5E4F13755A0D5399A0", hash_generated_method = "A2DF92807B3D8D73D90F0FF94073D220")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.924 -0400", hash_original_method = "7EFF2592C3C6BD5E4F13755A0D5399A0", hash_generated_method = "52159B83B72AB8A806ADCF35B702429A")
     @Override
     public int save() {
-        int varF2C17D2E97D5ED631A8D7EEE74944094_8655081 = (nSave(mRenderer, Canvas.CLIP_SAVE_FLAG | Canvas.MATRIX_SAVE_FLAG));
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1226753764 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1226753764;
-        
-        
+        int varBB74372FF18FEE33CB51B124B07FCD59_1796952435 = (nSave(mRenderer, Canvas.CLIP_SAVE_FLAG | Canvas.MATRIX_SAVE_FLAG));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1363919574 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1363919574;
+        // ---------- Original Method ----------
+        //return nSave(mRenderer, Canvas.CLIP_SAVE_FLAG | Canvas.MATRIX_SAVE_FLAG);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.182 -0400", hash_original_method = "F50C3BBFE7BD2C9D29BCAB4C8FE567F6", hash_generated_method = "7C340D2CE104ECA999469C561341D301")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.924 -0400", hash_original_method = "F50C3BBFE7BD2C9D29BCAB4C8FE567F6", hash_generated_method = "1BBD8861C9AFCF9AD1CAD1001ACAFC0A")
     @Override
     public int save(int saveFlags) {
-        int var2A3CE8B1D9F9FA715D89281510DCFCB9_931719847 = (nSave(mRenderer, saveFlags));
         addTaint(saveFlags);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1044349267 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1044349267;
-        
-        
+        int var83B098C10803F9C5FC6B081963F88E64_1848810078 = (nSave(mRenderer, saveFlags));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_938695031 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_938695031;
+        // ---------- Original Method ----------
+        //return nSave(mRenderer, saveFlags);
     }
 
     
@@ -959,35 +920,35 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.182 -0400", hash_original_method = "9DF5A937336C76576E5F634C144FC48D", hash_generated_method = "37A4B2A8A2284C5B56847830CD42C40E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.924 -0400", hash_original_method = "9DF5A937336C76576E5F634C144FC48D", hash_generated_method = "320E28E4AC3EAE2ADE06102A8DE86814")
     @Override
     public int saveLayer(RectF bounds, Paint paint, int saveFlags) {
-        {
-            int var20A869D74EDE832F843CC7BD4DB8A988_3786731 = (saveLayer(bounds.left, bounds.top, bounds.right, bounds.bottom, paint, saveFlags));
-        } 
-        int modifier;
-        modifier = setupColorFilter(paint);
-        modifier = MODIFIER_NONE;
-        int nativePaint;
-        nativePaint = 0;
-        nativePaint = paint.mNativePaint;
-        int count = nSaveLayer(mRenderer, nativePaint, saveFlags);
-        nResetModifiers(mRenderer, modifier);
-        addTaint(bounds.getTaint());
-        addTaint(paint.getTaint());
         addTaint(saveFlags);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1332815774 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1332815774;
-        
-        
-            
-        
-        
-        
-        
-        
-        
+        addTaint(paint.getTaint());
+        addTaint(bounds.getTaint());
+    if(bounds != null)        
+        {
+            int var6C14327D501CB2DF47256E66D8117CF0_379808560 = (saveLayer(bounds.left, bounds.top, bounds.right, bounds.bottom, paint, saveFlags));
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1552479000 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1552479000;
+        } //End block
+        int modifier = paint != null ? setupColorFilter(paint) : MODIFIER_NONE;
+        final int nativePaint = paint == null ? 0 : paint.mNativePaint;
+        int count = nSaveLayer(mRenderer, nativePaint, saveFlags);
+    if(modifier != MODIFIER_NONE)        
+        nResetModifiers(mRenderer, modifier);
+        int varE2942A04780E223B215EB8B663CF5353_831342705 = (count);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_117143488 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_117143488;
+        // ---------- Original Method ----------
+        //if (bounds != null) {
+            //return saveLayer(bounds.left, bounds.top, bounds.right, bounds.bottom, paint, saveFlags);
+        //}
+        //int modifier = paint != null ? setupColorFilter(paint) : MODIFIER_NONE;
+        //final int nativePaint = paint == null ? 0 : paint.mNativePaint;
+        //int count = nSaveLayer(mRenderer, nativePaint, saveFlags);
+        //if (modifier != MODIFIER_NONE) nResetModifiers(mRenderer, modifier);
+        //return count;
     }
 
     
@@ -997,39 +958,39 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.183 -0400", hash_original_method = "E794596E5060868E9256D6234D184C09", hash_generated_method = "ECB930BC2BBFA266828CDC76FF6A3550")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.924 -0400", hash_original_method = "E794596E5060868E9256D6234D184C09", hash_generated_method = "3CB8B3569BF5D8E5F898F322BACC3C05")
     @Override
     public int saveLayer(float left, float top, float right, float bottom, Paint paint,
             int saveFlags) {
-        {
-            int modifier;
-            modifier = setupColorFilter(paint);
-            modifier = MODIFIER_NONE;
-            int nativePaint;
-            nativePaint = 0;
-            nativePaint = paint.mNativePaint;
-            int count = nSaveLayer(mRenderer, left, top, right, bottom, nativePaint, saveFlags);
-            nResetModifiers(mRenderer, modifier);
-        } 
-        int varEA6155209B327E6D6A26296B56FB2AC5_475864829 = (save(saveFlags));
-        addTaint(left);
-        addTaint(top);
-        addTaint(right);
-        addTaint(bottom);
-        addTaint(paint.getTaint());
         addTaint(saveFlags);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1074692725 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1074692725;
-        
-        
-            
-            
-            
-            
-            
-        
-        
+        addTaint(paint.getTaint());
+        addTaint(bottom);
+        addTaint(right);
+        addTaint(top);
+        addTaint(left);
+    if(left < right && top < bottom)        
+        {
+            int modifier = paint != null ? setupColorFilter(paint) : MODIFIER_NONE;
+            final int nativePaint = paint == null ? 0 : paint.mNativePaint;
+            int count = nSaveLayer(mRenderer, left, top, right, bottom, nativePaint, saveFlags);
+    if(modifier != MODIFIER_NONE)            
+            nResetModifiers(mRenderer, modifier);
+            int varE2942A04780E223B215EB8B663CF5353_494609862 = (count);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2062659081 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2062659081;
+        } //End block
+        int var93E11C19FAFCCBCB4B81A37D476FB864_1053292311 = (save(saveFlags));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1707563732 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1707563732;
+        // ---------- Original Method ----------
+        //if (left < right && top < bottom) {
+            //int modifier = paint != null ? setupColorFilter(paint) : MODIFIER_NONE;
+            //final int nativePaint = paint == null ? 0 : paint.mNativePaint;
+            //int count = nSaveLayer(mRenderer, left, top, right, bottom, nativePaint, saveFlags);
+            //if (modifier != MODIFIER_NONE) nResetModifiers(mRenderer, modifier);
+            //return count;
+        //}
+        //return save(saveFlags);
     }
 
     
@@ -1040,26 +1001,28 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.184 -0400", hash_original_method = "E4AB6B80C5EF0D5B797D753415FED0BE", hash_generated_method = "FE9A8206DF3432C6777A1CB8C04DC308")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.925 -0400", hash_original_method = "E4AB6B80C5EF0D5B797D753415FED0BE", hash_generated_method = "4780780FF82EDD7CA8A6D4E946D837B0")
     @Override
     public int saveLayerAlpha(RectF bounds, int alpha, int saveFlags) {
-        {
-            int varFB0B372D7BDA6865AFF768ED959BAEF6_1107351438 = (saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom,
-                    alpha, saveFlags));
-        } 
-        int varCFD03E3328DC4C00BBEC0CCC6AD112E5_2073883817 = (nSaveLayerAlpha(mRenderer, alpha, saveFlags));
-        addTaint(bounds.getTaint());
-        addTaint(alpha);
         addTaint(saveFlags);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1915939169 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1915939169;
-        
-        
-            
-                    
-        
-        
+        addTaint(alpha);
+        addTaint(bounds.getTaint());
+    if(bounds != null)        
+        {
+            int var680C56DCD82C6DE036ED8C78E543A1E1_1902389951 = (saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom,
+                    alpha, saveFlags));
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1820403542 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1820403542;
+        } //End block
+        int var5CA833EA5C757196FCF1809B451D6ED4_56015170 = (nSaveLayerAlpha(mRenderer, alpha, saveFlags));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_449102088 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_449102088;
+        // ---------- Original Method ----------
+        //if (bounds != null) {
+            //return saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom,
+                    //alpha, saveFlags);
+        //}
+        //return nSaveLayerAlpha(mRenderer, alpha, saveFlags);
     }
 
     
@@ -1069,28 +1032,30 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.184 -0400", hash_original_method = "B4AB4565F10B041D742F1796C47ECB95", hash_generated_method = "C8F648B0113FD1C7A0C146806D9F8C40")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.925 -0400", hash_original_method = "B4AB4565F10B041D742F1796C47ECB95", hash_generated_method = "5812193168EC70CC619890056543BA94")
     @Override
     public int saveLayerAlpha(float left, float top, float right, float bottom, int alpha,
             int saveFlags) {
-        {
-            int var109591026B19EDE75417DB7AF33A11FA_1298386907 = (nSaveLayerAlpha(mRenderer, left, top, right, bottom, alpha, saveFlags));
-        } 
-        int varEA6155209B327E6D6A26296B56FB2AC5_1448141486 = (save(saveFlags));
-        addTaint(left);
-        addTaint(top);
-        addTaint(right);
-        addTaint(bottom);
-        addTaint(alpha);
         addTaint(saveFlags);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1254545904 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1254545904;
-        
-        
-            
-        
-        
+        addTaint(alpha);
+        addTaint(bottom);
+        addTaint(right);
+        addTaint(top);
+        addTaint(left);
+    if(left < right && top < bottom)        
+        {
+            int var86A0D67CF338C0CF143EF13E4B3BEE1C_280012572 = (nSaveLayerAlpha(mRenderer, left, top, right, bottom, alpha, saveFlags));
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_257730106 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_257730106;
+        } //End block
+        int var93E11C19FAFCCBCB4B81A37D476FB864_1887020802 = (save(saveFlags));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_776111035 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_776111035;
+        // ---------- Original Method ----------
+        //if (left < right && top < bottom) {
+            //return nSaveLayerAlpha(mRenderer, left, top, right, bottom, alpha, saveFlags);
+        //}
+        //return save(saveFlags);
     }
 
     
@@ -1101,13 +1066,12 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.185 -0400", hash_original_method = "C18753FB8460844761E485A3B07AB085", hash_generated_method = "70D1825D14CEDE923274F8D7C79BA367")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.925 -0400", hash_original_method = "C18753FB8460844761E485A3B07AB085", hash_generated_method = "70D1825D14CEDE923274F8D7C79BA367")
     @Override
     public void restore() {
         nRestore(mRenderer);
-        
-        
+        // ---------- Original Method ----------
+        //nRestore(mRenderer);
     }
 
     
@@ -1116,14 +1080,13 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.186 -0400", hash_original_method = "03029795119CF4F7F4374FF9CDD913F1", hash_generated_method = "2B2F57009AF9A88635FCC8D8D93756FD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.925 -0400", hash_original_method = "03029795119CF4F7F4374FF9CDD913F1", hash_generated_method = "9866F503B48E3048E862E853D8DE1004")
     @Override
     public void restoreToCount(int saveCount) {
-        nRestoreToCount(mRenderer, saveCount);
         addTaint(saveCount);
-        
-        
+        nRestoreToCount(mRenderer, saveCount);
+        // ---------- Original Method ----------
+        //nRestoreToCount(mRenderer, saveCount);
     }
 
     
@@ -1132,15 +1095,14 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.186 -0400", hash_original_method = "5171A9EFFCF2464453072A29F0BC817F", hash_generated_method = "1146B05ACF341F05B399B64DA78C0F59")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.926 -0400", hash_original_method = "5171A9EFFCF2464453072A29F0BC817F", hash_generated_method = "1FAF32FF0CF371A994880C62DD900841")
     @Override
     public int getSaveCount() {
-        int varBD59B9383972492C3C1BFF0B7946F4DD_1706264490 = (nGetSaveCount(mRenderer));
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1644109966 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1644109966;
-        
-        
+        int var07BC16A087EC2F97F6B7AAC46DF1D0FB_1731814357 = (nGetSaveCount(mRenderer));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1849055070 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1849055070;
+        // ---------- Original Method ----------
+        //return nGetSaveCount(mRenderer);
     }
 
     
@@ -1150,48 +1112,45 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.186 -0400", hash_original_method = "846B7706B193B695840103C92096214E", hash_generated_method = "2A2151BC53135B33E05ECD91C4DDE028")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.926 -0400", hash_original_method = "846B7706B193B695840103C92096214E", hash_generated_method = "2A2151BC53135B33E05ECD91C4DDE028")
     @Override
     public void setDrawFilter(DrawFilter filter) {
         mFilter = filter;
-        
-        
+        // ---------- Original Method ----------
+        //mFilter = filter;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.187 -0400", hash_original_method = "00C808EC6F25CC6E1FA57C10F69CA13D", hash_generated_method = "25FFD7DCFE0E56E60FFE50EFAEFC7186")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.926 -0400", hash_original_method = "00C808EC6F25CC6E1FA57C10F69CA13D", hash_generated_method = "9C0B66B7731553B2286FACCF43E38662")
     @Override
     public DrawFilter getDrawFilter() {
-        DrawFilter varB4EAC82CA7396A68D541C85D26508E83_1354750150 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1354750150 = mFilter;
-        varB4EAC82CA7396A68D541C85D26508E83_1354750150.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1354750150;
-        
-        
+DrawFilter var6104E4BD549FCD2640641D136DD683A6_716747252 =         mFilter;
+        var6104E4BD549FCD2640641D136DD683A6_716747252.addTaint(taint);
+        return var6104E4BD549FCD2640641D136DD683A6_716747252;
+        // ---------- Original Method ----------
+        //return mFilter;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.187 -0400", hash_original_method = "1B5F3778D027ED2D7C875DF279109721", hash_generated_method = "EBC026967703DAECD601BDFCD5B96A97")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.926 -0400", hash_original_method = "1B5F3778D027ED2D7C875DF279109721", hash_generated_method = "32F41CE9D8CF07BE82A7027D5C730880")
     @Override
     public void drawArc(RectF oval, float startAngle, float sweepAngle, boolean useCenter,
             Paint paint) {
+        addTaint(paint.getTaint());
+        addTaint(useCenter);
+        addTaint(sweepAngle);
+        addTaint(startAngle);
+        addTaint(oval.getTaint());
         int modifiers = setupModifiers(paint);
         nDrawArc(mRenderer, oval.left, oval.top, oval.right, oval.bottom, startAngle, sweepAngle,
                 useCenter, paint.mNativePaint);
+    if(modifiers != MODIFIER_NONE)        
         nResetModifiers(mRenderer, modifiers);
-        addTaint(oval.getTaint());
-        addTaint(startAngle);
-        addTaint(sweepAngle);
-        addTaint(useCenter);
-        addTaint(paint.getTaint());
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //int modifiers = setupModifiers(paint);
+        //nDrawArc(mRenderer, oval.left, oval.top, oval.right, oval.bottom, startAngle, sweepAngle,
+                //useCenter, paint.mNativePaint);
+        //if (modifiers != MODIFIER_NONE) nResetModifiers(mRenderer, modifiers);
     }
 
     
@@ -1202,43 +1161,38 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.188 -0400", hash_original_method = "AAC237D01F9254CC358C9D52B0A20AD9", hash_generated_method = "7100F337D20659FD2619EDAFF17FC452")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.926 -0400", hash_original_method = "AAC237D01F9254CC358C9D52B0A20AD9", hash_generated_method = "056F36CA49CC96D882A23D6253B9EA23")
     @Override
     public void drawARGB(int a, int r, int g, int b) {
-        drawColor((a & 0xFF) << 24 | (r & 0xFF) << 16 | (g & 0xFF) << 8 | (b & 0xFF));
-        addTaint(a);
-        addTaint(r);
-        addTaint(g);
         addTaint(b);
-        
-        
+        addTaint(g);
+        addTaint(r);
+        addTaint(a);
+        drawColor((a & 0xFF) << 24 | (r & 0xFF) << 16 | (g & 0xFF) << 8 | (b & 0xFF));
+        // ---------- Original Method ----------
+        //drawColor((a & 0xFF) << 24 | (r & 0xFF) << 16 | (g & 0xFF) << 8 | (b & 0xFF));
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.188 -0400", hash_original_method = "3E288E14B7CE68A819334B0A90162954", hash_generated_method = "BBB59D8D223BD6B6894D7319E33E2D0F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.928 -0400", hash_original_method = "3E288E14B7CE68A819334B0A90162954", hash_generated_method = "7AC6D5A04025FF0F15BCC4B7A9825784")
     @Override
     public void drawPatch(Bitmap bitmap, byte[] chunks, RectF dst, Paint paint) {
-        int modifier;
-        modifier = setupColorFilter(paint);
-        modifier = MODIFIER_NONE;
-        int nativePaint;
-        nativePaint = 0;
-        nativePaint = paint.mNativePaint;
+        addTaint(paint.getTaint());
+        addTaint(dst.getTaint());
+        addTaint(chunks[0]);
+        addTaint(bitmap.getTaint());
+        int modifier = paint != null ? setupColorFilter(paint) : MODIFIER_NONE;
+        final int nativePaint = paint == null ? 0 : paint.mNativePaint;
         nDrawPatch(mRenderer, bitmap.mNativeBitmap, bitmap.mBuffer, chunks,
                 dst.left, dst.top, dst.right, dst.bottom, nativePaint);
+    if(modifier != MODIFIER_NONE)        
         nResetModifiers(mRenderer, modifier);
-        addTaint(bitmap.getTaint());
-        addTaint(chunks[0]);
-        addTaint(dst.getTaint());
-        addTaint(paint.getTaint());
-        
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //int modifier = paint != null ? setupColorFilter(paint) : MODIFIER_NONE;
+        //final int nativePaint = paint == null ? 0 : paint.mNativePaint;
+        //nDrawPatch(mRenderer, bitmap.mNativeBitmap, bitmap.mBuffer, chunks,
+                //dst.left, dst.top, dst.right, dst.bottom, nativePaint);
+        //if (modifier != MODIFIER_NONE) nResetModifiers(mRenderer, modifier);
     }
 
     
@@ -1248,27 +1202,23 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.189 -0400", hash_original_method = "BF78CEE5A5D5A0B7000D42B8D7CD12A6", hash_generated_method = "B01E11762C9F1628459EF2CADDC12AE8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.928 -0400", hash_original_method = "BF78CEE5A5D5A0B7000D42B8D7CD12A6", hash_generated_method = "63652DBC220F442FA35F1DF187A840BA")
     @Override
     public void drawBitmap(Bitmap bitmap, float left, float top, Paint paint) {
-        int modifiers;
-        modifiers = setupModifiers(bitmap, paint);
-        modifiers = MODIFIER_NONE;
-        int nativePaint;
-        nativePaint = 0;
-        nativePaint = paint.mNativePaint;
-        nDrawBitmap(mRenderer, bitmap.mNativeBitmap, bitmap.mBuffer, left, top, nativePaint);
-        nResetModifiers(mRenderer, modifiers);
-        addTaint(bitmap.getTaint());
-        addTaint(left);
-        addTaint(top);
         addTaint(paint.getTaint());
-        
-        
-        
-        
-        
+        addTaint(top);
+        addTaint(left);
+        addTaint(bitmap.getTaint());
+        int modifiers = paint != null ? setupModifiers(bitmap, paint) : MODIFIER_NONE;
+        final int nativePaint = paint == null ? 0 : paint.mNativePaint;
+        nDrawBitmap(mRenderer, bitmap.mNativeBitmap, bitmap.mBuffer, left, top, nativePaint);
+    if(modifiers != MODIFIER_NONE)        
+        nResetModifiers(mRenderer, modifiers);
+        // ---------- Original Method ----------
+        //int modifiers = paint != null ? setupModifiers(bitmap, paint) : MODIFIER_NONE;
+        //final int nativePaint = paint == null ? 0 : paint.mNativePaint;
+        //nDrawBitmap(mRenderer, bitmap.mNativeBitmap, bitmap.mBuffer, left, top, nativePaint);
+        //if (modifiers != MODIFIER_NONE) nResetModifiers(mRenderer, modifiers);
     }
 
     
@@ -1278,28 +1228,24 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.190 -0400", hash_original_method = "7A23E114FF3FC414FFADAB9162210E17", hash_generated_method = "C1F9FC6EDC4FBC2FDD2210F90ADCAB67")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.928 -0400", hash_original_method = "7A23E114FF3FC414FFADAB9162210E17", hash_generated_method = "77800C56F7A3BF21B32AC59C4E20982A")
     @Override
     public void drawBitmap(Bitmap bitmap, Matrix matrix, Paint paint) {
-        int modifiers;
-        modifiers = setupModifiers(bitmap, paint);
-        modifiers = MODIFIER_NONE;
-        int nativePaint;
-        nativePaint = 0;
-        nativePaint = paint.mNativePaint;
+        addTaint(paint.getTaint());
+        addTaint(matrix.getTaint());
+        addTaint(bitmap.getTaint());
+        int modifiers = paint != null ? setupModifiers(bitmap, paint) : MODIFIER_NONE;
+        final int nativePaint = paint == null ? 0 : paint.mNativePaint;
         nDrawBitmap(mRenderer, bitmap.mNativeBitmap, bitmap.mBuffer,
                 matrix.native_instance, nativePaint);
+    if(modifiers != MODIFIER_NONE)        
         nResetModifiers(mRenderer, modifiers);
-        addTaint(bitmap.getTaint());
-        addTaint(matrix.getTaint());
-        addTaint(paint.getTaint());
-        
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //int modifiers = paint != null ? setupModifiers(bitmap, paint) : MODIFIER_NONE;
+        //final int nativePaint = paint == null ? 0 : paint.mNativePaint;
+        //nDrawBitmap(mRenderer, bitmap.mNativeBitmap, bitmap.mBuffer,
+                //matrix.native_instance, nativePaint);
+        //if (modifiers != MODIFIER_NONE) nResetModifiers(mRenderer, modifiers);
     }
 
     
@@ -1309,107 +1255,103 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.191 -0400", hash_original_method = "025B89D3F15CD9670FC3D74B91AB5D58", hash_generated_method = "611A34F8B8D32D25C9F7E8FA04546A70")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.930 -0400", hash_original_method = "025B89D3F15CD9670FC3D74B91AB5D58", hash_generated_method = "5EF40C1FA30701B82DDAC90FA0F06068")
     @Override
     public void drawBitmap(Bitmap bitmap, Rect src, Rect dst, Paint paint) {
-        int modifiers;
-        modifiers = setupModifiers(bitmap, paint);
-        modifiers = MODIFIER_NONE;
-        int nativePaint;
-        nativePaint = 0;
-        nativePaint = paint.mNativePaint;
+        addTaint(paint.getTaint());
+        addTaint(dst.getTaint());
+        addTaint(src.getTaint());
+        addTaint(bitmap.getTaint());
+        int modifiers = paint != null ? setupModifiers(bitmap, paint) : MODIFIER_NONE;
+        final int nativePaint = paint == null ? 0 : paint.mNativePaint;
         int left;
         int top;
         int right;
         int bottom;
+    if(src == null)        
         {
             left = top = 0;
             right = bitmap.getWidth();
             bottom = bitmap.getHeight();
-        } 
+        } //End block
+        else
         {
             left = src.left;
             right = src.right;
             top = src.top;
             bottom = src.bottom;
-        } 
+        } //End block
         nDrawBitmap(mRenderer, bitmap.mNativeBitmap, bitmap.mBuffer, left, top, right, bottom,
                 dst.left, dst.top, dst.right, dst.bottom, nativePaint);
+    if(modifiers != MODIFIER_NONE)        
         nResetModifiers(mRenderer, modifiers);
-        addTaint(bitmap.getTaint());
-        addTaint(src.getTaint());
-        addTaint(dst.getTaint());
-        addTaint(paint.getTaint());
-        
-        
-        
-        
-        
-            
-            
-            
-        
-            
-            
-            
-            
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //int modifiers = paint != null ? setupModifiers(bitmap, paint) : MODIFIER_NONE;
+        //final int nativePaint = paint == null ? 0 : paint.mNativePaint;
+        //int left, top, right, bottom;
+        //if (src == null) {
+            //left = top = 0;
+            //right = bitmap.getWidth();
+            //bottom = bitmap.getHeight();
+        //} else {
+            //left = src.left;
+            //right = src.right;
+            //top = src.top;
+            //bottom = src.bottom;
+        //}
+        //nDrawBitmap(mRenderer, bitmap.mNativeBitmap, bitmap.mBuffer, left, top, right, bottom,
+                //dst.left, dst.top, dst.right, dst.bottom, nativePaint);
+        //if (modifiers != MODIFIER_NONE) nResetModifiers(mRenderer, modifiers);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.192 -0400", hash_original_method = "18A7A5D5D5C8B881DFD85E47F7DA3439", hash_generated_method = "8D97BB904EF3E2462A79C4D25132A98E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.933 -0400", hash_original_method = "18A7A5D5D5C8B881DFD85E47F7DA3439", hash_generated_method = "DF85C1A6DC7E947ACE5692AB3884D7DD")
     @Override
     public void drawBitmap(Bitmap bitmap, Rect src, RectF dst, Paint paint) {
-        int modifiers;
-        modifiers = setupModifiers(bitmap, paint);
-        modifiers = MODIFIER_NONE;
-        int nativePaint;
-        nativePaint = 0;
-        nativePaint = paint.mNativePaint;
+        addTaint(paint.getTaint());
+        addTaint(dst.getTaint());
+        addTaint(src.getTaint());
+        addTaint(bitmap.getTaint());
+        int modifiers = paint != null ? setupModifiers(bitmap, paint) : MODIFIER_NONE;
+        final int nativePaint = paint == null ? 0 : paint.mNativePaint;
         float left;
         float top;
         float right;
         float bottom;
+    if(src == null)        
         {
             left = top = 0;
             right = bitmap.getWidth();
             bottom = bitmap.getHeight();
-        } 
+        } //End block
+        else
         {
             left = src.left;
             right = src.right;
             top = src.top;
             bottom = src.bottom;
-        } 
+        } //End block
         nDrawBitmap(mRenderer, bitmap.mNativeBitmap, bitmap.mBuffer, left, top, right, bottom,
                 dst.left, dst.top, dst.right, dst.bottom, nativePaint);
+    if(modifiers != MODIFIER_NONE)        
         nResetModifiers(mRenderer, modifiers);
-        addTaint(bitmap.getTaint());
-        addTaint(src.getTaint());
-        addTaint(dst.getTaint());
-        addTaint(paint.getTaint());
-        
-        
-        
-        
-        
-            
-            
-            
-        
-            
-            
-            
-            
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //int modifiers = paint != null ? setupModifiers(bitmap, paint) : MODIFIER_NONE;
+        //final int nativePaint = paint == null ? 0 : paint.mNativePaint;
+        //float left, top, right, bottom;
+        //if (src == null) {
+            //left = top = 0;
+            //right = bitmap.getWidth();
+            //bottom = bitmap.getHeight();
+        //} else {
+            //left = src.left;
+            //right = src.right;
+            //top = src.top;
+            //bottom = src.bottom;
+        //}
+        //nDrawBitmap(mRenderer, bitmap.mNativeBitmap, bitmap.mBuffer, left, top, right, bottom,
+                //dst.left, dst.top, dst.right, dst.bottom, nativePaint);
+        //if (modifiers != MODIFIER_NONE) nResetModifiers(mRenderer, modifiers);
     }
 
     
@@ -1420,109 +1362,105 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.193 -0400", hash_original_method = "9B6F84B3164E22399F0F518F30D6F56B", hash_generated_method = "2C0139AB8799BD160F56256C71EABAF8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.933 -0400", hash_original_method = "9B6F84B3164E22399F0F518F30D6F56B", hash_generated_method = "5446C43054469AD262F4DED8FBBDF7E2")
     @Override
     public void drawBitmap(int[] colors, int offset, int stride, float x, float y,
             int width, int height, boolean hasAlpha, Paint paint) {
-        int modifier;
-        modifier = setupColorFilter(paint);
-        modifier = MODIFIER_NONE;
-        Bitmap.Config config;
-        config = Bitmap.Config.ARGB_8888;
-        config = Bitmap.Config.RGB_565;
+        addTaint(paint.getTaint());
+        addTaint(hasAlpha);
+        addTaint(height);
+        addTaint(width);
+        addTaint(y);
+        addTaint(x);
+        addTaint(stride);
+        addTaint(offset);
+        addTaint(colors[0]);
+        int modifier = paint != null ? setupColorFilter(paint) : MODIFIER_NONE;
+        final Bitmap.Config config = hasAlpha ? Bitmap.Config.ARGB_8888 : Bitmap.Config.RGB_565;
         final Bitmap b = Bitmap.createBitmap(colors, offset, stride, width, height, config);
-        int nativePaint;
-        nativePaint = 0;
-        nativePaint = paint.mNativePaint;
+        final int nativePaint = paint == null ? 0 : paint.mNativePaint;
         nDrawBitmap(mRenderer, b.mNativeBitmap, b.mBuffer, x, y, nativePaint);
         b.recycle();
+    if(modifier != MODIFIER_NONE)        
         nResetModifiers(mRenderer, modifier);
-        addTaint(colors[0]);
-        addTaint(offset);
-        addTaint(stride);
-        addTaint(x);
-        addTaint(y);
-        addTaint(width);
-        addTaint(height);
-        addTaint(hasAlpha);
-        addTaint(paint.getTaint());
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int modifier = paint != null ? setupColorFilter(paint) : MODIFIER_NONE;
+        //final Bitmap.Config config = hasAlpha ? Bitmap.Config.ARGB_8888 : Bitmap.Config.RGB_565;
+        //final Bitmap b = Bitmap.createBitmap(colors, offset, stride, width, height, config);
+        //final int nativePaint = paint == null ? 0 : paint.mNativePaint;
+        //nDrawBitmap(mRenderer, b.mNativeBitmap, b.mBuffer, x, y, nativePaint);
+        //b.recycle();
+        //if (modifier != MODIFIER_NONE) nResetModifiers(mRenderer, modifier);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.194 -0400", hash_original_method = "1DECC82647C03783DFB70A54A4715DCA", hash_generated_method = "E86361AE744E9B7F72E66F9429D95648")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.933 -0400", hash_original_method = "1DECC82647C03783DFB70A54A4715DCA", hash_generated_method = "1B6822115F8797CEFF093DB7882E6C34")
     @Override
     public void drawBitmap(int[] colors, int offset, int stride, int x, int y,
             int width, int height, boolean hasAlpha, Paint paint) {
-        drawBitmap(colors, offset, stride, (float) x, (float) y, width, height, hasAlpha, paint);
-        addTaint(colors[0]);
-        addTaint(offset);
-        addTaint(stride);
-        addTaint(x);
-        addTaint(y);
-        addTaint(width);
-        addTaint(height);
-        addTaint(hasAlpha);
         addTaint(paint.getTaint());
-        
-        
+        addTaint(hasAlpha);
+        addTaint(height);
+        addTaint(width);
+        addTaint(y);
+        addTaint(x);
+        addTaint(stride);
+        addTaint(offset);
+        addTaint(colors[0]);
+        drawBitmap(colors, offset, stride, (float) x, (float) y, width, height, hasAlpha, paint);
+        // ---------- Original Method ----------
+        //drawBitmap(colors, offset, stride, (float) x, (float) y, width, height, hasAlpha, paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.194 -0400", hash_original_method = "B49032D10E62987D37B2D43027E8B7B3", hash_generated_method = "4B77C2058A49FC8474A261AE3C9221A2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.935 -0400", hash_original_method = "B49032D10E62987D37B2D43027E8B7B3", hash_generated_method = "8B0200765003E312C53292084B058D2E")
     @Override
     public void drawBitmapMesh(Bitmap bitmap, int meshWidth, int meshHeight, float[] verts,
             int vertOffset, int[] colors, int colorOffset, Paint paint) {
+        addTaint(paint.getTaint());
+        addTaint(colorOffset);
+        addTaint(colors[0]);
+        addTaint(vertOffset);
+        addTaint(verts[0]);
+        addTaint(meshHeight);
+        addTaint(meshWidth);
+        addTaint(bitmap.getTaint());
+    if(meshWidth < 0 || meshHeight < 0 || vertOffset < 0 || colorOffset < 0)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException();
-        } 
+            ArrayIndexOutOfBoundsException var37DB57B1FEB1C9FBA644A093BFA8B678_1185720996 = new ArrayIndexOutOfBoundsException();
+            var37DB57B1FEB1C9FBA644A093BFA8B678_1185720996.addTaint(taint);
+            throw var37DB57B1FEB1C9FBA644A093BFA8B678_1185720996;
+        } //End block
+    if(meshWidth == 0 || meshHeight == 0)        
+        {
+            return;
+        } //End block
         final int count = (meshWidth + 1) * (meshHeight + 1);
         checkRange(verts.length, vertOffset, count * 2);
         colors = null;
         colorOffset = 0;
-        int modifiers;
-        modifiers = setupModifiers(bitmap, paint);
-        modifiers = MODIFIER_NONE;
-        int nativePaint;
-        nativePaint = 0;
-        nativePaint = paint.mNativePaint;
+        int modifiers = paint != null ? setupModifiers(bitmap, paint) : MODIFIER_NONE;
+        final int nativePaint = paint == null ? 0 : paint.mNativePaint;
         nDrawBitmapMesh(mRenderer, bitmap.mNativeBitmap, bitmap.mBuffer, meshWidth, meshHeight,
                 verts, vertOffset, colors, colorOffset, nativePaint);
+    if(modifiers != MODIFIER_NONE)        
         nResetModifiers(mRenderer, modifiers);
-        addTaint(bitmap.getTaint());
-        addTaint(meshWidth);
-        addTaint(meshHeight);
-        addTaint(verts[0]);
-        addTaint(vertOffset);
-        addTaint(colors[0]);
-        addTaint(colorOffset);
-        addTaint(paint.getTaint());
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
-        
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //if (meshWidth < 0 || meshHeight < 0 || vertOffset < 0 || colorOffset < 0) {
+            //throw new ArrayIndexOutOfBoundsException();
+        //}
+        //if (meshWidth == 0 || meshHeight == 0) {
+            //return;
+        //}
+        //final int count = (meshWidth + 1) * (meshHeight + 1);
+        //checkRange(verts.length, vertOffset, count * 2);
+        //colors = null;
+        //colorOffset = 0;
+        //int modifiers = paint != null ? setupModifiers(bitmap, paint) : MODIFIER_NONE;
+        //final int nativePaint = paint == null ? 0 : paint.mNativePaint;
+        //nDrawBitmapMesh(mRenderer, bitmap.mNativeBitmap, bitmap.mBuffer, meshWidth, meshHeight,
+                //verts, vertOffset, colors, colorOffset, nativePaint);
+        //if (modifiers != MODIFIER_NONE) nResetModifiers(mRenderer, modifiers);
     }
 
     
@@ -1533,21 +1471,21 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.195 -0400", hash_original_method = "3CC575BC6DB3F469750010B2B8CAC81C", hash_generated_method = "EBBAD1BFB9856D8BEC02715E8F024851")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.935 -0400", hash_original_method = "3CC575BC6DB3F469750010B2B8CAC81C", hash_generated_method = "CFCE24718E3E7CF1D5E9A2A4D98BACB8")
     @Override
     public void drawCircle(float cx, float cy, float radius, Paint paint) {
+        addTaint(paint.getTaint());
+        addTaint(radius);
+        addTaint(cy);
+        addTaint(cx);
         int modifiers = setupModifiers(paint);
         nDrawCircle(mRenderer, cx, cy, radius, paint.mNativePaint);
+    if(modifiers != MODIFIER_NONE)        
         nResetModifiers(mRenderer, modifiers);
-        addTaint(cx);
-        addTaint(cy);
-        addTaint(radius);
-        addTaint(paint.getTaint());
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int modifiers = setupModifiers(paint);
+        //nDrawCircle(mRenderer, cx, cy, radius, paint.mNativePaint);
+        //if (modifiers != MODIFIER_NONE) nResetModifiers(mRenderer, modifiers);
     }
 
     
@@ -1557,25 +1495,24 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.195 -0400", hash_original_method = "4F7ABDA5E981B914379787693CC10165", hash_generated_method = "BDBB1C6CE2C518602EAF02B4D9C5F026")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.935 -0400", hash_original_method = "4F7ABDA5E981B914379787693CC10165", hash_generated_method = "C3C2A08E4F406434E020AFF0EA8C3C4A")
     @Override
     public void drawColor(int color) {
-        drawColor(color, PorterDuff.Mode.SRC_OVER);
         addTaint(color);
-        
-        
+        drawColor(color, PorterDuff.Mode.SRC_OVER);
+        // ---------- Original Method ----------
+        //drawColor(color, PorterDuff.Mode.SRC_OVER);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.196 -0400", hash_original_method = "CF35C7302232BF0C4B60CFA92B96D407", hash_generated_method = "66C5EADDBCC0448A906591FEDFC52DB1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.937 -0400", hash_original_method = "CF35C7302232BF0C4B60CFA92B96D407", hash_generated_method = "7AA2693CA714743AC774AEC1B0C16439")
     @Override
     public void drawColor(int color, PorterDuff.Mode mode) {
-        nDrawColor(mRenderer, color, mode.nativeInt);
-        addTaint(color);
         addTaint(mode.getTaint());
-        
-        
+        addTaint(color);
+        nDrawColor(mRenderer, color, mode.nativeInt);
+        // ---------- Original Method ----------
+        //nDrawColor(mRenderer, color, mode.nativeInt);
     }
 
     
@@ -1584,46 +1521,48 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.196 -0400", hash_original_method = "5EABC5A9A71D080A656B11841F718311", hash_generated_method = "83FBC18BECAA1D26869A9AFD31E56AD5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.937 -0400", hash_original_method = "5EABC5A9A71D080A656B11841F718311", hash_generated_method = "6330210DF13C15F2273C445DAFF62A14")
     @Override
     public void drawLine(float startX, float startY, float stopX, float stopY, Paint paint) {
+        addTaint(paint.getTaint());
         mLine[0] = startX;
         mLine[1] = startY;
         mLine[2] = stopX;
         mLine[3] = stopY;
         drawLines(mLine, 0, 4, paint);
-        addTaint(paint.getTaint());
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mLine[0] = startX;
+        //mLine[1] = startY;
+        //mLine[2] = stopX;
+        //mLine[3] = stopY;
+        //drawLines(mLine, 0, 4, paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.197 -0400", hash_original_method = "CC8F0B4448632DE8A259253A60E2B3F7", hash_generated_method = "CAF94CA85E686CF7324721A21202A420")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.938 -0400", hash_original_method = "CC8F0B4448632DE8A259253A60E2B3F7", hash_generated_method = "3A4874EC033FA4030D1264E9D2592C81")
     @Override
     public void drawLines(float[] pts, int offset, int count, Paint paint) {
+        addTaint(paint.getTaint());
+        addTaint(count);
+        addTaint(offset);
+        addTaint(pts[0]);
+    if((offset | count) < 0 || offset + count > pts.length)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The lines array must contain 4 elements per line.");
-        } 
+            IllegalArgumentException var549D16F3405BF0B3A7D18DF89C5725E5_1499412081 = new IllegalArgumentException("The lines array must contain 4 elements per line.");
+            var549D16F3405BF0B3A7D18DF89C5725E5_1499412081.addTaint(taint);
+            throw var549D16F3405BF0B3A7D18DF89C5725E5_1499412081;
+        } //End block
         int modifiers = setupModifiers(paint);
         nDrawLines(mRenderer, pts, offset, count, paint.mNativePaint);
+    if(modifiers != MODIFIER_NONE)        
         nResetModifiers(mRenderer, modifiers);
-        addTaint(pts[0]);
-        addTaint(offset);
-        addTaint(count);
-        addTaint(paint.getTaint());
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if ((offset | count) < 0 || offset + count > pts.length) {
+            //throw new IllegalArgumentException("The lines array must contain 4 elements per line.");
+        //}
+        //int modifiers = setupModifiers(paint);
+        //nDrawLines(mRenderer, pts, offset, count, paint.mNativePaint);
+        //if (modifiers != MODIFIER_NONE) nResetModifiers(mRenderer, modifiers);
     }
 
     
@@ -1633,31 +1572,30 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.197 -0400", hash_original_method = "C2DF9F5B70F03E16002905BD3365AB2E", hash_generated_method = "20F7F5F3BFD3766A6C8EDC4B8F987BDC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.939 -0400", hash_original_method = "C2DF9F5B70F03E16002905BD3365AB2E", hash_generated_method = "DD7D0820367BD7CCFC6E6C3BFF1DD24E")
     @Override
     public void drawLines(float[] pts, Paint paint) {
-        drawLines(pts, 0, pts.length, paint);
-        addTaint(pts[0]);
         addTaint(paint.getTaint());
-        
-        
+        addTaint(pts[0]);
+        drawLines(pts, 0, pts.length, paint);
+        // ---------- Original Method ----------
+        //drawLines(pts, 0, pts.length, paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.197 -0400", hash_original_method = "3C8333232F307DB00830ADFD9367082C", hash_generated_method = "0733ECA4F6C20A2033C203075FC58398")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.939 -0400", hash_original_method = "3C8333232F307DB00830ADFD9367082C", hash_generated_method = "BE7290F5D782DE45BBDFEB33AA60151D")
     @Override
     public void drawOval(RectF oval, Paint paint) {
+        addTaint(paint.getTaint());
+        addTaint(oval.getTaint());
         int modifiers = setupModifiers(paint);
         nDrawOval(mRenderer, oval.left, oval.top, oval.right, oval.bottom, paint.mNativePaint);
+    if(modifiers != MODIFIER_NONE)        
         nResetModifiers(mRenderer, modifiers);
-        addTaint(oval.getTaint());
-        addTaint(paint.getTaint());
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int modifiers = setupModifiers(paint);
+        //nDrawOval(mRenderer, oval.left, oval.top, oval.right, oval.bottom, paint.mNativePaint);
+        //if (modifiers != MODIFIER_NONE) nResetModifiers(mRenderer, modifiers);
     }
 
     
@@ -1667,47 +1605,49 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.198 -0400", hash_original_method = "F3CEC7F1ABD68352F2A5895BCD8335A7", hash_generated_method = "4437342066D10E68893C3D84DE346C8D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.939 -0400", hash_original_method = "F3CEC7F1ABD68352F2A5895BCD8335A7", hash_generated_method = "A57933C0DD66BB033573162B66104A07")
     @Override
     public void drawPaint(Paint paint) {
+        addTaint(paint.getTaint());
         final Rect r = mClipBounds;
         nGetClipBounds(mRenderer, r);
         drawRect(r.left, r.top, r.right, r.bottom, paint);
-        addTaint(paint.getTaint());
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //final Rect r = mClipBounds;
+        //nGetClipBounds(mRenderer, r);
+        //drawRect(r.left, r.top, r.right, r.bottom, paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.198 -0400", hash_original_method = "E734C6F1749AB430929BC8490D600517", hash_generated_method = "61937937C79AC9496EFFD599AAE79CDB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.939 -0400", hash_original_method = "E734C6F1749AB430929BC8490D600517", hash_generated_method = "7FDA9F40B87F90E80BDF6F3BB434DEA4")
     @Override
     public void drawPath(Path path, Paint paint) {
+        addTaint(paint.getTaint());
+        addTaint(path.getTaint());
         int modifiers = setupModifiers(paint);
+    if(path.isSimplePath)        
         {
+    if(path.rects != null)            
             {
                 nDrawRects(mRenderer, path.rects.mNativeRegion, paint.mNativePaint);
-            } 
-        } 
+            } //End block
+        } //End block
+        else
         {
             nDrawPath(mRenderer, path.mNativePath, paint.mNativePaint);
-        } 
+        } //End block
+    if(modifiers != MODIFIER_NONE)        
         nResetModifiers(mRenderer, modifiers);
-        addTaint(path.getTaint());
-        addTaint(paint.getTaint());
-        
-        
-        
-            
-                
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int modifiers = setupModifiers(paint);
+        //if (path.isSimplePath) {
+            //if (path.rects != null) {
+                //nDrawRects(mRenderer, path.rects.mNativeRegion, paint.mNativePaint);
+            //}
+        //} else {
+            //nDrawPath(mRenderer, path.mNativePath, paint.mNativePaint);
+        //}
+        //if (modifiers != MODIFIER_NONE) nResetModifiers(mRenderer, modifiers);
     }
 
     
@@ -1721,83 +1661,84 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.199 -0400", hash_original_method = "2AA9BBA2F44244E312AB57A12DAF658B", hash_generated_method = "F2B8595DD75A2F7A3630EEB354DA0C3F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.942 -0400", hash_original_method = "2AA9BBA2F44244E312AB57A12DAF658B", hash_generated_method = "0B3999624C32B26B5FCD7A5CAF6F0022")
     @Override
     public void drawPicture(Picture picture) {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         addTaint(picture.getTaint());
-        
-        
+        UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1511369206 = new UnsupportedOperationException();
+        var81FA7E299EEE7F062EBFBEEF08B0464D_1511369206.addTaint(taint);
+        throw var81FA7E299EEE7F062EBFBEEF08B0464D_1511369206;
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.200 -0400", hash_original_method = "1202DF046E7699A744E442D410CE2128", hash_generated_method = "C18903179754272BB4DAA014D59EEA46")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.942 -0400", hash_original_method = "1202DF046E7699A744E442D410CE2128", hash_generated_method = "02BC5DB703E17BE89BBC72ED9A3E3672")
     @Override
     public void drawPicture(Picture picture, Rect dst) {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        addTaint(picture.getTaint());
         addTaint(dst.getTaint());
-        
-        
+        addTaint(picture.getTaint());
+        UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_59529537 = new UnsupportedOperationException();
+        var81FA7E299EEE7F062EBFBEEF08B0464D_59529537.addTaint(taint);
+        throw var81FA7E299EEE7F062EBFBEEF08B0464D_59529537;
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.200 -0400", hash_original_method = "CE526B9F8925E416169A22B853086EA4", hash_generated_method = "C983ABE9421E9461991AEF24F970DCFE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.942 -0400", hash_original_method = "CE526B9F8925E416169A22B853086EA4", hash_generated_method = "D75D6D0741365858023C53D992C8B8B9")
     @Override
     public void drawPicture(Picture picture, RectF dst) {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        addTaint(picture.getTaint());
         addTaint(dst.getTaint());
-        
-        
+        addTaint(picture.getTaint());
+        UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1282151521 = new UnsupportedOperationException();
+        var81FA7E299EEE7F062EBFBEEF08B0464D_1282151521.addTaint(taint);
+        throw var81FA7E299EEE7F062EBFBEEF08B0464D_1282151521;
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.201 -0400", hash_original_method = "711B0E1C295D7644DD171BC7547CDDDA", hash_generated_method = "00C2BAB4377C062205605ACBC5494E12")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.942 -0400", hash_original_method = "711B0E1C295D7644DD171BC7547CDDDA", hash_generated_method = "104842C33FA4333CD182A9724A0EA65D")
     @Override
     public void drawPoint(float x, float y, Paint paint) {
+        addTaint(paint.getTaint());
         mPoint[0] = x;
         mPoint[1] = y;
         drawPoints(mPoint, 0, 2, paint);
-        addTaint(paint.getTaint());
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mPoint[0] = x;
+        //mPoint[1] = y;
+        //drawPoints(mPoint, 0, 2, paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.201 -0400", hash_original_method = "929DA853C72DCA36C1C2D5AEB0F0EEC1", hash_generated_method = "761E08A19F69F8527973C9F526190591")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.942 -0400", hash_original_method = "929DA853C72DCA36C1C2D5AEB0F0EEC1", hash_generated_method = "D8720D3F5332A17627233DE6797392EE")
     @Override
     public void drawPoints(float[] pts, Paint paint) {
-        drawPoints(pts, 0, pts.length, paint);
-        addTaint(pts[0]);
         addTaint(paint.getTaint());
-        
-        
+        addTaint(pts[0]);
+        drawPoints(pts, 0, pts.length, paint);
+        // ---------- Original Method ----------
+        //drawPoints(pts, 0, pts.length, paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.202 -0400", hash_original_method = "A6EA0B46F26697457B201A425B5A3171", hash_generated_method = "A2985637F2788B210D2200E69AE16C19")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.944 -0400", hash_original_method = "A6EA0B46F26697457B201A425B5A3171", hash_generated_method = "49A13EAB6B8AA2817AAA24DBC57B4125")
     @Override
     public void drawPoints(float[] pts, int offset, int count, Paint paint) {
+        addTaint(paint.getTaint());
+        addTaint(count);
+        addTaint(offset);
+        addTaint(pts[0]);
         int modifiers = setupModifiers(paint);
         nDrawPoints(mRenderer, pts, offset, count, paint.mNativePaint);
+    if(modifiers != MODIFIER_NONE)        
         nResetModifiers(mRenderer, modifiers);
-        addTaint(pts[0]);
-        addTaint(offset);
-        addTaint(count);
-        addTaint(paint.getTaint());
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int modifiers = setupModifiers(paint);
+        //nDrawPoints(mRenderer, pts, offset, count, paint.mNativePaint);
+        //if (modifiers != MODIFIER_NONE) nResetModifiers(mRenderer, modifiers);
     }
 
     
@@ -1807,46 +1748,44 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.203 -0400", hash_original_method = "A1D0375AE9DFF68E398CA7F0C8CFDC48", hash_generated_method = "C58AAF0ED1F6D9D63C48503C4E523D01")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.945 -0400", hash_original_method = "A1D0375AE9DFF68E398CA7F0C8CFDC48", hash_generated_method = "74F0D723D9BB3291B080D9D7733878F0")
     @Override
     public void drawPosText(char[] text, int index, int count, float[] pos, Paint paint) {
-        addTaint(text[0]);
-        addTaint(index);
-        addTaint(count);
-        addTaint(pos[0]);
         addTaint(paint.getTaint());
-        
+        addTaint(pos[0]);
+        addTaint(count);
+        addTaint(index);
+        addTaint(text[0]);
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.203 -0400", hash_original_method = "2727BD7310EB8AF1CE9C5E69FE8F5F77", hash_generated_method = "528C69E94D75929A5C52268974BE27CA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.945 -0400", hash_original_method = "2727BD7310EB8AF1CE9C5E69FE8F5F77", hash_generated_method = "3B5DADF6F0A55064CE40FA5ED654E984")
     @Override
     public void drawPosText(String text, float[] pos, Paint paint) {
-        addTaint(text.getTaint());
-        addTaint(pos[0]);
         addTaint(paint.getTaint());
-        
+        addTaint(pos[0]);
+        addTaint(text.getTaint());
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.203 -0400", hash_original_method = "1D1C68AD886616B8DD56E02894BED97B", hash_generated_method = "92771B0E2444F4143EADFD18CA61C8AD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.945 -0400", hash_original_method = "1D1C68AD886616B8DD56E02894BED97B", hash_generated_method = "EBFA760F7E574D3C1D1EA5D3EA936C92")
     @Override
     public void drawRect(float left, float top, float right, float bottom, Paint paint) {
+        addTaint(paint.getTaint());
+        addTaint(bottom);
+        addTaint(right);
+        addTaint(top);
+        addTaint(left);
         int modifiers = setupModifiers(paint);
         nDrawRect(mRenderer, left, top, right, bottom, paint.mNativePaint);
+    if(modifiers != MODIFIER_NONE)        
         nResetModifiers(mRenderer, modifiers);
-        addTaint(left);
-        addTaint(top);
-        addTaint(right);
-        addTaint(bottom);
-        addTaint(paint.getTaint());
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int modifiers = setupModifiers(paint);
+        //nDrawRect(mRenderer, left, top, right, bottom, paint.mNativePaint);
+        //if (modifiers != MODIFIER_NONE) nResetModifiers(mRenderer, modifiers);
     }
 
     
@@ -1856,60 +1795,57 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.204 -0400", hash_original_method = "9CB801DBEAF645326E64FD8725588653", hash_generated_method = "7B347C48A24269E0F3F362452CD9958D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.954 -0400", hash_original_method = "9CB801DBEAF645326E64FD8725588653", hash_generated_method = "BBB6D5F4F6A6E2187C3A22EA5AD2D898")
     @Override
     public void drawRect(Rect r, Paint paint) {
-        drawRect(r.left, r.top, r.right, r.bottom, paint);
-        addTaint(r.getTaint());
         addTaint(paint.getTaint());
-        
-        
+        addTaint(r.getTaint());
+        drawRect(r.left, r.top, r.right, r.bottom, paint);
+        // ---------- Original Method ----------
+        //drawRect(r.left, r.top, r.right, r.bottom, paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.205 -0400", hash_original_method = "73D11F584AEBB7C191086A2FFF4052A9", hash_generated_method = "6BA46391F60F374ED4AC0AC14305E04E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.954 -0400", hash_original_method = "73D11F584AEBB7C191086A2FFF4052A9", hash_generated_method = "2D56321029DEE0E9DA970C32DEDE0DB8")
     @Override
     public void drawRect(RectF r, Paint paint) {
-        drawRect(r.left, r.top, r.right, r.bottom, paint);
-        addTaint(r.getTaint());
         addTaint(paint.getTaint());
-        
-        
+        addTaint(r.getTaint());
+        drawRect(r.left, r.top, r.right, r.bottom, paint);
+        // ---------- Original Method ----------
+        //drawRect(r.left, r.top, r.right, r.bottom, paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.205 -0400", hash_original_method = "EB9FA3A1182306D8C56FD7B1B2A405F0", hash_generated_method = "4AE00367D49D1FA55A3E06642921B7B3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.954 -0400", hash_original_method = "EB9FA3A1182306D8C56FD7B1B2A405F0", hash_generated_method = "E6088EADF0D68049F3FB32C7CFAAB75D")
     @Override
     public void drawRGB(int r, int g, int b) {
-        drawColor(0xFF000000 | (r & 0xFF) << 16 | (g & 0xFF) << 8 | (b & 0xFF));
-        addTaint(r);
-        addTaint(g);
         addTaint(b);
-        
-        
+        addTaint(g);
+        addTaint(r);
+        drawColor(0xFF000000 | (r & 0xFF) << 16 | (g & 0xFF) << 8 | (b & 0xFF));
+        // ---------- Original Method ----------
+        //drawColor(0xFF000000 | (r & 0xFF) << 16 | (g & 0xFF) << 8 | (b & 0xFF));
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.205 -0400", hash_original_method = "F66719DAB9BD4C7CE0890FFA1C26F9F2", hash_generated_method = "E0FB26D9D2700573B79A50A1EE0FD469")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.955 -0400", hash_original_method = "F66719DAB9BD4C7CE0890FFA1C26F9F2", hash_generated_method = "EBE2A06C5985DEEBDF554AF33DBE0BD1")
     @Override
     public void drawRoundRect(RectF rect, float rx, float ry, Paint paint) {
+        addTaint(paint.getTaint());
+        addTaint(ry);
+        addTaint(rx);
+        addTaint(rect.getTaint());
         int modifiers = setupModifiers(paint);
         nDrawRoundRect(mRenderer, rect.left, rect.top, rect.right, rect.bottom,
                 rx, ry, paint.mNativePaint);
+    if(modifiers != MODIFIER_NONE)        
         nResetModifiers(mRenderer, modifiers);
-        addTaint(rect.getTaint());
-        addTaint(rx);
-        addTaint(ry);
-        addTaint(paint.getTaint());
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //int modifiers = setupModifiers(paint);
+        //nDrawRoundRect(mRenderer, rect.left, rect.top, rect.right, rect.bottom,
+                //rx, ry, paint.mNativePaint);
+        //if (modifiers != MODIFIER_NONE) nResetModifiers(mRenderer, modifiers);
     }
 
     
@@ -1919,38 +1855,41 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.206 -0400", hash_original_method = "5B66E40A85BEEB6F8228E5994A513667", hash_generated_method = "66D40364D8F80C4B215A7B30E881FE16")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.955 -0400", hash_original_method = "5B66E40A85BEEB6F8228E5994A513667", hash_generated_method = "23136926576D34ED9AFC7D3B6D3C3EB7")
     @Override
     public void drawText(char[] text, int index, int count, float x, float y, Paint paint) {
+        addTaint(paint.getTaint());
+        addTaint(y);
+        addTaint(x);
+        addTaint(count);
+        addTaint(index);
+        addTaint(text[0]);
+    if((index | count | (index + count) | (text.length - index - count)) < 0)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-        } 
+            IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_885747272 = new IndexOutOfBoundsException();
+            varE4A00D3DB3B35ED0F12562B8AA17377A_885747272.addTaint(taint);
+            throw varE4A00D3DB3B35ED0F12562B8AA17377A_885747272;
+        } //End block
         int modifiers = setupModifiers(paint);
         try 
         {
             nDrawText(mRenderer, text, index, count, x, y, paint.mBidiFlags, paint.mNativePaint);
-        } 
+        } //End block
         finally 
         {
+    if(modifiers != MODIFIER_NONE)            
             nResetModifiers(mRenderer, modifiers);
-        } 
-        addTaint(text[0]);
-        addTaint(index);
-        addTaint(count);
-        addTaint(x);
-        addTaint(y);
-        addTaint(paint.getTaint());
-        
-        
-            
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if ((index | count | (index + count) | (text.length - index - count)) < 0) {
+            //throw new IndexOutOfBoundsException();
+        //}
+        //int modifiers = setupModifiers(paint);
+        //try {
+            //nDrawText(mRenderer, text, index, count, x, y, paint.mBidiFlags, paint.mNativePaint);
+        //} finally {
+            //if (modifiers != MODIFIER_NONE) nResetModifiers(mRenderer, modifiers);
+        //}
     }
 
     
@@ -1960,79 +1899,84 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.207 -0400", hash_original_method = "BF4D02798081BBBF8269CD636760F070", hash_generated_method = "EE41C78DD9D65A8F04707490C780FF02")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.956 -0400", hash_original_method = "BF4D02798081BBBF8269CD636760F070", hash_generated_method = "4190B9A7FFD780925A16CCBC8620D778")
     @Override
     public void drawText(CharSequence text, int start, int end, float x, float y, Paint paint) {
+        addTaint(paint.getTaint());
+        addTaint(y);
+        addTaint(x);
+        addTaint(end);
+        addTaint(start);
+        addTaint(text.getTaint());
         int modifiers = setupModifiers(paint);
         try 
         {
+    if(text instanceof String || text instanceof SpannedString ||
+                    text instanceof SpannableString)            
             {
                 nDrawText(mRenderer, text.toString(), start, end, x, y, paint.mBidiFlags,
                         paint.mNativePaint);
-            } 
+            } //End block
+            else
+    if(text instanceof GraphicsOperations)            
             {
                 ((GraphicsOperations) text).drawText(this, start, end, x, y,
                                                          paint);
-            } 
+            } //End block
+            else
             {
                 char[] buf = TemporaryBuffer.obtain(end - start);
                 TextUtils.getChars(text, start, end, buf, 0);
                 nDrawText(mRenderer, buf, 0, end - start, x, y,
                         paint.mBidiFlags, paint.mNativePaint);
                 TemporaryBuffer.recycle(buf);
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
+    if(modifiers != MODIFIER_NONE)            
             nResetModifiers(mRenderer, modifiers);
-        } 
-        addTaint(text.getTaint());
-        addTaint(start);
-        addTaint(end);
-        addTaint(x);
-        addTaint(y);
-        addTaint(paint.getTaint());
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.207 -0400", hash_original_method = "53AB28ACA34BAB18CDB1722B92273EEB", hash_generated_method = "3187A12EF084C18A8B965766A09E9FF3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.957 -0400", hash_original_method = "53AB28ACA34BAB18CDB1722B92273EEB", hash_generated_method = "1D6FB07916367136B84513C72E8DEA65")
     @Override
     public void drawText(String text, int start, int end, float x, float y, Paint paint) {
+        addTaint(paint.getTaint());
+        addTaint(y);
+        addTaint(x);
+        addTaint(end);
+        addTaint(start);
+        addTaint(text.getTaint());
+    if((start | end | (end - start) | (text.length() - end)) < 0)        
         {
-            boolean var9527A5CDD965760192A60A252272F336_1839049712 = ((start | end | (end - start) | (text.length() - end)) < 0);
-            {
-                if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-            } 
-        } 
+            IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_883151814 = new IndexOutOfBoundsException();
+            varE4A00D3DB3B35ED0F12562B8AA17377A_883151814.addTaint(taint);
+            throw varE4A00D3DB3B35ED0F12562B8AA17377A_883151814;
+        } //End block
         int modifiers = setupModifiers(paint);
         try 
         {
             nDrawText(mRenderer, text, start, end, x, y, paint.mBidiFlags, paint.mNativePaint);
-        } 
+        } //End block
         finally 
         {
+    if(modifiers != MODIFIER_NONE)            
             nResetModifiers(mRenderer, modifiers);
-        } 
-        addTaint(text.getTaint());
-        addTaint(start);
-        addTaint(end);
-        addTaint(x);
-        addTaint(y);
-        addTaint(paint.getTaint());
-        
-        
-            
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if ((start | end | (end - start) | (text.length() - end)) < 0) {
+            //throw new IndexOutOfBoundsException();
+        //}
+        //int modifiers = setupModifiers(paint);
+        //try {
+            //nDrawText(mRenderer, text, start, end, x, y, paint.mBidiFlags, paint.mNativePaint);
+        //} finally {
+            //if (modifiers != MODIFIER_NONE) nResetModifiers(mRenderer, modifiers);
+        //}
     }
 
     
@@ -2042,108 +1986,112 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.208 -0400", hash_original_method = "F496E99287218708FCCC7DBE6218BF00", hash_generated_method = "0B7D0F51B665736DD5C8D78AA7496884")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.957 -0400", hash_original_method = "F496E99287218708FCCC7DBE6218BF00", hash_generated_method = "6560B7EB5B7762580F8F9561797E38B3")
     @Override
     public void drawText(String text, float x, float y, Paint paint) {
+        addTaint(paint.getTaint());
+        addTaint(y);
+        addTaint(x);
+        addTaint(text.getTaint());
         int modifiers = setupModifiers(paint);
         try 
         {
             nDrawText(mRenderer, text, 0, text.length(), x, y, paint.mBidiFlags,
                     paint.mNativePaint);
-        } 
+        } //End block
         finally 
         {
+    if(modifiers != MODIFIER_NONE)            
             nResetModifiers(mRenderer, modifiers);
-        } 
-        addTaint(text.getTaint());
-        addTaint(x);
-        addTaint(y);
-        addTaint(paint.getTaint());
-        
-        
-        
-            
-                    
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int modifiers = setupModifiers(paint);
+        //try {
+            //nDrawText(mRenderer, text, 0, text.length(), x, y, paint.mBidiFlags,
+                    //paint.mNativePaint);
+        //} finally {
+            //if (modifiers != MODIFIER_NONE) nResetModifiers(mRenderer, modifiers);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.208 -0400", hash_original_method = "C2D0F05CD306BD6EB45BAEA1052EFD68", hash_generated_method = "E8072F6412FBF0708CCDC684DDEFC2CC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.957 -0400", hash_original_method = "C2D0F05CD306BD6EB45BAEA1052EFD68", hash_generated_method = "7D8A930ECBDC214A71CEB1EEC14B63CC")
     @Override
     public void drawTextOnPath(char[] text, int index, int count, Path path, float hOffset,
             float vOffset, Paint paint) {
-        addTaint(text[0]);
-        addTaint(index);
-        addTaint(count);
-        addTaint(path.getTaint());
-        addTaint(hOffset);
-        addTaint(vOffset);
         addTaint(paint.getTaint());
-        
+        addTaint(vOffset);
+        addTaint(hOffset);
+        addTaint(path.getTaint());
+        addTaint(count);
+        addTaint(index);
+        addTaint(text[0]);
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.208 -0400", hash_original_method = "E399416700F7228806FC79CB70E6A478", hash_generated_method = "68D8C9D341F43CDFE24109F7E8C46C4D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.957 -0400", hash_original_method = "E399416700F7228806FC79CB70E6A478", hash_generated_method = "E3492886BB57304B70F3B7BCD2D166B4")
     @Override
     public void drawTextOnPath(String text, Path path, float hOffset, float vOffset, Paint paint) {
-        addTaint(text.getTaint());
-        addTaint(path.getTaint());
-        addTaint(hOffset);
-        addTaint(vOffset);
         addTaint(paint.getTaint());
-        
+        addTaint(vOffset);
+        addTaint(hOffset);
+        addTaint(path.getTaint());
+        addTaint(text.getTaint());
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.209 -0400", hash_original_method = "8FBF947B147B7DB5ED34E606F7095E1C", hash_generated_method = "65FB7BDC9C27F0219901EDFDE97ABF84")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.958 -0400", hash_original_method = "8FBF947B147B7DB5ED34E606F7095E1C", hash_generated_method = "09144BCD9686D372C09BD26582079B16")
     @Override
     public void drawTextRun(char[] text, int index, int count, int contextIndex, int contextCount,
             float x, float y, int dir, Paint paint) {
+        addTaint(paint.getTaint());
+        addTaint(dir);
+        addTaint(y);
+        addTaint(x);
+        addTaint(contextCount);
+        addTaint(contextIndex);
+        addTaint(count);
+        addTaint(index);
+        addTaint(text[0]);
+    if((index | count | text.length - index - count) < 0)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-        } 
+            IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_1529980132 = new IndexOutOfBoundsException();
+            varE4A00D3DB3B35ED0F12562B8AA17377A_1529980132.addTaint(taint);
+            throw varE4A00D3DB3B35ED0F12562B8AA17377A_1529980132;
+        } //End block
+    if(dir != DIRECTION_LTR && dir != DIRECTION_RTL)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Unknown direction: " + dir);
-        } 
+            IllegalArgumentException varA7697A0B8843DFFB67E3CBA4DDE8EAF9_1767349649 = new IllegalArgumentException("Unknown direction: " + dir);
+            varA7697A0B8843DFFB67E3CBA4DDE8EAF9_1767349649.addTaint(taint);
+            throw varA7697A0B8843DFFB67E3CBA4DDE8EAF9_1767349649;
+        } //End block
         int modifiers = setupModifiers(paint);
         try 
         {
             nDrawTextRun(mRenderer, text, index, count, contextIndex, contextCount, x, y, dir,
                     paint.mNativePaint);
-        } 
+        } //End block
         finally 
         {
+    if(modifiers != MODIFIER_NONE)            
             nResetModifiers(mRenderer, modifiers);
-        } 
-        addTaint(text[0]);
-        addTaint(index);
-        addTaint(count);
-        addTaint(contextIndex);
-        addTaint(contextCount);
-        addTaint(x);
-        addTaint(y);
-        addTaint(dir);
-        addTaint(paint.getTaint());
-        
-        
-            
-        
-        
-            
-        
-        
-        
-            
-                    
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if ((index | count | text.length - index - count) < 0) {
+            //throw new IndexOutOfBoundsException();
+        //}
+        //if (dir != DIRECTION_LTR && dir != DIRECTION_RTL) {
+            //throw new IllegalArgumentException("Unknown direction: " + dir);
+        //}
+        //int modifiers = setupModifiers(paint);
+        //try {
+            //nDrawTextRun(mRenderer, text, index, count, contextIndex, contextCount, x, y, dir,
+                    //paint.mNativePaint);
+        //} finally {
+            //if (modifiers != MODIFIER_NONE) nResetModifiers(mRenderer, modifiers);
+        //}
     }
 
     
@@ -2153,31 +2101,42 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.210 -0400", hash_original_method = "7904538C4B6BCEBBAA348BC3E2FD272F", hash_generated_method = "3D9E051969A9492B338777FF2EDF4A07")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.958 -0400", hash_original_method = "7904538C4B6BCEBBAA348BC3E2FD272F", hash_generated_method = "88A80190B9815EAE3B62EAA1905E3C61")
     @Override
     public void drawTextRun(CharSequence text, int start, int end, int contextStart, int contextEnd,
             float x, float y, int dir, Paint paint) {
+        addTaint(paint.getTaint());
+        addTaint(dir);
+        addTaint(y);
+        addTaint(x);
+        addTaint(contextEnd);
+        addTaint(contextStart);
+        addTaint(end);
+        addTaint(start);
+        addTaint(text.getTaint());
+    if((start | end | end - start | text.length() - end) < 0)        
         {
-            boolean var5121ADA1DFFE288F77E0A77339FFD85F_1849004487 = ((start | end | end - start | text.length() - end) < 0);
-            {
-                if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-            } 
-        } 
+            IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_1839413604 = new IndexOutOfBoundsException();
+            varE4A00D3DB3B35ED0F12562B8AA17377A_1839413604.addTaint(taint);
+            throw varE4A00D3DB3B35ED0F12562B8AA17377A_1839413604;
+        } //End block
         int modifiers = setupModifiers(paint);
         try 
         {
-            int flags;
-            flags = 0;
-            flags = 1;
+            int flags = dir == 0 ? 0 : 1;
+    if(text instanceof String || text instanceof SpannedString ||
+                    text instanceof SpannableString)            
             {
                 nDrawTextRun(mRenderer, text.toString(), start, end, contextStart,
                         contextEnd, x, y, flags, paint.mNativePaint);
-            } 
+            } //End block
+            else
+    if(text instanceof GraphicsOperations)            
             {
                 ((GraphicsOperations) text).drawTextRun(this, start, end,
                         contextStart, contextEnd, x, y, flags, paint);
-            } 
+            } //End block
+            else
             {
                 int contextLen = contextEnd - contextStart;
                 int len = end - start;
@@ -2186,23 +2145,15 @@ class GLES20Canvas extends HardwareCanvas {
                 nDrawTextRun(mRenderer, buf, start - contextStart, len, 0, contextLen,
                         x, y, flags, paint.mNativePaint);
                 TemporaryBuffer.recycle(buf);
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
+    if(modifiers != MODIFIER_NONE)            
             nResetModifiers(mRenderer, modifiers);
-        } 
-        addTaint(text.getTaint());
-        addTaint(start);
-        addTaint(end);
-        addTaint(contextStart);
-        addTaint(contextEnd);
-        addTaint(x);
-        addTaint(y);
-        addTaint(dir);
-        addTaint(paint.getTaint());
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2212,118 +2163,128 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.211 -0400", hash_original_method = "7C5BB6E42A47B8FFC1224CB48EC5DC66", hash_generated_method = "B8AD1C1FAE2C4B6BF26DC49B7C01AC46")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.959 -0400", hash_original_method = "7C5BB6E42A47B8FFC1224CB48EC5DC66", hash_generated_method = "40DFC169A693775C01A0188AE9FF9AE3")
     @Override
     public void drawVertices(VertexMode mode, int vertexCount, float[] verts, int vertOffset,
             float[] texs, int texOffset, int[] colors, int colorOffset, short[] indices,
             int indexOffset, int indexCount, Paint paint) {
-        addTaint(mode.getTaint());
-        addTaint(vertexCount);
-        addTaint(verts[0]);
-        addTaint(vertOffset);
-        addTaint(texs[0]);
-        addTaint(texOffset);
-        addTaint(colors[0]);
-        addTaint(colorOffset);
-        addTaint(indices[0]);
-        addTaint(indexOffset);
-        addTaint(indexCount);
         addTaint(paint.getTaint());
-        
+        addTaint(indexCount);
+        addTaint(indexOffset);
+        addTaint(indices[0]);
+        addTaint(colorOffset);
+        addTaint(colors[0]);
+        addTaint(texOffset);
+        addTaint(texs[0]);
+        addTaint(vertOffset);
+        addTaint(verts[0]);
+        addTaint(vertexCount);
+        addTaint(mode.getTaint());
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.212 -0400", hash_original_method = "5D6688C2A74D4FFF4670B4EAAE2F407B", hash_generated_method = "EFDECCF4FDBB5C44532552F83F67A4C3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.959 -0400", hash_original_method = "5D6688C2A74D4FFF4670B4EAAE2F407B", hash_generated_method = "81E7DCC60085EF9C79B39E74F75B1DBA")
     private int setupModifiers(Bitmap b, Paint paint) {
+        addTaint(paint.getTaint());
+        addTaint(b.getTaint());
+    if(b.getConfig() == Bitmap.Config.ALPHA_8)        
         {
-            boolean varE8F20F871D48D5163C8F27A746DD70EB_1110344281 = (b.getConfig() == Bitmap.Config.ALPHA_8);
-            {
-                int var0B5730C30DDBF6EECCE639F4E564849D_981121458 = (setupModifiers(paint));
-            } 
-        } 
+            int var413027AD41BF7545DCB2F18DFA7EE08B_683056064 = (setupModifiers(paint));
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_894396309 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_894396309;
+        } //End block
         final ColorFilter filter = paint.getColorFilter();
+    if(filter != null)        
         {
             nSetupColorFilter(mRenderer, filter.nativeColorFilter);
-        } 
-        addTaint(b.getTaint());
-        addTaint(paint.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1365219367 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1365219367;
-        
-        
-            
-        
-        
-        
-            
-            
-        
-        
+            int varD644E26BA3F8E16EA7B54364F3EC7563_622728456 = (MODIFIER_COLOR_FILTER);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1209210017 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1209210017;
+        } //End block
+        int var14EC4C6E987AFE92EEB1024593A6AD22_1532982282 = (MODIFIER_NONE);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1859357381 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1859357381;
+        // ---------- Original Method ----------
+        //if (b.getConfig() == Bitmap.Config.ALPHA_8) {
+            //return setupModifiers(paint);
+        //}
+        //final ColorFilter filter = paint.getColorFilter();
+        //if (filter != null) {
+            //nSetupColorFilter(mRenderer, filter.nativeColorFilter);
+            //return MODIFIER_COLOR_FILTER;
+        //}
+        //return MODIFIER_NONE;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.213 -0400", hash_original_method = "7663D59B2E312EB2A24D959BD08A0BC2", hash_generated_method = "79209B596A5238AB171A833AE7118653")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.959 -0400", hash_original_method = "7663D59B2E312EB2A24D959BD08A0BC2", hash_generated_method = "6B1CBD134459F0B2501726DCE6F5B17F")
     private int setupModifiers(Paint paint) {
+        addTaint(paint.getTaint());
         int modifiers = MODIFIER_NONE;
+    if(paint.hasShadow)        
         {
             nSetupShadow(mRenderer, paint.shadowRadius, paint.shadowDx, paint.shadowDy,
                     paint.shadowColor);
             modifiers |= MODIFIER_SHADOW;
-        } 
+        } //End block
         final Shader shader = paint.getShader();
+    if(shader != null)        
         {
             nSetupShader(mRenderer, shader.native_shader);
             modifiers |= MODIFIER_SHADER;
-        } 
+        } //End block
         final ColorFilter filter = paint.getColorFilter();
+    if(filter != null)        
         {
             nSetupColorFilter(mRenderer, filter.nativeColorFilter);
             modifiers |= MODIFIER_COLOR_FILTER;
-        } 
-        addTaint(paint.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_312846659 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_312846659;
-        
-        
-        
-            
-                    
-            
-        
-        
-        
-            
-            
-        
-        
-        
-            
-            
-        
-        
+        } //End block
+        int varBF24B44A8CC99E648657B164C8ABA758_1512260963 = (modifiers);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_179217242 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_179217242;
+        // ---------- Original Method ----------
+        //int modifiers = MODIFIER_NONE;
+        //if (paint.hasShadow) {
+            //nSetupShadow(mRenderer, paint.shadowRadius, paint.shadowDx, paint.shadowDy,
+                    //paint.shadowColor);
+            //modifiers |= MODIFIER_SHADOW;
+        //}
+        //final Shader shader = paint.getShader();
+        //if (shader != null) {
+            //nSetupShader(mRenderer, shader.native_shader);
+            //modifiers |= MODIFIER_SHADER;
+        //}
+        //final ColorFilter filter = paint.getColorFilter();
+        //if (filter != null) {
+            //nSetupColorFilter(mRenderer, filter.nativeColorFilter);
+            //modifiers |= MODIFIER_COLOR_FILTER;
+        //}
+        //return modifiers;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.213 -0400", hash_original_method = "8D8D130B420F7BDB77245347422EB674", hash_generated_method = "06E602FBECE85CBE0F3F24219CEA9654")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.960 -0400", hash_original_method = "8D8D130B420F7BDB77245347422EB674", hash_generated_method = "7D4566A917C3F3C45AFBE201BEE72CA4")
     private int setupColorFilter(Paint paint) {
+        addTaint(paint.getTaint());
         final ColorFilter filter = paint.getColorFilter();
+    if(filter != null)        
         {
             nSetupColorFilter(mRenderer, filter.nativeColorFilter);
-        } 
-        addTaint(paint.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1406958747 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1406958747;
-        
-        
-        
-            
-            
-        
-        
+            int varD644E26BA3F8E16EA7B54364F3EC7563_1079229007 = (MODIFIER_COLOR_FILTER);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1868498220 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1868498220;
+        } //End block
+        int var14EC4C6E987AFE92EEB1024593A6AD22_194461670 = (MODIFIER_NONE);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_568853379 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_568853379;
+        // ---------- Original Method ----------
+        //final ColorFilter filter = paint.getColorFilter();
+        //if (filter != null) {
+            //nSetupColorFilter(mRenderer, filter.nativeColorFilter);
+            //return MODIFIER_COLOR_FILTER;
+        //}
+        //return MODIFIER_NONE;
     }
 
     
@@ -2349,36 +2310,35 @@ class GLES20Canvas extends HardwareCanvas {
 
     
     private static final class CanvasFinalizer {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.214 -0400", hash_original_field = "D9CFA901A96C28EEA9DD412429CB9486", hash_generated_field = "29611ED2287CE69051FC2BCDB2E2FF9D")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.960 -0400", hash_original_field = "D9CFA901A96C28EEA9DD412429CB9486", hash_generated_field = "29611ED2287CE69051FC2BCDB2E2FF9D")
 
         private int mRenderer;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.214 -0400", hash_original_method = "FD0EABF3A28C8F1A6C7AE1792F2A951E", hash_generated_method = "F4CE774395766560B3604C2271BA47E5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.960 -0400", hash_original_method = "FD0EABF3A28C8F1A6C7AE1792F2A951E", hash_generated_method = "F4CE774395766560B3604C2271BA47E5")
         public  CanvasFinalizer(int renderer) {
             mRenderer = renderer;
-            
-            
+            // ---------- Original Method ----------
+            //mRenderer = renderer;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.215 -0400", hash_original_method = "98F8E6E4208DCA7352053ED1AE5E9232", hash_generated_method = "172B7210461BDF8CBEDEDD56AE7B7486")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.960 -0400", hash_original_method = "98F8E6E4208DCA7352053ED1AE5E9232", hash_generated_method = "172B7210461BDF8CBEDEDD56AE7B7486")
         @Override
         protected void finalize() throws Throwable {
             try 
             {
                 nDestroyRenderer(mRenderer);
-            } 
+            } //End block
             finally 
             {
                 super.finalize();
-            } 
-            
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //try {
+                //nDestroyRenderer(mRenderer);
+            //} finally {
+                //super.finalize();
+            //}
         }
 
         
@@ -2386,28 +2346,28 @@ class GLES20Canvas extends HardwareCanvas {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.215 -0400", hash_original_field = "724AEEA405FC9CF2CE47243A92797113", hash_generated_field = "E2BA09F8DF55E2B4054F568E93987B59")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.961 -0400", hash_original_field = "724AEEA405FC9CF2CE47243A92797113", hash_generated_field = "E2BA09F8DF55E2B4054F568E93987B59")
 
     private static final int MODIFIER_NONE = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.215 -0400", hash_original_field = "94B729010A95D20E8C197B93E2E6F8D5", hash_generated_field = "F3A096D0EBF980761DC223D5B61BA142")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.961 -0400", hash_original_field = "94B729010A95D20E8C197B93E2E6F8D5", hash_generated_field = "F3A096D0EBF980761DC223D5B61BA142")
 
     private static final int MODIFIER_SHADOW = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.215 -0400", hash_original_field = "0CA6B43DD1E03498AF4D707A3E3A166E", hash_generated_field = "A17A6835293DC1FAD5B4BD9C6992B819")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.961 -0400", hash_original_field = "0CA6B43DD1E03498AF4D707A3E3A166E", hash_generated_field = "A17A6835293DC1FAD5B4BD9C6992B819")
 
     private static final int MODIFIER_SHADER = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.215 -0400", hash_original_field = "8F247A4C1EFB8B21D56F5A549AF04510", hash_generated_field = "2EFB036221198641F88AC422E6AE703C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.961 -0400", hash_original_field = "8F247A4C1EFB8B21D56F5A549AF04510", hash_generated_field = "2EFB036221198641F88AC422E6AE703C")
 
     private static final int MODIFIER_COLOR_FILTER = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.215 -0400", hash_original_field = "311BEA3B2ABE4D5421B92A22977E6ED9", hash_generated_field = "00CB76E41029EE5E99449BE03B14A2C4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.961 -0400", hash_original_field = "311BEA3B2ABE4D5421B92A22977E6ED9", hash_generated_field = "00CB76E41029EE5E99449BE03B14A2C4")
 
     private static boolean sIsAvailable = nIsAvailable();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.215 -0400", hash_original_field = "2D3E4E15F2A351552D65553739390E48", hash_generated_field = "ABDEA563561F2E851E5FA87E2946EA62")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.961 -0400", hash_original_field = "2D3E4E15F2A351552D65553739390E48", hash_generated_field = "ABDEA563561F2E851E5FA87E2946EA62")
 
     public static final int FLUSH_CACHES_LAYERS = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.215 -0400", hash_original_field = "CC12B1F5538FD6E6A924A110A43464C3", hash_generated_field = "862324F027832C57FCA1F817DF8CFB81")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.961 -0400", hash_original_field = "CC12B1F5538FD6E6A924A110A43464C3", hash_generated_field = "862324F027832C57FCA1F817DF8CFB81")
 
     public static final int FLUSH_CACHES_MODERATE = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.215 -0400", hash_original_field = "3137DA4124C142EF7060FF3E7E058DC0", hash_generated_field = "868D2688FA6966D15281F70A2C218ADD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.961 -0400", hash_original_field = "3137DA4124C142EF7060FF3E7E058DC0", hash_generated_field = "868D2688FA6966D15281F70A2C218ADD")
 
     public static final int FLUSH_CACHES_FULL = 2;
 }

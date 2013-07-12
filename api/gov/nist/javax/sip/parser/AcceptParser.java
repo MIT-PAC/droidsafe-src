@@ -1,38 +1,34 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.core.*;
 import java.text.ParseException;
 
 public class AcceptParser extends ParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.661 -0400", hash_original_method = "E50D6CA61897C534ECF6BFE2E6C66EEB", hash_generated_method = "47E74533E30A5580A43C253EA52B779A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.700 -0400", hash_original_method = "E50D6CA61897C534ECF6BFE2E6C66EEB", hash_generated_method = "47E74533E30A5580A43C253EA52B779A")
     public  AcceptParser(String accept) {
         super(accept);
         addTaint(accept.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.661 -0400", hash_original_method = "B0740C746A8D55CA7E1BAB3B373D9F3B", hash_generated_method = "CFD5C41C299FA64BEF69A6D9AEDB1EB1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.700 -0400", hash_original_method = "B0740C746A8D55CA7E1BAB3B373D9F3B", hash_generated_method = "CFD5C41C299FA64BEF69A6D9AEDB1EB1")
     protected  AcceptParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.662 -0400", hash_original_method = "4B990F83EF66D5D2EAA453ED852E8DC7", hash_generated_method = "F0E198A86A7FCB914B55039D92065E64")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.701 -0400", hash_original_method = "4B990F83EF66D5D2EAA453ED852E8DC7", hash_generated_method = "26A49E70B3BE27139A72FFE35BE3DE70")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_156479035 = null; 
+    if(debug)        
         dbg_enter("AcceptParser.parse");
         AcceptList list = new AcceptList();
         try 
@@ -51,34 +47,34 @@ public class AcceptParser extends ParametersParser {
             this.lexer.SPorHT();
             super.parse(accept);
             list.add(accept);
+            while
+(lexer.lookAhead(0) == ',')            
             {
-                boolean var3D7F80AAA4BB4C7E5B5AFC820C1FE6A4_1745204061 = (lexer.lookAhead(0) == ',');
-                {
-                    this.lexer.match(',');
-                    this.lexer.SPorHT();
-                    accept = new Accept();
-                    this.lexer.match(TokenTypes.ID);
-                    token = lexer.getNextToken();
-                    accept.setContentType(token.getTokenValue());
-                    this.lexer.match('/');
-                    this.lexer.match(TokenTypes.ID);
-                    token = lexer.getNextToken();
-                    accept.setContentSubType(token.getTokenValue());
-                    this.lexer.SPorHT();
-                    super.parse(accept);
-                    list.add(accept);
-                } 
-            } 
-            varB4EAC82CA7396A68D541C85D26508E83_156479035 = list;
-        } 
+                this.lexer.match(',');
+                this.lexer.SPorHT();
+                accept = new Accept();
+                this.lexer.match(TokenTypes.ID);
+                token = lexer.getNextToken();
+                accept.setContentType(token.getTokenValue());
+                this.lexer.match('/');
+                this.lexer.match(TokenTypes.ID);
+                token = lexer.getNextToken();
+                accept.setContentSubType(token.getTokenValue());
+                this.lexer.SPorHT();
+                super.parse(accept);
+                list.add(accept);
+            } //End block
+SIPHeader varED12C351C2E8CA4F85F097DDC7E77B4D_1273043867 =             list;
+            varED12C351C2E8CA4F85F097DDC7E77B4D_1273043867.addTaint(taint);
+            return varED12C351C2E8CA4F85F097DDC7E77B4D_1273043867;
+        } //End block
         finally 
         {
+    if(debug)            
             dbg_leave("AcceptParser.parse");
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_156479035.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_156479035;
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

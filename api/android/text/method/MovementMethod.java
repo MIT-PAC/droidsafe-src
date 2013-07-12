@@ -1,12 +1,9 @@
 package android.text.method;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.widget.TextView;
 import android.view.KeyEvent;
 import android.view.MotionEvent;

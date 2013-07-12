@@ -1,12 +1,9 @@
 package org.apache.http.impl.client;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.security.Principal;
 import javax.net.ssl.SSLSession;
 import org.apache.http.auth.AuthScheme;
@@ -20,50 +17,51 @@ import org.apache.http.protocol.HttpContext;
 
 public class DefaultUserTokenHandler implements UserTokenHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.268 -0400", hash_original_method = "55806A67FE4596FA71F9FF04E560BE1C", hash_generated_method = "55806A67FE4596FA71F9FF04E560BE1C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.610 -0400", hash_original_method = "55806A67FE4596FA71F9FF04E560BE1C", hash_generated_method = "55806A67FE4596FA71F9FF04E560BE1C")
     public DefaultUserTokenHandler ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.272 -0400", hash_original_method = "C085E1B104B611601D851A47FC5A6C7D", hash_generated_method = "EA987F566B0C4BB5200CA12C69736EB5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.611 -0400", hash_original_method = "C085E1B104B611601D851A47FC5A6C7D", hash_generated_method = "7FCC2726DCB07FD981725B1ECBA39974")
     public Object getUserToken(final HttpContext context) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1161344180 = null; 
+        addTaint(context.getTaint());
         Principal userPrincipal = null;
         AuthState targetAuthState = (AuthState) context.getAttribute(
                 ClientContext.TARGET_AUTH_STATE);
+    if(targetAuthState != null)        
         {
             userPrincipal = getAuthPrincipal(targetAuthState);
+    if(userPrincipal == null)            
             {
                 AuthState proxyAuthState = (AuthState) context.getAttribute(
                         ClientContext.PROXY_AUTH_STATE);
                 userPrincipal = getAuthPrincipal(proxyAuthState);
-            } 
-        } 
+            } //End block
+        } //End block
+    if(userPrincipal == null)        
         {
             ManagedClientConnection conn = (ManagedClientConnection) context.getAttribute(
                     ExecutionContext.HTTP_CONNECTION);
+    if(conn.isOpen())            
             {
-                boolean var00AF467373E67E3980C8A55D3501BD16_1019272460 = (conn.isOpen());
+                SSLSession sslsession = conn.getSSLSession();
+    if(sslsession != null)                
                 {
-                    SSLSession sslsession = conn.getSSLSession();
-                    {
-                        userPrincipal = sslsession.getLocalPrincipal();
-                    } 
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1161344180 = userPrincipal;
-        addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1161344180.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1161344180;
-        
-        
+                    userPrincipal = sslsession.getLocalPrincipal();
+                } //End block
+            } //End block
+        } //End block
+Object var0CDBC293F5686809A28657B94AD2C0FD_1383396708 =         userPrincipal;
+        var0CDBC293F5686809A28657B94AD2C0FD_1383396708.addTaint(taint);
+        return var0CDBC293F5686809A28657B94AD2C0FD_1383396708;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    private static Principal getAuthPrincipal(final AuthState authState) {
+        private static Principal getAuthPrincipal(final AuthState authState) {
         AuthScheme scheme = authState.getAuthScheme();
         if (scheme != null && scheme.isComplete() && scheme.isConnectionBased()) {
             Credentials creds = authState.getCredentials();

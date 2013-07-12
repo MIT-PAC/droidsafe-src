@@ -1,12 +1,9 @@
 package gov.nist.javax.sip.header.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.text.ParseException;
 import javax.sip.InvalidArgumentException;
 import javax.sip.header.ExtensionHeader;
@@ -15,239 +12,239 @@ import gov.nist.javax.sip.header.AddressParametersHeader;
 
 public class PServedUser extends AddressParametersHeader implements PServedUserHeader, SIPHeaderNamesIms, ExtensionHeader {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.378 -0400", hash_original_method = "CE4E031625CF531C1B85FA453494B504", hash_generated_method = "D2CD9B450BEE17B2C8CB1F031EBB4B29")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.054 -0400", hash_original_method = "CE4E031625CF531C1B85FA453494B504", hash_generated_method = "9BF427C5F7D6858A9FE3465C4BC3EB51")
     public  PServedUser(AddressImpl address) {
         super(P_SERVED_USER);
-        this.address = address;
         addTaint(address.getTaint());
-        
-        
+        this.address = address;
+        // ---------- Original Method ----------
+        //this.address = address;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.379 -0400", hash_original_method = "88679C40290AB234E035EF50535B4D0D", hash_generated_method = "9DF219AB55C86B79DEECEA502C213C52")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.055 -0400", hash_original_method = "88679C40290AB234E035EF50535B4D0D", hash_generated_method = "9DF219AB55C86B79DEECEA502C213C52")
     public  PServedUser() {
         super(NAME);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.379 -0400", hash_original_method = "060F42FFBCCB73E6969A6CFC80051047", hash_generated_method = "9FBD55DEA1C52B30EFCA721B0330FD49")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.056 -0400", hash_original_method = "060F42FFBCCB73E6969A6CFC80051047", hash_generated_method = "163D8F608BFE68ADA7321DC041B70AB4")
     public String getRegistrationState() {
-        String varB4EAC82CA7396A68D541C85D26508E83_9813689 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_9813689 = getParameter(ParameterNamesIms.REGISTRATION_STATE);
-        varB4EAC82CA7396A68D541C85D26508E83_9813689.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_9813689;
-        
-        
+String varBFDAF6B74805E26E8C7CDA2F4F0F5708_798677480 =         getParameter(ParameterNamesIms.REGISTRATION_STATE);
+        varBFDAF6B74805E26E8C7CDA2F4F0F5708_798677480.addTaint(taint);
+        return varBFDAF6B74805E26E8C7CDA2F4F0F5708_798677480;
+        // ---------- Original Method ----------
+        //return getParameter(ParameterNamesIms.REGISTRATION_STATE);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.380 -0400", hash_original_method = "86F2D3309EA08C107052AE36BBC425BC", hash_generated_method = "DCA71FB33F0034926CC9FE2B4DEE9C65")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.056 -0400", hash_original_method = "86F2D3309EA08C107052AE36BBC425BC", hash_generated_method = "AC86B69F8BAD46BA80819F01D68FB8FD")
     public String getSessionCase() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2136426955 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_2136426955 = getParameter(ParameterNamesIms.SESSION_CASE);
-        varB4EAC82CA7396A68D541C85D26508E83_2136426955.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_2136426955;
-        
-        
+String var473848B19B95BAF1BACF7CC72F827365_558301345 =         getParameter(ParameterNamesIms.SESSION_CASE);
+        var473848B19B95BAF1BACF7CC72F827365_558301345.addTaint(taint);
+        return var473848B19B95BAF1BACF7CC72F827365_558301345;
+        // ---------- Original Method ----------
+        //return getParameter(ParameterNamesIms.SESSION_CASE);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.380 -0400", hash_original_method = "8A05E91630AB7D0557A40B65641F2C82", hash_generated_method = "251621AC48C49C79CC1CA0191A55DEEF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.057 -0400", hash_original_method = "8A05E91630AB7D0557A40B65641F2C82", hash_generated_method = "640A013EBB8F1FA419D91432D9C8FAD2")
     public void setRegistrationState(String registrationState) {
-        {
-            {
-                boolean varBA8681E7A138FDBF12BDB0A2B4AEE0BD_1285158581 = (registrationState.equals("reg")||registrationState.equals("unreg"));
-                {
-                    try 
-                    {
-                        setParameter(ParameterNamesIms.REGISTRATION_STATE, registrationState);
-                    } 
-                    catch (ParseException e)
-                    {
-                        e.printStackTrace();
-                    } 
-                } 
-                {
-                    try 
-                    {
-                        if (DroidSafeAndroidRuntime.control) throw new InvalidArgumentException("Value can be either reg or unreg");
-                    } 
-                    catch (InvalidArgumentException e)
-                    {
-                        e.printStackTrace();
-                    } 
-                } 
-            } 
-        } 
-        {
-            if (DroidSafeAndroidRuntime.control) throw new NullPointerException("regstate Parameter value is null");
-        } 
         addTaint(registrationState.getTaint());
-        
-        
-        
-            
-            
-                
-                    
-                
-                    
-                
-            
-              
-              
-                  
-                      
-                  
-                         
-                    
-              
-        
-        
-        
-            
-        
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.381 -0400", hash_original_method = "B96D543F72B1B5850C059C4E8A513320", hash_generated_method = "263B6BAAD8F99E024821CB13CF90439B")
-    public void setSessionCase(String sessionCase) {
+    if((registrationState!=null))        
         {
+    if(registrationState.equals("reg")||registrationState.equals("unreg"))            
             {
-                boolean var06E6B3A3543F32AF4A1823DD7B4D6730_682960406 = ((sessionCase.equals("orig"))||(sessionCase.equals("term")));
+                try 
                 {
-                    try 
-                    {
-                        setParameter(ParameterNamesIms.SESSION_CASE, sessionCase);
-                    } 
-                    catch (ParseException e)
-                    {
-                        e.printStackTrace();
-                    } 
-                } 
+                    setParameter(ParameterNamesIms.REGISTRATION_STATE, registrationState);
+                } //End block
+                catch (ParseException e)
                 {
-                    try 
-                    {
-                        if (DroidSafeAndroidRuntime.control) throw new InvalidArgumentException("Value can be either orig or term");
-                    } 
-                    catch (InvalidArgumentException e)
-                    {
-                        e.printStackTrace();
-                    } 
-                } 
-            } 
-        } 
+                    e.printStackTrace();
+                } //End block
+            } //End block
+            else
+            {
+                try 
+                {
+                    InvalidArgumentException var7BF9FD0EBAEEEF72642D9AD741F0559A_1057624294 = new InvalidArgumentException("Value can be either reg or unreg");
+                    var7BF9FD0EBAEEEF72642D9AD741F0559A_1057624294.addTaint(taint);
+                    throw var7BF9FD0EBAEEEF72642D9AD741F0559A_1057624294;
+                } //End block
+                catch (InvalidArgumentException e)
+                {
+                    e.printStackTrace();
+                } //End block
+            } //End block
+        } //End block
+        else
         {
-            if (DroidSafeAndroidRuntime.control) throw new NullPointerException("sess-case Parameter value is null");
-        } 
-        addTaint(sessionCase.getTaint());
-        
-        
-        
-            
-            
-                
-                    
-                
-                    
-                
-            
-              
-              
-                  
-                    
-                
-                    
-                
-              
-        
-        
-        
-            
-        
+            NullPointerException varAC0519D4697286A29B948606823DA531_887750286 = new NullPointerException("regstate Parameter value is null");
+            varAC0519D4697286A29B948606823DA531_887750286.addTaint(taint);
+            throw varAC0519D4697286A29B948606823DA531_887750286;
+        } //End block
+        // ---------- Original Method ----------
+        //if((registrationState!=null))
+        //{
+            //if(registrationState.equals("reg")||registrationState.equals("unreg"))
+            //{
+                //try {
+                    //setParameter(ParameterNamesIms.REGISTRATION_STATE, registrationState);
+                //} catch (ParseException e) {
+                    //e.printStackTrace();
+                //}
+            //}
+              //else
+              //{
+                  //try {
+                      //throw new InvalidArgumentException("Value can be either reg or unreg");
+                  //} catch (InvalidArgumentException e) {
+                         //e.printStackTrace();
+                    //}
+              //}
+        //}
+        //else
+        //{
+            //throw new NullPointerException("regstate Parameter value is null");
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.383 -0400", hash_original_method = "5C1FD3ED8946938E44DEC9CB0584970B", hash_generated_method = "04A28D8EDBB3BB01A72F529834BC304E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.058 -0400", hash_original_method = "B96D543F72B1B5850C059C4E8A513320", hash_generated_method = "8BB651A7FF4954F4BCFB011678EDEE4B")
+    public void setSessionCase(String sessionCase) {
+        addTaint(sessionCase.getTaint());
+    if((sessionCase!=null))        
+        {
+    if((sessionCase.equals("orig"))||(sessionCase.equals("term")))            
+            {
+                try 
+                {
+                    setParameter(ParameterNamesIms.SESSION_CASE, sessionCase);
+                } //End block
+                catch (ParseException e)
+                {
+                    e.printStackTrace();
+                } //End block
+            } //End block
+            else
+            {
+                try 
+                {
+                    InvalidArgumentException var257AE90AB2D38C3A3CD7D73CCAB10F69_381332301 = new InvalidArgumentException("Value can be either orig or term");
+                    var257AE90AB2D38C3A3CD7D73CCAB10F69_381332301.addTaint(taint);
+                    throw var257AE90AB2D38C3A3CD7D73CCAB10F69_381332301;
+                } //End block
+                catch (InvalidArgumentException e)
+                {
+                    e.printStackTrace();
+                } //End block
+            } //End block
+        } //End block
+        else
+        {
+            NullPointerException varB44C7F82B4A0EB05A88E16A6E952E9DA_416658402 = new NullPointerException("sess-case Parameter value is null");
+            varB44C7F82B4A0EB05A88E16A6E952E9DA_416658402.addTaint(taint);
+            throw varB44C7F82B4A0EB05A88E16A6E952E9DA_416658402;
+        } //End block
+        // ---------- Original Method ----------
+        //if((sessionCase!=null))
+        //{
+            //if((sessionCase.equals("orig"))||(sessionCase.equals("term")))
+            //{
+                //try {
+                    //setParameter(ParameterNamesIms.SESSION_CASE, sessionCase);
+                //} catch (ParseException e) {
+                    //e.printStackTrace();
+                //}
+            //}
+              //else
+              //{
+                  //try {
+                    //throw new InvalidArgumentException("Value can be either orig or term");
+                //} catch (InvalidArgumentException e) {
+                    //e.printStackTrace();
+                //}
+              //}
+        //}
+        //else
+        //{
+            //throw new NullPointerException("sess-case Parameter value is null");
+        //}
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.058 -0400", hash_original_method = "5C1FD3ED8946938E44DEC9CB0584970B", hash_generated_method = "C703741CBB334E9BDB35121C4316CE04")
     @Override
     protected String encodeBody() {
-        String varB4EAC82CA7396A68D541C85D26508E83_793878631 = null; 
         StringBuffer retval = new StringBuffer();
         retval.append(address.encode());
-        {
-            boolean varD3C027666130F10CDC2A85B288EA20D6_504755769 = (parameters.containsKey(ParameterNamesIms.REGISTRATION_STATE));
-            retval.append(SEMICOLON).append(ParameterNamesIms.REGISTRATION_STATE).append(EQUALS)
+    if(parameters.containsKey(ParameterNamesIms.REGISTRATION_STATE))        
+        retval.append(SEMICOLON).append(ParameterNamesIms.REGISTRATION_STATE).append(EQUALS)
             .append(this.getRegistrationState());
-        } 
-        {
-            boolean var441A52915CCC05FB5E68369C7AE68912_1610818283 = (parameters.containsKey(ParameterNamesIms.SESSION_CASE));
-            retval.append(SEMICOLON).append(ParameterNamesIms.SESSION_CASE).append(EQUALS)
+    if(parameters.containsKey(ParameterNamesIms.SESSION_CASE))        
+        retval.append(SEMICOLON).append(ParameterNamesIms.SESSION_CASE).append(EQUALS)
             .append(this.getSessionCase());
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_793878631 = retval.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_793878631.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_793878631;
-        
-        
-        
-        
-            
-            
-        
-            
-            
-        
+String var1B324365A764C077A55854483509F4AB_674772706 =         retval.toString();
+        var1B324365A764C077A55854483509F4AB_674772706.addTaint(taint);
+        return var1B324365A764C077A55854483509F4AB_674772706;
+        // ---------- Original Method ----------
+        //StringBuffer retval = new StringBuffer();
+        //retval.append(address.encode());
+        //if(parameters.containsKey(ParameterNamesIms.REGISTRATION_STATE))
+            //retval.append(SEMICOLON).append(ParameterNamesIms.REGISTRATION_STATE).append(EQUALS)
+            //.append(this.getRegistrationState());
+        //if(parameters.containsKey(ParameterNamesIms.SESSION_CASE))
+            //retval.append(SEMICOLON).append(ParameterNamesIms.SESSION_CASE).append(EQUALS)
+            //.append(this.getSessionCase());
+        //return retval.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.384 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "263BB18DC54AB83D62E13F134B9FEB9D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.059 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "872DF88EF55E15209326B4B172E67851")
     public void setValue(String value) throws ParseException {
-        if (DroidSafeAndroidRuntime.control) throw new ParseException(value,0);
         addTaint(value.getTaint());
-        
-        
+        ParseException varADC68F4409F245E41BA5DDA0F06CA1BA_2118874357 = new ParseException(value,0);
+        varADC68F4409F245E41BA5DDA0F06CA1BA_2118874357.addTaint(taint);
+        throw varADC68F4409F245E41BA5DDA0F06CA1BA_2118874357;
+        // ---------- Original Method ----------
+        //throw new ParseException(value,0);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.385 -0400", hash_original_method = "5DE7CF1B2BFD7CED31E376D58425CB92", hash_generated_method = "01C9CA8581F424BAD088E7D64B088400")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.059 -0400", hash_original_method = "5DE7CF1B2BFD7CED31E376D58425CB92", hash_generated_method = "8325ABFB13715729F5090757A817D3A4")
     public boolean equals(Object other) {
+        addTaint(other.getTaint());
+    if(other instanceof PServedUser)        
         {
             final PServedUserHeader psu = (PServedUserHeader)other;
-            boolean varD89FCAB86EA829CE7D9EF46AFDFD7F15_1986976439 = (this.getAddress().equals(((PServedUser) other).getAddress()));
-        } 
-        addTaint(other.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1213463221 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1213463221;
-        
-        
-         
-            
-            
-         
-        
+            boolean var10A62859C1DC72264993359B9D54A6BF_374336532 = (this.getAddress().equals(((PServedUser) other).getAddress()));
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_893212122 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_893212122;
+        } //End block
+        boolean var68934A3E9455FA72420237EB05902327_2083041325 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1434276130 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1434276130;
+        // ---------- Original Method ----------
+        //if(other instanceof PServedUser)
+         //{
+            //final PServedUserHeader psu = (PServedUserHeader)other;
+            //return this.getAddress().equals(((PServedUser) other).getAddress());
+         //}
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.388 -0400", hash_original_method = "E31F82669EB953245AD29DB03C98C513", hash_generated_method = "6998AD059ACE061F4EC0B3CF19167395")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.059 -0400", hash_original_method = "E31F82669EB953245AD29DB03C98C513", hash_generated_method = "FAC0AF6C5866CBEF4146E23D7A6414E3")
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_294809037 = null; 
         PServedUser retval = (PServedUser) super.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_294809037 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_294809037.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_294809037;
-        
-        
-        
+Object varF9E19AD6135C970F387F77C6F3DE4477_1570126051 =         retval;
+        varF9E19AD6135C970F387F77C6F3DE4477_1570126051.addTaint(taint);
+        return varF9E19AD6135C970F387F77C6F3DE4477_1570126051;
+        // ---------- Original Method ----------
+        //PServedUser retval = (PServedUser) super.clone();
+        //return retval;
     }
 
     

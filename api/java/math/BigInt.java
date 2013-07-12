@@ -1,74 +1,71 @@
 package java.math;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-
-import java.util.Iterator;
-
 final class BigInt {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.477 -0400", hash_original_field = "93F416957F94153A0658C38C2890FA30", hash_generated_field = "2E7F69903943700473696173A4E00017")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.704 -0400", hash_original_field = "93F416957F94153A0658C38C2890FA30", hash_generated_field = "2E7F69903943700473696173A4E00017")
 
     transient int bignum = 0;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.477 -0400", hash_original_method = "1310F12C90284BE28EAEC322C36620BE", hash_generated_method = "1310F12C90284BE28EAEC322C36620BE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.705 -0400", hash_original_method = "1310F12C90284BE28EAEC322C36620BE", hash_generated_method = "1310F12C90284BE28EAEC322C36620BE")
     public BigInt ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.478 -0400", hash_original_method = "BE6B93B7FDC95635F38722D58894F3B6", hash_generated_method = "6A3286CF45E3A22103D7740507159402")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.705 -0400", hash_original_method = "BE6B93B7FDC95635F38722D58894F3B6", hash_generated_method = "79F2A5564B5CFEB540C376A4B1096DBB")
     @Override
     protected void finalize() throws Throwable {
         try 
         {
+    if(this.bignum != 0)            
             {
                 NativeBN.BN_free(this.bignum);
                 this.bignum = 0;
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
             super.finalize();
-        } 
-        
-        
-            
-                
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //if (this.bignum != 0) {
+                //NativeBN.BN_free(this.bignum);
+                //this.bignum = 0;
+            //}
+        //} finally {
+            //super.finalize();
+        //}
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.478 -0400", hash_original_method = "AE4D2CED095C616381028CC9DA4809A2", hash_generated_method = "1DD1F0D90E018DFDA5D9341347B91B73")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.706 -0400", hash_original_method = "AE4D2CED095C616381028CC9DA4809A2", hash_generated_method = "328AE66661DE99408315188CAA80B2DA")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_447150837 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_447150837 = this.decString();
-        varB4EAC82CA7396A68D541C85D26508E83_447150837.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_447150837;
-        
-        
+String varEE38A904DF70C757D780CC0689FFC426_1542107688 =         this.decString();
+        varEE38A904DF70C757D780CC0689FFC426_1542107688.addTaint(taint);
+        return varEE38A904DF70C757D780CC0689FFC426_1542107688;
+        // ---------- Original Method ----------
+        //return this.decString();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.479 -0400", hash_original_method = "5BE7FB396EC56810A84432A49B351D93", hash_generated_method = "5C7C156AEE831E8CA685D9E53785A522")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.706 -0400", hash_original_method = "5BE7FB396EC56810A84432A49B351D93", hash_generated_method = "207B7A97DFBCD2EF292DD267FC341775")
      int getNativeBIGNUM() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_296925829 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_296925829;
-        
-        
+        int var2F62ECB1E1BFD54CAB557BA7F701A0DB_795313843 = (this.bignum);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_621226979 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_621226979;
+        // ---------- Original Method ----------
+        //return this.bignum;
     }
 
     
-    static int consumeErrors(StringBuilder sb) {
+        static int consumeErrors(StringBuilder sb) {
         int cnt = 0;
         int e, reason;
         while ((e = NativeBN.ERR_get_error()) != 0) {
@@ -91,7 +88,7 @@ final class BigInt {
     }
 
     
-    private static void Check(boolean success) {
+        private static void Check(boolean success) {
         if (!success) {
             StringBuilder sb = new StringBuilder("(openssl)ERR: ");
             int cnt = consumeErrors(sb);
@@ -101,21 +98,22 @@ final class BigInt {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.479 -0400", hash_original_method = "271E8D5D7DE583053F26E9ECE2A9ACB3", hash_generated_method = "C284E5EDF24B5CD7B90D49A0CBBCB56C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.707 -0400", hash_original_method = "271E8D5D7DE583053F26E9ECE2A9ACB3", hash_generated_method = "6590B780BDA809903AB57FA813FAD850")
     private void makeValid() {
+    if(this.bignum == 0)        
         {
             this.bignum = NativeBN.BN_new();
             Check(this.bignum != 0);
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (this.bignum == 0) {
+            //this.bignum = NativeBN.BN_new();
+            //Check(this.bignum != 0);
+        //}
     }
 
     
-    private static BigInt newBigInt() {
+        private static BigInt newBigInt() {
         BigInt bi = new BigInt();
         bi.bignum = NativeBN.BN_new();
         Check(bi.bignum != 0);
@@ -123,158 +121,174 @@ final class BigInt {
     }
 
     
-    static int cmp(BigInt a, BigInt b) {
+        static int cmp(BigInt a, BigInt b) {
         return NativeBN.BN_cmp(a.bignum, b.bignum);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.480 -0400", hash_original_method = "8941EBA58E329563221FF533A53A6CC6", hash_generated_method = "2C8C5825C971E55CBCCDE2936DC422DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.708 -0400", hash_original_method = "8941EBA58E329563221FF533A53A6CC6", hash_generated_method = "A53C2B47BE13DFD41D834C00E3021F6F")
      void putCopy(BigInt from) {
+        addTaint(from.getTaint());
         this.makeValid();
         Check(NativeBN.BN_copy(this.bignum, from.bignum));
-        addTaint(from.getTaint());
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.makeValid();
+        //Check(NativeBN.BN_copy(this.bignum, from.bignum));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.481 -0400", hash_original_method = "05F85FC1363853C2D04A531626254DA4", hash_generated_method = "C71B698958E5E8D6285B23EF27734C51")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.708 -0400", hash_original_method = "05F85FC1363853C2D04A531626254DA4", hash_generated_method = "DBA7C708EE270DDC1CF1C15F675C6315")
      BigInt copy() {
-        BigInt varB4EAC82CA7396A68D541C85D26508E83_933129040 = null; 
         BigInt bi = new BigInt();
         bi.putCopy(this);
-        varB4EAC82CA7396A68D541C85D26508E83_933129040 = bi;
-        varB4EAC82CA7396A68D541C85D26508E83_933129040.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_933129040;
-        
-        
-        
-        
+BigInt var87B0A797C42126F3585C9636042C24CE_1293285840 =         bi;
+        var87B0A797C42126F3585C9636042C24CE_1293285840.addTaint(taint);
+        return var87B0A797C42126F3585C9636042C24CE_1293285840;
+        // ---------- Original Method ----------
+        //BigInt bi = new BigInt();
+        //bi.putCopy(this);
+        //return bi;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.482 -0400", hash_original_method = "30A332A63D32AA82B1909AFA5FBB53FE", hash_generated_method = "9F4FE1739F998FF63CA0C442321A153A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.709 -0400", hash_original_method = "30A332A63D32AA82B1909AFA5FBB53FE", hash_generated_method = "39852ED1DDA1E2E553C1A24019D48134")
      void putLongInt(long val) {
+        addTaint(val);
         this.makeValid();
         Check(NativeBN.putLongInt(this.bignum, val));
-        addTaint(val);
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.makeValid();
+        //Check(NativeBN.putLongInt(this.bignum, val));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.482 -0400", hash_original_method = "2D149BF96A898165FFEB2983CC63FA56", hash_generated_method = "621D5A75DD981DDD500FB666D54321E8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.709 -0400", hash_original_method = "2D149BF96A898165FFEB2983CC63FA56", hash_generated_method = "C9A6AD284B168BEDD5EEB59097BA5447")
      void putULongInt(long val, boolean neg) {
+        addTaint(neg);
+        addTaint(val);
         this.makeValid();
         Check(NativeBN.putULongInt(this.bignum, val, neg));
-        addTaint(val);
-        addTaint(neg);
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.makeValid();
+        //Check(NativeBN.putULongInt(this.bignum, val, neg));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.483 -0400", hash_original_method = "9B61495EA965D6A6D5A899C3BAA9567B", hash_generated_method = "F37D2EFDD9099236B0A0A50FAC43A037")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.710 -0400", hash_original_method = "9B61495EA965D6A6D5A899C3BAA9567B", hash_generated_method = "3A56FA635A03F5D24C5FD0F3F40EB5C6")
     private NumberFormatException invalidBigInteger(String s) {
-        throw new NumberFormatException("Invalid BigInteger: " + s);
-        
-        
+        addTaint(s.getTaint());
+        NumberFormatException var3E0A23870CF491D90DB3D166BB4BDFBA_1652486484 = new NumberFormatException("Invalid BigInteger: " + s);
+        var3E0A23870CF491D90DB3D166BB4BDFBA_1652486484.addTaint(taint);
+        throw var3E0A23870CF491D90DB3D166BB4BDFBA_1652486484;
+        // ---------- Original Method ----------
+        //throw new NumberFormatException("Invalid BigInteger: " + s);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.483 -0400", hash_original_method = "6076EA670724B5FC9E7D900E17BB8270", hash_generated_method = "8977C62E3F3B59F5CFCACF5A0733C828")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.717 -0400", hash_original_method = "6076EA670724B5FC9E7D900E17BB8270", hash_generated_method = "97DB3DA2A6F0A45830EB6C0737950264")
      void putDecString(String original) {
+        addTaint(original.getTaint());
         String s = checkString(original, 10);
         this.makeValid();
         int usedLen = NativeBN.BN_dec2bn(this.bignum, s);
         Check((usedLen > 0));
+    if(usedLen < s.length())        
         {
-            boolean varA13F3142E694CF8397A4AEFE6967A458_165038040 = (usedLen < s.length());
-            {
-                if (DroidSafeAndroidRuntime.control) throw invalidBigInteger(original);
-            } 
-        } 
-        addTaint(original.getTaint());
-        
-        
-        
-        
-        
-        
-            
-        
+            java.lang.NumberFormatException varE8D11AC18CAE370F8E495AB217B30BEE_479104065 = invalidBigInteger(original);
+            varE8D11AC18CAE370F8E495AB217B30BEE_479104065.addTaint(taint);
+            throw varE8D11AC18CAE370F8E495AB217B30BEE_479104065;
+        } //End block
+        // ---------- Original Method ----------
+        //String s = checkString(original, 10);
+        //this.makeValid();
+        //int usedLen = NativeBN.BN_dec2bn(this.bignum, s);
+        //Check((usedLen > 0));
+        //if (usedLen < s.length()) {
+            //throw invalidBigInteger(original);
+        //}
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.483 -0400", hash_original_method = "77EC4D791D3A431E14DA888080E50FCA", hash_generated_method = "10BB5CB2612BA113CF50105164695EC1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.721 -0400", hash_original_method = "77EC4D791D3A431E14DA888080E50FCA", hash_generated_method = "C68BA695192B8103EE813673B5C70EDC")
      void putHexString(String original) {
+        addTaint(original.getTaint());
         String s = checkString(original, 16);
         this.makeValid();
         int usedLen = NativeBN.BN_hex2bn(this.bignum, s);
         Check((usedLen > 0));
+    if(usedLen < s.length())        
         {
-            boolean varA13F3142E694CF8397A4AEFE6967A458_1361633217 = (usedLen < s.length());
-            {
-                if (DroidSafeAndroidRuntime.control) throw invalidBigInteger(original);
-            } 
-        } 
-        addTaint(original.getTaint());
-        
-        
-        
-        
-        
-        
-            
-        
+            java.lang.NumberFormatException varE8D11AC18CAE370F8E495AB217B30BEE_1544842357 = invalidBigInteger(original);
+            varE8D11AC18CAE370F8E495AB217B30BEE_1544842357.addTaint(taint);
+            throw varE8D11AC18CAE370F8E495AB217B30BEE_1544842357;
+        } //End block
+        // ---------- Original Method ----------
+        //String s = checkString(original, 16);
+        //this.makeValid();
+        //int usedLen = NativeBN.BN_hex2bn(this.bignum, s);
+        //Check((usedLen > 0));
+        //if (usedLen < s.length()) {
+            //throw invalidBigInteger(original);
+        //}
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.484 -0400", hash_original_method = "509B8D432808DFEEDB9A2530ACB4E595", hash_generated_method = "6007B0B5DB931B9B930089ED0696761E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.728 -0400", hash_original_method = "509B8D432808DFEEDB9A2530ACB4E595", hash_generated_method = "EE0D633EA69EBD952DD674FEF8283B11")
      String checkString(String s, int base) {
-        String varB4EAC82CA7396A68D541C85D26508E83_650731180 = null; 
+        addTaint(base);
+        addTaint(s.getTaint());
+    if(s == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } 
+            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1839930692 = new NullPointerException();
+            var7338BC9F48D81FE0BBD6183F4014DCC4_1839930692.addTaint(taint);
+            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1839930692;
+        } //End block
         int charCount = s.length();
         int i = 0;
+    if(charCount > 0)        
         {
             char ch = s.charAt(0);
+    if(ch == '+')            
             {
                 s = s.substring(1);
-            } 
-        } 
+                --charCount;
+            } //End block
+            else
+    if(ch == '-')            
+            {
+                ++i;
+            } //End block
+        } //End block
+    if(charCount - i == 0)        
         {
-            if (DroidSafeAndroidRuntime.control) throw invalidBigInteger(s);
-        } 
+            java.lang.NumberFormatException var7F9B1EBE0B97EE479C788F183C4079A9_823287794 = invalidBigInteger(s);
+            var7F9B1EBE0B97EE479C788F183C4079A9_823287794.addTaint(taint);
+            throw var7F9B1EBE0B97EE479C788F183C4079A9_823287794;
+        } //End block
         boolean nonAscii = false;
+for(;i < charCount;++i)
         {
             char ch = s.charAt(i);
+    if(Character.digit(ch, base) == -1)            
             {
-                boolean varF5FD1498482E4E0987145634F68F58CE_405661564 = (Character.digit(ch, base) == -1);
-                {
-                    if (DroidSafeAndroidRuntime.control) throw invalidBigInteger(s);
-                } 
-            } 
+                java.lang.NumberFormatException var7F9B1EBE0B97EE479C788F183C4079A9_1999332240 = invalidBigInteger(s);
+                var7F9B1EBE0B97EE479C788F183C4079A9_1999332240.addTaint(taint);
+                throw var7F9B1EBE0B97EE479C788F183C4079A9_1999332240;
+            } //End block
+    if(ch > 128)            
             {
                 nonAscii = true;
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_650731180 = nonAscii ? toAscii(s, base) : s;
-        addTaint(s.getTaint());
-        addTaint(base);
-        varB4EAC82CA7396A68D541C85D26508E83_650731180.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_650731180;
-        
-        
+            } //End block
+        } //End block
+String varF5914D263E7A63078B23C8BE55D5C92B_488148871 =         nonAscii ? toAscii(s, base) : s;
+        varF5914D263E7A63078B23C8BE55D5C92B_488148871.addTaint(taint);
+        return varF5914D263E7A63078B23C8BE55D5C92B_488148871;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
-    private static String toAscii(String s, int base) {
+        private static String toAscii(String s, int base) {
         int length = s.length();
         StringBuilder result = new StringBuilder(length);
         for (int i = 0; i < length; ++i) {
@@ -289,256 +303,249 @@ final class BigInt {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.485 -0400", hash_original_method = "ACDB63EFF9B325E839800C11A6F974A8", hash_generated_method = "43EFF414FBB7D78601A6A3E50FECCB70")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.728 -0400", hash_original_method = "ACDB63EFF9B325E839800C11A6F974A8", hash_generated_method = "CD9F25EF0DC2807F6172CC43AC6B926D")
      void putBigEndian(byte[] a, boolean neg) {
+        addTaint(neg);
+        addTaint(a[0]);
         this.makeValid();
         Check(NativeBN.BN_bin2bn(a, a.length, neg, this.bignum));
-        addTaint(a[0]);
-        addTaint(neg);
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.makeValid();
+        //Check(NativeBN.BN_bin2bn(a, a.length, neg, this.bignum));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.485 -0400", hash_original_method = "F46F553C794EFAECC5CBB83791E423EA", hash_generated_method = "F0EE44A85BD597609CA749B27F66BE74")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.728 -0400", hash_original_method = "F46F553C794EFAECC5CBB83791E423EA", hash_generated_method = "AD2BEF5A0E1E3E4B92D2B35F3163C829")
      void putLittleEndianInts(int[] a, boolean neg) {
+        addTaint(neg);
+        addTaint(a[0]);
         this.makeValid();
         Check(NativeBN.litEndInts2bn(a, a.length, neg, this.bignum));
-        addTaint(a[0]);
-        addTaint(neg);
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.makeValid();
+        //Check(NativeBN.litEndInts2bn(a, a.length, neg, this.bignum));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.485 -0400", hash_original_method = "78A05CDDAF5055249AF6E8FAF4BFB01A", hash_generated_method = "4009FE82AC021BB5FF09463897DA8BFE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.728 -0400", hash_original_method = "78A05CDDAF5055249AF6E8FAF4BFB01A", hash_generated_method = "55FFBF4EAA47D256331278B9CAE1E099")
      void putBigEndianTwosComplement(byte[] a) {
+        addTaint(a[0]);
         this.makeValid();
         Check(NativeBN.twosComp2bn(a, a.length, this.bignum));
-        addTaint(a[0]);
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.makeValid();
+        //Check(NativeBN.twosComp2bn(a, a.length, this.bignum));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.485 -0400", hash_original_method = "27EA3CFBEF77EFE881C6E2FB553F4CC2", hash_generated_method = "31411D911AFC7F7F3219567A6AA18F48")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.729 -0400", hash_original_method = "27EA3CFBEF77EFE881C6E2FB553F4CC2", hash_generated_method = "35639FB99336D07EB846E99ED04697CD")
      long longInt() {
-        long var568B96714232996F05A67FEC3007E730_1857254413 = (NativeBN.longInt(this.bignum));
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_198422447 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_198422447;
-        
-        
+        long varC55BA8B2B9A00B1323A548E5B86AFCBA_939182026 = (NativeBN.longInt(this.bignum));
+                long var0F5264038205EDFB1AC05FBB0E8C5E94_540452572 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_540452572;
+        // ---------- Original Method ----------
+        //return NativeBN.longInt(this.bignum);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.486 -0400", hash_original_method = "91D15DC45533D4FB86FF476EA9D84EB9", hash_generated_method = "E1E4987FBDD30843E5EBE5430B6D3686")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.729 -0400", hash_original_method = "91D15DC45533D4FB86FF476EA9D84EB9", hash_generated_method = "0A11DD6FB2A1ABBE9E99495EAC1CC332")
      String decString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_626582918 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_626582918 = NativeBN.BN_bn2dec(this.bignum);
-        varB4EAC82CA7396A68D541C85D26508E83_626582918.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_626582918;
-        
-        
+String varCCF863F4D48E2DE62C695A86A66040EF_1818559748 =         NativeBN.BN_bn2dec(this.bignum);
+        varCCF863F4D48E2DE62C695A86A66040EF_1818559748.addTaint(taint);
+        return varCCF863F4D48E2DE62C695A86A66040EF_1818559748;
+        // ---------- Original Method ----------
+        //return NativeBN.BN_bn2dec(this.bignum);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.487 -0400", hash_original_method = "41C3EB22F67E33809F4134B2F2306A6C", hash_generated_method = "6FFE72713A0A861EC229B6CDD100D06A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.729 -0400", hash_original_method = "41C3EB22F67E33809F4134B2F2306A6C", hash_generated_method = "DBCFB2C8C246081F00D786CDAE0E8768")
      String hexString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1698758822 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1698758822 = NativeBN.BN_bn2hex(this.bignum);
-        varB4EAC82CA7396A68D541C85D26508E83_1698758822.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1698758822;
-        
-        
+String varE4F8BA600302B1E57A5C31B3EB1B1B21_976697489 =         NativeBN.BN_bn2hex(this.bignum);
+        varE4F8BA600302B1E57A5C31B3EB1B1B21_976697489.addTaint(taint);
+        return varE4F8BA600302B1E57A5C31B3EB1B1B21_976697489;
+        // ---------- Original Method ----------
+        //return NativeBN.BN_bn2hex(this.bignum);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.487 -0400", hash_original_method = "5BFAE0D787CB740802A929B95296D76B", hash_generated_method = "B04680546C302F6837C8CE0091C4D9F2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.774 -0400", hash_original_method = "5BFAE0D787CB740802A929B95296D76B", hash_generated_method = "744207F6BAD7529130CAC83A6C0FF26E")
      byte[] bigEndianMagnitude() {
-        byte[] var5713A3D0946171715E55913A347440FF_732763914 = (NativeBN.BN_bn2bin(this.bignum));
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1580002239 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1580002239;
-        
-        
+        byte[] var974B961D29BF5708EEFD709EE3C9B6C3_1968424326 = (NativeBN.BN_bn2bin(this.bignum));
+                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1763414573 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1763414573;
+        // ---------- Original Method ----------
+        //return NativeBN.BN_bn2bin(this.bignum);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.487 -0400", hash_original_method = "9306CD68F08E506A6F565B6B5DE53B97", hash_generated_method = "1C2A7D381E755A0A0A040B593B56210B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.774 -0400", hash_original_method = "9306CD68F08E506A6F565B6B5DE53B97", hash_generated_method = "8178D96DCC75B2DC4B4A1FC3C4A7C118")
      int[] littleEndianIntsMagnitude() {
-        int[] var6E1D22610BFEAF10D5E9C9888883D31F_188949748 = (NativeBN.bn2litEndInts(this.bignum));
-        int[] varB4CCCA26F9DB9189C32F33E82D425CFB_373188897 = {getTaintInt()};
-        return varB4CCCA26F9DB9189C32F33E82D425CFB_373188897;
-        
-        
+        int[] var4B84E68D8CDD0E00B539C5BBDD3C0297_1561325170 = (NativeBN.bn2litEndInts(this.bignum));
+                int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1185629083 = {getTaintInt()};
+        return varB4CCCA26F9DB9189C32F33E82D425CFB_1185629083;
+        // ---------- Original Method ----------
+        //return NativeBN.bn2litEndInts(this.bignum);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.487 -0400", hash_original_method = "20C3F9921E8308474D657B401A5C4926", hash_generated_method = "A5A8CC29815ABB55C4823EB9EDA73239")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.775 -0400", hash_original_method = "20C3F9921E8308474D657B401A5C4926", hash_generated_method = "61BD3661444FAD0F008649FA59BFD683")
      int sign() {
-        int varA6FFB2EBC8E064F4B12AFD8977763B21_1990688842 = (NativeBN.sign(this.bignum));
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1526533030 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1526533030;
-        
-        
+        int var30B6F63E32027C8A1E184493509869A6_664528447 = (NativeBN.sign(this.bignum));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1349742467 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1349742467;
+        // ---------- Original Method ----------
+        //return NativeBN.sign(this.bignum);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.488 -0400", hash_original_method = "D1EC3F455E1B2B87D60E54F4D60552ED", hash_generated_method = "5436B33A2F42F6E99AE3F117CEF82174")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.776 -0400", hash_original_method = "D1EC3F455E1B2B87D60E54F4D60552ED", hash_generated_method = "3B3C7CC6824D931061A89A493C908DEF")
      void setSign(int val) {
+        addTaint(val);
+    if(val > 0)        
         {
             NativeBN.BN_set_negative(this.bignum, 0);
-        } 
+        } //End block
+        else
         {
+    if(val < 0)            
             NativeBN.BN_set_negative(this.bignum, 1);
-        } 
-        addTaint(val);
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (val > 0) {
+            //NativeBN.BN_set_negative(this.bignum, 0);
+        //} else {
+            //if (val < 0) NativeBN.BN_set_negative(this.bignum, 1);
+        //}
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.488 -0400", hash_original_method = "0C4139075DA080C92B767C8D6DDC4F59", hash_generated_method = "69661C5259EB5EDF85B049BD23534493")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.777 -0400", hash_original_method = "0C4139075DA080C92B767C8D6DDC4F59", hash_generated_method = "627923ECB7DF5DFDC594F839EDE7FBA7")
      boolean twosCompFitsIntoBytes(int desiredByteCount) {
-        int actualByteCount = (NativeBN.bitLength(this.bignum) + 7) / 8;
         addTaint(desiredByteCount);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1835372389 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1835372389;
-        
-        
-        
+        int actualByteCount = (NativeBN.bitLength(this.bignum) + 7) / 8;
+        boolean var56074C02CFA094DC2F93464BDA66A9DD_9023711 = (actualByteCount <= desiredByteCount);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1913516370 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1913516370;
+        // ---------- Original Method ----------
+        //int actualByteCount = (NativeBN.bitLength(this.bignum) + 7) / 8;
+        //return actualByteCount <= desiredByteCount;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.488 -0400", hash_original_method = "06E4028740CFBC5E8F4DC5B6A30B93E1", hash_generated_method = "03EEDEC50B9F3B6CF3B568D23C096655")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.778 -0400", hash_original_method = "06E4028740CFBC5E8F4DC5B6A30B93E1", hash_generated_method = "95710ABEC58408BA28F335C99024C761")
      int bitLength() {
-        int var27C992443C21A44A87944D4A58DDEBF4_1341356604 = (NativeBN.bitLength(this.bignum));
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_450511856 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_450511856;
-        
-        
+        int var0F9DE3413157B0BF360CFE49C565F557_2134322298 = (NativeBN.bitLength(this.bignum));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1475678904 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1475678904;
+        // ---------- Original Method ----------
+        //return NativeBN.bitLength(this.bignum);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.489 -0400", hash_original_method = "7AF9A4C10272398CEA0DB42D124E2F09", hash_generated_method = "640AD541787E9E3464BBEE44ADB907BB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.779 -0400", hash_original_method = "7AF9A4C10272398CEA0DB42D124E2F09", hash_generated_method = "FE515FBDC9AB2E9A60FC6DC7492857DC")
      boolean isBitSet(int n) {
-        boolean var41FF7BE6D0CC98059B7B09D26E2122CC_1260158931 = (NativeBN.BN_is_bit_set(this.bignum, n));
         addTaint(n);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1064079048 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1064079048;
-        
-        
+        boolean varF06EB7850FF23805EFB6B8AE10768B04_1441630018 = (NativeBN.BN_is_bit_set(this.bignum, n));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1055143334 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1055143334;
+        // ---------- Original Method ----------
+        //return NativeBN.BN_is_bit_set(this.bignum, n);
     }
 
     
-    @DSModeled(DSC.SPEC)
-    static BigInt shift(BigInt a, int n) {
+        static BigInt shift(BigInt a, int n) {
         BigInt r = newBigInt();
         Check(NativeBN.BN_shift(r.bignum, a.bignum, n));
         return r;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.490 -0400", hash_original_method = "E387E2D423D242DA7510EDC2247E6A5C", hash_generated_method = "8E99E53D11860E6CEF110BC79F6C4567")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.781 -0400", hash_original_method = "E387E2D423D242DA7510EDC2247E6A5C", hash_generated_method = "C8DF347BD2BF9D83FFF9D24E2BD4B4CE")
      void shift(int n) {
-        Check(NativeBN.BN_shift(this.bignum, this.bignum, n));
         addTaint(n);
-        
-        
+        Check(NativeBN.BN_shift(this.bignum, this.bignum, n));
+        // ---------- Original Method ----------
+        //Check(NativeBN.BN_shift(this.bignum, this.bignum, n));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.490 -0400", hash_original_method = "3376DF594C58E0E875033FD1F81D1456", hash_generated_method = "7E084BFEDB883F61C6C7FF03338957C6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.781 -0400", hash_original_method = "3376DF594C58E0E875033FD1F81D1456", hash_generated_method = "B27FF13CDDB19642C061A48A8355B465")
      void addPositiveInt(int w) {
+        addTaint(w);
         Check(NativeBN.BN_add_word(this.bignum, w));
-        addTaint(w);
-        
-        
+        // ---------- Original Method ----------
+        //Check(NativeBN.BN_add_word(this.bignum, w));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.491 -0400", hash_original_method = "5EBBBBFBA0490D7B09CF7B986217857B", hash_generated_method = "BDDBD1113B4AA7D1B4E6FA7548A4EDF1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.783 -0400", hash_original_method = "5EBBBBFBA0490D7B09CF7B986217857B", hash_generated_method = "17F41774B8FE3ABEA78B4E49B7979DF3")
      void multiplyByPositiveInt(int w) {
-        Check(NativeBN.BN_mul_word(this.bignum, w));
         addTaint(w);
-        
-        
+        Check(NativeBN.BN_mul_word(this.bignum, w));
+        // ---------- Original Method ----------
+        //Check(NativeBN.BN_mul_word(this.bignum, w));
     }
 
     
-    @DSModeled(DSC.SPEC)
-    static int remainderByPositiveInt(BigInt a, int w) {
+        static int remainderByPositiveInt(BigInt a, int w) {
         int rem = NativeBN.BN_mod_word(a.bignum, w);
         Check(rem != -1);
         return rem;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    static BigInt addition(BigInt a, BigInt b) {
+        static BigInt addition(BigInt a, BigInt b) {
         BigInt r = newBigInt();
         Check(NativeBN.BN_add(r.bignum, a.bignum, b.bignum));
         return r;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.493 -0400", hash_original_method = "0051E42AE39953CC88EC24F561CB2DC4", hash_generated_method = "2A68044FACA0ADA2AD3A3006E9D9BB38")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.787 -0400", hash_original_method = "0051E42AE39953CC88EC24F561CB2DC4", hash_generated_method = "3EAD98D568723230A39CDFDFA4439AE8")
      void add(BigInt a) {
-        Check(NativeBN.BN_add(this.bignum, this.bignum, a.bignum));
         addTaint(a.getTaint());
-        
-        
+        Check(NativeBN.BN_add(this.bignum, this.bignum, a.bignum));
+        // ---------- Original Method ----------
+        //Check(NativeBN.BN_add(this.bignum, this.bignum, a.bignum));
     }
 
     
-    @DSModeled(DSC.SPEC)
-    static BigInt subtraction(BigInt a, BigInt b) {
+        static BigInt subtraction(BigInt a, BigInt b) {
         BigInt r = newBigInt();
         Check(NativeBN.BN_sub(r.bignum, a.bignum, b.bignum));
         return r;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    static BigInt gcd(BigInt a, BigInt b) {
+        static BigInt gcd(BigInt a, BigInt b) {
         BigInt r = newBigInt();
         Check(NativeBN.BN_gcd(r.bignum, a.bignum, b.bignum));
         return r;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    static BigInt product(BigInt a, BigInt b) {
+        static BigInt product(BigInt a, BigInt b) {
         BigInt r = newBigInt();
         Check(NativeBN.BN_mul(r.bignum, a.bignum, b.bignum));
         return r;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static BigInt bigExp(BigInt a, BigInt p) {
+        static BigInt bigExp(BigInt a, BigInt p) {
         BigInt r = newBigInt();
         Check(NativeBN.BN_exp(r.bignum, a.bignum, p.bignum));
         return r;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static BigInt exp(BigInt a, int p) {
+        static BigInt exp(BigInt a, int p) {
         BigInt power = new BigInt();
         power.putLongInt(p);
         return bigExp(a, power);
     }
 
     
-    @DSModeled(DSC.SPEC)
-    static void division(BigInt dividend, BigInt divisor,
+        static void division(BigInt dividend, BigInt divisor,
             BigInt quotient, BigInt remainder) {
         int quot, rem;
         if (quotient != null) {
@@ -557,46 +564,42 @@ final class BigInt {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static BigInt modulus(BigInt a, BigInt m) {
+        static BigInt modulus(BigInt a, BigInt m) {
         BigInt r = newBigInt();
         Check(NativeBN.BN_nnmod(r.bignum, a.bignum, m.bignum));
         return r;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static BigInt modExp(BigInt a, BigInt p, BigInt m) {
+        static BigInt modExp(BigInt a, BigInt p, BigInt m) {
         BigInt r = newBigInt();
         Check(NativeBN.BN_mod_exp(r.bignum, a.bignum, p.bignum, m.bignum));
         return r;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    static BigInt modInverse(BigInt a, BigInt m) {
+        static BigInt modInverse(BigInt a, BigInt m) {
         BigInt r = newBigInt();
         Check(NativeBN.BN_mod_inverse(r.bignum, a.bignum, m.bignum));
         return r;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    static BigInt generatePrimeDefault(int bitLength) {
+        static BigInt generatePrimeDefault(int bitLength) {
         BigInt r = newBigInt();
         Check(NativeBN.BN_generate_prime_ex(r.bignum, bitLength, false, 0, 0, 0));
         return r;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.498 -0400", hash_original_method = "E070D8C138AEEC2CD37718FB0D1B5E61", hash_generated_method = "AF14FA17FE519B31ADD383BF05186534")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.800 -0400", hash_original_method = "E070D8C138AEEC2CD37718FB0D1B5E61", hash_generated_method = "EB1647A7D471406A70E50A96F8A62450")
      boolean isPrime(int certainty) {
-        boolean varC73FF920A9D497BA034F5C82FDD4C8FD_1207458150 = (NativeBN.BN_is_prime_ex(bignum, certainty, 0));
         addTaint(certainty);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_776020701 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_776020701;
-        
-        
+        boolean var241D89B17919157472B0C305FE26C87F_548361975 = (NativeBN.BN_is_prime_ex(bignum, certainty, 0));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2060198593 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2060198593;
+        // ---------- Original Method ----------
+        //return NativeBN.BN_is_prime_ex(bignum, certainty, 0);
     }
 
     

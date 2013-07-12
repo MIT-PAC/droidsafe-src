@@ -1,12 +1,9 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.security.InvalidKeyException;
 import java.security.InvalidParameterException;
 import java.security.NoSuchAlgorithmException;
@@ -21,42 +18,41 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class OpenSSLSignature extends Signature {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.400 -0400", hash_original_field = "ECACFFFFC22141F3C1C9CF77DDF0308D", hash_generated_field = "BD1C84B906E542A0B7737CDBC958EBF4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.286 -0400", hash_original_field = "ECACFFFFC22141F3C1C9CF77DDF0308D", hash_generated_field = "BD1C84B906E542A0B7737CDBC958EBF4")
 
     private int ctx;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.400 -0400", hash_original_field = "5F039B4EF0058A1D652F13D612375A5B", hash_generated_field = "C6E827FEAEE2EB61DBE5D9A85D4D8B6B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.286 -0400", hash_original_field = "5F039B4EF0058A1D652F13D612375A5B", hash_generated_field = "C6E827FEAEE2EB61DBE5D9A85D4D8B6B")
 
     private int dsa;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.400 -0400", hash_original_field = "EF31070D66440687A73BEB6242F298BC", hash_generated_field = "08DC989B3FD973EC4E94901E8395CF84")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.286 -0400", hash_original_field = "EF31070D66440687A73BEB6242F298BC", hash_generated_field = "08DC989B3FD973EC4E94901E8395CF84")
 
     private int rsa;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.400 -0400", hash_original_field = "2E130D966996D5B7ADC4B805903D7A4A", hash_generated_field = "D1E1187B385C5797B4C8180AB8D613E0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.287 -0400", hash_original_field = "2E130D966996D5B7ADC4B805903D7A4A", hash_generated_field = "D1E1187B385C5797B4C8180AB8D613E0")
 
     private String evpAlgorithm;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.400 -0400", hash_original_field = "ABCA5D984BD29AABF4010E7D76926040", hash_generated_field = "9BD39ECEAC31FB507C39A41CCA51990D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.287 -0400", hash_original_field = "ABCA5D984BD29AABF4010E7D76926040", hash_generated_field = "9BD39ECEAC31FB507C39A41CCA51990D")
 
     private final byte[] singleByte = new byte[1];
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.401 -0400", hash_original_method = "2A2E0ABF3B3B1A4964ED7A72D14B2724", hash_generated_method = "002111F088C4CAE3840422D62A5B3B28")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.287 -0400", hash_original_method = "2A2E0ABF3B3B1A4964ED7A72D14B2724", hash_generated_method = "245F14C5E6329500A0CB0CF51A785C51")
     private  OpenSSLSignature(String algorithm) throws NoSuchAlgorithmException {
         super(algorithm);
+    if("RSA-MD2".equals(algorithm))        
         {
-            boolean var9B035DEB4153ABE2CC245F8952726083_1948341786 = ("RSA-MD2".equals(algorithm));
-            {
-                if (DroidSafeAndroidRuntime.control) throw new NoSuchAlgorithmException(algorithm);
-            } 
-        } 
+            NoSuchAlgorithmException var5405A112E617FE00103022CAE2AB0CA5_1138981501 = new NoSuchAlgorithmException(algorithm);
+            var5405A112E617FE00103022CAE2AB0CA5_1138981501.addTaint(taint);
+            throw var5405A112E617FE00103022CAE2AB0CA5_1138981501;
+        } //End block
         this.evpAlgorithm = algorithm;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if ("RSA-MD2".equals(algorithm)) {
+            //throw new NoSuchAlgorithmException(algorithm);
+        //}
+        //this.evpAlgorithm = algorithm;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static OpenSSLSignature getInstance(String algorithm) throws NoSuchAlgorithmException {
+        public static OpenSSLSignature getInstance(String algorithm) throws NoSuchAlgorithmException {
         Class <? extends OpenSSLSignature> clazz = jdkToOpenSsl.get(algorithm);
         if (clazz == null) {
             throw new NoSuchAlgorithmException(algorithm);
@@ -71,69 +67,71 @@ public class OpenSSLSignature extends Signature {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.401 -0400", hash_original_method = "346ED399212AE09C0968D8FA1B5865A9", hash_generated_method = "33328BFB371B279A80C61D79F659F0DE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.288 -0400", hash_original_method = "346ED399212AE09C0968D8FA1B5865A9", hash_generated_method = "33328BFB371B279A80C61D79F659F0DE")
     @Override
     protected void engineUpdate(byte input) {
         singleByte[0] = input;
         engineUpdate(singleByte, 0, 1);
-        
-        
-        
+        // ---------- Original Method ----------
+        //singleByte[0] = input;
+        //engineUpdate(singleByte, 0, 1);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.402 -0400", hash_original_method = "781B79B8126ED66671017896416B5787", hash_generated_method = "B5745E8112196A9E168E9179DDDE9C35")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.289 -0400", hash_original_method = "781B79B8126ED66671017896416B5787", hash_generated_method = "477583F9E74D9124F961E22D4B96E816")
     @Override
     protected void engineUpdate(byte[] input, int offset, int len) {
+        addTaint(len);
+        addTaint(offset);
+        addTaint(input[0]);
+    if(state == SIGN)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        } 
+            UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_45977078 = new UnsupportedOperationException();
+            var81FA7E299EEE7F062EBFBEEF08B0464D_45977078.addTaint(taint);
+            throw var81FA7E299EEE7F062EBFBEEF08B0464D_45977078;
+        } //End block
+        else
         {
             NativeCrypto.EVP_VerifyUpdate(ctx, input, offset, len);
-        } 
-        addTaint(input[0]);
-        addTaint(offset);
-        addTaint(len);
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (state == SIGN) {
+            //throw new UnsupportedOperationException();
+        //} else {
+            //NativeCrypto.EVP_VerifyUpdate(ctx, input, offset, len);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.402 -0400", hash_original_method = "CB8A1B4C2EB685EAF12C2B9210E25AE9", hash_generated_method = "9A21C3964CBF6C1BF7845DC6D11E45F4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.289 -0400", hash_original_method = "CB8A1B4C2EB685EAF12C2B9210E25AE9", hash_generated_method = "AEAC9944268717085CF2013D775F3E2B")
     @Override
     protected Object engineGetParameter(String param) throws InvalidParameterException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1207924667 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1207924667 = null;
         addTaint(param.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1207924667.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1207924667;
-        
-        
+Object var540C13E9E156B687226421B24F2DF178_576737532 =         null;
+        var540C13E9E156B687226421B24F2DF178_576737532.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_576737532;
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.403 -0400", hash_original_method = "6488F7E05A5FB9520658BCE2FDFC51FF", hash_generated_method = "2395ED19D5FA27B310B61C115E310B68")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.290 -0400", hash_original_method = "6488F7E05A5FB9520658BCE2FDFC51FF", hash_generated_method = "E490FFD96B9E68A2FC341311F7AAB305")
     @Override
     protected void engineInitSign(PrivateKey privateKey) throws InvalidKeyException {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         addTaint(privateKey.getTaint());
-        
-        
+        UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1946369388 = new UnsupportedOperationException();
+        var81FA7E299EEE7F062EBFBEEF08B0464D_1946369388.addTaint(taint);
+        throw var81FA7E299EEE7F062EBFBEEF08B0464D_1946369388;
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.404 -0400", hash_original_method = "B5DEEBDD8940EADE5B18431959F129E2", hash_generated_method = "7DB4CF3E64E435573A5DD1EF663D26F0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.291 -0400", hash_original_method = "B5DEEBDD8940EADE5B18431959F129E2", hash_generated_method = "C3CD48B93F6632A40DE95CCE19C2C0DC")
     @Override
     protected void engineInitVerify(PublicKey publicKey) throws InvalidKeyException {
+        addTaint(publicKey.getTaint());
+    if(publicKey instanceof DSAPublicKey)        
         {
             try 
             {
@@ -142,141 +140,154 @@ public class OpenSSLSignature extends Signature {
                 dsa = NativeCrypto.EVP_PKEY_new_DSA(dsaParams.getP().toByteArray(),
                         dsaParams.getQ().toByteArray(), dsaParams.getG().toByteArray(),
                         dsaPublicKey.getY().toByteArray(), null);
-            } 
+            } //End block
             catch (Exception e)
             {
-                if (DroidSafeAndroidRuntime.control) throw new InvalidKeyException(e);
-            } 
-        } 
+                InvalidKeyException varF522521D9392C2AD613C7567C21EFAAE_879025956 = new InvalidKeyException(e);
+                varF522521D9392C2AD613C7567C21EFAAE_879025956.addTaint(taint);
+                throw varF522521D9392C2AD613C7567C21EFAAE_879025956;
+            } //End block
+        } //End block
+        else
+    if(publicKey instanceof RSAPublicKey)        
         {
             try 
             {
                 RSAPublicKey rsaPublicKey = (RSAPublicKey)publicKey;
                 rsa = NativeCrypto.EVP_PKEY_new_RSA(rsaPublicKey.getModulus().toByteArray(),
                         rsaPublicKey.getPublicExponent().toByteArray(), null, null, null);
-            } 
+            } //End block
             catch (Exception e)
             {
-                if (DroidSafeAndroidRuntime.control) throw new InvalidKeyException(e);
-            } 
-        } 
+                InvalidKeyException varF522521D9392C2AD613C7567C21EFAAE_2134140905 = new InvalidKeyException(e);
+                varF522521D9392C2AD613C7567C21EFAAE_2134140905.addTaint(taint);
+                throw varF522521D9392C2AD613C7567C21EFAAE_2134140905;
+            } //End block
+        } //End block
+        else
         {
-            if (DroidSafeAndroidRuntime.control) throw new InvalidKeyException("Need DSA or RSA public key");
-        } 
+            InvalidKeyException var5D3448A6F61CCF883A8AC30588C0D279_671116649 = new InvalidKeyException("Need DSA or RSA public key");
+            var5D3448A6F61CCF883A8AC30588C0D279_671116649.addTaint(taint);
+            throw var5D3448A6F61CCF883A8AC30588C0D279_671116649;
+        } //End block
         try 
         {
             ctx = NativeCrypto.EVP_VerifyInit(evpAlgorithm);
-        } 
+        } //End block
         catch (Exception ex)
         {
-            if (DroidSafeAndroidRuntime.control) throw new RuntimeException(ex);
-        } 
-        addTaint(publicKey.getTaint());
-        
-        
+            RuntimeException varF35D3C95F99DACEE8C542CF38D772C50_189419324 = new RuntimeException(ex);
+            varF35D3C95F99DACEE8C542CF38D772C50_189419324.addTaint(taint);
+            throw varF35D3C95F99DACEE8C542CF38D772C50_189419324;
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.405 -0400", hash_original_method = "BB69CFAE2D7DAB40561C965B4584F359", hash_generated_method = "7BEA947E1474A3CD87BC2204E590B70A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.292 -0400", hash_original_method = "BB69CFAE2D7DAB40561C965B4584F359", hash_generated_method = "63674D7E8498AF443B36E38A5838B78A")
     @Override
     protected void engineSetParameter(String param, Object value) throws InvalidParameterException {
-        addTaint(param.getTaint());
         addTaint(value.getTaint());
-        
+        addTaint(param.getTaint());
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.407 -0400", hash_original_method = "1867E471CA5CA87F27F3477ACB97988E", hash_generated_method = "B2008C2E48197016C63648B0DA910815")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.292 -0400", hash_original_method = "1867E471CA5CA87F27F3477ACB97988E", hash_generated_method = "8BD4CDEF9E536CB9C895C1E4FAA0D53A")
     @Override
     protected byte[] engineSign() throws SignatureException {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_511981732 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_511981732;
-        
-        
+        UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_259351713 = new UnsupportedOperationException();
+        var81FA7E299EEE7F062EBFBEEF08B0464D_259351713.addTaint(taint);
+        throw var81FA7E299EEE7F062EBFBEEF08B0464D_259351713;
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.408 -0400", hash_original_method = "5335767B8D128F26CEBBB21EFAF129A4", hash_generated_method = "00F728C3D903A1821D3D93B91B91670E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.293 -0400", hash_original_method = "5335767B8D128F26CEBBB21EFAF129A4", hash_generated_method = "F750A8461D49A0D534F6016F97C4D2DF")
     @Override
     protected boolean engineVerify(byte[] sigBytes) throws SignatureException {
-        int handle;
-        handle = rsa;
-        handle = dsa;
+        addTaint(sigBytes[0]);
+        int handle = (rsa != 0) ? rsa : dsa;
+    if(handle == 0)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new SignatureException("Need DSA or RSA public key");
-        } 
+            SignatureException var4F29716846FADF369DEE71FC326C443A_1501989579 = new SignatureException("Need DSA or RSA public key");
+            var4F29716846FADF369DEE71FC326C443A_1501989579.addTaint(taint);
+            throw var4F29716846FADF369DEE71FC326C443A_1501989579;
+        } //End block
         try 
         {
             int result = NativeCrypto.EVP_VerifyFinal(ctx, sigBytes, 0, sigBytes.length, handle);
-        } 
+            boolean var1296E614A250C5BB8625DCE0F7073032_959156376 = (result == 1);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1689729147 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1689729147;
+        } //End block
         catch (Exception ex)
         {
-            if (DroidSafeAndroidRuntime.control) throw new SignatureException(ex);
-        } 
-        addTaint(sigBytes[0]);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2025324296 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2025324296;
-        
-        
-        
-            
-        
-        
-            
-            
-        
-            
-        
+            SignatureException var09F43B2FC38765F5CCE913464C558758_1935885769 = new SignatureException(ex);
+            var09F43B2FC38765F5CCE913464C558758_1935885769.addTaint(taint);
+            throw var09F43B2FC38765F5CCE913464C558758_1935885769;
+        } //End block
+        // ---------- Original Method ----------
+        //int handle = (rsa != 0) ? rsa : dsa;
+        //if (handle == 0) {
+            //throw new SignatureException("Need DSA or RSA public key");
+        //}
+        //try {
+            //int result = NativeCrypto.EVP_VerifyFinal(ctx, sigBytes, 0, sigBytes.length, handle);
+            //return result == 1;
+        //} catch (Exception ex) {
+            //throw new SignatureException(ex);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.409 -0400", hash_original_method = "ADE539E8C8A774F97769C848519F5DF9", hash_generated_method = "A9824AD18E8003042D533A5D5F02F132")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.294 -0400", hash_original_method = "ADE539E8C8A774F97769C848519F5DF9", hash_generated_method = "22FB1F6FCBE065255A928060D599B3F2")
     @Override
     protected void finalize() throws Throwable {
         try 
         {
+    if(dsa != 0)            
             {
                 NativeCrypto.EVP_PKEY_free(dsa);
-            } 
+            } //End block
+    if(rsa != 0)            
             {
                 NativeCrypto.EVP_PKEY_free(rsa);
-            } 
+            } //End block
+    if(ctx != 0)            
             {
                 NativeCrypto.EVP_MD_CTX_destroy(ctx);
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
             super.finalize();
-        } 
-        
-        
-            
-                
-            
-            
-                
-            
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //if (dsa != 0) {
+                //NativeCrypto.EVP_PKEY_free(dsa);
+            //}
+            //if (rsa != 0) {
+                //NativeCrypto.EVP_PKEY_free(rsa);
+            //}
+            //if (ctx != 0) {
+                //NativeCrypto.EVP_MD_CTX_destroy(ctx);
+            //}
+        //} finally {
+            //super.finalize();
+        //}
     }
 
     
     public static final class MD5RSA extends OpenSSLSignature {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.409 -0400", hash_original_method = "B1183C6C9886C7590F89656BAE25BECA", hash_generated_method = "DE94EFB383F6D56E1927946DBDFD1608")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.295 -0400", hash_original_method = "B1183C6C9886C7590F89656BAE25BECA", hash_generated_method = "DE94EFB383F6D56E1927946DBDFD1608")
         public  MD5RSA() throws NoSuchAlgorithmException {
             super("RSA-MD5");
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -286,10 +297,10 @@ public class OpenSSLSignature extends Signature {
     
     public static final class SHA1RSA extends OpenSSLSignature {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.410 -0400", hash_original_method = "52FBE190C92F5C8F173769172401F04E", hash_generated_method = "D986FEE06588614C43E9DAF463CBE8A8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.295 -0400", hash_original_method = "52FBE190C92F5C8F173769172401F04E", hash_generated_method = "D986FEE06588614C43E9DAF463CBE8A8")
         public  SHA1RSA() throws NoSuchAlgorithmException {
             super("RSA-SHA1");
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -299,10 +310,10 @@ public class OpenSSLSignature extends Signature {
     
     public static final class SHA256RSA extends OpenSSLSignature {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.410 -0400", hash_original_method = "E7BAD1A6B461EB173260E3EA071C4D98", hash_generated_method = "FACA5E3ED2133628B04490DE37518174")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.295 -0400", hash_original_method = "E7BAD1A6B461EB173260E3EA071C4D98", hash_generated_method = "FACA5E3ED2133628B04490DE37518174")
         public  SHA256RSA() throws NoSuchAlgorithmException {
             super("RSA-SHA256");
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -312,10 +323,10 @@ public class OpenSSLSignature extends Signature {
     
     public static final class SHA384RSA extends OpenSSLSignature {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.411 -0400", hash_original_method = "9FE2D91A88929DCA7C5B738CF76745E4", hash_generated_method = "5FFB04A117079BFEC3D624C2ADA45CEF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.296 -0400", hash_original_method = "9FE2D91A88929DCA7C5B738CF76745E4", hash_generated_method = "5FFB04A117079BFEC3D624C2ADA45CEF")
         public  SHA384RSA() throws NoSuchAlgorithmException {
             super("RSA-SHA384");
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -325,10 +336,10 @@ public class OpenSSLSignature extends Signature {
     
     public static final class SHA512RSA extends OpenSSLSignature {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.411 -0400", hash_original_method = "020897BEF8DEDF16062B317376B71FB5", hash_generated_method = "C6C7A91E8D9537A306EB69101DDC3A68")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.296 -0400", hash_original_method = "020897BEF8DEDF16062B317376B71FB5", hash_generated_method = "C6C7A91E8D9537A306EB69101DDC3A68")
         public  SHA512RSA() throws NoSuchAlgorithmException {
             super("RSA-SHA512");
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -338,10 +349,10 @@ public class OpenSSLSignature extends Signature {
     
     public static final class SHA1DSA extends OpenSSLSignature {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.412 -0400", hash_original_method = "E31D98400FA8DA28AFA04F7443B0CC39", hash_generated_method = "DCD379A979FD7A6DF1DFA89846B2D8E1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.297 -0400", hash_original_method = "E31D98400FA8DA28AFA04F7443B0CC39", hash_generated_method = "DCD379A979FD7A6DF1DFA89846B2D8E1")
         public  SHA1DSA() throws NoSuchAlgorithmException {
             super("DSA-SHA1");
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -349,7 +360,7 @@ public class OpenSSLSignature extends Signature {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.412 -0400", hash_original_field = "3E5062DD6F68BBC584F08EF6B9E2CC56", hash_generated_field = "30CADFDA226F957BCA4F06420D70879B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.297 -0400", hash_original_field = "3E5062DD6F68BBC584F08EF6B9E2CC56", hash_generated_field = "30CADFDA226F957BCA4F06420D70879B")
 
     private static Map<String,Class<? extends OpenSSLSignature>> jdkToOpenSsl = new HashMap<String,Class<? extends OpenSSLSignature>>();
     static {

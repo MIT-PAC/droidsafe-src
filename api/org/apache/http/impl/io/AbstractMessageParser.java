@@ -1,12 +1,9 @@
 package org.apache.http.impl.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.IOException;
 import java.util.ArrayList;
 import org.apache.http.Header;
@@ -23,54 +20,60 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.util.CharArrayBuffer;
 
 public abstract class AbstractMessageParser implements HttpMessageParser {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.602 -0400", hash_original_field = "C5C1A1B9CB00AE65F16C20243BC76E0D", hash_generated_field = "A33B1C99D4B1A85FF593937CE103B3DB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.026 -0400", hash_original_field = "C5C1A1B9CB00AE65F16C20243BC76E0D", hash_generated_field = "A33B1C99D4B1A85FF593937CE103B3DB")
 
     private SessionInputBuffer sessionBuffer;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.602 -0400", hash_original_field = "9E79D1C5118BFD93F2EA3354BE3B7BB3", hash_generated_field = "51B3B1D6F029892B5D1B485F1E8449D4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.026 -0400", hash_original_field = "9E79D1C5118BFD93F2EA3354BE3B7BB3", hash_generated_field = "51B3B1D6F029892B5D1B485F1E8449D4")
 
     private int maxHeaderCount;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.602 -0400", hash_original_field = "3609DB2A96EDAA41922B8FF957E1AC22", hash_generated_field = "8BE013DE7B241F7CDF197195794AF2BA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.026 -0400", hash_original_field = "3609DB2A96EDAA41922B8FF957E1AC22", hash_generated_field = "8BE013DE7B241F7CDF197195794AF2BA")
 
     private int maxLineLen;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.602 -0400", hash_original_field = "3BFFA82D6F37731C10E9CEDA46F669D0", hash_generated_field = "FA36EAE3CC325D535A91E6794A3FA61E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.027 -0400", hash_original_field = "3BFFA82D6F37731C10E9CEDA46F669D0", hash_generated_field = "FA36EAE3CC325D535A91E6794A3FA61E")
 
     protected LineParser lineParser;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.603 -0400", hash_original_method = "CD9F7BFE0207530C59E31A12BA61FD32", hash_generated_method = "B22B339261149112C549BDE5C5259B15")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.028 -0400", hash_original_method = "CD9F7BFE0207530C59E31A12BA61FD32", hash_generated_method = "B85B769F0053742F99B6151B80471CF8")
     public  AbstractMessageParser(
             final SessionInputBuffer buffer,
             final LineParser parser,
             final HttpParams params) {
         super();
+    if(buffer == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Session input buffer may not be null");
-        } 
+            IllegalArgumentException varB3677395451B18A3F9262E9D7FE254B3_314006414 = new IllegalArgumentException("Session input buffer may not be null");
+            varB3677395451B18A3F9262E9D7FE254B3_314006414.addTaint(taint);
+            throw varB3677395451B18A3F9262E9D7FE254B3_314006414;
+        } //End block
+    if(params == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP parameters may not be null");
-        } 
+            IllegalArgumentException var497CCC27A43EDD6EE25BEEC5507E2BE2_1345721087 = new IllegalArgumentException("HTTP parameters may not be null");
+            var497CCC27A43EDD6EE25BEEC5507E2BE2_1345721087.addTaint(taint);
+            throw var497CCC27A43EDD6EE25BEEC5507E2BE2_1345721087;
+        } //End block
         this.sessionBuffer = buffer;
         this.maxHeaderCount = params.getIntParameter(
                 CoreConnectionPNames.MAX_HEADER_COUNT, -1);
         this.maxLineLen = params.getIntParameter(
                 CoreConnectionPNames.MAX_LINE_LENGTH, -1);
         this.lineParser = (parser != null) ? parser : BasicLineParser.DEFAULT;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-                
-        
-                
-        
+        // ---------- Original Method ----------
+        //if (buffer == null) {
+            //throw new IllegalArgumentException("Session input buffer may not be null");
+        //}
+        //if (params == null) {
+            //throw new IllegalArgumentException("HTTP parameters may not be null");
+        //}
+        //this.sessionBuffer = buffer;
+        //this.maxHeaderCount = params.getIntParameter(
+                //CoreConnectionPNames.MAX_HEADER_COUNT, -1);
+        //this.maxLineLen = params.getIntParameter(
+                //CoreConnectionPNames.MAX_LINE_LENGTH, -1);
+        //this.lineParser = (parser != null) ? parser : BasicLineParser.DEFAULT;
     }
 
     
-    public static Header[] parseHeaders(
+        public static Header[] parseHeaders(
             final SessionInputBuffer inbuffer,
             int maxHeaderCount,
             int maxLineLen,
@@ -134,42 +137,42 @@ public abstract class AbstractMessageParser implements HttpMessageParser {
         throws IOException, HttpException, ParseException;
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.604 -0400", hash_original_method = "56FD9FE99CC7B8784E50CC19E304C067", hash_generated_method = "666FF5980578B5E7CB05AE683BF7853A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.029 -0400", hash_original_method = "56FD9FE99CC7B8784E50CC19E304C067", hash_generated_method = "2F15D69C0B1179A30C5C0EEBEDA61F53")
     public HttpMessage parse() throws IOException, HttpException {
-        HttpMessage varB4EAC82CA7396A68D541C85D26508E83_107823284 = null; 
         HttpMessage message = null;
         try 
         {
             message = parseHead(this.sessionBuffer);
-        } 
+        } //End block
         catch (ParseException px)
         {
-            if (DroidSafeAndroidRuntime.control) throw new ProtocolException(px.getMessage(), px);
-        } 
+            ProtocolException varD95A16F7A42FB78AC45970093BB1D826_77002380 = new ProtocolException(px.getMessage(), px);
+            varD95A16F7A42FB78AC45970093BB1D826_77002380.addTaint(taint);
+            throw varD95A16F7A42FB78AC45970093BB1D826_77002380;
+        } //End block
         Header[] headers = AbstractMessageParser.parseHeaders(
                 this.sessionBuffer, 
                 this.maxHeaderCount,
                 this.maxLineLen,
                 this.lineParser);
         message.setHeaders(headers);
-        varB4EAC82CA7396A68D541C85D26508E83_107823284 = message;
-        varB4EAC82CA7396A68D541C85D26508E83_107823284.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_107823284;
-        
-        
-        
-            
-        
-            
-        
-        
-                
-                
-                
-                
-        
-        
+HttpMessage varFD182D7074F3848E773A38B067BBB880_477225068 =         message;
+        varFD182D7074F3848E773A38B067BBB880_477225068.addTaint(taint);
+        return varFD182D7074F3848E773A38B067BBB880_477225068;
+        // ---------- Original Method ----------
+        //HttpMessage message = null;
+        //try {
+            //message = parseHead(this.sessionBuffer);
+        //} catch (ParseException px) {
+            //throw new ProtocolException(px.getMessage(), px);
+        //}
+        //Header[] headers = AbstractMessageParser.parseHeaders(
+                //this.sessionBuffer, 
+                //this.maxHeaderCount,
+                //this.maxLineLen,
+                //this.lineParser);
+        //message.setHeaders(headers);
+        //return message;
     }
 
     

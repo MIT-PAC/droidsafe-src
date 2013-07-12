@@ -1,147 +1,150 @@
 package java.security;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.Serializable;
 import java.security.cert.CertPath;
 
 public final class CodeSigner implements Serializable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.128 -0400", hash_original_field = "6E0FA7FC9CEF8E5B39B9BB28B636A6B5", hash_generated_field = "FC883EA50AB2FDD2C3073E407E6CEA66")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.944 -0400", hash_original_field = "6E0FA7FC9CEF8E5B39B9BB28B636A6B5", hash_generated_field = "FC883EA50AB2FDD2C3073E407E6CEA66")
 
     private CertPath signerCertPath;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.128 -0400", hash_original_field = "D7E6D55BA379A13D08C25D15FAF2A23B", hash_generated_field = "0D494C7F1B090A9E890D8617AD65E8BA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.944 -0400", hash_original_field = "D7E6D55BA379A13D08C25D15FAF2A23B", hash_generated_field = "0D494C7F1B090A9E890D8617AD65E8BA")
 
     private Timestamp timestamp;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.128 -0400", hash_original_field = "0800FC577294C34E0B28AD2839435945", hash_generated_field = "0316D82713F1CE4A6BE9BC97E8C831C1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.944 -0400", hash_original_field = "0800FC577294C34E0B28AD2839435945", hash_generated_field = "0316D82713F1CE4A6BE9BC97E8C831C1")
 
     private transient int hash;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.128 -0400", hash_original_method = "2D1A8E0F0018E23D2016EEE74572794C", hash_generated_method = "C8B133EEC32CA51343F6384E9CF4D2D9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.945 -0400", hash_original_method = "2D1A8E0F0018E23D2016EEE74572794C", hash_generated_method = "F119C4A671142E8AC99DD114ACF76DC3")
     public  CodeSigner(CertPath signerCertPath, Timestamp timestamp) {
+    if(signerCertPath == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new NullPointerException("signerCertPath == null");
-        } 
+            NullPointerException varAD3BDBD70F6B1C2E530A6596114697A8_1757225745 = new NullPointerException("signerCertPath == null");
+            varAD3BDBD70F6B1C2E530A6596114697A8_1757225745.addTaint(taint);
+            throw varAD3BDBD70F6B1C2E530A6596114697A8_1757225745;
+        } //End block
         this.signerCertPath = signerCertPath;
         this.timestamp = timestamp;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (signerCertPath == null) {
+            //throw new NullPointerException("signerCertPath == null");
+        //}
+        //this.signerCertPath = signerCertPath;
+        //this.timestamp = timestamp;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.129 -0400", hash_original_method = "9391ADEEB71A28BB26D9308D62C031F2", hash_generated_method = "695FB2A583BB615AEDE4A2E89680AA80")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.946 -0400", hash_original_method = "9391ADEEB71A28BB26D9308D62C031F2", hash_generated_method = "1EFAF2A4644CAAB55FE7A1176159FF8E")
     @Override
     public boolean equals(Object obj) {
+        addTaint(obj.getTaint());
+    if(obj == this)        
         {
-            boolean var8D1D3E5F4C020ED4FA594AED365B4BD8_376909339 = (obj == this);
-        } 
+            boolean varB326B5062B2F0E69046810717534CB09_294746743 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_940472004 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_940472004;
+        } //End block
+    if(obj instanceof CodeSigner)        
         {
             CodeSigner that = (CodeSigner) obj;
+    if(!signerCertPath.equals(that.signerCertPath))            
             {
-                boolean var2A88F9031A1725B008B9DA1DBED8F875_1641638916 = (!signerCertPath.equals(that.signerCertPath));
-            } 
-            {
-                Object varAC213430F859BD4A0A5A3A3CA0FDA1B9_1118701041 = (timestamp
+                boolean var68934A3E9455FA72420237EB05902327_1097755736 = (false);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_593684766 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_593684766;
+            } //End block
+            boolean varFF12D6A406BF50E0FC2C438C5A86D757_1312063114 = (timestamp == null ? that.timestamp == null : timestamp
                     .equals(that.timestamp));
-            } 
-        } 
-        addTaint(obj.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_584714440 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_584714440;
-        
-        
-            
-        
-        
-            
-            
-                
-            
-            
-                    
-        
-        
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_344815889 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_344815889;
+        } //End block
+        boolean var68934A3E9455FA72420237EB05902327_582979114 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1336785082 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1336785082;
+        // ---------- Original Method ----------
+        //if (obj == this) {
+            //return true;
+        //}
+        //if (obj instanceof CodeSigner) {
+            //CodeSigner that = (CodeSigner) obj;
+            //if (!signerCertPath.equals(that.signerCertPath)) {
+                //return false;
+            //}
+            //return timestamp == null ? that.timestamp == null : timestamp
+                    //.equals(that.timestamp);
+        //}
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.130 -0400", hash_original_method = "30F2DDB76579221F80A186A0F4D6B0C1", hash_generated_method = "4D91B981C5963E6024507CBD76781020")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.946 -0400", hash_original_method = "30F2DDB76579221F80A186A0F4D6B0C1", hash_generated_method = "E248F023712F89DE6755F2D64E51AFED")
     public CertPath getSignerCertPath() {
-        CertPath varB4EAC82CA7396A68D541C85D26508E83_1058464365 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1058464365 = signerCertPath;
-        varB4EAC82CA7396A68D541C85D26508E83_1058464365.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1058464365;
-        
-        
+CertPath varC4579A22BE0444B538B995294C4BD4B5_1971977180 =         signerCertPath;
+        varC4579A22BE0444B538B995294C4BD4B5_1971977180.addTaint(taint);
+        return varC4579A22BE0444B538B995294C4BD4B5_1971977180;
+        // ---------- Original Method ----------
+        //return signerCertPath;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.130 -0400", hash_original_method = "F117DFA1A6EB777CC4A763885DD30F8B", hash_generated_method = "D9BDA99A6790427C1063EAA0C2500B77")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.946 -0400", hash_original_method = "F117DFA1A6EB777CC4A763885DD30F8B", hash_generated_method = "FEF9F73E6A124870465A4A272A8D12B6")
     public Timestamp getTimestamp() {
-        Timestamp varB4EAC82CA7396A68D541C85D26508E83_992708654 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_992708654 = timestamp;
-        varB4EAC82CA7396A68D541C85D26508E83_992708654.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_992708654;
-        
-        
+Timestamp var7D8A855DA9A411559B05DE99C498CFFA_1241577390 =         timestamp;
+        var7D8A855DA9A411559B05DE99C498CFFA_1241577390.addTaint(taint);
+        return var7D8A855DA9A411559B05DE99C498CFFA_1241577390;
+        // ---------- Original Method ----------
+        //return timestamp;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.131 -0400", hash_original_method = "4C01119C48849B3B8C0F3B7EFA427DC4", hash_generated_method = "A8C736B870598A99BF3F07EB4482C448")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.947 -0400", hash_original_method = "4C01119C48849B3B8C0F3B7EFA427DC4", hash_generated_method = "741E187C9A1B0B2C11D1E86775F5DD2F")
     @Override
     public int hashCode() {
+    if(hash == 0)        
         {
             hash = signerCertPath.hashCode()
                     ^ (timestamp == null ? 0 : timestamp.hashCode());
-        } 
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1464494913 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1464494913;
-        
-        
-            
-                    
-        
-        
+        } //End block
+        int var0800FC577294C34E0B28AD2839435945_898963470 = (hash);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1227228748 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1227228748;
+        // ---------- Original Method ----------
+        //if (hash == 0) {
+            //hash = signerCertPath.hashCode()
+                    //^ (timestamp == null ? 0 : timestamp.hashCode());
+        //}
+        //return hash;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.132 -0400", hash_original_method = "9AD37782FDC32A71B028636E3AD750B0", hash_generated_method = "22E63D059A56A95CA36829E42BAD3A71")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.947 -0400", hash_original_method = "9AD37782FDC32A71B028636E3AD750B0", hash_generated_method = "C357FBE25F8416D0C4F97A30FA41EB30")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_173213002 = null; 
         StringBuilder buf = new StringBuilder(256);
         buf.append("CodeSigner [").append(signerCertPath.getCertificates().get(0));
+    if(timestamp != null)        
         {
             buf.append("; ").append(timestamp);
-        } 
+        } //End block
         buf.append("]");
-        varB4EAC82CA7396A68D541C85D26508E83_173213002 = buf.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_173213002.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_173213002;
-        
-        
-        
-        
-            
-        
-        
-        
+String var4FC680801218E6372BC708D6FA44AE60_484820216 =         buf.toString();
+        var4FC680801218E6372BC708D6FA44AE60_484820216.addTaint(taint);
+        return var4FC680801218E6372BC708D6FA44AE60_484820216;
+        // ---------- Original Method ----------
+        //StringBuilder buf = new StringBuilder(256);
+        //buf.append("CodeSigner [").append(signerCertPath.getCertificates().get(0));
+        //if( timestamp != null ) {
+            //buf.append("; ").append(timestamp);
+        //}
+        //buf.append("]");
+        //return buf.toString();
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.132 -0400", hash_original_field = "30C3C6CD6B540195EBC607DF05762D73", hash_generated_field = "29E3705B91FEE287C2335C4D8AA59C47")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.947 -0400", hash_original_field = "30C3C6CD6B540195EBC607DF05762D73", hash_generated_field = "29E3705B91FEE287C2335C4D8AA59C47")
 
     private static final long serialVersionUID = 6819288105193937581L;
 }

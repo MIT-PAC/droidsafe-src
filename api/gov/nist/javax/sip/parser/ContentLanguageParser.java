@@ -1,81 +1,78 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.core.*;
 import java.text.ParseException;
 
 public class ContentLanguageParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.865 -0400", hash_original_method = "0E099EDE885EEFB21F71B8A7B980DD82", hash_generated_method = "89C9A160B2C1B8A9C1BDA1A76AFA4AEF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.153 -0400", hash_original_method = "0E099EDE885EEFB21F71B8A7B980DD82", hash_generated_method = "89C9A160B2C1B8A9C1BDA1A76AFA4AEF")
     public  ContentLanguageParser(String contentLanguage) {
         super(contentLanguage);
         addTaint(contentLanguage.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.865 -0400", hash_original_method = "2896A247DEE95FE46B57871751B12905", hash_generated_method = "FD31EB8813837D78ACC5589B695912D3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.153 -0400", hash_original_method = "2896A247DEE95FE46B57871751B12905", hash_generated_method = "FD31EB8813837D78ACC5589B695912D3")
     protected  ContentLanguageParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.867 -0400", hash_original_method = "B9174D052A2AFCDDC5C88393A2D6AF07", hash_generated_method = "904025DCA0A68C92D2CBE2AB5ED54B68")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.224 -0400", hash_original_method = "B9174D052A2AFCDDC5C88393A2D6AF07", hash_generated_method = "E8E14EDD8CF923959B621E82B22B7BBB")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_844698106 = null; 
+    if(debug)        
         dbg_enter("ContentLanguageParser.parse");
         ContentLanguageList list = new ContentLanguageList();
         try 
         {
             headerName(TokenTypes.CONTENT_LANGUAGE);
+            while
+(lexer.lookAhead(0) != '\n')            
             {
-                boolean varA38820C66B6BCE71087D920E2767FF09_1290445594 = (lexer.lookAhead(0) != '\n');
+                this.lexer.SPorHT();
+                this.lexer.match(TokenTypes.ID);
+                Token token = lexer.getNextToken();
+                ContentLanguage cl = new ContentLanguage( token.getTokenValue() );
+                this.lexer.SPorHT();
+                list.add(cl);
+                while
+(lexer.lookAhead(0) == ',')                
                 {
+                    this.lexer.match(',');
                     this.lexer.SPorHT();
                     this.lexer.match(TokenTypes.ID);
-                    Token token = lexer.getNextToken();
-                    ContentLanguage cl = new ContentLanguage( token.getTokenValue() );
+                    this.lexer.SPorHT();
+                    token = lexer.getNextToken();
+                    cl = new ContentLanguage( token.getTokenValue() );
                     this.lexer.SPorHT();
                     list.add(cl);
-                    {
-                        boolean var7DC6EF7D2962860F171D1CEF6887AFF5_385993913 = (lexer.lookAhead(0) == ',');
-                        {
-                            this.lexer.match(',');
-                            this.lexer.SPorHT();
-                            this.lexer.match(TokenTypes.ID);
-                            this.lexer.SPorHT();
-                            token = lexer.getNextToken();
-                            cl = new ContentLanguage( token.getTokenValue() );
-                            this.lexer.SPorHT();
-                            list.add(cl);
-                        } 
-                    } 
-                } 
-            } 
-            varB4EAC82CA7396A68D541C85D26508E83_844698106 = list;
-        } 
+                } //End block
+            } //End block
+SIPHeader varED12C351C2E8CA4F85F097DDC7E77B4D_2085606004 =             list;
+            varED12C351C2E8CA4F85F097DDC7E77B4D_2085606004.addTaint(taint);
+            return varED12C351C2E8CA4F85F097DDC7E77B4D_2085606004;
+        } //End block
         catch (ParseException ex)
         {
-            if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-        } 
+            java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_1740611757 = createParseException(ex.getMessage());
+            varB8C80F72F95BF6A850D07F4EC5726C09_1740611757.addTaint(taint);
+            throw varB8C80F72F95BF6A850D07F4EC5726C09_1740611757;
+        } //End block
         finally 
         {
+    if(debug)            
             dbg_leave("ContentLanguageParser.parse");
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_844698106.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_844698106;
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

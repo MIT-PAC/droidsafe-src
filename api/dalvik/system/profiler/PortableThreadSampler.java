@@ -1,71 +1,59 @@
 package dalvik.system.profiler;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.util.Arrays;
 
 class PortableThreadSampler implements ThreadSampler {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.099 -0400", hash_original_field = "12A055BF01A31369FE81AC35D85C7BC1", hash_generated_field = "9E4E1D4E0DD2F9B43B1F6C7CB67C1409")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.997 -0400", hash_original_field = "12A055BF01A31369FE81AC35D85C7BC1", hash_generated_field = "9E4E1D4E0DD2F9B43B1F6C7CB67C1409")
 
     private int depth;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.099 -0400", hash_original_method = "4D56809BA46B0880BDFB6525AB14F55F", hash_generated_method = "4D56809BA46B0880BDFB6525AB14F55F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.997 -0400", hash_original_method = "4D56809BA46B0880BDFB6525AB14F55F", hash_generated_method = "4D56809BA46B0880BDFB6525AB14F55F")
     public PortableThreadSampler ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.100 -0400", hash_original_method = "7E87B9040AF172D5ADB37F7AF7F75CA6", hash_generated_method = "3A4056680CF8761630C703B1A5197ADD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.998 -0400", hash_original_method = "7E87B9040AF172D5ADB37F7AF7F75CA6", hash_generated_method = "3A4056680CF8761630C703B1A5197ADD")
     @Override
     public void setDepth(int depth) {
         this.depth = depth;
-        
-        
+        // ---------- Original Method ----------
+        //this.depth = depth;
     }
 
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.101 -0400", hash_original_method = "E8C7A5DFD07B28248405DFC9E0C75853", hash_generated_method = "60EE944416D8FB17E41A29C32CF7A71B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.998 -0400", hash_original_method = "E8C7A5DFD07B28248405DFC9E0C75853", hash_generated_method = "C95709B92A40B1CED59FC2DA07C19009")
     @Override
     public StackTraceElement[] getStackTrace(Thread thread) {
-        StackTraceElement[] varB4EAC82CA7396A68D541C85D26508E83_1583791814 = null; 
-        StackTraceElement[] varB4EAC82CA7396A68D541C85D26508E83_708248070 = null; 
+        addTaint(thread.getTaint());
         StackTraceElement[] stackFrames = thread.getStackTrace();
+    if(stackFrames.length == 0)        
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1583791814 = null;
-        } 
+StackTraceElement[] var540C13E9E156B687226421B24F2DF178_33737793 =             null;
+            var540C13E9E156B687226421B24F2DF178_33737793.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_33737793;
+        } //End block
+    if(stackFrames.length > depth)        
         {
             stackFrames = Arrays.copyOfRange(stackFrames, 0, depth);
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_708248070 = stackFrames;
-        addTaint(thread.getTaint());
-        StackTraceElement[] varA7E53CE21691AB073D9660D615818899_1538588931; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1538588931 = varB4EAC82CA7396A68D541C85D26508E83_1583791814;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1538588931 = varB4EAC82CA7396A68D541C85D26508E83_708248070;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1538588931.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1538588931;
-        
-        
-        
-            
-        
-        
-            
-        
-        
+        } //End block
+StackTraceElement[] varE98473DA09074D13245C9DB218456746_941114788 =         stackFrames;
+        varE98473DA09074D13245C9DB218456746_941114788.addTaint(taint);
+        return varE98473DA09074D13245C9DB218456746_941114788;
+        // ---------- Original Method ----------
+        //StackTraceElement[] stackFrames = thread.getStackTrace();
+        //if (stackFrames.length == 0) {
+            //return null;
+        //}
+        //if (stackFrames.length > depth) {
+            //stackFrames = Arrays.copyOfRange(stackFrames, 0, depth);
+        //}
+        //return stackFrames;
     }
 
     

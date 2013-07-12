@@ -1,69 +1,62 @@
 package java.lang;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-
-import java.util.Iterator;
-
 public class ClassNotFoundException extends Exception {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.870 -0400", hash_original_field = "54D54A126A783BC9CBA8C06137136943", hash_generated_field = "F73E8300D821D42895FBD4F8215B8AE6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.628 -0400", hash_original_field = "54D54A126A783BC9CBA8C06137136943", hash_generated_field = "F73E8300D821D42895FBD4F8215B8AE6")
 
     private Throwable ex;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.871 -0400", hash_original_method = "0639B59AB447390D4DDFBD24616B4C1C", hash_generated_method = "1E5153620BBC3A8E1E248DD972E06BD5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.628 -0400", hash_original_method = "0639B59AB447390D4DDFBD24616B4C1C", hash_generated_method = "1E5153620BBC3A8E1E248DD972E06BD5")
     public  ClassNotFoundException() {
         super((Throwable) null);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.871 -0400", hash_original_method = "298BE36926392F30C6A667D05BCFC9E5", hash_generated_method = "6ADA4533E6B0190347B8DB281C46029B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.629 -0400", hash_original_method = "298BE36926392F30C6A667D05BCFC9E5", hash_generated_method = "6ADA4533E6B0190347B8DB281C46029B")
     public  ClassNotFoundException(String detailMessage) {
         super(detailMessage, null);
         addTaint(detailMessage.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.872 -0400", hash_original_method = "3941F53B9B07ECD0ECA0F56417778218", hash_generated_method = "5E57F9C4EC681FCC299F499F12E75BD6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.629 -0400", hash_original_method = "3941F53B9B07ECD0ECA0F56417778218", hash_generated_method = "900E83B98E626A6E2C47CFB3A061CCDD")
     public  ClassNotFoundException(String detailMessage, Throwable exception) {
         super(detailMessage);
-        ex = exception;
         addTaint(detailMessage.getTaint());
-        
-        
+        ex = exception;
+        // ---------- Original Method ----------
+        //ex = exception;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.872 -0400", hash_original_method = "4088520C94C7E98A0F8384BC5CAC9A7D", hash_generated_method = "CD99025649F96C1D3D9FCC9022FBDD6D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.630 -0400", hash_original_method = "4088520C94C7E98A0F8384BC5CAC9A7D", hash_generated_method = "CEEC3CB5C31EF2729CEBC77C011328F2")
     public Throwable getException() {
-        Throwable varB4EAC82CA7396A68D541C85D26508E83_38233886 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_38233886 = ex;
-        varB4EAC82CA7396A68D541C85D26508E83_38233886.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_38233886;
-        
-        
+Throwable varD25D46DC39114B3B025BF73A68F87E69_335856802 =         ex;
+        varD25D46DC39114B3B025BF73A68F87E69_335856802.addTaint(taint);
+        return varD25D46DC39114B3B025BF73A68F87E69_335856802;
+        // ---------- Original Method ----------
+        //return ex;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.873 -0400", hash_original_method = "8471E555B70ADD40A898DC66BF7F4D1C", hash_generated_method = "EC5F2B481B73478335EAA07A37939120")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.630 -0400", hash_original_method = "8471E555B70ADD40A898DC66BF7F4D1C", hash_generated_method = "39BC8B27BF909A366F1F6BF9DC6AE8B0")
     @Override
     public Throwable getCause() {
-        Throwable varB4EAC82CA7396A68D541C85D26508E83_137369518 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_137369518 = ex;
-        varB4EAC82CA7396A68D541C85D26508E83_137369518.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_137369518;
-        
-        
+Throwable varD25D46DC39114B3B025BF73A68F87E69_291527762 =         ex;
+        varD25D46DC39114B3B025BF73A68F87E69_291527762.addTaint(taint);
+        return varD25D46DC39114B3B025BF73A68F87E69_291527762;
+        // ---------- Original Method ----------
+        //return ex;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.873 -0400", hash_original_field = "1ED7BB21E00FE119FAC2A7C8AF6A93B9", hash_generated_field = "FA7E6F5FBCB6CD253D61495BAEBC0CED")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.630 -0400", hash_original_field = "1ED7BB21E00FE119FAC2A7C8AF6A93B9", hash_generated_field = "FA7E6F5FBCB6CD253D61495BAEBC0CED")
 
     private static final long serialVersionUID = 9176873029745254542L;
 }

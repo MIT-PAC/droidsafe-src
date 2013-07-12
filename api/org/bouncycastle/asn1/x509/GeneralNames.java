@@ -1,12 +1,9 @@
 package org.bouncycastle.asn1.x509;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import org.bouncycastle.asn1.ASN1Encodable;
 import org.bouncycastle.asn1.ASN1Sequence;
 import org.bouncycastle.asn1.ASN1TaggedObject;
@@ -14,41 +11,38 @@ import org.bouncycastle.asn1.DERObject;
 import org.bouncycastle.asn1.DERSequence;
 
 public class GeneralNames extends ASN1Encodable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.823 -0400", hash_original_field = "A8998C31A141924D06220074FCDC6925", hash_generated_field = "74CEDC81B0DB27B07D173878E0284C60")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.077 -0400", hash_original_field = "A8998C31A141924D06220074FCDC6925", hash_generated_field = "74CEDC81B0DB27B07D173878E0284C60")
 
     private GeneralName[] names;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.823 -0400", hash_original_method = "F51AA332BBC1C75C23F2395E3D593569", hash_generated_method = "8BC893C6BAC23CD880DBCF48578BF738")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.077 -0400", hash_original_method = "F51AA332BBC1C75C23F2395E3D593569", hash_generated_method = "AACD523E399433764EB6C8C7D1E5A05B")
     public  GeneralNames(
         GeneralName  name) {
-        this.names = new GeneralName[] { name };
         addTaint(name.getTaint());
-        
-        
+        this.names = new GeneralName[] { name };
+        // ---------- Original Method ----------
+        //this.names = new GeneralName[] { name };
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.824 -0400", hash_original_method = "6F12A07D09CAFA480B0283A3B9FED616", hash_generated_method = "DAB419A7B41FBE9B505A534B468D2942")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.078 -0400", hash_original_method = "6F12A07D09CAFA480B0283A3B9FED616", hash_generated_method = "6B0C6093C710D50C58BB353912FB2203")
     public  GeneralNames(
         ASN1Sequence  seq) {
         this.names = new GeneralName[seq.size()];
+for(int i = 0;i != seq.size();i++)
         {
-            int i = 0;
-            boolean varA93A8909C6B18B3F6367766A0DBBDCF3_78650704 = (i != seq.size());
-            {
-                names[i] = GeneralName.getInstance(seq.getObjectAt(i));
-            } 
-        } 
-        
-        
-        
-        
-            
-        
+            names[i] = GeneralName.getInstance(seq.getObjectAt(i));
+        } //End block
+        // ---------- Original Method ----------
+        //this.names = new GeneralName[seq.size()];
+        //for (int i = 0; i != seq.size(); i++)
+        //{
+            //names[i] = GeneralName.getInstance(seq.getObjectAt(i));
+        //}
     }
 
     
-    public static GeneralNames getInstance(
+        public static GeneralNames getInstance(
         Object  obj) {
         if (obj == null || obj instanceof GeneralNames)
         {
@@ -62,72 +56,64 @@ public class GeneralNames extends ASN1Encodable {
     }
 
     
-    public static GeneralNames getInstance(
+        public static GeneralNames getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
         return getInstance(ASN1Sequence.getInstance(obj, explicit));
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.825 -0400", hash_original_method = "9AED96B400BA543408C9F5E967093153", hash_generated_method = "B7A72A9FE13633B31DA0E9518DCB7542")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.078 -0400", hash_original_method = "9AED96B400BA543408C9F5E967093153", hash_generated_method = "3E755C267439B2508A935EBBDF420712")
     public GeneralName[] getNames() {
-        GeneralName[] varB4EAC82CA7396A68D541C85D26508E83_800146428 = null; 
         GeneralName[] tmp = new GeneralName[names.length];
         System.arraycopy(names, 0, tmp, 0, names.length);
-        varB4EAC82CA7396A68D541C85D26508E83_800146428 = tmp;
-        varB4EAC82CA7396A68D541C85D26508E83_800146428.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_800146428;
-        
-        
-        
-        
+GeneralName[] var3F12A0424932F6B5155AA6C49B63FE6E_297255891 =         tmp;
+        var3F12A0424932F6B5155AA6C49B63FE6E_297255891.addTaint(taint);
+        return var3F12A0424932F6B5155AA6C49B63FE6E_297255891;
+        // ---------- Original Method ----------
+        //GeneralName[] tmp = new GeneralName[names.length];
+        //System.arraycopy(names, 0, tmp, 0, names.length);
+        //return tmp;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.825 -0400", hash_original_method = "04D00D35531AB013A64ACFCEB501C4EE", hash_generated_method = "AEDEB0863C43703724C408B5A78E3D7F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.079 -0400", hash_original_method = "04D00D35531AB013A64ACFCEB501C4EE", hash_generated_method = "6213496E73514B6D7A37D51E34D5B20F")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_973329243 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_973329243 = new DERSequence(names);
-        varB4EAC82CA7396A68D541C85D26508E83_973329243.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_973329243;
-        
-        
+DERObject varFA028EE8512E8E6D5C4DBDCDB27CF46F_91400780 =         new DERSequence(names);
+        varFA028EE8512E8E6D5C4DBDCDB27CF46F_91400780.addTaint(taint);
+        return varFA028EE8512E8E6D5C4DBDCDB27CF46F_91400780;
+        // ---------- Original Method ----------
+        //return new DERSequence(names);
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.826 -0400", hash_original_method = "7DDFA5C3E7762D6D39ED7DFFF0863845", hash_generated_method = "AD3B9CF96F8615B30BEF05E494729227")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.079 -0400", hash_original_method = "7DDFA5C3E7762D6D39ED7DFFF0863845", hash_generated_method = "A2D56375D86539388F5BB8156EF6206A")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1007483971 = null; 
         StringBuffer buf = new StringBuffer();
         String sep = System.getProperty("line.separator");
         buf.append("GeneralNames:");
         buf.append(sep);
+for(int i = 0;i != names.length;i++)
         {
-            int i = 0;
-            {
-                buf.append("    ");
-                buf.append(names[i]);
-                buf.append(sep);
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1007483971 = buf.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1007483971.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1007483971;
-        
-        
-        
-        
-        
-        
-        
-            
-            
-            
-        
-        
+            buf.append("    ");
+            buf.append(names[i]);
+            buf.append(sep);
+        } //End block
+String var4FC680801218E6372BC708D6FA44AE60_1406346281 =         buf.toString();
+        var4FC680801218E6372BC708D6FA44AE60_1406346281.addTaint(taint);
+        return var4FC680801218E6372BC708D6FA44AE60_1406346281;
+        // ---------- Original Method ----------
+        //StringBuffer  buf = new StringBuffer();
+        //String        sep = System.getProperty("line.separator");
+        //buf.append("GeneralNames:");
+        //buf.append(sep);
+        //for (int i = 0; i != names.length; i++)
+        //{
+            //buf.append("    ");
+            //buf.append(names[i]);
+            //buf.append(sep);
+        //}
+        //return buf.toString();
     }
 
     

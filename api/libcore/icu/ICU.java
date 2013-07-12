@@ -1,26 +1,22 @@
 package libcore.icu;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Locale;
 
 public final class ICU {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.151 -0400", hash_original_method = "41D0A20E3850008EA50DF809FC4EB919", hash_generated_method = "41D0A20E3850008EA50DF809FC4EB919")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.504 -0400", hash_original_method = "41D0A20E3850008EA50DF809FC4EB919", hash_generated_method = "41D0A20E3850008EA50DF809FC4EB919")
     public ICU ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
-    public static String[] getISOLanguages() {
+        public static String[] getISOLanguages() {
         if (isoLanguages == null) {
             isoLanguages = getISOLanguagesNative();
         }
@@ -28,8 +24,7 @@ public final class ICU {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String[] getISOCountries() {
+        public static String[] getISOCountries() {
         if (isoCountries == null) {
             isoCountries = getISOCountriesNative();
         }
@@ -37,8 +32,7 @@ public final class ICU {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static Locale localeFromString(String localeName) {
+        public static Locale localeFromString(String localeName) {
         int first = localeName.indexOf('_');
         int second = localeName.indexOf('_', first + 1);
         if (first == -1) {
@@ -51,8 +45,7 @@ public final class ICU {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static Locale[] localesFromStrings(String[] localeNames) {
+        public static Locale[] localesFromStrings(String[] localeNames) {
         LinkedHashSet<Locale> set = new LinkedHashSet<Locale>();
         for (String localeName : localeNames) {
             set.add(localeFromString(localeName));
@@ -61,8 +54,7 @@ public final class ICU {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static Locale[] getAvailableLocales() {
+        public static Locale[] getAvailableLocales() {
         if (availableLocalesCache == null) {
             availableLocalesCache = localesFromStrings(getAvailableLocalesNative());
         }
@@ -70,44 +62,37 @@ public final class ICU {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static Locale[] getAvailableBreakIteratorLocales() {
+        public static Locale[] getAvailableBreakIteratorLocales() {
         return localesFromStrings(getAvailableBreakIteratorLocalesNative());
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static Locale[] getAvailableCalendarLocales() {
+        public static Locale[] getAvailableCalendarLocales() {
         return localesFromStrings(getAvailableCalendarLocalesNative());
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static Locale[] getAvailableCollatorLocales() {
+        public static Locale[] getAvailableCollatorLocales() {
         return localesFromStrings(getAvailableCollatorLocalesNative());
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static Locale[] getAvailableDateFormatLocales() {
+        public static Locale[] getAvailableDateFormatLocales() {
         return localesFromStrings(getAvailableDateFormatLocalesNative());
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static Locale[] getAvailableDateFormatSymbolsLocales() {
+        public static Locale[] getAvailableDateFormatSymbolsLocales() {
         return getAvailableDateFormatLocales();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static Locale[] getAvailableDecimalFormatSymbolsLocales() {
+        public static Locale[] getAvailableDecimalFormatSymbolsLocales() {
         return getAvailableNumberFormatLocales();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static Locale[] getAvailableNumberFormatLocales() {
+        public static Locale[] getAvailableNumberFormatLocales() {
         return localesFromStrings(getAvailableNumberFormatLocalesNative());
     }
 
@@ -302,13 +287,13 @@ public final class ICU {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.156 -0400", hash_original_field = "88013DEF7F73488714320DFBA5CBDA04", hash_generated_field = "BE35828B892076AC7390E82ED7757E24")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.523 -0400", hash_original_field = "88013DEF7F73488714320DFBA5CBDA04", hash_generated_field = "BE35828B892076AC7390E82ED7757E24")
 
     private static String[] isoLanguages;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.156 -0400", hash_original_field = "5608ECD95723058790445D0401D02553", hash_generated_field = "DD8EDDECCA2B05E89485367EA0F1D58F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.523 -0400", hash_original_field = "5608ECD95723058790445D0401D02553", hash_generated_field = "DD8EDDECCA2B05E89485367EA0F1D58F")
 
     private static String[] isoCountries;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.156 -0400", hash_original_field = "5FB2CB19CCC322B383B07F128D410B7F", hash_generated_field = "5054072110B01E76431E0948BDF07C94")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.523 -0400", hash_original_field = "5FB2CB19CCC322B383B07F128D410B7F", hash_generated_field = "5054072110B01E76431E0948BDF07C94")
 
     private static Locale[] availableLocalesCache;
 }

@@ -1,12 +1,9 @@
 package android.location;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.util.HashMap;
 import android.os.Handler;
 import android.os.Looper;
@@ -14,168 +11,161 @@ import android.os.RemoteException;
 import android.util.Log;
 
 public class CountryDetector {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.141 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "586490950C196F388A8EA4D62FE86E5C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.649 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "586490950C196F388A8EA4D62FE86E5C")
 
     private ICountryDetector mService;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.141 -0400", hash_original_field = "2F2828353527044AFD6820F84A8A1FAB", hash_generated_field = "65263F123FD412210E5CA4FCF1CC12CD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.649 -0400", hash_original_field = "2F2828353527044AFD6820F84A8A1FAB", hash_generated_field = "65263F123FD412210E5CA4FCF1CC12CD")
 
     private HashMap<CountryListener, ListenerTransport> mListeners;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.141 -0400", hash_original_method = "1A7B373E04EF53B30E08B7B8CC03780E", hash_generated_method = "D989B224CC275E8895828F0A793F6A43")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.651 -0400", hash_original_method = "1A7B373E04EF53B30E08B7B8CC03780E", hash_generated_method = "D989B224CC275E8895828F0A793F6A43")
     public  CountryDetector(ICountryDetector service) {
         mService = service;
         mListeners = new HashMap<CountryListener, ListenerTransport>();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mService = service;
+        //mListeners = new HashMap<CountryListener, ListenerTransport>();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.142 -0400", hash_original_method = "8394DE101C334DCA17E1726BC4AA658C", hash_generated_method = "DD68B83355600A09ECFC0462B847B2CC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.652 -0400", hash_original_method = "8394DE101C334DCA17E1726BC4AA658C", hash_generated_method = "740B8042EA32A57D5CAF944BAFED4820")
     public Country detectCountry() {
-        Country varB4EAC82CA7396A68D541C85D26508E83_1588117364 = null; 
-        Country varB4EAC82CA7396A68D541C85D26508E83_1717035490 = null; 
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1588117364 = mService.detectCountry();
-        } 
+Country varD673DCCCB3DEFF407B3D1CE2BFD6E6FD_2109459355 =             mService.detectCountry();
+            varD673DCCCB3DEFF407B3D1CE2BFD6E6FD_2109459355.addTaint(taint);
+            return varD673DCCCB3DEFF407B3D1CE2BFD6E6FD_2109459355;
+        } //End block
         catch (RemoteException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1717035490 = null;
-        } 
-        Country varA7E53CE21691AB073D9660D615818899_1266217035; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1266217035 = varB4EAC82CA7396A68D541C85D26508E83_1588117364;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1266217035 = varB4EAC82CA7396A68D541C85D26508E83_1717035490;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1266217035.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1266217035;
-        
-        
-            
-        
-            
-            
-        
+Country var540C13E9E156B687226421B24F2DF178_1693902221 =             null;
+            var540C13E9E156B687226421B24F2DF178_1693902221.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_1693902221;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.detectCountry();
+        //} catch (RemoteException e) {
+            //Log.e(TAG, "detectCountry: RemoteException", e);
+            //return null;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.143 -0400", hash_original_method = "BC3AED2375940B210F4240F1B5BF489C", hash_generated_method = "BBF3B87E4686F7A6E75A3701462E9147")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.653 -0400", hash_original_method = "BC3AED2375940B210F4240F1B5BF489C", hash_generated_method = "EB2C37E8DA52A78DBC61A09D959779C9")
     public void addCountryListener(CountryListener listener, Looper looper) {
-        {
-            {
-                boolean var3A0ACFAC25F57F83126FEF2364554697_359557737 = (!mListeners.containsKey(listener));
-                {
-                    ListenerTransport transport = new ListenerTransport(listener, looper);
-                    try 
-                    {
-                        mService.addCountryListener(transport);
-                        mListeners.put(listener, transport);
-                    } 
-                    catch (RemoteException e)
-                    { }
-                } 
-            } 
-        } 
-        addTaint(listener.getTaint());
         addTaint(looper.getTaint());
-        
-        
-            
-                
-                
-                    
-                    
-                
-                    
-                
-            
-        
+        addTaint(listener.getTaint());
+        synchronized
+(mListeners)        {
+    if(!mListeners.containsKey(listener))            
+            {
+                ListenerTransport transport = new ListenerTransport(listener, looper);
+                try 
+                {
+                    mService.addCountryListener(transport);
+                    mListeners.put(listener, transport);
+                } //End block
+                catch (RemoteException e)
+                {
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mListeners) {
+            //if (!mListeners.containsKey(listener)) {
+                //ListenerTransport transport = new ListenerTransport(listener, looper);
+                //try {
+                    //mService.addCountryListener(transport);
+                    //mListeners.put(listener, transport);
+                //} catch (RemoteException e) {
+                    //Log.e(TAG, "addCountryListener: RemoteException", e);
+                //}
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.144 -0400", hash_original_method = "956D6A58CF004E8191495221FE8E06DD", hash_generated_method = "1CF73A47AF48EEDA20939AE1910FD700")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.653 -0400", hash_original_method = "956D6A58CF004E8191495221FE8E06DD", hash_generated_method = "E6087B886F6F040EBA7A2A6E97E5B538")
     public void removeCountryListener(CountryListener listener) {
-        {
+        addTaint(listener.getTaint());
+        synchronized
+(mListeners)        {
             ListenerTransport transport = mListeners.get(listener);
+    if(transport != null)            
             {
                 try 
                 {
                     mListeners.remove(listener);
                     mService.removeCountryListener(transport);
-                } 
+                } //End block
                 catch (RemoteException e)
-                { }
-            } 
-        } 
-        addTaint(listener.getTaint());
-        
-        
-            
-            
-                
-                    
-                    
-                
-                    
-                
-            
-        
+                {
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mListeners) {
+            //ListenerTransport transport = mListeners.get(listener);
+            //if (transport != null) {
+                //try {
+                    //mListeners.remove(listener);
+                    //mService.removeCountryListener(transport);
+                //} catch (RemoteException e) {
+                    //Log.e(TAG, "removeCountryListener: RemoteException", e);
+                //}
+            //}
+        //}
     }
 
     
     private final static class ListenerTransport extends ICountryListener.Stub {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.144 -0400", hash_original_field = "9B3DD33B99719CE65C53FA6749E2AD69", hash_generated_field = "C83CBAAD111326C8688E466E2DD9969D")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.654 -0400", hash_original_field = "9B3DD33B99719CE65C53FA6749E2AD69", hash_generated_field = "C83CBAAD111326C8688E466E2DD9969D")
 
         private CountryListener mListener;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.144 -0400", hash_original_field = "C78BEDFC523DB73DF63EFB071AF1C35B", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.654 -0400", hash_original_field = "C78BEDFC523DB73DF63EFB071AF1C35B", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
 
         private Handler mHandler;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.144 -0400", hash_original_method = "B76186AFC83B6C77A78C283544EECE09", hash_generated_method = "B194B4D0779AF318FDA32BCB6517C613")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.655 -0400", hash_original_method = "B76186AFC83B6C77A78C283544EECE09", hash_generated_method = "4159405EEFEEC31A8DF84904495E69EA")
         public  ListenerTransport(CountryListener listener, Looper looper) {
             mListener = listener;
+    if(looper != null)            
             {
                 mHandler = new Handler(looper);
-            } 
+            } //End block
+            else
             {
                 mHandler = new Handler();
-            } 
-            
-            
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //mListener = listener;
+            //if (looper != null) {
+                //mHandler = new Handler(looper);
+            //} else {
+                //mHandler = new Handler();
+            //}
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.145 -0400", hash_original_method = "F95DEB9AF970A5D9353FC83CA6F7013A", hash_generated_method = "01700522904EB1772145B96755B0D1DA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.656 -0400", hash_original_method = "F95DEB9AF970A5D9353FC83CA6F7013A", hash_generated_method = "099CDC1DD5C7EB6FC8EC8819A4B7A982")
         public void onCountryDetected(final Country country) {
-            
-            mHandler.post(new Runnable() {                
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.145 -0400", hash_original_method = "80BD55FB6767C94F80935DEF8974CD11", hash_generated_method = "0AA61EE6BBE285205045685EB9F88C6A")
-                public void run() {
-                    mListener.onCountryDetected(country);
-                    
-                    
-                }
-});
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(country.getTaint());
-            
-            
-                
-                    
-                
-            
+            mHandler.post(new Runnable() {            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.656 -0400", hash_original_method = "80BD55FB6767C94F80935DEF8974CD11", hash_generated_method = "0AA61EE6BBE285205045685EB9F88C6A")
+            public void run() {
+                mListener.onCountryDetected(country);
+                // ---------- Original Method ----------
+                //mListener.onCountryDetected(country);
+            }
+});
+            // ---------- Original Method ----------
+            //mHandler.post(new Runnable() {
+                //public void run() {
+                    //mListener.onCountryDetected(country);
+                //}
+            //});
         }
 
         
@@ -183,7 +173,7 @@ public class CountryDetector {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.145 -0400", hash_original_field = "6FDAD09C5B83FE076E966D1B24E66234", hash_generated_field = "FDDD7BCA9CDA28F5A3E99818FA3CA6DE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.657 -0400", hash_original_field = "6FDAD09C5B83FE076E966D1B24E66234", hash_generated_field = "FDDD7BCA9CDA28F5A3E99818FA3CA6DE")
 
     private final static String TAG = "CountryDetector";
 }

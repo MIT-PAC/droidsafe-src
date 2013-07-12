@@ -1,143 +1,145 @@
 package java.util.concurrent;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.util.concurrent.locks.*;
 import java.util.concurrent.atomic.*;
 
 public class CountDownLatch {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.732 -0400", hash_original_field = "63AD9D34F3503826E5F649AE6B7AC92C", hash_generated_field = "A4B34EF3CE38520839B34A2F06599243")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.442 -0400", hash_original_field = "63AD9D34F3503826E5F649AE6B7AC92C", hash_generated_field = "A4B34EF3CE38520839B34A2F06599243")
 
     private Sync sync;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.732 -0400", hash_original_method = "4C9DACB295593778FC44AB86E8E7D747", hash_generated_method = "17F26F23175D66830A53D7DC96BBD403")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.443 -0400", hash_original_method = "4C9DACB295593778FC44AB86E8E7D747", hash_generated_method = "F27F9AF92BB62969C60B4CE2C4B856EC")
     public  CountDownLatch(int count) {
-        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("count < 0");
+    if(count < 0)        
+        {
+        IllegalArgumentException varAEB2F18A5228FBCF89210BA55B20E012_290944776 = new IllegalArgumentException("count < 0");
+        varAEB2F18A5228FBCF89210BA55B20E012_290944776.addTaint(taint);
+        throw varAEB2F18A5228FBCF89210BA55B20E012_290944776;
+        }
         this.sync = new Sync(count);
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (count < 0) throw new IllegalArgumentException("count < 0");
+        //this.sync = new Sync(count);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.733 -0400", hash_original_method = "A9727D614A84DE128F63540E6073A44B", hash_generated_method = "D070BA44558B523604A261CE2882A091")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.443 -0400", hash_original_method = "A9727D614A84DE128F63540E6073A44B", hash_generated_method = "D070BA44558B523604A261CE2882A091")
     public void await() throws InterruptedException {
         sync.acquireSharedInterruptibly(1);
-        
-        
+        // ---------- Original Method ----------
+        //sync.acquireSharedInterruptibly(1);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.733 -0400", hash_original_method = "0AAF9EA81FFD8AD9617435605CC7D253", hash_generated_method = "DA42A080D1DB8237A43BD785CF17F9E5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.443 -0400", hash_original_method = "0AAF9EA81FFD8AD9617435605CC7D253", hash_generated_method = "1A18A5DB6844C5ED467E5DB312F5169A")
     public boolean await(long timeout, TimeUnit unit) throws InterruptedException {
-        boolean varD12778331A5B05E1E52D9468F6FF0E07_1324949960 = (sync.tryAcquireSharedNanos(1, unit.toNanos(timeout)));
-        addTaint(timeout);
         addTaint(unit.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1958624356 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1958624356;
-        
-        
+        addTaint(timeout);
+        boolean varF9FFBA7272EE05E2720644344A388E0D_1851183470 = (sync.tryAcquireSharedNanos(1, unit.toNanos(timeout)));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_737915935 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_737915935;
+        // ---------- Original Method ----------
+        //return sync.tryAcquireSharedNanos(1, unit.toNanos(timeout));
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.733 -0400", hash_original_method = "ACB2575EE39865032078A7B67E3D5076", hash_generated_method = "5F72B9A21B37F73F93872F70DF24474A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.443 -0400", hash_original_method = "ACB2575EE39865032078A7B67E3D5076", hash_generated_method = "5F72B9A21B37F73F93872F70DF24474A")
     public void countDown() {
         sync.releaseShared(1);
-        
-        
+        // ---------- Original Method ----------
+        //sync.releaseShared(1);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.734 -0400", hash_original_method = "ABE42AE497B23B643FDF7DC2348A1AF5", hash_generated_method = "D87D4013127EF3F508CC65AB9219059D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.443 -0400", hash_original_method = "ABE42AE497B23B643FDF7DC2348A1AF5", hash_generated_method = "7FAE55A531EEB4598D53F1116B0F61CE")
     public long getCount() {
-        long var3E7EE26A585DAEF98B448A2C779F0B42_1986119879 = (sync.getCount());
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_1383595677 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1383595677;
-        
-        
+        long varEADBA8DEF1BC9738D4EDEC8923318B63_1084453054 = (sync.getCount());
+                long var0F5264038205EDFB1AC05FBB0E8C5E94_1875767672 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1875767672;
+        // ---------- Original Method ----------
+        //return sync.getCount();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.734 -0400", hash_original_method = "45A2072B871660339FAF307330C7F60C", hash_generated_method = "0D4C4DD29E49EB6C90F9B2C82E66BA44")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.443 -0400", hash_original_method = "45A2072B871660339FAF307330C7F60C", hash_generated_method = "66B64053AE9E35C3A150DE0F46026031")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_165540453 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_165540453 = super.toString() + "[Count = " + sync.getCount() + "]";
-        varB4EAC82CA7396A68D541C85D26508E83_165540453.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_165540453;
-        
-        
+String var4D62EFEC3E50E2AF5780683B34D1CC77_361297067 =         super.toString() + "[Count = " + sync.getCount() + "]";
+        var4D62EFEC3E50E2AF5780683B34D1CC77_361297067.addTaint(taint);
+        return var4D62EFEC3E50E2AF5780683B34D1CC77_361297067;
+        // ---------- Original Method ----------
+        //return super.toString() + "[Count = " + sync.getCount() + "]";
     }
 
     
     private static final class Sync extends AbstractQueuedSynchronizer {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.735 -0400", hash_original_method = "9968F5AA54B3A1250121D3E0CFE14724", hash_generated_method = "9BB36C580E3DFB237981164E8A505DAF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.444 -0400", hash_original_method = "9968F5AA54B3A1250121D3E0CFE14724", hash_generated_method = "8A0C888A5DA83A3653D6DAE983FA987D")
           Sync(int count) {
-            setState(count);
             addTaint(count);
-            
-            
+            setState(count);
+            // ---------- Original Method ----------
+            //setState(count);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.735 -0400", hash_original_method = "192D38E698A214D58DA93C3298AD6AD3", hash_generated_method = "7621DB553093C3F06126807CD2505142")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.444 -0400", hash_original_method = "192D38E698A214D58DA93C3298AD6AD3", hash_generated_method = "98905205192782B267074DC71C81CA92")
          int getCount() {
-            int var376B5C2087169E76FB6628D31DCC9663_1358799117 = (getState());
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2041175722 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2041175722;
-            
-            
+            int var118C4F58F1303398C344B8AAB7CE6EE1_373586212 = (getState());
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_735112698 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_735112698;
+            // ---------- Original Method ----------
+            //return getState();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.736 -0400", hash_original_method = "5121E365AD686AC5D590ECBA2BCA053C", hash_generated_method = "4A0E07E5F8708787A96DFED36D869544")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.444 -0400", hash_original_method = "5121E365AD686AC5D590ECBA2BCA053C", hash_generated_method = "FBD7E0622E3604B947D862A9DF15A626")
         protected int tryAcquireShared(int acquires) {
-            {
-                boolean varB9A8967EEEE626B2D88454F1CD4A1CB3_997306760 = ((getState() == 0));
-            } 
             addTaint(acquires);
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1742991195 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1742991195;
-            
-            
+            int var3EC71F3BC01146A4D6BAB5C90EB4C53B_1054521476 = ((getState() == 0) ? 1 : -1);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1130481289 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1130481289;
+            // ---------- Original Method ----------
+            //return (getState() == 0) ? 1 : -1;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.736 -0400", hash_original_method = "136302DDF9CF08EA1ED73402F05AC756", hash_generated_method = "745CBE0E276CBDD7ADDF0A30C61B5EA1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.444 -0400", hash_original_method = "136302DDF9CF08EA1ED73402F05AC756", hash_generated_method = "8D9608DA02A1AB3FA894C038F1D2E028")
         protected boolean tryReleaseShared(int releases) {
+            addTaint(releases);
+for(;;)
             {
                 int c = getState();
-                int nextc = c-1;
+    if(c == 0)                
                 {
-                    boolean var525F59EF5A984E7DE1A679CCEEFC8101_290086000 = (compareAndSetState(c, nextc));
-                } 
-            } 
-            addTaint(releases);
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_548909869 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_548909869;
-            
-            
-                
-                
-                    
-                
-                
-                    
-            
+                boolean var68934A3E9455FA72420237EB05902327_1595101730 = (false);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_144675406 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_144675406;
+                }
+                int nextc = c-1;
+    if(compareAndSetState(c, nextc))                
+                {
+                boolean varFE567596D7CBF2AAC320D09D88315819_175417739 = (nextc == 0);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_692470954 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_692470954;
+                }
+            } //End block
+            // ---------- Original Method ----------
+            //for (;;) {
+                //int c = getState();
+                //if (c == 0)
+                    //return false;
+                //int nextc = c-1;
+                //if (compareAndSetState(c, nextc))
+                    //return nextc == 0;
+            //}
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.736 -0400", hash_original_field = "69F97A85B2FBB03A012E5B08317FA038", hash_generated_field = "CC4AEE6AD5E042E09631015E4C8CF188")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.444 -0400", hash_original_field = "69F97A85B2FBB03A012E5B08317FA038", hash_generated_field = "CC4AEE6AD5E042E09631015E4C8CF188")
 
         private static final long serialVersionUID = 4982264981922014374L;
     }

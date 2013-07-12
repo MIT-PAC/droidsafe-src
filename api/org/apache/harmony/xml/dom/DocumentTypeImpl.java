@@ -1,178 +1,161 @@
 package org.apache.harmony.xml.dom;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.DocumentType;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
 public final class DocumentTypeImpl extends LeafNodeImpl implements DocumentType {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.018 -0400", hash_original_field = "82D2A12B58D8FC8C4E67661201BE1287", hash_generated_field = "505E7DC5802BC20F1EF106B5FA0742F4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.685 -0400", hash_original_field = "82D2A12B58D8FC8C4E67661201BE1287", hash_generated_field = "505E7DC5802BC20F1EF106B5FA0742F4")
 
     private String qualifiedName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.018 -0400", hash_original_field = "24AB20BFB578F0A89FF4A9C081F21384", hash_generated_field = "60BF385FD0C88E4BC32EFD3E71F5528C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.685 -0400", hash_original_field = "24AB20BFB578F0A89FF4A9C081F21384", hash_generated_field = "60BF385FD0C88E4BC32EFD3E71F5528C")
 
     private String publicId;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.018 -0400", hash_original_field = "089D1A278481B86E821237F8E98E6DE7", hash_generated_field = "D8573F28EF4599A1790219EF1708D9C9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.685 -0400", hash_original_field = "089D1A278481B86E821237F8E98E6DE7", hash_generated_field = "D8573F28EF4599A1790219EF1708D9C9")
 
     private String systemId;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.018 -0400", hash_original_method = "B3AEE891CFF5F13501F03FB795F88BCC", hash_generated_method = "15615B032C0C6674AB14077C45E32116")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.686 -0400", hash_original_method = "B3AEE891CFF5F13501F03FB795F88BCC", hash_generated_method = "94DC658A962803E4C2A3BDE48DF002C4")
     public  DocumentTypeImpl(DocumentImpl document, String qualifiedName,
             String publicId, String systemId) {
         super(document);
+        addTaint(document.getTaint());
+    if(qualifiedName == null || "".equals(qualifiedName))        
         {
-            boolean var0C83B7F3BEFB36930E7DB0B806A1E4EE_1790511612 = (qualifiedName == null || "".equals(qualifiedName));
-            {
-                if (DroidSafeAndroidRuntime.control) throw new DOMException(DOMException.NAMESPACE_ERR, qualifiedName);
-            } 
-        } 
+            DOMException varEAAE8BE21121199D1902FAF31A9B641A_816129464 = new DOMException(DOMException.NAMESPACE_ERR, qualifiedName);
+            varEAAE8BE21121199D1902FAF31A9B641A_816129464.addTaint(taint);
+            throw varEAAE8BE21121199D1902FAF31A9B641A_816129464;
+        } //End block
         int prefixSeparator = qualifiedName.lastIndexOf(":");
+    if(prefixSeparator != -1)        
         {
             String prefix = qualifiedName.substring(0, prefixSeparator);
             String localName = qualifiedName.substring(prefixSeparator + 1);
+    if(!DocumentImpl.isXMLIdentifier(prefix))            
             {
-                boolean var9A2B50EBC2A6BBEB86D100CFFFC328E9_877802597 = (!DocumentImpl.isXMLIdentifier(prefix));
-                {
-                    if (DroidSafeAndroidRuntime.control) throw new DOMException(DOMException.NAMESPACE_ERR, qualifiedName);
-                } 
-            } 
+                DOMException varEAAE8BE21121199D1902FAF31A9B641A_428558154 = new DOMException(DOMException.NAMESPACE_ERR, qualifiedName);
+                varEAAE8BE21121199D1902FAF31A9B641A_428558154.addTaint(taint);
+                throw varEAAE8BE21121199D1902FAF31A9B641A_428558154;
+            } //End block
+    if(!DocumentImpl.isXMLIdentifier(localName))            
             {
-                boolean varBCDB1049C102CF6C1E4726F5706870E3_1556402272 = (!DocumentImpl.isXMLIdentifier(localName));
-                {
-                    if (DroidSafeAndroidRuntime.control) throw new DOMException(DOMException.INVALID_CHARACTER_ERR, qualifiedName);
-                } 
-            } 
-        } 
+                DOMException varD106CF1F7CB6D35A107B0C19A28BA57E_1888341702 = new DOMException(DOMException.INVALID_CHARACTER_ERR, qualifiedName);
+                varD106CF1F7CB6D35A107B0C19A28BA57E_1888341702.addTaint(taint);
+                throw varD106CF1F7CB6D35A107B0C19A28BA57E_1888341702;
+            } //End block
+        } //End block
+        else
         {
+    if(!DocumentImpl.isXMLIdentifier(qualifiedName))            
             {
-                boolean varB6AB7106C76BF58C8703F33052A6EF22_288950147 = (!DocumentImpl.isXMLIdentifier(qualifiedName));
-                {
-                    if (DroidSafeAndroidRuntime.control) throw new DOMException(DOMException.INVALID_CHARACTER_ERR, qualifiedName);
-                } 
-            } 
-        } 
+                DOMException varD106CF1F7CB6D35A107B0C19A28BA57E_1388816409 = new DOMException(DOMException.INVALID_CHARACTER_ERR, qualifiedName);
+                varD106CF1F7CB6D35A107B0C19A28BA57E_1388816409.addTaint(taint);
+                throw varD106CF1F7CB6D35A107B0C19A28BA57E_1388816409;
+            } //End block
+        } //End block
         this.qualifiedName = qualifiedName;
         this.publicId = publicId;
         this.systemId = systemId;
-        addTaint(document.getTaint());
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.019 -0400", hash_original_method = "E9049B6D3137F3441BE811CFF59C0D40", hash_generated_method = "8C874AF13B774A5BC0F1E3CBF51CF94F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.686 -0400", hash_original_method = "E9049B6D3137F3441BE811CFF59C0D40", hash_generated_method = "C93DF48B1F111F1383A6A999FDD178B2")
     @Override
     public String getNodeName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_568972274 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_568972274 = qualifiedName;
-        varB4EAC82CA7396A68D541C85D26508E83_568972274.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_568972274;
-        
-        
+String var094FD20AC4EEFAADAC7ED29B93015D2D_24351218 =         qualifiedName;
+        var094FD20AC4EEFAADAC7ED29B93015D2D_24351218.addTaint(taint);
+        return var094FD20AC4EEFAADAC7ED29B93015D2D_24351218;
+        // ---------- Original Method ----------
+        //return qualifiedName;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.019 -0400", hash_original_method = "7D99CB31F2E6992AF80C8FC45EE7DFBE", hash_generated_method = "30FDE7FEC8452C43C0934031445EEBF1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.687 -0400", hash_original_method = "7D99CB31F2E6992AF80C8FC45EE7DFBE", hash_generated_method = "7E2C418CB9343930851279FA51AE9606")
     @Override
     public short getNodeType() {
-        short var4F09DAA9D95BCB166A302407A0E0BABE_2026457524 = getTaintShort();
-        return var4F09DAA9D95BCB166A302407A0E0BABE_2026457524;
-        
-        
+        short var6A78A533359938F5F86187BF62D05B1A_1418353122 = (Node.DOCUMENT_TYPE_NODE);
+                short var4F09DAA9D95BCB166A302407A0E0BABE_830221838 = getTaintShort();
+        return var4F09DAA9D95BCB166A302407A0E0BABE_830221838;
+        // ---------- Original Method ----------
+        //return Node.DOCUMENT_TYPE_NODE;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.020 -0400", hash_original_method = "B18563406FBA7004CBA96EE0AEED3600", hash_generated_method = "76DFCB8599593A63E9AC0510634ED99D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.687 -0400", hash_original_method = "B18563406FBA7004CBA96EE0AEED3600", hash_generated_method = "D1ABB8ECB603DAC52D1E60ABDE135859")
     public NamedNodeMap getEntities() {
-        NamedNodeMap varB4EAC82CA7396A68D541C85D26508E83_1393750691 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1393750691 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1393750691.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1393750691;
-        
-        
+NamedNodeMap var540C13E9E156B687226421B24F2DF178_2011122165 =         null;
+        var540C13E9E156B687226421B24F2DF178_2011122165.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_2011122165;
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.021 -0400", hash_original_method = "1ACC60D85C446C7470ADF2E2CD7BECFD", hash_generated_method = "F304B333DEA86FA83A311DD8F1885C30")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.687 -0400", hash_original_method = "1ACC60D85C446C7470ADF2E2CD7BECFD", hash_generated_method = "C571D6C15C17142826A898142426A5AB")
     public String getInternalSubset() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1003687019 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1003687019 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1003687019.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1003687019;
-        
-        
+String var540C13E9E156B687226421B24F2DF178_1243182241 =         null;
+        var540C13E9E156B687226421B24F2DF178_1243182241.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_1243182241;
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.022 -0400", hash_original_method = "4B51CCD327B7473965DE5BE67319C7E7", hash_generated_method = "943D8758E558EB92ADD76AE189966AC6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.687 -0400", hash_original_method = "4B51CCD327B7473965DE5BE67319C7E7", hash_generated_method = "D7958B1064FFD65948386090858BF567")
     public String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_4659300 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_4659300 = qualifiedName;
-        varB4EAC82CA7396A68D541C85D26508E83_4659300.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_4659300;
-        
-        
+String var094FD20AC4EEFAADAC7ED29B93015D2D_2136805084 =         qualifiedName;
+        var094FD20AC4EEFAADAC7ED29B93015D2D_2136805084.addTaint(taint);
+        return var094FD20AC4EEFAADAC7ED29B93015D2D_2136805084;
+        // ---------- Original Method ----------
+        //return qualifiedName;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.022 -0400", hash_original_method = "521EA3163F33B14ADC5EA4FB49D4CB7E", hash_generated_method = "684894B499715BBB9312FB8D67DC68F1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.688 -0400", hash_original_method = "521EA3163F33B14ADC5EA4FB49D4CB7E", hash_generated_method = "998CB3EBA474E8461A71021EA07418A9")
     public NamedNodeMap getNotations() {
-        NamedNodeMap varB4EAC82CA7396A68D541C85D26508E83_870185502 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_870185502 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_870185502.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_870185502;
-        
-        
+NamedNodeMap var540C13E9E156B687226421B24F2DF178_1371397196 =         null;
+        var540C13E9E156B687226421B24F2DF178_1371397196.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_1371397196;
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.024 -0400", hash_original_method = "C19BBE926A67132A1C6BC386100A3E69", hash_generated_method = "0DBE326AF07AAA32BAA1BF55F105050E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.688 -0400", hash_original_method = "C19BBE926A67132A1C6BC386100A3E69", hash_generated_method = "4C35CCD7459CBF108086CC78B69AE7CD")
     public String getPublicId() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1445518278 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1445518278 = publicId;
-        varB4EAC82CA7396A68D541C85D26508E83_1445518278.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1445518278;
-        
-        
+String var76991CCBEF027A0871CF61642EBA53AB_1515292021 =         publicId;
+        var76991CCBEF027A0871CF61642EBA53AB_1515292021.addTaint(taint);
+        return var76991CCBEF027A0871CF61642EBA53AB_1515292021;
+        // ---------- Original Method ----------
+        //return publicId;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.026 -0400", hash_original_method = "8088708D8DEEE6054468B7FD77400E50", hash_generated_method = "2AEB1EBEFE3DA15ECB49F69E270FAA73")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.688 -0400", hash_original_method = "8088708D8DEEE6054468B7FD77400E50", hash_generated_method = "792A0E6F22E4008FAAF4D743B3A2C6C9")
     public String getSystemId() {
-        String varB4EAC82CA7396A68D541C85D26508E83_685603914 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_685603914 = systemId;
-        varB4EAC82CA7396A68D541C85D26508E83_685603914.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_685603914;
-        
-        
+String varB7D0727ACC7388EA86587212DD1C6E9F_1484164643 =         systemId;
+        varB7D0727ACC7388EA86587212DD1C6E9F_1484164643.addTaint(taint);
+        return varB7D0727ACC7388EA86587212DD1C6E9F_1484164643;
+        // ---------- Original Method ----------
+        //return systemId;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.027 -0400", hash_original_method = "76D2ADCA92D33C128096DC8FD3BC4D92", hash_generated_method = "206286D64BDEFE2E160E158AE39E1280")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.688 -0400", hash_original_method = "76D2ADCA92D33C128096DC8FD3BC4D92", hash_generated_method = "61271644990D6E1039ED4A8197563219")
     @Override
     public String getTextContent() throws DOMException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1890643684 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1890643684 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1890643684.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1890643684;
-        
-        
+String var540C13E9E156B687226421B24F2DF178_459089583 =         null;
+        var540C13E9E156B687226421B24F2DF178_459089583.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_459089583;
+        // ---------- Original Method ----------
+        //return null;
     }
 
     

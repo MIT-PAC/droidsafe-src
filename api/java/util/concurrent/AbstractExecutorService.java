@@ -1,383 +1,373 @@
 package java.util.concurrent;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.util.*;
 
 public abstract class AbstractExecutorService implements ExecutorService {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.053 -0400", hash_original_method = "3052CE934B3A3FC619D77CE90023EF56", hash_generated_method = "3052CE934B3A3FC619D77CE90023EF56")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.358 -0400", hash_original_method = "3052CE934B3A3FC619D77CE90023EF56", hash_generated_method = "3052CE934B3A3FC619D77CE90023EF56")
     public AbstractExecutorService ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.053 -0400", hash_original_method = "68FC815A084AC2ED05B7AEC372706304", hash_generated_method = "38E68C00A7B57DB4040785865C4A9242")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.359 -0400", hash_original_method = "68FC815A084AC2ED05B7AEC372706304", hash_generated_method = "1B68176FD3C70FA210B0949BFDB3FE41")
     protected <T> RunnableFuture<T> newTaskFor(Runnable runnable, T value) {
-        RunnableFuture<T> varB4EAC82CA7396A68D541C85D26508E83_22513976 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_22513976 = new FutureTask<T>(runnable, value);
-        addTaint(runnable.getTaint());
         addTaint(value.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_22513976.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_22513976;
-        
-        
+        addTaint(runnable.getTaint());
+RunnableFuture<T> var8D1A6CD94DD5BAFD6D53EB96DC760D01_561779218 =         new FutureTask<T>(runnable, value);
+        var8D1A6CD94DD5BAFD6D53EB96DC760D01_561779218.addTaint(taint);
+        return var8D1A6CD94DD5BAFD6D53EB96DC760D01_561779218;
+        // ---------- Original Method ----------
+        //return new FutureTask<T>(runnable, value);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.054 -0400", hash_original_method = "5FB2799215A846560527597078EAB474", hash_generated_method = "6FBAC70F75E3909CB0D9E516E2350FD6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.359 -0400", hash_original_method = "5FB2799215A846560527597078EAB474", hash_generated_method = "2000A8D46FBDE61984E5B6D8A2449F66")
     protected <T> RunnableFuture<T> newTaskFor(Callable<T> callable) {
-        RunnableFuture<T> varB4EAC82CA7396A68D541C85D26508E83_1633647994 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1633647994 = new FutureTask<T>(callable);
         addTaint(callable.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1633647994.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1633647994;
-        
-        
+RunnableFuture<T> varBEF434F9B24D8E8523500F630F54EF1C_1286377909 =         new FutureTask<T>(callable);
+        varBEF434F9B24D8E8523500F630F54EF1C_1286377909.addTaint(taint);
+        return varBEF434F9B24D8E8523500F630F54EF1C_1286377909;
+        // ---------- Original Method ----------
+        //return new FutureTask<T>(callable);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.054 -0400", hash_original_method = "049AFBF6C6F134F34D289DFB97D38727", hash_generated_method = "14F55440C703AE48BE98B6E850536BD1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.359 -0400", hash_original_method = "049AFBF6C6F134F34D289DFB97D38727", hash_generated_method = "3AD7098B5C8A7A1F8A46EC1B08B3CA1A")
     public Future<?> submit(Runnable task) {
-        Future<?> varB4EAC82CA7396A68D541C85D26508E83_948530914 = null; 
-        if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
+        addTaint(task.getTaint());
+    if(task == null)        
+        {
+        NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_124045927 = new NullPointerException();
+        var7338BC9F48D81FE0BBD6183F4014DCC4_124045927.addTaint(taint);
+        throw var7338BC9F48D81FE0BBD6183F4014DCC4_124045927;
+        }
         RunnableFuture<Void> ftask = newTaskFor(task, null);
         execute(ftask);
-        varB4EAC82CA7396A68D541C85D26508E83_948530914 = ftask;
-        addTaint(task.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_948530914.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_948530914;
-        
-        
-        
-        
-        
+Future<?> var1A47BEF10A35E08D71A10703CE70AAF7_1948198647 =         ftask;
+        var1A47BEF10A35E08D71A10703CE70AAF7_1948198647.addTaint(taint);
+        return var1A47BEF10A35E08D71A10703CE70AAF7_1948198647;
+        // ---------- Original Method ----------
+        //if (task == null) throw new NullPointerException();
+        //RunnableFuture<Void> ftask = newTaskFor(task, null);
+        //execute(ftask);
+        //return ftask;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.055 -0400", hash_original_method = "30E9EFFFABD0E5EC417E237355DE18FD", hash_generated_method = "DD1545856A9D30F4634E845BACBBE9B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.360 -0400", hash_original_method = "30E9EFFFABD0E5EC417E237355DE18FD", hash_generated_method = "F6759B495A8DB20C27AC7654863CE5DB")
     public <T> Future<T> submit(Runnable task, T result) {
-        Future<T> varB4EAC82CA7396A68D541C85D26508E83_418470319 = null; 
-        if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
+        addTaint(result.getTaint());
+        addTaint(task.getTaint());
+    if(task == null)        
+        {
+        NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_614890176 = new NullPointerException();
+        var7338BC9F48D81FE0BBD6183F4014DCC4_614890176.addTaint(taint);
+        throw var7338BC9F48D81FE0BBD6183F4014DCC4_614890176;
+        }
         RunnableFuture<T> ftask = newTaskFor(task, result);
         execute(ftask);
-        varB4EAC82CA7396A68D541C85D26508E83_418470319 = ftask;
-        addTaint(task.getTaint());
-        addTaint(result.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_418470319.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_418470319;
-        
-        
-        
-        
-        
+Future<T> var1A47BEF10A35E08D71A10703CE70AAF7_173272081 =         ftask;
+        var1A47BEF10A35E08D71A10703CE70AAF7_173272081.addTaint(taint);
+        return var1A47BEF10A35E08D71A10703CE70AAF7_173272081;
+        // ---------- Original Method ----------
+        //if (task == null) throw new NullPointerException();
+        //RunnableFuture<T> ftask = newTaskFor(task, result);
+        //execute(ftask);
+        //return ftask;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.055 -0400", hash_original_method = "F1883381F3EE85BA65E359E467E69859", hash_generated_method = "1F12FAA6006FCDD2C1C2898CD0988978")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.360 -0400", hash_original_method = "F1883381F3EE85BA65E359E467E69859", hash_generated_method = "92037FE66062593D393B5F64ED9DD5CF")
     public <T> Future<T> submit(Callable<T> task) {
-        Future<T> varB4EAC82CA7396A68D541C85D26508E83_650629591 = null; 
-        if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
+        addTaint(task.getTaint());
+    if(task == null)        
+        {
+        NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_497336349 = new NullPointerException();
+        var7338BC9F48D81FE0BBD6183F4014DCC4_497336349.addTaint(taint);
+        throw var7338BC9F48D81FE0BBD6183F4014DCC4_497336349;
+        }
         RunnableFuture<T> ftask = newTaskFor(task);
         execute(ftask);
-        varB4EAC82CA7396A68D541C85D26508E83_650629591 = ftask;
-        addTaint(task.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_650629591.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_650629591;
-        
-        
-        
-        
-        
+Future<T> var1A47BEF10A35E08D71A10703CE70AAF7_490269529 =         ftask;
+        var1A47BEF10A35E08D71A10703CE70AAF7_490269529.addTaint(taint);
+        return var1A47BEF10A35E08D71A10703CE70AAF7_490269529;
+        // ---------- Original Method ----------
+        //if (task == null) throw new NullPointerException();
+        //RunnableFuture<T> ftask = newTaskFor(task);
+        //execute(ftask);
+        //return ftask;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.059 -0400", hash_original_method = "7ADE924855E97F021AF211771D5543D6", hash_generated_method = "FCC1AE846E6B5D7B0600A5BC8EE843EB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.368 -0400", hash_original_method = "7ADE924855E97F021AF211771D5543D6", hash_generated_method = "F1BBDC991D02B8427FFE1AF6C5CC212A")
     private <T> T doInvokeAny(Collection<? extends Callable<T>> tasks,
                             boolean timed, long nanos) throws InterruptedException, ExecutionException, TimeoutException {
-        T varB4EAC82CA7396A68D541C85D26508E83_152329358 = null; 
-        if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
+        addTaint(nanos);
+        addTaint(timed);
+        addTaint(tasks.getTaint());
+    if(tasks == null)        
+        {
+        NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_259422762 = new NullPointerException();
+        var7338BC9F48D81FE0BBD6183F4014DCC4_259422762.addTaint(taint);
+        throw var7338BC9F48D81FE0BBD6183F4014DCC4_259422762;
+        }
         int ntasks = tasks.size();
-        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
+    if(ntasks == 0)        
+        {
+        IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1668075670 = new IllegalArgumentException();
+        var5783EF97022AA508B74A1E3EA38534AF_1668075670.addTaint(taint);
+        throw var5783EF97022AA508B74A1E3EA38534AF_1668075670;
+        }
         List<Future<T>> futures = new ArrayList<Future<T>>(ntasks);
         ExecutorCompletionService<T> ecs = new ExecutorCompletionService<T>(this);
         try 
         {
             ExecutionException ee = null;
-            long lastTime;
-            lastTime = System.nanoTime();
-            lastTime = 0;
+            long lastTime = timed ? System.nanoTime() : 0;
             Iterator<? extends Callable<T>> it = tasks.iterator();
             futures.add(ecs.submit(it.next()));
+            --ntasks;
             int active = 1;
+for(;;)
             {
                 Future<T> f = ecs.poll();
+    if(f == null)                
                 {
+    if(ntasks > 0)                    
                     {
+                        --ntasks;
                         futures.add(ecs.submit(it.next()));
-                    } 
+                        ++active;
+                    } //End block
+                    else
+    if(active == 0)                    
+                    break;
+                    else
+    if(timed)                    
                     {
                         f = ecs.poll(nanos, TimeUnit.NANOSECONDS);
-                        if (DroidSafeAndroidRuntime.control) throw new TimeoutException();
+    if(f == null)                        
+                        {
+                        TimeoutException var3B6A086CA796B867C2DC52AFEEF9D0CF_1623978103 = new TimeoutException();
+                        var3B6A086CA796B867C2DC52AFEEF9D0CF_1623978103.addTaint(taint);
+                        throw var3B6A086CA796B867C2DC52AFEEF9D0CF_1623978103;
+                        }
                         long now = System.nanoTime();
                         nanos -= now - lastTime;
                         lastTime = now;
-                    } 
+                    } //End block
+                    else
                     f = ecs.take();
-                } 
+                } //End block
+    if(f != null)                
                 {
+                    --active;
                     try 
                     {
-                        varB4EAC82CA7396A68D541C85D26508E83_152329358 = f.get();
-                    } 
+T var62EE18F85D765480227B4F97C873CDE0_1904041555 =                         f.get();
+                        var62EE18F85D765480227B4F97C873CDE0_1904041555.addTaint(taint);
+                        return var62EE18F85D765480227B4F97C873CDE0_1904041555;
+                    } //End block
                     catch (ExecutionException eex)
                     {
                         ee = eex;
-                    } 
+                    } //End block
                     catch (RuntimeException rex)
                     {
                         ee = new ExecutionException(rex);
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
+    if(ee == null)            
             ee = new ExecutionException();
-            if (DroidSafeAndroidRuntime.control) throw ee;
-        } 
+            ee.addTaint(taint);
+            throw ee;
+        } //End block
         finally 
         {
-            {
-                Iterator<Future<T>> var562C00083CDEF6998493FFDF1B4B277F_456783174 = (futures).iterator();
-                var562C00083CDEF6998493FFDF1B4B277F_456783174.hasNext();
-                Future<T> f = var562C00083CDEF6998493FFDF1B4B277F_456783174.next();
-                f.cancel(true);
-            } 
-        } 
-        addTaint(tasks.getTaint());
-        addTaint(timed);
-        addTaint(nanos);
-        varB4EAC82CA7396A68D541C85D26508E83_152329358.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_152329358;
-        
-        
+for(Future<T> f : futures)
+            f.cancel(true);
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.059 -0400", hash_original_method = "97F8F3146846E948F707846D19B902DB", hash_generated_method = "7F3EF63B62A2680B941C10A580906377")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.372 -0400", hash_original_method = "97F8F3146846E948F707846D19B902DB", hash_generated_method = "8C43617ECC89CC59B6BF18831584486F")
     public <T> T invokeAny(Collection<? extends Callable<T>> tasks) throws InterruptedException, ExecutionException {
-        T varB4EAC82CA7396A68D541C85D26508E83_207806822 = null; 
-        T varB4EAC82CA7396A68D541C85D26508E83_1263832557 = null; 
+        addTaint(tasks.getTaint());
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_207806822 = doInvokeAny(tasks, false, 0);
-        } 
+T var0D831F06EB35AD75173571A2A7D5F832_1124143597 =             doInvokeAny(tasks, false, 0);
+            var0D831F06EB35AD75173571A2A7D5F832_1124143597.addTaint(taint);
+            return var0D831F06EB35AD75173571A2A7D5F832_1124143597;
+        } //End block
         catch (TimeoutException cannotHappen)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1263832557 = null;
-        } 
-        addTaint(tasks.getTaint());
-        T varA7E53CE21691AB073D9660D615818899_600873851; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_600873851 = varB4EAC82CA7396A68D541C85D26508E83_207806822;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_600873851 = varB4EAC82CA7396A68D541C85D26508E83_1263832557;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_600873851.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_600873851;
-        
-        
-            
-        
-            
-            
-        
+T var540C13E9E156B687226421B24F2DF178_1052539697 =             null;
+            var540C13E9E156B687226421B24F2DF178_1052539697.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_1052539697;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return doInvokeAny(tasks, false, 0);
+        //} catch (TimeoutException cannotHappen) {
+            //assert false;
+            //return null;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.060 -0400", hash_original_method = "A9D2441D5895F636CD5D7E2B2C0159D4", hash_generated_method = "6D0D49F8779D90827BCCA8FAEC465E74")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.374 -0400", hash_original_method = "A9D2441D5895F636CD5D7E2B2C0159D4", hash_generated_method = "9A3099A35939CC7C89251533CC91FB8A")
     public <T> T invokeAny(Collection<? extends Callable<T>> tasks,
                            long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
-        T varB4EAC82CA7396A68D541C85D26508E83_2087714511 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_2087714511 = doInvokeAny(tasks, true, unit.toNanos(timeout));
-        addTaint(tasks.getTaint());
-        addTaint(timeout);
         addTaint(unit.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2087714511.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_2087714511;
-        
-        
+        addTaint(timeout);
+        addTaint(tasks.getTaint());
+T varDB8B1C04F589A22E27B8623D8C9F7420_994719580 =         doInvokeAny(tasks, true, unit.toNanos(timeout));
+        varDB8B1C04F589A22E27B8623D8C9F7420_994719580.addTaint(taint);
+        return varDB8B1C04F589A22E27B8623D8C9F7420_994719580;
+        // ---------- Original Method ----------
+        //return doInvokeAny(tasks, true, unit.toNanos(timeout));
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.064 -0400", hash_original_method = "B24747B6507D912BAB1561A4B1530E75", hash_generated_method = "D4F5DCE71E0985651FDAA12995EEA61A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.377 -0400", hash_original_method = "B24747B6507D912BAB1561A4B1530E75", hash_generated_method = "94254710DF15678B9AAAFC5F3D062F5A")
     public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks) throws InterruptedException {
-        List<Future<T>> varB4EAC82CA7396A68D541C85D26508E83_1180850010 = null; 
-        if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
+        addTaint(tasks.getTaint());
+    if(tasks == null)        
+        {
+        NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_637842535 = new NullPointerException();
+        var7338BC9F48D81FE0BBD6183F4014DCC4_637842535.addTaint(taint);
+        throw var7338BC9F48D81FE0BBD6183F4014DCC4_637842535;
+        }
         List<Future<T>> futures = new ArrayList<Future<T>>(tasks.size());
         boolean done = false;
         try 
         {
+for(Callable<T> t : tasks)
             {
-                Iterator<? extends Callable<T>> var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_900522027 = (tasks).iterator();
-                var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_900522027.hasNext();
-                Callable<T> t = var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_900522027.next();
-                {
-                    RunnableFuture<T> f = newTaskFor(t);
-                    futures.add(f);
-                    execute(f);
-                } 
-            } 
+                RunnableFuture<T> f = newTaskFor(t);
+                futures.add(f);
+                execute(f);
+            } //End block
+for(Future<T> f : futures)
             {
-                Iterator<Future<T>> var562C00083CDEF6998493FFDF1B4B277F_1516798350 = (futures).iterator();
-                var562C00083CDEF6998493FFDF1B4B277F_1516798350.hasNext();
-                Future<T> f = var562C00083CDEF6998493FFDF1B4B277F_1516798350.next();
+    if(!f.isDone())                
                 {
+                    try 
                     {
-                        boolean varF2D8200A41381633042302AEDF579A81_1616442509 = (!f.isDone());
-                        {
-                            try 
-                            {
-                                f.get();
-                            } 
-                            catch (CancellationException ignore)
-                            { }
-                            catch (ExecutionException ignore)
-                            { }
-                        } 
-                    } 
-                } 
-            } 
+                        f.get();
+                    } //End block
+                    catch (CancellationException ignore)
+                    {
+                    } //End block
+                    catch (ExecutionException ignore)
+                    {
+                    } //End block
+                } //End block
+            } //End block
             done = true;
-            varB4EAC82CA7396A68D541C85D26508E83_1180850010 = futures;
-        } 
+List<Future<T>> var7DD305F66D87C2DBA38D1F4FEAB104D5_1025703883 =             futures;
+            var7DD305F66D87C2DBA38D1F4FEAB104D5_1025703883.addTaint(taint);
+            return var7DD305F66D87C2DBA38D1F4FEAB104D5_1025703883;
+        } //End block
         finally 
         {
-            {
-                Iterator<Future<T>> var562C00083CDEF6998493FFDF1B4B277F_339931714 = (futures).iterator();
-                var562C00083CDEF6998493FFDF1B4B277F_339931714.hasNext();
-                Future<T> f = var562C00083CDEF6998493FFDF1B4B277F_339931714.next();
-                f.cancel(true);
-            } 
-        } 
-        addTaint(tasks.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1180850010.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1180850010;
-        
-        
+    if(!done)            
+for(Future<T> f : futures)
+            f.cancel(true);
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.072 -0400", hash_original_method = "14FC4B905592A585E278FFB06E2B3922", hash_generated_method = "9115B69D208925ADEE58311927E3A3FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.385 -0400", hash_original_method = "14FC4B905592A585E278FFB06E2B3922", hash_generated_method = "6EB8715C19308BE6634683E32FA23BC1")
     public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks,
                                          long timeout, TimeUnit unit) throws InterruptedException {
-        List<Future<T>> varB4EAC82CA7396A68D541C85D26508E83_1433945447 = null; 
-        List<Future<T>> varB4EAC82CA7396A68D541C85D26508E83_1012756548 = null; 
-        List<Future<T>> varB4EAC82CA7396A68D541C85D26508E83_899263421 = null; 
-        List<Future<T>> varB4EAC82CA7396A68D541C85D26508E83_418112726 = null; 
-        if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
+        addTaint(unit.getTaint());
+        addTaint(timeout);
+        addTaint(tasks.getTaint());
+    if(tasks == null || unit == null)        
+        {
+        NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1422483612 = new NullPointerException();
+        var7338BC9F48D81FE0BBD6183F4014DCC4_1422483612.addTaint(taint);
+        throw var7338BC9F48D81FE0BBD6183F4014DCC4_1422483612;
+        }
         long nanos = unit.toNanos(timeout);
         List<Future<T>> futures = new ArrayList<Future<T>>(tasks.size());
         boolean done = false;
         try 
         {
-            {
-                Iterator<? extends Callable<T>> var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_1563764440 = (tasks).iterator();
-                var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_1563764440.hasNext();
-                Callable<T> t = var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_1563764440.next();
-                futures.add(newTaskFor(t));
-            } 
+for(Callable<T> t : tasks)
+            futures.add(newTaskFor(t));
             long lastTime = System.nanoTime();
             Iterator<Future<T>> it = futures.iterator();
+            while
+(it.hasNext())            
             {
-                boolean varB2FF4435B274CC4BE01D264DEA08F957_390892150 = (it.hasNext());
+                execute((Runnable)(it.next()));
+                long now = System.nanoTime();
+                nanos -= now - lastTime;
+                lastTime = now;
+    if(nanos <= 0)                
                 {
-                    execute((Runnable)(it.next()));
+List<Future<T>> var7DD305F66D87C2DBA38D1F4FEAB104D5_1401820161 =                 futures;
+                var7DD305F66D87C2DBA38D1F4FEAB104D5_1401820161.addTaint(taint);
+                return var7DD305F66D87C2DBA38D1F4FEAB104D5_1401820161;
+                }
+            } //End block
+for(Future<T> f : futures)
+            {
+    if(!f.isDone())                
+                {
+    if(nanos <= 0)                    
+                    {
+List<Future<T>> var7DD305F66D87C2DBA38D1F4FEAB104D5_420276100 =                     futures;
+                    var7DD305F66D87C2DBA38D1F4FEAB104D5_420276100.addTaint(taint);
+                    return var7DD305F66D87C2DBA38D1F4FEAB104D5_420276100;
+                    }
+                    try 
+                    {
+                        f.get(nanos, TimeUnit.NANOSECONDS);
+                    } //End block
+                    catch (CancellationException ignore)
+                    {
+                    } //End block
+                    catch (ExecutionException ignore)
+                    {
+                    } //End block
+                    catch (TimeoutException toe)
+                    {
+List<Future<T>> var7DD305F66D87C2DBA38D1F4FEAB104D5_1641515248 =                         futures;
+                        var7DD305F66D87C2DBA38D1F4FEAB104D5_1641515248.addTaint(taint);
+                        return var7DD305F66D87C2DBA38D1F4FEAB104D5_1641515248;
+                    } //End block
                     long now = System.nanoTime();
                     nanos -= now - lastTime;
                     lastTime = now;
-                    varB4EAC82CA7396A68D541C85D26508E83_1433945447 = futures;
-                } 
-            } 
-            {
-                Iterator<Future<T>> var562C00083CDEF6998493FFDF1B4B277F_1361801393 = (futures).iterator();
-                var562C00083CDEF6998493FFDF1B4B277F_1361801393.hasNext();
-                Future<T> f = var562C00083CDEF6998493FFDF1B4B277F_1361801393.next();
-                {
-                    {
-                        boolean varF2D8200A41381633042302AEDF579A81_144447098 = (!f.isDone());
-                        {
-                            varB4EAC82CA7396A68D541C85D26508E83_1012756548 = futures;
-                            try 
-                            {
-                                f.get(nanos, TimeUnit.NANOSECONDS);
-                            } 
-                            catch (CancellationException ignore)
-                            { }
-                            catch (ExecutionException ignore)
-                            { }
-                            catch (TimeoutException toe)
-                            {
-                                varB4EAC82CA7396A68D541C85D26508E83_899263421 = futures;
-                            } 
-                            long now = System.nanoTime();
-                            nanos -= now - lastTime;
-                            lastTime = now;
-                        } 
-                    } 
-                } 
-            } 
+                } //End block
+            } //End block
             done = true;
-            varB4EAC82CA7396A68D541C85D26508E83_418112726 = futures;
-        } 
+List<Future<T>> var7DD305F66D87C2DBA38D1F4FEAB104D5_406988959 =             futures;
+            var7DD305F66D87C2DBA38D1F4FEAB104D5_406988959.addTaint(taint);
+            return var7DD305F66D87C2DBA38D1F4FEAB104D5_406988959;
+        } //End block
         finally 
         {
-            {
-                Iterator<Future<T>> var562C00083CDEF6998493FFDF1B4B277F_1224607181 = (futures).iterator();
-                var562C00083CDEF6998493FFDF1B4B277F_1224607181.hasNext();
-                Future<T> f = var562C00083CDEF6998493FFDF1B4B277F_1224607181.next();
-                f.cancel(true);
-            } 
-        } 
-        addTaint(tasks.getTaint());
-        addTaint(timeout);
-        addTaint(unit.getTaint());
-        List<Future<T>> varA7E53CE21691AB073D9660D615818899_345624225; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_345624225 = varB4EAC82CA7396A68D541C85D26508E83_1433945447;
-                break;
-            case 2: 
-                varA7E53CE21691AB073D9660D615818899_345624225 = varB4EAC82CA7396A68D541C85D26508E83_1012756548;
-                break;
-            case 3: 
-                varA7E53CE21691AB073D9660D615818899_345624225 = varB4EAC82CA7396A68D541C85D26508E83_899263421;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_345624225 = varB4EAC82CA7396A68D541C85D26508E83_418112726;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_345624225.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_345624225;
-        
-        
+    if(!done)            
+for(Future<T> f : futures)
+            f.cancel(true);
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

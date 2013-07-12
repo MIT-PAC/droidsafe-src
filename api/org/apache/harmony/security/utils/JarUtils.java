@@ -1,12 +1,9 @@
 package org.apache.harmony.security.utils;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigInteger;
@@ -33,15 +30,14 @@ import org.apache.harmony.xnet.provider.jsse.OpenSSLSignature;
 
 public class JarUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.353 -0400", hash_original_method = "C4E6A9DD3A1CC4544C825D59A384053A", hash_generated_method = "C4E6A9DD3A1CC4544C825D59A384053A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.413 -0400", hash_original_method = "C4E6A9DD3A1CC4544C825D59A384053A", hash_generated_method = "C4E6A9DD3A1CC4544C825D59A384053A")
     public JarUtils ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
-    public static Certificate[] verifySignature(InputStream signature, InputStream
+        public static Certificate[] verifySignature(InputStream signature, InputStream
             signatureBlock) throws IOException, GeneralSecurityException {
         BerInputStream bis = new BerInputStream(signatureBlock);
         ContentInfo info = (ContentInfo)ContentInfo.ASN1.decode(bis);
@@ -131,8 +127,7 @@ public class JarUtils {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static X509Certificate[] createChain(X509Certificate  signer, X509Certificate[] candidates) {
+        private static X509Certificate[] createChain(X509Certificate  signer, X509Certificate[] candidates) {
         LinkedList chain = new LinkedList();
         chain.add(0, signer);
         if (signer.getSubjectDN().equals(signer.getIssuerDN())){
@@ -157,8 +152,7 @@ public class JarUtils {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static X509Certificate findCert(Principal issuer, X509Certificate[] candidates) {
+        private static X509Certificate findCert(Principal issuer, X509Certificate[] candidates) {
         for (int i = 0; i < candidates.length; i++) {
             if (issuer.equals(candidates[i].getSubjectDN())) {
                 return candidates[i];
@@ -168,7 +162,7 @@ public class JarUtils {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.353 -0400", hash_original_field = "FA70A93BA7FB82881F779F0105AF644D", hash_generated_field = "8FC73BCA164B0A48DD2837F37864EBB1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.415 -0400", hash_original_field = "FA70A93BA7FB82881F779F0105AF644D", hash_generated_field = "8FC73BCA164B0A48DD2837F37864EBB1")
 
     private static final int[] MESSAGE_DIGEST_OID = new int[] {1, 2, 840, 113549, 1, 9, 4};
 }

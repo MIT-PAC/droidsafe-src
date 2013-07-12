@@ -1,12 +1,9 @@
 package org.apache.http.conn;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.IOException;
 import java.net.InetAddress;
 import org.apache.http.HttpHost;

@@ -1,55 +1,49 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.text.ParseException;
 import gov.nist.javax.sip.header.*;
 
 public class ReferToParser extends AddressParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.478 -0400", hash_original_method = "DF57B31FD2F05C7FE41E5F087EC0A031", hash_generated_method = "306BD483FA2BCDBD92831A5479E623FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.626 -0400", hash_original_method = "DF57B31FD2F05C7FE41E5F087EC0A031", hash_generated_method = "306BD483FA2BCDBD92831A5479E623FC")
     public  ReferToParser(String referTo) {
         super(referTo);
         addTaint(referTo.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.479 -0400", hash_original_method = "78341A496A4C46C460D57FED9263DC9D", hash_generated_method = "33783D1B9AF63A24398C18B41F2BD83E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.627 -0400", hash_original_method = "78341A496A4C46C460D57FED9263DC9D", hash_generated_method = "33783D1B9AF63A24398C18B41F2BD83E")
     protected  ReferToParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.479 -0400", hash_original_method = "3469BCE5DE818D1E33012B0295E9EC56", hash_generated_method = "D900F0194C85249ED2837548BC56028D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.627 -0400", hash_original_method = "3469BCE5DE818D1E33012B0295E9EC56", hash_generated_method = "554F6CA0A2ABE4B73EEAF9477BBDDCA6")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1408779060 = null; 
         headerName(TokenTypes.REFER_TO);
         ReferTo referTo = new ReferTo();
         super.parse(referTo);
         this.lexer.match('\n');
-        varB4EAC82CA7396A68D541C85D26508E83_1408779060 = referTo;
-        varB4EAC82CA7396A68D541C85D26508E83_1408779060.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1408779060;
-        
-        
-        
-        
-        
-        
+SIPHeader varF03467BD7719B93D23F3A1857BAA9912_1135718305 =         referTo;
+        varF03467BD7719B93D23F3A1857BAA9912_1135718305.addTaint(taint);
+        return varF03467BD7719B93D23F3A1857BAA9912_1135718305;
+        // ---------- Original Method ----------
+        //headerName(TokenTypes.REFER_TO);
+        //ReferTo referTo = new ReferTo();
+        //super.parse(referTo);
+        //this.lexer.match('\n');
+        //return referTo;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void main(String args[]) throws ParseException {
+        public static void main(String args[]) throws ParseException {
         String to[] =
             {   "Refer-To: <sip:dave@denver.example.org?" +
                     "Replaces=12345%40192.168.118.3%3Bto-tag%3D12345%3Bfrom-tag%3D5FFE-3994>\n",

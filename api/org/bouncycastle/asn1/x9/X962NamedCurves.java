@@ -1,12 +1,9 @@
 package org.bouncycastle.asn1.x9;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import org.bouncycastle.asn1.DERObjectIdentifier;
 import org.bouncycastle.math.ec.ECCurve;
 import org.bouncycastle.util.Strings;
@@ -17,23 +14,21 @@ import java.util.Hashtable;
 
 public class X962NamedCurves {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.329 -0400", hash_original_method = "E9893857EF70F6AC19E01FEF66A94FDD", hash_generated_method = "E9893857EF70F6AC19E01FEF66A94FDD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.446 -0400", hash_original_method = "E9893857EF70F6AC19E01FEF66A94FDD", hash_generated_method = "E9893857EF70F6AC19E01FEF66A94FDD")
     public X962NamedCurves ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
-    static void defineCurve(String name, DERObjectIdentifier oid, X9ECParametersHolder holder) {
+        static void defineCurve(String name, DERObjectIdentifier oid, X9ECParametersHolder holder) {
         objIds.put(name, oid);
         names.put(oid, name);
         curves.put(oid, holder);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static X9ECParameters getByName(
+        public static X9ECParameters getByName(
         String name) {
         DERObjectIdentifier oid = (DERObjectIdentifier)objIds.get(Strings.toLowerCase(name));
         if (oid != null)
@@ -44,8 +39,7 @@ public class X962NamedCurves {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static X9ECParameters getByOID(
+        public static X9ECParameters getByOID(
         DERObjectIdentifier oid) {
         X9ECParametersHolder holder = (X9ECParametersHolder)curves.get(oid);
         if (holder != null)
@@ -56,22 +50,19 @@ public class X962NamedCurves {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static DERObjectIdentifier getOID(
+        public static DERObjectIdentifier getOID(
         String name) {
         return (DERObjectIdentifier)objIds.get(Strings.toLowerCase(name));
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String getName(
+        public static String getName(
         DERObjectIdentifier oid) {
         return (String)names.get(oid);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static Enumeration getNames() {
+        public static Enumeration getNames() {
         return objIds.keys();
     }
 
@@ -925,13 +916,13 @@ public class X962NamedCurves {
 
         
 };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.364 -0400", hash_original_field = "09196982C4917B07F992CCE003F1710F", hash_generated_field = "1269679D47B7C172C418131040DC03AA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.448 -0400", hash_original_field = "09196982C4917B07F992CCE003F1710F", hash_generated_field = "1269679D47B7C172C418131040DC03AA")
 
     static final Hashtable objIds = new Hashtable();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.364 -0400", hash_original_field = "53A355950F48EB163EF1F9185C63BB74", hash_generated_field = "A509875984E2DDE173DFA329D230AB1E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.448 -0400", hash_original_field = "53A355950F48EB163EF1F9185C63BB74", hash_generated_field = "A509875984E2DDE173DFA329D230AB1E")
 
     static final Hashtable curves = new Hashtable();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.364 -0400", hash_original_field = "E70BACFD70C0C66E2A0FC643AF5696C0", hash_generated_field = "734EE0BA6EAA0FCA9CCE9A4B643B3169")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.448 -0400", hash_original_field = "E70BACFD70C0C66E2A0FC643AF5696C0", hash_generated_field = "734EE0BA6EAA0FCA9CCE9A4B643B3169")
 
     static final Hashtable names = new Hashtable();
     static {

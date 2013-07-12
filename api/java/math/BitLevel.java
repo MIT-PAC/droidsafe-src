@@ -1,23 +1,19 @@
 package java.math;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-
-import java.util.Iterator;
-
 class BitLevel {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.650 -0400", hash_original_method = "128537E4DA15C667DA21928E26685CE7", hash_generated_method = "8EBB079821786F638DB2E6786CCDDD62")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.959 -0400", hash_original_method = "128537E4DA15C667DA21928E26685CE7", hash_generated_method = "8EBB079821786F638DB2E6786CCDDD62")
     private  BitLevel() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static int bitLength(BigInteger val) {
+        static int bitLength(BigInteger val) {
         val.prepareJavaRepresentation();
         if (val.sign == 0) {
             return 0;
@@ -35,8 +31,7 @@ class BitLevel {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static int bitCount(BigInteger val) {
+        static int bitCount(BigInteger val) {
         val.prepareJavaRepresentation();
         int bCount = 0;
         if (val.sign == 0) {
@@ -58,15 +53,13 @@ class BitLevel {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static boolean testBit(BigInteger val, int n) {
+        static boolean testBit(BigInteger val, int n) {
         val.prepareJavaRepresentation();
         return ((val.digits[n >> 5] & (1 << (n & 31))) != 0);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static boolean nonZeroDroppedBits(int numberOfBits, int[] digits) {
+        static boolean nonZeroDroppedBits(int numberOfBits, int[] digits) {
         int intCount = numberOfBits >> 5;
         int bitCount = numberOfBits & 31;
         int i;
@@ -77,8 +70,7 @@ class BitLevel {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static void shiftLeftOneBit(int[] result, int[] source, int srcLen) {
+        static void shiftLeftOneBit(int[] result, int[] source, int srcLen) {
         int carry = 0;
         for (int i = 0; i < srcLen; i++) {
             int val = source[i];
@@ -91,8 +83,7 @@ class BitLevel {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static BigInteger shiftLeftOneBit(BigInteger source) {
+        static BigInteger shiftLeftOneBit(BigInteger source) {
         source.prepareJavaRepresentation();
         int srcLen = source.numberLength;
         int resLen = srcLen + 1;
@@ -102,8 +93,7 @@ class BitLevel {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static BigInteger shiftRight(BigInteger source, int count) {
+        static BigInteger shiftRight(BigInteger source, int count) {
         source.prepareJavaRepresentation();
         int intCount = count >> 5;
         count &= 31;
@@ -133,8 +123,7 @@ class BitLevel {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static boolean shiftRight(int[] result, int resultLen, int[] source, int intCount, int count) {
+        static boolean shiftRight(int[] result, int resultLen, int[] source, int intCount, int count) {
         int i;
         boolean allZero = true;
         for (i = 0; i < intCount; i++)
@@ -156,8 +145,7 @@ class BitLevel {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static BigInteger flipBit(BigInteger val, int n) {
+        static BigInteger flipBit(BigInteger val, int n) {
         val.prepareJavaRepresentation();
         int resSign = (val.sign == 0) ? 1 : val.sign;
         int intCount = n >> 5;

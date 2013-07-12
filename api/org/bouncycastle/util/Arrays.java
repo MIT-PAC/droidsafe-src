@@ -1,23 +1,19 @@
 package org.bouncycastle.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-
-import java.util.Iterator;
-
 public final class Arrays {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.164 -0400", hash_original_method = "F55A33B7721183458366770FE1A5E43D", hash_generated_method = "49F223D555836B7BADC6EB97733A13D3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.713 -0400", hash_original_method = "F55A33B7721183458366770FE1A5E43D", hash_generated_method = "49F223D555836B7BADC6EB97733A13D3")
     private  Arrays() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static boolean areEqual(
+        public static boolean areEqual(
         boolean[]  a,
         boolean[]  b) {
         if (a == b)
@@ -43,8 +39,7 @@ public final class Arrays {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static boolean areEqual(
+        public static boolean areEqual(
         char[]  a,
         char[]  b) {
         if (a == b)
@@ -70,8 +65,7 @@ public final class Arrays {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static boolean areEqual(
+        public static boolean areEqual(
         byte[]  a,
         byte[]  b) {
         if (a == b)
@@ -97,8 +91,7 @@ public final class Arrays {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static boolean constantTimeAreEqual(
+        public static boolean constantTimeAreEqual(
         byte[]  a,
         byte[]  b) {
         if (a == b)
@@ -122,8 +115,7 @@ public final class Arrays {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static boolean areEqual(
+        public static boolean areEqual(
         int[]  a,
         int[]  b) {
         if (a == b)
@@ -149,8 +141,7 @@ public final class Arrays {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void fill(
+        public static void fill(
         byte[] array,
         byte value) {
         for (int i = 0; i < array.length; i++)
@@ -160,8 +151,7 @@ public final class Arrays {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void fill(
+        public static void fill(
         long[] array,
         long value) {
         for (int i = 0; i < array.length; i++)
@@ -171,8 +161,7 @@ public final class Arrays {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void fill(
+        public static void fill(
         short[] array, 
         short value) {
         for (int i = 0; i < array.length; i++)
@@ -182,8 +171,7 @@ public final class Arrays {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static int hashCode(byte[] data) {
+        public static int hashCode(byte[] data) {
         if (data == null)
         {
             return 0;
@@ -199,8 +187,7 @@ public final class Arrays {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static byte[] clone(byte[] data) {
+        public static byte[] clone(byte[] data) {
         if (data == null)
         {
             return null;
@@ -211,8 +198,7 @@ public final class Arrays {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static int[] clone(int[] data) {
+        public static int[] clone(int[] data) {
         if (data == null)
         {
             return null;

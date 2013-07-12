@@ -1,12 +1,9 @@
 package android.app;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import com.android.internal.app.AlertController;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -26,60 +23,59 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 public class AlertDialog extends Dialog implements DialogInterface {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.105 -0400", hash_original_field = "5117530B5FC21047AC49783CC786404F", hash_generated_field = "167B5CF3490749BA13C3817234C227CF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:59.982 -0400", hash_original_field = "5117530B5FC21047AC49783CC786404F", hash_generated_field = "167B5CF3490749BA13C3817234C227CF")
 
     private AlertController mAlert;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.106 -0400", hash_original_method = "3B9AE3A4287FBB2F8914E3FC42E19D75", hash_generated_method = "1583F710FE0C1778C52687E18EADF09B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:59.982 -0400", hash_original_method = "3B9AE3A4287FBB2F8914E3FC42E19D75", hash_generated_method = "1583F710FE0C1778C52687E18EADF09B")
     protected  AlertDialog(Context context) {
         this(context, resolveDialogTheme(context, 0), true);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.106 -0400", hash_original_method = "C5FA972556687388DAE356FD387A2EE9", hash_generated_method = "CE0D53A489B0326F02AB48EAEA4541F5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:59.983 -0400", hash_original_method = "C5FA972556687388DAE356FD387A2EE9", hash_generated_method = "90F63D555F618DCEC64E8B91F3181DA4")
     protected  AlertDialog(Context context, int theme) {
         this(context, theme, true);
-        addTaint(context.getTaint());
         addTaint(theme);
-        
+        addTaint(context.getTaint());
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.107 -0400", hash_original_method = "6D386DC5BAB559A725B0E80B3B80739F", hash_generated_method = "3F34B817F90BB4AEA127B1A439CCC1C5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:59.984 -0400", hash_original_method = "6D386DC5BAB559A725B0E80B3B80739F", hash_generated_method = "4708DAF209A9E264F2870699385AEC0D")
       AlertDialog(Context context, int theme, boolean createContextWrapper) {
         super(context, resolveDialogTheme(context, theme), createContextWrapper);
+        addTaint(createContextWrapper);
+        addTaint(theme);
+        addTaint(context.getTaint());
         mWindow.alwaysReadCloseOnTouchAttr();
         mAlert = new AlertController(getContext(), this, getWindow());
-        addTaint(context.getTaint());
-        addTaint(theme);
-        addTaint(createContextWrapper);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mWindow.alwaysReadCloseOnTouchAttr();
+        //mAlert = new AlertController(getContext(), this, getWindow());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.108 -0400", hash_original_method = "EA464E0CF4AA10E0AEDF6B163BEEF729", hash_generated_method = "E49815D05BEC276A8A0718C38E86FAA0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:59.985 -0400", hash_original_method = "EA464E0CF4AA10E0AEDF6B163BEEF729", hash_generated_method = "7F5A902CFE78FB8167596A55229CBCFE")
     protected  AlertDialog(Context context, boolean cancelable, OnCancelListener cancelListener) {
         super(context, resolveDialogTheme(context, 0));
+        addTaint(cancelListener.getTaint());
+        addTaint(cancelable);
         mWindow.alwaysReadCloseOnTouchAttr();
         setCancelable(cancelable);
         setOnCancelListener(cancelListener);
         mAlert = new AlertController(context, this, getWindow());
-        addTaint(cancelable);
-        addTaint(cancelListener.getTaint());
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mWindow.alwaysReadCloseOnTouchAttr();
+        //setCancelable(cancelable);
+        //setOnCancelListener(cancelListener);
+        //mAlert = new AlertController(context, this, getWindow());
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static int resolveDialogTheme(Context context, int resid) {
+        static int resolveDialogTheme(Context context, int resid) {
         if (resid == THEME_TRADITIONAL) {
             return com.android.internal.R.style.Theme_Dialog_Alert;
         } else if (resid == THEME_HOLO_DARK) {
@@ -101,895 +97,832 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.110 -0400", hash_original_method = "2277A8C194577CB499FB53C1370D61D1", hash_generated_method = "0D6DA74593395E40E51F1DD7D38CA3D2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:59.987 -0400", hash_original_method = "2277A8C194577CB499FB53C1370D61D1", hash_generated_method = "EEC847867E7A96CBA18D02B198B00745")
     public Button getButton(int whichButton) {
-        Button varB4EAC82CA7396A68D541C85D26508E83_621540935 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_621540935 = mAlert.getButton(whichButton);
         addTaint(whichButton);
-        varB4EAC82CA7396A68D541C85D26508E83_621540935.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_621540935;
-        
-        
+Button var982AAF2A195CEB114AEA08F0D79D1554_376709208 =         mAlert.getButton(whichButton);
+        var982AAF2A195CEB114AEA08F0D79D1554_376709208.addTaint(taint);
+        return var982AAF2A195CEB114AEA08F0D79D1554_376709208;
+        // ---------- Original Method ----------
+        //return mAlert.getButton(whichButton);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.111 -0400", hash_original_method = "ECC410A91FC6F30B82508F44C93EA39B", hash_generated_method = "4CED19AE9CE2EF6DBB20DDD0F76B6059")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:59.989 -0400", hash_original_method = "ECC410A91FC6F30B82508F44C93EA39B", hash_generated_method = "C314974D485BEE10FC9B151EE9E0D352")
     public ListView getListView() {
-        ListView varB4EAC82CA7396A68D541C85D26508E83_1338091066 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1338091066 = mAlert.getListView();
-        varB4EAC82CA7396A68D541C85D26508E83_1338091066.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1338091066;
-        
-        
+ListView var2506D587169C0D50E4901C6C53BC48B5_1906744487 =         mAlert.getListView();
+        var2506D587169C0D50E4901C6C53BC48B5_1906744487.addTaint(taint);
+        return var2506D587169C0D50E4901C6C53BC48B5_1906744487;
+        // ---------- Original Method ----------
+        //return mAlert.getListView();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.111 -0400", hash_original_method = "5655E82DFA793B6CD86300EA45F77D5A", hash_generated_method = "DE06D1A99CF7710D2FF4A3875EC195AB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:59.990 -0400", hash_original_method = "5655E82DFA793B6CD86300EA45F77D5A", hash_generated_method = "752B50DE17B484A92012992274CD105C")
     @Override
     public void setTitle(CharSequence title) {
+        addTaint(title.getTaint());
         super.setTitle(title);
         mAlert.setTitle(title);
-        addTaint(title.getTaint());
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.setTitle(title);
+        //mAlert.setTitle(title);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.112 -0400", hash_original_method = "0AAF0E3192DB53DCF899ECF927301A42", hash_generated_method = "401A0C95D03B818F2FD5C0F48514DA52")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:59.991 -0400", hash_original_method = "0AAF0E3192DB53DCF899ECF927301A42", hash_generated_method = "6CFF09B36F781300333D722EA91046F8")
     public void setCustomTitle(View customTitleView) {
-        mAlert.setCustomTitle(customTitleView);
         addTaint(customTitleView.getTaint());
-        
-        
+        mAlert.setCustomTitle(customTitleView);
+        // ---------- Original Method ----------
+        //mAlert.setCustomTitle(customTitleView);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.113 -0400", hash_original_method = "0FDFF41BD74285789F29E89A2F2C112C", hash_generated_method = "DFE20EAF301830597C4553689C7ED5B0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:59.992 -0400", hash_original_method = "0FDFF41BD74285789F29E89A2F2C112C", hash_generated_method = "AD0A1CFD85BC03625326EDD2E6B6DEF0")
     public void setMessage(CharSequence message) {
-        mAlert.setMessage(message);
         addTaint(message.getTaint());
-        
-        
+        mAlert.setMessage(message);
+        // ---------- Original Method ----------
+        //mAlert.setMessage(message);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.113 -0400", hash_original_method = "588C26275F4E62D9742C7DBB082EE340", hash_generated_method = "92BB9529E33FE238EDD1E736CCCC1BA9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:59.993 -0400", hash_original_method = "588C26275F4E62D9742C7DBB082EE340", hash_generated_method = "9DFBFC5BE7B086484A96014C0BB838EA")
     public void setView(View view) {
-        mAlert.setView(view);
         addTaint(view.getTaint());
-        
-        
+        mAlert.setView(view);
+        // ---------- Original Method ----------
+        //mAlert.setView(view);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.114 -0400", hash_original_method = "399D46DD3D86F04F15AA9836309BED7E", hash_generated_method = "7132CC9A7DDAA98937D40C431D424567")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:59.993 -0400", hash_original_method = "399D46DD3D86F04F15AA9836309BED7E", hash_generated_method = "8EC4841573DFDA1EC25234F425B2F3F7")
     public void setView(View view, int viewSpacingLeft, int viewSpacingTop, int viewSpacingRight,
             int viewSpacingBottom) {
-        mAlert.setView(view, viewSpacingLeft, viewSpacingTop, viewSpacingRight, viewSpacingBottom);
-        addTaint(view.getTaint());
-        addTaint(viewSpacingLeft);
-        addTaint(viewSpacingTop);
-        addTaint(viewSpacingRight);
         addTaint(viewSpacingBottom);
-        
-        
+        addTaint(viewSpacingRight);
+        addTaint(viewSpacingTop);
+        addTaint(viewSpacingLeft);
+        addTaint(view.getTaint());
+        mAlert.setView(view, viewSpacingLeft, viewSpacingTop, viewSpacingRight, viewSpacingBottom);
+        // ---------- Original Method ----------
+        //mAlert.setView(view, viewSpacingLeft, viewSpacingTop, viewSpacingRight, viewSpacingBottom);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.114 -0400", hash_original_method = "CFE09EBA63F60A6BEEDA0ECE4DBD2BBE", hash_generated_method = "CC8087F197B860A791414E2743719A9A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:59.994 -0400", hash_original_method = "CFE09EBA63F60A6BEEDA0ECE4DBD2BBE", hash_generated_method = "5D987EC8CFC176A30136BDA78EB8E7B4")
     public void setButton(int whichButton, CharSequence text, Message msg) {
-        mAlert.setButton(whichButton, text, null, msg);
-        addTaint(whichButton);
-        addTaint(text.getTaint());
         addTaint(msg.getTaint());
-        
-        
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.115 -0400", hash_original_method = "FD92C01692F456341A0525E9D1CD5A83", hash_generated_method = "E0CEE024DC7576AEB4B24A793ACADA2E")
-    public void setButton(int whichButton, CharSequence text, OnClickListener listener) {
-        mAlert.setButton(whichButton, text, listener, null);
-        addTaint(whichButton);
         addTaint(text.getTaint());
-        addTaint(listener.getTaint());
-        
-        
+        addTaint(whichButton);
+        mAlert.setButton(whichButton, text, null, msg);
+        // ---------- Original Method ----------
+        //mAlert.setButton(whichButton, text, null, msg);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.116 -0400", hash_original_method = "2930D21A7389B776726F7D14477E22A5", hash_generated_method = "BC76FB53B508B9E9863D099CA48B69CD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:59.995 -0400", hash_original_method = "FD92C01692F456341A0525E9D1CD5A83", hash_generated_method = "29E6440070F9D9702911D1F48D6B97EB")
+    public void setButton(int whichButton, CharSequence text, OnClickListener listener) {
+        addTaint(listener.getTaint());
+        addTaint(text.getTaint());
+        addTaint(whichButton);
+        mAlert.setButton(whichButton, text, listener, null);
+        // ---------- Original Method ----------
+        //mAlert.setButton(whichButton, text, listener, null);
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:59.996 -0400", hash_original_method = "2930D21A7389B776726F7D14477E22A5", hash_generated_method = "10A49A8C11997F4F0A6B9043D88B162B")
     @Deprecated
     public void setButton(CharSequence text, Message msg) {
-        setButton(BUTTON_POSITIVE, text, msg);
-        addTaint(text.getTaint());
         addTaint(msg.getTaint());
-        
-        
+        addTaint(text.getTaint());
+        setButton(BUTTON_POSITIVE, text, msg);
+        // ---------- Original Method ----------
+        //setButton(BUTTON_POSITIVE, text, msg);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.116 -0400", hash_original_method = "5D138EC6D4B89A4911514A5D190A83FC", hash_generated_method = "39EF83642AEEC6F615FF4EE793E037EC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:59.996 -0400", hash_original_method = "5D138EC6D4B89A4911514A5D190A83FC", hash_generated_method = "91274E3FDD2D3B7490342C08DC50366D")
     @Deprecated
     public void setButton2(CharSequence text, Message msg) {
-        setButton(BUTTON_NEGATIVE, text, msg);
-        addTaint(text.getTaint());
         addTaint(msg.getTaint());
-        
-        
+        addTaint(text.getTaint());
+        setButton(BUTTON_NEGATIVE, text, msg);
+        // ---------- Original Method ----------
+        //setButton(BUTTON_NEGATIVE, text, msg);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.117 -0400", hash_original_method = "E62AA308196D7D74E77874CB13CC8D38", hash_generated_method = "EAD067B9A0D5323E10ADD3B9C0D8B697")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:59.997 -0400", hash_original_method = "E62AA308196D7D74E77874CB13CC8D38", hash_generated_method = "AAD1B41DE37D96FC451C9F58D920A9FB")
     @Deprecated
     public void setButton3(CharSequence text, Message msg) {
-        setButton(BUTTON_NEUTRAL, text, msg);
-        addTaint(text.getTaint());
         addTaint(msg.getTaint());
-        
-        
+        addTaint(text.getTaint());
+        setButton(BUTTON_NEUTRAL, text, msg);
+        // ---------- Original Method ----------
+        //setButton(BUTTON_NEUTRAL, text, msg);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.118 -0400", hash_original_method = "14303CDDA201782BB4EE72003EBE4B25", hash_generated_method = "21608FE9B96A65C9E363130572949387")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:59.998 -0400", hash_original_method = "14303CDDA201782BB4EE72003EBE4B25", hash_generated_method = "F5A39D614B0E1C476633016ECABDFCB3")
     @Deprecated
     public void setButton(CharSequence text, final OnClickListener listener) {
-        setButton(BUTTON_POSITIVE, text, listener);
-        addTaint(text.getTaint());
         addTaint(listener.getTaint());
-        
-        
+        addTaint(text.getTaint());
+        setButton(BUTTON_POSITIVE, text, listener);
+        // ---------- Original Method ----------
+        //setButton(BUTTON_POSITIVE, text, listener);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.119 -0400", hash_original_method = "99FBB4BC7546CFCEFDAC9CCE0B0EC52F", hash_generated_method = "65F8A2093B65525353B016963C5779BA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:59.999 -0400", hash_original_method = "99FBB4BC7546CFCEFDAC9CCE0B0EC52F", hash_generated_method = "A133C1FA29229A311BCC319905DF1878")
     @Deprecated
     public void setButton2(CharSequence text, final OnClickListener listener) {
-        setButton(BUTTON_NEGATIVE, text, listener);
-        addTaint(text.getTaint());
         addTaint(listener.getTaint());
-        
-        
+        addTaint(text.getTaint());
+        setButton(BUTTON_NEGATIVE, text, listener);
+        // ---------- Original Method ----------
+        //setButton(BUTTON_NEGATIVE, text, listener);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.121 -0400", hash_original_method = "9225C5ACB453A48CCE22F622BD426A12", hash_generated_method = "B1A8586464BEE77ACC61CB4FC4037361")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.000 -0400", hash_original_method = "9225C5ACB453A48CCE22F622BD426A12", hash_generated_method = "469E8C38083E77334CDE31443F3D835E")
     @Deprecated
     public void setButton3(CharSequence text, final OnClickListener listener) {
-        setButton(BUTTON_NEUTRAL, text, listener);
-        addTaint(text.getTaint());
         addTaint(listener.getTaint());
-        
-        
+        addTaint(text.getTaint());
+        setButton(BUTTON_NEUTRAL, text, listener);
+        // ---------- Original Method ----------
+        //setButton(BUTTON_NEUTRAL, text, listener);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.122 -0400", hash_original_method = "B742B976A105323EE27DB344109D47DF", hash_generated_method = "3B5D69ED7EFFB6F98CF943BC39C8F58C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.000 -0400", hash_original_method = "B742B976A105323EE27DB344109D47DF", hash_generated_method = "3C4D87639FE619F12997B202A1E9113E")
     public void setIcon(int resId) {
-        mAlert.setIcon(resId);
         addTaint(resId);
-        
-        
+        mAlert.setIcon(resId);
+        // ---------- Original Method ----------
+        //mAlert.setIcon(resId);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.123 -0400", hash_original_method = "58CB6A167EA4E7B84F26608014843ADF", hash_generated_method = "A2F13A37CA62F872F0695FC18AD2339B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.001 -0400", hash_original_method = "58CB6A167EA4E7B84F26608014843ADF", hash_generated_method = "44579B1B6EA54F49D24FAAC7B34B46E5")
     public void setIcon(Drawable icon) {
-        mAlert.setIcon(icon);
         addTaint(icon.getTaint());
-        
-        
+        mAlert.setIcon(icon);
+        // ---------- Original Method ----------
+        //mAlert.setIcon(icon);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.124 -0400", hash_original_method = "1B8133F4D68862D013C951EDD0C82832", hash_generated_method = "E58A26E1B0C530AEDB2AAD4567349D8E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.001 -0400", hash_original_method = "1B8133F4D68862D013C951EDD0C82832", hash_generated_method = "08969955AC3254B40ADC900C8F0396CF")
     public void setIconAttribute(int attrId) {
+        addTaint(attrId);
         TypedValue out = new TypedValue();
         mContext.getTheme().resolveAttribute(attrId, out, true);
         mAlert.setIcon(out.resourceId);
-        addTaint(attrId);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //TypedValue out = new TypedValue();
+        //mContext.getTheme().resolveAttribute(attrId, out, true);
+        //mAlert.setIcon(out.resourceId);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.124 -0400", hash_original_method = "21C74C630736CECBD7AD6F509C2AA5D7", hash_generated_method = "809D805EF0EA5017FA5539ADB79B922E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.002 -0400", hash_original_method = "21C74C630736CECBD7AD6F509C2AA5D7", hash_generated_method = "58DE19A281AA9B85C15AE7D335D2445B")
     public void setInverseBackgroundForced(boolean forceInverseBackground) {
-        mAlert.setInverseBackgroundForced(forceInverseBackground);
         addTaint(forceInverseBackground);
-        
-        
+        mAlert.setInverseBackgroundForced(forceInverseBackground);
+        // ---------- Original Method ----------
+        //mAlert.setInverseBackgroundForced(forceInverseBackground);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.125 -0400", hash_original_method = "84106AE7CC1A6E59D6E45CD48A2A2307", hash_generated_method = "A869CA6151B0EF8E805C5693785CB0CE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.002 -0400", hash_original_method = "84106AE7CC1A6E59D6E45CD48A2A2307", hash_generated_method = "36DE6950D3A8DC6BB6CD6BE5B103CE52")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
+        addTaint(savedInstanceState.getTaint());
         super.onCreate(savedInstanceState);
         mAlert.installContent();
-        addTaint(savedInstanceState.getTaint());
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onCreate(savedInstanceState);
+        //mAlert.installContent();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.126 -0400", hash_original_method = "BF8AB256B91D3A887301218CA5494F2D", hash_generated_method = "4974E99F8C16796B894C17779260C6A8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.003 -0400", hash_original_method = "BF8AB256B91D3A887301218CA5494F2D", hash_generated_method = "32800E870F25B21A60FC94F711C5C8DA")
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        
-        {
-            boolean var0860591BEC688168A96E8D7B8A8FC21B_1539976935 = (mAlert.onKeyDown(keyCode, event));
-        } 
-        boolean var8C6E6C19273FC56B5C56CC7DEF63ED7B_1980090399 = (super.onKeyDown(keyCode, event));
-        addTaint(keyCode);
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1942877204 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1942877204;
-        
-        
-        
+        addTaint(keyCode);
+    if(mAlert.onKeyDown(keyCode, event))        
+        {
+        boolean varB326B5062B2F0E69046810717534CB09_1085488010 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_490833436 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_490833436;
+        }
+        boolean var947F0C250323B9F4475E02588E9A9740_29408293 = (super.onKeyDown(keyCode, event));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1588367196 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1588367196;
+        // ---------- Original Method ----------
+        //if (mAlert.onKeyDown(keyCode, event)) return true;
+        //return super.onKeyDown(keyCode, event);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.126 -0400", hash_original_method = "A1B1EEF278CFBA53A19AA72D7DAA37CB", hash_generated_method = "700569865A55B38CA8E28B19D8936DE8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.004 -0400", hash_original_method = "A1B1EEF278CFBA53A19AA72D7DAA37CB", hash_generated_method = "589D61DF7592634DE673A61C73E7AD8C")
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
-        
-        {
-            boolean varC975F70000285699A9B742C42371726C_301993917 = (mAlert.onKeyUp(keyCode, event));
-        } 
-        boolean varEDD771EBF66425AD21882AB08CD0EE48_824455426 = (super.onKeyUp(keyCode, event));
-        addTaint(keyCode);
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_922303344 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_922303344;
-        
-        
-        
+        addTaint(keyCode);
+    if(mAlert.onKeyUp(keyCode, event))        
+        {
+        boolean varB326B5062B2F0E69046810717534CB09_2069158801 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_965854558 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_965854558;
+        }
+        boolean varAD33E8F21A74B923C1A24761EAF2F4A9_1347280296 = (super.onKeyUp(keyCode, event));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_118780348 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_118780348;
+        // ---------- Original Method ----------
+        //if (mAlert.onKeyUp(keyCode, event)) return true;
+        //return super.onKeyUp(keyCode, event);
     }
 
     
     public static class Builder {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.127 -0400", hash_original_field = "44C29EDB103A2872F519AD0C9A0FDAAA", hash_generated_field = "A137DC00364323BBFDABBB1A415FA549")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.005 -0400", hash_original_field = "44C29EDB103A2872F519AD0C9A0FDAAA", hash_generated_field = "A137DC00364323BBFDABBB1A415FA549")
 
         private AlertController.AlertParams P;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.127 -0400", hash_original_field = "F33340182B9891501636E62AEA88BE69", hash_generated_field = "34E231731C1A787DE0ECD3122BFFE819")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.005 -0400", hash_original_field = "F33340182B9891501636E62AEA88BE69", hash_generated_field = "34E231731C1A787DE0ECD3122BFFE819")
 
         private int mTheme;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.128 -0400", hash_original_method = "CB1BA6F353D1C3D1D9DFD93D2E2AA221", hash_generated_method = "791B948FE20DB84EB9AFE7EAB27B0BAA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.006 -0400", hash_original_method = "CB1BA6F353D1C3D1D9DFD93D2E2AA221", hash_generated_method = "791B948FE20DB84EB9AFE7EAB27B0BAA")
         public  Builder(Context context) {
             this(context, resolveDialogTheme(context, 0));
             addTaint(context.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.129 -0400", hash_original_method = "054A5871E094F7103A36213597CB2400", hash_generated_method = "75925050F4252355E77EE07B943F447E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.007 -0400", hash_original_method = "054A5871E094F7103A36213597CB2400", hash_generated_method = "75925050F4252355E77EE07B943F447E")
         public  Builder(Context context, int theme) {
             P = new AlertController.AlertParams(new ContextThemeWrapper(
                     context, resolveDialogTheme(context, theme)));
             mTheme = theme;
-            
-            
-                    
-            
+            // ---------- Original Method ----------
+            //P = new AlertController.AlertParams(new ContextThemeWrapper(
+                    //context, resolveDialogTheme(context, theme)));
+            //mTheme = theme;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.132 -0400", hash_original_method = "D1A12C2F09D145663A4318954DC7CD00", hash_generated_method = "1062951FCBA1D8886A1F49A60B6BAE2D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.008 -0400", hash_original_method = "D1A12C2F09D145663A4318954DC7CD00", hash_generated_method = "B76CECD6D3648212C3377C2539EC3558")
         public Context getContext() {
-            Context varB4EAC82CA7396A68D541C85D26508E83_850213284 = null; 
-            varB4EAC82CA7396A68D541C85D26508E83_850213284 = P.mContext;
-            varB4EAC82CA7396A68D541C85D26508E83_850213284.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_850213284;
-            
-            
+Context var102D10C674A12CAF94F2F690E7FA7CC0_1395037506 =             P.mContext;
+            var102D10C674A12CAF94F2F690E7FA7CC0_1395037506.addTaint(taint);
+            return var102D10C674A12CAF94F2F690E7FA7CC0_1395037506;
+            // ---------- Original Method ----------
+            //return P.mContext;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.134 -0400", hash_original_method = "E63FAC4DEED51E16AAD703A71B581EEF", hash_generated_method = "1A797C04F181024ABD8AB44855F6E814")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.009 -0400", hash_original_method = "E63FAC4DEED51E16AAD703A71B581EEF", hash_generated_method = "15A8AC4B7FA14025FF2D76CA31648355")
         public Builder setTitle(int titleId) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_670987992 = null; 
             P.mTitle = P.mContext.getText(titleId);
-            varB4EAC82CA7396A68D541C85D26508E83_670987992 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_670987992.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_670987992;
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_2104403543 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_2104403543.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_2104403543;
+            // ---------- Original Method ----------
+            //P.mTitle = P.mContext.getText(titleId);
+            //return this;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.136 -0400", hash_original_method = "255D326AF0B389CCA9CBF4AFBC3FE756", hash_generated_method = "3C337CF6CF5041BF28F1DBA38F395954")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.010 -0400", hash_original_method = "255D326AF0B389CCA9CBF4AFBC3FE756", hash_generated_method = "8088F89125450676068D42E1FCAF4AA5")
         public Builder setTitle(CharSequence title) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1127320860 = null; 
             P.mTitle = title;
-            varB4EAC82CA7396A68D541C85D26508E83_1127320860 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1127320860.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_1127320860;
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_101941070 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_101941070.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_101941070;
+            // ---------- Original Method ----------
+            //P.mTitle = title;
+            //return this;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.137 -0400", hash_original_method = "0009CCFABCB39131348E93CD167BBCD7", hash_generated_method = "E3607112CCBC762A15E5378F94FAD3FB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.011 -0400", hash_original_method = "0009CCFABCB39131348E93CD167BBCD7", hash_generated_method = "BF65A8F591B0066133CAE3339F58625C")
         public Builder setCustomTitle(View customTitleView) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_481447098 = null; 
             P.mCustomTitleView = customTitleView;
-            varB4EAC82CA7396A68D541C85D26508E83_481447098 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_481447098.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_481447098;
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_1404092349 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_1404092349.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_1404092349;
+            // ---------- Original Method ----------
+            //P.mCustomTitleView = customTitleView;
+            //return this;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.140 -0400", hash_original_method = "3B23BD93B750653B90374824F5917D89", hash_generated_method = "C9071B9685D5E866E0509C6867C46F96")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.012 -0400", hash_original_method = "3B23BD93B750653B90374824F5917D89", hash_generated_method = "DD1190175C87AED278B2047AB3529ABC")
         public Builder setMessage(int messageId) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1405964991 = null; 
             P.mMessage = P.mContext.getText(messageId);
-            varB4EAC82CA7396A68D541C85D26508E83_1405964991 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1405964991.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_1405964991;
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_91003528 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_91003528.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_91003528;
+            // ---------- Original Method ----------
+            //P.mMessage = P.mContext.getText(messageId);
+            //return this;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.143 -0400", hash_original_method = "F560859B14C962F22BDF3327E633A8EC", hash_generated_method = "0123107DB7ED682D7EB13C23E2B9E1B3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.015 -0400", hash_original_method = "F560859B14C962F22BDF3327E633A8EC", hash_generated_method = "D39B48CC52670DB83D2FE0CB978719C6")
         public Builder setMessage(CharSequence message) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_219578305 = null; 
             P.mMessage = message;
-            varB4EAC82CA7396A68D541C85D26508E83_219578305 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_219578305.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_219578305;
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_1306867256 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_1306867256.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_1306867256;
+            // ---------- Original Method ----------
+            //P.mMessage = message;
+            //return this;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.144 -0400", hash_original_method = "EBD38AA9C651B93ADF14B14E5D33C5C9", hash_generated_method = "21F2F91A9B581CB5D3A37C55690A45DC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.017 -0400", hash_original_method = "EBD38AA9C651B93ADF14B14E5D33C5C9", hash_generated_method = "292D7724E2DE25A33CC698BCE06A3896")
         public Builder setIcon(int iconId) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_83829625 = null; 
             P.mIconId = iconId;
-            varB4EAC82CA7396A68D541C85D26508E83_83829625 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_83829625.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_83829625;
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_133034797 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_133034797.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_133034797;
+            // ---------- Original Method ----------
+            //P.mIconId = iconId;
+            //return this;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.146 -0400", hash_original_method = "EDCD80F224B2F3CED85A928D84460540", hash_generated_method = "17F9C7CEF58487A846A41624777681CC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.018 -0400", hash_original_method = "EDCD80F224B2F3CED85A928D84460540", hash_generated_method = "06D94DF444DF07555CC46C764351B481")
         public Builder setIcon(Drawable icon) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_2130016178 = null; 
             P.mIcon = icon;
-            varB4EAC82CA7396A68D541C85D26508E83_2130016178 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_2130016178.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_2130016178;
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_1808809881 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_1808809881.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_1808809881;
+            // ---------- Original Method ----------
+            //P.mIcon = icon;
+            //return this;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.148 -0400", hash_original_method = "3A94A6A2822E55FB53EB2F980E52FF8E", hash_generated_method = "339CD66C570A85CB1603D6E095B91199")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.020 -0400", hash_original_method = "3A94A6A2822E55FB53EB2F980E52FF8E", hash_generated_method = "E4E161EB13252193DE0EC39A351E7899")
         public Builder setIconAttribute(int attrId) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_446185064 = null; 
+            addTaint(attrId);
             TypedValue out = new TypedValue();
             P.mContext.getTheme().resolveAttribute(attrId, out, true);
             P.mIconId = out.resourceId;
-            varB4EAC82CA7396A68D541C85D26508E83_446185064 = this;
-            addTaint(attrId);
-            varB4EAC82CA7396A68D541C85D26508E83_446185064.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_446185064;
-            
-            
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_1170748971 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_1170748971.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_1170748971;
+            // ---------- Original Method ----------
+            //TypedValue out = new TypedValue();
+            //P.mContext.getTheme().resolveAttribute(attrId, out, true);
+            //P.mIconId = out.resourceId;
+            //return this;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.150 -0400", hash_original_method = "1908B917B7F2E57ADC23D5E48F4386F2", hash_generated_method = "F2A33FBB9E118FFBCB9C6057AD6765B9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.022 -0400", hash_original_method = "1908B917B7F2E57ADC23D5E48F4386F2", hash_generated_method = "E8647403F8DC238614BDBA627A4A9A3A")
         public Builder setPositiveButton(int textId, final OnClickListener listener) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_611086097 = null; 
             P.mPositiveButtonText = P.mContext.getText(textId);
             P.mPositiveButtonListener = listener;
-            varB4EAC82CA7396A68D541C85D26508E83_611086097 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_611086097.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_611086097;
-            
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_1817620420 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_1817620420.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_1817620420;
+            // ---------- Original Method ----------
+            //P.mPositiveButtonText = P.mContext.getText(textId);
+            //P.mPositiveButtonListener = listener;
+            //return this;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.153 -0400", hash_original_method = "1500328C36AB679D672A26C184A5FC31", hash_generated_method = "7F8447EAE30711794CD11716EBECAB62")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.024 -0400", hash_original_method = "1500328C36AB679D672A26C184A5FC31", hash_generated_method = "49F39324AC75A6E34895EBAE77472261")
         public Builder setPositiveButton(CharSequence text, final OnClickListener listener) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_456191245 = null; 
             P.mPositiveButtonText = text;
             P.mPositiveButtonListener = listener;
-            varB4EAC82CA7396A68D541C85D26508E83_456191245 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_456191245.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_456191245;
-            
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_134601000 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_134601000.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_134601000;
+            // ---------- Original Method ----------
+            //P.mPositiveButtonText = text;
+            //P.mPositiveButtonListener = listener;
+            //return this;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.154 -0400", hash_original_method = "375537371A0A52AA7AA0B24EAC6A7474", hash_generated_method = "461EF5FC5F788FA0A6BC99F3D78FAFE3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.025 -0400", hash_original_method = "375537371A0A52AA7AA0B24EAC6A7474", hash_generated_method = "798F92E013294174DA573F5000E21382")
         public Builder setNegativeButton(int textId, final OnClickListener listener) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1899584364 = null; 
             P.mNegativeButtonText = P.mContext.getText(textId);
             P.mNegativeButtonListener = listener;
-            varB4EAC82CA7396A68D541C85D26508E83_1899584364 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1899584364.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_1899584364;
-            
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_323971740 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_323971740.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_323971740;
+            // ---------- Original Method ----------
+            //P.mNegativeButtonText = P.mContext.getText(textId);
+            //P.mNegativeButtonListener = listener;
+            //return this;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.155 -0400", hash_original_method = "50EFB872DEBCC22CFB32B40979906BC8", hash_generated_method = "81F27C21C6BA085BF406FE1D81955535")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.026 -0400", hash_original_method = "50EFB872DEBCC22CFB32B40979906BC8", hash_generated_method = "138A9707FB2DD23E5D78C0C82BD8204E")
         public Builder setNegativeButton(CharSequence text, final OnClickListener listener) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1590493049 = null; 
             P.mNegativeButtonText = text;
             P.mNegativeButtonListener = listener;
-            varB4EAC82CA7396A68D541C85D26508E83_1590493049 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1590493049.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_1590493049;
-            
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_1720011918 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_1720011918.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_1720011918;
+            // ---------- Original Method ----------
+            //P.mNegativeButtonText = text;
+            //P.mNegativeButtonListener = listener;
+            //return this;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.157 -0400", hash_original_method = "0D40DB16A6B6349ABA0D8583C3D4D844", hash_generated_method = "2238FA7FD6C6DB27B4CE3BABA6B7F7D5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.027 -0400", hash_original_method = "0D40DB16A6B6349ABA0D8583C3D4D844", hash_generated_method = "311B37BDFEDA53C6FBC1C68ECF971F1B")
         public Builder setNeutralButton(int textId, final OnClickListener listener) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1659775540 = null; 
             P.mNeutralButtonText = P.mContext.getText(textId);
             P.mNeutralButtonListener = listener;
-            varB4EAC82CA7396A68D541C85D26508E83_1659775540 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1659775540.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_1659775540;
-            
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_322318395 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_322318395.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_322318395;
+            // ---------- Original Method ----------
+            //P.mNeutralButtonText = P.mContext.getText(textId);
+            //P.mNeutralButtonListener = listener;
+            //return this;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.158 -0400", hash_original_method = "4D91C8A8E1E08D55171F5837D3929412", hash_generated_method = "CC4270A2F165816C6E062FB1B17D2F31")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.029 -0400", hash_original_method = "4D91C8A8E1E08D55171F5837D3929412", hash_generated_method = "1484536F528D915CE734B487D588961F")
         public Builder setNeutralButton(CharSequence text, final OnClickListener listener) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_806564817 = null; 
             P.mNeutralButtonText = text;
             P.mNeutralButtonListener = listener;
-            varB4EAC82CA7396A68D541C85D26508E83_806564817 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_806564817.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_806564817;
-            
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_1941971405 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_1941971405.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_1941971405;
+            // ---------- Original Method ----------
+            //P.mNeutralButtonText = text;
+            //P.mNeutralButtonListener = listener;
+            //return this;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.159 -0400", hash_original_method = "D23CAE45E6F3DF826F9F93A9D8E4F37B", hash_generated_method = "ED0D34F07DA03201FB7E75BB22CDDDB4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.030 -0400", hash_original_method = "D23CAE45E6F3DF826F9F93A9D8E4F37B", hash_generated_method = "86582F57A1BF43BD7685C1C6DBB6F336")
         public Builder setCancelable(boolean cancelable) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1973558221 = null; 
             P.mCancelable = cancelable;
-            varB4EAC82CA7396A68D541C85D26508E83_1973558221 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1973558221.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_1973558221;
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_1728505268 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_1728505268.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_1728505268;
+            // ---------- Original Method ----------
+            //P.mCancelable = cancelable;
+            //return this;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.162 -0400", hash_original_method = "D6E5909FD450512C75F4E75E987AC229", hash_generated_method = "87F021F020072177D33B113DC3450C07")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.031 -0400", hash_original_method = "D6E5909FD450512C75F4E75E987AC229", hash_generated_method = "154486FF32CF1B46C33F469FD709AAB5")
         public Builder setOnCancelListener(OnCancelListener onCancelListener) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_48450637 = null; 
             P.mOnCancelListener = onCancelListener;
-            varB4EAC82CA7396A68D541C85D26508E83_48450637 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_48450637.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_48450637;
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_1148223235 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_1148223235.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_1148223235;
+            // ---------- Original Method ----------
+            //P.mOnCancelListener = onCancelListener;
+            //return this;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.163 -0400", hash_original_method = "6E5FB56A362A817B52A235DFACC25DAE", hash_generated_method = "98BE61FE07A598C2B126401B9572EA5C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.032 -0400", hash_original_method = "6E5FB56A362A817B52A235DFACC25DAE", hash_generated_method = "9D40FA1D9B59B69D57E4D578DD369886")
         public Builder setOnKeyListener(OnKeyListener onKeyListener) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1822393842 = null; 
             P.mOnKeyListener = onKeyListener;
-            varB4EAC82CA7396A68D541C85D26508E83_1822393842 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1822393842.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_1822393842;
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_846414020 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_846414020.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_846414020;
+            // ---------- Original Method ----------
+            //P.mOnKeyListener = onKeyListener;
+            //return this;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.164 -0400", hash_original_method = "6D193582453841FD4D6BB305EA061757", hash_generated_method = "293B353D9658A52B555641D910F5CAE8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.033 -0400", hash_original_method = "6D193582453841FD4D6BB305EA061757", hash_generated_method = "C57FD03000FD8B7A9792CF9F661F5FC9")
         public Builder setItems(int itemsId, final OnClickListener listener) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_856700478 = null; 
             P.mItems = P.mContext.getResources().getTextArray(itemsId);
             P.mOnClickListener = listener;
-            varB4EAC82CA7396A68D541C85D26508E83_856700478 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_856700478.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_856700478;
-            
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_1569630188 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_1569630188.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_1569630188;
+            // ---------- Original Method ----------
+            //P.mItems = P.mContext.getResources().getTextArray(itemsId);
+            //P.mOnClickListener = listener;
+            //return this;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.165 -0400", hash_original_method = "AFD2C4146CF077CBCC62EEF7225AE645", hash_generated_method = "42CB68800C7BD89D80C0D79FBFD3627F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.034 -0400", hash_original_method = "AFD2C4146CF077CBCC62EEF7225AE645", hash_generated_method = "5DDCFA29919D5EE8D25B77803DE49CBA")
         public Builder setItems(CharSequence[] items, final OnClickListener listener) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_2143123918 = null; 
             P.mItems = items;
             P.mOnClickListener = listener;
-            varB4EAC82CA7396A68D541C85D26508E83_2143123918 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_2143123918.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_2143123918;
-            
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_513516298 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_513516298.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_513516298;
+            // ---------- Original Method ----------
+            //P.mItems = items;
+            //P.mOnClickListener = listener;
+            //return this;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.166 -0400", hash_original_method = "2FCAEDE0B3C9195EDB3158F22A7C0109", hash_generated_method = "A28920AAEFD52A6B861473BDE2C8AD67")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.035 -0400", hash_original_method = "2FCAEDE0B3C9195EDB3158F22A7C0109", hash_generated_method = "2ED0D7E6519FC9283D05BA866360485F")
         public Builder setAdapter(final ListAdapter adapter, final OnClickListener listener) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_183980647 = null; 
             P.mAdapter = adapter;
             P.mOnClickListener = listener;
-            varB4EAC82CA7396A68D541C85D26508E83_183980647 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_183980647.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_183980647;
-            
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_57720036 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_57720036.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_57720036;
+            // ---------- Original Method ----------
+            //P.mAdapter = adapter;
+            //P.mOnClickListener = listener;
+            //return this;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.167 -0400", hash_original_method = "7DFF15703A2CCBB36AC3557F6AE7E187", hash_generated_method = "685F708C2B3463C0032F9923194D3E37")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.037 -0400", hash_original_method = "7DFF15703A2CCBB36AC3557F6AE7E187", hash_generated_method = "7270B4FEA7576F1A6CC96915C085E30A")
         public Builder setCursor(final Cursor cursor, final OnClickListener listener,
                 String labelColumn) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1649366504 = null; 
             P.mCursor = cursor;
             P.mLabelColumn = labelColumn;
             P.mOnClickListener = listener;
-            varB4EAC82CA7396A68D541C85D26508E83_1649366504 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1649366504.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_1649366504;
-            
-            
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_1736618590 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_1736618590.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_1736618590;
+            // ---------- Original Method ----------
+            //P.mCursor = cursor;
+            //P.mLabelColumn = labelColumn;
+            //P.mOnClickListener = listener;
+            //return this;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.169 -0400", hash_original_method = "7878252A286B56EBCE9E439D4FCEB298", hash_generated_method = "0BB573C3AF2A2773B6339E8772FED618")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.039 -0400", hash_original_method = "7878252A286B56EBCE9E439D4FCEB298", hash_generated_method = "F9A01A854E12A9B27776BDD16458B118")
         public Builder setMultiChoiceItems(int itemsId, boolean[] checkedItems, 
                 final OnMultiChoiceClickListener listener) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1956185314 = null; 
             P.mItems = P.mContext.getResources().getTextArray(itemsId);
             P.mOnCheckboxClickListener = listener;
             P.mCheckedItems = checkedItems;
             P.mIsMultiChoice = true;
-            varB4EAC82CA7396A68D541C85D26508E83_1956185314 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1956185314.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_1956185314;
-            
-            
-            
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_1623121370 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_1623121370.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_1623121370;
+            // ---------- Original Method ----------
+            //P.mItems = P.mContext.getResources().getTextArray(itemsId);
+            //P.mOnCheckboxClickListener = listener;
+            //P.mCheckedItems = checkedItems;
+            //P.mIsMultiChoice = true;
+            //return this;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.172 -0400", hash_original_method = "73AB6C3AD26EFF6561BAC3BA481ECFD7", hash_generated_method = "F3631FBFFADE507CABF83CBAC45D6FB7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.043 -0400", hash_original_method = "73AB6C3AD26EFF6561BAC3BA481ECFD7", hash_generated_method = "C2A35208CE56F28161F1ABB2CDF11299")
         public Builder setMultiChoiceItems(CharSequence[] items, boolean[] checkedItems, 
                 final OnMultiChoiceClickListener listener) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_756697468 = null; 
             P.mItems = items;
             P.mOnCheckboxClickListener = listener;
             P.mCheckedItems = checkedItems;
             P.mIsMultiChoice = true;
-            varB4EAC82CA7396A68D541C85D26508E83_756697468 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_756697468.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_756697468;
-            
-            
-            
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_1987556956 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_1987556956.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_1987556956;
+            // ---------- Original Method ----------
+            //P.mItems = items;
+            //P.mOnCheckboxClickListener = listener;
+            //P.mCheckedItems = checkedItems;
+            //P.mIsMultiChoice = true;
+            //return this;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.174 -0400", hash_original_method = "E8A3FFCE7184DC2DAE306B849E312FF3", hash_generated_method = "73889A36D2D2C3AEB4751A322E964108")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.045 -0400", hash_original_method = "E8A3FFCE7184DC2DAE306B849E312FF3", hash_generated_method = "2A4441288432E3A60027B4309CAB02FF")
         public Builder setMultiChoiceItems(Cursor cursor, String isCheckedColumn, String labelColumn, 
                 final OnMultiChoiceClickListener listener) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1214158675 = null; 
             P.mCursor = cursor;
             P.mOnCheckboxClickListener = listener;
             P.mIsCheckedColumn = isCheckedColumn;
             P.mLabelColumn = labelColumn;
             P.mIsMultiChoice = true;
-            varB4EAC82CA7396A68D541C85D26508E83_1214158675 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1214158675.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_1214158675;
-            
-            
-            
-            
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_1328702846 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_1328702846.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_1328702846;
+            // ---------- Original Method ----------
+            //P.mCursor = cursor;
+            //P.mOnCheckboxClickListener = listener;
+            //P.mIsCheckedColumn = isCheckedColumn;
+            //P.mLabelColumn = labelColumn;
+            //P.mIsMultiChoice = true;
+            //return this;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.175 -0400", hash_original_method = "CF9378D7D2AE06BB2F5FFE088D660C44", hash_generated_method = "1FEB3830553B46942021A79C24F50FF9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.047 -0400", hash_original_method = "CF9378D7D2AE06BB2F5FFE088D660C44", hash_generated_method = "0CAFC1D1C2983CAFF37E045AEA64499E")
         public Builder setSingleChoiceItems(int itemsId, int checkedItem, 
                 final OnClickListener listener) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1322000096 = null; 
             P.mItems = P.mContext.getResources().getTextArray(itemsId);
             P.mOnClickListener = listener;
             P.mCheckedItem = checkedItem;
             P.mIsSingleChoice = true;
-            varB4EAC82CA7396A68D541C85D26508E83_1322000096 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1322000096.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_1322000096;
-            
-            
-            
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_2090897356 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_2090897356.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_2090897356;
+            // ---------- Original Method ----------
+            //P.mItems = P.mContext.getResources().getTextArray(itemsId);
+            //P.mOnClickListener = listener;
+            //P.mCheckedItem = checkedItem;
+            //P.mIsSingleChoice = true;
+            //return this;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.176 -0400", hash_original_method = "02441459B611830238DF1D8B31546828", hash_generated_method = "D5689D6BCDEA04F90B884AB440AFA901")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.048 -0400", hash_original_method = "02441459B611830238DF1D8B31546828", hash_generated_method = "6788A8FFE017DACBC967E9FA213548EE")
         public Builder setSingleChoiceItems(Cursor cursor, int checkedItem, String labelColumn, 
                 final OnClickListener listener) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_2000247488 = null; 
             P.mCursor = cursor;
             P.mOnClickListener = listener;
             P.mCheckedItem = checkedItem;
             P.mLabelColumn = labelColumn;
             P.mIsSingleChoice = true;
-            varB4EAC82CA7396A68D541C85D26508E83_2000247488 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_2000247488.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_2000247488;
-            
-            
-            
-            
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_554542471 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_554542471.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_554542471;
+            // ---------- Original Method ----------
+            //P.mCursor = cursor;
+            //P.mOnClickListener = listener;
+            //P.mCheckedItem = checkedItem;
+            //P.mLabelColumn = labelColumn;
+            //P.mIsSingleChoice = true;
+            //return this;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.178 -0400", hash_original_method = "7491118E608CEFA972DD3B23E3E7B8C6", hash_generated_method = "9685DC9328EBFA1749215139E4E81416")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.050 -0400", hash_original_method = "7491118E608CEFA972DD3B23E3E7B8C6", hash_generated_method = "7177FA995D8EFB362E02315697C81FD3")
         public Builder setSingleChoiceItems(CharSequence[] items, int checkedItem, final OnClickListener listener) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_2034687494 = null; 
             P.mItems = items;
             P.mOnClickListener = listener;
             P.mCheckedItem = checkedItem;
             P.mIsSingleChoice = true;
-            varB4EAC82CA7396A68D541C85D26508E83_2034687494 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_2034687494.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_2034687494;
-            
-            
-            
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_1928803393 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_1928803393.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_1928803393;
+            // ---------- Original Method ----------
+            //P.mItems = items;
+            //P.mOnClickListener = listener;
+            //P.mCheckedItem = checkedItem;
+            //P.mIsSingleChoice = true;
+            //return this;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.180 -0400", hash_original_method = "06BB43759703ED3EE55275B85ACF4622", hash_generated_method = "295CC5ABF12C610C77FCDC2082AA79A1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.052 -0400", hash_original_method = "06BB43759703ED3EE55275B85ACF4622", hash_generated_method = "A7F7734B9E64470EC26BD3F2F6CFD556")
         public Builder setSingleChoiceItems(ListAdapter adapter, int checkedItem, final OnClickListener listener) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1613272042 = null; 
             P.mAdapter = adapter;
             P.mOnClickListener = listener;
             P.mCheckedItem = checkedItem;
             P.mIsSingleChoice = true;
-            varB4EAC82CA7396A68D541C85D26508E83_1613272042 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1613272042.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_1613272042;
-            
-            
-            
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_1558384472 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_1558384472.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_1558384472;
+            // ---------- Original Method ----------
+            //P.mAdapter = adapter;
+            //P.mOnClickListener = listener;
+            //P.mCheckedItem = checkedItem;
+            //P.mIsSingleChoice = true;
+            //return this;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.183 -0400", hash_original_method = "2F93F9BAEF2ABE538EE141EAC45DF294", hash_generated_method = "63413A158C5F43A2DF649BD4A84E1EE4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.053 -0400", hash_original_method = "2F93F9BAEF2ABE538EE141EAC45DF294", hash_generated_method = "DCABE40B8F760DD35AF7E74F8C0CC4F0")
         public Builder setOnItemSelectedListener(final AdapterView.OnItemSelectedListener listener) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_6727290 = null; 
             P.mOnItemSelectedListener = listener;
-            varB4EAC82CA7396A68D541C85D26508E83_6727290 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_6727290.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_6727290;
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_1883921534 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_1883921534.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_1883921534;
+            // ---------- Original Method ----------
+            //P.mOnItemSelectedListener = listener;
+            //return this;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.184 -0400", hash_original_method = "ECE0E9F89C9289601A4B4F810B41F8E6", hash_generated_method = "B67467F3627E7B0101315ABB0AE23673")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.053 -0400", hash_original_method = "ECE0E9F89C9289601A4B4F810B41F8E6", hash_generated_method = "E27904C33E9F75794413ED7000591E4F")
         public Builder setView(View view) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_538509390 = null; 
             P.mView = view;
             P.mViewSpacingSpecified = false;
-            varB4EAC82CA7396A68D541C85D26508E83_538509390 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_538509390.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_538509390;
-            
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_931866219 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_931866219.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_931866219;
+            // ---------- Original Method ----------
+            //P.mView = view;
+            //P.mViewSpacingSpecified = false;
+            //return this;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.186 -0400", hash_original_method = "BAFAE1A19AC8AE3D7A23796C6231E632", hash_generated_method = "A7606F9E3D31667197FFBBE7F83FC862")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.055 -0400", hash_original_method = "BAFAE1A19AC8AE3D7A23796C6231E632", hash_generated_method = "5A4221317C0D9FF981F3EDF195B5F6F5")
         public Builder setView(View view, int viewSpacingLeft, int viewSpacingTop,
                 int viewSpacingRight, int viewSpacingBottom) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1245449243 = null; 
             P.mView = view;
             P.mViewSpacingSpecified = true;
             P.mViewSpacingLeft = viewSpacingLeft;
             P.mViewSpacingTop = viewSpacingTop;
             P.mViewSpacingRight = viewSpacingRight;
             P.mViewSpacingBottom = viewSpacingBottom;
-            varB4EAC82CA7396A68D541C85D26508E83_1245449243 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1245449243.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_1245449243;
-            
-            
-            
-            
-            
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_1705100184 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_1705100184.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_1705100184;
+            // ---------- Original Method ----------
+            //P.mView = view;
+            //P.mViewSpacingSpecified = true;
+            //P.mViewSpacingLeft = viewSpacingLeft;
+            //P.mViewSpacingTop = viewSpacingTop;
+            //P.mViewSpacingRight = viewSpacingRight;
+            //P.mViewSpacingBottom = viewSpacingBottom;
+            //return this;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.187 -0400", hash_original_method = "574A516CEEC9B60678E7B4D3D76288FB", hash_generated_method = "E1D2ED5CDEBB29902D8A842F22644AB7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.056 -0400", hash_original_method = "574A516CEEC9B60678E7B4D3D76288FB", hash_generated_method = "D21CCCA8ADD4468F323C2567FAE7E3CE")
         public Builder setInverseBackgroundForced(boolean useInverseBackground) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1721607082 = null; 
             P.mForceInverseBackground = useInverseBackground;
-            varB4EAC82CA7396A68D541C85D26508E83_1721607082 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1721607082.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_1721607082;
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_1610898504 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_1610898504.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_1610898504;
+            // ---------- Original Method ----------
+            //P.mForceInverseBackground = useInverseBackground;
+            //return this;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.188 -0400", hash_original_method = "B90B897256AEB065436BDBB1FFCE63CD", hash_generated_method = "3379C16313FB3C257545FDB91283E590")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.056 -0400", hash_original_method = "B90B897256AEB065436BDBB1FFCE63CD", hash_generated_method = "2A17EFA4FF2F970CE55053F1CAE73E70")
         public Builder setRecycleOnMeasureEnabled(boolean enabled) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1351559399 = null; 
             P.mRecycleOnMeasure = enabled;
-            varB4EAC82CA7396A68D541C85D26508E83_1351559399 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1351559399.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_1351559399;
-            
-            
-            
+Builder var72A74007B2BE62B849F475C7BDA4658B_720721774 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_720721774.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_720721774;
+            // ---------- Original Method ----------
+            //P.mRecycleOnMeasure = enabled;
+            //return this;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.190 -0400", hash_original_method = "24F2ECF5FEA53B0907C34A4AFC4C2134", hash_generated_method = "054F68C7AD34EECAB843C9E2A93DCBFF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.057 -0400", hash_original_method = "24F2ECF5FEA53B0907C34A4AFC4C2134", hash_generated_method = "609317A4A2010705D6BD90F09FAC63EA")
         public AlertDialog create() {
-            AlertDialog varB4EAC82CA7396A68D541C85D26508E83_2021859400 = null; 
             final AlertDialog dialog = new AlertDialog(P.mContext, mTheme, false);
             P.apply(dialog.mAlert);
             dialog.setCancelable(P.mCancelable);
+    if(P.mCancelable)            
             {
                 dialog.setCanceledOnTouchOutside(true);
-            } 
+            } //End block
             dialog.setOnCancelListener(P.mOnCancelListener);
+    if(P.mOnKeyListener != null)            
             {
                 dialog.setOnKeyListener(P.mOnKeyListener);
-            } 
-            varB4EAC82CA7396A68D541C85D26508E83_2021859400 = dialog;
-            varB4EAC82CA7396A68D541C85D26508E83_2021859400.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_2021859400;
-            
-            
-            
-            
-            
-                
-            
-            
-            
-                
-            
-            
+            } //End block
+AlertDialog varE19892282EF70932DF3A147A213BE89D_335329243 =             dialog;
+            varE19892282EF70932DF3A147A213BE89D_335329243.addTaint(taint);
+            return varE19892282EF70932DF3A147A213BE89D_335329243;
+            // ---------- Original Method ----------
+            //final AlertDialog dialog = new AlertDialog(P.mContext, mTheme, false);
+            //P.apply(dialog.mAlert);
+            //dialog.setCancelable(P.mCancelable);
+            //if (P.mCancelable) {
+                //dialog.setCanceledOnTouchOutside(true);
+            //}
+            //dialog.setOnCancelListener(P.mOnCancelListener);
+            //if (P.mOnKeyListener != null) {
+                //dialog.setOnKeyListener(P.mOnKeyListener);
+            //}
+            //return dialog;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.193 -0400", hash_original_method = "9ED881995B2EAB3CB90B8129D2705377", hash_generated_method = "1F6D9F13FD2C03758D8A96FE922CFC70")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.058 -0400", hash_original_method = "9ED881995B2EAB3CB90B8129D2705377", hash_generated_method = "92ED8E35A61FF3CB34D0549CEE7FFF29")
         public AlertDialog show() {
-            AlertDialog varB4EAC82CA7396A68D541C85D26508E83_1865292396 = null; 
             AlertDialog dialog = create();
             dialog.show();
-            varB4EAC82CA7396A68D541C85D26508E83_1865292396 = dialog;
-            varB4EAC82CA7396A68D541C85D26508E83_1865292396.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_1865292396;
-            
-            
-            
-            
+AlertDialog varE19892282EF70932DF3A147A213BE89D_1881043440 =             dialog;
+            varE19892282EF70932DF3A147A213BE89D_1881043440.addTaint(taint);
+            return varE19892282EF70932DF3A147A213BE89D_1881043440;
+            // ---------- Original Method ----------
+            //AlertDialog dialog = create();
+            //dialog.show();
+            //return dialog;
         }
 
         
@@ -997,19 +930,19 @@ public class AlertDialog extends Dialog implements DialogInterface {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.193 -0400", hash_original_field = "4DFDB4E3D636655F48E1A3F56FC8B460", hash_generated_field = "04F8A3C57B2864E838978D2CD85E8969")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.058 -0400", hash_original_field = "4DFDB4E3D636655F48E1A3F56FC8B460", hash_generated_field = "04F8A3C57B2864E838978D2CD85E8969")
 
     public static final int THEME_TRADITIONAL = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.193 -0400", hash_original_field = "1FEAEF575CA7C9C499A21A6D00FF6A81", hash_generated_field = "2784576D25C201833EBEF780244434BE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.058 -0400", hash_original_field = "1FEAEF575CA7C9C499A21A6D00FF6A81", hash_generated_field = "2784576D25C201833EBEF780244434BE")
 
     public static final int THEME_HOLO_DARK = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.194 -0400", hash_original_field = "89D7D60DEB78F2A37B347CF842C4D168", hash_generated_field = "C3AAAE4F57F49818B346717868538E05")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.059 -0400", hash_original_field = "89D7D60DEB78F2A37B347CF842C4D168", hash_generated_field = "C3AAAE4F57F49818B346717868538E05")
 
     public static final int THEME_HOLO_LIGHT = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.194 -0400", hash_original_field = "5D9B0E66987E45D6A6FA09D644E80FED", hash_generated_field = "BFF34475E73341D4B4E388DEB93A3440")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.059 -0400", hash_original_field = "5D9B0E66987E45D6A6FA09D644E80FED", hash_generated_field = "BFF34475E73341D4B4E388DEB93A3440")
 
     public static final int THEME_DEVICE_DEFAULT_DARK = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.194 -0400", hash_original_field = "DFB38917D9774209AE404DFC71CA5CE8", hash_generated_field = "E0D4DDCC01DBB4B3153128208E0562F5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.059 -0400", hash_original_field = "DFB38917D9774209AE404DFC71CA5CE8", hash_generated_field = "E0D4DDCC01DBB4B3153128208E0562F5")
 
     public static final int THEME_DEVICE_DEFAULT_LIGHT = 5;
 }

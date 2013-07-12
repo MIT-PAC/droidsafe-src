@@ -1,12 +1,9 @@
 package org.apache.http.impl.cookie;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.util.Locale;
 import org.apache.http.cookie.Cookie;
 import org.apache.http.cookie.CookieAttributeHandler;
@@ -16,139 +13,167 @@ import org.apache.http.cookie.SetCookie;
 
 public class RFC2109DomainHandler implements CookieAttributeHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.293 -0400", hash_original_method = "BA3C0693A4254304D076B6F4F238BB9F", hash_generated_method = "792C59D9D2B3A1BF306F01640B547EEC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.674 -0400", hash_original_method = "BA3C0693A4254304D076B6F4F238BB9F", hash_generated_method = "792C59D9D2B3A1BF306F01640B547EEC")
     public  RFC2109DomainHandler() {
         super();
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.293 -0400", hash_original_method = "A2A30C6200DB9994662FDA726DA35D9E", hash_generated_method = "F951FCC21BAACB024B5B5A26FAD41938")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.674 -0400", hash_original_method = "A2A30C6200DB9994662FDA726DA35D9E", hash_generated_method = "FAB27AAE49183D1D4AA298CEA1A3903A")
     public void parse(final SetCookie cookie, final String value) throws MalformedCookieException {
-        {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie may not be null");
-        } 
-        {
-            if (DroidSafeAndroidRuntime.control) throw new MalformedCookieException("Missing value for domain attribute");
-        } 
-        {
-            boolean var9FBE5B3A34BFAF0B0EC7E39F0CD9C0B6_958206716 = (value.trim().length() == 0);
-            {
-                if (DroidSafeAndroidRuntime.control) throw new MalformedCookieException("Blank value for domain attribute");
-            } 
-        } 
-        cookie.setDomain(value);
-        addTaint(cookie.getTaint());
         addTaint(value.getTaint());
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
+        addTaint(cookie.getTaint());
+    if(cookie == null)        
+        {
+            IllegalArgumentException varFBA11BCFA12F6CB336E0E79489ED6755_898470496 = new IllegalArgumentException("Cookie may not be null");
+            varFBA11BCFA12F6CB336E0E79489ED6755_898470496.addTaint(taint);
+            throw varFBA11BCFA12F6CB336E0E79489ED6755_898470496;
+        } //End block
+    if(value == null)        
+        {
+            MalformedCookieException var0F112B9FC8E3827692FDE0884407A29E_1155738371 = new MalformedCookieException("Missing value for domain attribute");
+            var0F112B9FC8E3827692FDE0884407A29E_1155738371.addTaint(taint);
+            throw var0F112B9FC8E3827692FDE0884407A29E_1155738371;
+        } //End block
+    if(value.trim().length() == 0)        
+        {
+            MalformedCookieException var07BAB46695E7C8E84A0A4107E34A960E_693297498 = new MalformedCookieException("Blank value for domain attribute");
+            var07BAB46695E7C8E84A0A4107E34A960E_693297498.addTaint(taint);
+            throw var07BAB46695E7C8E84A0A4107E34A960E_693297498;
+        } //End block
+        cookie.setDomain(value);
+        // ---------- Original Method ----------
+        //if (cookie == null) {
+            //throw new IllegalArgumentException("Cookie may not be null");
+        //}
+        //if (value == null) {
+            //throw new MalformedCookieException("Missing value for domain attribute");
+        //}
+        //if (value.trim().length() == 0) {
+            //throw new MalformedCookieException("Blank value for domain attribute");
+        //}
+        //cookie.setDomain(value);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.294 -0400", hash_original_method = "B2BF5046DB79177D44AB1563AAF5AFFB", hash_generated_method = "76CFC357CDBE9F67AF3306BE1D1B8823")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.675 -0400", hash_original_method = "B2BF5046DB79177D44AB1563AAF5AFFB", hash_generated_method = "FF5D1A5DAC0186DBF87E2EC6F89FB0E9")
     public void validate(final Cookie cookie, final CookieOrigin origin) throws MalformedCookieException {
+        addTaint(origin.getTaint());
+        addTaint(cookie.getTaint());
+    if(cookie == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie may not be null");
-        } 
+            IllegalArgumentException varFBA11BCFA12F6CB336E0E79489ED6755_1313586556 = new IllegalArgumentException("Cookie may not be null");
+            varFBA11BCFA12F6CB336E0E79489ED6755_1313586556.addTaint(taint);
+            throw varFBA11BCFA12F6CB336E0E79489ED6755_1313586556;
+        } //End block
+    if(origin == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie origin may not be null");
-        } 
+            IllegalArgumentException var4264914F0057BA70A0B3E6621821A095_1868421910 = new IllegalArgumentException("Cookie origin may not be null");
+            var4264914F0057BA70A0B3E6621821A095_1868421910.addTaint(taint);
+            throw var4264914F0057BA70A0B3E6621821A095_1868421910;
+        } //End block
         String host = origin.getHost();
         String domain = cookie.getDomain();
+    if(domain == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new MalformedCookieException("Cookie domain may not be null");
-        } 
+            MalformedCookieException varB79BAE8CA7273A58873D2185EA314BFC_1143123475 = new MalformedCookieException("Cookie domain may not be null");
+            varB79BAE8CA7273A58873D2185EA314BFC_1143123475.addTaint(taint);
+            throw varB79BAE8CA7273A58873D2185EA314BFC_1143123475;
+        } //End block
+    if(!domain.equals(host))        
         {
-            boolean varDF00A4A746D4F13DFC9772ADDA702974_833017160 = (!domain.equals(host));
+            int dotIndex = domain.indexOf('.');
+    if(dotIndex == -1)            
             {
-                int dotIndex = domain.indexOf('.');
-                {
-                    if (DroidSafeAndroidRuntime.control) throw new MalformedCookieException("Domain attribute \"" 
+                MalformedCookieException var5487B9380B0162AA1731440DD7D7F72B_849767486 = new MalformedCookieException("Domain attribute \"" 
                         + domain 
                         + "\" does not match the host \"" 
                         + host + "\"");
-                } 
-                {
-                    boolean varDD0C5D77A22559311347468CC8DBDB32_706629111 = (!domain.startsWith("."));
-                    {
-                        if (DroidSafeAndroidRuntime.control) throw new MalformedCookieException("Domain attribute \"" 
+                var5487B9380B0162AA1731440DD7D7F72B_849767486.addTaint(taint);
+                throw var5487B9380B0162AA1731440DD7D7F72B_849767486;
+            } //End block
+    if(!domain.startsWith("."))            
+            {
+                MalformedCookieException varD428D8CA28CF5E845B8B1F2D64794B22_1741013666 = new MalformedCookieException("Domain attribute \"" 
                     + domain 
                     + "\" violates RFC 2109: domain must start with a dot");
-                    } 
-                } 
-                dotIndex = domain.indexOf('.', 1);
-                {
-                    boolean var799E18FB6D5BD5416B7EBCBE80C32465_265365279 = (dotIndex < 0 || dotIndex == domain.length() - 1);
-                    {
-                        if (DroidSafeAndroidRuntime.control) throw new MalformedCookieException("Domain attribute \"" 
+                varD428D8CA28CF5E845B8B1F2D64794B22_1741013666.addTaint(taint);
+                throw varD428D8CA28CF5E845B8B1F2D64794B22_1741013666;
+            } //End block
+            dotIndex = domain.indexOf('.', 1);
+    if(dotIndex < 0 || dotIndex == domain.length() - 1)            
+            {
+                MalformedCookieException var9E36F9F251E2C732FCF402CB91D56DF0_1276667888 = new MalformedCookieException("Domain attribute \"" 
                     + domain 
                     + "\" violates RFC 2109: domain must contain an embedded dot");
-                    } 
-                } 
-                host = host.toLowerCase(Locale.ENGLISH);
-                {
-                    boolean var4CC5C42A13FF000FBBF07CCD71946771_1981229148 = (!host.endsWith(domain));
-                    {
-                        if (DroidSafeAndroidRuntime.control) throw new MalformedCookieException(
+                var9E36F9F251E2C732FCF402CB91D56DF0_1276667888.addTaint(taint);
+                throw var9E36F9F251E2C732FCF402CB91D56DF0_1276667888;
+            } //End block
+            host = host.toLowerCase(Locale.ENGLISH);
+    if(!host.endsWith(domain))            
+            {
+                MalformedCookieException var1FAEB6A838498A08609AB07AF40CFFB3_216325164 = new MalformedCookieException(
                     "Illegal domain attribute \"" + domain 
                     + "\". Domain of origin: \"" + host + "\"");
-                    } 
-                } 
-                String hostWithoutDomain = host.substring(0, host.length() - domain.length());
-                {
-                    boolean varDE5B1218E068294DF30CA1D70588DEFD_337203437 = (hostWithoutDomain.indexOf('.') != -1);
-                    {
-                        if (DroidSafeAndroidRuntime.control) throw new MalformedCookieException("Domain attribute \"" 
+                var1FAEB6A838498A08609AB07AF40CFFB3_216325164.addTaint(taint);
+                throw var1FAEB6A838498A08609AB07AF40CFFB3_216325164;
+            } //End block
+            String hostWithoutDomain = host.substring(0, host.length() - domain.length());
+    if(hostWithoutDomain.indexOf('.') != -1)            
+            {
+                MalformedCookieException var36C877C5664221807621883D47CF8378_1424547470 = new MalformedCookieException("Domain attribute \"" 
                     + domain 
                     + "\" violates RFC 2109: host minus domain may not contain any dots");
-                    } 
-                } 
-            } 
-        } 
-        addTaint(cookie.getTaint());
-        addTaint(origin.getTaint());
-        
-        
+                var36C877C5664221807621883D47CF8378_1424547470.addTaint(taint);
+                throw var36C877C5664221807621883D47CF8378_1424547470;
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.294 -0400", hash_original_method = "366C15EED829D9311CF9BF5EB777430B", hash_generated_method = "39E4B954706000AFFD7B3CBBC7154119")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.676 -0400", hash_original_method = "366C15EED829D9311CF9BF5EB777430B", hash_generated_method = "5D90B0A2233DBC33CF0BA9CCB408EE98")
     public boolean match(final Cookie cookie, final CookieOrigin origin) {
+        addTaint(origin.getTaint());
+        addTaint(cookie.getTaint());
+    if(cookie == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie may not be null");
-        } 
+            IllegalArgumentException varFBA11BCFA12F6CB336E0E79489ED6755_1008002227 = new IllegalArgumentException("Cookie may not be null");
+            varFBA11BCFA12F6CB336E0E79489ED6755_1008002227.addTaint(taint);
+            throw varFBA11BCFA12F6CB336E0E79489ED6755_1008002227;
+        } //End block
+    if(origin == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie origin may not be null");
-        } 
+            IllegalArgumentException var4264914F0057BA70A0B3E6621821A095_1698418837 = new IllegalArgumentException("Cookie origin may not be null");
+            var4264914F0057BA70A0B3E6621821A095_1698418837.addTaint(taint);
+            throw var4264914F0057BA70A0B3E6621821A095_1698418837;
+        } //End block
         String host = origin.getHost();
         String domain = cookie.getDomain();
-        boolean varD3BEE7717F5C53B8019886A641FD7C0D_1648555869 = (host.equals(domain) || (domain.startsWith(".") && host.endsWith(domain)));
-        addTaint(cookie.getTaint());
-        addTaint(origin.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1629419331 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1629419331;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
-            
-        
-        
+    if(domain == null)        
+        {
+            boolean var68934A3E9455FA72420237EB05902327_81307792 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_721715947 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_721715947;
+        } //End block
+        boolean var6FCDBCB2A83BA8F68B4434B5341CE458_1296282902 = (host.equals(domain) || (domain.startsWith(".") && host.endsWith(domain)));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1183108892 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1183108892;
+        // ---------- Original Method ----------
+        //if (cookie == null) {
+            //throw new IllegalArgumentException("Cookie may not be null");
+        //}
+        //if (origin == null) {
+            //throw new IllegalArgumentException("Cookie origin may not be null");
+        //}
+        //String host = origin.getHost();
+        //String domain = cookie.getDomain();
+        //if (domain == null) {
+            //return false;
+        //}
+        //return host.equals(domain) || (domain.startsWith(".") && host.endsWith(domain));
     }
 
     

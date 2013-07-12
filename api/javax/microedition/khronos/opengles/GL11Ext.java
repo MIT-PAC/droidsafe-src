@@ -1,12 +1,9 @@
 package javax.microedition.khronos.opengles;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 
 public interface GL11Ext extends GL {
     int GL_MATRIX_INDEX_ARRAY_BUFFER_BINDING_OES = 0x8B9E;

@@ -1,12 +1,9 @@
 package org.apache.http.impl.auth;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -18,111 +15,105 @@ import org.apache.http.message.ParserCursor;
 import org.apache.http.util.CharArrayBuffer;
 
 public abstract class RFC2617Scheme extends AuthSchemeBase {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.867 -0400", hash_original_field = "21FFCE5B8A6CC8CC6A41448DD69623C9", hash_generated_field = "B49004743386D72E13E3DDAE8A9782AD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.204 -0400", hash_original_field = "21FFCE5B8A6CC8CC6A41448DD69623C9", hash_generated_field = "B49004743386D72E13E3DDAE8A9782AD")
 
     private Map<String, String> params;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.867 -0400", hash_original_method = "80ED69FEE6B04980340E6722B9C707A6", hash_generated_method = "B90D9EB300F2A770A1CD2621E397D28E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.204 -0400", hash_original_method = "80ED69FEE6B04980340E6722B9C707A6", hash_generated_method = "B90D9EB300F2A770A1CD2621E397D28E")
     public  RFC2617Scheme() {
         super();
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.874 -0400", hash_original_method = "94B96EA06442EEC21FB07C868A7FF799", hash_generated_method = "D9E126895440E2BD00C4564D4367B8D2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.205 -0400", hash_original_method = "94B96EA06442EEC21FB07C868A7FF799", hash_generated_method = "96553F3EBC154713C5AA9FC6FC7CAC5A")
     @Override
     protected void parseChallenge(
             final CharArrayBuffer buffer, int pos, int len) throws MalformedChallengeException {
+        addTaint(len);
+        addTaint(pos);
+        addTaint(buffer.getTaint());
         HeaderValueParser parser = BasicHeaderValueParser.DEFAULT;
         ParserCursor cursor = new ParserCursor(pos, buffer.length());
         HeaderElement[] elements = parser.parseElements(buffer, cursor);
+    if(elements.length == 0)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new MalformedChallengeException("Authentication challenge is empty");
-        } 
+            MalformedChallengeException varB4181F999E7B1D8DD4899D0721FD90A4_2073893567 = new MalformedChallengeException("Authentication challenge is empty");
+            varB4181F999E7B1D8DD4899D0721FD90A4_2073893567.addTaint(taint);
+            throw varB4181F999E7B1D8DD4899D0721FD90A4_2073893567;
+        } //End block
         this.params = new HashMap<String, String>(elements.length);
+for(HeaderElement element : elements)
         {
-            HeaderElement element = elements[0];
-            {
-                this.params.put(element.getName(), element.getValue());
-            } 
-        } 
-        addTaint(buffer.getTaint());
-        addTaint(pos);
-        addTaint(len);
-        
-        
-        
-        
-        
-            
-        
-        
-        
-            
-        
+            this.params.put(element.getName(), element.getValue());
+        } //End block
+        // ---------- Original Method ----------
+        //HeaderValueParser parser = BasicHeaderValueParser.DEFAULT;
+        //ParserCursor cursor = new ParserCursor(pos, buffer.length());
+        //HeaderElement[] elements = parser.parseElements(buffer, cursor);
+        //if (elements.length == 0) {
+            //throw new MalformedChallengeException("Authentication challenge is empty");
+        //}
+        //this.params = new HashMap<String, String>(elements.length);
+        //for (HeaderElement element : elements) {
+            //this.params.put(element.getName(), element.getValue());
+        //}
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.876 -0400", hash_original_method = "3C8F107729ADA298748F7F0240656480", hash_generated_method = "0E6900DAC25A38123C107C6409DD96A9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.206 -0400", hash_original_method = "3C8F107729ADA298748F7F0240656480", hash_generated_method = "1E246EBDE08AF7D2EE03394FC94003A9")
     protected Map<String, String> getParameters() {
-        Map<String, String> varB4EAC82CA7396A68D541C85D26508E83_9527055 = null; 
+    if(this.params == null)        
         {
             this.params = new HashMap<String, String>();
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_9527055 = this.params;
-        varB4EAC82CA7396A68D541C85D26508E83_9527055.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_9527055;
-        
-        
-            
-        
-        
+        } //End block
+Map<String, String> var751A5B03769AE238544A23D7966F9A50_444792342 =         this.params;
+        var751A5B03769AE238544A23D7966F9A50_444792342.addTaint(taint);
+        return var751A5B03769AE238544A23D7966F9A50_444792342;
+        // ---------- Original Method ----------
+        //if (this.params == null) {
+            //this.params = new HashMap<String, String>();
+        //}
+        //return this.params;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.877 -0400", hash_original_method = "438C518DA2063D2BB9EB7CDD3EF15700", hash_generated_method = "FFC19A698CF2CCC7F562915B4A031A48")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.207 -0400", hash_original_method = "438C518DA2063D2BB9EB7CDD3EF15700", hash_generated_method = "479C5671016F6362F23D21E9D1257678")
     public String getParameter(final String name) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1487409733 = null; 
-        String varB4EAC82CA7396A68D541C85D26508E83_924383875 = null; 
-        {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Parameter name may not be null");
-        } 
-        {
-            varB4EAC82CA7396A68D541C85D26508E83_1487409733 = null;
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_924383875 = this.params.get(name.toLowerCase(Locale.ENGLISH));
         addTaint(name.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_1197332263; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1197332263 = varB4EAC82CA7396A68D541C85D26508E83_1487409733;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1197332263 = varB4EAC82CA7396A68D541C85D26508E83_924383875;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1197332263.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1197332263;
-        
-        
-            
-        
-        
-            
-        
-        
+    if(name == null)        
+        {
+            IllegalArgumentException var27808EC28D2A61D0D9CEDF204AE56875_769319361 = new IllegalArgumentException("Parameter name may not be null");
+            var27808EC28D2A61D0D9CEDF204AE56875_769319361.addTaint(taint);
+            throw var27808EC28D2A61D0D9CEDF204AE56875_769319361;
+        } //End block
+    if(this.params == null)        
+        {
+String var540C13E9E156B687226421B24F2DF178_1254667546 =             null;
+            var540C13E9E156B687226421B24F2DF178_1254667546.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_1254667546;
+        } //End block
+String varFBF77A7E99F84EB59C163A59DAFE14E8_69305885 =         this.params.get(name.toLowerCase(Locale.ENGLISH));
+        varFBF77A7E99F84EB59C163A59DAFE14E8_69305885.addTaint(taint);
+        return varFBF77A7E99F84EB59C163A59DAFE14E8_69305885;
+        // ---------- Original Method ----------
+        //if (name == null) {
+            //throw new IllegalArgumentException("Parameter name may not be null"); 
+        //}
+        //if (this.params == null) {
+            //return null;
+        //}
+        //return this.params.get(name.toLowerCase(Locale.ENGLISH));
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.878 -0400", hash_original_method = "39A90A5FE6DEA4D9B5180EC009C17361", hash_generated_method = "FC0F9D733F6B6D0597BD14287A7493A2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.207 -0400", hash_original_method = "39A90A5FE6DEA4D9B5180EC009C17361", hash_generated_method = "6B1A8360EDDE7BA824F17127326DE720")
     public String getRealm() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1879415290 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1879415290 = getParameter("realm");
-        varB4EAC82CA7396A68D541C85D26508E83_1879415290.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1879415290;
-        
-        
+String var11FB4A81E0A819600072705611ABDD2B_1241592002 =         getParameter("realm");
+        var11FB4A81E0A819600072705611ABDD2B_1241592002.addTaint(taint);
+        return var11FB4A81E0A819600072705611ABDD2B_1241592002;
+        // ---------- Original Method ----------
+        //return getParameter("realm");
     }
 
     

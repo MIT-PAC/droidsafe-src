@@ -1,12 +1,9 @@
 package gov.nist.javax.sip.address;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import javax.sip.address.SipURI;
 
 public interface SipURIExt extends SipURI {

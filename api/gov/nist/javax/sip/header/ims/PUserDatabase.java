@@ -1,134 +1,122 @@
 package gov.nist.javax.sip.header.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.text.ParseException;
 import javax.sip.header.ExtensionHeader;
 
 public class PUserDatabase extends gov.nist.javax.sip.header.ParametersHeader implements PUserDatabaseHeader, SIPHeaderNamesIms, ExtensionHeader {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.405 -0400", hash_original_field = "F618483EEF4956A817EFB2CA268621CA", hash_generated_field = "86C05D139AEEDD5C16FB836B4667558E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.074 -0400", hash_original_field = "F618483EEF4956A817EFB2CA268621CA", hash_generated_field = "86C05D139AEEDD5C16FB836B4667558E")
 
     private String databaseName;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.405 -0400", hash_original_method = "7F14AD9E055B0EDA573715DABAF69E4A", hash_generated_method = "D92B52698CB02D38DCC6FEC6BDD40EC8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.074 -0400", hash_original_method = "7F14AD9E055B0EDA573715DABAF69E4A", hash_generated_method = "D92B52698CB02D38DCC6FEC6BDD40EC8")
     public  PUserDatabase(String databaseName) {
         super(NAME);
         this.databaseName = databaseName;
-        
-        
+        // ---------- Original Method ----------
+        //this.databaseName = databaseName;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.406 -0400", hash_original_method = "E39FCB193BD9E02D223AAEA09A512240", hash_generated_method = "7ADBEBC1D5F5E2626F7290454A00780A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.074 -0400", hash_original_method = "E39FCB193BD9E02D223AAEA09A512240", hash_generated_method = "7ADBEBC1D5F5E2626F7290454A00780A")
     public  PUserDatabase() {
         super(P_USER_DATABASE);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.407 -0400", hash_original_method = "1786B1376B4CD3FEAEBCAB28A560C6C6", hash_generated_method = "B9EB4E984EFBCABC4D00022C782DEEB0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.075 -0400", hash_original_method = "1786B1376B4CD3FEAEBCAB28A560C6C6", hash_generated_method = "3D81D0E04E157D102DF8F1AEF4E4D3A4")
     public String getDatabaseName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_211129604 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_211129604 = this.databaseName;
-        varB4EAC82CA7396A68D541C85D26508E83_211129604.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_211129604;
-        
-        
+String var851A3104A174A0317C1CB008C48A1898_493213275 =         this.databaseName;
+        var851A3104A174A0317C1CB008C48A1898_493213275.addTaint(taint);
+        return var851A3104A174A0317C1CB008C48A1898_493213275;
+        // ---------- Original Method ----------
+        //return this.databaseName;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.408 -0400", hash_original_method = "D51F20AACD3B656F6DA8A7AF0FAAC017", hash_generated_method = "89E00AB5C60CFC75FBC397012086BA04")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.075 -0400", hash_original_method = "D51F20AACD3B656F6DA8A7AF0FAAC017", hash_generated_method = "42245F866E63A2300CEC434B1AA7AF15")
     public void setDatabaseName(String databaseName) {
+    if((databaseName==null)||(databaseName.equals(" ")))        
         {
-            boolean var6F885EEACD664FF487C08E325F655CE7_727599562 = ((databaseName==null)||(databaseName.equals(" ")));
-            if (DroidSafeAndroidRuntime.control) throw new NullPointerException("Database name is null");
-            {
-                boolean varE80BF1BFB6096183B0C913A4D14DBC6F_28385024 = (!databaseName.contains("aaa://"));
-                this.databaseName = new StringBuffer().append("aaa://").append(databaseName).toString();
-                this.databaseName = databaseName;
-            } 
-        } 
-        
-        
-            
-        
-            
-        
-            
-                
+        NullPointerException varA3D75CD097E396096D0DAAE2F57C8E0F_1560426686 = new NullPointerException("Database name is null");
+        varA3D75CD097E396096D0DAAE2F57C8E0F_1560426686.addTaint(taint);
+        throw varA3D75CD097E396096D0DAAE2F57C8E0F_1560426686;
+        }
+        else
+    if(!databaseName.contains("aaa://"))        
+        this.databaseName = new StringBuffer().append("aaa://").append(databaseName).toString();
+        else
+        this.databaseName = databaseName;
+        // ---------- Original Method ----------
+        //if((databaseName==null)||(databaseName.equals(" ")))
+            //throw new NullPointerException("Database name is null");
+        //else
+            //if(!databaseName.contains("aaa://"))
+        //this.databaseName = new StringBuffer().append("aaa://").append(databaseName).toString();
+            //else
+                //this.databaseName = databaseName;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.408 -0400", hash_original_method = "C5A419AE4F54D4DB306D1B917A489A39", hash_generated_method = "C33B0AC44E3C9B672A5F9E80405FE176")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.076 -0400", hash_original_method = "C5A419AE4F54D4DB306D1B917A489A39", hash_generated_method = "E0A2F29B7071073CE81490309B312C43")
     protected String encodeBody() {
-        String varB4EAC82CA7396A68D541C85D26508E83_848138425 = null; 
         StringBuffer retval = new StringBuffer();
         retval.append("<");
-        {
-            boolean varA9B2934EF83AB045E2C5BEB25251AC8C_1618279855 = (getDatabaseName()!=null);
-            retval.append(getDatabaseName());
-        } 
-        {
-            boolean varB381AD842454BDB2397F4C2DAD0B3FA1_155280661 = (!parameters.isEmpty());
-            retval.append(SEMICOLON + this.parameters.encode());
-        } 
+    if(getDatabaseName()!=null)        
+        retval.append(getDatabaseName());
+    if(!parameters.isEmpty())        
+        retval.append(SEMICOLON + this.parameters.encode());
         retval.append(">");
-        varB4EAC82CA7396A68D541C85D26508E83_848138425 = retval.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_848138425.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_848138425;
-        
-        
-        
-        
-        
-        
-            
-        
-        
+String var1B324365A764C077A55854483509F4AB_407987131 =         retval.toString();
+        var1B324365A764C077A55854483509F4AB_407987131.addTaint(taint);
+        return var1B324365A764C077A55854483509F4AB_407987131;
+        // ---------- Original Method ----------
+        //StringBuffer retval = new StringBuffer();
+        //retval.append("<");
+        //if(getDatabaseName()!=null)
+        //retval.append(getDatabaseName());
+        //if (!parameters.isEmpty())
+            //retval.append(SEMICOLON + this.parameters.encode());
+        //retval.append(">");
+        //return retval.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.409 -0400", hash_original_method = "E720B3A09C72EF9AD917691C9271EB0A", hash_generated_method = "A75A421B73A285296FE263AC581E9CD2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.076 -0400", hash_original_method = "E720B3A09C72EF9AD917691C9271EB0A", hash_generated_method = "3BBB8EB595D4673B6968E1283B850E37")
     public boolean equals(Object other) {
-        boolean varB67670436F072ACD0F3C6E986BAF90AF_2070612849 = ((other instanceof PUserDatabaseHeader) && super.equals(other));
         addTaint(other.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_28580318 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_28580318;
-        
-        
+        boolean var3F1E40688CFCC9D3E63130371C01BF36_2061185265 = ((other instanceof PUserDatabaseHeader) && super.equals(other));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_422947862 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_422947862;
+        // ---------- Original Method ----------
+        //return (other instanceof PUserDatabaseHeader) && super.equals(other);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.409 -0400", hash_original_method = "0C530D20B34B6FA1A3EDDB9B09D02FD1", hash_generated_method = "77F79CFE6A0B4BDDC84C413A557BC40F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.077 -0400", hash_original_method = "0C530D20B34B6FA1A3EDDB9B09D02FD1", hash_generated_method = "55698EE82F7160EF1A5EFE77FA5E08BC")
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_929500894 = null; 
         PUserDatabase retval = (PUserDatabase) super.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_929500894 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_929500894.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_929500894;
-        
-        
-        
+Object varF9E19AD6135C970F387F77C6F3DE4477_137964154 =         retval;
+        varF9E19AD6135C970F387F77C6F3DE4477_137964154.addTaint(taint);
+        return varF9E19AD6135C970F387F77C6F3DE4477_137964154;
+        // ---------- Original Method ----------
+        //PUserDatabase retval = (PUserDatabase) super.clone();
+        //return retval;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.409 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "263BB18DC54AB83D62E13F134B9FEB9D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.078 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "D0856B54B2DC1902ECE86C67734AFA4C")
     public void setValue(String value) throws ParseException {
-        if (DroidSafeAndroidRuntime.control) throw new ParseException(value,0);
         addTaint(value.getTaint());
-        
-        
+        ParseException varADC68F4409F245E41BA5DDA0F06CA1BA_1066327932 = new ParseException(value,0);
+        varADC68F4409F245E41BA5DDA0F06CA1BA_1066327932.addTaint(taint);
+        throw varADC68F4409F245E41BA5DDA0F06CA1BA_1066327932;
+        // ---------- Original Method ----------
+        //throw new ParseException(value,0);
     }
 
     

@@ -1,12 +1,9 @@
 package org.apache.http.impl.cookie;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,240 +23,246 @@ import org.apache.http.util.CharArrayBuffer;
 
 public class RFC2965Spec extends RFC2109Spec {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.495 -0400", hash_original_method = "0C9AFF04E5BAABEBA18893034F65C0B5", hash_generated_method = "ED8461C5C758500E2E57B09EC8299F41")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.890 -0400", hash_original_method = "0C9AFF04E5BAABEBA18893034F65C0B5", hash_generated_method = "ED8461C5C758500E2E57B09EC8299F41")
     public  RFC2965Spec() {
         this(null, false);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.496 -0400", hash_original_method = "ACE780060B747E0E2CD86A0260ED3969", hash_generated_method = "949480FDE45EA50307EAFAD969F9B712")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.891 -0400", hash_original_method = "ACE780060B747E0E2CD86A0260ED3969", hash_generated_method = "D4B6452AC00A2CECCC77D22C5A107025")
     public  RFC2965Spec(final String[] datepatterns, boolean oneHeader) {
         super(datepatterns, oneHeader);
+        addTaint(oneHeader);
+        addTaint(datepatterns[0].getTaint());
         registerAttribHandler(ClientCookie.DOMAIN_ATTR, new RFC2965DomainAttributeHandler());
         registerAttribHandler(ClientCookie.PORT_ATTR, new RFC2965PortAttributeHandler());
         registerAttribHandler(ClientCookie.COMMENTURL_ATTR, new RFC2965CommentUrlAttributeHandler());
         registerAttribHandler(ClientCookie.DISCARD_ATTR, new RFC2965DiscardAttributeHandler());
         registerAttribHandler(ClientCookie.VERSION_ATTR, new RFC2965VersionAttributeHandler());
-        addTaint(datepatterns[0].getTaint());
-        addTaint(oneHeader);
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //registerAttribHandler(ClientCookie.DOMAIN_ATTR, new RFC2965DomainAttributeHandler());
+        //registerAttribHandler(ClientCookie.PORT_ATTR, new RFC2965PortAttributeHandler());
+        //registerAttribHandler(ClientCookie.COMMENTURL_ATTR, new RFC2965CommentUrlAttributeHandler());
+        //registerAttribHandler(ClientCookie.DISCARD_ATTR, new RFC2965DiscardAttributeHandler());
+        //registerAttribHandler(ClientCookie.VERSION_ATTR, new RFC2965VersionAttributeHandler());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.496 -0400", hash_original_method = "4409F0FE45DA6FEDE61567597482D361", hash_generated_method = "870520A37E59E6363D426056AB638B05")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.891 -0400", hash_original_method = "4409F0FE45DA6FEDE61567597482D361", hash_generated_method = "1EF37EEA2D42BBCF5DE0E0E4C990ECAD")
     private BasicClientCookie createCookie(
             final String name, final String value, final CookieOrigin origin) {
-        BasicClientCookie varB4EAC82CA7396A68D541C85D26508E83_784779668 = null; 
+        addTaint(origin.getTaint());
+        addTaint(value.getTaint());
+        addTaint(name.getTaint());
         BasicClientCookie cookie = new BasicClientCookie(name, value);
         cookie.setPath(getDefaultPath(origin));
         cookie.setDomain(getDefaultDomain(origin));
-        varB4EAC82CA7396A68D541C85D26508E83_784779668 = cookie;
-        addTaint(name.getTaint());
-        addTaint(value.getTaint());
-        addTaint(origin.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_784779668.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_784779668;
-        
-        
-        
-        
-        
+BasicClientCookie varB4C6ADEB9C3E8E55D6C4EB3F341D441E_1431246374 =         cookie;
+        varB4C6ADEB9C3E8E55D6C4EB3F341D441E_1431246374.addTaint(taint);
+        return varB4C6ADEB9C3E8E55D6C4EB3F341D441E_1431246374;
+        // ---------- Original Method ----------
+        //BasicClientCookie cookie = new BasicClientCookie(name, value);
+        //cookie.setPath(getDefaultPath(origin));
+        //cookie.setDomain(getDefaultDomain(origin));
+        //return cookie;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.497 -0400", hash_original_method = "C203D6CC66BEDFCF9DF77F8143966D25", hash_generated_method = "D2B25DDC4CD0FC0E618BD11FFFDB013F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.891 -0400", hash_original_method = "C203D6CC66BEDFCF9DF77F8143966D25", hash_generated_method = "0BD9A6B573B6A6FB875D2C0C8DE43182")
     private BasicClientCookie createCookie2(
             final String name, final String value, final CookieOrigin origin) {
-        BasicClientCookie varB4EAC82CA7396A68D541C85D26508E83_1608804050 = null; 
+        addTaint(origin.getTaint());
+        addTaint(value.getTaint());
+        addTaint(name.getTaint());
         BasicClientCookie2 cookie = new BasicClientCookie2(name, value);
         cookie.setPath(getDefaultPath(origin));
         cookie.setDomain(getDefaultDomain(origin));
         cookie.setPorts(new int [] { origin.getPort() });
-        varB4EAC82CA7396A68D541C85D26508E83_1608804050 = cookie;
-        addTaint(name.getTaint());
-        addTaint(value.getTaint());
-        addTaint(origin.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1608804050.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1608804050;
-        
-        
-        
-        
-        
-        
+BasicClientCookie varB4C6ADEB9C3E8E55D6C4EB3F341D441E_165458513 =         cookie;
+        varB4C6ADEB9C3E8E55D6C4EB3F341D441E_165458513.addTaint(taint);
+        return varB4C6ADEB9C3E8E55D6C4EB3F341D441E_165458513;
+        // ---------- Original Method ----------
+        //BasicClientCookie2 cookie = new BasicClientCookie2(name, value);
+        //cookie.setPath(getDefaultPath(origin));
+        //cookie.setDomain(getDefaultDomain(origin));
+        //cookie.setPorts(new int [] { origin.getPort() });
+        //return cookie;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.501 -0400", hash_original_method = "63E6AFA36A40CA79A5C09930028E525A", hash_generated_method = "7A1D832F6543BDA375B41ED7B12FF502")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.893 -0400", hash_original_method = "63E6AFA36A40CA79A5C09930028E525A", hash_generated_method = "124FE90C3CE35FB2667569DB3AF92F2B")
     @Override
     public List<Cookie> parse(
             final Header header, 
             CookieOrigin origin) throws MalformedCookieException {
-        List<Cookie> varB4EAC82CA7396A68D541C85D26508E83_1728093860 = null; 
+        addTaint(origin.getTaint());
+        addTaint(header.getTaint());
+    if(header == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Header may not be null");
-        } 
+            IllegalArgumentException var655E57DE77F969F763516260E292795B_1673774176 = new IllegalArgumentException("Header may not be null");
+            var655E57DE77F969F763516260E292795B_1673774176.addTaint(taint);
+            throw var655E57DE77F969F763516260E292795B_1673774176;
+        } //End block
+    if(origin == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie origin may not be null");
-        } 
+            IllegalArgumentException var4264914F0057BA70A0B3E6621821A095_35912101 = new IllegalArgumentException("Cookie origin may not be null");
+            var4264914F0057BA70A0B3E6621821A095_35912101.addTaint(taint);
+            throw var4264914F0057BA70A0B3E6621821A095_35912101;
+        } //End block
         origin = adjustEffectiveHost(origin);
         HeaderElement[] elems = header.getElements();
         List<Cookie> cookies = new ArrayList<Cookie>(elems.length);
+for(HeaderElement headerelement : elems)
         {
-            HeaderElement headerelement = elems[0];
+            String name = headerelement.getName();
+            String value = headerelement.getValue();
+    if(name == null || name.length() == 0)            
             {
-                String name = headerelement.getName();
-                String value = headerelement.getValue();
+                MalformedCookieException varAF01CFF0F91F0FF1D49FEB435A288F00_1713225135 = new MalformedCookieException("Cookie name may not be empty");
+                varAF01CFF0F91F0FF1D49FEB435A288F00_1713225135.addTaint(taint);
+                throw varAF01CFF0F91F0FF1D49FEB435A288F00_1713225135;
+            } //End block
+            BasicClientCookie cookie;
+    if(header.getName().equals(SM.SET_COOKIE2))            
+            {
+                cookie = createCookie2(name, value, origin);
+            } //End block
+            else
+            {
+                cookie = createCookie(name, value, origin);
+            } //End block
+            NameValuePair[] attribs = headerelement.getParameters();
+            Map<String, NameValuePair> attribmap = new HashMap<String, NameValuePair>(attribs.length);
+for(int j = attribs.length - 1;j >= 0;j--)
+            {
+                NameValuePair param = attribs[j];
+                attribmap.put(param.getName().toLowerCase(Locale.ENGLISH), param);
+            } //End block
+for(Map.Entry<String, NameValuePair> entry : attribmap.entrySet())
+            {
+                NameValuePair attrib = entry.getValue();
+                String s = attrib.getName().toLowerCase(Locale.ENGLISH);
+                cookie.setAttribute(s, attrib.getValue());
+                CookieAttributeHandler handler = findAttribHandler(s);
+    if(handler != null)                
                 {
-                    boolean var4461637DABA130E2A1B9BDCB33E9CE15_1407052474 = (name == null || name.length() == 0);
-                    {
-                        if (DroidSafeAndroidRuntime.control) throw new MalformedCookieException("Cookie name may not be empty");
-                    } 
-                } 
-                BasicClientCookie cookie;
-                {
-                    boolean var6AAE77C4B9E15A12E99793AA7DBB24FF_1570857165 = (header.getName().equals(SM.SET_COOKIE2));
-                    {
-                        cookie = createCookie2(name, value, origin);
-                    } 
-                    {
-                        cookie = createCookie(name, value, origin);
-                    } 
-                } 
-                NameValuePair[] attribs = headerelement.getParameters();
-                Map<String, NameValuePair> attribmap = new HashMap<String, NameValuePair>(attribs.length);
-                {
-                    int j = attribs.length - 1;
-                    {
-                        NameValuePair param = attribs[j];
-                        attribmap.put(param.getName().toLowerCase(Locale.ENGLISH), param);
-                    } 
-                } 
-                {
-                    Iterator<Map.Entry<String, NameValuePair>> var31E344CB7BBCC0B9BB8B4730C2B3AB1B_1363022324 = (attribmap.entrySet()).iterator();
-                    var31E344CB7BBCC0B9BB8B4730C2B3AB1B_1363022324.hasNext();
-                    Map.Entry<String, NameValuePair> entry = var31E344CB7BBCC0B9BB8B4730C2B3AB1B_1363022324.next();
-                    {
-                        NameValuePair attrib = entry.getValue();
-                        String s = attrib.getName().toLowerCase(Locale.ENGLISH);
-                        cookie.setAttribute(s, attrib.getValue());
-                        CookieAttributeHandler handler = findAttribHandler(s);
-                        {
-                            handler.parse(cookie, attrib.getValue());
-                        } 
-                    } 
-                } 
-                cookies.add(cookie);
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1728093860 = cookies;
-        addTaint(header.getTaint());
-        addTaint(origin.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1728093860.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1728093860;
-        
-        
+                    handler.parse(cookie, attrib.getValue());
+                } //End block
+            } //End block
+            cookies.add(cookie);
+        } //End block
+List<Cookie> var7A32AB0BC299936B4ABF6C972D767041_275101268 =         cookies;
+        var7A32AB0BC299936B4ABF6C972D767041_275101268.addTaint(taint);
+        return var7A32AB0BC299936B4ABF6C972D767041_275101268;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.502 -0400", hash_original_method = "67EA3E91E653DB3E455D1CE08BD1E58C", hash_generated_method = "6DAEEE5A57DA55FF7C8331C27469CFC9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.894 -0400", hash_original_method = "67EA3E91E653DB3E455D1CE08BD1E58C", hash_generated_method = "512EE121164FA526DC6F2A9BD4C20735")
     @Override
     public void validate(final Cookie cookie, CookieOrigin origin) throws MalformedCookieException {
+        addTaint(origin.getTaint());
+        addTaint(cookie.getTaint());
+    if(cookie == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie may not be null");
-        } 
+            IllegalArgumentException varFBA11BCFA12F6CB336E0E79489ED6755_1976139666 = new IllegalArgumentException("Cookie may not be null");
+            varFBA11BCFA12F6CB336E0E79489ED6755_1976139666.addTaint(taint);
+            throw varFBA11BCFA12F6CB336E0E79489ED6755_1976139666;
+        } //End block
+    if(origin == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie origin may not be null");
-        } 
+            IllegalArgumentException var4264914F0057BA70A0B3E6621821A095_712948773 = new IllegalArgumentException("Cookie origin may not be null");
+            var4264914F0057BA70A0B3E6621821A095_712948773.addTaint(taint);
+            throw var4264914F0057BA70A0B3E6621821A095_712948773;
+        } //End block
         origin = adjustEffectiveHost(origin);
         super.validate(cookie, origin);
-        addTaint(cookie.getTaint());
-        addTaint(origin.getTaint());
-        
-        
-            
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (cookie == null) {
+            //throw new IllegalArgumentException("Cookie may not be null");
+        //}
+        //if (origin == null) {
+            //throw new IllegalArgumentException("Cookie origin may not be null");
+        //}
+        //origin = adjustEffectiveHost(origin);
+        //super.validate(cookie, origin);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.502 -0400", hash_original_method = "6825BB2CF6533B26EC949D0ED0CB3EFF", hash_generated_method = "B9038B11BB895A6237BE62D39F47179D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.895 -0400", hash_original_method = "6825BB2CF6533B26EC949D0ED0CB3EFF", hash_generated_method = "FF0535FBF7F6853A6CD5E5C109A06D0D")
     @Override
     public boolean match(final Cookie cookie, CookieOrigin origin) {
-        {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie may not be null");
-        } 
-        {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie origin may not be null");
-        } 
-        origin = adjustEffectiveHost(origin);
-        boolean var4646C80192E3B5F87999DDAAB5D6A6A4_829891725 = (super.match(cookie, origin));
-        addTaint(cookie.getTaint());
         addTaint(origin.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1293079565 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1293079565;
-        
-        
-            
-        
-        
-            
-        
-        
-        
+        addTaint(cookie.getTaint());
+    if(cookie == null)        
+        {
+            IllegalArgumentException varFBA11BCFA12F6CB336E0E79489ED6755_2010958627 = new IllegalArgumentException("Cookie may not be null");
+            varFBA11BCFA12F6CB336E0E79489ED6755_2010958627.addTaint(taint);
+            throw varFBA11BCFA12F6CB336E0E79489ED6755_2010958627;
+        } //End block
+    if(origin == null)        
+        {
+            IllegalArgumentException var4264914F0057BA70A0B3E6621821A095_1947723314 = new IllegalArgumentException("Cookie origin may not be null");
+            var4264914F0057BA70A0B3E6621821A095_1947723314.addTaint(taint);
+            throw var4264914F0057BA70A0B3E6621821A095_1947723314;
+        } //End block
+        origin = adjustEffectiveHost(origin);
+        boolean varE92E72DDB1FE536FA8D55D87A2797528_1002233778 = (super.match(cookie, origin));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1027315608 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1027315608;
+        // ---------- Original Method ----------
+        //if (cookie == null) {
+            //throw new IllegalArgumentException("Cookie may not be null");
+        //}
+        //if (origin == null) {
+            //throw new IllegalArgumentException("Cookie origin may not be null");
+        //}
+        //origin = adjustEffectiveHost(origin);
+        //return super.match(cookie, origin);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.503 -0400", hash_original_method = "BB37CE4D8DBA00C0591EE6D75240E9EE", hash_generated_method = "05B0961D312990045F1E01186A2CC54B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.895 -0400", hash_original_method = "BB37CE4D8DBA00C0591EE6D75240E9EE", hash_generated_method = "63EEAF6397A88AB99C4A369500D67A57")
     @Override
     protected void formatCookieAsVer(final CharArrayBuffer buffer, 
             final Cookie cookie, int version) {
+        addTaint(version);
+        addTaint(cookie.getTaint());
+        addTaint(buffer.getTaint());
         super.formatCookieAsVer(buffer, cookie, version);
+    if(cookie instanceof ClientCookie)        
         {
             String s = ((ClientCookie) cookie).getAttribute(ClientCookie.PORT_ATTR);
+    if(s != null)            
             {
                 buffer.append("; $Port");
                 buffer.append("=\"");
+    if(s.trim().length() > 0)                
                 {
-                    boolean var581DBC2523087AD4616EE4691A0BEDAF_1715586788 = (s.trim().length() > 0);
+                    int[] ports = cookie.getPorts();
+    if(ports != null)                    
                     {
-                        int[] ports = cookie.getPorts();
+for(int i = 0, len = ports.length;i < len;i++)
                         {
+    if(i > 0)                            
                             {
-                                int i = 0;
-                                int len = ports.length;
-                                {
-                                    {
-                                        buffer.append(",");
-                                    } 
-                                    buffer.append(Integer.toString(ports[i]));
-                                } 
-                            } 
-                        } 
-                    } 
-                } 
+                                buffer.append(",");
+                            } //End block
+                            buffer.append(Integer.toString(ports[i]));
+                        } //End block
+                    } //End block
+                } //End block
                 buffer.append("\"");
-            } 
-        } 
-        addTaint(buffer.getTaint());
-        addTaint(cookie.getTaint());
-        addTaint(version);
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    private static CookieOrigin adjustEffectiveHost(final CookieOrigin origin) {
+        private static CookieOrigin adjustEffectiveHost(final CookieOrigin origin) {
         String host = origin.getHost();
         boolean isLocalHost = true;
         for (int i = 0; i < host.length(); i++) {
@@ -282,37 +285,35 @@ public class RFC2965Spec extends RFC2109Spec {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.503 -0400", hash_original_method = "48398E54A721F2ABBD2AD2C5ED75FBF5", hash_generated_method = "2C19428A78044BCEA1DF839955B3D13F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.897 -0400", hash_original_method = "48398E54A721F2ABBD2AD2C5ED75FBF5", hash_generated_method = "38F409CDB9978DF094B4DAF259207920")
     @Override
     public int getVersion() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_900821254 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_900821254;
-        
-        
+        int varC4CA4238A0B923820DCC509A6F75849B_1501726528 = (1);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_330402359 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_330402359;
+        // ---------- Original Method ----------
+        //return 1;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.504 -0400", hash_original_method = "135D9D751A7E49D965B3B7FE1A189F11", hash_generated_method = "F3D73CCFD16B539E7A27503C081D5C74")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.898 -0400", hash_original_method = "135D9D751A7E49D965B3B7FE1A189F11", hash_generated_method = "8A330EDFBCCE01913132081C7735B0D6")
     @Override
     public Header getVersionHeader() {
-        Header varB4EAC82CA7396A68D541C85D26508E83_1073416693 = null; 
         CharArrayBuffer buffer = new CharArrayBuffer(40);
         buffer.append(SM.COOKIE2);
         buffer.append(": ");
         buffer.append("$Version=");
         buffer.append(Integer.toString(getVersion()));
-        varB4EAC82CA7396A68D541C85D26508E83_1073416693 = new BufferedHeader(buffer);
-        varB4EAC82CA7396A68D541C85D26508E83_1073416693.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1073416693;
-        
-        
-        
-        
-        
-        
-        
+Header varA538F19AF489509DED0A3819B3004747_1727745612 =         new BufferedHeader(buffer);
+        varA538F19AF489509DED0A3819B3004747_1727745612.addTaint(taint);
+        return varA538F19AF489509DED0A3819B3004747_1727745612;
+        // ---------- Original Method ----------
+        //CharArrayBuffer buffer = new CharArrayBuffer(40);
+        //buffer.append(SM.COOKIE2);
+        //buffer.append(": ");
+        //buffer.append("$Version=");
+        //buffer.append(Integer.toString(getVersion()));
+        //return new BufferedHeader(buffer);
     }
 
     

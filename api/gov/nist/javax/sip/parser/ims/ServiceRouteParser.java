@@ -1,12 +1,9 @@
 package gov.nist.javax.sip.parser.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.text.ParseException;
 import gov.nist.javax.sip.header.ims.ServiceRoute;
 import gov.nist.javax.sip.header.ims.ServiceRouteList;
@@ -17,27 +14,26 @@ import gov.nist.javax.sip.parser.TokenTypes;
 
 public class ServiceRouteParser extends AddressParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.235 -0400", hash_original_method = "C37E1CF835BF2C15063590E48C1460DA", hash_generated_method = "8C2B7AE6C87ECFA2AE553FECAD97617E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.341 -0400", hash_original_method = "C37E1CF835BF2C15063590E48C1460DA", hash_generated_method = "8C2B7AE6C87ECFA2AE553FECAD97617E")
     public  ServiceRouteParser(String serviceRoute) {
         super(serviceRoute);
         addTaint(serviceRoute.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.235 -0400", hash_original_method = "2EF38FE2F98AC9040691FDDD49315448", hash_generated_method = "40B8AF85BCDEC5F1C3B570E298922915")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.342 -0400", hash_original_method = "2EF38FE2F98AC9040691FDDD49315448", hash_generated_method = "40B8AF85BCDEC5F1C3B570E298922915")
     protected  ServiceRouteParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.235 -0400", hash_original_method = "8017C6E265731C6E1BE6E337AC0EFE2E", hash_generated_method = "3657DE966816C7648CBC274812482199")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.371 -0400", hash_original_method = "8017C6E265731C6E1BE6E337AC0EFE2E", hash_generated_method = "BAD3BF165BDE7B422B9E2AD0A743E2E3")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_117457860 = null; 
         ServiceRouteList serviceRouteList = new ServiceRouteList();
+    if(debug)        
         dbg_enter("ServiceRouteParser.parse");
         try 
         {
@@ -45,33 +41,39 @@ public class ServiceRouteParser extends AddressParametersParser {
             this.lexer.SPorHT();
             this.lexer.match(':');
             this.lexer.SPorHT();
+            while
+(true)            
             {
                 ServiceRoute serviceRoute = new ServiceRoute();
                 super.parse(serviceRoute);
                 serviceRouteList.add(serviceRoute);
                 this.lexer.SPorHT();
+    if(lexer.lookAhead(0) == ',')                
                 {
-                    boolean varFAA47A806C2A7754F7408D0DC0C208DE_1623892269 = (lexer.lookAhead(0) == ',');
-                    {
-                        this.lexer.match(',');
-                        this.lexer.SPorHT();
-                    } 
-                    {
-                        boolean var91663D5DD0C5A7E21E3D02876DD48380_1680107576 = (lexer.lookAhead(0) == '\n');
-                        if (DroidSafeAndroidRuntime.control) throw createParseException("unexpected char");
-                    } 
-                } 
-            } 
-            varB4EAC82CA7396A68D541C85D26508E83_117457860 = serviceRouteList;
-        } 
+                    this.lexer.match(',');
+                    this.lexer.SPorHT();
+                } //End block
+                else
+    if(lexer.lookAhead(0) == '\n')                
+                break;
+                else
+                {
+                java.text.ParseException var7805DD1445672D84C07E56FCC19D9765_1741341194 = createParseException("unexpected char");
+                var7805DD1445672D84C07E56FCC19D9765_1741341194.addTaint(taint);
+                throw var7805DD1445672D84C07E56FCC19D9765_1741341194;
+                }
+            } //End block
+SIPHeader var15F59CE80F4A2D75F7C8D25CA28F4077_193185151 =             serviceRouteList;
+            var15F59CE80F4A2D75F7C8D25CA28F4077_193185151.addTaint(taint);
+            return var15F59CE80F4A2D75F7C8D25CA28F4077_193185151;
+        } //End block
         finally 
         {
+    if(debug)            
             dbg_leave("ServiceRouteParser.parse");
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_117457860.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_117457860;
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

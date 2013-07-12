@@ -1,341 +1,381 @@
 package org.apache.http.message;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.util.NoSuchElementException;
 import org.apache.http.HeaderIterator;
 import org.apache.http.ParseException;
 import org.apache.http.TokenIterator;
 
 public class BasicTokenIterator implements TokenIterator {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.301 -0400", hash_original_field = "17843B798641DCC33A90FE8CA70EEC07", hash_generated_field = "EC9D0C260936A48CE3D00DF1B58760FD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.688 -0400", hash_original_field = "17843B798641DCC33A90FE8CA70EEC07", hash_generated_field = "EC9D0C260936A48CE3D00DF1B58760FD")
 
     protected HeaderIterator headerIt;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.302 -0400", hash_original_field = "8A48FDE5E525D8E0723FE89C04899A8A", hash_generated_field = "7B4E018C3F013525C08A27A13DF71B71")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.688 -0400", hash_original_field = "8A48FDE5E525D8E0723FE89C04899A8A", hash_generated_field = "7B4E018C3F013525C08A27A13DF71B71")
 
     protected String currentHeader;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.302 -0400", hash_original_field = "D669CB175EE8F1FF968DF72793C16003", hash_generated_field = "74D8A76D642811495F7C9EB2CC2B1DBE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.689 -0400", hash_original_field = "D669CB175EE8F1FF968DF72793C16003", hash_generated_field = "74D8A76D642811495F7C9EB2CC2B1DBE")
 
     protected String currentToken;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.302 -0400", hash_original_field = "B2CCF8E31CDFA90F9873152A70561B3B", hash_generated_field = "41CA8C81CB60760B0D4A540CC5B31524")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.689 -0400", hash_original_field = "B2CCF8E31CDFA90F9873152A70561B3B", hash_generated_field = "41CA8C81CB60760B0D4A540CC5B31524")
 
     protected int searchPos;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.302 -0400", hash_original_method = "728241B000D06E5A4B3FF4A1E835CDCC", hash_generated_method = "BD21B7C2E60C9DF6349C443D6D450F5E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.689 -0400", hash_original_method = "728241B000D06E5A4B3FF4A1E835CDCC", hash_generated_method = "EECBB0328C0EF0C21C0C6976903AE5D2")
     public  BasicTokenIterator(final HeaderIterator headerIterator) {
+    if(headerIterator == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
+            IllegalArgumentException var7DF460ACC625D606A2CEDF16D44D1646_2123654278 = new IllegalArgumentException
                 ("Header iterator must not be null.");
-        } 
+            var7DF460ACC625D606A2CEDF16D44D1646_2123654278.addTaint(taint);
+            throw var7DF460ACC625D606A2CEDF16D44D1646_2123654278;
+        } //End block
         this.headerIt = headerIterator;
         this.searchPos = findNext(-1);
-        
-        
-            
-                
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (headerIterator == null) {
+            //throw new IllegalArgumentException
+                //("Header iterator must not be null.");
+        //}
+        //this.headerIt = headerIterator;
+        //this.searchPos = findNext(-1);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.302 -0400", hash_original_method = "DAB37B2EA98FD1DE22306A8DB0E83A00", hash_generated_method = "D986B4A5DC34406D27D290137D499A66")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.689 -0400", hash_original_method = "DAB37B2EA98FD1DE22306A8DB0E83A00", hash_generated_method = "00E525DFB13DB1726422483E3297801A")
     public boolean hasNext() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1790327831 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1790327831;
-        
-        
+        boolean varF9D1FD9B4069C0625E90F30612866EF5_519470397 = ((this.currentToken != null));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1954622223 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1954622223;
+        // ---------- Original Method ----------
+        //return (this.currentToken != null);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.303 -0400", hash_original_method = "2D2EFD32F6C702BC7EE07BEBECC92489", hash_generated_method = "080EE7A4CA6EA715159406F19C364331")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.690 -0400", hash_original_method = "2D2EFD32F6C702BC7EE07BEBECC92489", hash_generated_method = "9C75D9B21CBCD64138406D4ABE23CC1D")
     public String nextToken() throws NoSuchElementException, ParseException {
-        String varB4EAC82CA7396A68D541C85D26508E83_316390915 = null; 
+    if(this.currentToken == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException("Iteration already finished.");
-        } 
+            NoSuchElementException var987AB9BC96C39424DAD4C83B35F26CD8_1479901082 = new NoSuchElementException("Iteration already finished.");
+            var987AB9BC96C39424DAD4C83B35F26CD8_1479901082.addTaint(taint);
+            throw var987AB9BC96C39424DAD4C83B35F26CD8_1479901082;
+        } //End block
         final String result = this.currentToken;
         this.searchPos = findNext(this.searchPos);
-        varB4EAC82CA7396A68D541C85D26508E83_316390915 = result;
-        varB4EAC82CA7396A68D541C85D26508E83_316390915.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_316390915;
-        
-        
-            
-        
-        
-        
-        
+String varDC838461EE2FA0CA4C9BBB70A15456B0_162000035 =         result;
+        varDC838461EE2FA0CA4C9BBB70A15456B0_162000035.addTaint(taint);
+        return varDC838461EE2FA0CA4C9BBB70A15456B0_162000035;
+        // ---------- Original Method ----------
+        //if (this.currentToken == null) {
+            //throw new NoSuchElementException("Iteration already finished.");
+        //}
+        //final String result = this.currentToken;
+        //this.searchPos = findNext(this.searchPos);
+        //return result;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.304 -0400", hash_original_method = "EF0593622B27F345C7E5884D7EB53A09", hash_generated_method = "D36CCE108358A453E22F3B4D00856EE3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.690 -0400", hash_original_method = "EF0593622B27F345C7E5884D7EB53A09", hash_generated_method = "99338AE53799DA6D983D0F27BADADB8E")
     public final Object next() throws NoSuchElementException, ParseException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_739936234 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_739936234 = nextToken();
-        varB4EAC82CA7396A68D541C85D26508E83_739936234.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_739936234;
-        
-        
+Object var1E85D5DD28517B6F091CC30DA1235BD1_767750184 =         nextToken();
+        var1E85D5DD28517B6F091CC30DA1235BD1_767750184.addTaint(taint);
+        return var1E85D5DD28517B6F091CC30DA1235BD1_767750184;
+        // ---------- Original Method ----------
+        //return nextToken();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.304 -0400", hash_original_method = "3BA4D5C83A160BCB8FD8E05B9614066A", hash_generated_method = "037448CF857D69C849CA62DE01E88BFD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.690 -0400", hash_original_method = "3BA4D5C83A160BCB8FD8E05B9614066A", hash_generated_method = "4433241A1208F1DADFEB10FAE5F73A2A")
     public final void remove() throws UnsupportedOperationException {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException
+        UnsupportedOperationException var7B570CABEE51442D3CCB7BB64D5EC4F8_597599413 = new UnsupportedOperationException
             ("Removing tokens is not supported.");
-        
-        
-            
+        var7B570CABEE51442D3CCB7BB64D5EC4F8_597599413.addTaint(taint);
+        throw var7B570CABEE51442D3CCB7BB64D5EC4F8_597599413;
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException
+            //("Removing tokens is not supported.");
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.304 -0400", hash_original_method = "32F5FD491C11EBCEB75A9EB408CEB9C9", hash_generated_method = "669FAFAD541BB44F572862447048E1E1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.691 -0400", hash_original_method = "32F5FD491C11EBCEB75A9EB408CEB9C9", hash_generated_method = "F66842077F5B7326ABA5FB8B49D3731E")
     protected int findNext(int from) throws ParseException {
+        addTaint(from);
+    if(from < 0)        
         {
+    if(!this.headerIt.hasNext())            
             {
-                boolean var2ED5D41DAB80F18400A8BF4D761F589A_1757045399 = (!this.headerIt.hasNext());
-            } 
+                int var6BB61E3B7BCE0931DA574D19D1D82C88_2107567532 = (-1);
+                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1037012153 = getTaintInt();
+                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1037012153;
+            } //End block
             this.currentHeader = this.headerIt.nextHeader().getValue();
             from = 0;
-        } 
+        } //End block
+        else
         {
             from = findTokenSeparator(from);
-        } 
+        } //End block
         int start = findTokenStart(from);
+    if(start < 0)        
         {
             this.currentToken = null;
-        } 
+            int var6BB61E3B7BCE0931DA574D19D1D82C88_1484952286 = (-1);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_819776749 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_819776749;
+        } //End block
         int end = findTokenEnd(start);
         this.currentToken = createToken(this.currentHeader, start, end);
-        addTaint(from);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1628081905 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1628081905;
-        
-        
-            
-                
-            
-            
-            
-        
-            
-        
-        
-        
-            
-            
-        
-        
-        
-        
+        int var7F021A1415B86F2D013B2618FB31AE53_1616365868 = (end);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1957190574 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1957190574;
+        // ---------- Original Method ----------
+        //if (from < 0) {
+            //if (!this.headerIt.hasNext()) {
+                //return -1;
+            //}
+            //this.currentHeader = this.headerIt.nextHeader().getValue();
+            //from = 0;
+        //} else {
+            //from = findTokenSeparator(from);
+        //}
+        //int start = findTokenStart(from);
+        //if (start < 0) {
+            //this.currentToken = null;
+            //return -1; 
+        //}
+        //int end = findTokenEnd(start);
+        //this.currentToken = createToken(this.currentHeader, start, end);
+        //return end;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.306 -0400", hash_original_method = "8A7AB715022476147F81646A7190B2B6", hash_generated_method = "984C2F4A7B0EEE18F1BA91EBD84D1DC0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.692 -0400", hash_original_method = "8A7AB715022476147F81646A7190B2B6", hash_generated_method = "E825169F83544E34C235A03D164AD35F")
     protected String createToken(String value, int start, int end) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1584074892 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1584074892 = value.substring(start, end);
-        addTaint(value.getTaint());
-        addTaint(start);
         addTaint(end);
-        varB4EAC82CA7396A68D541C85D26508E83_1584074892.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1584074892;
-        
-        
+        addTaint(start);
+        addTaint(value.getTaint());
+String var6D1AD31619F0A44155D98F0B7B4EEE63_818405000 =         value.substring(start, end);
+        var6D1AD31619F0A44155D98F0B7B4EEE63_818405000.addTaint(taint);
+        return var6D1AD31619F0A44155D98F0B7B4EEE63_818405000;
+        // ---------- Original Method ----------
+        //return value.substring(start, end);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.307 -0400", hash_original_method = "C3C9B07DEC7C1A6A9535E620A84F019D", hash_generated_method = "648A8BC124D55425D29BF56436907C2E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.694 -0400", hash_original_method = "C3C9B07DEC7C1A6A9535E620A84F019D", hash_generated_method = "C757C9A463FA6E75E072C3866B0C8FB0")
     protected int findTokenStart(int from) {
+        addTaint(from);
+    if(from < 0)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
+            IllegalArgumentException varE67816026124B737FE00C0674250C1B6_1604507112 = new IllegalArgumentException
                 ("Search position must not be negative: " + from);
-        } 
+            varE67816026124B737FE00C0674250C1B6_1604507112.addTaint(taint);
+            throw varE67816026124B737FE00C0674250C1B6_1604507112;
+        } //End block
         boolean found = false;
+        while
+(!found && (this.currentHeader != null))        
         {
             final int to = this.currentHeader.length();
+            while
+(!found && (from < to))            
             {
                 final char ch = this.currentHeader.charAt(from);
+    if(isTokenSeparator(ch) || isWhitespace(ch))                
                 {
-                    boolean var1CFFC2151A0DE523FB3ADD132871A9B5_693058862 = (isTokenSeparator(ch) || isWhitespace(ch));
-                    {
-                        boolean var6F63D153970F70A4B3084057F7262005_2082851915 = (isTokenChar(this.currentHeader.charAt(from)));
-                        {
-                            found = true;
-                        } 
-                        {
-                            if (DroidSafeAndroidRuntime.control) throw new ParseException
-                        ("Invalid character before token (pos " + from +
-                         "): " + this.currentHeader);
-                        } 
-                    } 
-                } 
-            } 
-            {
-                {
-                    boolean var28CB0FA688573765FA387321488729EB_1235039813 = (this.headerIt.hasNext());
-                    {
-                        this.currentHeader = this.headerIt.nextHeader().getValue();
-                        from = 0;
-                    } 
-                    {
-                        this.currentHeader = null;
-                    } 
-                } 
-            } 
-        } 
-        addTaint(from);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_743487266 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_743487266;
-        
-        
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.307 -0400", hash_original_method = "85E1DE95D8123E292DCFF62F7D93B47F", hash_generated_method = "1C3F28D5F3D33FB540ACE5ACF74B6AF7")
-    protected int findTokenSeparator(int from) {
-        {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
-                ("Search position must not be negative: " + from);
-        } 
-        boolean found = false;
-        final int to = this.currentHeader.length();
-        {
-            final char ch = this.currentHeader.charAt(from);
-            {
-                boolean var3446E97B69F01D5EE66A5892B24698C7_568577421 = (isTokenSeparator(ch));
+                    from++;
+                } //End block
+                else
+    if(isTokenChar(this.currentHeader.charAt(from)))                
                 {
                     found = true;
-                } 
+                } //End block
+                else
                 {
-                    boolean var24E73B081FAA1F3638302F7B0430AE99_941989451 = (isWhitespace(ch));
-                    {
-                        boolean var071CCC5723544444075BA17AB0B5D484_137833571 = (isTokenChar(ch));
-                        {
-                            if (DroidSafeAndroidRuntime.control) throw new ParseException
+                    ParseException varA8030CC569E7A8CB5F552D188C3E0720_1864553204 = new ParseException
+                        ("Invalid character before token (pos " + from +
+                         "): " + this.currentHeader);
+                    varA8030CC569E7A8CB5F552D188C3E0720_1864553204.addTaint(taint);
+                    throw varA8030CC569E7A8CB5F552D188C3E0720_1864553204;
+                } //End block
+            } //End block
+    if(!found)            
+            {
+    if(this.headerIt.hasNext())                
+                {
+                    this.currentHeader = this.headerIt.nextHeader().getValue();
+                    from = 0;
+                } //End block
+                else
+                {
+                    this.currentHeader = null;
+                } //End block
+            } //End block
+        } //End block
+        int var30BEC673AA85928644B576FD1EBDB4A9_2129150162 = (found ? from : -1);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1650004067 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1650004067;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.696 -0400", hash_original_method = "85E1DE95D8123E292DCFF62F7D93B47F", hash_generated_method = "CC19907B6EE73C72E2012C0A53C8EA85")
+    protected int findTokenSeparator(int from) {
+        addTaint(from);
+    if(from < 0)        
+        {
+            IllegalArgumentException varE67816026124B737FE00C0674250C1B6_250908238 = new IllegalArgumentException
+                ("Search position must not be negative: " + from);
+            varE67816026124B737FE00C0674250C1B6_250908238.addTaint(taint);
+            throw varE67816026124B737FE00C0674250C1B6_250908238;
+        } //End block
+        boolean found = false;
+        final int to = this.currentHeader.length();
+        while
+(!found && (from < to))        
+        {
+            final char ch = this.currentHeader.charAt(from);
+    if(isTokenSeparator(ch))            
+            {
+                found = true;
+            } //End block
+            else
+    if(isWhitespace(ch))            
+            {
+                from++;
+            } //End block
+            else
+    if(isTokenChar(ch))            
+            {
+                ParseException varEA490B7121C4EAA91DF759C9DBD7A5E2_1235875232 = new ParseException
                     ("Tokens without separator (pos " + from +
                      "): " + this.currentHeader);
-                        } 
-                        {
-                            if (DroidSafeAndroidRuntime.control) throw new ParseException
+                varEA490B7121C4EAA91DF759C9DBD7A5E2_1235875232.addTaint(taint);
+                throw varEA490B7121C4EAA91DF759C9DBD7A5E2_1235875232;
+            } //End block
+            else
+            {
+                ParseException varE0E763A9CA040A12DD639AF228B6984D_2126017827 = new ParseException
                     ("Invalid character after token (pos " + from +
                      "): " + this.currentHeader);
-                        } 
-                    } 
-                } 
-            } 
-        } 
-        addTaint(from);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1009004348 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1009004348;
-        
-        
+                varE0E763A9CA040A12DD639AF228B6984D_2126017827.addTaint(taint);
+                throw varE0E763A9CA040A12DD639AF228B6984D_2126017827;
+            } //End block
+        } //End block
+        int varD98A07F84921B24EE30F86FD8CD85C3C_1944655861 = (from);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1623784335 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1623784335;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.308 -0400", hash_original_method = "ED818B78DD519794D8AD6912C0355074", hash_generated_method = "8DFCE8B8EDD9343C335B28130E5F7BA3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.696 -0400", hash_original_method = "ED818B78DD519794D8AD6912C0355074", hash_generated_method = "5F8C0D3D84EDCF305DD58B91F6FE5352")
     protected int findTokenEnd(int from) {
+        addTaint(from);
+    if(from < 0)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
+            IllegalArgumentException varA6DC0764CC986C425F6C0F9B12A0AD34_1031935293 = new IllegalArgumentException
                 ("Token start position must not be negative: " + from);
-        } 
+            varA6DC0764CC986C425F6C0F9B12A0AD34_1031935293.addTaint(taint);
+            throw varA6DC0764CC986C425F6C0F9B12A0AD34_1031935293;
+        } //End block
         final int to = this.currentHeader.length();
         int end = from+1;
+        while
+((end < to) && isTokenChar(this.currentHeader.charAt(end)))        
         {
-            boolean var7712AE26A406C9569CD551B48EA985FD_321669988 = ((end < to) && isTokenChar(this.currentHeader.charAt(end)));
-        } 
-        addTaint(from);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1933582575 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1933582575;
-        
-        
-            
-                
-        
-        
-        
-        
-            
-        
-        
+            end++;
+        } //End block
+        int var7F021A1415B86F2D013B2618FB31AE53_1263728749 = (end);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1627658992 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1627658992;
+        // ---------- Original Method ----------
+        //if (from < 0) {
+            //throw new IllegalArgumentException
+                //("Token start position must not be negative: " + from);
+        //}
+        //final int to = this.currentHeader.length();
+        //int end = from+1;
+        //while ((end < to) && isTokenChar(this.currentHeader.charAt(end))) {
+            //end++;
+        //}
+        //return end;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.308 -0400", hash_original_method = "82ADC719B633E23931D943624F51E118", hash_generated_method = "11AD3A0DD9309668D38BA46762D14790")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.697 -0400", hash_original_method = "82ADC719B633E23931D943624F51E118", hash_generated_method = "49A73D3A5BC28B0EB4A46CD38134308D")
     protected boolean isTokenSeparator(char ch) {
         addTaint(ch);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_251882041 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_251882041;
-        
-        
+        boolean var618CE8E35889B64AFA0E42D547797C4D_1678750449 = ((ch == ','));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1856550433 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1856550433;
+        // ---------- Original Method ----------
+        //return (ch == ',');
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.308 -0400", hash_original_method = "C3B308F031251D57A69A78A18E46CB9C", hash_generated_method = "C0063BEF8D9A652C3476C79267E4FD1A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.697 -0400", hash_original_method = "C3B308F031251D57A69A78A18E46CB9C", hash_generated_method = "CC0BEA110DDE70E36B5906EBFB07910A")
     protected boolean isWhitespace(char ch) {
-        boolean var8719D6B137540C1E7A3C19DC6567EB7D_1660527016 = (((ch == '\t') || Character.isSpaceChar(ch)));
         addTaint(ch);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_509801288 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_509801288;
-        
-        
+        boolean var19DF6487BAD8F89596CAC8516F2A5CC2_602301956 = (((ch == '\t') || Character.isSpaceChar(ch)));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2141050789 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2141050789;
+        // ---------- Original Method ----------
+        //return ((ch == '\t') || Character.isSpaceChar(ch));
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.309 -0400", hash_original_method = "776CFF97F037037124FC98CDEBC144D9", hash_generated_method = "6B94A7333ADC9CB5539A02E4AAD5C423")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.697 -0400", hash_original_method = "776CFF97F037037124FC98CDEBC144D9", hash_generated_method = "7F217D938A1BAC3D1514A6E2B1013F76")
     protected boolean isTokenChar(char ch) {
-        {
-            boolean varBCA8C5ED5D4BB726319B13FC9A89C314_2103050740 = (Character.isLetterOrDigit(ch));
-        } 
-        {
-            boolean varC940A6D7CCFAACAA9FBD978001FC2F57_1800408592 = (Character.isISOControl(ch));
-        } 
-        {
-            boolean var966F8668D114AAF75212C7F4B98183C4_2147204409 = (isHttpSeparator(ch));
-        } 
         addTaint(ch);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_785765167 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_785765167;
-        
-        
-            
-        
-            
-        
-            
-        
+    if(Character.isLetterOrDigit(ch))        
+        {
+        boolean varB326B5062B2F0E69046810717534CB09_214108846 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1496903268 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1496903268;
+        }
+    if(Character.isISOControl(ch))        
+        {
+        boolean var68934A3E9455FA72420237EB05902327_1000976420 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1509404658 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1509404658;
+        }
+    if(isHttpSeparator(ch))        
+        {
+        boolean var68934A3E9455FA72420237EB05902327_622519968 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_427378 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_427378;
+        }
+        boolean varB326B5062B2F0E69046810717534CB09_1281964135 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_623319239 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_623319239;
+        // ---------- Original Method ----------
+        //if (Character.isLetterOrDigit(ch))
+            //return true;
+        //if (Character.isISOControl(ch))
+            //return false;
+        //if (isHttpSeparator(ch))
+            //return false;
+        //return true;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.309 -0400", hash_original_method = "8ABD66F1955A5164E5EB5D68E76EE993", hash_generated_method = "EB13CF18B54D5E7071D36C90C8270276")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.698 -0400", hash_original_method = "8ABD66F1955A5164E5EB5D68E76EE993", hash_generated_method = "79BA4695B1C79F98CF48FA211DF90972")
     protected boolean isHttpSeparator(char ch) {
-        boolean varA864A68687971D97FD6C89CDBAC47E21_6468720 = ((HTTP_SEPARATORS.indexOf(ch) >= 0));
         addTaint(ch);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_80314247 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_80314247;
-        
-        
+        boolean var05603C57C93F34A5B16428FA2E84075F_556393032 = ((HTTP_SEPARATORS.indexOf(ch) >= 0));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_127211119 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_127211119;
+        // ---------- Original Method ----------
+        //return (HTTP_SEPARATORS.indexOf(ch) >= 0);
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.309 -0400", hash_original_field = "5FFFA8EDDAC6A93901241670E3BF8737", hash_generated_field = "802E3896B75225C251D59A8EE5A9E545")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.698 -0400", hash_original_field = "5FFFA8EDDAC6A93901241670E3BF8737", hash_generated_field = "802E3896B75225C251D59A8EE5A9E545")
 
     public final static String HTTP_SEPARATORS = " ,;=()<>@:\\\"/[]?{}\t";
 }

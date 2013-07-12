@@ -1,86 +1,84 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.database.Cursor;
 
 class CursorFilter extends Filter {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.310 -0400", hash_original_field = "C2AFC6EFB8302E140D5B8FB82E161BFF", hash_generated_field = "D7B21BB19581EA5872B7B46EEFBFEFD2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.928 -0400", hash_original_field = "C2AFC6EFB8302E140D5B8FB82E161BFF", hash_generated_field = "D7B21BB19581EA5872B7B46EEFBFEFD2")
 
     CursorFilterClient mClient;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.310 -0400", hash_original_method = "D61DC331CF58D286B36C03C7DC72D315", hash_generated_method = "6E3D5C0883E914F2A2E7C1B092F68B97")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.928 -0400", hash_original_method = "D61DC331CF58D286B36C03C7DC72D315", hash_generated_method = "6E3D5C0883E914F2A2E7C1B092F68B97")
       CursorFilter(CursorFilterClient client) {
         mClient = client;
-        
-        
+        // ---------- Original Method ----------
+        //mClient = client;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.311 -0400", hash_original_method = "13FD068C641361B638C17FBE36928984", hash_generated_method = "6037E08F7E942C79FC32AAC55DD1E401")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.929 -0400", hash_original_method = "13FD068C641361B638C17FBE36928984", hash_generated_method = "56010BC93026B9693376E40893023824")
     @Override
     public CharSequence convertResultToString(Object resultValue) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_2007627158 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_2007627158 = mClient.convertToString((Cursor) resultValue);
         addTaint(resultValue.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2007627158.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_2007627158;
-        
-        
+CharSequence var96717A582256C30A3C013FF45D0F5738_627331209 =         mClient.convertToString((Cursor) resultValue);
+        var96717A582256C30A3C013FF45D0F5738_627331209.addTaint(taint);
+        return var96717A582256C30A3C013FF45D0F5738_627331209;
+        // ---------- Original Method ----------
+        //return mClient.convertToString((Cursor) resultValue);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.311 -0400", hash_original_method = "A46F4651EB2D092BF8983D238E1886EF", hash_generated_method = "30C8E842A20326D475BFADF83EA52221")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.933 -0400", hash_original_method = "A46F4651EB2D092BF8983D238E1886EF", hash_generated_method = "5B5E83B070C4A42DCA083CC049B98709")
     @Override
     protected FilterResults performFiltering(CharSequence constraint) {
-        FilterResults varB4EAC82CA7396A68D541C85D26508E83_1595122440 = null; 
+        addTaint(constraint.getTaint());
         Cursor cursor = mClient.runQueryOnBackgroundThread(constraint);
         FilterResults results = new FilterResults();
+    if(cursor != null)        
         {
             results.count = cursor.getCount();
             results.values = cursor;
-        } 
+        } //End block
+        else
         {
             results.count = 0;
             results.values = null;
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1595122440 = results;
-        addTaint(constraint.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1595122440.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1595122440;
-        
-        
-        
-        
-            
-            
-        
-            
-            
-        
-        
+        } //End block
+FilterResults var238ECCC9872FFCA0B3C3DB83598FF044_2055990058 =         results;
+        var238ECCC9872FFCA0B3C3DB83598FF044_2055990058.addTaint(taint);
+        return var238ECCC9872FFCA0B3C3DB83598FF044_2055990058;
+        // ---------- Original Method ----------
+        //Cursor cursor = mClient.runQueryOnBackgroundThread(constraint);
+        //FilterResults results = new FilterResults();
+        //if (cursor != null) {
+            //results.count = cursor.getCount();
+            //results.values = cursor;
+        //} else {
+            //results.count = 0;
+            //results.values = null;
+        //}
+        //return results;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.312 -0400", hash_original_method = "9BA8484E000B7F5A5243E4175A8A6AA1", hash_generated_method = "9281DEBA38AB6EC83134B8885228505B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.933 -0400", hash_original_method = "9BA8484E000B7F5A5243E4175A8A6AA1", hash_generated_method = "07A6D1B9C8B212FBC9454342D3AD39D0")
     @Override
     protected void publishResults(CharSequence constraint, FilterResults results) {
+        addTaint(results.getTaint());
+        addTaint(constraint.getTaint());
         Cursor oldCursor = mClient.getCursor();
+    if(results.values != null && results.values != oldCursor)        
         {
             mClient.changeCursor((Cursor) results.values);
-        } 
-        addTaint(constraint.getTaint());
-        addTaint(results.getTaint());
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Cursor oldCursor = mClient.getCursor();
+        //if (results.values != null && results.values != oldCursor) {
+            //mClient.changeCursor((Cursor) results.values);
+        //}
     }
 
     

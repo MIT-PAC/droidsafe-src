@@ -1,24 +1,20 @@
 package java.math;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.util.Arrays;
 
 class Primality {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.984 -0400", hash_original_method = "3E56E5809677C3FC79921E23C4FBCC34", hash_generated_method = "BF7E1FB696DD619FEE28860391904779")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.385 -0400", hash_original_method = "3E56E5809677C3FC79921E23C4FBCC34", hash_generated_method = "BF7E1FB696DD619FEE28860391904779")
     private  Primality() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static BigInteger nextProbablePrime(BigInteger n) {
+        static BigInteger nextProbablePrime(BigInteger n) {
         int i, j;
         int gapSize = 1024;
         int[] modules = new int[primes.length];
@@ -60,7 +56,7 @@ class Primality {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.984 -0400", hash_original_field = "A30A479233D903EB994AD7FFD4E8F32C", hash_generated_field = "C83F4D8599BBB0CEE3395F15A4E154B6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.386 -0400", hash_original_field = "A30A479233D903EB994AD7FFD4E8F32C", hash_generated_field = "C83F4D8599BBB0CEE3395F15A4E154B6")
 
     private static final int[] primes = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29,
             31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101,
@@ -76,7 +72,7 @@ class Primality {
             827, 829, 839, 853, 857, 859, 863, 877, 881, 883, 887, 907, 911,
             919, 929, 937, 941, 947, 953, 967, 971, 977, 983, 991, 997, 1009,
             1013, 1019, 1021 };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.984 -0400", hash_original_field = "6B29DE19A7248E70046FAC8FB4519EC0", hash_generated_field = "694815BADD9AFBE18A40D6B05D39F7EA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.386 -0400", hash_original_field = "6B29DE19A7248E70046FAC8FB4519EC0", hash_generated_field = "694815BADD9AFBE18A40D6B05D39F7EA")
 
     private static final BigInteger BIprimes[] = new BigInteger[primes.length];
     static {

@@ -1,64 +1,58 @@
 package org.bouncycastle.math.ec;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.math.BigInteger;
 
 class FpNafMultiplier implements ECMultiplier {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.649 -0400", hash_original_method = "BABE471E2E455F4576B9B6A994FEF2CC", hash_generated_method = "BABE471E2E455F4576B9B6A994FEF2CC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.059 -0400", hash_original_method = "BABE471E2E455F4576B9B6A994FEF2CC", hash_generated_method = "BABE471E2E455F4576B9B6A994FEF2CC")
     public FpNafMultiplier ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.653 -0400", hash_original_method = "DE008A6A0942FE352BE58D2F6B7E9069", hash_generated_method = "19BC9734E24D51EA12651CD091CE7AE6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.059 -0400", hash_original_method = "DE008A6A0942FE352BE58D2F6B7E9069", hash_generated_method = "B2307750CFB31D215ECB64F5B5B5F17B")
     public ECPoint multiply(ECPoint p, BigInteger k, PreCompInfo preCompInfo) {
-        ECPoint varB4EAC82CA7396A68D541C85D26508E83_1572823871 = null; 
+        addTaint(preCompInfo.getTaint());
+        addTaint(k.getTaint());
+        addTaint(p.getTaint());
         BigInteger e = k;
         BigInteger h = e.multiply(BigInteger.valueOf(3));
         ECPoint neg = p.negate();
         ECPoint R = p;
+for(int i = h.bitLength() - 2;i > 0;--i)
         {
-            int i = h.bitLength() - 2;
+            R = R.twice();
+            boolean hBit = h.testBit(i);
+            boolean eBit = e.testBit(i);
+    if(hBit != eBit)            
             {
-                R = R.twice();
-                boolean hBit = h.testBit(i);
-                boolean eBit = e.testBit(i);
-                {
-                    R = R.add(hBit ? p : neg);
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1572823871 = R;
-        addTaint(p.getTaint());
-        addTaint(k.getTaint());
-        addTaint(preCompInfo.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1572823871.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1572823871;
-        
-        
-        
-        
-        
-        
-        
-            
-            
-            
-            
-            
-                
-            
-        
-        
+                R = R.add(hBit ? p : neg);
+            } //End block
+        } //End block
+ECPoint varB1A707F4AE63CA846D8DEED4B4536429_1004221240 =         R;
+        varB1A707F4AE63CA846D8DEED4B4536429_1004221240.addTaint(taint);
+        return varB1A707F4AE63CA846D8DEED4B4536429_1004221240;
+        // ---------- Original Method ----------
+        //BigInteger e = k;
+        //BigInteger h = e.multiply(BigInteger.valueOf(3));
+        //ECPoint neg = p.negate();
+        //ECPoint R = p;
+        //for (int i = h.bitLength() - 2; i > 0; --i)
+        //{             
+            //R = R.twice();
+            //boolean hBit = h.testBit(i);
+            //boolean eBit = e.testBit(i);
+            //if (hBit != eBit)
+            //{
+                //R = R.add(hBit ? p : neg);
+            //}
+        //}
+        //return R;
     }
 
     

@@ -1,207 +1,176 @@
 package gov.nist.javax.sip.header;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-
-import java.util.Iterator;
-
 public abstract class SIPHeader extends SIPObject implements SIPHeaderNames, javax.sip.header.Header, HeaderExt {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.335 -0400", hash_original_field = "5B56D13EFD69E1602F78DED5D4B9CB80", hash_generated_field = "A59FED2AE4AD2264FB1F7BF89553485D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.148 -0400", hash_original_field = "5B56D13EFD69E1602F78DED5D4B9CB80", hash_generated_field = "A59FED2AE4AD2264FB1F7BF89553485D")
 
     protected String headerName;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.335 -0400", hash_original_method = "FE673D693BAC70694CA41EF39D92900D", hash_generated_method = "65F96AA6876FD65CD5AC5D1ED00B8886")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.148 -0400", hash_original_method = "FE673D693BAC70694CA41EF39D92900D", hash_generated_method = "65F96AA6876FD65CD5AC5D1ED00B8886")
     protected  SIPHeader(String hname) {
         headerName = hname;
-        
-        
+        // ---------- Original Method ----------
+        //headerName = hname;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.335 -0400", hash_original_method = "1EA533F6110BBCB8F937FFE2E4A5C224", hash_generated_method = "944F6867AF0E885EC31D94410F55FE87")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.148 -0400", hash_original_method = "1EA533F6110BBCB8F937FFE2E4A5C224", hash_generated_method = "944F6867AF0E885EC31D94410F55FE87")
     public  SIPHeader() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.336 -0400", hash_original_method = "62BB7D98AC3AE2D1B44BF4A9C83BFCEA", hash_generated_method = "1625E0E0E490C151EB22C2BBF3C38A5B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.148 -0400", hash_original_method = "62BB7D98AC3AE2D1B44BF4A9C83BFCEA", hash_generated_method = "B85699B78DBF4050C82F4E4E9ACE739F")
     public String getHeaderName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_717913317 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_717913317 = headerName;
-        varB4EAC82CA7396A68D541C85D26508E83_717913317.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_717913317;
-        
-        
+String var39A6529A5A73FCA4F413DA93A90497DA_89515707 =         headerName;
+        var39A6529A5A73FCA4F413DA93A90497DA_89515707.addTaint(taint);
+        return var39A6529A5A73FCA4F413DA93A90497DA_89515707;
+        // ---------- Original Method ----------
+        //return headerName;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.336 -0400", hash_original_method = "5A8D65821D08B5534EF9F59F256EB0ED", hash_generated_method = "08721D10C5D0FE35F50124BE019790D2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.149 -0400", hash_original_method = "5A8D65821D08B5534EF9F59F256EB0ED", hash_generated_method = "A917C70AFF46BC532555EA1BF9F7ADD0")
     public String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_745260868 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_745260868 = this.headerName;
-        varB4EAC82CA7396A68D541C85D26508E83_745260868.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_745260868;
-        
-        
+String var2D0A9E749E9205038C7691483855DB68_309488485 =         this.headerName;
+        var2D0A9E749E9205038C7691483855DB68_309488485.addTaint(taint);
+        return var2D0A9E749E9205038C7691483855DB68_309488485;
+        // ---------- Original Method ----------
+        //return this.headerName;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.336 -0400", hash_original_method = "B4EB4BB0337C6A7359D4335CEE5552C5", hash_generated_method = "6CE49BAD21B0CDF875F602FC403D818D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.149 -0400", hash_original_method = "B4EB4BB0337C6A7359D4335CEE5552C5", hash_generated_method = "6CE49BAD21B0CDF875F602FC403D818D")
     public void setHeaderName(String hdrname) {
         headerName = hdrname;
-        
-        
+        // ---------- Original Method ----------
+        //headerName = hdrname;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.337 -0400", hash_original_method = "4978FCECCFF9CE458180DF94EDCE0642", hash_generated_method = "EC1050EAD3EC2C15EB372DA3668BD9CD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.149 -0400", hash_original_method = "4978FCECCFF9CE458180DF94EDCE0642", hash_generated_method = "7E3B92B915BC87D2468DDA7EB56270E9")
     public String getHeaderValue() {
-        String varB4EAC82CA7396A68D541C85D26508E83_953324120 = null; 
-        String varB4EAC82CA7396A68D541C85D26508E83_713163929 = null; 
         String encodedHdr = null;
         try 
         {
             encodedHdr = this.encode();
-        } 
+        } //End block
         catch (Exception ex)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_953324120 = null;
-        } 
+String var540C13E9E156B687226421B24F2DF178_805196541 =             null;
+            var540C13E9E156B687226421B24F2DF178_805196541.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_805196541;
+        } //End block
         StringBuffer buffer = new StringBuffer(encodedHdr);
+        while
+(buffer.length() > 0 && buffer.charAt(0) != ':')        
         {
-            boolean var8ED0ECD51D0EE01B77341FFB604DA0BF_1949430199 = (buffer.length() > 0 && buffer.charAt(0) != ':');
-            {
-                buffer.deleteCharAt(0);
-            } 
-        } 
-        {
-            boolean varA6481F2DD37075F8497C4FE156A6F563_796144438 = (buffer.length() > 0);
             buffer.deleteCharAt(0);
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_713163929 = buffer.toString().trim();
-        String varA7E53CE21691AB073D9660D615818899_1759102804; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1759102804 = varB4EAC82CA7396A68D541C85D26508E83_953324120;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1759102804 = varB4EAC82CA7396A68D541C85D26508E83_713163929;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1759102804.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1759102804;
-        
-        
-        
-            
-        
-            
-        
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+    if(buffer.length() > 0)        
+        buffer.deleteCharAt(0);
+String varF08EA8F86C2009CF17A86BBDF8DB2EA7_702338557 =         buffer.toString().trim();
+        varF08EA8F86C2009CF17A86BBDF8DB2EA7_702338557.addTaint(taint);
+        return varF08EA8F86C2009CF17A86BBDF8DB2EA7_702338557;
+        // ---------- Original Method ----------
+        //String encodedHdr = null;
+        //try {
+            //encodedHdr = this.encode();
+        //} catch (Exception ex) {
+            //return null;
+        //}
+        //StringBuffer buffer = new StringBuffer(encodedHdr);
+        //while (buffer.length() > 0 && buffer.charAt(0) != ':') {
+            //buffer.deleteCharAt(0);
+        //}
+        //if (buffer.length() > 0)
+            //buffer.deleteCharAt(0);
+        //return buffer.toString().trim();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.337 -0400", hash_original_method = "1CB55F4681FA88A1D00C1CC7A8265E42", hash_generated_method = "649D75E39EE5F9697C21E0BEEA4D32FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.150 -0400", hash_original_method = "1CB55F4681FA88A1D00C1CC7A8265E42", hash_generated_method = "48D59B6C3CAF4C9586B23780B112654A")
     public boolean isHeaderList() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_261456481 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_261456481;
-        
-        
+        boolean var68934A3E9455FA72420237EB05902327_1428483826 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_361724771 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_361724771;
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.338 -0400", hash_original_method = "A36333A6F745F23182438BFF478F971C", hash_generated_method = "9046C3BABBF84AF991DC43955BDE4CA2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.150 -0400", hash_original_method = "A36333A6F745F23182438BFF478F971C", hash_generated_method = "B7012055E62B76DDEEC9F4FD2FABB84B")
     public String encode() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1384830161 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1384830161 = encode(new StringBuffer()).toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1384830161.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1384830161;
-        
-        
+String var678B6FE61D54E5BD4E109D01C318C133_1525210025 =         encode(new StringBuffer()).toString();
+        var678B6FE61D54E5BD4E109D01C318C133_1525210025.addTaint(taint);
+        return var678B6FE61D54E5BD4E109D01C318C133_1525210025;
+        // ---------- Original Method ----------
+        //return encode(new StringBuffer()).toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.339 -0400", hash_original_method = "D602371A78852934DC2C93C46C0FD81D", hash_generated_method = "97D42B9712E5FBFE5F0123191D76AFFA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.151 -0400", hash_original_method = "D602371A78852934DC2C93C46C0FD81D", hash_generated_method = "A6D03E7FE212CE8865EBC798054430D6")
     public StringBuffer encode(StringBuffer buffer) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_967423405 = null; 
+        addTaint(buffer.getTaint());
         buffer.append(this.headerName).append(COLON).append(SP);
         this.encodeBody(buffer);
         buffer.append(NEWLINE);
-        varB4EAC82CA7396A68D541C85D26508E83_967423405 = buffer;
-        addTaint(buffer.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_967423405.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_967423405;
-        
-        
-        
-        
-        
+StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_829084806 =         buffer;
+        varE75BCB56CC6A0BCEED51BE38E1BB3F38_829084806.addTaint(taint);
+        return varE75BCB56CC6A0BCEED51BE38E1BB3F38_829084806;
+        // ---------- Original Method ----------
+        //buffer.append(this.headerName).append(COLON).append(SP);
+        //this.encodeBody(buffer);
+        //buffer.append(NEWLINE);
+        //return buffer;
     }
 
     
     protected abstract String encodeBody();
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.340 -0400", hash_original_method = "112FD4376D79389C2460FE6A980E7021", hash_generated_method = "E6D53A3D8320D508ABCD400C2CEB2294")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.151 -0400", hash_original_method = "112FD4376D79389C2460FE6A980E7021", hash_generated_method = "C4B85B7CC8F0014328A6B4CFF3BB9B6D")
     protected StringBuffer encodeBody(StringBuffer buffer) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1158865704 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1158865704 = buffer.append(encodeBody());
         addTaint(buffer.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1158865704.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1158865704;
-        
-        
+StringBuffer varABD6A1236808A2805884156E6801E996_834768714 =         buffer.append(encodeBody());
+        varABD6A1236808A2805884156E6801E996_834768714.addTaint(taint);
+        return varABD6A1236808A2805884156E6801E996_834768714;
+        // ---------- Original Method ----------
+        //return buffer.append(encodeBody());
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.341 -0400", hash_original_method = "B7F53CD18FD7F00B77483EF4A0589C59", hash_generated_method = "A0FD23FC6FC12F4F581DAD25766B8BC6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.151 -0400", hash_original_method = "B7F53CD18FD7F00B77483EF4A0589C59", hash_generated_method = "74F9F41CC7022BEB8321BAE99B9304EA")
     public String getValue() {
-        String varB4EAC82CA7396A68D541C85D26508E83_93523851 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_93523851 = this.getHeaderValue();
-        varB4EAC82CA7396A68D541C85D26508E83_93523851.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_93523851;
-        
-        
+String var650A235F8D00B3E802F034AA253BD873_1107538879 =         this.getHeaderValue();
+        var650A235F8D00B3E802F034AA253BD873_1107538879.addTaint(taint);
+        return var650A235F8D00B3E802F034AA253BD873_1107538879;
+        // ---------- Original Method ----------
+        //return this.getHeaderValue();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.341 -0400", hash_original_method = "78242797F449E5EBFB278CC5A6BC56D0", hash_generated_method = "F0517E6F2D11B6B6C9E90FDE833DBA63")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.152 -0400", hash_original_method = "78242797F449E5EBFB278CC5A6BC56D0", hash_generated_method = "A63FAC272F6CAFB8A82F1CA416401589")
     public int hashCode() {
-        int var4B8D37533CC12365BECFAB730FC9EDC2_1433255232 = (this.headerName.hashCode());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1348909236 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1348909236;
-        
-        
+        int var3CA62782399404389049138061B2C659_1909444289 = (this.headerName.hashCode());
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1641387944 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1641387944;
+        // ---------- Original Method ----------
+        //return this.headerName.hashCode();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.342 -0400", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "107B0DEC3344C85F00376272607A0892")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.152 -0400", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "68CB6505A6C80FCC0B6AE1460FC56753")
     public final String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1934020416 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1934020416 = this.encode();
-        varB4EAC82CA7396A68D541C85D26508E83_1934020416.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1934020416;
-        
-        
+String varB17575D7C845B2C662583710539AAEBB_1095359469 =         this.encode();
+        varB17575D7C845B2C662583710539AAEBB_1095359469.addTaint(taint);
+        return varB17575D7C845B2C662583710539AAEBB_1095359469;
+        // ---------- Original Method ----------
+        //return this.encode();
     }
 
     

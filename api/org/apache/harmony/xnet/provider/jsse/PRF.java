@@ -1,12 +1,9 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.security.GeneralSecurityException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -17,15 +14,14 @@ import javax.net.ssl.SSLException;
 
 public class PRF {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.653 -0400", hash_original_method = "A5FFDA88D1812D20324981FB63A9C9B4", hash_generated_method = "A5FFDA88D1812D20324981FB63A9C9B4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.860 -0400", hash_original_method = "A5FFDA88D1812D20324981FB63A9C9B4", hash_generated_method = "A5FFDA88D1812D20324981FB63A9C9B4")
     public PRF ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
-    static private void init() {
+        static private void init() {
         try {
             md5_mac = Mac.getInstance("HmacMD5");
             sha_mac = Mac.getInstance("HmacSHA1");
@@ -48,8 +44,7 @@ public class PRF {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static synchronized void computePRF_SSLv3(byte[] out, byte[] secret, byte[] seed) {
+        static synchronized void computePRF_SSLv3(byte[] out, byte[] secret, byte[] seed) {
         if (sha == null) {
             init();
         }
@@ -76,8 +71,7 @@ public class PRF {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    synchronized static void computePRF(byte[] out, byte[] secret,
+        synchronized static void computePRF(byte[] out, byte[] secret,
             byte[] str_byts, byte[] seed) throws GeneralSecurityException {
         if (sha_mac == null) {
             init();
@@ -151,25 +145,25 @@ public class PRF {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.654 -0400", hash_original_field = "B9DD19CA9DF6AF0A12518D69A173A2AE", hash_generated_field = "C3F45E78FDFD4A7B65124F3B5EABEA83")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.861 -0400", hash_original_field = "B9DD19CA9DF6AF0A12518D69A173A2AE", hash_generated_field = "C3F45E78FDFD4A7B65124F3B5EABEA83")
 
     private static Logger.Stream logger = Logger.getStream("prf");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.654 -0400", hash_original_field = "8A5CFFE78E88DDE2248401A20C771A53", hash_generated_field = "A5684AE7706FA9ECD61E6D3EA8256C34")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.861 -0400", hash_original_field = "8A5CFFE78E88DDE2248401A20C771A53", hash_generated_field = "A5684AE7706FA9ECD61E6D3EA8256C34")
 
     private static Mac md5_mac;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.654 -0400", hash_original_field = "453D4A6AEBB5FB5CD38316C6C6331AB4", hash_generated_field = "390D99310B8B23E117E0ACB370C8F537")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.861 -0400", hash_original_field = "453D4A6AEBB5FB5CD38316C6C6331AB4", hash_generated_field = "390D99310B8B23E117E0ACB370C8F537")
 
     private static Mac sha_mac;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.654 -0400", hash_original_field = "1BC29B36F623BA82AAF6724FD3B16718", hash_generated_field = "D5F014887D4A79E166510A4FA421D08B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.861 -0400", hash_original_field = "1BC29B36F623BA82AAF6724FD3B16718", hash_generated_field = "D5F014887D4A79E166510A4FA421D08B")
 
     protected static MessageDigest md5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.654 -0400", hash_original_field = "CA794FB2D950ACF25C964ECC35F2D7E2", hash_generated_field = "2E9E9E85A50E6935D767AA6B9691EC63")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.861 -0400", hash_original_field = "CA794FB2D950ACF25C964ECC35F2D7E2", hash_generated_field = "2E9E9E85A50E6935D767AA6B9691EC63")
 
     protected static MessageDigest sha;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.654 -0400", hash_original_field = "43388F9313CECFF9CD697ED57180FB53", hash_generated_field = "2C9D0114C1AC2794837DE00C523B4889")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.861 -0400", hash_original_field = "43388F9313CECFF9CD697ED57180FB53", hash_generated_field = "2C9D0114C1AC2794837DE00C523B4889")
 
     private static int md5_mac_length;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.654 -0400", hash_original_field = "249BE768117C096E96EC036C55F03F71", hash_generated_field = "05BC0A15A688E18C1BE91C143F82353B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.861 -0400", hash_original_field = "249BE768117C096E96EC036C55F03F71", hash_generated_field = "05BC0A15A688E18C1BE91C143F82353B")
 
     private static int sha_mac_length;
 }

@@ -1,12 +1,9 @@
 package android.net.http;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.content.Context;
 import java.net.Socket;
 import java.io.IOException;
@@ -18,21 +15,21 @@ import org.apache.http.params.HttpConnectionParams;
 
 class HttpConnection extends Connection {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.904 -0400", hash_original_method = "8B0FF76444F6FD4A7628D73D943DE9DB", hash_generated_method = "24153836523023A6CDF0D934BE6FD294")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.214 -0400", hash_original_method = "8B0FF76444F6FD4A7628D73D943DE9DB", hash_generated_method = "272759CD16D2D43385322A80BF1D6C19")
       HttpConnection(Context context, HttpHost host,
                    RequestFeeder requestFeeder) {
         super(context, host, requestFeeder);
-        addTaint(context.getTaint());
-        addTaint(host.getTaint());
         addTaint(requestFeeder.getTaint());
-        
+        addTaint(host.getTaint());
+        addTaint(context.getTaint());
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.904 -0400", hash_original_method = "EFF3BAA5D0EF7633E7DF2DAA76502E87", hash_generated_method = "D24A782F3417D77D4C0D36495DEECB30")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.214 -0400", hash_original_method = "EFF3BAA5D0EF7633E7DF2DAA76502E87", hash_generated_method = "CAD37A46CA6990A5E291C9FAEBD183DF")
     @Override
      AndroidHttpClientConnection openConnection(Request req) throws IOException {
-        AndroidHttpClientConnection varB4EAC82CA7396A68D541C85D26508E83_656824489 = null; 
+        addTaint(req.getTaint());
         EventHandler eventHandler = req.getEventHandler();
         mCertificate = null;
         eventHandler.certificate(mCertificate);
@@ -41,72 +38,67 @@ class HttpConnection extends Connection {
         Socket sock = new Socket(mHost.getHostName(), mHost.getPort());
         params.setIntParameter(HttpConnectionParams.SOCKET_BUFFER_SIZE, 8192);
         conn.bind(sock, params);
-        varB4EAC82CA7396A68D541C85D26508E83_656824489 = conn;
-        addTaint(req.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_656824489.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_656824489;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+AndroidHttpClientConnection varE92EA799FE726EFFA481FDDF43ADE4CF_1802880265 =         conn;
+        varE92EA799FE726EFFA481FDDF43ADE4CF_1802880265.addTaint(taint);
+        return varE92EA799FE726EFFA481FDDF43ADE4CF_1802880265;
+        // ---------- Original Method ----------
+        //EventHandler eventHandler = req.getEventHandler();
+        //mCertificate = null;
+        //eventHandler.certificate(mCertificate);
+        //AndroidHttpClientConnection conn = new AndroidHttpClientConnection();
+        //BasicHttpParams params = new BasicHttpParams();
+        //Socket sock = new Socket(mHost.getHostName(), mHost.getPort());
+        //params.setIntParameter(HttpConnectionParams.SOCKET_BUFFER_SIZE, 8192);
+        //conn.bind(sock, params);
+        //return conn;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.905 -0400", hash_original_method = "28229552049A2A2DB18166A64CE88A0A", hash_generated_method = "E504443F33DFF7B4F31629F25F11A589")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.215 -0400", hash_original_method = "28229552049A2A2DB18166A64CE88A0A", hash_generated_method = "4B62D9E387E3411FA8910B36C93EF9E2")
      void closeConnection() {
         try 
         {
+    if(mHttpClientConnection != null && mHttpClientConnection.isOpen())            
             {
-                boolean var554318C54B5107CFCDE3465BA6E4A2D0_542549130 = (mHttpClientConnection != null && mHttpClientConnection.isOpen());
-                {
-                    mHttpClientConnection.close();
-                } 
-            } 
-        } 
+                mHttpClientConnection.close();
+            } //End block
+        } //End block
         catch (IOException e)
         {
+    if(HttpLog.LOGV)            
             HttpLog.v(
                     "closeConnection(): failed closing connection " +
                     mHost);
             e.printStackTrace();
-        } 
-        
-        
-            
-                
-            
-        
-            
-                    
-                    
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //if (mHttpClientConnection != null && mHttpClientConnection.isOpen()) {
+                //mHttpClientConnection.close();
+            //}
+        //} catch (IOException e) {
+            //if (HttpLog.LOGV) HttpLog.v(
+                    //"closeConnection(): failed closing connection " +
+                    //mHost);
+            //e.printStackTrace();
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.905 -0400", hash_original_method = "F65A3585D6DFE09EE931E3CB8D7B855F", hash_generated_method = "3D03B196C0054FDF260344F57DB44DDC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.216 -0400", hash_original_method = "F65A3585D6DFE09EE931E3CB8D7B855F", hash_generated_method = "3D03B196C0054FDF260344F57DB44DDC")
      void restartConnection(boolean abort) {
         addTaint(abort);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.906 -0400", hash_original_method = "28A13316B46B35CCB565BDA96B57339B", hash_generated_method = "EF3535413166AF956867FE3F2B61BE6B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.216 -0400", hash_original_method = "28A13316B46B35CCB565BDA96B57339B", hash_generated_method = "47E41E4EAB614CFB35D520A8333FB623")
      String getScheme() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1907829731 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1907829731 = "http";
-        varB4EAC82CA7396A68D541C85D26508E83_1907829731.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1907829731;
-        
-        
+String var44B57466CD1C2BC7FBE96906897504B6_934017218 =         "http";
+        var44B57466CD1C2BC7FBE96906897504B6_934017218.addTaint(taint);
+        return var44B57466CD1C2BC7FBE96906897504B6_934017218;
+        // ---------- Original Method ----------
+        //return "http";
     }
 
     

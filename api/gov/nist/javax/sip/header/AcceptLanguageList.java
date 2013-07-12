@@ -1,97 +1,84 @@
 package gov.nist.javax.sip.header;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import javax.sip.header.*;
 
 public class AcceptLanguageList extends SIPHeaderList<AcceptLanguage> {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.835 -0400", hash_original_method = "240BB3B9B24C078BD16B4E527289E882", hash_generated_method = "11DB9C05848E7350775B5746176F17CF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.690 -0400", hash_original_method = "240BB3B9B24C078BD16B4E527289E882", hash_generated_method = "11DB9C05848E7350775B5746176F17CF")
     public  AcceptLanguageList() {
         super(AcceptLanguage.class, AcceptLanguageHeader.NAME);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.835 -0400", hash_original_method = "D59E3796661CC485086FCE096143E912", hash_generated_method = "9450EE83424D1517DC9C5E52B29C10A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.691 -0400", hash_original_method = "D59E3796661CC485086FCE096143E912", hash_generated_method = "17A2BA5FCCCB6DF5BD378811E637D73B")
     @Override
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_714673318 = null; 
         AcceptLanguageList retval = new AcceptLanguageList();
         retval.clonehlist(this.hlist);
-        varB4EAC82CA7396A68D541C85D26508E83_714673318 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_714673318.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_714673318;
-        
-        
-        
-        
+Object varF9E19AD6135C970F387F77C6F3DE4477_1949219861 =         retval;
+        varF9E19AD6135C970F387F77C6F3DE4477_1949219861.addTaint(taint);
+        return varF9E19AD6135C970F387F77C6F3DE4477_1949219861;
+        // ---------- Original Method ----------
+        //AcceptLanguageList retval = new AcceptLanguageList();
+        //retval.clonehlist(this.hlist);
+        //return retval;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.836 -0400", hash_original_method = "4EAA649C6A43B8603903A57164247286", hash_generated_method = "42145DA1276A926A47787A4211164668")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.691 -0400", hash_original_method = "4EAA649C6A43B8603903A57164247286", hash_generated_method = "883A2F371ED0926AD57062F1BF4912B4")
     public AcceptLanguage getFirst() {
-        AcceptLanguage varB4EAC82CA7396A68D541C85D26508E83_910197985 = null; 
-        AcceptLanguage varB4EAC82CA7396A68D541C85D26508E83_317330687 = null; 
         AcceptLanguage retval = (AcceptLanguage) super.getFirst();
-        varB4EAC82CA7396A68D541C85D26508E83_910197985 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_317330687 = new AcceptLanguage();
-        AcceptLanguage varA7E53CE21691AB073D9660D615818899_429333918; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_429333918 = varB4EAC82CA7396A68D541C85D26508E83_910197985;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_429333918 = varB4EAC82CA7396A68D541C85D26508E83_317330687;
-                break;
+    if(retval != null)        
+        {
+AcceptLanguage varF9E19AD6135C970F387F77C6F3DE4477_567250190 =         retval;
+        varF9E19AD6135C970F387F77C6F3DE4477_567250190.addTaint(taint);
+        return varF9E19AD6135C970F387F77C6F3DE4477_567250190;
         }
-        varA7E53CE21691AB073D9660D615818899_429333918.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_429333918;
-        
-        
-        
-            
-        
-            
+        else
+        {
+AcceptLanguage varE6C39D00C284C00444956A3AA96F5918_1568613459 =         new AcceptLanguage();
+        varE6C39D00C284C00444956A3AA96F5918_1568613459.addTaint(taint);
+        return varE6C39D00C284C00444956A3AA96F5918_1568613459;
+        }
+        // ---------- Original Method ----------
+        //AcceptLanguage retval = (AcceptLanguage) super.getFirst();
+        //if (retval != null)
+            //return retval;
+        //else
+            //return new AcceptLanguage();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.836 -0400", hash_original_method = "D3074C13DEFE0D00E21551F82106E50D", hash_generated_method = "6EBFC1D5A283237FE9141ED518492330")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.691 -0400", hash_original_method = "D3074C13DEFE0D00E21551F82106E50D", hash_generated_method = "B1A8A7FB049CDCA724D68206AC7CAB02")
     public AcceptLanguage getLast() {
-        AcceptLanguage varB4EAC82CA7396A68D541C85D26508E83_954742743 = null; 
-        AcceptLanguage varB4EAC82CA7396A68D541C85D26508E83_2048869576 = null; 
         AcceptLanguage retval = (AcceptLanguage) super.getLast();
-        varB4EAC82CA7396A68D541C85D26508E83_954742743 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_2048869576 = new AcceptLanguage();
-        AcceptLanguage varA7E53CE21691AB073D9660D615818899_1915165300; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1915165300 = varB4EAC82CA7396A68D541C85D26508E83_954742743;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1915165300 = varB4EAC82CA7396A68D541C85D26508E83_2048869576;
-                break;
+    if(retval != null)        
+        {
+AcceptLanguage varF9E19AD6135C970F387F77C6F3DE4477_457527595 =         retval;
+        varF9E19AD6135C970F387F77C6F3DE4477_457527595.addTaint(taint);
+        return varF9E19AD6135C970F387F77C6F3DE4477_457527595;
         }
-        varA7E53CE21691AB073D9660D615818899_1915165300.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1915165300;
-        
-        
-        
-            
-        
-            
+        else
+        {
+AcceptLanguage varE6C39D00C284C00444956A3AA96F5918_2051898570 =         new AcceptLanguage();
+        varE6C39D00C284C00444956A3AA96F5918_2051898570.addTaint(taint);
+        return varE6C39D00C284C00444956A3AA96F5918_2051898570;
+        }
+        // ---------- Original Method ----------
+        //AcceptLanguage retval = (AcceptLanguage) super.getLast();
+        //if (retval != null)
+            //return retval;
+        //else
+            //return new AcceptLanguage();
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.837 -0400", hash_original_field = "2DC0C9505B6601CC65D202A5B3F50DF0", hash_generated_field = "7EA90335ABAD53EEB534CFBDFF1F0433")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.692 -0400", hash_original_field = "2DC0C9505B6601CC65D202A5B3F50DF0", hash_generated_field = "7EA90335ABAD53EEB534CFBDFF1F0433")
 
     private static final long serialVersionUID = -3289606805203488840L;
 }

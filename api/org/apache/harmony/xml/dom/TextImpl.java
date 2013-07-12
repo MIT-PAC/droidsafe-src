@@ -1,277 +1,242 @@
 package org.apache.harmony.xml.dom;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Node;
 import org.w3c.dom.Text;
 
 public class TextImpl extends CharacterDataImpl implements Text {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.447 -0400", hash_original_method = "8FBFCF7E900515A865ACF1E6532A7BB4", hash_generated_method = "778826811E83592E50B2C9B824F4A820")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.961 -0400", hash_original_method = "8FBFCF7E900515A865ACF1E6532A7BB4", hash_generated_method = "DDA698DE5625F3952C79CAC3D7CFF209")
     public  TextImpl(DocumentImpl document, String data) {
         super(document, data);
-        addTaint(document.getTaint());
         addTaint(data.getTaint());
-        
+        addTaint(document.getTaint());
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.447 -0400", hash_original_method = "F5AD87001A4CE84E4D3D0566BEEE7118", hash_generated_method = "D041A02AE7FB0EEA27FDD5E07F6BC031")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.961 -0400", hash_original_method = "F5AD87001A4CE84E4D3D0566BEEE7118", hash_generated_method = "44743743CA6F6A90DC5D6BAFDEA2589A")
     @Override
     public String getNodeName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_230994134 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_230994134 = "#text";
-        varB4EAC82CA7396A68D541C85D26508E83_230994134.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_230994134;
-        
-        
+String var479BE8C6ABF395546FF8B94D5B3DB44D_276893398 =         "#text";
+        var479BE8C6ABF395546FF8B94D5B3DB44D_276893398.addTaint(taint);
+        return var479BE8C6ABF395546FF8B94D5B3DB44D_276893398;
+        // ---------- Original Method ----------
+        //return "#text";
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.447 -0400", hash_original_method = "C38FDDE6CC592E744EE6602E5FF8812E", hash_generated_method = "F06E654BE43BB88EA135C17823D41992")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.962 -0400", hash_original_method = "C38FDDE6CC592E744EE6602E5FF8812E", hash_generated_method = "73B872AA46B7287007C3E5D1D5DE7B7F")
     @Override
     public short getNodeType() {
-        short var4F09DAA9D95BCB166A302407A0E0BABE_1024597682 = getTaintShort();
-        return var4F09DAA9D95BCB166A302407A0E0BABE_1024597682;
-        
-        
+        short var342655E618A3A8BC65F7B1BD4EFE2ADE_968947024 = (Node.TEXT_NODE);
+                short var4F09DAA9D95BCB166A302407A0E0BABE_552369272 = getTaintShort();
+        return var4F09DAA9D95BCB166A302407A0E0BABE_552369272;
+        // ---------- Original Method ----------
+        //return Node.TEXT_NODE;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.448 -0400", hash_original_method = "F2223FE614407E591CCAD60B04318A19", hash_generated_method = "8705752203871EE3DC1A9365795E9757")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.962 -0400", hash_original_method = "F2223FE614407E591CCAD60B04318A19", hash_generated_method = "BF24CFAC3BB2DB1F8422A0463938B5BC")
     public final Text splitText(int offset) throws DOMException {
-        Text varB4EAC82CA7396A68D541C85D26508E83_1324771831 = null; 
+        addTaint(offset);
         Text newText = document.createTextNode(
                 substringData(offset, getLength() - offset));
         deleteData(0, offset);
         Node refNode = getNextSibling();
+    if(refNode == null)        
         {
             getParentNode().appendChild(newText);
-        } 
+        } //End block
+        else
         {
             getParentNode().insertBefore(newText, refNode);
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1324771831 = this;
-        addTaint(offset);
-        varB4EAC82CA7396A68D541C85D26508E83_1324771831.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1324771831;
-        
-        
-                
-        
-        
-        
-            
-        
-            
-        
-        
+        } //End block
+Text var72A74007B2BE62B849F475C7BDA4658B_2046536736 =         this;
+        var72A74007B2BE62B849F475C7BDA4658B_2046536736.addTaint(taint);
+        return var72A74007B2BE62B849F475C7BDA4658B_2046536736;
+        // ---------- Original Method ----------
+        //Text newText = document.createTextNode(
+                //substringData(offset, getLength() - offset));
+        //deleteData(0, offset);
+        //Node refNode = getNextSibling();
+        //if (refNode == null) {
+            //getParentNode().appendChild(newText);
+        //} else {
+            //getParentNode().insertBefore(newText, refNode);
+        //}
+        //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.448 -0400", hash_original_method = "E52052CEEE0E5966B25CAA49C3A5CE28", hash_generated_method = "237C0563ECD2C698472CDA689CE06923")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.962 -0400", hash_original_method = "E52052CEEE0E5966B25CAA49C3A5CE28", hash_generated_method = "16F778D0BC9D9FF5AA8E6699B63691DC")
     public final boolean isElementContentWhitespace() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_601971222 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_601971222;
-        
-        
+        boolean var68934A3E9455FA72420237EB05902327_940384405 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1494299465 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1494299465;
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.449 -0400", hash_original_method = "9EC887BD47A703F2DBB656ECC04AC254", hash_generated_method = "4C73CC4A35D55D676D1DB091304503CF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.963 -0400", hash_original_method = "9EC887BD47A703F2DBB656ECC04AC254", hash_generated_method = "362F69279B45AA0E01160579B025E946")
     public final String getWholeText() {
-        String varB4EAC82CA7396A68D541C85D26508E83_199605365 = null; 
         StringBuilder result = new StringBuilder();
+for(TextImpl n = firstTextNodeInCurrentRun();n != null;n = n.nextTextNode())
         {
-            TextImpl n = firstTextNodeInCurrentRun();
-            n = n.nextTextNode();
-            {
-                n.appendDataTo(result);
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_199605365 = result.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_199605365.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_199605365;
-        
-        
-        
-            
-        
-        
+            n.appendDataTo(result);
+        } //End block
+String varE65B3A02759122992CB82C0E651AD408_1602729226 =         result.toString();
+        varE65B3A02759122992CB82C0E651AD408_1602729226.addTaint(taint);
+        return varE65B3A02759122992CB82C0E651AD408_1602729226;
+        // ---------- Original Method ----------
+        //StringBuilder result = new StringBuilder();
+        //for (TextImpl n = firstTextNodeInCurrentRun(); n != null; n = n.nextTextNode()) {
+            //n.appendDataTo(result);
+        //}
+        //return result.toString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.450 -0400", hash_original_method = "F1D9E0F93EC220C6C7713D2F10A5FC3E", hash_generated_method = "97F6F97319ACAE3C651581A2069F5ADF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.964 -0400", hash_original_method = "F1D9E0F93EC220C6C7713D2F10A5FC3E", hash_generated_method = "2CE31E619EB2F2AEA9C63E50D6909662")
     public final Text replaceWholeText(String content) throws DOMException {
-        Text varB4EAC82CA7396A68D541C85D26508E83_2037000444 = null; 
+        addTaint(content.getTaint());
         Node parent = getParentNode();
         Text result = null;
+for(TextImpl n = firstTextNodeInCurrentRun();n != null;)
         {
-            TextImpl n = firstTextNodeInCurrentRun();
+    if(n == this && content != null && content.length() > 0)            
             {
-                {
-                    boolean var0831F1DFD766B141B2DAE9EBB226A597_754345617 = (n == this && content != null && content.length() > 0);
-                    {
-                        setData(content);
-                        result = this;
-                        n = n.nextTextNode();
-                    } 
-                    {
-                        Node toRemove = n;
-                        n = n.nextTextNode();
-                        parent.removeChild(toRemove);
-                    } 
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_2037000444 = result;
-        addTaint(content.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2037000444.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_2037000444;
-        
-        
-        
-        
-            
-                
-                
-                
-            
-                
-                
-                
-            
-        
-        
+                setData(content);
+                result = this;
+                n = n.nextTextNode();
+            } //End block
+            else
+            {
+                Node toRemove = n;
+                n = n.nextTextNode();
+                parent.removeChild(toRemove);
+            } //End block
+        } //End block
+Text varDC838461EE2FA0CA4C9BBB70A15456B0_998910394 =         result;
+        varDC838461EE2FA0CA4C9BBB70A15456B0_998910394.addTaint(taint);
+        return varDC838461EE2FA0CA4C9BBB70A15456B0_998910394;
+        // ---------- Original Method ----------
+        //Node parent = getParentNode();
+        //Text result = null;
+        //for (TextImpl n = firstTextNodeInCurrentRun(); n != null; ) {
+            //if (n == this && content != null && content.length() > 0) {
+                //setData(content);
+                //result = this;
+                //n = n.nextTextNode();
+            //} else {
+                //Node toRemove = n; 
+                //n = n.nextTextNode();
+                //parent.removeChild(toRemove);
+            //}
+        //}
+        //return result;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.452 -0400", hash_original_method = "9928E14A90ED22F7792AF824C555C38E", hash_generated_method = "4C37FE28949DDFF7B6A83AABFE6DF5FD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.964 -0400", hash_original_method = "9928E14A90ED22F7792AF824C555C38E", hash_generated_method = "436B1606C96BC16B17B1885505756984")
     private TextImpl firstTextNodeInCurrentRun() {
-        TextImpl varB4EAC82CA7396A68D541C85D26508E83_949136007 = null; 
         TextImpl firstTextInCurrentRun = this;
+for(Node p = getPreviousSibling();p != null;p = p.getPreviousSibling())
         {
-            Node p = getPreviousSibling();
-            p = p.getPreviousSibling();
+            short nodeType = p.getNodeType();
+    if(nodeType == Node.TEXT_NODE || nodeType == Node.CDATA_SECTION_NODE)            
             {
-                short nodeType = p.getNodeType();
-                {
-                    firstTextInCurrentRun = (TextImpl) p;
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_949136007 = firstTextInCurrentRun;
-        varB4EAC82CA7396A68D541C85D26508E83_949136007.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_949136007;
-        
-        
-        
-            
-            
-                
-            
-                
-            
-        
-        
+                firstTextInCurrentRun = (TextImpl) p;
+            } //End block
+            else
+            {
+                break;
+            } //End block
+        } //End block
+TextImpl var0029222DF1606034C9ECFB713BE58214_1658712362 =         firstTextInCurrentRun;
+        var0029222DF1606034C9ECFB713BE58214_1658712362.addTaint(taint);
+        return var0029222DF1606034C9ECFB713BE58214_1658712362;
+        // ---------- Original Method ----------
+        //TextImpl firstTextInCurrentRun = this;
+        //for (Node p = getPreviousSibling(); p != null; p = p.getPreviousSibling()) {
+            //short nodeType = p.getNodeType();
+            //if (nodeType == Node.TEXT_NODE || nodeType == Node.CDATA_SECTION_NODE) {
+                //firstTextInCurrentRun = (TextImpl) p;
+            //} else {
+                //break;
+            //}
+        //}
+        //return firstTextInCurrentRun;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.455 -0400", hash_original_method = "E11C938286265122BF52D51A5CD9EED3", hash_generated_method = "B6D894B758EF7D04D6879D0F40761325")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.965 -0400", hash_original_method = "E11C938286265122BF52D51A5CD9EED3", hash_generated_method = "033F89523305485014B3D97BA3CB8EEA")
     private TextImpl nextTextNode() {
-        TextImpl varB4EAC82CA7396A68D541C85D26508E83_1997686941 = null; 
-        TextImpl varB4EAC82CA7396A68D541C85D26508E83_912895259 = null; 
         Node nextSibling = getNextSibling();
+    if(nextSibling == null)        
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1997686941 = null;
-        } 
+TextImpl var540C13E9E156B687226421B24F2DF178_286422226 =             null;
+            var540C13E9E156B687226421B24F2DF178_286422226.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_286422226;
+        } //End block
         short nodeType = nextSibling.getNodeType();
-        varB4EAC82CA7396A68D541C85D26508E83_912895259 = nodeType == Node.TEXT_NODE || nodeType == Node.CDATA_SECTION_NODE
+TextImpl var035B60A3C8E68711360148642E80CAF6_655998355 =         nodeType == Node.TEXT_NODE || nodeType == Node.CDATA_SECTION_NODE
                 ? (TextImpl) nextSibling
                 : null;
-        TextImpl varA7E53CE21691AB073D9660D615818899_10831064; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_10831064 = varB4EAC82CA7396A68D541C85D26508E83_1997686941;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_10831064 = varB4EAC82CA7396A68D541C85D26508E83_912895259;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_10831064.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_10831064;
-        
-        
-        
-            
-        
-        
-        
-                
-                
+        var035B60A3C8E68711360148642E80CAF6_655998355.addTaint(taint);
+        return var035B60A3C8E68711360148642E80CAF6_655998355;
+        // ---------- Original Method ----------
+        //Node nextSibling = getNextSibling();
+        //if (nextSibling == null) {
+            //return null;
+        //}
+        //short nodeType = nextSibling.getNodeType();
+        //return nodeType == Node.TEXT_NODE || nodeType == Node.CDATA_SECTION_NODE
+                //? (TextImpl) nextSibling
+                //: null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.456 -0400", hash_original_method = "C12D207E9524D7914DF3EC77CD8084EB", hash_generated_method = "A14024B278BB4A8BE21FFC70F1FAB0C3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.965 -0400", hash_original_method = "C12D207E9524D7914DF3EC77CD8084EB", hash_generated_method = "ECF9BDE745A04A61C7ABE0C7FF6F4CEA")
     public final TextImpl minimize() {
-        TextImpl varB4EAC82CA7396A68D541C85D26508E83_459796419 = null; 
-        TextImpl varB4EAC82CA7396A68D541C85D26508E83_1171838611 = null; 
-        TextImpl varB4EAC82CA7396A68D541C85D26508E83_219878411 = null; 
+    if(getLength() == 0)        
         {
-            boolean varB0D0CE9333EA8221AF0697B62A1B4A5C_1656153957 = (getLength() == 0);
-            {
-                parent.removeChild(this);
-                varB4EAC82CA7396A68D541C85D26508E83_459796419 = null;
-            } 
-        } 
+            parent.removeChild(this);
+TextImpl var540C13E9E156B687226421B24F2DF178_710366427 =             null;
+            var540C13E9E156B687226421B24F2DF178_710366427.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_710366427;
+        } //End block
         Node previous = getPreviousSibling();
+    if(previous == null || previous.getNodeType() != Node.TEXT_NODE)        
         {
-            boolean var4A5BF3CA70F2129AF0CB018F3C4F2317_1662708091 = (previous == null || previous.getNodeType() != Node.TEXT_NODE);
-            {
-                varB4EAC82CA7396A68D541C85D26508E83_1171838611 = this;
-            } 
-        } 
+TextImpl var72A74007B2BE62B849F475C7BDA4658B_1670977356 =             this;
+            var72A74007B2BE62B849F475C7BDA4658B_1670977356.addTaint(taint);
+            return var72A74007B2BE62B849F475C7BDA4658B_1670977356;
+        } //End block
         TextImpl previousText = (TextImpl) previous;
         previousText.buffer.append(buffer);
         parent.removeChild(this);
-        varB4EAC82CA7396A68D541C85D26508E83_219878411 = previousText;
-        TextImpl varA7E53CE21691AB073D9660D615818899_1991082459; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1991082459 = varB4EAC82CA7396A68D541C85D26508E83_459796419;
-                break;
-            case 2: 
-                varA7E53CE21691AB073D9660D615818899_1991082459 = varB4EAC82CA7396A68D541C85D26508E83_1171838611;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1991082459 = varB4EAC82CA7396A68D541C85D26508E83_219878411;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1991082459.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1991082459;
-        
-        
-            
-            
-        
-        
-        
-            
-        
-        
-        
-        
-        
+TextImpl varC48E273F6CD7E4BAAF96F602624F7212_585994815 =         previousText;
+        varC48E273F6CD7E4BAAF96F602624F7212_585994815.addTaint(taint);
+        return varC48E273F6CD7E4BAAF96F602624F7212_585994815;
+        // ---------- Original Method ----------
+        //if (getLength() == 0) {
+            //parent.removeChild(this);
+            //return null;
+        //}
+        //Node previous = getPreviousSibling();
+        //if (previous == null || previous.getNodeType() != Node.TEXT_NODE) {
+            //return this;
+        //}
+        //TextImpl previousText = (TextImpl) previous;
+        //previousText.buffer.append(buffer);
+        //parent.removeChild(this);
+        //return previousText;
     }
 
     

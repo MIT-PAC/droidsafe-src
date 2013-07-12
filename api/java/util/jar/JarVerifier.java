@@ -1,12 +1,9 @@
 package java.util.jar;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -27,377 +24,398 @@ import libcore.io.Base64;
 import org.apache.harmony.security.utils.JarUtils;
 
 class JarVerifier {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.164 -0400", hash_original_field = "36C03847AF0883885A22C7148FF9D945", hash_generated_field = "9E85BB611D3EE89CADB45020535E6B11")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.177 -0400", hash_original_field = "36C03847AF0883885A22C7148FF9D945", hash_generated_field = "9E85BB611D3EE89CADB45020535E6B11")
 
     private String jarName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.164 -0400", hash_original_field = "39C63DDB96A31B9610CD976B896AD4F0", hash_generated_field = "1E6BF158A9ED964E950A909DB5592C82")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.177 -0400", hash_original_field = "39C63DDB96A31B9610CD976B896AD4F0", hash_generated_field = "1E6BF158A9ED964E950A909DB5592C82")
 
     private Manifest man;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.164 -0400", hash_original_field = "7F95040407D1DE1DD06100938FB014B8", hash_generated_field = "7597311A3575323E247960656BDFED83")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.177 -0400", hash_original_field = "7F95040407D1DE1DD06100938FB014B8", hash_generated_field = "7597311A3575323E247960656BDFED83")
 
     private HashMap<String, byte[]> metaEntries = new HashMap<String, byte[]>(5);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.164 -0400", hash_original_field = "EA27612449888A6254ED42A8C6C42B91", hash_generated_field = "EBE3D14483DFDBD581E4922AC5C6EF8C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.177 -0400", hash_original_field = "EA27612449888A6254ED42A8C6C42B91", hash_generated_field = "EBE3D14483DFDBD581E4922AC5C6EF8C")
 
     private final Hashtable<String, HashMap<String, Attributes>> signatures = new Hashtable<String, HashMap<String, Attributes>>(
             5);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.164 -0400", hash_original_field = "B44FC64946B64487171B584AE29B105E", hash_generated_field = "F2823AD67EF4110598FC3B6AEAEBB2CE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.177 -0400", hash_original_field = "B44FC64946B64487171B584AE29B105E", hash_generated_field = "F2823AD67EF4110598FC3B6AEAEBB2CE")
 
     private final Hashtable<String, Certificate[]> certificates = new Hashtable<String, Certificate[]>(
             5);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.164 -0400", hash_original_field = "D94070297E6AC792A9C25E0BCEB74EAB", hash_generated_field = "60F30BC5BC981A97975947915771AEC9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.177 -0400", hash_original_field = "D94070297E6AC792A9C25E0BCEB74EAB", hash_generated_field = "60F30BC5BC981A97975947915771AEC9")
 
     private final Hashtable<String, Certificate[]> verifiedEntries = new Hashtable<String, Certificate[]>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.164 -0400", hash_original_field = "C0B00F03876D83321535EB4B46A79FCE", hash_generated_field = "6B8C7E29F08A08768A13067ED2CA8C6A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.177 -0400", hash_original_field = "C0B00F03876D83321535EB4B46A79FCE", hash_generated_field = "6B8C7E29F08A08768A13067ED2CA8C6A")
 
     int mainAttributesEnd;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.165 -0400", hash_original_method = "4436059C4E8276439A6065FE93A5DE5F", hash_generated_method = "0A8DC9E44BE88658AD08D7EFC25F2EE1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.178 -0400", hash_original_method = "4436059C4E8276439A6065FE93A5DE5F", hash_generated_method = "0A8DC9E44BE88658AD08D7EFC25F2EE1")
       JarVerifier(String name) {
         jarName = name;
-        
-        
+        // ---------- Original Method ----------
+        //jarName = name;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.165 -0400", hash_original_method = "A00C668D834700B7DBCD83DF376B2F68", hash_generated_method = "0AE4DE462D27C99BF7511E5F32568FA9")
-    private SecurityException invalidDigest(String signatureFile, String name, String jarName) {throw new SecurityException(signatureFile + " has invalid digest for " + name +
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.178 -0400", hash_original_method = "A00C668D834700B7DBCD83DF376B2F68", hash_generated_method = "4FFE8D89498B30AD4555549583E38E0F")
+    private SecurityException invalidDigest(String signatureFile, String name, String jarName) {
+        addTaint(jarName.getTaint());
+        addTaint(name.getTaint());
+        addTaint(signatureFile.getTaint());
+        SecurityException var074A5CA52DC88256F635FF6342A6CFE2_1617031252 = new SecurityException(signatureFile + " has invalid digest for " + name +
                 " in " + jarName);
-        
-        
-                
+        var074A5CA52DC88256F635FF6342A6CFE2_1617031252.addTaint(taint);
+        throw var074A5CA52DC88256F635FF6342A6CFE2_1617031252;
+        // ---------- Original Method ----------
+        //throw new SecurityException(signatureFile + " has invalid digest for " + name +
+                //" in " + jarName);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.166 -0400", hash_original_method = "6DF68FF1B39EE346E0EC276311EA5830", hash_generated_method = "AAA875AEE235418D0232F225DF87CC81")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.179 -0400", hash_original_method = "6DF68FF1B39EE346E0EC276311EA5830", hash_generated_method = "D3D317FD39BE469757B659FED0657FAE")
     private SecurityException failedVerification(String jarName, String signatureFile) {
-    	throw new SecurityException(jarName + " failed verification of " + signatureFile);
-        
-        
+        addTaint(signatureFile.getTaint());
+        addTaint(jarName.getTaint());
+        SecurityException varB468A6384A0E268EB77C0514F32BE836_104477158 = new SecurityException(jarName + " failed verification of " + signatureFile);
+        varB468A6384A0E268EB77C0514F32BE836_104477158.addTaint(taint);
+        throw varB468A6384A0E268EB77C0514F32BE836_104477158;
+        // ---------- Original Method ----------
+        //throw new SecurityException(jarName + " failed verification of " + signatureFile);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.167 -0400", hash_original_method = "6A6033A1386EA2314D4EF0CB331B3F5C", hash_generated_method = "36DE4DF93177EA1C79EFE1DC4465DB6C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.180 -0400", hash_original_method = "6A6033A1386EA2314D4EF0CB331B3F5C", hash_generated_method = "5B04B1C7128CBA9735ECB2A7430FF4BD")
      VerifierEntry initEntry(String name) {
-        VerifierEntry varB4EAC82CA7396A68D541C85D26508E83_2009555559 = null; 
-        VerifierEntry varB4EAC82CA7396A68D541C85D26508E83_1513237032 = null; 
-        VerifierEntry varB4EAC82CA7396A68D541C85D26508E83_2142503619 = null; 
-        VerifierEntry varB4EAC82CA7396A68D541C85D26508E83_445668025 = null; 
-        VerifierEntry varB4EAC82CA7396A68D541C85D26508E83_990773497 = null; 
+        addTaint(name.getTaint());
+    if(man == null || signatures.size() == 0)        
         {
-            boolean var1739105B34C5F197F51A0EEC2FCE22C4_1175864499 = (man == null || signatures.size() == 0);
-            {
-                varB4EAC82CA7396A68D541C85D26508E83_2009555559 = null;
-            } 
-        } 
+VerifierEntry var540C13E9E156B687226421B24F2DF178_1907612543 =             null;
+            var540C13E9E156B687226421B24F2DF178_1907612543.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_1907612543;
+        } //End block
         Attributes attributes = man.getAttributes(name);
+    if(attributes == null)        
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1513237032 = null;
-        } 
+VerifierEntry var540C13E9E156B687226421B24F2DF178_1604456868 =             null;
+            var540C13E9E156B687226421B24F2DF178_1604456868.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_1604456868;
+        } //End block
         ArrayList<Certificate> certs = new ArrayList<Certificate>();
         Iterator<Map.Entry<String, HashMap<String, Attributes>>> it = signatures.entrySet().iterator();
+        while
+(it.hasNext())        
         {
-            boolean var03729FD53960D8DCA3A41A13A0229637_193350089 = (it.hasNext());
+            Map.Entry<String, HashMap<String, Attributes>> entry = it.next();
+            HashMap<String, Attributes> hm = entry.getValue();
+    if(hm.get(name) != null)            
             {
-                Map.Entry<String, HashMap<String, Attributes>> entry = it.next();
-                HashMap<String, Attributes> hm = entry.getValue();
-                {
-                    boolean varA11FBA9D7341E0328282C6ADC9E3B007_1437556007 = (hm.get(name) != null);
-                    {
-                        String signatureFile = entry.getKey();
-                        certs.addAll(getSignerCertificates(signatureFile, certificates));
-                    } 
-                } 
-            } 
-        } 
+                String signatureFile = entry.getKey();
+                certs.addAll(getSignerCertificates(signatureFile, certificates));
+            } //End block
+        } //End block
+    if(certs.isEmpty())        
         {
-            boolean varD07177C898FD12D837B9D5964F0C24CD_1307279813 = (certs.isEmpty());
-            {
-                varB4EAC82CA7396A68D541C85D26508E83_2142503619 = null;
-            } 
-        } 
+VerifierEntry var540C13E9E156B687226421B24F2DF178_599695540 =             null;
+            var540C13E9E156B687226421B24F2DF178_599695540.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_599695540;
+        } //End block
         Certificate[] certificatesArray = certs.toArray(new Certificate[certs.size()]);
         String algorithms = attributes.getValue("Digest-Algorithms");
+    if(algorithms == null)        
         {
             algorithms = "SHA SHA1";
-        } 
+        } //End block
         StringTokenizer tokens = new StringTokenizer(algorithms);
+        while
+(tokens.hasMoreTokens())        
         {
-            boolean var4A8B7054AF091A6B38EB732ACFC1CEDB_943921526 = (tokens.hasMoreTokens());
+            String algorithm = tokens.nextToken();
+            String hash = attributes.getValue(algorithm + "-Digest");
+    if(hash == null)            
             {
-                String algorithm = tokens.nextToken();
-                String hash = attributes.getValue(algorithm + "-Digest");
-                byte[] hashBytes = hash.getBytes(Charsets.ISO_8859_1);
-                try 
-                {
-                    varB4EAC82CA7396A68D541C85D26508E83_445668025 = new VerifierEntry(name, MessageDigest
+                continue;
+            } //End block
+            byte[] hashBytes = hash.getBytes(Charsets.ISO_8859_1);
+            try 
+            {
+VerifierEntry var18BE1F5426B3001F1D977CE0544C7884_1486456982 =                 new VerifierEntry(name, MessageDigest
                         .getInstance(algorithm), hashBytes, certificatesArray);
-                } 
-                catch (NoSuchAlgorithmException e)
-                { }
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_990773497 = null;
-        addTaint(name.getTaint());
-        VerifierEntry varA7E53CE21691AB073D9660D615818899_872336549; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_872336549 = varB4EAC82CA7396A68D541C85D26508E83_2009555559;
-                break;
-            case 2: 
-                varA7E53CE21691AB073D9660D615818899_872336549 = varB4EAC82CA7396A68D541C85D26508E83_1513237032;
-                break;
-            case 3: 
-                varA7E53CE21691AB073D9660D615818899_872336549 = varB4EAC82CA7396A68D541C85D26508E83_2142503619;
-                break;
-            case 4: 
-                varA7E53CE21691AB073D9660D615818899_872336549 = varB4EAC82CA7396A68D541C85D26508E83_445668025;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_872336549 = varB4EAC82CA7396A68D541C85D26508E83_990773497;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_872336549.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_872336549;
-        
-        
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.168 -0400", hash_original_method = "B24E46A89F6B78A5F74DC1F8899F1D36", hash_generated_method = "ED12B2ED3232D85AB068B860172E6DC0")
-     void addMetaEntry(String name, byte[] buf) {
-        metaEntries.put(name.toUpperCase(Locale.US), buf);
-        addTaint(name.getTaint());
-        addTaint(buf[0]);
-        
-        
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.169 -0400", hash_original_method = "8A8EDD1088AB3F7694E04A76DE584752", hash_generated_method = "6EEE1266FEFA5F996E702616D944654F")
-    synchronized boolean readCertificates() {
-        Iterator<String> it = metaEntries.keySet().iterator();
-        {
-            boolean var03729FD53960D8DCA3A41A13A0229637_283888451 = (it.hasNext());
+                var18BE1F5426B3001F1D977CE0544C7884_1486456982.addTaint(taint);
+                return var18BE1F5426B3001F1D977CE0544C7884_1486456982;
+            } //End block
+            catch (NoSuchAlgorithmException e)
             {
-                String key = it.next();
-                {
-                    boolean var4681B3668908FCE90CF6A905CFCA3F33_682663019 = (key.endsWith(".DSA") || key.endsWith(".RSA"));
-                    {
-                        verifyCertificate(key);
-                        it.remove();
-                    } 
-                } 
-            } 
-        } 
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1358038154 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1358038154;
-        
-        
-            
-        
-        
-        
-            
-            
-                
-                
-                    
-                
-                
-            
-        
-        
+            } //End block
+        } //End block
+VerifierEntry var540C13E9E156B687226421B24F2DF178_1133771427 =         null;
+        var540C13E9E156B687226421B24F2DF178_1133771427.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_1133771427;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.170 -0400", hash_original_method = "E0F968F23AF085C0376D04DBFBF51D30", hash_generated_method = "B1D3F5BB33870A06DA7679E1E6C4DB26")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.180 -0400", hash_original_method = "B24E46A89F6B78A5F74DC1F8899F1D36", hash_generated_method = "33CAFEEEB0CFA2B159626EC9CC8BE3A5")
+     void addMetaEntry(String name, byte[] buf) {
+        addTaint(buf[0]);
+        addTaint(name.getTaint());
+        metaEntries.put(name.toUpperCase(Locale.US), buf);
+        // ---------- Original Method ----------
+        //metaEntries.put(name.toUpperCase(Locale.US), buf);
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.181 -0400", hash_original_method = "8A8EDD1088AB3F7694E04A76DE584752", hash_generated_method = "ECA39C2DD21B89EE389FC8F25DDCE059")
+    synchronized boolean readCertificates() {
+    if(metaEntries == null)        
+        {
+            boolean var68934A3E9455FA72420237EB05902327_1598273376 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1877678 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1877678;
+        } //End block
+        Iterator<String> it = metaEntries.keySet().iterator();
+        while
+(it.hasNext())        
+        {
+            String key = it.next();
+    if(key.endsWith(".DSA") || key.endsWith(".RSA"))            
+            {
+                verifyCertificate(key);
+    if(metaEntries == null)                
+                {
+                    boolean var68934A3E9455FA72420237EB05902327_1348777368 = (false);
+                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_394741465 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_394741465;
+                } //End block
+                it.remove();
+            } //End block
+        } //End block
+        boolean varB326B5062B2F0E69046810717534CB09_177587160 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1688072467 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1688072467;
+        // ---------- Original Method ----------
+        //if (metaEntries == null) {
+            //return false;
+        //}
+        //Iterator<String> it = metaEntries.keySet().iterator();
+        //while (it.hasNext()) {
+            //String key = it.next();
+            //if (key.endsWith(".DSA") || key.endsWith(".RSA")) {
+                //verifyCertificate(key);
+                //if (metaEntries == null) {
+                    //return false;
+                //}
+                //it.remove();
+            //}
+        //}
+        //return true;
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.197 -0400", hash_original_method = "E0F968F23AF085C0376D04DBFBF51D30", hash_generated_method = "062206329B957318B7A48284998905DD")
     private void verifyCertificate(String certFile) {
+        addTaint(certFile.getTaint());
         String signatureFile = certFile.substring(0, certFile.lastIndexOf('.'))
                 + ".SF";
         byte[] sfBytes = metaEntries.get(signatureFile);
+    if(sfBytes == null)        
+        {
+            return;
+        } //End block
         byte[] manifest = metaEntries.get(JarFile.MANIFEST_NAME);
+    if(manifest == null)        
+        {
+            return;
+        } //End block
         byte[] sBlockBytes = metaEntries.get(certFile);
         try 
         {
             Certificate[] signerCertChain = JarUtils.verifySignature(
                     new ByteArrayInputStream(sfBytes),
                     new ByteArrayInputStream(sBlockBytes));
+    if(metaEntries == null)            
+            {
+                return;
+            } //End block
+    if(signerCertChain != null)            
             {
                 certificates.put(signatureFile, signerCertChain);
-            } 
-        } 
+            } //End block
+        } //End block
         catch (IOException e)
-        { }
+        {
+            return;
+        } //End block
         catch (GeneralSecurityException e)
         {
-            if (DroidSafeAndroidRuntime.control) throw failedVerification(jarName, signatureFile);
-        } 
+            java.lang.SecurityException var9F75C122D2300A75696115F728064C23_1998297175 = failedVerification(jarName, signatureFile);
+            var9F75C122D2300A75696115F728064C23_1998297175.addTaint(taint);
+            throw var9F75C122D2300A75696115F728064C23_1998297175;
+        } //End block
         Attributes attributes = new Attributes();
         HashMap<String, Attributes> entries = new HashMap<String, Attributes>();
         try 
         {
             InitManifest im = new InitManifest(sfBytes, attributes, Attributes.Name.SIGNATURE_VERSION);
             im.initEntries(entries, null);
-        } 
+        } //End block
         catch (IOException e)
-        { }
+        {
+            return;
+        } //End block
         boolean createdBySigntool = false;
         String createdBy = attributes.getValue("Created-By");
+    if(createdBy != null)        
         {
             createdBySigntool = createdBy.indexOf("signtool") != -1;
-        } 
+        } //End block
+    if(mainAttributesEnd > 0 && !createdBySigntool)        
         {
             String digestAttribute = "-Digest-Manifest-Main-Attributes";
+    if(!verify(attributes, digestAttribute, manifest, 0, mainAttributesEnd, false, true))            
             {
-                boolean var9660D2ABC682B0CBB44B33389EFC28FB_355256716 = (!verify(attributes, digestAttribute, manifest, 0, mainAttributesEnd, false, true));
-                {
-                    if (DroidSafeAndroidRuntime.control) throw failedVerification(jarName, signatureFile);
-                } 
-            } 
-        } 
-        String digestAttribute;
-        digestAttribute = "-Digest";
-        digestAttribute = "-Digest-Manifest";
+                java.lang.SecurityException var9F75C122D2300A75696115F728064C23_947594623 = failedVerification(jarName, signatureFile);
+                var9F75C122D2300A75696115F728064C23_947594623.addTaint(taint);
+                throw var9F75C122D2300A75696115F728064C23_947594623;
+            } //End block
+        } //End block
+        String digestAttribute = createdBySigntool ? "-Digest"
+                : "-Digest-Manifest";
+    if(!verify(attributes, digestAttribute, manifest, 0, manifest.length,
+                false, false))        
         {
-            boolean varBF55E30490CA8C888FC67F88CD7AD658_991264678 = (!verify(attributes, digestAttribute, manifest, 0, manifest.length,
-                false, false));
-            {
-                Iterator<Map.Entry<String, Attributes>> it = entries.entrySet()
+            Iterator<Map.Entry<String, Attributes>> it = entries.entrySet()
                     .iterator();
+            while
+(it.hasNext())            
+            {
+                Map.Entry<String, Attributes> entry = it.next();
+                Manifest.Chunk chunk = man.getChunk(entry.getKey());
+    if(chunk == null)                
                 {
-                    boolean var3DEC40B862508A9A2151C7EC9CE55CF3_64684306 = (it.hasNext());
-                    {
-                        Map.Entry<String, Attributes> entry = it.next();
-                        Manifest.Chunk chunk = man.getChunk(entry.getKey());
-                        {
-                            boolean varAC1C8F34BDBC7D9F713C0353FA7B6FAF_2145213274 = (!verify(entry.getValue(), "-Digest", manifest,
-                        chunk.start, chunk.end, createdBySigntool, false));
-                            {
-                                if (DroidSafeAndroidRuntime.control) throw invalidDigest(signatureFile, entry.getKey(), jarName);
-                            } 
-                        } 
-                    } 
-                } 
-            } 
-        } 
+                    return;
+                } //End block
+    if(!verify(entry.getValue(), "-Digest", manifest,
+                        chunk.start, chunk.end, createdBySigntool, false))                
+                {
+                    java.lang.SecurityException var67613D444084A15067150FCA554C8CE7_2033499939 = invalidDigest(signatureFile, entry.getKey(), jarName);
+                    var67613D444084A15067150FCA554C8CE7_2033499939.addTaint(taint);
+                    throw var67613D444084A15067150FCA554C8CE7_2033499939;
+                } //End block
+            } //End block
+        } //End block
         metaEntries.put(signatureFile, null);
         signatures.put(signatureFile, entries);
-        addTaint(certFile.getTaint());
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.171 -0400", hash_original_method = "5E96175D15755C77B9F4C5D6341FECA1", hash_generated_method = "27CCBD8B39BAC0602317753C0A8767E5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.199 -0400", hash_original_method = "5E96175D15755C77B9F4C5D6341FECA1", hash_generated_method = "27CCBD8B39BAC0602317753C0A8767E5")
      void setManifest(Manifest mf) {
         man = mf;
-        
-        
+        // ---------- Original Method ----------
+        //man = mf;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.171 -0400", hash_original_method = "61D9EDAFD8C0E1537C8EF2C7E942A904", hash_generated_method = "98A4FB0641DAFFDF8403F108EBAA2BBA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.199 -0400", hash_original_method = "61D9EDAFD8C0E1537C8EF2C7E942A904", hash_generated_method = "4C73C697710AFC3FD265FA4164756DC7")
      boolean isSignedJar() {
-        boolean var7CAE1A061A4DC00175B4D2E783D22316_214087782 = (certificates.size() > 0);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_321411457 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_321411457;
-        
-        
+        boolean varAAB13CD57140FC9C26289A146A937C91_1783775607 = (certificates.size() > 0);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_610053655 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_610053655;
+        // ---------- Original Method ----------
+        //return certificates.size() > 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.173 -0400", hash_original_method = "C1D665F8901BA184CF5172955B73AB34", hash_generated_method = "DFD5E017C55FABA71FE4043016A21B81")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.200 -0400", hash_original_method = "C1D665F8901BA184CF5172955B73AB34", hash_generated_method = "69365273FBAF71A13E4B2E6418433E6C")
     private boolean verify(Attributes attributes, String entry, byte[] data,
             int start, int end, boolean ignoreSecondEndline, boolean ignorable) {
+        addTaint(ignorable);
+        addTaint(ignoreSecondEndline);
+        addTaint(end);
+        addTaint(start);
+        addTaint(data[0]);
+        addTaint(entry.getTaint());
+        addTaint(attributes.getTaint());
         String algorithms = attributes.getValue("Digest-Algorithms");
+    if(algorithms == null)        
         {
             algorithms = "SHA SHA1";
-        } 
+        } //End block
         StringTokenizer tokens = new StringTokenizer(algorithms);
+        while
+(tokens.hasMoreTokens())        
         {
-            boolean var4A8B7054AF091A6B38EB732ACFC1CEDB_1359234788 = (tokens.hasMoreTokens());
+            String algorithm = tokens.nextToken();
+            String hash = attributes.getValue(algorithm + entry);
+    if(hash == null)            
             {
-                String algorithm = tokens.nextToken();
-                String hash = attributes.getValue(algorithm + entry);
-                MessageDigest md;
-                try 
-                {
-                    md = MessageDigest.getInstance(algorithm);
-                } 
-                catch (NoSuchAlgorithmException e)
-                { return false; }
-                {
-                    md.update(data, start, end - 1 - start);
-                } 
-                {
-                    md.update(data, start, end - start);
-                } 
-                byte[] b = md.digest();
-                byte[] hashBytes = hash.getBytes(Charsets.ISO_8859_1);
-                boolean varF4F3230BCA44283481584F405E42E5C9_759340487 = (MessageDigest.isEqual(b, Base64.decode(hashBytes)));
-            } 
-        } 
-        addTaint(attributes.getTaint());
-        addTaint(entry.getTaint());
-        addTaint(data[0]);
-        addTaint(start);
-        addTaint(end);
-        addTaint(ignoreSecondEndline);
-        addTaint(ignorable);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_354020947 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_354020947;
-        
-        
+                continue;
+            } //End block
+            MessageDigest md;
+            try 
+            {
+                md = MessageDigest.getInstance(algorithm);
+            } //End block
+            catch (NoSuchAlgorithmException e)
+            {
+                continue;
+            } //End block
+    if(ignoreSecondEndline && data[end - 1] == '\n'
+                    && data[end - 2] == '\n')            
+            {
+                md.update(data, start, end - 1 - start);
+            } //End block
+            else
+            {
+                md.update(data, start, end - start);
+            } //End block
+            byte[] b = md.digest();
+            byte[] hashBytes = hash.getBytes(Charsets.ISO_8859_1);
+            boolean var682244A446E71B106B75EA193A59EB60_1333056555 = (MessageDigest.isEqual(b, Base64.decode(hashBytes)));
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2023757009 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2023757009;
+        } //End block
+        boolean var945E3CDAF82CC9611962E167614498BC_1107985467 = (ignorable);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1443872212 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1443872212;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.174 -0400", hash_original_method = "4AB9D8996D4C7F856FC4CD4DD096303E", hash_generated_method = "E24BA93F7F8858E60AFEB131AFEC0A2E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.201 -0400", hash_original_method = "4AB9D8996D4C7F856FC4CD4DD096303E", hash_generated_method = "E985C9BE77F13414B9BE7DC773C5070B")
      Certificate[] getCertificates(String name) {
-        Certificate[] varB4EAC82CA7396A68D541C85D26508E83_418306706 = null; 
-        Certificate[] varB4EAC82CA7396A68D541C85D26508E83_1856893491 = null; 
-        Certificate[] verifiedCerts = verifiedEntries.get(name);
-        {
-            varB4EAC82CA7396A68D541C85D26508E83_418306706 = null;
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1856893491 = verifiedCerts.clone();
         addTaint(name.getTaint());
-        Certificate[] varA7E53CE21691AB073D9660D615818899_80022366; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_80022366 = varB4EAC82CA7396A68D541C85D26508E83_418306706;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_80022366 = varB4EAC82CA7396A68D541C85D26508E83_1856893491;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_80022366.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_80022366;
-        
-        
-        
-            
-        
-        
+        Certificate[] verifiedCerts = verifiedEntries.get(name);
+    if(verifiedCerts == null)        
+        {
+Certificate[] var540C13E9E156B687226421B24F2DF178_84656812 =             null;
+            var540C13E9E156B687226421B24F2DF178_84656812.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_84656812;
+        } //End block
+Certificate[] var32B73750590266689C19084802167374_1446959973 =         verifiedCerts.clone();
+        var32B73750590266689C19084802167374_1446959973.addTaint(taint);
+        return var32B73750590266689C19084802167374_1446959973;
+        // ---------- Original Method ----------
+        //Certificate[] verifiedCerts = verifiedEntries.get(name);
+        //if (verifiedCerts == null) {
+            //return null;
+        //}
+        //return verifiedCerts.clone();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.174 -0400", hash_original_method = "98B5FDE1FF609AB4DAC6F710E4FAE37E", hash_generated_method = "B134C21CF39C711019A6E185A2A3E9BB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.201 -0400", hash_original_method = "98B5FDE1FF609AB4DAC6F710E4FAE37E", hash_generated_method = "B134C21CF39C711019A6E185A2A3E9BB")
      void removeMetaEntries() {
         metaEntries = null;
-        
-        
+        // ---------- Original Method ----------
+        //metaEntries = null;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static Vector<Certificate> getSignerCertificates(
+        public static Vector<Certificate> getSignerCertificates(
             String signatureFileName, Map<String, Certificate[]> certificates) {
         Vector<Certificate> result = new Vector<Certificate>();
         Certificate[] certChain = certificates.get(signatureFileName);
@@ -411,72 +429,72 @@ class JarVerifier {
 
     
     class VerifierEntry extends OutputStream {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.175 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.202 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
         private String name;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.175 -0400", hash_original_field = "C10F77963A2B21079156A0E5C5A4BB3C", hash_generated_field = "145A8FD0EC1911E7DDCA25F923899831")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.202 -0400", hash_original_field = "C10F77963A2B21079156A0E5C5A4BB3C", hash_generated_field = "145A8FD0EC1911E7DDCA25F923899831")
 
         private MessageDigest digest;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.175 -0400", hash_original_field = "0800FC577294C34E0B28AD2839435945", hash_generated_field = "670F24B05EDED2247F0B4CD66AB4EE15")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.202 -0400", hash_original_field = "0800FC577294C34E0B28AD2839435945", hash_generated_field = "670F24B05EDED2247F0B4CD66AB4EE15")
 
         private byte[] hash;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.175 -0400", hash_original_field = "3CC41D0F46073BA8D93EA9DB2412437F", hash_generated_field = "6029E7C21A5106D4483252478B646415")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.202 -0400", hash_original_field = "3CC41D0F46073BA8D93EA9DB2412437F", hash_generated_field = "6029E7C21A5106D4483252478B646415")
 
         private Certificate[] certificates;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.175 -0400", hash_original_method = "519B899FEA5DD6CF74252B8A7E9BDF9B", hash_generated_method = "392088D1361F148BA7EABBED99C5FDBB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.203 -0400", hash_original_method = "519B899FEA5DD6CF74252B8A7E9BDF9B", hash_generated_method = "392088D1361F148BA7EABBED99C5FDBB")
           VerifierEntry(String name, MessageDigest digest, byte[] hash,
                 Certificate[] certificates) {
             this.name = name;
             this.digest = digest;
             this.hash = hash;
             this.certificates = certificates;
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.name = name;
+            //this.digest = digest;
+            //this.hash = hash;
+            //this.certificates = certificates;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.176 -0400", hash_original_method = "977E904E5666EA1924971461B3999364", hash_generated_method = "851854E1A229E9345EDE284398C8B3C4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.203 -0400", hash_original_method = "977E904E5666EA1924971461B3999364", hash_generated_method = "50C4B56121CA2DEEF9871162D7716E97")
         @Override
         public void write(int value) {
-            digest.update((byte) value);
             addTaint(value);
-            
-            
+            digest.update((byte) value);
+            // ---------- Original Method ----------
+            //digest.update((byte) value);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.177 -0400", hash_original_method = "8BB7D0A84FCC70584CF33970C6F95BDA", hash_generated_method = "2F17822BA892ADFF099CD9A221F557B2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.204 -0400", hash_original_method = "8BB7D0A84FCC70584CF33970C6F95BDA", hash_generated_method = "60A10365C6398DC0656D7CD3D257F7AD")
         @Override
         public void write(byte[] buf, int off, int nbytes) {
-            digest.update(buf, off, nbytes);
-            addTaint(buf[0]);
-            addTaint(off);
             addTaint(nbytes);
-            
-            
+            addTaint(off);
+            addTaint(buf[0]);
+            digest.update(buf, off, nbytes);
+            // ---------- Original Method ----------
+            //digest.update(buf, off, nbytes);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.178 -0400", hash_original_method = "E514DAB8C6AF0A1EE37FB72F5B8B9108", hash_generated_method = "8ED832EFEF49AABDEBB416EBB1DA3862")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.210 -0400", hash_original_method = "E514DAB8C6AF0A1EE37FB72F5B8B9108", hash_generated_method = "5C4BD9472CDE665A3B734979B8A321D7")
          void verify() {
             byte[] d = digest.digest();
+    if(!MessageDigest.isEqual(d, Base64.decode(hash)))            
             {
-                boolean varF713951728C54611E5DA59160EF2FDFA_793011099 = (!MessageDigest.isEqual(d, Base64.decode(hash)));
-                {
-                    if (DroidSafeAndroidRuntime.control) throw invalidDigest(JarFile.MANIFEST_NAME, name, jarName);
-                } 
-            } 
+                SecurityException var9EEA0942EA74388A1F03C5B5C555D6C5_1241829624 = invalidDigest(JarFile.MANIFEST_NAME, name, jarName);
+                var9EEA0942EA74388A1F03C5B5C555D6C5_1241829624.addTaint(taint);
+                throw var9EEA0942EA74388A1F03C5B5C555D6C5_1241829624;
+            } //End block
             verifiedEntries.put(name, certificates);
-            
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //byte[] d = digest.digest();
+            //if (!MessageDigest.isEqual(d, Base64.decode(hash))) {
+                //throw invalidDigest(JarFile.MANIFEST_NAME, name, jarName);
+            //}
+            //verifiedEntries.put(name, certificates);
         }
 
         

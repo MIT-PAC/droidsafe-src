@@ -1,36 +1,30 @@
 package java.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-
-import java.util.Iterator;
-
 final class DualPivotQuicksort {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.825 -0400", hash_original_method = "7D881BD1A8E4D4C26C8DF479B09D2287", hash_generated_method = "9C971A81550C1F38D789FED4E5A30339")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.230 -0400", hash_original_method = "7D881BD1A8E4D4C26C8DF479B09D2287", hash_generated_method = "9C971A81550C1F38D789FED4E5A30339")
     private  DualPivotQuicksort() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void sort(int[] a) {
+        public static void sort(int[] a) {
         doSort(a, 0, a.length - 1);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void sort(int[] a, int fromIndex, int toIndex) {
+        public static void sort(int[] a, int fromIndex, int toIndex) {
         Arrays.checkStartAndEnd(a.length, fromIndex, toIndex);
         doSort(a, fromIndex, toIndex - 1);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static void doSort(int[] a, int left, int right) {
+        private static void doSort(int[] a, int left, int right) {
         if (right - left + 1 < INSERTION_SORT_THRESHOLD) {
             for (int i = left + 1; i <= right; i++) {
                 int ai = a[i];
@@ -46,8 +40,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static void dualPivotQuicksort(int[] a, int left, int right) {
+        private static void dualPivotQuicksort(int[] a, int left, int right) {
         int sixth = (right - left + 1) / 6;
         int e1 = left  + sixth;
         int e5 = right - sixth;
@@ -169,21 +162,18 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void sort(long[] a) {
+        public static void sort(long[] a) {
         doSort(a, 0, a.length - 1);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void sort(long[] a, int fromIndex, int toIndex) {
+        public static void sort(long[] a, int fromIndex, int toIndex) {
         Arrays.checkStartAndEnd(a.length, fromIndex, toIndex);
         doSort(a, fromIndex, toIndex - 1);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static void doSort(long[] a, int left, int right) {
+        private static void doSort(long[] a, int left, int right) {
         if (right - left + 1 < INSERTION_SORT_THRESHOLD) {
             for (int i = left + 1; i <= right; i++) {
                 long ai = a[i];
@@ -199,8 +189,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static void dualPivotQuicksort(long[] a, int left, int right) {
+        private static void dualPivotQuicksort(long[] a, int left, int right) {
         int sixth = (right - left + 1) / 6;
         int e1 = left  + sixth;
         int e5 = right - sixth;
@@ -322,21 +311,18 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void sort(short[] a) {
+        public static void sort(short[] a) {
         doSort(a, 0, a.length - 1);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void sort(short[] a, int fromIndex, int toIndex) {
+        public static void sort(short[] a, int fromIndex, int toIndex) {
         Arrays.checkStartAndEnd(a.length, fromIndex, toIndex);
         doSort(a, fromIndex, toIndex - 1);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static void doSort(short[] a, int left, int right) {
+        private static void doSort(short[] a, int left, int right) {
         if (right - left + 1 < INSERTION_SORT_THRESHOLD) {
             for (int i = left + 1; i <= right; i++) {
                 short ai = a[i];
@@ -363,8 +349,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static void dualPivotQuicksort(short[] a, int left, int right) {
+        private static void dualPivotQuicksort(short[] a, int left, int right) {
         int sixth = (right - left + 1) / 6;
         int e1 = left  + sixth;
         int e5 = right - sixth;
@@ -486,21 +471,18 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void sort(char[] a) {
+        public static void sort(char[] a) {
         doSort(a, 0, a.length - 1);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void sort(char[] a, int fromIndex, int toIndex) {
+        public static void sort(char[] a, int fromIndex, int toIndex) {
         Arrays.checkStartAndEnd(a.length, fromIndex, toIndex);
         doSort(a, fromIndex, toIndex - 1);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static void doSort(char[] a, int left, int right) {
+        private static void doSort(char[] a, int left, int right) {
         if (right - left + 1 < INSERTION_SORT_THRESHOLD) {
             for (int i = left + 1; i <= right; i++) {
                 char ai = a[i];
@@ -526,8 +508,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static void dualPivotQuicksort(char[] a, int left, int right) {
+        private static void dualPivotQuicksort(char[] a, int left, int right) {
         int sixth = (right - left + 1) / 6;
         int e1 = left  + sixth;
         int e5 = right - sixth;
@@ -649,21 +630,18 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void sort(byte[] a) {
+        public static void sort(byte[] a) {
         doSort(a, 0, a.length - 1);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void sort(byte[] a, int fromIndex, int toIndex) {
+        public static void sort(byte[] a, int fromIndex, int toIndex) {
         Arrays.checkStartAndEnd(a.length, fromIndex, toIndex);
         doSort(a, fromIndex, toIndex - 1);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static void doSort(byte[] a, int left, int right) {
+        private static void doSort(byte[] a, int left, int right) {
         if (right - left + 1 < INSERTION_SORT_THRESHOLD) {
             for (int i = left + 1; i <= right; i++) {
                 byte ai = a[i];
@@ -690,8 +668,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static void dualPivotQuicksort(byte[] a, int left, int right) {
+        private static void dualPivotQuicksort(byte[] a, int left, int right) {
         int sixth = (right - left + 1) / 6;
         int e1 = left  + sixth;
         int e5 = right - sixth;
@@ -813,21 +790,18 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void sort(float[] a) {
+        public static void sort(float[] a) {
         sortNegZeroAndNaN(a, 0, a.length - 1);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void sort(float[] a, int fromIndex, int toIndex) {
+        public static void sort(float[] a, int fromIndex, int toIndex) {
         Arrays.checkStartAndEnd(a.length, fromIndex, toIndex);
         sortNegZeroAndNaN(a, fromIndex, toIndex - 1);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static void sortNegZeroAndNaN(float[] a, int left, int right) {
+        private static void sortNegZeroAndNaN(float[] a, int left, int right) {
         final int NEGATIVE_ZERO = Float.floatToIntBits(-0.0f);
         int numNegativeZeros = 0;
         int n = right;
@@ -855,8 +829,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static int findAnyZero(float[] a, int low, int high) {
+        private static int findAnyZero(float[] a, int low, int high) {
         while (true) {
             int middle = (low + high) >>> 1;
             float middleValue = a[middle];
@@ -871,8 +844,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static void doSort(float[] a, int left, int right) {
+        private static void doSort(float[] a, int left, int right) {
         if (right - left + 1 < INSERTION_SORT_THRESHOLD) {
             for (int i = left + 1; i <= right; i++) {
                 float ai = a[i];
@@ -888,8 +860,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static void dualPivotQuicksort(float[] a, int left, int right) {
+        private static void dualPivotQuicksort(float[] a, int left, int right) {
         int sixth = (right - left + 1) / 6;
         int e1 = left  + sixth;
         int e5 = right - sixth;
@@ -1011,21 +982,18 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void sort(double[] a) {
+        public static void sort(double[] a) {
         sortNegZeroAndNaN(a, 0, a.length - 1);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void sort(double[] a, int fromIndex, int toIndex) {
+        public static void sort(double[] a, int fromIndex, int toIndex) {
         Arrays.checkStartAndEnd(a.length, fromIndex, toIndex);
         sortNegZeroAndNaN(a, fromIndex, toIndex - 1);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static void sortNegZeroAndNaN(double[] a, int left, int right) {
+        private static void sortNegZeroAndNaN(double[] a, int left, int right) {
         final long NEGATIVE_ZERO = Double.doubleToLongBits(-0.0d);
         int numNegativeZeros = 0;
         int n = right;
@@ -1053,8 +1021,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static int findAnyZero(double[] a, int low, int high) {
+        private static int findAnyZero(double[] a, int low, int high) {
         while (true) {
             int middle = (low + high) >>> 1;
             double middleValue = a[middle];
@@ -1069,8 +1036,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static void doSort(double[] a, int left, int right) {
+        private static void doSort(double[] a, int left, int right) {
         if (right - left + 1 < INSERTION_SORT_THRESHOLD) {
             for (int i = left + 1; i <= right; i++) {
                 double ai = a[i];
@@ -1086,8 +1052,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static void dualPivotQuicksort(double[] a, int left, int right) {
+        private static void dualPivotQuicksort(double[] a, int left, int right) {
         int sixth = (right - left + 1) / 6;
         int e1 = left  + sixth;
         int e5 = right - sixth;
@@ -1209,22 +1174,22 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.835 -0400", hash_original_field = "40DFBCFA0015CF2B5B8856772075A73C", hash_generated_field = "EE626DB968C3F816A23B02BAE465264B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.243 -0400", hash_original_field = "40DFBCFA0015CF2B5B8856772075A73C", hash_generated_field = "EE626DB968C3F816A23B02BAE465264B")
 
     private static final int INSERTION_SORT_THRESHOLD = 32;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.835 -0400", hash_original_field = "7D618EC30B82F0EC6301E62FCA311105", hash_generated_field = "FB00E5C7F5169F6909153059E9E7DC47")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.243 -0400", hash_original_field = "7D618EC30B82F0EC6301E62FCA311105", hash_generated_field = "FB00E5C7F5169F6909153059E9E7DC47")
 
     private static final int COUNTING_SORT_THRESHOLD_FOR_BYTE = 128;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.835 -0400", hash_original_field = "BC021128A62D345CB90C1DB05BA0647A", hash_generated_field = "BC08190B460D0471F1781A740F156E67")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.243 -0400", hash_original_field = "BC021128A62D345CB90C1DB05BA0647A", hash_generated_field = "BC08190B460D0471F1781A740F156E67")
 
     private static final int COUNTING_SORT_THRESHOLD_FOR_SHORT_OR_CHAR = 32768;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.835 -0400", hash_original_field = "61ABDF304E90651718DCF5A8C92AB1C2", hash_generated_field = "FB6D5FC791962D1D653D5EC8368240F1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.243 -0400", hash_original_field = "61ABDF304E90651718DCF5A8C92AB1C2", hash_generated_field = "FB6D5FC791962D1D653D5EC8368240F1")
 
     private static final int NUM_SHORT_VALUES = 1 << 16;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.836 -0400", hash_original_field = "166962CD2FDEDEBD0CD2D72E93AEEC7B", hash_generated_field = "32B1F4D135C8358A9B7BCD2C64DB0B09")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.243 -0400", hash_original_field = "166962CD2FDEDEBD0CD2D72E93AEEC7B", hash_generated_field = "32B1F4D135C8358A9B7BCD2C64DB0B09")
 
     private static final int NUM_CHAR_VALUES = 1 << 16;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.836 -0400", hash_original_field = "3F03A866275E01960683B824A4C94070", hash_generated_field = "891D887973B93E8CB3FE00BAD7302B4C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.244 -0400", hash_original_field = "3F03A866275E01960683B824A4C94070", hash_generated_field = "891D887973B93E8CB3FE00BAD7302B4C")
 
     private static final int NUM_BYTE_VALUES = 1 << 8;
 }

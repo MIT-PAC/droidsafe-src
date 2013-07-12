@@ -1,12 +1,9 @@
 package javax.net.ssl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 

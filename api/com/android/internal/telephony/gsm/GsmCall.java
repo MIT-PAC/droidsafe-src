@@ -1,12 +1,9 @@
 package com.android.internal.telephony.gsm;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import com.android.internal.telephony.Call;
 import com.android.internal.telephony.CallStateException;
 import com.android.internal.telephony.Connection;
@@ -16,22 +13,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 class GsmCall extends Call {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.123 -0400", hash_original_field = "EC0FEA7E6F8E16E3471486B698ED3A9D", hash_generated_field = "2814A276BAC6C190BAEC9128FA3036E9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.764 -0400", hash_original_field = "EC0FEA7E6F8E16E3471486B698ED3A9D", hash_generated_field = "2814A276BAC6C190BAEC9128FA3036E9")
 
     ArrayList<Connection> connections = new ArrayList<Connection>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.123 -0400", hash_original_field = "72122CE96BFEC66E2396D2E25225D70A", hash_generated_field = "B6239D6F2AF1190D06AAF0170D315E18")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.764 -0400", hash_original_field = "72122CE96BFEC66E2396D2E25225D70A", hash_generated_field = "B6239D6F2AF1190D06AAF0170D315E18")
 
     GsmCallTracker owner;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.124 -0400", hash_original_method = "28231960C31A4F9365B5A7FC4FD91175", hash_generated_method = "408E6705D70E74F4400D6AF6E976C261")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.765 -0400", hash_original_method = "28231960C31A4F9365B5A7FC4FD91175", hash_generated_method = "408E6705D70E74F4400D6AF6E976C261")
       GsmCall(GsmCallTracker owner) {
         this.owner = owner;
-        
-        
+        // ---------- Original Method ----------
+        //this.owner = owner;
     }
 
     
-    static State stateFromDCState(DriverCall.State dcState) {
+        static State stateFromDCState(DriverCall.State dcState) {
         switch (dcState) {
             case ACTIVE:        return State.ACTIVE;
             case HOLDING:       return State.HOLDING;
@@ -44,244 +41,219 @@ class GsmCall extends Call {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.124 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.766 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     public void dispose() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.124 -0400", hash_original_method = "DA46D72C53A8C0722B0E4038E55B8A9F", hash_generated_method = "8AF97C87DBCB968CC62ABB0294D1B06A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.766 -0400", hash_original_method = "DA46D72C53A8C0722B0E4038E55B8A9F", hash_generated_method = "7A9D76ED4C7E654363DB89E47E184CCE")
     public List<Connection> getConnections() {
-        List<Connection> varB4EAC82CA7396A68D541C85D26508E83_1386773209 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1386773209 = connections;
-        varB4EAC82CA7396A68D541C85D26508E83_1386773209.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1386773209;
-        
-        
+List<Connection> varD8B91E18CFFE05D77A84C03EDA812BE2_1679725699 =         connections;
+        varD8B91E18CFFE05D77A84C03EDA812BE2_1679725699.addTaint(taint);
+        return varD8B91E18CFFE05D77A84C03EDA812BE2_1679725699;
+        // ---------- Original Method ----------
+        //return connections;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.125 -0400", hash_original_method = "3D84383237FBED33FD2CE3B737BA6B20", hash_generated_method = "0C4EFCE49C1DA0FD426B54BAAABAACE4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.766 -0400", hash_original_method = "3D84383237FBED33FD2CE3B737BA6B20", hash_generated_method = "71408A30DA1C2419F9C1B87389E76E72")
     public Phone getPhone() {
-        Phone varB4EAC82CA7396A68D541C85D26508E83_1108675872 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1108675872 = owner.phone;
-        varB4EAC82CA7396A68D541C85D26508E83_1108675872.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1108675872;
-        
-        
+Phone var184C3BF9D73535588B22D3939CD1F578_770883104 =         owner.phone;
+        var184C3BF9D73535588B22D3939CD1F578_770883104.addTaint(taint);
+        return var184C3BF9D73535588B22D3939CD1F578_770883104;
+        // ---------- Original Method ----------
+        //return owner.phone;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.125 -0400", hash_original_method = "E944BDEAA6C46A001782606E74F9EFB0", hash_generated_method = "6E2B36F38504F9DFE8655EC8C686EA2C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.766 -0400", hash_original_method = "E944BDEAA6C46A001782606E74F9EFB0", hash_generated_method = "D3B4BCD47739498FA46BC49D571918BD")
     public boolean isMultiparty() {
-        boolean var52647A12D2BB0BA84480F9E34372A169_1422223296 = (connections.size() > 1);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1958963352 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1958963352;
-        
-        
+        boolean var29D4E14E3A46A0A5CCEDD95593D030FA_907017286 = (connections.size() > 1);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_549388759 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_549388759;
+        // ---------- Original Method ----------
+        //return connections.size() > 1;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.125 -0400", hash_original_method = "BD4623110C086A165B3AF83FA1BCBA34", hash_generated_method = "5E905B16961B21B9CFA064E867BE77FF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.766 -0400", hash_original_method = "BD4623110C086A165B3AF83FA1BCBA34", hash_generated_method = "5E905B16961B21B9CFA064E867BE77FF")
     public void hangup() throws CallStateException {
         owner.hangup(this);
-        
-        
+        // ---------- Original Method ----------
+        //owner.hangup(this);
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.126 -0400", hash_original_method = "A7B99D81B12619E0B5BB79286D622078", hash_generated_method = "2AA70803CC69752BCB6B25464BEC22D9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.767 -0400", hash_original_method = "A7B99D81B12619E0B5BB79286D622078", hash_generated_method = "47592A5C4DE8D357DFEA637B53A131C0")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_924312414 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_924312414 = state.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_924312414.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_924312414;
-        
-        
+String var03910CD76C0E5BA32DFF47134AABAD32_552502065 =         state.toString();
+        var03910CD76C0E5BA32DFF47134AABAD32_552502065.addTaint(taint);
+        return var03910CD76C0E5BA32DFF47134AABAD32_552502065;
+        // ---------- Original Method ----------
+        //return state.toString();
     }
 
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.126 -0400", hash_original_method = "ADEE6A90086841672D212D83F619D5B4", hash_generated_method = "E1D6DE3DB4F8E09EF74D5A336B63CF81")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.767 -0400", hash_original_method = "ADEE6A90086841672D212D83F619D5B4", hash_generated_method = "1EA511AE55869B542F3AF0F88DEAA479")
      void attach(Connection conn, DriverCall dc) {
+        addTaint(dc.getTaint());
+        addTaint(conn.getTaint());
         connections.add(conn);
         state = stateFromDCState (dc.state);
-        addTaint(conn.getTaint());
-        addTaint(dc.getTaint());
-        
-        
-        
+        // ---------- Original Method ----------
+        //connections.add(conn);
+        //state = stateFromDCState (dc.state);
     }
 
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.127 -0400", hash_original_method = "1D150B86FE35D9DF33C56E5123257F96", hash_generated_method = "415FA717321E9F355787A9DBB86120EB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.767 -0400", hash_original_method = "1D150B86FE35D9DF33C56E5123257F96", hash_generated_method = "F25E6E7715232EACCE5B85735F6ED78B")
      void attachFake(Connection conn, State state) {
+        addTaint(state.getTaint());
+        addTaint(conn.getTaint());
         connections.add(conn);
         this.state = state;
-        addTaint(conn.getTaint());
-        addTaint(state.getTaint());
-        
-        
-        
+        // ---------- Original Method ----------
+        //connections.add(conn);
+        //this.state = state;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.128 -0400", hash_original_method = "6CF66D622F9C9313C400A181CC9C1077", hash_generated_method = "3E549CCF2102A027D914A6A3B1504FB1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.768 -0400", hash_original_method = "6CF66D622F9C9313C400A181CC9C1077", hash_generated_method = "F513AC6FDA6110EB6F7EF0C63E06F5A0")
      void connectionDisconnected(GsmConnection conn) {
+        addTaint(conn.getTaint());
+    if(state != State.DISCONNECTED)        
         {
             boolean hasOnlyDisconnectedConnections = true;
+for(int i = 0, s = connections.size();i < s;i ++)
             {
-                int i = 0;
-                int s = connections.size();
+    if(connections.get(i).getState()
+                    != State.DISCONNECTED)                
                 {
-                    {
-                        boolean var04AFE2A5134EA8ACC0F9B0C19F48FDDB_121845688 = (connections.get(i).getState()
-                    != State.DISCONNECTED);
-                        {
-                            hasOnlyDisconnectedConnections = false;
-                        } 
-                    } 
-                } 
-            } 
+                    hasOnlyDisconnectedConnections = false;
+                    break;
+                } //End block
+            } //End block
+    if(hasOnlyDisconnectedConnections)            
             {
                 state = State.DISCONNECTED;
-            } 
-        } 
-        addTaint(conn.getTaint());
-        
-        
-            
-            
-                
-                    
-                
-                    
-                    
-                
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (state != State.DISCONNECTED) {
+            //boolean hasOnlyDisconnectedConnections = true;
+            //for (int i = 0, s = connections.size()  ; i < s; i ++) {
+                //if (connections.get(i).getState()
+                    //!= State.DISCONNECTED
+                //) {
+                    //hasOnlyDisconnectedConnections = false;
+                    //break;
+                //}
+            //}
+            //if (hasOnlyDisconnectedConnections) {
+                //state = State.DISCONNECTED;
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.128 -0400", hash_original_method = "D8060A2D244E5FF428DF6CE721032DF1", hash_generated_method = "D8F97316784CC2466462A55B6B9D1FC2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.768 -0400", hash_original_method = "D8060A2D244E5FF428DF6CE721032DF1", hash_generated_method = "7FA6F22FF331101849029B2C04AF9BFD")
      void detach(GsmConnection conn) {
-        connections.remove(conn);
-        {
-            boolean var92053B84273B30E40984664E5B7D0B68_309369668 = (connections.size() == 0);
-            {
-                state = State.IDLE;
-            } 
-        } 
         addTaint(conn.getTaint());
-        
-        
-        
-            
-        
+        connections.remove(conn);
+    if(connections.size() == 0)        
+        {
+            state = State.IDLE;
+        } //End block
+        // ---------- Original Method ----------
+        //connections.remove(conn);
+        //if (connections.size() == 0) {
+            //state = State.IDLE;
+        //}
     }
 
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.129 -0400", hash_original_method = "B7010AC293AED59823FAEF8D2AD3B969", hash_generated_method = "252990A5BB953ED3FED207AA49D2F9C7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.769 -0400", hash_original_method = "B7010AC293AED59823FAEF8D2AD3B969", hash_generated_method = "3FFAD2A7E18F826C42B789A4BAECA5D6")
      boolean update(GsmConnection conn, DriverCall dc) {
+        addTaint(dc.getTaint());
+        addTaint(conn.getTaint());
         State newState;
         boolean changed = false;
         newState = stateFromDCState(dc.state);
+    if(newState != state)        
         {
             state = newState;
             changed = true;
-        } 
-        addTaint(conn.getTaint());
-        addTaint(dc.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1229235 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1229235;
-        
-        
-        
-        
-        
-            
-            
-        
-        
+        } //End block
+        boolean var8977DFAC2F8E04CB96E66882235F5ABA_1739457114 = (changed);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2068705466 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2068705466;
+        // ---------- Original Method ----------
+        //State newState;
+        //boolean changed = false;
+        //newState = stateFromDCState(dc.state);
+        //if (newState != state) {
+            //state = newState;
+            //changed = true;
+        //}
+        //return changed;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.129 -0400", hash_original_method = "8D2922917355F4AB0DD299BF5AB22FDE", hash_generated_method = "610129ACFF26ED6B4A88550927A320EC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.769 -0400", hash_original_method = "8D2922917355F4AB0DD299BF5AB22FDE", hash_generated_method = "F94FCCA6272649A47ECB6F9DB2C3F8CE")
      boolean isFull() {
-        boolean var2DF79FCB526F8B8B7AF2EB3786378692_293511514 = (connections.size() == GsmCallTracker.MAX_CONNECTIONS_PER_CALL);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_8906822 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_8906822;
-        
-        
+        boolean var87A40A3B673CDD3F8EDC668F98471211_106908980 = (connections.size() == GsmCallTracker.MAX_CONNECTIONS_PER_CALL);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_999286506 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_999286506;
+        // ---------- Original Method ----------
+        //return connections.size() == GsmCallTracker.MAX_CONNECTIONS_PER_CALL;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.129 -0400", hash_original_method = "B742BF2BEC1472EF6E9612211814463C", hash_generated_method = "C65A880D35ED85B0E5E950784165E560")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.770 -0400", hash_original_method = "B742BF2BEC1472EF6E9612211814463C", hash_generated_method = "77D803A0E471ACC0DB8995ED4134CFF6")
      void onHangupLocal() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
+for(int i = 0, s = connections.size();i < s;i++)
         {
-            int i = 0;
-            int s = connections.size();
-            {
-                GsmConnection cn = (GsmConnection)connections.get(i);
-                cn.onHangupLocal();
-            } 
-        } 
+            GsmConnection cn = (GsmConnection)connections.get(i);
+            cn.onHangupLocal();
+        } //End block
         state = State.DISCONNECTING;
-        
-        
-                
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //for (int i = 0, s = connections.size()
+                //; i < s; i++
+        //) {
+            //GsmConnection cn = (GsmConnection)connections.get(i);
+            //cn.onHangupLocal();
+        //}
+        //state = State.DISCONNECTING;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.130 -0400", hash_original_method = "001DBBEE7493D5C83D8EF835ED579635", hash_generated_method = "FA110A826DD195443BB63D77D727CF5D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.770 -0400", hash_original_method = "001DBBEE7493D5C83D8EF835ED579635", hash_generated_method = "D88A649E223C5963F4A95B4936EC10AE")
      void clearDisconnected() {
+for(int i = connections.size() - 1;i >= 0;i--)
         {
-            int i = connections.size() - 1;
+            GsmConnection cn = (GsmConnection)connections.get(i);
+    if(cn.getState() == State.DISCONNECTED)            
             {
-                GsmConnection cn = (GsmConnection)connections.get(i);
-                {
-                    boolean var21929D219ECCE9FD7C6256E3BD60435E_1990403045 = (cn.getState() == State.DISCONNECTED);
-                    {
-                        connections.remove(i);
-                    } 
-                } 
-            } 
-        } 
+                connections.remove(i);
+            } //End block
+        } //End block
+    if(connections.size() == 0)        
         {
-            boolean var92053B84273B30E40984664E5B7D0B68_1554811231 = (connections.size() == 0);
-            {
-                state = State.IDLE;
-            } 
-        } 
-        
-        
-            
-            
-                
-            
-        
-        
-            
-        
+            state = State.IDLE;
+        } //End block
+        // ---------- Original Method ----------
+        //for (int i = connections.size() - 1 ; i >= 0 ; i--) {
+            //GsmConnection cn = (GsmConnection)connections.get(i);
+            //if (cn.getState() == State.DISCONNECTED) {
+                //connections.remove(i);
+            //}
+        //}
+        //if (connections.size() == 0) {
+            //state = State.IDLE;
+        //}
     }
 
     

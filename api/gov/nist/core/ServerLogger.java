@@ -1,12 +1,9 @@
 package gov.nist.core;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.util.Properties;
 import javax.sip.SipStack;
 import gov.nist.javax.sip.message.SIPMessage;

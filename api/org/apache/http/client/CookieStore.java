@@ -1,12 +1,9 @@
 package org.apache.http.client;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.util.Date;
 import java.util.List;
 import org.apache.http.cookie.Cookie;

@@ -1,12 +1,9 @@
 package com.android.internal.telephony.cat;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 
 public enum FontSize {
     NORMAL(0x0),
@@ -16,7 +13,6 @@ public enum FontSize {
     FontSize(int value) {
         mValue = value;
     }
-    @DSModeled(DSC.SAFE)
     public static FontSize fromInt(int value) {
         for (FontSize e : FontSize.values()) {
             if (e.mValue == value) {

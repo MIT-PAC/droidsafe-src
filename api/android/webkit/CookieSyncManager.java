@@ -1,12 +1,9 @@
 package android.webkit;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.content.Context;
 import android.util.Log;
 import android.webkit.CookieManager.Cookie;
@@ -14,27 +11,25 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public final class CookieSyncManager extends WebSyncManager {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.393 -0400", hash_original_field = "987C70772419D69E3D25E6A1F99457DA", hash_generated_field = "67C891CCE0BBDCBA776A2A7129D5A0E9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.822 -0400", hash_original_field = "987C70772419D69E3D25E6A1F99457DA", hash_generated_field = "67C891CCE0BBDCBA776A2A7129D5A0E9")
 
     private long mLastUpdate;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.393 -0400", hash_original_method = "5E4F0B174A675D28BE31D2D74DFE21DE", hash_generated_method = "320941A299E83C604E95EABFA239D955")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.823 -0400", hash_original_method = "5E4F0B174A675D28BE31D2D74DFE21DE", hash_generated_method = "320941A299E83C604E95EABFA239D955")
     private  CookieSyncManager(Context context) {
         super(context, "CookieSyncManager");
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static synchronized CookieSyncManager getInstance() {
+        public static synchronized CookieSyncManager getInstance() {
         checkInstanceIsCreated();
         return sRef;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static synchronized CookieSyncManager createInstance(
+        public static synchronized CookieSyncManager createInstance(
             Context context) {
         if (context == null) {
             throw new IllegalArgumentException("Invalid context argument");
@@ -48,170 +43,186 @@ public final class CookieSyncManager extends WebSyncManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.394 -0400", hash_original_method = "A7C987CCC15AF0CAF990686404E67664", hash_generated_method = "7C6454BE04E517A2147DCFCEA7DDD137")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.824 -0400", hash_original_method = "A7C987CCC15AF0CAF990686404E67664", hash_generated_method = "4A4395994F46002C8DAA821064CCC6E7")
      ArrayList<Cookie> getCookiesForDomain(String domain) {
-        ArrayList<Cookie> varB4EAC82CA7396A68D541C85D26508E83_2133810150 = null; 
-        ArrayList<Cookie> varB4EAC82CA7396A68D541C85D26508E83_1767909270 = null; 
-        {
-            varB4EAC82CA7396A68D541C85D26508E83_2133810150 = new ArrayList<Cookie>();
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1767909270 = mDataBase.getCookiesForDomain(domain);
         addTaint(domain.getTaint());
-        ArrayList<Cookie> varA7E53CE21691AB073D9660D615818899_1350742201; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1350742201 = varB4EAC82CA7396A68D541C85D26508E83_2133810150;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1350742201 = varB4EAC82CA7396A68D541C85D26508E83_1767909270;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1350742201.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1350742201;
-        
-        
-            
-        
-        
+    if(mDataBase == null)        
+        {
+ArrayList<Cookie> var3225A295C909FE34C2F651B1B1E38297_1147183861 =             new ArrayList<Cookie>();
+            var3225A295C909FE34C2F651B1B1E38297_1147183861.addTaint(taint);
+            return var3225A295C909FE34C2F651B1B1E38297_1147183861;
+        } //End block
+ArrayList<Cookie> var632770A87E3F4018887846A1E06A14AE_676505759 =         mDataBase.getCookiesForDomain(domain);
+        var632770A87E3F4018887846A1E06A14AE_676505759.addTaint(taint);
+        return var632770A87E3F4018887846A1E06A14AE_676505759;
+        // ---------- Original Method ----------
+        //if (mDataBase == null) {
+            //return new ArrayList<Cookie>();
+        //}
+        //return mDataBase.getCookiesForDomain(domain);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.394 -0400", hash_original_method = "04ED664127B5DCE8177E313009734B8D", hash_generated_method = "2843214E3A3E2EC85FFC4FCD19EE28DA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.824 -0400", hash_original_method = "04ED664127B5DCE8177E313009734B8D", hash_generated_method = "56DF1169E1F544FCF8D9D9E2D55D0DBA")
      void clearAllCookies() {
+    if(mDataBase == null)        
+        {
+            return;
+        } //End block
         mDataBase.clearCookies();
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mDataBase == null) {
+            //return;
+        //}
+        //mDataBase.clearCookies();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.395 -0400", hash_original_method = "8FADF93798BEC10B7C24976655D3DFB0", hash_generated_method = "44058A46F6EF25088EFF637647360A41")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.824 -0400", hash_original_method = "8FADF93798BEC10B7C24976655D3DFB0", hash_generated_method = "54E5AE9CA717DB83EB286CD0E3799AE2")
      boolean hasCookies() {
-        boolean var07D4D8FF84F9BA965A9EB458725E1CA1_859926267 = (mDataBase.hasCookies());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_522374052 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_522374052;
-        
-        
-            
-        
-        
+    if(mDataBase == null)        
+        {
+            boolean var68934A3E9455FA72420237EB05902327_2082180150 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1703775509 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1703775509;
+        } //End block
+        boolean var27C29B458C338D3EBC7707B36B390E0F_759350633 = (mDataBase.hasCookies());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_586007306 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_586007306;
+        // ---------- Original Method ----------
+        //if (mDataBase == null) {
+            //return false;
+        //}
+        //return mDataBase.hasCookies();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.395 -0400", hash_original_method = "C551147CF3F803C4BE33E46DD1A6FC76", hash_generated_method = "E2B0F86A0B4DA97650D6F56B401C475F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.825 -0400", hash_original_method = "C551147CF3F803C4BE33E46DD1A6FC76", hash_generated_method = "DB5E862EAF4476CD2AAC6C135238852F")
      void clearSessionCookies() {
+    if(mDataBase == null)        
+        {
+            return;
+        } //End block
         mDataBase.clearSessionCookies();
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mDataBase == null) {
+            //return;
+        //}
+        //mDataBase.clearSessionCookies();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.395 -0400", hash_original_method = "C17F5F6F39FEAB50212EA7D808E14AB6", hash_generated_method = "96E78EA379BB1E871D458D38F722703E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.825 -0400", hash_original_method = "C17F5F6F39FEAB50212EA7D808E14AB6", hash_generated_method = "376263A331BF5A37EFC28D249C653C23")
      void clearExpiredCookies(long now) {
-        mDataBase.clearExpiredCookies(now);
         addTaint(now);
-        
-        
-            
-        
-        
+    if(mDataBase == null)        
+        {
+            return;
+        } //End block
+        mDataBase.clearExpiredCookies(now);
+        // ---------- Original Method ----------
+        //if (mDataBase == null) {
+            //return;
+        //}
+        //mDataBase.clearExpiredCookies(now);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.396 -0400", hash_original_method = "05B4AB2BDA2D583135C82323F50F29AB", hash_generated_method = "F728272CA22514131588A332474DEAA9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.825 -0400", hash_original_method = "05B4AB2BDA2D583135C82323F50F29AB", hash_generated_method = "3A63D579C07CECE2FCF5968A5562D878")
     protected void syncFromRamToFlash() {
+    if(DebugFlags.COOKIE_SYNC_MANAGER)        
+        {
+        } //End block
         CookieManager manager = CookieManager.getInstance();
+    if(!manager.acceptCookie())        
         {
-            boolean varC9B51255ADF56E24A3D4B4F425E75C21_1118888103 = (!manager.acceptCookie());
-        } 
+            return;
+        } //End block
+    if(JniUtil.useChromiumHttpStack())        
         {
-            boolean var9ACB1B3B30D2C0CED704DA8C8B3FC1B9_208046290 = (JniUtil.useChromiumHttpStack());
-            {
-                manager.flushCookieStore();
-            } 
-            {
-                ArrayList<Cookie> cookieList = manager.getUpdatedCookiesSince(mLastUpdate);
-                mLastUpdate = System.currentTimeMillis();
-                syncFromRamToFlash(cookieList);
-                ArrayList<Cookie> lruList = manager.deleteLRUDomain();
-                syncFromRamToFlash(lruList);
-            } 
-        } 
-        
-        
-            
-        
-        
-        
-            
-        
-        
-            
-        
-            
-            
-            
-            
-            
-        
-        
-            
-        
+            manager.flushCookieStore();
+        } //End block
+        else
+        {
+            ArrayList<Cookie> cookieList = manager.getUpdatedCookiesSince(mLastUpdate);
+            mLastUpdate = System.currentTimeMillis();
+            syncFromRamToFlash(cookieList);
+            ArrayList<Cookie> lruList = manager.deleteLRUDomain();
+            syncFromRamToFlash(lruList);
+        } //End block
+    if(DebugFlags.COOKIE_SYNC_MANAGER)        
+        {
+        } //End block
+        // ---------- Original Method ----------
+        //if (DebugFlags.COOKIE_SYNC_MANAGER) {
+            //Log.v(LOGTAG, "CookieSyncManager::syncFromRamToFlash STARTS");
+        //}
+        //CookieManager manager = CookieManager.getInstance();
+        //if (!manager.acceptCookie()) {
+            //return;
+        //}
+        //if (JniUtil.useChromiumHttpStack()) {
+            //manager.flushCookieStore();
+        //} else {
+            //ArrayList<Cookie> cookieList = manager.getUpdatedCookiesSince(mLastUpdate);
+            //mLastUpdate = System.currentTimeMillis();
+            //syncFromRamToFlash(cookieList);
+            //ArrayList<Cookie> lruList = manager.deleteLRUDomain();
+            //syncFromRamToFlash(lruList);
+        //}
+        //if (DebugFlags.COOKIE_SYNC_MANAGER) {
+            //Log.v(LOGTAG, "CookieSyncManager::syncFromRamToFlash DONE");
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.397 -0400", hash_original_method = "CE02A4B6AAF984780597D96D08B33D6E", hash_generated_method = "560E43C38B9965FFC68A36394575434B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.826 -0400", hash_original_method = "CE02A4B6AAF984780597D96D08B33D6E", hash_generated_method = "F3F17D28298E164139FE38FACE024DB3")
     private void syncFromRamToFlash(ArrayList<Cookie> list) {
-        Iterator<Cookie> iter = list.iterator();
-        {
-            boolean varADABAFEBBAB7E585DD903333BD7F20A8_1728590597 = (iter.hasNext());
-            {
-                Cookie cookie = iter.next();
-                {
-                    {
-                        mDataBase.deleteCookies(cookie.domain, cookie.path,
-                            cookie.name);
-                    } 
-                    {
-                        mDataBase.addCookie(cookie);
-                        CookieManager.getInstance().syncedACookie(cookie);
-                    } 
-                    {
-                        CookieManager.getInstance().deleteACookie(cookie);
-                    } 
-                } 
-            } 
-        } 
         addTaint(list.getTaint());
-        
-        
-        
-            
-            
-                
-                    
-                            
-                
-                
-                    
-                    
-                
-                    
-                
-            
-        
+        Iterator<Cookie> iter = list.iterator();
+        while
+(iter.hasNext())        
+        {
+            Cookie cookie = iter.next();
+    if(cookie.mode != Cookie.MODE_NORMAL)            
+            {
+    if(cookie.mode != Cookie.MODE_NEW)                
+                {
+                    mDataBase.deleteCookies(cookie.domain, cookie.path,
+                            cookie.name);
+                } //End block
+    if(cookie.mode != Cookie.MODE_DELETED)                
+                {
+                    mDataBase.addCookie(cookie);
+                    CookieManager.getInstance().syncedACookie(cookie);
+                } //End block
+                else
+                {
+                    CookieManager.getInstance().deleteACookie(cookie);
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //Iterator<Cookie> iter = list.iterator();
+        //while (iter.hasNext()) {
+            //Cookie cookie = iter.next();
+            //if (cookie.mode != Cookie.MODE_NORMAL) {
+                //if (cookie.mode != Cookie.MODE_NEW) {
+                    //mDataBase.deleteCookies(cookie.domain, cookie.path,
+                            //cookie.name);
+                //}
+                //if (cookie.mode != Cookie.MODE_DELETED) {
+                    //mDataBase.addCookie(cookie);
+                    //CookieManager.getInstance().syncedACookie(cookie);
+                //} else {
+                    //CookieManager.getInstance().deleteACookie(cookie);
+                //}
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static void checkInstanceIsCreated() {
+        private static void checkInstanceIsCreated() {
         if (sRef == null) {
             throw new IllegalStateException(
                     "CookieSyncManager::createInstance() needs to be called "
@@ -220,7 +231,7 @@ public final class CookieSyncManager extends WebSyncManager {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.397 -0400", hash_original_field = "E6BA83C33E70ACF527403866BBE81365", hash_generated_field = "73C10A9E9156F9CA0177FC69B4C20965")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.827 -0400", hash_original_field = "E6BA83C33E70ACF527403866BBE81365", hash_generated_field = "73C10A9E9156F9CA0177FC69B4C20965")
 
     private static CookieSyncManager sRef;
 }

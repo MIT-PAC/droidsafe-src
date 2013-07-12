@@ -1,46 +1,43 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.javax.sip.address.*;
 import java.text.ParseException;
 
 public class ErrorInfoParser extends ParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.940 -0400", hash_original_method = "5AFF5330EA4A2771143BBB17EF4E79AC", hash_generated_method = "83D3B9F618EFC876DDE2B0F01045EEC6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.432 -0400", hash_original_method = "5AFF5330EA4A2771143BBB17EF4E79AC", hash_generated_method = "83D3B9F618EFC876DDE2B0F01045EEC6")
     public  ErrorInfoParser(String errorInfo) {
         super(errorInfo);
         addTaint(errorInfo.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.940 -0400", hash_original_method = "8F205A65B870DAE08BD525603424E427", hash_generated_method = "5E6090731FD6E4E3002E0DA957BD8102")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.432 -0400", hash_original_method = "8F205A65B870DAE08BD525603424E427", hash_generated_method = "5E6090731FD6E4E3002E0DA957BD8102")
     protected  ErrorInfoParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.942 -0400", hash_original_method = "A1D86D832E01EE0ED40EBBDB518014BA", hash_generated_method = "EBCF1238AE2BBD5FCD156C1D738901BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.432 -0400", hash_original_method = "A1D86D832E01EE0ED40EBBDB518014BA", hash_generated_method = "526265750CF76B4C310DDBF998A4B5EA")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_106385511 = null; 
+    if(debug)        
         dbg_enter("ErrorInfoParser.parse");
         ErrorInfoList list = new ErrorInfoList();
         try 
         {
             headerName(TokenTypes.ERROR_INFO);
+            while
+(lexer.lookAhead(0) != '\n')            
             {
-                boolean varA38820C66B6BCE71087D920E2767FF09_1559255356 = (lexer.lookAhead(0) != '\n');
-                {
+                do {
                     {
                         ErrorInfo errorInfo = new ErrorInfo();
                         errorInfo.setHeaderName(SIPHeaderNames.ERROR_INFO);
@@ -53,25 +50,26 @@ public class ErrorInfoParser extends ParametersParser {
                         this.lexer.SPorHT();
                         super.parse(errorInfo);
                         list.add(errorInfo);
+    if(lexer.lookAhead(0) == ',')                        
                         {
-                            boolean var9AE54EB6EBAEA27AE99856C2C81EF714_1783998622 = (lexer.lookAhead(0) == ',');
-                            {
-                                this.lexer.match(',');
-                            } 
-                        } 
-                    } 
-                } 
-            } 
-            varB4EAC82CA7396A68D541C85D26508E83_106385511 = list;
-        } 
+                            this.lexer.match(',');
+                        } //End block
+                        else
+                        break;
+                    } //End block
+} while (true);
+            } //End block
+SIPHeader varED12C351C2E8CA4F85F097DDC7E77B4D_410240638 =             list;
+            varED12C351C2E8CA4F85F097DDC7E77B4D_410240638.addTaint(taint);
+            return varED12C351C2E8CA4F85F097DDC7E77B4D_410240638;
+        } //End block
         finally 
         {
+    if(debug)            
             dbg_leave("ErrorInfoParser.parse");
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_106385511.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_106385511;
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

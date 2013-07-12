@@ -1,12 +1,9 @@
 package com.android.internal.telephony.gsm;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.content.Context;
 import com.android.internal.telephony.*;
 import android.os.*;
@@ -19,62 +16,61 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 public final class GsmMmiCode extends Handler implements MmiCode {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.324 -0400", hash_original_field = "F7A42FE7211F98AC7A60A285AC3A9E87", hash_generated_field = "690DC9441FA6BD04E0472B4DF9E035F8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.848 -0400", hash_original_field = "F7A42FE7211F98AC7A60A285AC3A9E87", hash_generated_field = "690DC9441FA6BD04E0472B4DF9E035F8")
 
     GSMPhone phone;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.324 -0400", hash_original_field = "5C18EF72771564B7F43C497DC507AEAB", hash_generated_field = "571FE4403DDA9BF54693EBF4F0D6639D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.848 -0400", hash_original_field = "5C18EF72771564B7F43C497DC507AEAB", hash_generated_field = "571FE4403DDA9BF54693EBF4F0D6639D")
 
     Context context;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.324 -0400", hash_original_field = "418C5509E2171D55B0AEE5C2EA4442B5", hash_generated_field = "F0D53334D1D58D4E79746838A9C851E9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.848 -0400", hash_original_field = "418C5509E2171D55B0AEE5C2EA4442B5", hash_generated_field = "F0D53334D1D58D4E79746838A9C851E9")
 
     String action;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.324 -0400", hash_original_field = "D54185B71F614C30A396AC4BC44D3269", hash_generated_field = "1F12170F3EB5D5C8E81971C7E7A70DEB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.848 -0400", hash_original_field = "D54185B71F614C30A396AC4BC44D3269", hash_generated_field = "1F12170F3EB5D5C8E81971C7E7A70DEB")
 
     String sc;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.324 -0400", hash_original_field = "07AF7E75676EAB410D1F83937D7AFB62", hash_generated_field = "A81AA63AE09D96070D67E017AC9A9A05")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.848 -0400", hash_original_field = "07AF7E75676EAB410D1F83937D7AFB62", hash_generated_field = "A81AA63AE09D96070D67E017AC9A9A05")
 
     String sia;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.324 -0400", hash_original_field = "A444633D8CF456EECA3138C78F4AE12E", hash_generated_field = "58A1CEF50FC10710B7250BC1FCA66342")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.848 -0400", hash_original_field = "A444633D8CF456EECA3138C78F4AE12E", hash_generated_field = "58A1CEF50FC10710B7250BC1FCA66342")
 
     String sib;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.324 -0400", hash_original_field = "82F5C1C9BE89C68344D5C6BCF404C804", hash_generated_field = "8A9043BD9E04D5B2D22710F5E973C72C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.848 -0400", hash_original_field = "82F5C1C9BE89C68344D5C6BCF404C804", hash_generated_field = "8A9043BD9E04D5B2D22710F5E973C72C")
 
     String sic;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.324 -0400", hash_original_field = "A265DB9AE14F0DD90BC117F8B98A0755", hash_generated_field = "BB2724DBDDFCC035B982DADDB95A1B73")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.848 -0400", hash_original_field = "A265DB9AE14F0DD90BC117F8B98A0755", hash_generated_field = "BB2724DBDDFCC035B982DADDB95A1B73")
 
     String poundString;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.324 -0400", hash_original_field = "CEFDF90E0BAE9FC3A52CE140170834F6", hash_generated_field = "8E3BE840A192C669D20F33CA83223066")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.848 -0400", hash_original_field = "CEFDF90E0BAE9FC3A52CE140170834F6", hash_generated_field = "8E3BE840A192C669D20F33CA83223066")
 
     String dialingNumber;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.324 -0400", hash_original_field = "9003D1DF22EB4D3820015070385194C8", hash_generated_field = "389FC73FC9600F29B99C9C32C4AF72ED")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.849 -0400", hash_original_field = "9003D1DF22EB4D3820015070385194C8", hash_generated_field = "389FC73FC9600F29B99C9C32C4AF72ED")
 
     String pwd;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.324 -0400", hash_original_field = "8D111C48FFCFB880A1878EEA7D383221", hash_generated_field = "75B5B7D441FCCB2BF9802C8C7F593C9E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.849 -0400", hash_original_field = "8D111C48FFCFB880A1878EEA7D383221", hash_generated_field = "75B5B7D441FCCB2BF9802C8C7F593C9E")
 
     private boolean isPendingUSSD;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.324 -0400", hash_original_field = "07574527064CCEC9D1F5EEA5FA7C4751", hash_generated_field = "A601B09474CCCD19D7EF905D10ED4B31")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.849 -0400", hash_original_field = "07574527064CCEC9D1F5EEA5FA7C4751", hash_generated_field = "A601B09474CCCD19D7EF905D10ED4B31")
 
     private boolean isUssdRequest;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.324 -0400", hash_original_field = "B355E0B84F8AFF2409A9BE6D26D2C44F", hash_generated_field = "1C260AF567CCE39E2DADC6C6A5D564F0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.849 -0400", hash_original_field = "B355E0B84F8AFF2409A9BE6D26D2C44F", hash_generated_field = "1C260AF567CCE39E2DADC6C6A5D564F0")
 
     State state = State.PENDING;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.324 -0400", hash_original_field = "78E731027D8FD50ED642340B7C9A63B3", hash_generated_field = "422FD4BFD34A850AED895188AD7E511B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.849 -0400", hash_original_field = "78E731027D8FD50ED642340B7C9A63B3", hash_generated_field = "422FD4BFD34A850AED895188AD7E511B")
 
     CharSequence message;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.325 -0400", hash_original_method = "1F245899EC025E108E5BE08C8380C5BD", hash_generated_method = "AE1A92BE86BC124C3840C6CA8E93CC5D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.849 -0400", hash_original_method = "1F245899EC025E108E5BE08C8380C5BD", hash_generated_method = "AE1A92BE86BC124C3840C6CA8E93CC5D")
       GsmMmiCode(GSMPhone phone) {
         super(phone.getHandler().getLooper());
         this.phone = phone;
         this.context = phone.getContext();
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.phone = phone;
+        //this.context = phone.getContext();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static GsmMmiCode newFromDialString(String dialString, GSMPhone phone) {
+        static GsmMmiCode newFromDialString(String dialString, GSMPhone phone) {
         Matcher m;
         GsmMmiCode ret = null;
         m = sPatternSuppService.matcher(dialString);
@@ -101,8 +97,7 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static GsmMmiCode newNetworkInitiatedUssd(String ussdMessage,
+        static GsmMmiCode newNetworkInitiatedUssd(String ussdMessage,
                                 boolean isUssdRequest, GSMPhone phone) {
         GsmMmiCode ret;
         ret = new GsmMmiCode(phone);
@@ -118,8 +113,7 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static GsmMmiCode newFromUssdUserInput(String ussdMessge, GSMPhone phone) {
+        static GsmMmiCode newFromUssdUserInput(String ussdMessge, GSMPhone phone) {
         GsmMmiCode ret = new GsmMmiCode(phone);
         ret.message = ussdMessge;
         ret.state = State.PENDING;
@@ -128,21 +122,18 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static String makeEmptyNull(String s) {
+        private static String makeEmptyNull(String s) {
         if (s != null && s.length() == 0) return null;
         return s;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static boolean isEmptyOrNull(CharSequence s) {
+        private static boolean isEmptyOrNull(CharSequence s) {
         return s == null || (s.length() == 0);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static int scToCallForwardReason(String sc) {
+        private static int scToCallForwardReason(String sc) {
         if (sc == null) {
             throw new RuntimeException ("invalid call forward sc");
         }
@@ -164,8 +155,7 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static int siToServiceClass(String si) {
+        private static int siToServiceClass(String si) {
         if (si == null || si.length() == 0) {
                 return  SERVICE_CLASS_NONE;
         } else {
@@ -191,8 +181,7 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static int siToTime(String si) {
+        private static int siToTime(String si) {
         if (si == null || si.length() == 0) {
             return 0;
         } else {
@@ -201,8 +190,7 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static boolean isServiceCodeCallForwarding(String sc) {
+        static boolean isServiceCodeCallForwarding(String sc) {
         return sc != null &&
                 (sc.equals(SC_CFU)
                 || sc.equals(SC_CFB) || sc.equals(SC_CFNRy)
@@ -211,8 +199,7 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static boolean isServiceCodeCallBarring(String sc) {
+        static boolean isServiceCodeCallBarring(String sc) {
         return sc != null &&
                 (sc.equals(SC_BAOC)
                 || sc.equals(SC_BAOIC)
@@ -225,8 +212,7 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static String scToBarringFacility(String sc) {
+        static String scToBarringFacility(String sc) {
         if (sc == null) {
             throw new RuntimeException ("invalid call barring sc");
         }
@@ -252,87 +238,87 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.327 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "3A4A5397EDADC8AB93C0DBF42D244541")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.852 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "1011BDE16286B5AA22D002FBB93D64A9")
     public State getState() {
-        State varB4EAC82CA7396A68D541C85D26508E83_280571811 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_280571811 = state;
-        varB4EAC82CA7396A68D541C85D26508E83_280571811.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_280571811;
-        
-        
+State var37C56C9D63C623261861C16DCFB73F6D_1866741360 =         state;
+        var37C56C9D63C623261861C16DCFB73F6D_1866741360.addTaint(taint);
+        return var37C56C9D63C623261861C16DCFB73F6D_1866741360;
+        // ---------- Original Method ----------
+        //return state;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.328 -0400", hash_original_method = "570FEAA437E41D0252DA00ACF07950A0", hash_generated_method = "C2BAC143CB326917BA7450A9135B6E32")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.852 -0400", hash_original_method = "570FEAA437E41D0252DA00ACF07950A0", hash_generated_method = "BA9F214D9A0EE5A893ABC2D8884C71D6")
     public CharSequence getMessage() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1994533820 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1994533820 = message;
-        varB4EAC82CA7396A68D541C85D26508E83_1994533820.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1994533820;
-        
-        
+CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
+        varFD182D7074F3848E773A38B067BBB880_747266200.addTaint(taint);
+        return varFD182D7074F3848E773A38B067BBB880_747266200;
+        // ---------- Original Method ----------
+        //return message;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.329 -0400", hash_original_method = "E883165C6689A3782C7AFFDB1FCF97C2", hash_generated_method = "DDD294D2F15DC82E2D473B5D0C41FEB6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.852 -0400", hash_original_method = "E883165C6689A3782C7AFFDB1FCF97C2", hash_generated_method = "69C120AF8FBBD4F9A9C72DE5B0200F28")
     public void cancel() {
+    if(state == State.COMPLETE || state == State.FAILED)        
+        {
+            return;
+        } //End block
         state = State.CANCELLED;
+    if(isPendingUSSD)        
         {
             phone.mCM.cancelPendingUssd(obtainMessage(EVENT_USSD_CANCEL_COMPLETE, this));
-        } 
+        } //End block
+        else
         {
             phone.onMMIDone (this);
-        } 
-        
-        
-            
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (state == State.COMPLETE || state == State.FAILED) {
+            //return;
+        //}
+        //state = State.CANCELLED;
+        //if (isPendingUSSD) {
+            //phone.mCM.cancelPendingUssd(obtainMessage(EVENT_USSD_CANCEL_COMPLETE, this));
+        //} else {
+            //phone.onMMIDone (this);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.330 -0400", hash_original_method = "248235E8DF3E05BA5583B3AF86C41C77", hash_generated_method = "9FFDDB23492F7408CE2A882FB265C7E8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.853 -0400", hash_original_method = "248235E8DF3E05BA5583B3AF86C41C77", hash_generated_method = "F919D4CF978BC51E826C8EED39D24FCF")
     public boolean isCancelable() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1470174279 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1470174279;
-        
-        
+        boolean var8D111C48FFCFB880A1878EEA7D383221_976621444 = (isPendingUSSD);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2101252221 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2101252221;
+        // ---------- Original Method ----------
+        //return isPendingUSSD;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.330 -0400", hash_original_method = "C3EFABB6ACCE73BCC8BAFC802C5DCA3C", hash_generated_method = "F7D7899B4CBAEC49B78B7217F1DE3B28")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.853 -0400", hash_original_method = "C3EFABB6ACCE73BCC8BAFC802C5DCA3C", hash_generated_method = "88234E2A4122F8F1349F78D51632D6E0")
      boolean isMMI() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2087834489 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2087834489;
-        
-        
+        boolean varFA8A19485DF9D2474D2439AA7B853812_1892326349 = (poundString != null);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2012395845 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2012395845;
+        // ---------- Original Method ----------
+        //return poundString != null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.330 -0400", hash_original_method = "C27864618833FAFE773E7DA58094B237", hash_generated_method = "8D1FC91F18B01C311F2320C64A60684B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.853 -0400", hash_original_method = "C27864618833FAFE773E7DA58094B237", hash_generated_method = "6D7BADDA7EA2647827FC2FD676D940E6")
      boolean isShortCode() {
-        boolean var5484DF39387CF98FB51501CB4001F9FA_1173795792 = (poundString == null
+        boolean var111A3A83B84F6CE86C4BA71405D3BB20_709776191 = (poundString == null
                     && dialingNumber != null && dialingNumber.length() <= 2);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1659468070 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1659468070;
-        
-        
-                    
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_120720021 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_120720021;
+        // ---------- Original Method ----------
+        //return poundString == null
+                    //&& dialingNumber != null && dialingNumber.length() <= 2;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static private boolean isTwoDigitShortCode(Context context, String dialString) {
+        static private boolean isTwoDigitShortCode(Context context, String dialString) {
         Log.d(LOG_TAG, "isTwoDigitShortCode");
         if (dialString == null || dialString.length() != 2) return false;
         if (sTwoDigitNumberPattern == null) {
@@ -351,8 +337,7 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static private boolean isShortCode(String dialString, GSMPhone phone) {
+        static private boolean isShortCode(String dialString, GSMPhone phone) {
         if (dialString == null) {
             return false;
         }
@@ -367,8 +352,7 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static private boolean isShortCodeUSSD(String dialString, GSMPhone phone) {
+        static private boolean isShortCodeUSSD(String dialString, GSMPhone phone) {
         if (dialString != null) {
             if (phone.isInCall()) {
                 if (dialString.length() <= MAX_LENGTH_SHORT_CODE) {
@@ -385,1328 +369,1257 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.331 -0400", hash_original_method = "59EBB8632489E0E4FC2DAAE2E73A576E", hash_generated_method = "BA3F61C3F21C9BBD5C33088CA620E266")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.854 -0400", hash_original_method = "59EBB8632489E0E4FC2DAAE2E73A576E", hash_generated_method = "AB00A230C875C040F81015E08C8BC69C")
      boolean isPinCommand() {
-        boolean varFF503AA9A44C28D3C7411096077FB957_1396578321 = (sc != null && (sc.equals(SC_PIN) || sc.equals(SC_PIN2)
+        boolean var13F0F8A2CEF4DD01F0592E9E21113FAC_566959065 = (sc != null && (sc.equals(SC_PIN) || sc.equals(SC_PIN2)
                               || sc.equals(SC_PUK) || sc.equals(SC_PUK2)));
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_344814274 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_344814274;
-        
-        
-                              
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_729503747 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_729503747;
+        // ---------- Original Method ----------
+        //return sc != null && (sc.equals(SC_PIN) || sc.equals(SC_PIN2)
+                              //|| sc.equals(SC_PUK) || sc.equals(SC_PUK2));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.332 -0400", hash_original_method = "38FEBB881BBF680269ABAA58BA7CAEF9", hash_generated_method = "FEA36A2D634DCF6A0D4E20C69832AF7F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.854 -0400", hash_original_method = "38FEBB881BBF680269ABAA58BA7CAEF9", hash_generated_method = "3310D497D135CB7F388EB27F80D5AC36")
      boolean isTemporaryModeCLIR() {
-        boolean var544696A52FC0DFD167FF01D5AB5C7E65_2147315006 = (sc != null && sc.equals(SC_CLIR) && dialingNumber != null
+        boolean var1A4AA322E278790E1200DFA1AC78BAD5_1716108782 = (sc != null && sc.equals(SC_CLIR) && dialingNumber != null
                 && (isActivate() || isDeactivate()));
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1424975325 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1424975325;
-        
-        
-                
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2068926924 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2068926924;
+        // ---------- Original Method ----------
+        //return sc != null && sc.equals(SC_CLIR) && dialingNumber != null
+                //&& (isActivate() || isDeactivate());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.332 -0400", hash_original_method = "29290542493AE0E5F1628242CAC04AE5", hash_generated_method = "ABB627CC2E9D6A9AE12A65DD6F8A4B28")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.855 -0400", hash_original_method = "29290542493AE0E5F1628242CAC04AE5", hash_generated_method = "30A489F60C8212F8A0523EC67C2B5669")
      int getCLIRMode() {
+    if(sc != null && sc.equals(SC_CLIR))        
         {
-            boolean var34648CEF6B66EF75C2E3E4FDB714C6B5_63057920 = (sc != null && sc.equals(SC_CLIR));
+    if(isActivate())            
             {
-                {
-                    boolean var6DAE9187104E5001F23DD333FAAFF7E8_1183723610 = (isActivate());
-                    {
-                        boolean var60B1109AE4AFCE40EC270D9BE8674276_1646929952 = (isDeactivate());
-                    } 
-                } 
-            } 
-        } 
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_206469659 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_206469659;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+                int varD38B27557D595B778DCFAE299AD92029_475630536 = (CommandsInterface.CLIR_SUPPRESSION);
+                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_828717328 = getTaintInt();
+                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_828717328;
+            } //End block
+            else
+    if(isDeactivate())            
+            {
+                int varA3FE8AA79AD35CC33958C8A8D3703FFE_484501443 = (CommandsInterface.CLIR_INVOCATION);
+                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_237023369 = getTaintInt();
+                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_237023369;
+            } //End block
+        } //End block
+        int varD7A3850F0E720499810E0323D2FBBEBF_735304406 = (CommandsInterface.CLIR_DEFAULT);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_43315797 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_43315797;
+        // ---------- Original Method ----------
+        //if (sc != null && sc.equals(SC_CLIR)) {
+            //if (isActivate()) {
+                //return CommandsInterface.CLIR_SUPPRESSION;
+            //} else if (isDeactivate()) {
+                //return CommandsInterface.CLIR_INVOCATION;
+            //}
+        //}
+        //return CommandsInterface.CLIR_DEFAULT;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.332 -0400", hash_original_method = "68E2406D480606BAD5624672FC8435A4", hash_generated_method = "0E996CEB488D2C200234DE66D8E33B8C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.855 -0400", hash_original_method = "68E2406D480606BAD5624672FC8435A4", hash_generated_method = "6B7B69F4A753EE90DEBE06954B386C7D")
      boolean isActivate() {
-        boolean varDA9476B1A494F0D070B1BF7D372D3355_2035787202 = (action != null && action.equals(ACTION_ACTIVATE));
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_936041155 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_936041155;
-        
-        
+        boolean varD51B6B7143DCE4C416EB68FBE2262A64_2084125401 = (action != null && action.equals(ACTION_ACTIVATE));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2042777525 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2042777525;
+        // ---------- Original Method ----------
+        //return action != null && action.equals(ACTION_ACTIVATE);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.332 -0400", hash_original_method = "83961E295B5FE9A8E52B830AEEEC29A1", hash_generated_method = "942DD7600A5B457DEF6A17F534DB1C82")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.855 -0400", hash_original_method = "83961E295B5FE9A8E52B830AEEEC29A1", hash_generated_method = "47411D543B9996F36DE482AC6B3D6389")
      boolean isDeactivate() {
-        boolean varE0E3F7818F99EE86F25A069D66EF50F8_83512068 = (action != null && action.equals(ACTION_DEACTIVATE));
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_904352423 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_904352423;
-        
-        
+        boolean var356C7756771A8BB8E836AC8D33500DBC_1164131376 = (action != null && action.equals(ACTION_DEACTIVATE));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1528719908 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1528719908;
+        // ---------- Original Method ----------
+        //return action != null && action.equals(ACTION_DEACTIVATE);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.333 -0400", hash_original_method = "E588DEB258357C4BFC7DA2575588FA46", hash_generated_method = "B01678E1B7093EDD9215298C8F7E2CFF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.856 -0400", hash_original_method = "E588DEB258357C4BFC7DA2575588FA46", hash_generated_method = "7D10A5BCAFF4AD54E311684A047280AD")
      boolean isInterrogate() {
-        boolean var80F2797A4F74689C3AE333F5C724FB3D_1051719499 = (action != null && action.equals(ACTION_INTERROGATE));
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_951812484 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_951812484;
-        
-        
+        boolean var18153B4C33E04B05BBB237A6E5701168_1876145613 = (action != null && action.equals(ACTION_INTERROGATE));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_292841985 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_292841985;
+        // ---------- Original Method ----------
+        //return action != null && action.equals(ACTION_INTERROGATE);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.333 -0400", hash_original_method = "CA7357DC4342746EF1FE3C742A9E7FC8", hash_generated_method = "431AF2C1BDD35CE394877291F0311D16")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.856 -0400", hash_original_method = "CA7357DC4342746EF1FE3C742A9E7FC8", hash_generated_method = "74536E262BE294ED5515002C1920EABD")
      boolean isRegister() {
-        boolean var8F8DE4A6AF200F3CCE4ABD0A031FFBC0_1879095913 = (action != null && action.equals(ACTION_REGISTER));
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2114961260 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2114961260;
-        
-        
+        boolean var8AFE299431940E3F9012D8FC2BB2FDCF_2093416497 = (action != null && action.equals(ACTION_REGISTER));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1262444773 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1262444773;
+        // ---------- Original Method ----------
+        //return action != null && action.equals(ACTION_REGISTER);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.333 -0400", hash_original_method = "BEEEFB61222182AD97B0B2576158AC2D", hash_generated_method = "B5701B6D849147E4020A5D4A28A9D669")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.856 -0400", hash_original_method = "BEEEFB61222182AD97B0B2576158AC2D", hash_generated_method = "31F577B28F96DBB0E45059C2BD6DF384")
      boolean isErasure() {
-        boolean var26E8FF1C98185BC2E63EA43F2B1F6AA7_1922398954 = (action != null && action.equals(ACTION_ERASURE));
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1555081962 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1555081962;
-        
-        
+        boolean var3CF522A21BDFB54475D8AFDFA2BB1D25_224834027 = (action != null && action.equals(ACTION_ERASURE));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_778635161 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_778635161;
+        // ---------- Original Method ----------
+        //return action != null && action.equals(ACTION_ERASURE);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.333 -0400", hash_original_method = "18A8B0A5C57D2FDE667C353F321E4EE3", hash_generated_method = "0710A6DB87B4A791B823921F8A9D4B65")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.856 -0400", hash_original_method = "18A8B0A5C57D2FDE667C353F321E4EE3", hash_generated_method = "D1426B38C98748E3CD9B89A94D662375")
     public boolean isPendingUSSD() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_353892404 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_353892404;
-        
-        
+        boolean var8D111C48FFCFB880A1878EEA7D383221_1736971155 = (isPendingUSSD);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1677432286 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1677432286;
+        // ---------- Original Method ----------
+        //return isPendingUSSD;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.334 -0400", hash_original_method = "29AF801768BF493864C8071B1DB2A48B", hash_generated_method = "CC71A1522F361C33A2246A5BCBE7CCDB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.856 -0400", hash_original_method = "29AF801768BF493864C8071B1DB2A48B", hash_generated_method = "221FF785768C43F8ADF9D4BB61D8A80E")
     public boolean isUssdRequest() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1321798400 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1321798400;
-        
-        
+        boolean var07574527064CCEC9D1F5EEA5FA7C4751_727021311 = (isUssdRequest);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_694110934 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_694110934;
+        // ---------- Original Method ----------
+        //return isUssdRequest;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.335 -0400", hash_original_method = "889EE3022DF864BE1DEDCF5E80AD4B15", hash_generated_method = "E9703E832B9BFC0C607A1D54AE982C49")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.858 -0400", hash_original_method = "889EE3022DF864BE1DEDCF5E80AD4B15", hash_generated_method = "9AD44A8E65F5D83F36AA050A6876EA7C")
      void processCode() {
         try 
         {
+    if(isShortCode())            
             {
-                boolean var8D3139A2E490A629DC2B2B2E088002D1_2059111569 = (isShortCode());
+                Log.d(LOG_TAG, "isShortCode");
+                sendUssd(dialingNumber);
+            } //End block
+            else
+    if(dialingNumber != null)            
+            {
+                RuntimeException var2E49DDD3355A805A242019B4EA18BC60_509650858 = new RuntimeException ("Invalid or Unsupported MMI Code");
+                var2E49DDD3355A805A242019B4EA18BC60_509650858.addTaint(taint);
+                throw var2E49DDD3355A805A242019B4EA18BC60_509650858;
+            } //End block
+            else
+    if(sc != null && sc.equals(SC_CLIP))            
+            {
+                Log.d(LOG_TAG, "is CLIP");
+    if(isInterrogate())                
                 {
-                    Log.d(LOG_TAG, "isShortCode");
-                    sendUssd(dialingNumber);
-                } 
-                {
-                    if (DroidSafeAndroidRuntime.control) throw new RuntimeException ("Invalid or Unsupported MMI Code");
-                } 
-                {
-                    boolean varD990A9821BF7C1A6CEBB4AF3A08286F4_2085069446 = (sc != null && sc.equals(SC_CLIP));
-                    {
-                        Log.d(LOG_TAG, "is CLIP");
-                        {
-                            boolean var2CCA4E10A7F30CA1D898E5A5AC1ABD11_384850370 = (isInterrogate());
-                            {
-                                phone.mCM.queryCLIP(
+                    phone.mCM.queryCLIP(
                             obtainMessage(EVENT_QUERY_COMPLETE, this));
-                            } 
-                            {
-                                if (DroidSafeAndroidRuntime.control) throw new RuntimeException ("Invalid or Unsupported MMI Code");
-                            } 
-                        } 
-                    } 
-                    {
-                        boolean var0812373E25987806BA10DCBE1830B470_846569644 = (sc != null && sc.equals(SC_CLIR));
-                        {
-                            Log.d(LOG_TAG, "is CLIR");
-                            {
-                                boolean var660F9C4115C74CCDF15C3870AE7DD93D_1812715866 = (isActivate());
-                                {
-                                    phone.mCM.setCLIR(CommandsInterface.CLIR_INVOCATION,
+                } //End block
+                else
+                {
+                    RuntimeException var2E49DDD3355A805A242019B4EA18BC60_816508421 = new RuntimeException ("Invalid or Unsupported MMI Code");
+                    var2E49DDD3355A805A242019B4EA18BC60_816508421.addTaint(taint);
+                    throw var2E49DDD3355A805A242019B4EA18BC60_816508421;
+                } //End block
+            } //End block
+            else
+    if(sc != null && sc.equals(SC_CLIR))            
+            {
+                Log.d(LOG_TAG, "is CLIR");
+    if(isActivate())                
+                {
+                    phone.mCM.setCLIR(CommandsInterface.CLIR_INVOCATION,
                         obtainMessage(EVENT_SET_COMPLETE, this));
-                                } 
-                                {
-                                    boolean varDA9013164DD6CF176DBD049823930B6B_1758668458 = (isDeactivate());
-                                    {
-                                        phone.mCM.setCLIR(CommandsInterface.CLIR_SUPPRESSION,
+                } //End block
+                else
+    if(isDeactivate())                
+                {
+                    phone.mCM.setCLIR(CommandsInterface.CLIR_SUPPRESSION,
                         obtainMessage(EVENT_SET_COMPLETE, this));
-                                    } 
-                                    {
-                                        boolean var18717314843932DC2BFAB4258F743FFD_1822526408 = (isInterrogate());
-                                        {
-                                            phone.mCM.getCLIR(
+                } //End block
+                else
+    if(isInterrogate())                
+                {
+                    phone.mCM.getCLIR(
                         obtainMessage(EVENT_GET_CLIR_COMPLETE, this));
-                                        } 
-                                        {
-                                            if (DroidSafeAndroidRuntime.control) throw new RuntimeException ("Invalid or Unsupported MMI Code");
-                                        } 
-                                    } 
-                                } 
-                            } 
-                        } 
-                        {
-                            boolean var7312C42DD719B1CD668FCA247DDADED7_1847230007 = (isServiceCodeCallForwarding(sc));
-                            {
-                                Log.d(LOG_TAG, "is CF");
-                                String dialingNumber = sia;
-                                int serviceClass = siToServiceClass(sib);
-                                int reason = scToCallForwardReason(sc);
-                                int time = siToTime(sic);
-                                {
-                                    boolean var61B524360B73CC876F21BB5D0DD14CDF_1482144875 = (isInterrogate());
-                                    {
-                                        phone.mCM.queryCallForwardStatus(
+                } //End block
+                else
+                {
+                    RuntimeException var2E49DDD3355A805A242019B4EA18BC60_1218181830 = new RuntimeException ("Invalid or Unsupported MMI Code");
+                    var2E49DDD3355A805A242019B4EA18BC60_1218181830.addTaint(taint);
+                    throw var2E49DDD3355A805A242019B4EA18BC60_1218181830;
+                } //End block
+            } //End block
+            else
+    if(isServiceCodeCallForwarding(sc))            
+            {
+                Log.d(LOG_TAG, "is CF");
+                String dialingNumber = sia;
+                int serviceClass = siToServiceClass(sib);
+                int reason = scToCallForwardReason(sc);
+                int time = siToTime(sic);
+    if(isInterrogate())                
+                {
+                    phone.mCM.queryCallForwardStatus(
                             reason, serviceClass,  dialingNumber,
                                 obtainMessage(EVENT_QUERY_CF_COMPLETE, this));
-                                    } 
-                                    {
-                                        int cfAction;
-                                        {
-                                            boolean var4E150FF745CF73441F17C76F3D37B88B_1873976385 = (isActivate());
-                                            {
-                                                cfAction = CommandsInterface.CF_ACTION_ENABLE;
-                                            } 
-                                            {
-                                                boolean var933AF435450C733B38ACA41F2D3FCAF9_1858073704 = (isDeactivate());
-                                                {
-                                                    cfAction = CommandsInterface.CF_ACTION_DISABLE;
-                                                } 
-                                                {
-                                                    boolean varB2A81FB350799613F9E2D67A1BA1D4A7_718274003 = (isRegister());
-                                                    {
-                                                        cfAction = CommandsInterface.CF_ACTION_REGISTRATION;
-                                                    } 
-                                                    {
-                                                        boolean var25ADF80BDE86F8A8B3E8088E4D221AE4_433056109 = (isErasure());
-                                                        {
-                                                            cfAction = CommandsInterface.CF_ACTION_ERASURE;
-                                                        } 
-                                                        {
-                                                            if (DroidSafeAndroidRuntime.control) throw new RuntimeException ("invalid action");
-                                                        } 
-                                                    } 
-                                                } 
-                                            } 
-                                        } 
-                                        int isSettingUnconditionalVoice;
-                                        isSettingUnconditionalVoice = 1;
-                                        isSettingUnconditionalVoice = 0;
-                                        int isEnableDesired;
-                                        isEnableDesired = 1;
-                                        isEnableDesired = 0;
-                                        Log.d(LOG_TAG, "is CF setCallForward");
-                                        phone.mCM.setCallForward(cfAction, reason, serviceClass,
+                } //End block
+                else
+                {
+                    int cfAction;
+    if(isActivate())                    
+                    {
+                        cfAction = CommandsInterface.CF_ACTION_ENABLE;
+                    } //End block
+                    else
+    if(isDeactivate())                    
+                    {
+                        cfAction = CommandsInterface.CF_ACTION_DISABLE;
+                    } //End block
+                    else
+    if(isRegister())                    
+                    {
+                        cfAction = CommandsInterface.CF_ACTION_REGISTRATION;
+                    } //End block
+                    else
+    if(isErasure())                    
+                    {
+                        cfAction = CommandsInterface.CF_ACTION_ERASURE;
+                    } //End block
+                    else
+                    {
+                        RuntimeException varBE297E2E2298C577E9B1609E5D2C9636_687025510 = new RuntimeException ("invalid action");
+                        varBE297E2E2298C577E9B1609E5D2C9636_687025510.addTaint(taint);
+                        throw varBE297E2E2298C577E9B1609E5D2C9636_687025510;
+                    } //End block
+                    int isSettingUnconditionalVoice = (((reason == CommandsInterface.CF_REASON_UNCONDITIONAL) ||
+                                (reason == CommandsInterface.CF_REASON_ALL)) &&
+                                (((serviceClass & CommandsInterface.SERVICE_CLASS_VOICE) != 0) ||
+                                 (serviceClass == CommandsInterface.SERVICE_CLASS_NONE))) ? 1 : 0;
+                    int isEnableDesired = ((cfAction == CommandsInterface.CF_ACTION_ENABLE) ||
+                                (cfAction == CommandsInterface.CF_ACTION_REGISTRATION)) ? 1 : 0;
+                    Log.d(LOG_TAG, "is CF setCallForward");
+                    phone.mCM.setCallForward(cfAction, reason, serviceClass,
                             dialingNumber, time, obtainMessage(
                                     EVENT_SET_CFF_COMPLETE,
                                     isSettingUnconditionalVoice,
                                     isEnableDesired, this));
-                                    } 
-                                } 
-                            } 
-                            {
-                                boolean var12C22BB7EEA013327BEDC89EF49EBBAB_2020243367 = (isServiceCodeCallBarring(sc));
-                                {
-                                    String password = sia;
-                                    int serviceClass = siToServiceClass(sib);
-                                    String facility = scToBarringFacility(sc);
-                                    {
-                                        boolean var18717314843932DC2BFAB4258F743FFD_2015475645 = (isInterrogate());
-                                        {
-                                            phone.mCM.queryFacilityLock(facility, password,
+                } //End block
+            } //End block
+            else
+    if(isServiceCodeCallBarring(sc))            
+            {
+                String password = sia;
+                int serviceClass = siToServiceClass(sib);
+                String facility = scToBarringFacility(sc);
+    if(isInterrogate())                
+                {
+                    phone.mCM.queryFacilityLock(facility, password,
                             serviceClass, obtainMessage(EVENT_QUERY_COMPLETE, this));
-                                        } 
-                                        {
-                                            boolean var119A5D265CCF4791E780BDE84928E729_1877965030 = (isActivate() || isDeactivate());
-                                            {
-                                                phone.mCM.setFacilityLock(facility, isActivate(), password,
+                } //End block
+                else
+    if(isActivate() || isDeactivate())                
+                {
+                    phone.mCM.setFacilityLock(facility, isActivate(), password,
                             serviceClass, obtainMessage(EVENT_SET_COMPLETE, this));
-                                            } 
-                                            {
-                                                if (DroidSafeAndroidRuntime.control) throw new RuntimeException ("Invalid or Unsupported MMI Code");
-                                            } 
-                                        } 
-                                    } 
-                                } 
-                                {
-                                    boolean varCDD454EC464ABD0A8BFA09F4744BB0C5_2127458343 = (sc != null && sc.equals(SC_PWD));
-                                    {
-                                        String facility;
-                                        String oldPwd = sib;
-                                        String newPwd = sic;
-                                        {
-                                            boolean varED52A25A69DBFEC36BAE7920F2260BF9_407693552 = (isActivate() || isRegister());
-                                            {
-                                                action = ACTION_REGISTER;
-                                                {
-                                                    facility = CommandsInterface.CB_FACILITY_BA_ALL;
-                                                } 
-                                                {
-                                                    facility = scToBarringFacility(sia);
-                                                } 
-                                                {
-                                                    boolean var0391FAAA3FE1381FC688FE40567A50CA_626627433 = (newPwd.equals(pwd));
-                                                    {
-                                                        phone.mCM.changeBarringPassword(facility, oldPwd,
+                } //End block
+                else
+                {
+                    RuntimeException var2E49DDD3355A805A242019B4EA18BC60_723520706 = new RuntimeException ("Invalid or Unsupported MMI Code");
+                    var2E49DDD3355A805A242019B4EA18BC60_723520706.addTaint(taint);
+                    throw var2E49DDD3355A805A242019B4EA18BC60_723520706;
+                } //End block
+            } //End block
+            else
+    if(sc != null && sc.equals(SC_PWD))            
+            {
+                String facility;
+                String oldPwd = sib;
+                String newPwd = sic;
+    if(isActivate() || isRegister())                
+                {
+                    action = ACTION_REGISTER;
+    if(sia == null)                    
+                    {
+                        facility = CommandsInterface.CB_FACILITY_BA_ALL;
+                    } //End block
+                    else
+                    {
+                        facility = scToBarringFacility(sia);
+                    } //End block
+    if(newPwd.equals(pwd))                    
+                    {
+                        phone.mCM.changeBarringPassword(facility, oldPwd,
                                 newPwd, obtainMessage(EVENT_SET_COMPLETE, this));
-                                                    } 
-                                                    {
-                                                        handlePasswordError(com.android.internal.R.string.passwordIncorrect);
-                                                    } 
-                                                } 
-                                            } 
-                                            {
-                                                if (DroidSafeAndroidRuntime.control) throw new RuntimeException ("Invalid or Unsupported MMI Code");
-                                            } 
-                                        } 
-                                    } 
-                                    {
-                                        boolean var572741C1390D1648B95B43B4EB591AAD_1611296713 = (sc != null && sc.equals(SC_WAIT));
-                                        {
-                                            int serviceClass = siToServiceClass(sia);
-                                            {
-                                                boolean var2FD224AA61CCD0ABD56110F8F107990B_1820426122 = (isActivate() || isDeactivate());
-                                                {
-                                                    phone.mCM.setCallWaiting(isActivate(), serviceClass,
+                    } //End block
+                    else
+                    {
+                        handlePasswordError(com.android.internal.R.string.passwordIncorrect);
+                    } //End block
+                } //End block
+                else
+                {
+                    RuntimeException var2E49DDD3355A805A242019B4EA18BC60_612347304 = new RuntimeException ("Invalid or Unsupported MMI Code");
+                    var2E49DDD3355A805A242019B4EA18BC60_612347304.addTaint(taint);
+                    throw var2E49DDD3355A805A242019B4EA18BC60_612347304;
+                } //End block
+            } //End block
+            else
+    if(sc != null && sc.equals(SC_WAIT))            
+            {
+                int serviceClass = siToServiceClass(sia);
+    if(isActivate() || isDeactivate())                
+                {
+                    phone.mCM.setCallWaiting(isActivate(), serviceClass,
                             obtainMessage(EVENT_SET_COMPLETE, this));
-                                                } 
-                                                {
-                                                    boolean var75AAC492F8B008891AB83B5FB4B29791_1641567778 = (isInterrogate());
-                                                    {
-                                                        phone.mCM.queryCallWaiting(serviceClass,
+                } //End block
+                else
+    if(isInterrogate())                
+                {
+                    phone.mCM.queryCallWaiting(serviceClass,
                             obtainMessage(EVENT_QUERY_COMPLETE, this));
-                                                    } 
-                                                    {
-                                                        if (DroidSafeAndroidRuntime.control) throw new RuntimeException ("Invalid or Unsupported MMI Code");
-                                                    } 
-                                                } 
-                                            } 
-                                        } 
-                                        {
-                                            boolean varE9E9769B3965CB509E03E906501C297B_951426170 = (isPinCommand());
-                                            {
-                                                String oldPinOrPuk = sia;
-                                                String newPin = sib;
-                                                int pinLen = newPin.length();
-                                                {
-                                                    boolean varB2A81FB350799613F9E2D67A1BA1D4A7_883106367 = (isRegister());
-                                                    {
-                                                        {
-                                                            boolean var8AAFFDB78603D28040F2394F0AD529DA_196366262 = (!newPin.equals(sic));
-                                                            {
-                                                                handlePasswordError(com.android.internal.R.string.mismatchPin);
-                                                            } 
-                                                            {
-                                                                handlePasswordError(com.android.internal.R.string.invalidPin);
-                                                            } 
-                                                            {
-                                                                boolean varB803AB2D427385C9994C2A4CADA7A133_442039311 = (sc.equals(SC_PIN) &&
-                               phone.mIccCard.getState() == SimCard.State.PUK_REQUIRED);
-                                                                {
-                                                                    handlePasswordError(com.android.internal.R.string.needPuk);
-                                                                } 
-                                                                {
-                                                                    {
-                                                                        boolean var1EDE5DF632D5A9C013C23432D6E0A17F_488474890 = (sc.equals(SC_PIN));
-                                                                        {
-                                                                            phone.mCM.changeIccPin(oldPinOrPuk, newPin,
+                } //End block
+                else
+                {
+                    RuntimeException var2E49DDD3355A805A242019B4EA18BC60_712378043 = new RuntimeException ("Invalid or Unsupported MMI Code");
+                    var2E49DDD3355A805A242019B4EA18BC60_712378043.addTaint(taint);
+                    throw var2E49DDD3355A805A242019B4EA18BC60_712378043;
+                } //End block
+            } //End block
+            else
+    if(isPinCommand())            
+            {
+                String oldPinOrPuk = sia;
+                String newPin = sib;
+                int pinLen = newPin.length();
+    if(isRegister())                
+                {
+    if(!newPin.equals(sic))                    
+                    {
+                        handlePasswordError(com.android.internal.R.string.mismatchPin);
+                    } //End block
+                    else
+    if(pinLen < 4 || pinLen > 8)                    
+                    {
+                        handlePasswordError(com.android.internal.R.string.invalidPin);
+                    } //End block
+                    else
+    if(sc.equals(SC_PIN) &&
+                               phone.mIccCard.getState() == SimCard.State.PUK_REQUIRED)                    
+                    {
+                        handlePasswordError(com.android.internal.R.string.needPuk);
+                    } //End block
+                    else
+                    {
+    if(sc.equals(SC_PIN))                        
+                        {
+                            phone.mCM.changeIccPin(oldPinOrPuk, newPin,
                                     obtainMessage(EVENT_SET_COMPLETE, this));
-                                                                        } 
-                                                                        {
-                                                                            boolean var0BF913DF155AAE543691723B891AE7DB_112939085 = (sc.equals(SC_PIN2));
-                                                                            {
-                                                                                phone.mCM.changeIccPin2(oldPinOrPuk, newPin,
+                        } //End block
+                        else
+    if(sc.equals(SC_PIN2))                        
+                        {
+                            phone.mCM.changeIccPin2(oldPinOrPuk, newPin,
                                     obtainMessage(EVENT_SET_COMPLETE, this));
-                                                                            } 
-                                                                            {
-                                                                                boolean var3FF6DE7548056294F609BF66B6EE3C0F_1791487580 = (sc.equals(SC_PUK));
-                                                                                {
-                                                                                    phone.mCM.supplyIccPuk(oldPinOrPuk, newPin,
+                        } //End block
+                        else
+    if(sc.equals(SC_PUK))                        
+                        {
+                            phone.mCM.supplyIccPuk(oldPinOrPuk, newPin,
                                     obtainMessage(EVENT_SET_COMPLETE, this));
-                                                                                } 
-                                                                                {
-                                                                                    boolean var5F1753C6264CCB0AFA8B9E811C51CEDC_133638745 = (sc.equals(SC_PUK2));
-                                                                                    {
-                                                                                        phone.mCM.supplyIccPuk2(oldPinOrPuk, newPin,
+                        } //End block
+                        else
+    if(sc.equals(SC_PUK2))                        
+                        {
+                            phone.mCM.supplyIccPuk2(oldPinOrPuk, newPin,
                                     obtainMessage(EVENT_SET_COMPLETE, this));
-                                                                                    } 
-                                                                                } 
-                                                                            } 
-                                                                        } 
-                                                                    } 
-                                                                } 
-                                                            } 
-                                                        } 
-                                                    } 
-                                                    {
-                                                        if (DroidSafeAndroidRuntime.control) throw new RuntimeException ("Invalid or Unsupported MMI Code");
-                                                    } 
-                                                } 
-                                            } 
-                                            {
-                                                sendUssd(poundString);
-                                            } 
-                                            {
-                                                if (DroidSafeAndroidRuntime.control) throw new RuntimeException ("Invalid or Unsupported MMI Code");
-                                            } 
-                                        } 
-                                    } 
-                                } 
-                            } 
-                        } 
-                    } 
-                } 
-            } 
-        } 
+                        } //End block
+                    } //End block
+                } //End block
+                else
+                {
+                    RuntimeException var2E49DDD3355A805A242019B4EA18BC60_1496510003 = new RuntimeException ("Invalid or Unsupported MMI Code");
+                    var2E49DDD3355A805A242019B4EA18BC60_1496510003.addTaint(taint);
+                    throw var2E49DDD3355A805A242019B4EA18BC60_1496510003;
+                } //End block
+            } //End block
+            else
+    if(poundString != null)            
+            {
+                sendUssd(poundString);
+            } //End block
+            else
+            {
+                RuntimeException var2E49DDD3355A805A242019B4EA18BC60_1417743853 = new RuntimeException ("Invalid or Unsupported MMI Code");
+                var2E49DDD3355A805A242019B4EA18BC60_1417743853.addTaint(taint);
+                throw var2E49DDD3355A805A242019B4EA18BC60_1417743853;
+            } //End block
+        } //End block
         catch (RuntimeException exc)
         {
             state = State.FAILED;
             message = context.getText(com.android.internal.R.string.mmiError);
             phone.onMMIDone(this);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.336 -0400", hash_original_method = "60196158E22905B06D5E62564673E5E1", hash_generated_method = "878F8042D8FA72C244D61D1029C0968B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.861 -0400", hash_original_method = "60196158E22905B06D5E62564673E5E1", hash_generated_method = "8D5D96E26CBDDA8A4D99891B21FC6323")
     private void handlePasswordError(int res) {
+        addTaint(res);
         state = State.FAILED;
         StringBuilder sb = new StringBuilder(getScString());
         sb.append("\n");
         sb.append(context.getText(res));
         message = sb;
         phone.onMMIDone(this);
-        addTaint(res);
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //state = State.FAILED;
+        //StringBuilder sb = new StringBuilder(getScString());
+        //sb.append("\n");
+        //sb.append(context.getText(res));
+        //message = sb;
+        //phone.onMMIDone(this);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.337 -0400", hash_original_method = "A7DAC75B31530E6CD4845B1030678B66", hash_generated_method = "F06561A698D09354C2DBFD6BEBEC4386")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.862 -0400", hash_original_method = "A7DAC75B31530E6CD4845B1030678B66", hash_generated_method = "C3D13BA2A2AC3FDB3D4B1F4B0F6DB9E6")
      void onUssdFinished(String ussdMessage, boolean isUssdRequest) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
+    if(state == State.PENDING)        
         {
+    if(ussdMessage == null)            
             {
                 message = context.getText(com.android.internal.R.string.mmiComplete);
-            } 
+            } //End block
+            else
             {
                 message = ussdMessage;
-            } 
+            } //End block
             this.isUssdRequest = isUssdRequest;
+    if(!isUssdRequest)            
             {
                 state = State.COMPLETE;
-            } 
+            } //End block
             phone.onMMIDone(this);
-        } 
-        
-        
-            
-                
-            
-                
-            
-            
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (state == State.PENDING) {
+            //if (ussdMessage == null) {
+                //message = context.getText(com.android.internal.R.string.mmiComplete);
+            //} else {
+                //message = ussdMessage;
+            //}
+            //this.isUssdRequest = isUssdRequest;
+            //if (!isUssdRequest) {
+                //state = State.COMPLETE;
+            //}
+            //phone.onMMIDone(this);
+        //}
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.337 -0400", hash_original_method = "6CB35EDB68C77D37EFB134F2D3B374DA", hash_generated_method = "D9A37A1161AFF010CC3D3C13DFD41836")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.863 -0400", hash_original_method = "6CB35EDB68C77D37EFB134F2D3B374DA", hash_generated_method = "29CB3DD3195A2DFA68F54C3B4624BDDA")
      void onUssdFinishedError() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
+    if(state == State.PENDING)        
         {
             state = State.FAILED;
             message = context.getText(com.android.internal.R.string.mmiError);
             phone.onMMIDone(this);
-        } 
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (state == State.PENDING) {
+            //state = State.FAILED;
+            //message = context.getText(com.android.internal.R.string.mmiError);
+            //phone.onMMIDone(this);
+        //}
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.337 -0400", hash_original_method = "91A2759A8D20AD291EA9305932FA3032", hash_generated_method = "B3165A145D90C0F89CBDFABEBF5B57F5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.863 -0400", hash_original_method = "91A2759A8D20AD291EA9305932FA3032", hash_generated_method = "26B56314674E59602C6CBC0D096E42F9")
      void sendUssd(String ussdMessage) {
+        addTaint(ussdMessage.getTaint());
         isPendingUSSD = true;
         phone.mCM.sendUSSD(ussdMessage,
             obtainMessage(EVENT_USSD_COMPLETE, this));
-        addTaint(ussdMessage.getTaint());
-        
-        
-        
-            
+        // ---------- Original Method ----------
+        //isPendingUSSD = true;
+        //phone.mCM.sendUSSD(ussdMessage,
+            //obtainMessage(EVENT_USSD_COMPLETE, this));
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.338 -0400", hash_original_method = "5C6BF8BFD3AA6C53F0FB54F2701C6A7B", hash_generated_method = "D54984FD8A04A6E2A5E4C8F825A8D64C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.864 -0400", hash_original_method = "5C6BF8BFD3AA6C53F0FB54F2701C6A7B", hash_generated_method = "CA24843F68CF3143583FC9293170609A")
     public void handleMessage(Message msg) {
+        addTaint(msg.getTaint());
         AsyncResult ar;
-        
+switch(msg.what){
+        case EVENT_SET_COMPLETE:
         ar = (AsyncResult) (msg.obj);
-        
-        
         onSetComplete(ar);
-        
-        
+        break;
+        case EVENT_SET_CFF_COMPLETE:
         ar = (AsyncResult) (msg.obj);
-        
-        
+    if((ar.exception == null) && (msg.arg1 == 1))        
         {
             boolean cffEnabled = (msg.arg2 == 1);
             phone.mIccRecords.setVoiceCallForwardingFlag(1, cffEnabled);
-        } 
-        
-        
+        } //End block
         onSetComplete(ar);
-        
-        
+        break;
+        case EVENT_GET_CLIR_COMPLETE:
         ar = (AsyncResult) (msg.obj);
-        
-        
         onGetClirComplete(ar);
-        
-        
+        break;
+        case EVENT_QUERY_CF_COMPLETE:
         ar = (AsyncResult) (msg.obj);
-        
-        
         onQueryCfComplete(ar);
-        
-        
+        break;
+        case EVENT_QUERY_COMPLETE:
         ar = (AsyncResult) (msg.obj);
-        
-        
         onQueryComplete(ar);
-        
-        
+        break;
+        case EVENT_USSD_COMPLETE:
         ar = (AsyncResult) (msg.obj);
-        
-        
+    if(ar.exception != null)        
         {
             state = State.FAILED;
             message = getErrorMessage(ar);
             phone.onMMIDone(this);
-        } 
-        
-        
+        } //End block
+        break;
+        case EVENT_USSD_CANCEL_COMPLETE:
         phone.onMMIDone(this);
-        
-        addTaint(msg.getTaint());
-        
-        
+        break;
+}
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.339 -0400", hash_original_method = "6FA8450E92822795C4AD46C68EFB0477", hash_generated_method = "DF7C512790D23D4AE2861750C57869EE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.864 -0400", hash_original_method = "6FA8450E92822795C4AD46C68EFB0477", hash_generated_method = "F5F90E68940DC4E848606CAEAA3A89DD")
     private CharSequence getErrorMessage(AsyncResult ar) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_233001841 = null; 
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1360579128 = null; 
+        addTaint(ar.getTaint());
+    if(ar.exception instanceof CommandException)        
         {
             CommandException.Error err = ((CommandException)(ar.exception)).getCommandError();
+    if(err == CommandException.Error.FDN_CHECK_FAILURE)            
             {
-                varB4EAC82CA7396A68D541C85D26508E83_233001841 = context.getText(com.android.internal.R.string.mmiFdnError);
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1360579128 = context.getText(com.android.internal.R.string.mmiError);
-        addTaint(ar.getTaint());
-        CharSequence varA7E53CE21691AB073D9660D615818899_973526793; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_973526793 = varB4EAC82CA7396A68D541C85D26508E83_233001841;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_973526793 = varB4EAC82CA7396A68D541C85D26508E83_1360579128;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_973526793.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_973526793;
-        
-        
-            
-            
-                
-                
-            
-        
-        
+CharSequence var7546541A18C8CA4977196FFAB1512D14_541575111 =                 context.getText(com.android.internal.R.string.mmiFdnError);
+                var7546541A18C8CA4977196FFAB1512D14_541575111.addTaint(taint);
+                return var7546541A18C8CA4977196FFAB1512D14_541575111;
+            } //End block
+        } //End block
+CharSequence varE3E2A91E37966F79091D0455567D108C_1836740320 =         context.getText(com.android.internal.R.string.mmiError);
+        varE3E2A91E37966F79091D0455567D108C_1836740320.addTaint(taint);
+        return varE3E2A91E37966F79091D0455567D108C_1836740320;
+        // ---------- Original Method ----------
+        //if (ar.exception instanceof CommandException) {
+            //CommandException.Error err = ((CommandException)(ar.exception)).getCommandError();
+            //if (err == CommandException.Error.FDN_CHECK_FAILURE) {
+                //Log.i(LOG_TAG, "FDN_CHECK_FAILURE");
+                //return context.getText(com.android.internal.R.string.mmiFdnError);
+            //}
+        //}
+        //return context.getText(com.android.internal.R.string.mmiError);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.342 -0400", hash_original_method = "F062B7C9E966AA410521C905675EBDA7", hash_generated_method = "9463DB9B8565F013578995852158A8E1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.865 -0400", hash_original_method = "F062B7C9E966AA410521C905675EBDA7", hash_generated_method = "DCB1DF6D72C1230F12936A0C0457FDD1")
     private CharSequence getScString() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1081797190 = null; 
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_557707486 = null; 
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1594352242 = null; 
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1358373700 = null; 
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1753276209 = null; 
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1724083110 = null; 
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_973268245 = null; 
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1349489358 = null; 
+    if(sc != null)        
         {
+    if(isServiceCodeCallBarring(sc))            
             {
-                boolean varCCA5F2A13C1993EFC5A1CF2F0165F813_269822741 = (isServiceCodeCallBarring(sc));
-                {
-                    varB4EAC82CA7396A68D541C85D26508E83_1081797190 = context.getText(com.android.internal.R.string.BaMmi);
-                } 
-                {
-                    boolean var32DC5B084701CD8CD9A8C906B0EEBD05_1432476076 = (isServiceCodeCallForwarding(sc));
-                    {
-                        varB4EAC82CA7396A68D541C85D26508E83_557707486 = context.getText(com.android.internal.R.string.CfMmi);
-                    } 
-                    {
-                        boolean var6914B4EC879BBBF42E2E74E4C168A160_948556835 = (sc.equals(SC_CLIP));
-                        {
-                            varB4EAC82CA7396A68D541C85D26508E83_1594352242 = context.getText(com.android.internal.R.string.ClipMmi);
-                        } 
-                        {
-                            boolean var0623604252E0864F742051097B6173BA_702793125 = (sc.equals(SC_CLIR));
-                            {
-                                varB4EAC82CA7396A68D541C85D26508E83_1358373700 = context.getText(com.android.internal.R.string.ClirMmi);
-                            } 
-                            {
-                                boolean var5C676F9701A0966D4E94DEF50F123275_983452504 = (sc.equals(SC_PWD));
-                                {
-                                    varB4EAC82CA7396A68D541C85D26508E83_1753276209 = context.getText(com.android.internal.R.string.PwdMmi);
-                                } 
-                                {
-                                    boolean varDA6852543E26402D459735260F444175_148500221 = (sc.equals(SC_WAIT));
-                                    {
-                                        varB4EAC82CA7396A68D541C85D26508E83_1724083110 = context.getText(com.android.internal.R.string.CwMmi);
-                                    } 
-                                    {
-                                        boolean varD1C658B382FEF05BC29F9D45B74B0428_566835170 = (isPinCommand());
-                                        {
-                                            varB4EAC82CA7396A68D541C85D26508E83_973268245 = context.getText(com.android.internal.R.string.PinMmi);
-                                        } 
-                                    } 
-                                } 
-                            } 
-                        } 
-                    } 
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1349489358 = "";
-        CharSequence varA7E53CE21691AB073D9660D615818899_302561465; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_302561465 = varB4EAC82CA7396A68D541C85D26508E83_1081797190;
-                break;
-            case 2: 
-                varA7E53CE21691AB073D9660D615818899_302561465 = varB4EAC82CA7396A68D541C85D26508E83_557707486;
-                break;
-            case 3: 
-                varA7E53CE21691AB073D9660D615818899_302561465 = varB4EAC82CA7396A68D541C85D26508E83_1594352242;
-                break;
-            case 4: 
-                varA7E53CE21691AB073D9660D615818899_302561465 = varB4EAC82CA7396A68D541C85D26508E83_1358373700;
-                break;
-            case 5: 
-                varA7E53CE21691AB073D9660D615818899_302561465 = varB4EAC82CA7396A68D541C85D26508E83_1753276209;
-                break;
-            case 6: 
-                varA7E53CE21691AB073D9660D615818899_302561465 = varB4EAC82CA7396A68D541C85D26508E83_1724083110;
-                break;
-            case 7: 
-                varA7E53CE21691AB073D9660D615818899_302561465 = varB4EAC82CA7396A68D541C85D26508E83_973268245;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_302561465 = varB4EAC82CA7396A68D541C85D26508E83_1349489358;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_302561465.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_302561465;
-        
-        
+CharSequence var4A219DBE1020D00C65614989003A417F_910417927 =                 context.getText(com.android.internal.R.string.BaMmi);
+                var4A219DBE1020D00C65614989003A417F_910417927.addTaint(taint);
+                return var4A219DBE1020D00C65614989003A417F_910417927;
+            } //End block
+            else
+    if(isServiceCodeCallForwarding(sc))            
+            {
+CharSequence var0AD241621EC157480BDF093743E656D7_1844214049 =                 context.getText(com.android.internal.R.string.CfMmi);
+                var0AD241621EC157480BDF093743E656D7_1844214049.addTaint(taint);
+                return var0AD241621EC157480BDF093743E656D7_1844214049;
+            } //End block
+            else
+    if(sc.equals(SC_CLIP))            
+            {
+CharSequence varF9D4057DC71DAAF42812A4FDFA85D981_924230241 =                 context.getText(com.android.internal.R.string.ClipMmi);
+                varF9D4057DC71DAAF42812A4FDFA85D981_924230241.addTaint(taint);
+                return varF9D4057DC71DAAF42812A4FDFA85D981_924230241;
+            } //End block
+            else
+    if(sc.equals(SC_CLIR))            
+            {
+CharSequence var3B89DE57E1E9329284D992EA4D22610A_1263603527 =                 context.getText(com.android.internal.R.string.ClirMmi);
+                var3B89DE57E1E9329284D992EA4D22610A_1263603527.addTaint(taint);
+                return var3B89DE57E1E9329284D992EA4D22610A_1263603527;
+            } //End block
+            else
+    if(sc.equals(SC_PWD))            
+            {
+CharSequence var0F4FB2DC421820976ED3BB3C99D0704C_1132629272 =                 context.getText(com.android.internal.R.string.PwdMmi);
+                var0F4FB2DC421820976ED3BB3C99D0704C_1132629272.addTaint(taint);
+                return var0F4FB2DC421820976ED3BB3C99D0704C_1132629272;
+            } //End block
+            else
+    if(sc.equals(SC_WAIT))            
+            {
+CharSequence var2C556777341C88B98256CC700C9D9AD1_1222362211 =                 context.getText(com.android.internal.R.string.CwMmi);
+                var2C556777341C88B98256CC700C9D9AD1_1222362211.addTaint(taint);
+                return var2C556777341C88B98256CC700C9D9AD1_1222362211;
+            } //End block
+            else
+    if(isPinCommand())            
+            {
+CharSequence varC01B34D797D5ECB0C81BDA0577666337_1289804495 =                 context.getText(com.android.internal.R.string.PinMmi);
+                varC01B34D797D5ECB0C81BDA0577666337_1289804495.addTaint(taint);
+                return varC01B34D797D5ECB0C81BDA0577666337_1289804495;
+            } //End block
+        } //End block
+CharSequence var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1000511704 =         "";
+        var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1000511704.addTaint(taint);
+        return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1000511704;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.343 -0400", hash_original_method = "86E59952328AB1858ED821151A4A3DAE", hash_generated_method = "42331B7E0B587ADBA2F9AFA3909FB614")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.867 -0400", hash_original_method = "86E59952328AB1858ED821151A4A3DAE", hash_generated_method = "72DA66FC41DA63F6A45EEB9BED890277")
     private void onSetComplete(AsyncResult ar) {
+        addTaint(ar.getTaint());
         StringBuilder sb = new StringBuilder(getScString());
         sb.append("\n");
+    if(ar.exception != null)        
         {
             state = State.FAILED;
+    if(ar.exception instanceof CommandException)            
             {
                 CommandException.Error err = ((CommandException)(ar.exception)).getCommandError();
+    if(err == CommandException.Error.PASSWORD_INCORRECT)                
                 {
+    if(isPinCommand())                    
                     {
-                        boolean varE9FBF60BA382E5447A6974F53D0FF9D9_278890537 = (isPinCommand());
-                        {
-                            {
-                                boolean var542A32D8FD5F06047C25109609B431AB_1326087047 = (sc.equals(SC_PUK) || sc.equals(SC_PUK2));
-                                {
-                                    sb.append(context.getText(
-                                    com.android.internal.R.string.badPuk));
-                                } 
-                                {
-                                    sb.append(context.getText(
-                                    com.android.internal.R.string.badPin));
-                                } 
-                            } 
-                        } 
+    if(sc.equals(SC_PUK) || sc.equals(SC_PUK2))                        
                         {
                             sb.append(context.getText(
+                                    com.android.internal.R.string.badPuk));
+                        } //End block
+                        else
+                        {
+                            sb.append(context.getText(
+                                    com.android.internal.R.string.badPin));
+                        } //End block
+                    } //End block
+                    else
+                    {
+                        sb.append(context.getText(
                                 com.android.internal.R.string.passwordIncorrect));
-                        } 
-                    } 
-                } 
+                    } //End block
+                } //End block
+                else
+    if(err == CommandException.Error.SIM_PUK2)                
                 {
                     sb.append(context.getText(
                             com.android.internal.R.string.badPin));
                     sb.append("\n");
                     sb.append(context.getText(
                             com.android.internal.R.string.needPuk2));
-                } 
+                } //End block
+                else
+    if(err == CommandException.Error.FDN_CHECK_FAILURE)                
                 {
                     sb.append(context.getText(com.android.internal.R.string.mmiFdnError));
-                } 
+                } //End block
+                else
                 {
                     sb.append(context.getText(
                             com.android.internal.R.string.mmiError));
-                } 
-            } 
+                } //End block
+            } //End block
+            else
             {
                 sb.append(context.getText(
                         com.android.internal.R.string.mmiError));
-            } 
-        } 
+            } //End block
+        } //End block
+        else
+    if(isActivate())        
         {
-            boolean varD4B13402CFA6A550CEC0E5DDCA20FC61_322165858 = (isActivate());
-            {
-                state = State.COMPLETE;
-                sb.append(context.getText(
+            state = State.COMPLETE;
+            sb.append(context.getText(
                     com.android.internal.R.string.serviceEnabled));
-                {
-                    boolean var963F1E632E68242542E9A5B1692F1816_1023944219 = (sc.equals(SC_CLIR));
-                    {
-                        phone.saveClirSetting(CommandsInterface.CLIR_INVOCATION);
-                    } 
-                } 
-            } 
+    if(sc.equals(SC_CLIR))            
             {
-                boolean var0FE307E32DF6975EC6641BDD38B8A41D_854345263 = (isDeactivate());
-                {
-                    state = State.COMPLETE;
-                    sb.append(context.getText(
+                phone.saveClirSetting(CommandsInterface.CLIR_INVOCATION);
+            } //End block
+        } //End block
+        else
+    if(isDeactivate())        
+        {
+            state = State.COMPLETE;
+            sb.append(context.getText(
                     com.android.internal.R.string.serviceDisabled));
-                    {
-                        boolean var767B63B127ECD6CE628AB160BBB58776_581394014 = (sc.equals(SC_CLIR));
-                        {
-                            phone.saveClirSetting(CommandsInterface.CLIR_SUPPRESSION);
-                        } 
-                    } 
-                } 
-                {
-                    boolean varACC7E5A3F90406763366F9A6873CC87D_920668707 = (isRegister());
-                    {
-                        state = State.COMPLETE;
-                        sb.append(context.getText(
+    if(sc.equals(SC_CLIR))            
+            {
+                phone.saveClirSetting(CommandsInterface.CLIR_SUPPRESSION);
+            } //End block
+        } //End block
+        else
+    if(isRegister())        
+        {
+            state = State.COMPLETE;
+            sb.append(context.getText(
                     com.android.internal.R.string.serviceRegistered));
-                    } 
-                    {
-                        boolean var4C83CC598DD8ACFB794FA2BD7EA1E761_1092950244 = (isErasure());
-                        {
-                            state = State.COMPLETE;
-                            sb.append(context.getText(
+        } //End block
+        else
+    if(isErasure())        
+        {
+            state = State.COMPLETE;
+            sb.append(context.getText(
                     com.android.internal.R.string.serviceErased));
-                        } 
-                        {
-                            state = State.FAILED;
-                            sb.append(context.getText(
+        } //End block
+        else
+        {
+            state = State.FAILED;
+            sb.append(context.getText(
                     com.android.internal.R.string.mmiError));
-                        } 
-                    } 
-                } 
-            } 
-        } 
+        } //End block
         message = sb;
         phone.onMMIDone(this);
-        addTaint(ar.getTaint());
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.345 -0400", hash_original_method = "E00F9D791A3B8B3DD19100E46A3BBC7E", hash_generated_method = "3BCEDCB9E8486F8B6B0CD0752DB13127")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.868 -0400", hash_original_method = "E00F9D791A3B8B3DD19100E46A3BBC7E", hash_generated_method = "C14F21D7036AD251CC817E51F061C364")
     private void onGetClirComplete(AsyncResult ar) {
+        addTaint(ar.getTaint());
         StringBuilder sb = new StringBuilder(getScString());
         sb.append("\n");
+    if(ar.exception != null)        
         {
             state = State.FAILED;
             sb.append(getErrorMessage(ar));
-        } 
+        } //End block
+        else
         {
             int clirArgs[];
             clirArgs = (int[])ar.result;
-            
+switch(clirArgs[1]){
+            case 0:
             sb.append(context.getText(
                                 com.android.internal.R.string.serviceNotProvisioned));
-            
-            
             state = State.COMPLETE;
-            
-            
+            break;
+            case 1:
             sb.append(context.getText(
                                 com.android.internal.R.string.CLIRPermanent));
-            
-            
             state = State.COMPLETE;
-            
-            
+            break;
+            case 2:
             sb.append(context.getText(
                                 com.android.internal.R.string.mmiError));
-            
-            
             state = State.FAILED;
-            
-            
-            
+            break;
+            case 3:
+switch(clirArgs[0]){
+            default:
+            case 0:
             sb.append(context.getText(
                                     com.android.internal.R.string.CLIRDefaultOnNextCallOn));
-            
-            
+            break;
+            case 1:
             sb.append(context.getText(
                                     com.android.internal.R.string.CLIRDefaultOnNextCallOn));
-            
-            
+            break;
+            case 2:
             sb.append(context.getText(
                                     com.android.internal.R.string.CLIRDefaultOnNextCallOff));
-            
-            
-            
-            state = State.COMPLETE;
-            
-            
-            
+            break;
+}            state = State.COMPLETE;
+            break;
+            case 4:
+switch(clirArgs[0]){
+            default:
+            case 0:
             sb.append(context.getText(
                                     com.android.internal.R.string.CLIRDefaultOffNextCallOff));
-            
-            
+            break;
+            case 1:
             sb.append(context.getText(
                                     com.android.internal.R.string.CLIRDefaultOffNextCallOn));
-            
-            
+            break;
+            case 2:
             sb.append(context.getText(
                                     com.android.internal.R.string.CLIRDefaultOffNextCallOff));
-            
-            
-            
-            state = State.COMPLETE;
-            
-        } 
+            break;
+}            state = State.COMPLETE;
+            break;
+}
+        } //End block
         message = sb;
         phone.onMMIDone(this);
-        addTaint(ar.getTaint());
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.346 -0400", hash_original_method = "8B6CA3810AD4ECA237178B5B4043C8E2", hash_generated_method = "6DAF461CE6E1063494235A1CCAA54A06")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.868 -0400", hash_original_method = "8B6CA3810AD4ECA237178B5B4043C8E2", hash_generated_method = "AD67B4452FD4003DD47AE173A39AD780")
     private CharSequence serviceClassToCFString(int serviceClass) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_17881490 = null; 
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_45169067 = null; 
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1831165433 = null; 
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_236588258 = null; 
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_322427114 = null; 
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1146237191 = null; 
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_840481117 = null; 
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_631830526 = null; 
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_793227656 = null; 
-        
-        varB4EAC82CA7396A68D541C85D26508E83_17881490 = context.getText(com.android.internal.R.string.serviceClassVoice);
-        
-        
-        varB4EAC82CA7396A68D541C85D26508E83_45169067 = context.getText(com.android.internal.R.string.serviceClassData);
-        
-        
-        varB4EAC82CA7396A68D541C85D26508E83_1831165433 = context.getText(com.android.internal.R.string.serviceClassFAX);
-        
-        
-        varB4EAC82CA7396A68D541C85D26508E83_236588258 = context.getText(com.android.internal.R.string.serviceClassSMS);
-        
-        
-        varB4EAC82CA7396A68D541C85D26508E83_322427114 = context.getText(com.android.internal.R.string.serviceClassDataSync);
-        
-        
-        varB4EAC82CA7396A68D541C85D26508E83_1146237191 = context.getText(com.android.internal.R.string.serviceClassDataAsync);
-        
-        
-        varB4EAC82CA7396A68D541C85D26508E83_840481117 = context.getText(com.android.internal.R.string.serviceClassPacket);
-        
-        
-        varB4EAC82CA7396A68D541C85D26508E83_631830526 = context.getText(com.android.internal.R.string.serviceClassPAD);
-        
-        
-        varB4EAC82CA7396A68D541C85D26508E83_793227656 = null;
-        
         addTaint(serviceClass);
-        CharSequence varA7E53CE21691AB073D9660D615818899_536913980; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_536913980 = varB4EAC82CA7396A68D541C85D26508E83_17881490;
-                break;
-            case 2: 
-                varA7E53CE21691AB073D9660D615818899_536913980 = varB4EAC82CA7396A68D541C85D26508E83_45169067;
-                break;
-            case 3: 
-                varA7E53CE21691AB073D9660D615818899_536913980 = varB4EAC82CA7396A68D541C85D26508E83_1831165433;
-                break;
-            case 4: 
-                varA7E53CE21691AB073D9660D615818899_536913980 = varB4EAC82CA7396A68D541C85D26508E83_236588258;
-                break;
-            case 5: 
-                varA7E53CE21691AB073D9660D615818899_536913980 = varB4EAC82CA7396A68D541C85D26508E83_322427114;
-                break;
-            case 6: 
-                varA7E53CE21691AB073D9660D615818899_536913980 = varB4EAC82CA7396A68D541C85D26508E83_1146237191;
-                break;
-            case 7: 
-                varA7E53CE21691AB073D9660D615818899_536913980 = varB4EAC82CA7396A68D541C85D26508E83_840481117;
-                break;
-            case 8: 
-                varA7E53CE21691AB073D9660D615818899_536913980 = varB4EAC82CA7396A68D541C85D26508E83_631830526;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_536913980 = varB4EAC82CA7396A68D541C85D26508E83_793227656;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_536913980.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_536913980;
-        
-        
+switch(serviceClass){
+        case SERVICE_CLASS_VOICE:
+CharSequence varFF54E87D2E0E544CE42D209B62BE906F_33487702 =         context.getText(com.android.internal.R.string.serviceClassVoice);
+        varFF54E87D2E0E544CE42D209B62BE906F_33487702.addTaint(taint);
+        return varFF54E87D2E0E544CE42D209B62BE906F_33487702;
+        case SERVICE_CLASS_DATA:
+CharSequence varC7AE682EEFB8DD18B620D8062E669A7C_1776567706 =         context.getText(com.android.internal.R.string.serviceClassData);
+        varC7AE682EEFB8DD18B620D8062E669A7C_1776567706.addTaint(taint);
+        return varC7AE682EEFB8DD18B620D8062E669A7C_1776567706;
+        case SERVICE_CLASS_FAX:
+CharSequence var85335132685F70084C63EB344A1EF39F_778328060 =         context.getText(com.android.internal.R.string.serviceClassFAX);
+        var85335132685F70084C63EB344A1EF39F_778328060.addTaint(taint);
+        return var85335132685F70084C63EB344A1EF39F_778328060;
+        case SERVICE_CLASS_SMS:
+CharSequence var8D5C16A0957AD852D16D857A10534712_1618102725 =         context.getText(com.android.internal.R.string.serviceClassSMS);
+        var8D5C16A0957AD852D16D857A10534712_1618102725.addTaint(taint);
+        return var8D5C16A0957AD852D16D857A10534712_1618102725;
+        case SERVICE_CLASS_DATA_SYNC:
+CharSequence varDAFEA5AB5B57B8D6C57532F76ADE6D62_1325491416 =         context.getText(com.android.internal.R.string.serviceClassDataSync);
+        varDAFEA5AB5B57B8D6C57532F76ADE6D62_1325491416.addTaint(taint);
+        return varDAFEA5AB5B57B8D6C57532F76ADE6D62_1325491416;
+        case SERVICE_CLASS_DATA_ASYNC:
+CharSequence var85B115499EA3716710A403CA79D98650_170855601 =         context.getText(com.android.internal.R.string.serviceClassDataAsync);
+        var85B115499EA3716710A403CA79D98650_170855601.addTaint(taint);
+        return var85B115499EA3716710A403CA79D98650_170855601;
+        case SERVICE_CLASS_PACKET:
+CharSequence var89CDAFFB46A2035ACE8334A7BE85B52C_1676296530 =         context.getText(com.android.internal.R.string.serviceClassPacket);
+        var89CDAFFB46A2035ACE8334A7BE85B52C_1676296530.addTaint(taint);
+        return var89CDAFFB46A2035ACE8334A7BE85B52C_1676296530;
+        case SERVICE_CLASS_PAD:
+CharSequence varF9B18B8D12BC5BE7E2E4098B2E06D733_1395802366 =         context.getText(com.android.internal.R.string.serviceClassPAD);
+        varF9B18B8D12BC5BE7E2E4098B2E06D733_1395802366.addTaint(taint);
+        return varF9B18B8D12BC5BE7E2E4098B2E06D733_1395802366;
+        default:
+CharSequence var540C13E9E156B687226421B24F2DF178_1697281641 =         null;
+        var540C13E9E156B687226421B24F2DF178_1697281641.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_1697281641;
+}
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.348 -0400", hash_original_method = "ECAE8AA4EBDE1134552CC635B1F3D0F6", hash_generated_method = "C6FC8B34101C158F6410D4A561E71652")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.869 -0400", hash_original_method = "ECAE8AA4EBDE1134552CC635B1F3D0F6", hash_generated_method = "0DC9CAFDD89410647D1BAF9F993D63C3")
     private CharSequence makeCFQueryResultMessage(CallForwardInfo info, int serviceClassMask) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_226358780 = null; 
+        addTaint(serviceClassMask);
+        addTaint(info.getTaint());
         CharSequence template;
         String sources[] = {"{0}", "{1}", "{2}"};
         CharSequence destinations[] = new CharSequence[3];
         boolean needTimeTemplate;
         needTimeTemplate =
             (info.reason == CommandsInterface.CF_REASON_NO_REPLY);
+    if(info.status == 1)        
         {
+    if(needTimeTemplate)            
             {
                 template = context.getText(
                         com.android.internal.R.string.cfTemplateForwardedTime);
-            } 
+            } //End block
+            else
             {
                 template = context.getText(
                         com.android.internal.R.string.cfTemplateForwarded);
-            } 
-        } 
+            } //End block
+        } //End block
+        else
+    if(info.status == 0 && isEmptyOrNull(info.number))        
         {
-            boolean var8E4CE04EDC775CBCECD23931344407DA_2102997395 = (info.status == 0 && isEmptyOrNull(info.number));
+            template = context.getText(
+                        com.android.internal.R.string.cfTemplateNotForwarded);
+        } //End block
+        else
+        {
+    if(needTimeTemplate)            
             {
                 template = context.getText(
-                        com.android.internal.R.string.cfTemplateNotForwarded);
-            } 
-            {
-                {
-                    template = context.getText(
                         com.android.internal.R.string.cfTemplateRegisteredTime);
-                } 
-                {
-                    template = context.getText(
+            } //End block
+            else
+            {
+                template = context.getText(
                         com.android.internal.R.string.cfTemplateRegistered);
-                } 
-            } 
-        } 
+            } //End block
+        } //End block
         destinations[0] = serviceClassToCFString(info.serviceClass & serviceClassMask);
         destinations[1] = PhoneNumberUtils.stringFromStringAndTOA(info.number, info.toa);
         destinations[2] = Integer.toString(info.timeSeconds);
+    if(info.reason == CommandsInterface.CF_REASON_UNCONDITIONAL &&
+                (info.serviceClass & serviceClassMask)
+                        == CommandsInterface.SERVICE_CLASS_VOICE)        
         {
             boolean cffEnabled = (info.status == 1);
             phone.mIccRecords.setVoiceCallForwardingFlag(1, cffEnabled);
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_226358780 = TextUtils.replace(template, sources, destinations);
-        addTaint(info.getTaint());
-        addTaint(serviceClassMask);
-        varB4EAC82CA7396A68D541C85D26508E83_226358780.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_226358780;
-        
-        
+        } //End block
+CharSequence varCC00AC05189E4C48DCF26ECA130B36A6_40736997 =         TextUtils.replace(template, sources, destinations);
+        varCC00AC05189E4C48DCF26ECA130B36A6_40736997.addTaint(taint);
+        return varCC00AC05189E4C48DCF26ECA130B36A6_40736997;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.350 -0400", hash_original_method = "5082D13BAC647DFAEF8F3236E64BC951", hash_generated_method = "97E753E0D6C42AD836BBB9B6C20A79BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.870 -0400", hash_original_method = "5082D13BAC647DFAEF8F3236E64BC951", hash_generated_method = "6DB41983D5E0E4F723A47281CAC55512")
     private void onQueryCfComplete(AsyncResult ar) {
+        addTaint(ar.getTaint());
         StringBuilder sb = new StringBuilder(getScString());
         sb.append("\n");
+    if(ar.exception != null)        
         {
             state = State.FAILED;
             sb.append(getErrorMessage(ar));
-        } 
+        } //End block
+        else
         {
             CallForwardInfo infos[];
             infos = (CallForwardInfo[]) ar.result;
+    if(infos.length == 0)            
             {
                 sb.append(context.getText(com.android.internal.R.string.serviceDisabled));
                 phone.mIccRecords.setVoiceCallForwardingFlag(1, false);
-            } 
+            } //End block
+            else
             {
                 SpannableStringBuilder tb = new SpannableStringBuilder();
+for(int serviceClassMask = 1;serviceClassMask <= SERVICE_CLASS_MAX;serviceClassMask <<= 1)
                 {
-                    int serviceClassMask = 1;
-                    serviceClassMask <<= 1;
+for(int i = 0, s = infos.length;i < s;i++)
                     {
+    if((serviceClassMask & infos[i].serviceClass) != 0)                        
                         {
-                            int i = 0;
-                            int s = infos.length;
-                            {
-                                {
-                                    tb.append(makeCFQueryResultMessage(infos[i],
+                            tb.append(makeCFQueryResultMessage(infos[i],
                                             serviceClassMask));
-                                    tb.append("\n");
-                                } 
-                            } 
-                        } 
-                    } 
-                } 
+                            tb.append("\n");
+                        } //End block
+                    } //End block
+                } //End block
                 sb.append(tb);
-            } 
+            } //End block
             state = State.COMPLETE;
-        } 
+        } //End block
         message = sb;
         phone.onMMIDone(this);
-        addTaint(ar.getTaint());
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.351 -0400", hash_original_method = "34E140E893F772F43554211DC345FDB0", hash_generated_method = "C3FD401C88BDD58D785DE45636968931")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.870 -0400", hash_original_method = "34E140E893F772F43554211DC345FDB0", hash_generated_method = "31B33ACCF86E4A4767DBAF42DDAE8BBF")
     private void onQueryComplete(AsyncResult ar) {
+        addTaint(ar.getTaint());
         StringBuilder sb = new StringBuilder(getScString());
         sb.append("\n");
+    if(ar.exception != null)        
         {
             state = State.FAILED;
             sb.append(getErrorMessage(ar));
-        } 
+        } //End block
+        else
         {
             int[] ints = (int[])ar.result;
+    if(ints.length != 0)            
             {
+    if(ints[0] == 0)                
                 {
                     sb.append(context.getText(com.android.internal.R.string.serviceDisabled));
-                } 
+                } //End block
+                else
+    if(sc.equals(SC_WAIT))                
                 {
-                    boolean var080A5A128C565A100A91BE3125C6E632_254156049 = (sc.equals(SC_WAIT));
-                    {
-                        sb.append(createQueryCallWaitingResultMessage(ints[1]));
-                    } 
-                    {
-                        boolean var5C4CEC64D984C092A00EC9F31984726F_1841995772 = (isServiceCodeCallBarring(sc));
-                        {
-                            sb.append(createQueryCallBarringResultMessage(ints[0]));
-                        } 
-                        {
-                            sb.append(context.getText(com.android.internal.R.string.serviceEnabled));
-                        } 
-                        {
-                            sb.append(context.getText(com.android.internal.R.string.mmiError));
-                        } 
-                    } 
-                } 
-            } 
+                    sb.append(createQueryCallWaitingResultMessage(ints[1]));
+                } //End block
+                else
+    if(isServiceCodeCallBarring(sc))                
+                {
+                    sb.append(createQueryCallBarringResultMessage(ints[0]));
+                } //End block
+                else
+    if(ints[0] == 1)                
+                {
+                    sb.append(context.getText(com.android.internal.R.string.serviceEnabled));
+                } //End block
+                else
+                {
+                    sb.append(context.getText(com.android.internal.R.string.mmiError));
+                } //End block
+            } //End block
+            else
             {
                 sb.append(context.getText(com.android.internal.R.string.mmiError));
-            } 
+            } //End block
             state = State.COMPLETE;
-        } 
+        } //End block
         message = sb;
         phone.onMMIDone(this);
-        addTaint(ar.getTaint());
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.355 -0400", hash_original_method = "8FB50CB401051839B48C4DBAEAA3D5D3", hash_generated_method = "F1BF189F16C77F9718700E93FEFD0C75")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.871 -0400", hash_original_method = "8FB50CB401051839B48C4DBAEAA3D5D3", hash_generated_method = "A4D2114E11DDCFD7B5C732F47A0122C0")
     private CharSequence createQueryCallWaitingResultMessage(int serviceClass) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_2060092274 = null; 
-        StringBuilder sb = new StringBuilder(context.getText(com.android.internal.R.string.serviceEnabledFor));
-        {
-            int classMask = 1;
-            classMask <<= 1;
-            {
-                {
-                    sb.append("\n");
-                    sb.append(serviceClassToCFString(classMask & serviceClass));
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_2060092274 = sb;
         addTaint(serviceClass);
-        varB4EAC82CA7396A68D541C85D26508E83_2060092274.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_2060092274;
-        
-        
-                
-        
-                    
-                    
-        
-            
-                
-                
-            
-        
-        
+        StringBuilder sb = new StringBuilder(context.getText(com.android.internal.R.string.serviceEnabledFor));
+for(int classMask = 1;classMask <= SERVICE_CLASS_MAX;classMask <<= 1)
+        {
+    if((classMask & serviceClass) != 0)            
+            {
+                sb.append("\n");
+                sb.append(serviceClassToCFString(classMask & serviceClass));
+            } //End block
+        } //End block
+CharSequence var8C7F5CF7BA5191ABF78E376D65A0039D_1727678175 =         sb;
+        var8C7F5CF7BA5191ABF78E376D65A0039D_1727678175.addTaint(taint);
+        return var8C7F5CF7BA5191ABF78E376D65A0039D_1727678175;
+        // ---------- Original Method ----------
+        //StringBuilder sb =
+                //new StringBuilder(context.getText(com.android.internal.R.string.serviceEnabledFor));
+        //for (int classMask = 1
+                    //; classMask <= SERVICE_CLASS_MAX
+                    //; classMask <<= 1
+        //) {
+            //if ((classMask & serviceClass) != 0) {
+                //sb.append("\n");
+                //sb.append(serviceClassToCFString(classMask & serviceClass));
+            //}
+        //}
+        //return sb;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.357 -0400", hash_original_method = "C357AC638D1646361DDD93B23863C2E5", hash_generated_method = "017561D57D97658AB7F896E8159837F0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.871 -0400", hash_original_method = "C357AC638D1646361DDD93B23863C2E5", hash_generated_method = "ED91086E926DAA3F3E30509B6FE3EAE7")
     private CharSequence createQueryCallBarringResultMessage(int serviceClass) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1823456359 = null; 
-        StringBuilder sb = new StringBuilder(context.getText(com.android.internal.R.string.serviceEnabledFor));
-        {
-            int classMask = 1;
-            classMask <<= 1;
-            {
-                {
-                    sb.append("\n");
-                    sb.append(serviceClassToCFString(classMask & serviceClass));
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1823456359 = sb;
         addTaint(serviceClass);
-        varB4EAC82CA7396A68D541C85D26508E83_1823456359.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1823456359;
-        
-        
-        
-                    
-                    
-        
-            
-                
-                
-            
-        
-        
+        StringBuilder sb = new StringBuilder(context.getText(com.android.internal.R.string.serviceEnabledFor));
+for(int classMask = 1;classMask <= SERVICE_CLASS_MAX;classMask <<= 1)
+        {
+    if((classMask & serviceClass) != 0)            
+            {
+                sb.append("\n");
+                sb.append(serviceClassToCFString(classMask & serviceClass));
+            } //End block
+        } //End block
+CharSequence var8C7F5CF7BA5191ABF78E376D65A0039D_568196531 =         sb;
+        var8C7F5CF7BA5191ABF78E376D65A0039D_568196531.addTaint(taint);
+        return var8C7F5CF7BA5191ABF78E376D65A0039D_568196531;
+        // ---------- Original Method ----------
+        //StringBuilder sb = new StringBuilder(context.getText(com.android.internal.R.string.serviceEnabledFor));
+        //for (int classMask = 1
+                    //; classMask <= SERVICE_CLASS_MAX
+                    //; classMask <<= 1
+        //) {
+            //if ((classMask & serviceClass) != 0) {
+                //sb.append("\n");
+                //sb.append(serviceClassToCFString(classMask & serviceClass));
+            //}
+        //}
+        //return sb;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.359 -0400", hash_original_method = "4616EBEA9D2FF88EEA02D51F5D1F1A7C", hash_generated_method = "98B27A77727AFB65F74FED4DC5E38878")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.871 -0400", hash_original_method = "4616EBEA9D2FF88EEA02D51F5D1F1A7C", hash_generated_method = "3E5831B4AB61979629770C778A493BED")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1783217405 = null; 
         StringBuilder sb = new StringBuilder("GsmMmiCode {");
         sb.append("State=" + getState());
+    if(action != null)        
         sb.append(" action=" + action);
+    if(sc != null)        
         sb.append(" sc=" + sc);
+    if(sia != null)        
         sb.append(" sia=" + sia);
+    if(sib != null)        
         sb.append(" sib=" + sib);
+    if(sic != null)        
         sb.append(" sic=" + sic);
+    if(poundString != null)        
         sb.append(" poundString=" + poundString);
+    if(dialingNumber != null)        
         sb.append(" dialingNumber=" + dialingNumber);
+    if(pwd != null)        
         sb.append(" pwd=" + pwd);
         sb.append("}");
-        varB4EAC82CA7396A68D541C85D26508E83_1783217405 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1783217405.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1783217405;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+String var2460B846747F8B22185AD8BE722266A5_648581733 =         sb.toString();
+        var2460B846747F8B22185AD8BE722266A5_648581733.addTaint(taint);
+        return var2460B846747F8B22185AD8BE722266A5_648581733;
+        // ---------- Original Method ----------
+        //StringBuilder sb = new StringBuilder("GsmMmiCode {");
+        //sb.append("State=" + getState());
+        //if (action != null) sb.append(" action=" + action);
+        //if (sc != null) sb.append(" sc=" + sc);
+        //if (sia != null) sb.append(" sia=" + sia);
+        //if (sib != null) sb.append(" sib=" + sib);
+        //if (sic != null) sb.append(" sic=" + sic);
+        //if (poundString != null) sb.append(" poundString=" + poundString);
+        //if (dialingNumber != null) sb.append(" dialingNumber=" + dialingNumber);
+        //if (pwd != null) sb.append(" pwd=" + pwd);
+        //sb.append("}");
+        //return sb.toString();
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.359 -0400", hash_original_field = "41EBE7F32B96C1E2E9C209710486A443", hash_generated_field = "B8386CD6D900777C9D6A0A5CA1D0B217")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.871 -0400", hash_original_field = "41EBE7F32B96C1E2E9C209710486A443", hash_generated_field = "B8386CD6D900777C9D6A0A5CA1D0B217")
 
     static final String LOG_TAG = "GSM";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.359 -0400", hash_original_field = "9A3C08FC3E505EA59A036940348ACC20", hash_generated_field = "84380FB2A501B00185F3C8C921C42CD0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "9A3C08FC3E505EA59A036940348ACC20", hash_generated_field = "84380FB2A501B00185F3C8C921C42CD0")
 
     static final int MAX_LENGTH_SHORT_CODE = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.359 -0400", hash_original_field = "C03AB9291666D1A3221E51755E6E283F", hash_generated_field = "D2F2A0356ABABF263CD1876D3484452A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "C03AB9291666D1A3221E51755E6E283F", hash_generated_field = "D2F2A0356ABABF263CD1876D3484452A")
 
     static final char END_OF_USSD_COMMAND = '#';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.359 -0400", hash_original_field = "A537752B1259F88AC18F76D3115FF078", hash_generated_field = "18F682957DD333F418DC1E51CABE0145")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "A537752B1259F88AC18F76D3115FF078", hash_generated_field = "18F682957DD333F418DC1E51CABE0145")
 
     static final String ACTION_ACTIVATE = "*";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.359 -0400", hash_original_field = "6D54A4CFA33154B4F25361364F9EBBFD", hash_generated_field = "E3284E18102DE7D7C6F38C074B8DCE9F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "6D54A4CFA33154B4F25361364F9EBBFD", hash_generated_field = "E3284E18102DE7D7C6F38C074B8DCE9F")
 
     static final String ACTION_DEACTIVATE = "#";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.359 -0400", hash_original_field = "25583D22F5D13B64BA6FE4B3EE60AC86", hash_generated_field = "D264585CD251BCD3ABEAC4C7825F93F9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "25583D22F5D13B64BA6FE4B3EE60AC86", hash_generated_field = "D264585CD251BCD3ABEAC4C7825F93F9")
 
     static final String ACTION_INTERROGATE = "*#";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.359 -0400", hash_original_field = "B36D859659D29B3CF582794F8F07A110", hash_generated_field = "A747A2BA07E0220107EEBEA1B6706D02")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "B36D859659D29B3CF582794F8F07A110", hash_generated_field = "A747A2BA07E0220107EEBEA1B6706D02")
 
     static final String ACTION_REGISTER = "**";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.359 -0400", hash_original_field = "3A1254E19648A61BA480A107270318F9", hash_generated_field = "32CD02DE89D027BB80525CC133B872CA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "3A1254E19648A61BA480A107270318F9", hash_generated_field = "32CD02DE89D027BB80525CC133B872CA")
 
     static final String ACTION_ERASURE = "##";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.359 -0400", hash_original_field = "B506035B8DD0DBA2172D0BA0EEC13A88", hash_generated_field = "A51D4720DC81AC3C4C86A4D8412F140A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "B506035B8DD0DBA2172D0BA0EEC13A88", hash_generated_field = "A51D4720DC81AC3C4C86A4D8412F140A")
 
     static final String SC_CLIP = "30";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.359 -0400", hash_original_field = "EC8AA66BEF533B273213E6DB0BBF8ADF", hash_generated_field = "E644B736CD2A9C2179B5ADA66B2BD371")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "EC8AA66BEF533B273213E6DB0BBF8ADF", hash_generated_field = "E644B736CD2A9C2179B5ADA66B2BD371")
 
     static final String SC_CLIR = "31";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.359 -0400", hash_original_field = "ABC9C4C74D231F8ABA6F93F413FB3FD0", hash_generated_field = "A0A984619995E559906729FB0885BD37")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "ABC9C4C74D231F8ABA6F93F413FB3FD0", hash_generated_field = "A0A984619995E559906729FB0885BD37")
 
     static final String SC_CFU = "21";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.359 -0400", hash_original_field = "9454383467543242D669ED87F248413F", hash_generated_field = "162AB085207CEB2C27F8FDC8BF9ECDF2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "9454383467543242D669ED87F248413F", hash_generated_field = "162AB085207CEB2C27F8FDC8BF9ECDF2")
 
     static final String SC_CFB = "67";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.359 -0400", hash_original_field = "283733E2C01965DFD9773570E027EE6F", hash_generated_field = "188B5492DB9239773311815652D08E1E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "283733E2C01965DFD9773570E027EE6F", hash_generated_field = "188B5492DB9239773311815652D08E1E")
 
     static final String SC_CFNRy = "61";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.359 -0400", hash_original_field = "9639B61E8C19778C436B9EB92511C44A", hash_generated_field = "970B94E83FA60DC84055EBAC72BEA6A7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "9639B61E8C19778C436B9EB92511C44A", hash_generated_field = "970B94E83FA60DC84055EBAC72BEA6A7")
 
     static final String SC_CFNR = "62";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.359 -0400", hash_original_field = "F3E9FC00FA6C76B92C393B7FEAAD3FA6", hash_generated_field = "AAACA7CABEBB58D4DBEDA093B2CDF4C5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "F3E9FC00FA6C76B92C393B7FEAAD3FA6", hash_generated_field = "AAACA7CABEBB58D4DBEDA093B2CDF4C5")
 
     static final String SC_CF_All = "002";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.359 -0400", hash_original_field = "536F482EC4EF47627A43E2F42C660DAC", hash_generated_field = "E97209C1CAD929CA0DC97B53BB34B72F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "536F482EC4EF47627A43E2F42C660DAC", hash_generated_field = "E97209C1CAD929CA0DC97B53BB34B72F")
 
     static final String SC_CF_All_Conditional = "004";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.359 -0400", hash_original_field = "66E77556273BFCA545031190388E9C77", hash_generated_field = "7E42427065171F529F659EBE79102742")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "66E77556273BFCA545031190388E9C77", hash_generated_field = "7E42427065171F529F659EBE79102742")
 
     static final String SC_WAIT = "43";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.359 -0400", hash_original_field = "974BB9052E8EDAB3B8DB0339197E7AE0", hash_generated_field = "EB539ECDFB664D7B6F97071235485A9F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "974BB9052E8EDAB3B8DB0339197E7AE0", hash_generated_field = "EB539ECDFB664D7B6F97071235485A9F")
 
     static final String SC_BAOC = "33";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "30AA7D36FDDA5FDE334B45C22EF77A0F", hash_generated_field = "E42D4E647E8ACC2C103C2935E6E0CE74")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "30AA7D36FDDA5FDE334B45C22EF77A0F", hash_generated_field = "E42D4E647E8ACC2C103C2935E6E0CE74")
 
     static final String SC_BAOIC = "331";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "FD10E90BD126124E5850D6F4CCEAD16B", hash_generated_field = "91A59766F8A5C17F073F097729110BA1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "FD10E90BD126124E5850D6F4CCEAD16B", hash_generated_field = "91A59766F8A5C17F073F097729110BA1")
 
     static final String SC_BAOICxH = "332";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "E17BDC7554CEA6F3DB3F5A99ADC0DF37", hash_generated_field = "8A5B8B89DDC698F51EFD8240BA01409D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "E17BDC7554CEA6F3DB3F5A99ADC0DF37", hash_generated_field = "8A5B8B89DDC698F51EFD8240BA01409D")
 
     static final String SC_BAIC = "35";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "590580DA02A1809E7C37E217AC28C3AA", hash_generated_field = "481173BEDB5B2B2B9B6107CCDD3C1DFB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "590580DA02A1809E7C37E217AC28C3AA", hash_generated_field = "481173BEDB5B2B2B9B6107CCDD3C1DFB")
 
     static final String SC_BAICr = "351";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "2D6A703DBB1F260ACFD5648813B27270", hash_generated_field = "2118AEBDF2A411624DDAA38436B55831")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "2D6A703DBB1F260ACFD5648813B27270", hash_generated_field = "2118AEBDF2A411624DDAA38436B55831")
 
     static final String SC_BA_ALL = "330";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "E6C14FB76617FAC17954B4D2D9BA77D7", hash_generated_field = "78090C0D99EB492E8EA3B970D8545B61")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "E6C14FB76617FAC17954B4D2D9BA77D7", hash_generated_field = "78090C0D99EB492E8EA3B970D8545B61")
 
     static final String SC_BA_MO = "333";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "A1749A6E67C7A811178C645BF395C965", hash_generated_field = "D87B853EA32848746BBA1779B8A2EE68")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "A1749A6E67C7A811178C645BF395C965", hash_generated_field = "D87B853EA32848746BBA1779B8A2EE68")
 
     static final String SC_BA_MT = "353";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "35425CC920C614B65CECDD2A8D8F526F", hash_generated_field = "67CCC016F241E1D4CFD0A5CE5C530D23")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "35425CC920C614B65CECDD2A8D8F526F", hash_generated_field = "67CCC016F241E1D4CFD0A5CE5C530D23")
 
     static final String SC_PWD = "03";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "D7B4EA3A3E3449565EA9B1BFEC63FCAD", hash_generated_field = "EEE3024D1CF5D84AF8F4CB01077B8E95")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.872 -0400", hash_original_field = "D7B4EA3A3E3449565EA9B1BFEC63FCAD", hash_generated_field = "EEE3024D1CF5D84AF8F4CB01077B8E95")
 
     static final String SC_PIN = "04";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "68C3A8A262F7F737FB51D8F10B96BE6C", hash_generated_field = "7A8798943D2B724D80E98EC6B7CB93B6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.873 -0400", hash_original_field = "68C3A8A262F7F737FB51D8F10B96BE6C", hash_generated_field = "7A8798943D2B724D80E98EC6B7CB93B6")
 
     static final String SC_PIN2 = "042";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "5BAD5D2228CE32354A88D354D80B2D1B", hash_generated_field = "F24A24DD4B537B4770521D463804E4D1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.873 -0400", hash_original_field = "5BAD5D2228CE32354A88D354D80B2D1B", hash_generated_field = "F24A24DD4B537B4770521D463804E4D1")
 
     static final String SC_PUK = "05";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "D00C049CD89213BBED85DA008A8C0664", hash_generated_field = "B746ACB42145A31CD109C60F14BFE667")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.873 -0400", hash_original_field = "D00C049CD89213BBED85DA008A8C0664", hash_generated_field = "B746ACB42145A31CD109C60F14BFE667")
 
     static final String SC_PUK2 = "052";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "4C1215DA515DFC3564B3BB1182B13CFF", hash_generated_field = "A94BA604FE3CDE84F64462E973B833FB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.873 -0400", hash_original_field = "4C1215DA515DFC3564B3BB1182B13CFF", hash_generated_field = "A94BA604FE3CDE84F64462E973B833FB")
 
     static final int EVENT_SET_COMPLETE = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "EAB3780CCE31DBB465E64A2CD46D2990", hash_generated_field = "9829C51898ECEEF688DC24D5C6D88094")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.873 -0400", hash_original_field = "EAB3780CCE31DBB465E64A2CD46D2990", hash_generated_field = "9829C51898ECEEF688DC24D5C6D88094")
 
     static final int EVENT_GET_CLIR_COMPLETE = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "6093DB005424AB007B12DCE4B4BC126C", hash_generated_field = "7AFF40CB3CEB21DFC3DD957EE7B8EBBC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.873 -0400", hash_original_field = "6093DB005424AB007B12DCE4B4BC126C", hash_generated_field = "7AFF40CB3CEB21DFC3DD957EE7B8EBBC")
 
     static final int EVENT_QUERY_CF_COMPLETE = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "6B552A15FE79814FE37ADA5EB027B548", hash_generated_field = "D739A36AE28735AFC84C598B959E4F6E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.873 -0400", hash_original_field = "6B552A15FE79814FE37ADA5EB027B548", hash_generated_field = "D739A36AE28735AFC84C598B959E4F6E")
 
     static final int EVENT_USSD_COMPLETE = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "E6D8D584F5F0A4F20E7A8840538FA1EA", hash_generated_field = "72ABCFECA11B8C5650C5459A9D911C41")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.873 -0400", hash_original_field = "E6D8D584F5F0A4F20E7A8840538FA1EA", hash_generated_field = "72ABCFECA11B8C5650C5459A9D911C41")
 
     static final int EVENT_QUERY_COMPLETE = 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "CB9C1EA429412F1AE1D5CE68B2BCB19C", hash_generated_field = "D47F75990E603624F182DA469CF653E4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.873 -0400", hash_original_field = "CB9C1EA429412F1AE1D5CE68B2BCB19C", hash_generated_field = "D47F75990E603624F182DA469CF653E4")
 
     static final int EVENT_SET_CFF_COMPLETE = 6;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "4C6E6B70640FA17BEF8F121BA52ED445", hash_generated_field = "1A3F2D11BE99F10E9049869D455AA7BC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.873 -0400", hash_original_field = "4C6E6B70640FA17BEF8F121BA52ED445", hash_generated_field = "1A3F2D11BE99F10E9049869D455AA7BC")
 
     static final int EVENT_USSD_CANCEL_COMPLETE = 7;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "3902BAEB69E5FDBE62258952DBE89AF9", hash_generated_field = "5990EA0198CB826DF3EBD44395CC5B38")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.873 -0400", hash_original_field = "3902BAEB69E5FDBE62258952DBE89AF9", hash_generated_field = "5990EA0198CB826DF3EBD44395CC5B38")
 
     static Pattern sPatternSuppService = Pattern.compile(
         "((\\*|#|\\*#|\\*\\*|##)(\\d{2,3})(\\*([^*#]*)(\\*([^*#]*)(\\*([^*#]*)(\\*([^*#]*))?)?)?)?#)([^#]*)");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "BB3719B16018B63D6E1AEFEF4670AD63", hash_generated_field = "7CA15DFCD577D5C84BA78A4189BC0E2C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.873 -0400", hash_original_field = "BB3719B16018B63D6E1AEFEF4670AD63", hash_generated_field = "7CA15DFCD577D5C84BA78A4189BC0E2C")
 
     static final int MATCH_GROUP_POUND_STRING = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "90C3F831BEE8235DF8513B65A2F403D2", hash_generated_field = "F4DF33F7D8D6D17C4F4FEA7F8C1A94D0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.873 -0400", hash_original_field = "90C3F831BEE8235DF8513B65A2F403D2", hash_generated_field = "F4DF33F7D8D6D17C4F4FEA7F8C1A94D0")
 
     static final int MATCH_GROUP_ACTION = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "CF0646443BB08F914B0A122FED173F6E", hash_generated_field = "A024C419F83A9F642C010C9489DE8C1A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.873 -0400", hash_original_field = "CF0646443BB08F914B0A122FED173F6E", hash_generated_field = "A024C419F83A9F642C010C9489DE8C1A")
 
     static final int MATCH_GROUP_SERVICE_CODE = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "99D1B083A79036DBCFC5A60D46F22411", hash_generated_field = "EF421560D72C37CDE6066BA9C31D6755")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.873 -0400", hash_original_field = "99D1B083A79036DBCFC5A60D46F22411", hash_generated_field = "EF421560D72C37CDE6066BA9C31D6755")
 
     static final int MATCH_GROUP_SIA = 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "CDB9823919E9311E255A6F07A6DD9342", hash_generated_field = "D2593982434FD1D6031B1B2239618C42")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.873 -0400", hash_original_field = "CDB9823919E9311E255A6F07A6DD9342", hash_generated_field = "D2593982434FD1D6031B1B2239618C42")
 
     static final int MATCH_GROUP_SIB = 7;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "1470B5B0F1CC2B70632F064AA14D1792", hash_generated_field = "2B00556FFA768C0F276AE643F78A7D2C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.873 -0400", hash_original_field = "1470B5B0F1CC2B70632F064AA14D1792", hash_generated_field = "2B00556FFA768C0F276AE643F78A7D2C")
 
     static final int MATCH_GROUP_SIC = 9;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "F90A3CDD189D147E86CFA37AA82536DD", hash_generated_field = "2B2C87265D64C476329F77ED35E669F5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.873 -0400", hash_original_field = "F90A3CDD189D147E86CFA37AA82536DD", hash_generated_field = "2B2C87265D64C476329F77ED35E669F5")
 
     static final int MATCH_GROUP_PWD_CONFIRM = 11;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "663794BFD8D4A5D988354CA3CFA9154D", hash_generated_field = "9FA3793E535AC26009C54ED054C80B08")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.873 -0400", hash_original_field = "663794BFD8D4A5D988354CA3CFA9154D", hash_generated_field = "9FA3793E535AC26009C54ED054C80B08")
 
     static final int MATCH_GROUP_DIALING_NUMBER = 12;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.360 -0400", hash_original_field = "2727DAB650F3A79EA96DFB00B503B05E", hash_generated_field = "55E2DF2087007B0F74B525D8CFC27B5F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.873 -0400", hash_original_field = "2727DAB650F3A79EA96DFB00B503B05E", hash_generated_field = "55E2DF2087007B0F74B525D8CFC27B5F")
 
     static private String[] sTwoDigitNumberPattern;
 }

@@ -1,12 +1,9 @@
 package dalvik.system.profiler;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.util.HashMap;
@@ -14,14 +11,14 @@ import java.util.Map;
 
 public final class BinaryHprof {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.850 -0400", hash_original_method = "5337F4C002A0025B40CFBFFF348D94A9", hash_generated_method = "5337F4C002A0025B40CFBFFF348D94A9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.857 -0400", hash_original_method = "5337F4C002A0025B40CFBFFF348D94A9", hash_generated_method = "5337F4C002A0025B40CFBFFF348D94A9")
     public BinaryHprof ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    public static final String readMagic(DataInputStream in) {
+        public static final String readMagic(DataInputStream in) {
         try {
             byte[] bytes = new byte[512];
             for (int i = 0; i < bytes.length; i++) {
@@ -77,11 +74,9 @@ public final class BinaryHprof {
                 BYTE_TO_TAG.put(v.tag, v);
             }
         }
-        @DSModeled(DSC.BAN)
         public static Tag get(byte tag) {
             return BYTE_TO_TAG.get(tag);
         }
-        @DSModeled(DSC.BAN)
         public String checkSize(int actual) {
             if (actual < minimumSize) {
                 return "expected a minimial record size of " + minimumSize + " for " + this
@@ -109,10 +104,10 @@ public final class BinaryHprof {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.851 -0400", hash_original_field = "78ED38D23F66FD3D9881991183056ED4", hash_generated_field = "8349BBEB77016752FBF2456D191A1A2F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.858 -0400", hash_original_field = "78ED38D23F66FD3D9881991183056ED4", hash_generated_field = "8349BBEB77016752FBF2456D191A1A2F")
 
     public static final int ID_SIZE = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.851 -0400", hash_original_field = "9ED898E2A40E3B1FEA9CC9074DE69EFE", hash_generated_field = "D7189B99CFC6CE5EBE348FB248539A4B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.858 -0400", hash_original_field = "9ED898E2A40E3B1FEA9CC9074DE69EFE", hash_generated_field = "D7189B99CFC6CE5EBE348FB248539A4B")
 
     static String MAGIC = "JAVA PROFILE ";
 }

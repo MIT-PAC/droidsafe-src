@@ -1,94 +1,98 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import gov.nist.core.Token;
 import gov.nist.javax.sip.header.*;
 import java.text.ParseException;
 
 public class UserAgentParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.933 -0400", hash_original_method = "72C240456E98B58E534CB3630B89C3C4", hash_generated_method = "8E84A0C3F9F84722131501E191D0670E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.498 -0400", hash_original_method = "72C240456E98B58E534CB3630B89C3C4", hash_generated_method = "8E84A0C3F9F84722131501E191D0670E")
     public  UserAgentParser(String userAgent) {
         super(userAgent);
         addTaint(userAgent.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.933 -0400", hash_original_method = "1D2877F696A9DE47D6D871F3024594AA", hash_generated_method = "3CAEFF70DD19529513F3F7832479172C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.499 -0400", hash_original_method = "1D2877F696A9DE47D6D871F3024594AA", hash_generated_method = "3CAEFF70DD19529513F3F7832479172C")
     protected  UserAgentParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.934 -0400", hash_original_method = "67E8EBD2906BCEC3B5F02757CFDC6836", hash_generated_method = "1C7D480532A75CB8F5F21661F521587B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.534 -0400", hash_original_method = "67E8EBD2906BCEC3B5F02757CFDC6836", hash_generated_method = "0EB11FD0C43CE1173653C66B2506F324")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1731453958 = null; 
+    if(debug)        
         dbg_enter("UserAgentParser.parse");
         UserAgent userAgent = new UserAgent();
         try 
         {
             headerName(TokenTypes.USER_AGENT);
+    if(this.lexer.lookAhead(0) == '\n')            
             {
-                boolean varE8319E96ED7B82FE86A0F5A02AAB8C1A_1278022999 = (this.lexer.lookAhead(0) == '\n');
-                if (DroidSafeAndroidRuntime.control) throw createParseException("empty header");
-            } 
+            java.text.ParseException var2A78B7EA9E0D9AA1D9EB461A1311D9F5_845983508 = createParseException("empty header");
+            var2A78B7EA9E0D9AA1D9EB461A1311D9F5_845983508.addTaint(taint);
+            throw var2A78B7EA9E0D9AA1D9EB461A1311D9F5_845983508;
+            }
+            while
+(this.lexer.lookAhead(0) != '\n'
+                    && this.lexer.lookAhead(0) != '\0')            
             {
-                boolean var8F462703D5AFB8059D6E8FF16FEB4CE3_984498933 = (this.lexer.lookAhead(0) != '\n'
-                    && this.lexer.lookAhead(0) != '\0');
+    if(this.lexer.lookAhead(0) == '(')                
                 {
+                    String comment = this.lexer.comment();
+                    userAgent.addProductToken('(' + comment + ')');
+                } //End block
+                else
+                {
+                    this.getLexer().SPorHT();
+                    String product = this.lexer.byteStringNoSlash();
+    if(product == null)                    
                     {
-                        boolean varBE42586E6C05C1C337617197702A94AB_1873280024 = (this.lexer.lookAhead(0) == '(');
+                    java.text.ParseException varEC678097075546EF1C4ED9C7745E8ABF_248742554 = createParseException("Expected product string");
+                    varEC678097075546EF1C4ED9C7745E8ABF_248742554.addTaint(taint);
+                    throw varEC678097075546EF1C4ED9C7745E8ABF_248742554;
+                    }
+                    StringBuffer productSb = new StringBuffer(product);
+    if(this.lexer.peekNextToken().getTokenType() == TokenTypes.SLASH)                    
+                    {
+                        this.lexer.match(TokenTypes.SLASH);
+                        this.getLexer().SPorHT();
+                        String productVersion = this.lexer.byteStringNoSlash();
+    if(productVersion == null)                        
                         {
-                            String comment = this.lexer.comment();
-                            userAgent.addProductToken('(' + comment + ')');
-                        } 
-                        {
-                            this.getLexer().SPorHT();
-                            String product = this.lexer.byteStringNoSlash();
-                            if (DroidSafeAndroidRuntime.control) throw createParseException("Expected product string");
-                            StringBuffer productSb = new StringBuffer(product);
-                            {
-                                boolean varFDA4A89BAF4E98EA4E3B3B4AD09BAA25_490289852 = (this.lexer.peekNextToken().getTokenType() == TokenTypes.SLASH);
-                                {
-                                    this.lexer.match(TokenTypes.SLASH);
-                                    this.getLexer().SPorHT();
-                                    String productVersion = this.lexer.byteStringNoSlash();
-                                    if (DroidSafeAndroidRuntime.control) throw createParseException("Expected product version");
-                                    productSb.append("/");
-                                    productSb.append(productVersion);
-                                } 
-                            } 
-                            userAgent.addProductToken(productSb.toString());
-                        } 
-                    } 
-                    this.lexer.SPorHT();
-                } 
-            } 
-        } 
+                        java.text.ParseException var7114B794543F9428E4E38A03383DD4FC_644836755 = createParseException("Expected product version");
+                        var7114B794543F9428E4E38A03383DD4FC_644836755.addTaint(taint);
+                        throw var7114B794543F9428E4E38A03383DD4FC_644836755;
+                        }
+                        productSb.append("/");
+                        productSb.append(productVersion);
+                    } //End block
+                    userAgent.addProductToken(productSb.toString());
+                } //End block
+                this.lexer.SPorHT();
+            } //End block
+        } //End block
         finally 
         {
+    if(debug)            
             dbg_leave("UserAgentParser.parse");
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1731453958 = userAgent;
-        varB4EAC82CA7396A68D541C85D26508E83_1731453958.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1731453958;
-        
-        
+        } //End block
+SIPHeader varB90BAE9CF13799DF66AC7440F5DAE3DA_316039081 =         userAgent;
+        varB90BAE9CF13799DF66AC7440F5DAE3DA_316039081.addTaint(taint);
+        return varB90BAE9CF13799DF66AC7440F5DAE3DA_316039081;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void main(String args[]) throws ParseException {
+        public static void main(String args[]) throws ParseException {
         String
       userAgent[] = { "User-Agent: Softphone/Beta1.5 \n", "User-Agent:Nist/Beta1 (beta version) \n", "User-Agent: Nist UA (beta version)\n",
       "User-Agent: Nist1.0/Beta2 Ubi/vers.1.0 (very cool) \n" ,

@@ -1,25 +1,21 @@
 package android.telephony;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.text.Editable;
 
 class JapanesePhoneNumberFormatter {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.411 -0400", hash_original_method = "8633AFAAB867BB1617201EF2E839378D", hash_generated_method = "8633AFAAB867BB1617201EF2E839378D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.620 -0400", hash_original_method = "8633AFAAB867BB1617201EF2E839378D", hash_generated_method = "8633AFAAB867BB1617201EF2E839378D")
     public JapanesePhoneNumberFormatter ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
-    public static void format(Editable text) {
+        public static void format(Editable text) {
         int rootIndex = 1;
         int length = text.length();
         if (length > 3
@@ -73,7 +69,7 @@ class JapanesePhoneNumberFormatter {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.413 -0400", hash_original_field = "A7EC13753EC06139DD5665DC71016EA3", hash_generated_field = "A41ED4450E04BDA3A5345586D1E8DE2E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.622 -0400", hash_original_field = "A7EC13753EC06139DD5665DC71016EA3", hash_generated_field = "A41ED4450E04BDA3A5345586D1E8DE2E")
 
     private static short FORMAT_MAP[] = {
     -100, 10, 220, -15, 410, 530, 1200, 670, 780, 1060,

@@ -1,12 +1,9 @@
 package gov.nist.javax.sip.parser.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.text.ParseException;
 import gov.nist.javax.sip.header.ims.PCalledPartyID;
 import gov.nist.javax.sip.header.SIPHeader;
@@ -16,26 +13,25 @@ import gov.nist.javax.sip.parser.AddressParametersParser;
 
 public class PCalledPartyIDParser extends AddressParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.110 -0400", hash_original_method = "5A210D10F0DA09D81C9A40BA3A0E0BA0", hash_generated_method = "BBD7965D346BF1D7806D7ABC42DEB4ED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.057 -0400", hash_original_method = "5A210D10F0DA09D81C9A40BA3A0E0BA0", hash_generated_method = "BBD7965D346BF1D7806D7ABC42DEB4ED")
     public  PCalledPartyIDParser(String calledPartyID) {
         super(calledPartyID);
         addTaint(calledPartyID.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.110 -0400", hash_original_method = "A63723B4A16B3DEC36752AB85CAA4736", hash_generated_method = "1A433AD9ED26F8AC88F7689284675C35")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.058 -0400", hash_original_method = "A63723B4A16B3DEC36752AB85CAA4736", hash_generated_method = "1A433AD9ED26F8AC88F7689284675C35")
     protected  PCalledPartyIDParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.111 -0400", hash_original_method = "C43CF84ED746DD134AB177C7FEFB3286", hash_generated_method = "A9F772AB13892E30DEF2FEE8A12F14F0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.058 -0400", hash_original_method = "C43CF84ED746DD134AB177C7FEFB3286", hash_generated_method = "3067CED401318BFE95D305D7847F8F5B")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_66521183 = null; 
+    if(debug)        
         dbg_enter("PCalledPartyIDParser.parse");
         try 
         {
@@ -45,29 +41,30 @@ public class PCalledPartyIDParser extends AddressParametersParser {
             this.lexer.SPorHT();
             PCalledPartyID calledPartyID = new PCalledPartyID();
             super.parse(calledPartyID);
-            varB4EAC82CA7396A68D541C85D26508E83_66521183 = calledPartyID;
-        } 
+SIPHeader var7CED634B91969C8974B3C449C1A23580_247360569 =             calledPartyID;
+            var7CED634B91969C8974B3C449C1A23580_247360569.addTaint(taint);
+            return var7CED634B91969C8974B3C449C1A23580_247360569;
+        } //End block
         finally 
         {
+    if(debug)            
             dbg_leave("PCalledPartyIDParser.parse");
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_66521183.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_66521183;
-        
-        
-            
-        
-            
-            
-            
-            
-            
-            
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (debug)
+            //dbg_enter("PCalledPartyIDParser.parse");
+        //try {
+            //this.lexer.match(TokenTypes.P_CALLED_PARTY_ID);
+            //this.lexer.SPorHT();
+            //this.lexer.match(':');
+            //this.lexer.SPorHT();
+            //PCalledPartyID calledPartyID = new PCalledPartyID();
+            //super.parse(calledPartyID);
+            //return calledPartyID;
+        //} finally {
+            //if (debug)
+                //dbg_leave("PCalledPartyIDParser.parse");
+        //}
     }
 
     

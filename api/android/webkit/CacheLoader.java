@@ -1,106 +1,92 @@
 package android.webkit;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.net.http.Headers;
 import android.text.TextUtils;
 import android.webkit.JniUtil;
 
 class CacheLoader extends StreamLoader {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.793 -0400", hash_original_field = "214CBCF3E2AD0D57BF05ACDE798A8E91", hash_generated_field = "B8E944361CAE1A88801CDDF7F334AC6D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.093 -0400", hash_original_field = "214CBCF3E2AD0D57BF05ACDE798A8E91", hash_generated_field = "B8E944361CAE1A88801CDDF7F334AC6D")
 
     CacheManager.CacheResult mCacheResult;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.794 -0400", hash_original_method = "5AF96706DF9FEED69E5A85053239A8E2", hash_generated_method = "B65A0BAE1301533AD63363BBCEF1A4B3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.094 -0400", hash_original_method = "5AF96706DF9FEED69E5A85053239A8E2", hash_generated_method = "FD7F62419736B8FBDC2784E53852262E")
       CacheLoader(LoadListener loadListener, CacheManager.CacheResult result) {
         super(loadListener);
-        mCacheResult = result;
         addTaint(loadListener.getTaint());
-        
-        
-        
+        mCacheResult = result;
+        // ---------- Original Method ----------
+        //assert !JniUtil.useChromiumHttpStack();
+        //mCacheResult = result;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.794 -0400", hash_original_method = "5DFC3C12C1D0EBA5023FB5F302EE8813", hash_generated_method = "1F546693585518DC262CFECEB52F5F60")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.095 -0400", hash_original_method = "5DFC3C12C1D0EBA5023FB5F302EE8813", hash_generated_method = "7C48BE2671D31EB501E3868C2F9B3BC8")
     @Override
     protected boolean setupStreamAndSendStatus() {
         mDataStream = mCacheResult.inStream;
         mContentLength = mCacheResult.contentLength;
         mLoadListener.status(1, 1, mCacheResult.httpStatusCode, "OK");
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1373110543 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1373110543;
-        
-        
-        
-        
-        
+        boolean varB326B5062B2F0E69046810717534CB09_1674725111 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_205510881 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_205510881;
+        // ---------- Original Method ----------
+        //mDataStream = mCacheResult.inStream;
+        //mContentLength = mCacheResult.contentLength;
+        //mLoadListener.status(1, 1, mCacheResult.httpStatusCode, "OK");
+        //return true;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.795 -0400", hash_original_method = "09EA95975DEA7D7D43A5B322B32B5DDD", hash_generated_method = "52ACE7ED7850F90BC6B199C82B2E5D82")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.095 -0400", hash_original_method = "09EA95975DEA7D7D43A5B322B32B5DDD", hash_generated_method = "677AEE8BFB9C056C13BDBB60BA9F7A48")
     @Override
     protected void buildHeaders(Headers headers) {
-        StringBuilder sb = new StringBuilder(mCacheResult.mimeType);
-        {
-            boolean varAA9DD98176BC7E4C558C312499F0DC87_1824409776 = (!TextUtils.isEmpty(mCacheResult.encoding));
-            {
-                sb.append(';');
-                sb.append(mCacheResult.encoding);
-            } 
-        } 
-        headers.setContentType(sb.toString());
-        {
-            boolean var2AB1B988E1A823180096207E3A1DD69B_714961030 = (!TextUtils.isEmpty(mCacheResult.location));
-            {
-                headers.setLocation(mCacheResult.location);
-            } 
-        } 
-        {
-            boolean var5A5B7E55E6141F5C77AA200692ADA201_1046777383 = (!TextUtils.isEmpty(mCacheResult.expiresString));
-            {
-                headers.setExpires(mCacheResult.expiresString);
-            } 
-        } 
-        {
-            boolean varF419A7BAAB919C8802ABABFFAE8A7582_60421211 = (!TextUtils.isEmpty(mCacheResult.contentdisposition));
-            {
-                headers.setContentDisposition(mCacheResult.contentdisposition);
-            } 
-        } 
-        {
-            boolean varA478B5521C4B854F39D54F90D5ED7D8B_447417364 = (!TextUtils.isEmpty(mCacheResult.crossDomain));
-            {
-                headers.setXPermittedCrossDomainPolicies(mCacheResult.crossDomain);
-            } 
-        } 
         addTaint(headers.getTaint());
-        
-        
-        
-            
-            
-        
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
+        StringBuilder sb = new StringBuilder(mCacheResult.mimeType);
+    if(!TextUtils.isEmpty(mCacheResult.encoding))        
+        {
+            sb.append(';');
+            sb.append(mCacheResult.encoding);
+        } //End block
+        headers.setContentType(sb.toString());
+    if(!TextUtils.isEmpty(mCacheResult.location))        
+        {
+            headers.setLocation(mCacheResult.location);
+        } //End block
+    if(!TextUtils.isEmpty(mCacheResult.expiresString))        
+        {
+            headers.setExpires(mCacheResult.expiresString);
+        } //End block
+    if(!TextUtils.isEmpty(mCacheResult.contentdisposition))        
+        {
+            headers.setContentDisposition(mCacheResult.contentdisposition);
+        } //End block
+    if(!TextUtils.isEmpty(mCacheResult.crossDomain))        
+        {
+            headers.setXPermittedCrossDomainPolicies(mCacheResult.crossDomain);
+        } //End block
+        // ---------- Original Method ----------
+        //StringBuilder sb = new StringBuilder(mCacheResult.mimeType);
+        //if (!TextUtils.isEmpty(mCacheResult.encoding)) {
+            //sb.append(';');
+            //sb.append(mCacheResult.encoding);
+        //}
+        //headers.setContentType(sb.toString());
+        //if (!TextUtils.isEmpty(mCacheResult.location)) {
+            //headers.setLocation(mCacheResult.location);
+        //}
+        //if (!TextUtils.isEmpty(mCacheResult.expiresString)) {
+            //headers.setExpires(mCacheResult.expiresString);
+        //}
+        //if (!TextUtils.isEmpty(mCacheResult.contentdisposition)) {
+            //headers.setContentDisposition(mCacheResult.contentdisposition);
+        //}
+        //if (!TextUtils.isEmpty(mCacheResult.crossDomain)) {
+            //headers.setXPermittedCrossDomainPolicies(mCacheResult.crossDomain);
+        //}
     }
 
     

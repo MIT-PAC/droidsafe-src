@@ -1,23 +1,19 @@
 package java.lang;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-
-import java.util.Iterator;
-
 public final class IntegralToString {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.231 -0400", hash_original_method = "DF20FC0B1F395B5ECC5581BA0BD3AC0B", hash_generated_method = "724F18F022450896EB503A5FBBDA6BC7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:45.007 -0400", hash_original_method = "DF20FC0B1F395B5ECC5581BA0BD3AC0B", hash_generated_method = "724F18F022450896EB503A5FBBDA6BC7")
     private  IntegralToString() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String intToString(int i, int radix) {
+        public static String intToString(int i, int radix) {
         if (radix < Character.MIN_RADIX || radix > Character.MAX_RADIX) {
             radix = 10;
         }
@@ -45,20 +41,17 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String intToString(int i) {
+        public static String intToString(int i) {
         return convertInt(null, i);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void appendInt(AbstractStringBuilder sb, int i) {
+        public static void appendInt(AbstractStringBuilder sb, int i) {
         convertInt(sb, i);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static String convertInt(AbstractStringBuilder sb, int i) {
+        private static String convertInt(AbstractStringBuilder sb, int i) {
         boolean negative = false;
         String quickResult = null;
         if (i < 0) {
@@ -119,8 +112,7 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String longToString(long v, int radix) {
+        public static String longToString(long v, int radix) {
         int i = (int) v;
         if (i == v) {
             return intToString(i, radix);
@@ -152,20 +144,17 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String longToString(long l) {
+        public static String longToString(long l) {
         return convertLong(null, l);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void appendLong(AbstractStringBuilder sb, long l) {
+        public static void appendLong(AbstractStringBuilder sb, long l) {
         convertLong(sb, l);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static String convertLong(AbstractStringBuilder sb, long n) {
+        private static String convertLong(AbstractStringBuilder sb, long n) {
         int i = (int) n;
         if (i == n) {
             return convertInt(sb, i);
@@ -216,8 +205,7 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static int intIntoCharArray(char[] buf, int cursor, int n) {
+        private static int intIntoCharArray(char[] buf, int cursor, int n) {
         while ((n & 0xffff0000) != 0) {
             int q = (int) ((0x51EB851FL * (n >>> 2)) >>> 35);
             int r = n - 100*q;
@@ -235,8 +223,7 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String intToBinaryString(int i) {
+        public static String intToBinaryString(int i) {
         int bufLen = 32;
         char[] buf = new char[bufLen];
         int cursor = bufLen;
@@ -247,8 +234,7 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String longToBinaryString(long v) {
+        public static String longToBinaryString(long v) {
         int i = (int) v;
         if (v >= 0 && i == v) {
             return intToBinaryString(i);
@@ -263,8 +249,7 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static StringBuilder appendByteAsHex(StringBuilder sb, byte b, boolean upperCase) {
+        public static StringBuilder appendByteAsHex(StringBuilder sb, byte b, boolean upperCase) {
         char[] digits = upperCase ? UPPER_CASE_DIGITS : DIGITS;
         sb.append(digits[(b >> 4) & 0xf]);
         sb.append(digits[b & 0xf]);
@@ -272,8 +257,7 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String byteToHexString(byte b, boolean upperCase) {
+        public static String byteToHexString(byte b, boolean upperCase) {
         char[] digits = upperCase ? UPPER_CASE_DIGITS : DIGITS;
         char[] buf = new char[2];
         buf[0] = digits[(b >> 4) & 0xf];
@@ -282,8 +266,7 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String bytesToHexString(byte[] bytes, boolean upperCase) {
+        public static String bytesToHexString(byte[] bytes, boolean upperCase) {
         char[] digits = upperCase ? UPPER_CASE_DIGITS : DIGITS;
         char[] buf = new char[bytes.length * 2];
         int c = 0;
@@ -295,8 +278,7 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String intToHexString(int i, boolean upperCase, int minWidth) {
+        public static String intToHexString(int i, boolean upperCase, int minWidth) {
         int bufLen = 8;
         char[] buf = new char[bufLen];
         int cursor = bufLen;
@@ -308,8 +290,7 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String longToHexString(long v) {
+        public static String longToHexString(long v) {
         int i = (int) v;
         if (v >= 0 && i == v) {
             return intToHexString(i, false, 0);
@@ -324,8 +305,7 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String intToOctalString(int i) {
+        public static String intToOctalString(int i) {
         int bufLen = 11;
         char[] buf = new char[bufLen];
         int cursor = bufLen;
@@ -336,8 +316,7 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String longToOctalString(long v) {
+        public static String longToOctalString(long v) {
         int i = (int) v;
         if (v >= 0 && i == v) {
             return intToOctalString(i);
@@ -352,7 +331,7 @@ public final class IntegralToString {
     }
 
     
-    private static String stringOf(char... args) {
+        private static String stringOf(char... args) {
         return new String(0, args.length, args);
     }
 
@@ -372,13 +351,13 @@ public final class IntegralToString {
 
         
 };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.236 -0400", hash_original_field = "EAFB73603CE2CB8500F6DCC368134B80", hash_generated_field = "3F7A7621FDECF4B1F00F7F02BB032983")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:45.014 -0400", hash_original_field = "EAFB73603CE2CB8500F6DCC368134B80", hash_generated_field = "3F7A7621FDECF4B1F00F7F02BB032983")
 
     private static final String[] SMALL_NONNEGATIVE_VALUES = new String[100];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.236 -0400", hash_original_field = "488857CAEF9939FF9A91517F8184C90C", hash_generated_field = "0F2C6CD52D3AC35204AE87E543B933FE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:45.014 -0400", hash_original_field = "488857CAEF9939FF9A91517F8184C90C", hash_generated_field = "0F2C6CD52D3AC35204AE87E543B933FE")
 
     private static final String[] SMALL_NEGATIVE_VALUES = new String[100];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.236 -0400", hash_original_field = "4E44F8641CA299D7987D949BD06F7C5E", hash_generated_field = "F4F0B5078F2B36CA1654493CC02FBE1B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:45.015 -0400", hash_original_field = "4E44F8641CA299D7987D949BD06F7C5E", hash_generated_field = "F4F0B5078F2B36CA1654493CC02FBE1B")
 
     private static final char[] TENS = {
         '0', '0', '0', '0', '0', '0', '0', '0', '0', '0',
@@ -392,7 +371,7 @@ public final class IntegralToString {
         '8', '8', '8', '8', '8', '8', '8', '8', '8', '8',
         '9', '9', '9', '9', '9', '9', '9', '9', '9', '9'
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.236 -0400", hash_original_field = "2DFD29EBB5934DA81BA3D203A821EF23", hash_generated_field = "C40FC9CE2E1863E8D99B8E9E8459B998")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:45.015 -0400", hash_original_field = "2DFD29EBB5934DA81BA3D203A821EF23", hash_generated_field = "C40FC9CE2E1863E8D99B8E9E8459B998")
 
     private static final char[] ONES = {
         '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
@@ -406,12 +385,12 @@ public final class IntegralToString {
         '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
         '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.236 -0400", hash_original_field = "611CCEC708888401FC95E85326BFD8A1", hash_generated_field = "7ECA72DEBCDA6EB92131D3D0F3D8765E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:45.015 -0400", hash_original_field = "611CCEC708888401FC95E85326BFD8A1", hash_generated_field = "7ECA72DEBCDA6EB92131D3D0F3D8765E")
 
     private static final char[] MOD_10_TABLE = {
         0, 1, 2, 2, 3, 3, 4, 5, 5, 6, 7, 7, 8, 8, 9, 0
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.236 -0400", hash_original_field = "4102EFFF5068B86037B1783FBB3A87A6", hash_generated_field = "0F077AEAC9BBB0ADF3D0D4E6AACE2DF1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:45.015 -0400", hash_original_field = "4102EFFF5068B86037B1783FBB3A87A6", hash_generated_field = "0F077AEAC9BBB0ADF3D0D4E6AACE2DF1")
 
     private static final char[] DIGITS = {
         '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
@@ -419,7 +398,7 @@ public final class IntegralToString {
         'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
         'u', 'v', 'w', 'x', 'y', 'z'
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.236 -0400", hash_original_field = "26697557AFB8BA6B08D03FD60A18E4FF", hash_generated_field = "C31924D8CB8753379AD2B96C86ABBAE8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:45.015 -0400", hash_original_field = "26697557AFB8BA6B08D03FD60A18E4FF", hash_generated_field = "C31924D8CB8753379AD2B96C86ABBAE8")
 
     private static final char[] UPPER_CASE_DIGITS = {
         '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',

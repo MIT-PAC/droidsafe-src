@@ -1,12 +1,9 @@
 package org.bouncycastle.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.ByteArrayInputStream;
 import java.io.EOFException;
 import java.io.FilterInputStream;
@@ -15,70 +12,69 @@ import java.io.InputStream;
 import org.bouncycastle.util.io.Streams;
 
 public class ASN1InputStream extends FilterInputStream implements DERTags {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.869 -0400", hash_original_field = "AA9F73EEA60A006820D0F8768BC8A3FC", hash_generated_field = "D8A77E2E2DC8CA16CE4A344FA1118F72")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.582 -0400", hash_original_field = "AA9F73EEA60A006820D0F8768BC8A3FC", hash_generated_field = "D8A77E2E2DC8CA16CE4A344FA1118F72")
 
     private int limit;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.869 -0400", hash_original_field = "677A3369D53E6980D2B72D680BD4755C", hash_generated_field = "479E5A76190EF85C722BCE9E91B363C1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.582 -0400", hash_original_field = "677A3369D53E6980D2B72D680BD4755C", hash_generated_field = "479E5A76190EF85C722BCE9E91B363C1")
 
     private boolean lazyEvaluate;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.871 -0400", hash_original_method = "A509F95CC009C058902019FB1EA46111", hash_generated_method = "712E96BD7D3E62F77404E58E95566D4B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.582 -0400", hash_original_method = "A509F95CC009C058902019FB1EA46111", hash_generated_method = "712E96BD7D3E62F77404E58E95566D4B")
     public  ASN1InputStream(
         InputStream is) {
         this(is, findLimit(is));
         addTaint(is.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.872 -0400", hash_original_method = "00EF7E908C3752F726679FF101FABBAF", hash_generated_method = "3463856FAA2DB77D2CE4E16A57C8AE31")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.582 -0400", hash_original_method = "00EF7E908C3752F726679FF101FABBAF", hash_generated_method = "3463856FAA2DB77D2CE4E16A57C8AE31")
     public  ASN1InputStream(
         byte[] input) {
         this(new ByteArrayInputStream(input), input.length);
         addTaint(input[0]);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.874 -0400", hash_original_method = "B0ECE654E14AB45AF60FAFEB349CC4AF", hash_generated_method = "D55842404E18CAF7EE185C1B0387A1D0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.583 -0400", hash_original_method = "B0ECE654E14AB45AF60FAFEB349CC4AF", hash_generated_method = "611C1895748C709C464F4829B64083BB")
     public  ASN1InputStream(
         byte[] input,
         boolean lazyEvaluate) {
         this(new ByteArrayInputStream(input), input.length, lazyEvaluate);
-        addTaint(input[0]);
         addTaint(lazyEvaluate);
-        
+        addTaint(input[0]);
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.875 -0400", hash_original_method = "EDCCEC3121F6C5E9B0FA391DCCD578AC", hash_generated_method = "F776935DC3708D07DBD0165894BAE729")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.583 -0400", hash_original_method = "EDCCEC3121F6C5E9B0FA391DCCD578AC", hash_generated_method = "30E22029645B9A707CD191A92111E3E5")
     public  ASN1InputStream(
         InputStream input,
         int         limit) {
         this(input, limit, false);
-        addTaint(input.getTaint());
         addTaint(limit);
-        
+        addTaint(input.getTaint());
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.876 -0400", hash_original_method = "B7677C48F68A4418B50D4EB3534A5CED", hash_generated_method = "B052FF37F1736B0FA46C2A76485BAB38")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.584 -0400", hash_original_method = "B7677C48F68A4418B50D4EB3534A5CED", hash_generated_method = "D4ED06E035F79507C3E1C2E566C6AD6B")
     public  ASN1InputStream(
         InputStream input,
         int         limit,
         boolean     lazyEvaluate) {
         super(input);
+        addTaint(input.getTaint());
         this.limit = limit;
         this.lazyEvaluate = lazyEvaluate;
-        addTaint(input.getTaint());
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.limit = limit;
+        //this.lazyEvaluate = lazyEvaluate;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static int findLimit(InputStream in) {
+        static int findLimit(InputStream in) {
         if (in instanceof LimitedInputStream)
         {
             return ((LimitedInputStream)in).getRemaining();
@@ -91,255 +87,217 @@ public class ASN1InputStream extends FilterInputStream implements DERTags {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.876 -0400", hash_original_method = "CF3BC7CE74758708D5C7508F6ABCFCEC", hash_generated_method = "F249F1FC182FFE507585B476EA125C66")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.584 -0400", hash_original_method = "CF3BC7CE74758708D5C7508F6ABCFCEC", hash_generated_method = "0F619C592D086E257DB979E27C24F902")
     protected int readLength() throws IOException {
-        int varFC54B06A18C5F743D076DE1A30D2E8CA_464363553 = (readLength(this, limit));
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1929009657 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1929009657;
-        
-        
+        int varC80E0DC01831B644FC078B296E30DF0A_1961414191 = (readLength(this, limit));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1980160309 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1980160309;
+        // ---------- Original Method ----------
+        //return readLength(this, limit);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.877 -0400", hash_original_method = "BA47F8F31DF51652E381DF5AC1EDFDE7", hash_generated_method = "54D5078B5F78A9DACBC7856BC77E69FD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.584 -0400", hash_original_method = "BA47F8F31DF51652E381DF5AC1EDFDE7", hash_generated_method = "A75CFD64C0B65E900B2BBCCE4114DFC3")
     protected void readFully(
         byte[]  bytes) throws IOException {
-        {
-            boolean var011D91AC74BB7BF8D52D2193E1C46108_842887630 = (Streams.readFully(this, bytes) != bytes.length);
-            {
-                if (DroidSafeAndroidRuntime.control) throw new EOFException("EOF encountered in middle of object");
-            } 
-        } 
         addTaint(bytes[0]);
-        
-        
-        
-            
-        
+    if(Streams.readFully(this, bytes) != bytes.length)        
+        {
+            EOFException var21E10E3FDE2F28CF052B18FD81B49AC0_119149516 = new EOFException("EOF encountered in middle of object");
+            var21E10E3FDE2F28CF052B18FD81B49AC0_119149516.addTaint(taint);
+            throw var21E10E3FDE2F28CF052B18FD81B49AC0_119149516;
+        } //End block
+        // ---------- Original Method ----------
+        //if (Streams.readFully(this, bytes) != bytes.length)
+        //{
+            //throw new EOFException("EOF encountered in middle of object");
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.877 -0400", hash_original_method = "FB275304C6A60067CFDA4B800CA085AD", hash_generated_method = "6F938048964F7BFA71C0E03CC3477FA7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.585 -0400", hash_original_method = "FB275304C6A60067CFDA4B800CA085AD", hash_generated_method = "D1CCA0617F77F1BD2B97DC293CC58598")
     protected DERObject buildObject(
         int       tag,
         int       tagNo,
         int       length) throws IOException {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1744970237 = null; 
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1165734597 = null; 
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_352796934 = null; 
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_51861899 = null; 
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1293107389 = null; 
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_2013140273 = null; 
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1604564340 = null; 
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1174394075 = null; 
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_2094822087 = null; 
+        addTaint(length);
+        addTaint(tagNo);
+        addTaint(tag);
         boolean isConstructed = (tag & CONSTRUCTED) != 0;
         DefiniteLengthInputStream defIn = new DefiniteLengthInputStream(this, length);
+    if((tag & APPLICATION) != 0)        
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1744970237 = new DERApplicationSpecific(isConstructed, tagNo, defIn.toByteArray());
-        } 
+DERObject varE34C51A9354A8B1A118F6CDDBBAC7679_1678896436 =             new DERApplicationSpecific(isConstructed, tagNo, defIn.toByteArray());
+            varE34C51A9354A8B1A118F6CDDBBAC7679_1678896436.addTaint(taint);
+            return varE34C51A9354A8B1A118F6CDDBBAC7679_1678896436;
+        } //End block
+    if((tag & TAGGED) != 0)        
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1165734597 = new ASN1StreamParser(defIn).readTaggedObject(isConstructed, tagNo);
-        } 
+DERObject var0ADBEA0CD0E4A395AB6A8BDE5DB1DF52_1149072953 =             new ASN1StreamParser(defIn).readTaggedObject(isConstructed, tagNo);
+            var0ADBEA0CD0E4A395AB6A8BDE5DB1DF52_1149072953.addTaint(taint);
+            return var0ADBEA0CD0E4A395AB6A8BDE5DB1DF52_1149072953;
+        } //End block
+    if(isConstructed)        
         {
-            
-            varB4EAC82CA7396A68D541C85D26508E83_352796934 = new BERConstructedOctetString(buildDEREncodableVector(defIn).v);
-            
-            
+switch(tagNo){
+            case OCTET_STRING:
+DERObject var77EA9382029402B6AF3BACBAF60EF53A_521394516 =             new BERConstructedOctetString(buildDEREncodableVector(defIn).v);
+            var77EA9382029402B6AF3BACBAF60EF53A_521394516.addTaint(taint);
+            return var77EA9382029402B6AF3BACBAF60EF53A_521394516;
+            case SEQUENCE:
+    if(lazyEvaluate)            
             {
-                varB4EAC82CA7396A68D541C85D26508E83_51861899 = new LazyDERSequence(defIn.toByteArray());
-            } 
+DERObject var7F7029B27A36368CD96B97187ADE8F74_1620410938 =                 new LazyDERSequence(defIn.toByteArray());
+                var7F7029B27A36368CD96B97187ADE8F74_1620410938.addTaint(taint);
+                return var7F7029B27A36368CD96B97187ADE8F74_1620410938;
+            } //End block
+            else
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1293107389 = DERFactory.createSequence(buildDEREncodableVector(defIn));
-            } 
-            
-            
-            varB4EAC82CA7396A68D541C85D26508E83_2013140273 = DERFactory.createSet(buildDEREncodableVector(defIn), false);
-            
-            
-            varB4EAC82CA7396A68D541C85D26508E83_1604564340 = new DERExternal(buildDEREncodableVector(defIn));
-            
-            
-            varB4EAC82CA7396A68D541C85D26508E83_1174394075 = new DERUnknownTag(true, tagNo, defIn.toByteArray());
-            
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_2094822087 = createPrimitiveDERObject(tagNo, defIn.toByteArray());
-        addTaint(tag);
-        addTaint(tagNo);
-        addTaint(length);
-        DERObject varA7E53CE21691AB073D9660D615818899_830254886; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_830254886 = varB4EAC82CA7396A68D541C85D26508E83_1744970237;
-                break;
-            case 2: 
-                varA7E53CE21691AB073D9660D615818899_830254886 = varB4EAC82CA7396A68D541C85D26508E83_1165734597;
-                break;
-            case 3: 
-                varA7E53CE21691AB073D9660D615818899_830254886 = varB4EAC82CA7396A68D541C85D26508E83_352796934;
-                break;
-            case 4: 
-                varA7E53CE21691AB073D9660D615818899_830254886 = varB4EAC82CA7396A68D541C85D26508E83_51861899;
-                break;
-            case 5: 
-                varA7E53CE21691AB073D9660D615818899_830254886 = varB4EAC82CA7396A68D541C85D26508E83_1293107389;
-                break;
-            case 6: 
-                varA7E53CE21691AB073D9660D615818899_830254886 = varB4EAC82CA7396A68D541C85D26508E83_2013140273;
-                break;
-            case 7: 
-                varA7E53CE21691AB073D9660D615818899_830254886 = varB4EAC82CA7396A68D541C85D26508E83_1604564340;
-                break;
-            case 8: 
-                varA7E53CE21691AB073D9660D615818899_830254886 = varB4EAC82CA7396A68D541C85D26508E83_1174394075;
-                break;
+DERObject varB72ABBB4CF7C46F2BE0CB5E0449050FD_1056110220 =                 DERFactory.createSequence(buildDEREncodableVector(defIn));
+                varB72ABBB4CF7C46F2BE0CB5E0449050FD_1056110220.addTaint(taint);
+                return varB72ABBB4CF7C46F2BE0CB5E0449050FD_1056110220;
+            } //End block
+            case SET:
+DERObject var9629FC4803A172D4CC1867B424C1D57F_1750936597 =             DERFactory.createSet(buildDEREncodableVector(defIn), false);
+            var9629FC4803A172D4CC1867B424C1D57F_1750936597.addTaint(taint);
+            return var9629FC4803A172D4CC1867B424C1D57F_1750936597;
+            case EXTERNAL:
+DERObject var9D666F162AC4110BC78A7E66734AFCFE_329186660 =             new DERExternal(buildDEREncodableVector(defIn));
+            var9D666F162AC4110BC78A7E66734AFCFE_329186660.addTaint(taint);
+            return var9D666F162AC4110BC78A7E66734AFCFE_329186660;
             default:
-                varA7E53CE21691AB073D9660D615818899_830254886 = varB4EAC82CA7396A68D541C85D26508E83_2094822087;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_830254886.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_830254886;
-        
-        
+DERObject varD10C2E8D563A110A48696C7D62447036_2056409078 =             new DERUnknownTag(true, tagNo, defIn.toByteArray());
+            varD10C2E8D563A110A48696C7D62447036_2056409078.addTaint(taint);
+            return varD10C2E8D563A110A48696C7D62447036_2056409078;
+}
+        } //End block
+DERObject var72557301F4134763D6B451D02E18155C_430264010 =         createPrimitiveDERObject(tagNo, defIn.toByteArray());
+        var72557301F4134763D6B451D02E18155C_430264010.addTaint(taint);
+        return var72557301F4134763D6B451D02E18155C_430264010;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.878 -0400", hash_original_method = "3644C80D3B1C21E0DE1F50623D57B77E", hash_generated_method = "E84C8F1432D410654782CCB0881C5808")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.586 -0400", hash_original_method = "3644C80D3B1C21E0DE1F50623D57B77E", hash_generated_method = "DCAB1184EBB988C3CFC367940123F206")
      ASN1EncodableVector buildEncodableVector() throws IOException {
-        ASN1EncodableVector varB4EAC82CA7396A68D541C85D26508E83_45290143 = null; 
         ASN1EncodableVector v = new ASN1EncodableVector();
         DERObject o;
+        while
+((o = readObject()) != null)        
         {
-            boolean var1E1A0CFD9EF9D741150732B571DE4596_116528186 = ((o = readObject()) != null);
-            {
-                v.add(o);
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_45290143 = v;
-        varB4EAC82CA7396A68D541C85D26508E83_45290143.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_45290143;
-        
-        
-        
-        
-        
-            
-        
-        
+            v.add(o);
+        } //End block
+ASN1EncodableVector var6DC76BC51820DD65E8396280E884AA78_1952765405 =         v;
+        var6DC76BC51820DD65E8396280E884AA78_1952765405.addTaint(taint);
+        return var6DC76BC51820DD65E8396280E884AA78_1952765405;
+        // ---------- Original Method ----------
+        //ASN1EncodableVector v = new ASN1EncodableVector();
+        //DERObject o;
+        //while ((o = readObject()) != null)
+        //{
+            //v.add(o);
+        //}
+        //return v;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.878 -0400", hash_original_method = "758DE99B8F596F62A95AD037BCF1A83C", hash_generated_method = "AF9CA2358AA510706F294449D89A6378")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.586 -0400", hash_original_method = "758DE99B8F596F62A95AD037BCF1A83C", hash_generated_method = "2CCB720824EA3A877D2653B1AB2CA75A")
      ASN1EncodableVector buildDEREncodableVector(
         DefiniteLengthInputStream dIn) throws IOException {
-        ASN1EncodableVector varB4EAC82CA7396A68D541C85D26508E83_1093366288 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1093366288 = new ASN1InputStream(dIn).buildEncodableVector();
         addTaint(dIn.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1093366288.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1093366288;
-        
-        
+ASN1EncodableVector var705FA4AEB2BCFF47B76DA61F226F7E26_673347615 =         new ASN1InputStream(dIn).buildEncodableVector();
+        var705FA4AEB2BCFF47B76DA61F226F7E26_673347615.addTaint(taint);
+        return var705FA4AEB2BCFF47B76DA61F226F7E26_673347615;
+        // ---------- Original Method ----------
+        //return new ASN1InputStream(dIn).buildEncodableVector();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.879 -0400", hash_original_method = "14F17C52EA17CC32DA8A973E14D77B9E", hash_generated_method = "D74E3FC7E8B0F9A455CC2B55D9EA349A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.587 -0400", hash_original_method = "14F17C52EA17CC32DA8A973E14D77B9E", hash_generated_method = "477B9A4E41741CB601D6687929597A65")
     public DERObject readObject() throws IOException {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_358428242 = null; 
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_587120542 = null; 
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_2105385923 = null; 
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_163828216 = null; 
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_328179564 = null; 
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1322065336 = null; 
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_743533586 = null; 
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1463793807 = null; 
         int tag = read();
+    if(tag <= 0)        
         {
+    if(tag == 0)            
             {
-                if (DroidSafeAndroidRuntime.control) throw new IOException("unexpected end-of-contents marker");
-            } 
-            varB4EAC82CA7396A68D541C85D26508E83_358428242 = null;
-        } 
+                IOException var5C9B7C12641D8A4D21001643E6417EC5_750767469 = new IOException("unexpected end-of-contents marker");
+                var5C9B7C12641D8A4D21001643E6417EC5_750767469.addTaint(taint);
+                throw var5C9B7C12641D8A4D21001643E6417EC5_750767469;
+            } //End block
+DERObject var540C13E9E156B687226421B24F2DF178_1667800654 =             null;
+            var540C13E9E156B687226421B24F2DF178_1667800654.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_1667800654;
+        } //End block
         int tagNo = readTagNumber(this, tag);
         boolean isConstructed = (tag & CONSTRUCTED) != 0;
         int length = readLength();
+    if(length < 0)        
         {
+    if(!isConstructed)            
             {
-                if (DroidSafeAndroidRuntime.control) throw new IOException("indefinite length primitive encoding encountered");
-            } 
+                IOException var0055B29725078D64828DFE2C61240180_155221928 = new IOException("indefinite length primitive encoding encountered");
+                var0055B29725078D64828DFE2C61240180_155221928.addTaint(taint);
+                throw var0055B29725078D64828DFE2C61240180_155221928;
+            } //End block
             IndefiniteLengthInputStream indIn = new IndefiniteLengthInputStream(this, limit);
             ASN1StreamParser sp = new ASN1StreamParser(indIn, limit);
+    if((tag & APPLICATION) != 0)            
             {
-                varB4EAC82CA7396A68D541C85D26508E83_587120542 = new BERApplicationSpecificParser(tagNo, sp).getLoadedObject();
-            } 
+DERObject var693ABAC9A9FF779289639FF2A3D198F6_161753164 =                 new BERApplicationSpecificParser(tagNo, sp).getLoadedObject();
+                var693ABAC9A9FF779289639FF2A3D198F6_161753164.addTaint(taint);
+                return var693ABAC9A9FF779289639FF2A3D198F6_161753164;
+            } //End block
+    if((tag & TAGGED) != 0)            
             {
-                varB4EAC82CA7396A68D541C85D26508E83_2105385923 = new BERTaggedObjectParser(true, tagNo, sp).getLoadedObject();
-            } 
-            
-            varB4EAC82CA7396A68D541C85D26508E83_163828216 = new BEROctetStringParser(sp).getLoadedObject();
-            
-            
-            varB4EAC82CA7396A68D541C85D26508E83_328179564 = new BERSequenceParser(sp).getLoadedObject();
-            
-            
-            varB4EAC82CA7396A68D541C85D26508E83_1322065336 = new BERSetParser(sp).getLoadedObject();
-            
-            
-            varB4EAC82CA7396A68D541C85D26508E83_743533586 = new DERExternalParser(sp).getLoadedObject();
-            
-            
-            if (DroidSafeAndroidRuntime.control) throw new IOException("unknown BER object encountered");
-            
-        } 
+DERObject var97EFBFC0B8A4F08549BDB35729FA95AE_460518983 =                 new BERTaggedObjectParser(true, tagNo, sp).getLoadedObject();
+                var97EFBFC0B8A4F08549BDB35729FA95AE_460518983.addTaint(taint);
+                return var97EFBFC0B8A4F08549BDB35729FA95AE_460518983;
+            } //End block
+switch(tagNo){
+            case OCTET_STRING:
+DERObject var2A744DACCC077923A0D7916B60B7B4B8_302620611 =             new BEROctetStringParser(sp).getLoadedObject();
+            var2A744DACCC077923A0D7916B60B7B4B8_302620611.addTaint(taint);
+            return var2A744DACCC077923A0D7916B60B7B4B8_302620611;
+            case SEQUENCE:
+DERObject varC8A113D46E9A75F8F3EE71CDF8CB5A1B_1688312835 =             new BERSequenceParser(sp).getLoadedObject();
+            varC8A113D46E9A75F8F3EE71CDF8CB5A1B_1688312835.addTaint(taint);
+            return varC8A113D46E9A75F8F3EE71CDF8CB5A1B_1688312835;
+            case SET:
+DERObject var7AA171027B889857ADAA933EB2461343_1144802522 =             new BERSetParser(sp).getLoadedObject();
+            var7AA171027B889857ADAA933EB2461343_1144802522.addTaint(taint);
+            return var7AA171027B889857ADAA933EB2461343_1144802522;
+            case EXTERNAL:
+DERObject var3518CBDB4D24245AB7060EECA43E77E7_1917977714 =             new DERExternalParser(sp).getLoadedObject();
+            var3518CBDB4D24245AB7060EECA43E77E7_1917977714.addTaint(taint);
+            return var3518CBDB4D24245AB7060EECA43E77E7_1917977714;
+            default:
+            IOException var7CA3C00DE0F222C95CF1D61190C120F3_232736425 = new IOException("unknown BER object encountered");
+            var7CA3C00DE0F222C95CF1D61190C120F3_232736425.addTaint(taint);
+            throw var7CA3C00DE0F222C95CF1D61190C120F3_232736425;
+}
+        } //End block
+        else
         {
             try 
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1463793807 = buildObject(tag, tagNo, length);
-            } 
+DERObject var9F04FABE8EE077714A8CD9610888B3CA_233540059 =                 buildObject(tag, tagNo, length);
+                var9F04FABE8EE077714A8CD9610888B3CA_233540059.addTaint(taint);
+                return var9F04FABE8EE077714A8CD9610888B3CA_233540059;
+            } //End block
             catch (IllegalArgumentException e)
             {
-                if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("corrupted stream detected", e);
-            } 
-        } 
-        DERObject varA7E53CE21691AB073D9660D615818899_1469711084; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1469711084 = varB4EAC82CA7396A68D541C85D26508E83_358428242;
-                break;
-            case 2: 
-                varA7E53CE21691AB073D9660D615818899_1469711084 = varB4EAC82CA7396A68D541C85D26508E83_587120542;
-                break;
-            case 3: 
-                varA7E53CE21691AB073D9660D615818899_1469711084 = varB4EAC82CA7396A68D541C85D26508E83_2105385923;
-                break;
-            case 4: 
-                varA7E53CE21691AB073D9660D615818899_1469711084 = varB4EAC82CA7396A68D541C85D26508E83_163828216;
-                break;
-            case 5: 
-                varA7E53CE21691AB073D9660D615818899_1469711084 = varB4EAC82CA7396A68D541C85D26508E83_328179564;
-                break;
-            case 6: 
-                varA7E53CE21691AB073D9660D615818899_1469711084 = varB4EAC82CA7396A68D541C85D26508E83_1322065336;
-                break;
-            case 7: 
-                varA7E53CE21691AB073D9660D615818899_1469711084 = varB4EAC82CA7396A68D541C85D26508E83_743533586;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1469711084 = varB4EAC82CA7396A68D541C85D26508E83_1463793807;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1469711084.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1469711084;
-        
-        
+                ASN1Exception var30FC1394D6DD5B9F39A6694742A3F039_1751999198 = new ASN1Exception("corrupted stream detected", e);
+                var30FC1394D6DD5B9F39A6694742A3F039_1751999198.addTaint(taint);
+                throw var30FC1394D6DD5B9F39A6694742A3F039_1751999198;
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static int readTagNumber(InputStream s, int tag) throws IOException {
+        static int readTagNumber(InputStream s, int tag) throws IOException {
         int tagNo = tag & 0x1f;
         if (tagNo == 0x1f)
         {
@@ -365,8 +323,7 @@ public class ASN1InputStream extends FilterInputStream implements DERTags {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static int readLength(InputStream s, int limit) throws IOException {
+        static int readLength(InputStream s, int limit) throws IOException {
         int length = s.read();
         if (length < 0)
         {
@@ -406,8 +363,7 @@ public class ASN1InputStream extends FilterInputStream implements DERTags {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static DERObject createPrimitiveDERObject(
+        static DERObject createPrimitiveDERObject(
         int     tagNo,
         byte[]  bytes) {
         switch (tagNo)

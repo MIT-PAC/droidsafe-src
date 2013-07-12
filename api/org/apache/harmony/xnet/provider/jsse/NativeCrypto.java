@@ -1,12 +1,9 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.net.SocketTimeoutException;
@@ -29,10 +26,10 @@ import libcore.io.Memory;
 
 public final class NativeCrypto {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.242 -0400", hash_original_method = "DDEFB157515C7447D58E1F6901777126", hash_generated_method = "DDEFB157515C7447D58E1F6901777126")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.191 -0400", hash_original_method = "DDEFB157515C7447D58E1F6901777126", hash_generated_method = "DDEFB157515C7447D58E1F6901777126")
     public NativeCrypto ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -146,20 +143,17 @@ public final class NativeCrypto {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static int X509_NAME_hash(X500Principal principal) {
+        public static int X509_NAME_hash(X500Principal principal) {
         return X509_NAME_hash(principal, "SHA1");
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static int X509_NAME_hash_old(X500Principal principal) {
+        public static int X509_NAME_hash_old(X500Principal principal) {
         return X509_NAME_hash(principal, "MD5");
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static int X509_NAME_hash(X500Principal principal, String algorithm) {
+        private static int X509_NAME_hash(X500Principal principal, String algorithm) {
         try {
             byte[] digest = MessageDigest.getInstance(algorithm).digest(principal.getEncoded());
             return Memory.peekInt(digest, 0, ByteOrder.LITTLE_ENDIAN);
@@ -169,8 +163,7 @@ public final class NativeCrypto {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static void add(String standard, String openssl) {
+        private static void add(String standard, String openssl) {
         OPENSSL_TO_STANDARD_CIPHER_SUITES.put(openssl, standard);
         STANDARD_TO_OPENSSL_CIPHER_SUITES.put(standard, openssl);
     }
@@ -183,8 +176,7 @@ public final class NativeCrypto {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String[] getDefaultCipherSuites() {
+        public static String[] getDefaultCipherSuites() {
         return new String[] {
             "SSL_RSA_WITH_RC4_128_MD5",
             "SSL_RSA_WITH_RC4_128_SHA",
@@ -225,8 +217,7 @@ public final class NativeCrypto {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String[] getSupportedCipherSuites() {
+        public static String[] getSupportedCipherSuites() {
         return SUPPORTED_CIPHER_SUITES.clone();
     }
 
@@ -243,8 +234,7 @@ public final class NativeCrypto {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static byte[][] encodeCertificates(Certificate[] certificates) throws CertificateEncodingException {
+        public static byte[][] encodeCertificates(Certificate[] certificates) throws CertificateEncodingException {
         byte[][] certificateBytes = new byte[certificates.length][];
         for (int i = 0; i < certificates.length; i++) {
             certificateBytes[i] = certificates[i].getEncoded();
@@ -268,8 +258,7 @@ public final class NativeCrypto {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static byte[][] encodeIssuerX509Principals(X509Certificate[] certificates) throws CertificateEncodingException {
+        public static byte[][] encodeIssuerX509Principals(X509Certificate[] certificates) throws CertificateEncodingException {
         byte[][] principalBytes = new byte[certificates.length][];
         for (int i = 0; i < certificates.length; i++) {
             principalBytes[i] = certificates[i].getIssuerX500Principal().getEncoded();
@@ -325,14 +314,12 @@ public final class NativeCrypto {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String[] getSupportedProtocols() {
+        public static String[] getSupportedProtocols() {
         return new String[] { SUPPORTED_PROTOCOL_SSLV3, SUPPORTED_PROTOCOL_TLSV1 };
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void setEnabledProtocols(int ssl, String[] protocols) {
+        public static void setEnabledProtocols(int ssl, String[] protocols) {
         checkEnabledProtocols(protocols);
         long optionsToSet = (SSL_OP_NO_SSLv3 | SSL_OP_NO_TLSv1);
         long optionsToClear = 0;
@@ -353,8 +340,7 @@ public final class NativeCrypto {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String[] checkEnabledProtocols(String[] protocols) {
+        public static String[] checkEnabledProtocols(String[] protocols) {
         if (protocols == null) {
             throw new IllegalArgumentException("protocols == null");
         }
@@ -378,8 +364,7 @@ public final class NativeCrypto {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void setEnabledCipherSuites(int ssl, String[] cipherSuites) {
+        public static void setEnabledCipherSuites(int ssl, String[] cipherSuites) {
         checkEnabledCipherSuites(cipherSuites);
         List<String> opensslSuites = new ArrayList<String>();
         for (int i = 0; i < cipherSuites.length; i++) {
@@ -395,8 +380,7 @@ public final class NativeCrypto {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String[] checkEnabledCipherSuites(String[] cipherSuites) {
+        public static String[] checkEnabledCipherSuites(String[] cipherSuites) {
         if (cipherSuites == null) {
             throw new IllegalArgumentException("cipherSuites == null");
         }
@@ -420,19 +404,17 @@ public final class NativeCrypto {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String[] getSupportedCompressionMethods() {
+        public static String[] getSupportedCompressionMethods() {
         return SUPPORTED_COMPRESSION_METHODS.clone();
     }
 
     
-    public static final String[] getDefaultCompressionMethods() {
+        public static final String[] getDefaultCompressionMethods() {
         return new String[] { SUPPORTED_COMPRESSION_METHOD_NULL };
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String[] checkEnabledCompressionMethods(String[] methods) {
+        public static String[] checkEnabledCompressionMethods(String[] methods) {
         if (methods == null) {
             throw new IllegalArgumentException("methods == null");
         }
@@ -455,8 +437,7 @@ public final class NativeCrypto {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void setEnabledCompressionMethods(int ssl, String[] methods) {
+        public static void setEnabledCompressionMethods(int ssl, String[] methods) {
         checkEnabledCompressionMethods(methods);
         long optionsToSet = (SSL_OP_NO_COMPRESSION);
         long optionsToClear = 0;
@@ -498,7 +479,6 @@ public final class NativeCrypto {
     
     @DSModeled(DSC.SAFE)
     public static String SSL_get_servername(int sslNativePointer) {
-                
     	String ret = new String();
     	ret.taint.addTaint(sslNativePointer);
     	return ret;
@@ -586,17 +566,14 @@ public final class NativeCrypto {
     
     @DSModeled(DSC.SAFE)
     public static String SSL_SESSION_get_version(int sslSessionNativePointer) {
-                
     	String ret = new String();
     	ret.taint.addTaint(sslSessionNativePointer);
     	return ret;
-    	
     }
 
     
     @DSModeled(DSC.SAFE)
     public static String SSL_SESSION_cipher(int sslSessionNativePointer) {
-                
     	String ret = new String();
     	ret.taint.addTaint(sslSessionNativePointer);
     	return ret;
@@ -606,7 +583,6 @@ public final class NativeCrypto {
     @DSModeled(DSC.SAFE)
     public static String SSL_SESSION_compress_meth(int sslCtxNativePointer,
                                                           int sslSessionNativePointer) {
-                
     	String ret = new String();
     	ret.taint.addTaint(sslCtxNativePointer);
     	ret.taint.addTaint(sslSessionNativePointer);
@@ -651,24 +627,24 @@ public final class NativeCrypto {
         clinit();
     }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.257 -0400", hash_original_field = "0F4CEBB59962BA368C7FD7D079A3D043", hash_generated_field = "96B3D7F063AB86A68380150319726EEF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.198 -0400", hash_original_field = "0F4CEBB59962BA368C7FD7D079A3D043", hash_generated_field = "96B3D7F063AB86A68380150319726EEF")
 
     public static final int RAND_SEED_LENGTH_IN_BYTES = 1024;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.257 -0400", hash_original_field = "B3EF6ECACE1051049771471599EE7E52", hash_generated_field = "9023935C52A658A359F4EC994ADDAD3D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.198 -0400", hash_original_field = "B3EF6ECACE1051049771471599EE7E52", hash_generated_field = "9023935C52A658A359F4EC994ADDAD3D")
 
     private static final String SUPPORTED_PROTOCOL_SSLV3 = "SSLv3";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.257 -0400", hash_original_field = "624150269722D4BCD0E03A70841F141C", hash_generated_field = "5B202BC2B7655D8857447040CF43C754")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.198 -0400", hash_original_field = "624150269722D4BCD0E03A70841F141C", hash_generated_field = "5B202BC2B7655D8857447040CF43C754")
 
     private static final String SUPPORTED_PROTOCOL_TLSV1 = "TLSv1";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.257 -0400", hash_original_field = "82054084632775C6B5F75BA70FD292AE", hash_generated_field = "97E16C9F2C2CC1721F1B1B68F46A60D5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.198 -0400", hash_original_field = "82054084632775C6B5F75BA70FD292AE", hash_generated_field = "97E16C9F2C2CC1721F1B1B68F46A60D5")
 
     public static final Map<String, String> OPENSSL_TO_STANDARD_CIPHER_SUITES
             = new HashMap<String, String>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.257 -0400", hash_original_field = "7EF47BEB0434D81D805CCB08D1F89C74", hash_generated_field = "E10C27FC0C78FF9558F6C5C640B527B4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.198 -0400", hash_original_field = "7EF47BEB0434D81D805CCB08D1F89C74", hash_generated_field = "E10C27FC0C78FF9558F6C5C640B527B4")
 
     public static final Map<String, String> STANDARD_TO_OPENSSL_CIPHER_SUITES
             = new LinkedHashMap<String, String>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.257 -0400", hash_original_field = "F3E5577A73E18E0FA4E7EFA29622EB9B", hash_generated_field = "99061485CAC02933CFB832A8FA01EF67")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.198 -0400", hash_original_field = "F3E5577A73E18E0FA4E7EFA29622EB9B", hash_generated_field = "99061485CAC02933CFB832A8FA01EF67")
 
     public static final String TLS_EMPTY_RENEGOTIATION_INFO_SCSV
             = "TLS_EMPTY_RENEGOTIATION_INFO_SCSV";
@@ -727,7 +703,7 @@ public final class NativeCrypto {
         add("TLS_ECDH_anon_WITH_NULL_SHA",           "AECDH-NULL-SHA");
     }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.258 -0400", hash_original_field = "24D46A327FE03D7E6A9CE5B8E4DCEF2E", hash_generated_field = "91DE1DEF6C8DAA1D2D57F34F524A0E97")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.198 -0400", hash_original_field = "24D46A327FE03D7E6A9CE5B8E4DCEF2E", hash_generated_field = "91DE1DEF6C8DAA1D2D57F34F524A0E97")
 
     private static String[] SUPPORTED_CIPHER_SUITES;
     static {
@@ -737,37 +713,37 @@ public final class NativeCrypto {
         SUPPORTED_CIPHER_SUITES[size] = TLS_EMPTY_RENEGOTIATION_INFO_SCSV;
     }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.258 -0400", hash_original_field = "B9A825B44482009433F40D261C069096", hash_generated_field = "D12010845BE358860D4C1B9CEDB0A239")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.199 -0400", hash_original_field = "B9A825B44482009433F40D261C069096", hash_generated_field = "D12010845BE358860D4C1B9CEDB0A239")
 
     public static final long SSL_MODE_HANDSHAKE_CUTTHROUGH = 0x00000040L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.258 -0400", hash_original_field = "6F1A501C5CAFC3F779CB2E5F3669FFF5", hash_generated_field = "F599E1E38DE2FF7C5195192CDE8B77D9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.199 -0400", hash_original_field = "6F1A501C5CAFC3F779CB2E5F3669FFF5", hash_generated_field = "F599E1E38DE2FF7C5195192CDE8B77D9")
 
     public static final long SSL_OP_NO_TICKET      = 0x00004000L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.258 -0400", hash_original_field = "C392CA8836302EAD135F372AD4D667B5", hash_generated_field = "DEE386528586EC46246396BFBFF5E31B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.199 -0400", hash_original_field = "C392CA8836302EAD135F372AD4D667B5", hash_generated_field = "DEE386528586EC46246396BFBFF5E31B")
 
     public static final long SSL_OP_NO_COMPRESSION = 0x00020000L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.258 -0400", hash_original_field = "DF98C840C3BAA7824C9CFEEA4F01865B", hash_generated_field = "4596713C51D4556006279A44FF3DC1E5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.199 -0400", hash_original_field = "DF98C840C3BAA7824C9CFEEA4F01865B", hash_generated_field = "4596713C51D4556006279A44FF3DC1E5")
 
     public static final long SSL_OP_NO_SSLv3       = 0x02000000L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.258 -0400", hash_original_field = "3448B29885C7E965BA4BE5DEB4023D85", hash_generated_field = "04D5F157235A64D42E27F0360EC9A8E6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.199 -0400", hash_original_field = "3448B29885C7E965BA4BE5DEB4023D85", hash_generated_field = "04D5F157235A64D42E27F0360EC9A8E6")
 
     public static final long SSL_OP_NO_TLSv1       = 0x04000000L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.258 -0400", hash_original_field = "7D6DAE6B609B9C785AAB48494D5A94E4", hash_generated_field = "D6A7C7352FC63DCD987CF33EE58428AD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.199 -0400", hash_original_field = "7D6DAE6B609B9C785AAB48494D5A94E4", hash_generated_field = "D6A7C7352FC63DCD987CF33EE58428AD")
 
     private static final String SUPPORTED_COMPRESSION_METHOD_ZLIB = "ZLIB";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.258 -0400", hash_original_field = "47C5EE9EA5B65FA90CE89165E55D1BBE", hash_generated_field = "A016FFB952E5D4292D0F4F008344F132")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.199 -0400", hash_original_field = "47C5EE9EA5B65FA90CE89165E55D1BBE", hash_generated_field = "A016FFB952E5D4292D0F4F008344F132")
 
     private static final String SUPPORTED_COMPRESSION_METHOD_NULL = "NULL";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.258 -0400", hash_original_field = "D5E4AAD482A0BBE2712AFFC08AB22442", hash_generated_field = "666CD3955D49FDE8D33C7478EA6E111C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.199 -0400", hash_original_field = "D5E4AAD482A0BBE2712AFFC08AB22442", hash_generated_field = "666CD3955D49FDE8D33C7478EA6E111C")
 
     private static final String[] SUPPORTED_COMPRESSION_METHODS = { SUPPORTED_COMPRESSION_METHOD_ZLIB, SUPPORTED_COMPRESSION_METHOD_NULL };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.258 -0400", hash_original_field = "C4F14EAEBC522E9442D933BD91F0BF9A", hash_generated_field = "1264308E1D0D1CDE461ADE126F53073B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.199 -0400", hash_original_field = "C4F14EAEBC522E9442D933BD91F0BF9A", hash_generated_field = "1264308E1D0D1CDE461ADE126F53073B")
 
     public static final int SSL_VERIFY_NONE =                 0x00;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.258 -0400", hash_original_field = "DBD53610952BF88DA6B8106B323FBDE5", hash_generated_field = "056F9710D986851C1F655920AA971C19")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.199 -0400", hash_original_field = "DBD53610952BF88DA6B8106B323FBDE5", hash_generated_field = "056F9710D986851C1F655920AA971C19")
 
     public static final int SSL_VERIFY_PEER =                 0x01;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.258 -0400", hash_original_field = "9E72384D5C283A7D3BF0E0A3D49688B4", hash_generated_field = "A39492168197080C3D83D6E8C946708C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.199 -0400", hash_original_field = "9E72384D5C283A7D3BF0E0A3D49688B4", hash_generated_field = "A39492168197080C3D83D6E8C946708C")
 
     public static final int SSL_VERIFY_FAIL_IF_NO_PEER_CERT = 0x02;
 }

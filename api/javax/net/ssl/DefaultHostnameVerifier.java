@@ -1,12 +1,9 @@
 package javax.net.ssl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.net.InetAddress;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateParsingException;
@@ -15,247 +12,236 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 
 class DefaultHostnameVerifier implements HostnameVerifier {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.479 -0400", hash_original_method = "1ABE3FCDF9FB32248BCD2F796A0E487C", hash_generated_method = "1ABE3FCDF9FB32248BCD2F796A0E487C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.730 -0400", hash_original_method = "1ABE3FCDF9FB32248BCD2F796A0E487C", hash_generated_method = "1ABE3FCDF9FB32248BCD2F796A0E487C")
     public DefaultHostnameVerifier ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.483 -0400", hash_original_method = "648595920530E4C54EAA991A797FC9D5", hash_generated_method = "F0C7B4E51638CA6F146E06A88F2FBD1D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.732 -0400", hash_original_method = "648595920530E4C54EAA991A797FC9D5", hash_generated_method = "DAA4FE55515A408AD8928738B9AF8DEE")
     public final boolean verify(String host, SSLSession session) {
-        Certificate[] certs = null;
+        addTaint(session.getTaint());
+        addTaint(host.getTaint());
+        Certificate[] certs;
         try 
         {
             certs = session.getPeerCertificates();
-        } 
+        } //End block
         catch (SSLException e)
-        { }
+        {
+            boolean var68934A3E9455FA72420237EB05902327_515704037 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1752343221 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1752343221;
+        } //End block
         X509Certificate x509 = (X509Certificate) certs[0];
         String hostName = host.trim().toLowerCase(Locale.ENGLISH);
         String firstCn = getFirstCn(x509);
+    if(matches(hostName, firstCn))        
         {
-            boolean var29EDEFEF2843435DB2D9ED7F0A830B4A_1334625990 = (matches(hostName, firstCn));
-        } 
+            boolean varB326B5062B2F0E69046810717534CB09_83229720 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1162964890 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1162964890;
+        } //End block
+for(String cn : getDNSSubjectAlts(x509))
         {
-            Iterator<String> var85D067CFAE92C30817A3CFD58AF3EDFF_64029468 = (getDNSSubjectAlts(x509)).iterator();
-            var85D067CFAE92C30817A3CFD58AF3EDFF_64029468.hasNext();
-            String cn = var85D067CFAE92C30817A3CFD58AF3EDFF_64029468.next();
+    if(matches(hostName, cn))            
             {
-                {
-                    boolean varAA8A1F5E9B1AFEFBACB19B19015D2736_1448601743 = (matches(hostName, cn));
-                } 
-            } 
-        } 
-        addTaint(host.getTaint());
-        addTaint(session.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1287568625 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1287568625;
-        
-        
-        
-            
-        
-            
-        
-        
-        
-        
-        
-            
-        
-        
-            
-                
-            
-        
-        
+                boolean varB326B5062B2F0E69046810717534CB09_488299590 = (true);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1603981773 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1603981773;
+            } //End block
+        } //End block
+        boolean var68934A3E9455FA72420237EB05902327_1840649238 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1658487559 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1658487559;
+        // ---------- Original Method ----------
+        //Certificate[] certs;
+        //try {
+            //certs = session.getPeerCertificates();
+        //} catch (SSLException e) {
+            //return false;
+        //}
+        //X509Certificate x509 = (X509Certificate) certs[0];
+        //String hostName = host.trim().toLowerCase(Locale.ENGLISH);
+        //String firstCn = getFirstCn(x509);
+        //if (matches(hostName, firstCn)) {
+            //return true;
+        //}
+        //for (String cn : getDNSSubjectAlts(x509)) {
+            //if (matches(hostName, cn)) {
+                //return true;
+            //}
+        //}
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.483 -0400", hash_original_method = "310064F85DB6CB010FFDA9849E47D727", hash_generated_method = "26160A260D68C1BDD15C2256B9B844D3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.733 -0400", hash_original_method = "310064F85DB6CB010FFDA9849E47D727", hash_generated_method = "441B50B7BE9F1B6274D94A388F0B9237")
     private boolean matches(String hostName, String cn) {
-        cn = cn.toLowerCase(Locale.ENGLISH);
+        addTaint(cn.getTaint());
+        addTaint(hostName.getTaint());
+    if(cn == null)        
         {
-            boolean varF7D3801EBF5FB948A1E85640EC3BD086_2267397 = (cn.startsWith("*."));
-            {
-                int matchLength = cn.length() - 1;
-                boolean var42068F7156658AC8E7BBA3792503CC9B_960443268 = (hostName.regionMatches(hostName.length() - matchLength, cn, 1, matchLength)
+            boolean var68934A3E9455FA72420237EB05902327_1752992828 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1048265194 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1048265194;
+        } //End block
+        cn = cn.toLowerCase(Locale.ENGLISH);
+    if(cn.startsWith("*."))        
+        {
+            int matchLength = cn.length() - 1;
+            boolean var947009A6C4D2153421297767332E29DE_2030195081 = (hostName.regionMatches(hostName.length() - matchLength, cn, 1, matchLength)
                     && cn.indexOf('.', 2) != -1
                     && acceptableCountryWildcard(cn)
                     && !InetAddress.isNumeric(hostName));
-            } 
-            {
-                boolean varBED26020AD4B547D64FB1356A9AD9C82_1080043119 = (hostName.equals(cn));
-            } 
-        } 
-        addTaint(hostName.getTaint());
-        addTaint(cn.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1206716828 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1206716828;
-        
-        
-            
-        
-        
-        
-            
-            
-                    
-                    
-                    
-        
-            
-        
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_192674 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_192674;
+        } //End block
+        else
+        {
+            boolean var2666B50D3A0F31A384B26AF31255F5E8_1806900930 = (hostName.equals(cn));
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2013465835 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2013465835;
+        } //End block
+        // ---------- Original Method ----------
+        //if (cn == null) {
+            //return false;
+        //}
+        //cn = cn.toLowerCase(Locale.ENGLISH);
+        //if (cn.startsWith("*.")) {
+            //int matchLength = cn.length() - 1;
+            //return hostName.regionMatches(hostName.length() - matchLength, cn, 1, matchLength)
+                    //&& cn.indexOf('.', 2) != -1
+                    //&& acceptableCountryWildcard(cn)
+                    //&& !InetAddress.isNumeric(hostName);
+        //} else {
+            //return hostName.equals(cn);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.484 -0400", hash_original_method = "FE150C1B8C346B276109DA6F46173FD5", hash_generated_method = "8C641BC5D7F4F26923A23137C6B93EC3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.734 -0400", hash_original_method = "FE150C1B8C346B276109DA6F46173FD5", hash_generated_method = "85D71A6BE51B5BA729ACBAE6E3DD0750")
     private boolean acceptableCountryWildcard(String cn) {
-        int cnLen = cn.length();
-        {
-            {
-                boolean var864F55A9DD3A6ABB8C8A48AFBD8437A1_905333492 = (cn.charAt(cnLen - 3) == '.');
-                {
-                    String s = cn.substring(2, cnLen - 3);
-                    int x = Arrays.binarySearch(BAD_COUNTRY_2LDS, s);
-                } 
-            } 
-        } 
         addTaint(cn.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_338843303 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_338843303;
-        
-        
-        
-            
-                
-                
-                
-            
-        
-        
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.487 -0400", hash_original_method = "6C819E0D5A8E8E96C06210327678F487", hash_generated_method = "0B5D004061F229283D13CA214340A569")
-    private String getFirstCn(X509Certificate cert) {
-        String varB4EAC82CA7396A68D541C85D26508E83_365857526 = null; 
-        String varB4EAC82CA7396A68D541C85D26508E83_1885090681 = null; 
-        String subjectPrincipal = cert.getSubjectX500Principal().toString();
+        int cnLen = cn.length();
+    if(cnLen >= 7 && cnLen <= 9)        
         {
-            String token = subjectPrincipal.split(",")[0];
+    if(cn.charAt(cnLen - 3) == '.')            
             {
-                int x = token.indexOf("CN=");
-                {
-                    varB4EAC82CA7396A68D541C85D26508E83_365857526 = token.substring(x + 3);
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1885090681 = null;
-        addTaint(cert.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_1552725425; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1552725425 = varB4EAC82CA7396A68D541C85D26508E83_365857526;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1552725425 = varB4EAC82CA7396A68D541C85D26508E83_1885090681;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1552725425.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1552725425;
-        
-        
-        
-            
-            
-                
-            
-        
-        
+                String s = cn.substring(2, cnLen - 3);
+                int x = Arrays.binarySearch(BAD_COUNTRY_2LDS, s);
+                boolean var3B4A721B7390BAF1B8AFCC251D43D129_1462524889 = (x < 0);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1429692921 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1429692921;
+            } //End block
+        } //End block
+        boolean varB326B5062B2F0E69046810717534CB09_2094681430 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1328281964 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1328281964;
+        // ---------- Original Method ----------
+        //int cnLen = cn.length();
+        //if (cnLen >= 7 && cnLen <= 9) {
+            //if (cn.charAt(cnLen - 3) == '.') {
+                //String s = cn.substring(2, cnLen - 3);
+                //int x = Arrays.binarySearch(BAD_COUNTRY_2LDS, s);
+                //return x < 0;
+            //}
+        //}
+        //return true;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.489 -0400", hash_original_method = "F40DC2B7DE530D6D3AB694EABABE065F", hash_generated_method = "46CB8E6E4845C58401462B8DB8DB7622")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.736 -0400", hash_original_method = "6C819E0D5A8E8E96C06210327678F487", hash_generated_method = "734310FA843DE023A067395BC3E3EE6A")
+    private String getFirstCn(X509Certificate cert) {
+        addTaint(cert.getTaint());
+        String subjectPrincipal = cert.getSubjectX500Principal().toString();
+for(String token : subjectPrincipal.split(","))
+        {
+            int x = token.indexOf("CN=");
+    if(x >= 0)            
+            {
+String var6C45848D4E5C4A16DF70076C8744CB8A_1043102331 =                 token.substring(x + 3);
+                var6C45848D4E5C4A16DF70076C8744CB8A_1043102331.addTaint(taint);
+                return var6C45848D4E5C4A16DF70076C8744CB8A_1043102331;
+            } //End block
+        } //End block
+String var540C13E9E156B687226421B24F2DF178_2082547663 =         null;
+        var540C13E9E156B687226421B24F2DF178_2082547663.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_2082547663;
+        // ---------- Original Method ----------
+        //String subjectPrincipal = cert.getSubjectX500Principal().toString();
+        //for (String token : subjectPrincipal.split(",")) {
+            //int x = token.indexOf("CN=");
+            //if (x >= 0) {
+                //return token.substring(x + 3);
+            //}
+        //}
+        //return null;
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.737 -0400", hash_original_method = "F40DC2B7DE530D6D3AB694EABABE065F", hash_generated_method = "6A8BB3FD7ABD32EEF9B0E5774D632783")
     private List<String> getDNSSubjectAlts(X509Certificate cert) {
-        List<String> varB4EAC82CA7396A68D541C85D26508E83_950623639 = null; 
-        List<String> varB4EAC82CA7396A68D541C85D26508E83_365650371 = null; 
-        List<String> varB4EAC82CA7396A68D541C85D26508E83_1862439589 = null; 
-        Collection<List<?>> subjectAlternativeNames = new LinkedList<List<?>>();
+        addTaint(cert.getTaint());
+        Collection<List<?>> subjectAlternativeNames;
         try 
         {
             subjectAlternativeNames = cert.getSubjectAlternativeNames();
-        } 
+        } //End block
         catch (CertificateParsingException cpe)
         {
             System.logI("Error parsing certificate", cpe);
-            varB4EAC82CA7396A68D541C85D26508E83_950623639 = Collections.emptyList();
-        } 
+List<String> varB803AB532741AA7D5C2F301CCDDD25F2_954976524 =             Collections.emptyList();
+            varB803AB532741AA7D5C2F301CCDDD25F2_954976524.addTaint(taint);
+            return varB803AB532741AA7D5C2F301CCDDD25F2_954976524;
+        } //End block
+    if(subjectAlternativeNames == null)        
         {
-            varB4EAC82CA7396A68D541C85D26508E83_365650371 = Collections.emptyList();
-        } 
+List<String> varB803AB532741AA7D5C2F301CCDDD25F2_1692639651 =             Collections.emptyList();
+            varB803AB532741AA7D5C2F301CCDDD25F2_1692639651.addTaint(taint);
+            return varB803AB532741AA7D5C2F301CCDDD25F2_1692639651;
+        } //End block
         List<String> subjectAltList = new ArrayList<String>();
+for(List<?> pair : subjectAlternativeNames)
         {
-        	List<?> pair = (List<?>)subjectAlternativeNames.toArray()[0];
-            
+            int type = (Integer) pair.get(0);
+    if(type == 2)            
             {
-                int type = (Integer) pair.get(0);
-                addTaint(type);
-                {
-                    subjectAltList.add((String) pair.get(1));
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1862439589 = subjectAltList;
-        addTaint(cert.getTaint());
-        List<String> varA7E53CE21691AB073D9660D615818899_128098990; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_128098990 = varB4EAC82CA7396A68D541C85D26508E83_950623639;
-                break;
-            case 2: 
-                varA7E53CE21691AB073D9660D615818899_128098990 = varB4EAC82CA7396A68D541C85D26508E83_365650371;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_128098990 = varB4EAC82CA7396A68D541C85D26508E83_1862439589;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_128098990.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_128098990;
-        
-        
-        
-            
-        
-            
-            
-        
-        
-            
-        
-        
-        
-            
-            
-                
-            
-        
-        
+                subjectAltList.add((String) pair.get(1));
+            } //End block
+        } //End block
+List<String> var1958EE9065303448D12A47CD69FD4819_1553751414 =         subjectAltList;
+        var1958EE9065303448D12A47CD69FD4819_1553751414.addTaint(taint);
+        return var1958EE9065303448D12A47CD69FD4819_1553751414;
+        // ---------- Original Method ----------
+        //Collection<List<?>> subjectAlternativeNames;
+        //try {
+            //subjectAlternativeNames = cert.getSubjectAlternativeNames();
+        //} catch (CertificateParsingException cpe) {
+            //System.logI("Error parsing certificate", cpe);
+            //return Collections.emptyList();
+        //}
+        //if (subjectAlternativeNames == null) {
+            //return Collections.emptyList();
+        //}
+        //List<String> subjectAltList = new ArrayList<String>();
+        //for (List<?> pair : subjectAlternativeNames) {
+            //int type = (Integer) pair.get(0);
+            //if (type == 2) {
+                //subjectAltList.add((String) pair.get(1));
+            //}
+        //}
+        //return subjectAltList;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.489 -0400", hash_original_field = "76B1D705F0ADC634FC0CFCB99B6D9F38", hash_generated_field = "3A751CA92898755F652261390A3F7AD7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.738 -0400", hash_original_field = "76B1D705F0ADC634FC0CFCB99B6D9F38", hash_generated_field = "3A751CA92898755F652261390A3F7AD7")
 
     private static final String[] BAD_COUNTRY_2LDS = { "ac", "co", "com", "ed", "edu", "go", "gouv", "gov", "info",
             "lg", "ne", "net", "or", "org" };

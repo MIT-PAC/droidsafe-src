@@ -1,12 +1,9 @@
 package libcore.net.http;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -16,15 +13,14 @@ import java.util.TimeZone;
 
 public final class HttpDate {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.806 -0400", hash_original_method = "0136B205498F115685D55FF9321B6B42", hash_generated_method = "0136B205498F115685D55FF9321B6B42")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.208 -0400", hash_original_method = "0136B205498F115685D55FF9321B6B42", hash_generated_method = "0136B205498F115685D55FF9321B6B42")
     public HttpDate ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
-    public static Date parse(String value) {
+        public static Date parse(String value) {
         try {
             return STANDARD_DATE_FORMAT.get().parse(value);
         } catch (ParseException ignore) {
@@ -39,8 +35,7 @@ public final class HttpDate {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String format(Date value) {
+        public static String format(Date value) {
         return STANDARD_DATE_FORMAT.get().format(value);
     }
 
@@ -65,7 +60,7 @@ public final class HttpDate {
 
         
 };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.807 -0400", hash_original_field = "1A5262111CAC9B43E8DD975F2EB0643F", hash_generated_field = "BEEAED429442B6C53D9D9D627997B72C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.209 -0400", hash_original_field = "1A5262111CAC9B43E8DD975F2EB0643F", hash_generated_field = "BEEAED429442B6C53D9D9D627997B72C")
 
     private static final String[] BROWSER_COMPATIBLE_DATE_FORMATS = new String[] {
             

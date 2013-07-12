@@ -1,12 +1,9 @@
 package org.bouncycastle.asn1.x509;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import org.bouncycastle.asn1.ASN1InputStream;
 import org.bouncycastle.asn1.DERObject;
 import org.bouncycastle.asn1.DERObjectIdentifier;
@@ -16,61 +13,60 @@ import java.io.IOException;
 
 public abstract class X509NameEntryConverter {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.281 -0400", hash_original_method = "895CB1F94322718A75CF3FC7407A7622", hash_generated_method = "895CB1F94322718A75CF3FC7407A7622")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.575 -0400", hash_original_method = "895CB1F94322718A75CF3FC7407A7622", hash_generated_method = "895CB1F94322718A75CF3FC7407A7622")
     public X509NameEntryConverter ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.282 -0400", hash_original_method = "0820E5B6790D0EF76EEAF699A8A71CD6", hash_generated_method = "BCDC1AAC989C32774E21143B43B5BD2D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.577 -0400", hash_original_method = "0820E5B6790D0EF76EEAF699A8A71CD6", hash_generated_method = "2EAEB41E0AF83FBEEF56DD376F552DE8")
     protected DERObject convertHexEncoded(
         String  str,
         int     off) throws IOException {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_626445481 = null; 
+        addTaint(off);
+        addTaint(str.getTaint());
         str = Strings.toLowerCase(str);
         byte[] data = new byte[(str.length() - off) / 2];
+for(int index = 0;index != data.length;index++)
         {
-            int index = 0;
+            char left = str.charAt((index * 2) + off);
+            char right = str.charAt((index * 2) + off + 1);
+    if(left < 'a')            
             {
-                char left = str.charAt((index * 2) + off);
-                char right = str.charAt((index * 2) + off + 1);
-                {
-                    data[index] = (byte)((left - '0') << 4);
-                } 
-                {
-                    data[index] = (byte)((left - 'a' + 10) << 4);
-                } 
-                {
-                    data[index] |= (byte)(right - '0');
-                } 
-                {
-                    data[index] |= (byte)(right - 'a' + 10);
-                } 
-            } 
-        } 
+                data[index] = (byte)((left - '0') << 4);
+            } //End block
+            else
+            {
+                data[index] = (byte)((left - 'a' + 10) << 4);
+            } //End block
+    if(right < 'a')            
+            {
+                data[index] |= (byte)(right - '0');
+            } //End block
+            else
+            {
+                data[index] |= (byte)(right - 'a' + 10);
+            } //End block
+        } //End block
         ASN1InputStream aIn = new ASN1InputStream(data);
-        varB4EAC82CA7396A68D541C85D26508E83_626445481 = aIn.readObject();
-        addTaint(str.getTaint());
-        addTaint(off);
-        varB4EAC82CA7396A68D541C85D26508E83_626445481.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_626445481;
-        
-        
+DERObject var744C7B728C1BF7AC9370DA8D8B9598D6_1774561935 =         aIn.readObject();
+        var744C7B728C1BF7AC9370DA8D8B9598D6_1774561935.addTaint(taint);
+        return var744C7B728C1BF7AC9370DA8D8B9598D6_1774561935;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.282 -0400", hash_original_method = "499FF8BD25CE956701C5B1F46FEEC51A", hash_generated_method = "BDEFDF66C42844978C2F8C647EEBC777")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.578 -0400", hash_original_method = "499FF8BD25CE956701C5B1F46FEEC51A", hash_generated_method = "2B2C41BD20EC7BEA8A46FE0285C1D1A2")
     protected boolean canBePrintable(
         String  str) {
-        boolean varE4B9094FDD502E0BF184965135189B5D_746100636 = (DERPrintableString.isPrintableString(str));
         addTaint(str.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1391944638 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1391944638;
-        
-        
+        boolean varF6C770A90D6BB561B31334BDADDD9A35_1264491093 = (DERPrintableString.isPrintableString(str));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1979217496 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1979217496;
+        // ---------- Original Method ----------
+        //return DERPrintableString.isPrintableString(str);
     }
 
     

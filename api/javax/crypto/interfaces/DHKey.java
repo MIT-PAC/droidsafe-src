@@ -1,12 +1,9 @@
 package javax.crypto.interfaces;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import javax.crypto.spec.DHParameterSpec;
 
 public interface DHKey {

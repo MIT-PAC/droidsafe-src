@@ -1,12 +1,9 @@
 package libcore.net.http;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.IOException;
 import java.net.Proxy;
 import java.net.URL;
@@ -15,56 +12,55 @@ import java.net.URLStreamHandler;
 
 public final class HttpHandler extends URLStreamHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.916 -0400", hash_original_method = "19FB70242B210A6BA2C2EBCBFA2BC8EA", hash_generated_method = "19FB70242B210A6BA2C2EBCBFA2BC8EA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.308 -0400", hash_original_method = "19FB70242B210A6BA2C2EBCBFA2BC8EA", hash_generated_method = "19FB70242B210A6BA2C2EBCBFA2BC8EA")
     public HttpHandler ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.918 -0400", hash_original_method = "36344CA950B2A976BD9D30B58C91386F", hash_generated_method = "5F10BB7EF4B5CF237B593650370D1046")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.309 -0400", hash_original_method = "36344CA950B2A976BD9D30B58C91386F", hash_generated_method = "36DA6BA2578691A660272BD538B04B35")
     @Override
     protected URLConnection openConnection(URL u) throws IOException {
-        URLConnection varB4EAC82CA7396A68D541C85D26508E83_1450515288 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1450515288 = new HttpURLConnectionImpl(u, getDefaultPort());
         addTaint(u.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1450515288.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1450515288;
-        
-        
+URLConnection var0CE870C292B30B6835AB9F24F9C87407_1176982158 =         new HttpURLConnectionImpl(u, getDefaultPort());
+        var0CE870C292B30B6835AB9F24F9C87407_1176982158.addTaint(taint);
+        return var0CE870C292B30B6835AB9F24F9C87407_1176982158;
+        // ---------- Original Method ----------
+        //return new HttpURLConnectionImpl(u, getDefaultPort());
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.919 -0400", hash_original_method = "1382348F6F5129438828F631F9FA5282", hash_generated_method = "083AA2216615B26AD519890BCEFDC943")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.309 -0400", hash_original_method = "1382348F6F5129438828F631F9FA5282", hash_generated_method = "E19D6E861B668AA2BC93E956F73338B1")
     @Override
     protected URLConnection openConnection(URL url, Proxy proxy) throws IOException {
-        URLConnection varB4EAC82CA7396A68D541C85D26508E83_2021624113 = null; 
-        {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("url == null || proxy == null");
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_2021624113 = new HttpURLConnectionImpl(url, getDefaultPort(), proxy);
-        addTaint(url.getTaint());
         addTaint(proxy.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2021624113.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_2021624113;
-        
-        
-            
-        
-        
+        addTaint(url.getTaint());
+    if(url == null || proxy == null)        
+        {
+            IllegalArgumentException var180E1357F474E7208A2DB6FF80901B51_2118827595 = new IllegalArgumentException("url == null || proxy == null");
+            var180E1357F474E7208A2DB6FF80901B51_2118827595.addTaint(taint);
+            throw var180E1357F474E7208A2DB6FF80901B51_2118827595;
+        } //End block
+URLConnection var7ACE3BB648BA8E90CB3292E2E8EF04FA_598102067 =         new HttpURLConnectionImpl(url, getDefaultPort(), proxy);
+        var7ACE3BB648BA8E90CB3292E2E8EF04FA_598102067.addTaint(taint);
+        return var7ACE3BB648BA8E90CB3292E2E8EF04FA_598102067;
+        // ---------- Original Method ----------
+        //if (url == null || proxy == null) {
+            //throw new IllegalArgumentException("url == null || proxy == null");
+        //}
+        //return new HttpURLConnectionImpl(url, getDefaultPort(), proxy);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.920 -0400", hash_original_method = "FEEAB6915C12BF9E3FEC7C9D98366E77", hash_generated_method = "61F70046E9088B19A4E6F03DC0F87D47")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.310 -0400", hash_original_method = "FEEAB6915C12BF9E3FEC7C9D98366E77", hash_generated_method = "CF1E74F16B880A59063C777A7BB7E914")
     @Override
     protected int getDefaultPort() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_612163421 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_612163421;
-        
-        
+        int varF033AB37C30201F73F142449D037028D_1267077308 = (80);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_117591299 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_117591299;
+        // ---------- Original Method ----------
+        //return 80;
     }
 
     

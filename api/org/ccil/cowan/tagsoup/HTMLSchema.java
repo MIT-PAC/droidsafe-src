@@ -1,16 +1,13 @@
 package org.ccil.cowan.tagsoup;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-
-import java.util.Iterator;
-
 public class HTMLSchema extends Schema implements HTMLModels {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.907 -0400", hash_original_method = "B37F2CC4D3CB706912F6CBA7F07B30C9", hash_generated_method = "930CC9D540F8626E41226D5739341005")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.154 -0400", hash_original_method = "B37F2CC4D3CB706912F6CBA7F07B30C9", hash_generated_method = "930CC9D540F8626E41226D5739341005")
     public  HTMLSchema() {
         setURI("http://www.w3.org/1999/xhtml");
         setPrefix("html");
@@ -2869,8 +2866,8 @@ public class HTMLSchema extends Schema implements HTMLModels {
         entity("Zscr", 0x1D4B5);
         entity("zwj", 0x200D);
         entity("zwnj", 0x200C);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

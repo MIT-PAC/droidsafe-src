@@ -1,76 +1,69 @@
 package javax.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 
 final class DefaultServerSocketFactory extends ServerSocketFactory {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.413 -0400", hash_original_method = "8A4D96D5B28C2AFD105167087B65524F", hash_generated_method = "8A4D96D5B28C2AFD105167087B65524F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.504 -0400", hash_original_method = "8A4D96D5B28C2AFD105167087B65524F", hash_generated_method = "8A4D96D5B28C2AFD105167087B65524F")
     public DefaultServerSocketFactory ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.414 -0400", hash_original_method = "09A32D8E0ECF3B35B71EC41FF4A7A4A5", hash_generated_method = "9422C9B796E5364B91BA6C337CEDAB99")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.504 -0400", hash_original_method = "09A32D8E0ECF3B35B71EC41FF4A7A4A5", hash_generated_method = "9BAA51F5334691DD3A2226F5BBA9000D")
     @Override
     public ServerSocket createServerSocket() throws IOException {
-        ServerSocket varB4EAC82CA7396A68D541C85D26508E83_1148926280 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1148926280 = new ServerSocket();
-        varB4EAC82CA7396A68D541C85D26508E83_1148926280.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1148926280;
-        
-        
+ServerSocket var0DF332023E849EB0317104A964F1F502_2108043422 =         new ServerSocket();
+        var0DF332023E849EB0317104A964F1F502_2108043422.addTaint(taint);
+        return var0DF332023E849EB0317104A964F1F502_2108043422;
+        // ---------- Original Method ----------
+        //return new ServerSocket();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.414 -0400", hash_original_method = "097C287FD25A56D7F8F92140BF3438EE", hash_generated_method = "1C8B8CE35A11C46D7177E3F742A8DD3B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.504 -0400", hash_original_method = "097C287FD25A56D7F8F92140BF3438EE", hash_generated_method = "2E6C2C220B55E8CE6D68F6B09D3F2630")
     @Override
     public ServerSocket createServerSocket(int port) throws IOException {
-        ServerSocket varB4EAC82CA7396A68D541C85D26508E83_1363390059 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1363390059 = new ServerSocket(port);
         addTaint(port);
-        varB4EAC82CA7396A68D541C85D26508E83_1363390059.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1363390059;
-        
-        
+ServerSocket varABE3B6A1CDC7C9D14D97B943CEECAC98_306247821 =         new ServerSocket(port);
+        varABE3B6A1CDC7C9D14D97B943CEECAC98_306247821.addTaint(taint);
+        return varABE3B6A1CDC7C9D14D97B943CEECAC98_306247821;
+        // ---------- Original Method ----------
+        //return new ServerSocket(port);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.415 -0400", hash_original_method = "3D1593377407708784326DC2078D0103", hash_generated_method = "4F50CFA17922FB0866C6AEF806370163")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.505 -0400", hash_original_method = "3D1593377407708784326DC2078D0103", hash_generated_method = "467CFDA62B9D3A8914627225F659BB8A")
     @Override
     public ServerSocket createServerSocket(int port, int backlog) throws IOException {
-        ServerSocket varB4EAC82CA7396A68D541C85D26508E83_1153094209 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1153094209 = new ServerSocket(port, backlog);
-        addTaint(port);
         addTaint(backlog);
-        varB4EAC82CA7396A68D541C85D26508E83_1153094209.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1153094209;
-        
-        
+        addTaint(port);
+ServerSocket var32E1DD942B0D675FF44A81F59EAA4D4B_603361903 =         new ServerSocket(port, backlog);
+        var32E1DD942B0D675FF44A81F59EAA4D4B_603361903.addTaint(taint);
+        return var32E1DD942B0D675FF44A81F59EAA4D4B_603361903;
+        // ---------- Original Method ----------
+        //return new ServerSocket(port, backlog);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.415 -0400", hash_original_method = "A38ABA8DDEB89B029728737B9173480B", hash_generated_method = "F02C3A035E9195029FCA43DDBF2BDD81")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.505 -0400", hash_original_method = "A38ABA8DDEB89B029728737B9173480B", hash_generated_method = "120B22BC10FE9B81FFF47E3076FB6343")
     @Override
     public ServerSocket createServerSocket(int port, int backlog, InetAddress iAddress) throws IOException {
-        ServerSocket varB4EAC82CA7396A68D541C85D26508E83_1317212575 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1317212575 = new ServerSocket(port, backlog, iAddress);
-        addTaint(port);
-        addTaint(backlog);
         addTaint(iAddress.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1317212575.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1317212575;
-        
-        
+        addTaint(backlog);
+        addTaint(port);
+ServerSocket varBEC696F7A4363189EF3CF61AC6A0FF58_1019577876 =         new ServerSocket(port, backlog, iAddress);
+        varBEC696F7A4363189EF3CF61AC6A0FF58_1019577876.addTaint(taint);
+        return varBEC696F7A4363189EF3CF61AC6A0FF58_1019577876;
+        // ---------- Original Method ----------
+        //return new ServerSocket(port, backlog, iAddress);
     }
 
     

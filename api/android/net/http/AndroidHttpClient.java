@@ -1,12 +1,9 @@
 package android.net.http;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import com.android.internal.http.HttpDateTime;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
@@ -54,74 +51,71 @@ import android.util.Base64;
 import android.util.Log;
 
 public final class AndroidHttpClient implements HttpClient {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.499 -0400", hash_original_field = "7F662005788AB434B371FBB0EFC6D45F", hash_generated_field = "6440DD854F4D596C0D709D30B47087FC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.848 -0400", hash_original_field = "7F662005788AB434B371FBB0EFC6D45F", hash_generated_field = "6440DD854F4D596C0D709D30B47087FC")
 
     private HttpClient delegate;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.499 -0400", hash_original_field = "498FE078AF0C34DADF42139EA3E05289", hash_generated_field = "D90B3D3803AFC0B006090E75019AA334")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.848 -0400", hash_original_field = "498FE078AF0C34DADF42139EA3E05289", hash_generated_field = "D90B3D3803AFC0B006090E75019AA334")
 
     private RuntimeException mLeakedException = new IllegalStateException(
             "AndroidHttpClient created and never closed");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.499 -0400", hash_original_field = "813880D08B4F0B373C5506C85F431E92", hash_generated_field = "7118A8C21E158E47B1C5DDDEC5F671B3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.848 -0400", hash_original_field = "813880D08B4F0B373C5506C85F431E92", hash_generated_field = "7118A8C21E158E47B1C5DDDEC5F671B3")
 
     private volatile LoggingConfiguration curlConfiguration;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.501 -0400", hash_original_method = "D8AE79D95EB274B9A84FF0181FB0726D", hash_generated_method = "D0E46774529034293706A7ADE440CCAB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.850 -0400", hash_original_method = "D8AE79D95EB274B9A84FF0181FB0726D", hash_generated_method = "AED23902127D9043F6D6F3A9638F8450")
     private  AndroidHttpClient(ClientConnectionManager ccm, HttpParams params) {
-        this.delegate = new DefaultHttpClient(ccm, params) {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.500 -0400", hash_original_method = "6C76B225B446D1888A1E1537A254B656", hash_generated_method = "5D71FD5E50EA6241A53D165BD6FB30D4")
-            @Override
-            protected BasicHttpProcessor createHttpProcessor() {
-                BasicHttpProcessor varB4EAC82CA7396A68D541C85D26508E83_187909678 = null; 
-                BasicHttpProcessor processor = super.createHttpProcessor();
-                processor.addRequestInterceptor(sThreadCheckInterceptor);
-                processor.addRequestInterceptor(new CurlLogger());
-                varB4EAC82CA7396A68D541C85D26508E83_187909678 = processor;
-                varB4EAC82CA7396A68D541C85D26508E83_187909678.addTaint(getTaint()); 
-                return varB4EAC82CA7396A68D541C85D26508E83_187909678;
-                
-                
-                
-                
-                
-            }
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.501 -0400", hash_original_method = "C49D4F976490FCA93E48C6E59F8BCE3A", hash_generated_method = "FBD290BBD2F352EBF5AC69035C68F764")
-            @Override
-            protected HttpContext createHttpContext() {
-                HttpContext varB4EAC82CA7396A68D541C85D26508E83_338991350 = null; 
-                HttpContext context = new BasicHttpContext();
-                context.setAttribute(
+        this.delegate = new DefaultHttpClient(ccm, params) {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.849 -0400", hash_original_method = "6C76B225B446D1888A1E1537A254B656", hash_generated_method = "98B15407EC07FD8F8A6A5DC0D5C15D2B")
+        @Override
+        protected BasicHttpProcessor createHttpProcessor() {
+            BasicHttpProcessor processor = super.createHttpProcessor();
+            processor.addRequestInterceptor(sThreadCheckInterceptor);
+            processor.addRequestInterceptor(new CurlLogger());
+BasicHttpProcessor varCB22DE2E9E1B163F22CB9A856393418B_1389425308 =             processor;
+            varCB22DE2E9E1B163F22CB9A856393418B_1389425308.addTaint(taint);
+            return varCB22DE2E9E1B163F22CB9A856393418B_1389425308;
+            // ---------- Original Method ----------
+            //BasicHttpProcessor processor = super.createHttpProcessor();
+            //processor.addRequestInterceptor(sThreadCheckInterceptor);
+            //processor.addRequestInterceptor(new CurlLogger());
+            //return processor;
+        }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.850 -0400", hash_original_method = "C49D4F976490FCA93E48C6E59F8BCE3A", hash_generated_method = "459FE3F9B5375D764345AE54E2470F60")
+        @Override
+        protected HttpContext createHttpContext() {
+            HttpContext context = new BasicHttpContext();
+            context.setAttribute(
                         ClientContext.AUTHSCHEME_REGISTRY,
                         getAuthSchemes());
-                context.setAttribute(
+            context.setAttribute(
                         ClientContext.COOKIESPEC_REGISTRY,
                         getCookieSpecs());
-                context.setAttribute(
+            context.setAttribute(
                         ClientContext.CREDS_PROVIDER,
                         getCredentialsProvider());
-                varB4EAC82CA7396A68D541C85D26508E83_338991350 = context;
-                varB4EAC82CA7396A68D541C85D26508E83_338991350.addTaint(getTaint()); 
-                return varB4EAC82CA7396A68D541C85D26508E83_338991350;
-                
-                
-                
-                        
-                        
-                
-                        
-                        
-                
-                        
-                        
-                
-            }
+HttpContext var4C2DD4015CB4BB3F876A587F79816595_1631897573 =             context;
+            var4C2DD4015CB4BB3F876A587F79816595_1631897573.addTaint(taint);
+            return var4C2DD4015CB4BB3F876A587F79816595_1631897573;
+            // ---------- Original Method ----------
+            //HttpContext context = new BasicHttpContext();
+            //context.setAttribute(
+                        //ClientContext.AUTHSCHEME_REGISTRY,
+                        //getAuthSchemes());
+            //context.setAttribute(
+                        //ClientContext.COOKIESPEC_REGISTRY,
+                        //getCookieSpecs());
+            //context.setAttribute(
+                        //ClientContext.CREDS_PROVIDER,
+                        //getCredentialsProvider());
+            //return context;
+        }
 };
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static AndroidHttpClient newInstance(String userAgent, Context context) {
+        public static AndroidHttpClient newInstance(String userAgent, Context context) {
         HttpParams params = new BasicHttpParams();
         HttpConnectionParams.setStaleCheckingEnabled(params, false);
         HttpConnectionParams.setConnectionTimeout(params, SOCKET_OPERATION_TIMEOUT);
@@ -142,37 +136,34 @@ public final class AndroidHttpClient implements HttpClient {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static AndroidHttpClient newInstance(String userAgent) {
+        public static AndroidHttpClient newInstance(String userAgent) {
         return newInstance(userAgent, null );
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.503 -0400", hash_original_method = "B02E74BCEF0E366F496BFBC11FACA316", hash_generated_method = "747D613A9559AD446B0F0E8D62F30AFC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.851 -0400", hash_original_method = "B02E74BCEF0E366F496BFBC11FACA316", hash_generated_method = "732326A0DFE11A34B81AAC6BB31C368C")
     @Override
     protected void finalize() throws Throwable {
         super.finalize();
+    if(mLeakedException != null)        
         {
             mLeakedException = null;
-        } 
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.finalize();
+        //if (mLeakedException != null) {
+            //Log.e(TAG, "Leak found", mLeakedException);
+            //mLeakedException = null;
+        //}
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void modifyRequestToAcceptGzipResponse(HttpRequest request) {
+        public static void modifyRequestToAcceptGzipResponse(HttpRequest request) {
         request.addHeader("Accept-Encoding", "gzip");
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static InputStream getUngzippedContent(HttpEntity entity) throws IOException {
+        public static InputStream getUngzippedContent(HttpEntity entity) throws IOException {
         InputStream responseStream = entity.getContent();
         if (responseStream == null) return responseStream;
         Header header = entity.getContentEncoding();
@@ -185,169 +176,148 @@ public final class AndroidHttpClient implements HttpClient {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.504 -0400", hash_original_method = "5EF975DC0C48CD0E5439D816C45920DD", hash_generated_method = "CAC673E2A69CDA6DF27B93848E45272A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.852 -0400", hash_original_method = "5EF975DC0C48CD0E5439D816C45920DD", hash_generated_method = "9FE697B6FC992C3CF749CEAB0E394902")
     public void close() {
+    if(mLeakedException != null)        
         {
             getConnectionManager().shutdown();
             mLeakedException = null;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mLeakedException != null) {
+            //getConnectionManager().shutdown();
+            //mLeakedException = null;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.504 -0400", hash_original_method = "5DB032B661B95AF8C86F6F8448CB3EFD", hash_generated_method = "5ECB1F3A3256D42F09DF95DDB60AF528")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.853 -0400", hash_original_method = "5DB032B661B95AF8C86F6F8448CB3EFD", hash_generated_method = "E9953EA7B6B4BEE920D319678A16CDF5")
     public HttpParams getParams() {
-        HttpParams varB4EAC82CA7396A68D541C85D26508E83_113663673 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_113663673 = delegate.getParams();
-        varB4EAC82CA7396A68D541C85D26508E83_113663673.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_113663673;
-        
-        
+HttpParams var58F71D00F7895AFF9FAD07E21D27F5D7_1068935582 =         delegate.getParams();
+        var58F71D00F7895AFF9FAD07E21D27F5D7_1068935582.addTaint(taint);
+        return var58F71D00F7895AFF9FAD07E21D27F5D7_1068935582;
+        // ---------- Original Method ----------
+        //return delegate.getParams();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.505 -0400", hash_original_method = "53260AB8F43CDB4D95BC832EBA5D95FD", hash_generated_method = "EC455BCEAEA3157AEF8C401B6B1BA24C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.853 -0400", hash_original_method = "53260AB8F43CDB4D95BC832EBA5D95FD", hash_generated_method = "DC6F307EDBE70F9F78724AB65AF6BEE2")
     public ClientConnectionManager getConnectionManager() {
-        ClientConnectionManager varB4EAC82CA7396A68D541C85D26508E83_19953107 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_19953107 = delegate.getConnectionManager();
-        varB4EAC82CA7396A68D541C85D26508E83_19953107.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_19953107;
-        
-        
+ClientConnectionManager var4BE3268C1364FD1BD22646583095ACC4_1930482091 =         delegate.getConnectionManager();
+        var4BE3268C1364FD1BD22646583095ACC4_1930482091.addTaint(taint);
+        return var4BE3268C1364FD1BD22646583095ACC4_1930482091;
+        // ---------- Original Method ----------
+        //return delegate.getConnectionManager();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.505 -0400", hash_original_method = "0560DA2228BFB64D3B8813172C1C501C", hash_generated_method = "A9FA05CB4499BF29D6B59C60EF159C1E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.853 -0400", hash_original_method = "0560DA2228BFB64D3B8813172C1C501C", hash_generated_method = "A92E0EEA344CF3267058578E87882C24")
     public HttpResponse execute(HttpUriRequest request) throws IOException {
-        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_297972270 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_297972270 = delegate.execute(request);
         addTaint(request.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_297972270.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_297972270;
-        
-        
+HttpResponse varB4CF8B99FC3CD6EEC90F3B07385C4C7D_80493851 =         delegate.execute(request);
+        varB4CF8B99FC3CD6EEC90F3B07385C4C7D_80493851.addTaint(taint);
+        return varB4CF8B99FC3CD6EEC90F3B07385C4C7D_80493851;
+        // ---------- Original Method ----------
+        //return delegate.execute(request);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.506 -0400", hash_original_method = "7AD2D127C26D9679F6BBE27F72FD947E", hash_generated_method = "81C0D4AC34334D98C639105F17A59B96")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.853 -0400", hash_original_method = "7AD2D127C26D9679F6BBE27F72FD947E", hash_generated_method = "AFD5967801A005952832978797CA7073")
     public HttpResponse execute(HttpUriRequest request, HttpContext context) throws IOException {
-        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_1215080211 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1215080211 = delegate.execute(request, context);
-        addTaint(request.getTaint());
         addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1215080211.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1215080211;
-        
-        
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.506 -0400", hash_original_method = "BD436F920432FBA2B6127A4BA2765DC7", hash_generated_method = "AC37DDA80E66CCC14405DD7ACB715B29")
-    public HttpResponse execute(HttpHost target, HttpRequest request) throws IOException {
-        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_227487613 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_227487613 = delegate.execute(target, request);
-        addTaint(target.getTaint());
         addTaint(request.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_227487613.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_227487613;
-        
-        
+HttpResponse var8F3F36BC19AF3E29944BBBAB74EC28BC_1356023 =         delegate.execute(request, context);
+        var8F3F36BC19AF3E29944BBBAB74EC28BC_1356023.addTaint(taint);
+        return var8F3F36BC19AF3E29944BBBAB74EC28BC_1356023;
+        // ---------- Original Method ----------
+        //return delegate.execute(request, context);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.507 -0400", hash_original_method = "02756492F9E21421543B6A3EB2FE7DF1", hash_generated_method = "4AE32B387EB66A923F908EDE93BEE883")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.854 -0400", hash_original_method = "BD436F920432FBA2B6127A4BA2765DC7", hash_generated_method = "E55087D95827E585A267DF132FE4F6F7")
+    public HttpResponse execute(HttpHost target, HttpRequest request) throws IOException {
+        addTaint(request.getTaint());
+        addTaint(target.getTaint());
+HttpResponse varD1BCB4F56C6C466E27A382C951D3B30E_386024781 =         delegate.execute(target, request);
+        varD1BCB4F56C6C466E27A382C951D3B30E_386024781.addTaint(taint);
+        return varD1BCB4F56C6C466E27A382C951D3B30E_386024781;
+        // ---------- Original Method ----------
+        //return delegate.execute(target, request);
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.854 -0400", hash_original_method = "02756492F9E21421543B6A3EB2FE7DF1", hash_generated_method = "E6AFD26ED269E611B2CE821F969E71D6")
     public HttpResponse execute(HttpHost target, HttpRequest request,
             HttpContext context) throws IOException {
-        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_1387765039 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1387765039 = delegate.execute(target, request, context);
-        addTaint(target.getTaint());
-        addTaint(request.getTaint());
         addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1387765039.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1387765039;
-        
-        
+        addTaint(request.getTaint());
+        addTaint(target.getTaint());
+HttpResponse var4A5520C67A1D4012A605006600ED3E5E_1660579970 =         delegate.execute(target, request, context);
+        var4A5520C67A1D4012A605006600ED3E5E_1660579970.addTaint(taint);
+        return var4A5520C67A1D4012A605006600ED3E5E_1660579970;
+        // ---------- Original Method ----------
+        //return delegate.execute(target, request, context);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.507 -0400", hash_original_method = "EB0DDC231013D5372DD8D788C79B1E98", hash_generated_method = "2517B4AA4FA66EA3FD52B4C14042084F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.854 -0400", hash_original_method = "EB0DDC231013D5372DD8D788C79B1E98", hash_generated_method = "7AF4C9759884BBA3B4E025A6FB595AD8")
     public <T> T execute(HttpUriRequest request, 
             ResponseHandler<? extends T> responseHandler) throws IOException, ClientProtocolException {
-        T varB4EAC82CA7396A68D541C85D26508E83_708490916 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_708490916 = delegate.execute(request, responseHandler);
-        addTaint(request.getTaint());
         addTaint(responseHandler.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_708490916.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_708490916;
-        
-        
+        addTaint(request.getTaint());
+T var36E49463A8C0D597D04C307A302D4311_514412043 =         delegate.execute(request, responseHandler);
+        var36E49463A8C0D597D04C307A302D4311_514412043.addTaint(taint);
+        return var36E49463A8C0D597D04C307A302D4311_514412043;
+        // ---------- Original Method ----------
+        //return delegate.execute(request, responseHandler);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.508 -0400", hash_original_method = "F3FC7BD600F2641741DDE041CB58993B", hash_generated_method = "FAF9151A3F18934A99D2BA07082E2882")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.855 -0400", hash_original_method = "F3FC7BD600F2641741DDE041CB58993B", hash_generated_method = "35E9F4498350FFDFB7C58607A217679E")
     public <T> T execute(HttpUriRequest request,
             ResponseHandler<? extends T> responseHandler, HttpContext context) throws IOException, ClientProtocolException {
-        T varB4EAC82CA7396A68D541C85D26508E83_891626984 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_891626984 = delegate.execute(request, responseHandler, context);
-        addTaint(request.getTaint());
-        addTaint(responseHandler.getTaint());
         addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_891626984.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_891626984;
-        
-        
+        addTaint(responseHandler.getTaint());
+        addTaint(request.getTaint());
+T var4C992D413ECABA26DC3DF2FE56905C2B_320641339 =         delegate.execute(request, responseHandler, context);
+        var4C992D413ECABA26DC3DF2FE56905C2B_320641339.addTaint(taint);
+        return var4C992D413ECABA26DC3DF2FE56905C2B_320641339;
+        // ---------- Original Method ----------
+        //return delegate.execute(request, responseHandler, context);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.508 -0400", hash_original_method = "7CB9DE1B48678C64D58684D5D8F5CD5D", hash_generated_method = "74677490ED0A8F7A42B75C2F0D756178")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.855 -0400", hash_original_method = "7CB9DE1B48678C64D58684D5D8F5CD5D", hash_generated_method = "FBA659F228E5C773EF13BB7C99C41D7F")
     public <T> T execute(HttpHost target, HttpRequest request,
             ResponseHandler<? extends T> responseHandler) throws IOException,
             ClientProtocolException {
-        T varB4EAC82CA7396A68D541C85D26508E83_85328287 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_85328287 = delegate.execute(target, request, responseHandler);
-        addTaint(target.getTaint());
-        addTaint(request.getTaint());
         addTaint(responseHandler.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_85328287.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_85328287;
-        
-        
+        addTaint(request.getTaint());
+        addTaint(target.getTaint());
+T var1B6735C657E1CD3BC52AB580BBCBDB6A_1141384865 =         delegate.execute(target, request, responseHandler);
+        var1B6735C657E1CD3BC52AB580BBCBDB6A_1141384865.addTaint(taint);
+        return var1B6735C657E1CD3BC52AB580BBCBDB6A_1141384865;
+        // ---------- Original Method ----------
+        //return delegate.execute(target, request, responseHandler);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.509 -0400", hash_original_method = "A182144DA9C7044CF91703E3B51621BD", hash_generated_method = "C4D0EC3CB71E65A7D3C012D9281D4C7D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.855 -0400", hash_original_method = "A182144DA9C7044CF91703E3B51621BD", hash_generated_method = "C34280C57D63E08BCF74EB1CDA6359C0")
     public <T> T execute(HttpHost target, HttpRequest request,
             ResponseHandler<? extends T> responseHandler, HttpContext context) throws IOException, ClientProtocolException {
-        T varB4EAC82CA7396A68D541C85D26508E83_443602860 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_443602860 = delegate.execute(target, request, responseHandler, context);
-        addTaint(target.getTaint());
-        addTaint(request.getTaint());
-        addTaint(responseHandler.getTaint());
         addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_443602860.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_443602860;
-        
-        
+        addTaint(responseHandler.getTaint());
+        addTaint(request.getTaint());
+        addTaint(target.getTaint());
+T var88CD165110419B2B8C92D3A1E57DA7B1_926421714 =         delegate.execute(target, request, responseHandler, context);
+        var88CD165110419B2B8C92D3A1E57DA7B1_926421714.addTaint(taint);
+        return var88CD165110419B2B8C92D3A1E57DA7B1_926421714;
+        // ---------- Original Method ----------
+        //return delegate.execute(target, request, responseHandler, context);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static AbstractHttpEntity getCompressedEntity(byte data[], ContentResolver resolver) throws IOException {
+        public static AbstractHttpEntity getCompressedEntity(byte data[], ContentResolver resolver) throws IOException {
         AbstractHttpEntity entity;
         if (data.length < getMinGzipSize(resolver)) {
             entity = new ByteArrayEntity(data);
@@ -363,46 +333,48 @@ public final class AndroidHttpClient implements HttpClient {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static long getMinGzipSize(ContentResolver resolver) {
+        public static long getMinGzipSize(ContentResolver resolver) {
         return DEFAULT_SYNC_MIN_GZIP_BYTES;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.510 -0400", hash_original_method = "B1B69215498581680849253AEA19542C", hash_generated_method = "CBA3DDC198353BBAA56B795793C048B1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.856 -0400", hash_original_method = "B1B69215498581680849253AEA19542C", hash_generated_method = "68BDAA4F081407C9C38CFF93DF253D38")
     public void enableCurlLogging(String name, int level) {
+    if(name == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new NullPointerException("name");
-        } 
+            NullPointerException var9AD8310F6B4E990AB41E4395C382A591_412947043 = new NullPointerException("name");
+            var9AD8310F6B4E990AB41E4395C382A591_412947043.addTaint(taint);
+            throw var9AD8310F6B4E990AB41E4395C382A591_412947043;
+        } //End block
+    if(level < Log.VERBOSE || level > Log.ASSERT)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Level is out of range ["
+            IllegalArgumentException var1D44EB966F584D11C789FD2B0005F40D_483824472 = new IllegalArgumentException("Level is out of range ["
                 + Log.VERBOSE + ".." + Log.ASSERT + "]");
-        } 
+            var1D44EB966F584D11C789FD2B0005F40D_483824472.addTaint(taint);
+            throw var1D44EB966F584D11C789FD2B0005F40D_483824472;
+        } //End block
         curlConfiguration = new LoggingConfiguration(name, level);
-        
-        
-            
-        
-        
-            
-                
-        
-        
+        // ---------- Original Method ----------
+        //if (name == null) {
+            //throw new NullPointerException("name");
+        //}
+        //if (level < Log.VERBOSE || level > Log.ASSERT) {
+            //throw new IllegalArgumentException("Level is out of range ["
+                //+ Log.VERBOSE + ".." + Log.ASSERT + "]");
+        //}
+        //curlConfiguration = new LoggingConfiguration(name, level);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.511 -0400", hash_original_method = "ACD8C6EB71D9F6C325AF8CC21E8A00EF", hash_generated_method = "C4593E5AA16D43E72F368F7DD199C333")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.857 -0400", hash_original_method = "ACD8C6EB71D9F6C325AF8CC21E8A00EF", hash_generated_method = "C4593E5AA16D43E72F368F7DD199C333")
     public void disableCurlLogging() {
         curlConfiguration = null;
-        
-        
+        // ---------- Original Method ----------
+        //curlConfiguration = null;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static String toCurl(HttpUriRequest request, boolean logAuthToken) throws IOException {
+        private static String toCurl(HttpUriRequest request, boolean logAuthToken) throws IOException {
         StringBuilder builder = new StringBuilder();
         builder.append("curl ");
         for (Header header: request.getAllHeaders()) {
@@ -452,8 +424,7 @@ public final class AndroidHttpClient implements HttpClient {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static boolean isBinaryContent(HttpUriRequest request) {
+        private static boolean isBinaryContent(HttpUriRequest request) {
         Header[] headers;
         headers = request.getHeaders(Headers.CONTENT_ENCODING);
         if (headers != null) {
@@ -477,46 +448,45 @@ public final class AndroidHttpClient implements HttpClient {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static long parseDate(String dateString) {
+        public static long parseDate(String dateString) {
         return HttpDateTime.parse(dateString);
     }
 
     
     private static class LoggingConfiguration {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.512 -0400", hash_original_field = "E4D23E841D8E8804190027BCE3180FA5", hash_generated_field = "21B5B848D650825609ACDCB16F135AD3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.858 -0400", hash_original_field = "E4D23E841D8E8804190027BCE3180FA5", hash_generated_field = "21B5B848D650825609ACDCB16F135AD3")
 
         private String tag;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.513 -0400", hash_original_field = "C9E9A848920877E76685B2E4E76DE38D", hash_generated_field = "57A7D6A8967F8756CE39676B1CDDECE5")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.858 -0400", hash_original_field = "C9E9A848920877E76685B2E4E76DE38D", hash_generated_field = "57A7D6A8967F8756CE39676B1CDDECE5")
 
         private int level;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.514 -0400", hash_original_method = "7A9F95068D47CF60B894A5D5EE822200", hash_generated_method = "DDC2BDD6DC1614A04F536562C855C1CE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.858 -0400", hash_original_method = "7A9F95068D47CF60B894A5D5EE822200", hash_generated_method = "DDC2BDD6DC1614A04F536562C855C1CE")
         private  LoggingConfiguration(String tag, int level) {
             this.tag = tag;
             this.level = level;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.tag = tag;
+            //this.level = level;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.514 -0400", hash_original_method = "B5444C1DC99A243E7A135E83B11C8EBC", hash_generated_method = "7D690AE101A9E2B104F061BA37EE7A4D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.859 -0400", hash_original_method = "B5444C1DC99A243E7A135E83B11C8EBC", hash_generated_method = "C80DF24F5DF878ADE10F96158444D789")
         private boolean isLoggable() {
-            boolean varE5787261DEF50602463A867E1AEB2C4B_1012296361 = (Log.isLoggable(tag, level));
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_8090477 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_8090477;
-            
-            
+            boolean varF6071C9114C968C92D018274AD7D4F3F_1434162461 = (Log.isLoggable(tag, level));
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1900660760 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1900660760;
+            // ---------- Original Method ----------
+            //return Log.isLoggable(tag, level);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.515 -0400", hash_original_method = "0A6EBDDF0EE93BAA660A9D5D941C1EF5", hash_generated_method = "86C85ECEF4A2E4CDFEECF7ACE4AF1C72")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.859 -0400", hash_original_method = "0A6EBDDF0EE93BAA660A9D5D941C1EF5", hash_generated_method = "E742801E4D5E3C30B65E57B6B062ECF0")
         private void println(String message) {
-            Log.println(level, tag, message);
             addTaint(message.getTaint());
-            
-            
+            Log.println(level, tag, message);
+            // ---------- Original Method ----------
+            //Log.println(level, tag, message);
         }
 
         
@@ -526,33 +496,31 @@ public final class AndroidHttpClient implements HttpClient {
     
     private class CurlLogger implements HttpRequestInterceptor {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.515 -0400", hash_original_method = "031D6A607DADA24E6C6F491D807252DF", hash_generated_method = "031D6A607DADA24E6C6F491D807252DF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.859 -0400", hash_original_method = "031D6A607DADA24E6C6F491D807252DF", hash_generated_method = "031D6A607DADA24E6C6F491D807252DF")
         public CurlLogger ()
         {
-            
+            //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.515 -0400", hash_original_method = "548F79A85E58318C95FE6E873644EB65", hash_generated_method = "A26AB7472A59509731D25A69F17BF311")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.859 -0400", hash_original_method = "548F79A85E58318C95FE6E873644EB65", hash_generated_method = "392DD9DE5F7D09482C251353CDD1155E")
         public void process(HttpRequest request, HttpContext context) throws HttpException, IOException {
-            LoggingConfiguration configuration = curlConfiguration;
-            {
-                boolean var4EBC5DB080ADA8F5710E136849F404CD_48560898 = (configuration != null
-                    && configuration.isLoggable()
-                    && request instanceof HttpUriRequest);
-                {
-                    configuration.println(toCurl((HttpUriRequest) request, false));
-                } 
-            } 
-            addTaint(request.getTaint());
             addTaint(context.getTaint());
-            
-            
-            
-                    
-                    
-                
-            
+            addTaint(request.getTaint());
+            LoggingConfiguration configuration = curlConfiguration;
+    if(configuration != null
+                    && configuration.isLoggable()
+                    && request instanceof HttpUriRequest)            
+            {
+                configuration.println(toCurl((HttpUriRequest) request, false));
+            } //End block
+            // ---------- Original Method ----------
+            //LoggingConfiguration configuration = curlConfiguration;
+            //if (configuration != null
+                    //&& configuration.isLoggable()
+                    //&& request instanceof HttpUriRequest) {
+                //configuration.println(toCurl((HttpUriRequest) request, false));
+            //}
         }
 
         
@@ -560,16 +528,16 @@ public final class AndroidHttpClient implements HttpClient {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.516 -0400", hash_original_field = "D9CA95F12AB95C01D1E4FF037197D4F3", hash_generated_field = "636A49C38E1406125087E3E229184E73")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.859 -0400", hash_original_field = "D9CA95F12AB95C01D1E4FF037197D4F3", hash_generated_field = "636A49C38E1406125087E3E229184E73")
 
     public static long DEFAULT_SYNC_MIN_GZIP_BYTES = 256;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.516 -0400", hash_original_field = "816B5DA9E1442B79CE6BB08C3246E5DF", hash_generated_field = "AC25CF9BD92864499A69AA82F8FF1A54")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.860 -0400", hash_original_field = "816B5DA9E1442B79CE6BB08C3246E5DF", hash_generated_field = "AC25CF9BD92864499A69AA82F8FF1A54")
 
     private static final int SOCKET_OPERATION_TIMEOUT = 60 * 1000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.516 -0400", hash_original_field = "B130AFEA0E83CB5B14EA3CF260452B49", hash_generated_field = "97E15BF1145A52C243BF2650CF904E71")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.860 -0400", hash_original_field = "B130AFEA0E83CB5B14EA3CF260452B49", hash_generated_field = "97E15BF1145A52C243BF2650CF904E71")
 
     private static final String TAG = "AndroidHttpClient";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.516 -0400", hash_original_field = "32E9A22B388B1A21461D281EA9DD396D", hash_generated_field = "54659355031202ED56EB5471E883C486")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.860 -0400", hash_original_field = "32E9A22B388B1A21461D281EA9DD396D", hash_generated_field = "54659355031202ED56EB5471E883C486")
 
     private static String[] textContentTypes = new String[] {
             "text/",

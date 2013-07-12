@@ -1,12 +1,9 @@
 package java.security.cert;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.ByteArrayInputStream;
 import java.io.NotSerializableException;
 import java.io.ObjectStreamException;
@@ -20,93 +17,103 @@ import java.security.SignatureException;
 import java.util.Arrays;
 
 public abstract class Certificate implements Serializable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.943 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "AB2C9E2EF2C4EBDBF6BF18A679B45B62")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.605 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "AB2C9E2EF2C4EBDBF6BF18A679B45B62")
 
     private String type;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.944 -0400", hash_original_method = "244ADEDBEBB96EF97070F535965BB014", hash_generated_method = "091FFA48FFD653C349D8D45027C4C179")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.605 -0400", hash_original_method = "244ADEDBEBB96EF97070F535965BB014", hash_generated_method = "091FFA48FFD653C349D8D45027C4C179")
     protected  Certificate(String type) {
         this.type = type;
-        
-        
+        // ---------- Original Method ----------
+        //this.type = type;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.944 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "6F6B30863382FC352D5048ACE5D20BB2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.605 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "EBE0EFFD687F30D53036E78D72CADC12")
     public final String getType() {
-        String varB4EAC82CA7396A68D541C85D26508E83_37888412 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_37888412 = type;
-        varB4EAC82CA7396A68D541C85D26508E83_37888412.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_37888412;
-        
-        
+String varC5B9F25B4EEAD3E8E2C33F9429204397_462534867 =         type;
+        varC5B9F25B4EEAD3E8E2C33F9429204397_462534867.addTaint(taint);
+        return varC5B9F25B4EEAD3E8E2C33F9429204397_462534867;
+        // ---------- Original Method ----------
+        //return type;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.944 -0400", hash_original_method = "34CF5F66357C97013C2BECCDE3CD7868", hash_generated_method = "FA0E6DE1FB18771CF5975426062D8F14")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.606 -0400", hash_original_method = "34CF5F66357C97013C2BECCDE3CD7868", hash_generated_method = "60BB8190A328ABB7602D3145F993CC7B")
     public boolean equals(Object other) {
+        addTaint(other.getTaint());
+    if(this == other)        
+        {
+            boolean varB326B5062B2F0E69046810717534CB09_1247057391 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1327416529 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1327416529;
+        } //End block
+    if(other instanceof Certificate)        
         {
             try 
             {
-                boolean var4B38EF159D3F0D18D03DD6C018FE1989_901649905 = (Arrays.equals(this.getEncoded(),
+                boolean var4103D3053CD784E62668680AA7D2BA51_2117297814 = (Arrays.equals(this.getEncoded(),
                         ((Certificate)other).getEncoded()));
-            } 
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_302721946 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_302721946;
+            } //End block
             catch (CertificateEncodingException e)
             {
-                if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
-            } 
-        } 
-        addTaint(other.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_951940463 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_951940463;
-        
-        
-            
-        
-        
-            
-                
-                        
-            
-                
-            
-        
-        
+                RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_2037699955 = new RuntimeException(e);
+                varC76ADF009CE2FEDD948F7A54F409BA37_2037699955.addTaint(taint);
+                throw varC76ADF009CE2FEDD948F7A54F409BA37_2037699955;
+            } //End block
+        } //End block
+        boolean var68934A3E9455FA72420237EB05902327_1741674357 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_500118821 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_500118821;
+        // ---------- Original Method ----------
+        //if (this == other) {
+            //return true;
+        //}
+        //if (other instanceof Certificate) {
+            //try {
+                //return Arrays.equals(this.getEncoded(),
+                        //((Certificate)other).getEncoded());
+            //} catch (CertificateEncodingException e) {
+                //throw new RuntimeException(e);
+            //}
+        //}
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.945 -0400", hash_original_method = "4607E15AFDECFF486998F7FDB6C49986", hash_generated_method = "0ED3A29EE54640083A7A5E95252A968E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.607 -0400", hash_original_method = "4607E15AFDECFF486998F7FDB6C49986", hash_generated_method = "97E0E8D013199A734E3B7C1A59963397")
     public int hashCode() {
         try 
         {
             byte[] encoded = getEncoded();
             int hash = 0;
+for(int i=0;i<encoded.length;i++)
             {
-                int i = 0;
-                {
-                    hash += i*encoded[i];
-                } 
-            } 
-        } 
+                hash += i*encoded[i];
+            } //End block
+            int var0800FC577294C34E0B28AD2839435945_1922674690 = (hash);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_687013322 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_687013322;
+        } //End block
         catch (CertificateEncodingException e)
         {
-            if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
-        } 
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_588745937 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_588745937;
-        
-        
-            
-            
-            
-                
-            
-            
-        
-            
-        
+            RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_825850947 = new RuntimeException(e);
+            varC76ADF009CE2FEDD948F7A54F409BA37_825850947.addTaint(taint);
+            throw varC76ADF009CE2FEDD948F7A54F409BA37_825850947;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //byte[] encoded = getEncoded();
+            //int hash = 0;
+            //for (int i=0; i<encoded.length; i++) {
+                //hash += i*encoded[i];
+            //}
+            //return hash;
+        //} catch (CertificateEncodingException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
@@ -135,75 +142,76 @@ public abstract class Certificate implements Serializable {
     public abstract PublicKey getPublicKey();
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.946 -0400", hash_original_method = "99E789CC29F8A2F97D8F3F24132FD9A6", hash_generated_method = "FDADFE31C0B5754F7B4838A599D9F73F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.608 -0400", hash_original_method = "99E789CC29F8A2F97D8F3F24132FD9A6", hash_generated_method = "6608CCD91BB96C5DBF9AE1FE0979F508")
     protected Object writeReplace() throws ObjectStreamException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_826953531 = null; 
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_826953531 = new CertificateRep(getType(), getEncoded());
-        } 
+Object varA4927F1440786F4D2449DB9A7837689C_2090865940 =             new CertificateRep(getType(), getEncoded());
+            varA4927F1440786F4D2449DB9A7837689C_2090865940.addTaint(taint);
+            return varA4927F1440786F4D2449DB9A7837689C_2090865940;
+        } //End block
         catch (CertificateEncodingException e)
         {
-            if (DroidSafeAndroidRuntime.control) throw new NotSerializableException("Could not create serialization object: " + e);
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_826953531.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_826953531;
-        
-        
-            
-        
-            
-        
+            NotSerializableException varD10E63AB14446D5829D48417DD9728EF_432626177 = new NotSerializableException("Could not create serialization object: " + e);
+            varD10E63AB14446D5829D48417DD9728EF_432626177.addTaint(taint);
+            throw varD10E63AB14446D5829D48417DD9728EF_432626177;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return new CertificateRep(getType(), getEncoded());
+        //} catch (CertificateEncodingException e) {
+            //throw new NotSerializableException("Could not create serialization object: " + e);
+        //}
     }
 
     
     protected static class CertificateRep implements Serializable {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.947 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "AB2C9E2EF2C4EBDBF6BF18A679B45B62")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.609 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "AB2C9E2EF2C4EBDBF6BF18A679B45B62")
 
         private String type;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.947 -0400", hash_original_field = "8D777F385D3DFEC8815D20F7496026DC", hash_generated_field = "BCB00A81B11593F3A75239028B6E65B9")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.609 -0400", hash_original_field = "8D777F385D3DFEC8815D20F7496026DC", hash_generated_field = "BCB00A81B11593F3A75239028B6E65B9")
 
         private byte[] data;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.947 -0400", hash_original_method = "D627339278E2A38DCC6197D27B1C70B7", hash_generated_method = "55F6196FF50C3DD7ADA6E33F2AD1B31C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.609 -0400", hash_original_method = "D627339278E2A38DCC6197D27B1C70B7", hash_generated_method = "55F6196FF50C3DD7ADA6E33F2AD1B31C")
         protected  CertificateRep(String type, byte[] data) {
             this.type = type;
             this.data = data;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.type = type;
+            //this.data = data;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.948 -0400", hash_original_method = "4FCDFCCBC9683C8411983C8346CDCC6D", hash_generated_method = "20590C7020D5E358D9FC52CEA37DB429")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.610 -0400", hash_original_method = "4FCDFCCBC9683C8411983C8346CDCC6D", hash_generated_method = "047B6D888C0458E9FD89A2937C906F78")
         protected Object readResolve() throws ObjectStreamException {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1185002597 = null; 
             try 
             {
                 CertificateFactory cf = CertificateFactory.getInstance(type);
-                varB4EAC82CA7396A68D541C85D26508E83_1185002597 = cf.generateCertificate(new ByteArrayInputStream(data));
-            } 
+Object varD5B1E3A57F58153FF178493DE243F922_1679012166 =                 cf.generateCertificate(new ByteArrayInputStream(data));
+                varD5B1E3A57F58153FF178493DE243F922_1679012166.addTaint(taint);
+                return varD5B1E3A57F58153FF178493DE243F922_1679012166;
+            } //End block
             catch (Throwable t)
             {
-                if (DroidSafeAndroidRuntime.control) throw new NotSerializableException("Could not resolve certificate: " + t);
-            } 
-            varB4EAC82CA7396A68D541C85D26508E83_1185002597.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_1185002597;
-            
-            
-                
-                
-            
-                
-            
+                NotSerializableException var94D0FAB119F18D6D8D1335EC6968AA1A_1148293927 = new NotSerializableException("Could not resolve certificate: " + t);
+                var94D0FAB119F18D6D8D1335EC6968AA1A_1148293927.addTaint(taint);
+                throw var94D0FAB119F18D6D8D1335EC6968AA1A_1148293927;
+            } //End block
+            // ---------- Original Method ----------
+            //try {
+                //CertificateFactory cf = CertificateFactory.getInstance(type);
+                //return cf.generateCertificate(new ByteArrayInputStream(data));
+            //} catch (Throwable t) {
+                //throw new NotSerializableException("Could not resolve certificate: " + t);
+            //}
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.948 -0400", hash_original_field = "C67BEA3C27E872799CA2A3F4BF7600DF", hash_generated_field = "945034F4E24059F289CC97EFC7BB0CA4")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.610 -0400", hash_original_field = "C67BEA3C27E872799CA2A3F4BF7600DF", hash_generated_field = "945034F4E24059F289CC97EFC7BB0CA4")
 
         private static final long serialVersionUID = -8563758940495660020L;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.948 -0400", hash_original_field = "B0A20FC242DEEE0C0792909819F416AA", hash_generated_field = "AB4D6C645AC4B18232ECD0062FB68685")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.610 -0400", hash_original_field = "B0A20FC242DEEE0C0792909819F416AA", hash_generated_field = "AB4D6C645AC4B18232ECD0062FB68685")
 
         private static final ObjectStreamField[] serialPersistentFields = {
              new ObjectStreamField("type", String.class),
@@ -213,7 +221,7 @@ public abstract class Certificate implements Serializable {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.948 -0400", hash_original_field = "FCAEC767E7CCF2D06EA44AB29A7557F6", hash_generated_field = "F128B9ED7E1B9361939A91BA465EE1B0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.610 -0400", hash_original_field = "FCAEC767E7CCF2D06EA44AB29A7557F6", hash_generated_field = "F128B9ED7E1B9361939A91BA465EE1B0")
 
     private static final long serialVersionUID = -3585440601605666277L;
 }

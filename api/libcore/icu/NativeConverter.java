@@ -1,12 +1,10 @@
 package libcore.icu;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-
-import java.util.Iterator;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.nio.charset.Charset;
@@ -17,10 +15,10 @@ import java.nio.charset.CodingErrorAction;
 
 public final class NativeConverter {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:26.968 -0400", hash_original_method = "B3DE170E5D5FA99ECB84F9E7CDF4AF7D", hash_generated_method = "B3DE170E5D5FA99ECB84F9E7CDF4AF7D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:14.580 -0400", hash_original_method = "B3DE170E5D5FA99ECB84F9E7CDF4AF7D", hash_generated_method = "B3DE170E5D5FA99ECB84F9E7CDF4AF7D")
     public NativeConverter ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -122,7 +120,6 @@ public final class NativeConverter {
     @DSModeled(DSC.SAFE)
     public static Charset charsetForName(String charsetName) {
     	return new Charset(charsetName, null) {
-			
 			@Override
 			public CharsetEncoder newEncoder() {
 				return new CharsetEncoder(this, 0, 0) {
@@ -154,11 +151,9 @@ public final class NativeConverter {
 					}
 				};
 			}
-			
 			@Override
 			public CharsetDecoder newDecoder() {
 				return new CharsetDecoder(this, 0, 0) {
-					
 					@Override
 					protected CoderResult decodeLoop(ByteBuffer in, CharBuffer out) {
 						out.addTaint(in.getTaint());
@@ -187,18 +182,15 @@ public final class NativeConverter {
 					}
 				};
 			}
-			
 			@Override
 			public boolean contains(Charset charset) {
-				
 				return false;
 			}
 		};
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static int translateCodingErrorAction(CodingErrorAction action) {
+        private static int translateCodingErrorAction(CodingErrorAction action) {
         if (action == CodingErrorAction.REPORT) {
             return 0;
         } else if (action == CodingErrorAction.IGNORE) {
@@ -211,8 +203,7 @@ public final class NativeConverter {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static int setCallbackDecode(long converterHandle, CharsetDecoder decoder) {
+        public static int setCallbackDecode(long converterHandle, CharsetDecoder decoder) {
         return setCallbackDecode(converterHandle,
                 translateCodingErrorAction(decoder.malformedInputAction()),
                 translateCodingErrorAction(decoder.unmappableCharacterAction()),
@@ -227,8 +218,7 @@ public final class NativeConverter {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static int setCallbackEncode(long converterHandle, CharsetEncoder encoder) {
+        public static int setCallbackEncode(long converterHandle, CharsetEncoder encoder) {
         return setCallbackEncode(converterHandle,
                 translateCodingErrorAction(encoder.malformedInputAction()),
                 translateCodingErrorAction(encoder.unmappableCharacterAction()),

@@ -1,12 +1,9 @@
 package android.database;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.content.ContentResolver;
 import android.net.Uri;
 import android.os.Bundle;

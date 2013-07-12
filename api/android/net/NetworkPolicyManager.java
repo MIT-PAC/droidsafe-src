@@ -1,12 +1,9 @@
 package android.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import static android.content.pm.PackageManager.GET_SIGNATURES;
 import static android.text.format.Time.MONTH_DAY;
 import android.content.Context;
@@ -21,160 +18,154 @@ import java.io.PrintWriter;
 import java.util.HashSet;
 
 public class NetworkPolicyManager {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.426 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "99D41184207358A72CF865D27CF56B99")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.821 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "99D41184207358A72CF865D27CF56B99")
 
     private INetworkPolicyManager mService;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.427 -0400", hash_original_method = "BE20EED3085F3645396D71EF01AFD2C0", hash_generated_method = "8147234F295E452C1A833AA9B188EAB4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.822 -0400", hash_original_method = "BE20EED3085F3645396D71EF01AFD2C0", hash_generated_method = "D5235DAC174CDA836645F45B8DA539A9")
     public  NetworkPolicyManager(INetworkPolicyManager service) {
+    if(service == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("missing INetworkPolicyManager");
-        } 
+            IllegalArgumentException varDD4E4A1C469E87CD701596C87D20B2A2_1592561102 = new IllegalArgumentException("missing INetworkPolicyManager");
+            varDD4E4A1C469E87CD701596C87D20B2A2_1592561102.addTaint(taint);
+            throw varDD4E4A1C469E87CD701596C87D20B2A2_1592561102;
+        } //End block
         mService = service;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (service == null) {
+            //throw new IllegalArgumentException("missing INetworkPolicyManager");
+        //}
+        //mService = service;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static NetworkPolicyManager getSystemService(Context context) {
+        public static NetworkPolicyManager getSystemService(Context context) {
         return (NetworkPolicyManager) context.getSystemService(Context.NETWORK_POLICY_SERVICE);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.427 -0400", hash_original_method = "6C9718C45778137F76C2603939413095", hash_generated_method = "CAB9DC37DE9BEA0CC66D1DE07A242AB9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.822 -0400", hash_original_method = "6C9718C45778137F76C2603939413095", hash_generated_method = "DEC24C933533BB9E9D99BEA6719D6B8F")
     public void setNetworkPolicies(NetworkPolicy[] policies) {
+        addTaint(policies[0].getTaint());
         try 
         {
             mService.setNetworkPolicies(policies);
-        } 
+        } //End block
         catch (RemoteException e)
-        { }
-        addTaint(policies[0].getTaint());
-        
-        
-            
-        
-        
+        {
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.setNetworkPolicies(policies);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.428 -0400", hash_original_method = "025521C078EE07825554E8E10F94F333", hash_generated_method = "C171D49E1732F3E8FE3AB8FB6878752B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.823 -0400", hash_original_method = "025521C078EE07825554E8E10F94F333", hash_generated_method = "AFA9CBDB06BC800F80A834A2179F8060")
     public NetworkPolicy[] getNetworkPolicies() {
-        NetworkPolicy[] varB4EAC82CA7396A68D541C85D26508E83_426770256 = null; 
-        NetworkPolicy[] varB4EAC82CA7396A68D541C85D26508E83_247341331 = null; 
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_426770256 = mService.getNetworkPolicies();
-        } 
+NetworkPolicy[] var4F047D404EBF980DA3870796EB824A12_413020622 =             mService.getNetworkPolicies();
+            var4F047D404EBF980DA3870796EB824A12_413020622.addTaint(taint);
+            return var4F047D404EBF980DA3870796EB824A12_413020622;
+        } //End block
         catch (RemoteException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_247341331 = null;
-        } 
-        NetworkPolicy[] varA7E53CE21691AB073D9660D615818899_484307121; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_484307121 = varB4EAC82CA7396A68D541C85D26508E83_426770256;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_484307121 = varB4EAC82CA7396A68D541C85D26508E83_247341331;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_484307121.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_484307121;
-        
-        
-            
-        
-            
-        
+NetworkPolicy[] var540C13E9E156B687226421B24F2DF178_268267859 =             null;
+            var540C13E9E156B687226421B24F2DF178_268267859.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_268267859;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getNetworkPolicies();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.429 -0400", hash_original_method = "A06EA8E312C1B7FA5C4AC7FF7B993ED4", hash_generated_method = "6A5841D3BC023CEBF662D4648F87A3AA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.823 -0400", hash_original_method = "A06EA8E312C1B7FA5C4AC7FF7B993ED4", hash_generated_method = "F31C0CED39263F9AD2CCEAAEFEC79384")
     public void setUidPolicy(int uid, int policy) {
+        addTaint(policy);
+        addTaint(uid);
         try 
         {
             mService.setUidPolicy(uid, policy);
-        } 
+        } //End block
         catch (RemoteException e)
-        { }
-        addTaint(uid);
-        addTaint(policy);
-        
-        
-            
-        
-        
+        {
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.setUidPolicy(uid, policy);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.429 -0400", hash_original_method = "7AF3F24A0466D6FB5C5D518CC41F56AD", hash_generated_method = "3092AACA5B9741CD2DD4DB80698E835D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.824 -0400", hash_original_method = "7AF3F24A0466D6FB5C5D518CC41F56AD", hash_generated_method = "CA88364CF6F0CF3AFAE492B7E00D643E")
     public int getUidPolicy(int uid) {
+        addTaint(uid);
         try 
         {
-            int var2EFE4EBC09097CC24DA539A1E8DCD3CE_1431173586 = (mService.getUidPolicy(uid));
-        } 
+            int var9C634B2AB7B4EA717CAA76618B318108_999172944 = (mService.getUidPolicy(uid));
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_541213874 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_541213874;
+        } //End block
         catch (RemoteException e)
-        { }
-        addTaint(uid);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_579514837 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_579514837;
-        
-        
-            
-        
-            
-        
+        {
+            int var951D17BFE6AE91F8E390B7432D760639_1868292410 = (POLICY_NONE);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_332657022 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_332657022;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getUidPolicy(uid);
+        //} catch (RemoteException e) {
+            //return POLICY_NONE;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.430 -0400", hash_original_method = "14080C9EBE421CBAA0CC7A85DC8AF1A5", hash_generated_method = "F8F2B172F98C25CEE95E5E1A7E12475E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.824 -0400", hash_original_method = "14080C9EBE421CBAA0CC7A85DC8AF1A5", hash_generated_method = "C24CEFF6E15A1744700711AE690AB1B2")
     public void registerListener(INetworkPolicyListener listener) {
-        
+        //DSFIXME: CODE0010: Possible callback registration function detected
+        addTaint(listener.getTaint());
         try 
         {
             mService.registerListener(listener);
-        } 
+        } //End block
         catch (RemoteException e)
-        { }
-        addTaint(listener.getTaint());
-        
-        
-            
-        
-        
+        {
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.registerListener(listener);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.431 -0400", hash_original_method = "35702F276EA8A80B200FDB5306DFD41E", hash_generated_method = "51C036CBD170D6512891CB5207B01BDC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.824 -0400", hash_original_method = "35702F276EA8A80B200FDB5306DFD41E", hash_generated_method = "371523183CC19B92A10C034B5B6EDD56")
     public void unregisterListener(INetworkPolicyListener listener) {
+        addTaint(listener.getTaint());
         try 
         {
             mService.unregisterListener(listener);
-        } 
+        } //End block
         catch (RemoteException e)
-        { }
-        addTaint(listener.getTaint());
-        
-        
-            
-        
-        
+        {
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.unregisterListener(listener);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static long computeLastCycleBoundary(long currentTime, NetworkPolicy policy) {
+        public static long computeLastCycleBoundary(long currentTime, NetworkPolicy policy) {
         final Time now = new Time(Time.TIMEZONE_UTC);
         now.set(currentTime);
         final Time cycle = new Time(now);
@@ -193,8 +184,7 @@ public class NetworkPolicyManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static long computeNextCycleBoundary(long currentTime, NetworkPolicy policy) {
+        public static long computeNextCycleBoundary(long currentTime, NetworkPolicy policy) {
         final Time now = new Time(Time.TIMEZONE_UTC);
         now.set(currentTime);
         final Time cycle = new Time(now);
@@ -213,8 +203,7 @@ public class NetworkPolicyManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void snapToCycleDay(Time time, int cycleDay) {
+        public static void snapToCycleDay(Time time, int cycleDay) {
         if (cycleDay > time.getActualMaximum(MONTH_DAY)) {
             time.month += 1;
             time.monthDay = 1;
@@ -226,8 +215,7 @@ public class NetworkPolicyManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static boolean isUidValidForPolicy(Context context, int uid) {
+        public static boolean isUidValidForPolicy(Context context, int uid) {
         if (uid < android.os.Process.FIRST_APPLICATION_UID
                 || uid > android.os.Process.LAST_APPLICATION_UID) {
             return false;
@@ -256,8 +244,7 @@ public class NetworkPolicyManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void dumpPolicy(PrintWriter fout, int policy) {
+        public static void dumpPolicy(PrintWriter fout, int policy) {
         fout.write("[");
         if ((policy & POLICY_REJECT_METERED_BACKGROUND) != 0) {
             fout.write("REJECT_METERED_BACKGROUND");
@@ -266,8 +253,7 @@ public class NetworkPolicyManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void dumpRules(PrintWriter fout, int rules) {
+        public static void dumpRules(PrintWriter fout, int rules) {
         fout.write("[");
         if ((rules & RULE_REJECT_METERED) != 0) {
             fout.write("REJECT_METERED");
@@ -276,22 +262,22 @@ public class NetworkPolicyManager {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.432 -0400", hash_original_field = "5F01DF1EC1C676246E73BF9B11F16961", hash_generated_field = "A3BDE024BE500201404672CCC1FA302A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.827 -0400", hash_original_field = "5F01DF1EC1C676246E73BF9B11F16961", hash_generated_field = "A3BDE024BE500201404672CCC1FA302A")
 
     public static final int POLICY_NONE = 0x0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.432 -0400", hash_original_field = "508212C4E68E17ADFD3CAD6DF2535DF4", hash_generated_field = "1AA83347B7872B2E30E521C1406805D2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.827 -0400", hash_original_field = "508212C4E68E17ADFD3CAD6DF2535DF4", hash_generated_field = "1AA83347B7872B2E30E521C1406805D2")
 
     public static final int POLICY_REJECT_METERED_BACKGROUND = 0x1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.432 -0400", hash_original_field = "E10817514635957436609E1FAB8975E1", hash_generated_field = "1275F8E08B26E334FD55FCC008B3124E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.827 -0400", hash_original_field = "E10817514635957436609E1FAB8975E1", hash_generated_field = "1275F8E08B26E334FD55FCC008B3124E")
 
     public static final int RULE_ALLOW_ALL = 0x0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.432 -0400", hash_original_field = "E2A0D322ABD6E5AA243E226C00F05628", hash_generated_field = "4356C8F4B6AFE9AC655D4B421139074C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.827 -0400", hash_original_field = "E2A0D322ABD6E5AA243E226C00F05628", hash_generated_field = "4356C8F4B6AFE9AC655D4B421139074C")
 
     public static final int RULE_REJECT_METERED = 0x1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.432 -0400", hash_original_field = "75F62DC6D048838CBD4FC2C088798D84", hash_generated_field = "F1EAF378337BFA0CCC51503439EDE9BF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.827 -0400", hash_original_field = "75F62DC6D048838CBD4FC2C088798D84", hash_generated_field = "F1EAF378337BFA0CCC51503439EDE9BF")
 
     private static final boolean ALLOW_PLATFORM_APP_POLICY = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.432 -0400", hash_original_field = "FB2642AC3EF8E7EAC32618880485B684", hash_generated_field = "7320E001215B3C746B3AE684FAAEC5AC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.827 -0400", hash_original_field = "FB2642AC3EF8E7EAC32618880485B684", hash_generated_field = "7320E001215B3C746B3AE684FAAEC5AC")
 
     public static final String EXTRA_NETWORK_TEMPLATE = "android.net.NETWORK_TEMPLATE";
 }

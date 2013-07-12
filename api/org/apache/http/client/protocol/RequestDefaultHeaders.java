@@ -1,12 +1,9 @@
 package org.apache.http.client.protocol;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.IOException;
 import java.util.Collection;
 import org.apache.http.Header;
@@ -18,43 +15,43 @@ import org.apache.http.protocol.HttpContext;
 
 public class RequestDefaultHeaders implements HttpRequestInterceptor {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.846 -0400", hash_original_method = "A692411AA68D5698704806EAFB0D6447", hash_generated_method = "BC9A54616EA56C3FB9CBB65BD3CE817E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.247 -0400", hash_original_method = "A692411AA68D5698704806EAFB0D6447", hash_generated_method = "BC9A54616EA56C3FB9CBB65BD3CE817E")
     public  RequestDefaultHeaders() {
         super();
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.861 -0400", hash_original_method = "BC6D4315FE478105CC299FA29DDE20AF", hash_generated_method = "1E2EC1C7AF1CACB89F6DDAD0957FFBE8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.247 -0400", hash_original_method = "BC6D4315FE478105CC299FA29DDE20AF", hash_generated_method = "22E8F5A84C462058C94F4862D68CD85E")
     public void process(final HttpRequest request, final HttpContext context) throws HttpException, IOException {
+        addTaint(context.getTaint());
+        addTaint(request.getTaint());
+    if(request == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
-        } 
+            IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_1065650527 = new IllegalArgumentException("HTTP request may not be null");
+            varF07DEF4BA25028D1DB51C0BA629AF0B4_1065650527.addTaint(taint);
+            throw varF07DEF4BA25028D1DB51C0BA629AF0B4_1065650527;
+        } //End block
         Collection<?> defHeaders = (Collection<?>) request.getParams().getParameter(
                 ClientPNames.DEFAULT_HEADERS);
+    if(defHeaders != null)        
         {
+for(Object defHeader : defHeaders)
             {
-                Iterator<?> var6DB89BCBACB10D0D7F512BB6B9D9D2DC_1687130429 = (defHeaders).iterator();
-                var6DB89BCBACB10D0D7F512BB6B9D9D2DC_1687130429.hasNext();
-                Object defHeader = var6DB89BCBACB10D0D7F512BB6B9D9D2DC_1687130429.next();
-                {
-                    request.addHeader((Header) defHeader);
-                } 
-            } 
-        } 
-        addTaint(request.getTaint());
-        addTaint(context.getTaint());
-        
-        
-            
-        
-        
-                
-        
-            
-                
-            
-        
+                request.addHeader((Header) defHeader);
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (request == null) {
+            //throw new IllegalArgumentException("HTTP request may not be null");
+        //}
+        //Collection<?> defHeaders = (Collection<?>) request.getParams().getParameter(
+                //ClientPNames.DEFAULT_HEADERS);
+        //if (defHeaders != null) {
+            //for (Object defHeader : defHeaders) {
+                //request.addHeader((Header) defHeader);
+            //}
+        //}
     }
 
     

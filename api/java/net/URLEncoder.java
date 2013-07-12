@@ -1,12 +1,9 @@
 package java.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.nio.charset.Charsets;
@@ -14,21 +11,19 @@ import libcore.net.UriCodec;
 
 public class URLEncoder {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.615 -0400", hash_original_method = "B41CBCC9C76AA809E0DC45FDBBA0D268", hash_generated_method = "A6F2D9E84EF75199314CB290B61AC175")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:55.380 -0400", hash_original_method = "B41CBCC9C76AA809E0DC45FDBBA0D268", hash_generated_method = "A6F2D9E84EF75199314CB290B61AC175")
     private  URLEncoder() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static String encode(String s) {
         return ENCODER.encode(s, Charsets.UTF_8);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String encode(String s, String charsetName) throws UnsupportedEncodingException {
+        public static String encode(String s, String charsetName) throws UnsupportedEncodingException {
         return ENCODER.encode(s, Charset.forName(charsetName));
     }
 

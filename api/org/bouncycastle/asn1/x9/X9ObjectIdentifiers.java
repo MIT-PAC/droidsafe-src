@@ -1,12 +1,9 @@
 package org.bouncycastle.asn1.x9;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 
 public interface X9ObjectIdentifiers

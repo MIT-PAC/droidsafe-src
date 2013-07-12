@@ -1,12 +1,9 @@
 package javax.xml.parsers;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -22,268 +19,293 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public abstract class SAXParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.800 -0400", hash_original_method = "60861A80C08610A003AEF9BD086AC67B", hash_generated_method = "D85D3D2B092B8D57ADC303B7697DCEA9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.861 -0400", hash_original_method = "60861A80C08610A003AEF9BD086AC67B", hash_generated_method = "D85D3D2B092B8D57ADC303B7697DCEA9")
     protected  SAXParser() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.801 -0400", hash_original_method = "EE92C6E107D176D208870C8A6C9502AF", hash_generated_method = "9143287AF68609AEF72DB0E83AD02E5E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.861 -0400", hash_original_method = "EE92C6E107D176D208870C8A6C9502AF", hash_generated_method = "20555AADD39CBBF8CB174247CE7ADF51")
     public void reset() {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(
+        UnsupportedOperationException var7C551673C8356EEBC5D7497F7A95F3F8_1503495508 = new UnsupportedOperationException(
             "This SAXParser, \"" + this.getClass().getName() + "\", does not support the reset functionality."
             + "  Specification \"" + this.getClass().getPackage().getSpecificationTitle() + "\""
             + " version \"" + this.getClass().getPackage().getSpecificationVersion() + "\""
             );
-        
-        
-            
-            
-            
-            
+        var7C551673C8356EEBC5D7497F7A95F3F8_1503495508.addTaint(taint);
+        throw var7C551673C8356EEBC5D7497F7A95F3F8_1503495508;
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException(
+            //"This SAXParser, \"" + this.getClass().getName() + "\", does not support the reset functionality."
+            //+ "  Specification \"" + this.getClass().getPackage().getSpecificationTitle() + "\""
+            //+ " version \"" + this.getClass().getPackage().getSpecificationVersion() + "\""
+            //);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.801 -0400", hash_original_method = "E0E7EFA387CE9D5F50CEC1024059C3F8", hash_generated_method = "4C541BB6BBC21F13B8F44A754FC7CC38")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.862 -0400", hash_original_method = "E0E7EFA387CE9D5F50CEC1024059C3F8", hash_generated_method = "C79C9BC058C624FE7AA6097303D9A7A4")
     public void parse(InputStream is, HandlerBase hb) throws SAXException, IOException {
+        addTaint(hb.getTaint());
+        addTaint(is.getTaint());
+    if(is == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("InputStream cannot be null");
-        } 
+            IllegalArgumentException varC815381FE103054CE280DFD5B97A6E37_2075750969 = new IllegalArgumentException("InputStream cannot be null");
+            varC815381FE103054CE280DFD5B97A6E37_2075750969.addTaint(taint);
+            throw varC815381FE103054CE280DFD5B97A6E37_2075750969;
+        } //End block
         InputSource input = new InputSource(is);
         this.parse(input, hb);
-        addTaint(is.getTaint());
-        addTaint(hb.getTaint());
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (is == null) {
+            //throw new IllegalArgumentException("InputStream cannot be null");
+        //}
+        //InputSource input = new InputSource(is);
+        //this.parse(input, hb);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.801 -0400", hash_original_method = "E43A55A8544E4B0EB3A11D0317C825F2", hash_generated_method = "AA5580127AE113DA41EF8DDA2A235EB8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.862 -0400", hash_original_method = "E43A55A8544E4B0EB3A11D0317C825F2", hash_generated_method = "3017AC3AF136C0F67B51E4D9C34816ED")
     public void parse(
         InputStream is,
         HandlerBase hb,
         String systemId) throws SAXException, IOException {
+        addTaint(systemId.getTaint());
+        addTaint(hb.getTaint());
+        addTaint(is.getTaint());
+    if(is == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("InputStream cannot be null");
-        } 
+            IllegalArgumentException varC815381FE103054CE280DFD5B97A6E37_1688792754 = new IllegalArgumentException("InputStream cannot be null");
+            varC815381FE103054CE280DFD5B97A6E37_1688792754.addTaint(taint);
+            throw varC815381FE103054CE280DFD5B97A6E37_1688792754;
+        } //End block
         InputSource input = new InputSource(is);
         input.setSystemId(systemId);
         this.parse(input, hb);
-        addTaint(is.getTaint());
-        addTaint(hb.getTaint());
-        addTaint(systemId.getTaint());
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (is == null) {
+            //throw new IllegalArgumentException("InputStream cannot be null");
+        //}
+        //InputSource input = new InputSource(is);
+        //input.setSystemId(systemId);
+        //this.parse(input, hb);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.801 -0400", hash_original_method = "F19248E94372C80DC5D37D9D6B998C8A", hash_generated_method = "BFE9DFE9186BE48E5230F0E2D5154E0D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.863 -0400", hash_original_method = "F19248E94372C80DC5D37D9D6B998C8A", hash_generated_method = "DD06C92770FE563DF66508E910664B88")
     public void parse(InputStream is, DefaultHandler dh) throws SAXException, IOException {
+        addTaint(dh.getTaint());
+        addTaint(is.getTaint());
+    if(is == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("InputStream cannot be null");
-        } 
+            IllegalArgumentException varC815381FE103054CE280DFD5B97A6E37_658104498 = new IllegalArgumentException("InputStream cannot be null");
+            varC815381FE103054CE280DFD5B97A6E37_658104498.addTaint(taint);
+            throw varC815381FE103054CE280DFD5B97A6E37_658104498;
+        } //End block
         InputSource input = new InputSource(is);
         this.parse(input, dh);
-        addTaint(is.getTaint());
-        addTaint(dh.getTaint());
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (is == null) {
+            //throw new IllegalArgumentException("InputStream cannot be null");
+        //}
+        //InputSource input = new InputSource(is);
+        //this.parse(input, dh);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.802 -0400", hash_original_method = "1FC33240EB3C018A09EA92FF8A96D1A8", hash_generated_method = "DC85B5792C749362B3CE92D34FAAC468")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.863 -0400", hash_original_method = "1FC33240EB3C018A09EA92FF8A96D1A8", hash_generated_method = "E78DF7D61CAD7C3DFC0CCB90D12DD9FE")
     public void parse(
         InputStream is,
         DefaultHandler dh,
         String systemId) throws SAXException, IOException {
+        addTaint(systemId.getTaint());
+        addTaint(dh.getTaint());
+        addTaint(is.getTaint());
+    if(is == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("InputStream cannot be null");
-        } 
+            IllegalArgumentException varC815381FE103054CE280DFD5B97A6E37_1314825627 = new IllegalArgumentException("InputStream cannot be null");
+            varC815381FE103054CE280DFD5B97A6E37_1314825627.addTaint(taint);
+            throw varC815381FE103054CE280DFD5B97A6E37_1314825627;
+        } //End block
         InputSource input = new InputSource(is);
         input.setSystemId(systemId);
         this.parse(input, dh);
-        addTaint(is.getTaint());
-        addTaint(dh.getTaint());
-        addTaint(systemId.getTaint());
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (is == null) {
+            //throw new IllegalArgumentException("InputStream cannot be null");
+        //}
+        //InputSource input = new InputSource(is);
+        //input.setSystemId(systemId);
+        //this.parse(input, dh);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.802 -0400", hash_original_method = "67AC143C34CF78ECFB000A375BF6460F", hash_generated_method = "927F7E491F5534F183C5F582C3A2C075")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.863 -0400", hash_original_method = "67AC143C34CF78ECFB000A375BF6460F", hash_generated_method = "6B1D29210626ECA6ABE46BCADAF64260")
     public void parse(String uri, HandlerBase hb) throws SAXException, IOException {
+        addTaint(hb.getTaint());
+        addTaint(uri.getTaint());
+    if(uri == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("uri cannot be null");
-        } 
+            IllegalArgumentException var43E55EBB1529700CC8D575B1A62B12AE_230111906 = new IllegalArgumentException("uri cannot be null");
+            var43E55EBB1529700CC8D575B1A62B12AE_230111906.addTaint(taint);
+            throw var43E55EBB1529700CC8D575B1A62B12AE_230111906;
+        } //End block
         InputSource input = new InputSource(uri);
         this.parse(input, hb);
-        addTaint(uri.getTaint());
-        addTaint(hb.getTaint());
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (uri == null) {
+            //throw new IllegalArgumentException("uri cannot be null");
+        //}
+        //InputSource input = new InputSource(uri);
+        //this.parse(input, hb);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.802 -0400", hash_original_method = "9D1B9B5B338D189F5FEB6183087C0F90", hash_generated_method = "9C5A76CD421BC4437D871151AC24FDD1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.864 -0400", hash_original_method = "9D1B9B5B338D189F5FEB6183087C0F90", hash_generated_method = "0BCCF7FC7389FCD3389544DFDA81E63C")
     public void parse(String uri, DefaultHandler dh) throws SAXException, IOException {
+        addTaint(dh.getTaint());
+        addTaint(uri.getTaint());
+    if(uri == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("uri cannot be null");
-        } 
+            IllegalArgumentException var43E55EBB1529700CC8D575B1A62B12AE_1812973058 = new IllegalArgumentException("uri cannot be null");
+            var43E55EBB1529700CC8D575B1A62B12AE_1812973058.addTaint(taint);
+            throw var43E55EBB1529700CC8D575B1A62B12AE_1812973058;
+        } //End block
         InputSource input = new InputSource(uri);
         this.parse(input, dh);
-        addTaint(uri.getTaint());
-        addTaint(dh.getTaint());
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (uri == null) {
+            //throw new IllegalArgumentException("uri cannot be null");
+        //}
+        //InputSource input = new InputSource(uri);
+        //this.parse(input, dh);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.803 -0400", hash_original_method = "0F0EB1667ABEA41C60E7456F327FDB47", hash_generated_method = "709E1B5F9CC9EC7D83CCA7AC7618EE5D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.864 -0400", hash_original_method = "0F0EB1667ABEA41C60E7456F327FDB47", hash_generated_method = "E4455D5817833F974FDBEADDEA05AEC8")
     public void parse(File f, HandlerBase hb) throws SAXException, IOException {
+        addTaint(hb.getTaint());
+        addTaint(f.getTaint());
+    if(f == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("File cannot be null");
-        } 
+            IllegalArgumentException varFEC080412D1250CB64DE25E01D0B1780_471055354 = new IllegalArgumentException("File cannot be null");
+            varFEC080412D1250CB64DE25E01D0B1780_471055354.addTaint(taint);
+            throw varFEC080412D1250CB64DE25E01D0B1780_471055354;
+        } //End block
         String escapedURI = FilePathToURI.filepath2URI(f.getAbsolutePath());
+    if(DEBUG)        
         {
             System.out.println("Escaped URI = " + escapedURI);
-        } 
+        } //End block
         InputSource input = new InputSource(escapedURI);
         this.parse(input, hb);
-        addTaint(f.getTaint());
-        addTaint(hb.getTaint());
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (f == null) {
+            //throw new IllegalArgumentException("File cannot be null");
+        //}
+        //String escapedURI = FilePathToURI.filepath2URI(f.getAbsolutePath());
+        //if (DEBUG) {
+            //System.out.println("Escaped URI = " + escapedURI);
+        //}
+        //InputSource input = new InputSource(escapedURI);
+        //this.parse(input, hb);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.804 -0400", hash_original_method = "4E507AEF2C358B180E5AB169C6F8A741", hash_generated_method = "E1BF53FE05DDAF79B6AF60F563CC1AA1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.865 -0400", hash_original_method = "4E507AEF2C358B180E5AB169C6F8A741", hash_generated_method = "F6000199E5685B7E346CF08030F5FC63")
     public void parse(File f, DefaultHandler dh) throws SAXException, IOException {
+        addTaint(dh.getTaint());
+        addTaint(f.getTaint());
+    if(f == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("File cannot be null");
-        } 
+            IllegalArgumentException varFEC080412D1250CB64DE25E01D0B1780_286011670 = new IllegalArgumentException("File cannot be null");
+            varFEC080412D1250CB64DE25E01D0B1780_286011670.addTaint(taint);
+            throw varFEC080412D1250CB64DE25E01D0B1780_286011670;
+        } //End block
         String escapedURI = FilePathToURI.filepath2URI(f.getAbsolutePath());
+    if(DEBUG)        
         {
             System.out.println("Escaped URI = " + escapedURI);
-        } 
+        } //End block
         InputSource input = new InputSource(escapedURI);
         this.parse(input, dh);
-        addTaint(f.getTaint());
-        addTaint(dh.getTaint());
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (f == null) {
+            //throw new IllegalArgumentException("File cannot be null");
+        //}
+        //String escapedURI = FilePathToURI.filepath2URI(f.getAbsolutePath());
+        //if (DEBUG) {
+            //System.out.println("Escaped URI = " + escapedURI);
+        //}
+        //InputSource input = new InputSource(escapedURI);
+        //this.parse(input, dh);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.805 -0400", hash_original_method = "07160A7FD95C7E2FA31C88097829A206", hash_generated_method = "503638CF59727D05778EC37CD565B8E3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.865 -0400", hash_original_method = "07160A7FD95C7E2FA31C88097829A206", hash_generated_method = "25E24BCB13A496B59AE6CF0EDC87D5F1")
     public void parse(InputSource is, HandlerBase hb) throws SAXException, IOException {
+        addTaint(hb.getTaint());
+        addTaint(is.getTaint());
+    if(is == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("InputSource cannot be null");
-        } 
+            IllegalArgumentException varA613319797731CA5E15D0EBCB2C00F66_234066608 = new IllegalArgumentException("InputSource cannot be null");
+            varA613319797731CA5E15D0EBCB2C00F66_234066608.addTaint(taint);
+            throw varA613319797731CA5E15D0EBCB2C00F66_234066608;
+        } //End block
         Parser parser = this.getParser();
+    if(hb != null)        
         {
             parser.setDocumentHandler(hb);
             parser.setEntityResolver(hb);
             parser.setErrorHandler(hb);
             parser.setDTDHandler(hb);
-        } 
+        } //End block
         parser.parse(is);
-        addTaint(is.getTaint());
-        addTaint(hb.getTaint());
-        
-        
-            
-        
-        
-        
-            
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (is == null) {
+            //throw new IllegalArgumentException("InputSource cannot be null");
+        //}
+        //Parser parser = this.getParser();
+        //if (hb != null) {
+            //parser.setDocumentHandler(hb);
+            //parser.setEntityResolver(hb);
+            //parser.setErrorHandler(hb);
+            //parser.setDTDHandler(hb);
+        //}
+        //parser.parse(is);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.805 -0400", hash_original_method = "8F425B137DCEBCB18BE581A6911D8EA7", hash_generated_method = "9BE57DF412D01C90E2CDC5A181CFD1BE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.866 -0400", hash_original_method = "8F425B137DCEBCB18BE581A6911D8EA7", hash_generated_method = "19B2C163FD63F510B26BE4ABB492EED1")
     public void parse(InputSource is, DefaultHandler dh) throws SAXException, IOException {
+        addTaint(dh.getTaint());
+        addTaint(is.getTaint());
+    if(is == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("InputSource cannot be null");
-        } 
+            IllegalArgumentException varA613319797731CA5E15D0EBCB2C00F66_386498270 = new IllegalArgumentException("InputSource cannot be null");
+            varA613319797731CA5E15D0EBCB2C00F66_386498270.addTaint(taint);
+            throw varA613319797731CA5E15D0EBCB2C00F66_386498270;
+        } //End block
         XMLReader reader = this.getXMLReader();
+    if(dh != null)        
         {
             reader.setContentHandler(dh);
             reader.setEntityResolver(dh);
             reader.setErrorHandler(dh);
             reader.setDTDHandler(dh);
-        } 
+        } //End block
         reader.parse(is);
-        addTaint(is.getTaint());
-        addTaint(dh.getTaint());
-        
-        
-            
-        
-        
-        
-            
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (is == null) {
+            //throw new IllegalArgumentException("InputSource cannot be null");
+        //}
+        //XMLReader reader = this.getXMLReader();
+        //if (dh != null) {
+            //reader.setContentHandler(dh);
+            //reader.setEntityResolver(dh);
+            //reader.setErrorHandler(dh);
+            //reader.setDTDHandler(dh);
+        //}
+        //reader.parse(is);
     }
 
     
@@ -307,52 +329,51 @@ public abstract class SAXParser {
         throws SAXNotRecognizedException, SAXNotSupportedException;
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.806 -0400", hash_original_method = "0EC7A1CF3FE0EA75043A7D33C5A41123", hash_generated_method = "2E2EBD7A2D5464481CAA84ECE27CE0D0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.867 -0400", hash_original_method = "0EC7A1CF3FE0EA75043A7D33C5A41123", hash_generated_method = "92D6F490BE43845ECC0196EDE76F926D")
     public Schema getSchema() {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(
+        UnsupportedOperationException varE9742D55AB47AEF31209978AAE994BE9_1689864285 = new UnsupportedOperationException(
             "This parser does not support specification \""
             + this.getClass().getPackage().getSpecificationTitle()
             + "\" version \""
             + this.getClass().getPackage().getSpecificationVersion()
             + "\""
             );
-        return (Schema)new Object();
-        
-        
-            
-            
-            
-            
-            
-            
+        varE9742D55AB47AEF31209978AAE994BE9_1689864285.addTaint(taint);
+        throw varE9742D55AB47AEF31209978AAE994BE9_1689864285;
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException(
+            //"This parser does not support specification \""
+            //+ this.getClass().getPackage().getSpecificationTitle()
+            //+ "\" version \""
+            //+ this.getClass().getPackage().getSpecificationVersion()
+            //+ "\""
+            //);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.807 -0400", hash_original_method = "2D701854F0A16C5A4E7C38BB02DF4544", hash_generated_method = "4129359F22887618CF3FE9596E3EFC31")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.868 -0400", hash_original_method = "2D701854F0A16C5A4E7C38BB02DF4544", hash_generated_method = "7B2BD95D6F6733EDC72ABB76429B9974")
     public boolean isXIncludeAware() {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(
+        UnsupportedOperationException varE9742D55AB47AEF31209978AAE994BE9_1978241853 = new UnsupportedOperationException(
             "This parser does not support specification \""
             + this.getClass().getPackage().getSpecificationTitle()
             + "\" version \""
             + this.getClass().getPackage().getSpecificationVersion()
             + "\""
             );
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1127977425 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1127977425;
-        
-        
-            
-            
-            
-            
-            
-            
+        varE9742D55AB47AEF31209978AAE994BE9_1978241853.addTaint(taint);
+        throw varE9742D55AB47AEF31209978AAE994BE9_1978241853;
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException(
+            //"This parser does not support specification \""
+            //+ this.getClass().getPackage().getSpecificationTitle()
+            //+ "\" version \""
+            //+ this.getClass().getPackage().getSpecificationVersion()
+            //+ "\""
+            //);
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.807 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.868 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
 
     private static final boolean DEBUG = false;
 }

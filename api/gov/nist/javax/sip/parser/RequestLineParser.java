@@ -1,42 +1,38 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import gov.nist.javax.sip.address.*;
 import java.text.ParseException;
 import gov.nist.javax.sip.header.*;
 
 public class RequestLineParser extends Parser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.492 -0400", hash_original_method = "9E54F2AF74A618ACEB8F17B65C16A48F", hash_generated_method = "ECC9D14D924F666200406F406E44BA1E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.652 -0400", hash_original_method = "9E54F2AF74A618ACEB8F17B65C16A48F", hash_generated_method = "FB8FE551FA5D181ADCB5FE9C481BD6ED")
     public  RequestLineParser(String requestLine) {
-        this.lexer = new Lexer("method_keywordLexer", requestLine);
         addTaint(requestLine.getTaint());
-        
-        
+        this.lexer = new Lexer("method_keywordLexer", requestLine);
+        // ---------- Original Method ----------
+        //this.lexer = new Lexer("method_keywordLexer", requestLine);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.493 -0400", hash_original_method = "A6666834E60C7B51DE2E6BABDAF9B193", hash_generated_method = "11B589A13EED926FDBCAB426A03A5F5F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.653 -0400", hash_original_method = "A6666834E60C7B51DE2E6BABDAF9B193", hash_generated_method = "219D76BC983E87B19D174293804330B6")
     public  RequestLineParser(Lexer lexer) {
+        addTaint(lexer.getTaint());
         this.lexer = lexer;
         this.lexer.selectLexer("method_keywordLexer");
-        addTaint(lexer.getTaint());
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.lexer = lexer;
+        //this.lexer.selectLexer("method_keywordLexer");
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.494 -0400", hash_original_method = "3F5CD164E270AAF338C0D4B97DF78E19", hash_generated_method = "515B8D488E98767FFAD2B70072B6F7C5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.655 -0400", hash_original_method = "3F5CD164E270AAF338C0D4B97DF78E19", hash_generated_method = "818E255CAF929F559386CB4FABB3CB21")
     public RequestLine parse() throws ParseException {
-        RequestLine varB4EAC82CA7396A68D541C85D26508E83_1440136424 = null; 
+    if(debug)        
         dbg_enter("parse");
         try 
         {
@@ -54,42 +50,42 @@ public class RequestLineParser extends Parser {
             retval.setSipVersion(v);
             lexer.SPorHT();
             lexer.match('\n');
-            varB4EAC82CA7396A68D541C85D26508E83_1440136424 = retval;
-        } 
+RequestLine varF9E19AD6135C970F387F77C6F3DE4477_1977756574 =             retval;
+            varF9E19AD6135C970F387F77C6F3DE4477_1977756574.addTaint(taint);
+            return varF9E19AD6135C970F387F77C6F3DE4477_1977756574;
+        } //End block
         finally 
         {
+    if(debug)            
             dbg_leave("parse");
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1440136424.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1440136424;
-        
-        
-            
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (debug)
+            //dbg_enter("parse");
+        //try {
+            //RequestLine retval = new RequestLine();
+            //String m = method();
+            //lexer.SPorHT();
+            //retval.setMethod(m);
+            //this.lexer.selectLexer("sip_urlLexer");
+            //URLParser urlParser = new URLParser(this.getLexer());
+            //GenericURI url = urlParser.uriReference(true);
+            //lexer.SPorHT();
+            //retval.setUri(url);
+            //this.lexer.selectLexer("request_lineLexer");
+            //String v = sipVersion();
+            //retval.setSipVersion(v);
+            //lexer.SPorHT();
+            //lexer.match('\n');
+            //return retval;
+        //} finally {
+            //if (debug)
+                //dbg_leave("parse");
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void main(String args[]) throws ParseException {
+        public static void main(String args[]) throws ParseException {
         String requestLines[] = {
                 "REGISTER sip:192.168.0.68 SIP/2.0\n",
                 "REGISTER sip:company.com SIP/2.0\n",

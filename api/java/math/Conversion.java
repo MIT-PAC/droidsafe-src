@@ -1,23 +1,19 @@
 package java.math;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-
-import java.util.Iterator;
-
 class Conversion {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.690 -0400", hash_original_method = "A600C72BC77DD5DD4F1CBED3B2E3D2F0", hash_generated_method = "80546BF6DE416F93FA5C3272886F6955")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.007 -0400", hash_original_method = "A600C72BC77DD5DD4F1CBED3B2E3D2F0", hash_generated_method = "80546BF6DE416F93FA5C3272886F6955")
     private  Conversion() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static String bigInteger2String(BigInteger val, int radix) {
+        static String bigInteger2String(BigInteger val, int radix) {
         val.prepareJavaRepresentation();
         int sign = val.sign;
         int numberLength = val.numberLength;
@@ -89,8 +85,7 @@ class Conversion {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static String toDecimalScaledString(BigInteger val, int scale) {
+        static String toDecimalScaledString(BigInteger val, int scale) {
         val.prepareJavaRepresentation();
         int sign = val.sign;
         int numberLength = val.numberLength;
@@ -236,8 +231,7 @@ class Conversion {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static String toDecimalScaledString(long value, int scale) {
+        static String toDecimalScaledString(long value, int scale) {
         int resLengthInChars;
         int currentChar;
         char[] result;
@@ -325,8 +319,7 @@ class Conversion {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static long divideLongByBillion(long a) {
+        static long divideLongByBillion(long a) {
         long quot;
         long rem;
         if (a >= 0) {
@@ -344,8 +337,7 @@ class Conversion {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static double bigInteger2Double(BigInteger val) {
+        static double bigInteger2Double(BigInteger val) {
         val.prepareJavaRepresentation();
         if ((val.numberLength < 2)
                 || ((val.numberLength == 2) && (val.digits[1] > 0))) {
@@ -382,12 +374,12 @@ class Conversion {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.692 -0400", hash_original_field = "79CEEB0B96E31706DC35916021293954", hash_generated_field = "84ACB74AE0C2E46DB3D63D4F9B7B0A72")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.010 -0400", hash_original_field = "79CEEB0B96E31706DC35916021293954", hash_generated_field = "84ACB74AE0C2E46DB3D63D4F9B7B0A72")
 
     static final int[] digitFitInInt = { -1, -1, 31, 19, 15, 13, 11,
             11, 10, 9, 9, 8, 8, 8, 8, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 6,
             6, 6, 6, 6, 6, 6, 6, 5 };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.692 -0400", hash_original_field = "FC1884A674814367F99D68DA056FBF33", hash_generated_field = "BD1A65B06765EC59F73D0719049ECD1B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.010 -0400", hash_original_field = "FC1884A674814367F99D68DA056FBF33", hash_generated_field = "BD1A65B06765EC59F73D0719049ECD1B")
 
     static final int[] bigRadices = { -2147483648, 1162261467,
             1073741824, 1220703125, 362797056, 1977326743, 1073741824,

@@ -1,27 +1,23 @@
 package gov.nist.javax.sip.message;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.javax.sip.header.ims.*;
 import java.util.Hashtable;
 
 class ListMap {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.646 -0400", hash_original_method = "3B4FA022548893E6C8E65FE681D24699", hash_generated_method = "3B4FA022548893E6C8E65FE681D24699")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.290 -0400", hash_original_method = "3B4FA022548893E6C8E65FE681D24699", hash_generated_method = "3B4FA022548893E6C8E65FE681D24699")
     public ListMap ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
-    static private void initializeListMap() {
+        static private void initializeListMap() {
         headerListTable = new Hashtable<Class<?>, Class<?>>();
         headerListTable.put(ExtensionHeaderImpl.class, ExtensionHeaderList.class);
         headerListTable.put(Contact.class, ContactList.class);
@@ -61,8 +57,7 @@ class ListMap {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static protected boolean hasList(SIPHeader sipHeader) {
+        static protected boolean hasList(SIPHeader sipHeader) {
         if (sipHeader instanceof SIPHeaderList)
             return false;
         else {
@@ -72,24 +67,21 @@ class ListMap {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static protected boolean hasList(Class<?> sipHdrClass) {
+        static protected boolean hasList(Class<?> sipHdrClass) {
         if (!initialized)
             initializeListMap();
         return headerListTable.get(sipHdrClass) != null;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static protected Class<?> getListClass(Class<?> sipHdrClass) {
+        static protected Class<?> getListClass(Class<?> sipHdrClass) {
         if (!initialized)
             initializeListMap();
         return (Class<?>) headerListTable.get(sipHdrClass);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @SuppressWarnings("unchecked")
+        @SuppressWarnings("unchecked")
     static protected SIPHeaderList<SIPHeader> getList(SIPHeader sipHeader) {
         if (!initialized)
             initializeListMap();
@@ -108,10 +100,10 @@ class ListMap {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.647 -0400", hash_original_field = "1B2224DE52334EF5CB80B405CB11D33A", hash_generated_field = "62CC7C40693B8912372FB3323E83E945")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.292 -0400", hash_original_field = "1B2224DE52334EF5CB80B405CB11D33A", hash_generated_field = "62CC7C40693B8912372FB3323E83E945")
 
     private static Hashtable<Class<?>,Class<?>> headerListTable;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.647 -0400", hash_original_field = "84D10A1ED612E61DBF6880F6E3EE533A", hash_generated_field = "9FD51B35B9E2224AA107F59D57389A34")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.292 -0400", hash_original_field = "84D10A1ED612E61DBF6880F6E3EE533A", hash_generated_field = "9FD51B35B9E2224AA107F59D57389A34")
 
     private static boolean initialized;
     static {

@@ -1,12 +1,9 @@
 package gov.nist.javax.sip.header.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.text.ParseException;
 import gov.nist.javax.sip.address.AddressImpl;
 import gov.nist.javax.sip.address.GenericURI;
@@ -16,124 +13,118 @@ import gov.nist.javax.sip.header.ims.PAssociatedURIHeader;
 
 public class PAssociatedURI extends gov.nist.javax.sip.header.AddressParametersHeader implements PAssociatedURIHeader, SIPHeaderNamesIms, ExtensionHeader {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.216 -0400", hash_original_method = "0CE9AC4DACE0AF9EAE08E4894C346C94", hash_generated_method = "E89CFA99CD3013AEEE12279CD13FCD79")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.905 -0400", hash_original_method = "0CE9AC4DACE0AF9EAE08E4894C346C94", hash_generated_method = "E89CFA99CD3013AEEE12279CD13FCD79")
     public  PAssociatedURI() {
         super(PAssociatedURIHeader.NAME);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.217 -0400", hash_original_method = "23DD9D121A8A941629D341729647359A", hash_generated_method = "9F672CEE53A14D48B4D185D3B5A9DF3B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.905 -0400", hash_original_method = "23DD9D121A8A941629D341729647359A", hash_generated_method = "60201E23D7BC50CAED05486D01E59593")
     public  PAssociatedURI(AddressImpl address) {
         super(PAssociatedURIHeader.NAME);
-        this.address = address;
         addTaint(address.getTaint());
-        
-        
+        this.address = address;
+        // ---------- Original Method ----------
+        //this.address = address;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.217 -0400", hash_original_method = "BEC6817E399EBD6982FBF2F710E24F3F", hash_generated_method = "E475E1D8CB64581A77C13BB28429ADD1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.906 -0400", hash_original_method = "BEC6817E399EBD6982FBF2F710E24F3F", hash_generated_method = "F7EEAA2D2604C2E77936BF678270B94C")
     public  PAssociatedURI(GenericURI associatedURI) {
         super(PAssociatedURIHeader.NAME);
+        addTaint(associatedURI.getTaint());
         this.address = new AddressImpl();
         this.address.setURI(associatedURI);
-        addTaint(associatedURI.getTaint());
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.address = new AddressImpl();
+        //this.address.setURI(associatedURI);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.218 -0400", hash_original_method = "DD9AA0788424353442B0CFE218D97412", hash_generated_method = "47F9618684159B691B13BD88D5AE85EB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.906 -0400", hash_original_method = "DD9AA0788424353442B0CFE218D97412", hash_generated_method = "5CC0F8FBA1FC29F6E0E26B9B60D1235D")
     public String encodeBody() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1220433725 = null; 
         StringBuffer retval = new StringBuffer();
+    if(address.getAddressType() == AddressImpl.ADDRESS_SPEC)        
         {
-            boolean varA8A94084CEDB8AE131E76CDFE26F1997_1927484096 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
-            {
-                retval.append(LESS_THAN);
-            } 
-        } 
+            retval.append(LESS_THAN);
+        } //End block
         retval.append(address.encode());
+    if(address.getAddressType() == AddressImpl.ADDRESS_SPEC)        
         {
-            boolean varA8A94084CEDB8AE131E76CDFE26F1997_530284516 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
-            {
-                retval.append(GREATER_THAN);
-            } 
-        } 
-        {
-            boolean varB381AD842454BDB2397F4C2DAD0B3FA1_1367028712 = (!parameters.isEmpty());
-            retval.append(SEMICOLON + this.parameters.encode());
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1220433725 = retval.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1220433725.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1220433725;
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-            
-        
+            retval.append(GREATER_THAN);
+        } //End block
+    if(!parameters.isEmpty())        
+        retval.append(SEMICOLON + this.parameters.encode());
+String var1B324365A764C077A55854483509F4AB_1258756981 =         retval.toString();
+        var1B324365A764C077A55854483509F4AB_1258756981.addTaint(taint);
+        return var1B324365A764C077A55854483509F4AB_1258756981;
+        // ---------- Original Method ----------
+        //StringBuffer retval = new StringBuffer();
+        //if (address.getAddressType() == AddressImpl.ADDRESS_SPEC) {
+            //retval.append(LESS_THAN);
+        //}
+        //retval.append(address.encode());
+        //if (address.getAddressType() == AddressImpl.ADDRESS_SPEC) {
+            //retval.append(GREATER_THAN);
+        //}
+        //if (!parameters.isEmpty())
+            //retval.append(SEMICOLON + this.parameters.encode());
+        //return retval.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.218 -0400", hash_original_method = "BCB734BB1E91EA14E0E35E6B88E7C93B", hash_generated_method = "E3926A9A8F0CF2581F06840FEC55A697")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.907 -0400", hash_original_method = "BCB734BB1E91EA14E0E35E6B88E7C93B", hash_generated_method = "5333FF1EB58FF11D3D8D38D779BB3D17")
     public void setAssociatedURI(URI associatedURI) throws NullPointerException {
-        if (DroidSafeAndroidRuntime.control) throw new NullPointerException("null URI");
-        this.address.setURI(associatedURI);
         addTaint(associatedURI.getTaint());
-        
-        
-            
-        
+    if(associatedURI == null)        
+        {
+        NullPointerException varCC2B4CF1D5C3A06C7F71134B2649E466_2111216601 = new NullPointerException("null URI");
+        varCC2B4CF1D5C3A06C7F71134B2649E466_2111216601.addTaint(taint);
+        throw varCC2B4CF1D5C3A06C7F71134B2649E466_2111216601;
+        }
+        this.address.setURI(associatedURI);
+        // ---------- Original Method ----------
+        //if (associatedURI == null)
+            //throw new NullPointerException("null URI");
+        //this.address.setURI(associatedURI);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.219 -0400", hash_original_method = "D8B52B7CB92D047EA9436CA55D36407D", hash_generated_method = "25FE9986013D0684AED6D2C16894A201")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.907 -0400", hash_original_method = "D8B52B7CB92D047EA9436CA55D36407D", hash_generated_method = "0B2B8D8253D74AA044836F0C460D8035")
     public URI getAssociatedURI() {
-        URI varB4EAC82CA7396A68D541C85D26508E83_1059642165 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1059642165 = this.address.getURI();
-        varB4EAC82CA7396A68D541C85D26508E83_1059642165.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1059642165;
-        
-        
+URI var90C92A89BE51D95AD79F613CFDD811DA_2120693804 =         this.address.getURI();
+        var90C92A89BE51D95AD79F613CFDD811DA_2120693804.addTaint(taint);
+        return var90C92A89BE51D95AD79F613CFDD811DA_2120693804;
+        // ---------- Original Method ----------
+        //return this.address.getURI();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.219 -0400", hash_original_method = "58EA9D2DAC0517F3416AFEEB738C5473", hash_generated_method = "69EDADD54A14C207783F3EE1311B46DD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.907 -0400", hash_original_method = "58EA9D2DAC0517F3416AFEEB738C5473", hash_generated_method = "D36E9D0B6DCD6653B1029D19138194B6")
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_306645326 = null; 
         PAssociatedURI retval = (PAssociatedURI) super.clone();
+    if(this.address != null)        
         retval.address = (AddressImpl) this.address.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_306645326 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_306645326.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_306645326;
-        
-        
-        
-            
-        
+Object varF9E19AD6135C970F387F77C6F3DE4477_462449601 =         retval;
+        varF9E19AD6135C970F387F77C6F3DE4477_462449601.addTaint(taint);
+        return varF9E19AD6135C970F387F77C6F3DE4477_462449601;
+        // ---------- Original Method ----------
+        //PAssociatedURI retval = (PAssociatedURI) super.clone();
+        //if (this.address != null)
+            //retval.address = (AddressImpl) this.address.clone();
+        //return retval;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.220 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "263BB18DC54AB83D62E13F134B9FEB9D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.908 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "C4D494FF4E1562F99E4919E324CC20AE")
     public void setValue(String value) throws ParseException {
-        if (DroidSafeAndroidRuntime.control) throw new ParseException(value,0);
         addTaint(value.getTaint());
-        
-        
+        ParseException varADC68F4409F245E41BA5DDA0F06CA1BA_1286095329 = new ParseException(value,0);
+        varADC68F4409F245E41BA5DDA0F06CA1BA_1286095329.addTaint(taint);
+        throw varADC68F4409F245E41BA5DDA0F06CA1BA_1286095329;
+        // ---------- Original Method ----------
+        //throw new ParseException(value,0);
     }
 
     

@@ -1,12 +1,9 @@
 package javax.microedition.khronos.opengles;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 
 public interface GL11ExtensionPack extends GL {
     int GL_BLEND_DST_ALPHA                                  = 0x80CA;

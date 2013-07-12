@@ -1,80 +1,64 @@
 package gov.nist.javax.sip.header;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import gov.nist.javax.sip.address.*;
 
 public final class ReferTo extends AddressParametersHeader implements javax.sip.header.ReferToHeader {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.021 -0400", hash_original_method = "3600BA21C1DE3615470645CB07A3B945", hash_generated_method = "895B7864473D22CB612ECFF8E800F936")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.838 -0400", hash_original_method = "3600BA21C1DE3615470645CB07A3B945", hash_generated_method = "895B7864473D22CB612ECFF8E800F936")
     public  ReferTo() {
         super(NAME);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.022 -0400", hash_original_method = "264DF371DD142B0CCD6F6ECE44A7BFB6", hash_generated_method = "580F846DDEA6F6D40C68CA1F17F89F3D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.839 -0400", hash_original_method = "264DF371DD142B0CCD6F6ECE44A7BFB6", hash_generated_method = "8BE28CA6C76DEEB4B3E08245DF08679E")
     protected String encodeBody() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1567780849 = null; 
-        String varB4EAC82CA7396A68D541C85D26508E83_576873796 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1567780849 = null;
-        String retval = "";
+    if(address == null)        
         {
-            boolean varA8A94084CEDB8AE131E76CDFE26F1997_135772934 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
-            {
-                retval += LESS_THAN;
-            } 
-        } 
-        retval += address.encode();
-        {
-            boolean varA8A94084CEDB8AE131E76CDFE26F1997_1785567871 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
-            {
-                retval += GREATER_THAN;
-            } 
-        } 
-        {
-            boolean varB381AD842454BDB2397F4C2DAD0B3FA1_1485757184 = (!parameters.isEmpty());
-            {
-                retval += SEMICOLON + parameters.encode();
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_576873796 = retval;
-        String varA7E53CE21691AB073D9660D615818899_1351123652; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1351123652 = varB4EAC82CA7396A68D541C85D26508E83_1567780849;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1351123652 = varB4EAC82CA7396A68D541C85D26508E83_576873796;
-                break;
+String var540C13E9E156B687226421B24F2DF178_1170949050 =         null;
+        var540C13E9E156B687226421B24F2DF178_1170949050.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_1170949050;
         }
-        varA7E53CE21691AB073D9660D615818899_1351123652.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1351123652;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-            
-        
-        
-            
-        
-        
+        String retval = "";
+    if(address.getAddressType() == AddressImpl.ADDRESS_SPEC)        
+        {
+            retval += LESS_THAN;
+        } //End block
+        retval += address.encode();
+    if(address.getAddressType() == AddressImpl.ADDRESS_SPEC)        
+        {
+            retval += GREATER_THAN;
+        } //End block
+    if(!parameters.isEmpty())        
+        {
+            retval += SEMICOLON + parameters.encode();
+        } //End block
+String varF9E19AD6135C970F387F77C6F3DE4477_857170727 =         retval;
+        varF9E19AD6135C970F387F77C6F3DE4477_857170727.addTaint(taint);
+        return varF9E19AD6135C970F387F77C6F3DE4477_857170727;
+        // ---------- Original Method ----------
+        //if (address == null)
+            //return null;
+        //String retval = "";
+        //if (address.getAddressType() == AddressImpl.ADDRESS_SPEC) {
+            //retval += LESS_THAN;
+        //}
+        //retval += address.encode();
+        //if (address.getAddressType() == AddressImpl.ADDRESS_SPEC) {
+            //retval += GREATER_THAN;
+        //}
+        //if (!parameters.isEmpty()) {
+            //retval += SEMICOLON + parameters.encode();
+        //}
+        //return retval;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.022 -0400", hash_original_field = "9E7B615A154FC45BB1B1F6461C751642", hash_generated_field = "F4CFDA8E2513677F950180F2D0A8DF68")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.839 -0400", hash_original_field = "9E7B615A154FC45BB1B1F6461C751642", hash_generated_field = "F4CFDA8E2513677F950180F2D0A8DF68")
 
     private static final long serialVersionUID = -1666700428440034851L;
 }

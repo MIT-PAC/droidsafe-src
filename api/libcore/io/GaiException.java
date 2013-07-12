@@ -1,87 +1,85 @@
 package libcore.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.net.UnknownHostException;
 import libcore.io.OsConstants;
 
 public final class GaiException extends RuntimeException {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.112 -0400", hash_original_field = "18B5CA8CBD35BC4F1D1B026A63E1062E", hash_generated_field = "3A7419DC5D02B665865D1D41C31D2769")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.584 -0400", hash_original_field = "18B5CA8CBD35BC4F1D1B026A63E1062E", hash_generated_field = "3A7419DC5D02B665865D1D41C31D2769")
 
     private String functionName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.112 -0400", hash_original_field = "CB5E100E5A9A3E7F6D1FD97512215282", hash_generated_field = "BB4B5831C4D0D33F468CF74A7B49F52F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.585 -0400", hash_original_field = "CB5E100E5A9A3E7F6D1FD97512215282", hash_generated_field = "BB4B5831C4D0D33F468CF74A7B49F52F")
 
     public int error;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.113 -0400", hash_original_method = "BA53EB307FD31FC241DD4C6044D04AD1", hash_generated_method = "E8AF62B805AA6C835F1A36515273810B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.585 -0400", hash_original_method = "BA53EB307FD31FC241DD4C6044D04AD1", hash_generated_method = "E8AF62B805AA6C835F1A36515273810B")
     public  GaiException(String functionName, int error) {
         this.functionName = functionName;
         this.error = error;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.functionName = functionName;
+        //this.error = error;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.114 -0400", hash_original_method = "845DC588FB53DD48B2B7818DC3F43C36", hash_generated_method = "DD7BA15F46D49D82D1D21B469F811AC4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.586 -0400", hash_original_method = "845DC588FB53DD48B2B7818DC3F43C36", hash_generated_method = "5105B9C32E595851BB1A8B27DCDF6C46")
     public  GaiException(String functionName, int error, Throwable cause) {
         super(cause);
+        addTaint(cause.getTaint());
         this.functionName = functionName;
         this.error = error;
-        addTaint(cause.getTaint());
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.functionName = functionName;
+        //this.error = error;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.114 -0400", hash_original_method = "6B923BF9D17AE00E606BE15037C1D30D", hash_generated_method = "418F3C59720BEC6AC023892F3C3349F2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.586 -0400", hash_original_method = "6B923BF9D17AE00E606BE15037C1D30D", hash_generated_method = "5F010F15FB3DEA3FF61F8B1471549320")
     @Override
     public String getMessage() {
-        String varB4EAC82CA7396A68D541C85D26508E83_625400032 = null; 
         String gaiName = OsConstants.gaiName(error);
+    if(gaiName == null)        
         {
             gaiName = "GAI_ error " + error;
-        } 
+        } //End block
         String description = Libcore.os.gai_strerror(error);
-        varB4EAC82CA7396A68D541C85D26508E83_625400032 = functionName + " failed: " + gaiName + " (" + description + ")";
-        varB4EAC82CA7396A68D541C85D26508E83_625400032.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_625400032;
-        
-        
-        
-            
-        
-        
-        
+String var701BE8BF919F58E6C9A5E8912E1F0ED7_1425765131 =         functionName + " failed: " + gaiName + " (" + description + ")";
+        var701BE8BF919F58E6C9A5E8912E1F0ED7_1425765131.addTaint(taint);
+        return var701BE8BF919F58E6C9A5E8912E1F0ED7_1425765131;
+        // ---------- Original Method ----------
+        //String gaiName = OsConstants.gaiName(error);
+        //if (gaiName == null) {
+            //gaiName = "GAI_ error " + error;
+        //}
+        //String description = Libcore.os.gai_strerror(error);
+        //return functionName + " failed: " + gaiName + " (" + description + ")";
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.115 -0400", hash_original_method = "5B589888D552552C8BEA12CEE384825F", hash_generated_method = "7A4191D7075FCBDBA98B75A7DF97203C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.587 -0400", hash_original_method = "5B589888D552552C8BEA12CEE384825F", hash_generated_method = "69E64AF536E7E9C1F97746E4595E030C")
     public UnknownHostException rethrowAsUnknownHostException(String detailMessage) throws UnknownHostException {
+        addTaint(detailMessage.getTaint());
         UnknownHostException newException = new UnknownHostException(detailMessage);
         newException.initCause(this);
+        newException.addTaint(taint);
         throw newException;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //UnknownHostException newException = new UnknownHostException(detailMessage);
+        //newException.initCause(this);
+        //throw newException;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.115 -0400", hash_original_method = "81B83C8D72DB912D679B4B84F9977C22", hash_generated_method = "1F1035B2C54E0A812B5D92858BC61427")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.589 -0400", hash_original_method = "81B83C8D72DB912D679B4B84F9977C22", hash_generated_method = "8A54E541A56524DBD6034352A06D678E")
     public UnknownHostException rethrowAsUnknownHostException() throws UnknownHostException {
-    	throw rethrowAsUnknownHostException(getMessage());
-        
-        
+        java.net.UnknownHostException var5F7B19AF1BB87D36470BEC0E68B99E1A_1500317859 = rethrowAsUnknownHostException(getMessage());
+        var5F7B19AF1BB87D36470BEC0E68B99E1A_1500317859.addTaint(taint);
+        throw var5F7B19AF1BB87D36470BEC0E68B99E1A_1500317859;
+        // ---------- Original Method ----------
+        //throw rethrowAsUnknownHostException(getMessage());
     }
 
     

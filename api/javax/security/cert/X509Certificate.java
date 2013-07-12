@@ -1,12 +1,9 @@
 package javax.security.cert;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.lang.reflect.Constructor;
@@ -23,13 +20,13 @@ import java.util.Date;
 
 public abstract class X509Certificate extends Certificate {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.991 -0400", hash_original_method = "0337B060243DB2E8E059CE304C023100", hash_generated_method = "9BA920E90C5C7EE22A37FD86BC262ED2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.277 -0400", hash_original_method = "0337B060243DB2E8E059CE304C023100", hash_generated_method = "9BA920E90C5C7EE22A37FD86BC262ED2")
     public  X509Certificate() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    public static final X509Certificate getInstance(InputStream inStream) throws CertificateException {
+        public static final X509Certificate getInstance(InputStream inStream) throws CertificateException {
         if (inStream == null) {
             throw new CertificateException("inStream == null");
         }
@@ -82,8 +79,7 @@ public abstract class X509Certificate extends Certificate {
             public PublicKey getPublicKey() {
                 return cert.getPublicKey();
             }
-            @DSModeled(DSC.SAFE)
-    public void checkValidity() throws CertificateExpiredException,
+            public void checkValidity() throws CertificateExpiredException,
                                    CertificateNotYetValidException {
                 try {
                     cert.checkValidity();
@@ -93,8 +89,7 @@ public abstract class X509Certificate extends Certificate {
                     throw new CertificateExpiredException(e.getMessage());
                 }
             }
-            @DSModeled(DSC.SAFE)
-    public void checkValidity(Date date)
+            public void checkValidity(Date date)
                             throws CertificateExpiredException,
                                    CertificateNotYetValidException {
                 try {
@@ -105,47 +100,38 @@ public abstract class X509Certificate extends Certificate {
                     throw new CertificateExpiredException(e.getMessage());
                 }
             }
-            @DSModeled(DSC.SAFE)
-    public int getVersion() {
+            public int getVersion() {
                 return 2;
             }
-            @DSModeled(DSC.SAFE)
-    public BigInteger getSerialNumber() {
+            public BigInteger getSerialNumber() {
                 return cert.getSerialNumber();
             }
-            @DSModeled(DSC.SAFE)
-    public Principal getIssuerDN() {
+            public Principal getIssuerDN() {
                 return cert.getIssuerDN();
             }
-            @DSModeled(DSC.SAFE)
-    public Principal getSubjectDN() {
+            public Principal getSubjectDN() {
                 return cert.getSubjectDN();
             }
-            @DSModeled(DSC.SAFE)
-    public Date getNotBefore() {
+            public Date getNotBefore() {
                 return cert.getNotBefore();
             }
-            @DSModeled(DSC.SAFE)
-    public Date getNotAfter() {
+            public Date getNotAfter() {
                 return cert.getNotAfter();
             }
-            @DSModeled(DSC.SAFE)
-    public String getSigAlgName() {
+            public String getSigAlgName() {
                 return cert.getSigAlgName();
             }
-            @DSModeled(DSC.SAFE)
-    public String getSigAlgOID() {
+            public String getSigAlgOID() {
                 return cert.getSigAlgOID();
             }
-            @DSModeled(DSC.SAFE)
-    public byte[] getSigAlgParams() {
+            public byte[] getSigAlgParams() {
                 return cert.getSigAlgParams();
             }
         };
     }
 
     
-    public static final X509Certificate getInstance(byte[] certData) throws CertificateException {
+        public static final X509Certificate getInstance(byte[] certData) throws CertificateException {
         if (certData == null) {
             throw new CertificateException("certData == null");
         }
@@ -189,7 +175,7 @@ public abstract class X509Certificate extends Certificate {
     public abstract byte[] getSigAlgParams();
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.993 -0400", hash_original_field = "6CA268371EEB5D93EEFEB68F96157666", hash_generated_field = "2112A4F4A023E8F770192D2021400B78")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.278 -0400", hash_original_field = "6CA268371EEB5D93EEFEB68F96157666", hash_generated_field = "2112A4F4A023E8F770192D2021400B78")
 
     private static Constructor constructor;
     static {
@@ -200,5 +186,6 @@ public abstract class X509Certificate extends Certificate {
         } catch (Throwable e) {
         }
     }
+    
 }
 

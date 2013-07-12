@@ -1,12 +1,9 @@
 package android.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;

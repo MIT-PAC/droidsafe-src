@@ -1,12 +1,9 @@
 package java.lang;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -14,131 +11,124 @@ import libcore.util.BasicLruCache;
 import libcore.util.EmptyArray;
 
 public abstract class Enum<E extends Enum<E>> implements Serializable, Comparable<E> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.968 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.699 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
     private String name;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.968 -0400", hash_original_field = "281858037F7DCF7ED49271BB92C60526", hash_generated_field = "9B9D896414A0E67CE9221B96A63BE0CD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.699 -0400", hash_original_field = "281858037F7DCF7ED49271BB92C60526", hash_generated_field = "9B9D896414A0E67CE9221B96A63BE0CD")
 
     int ordinal;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.969 -0400", hash_original_method = "2DD8D404884977C1C225DE3C5244FDA0", hash_generated_method = "3A3CD01EC43B734FD3F8DAA5CF280987")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.700 -0400", hash_original_method = "2DD8D404884977C1C225DE3C5244FDA0", hash_generated_method = "3A3CD01EC43B734FD3F8DAA5CF280987")
     protected  Enum(String name, int ordinal) {
         this.name = name;
         this.ordinal = ordinal;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.name = name;
+        //this.ordinal = ordinal;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.969 -0400", hash_original_method = "B829A2DCF2B6B038F9421827E4B40BDF", hash_generated_method = "79CA60EE9D1057A7D6581BCAFED470BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.701 -0400", hash_original_method = "B829A2DCF2B6B038F9421827E4B40BDF", hash_generated_method = "8C930898CA4A59925D6D9750D5E6CAD1")
     public final String name() {
-        String varB4EAC82CA7396A68D541C85D26508E83_80574957 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_80574957 = name;
-        varB4EAC82CA7396A68D541C85D26508E83_80574957.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_80574957;
-        
-        
+String varB017984728AC60AD1F0BF8734F33F15C_746877297 =         name;
+        varB017984728AC60AD1F0BF8734F33F15C_746877297.addTaint(taint);
+        return varB017984728AC60AD1F0BF8734F33F15C_746877297;
+        // ---------- Original Method ----------
+        //return name;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.969 -0400", hash_original_method = "F85866CCC5D845B1D53CAF0C5BA97CF5", hash_generated_method = "8B4678E6142587D6657D8215ED485DD8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.701 -0400", hash_original_method = "F85866CCC5D845B1D53CAF0C5BA97CF5", hash_generated_method = "F1182E2E628B776179CD17C97DE2BDAC")
     public final int ordinal() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_863636262 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_863636262;
-        
-        
+        int var281858037F7DCF7ED49271BB92C60526_467072075 = (ordinal);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_985829999 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_985829999;
+        // ---------- Original Method ----------
+        //return ordinal;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.970 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "63FE3120529F360F42489B5082934718")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.702 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "82DA08DC7631412BC665D87704304576")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_317817671 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_317817671 = name;
-        varB4EAC82CA7396A68D541C85D26508E83_317817671.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_317817671;
-        
-        
+String varB017984728AC60AD1F0BF8734F33F15C_97653883 =         name;
+        varB017984728AC60AD1F0BF8734F33F15C_97653883.addTaint(taint);
+        return varB017984728AC60AD1F0BF8734F33F15C_97653883;
+        // ---------- Original Method ----------
+        //return name;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.970 -0400", hash_original_method = "75011B979FEDB2DAAF1F1F1C2C24B4BF", hash_generated_method = "8750797A248F8B1AB247D8AF0503CD74")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.702 -0400", hash_original_method = "75011B979FEDB2DAAF1F1F1C2C24B4BF", hash_generated_method = "D6208824A0F5DAD830BB78162056BC38")
     @Override
     public final boolean equals(Object other) {
         addTaint(other.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_561549600 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_561549600;
-        
-        
+        boolean varBE1F9AF96A88D9FBF24773A7F592CAA1_1742507781 = (this == other);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_423218408 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_423218408;
+        // ---------- Original Method ----------
+        //return this == other;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.970 -0400", hash_original_method = "EA441E584394EE19D2A56603F808DF7D", hash_generated_method = "7E5AA309F267D16B92DE0E0E24ECB228")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.703 -0400", hash_original_method = "EA441E584394EE19D2A56603F808DF7D", hash_generated_method = "42629B671498F2CC9E68088585E7693F")
     @Override
     public final int hashCode() {
-        int var7757EFC4B98575F4A69036771684C57E_2117114853 = (ordinal + (name == null ? 0 : name.hashCode())); 
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_237067515 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_237067515;
-        
-        
+        int var33D1C4572F13B312B30F81348BACBF5B_76822513 = (ordinal + (name == null ? 0 : name.hashCode()));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_448716407 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_448716407;
+        // ---------- Original Method ----------
+        //return ordinal + (name == null ? 0 : name.hashCode());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.970 -0400", hash_original_method = "E819DB208756D0A4B5DFB72B3A772B65", hash_generated_method = "7CFDAA36D607D56DCBB441FFA1E83CF5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.703 -0400", hash_original_method = "E819DB208756D0A4B5DFB72B3A772B65", hash_generated_method = "BF6A2E34759083585E8554FF498BE214")
     @Override
     protected final Object clone() throws CloneNotSupportedException {
-    	throw new CloneNotSupportedException("Enums may not be cloned");
-        
-        
+        CloneNotSupportedException var0F695EF6D311AE6302038C57F4C701F5_1022391698 = new CloneNotSupportedException("Enums may not be cloned");
+        var0F695EF6D311AE6302038C57F4C701F5_1022391698.addTaint(taint);
+        throw var0F695EF6D311AE6302038C57F4C701F5_1022391698;
+        // ---------- Original Method ----------
+        //throw new CloneNotSupportedException("Enums may not be cloned");
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.971 -0400", hash_original_method = "914B430886739457D899D0D840F0325C", hash_generated_method = "52D6F20A9BAF4D24D53B52CB63AEC7A4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.704 -0400", hash_original_method = "914B430886739457D899D0D840F0325C", hash_generated_method = "5F51A0354B5D3287F2C42ECC03C0333B")
     public final int compareTo(E o) {
         addTaint(o.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_68555680 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_68555680;
-        
-        
+        int var2F1BC9575CF0B62B5E318FC18441A6C5_535157615 = (ordinal - o.ordinal);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1311046405 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1311046405;
+        // ---------- Original Method ----------
+        //return ordinal - o.ordinal;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.971 -0400", hash_original_method = "0D462A5B0CC7E5E79CA20DB4952DBB5B", hash_generated_method = "3641F5E846FAD51B672403C675422EBC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.704 -0400", hash_original_method = "0D462A5B0CC7E5E79CA20DB4952DBB5B", hash_generated_method = "9D4C80B0CF0C9DE20E926BBA00BCE124")
     @SuppressWarnings("unchecked")
     public final Class<E> getDeclaringClass() {
-        Class<E> varB4EAC82CA7396A68D541C85D26508E83_1360417961 = null; 
-        Class<E> varB4EAC82CA7396A68D541C85D26508E83_478588676 = null; 
         Class<?> myClass = getClass();
         Class<?> mySuperClass = myClass.getSuperclass();
+    if(Enum.class == mySuperClass)        
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1360417961 = (Class<E>)myClass;
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_478588676 = (Class<E>)mySuperClass;
-        Class<E> varA7E53CE21691AB073D9660D615818899_98375339; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_98375339 = varB4EAC82CA7396A68D541C85D26508E83_1360417961;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_98375339 = varB4EAC82CA7396A68D541C85D26508E83_478588676;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_98375339.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_98375339;
-        
-        
-        
-        
-            
-        
-        
+Class<E> varB15DA18871E1717E67B355E232DDA51C_1199473501 =             (Class<E>)myClass;
+            varB15DA18871E1717E67B355E232DDA51C_1199473501.addTaint(taint);
+            return varB15DA18871E1717E67B355E232DDA51C_1199473501;
+        } //End block
+Class<E> var8F6953680D8F9BB6E774268F02FC3AA7_1951049025 =         (Class<E>)mySuperClass;
+        var8F6953680D8F9BB6E774268F02FC3AA7_1951049025.addTaint(taint);
+        return var8F6953680D8F9BB6E774268F02FC3AA7_1951049025;
+        // ---------- Original Method ----------
+        //Class<?> myClass = getClass();
+        //Class<?> mySuperClass = myClass.getSuperclass();
+        //if (Enum.class == mySuperClass) {
+            //return (Class<E>)myClass;
+        //}
+        //return (Class<E>)mySuperClass;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static <T extends Enum<T>> T valueOf(Class<T> enumType, String name) {
+        public static <T extends Enum<T>> T valueOf(Class<T> enumType, String name) {
         if (enumType == null || name == null) {
             throw new NullPointerException("enumType == null || name == null");
         }
@@ -154,22 +144,21 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @SuppressWarnings("unchecked")
+        @SuppressWarnings("unchecked")
     public static <T extends Enum<T>> T[] getSharedConstants(Class<T> enumType) {
         return (T[]) sharedConstantsCache.get(enumType);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.972 -0400", hash_original_method = "3012BD4162FEB4D4063E0B4E3944BED9", hash_generated_method = "FE1C663109CE5DFABF002048A3AF339A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.705 -0400", hash_original_method = "3012BD4162FEB4D4063E0B4E3944BED9", hash_generated_method = "FE1C663109CE5DFABF002048A3AF339A")
     @Override
     @SuppressWarnings("FinalizeDoesntCallSuperFinalize")
     protected final void finalize() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.972 -0400", hash_original_field = "7DBCEA52E8DCD6AE5AC7B75D618534F3", hash_generated_field = "F6C6D1A2DF29E3B35FCE4B7C508D18C8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.706 -0400", hash_original_field = "7DBCEA52E8DCD6AE5AC7B75D618534F3", hash_generated_field = "F6C6D1A2DF29E3B35FCE4B7C508D18C8")
 
     private static final long serialVersionUID = -4300926546619394005L;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.973 -0400", hash_original_field = "9E1AB9651106D78F89D200A6B8A75C99", hash_generated_field = "B4F6D6026899BCE9E7B0DB1ABDB36603")

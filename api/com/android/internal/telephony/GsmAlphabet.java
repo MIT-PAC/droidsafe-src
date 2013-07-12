@@ -1,12 +1,9 @@
 package com.android.internal.telephony;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.content.res.Resources;
 import android.text.TextUtils;
 import android.util.SparseIntArray;
@@ -22,14 +19,13 @@ import static android.telephony.SmsMessage.MAX_USER_DATA_SEPTETS_WITH_HEADER;
 
 public class GsmAlphabet {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.229 -0400", hash_original_method = "ACEB66A7A5EB57C667A16876F7FFD7A1", hash_generated_method = "9D914C4804B753FB0D925E0024275993")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.806 -0400", hash_original_method = "ACEB66A7A5EB57C667A16876F7FFD7A1", hash_generated_method = "9D914C4804B753FB0D925E0024275993")
     private  GsmAlphabet() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static int charToGsm(char c) {
+        public static int charToGsm(char c) {
         try {
             return charToGsm(c, false);
         } catch (EncodeException ex) {
@@ -38,8 +34,7 @@ public class GsmAlphabet {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static int charToGsm(char c, boolean throwException) throws EncodeException {
+        public static int charToGsm(char c, boolean throwException) throws EncodeException {
         int ret;
         ret = sCharsToGsmTables[0].get(c, -1);
         if (ret == -1) {
@@ -58,8 +53,7 @@ public class GsmAlphabet {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static int charToGsmExtended(char c) {
+        public static int charToGsmExtended(char c) {
         int ret;
         ret = sCharsToShiftTables[0].get(c, -1);
         if (ret == -1) {
@@ -69,8 +63,7 @@ public class GsmAlphabet {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static char gsmToChar(int gsmChar) {
+        public static char gsmToChar(int gsmChar) {
         if (gsmChar >= 0 && gsmChar < 128) {
             return sLanguageTables[0].charAt(gsmChar);
         } else {
@@ -79,8 +72,7 @@ public class GsmAlphabet {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static char gsmExtendedToChar(int gsmChar) {
+        public static char gsmExtendedToChar(int gsmChar) {
         if (gsmChar == GSM_EXTENDED_ESCAPE) {
             return ' ';
         } else if (gsmChar >= 0 && gsmChar < 128) {
@@ -96,14 +88,12 @@ public class GsmAlphabet {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static byte[] stringToGsm7BitPackedWithHeader(String data, byte[] header) throws EncodeException {
+        public static byte[] stringToGsm7BitPackedWithHeader(String data, byte[] header) throws EncodeException {
         return stringToGsm7BitPackedWithHeader(data, header, 0, 0);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static byte[] stringToGsm7BitPackedWithHeader(String data, byte[] header,
+        public static byte[] stringToGsm7BitPackedWithHeader(String data, byte[] header,
             int languageTable, int languageShiftTable) throws EncodeException {
         if (header == null || header.length == 0) {
             return stringToGsm7BitPacked(data, languageTable, languageShiftTable);
@@ -118,21 +108,18 @@ public class GsmAlphabet {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static byte[] stringToGsm7BitPacked(String data) throws EncodeException {
+        public static byte[] stringToGsm7BitPacked(String data) throws EncodeException {
         return stringToGsm7BitPacked(data, 0, true, 0, 0);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static byte[] stringToGsm7BitPacked(String data, int languageTable,
+        public static byte[] stringToGsm7BitPacked(String data, int languageTable,
             int languageShiftTable) throws EncodeException {
         return stringToGsm7BitPacked(data, 0, true, languageTable, languageShiftTable);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static byte[] stringToGsm7BitPacked(String data, int startingSeptetOffset,
+        public static byte[] stringToGsm7BitPacked(String data, int startingSeptetOffset,
             boolean throwException, int languageTable, int languageShiftTable) throws EncodeException {
         int dataLen = data.length();
         int septetCount = countGsmSeptetsUsingTables(data, !throwException,
@@ -175,8 +162,7 @@ public class GsmAlphabet {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static void packSmsChar(byte[] packedChars, int bitOffset, int value) {
+        private static void packSmsChar(byte[] packedChars, int bitOffset, int value) {
         int byteOffset = bitOffset / 8;
         int shift = bitOffset % 8;
         packedChars[++byteOffset] |= value << shift;
@@ -186,15 +172,13 @@ public class GsmAlphabet {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String gsm7BitPackedToString(byte[] pdu, int offset,
+        public static String gsm7BitPackedToString(byte[] pdu, int offset,
             int lengthSeptets) {
         return gsm7BitPackedToString(pdu, offset, lengthSeptets, 0, 0, 0);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String gsm7BitPackedToString(byte[] pdu, int offset,
+        public static String gsm7BitPackedToString(byte[] pdu, int offset,
             int lengthSeptets, int numPaddingBits, int languageTable, int shiftTable) {
         StringBuilder ret = new StringBuilder(lengthSeptets);
         if (languageTable < 0 || languageTable > sLanguageTables.length) {
@@ -253,14 +237,12 @@ public class GsmAlphabet {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String gsm8BitUnpackedToString(byte[] data, int offset, int length) {
+        public static String gsm8BitUnpackedToString(byte[] data, int offset, int length) {
         return gsm8BitUnpackedToString(data, offset, length, "");
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String gsm8BitUnpackedToString(byte[] data, int offset, int length, String characterset) {
+        public static String gsm8BitUnpackedToString(byte[] data, int offset, int length, String characterset) {
         boolean isMbcs = false;
         Charset charset = null;
         ByteBuffer mbcsBuffer = null;
@@ -311,8 +293,7 @@ public class GsmAlphabet {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static byte[] stringToGsm8BitPacked(String s) {
+        public static byte[] stringToGsm8BitPacked(String s) {
         byte[] ret;
         int septets = countGsmSeptetsUsingTables(s, true, 0, 0);
         ret = new byte[septets];
@@ -321,8 +302,7 @@ public class GsmAlphabet {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void stringToGsm8BitUnpackedField(String s, byte dest[], int offset, int length) {
+        public static void stringToGsm8BitUnpackedField(String s, byte dest[], int offset, int length) {
         int outByteIndex = offset;
         SparseIntArray charToLanguageTable = sCharsToGsmTables[0];
         SparseIntArray charToShiftTable = sCharsToShiftTables[0];
@@ -351,8 +331,7 @@ public class GsmAlphabet {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static int countGsmSeptets(char c) {
+        public static int countGsmSeptets(char c) {
         try {
             return countGsmSeptets(c, false);
         } catch (EncodeException ex) {
@@ -361,8 +340,7 @@ public class GsmAlphabet {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static int countGsmSeptets(char c, boolean throwsException) throws EncodeException {
+        public static int countGsmSeptets(char c, boolean throwsException) throws EncodeException {
         if (sCharsToGsmTables[0].get(c, -1) != -1) {
             return 1;
         }
@@ -377,8 +355,7 @@ public class GsmAlphabet {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static int countGsmSeptetsUsingTables(CharSequence s, boolean use7bitOnly,
+        public static int countGsmSeptetsUsingTables(CharSequence s, boolean use7bitOnly,
             int languageTable, int languageShiftTable) {
         int count = 0;
         int sz = s.length();
@@ -404,7 +381,7 @@ public class GsmAlphabet {
     }
 
     
-    public static SmsMessageBase.TextEncodingDetails countGsmSeptets(CharSequence s, boolean use7bitOnly) {
+        public static SmsMessageBase.TextEncodingDetails countGsmSeptets(CharSequence s, boolean use7bitOnly) {
         if (sEnabledSingleShiftTables.length + sEnabledLockingShiftTables.length == 0) {
             SmsMessageBase.TextEncodingDetails ted = new SmsMessageBase.TextEncodingDetails();
             int septets = GsmAlphabet.countGsmSeptetsUsingTables(s, use7bitOnly, 0, 0);
@@ -523,8 +500,7 @@ public class GsmAlphabet {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static int findGsmSeptetLimitIndex(String s, int start, int limit, int langTable, int langShiftTable) {
+        public static int findGsmSeptetLimitIndex(String s, int start, int limit, int langTable, int langShiftTable) {
         int accumulator = 0;
         int size = s.length();
         SparseIntArray charToLangTable = sCharsToGsmTables[langTable];
@@ -549,8 +525,7 @@ public class GsmAlphabet {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static synchronized void setEnabledSingleShiftTables(int[] tables) {
+        static synchronized void setEnabledSingleShiftTables(int[] tables) {
         sEnabledSingleShiftTables = tables;
         if (tables.length > 0) {
             sHighestEnabledSingleShiftCode = tables[tables.length - 1];
@@ -560,73 +535,75 @@ public class GsmAlphabet {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static synchronized void setEnabledLockingShiftTables(int[] tables) {
+        static synchronized void setEnabledLockingShiftTables(int[] tables) {
         sEnabledLockingShiftTables = tables;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static synchronized int[] getEnabledSingleShiftTables() {
+        static synchronized int[] getEnabledSingleShiftTables() {
         return sEnabledSingleShiftTables;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static synchronized int[] getEnabledLockingShiftTables() {
+        static synchronized int[] getEnabledLockingShiftTables() {
         return sEnabledLockingShiftTables;
     }
 
     
     private static class LanguagePairCount {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.235 -0400", hash_original_field = "3A3CB397ADE05A407F0D792E87F6F299", hash_generated_field = "751385C2D4084786D52A9F254B89775D")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.809 -0400", hash_original_field = "3A3CB397ADE05A407F0D792E87F6F299", hash_generated_field = "751385C2D4084786D52A9F254B89775D")
 
         int languageCode;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.235 -0400", hash_original_field = "C952B21C8E1E6EA1BFBDA4335931DBF0", hash_generated_field = "2ABCA39022907433C3B5065AE66DDA55")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.809 -0400", hash_original_field = "C952B21C8E1E6EA1BFBDA4335931DBF0", hash_generated_field = "2ABCA39022907433C3B5065AE66DDA55")
 
         int[] septetCounts;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.235 -0400", hash_original_field = "FA96D72628AD78B424E796DF9177A4C4", hash_generated_field = "538C50EAF301EE2CC9D2096166C6CEE7")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.809 -0400", hash_original_field = "FA96D72628AD78B424E796DF9177A4C4", hash_generated_field = "538C50EAF301EE2CC9D2096166C6CEE7")
 
         int[] unencodableCounts;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.235 -0400", hash_original_method = "62389A632F9774EDFBFC18A0B528AAFD", hash_generated_method = "2330F9A8261C0C983D54268587DF7AC9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.809 -0400", hash_original_method = "62389A632F9774EDFBFC18A0B528AAFD", hash_generated_method = "BC5E116F55ACA8D55FEDED7E37C12C4B")
           LanguagePairCount(int code) {
             this.languageCode = code;
             int maxSingleShiftCode = sHighestEnabledSingleShiftCode;
             septetCounts = new int[maxSingleShiftCode + 1];
             unencodableCounts = new int[maxSingleShiftCode + 1];
+for(int i = 1, tableOffset = 0;i <= maxSingleShiftCode;i++)
             {
-                int i = 1;
-                int tableOffset = 0;
+    if(sEnabledSingleShiftTables[tableOffset] == i)                
                 {
-                    {
-                        septetCounts[i] = -1;
-                    } 
-                } 
-            } 
+                    tableOffset++;
+                } //End block
+                else
+                {
+                    septetCounts[i] = -1;
+                } //End block
+            } //End block
+    if(code == 1 && maxSingleShiftCode >= 1)            
             {
                 septetCounts[1] = -1;
-            } 
+            } //End block
+            else
+    if(code == 3 && maxSingleShiftCode >= 2)            
             {
                 septetCounts[2] = -1;
-            } 
-            
-            
-            
-            
-            
-            
-                
-                    
-                
-                    
-                
-            
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //this.languageCode = code;
+            //int maxSingleShiftCode = sHighestEnabledSingleShiftCode;
+            //septetCounts = new int[maxSingleShiftCode + 1];
+            //unencodableCounts = new int[maxSingleShiftCode + 1];
+            //for (int i = 1, tableOffset = 0; i <= maxSingleShiftCode; i++) {
+                //if (sEnabledSingleShiftTables[tableOffset] == i) {
+                    //tableOffset++;
+                //} else {
+                    //septetCounts[i] = -1;   
+                //}
+            //}
+            //if (code == 1 && maxSingleShiftCode >= 1) {
+                //septetCounts[1] = -1;   
+            //} else if (code == 3 && maxSingleShiftCode >= 2) {
+                //septetCounts[2] = -1;   
+            //}
         }
 
         
@@ -634,40 +611,40 @@ public class GsmAlphabet {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.236 -0400", hash_original_field = "1E54D398F6654D474F0F5192DC98EDCC", hash_generated_field = "EFF0BA8EAA7A2E5FCD3601D1F8EC46DA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.809 -0400", hash_original_field = "1E54D398F6654D474F0F5192DC98EDCC", hash_generated_field = "EFF0BA8EAA7A2E5FCD3601D1F8EC46DA")
 
     private static final String TAG = "GSM";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.236 -0400", hash_original_field = "83E2E53BC5D628A00F74973C0828D312", hash_generated_field = "01B4701196E8E146FCB4ABE9EBFE561A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.810 -0400", hash_original_field = "83E2E53BC5D628A00F74973C0828D312", hash_generated_field = "01B4701196E8E146FCB4ABE9EBFE561A")
 
     public static final byte GSM_EXTENDED_ESCAPE = 0x1B;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.236 -0400", hash_original_field = "AD6F7CFC9406C3F8AD68F0A7C4F3C303", hash_generated_field = "E7C187193C05B2BE92F97B401ABD1A56")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.810 -0400", hash_original_field = "AD6F7CFC9406C3F8AD68F0A7C4F3C303", hash_generated_field = "E7C187193C05B2BE92F97B401ABD1A56")
 
     public static final int UDH_SEPTET_COST_LENGTH = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.236 -0400", hash_original_field = "22BA7F2F78CC9082AE110ABA358462A3", hash_generated_field = "CBFC8557EFC74CEEF14352FADE5BCE44")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.810 -0400", hash_original_field = "22BA7F2F78CC9082AE110ABA358462A3", hash_generated_field = "CBFC8557EFC74CEEF14352FADE5BCE44")
 
     public static final int UDH_SEPTET_COST_ONE_SHIFT_TABLE = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.236 -0400", hash_original_field = "65DB77D05C33F2258AC9F6FC92FAC80D", hash_generated_field = "E0214C53588E79AF1E1679ED35E28F19")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.810 -0400", hash_original_field = "65DB77D05C33F2258AC9F6FC92FAC80D", hash_generated_field = "E0214C53588E79AF1E1679ED35E28F19")
 
     public static final int UDH_SEPTET_COST_TWO_SHIFT_TABLES = 7;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.236 -0400", hash_original_field = "C21D2E8F2D7CB95111AB1184C353F100", hash_generated_field = "8F3BC9CF64CC8917571C6ADB052B3A62")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.810 -0400", hash_original_field = "C21D2E8F2D7CB95111AB1184C353F100", hash_generated_field = "8F3BC9CF64CC8917571C6ADB052B3A62")
 
     public static final int UDH_SEPTET_COST_CONCATENATED_MESSAGE = 6;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.236 -0400", hash_original_field = "6825F1DFB1958CFDF02A05E7F173EC56", hash_generated_field = "B45451A3D3324EFBFEB9E27D9B614D45")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.810 -0400", hash_original_field = "6825F1DFB1958CFDF02A05E7F173EC56", hash_generated_field = "B45451A3D3324EFBFEB9E27D9B614D45")
 
     private static SparseIntArray[] sCharsToGsmTables;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.236 -0400", hash_original_field = "A56B9E2E62E4459E7628AF163CFE0E20", hash_generated_field = "0B96A40055A95B2257379B3584AA9523")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.810 -0400", hash_original_field = "A56B9E2E62E4459E7628AF163CFE0E20", hash_generated_field = "0B96A40055A95B2257379B3584AA9523")
 
     private static SparseIntArray[] sCharsToShiftTables;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.236 -0400", hash_original_field = "8957A49BB200B611FDBE5403C52866A1", hash_generated_field = "2ECC027C28F9F71EED05C10584CA030F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.810 -0400", hash_original_field = "8957A49BB200B611FDBE5403C52866A1", hash_generated_field = "2ECC027C28F9F71EED05C10584CA030F")
 
     private static int[] sEnabledSingleShiftTables;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.236 -0400", hash_original_field = "AD983259565FC9E37CFB9D682F9AD1A8", hash_generated_field = "3A09A08C6E3D262BBDA43B757C45805B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.810 -0400", hash_original_field = "AD983259565FC9E37CFB9D682F9AD1A8", hash_generated_field = "3A09A08C6E3D262BBDA43B757C45805B")
 
     private static int[] sEnabledLockingShiftTables;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.236 -0400", hash_original_field = "AFBC260B8EF65D7E5411FF4A74B35187", hash_generated_field = "912597CF8776978E6C995535FD23DDFD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.810 -0400", hash_original_field = "AFBC260B8EF65D7E5411FF4A74B35187", hash_generated_field = "912597CF8776978E6C995535FD23DDFD")
 
     private static int sHighestEnabledSingleShiftCode;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.236 -0400", hash_original_field = "583F60D042B2E4ED9B0B63C2F42E4376", hash_generated_field = "2FB715E5FB56BF92B1C0C9951328990A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.810 -0400", hash_original_field = "583F60D042B2E4ED9B0B63C2F42E4376", hash_generated_field = "2FB715E5FB56BF92B1C0C9951328990A")
 
     private static final String[] sLanguageTables = {
         
@@ -844,7 +821,7 @@ public class GsmAlphabet {
             
             + "yz\u0655\u0651\u0653\u0656\u0670"
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.236 -0400", hash_original_field = "ED8E1D9DAF8EC0116220715DF9C5259D", hash_generated_field = "122ADAB93F7862CCCD44F5ECE5220A35")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.810 -0400", hash_original_field = "ED8E1D9DAF8EC0116220715DF9C5259D", hash_generated_field = "122ADAB93F7862CCCD44F5ECE5220A35")
 
     private static final String[] sLanguageShiftTables = new String[]{
         

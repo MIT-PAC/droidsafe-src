@@ -1,29 +1,25 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-
-import java.util.Iterator;
-
 public class DHParameters {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.000 -0400", hash_original_method = "808CB0297624A41B24EE6EECFB636C09", hash_generated_method = "808CB0297624A41B24EE6EECFB636C09")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.285 -0400", hash_original_method = "808CB0297624A41B24EE6EECFB636C09", hash_generated_method = "808CB0297624A41B24EE6EECFB636C09")
     public DHParameters ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
-    public static byte[] getPrime() {
+        public static byte[] getPrime() {
         return prime;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.001 -0400", hash_original_field = "F4CCA7E9B059F7B0810A83F444F38F8A", hash_generated_field = "A774C48B8B96AAA5E63098DCD36D323F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.285 -0400", hash_original_field = "F4CCA7E9B059F7B0810A83F444F38F8A", hash_generated_field = "A774C48B8B96AAA5E63098DCD36D323F")
 
     private static byte[] prime512 = new byte[] { (byte) 0xF5, (byte) 0x2A, (byte) 0xFF,
             (byte) 0x3C, (byte) 0xE1, (byte) 0xB1, (byte) 0x29, (byte) 0x40,
@@ -39,7 +35,7 @@ public class DHParameters {
             (byte) 0x26, (byte) 0xBA, (byte) 0xAB, (byte) 0xA2, (byte) 0x5E,
             (byte) 0xC3, (byte) 0x55, (byte) 0xE9, (byte) 0x2A, (byte) 0x05,
             (byte) 0x5F };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.001 -0400", hash_original_field = "5A8CCCF39F1DAAAAE10AE3EA05562660", hash_generated_field = "E84D0BD2C59E053701D27F642EE57F73")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.286 -0400", hash_original_field = "5A8CCCF39F1DAAAAE10AE3EA05562660", hash_generated_field = "E84D0BD2C59E053701D27F642EE57F73")
 
     private static byte[] primeGroup1 = { (byte) 0xFF, (byte) 0xFF, (byte) 0xFF, (byte) 0xFF,
             (byte) 0xFF, (byte) 0xFF, (byte) 0xFF, (byte) 0xFF, (byte) 0xC9,
@@ -61,7 +57,7 @@ public class DHParameters {
             (byte) 0xA6, (byte) 0x3A, (byte) 0x36, (byte) 0x20, (byte) 0xFF,
             (byte) 0xFF, (byte) 0xFF, (byte) 0xFF, (byte) 0xFF, (byte) 0xFF,
             (byte) 0xFF, (byte) 0xFF };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.001 -0400", hash_original_field = "5C1CE63351F7C68E10B270BCDB3B60CC", hash_generated_field = "70AC00DE5475B939FD9562176AA240C7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.286 -0400", hash_original_field = "5C1CE63351F7C68E10B270BCDB3B60CC", hash_generated_field = "70AC00DE5475B939FD9562176AA240C7")
 
     private static byte[] primeGroup2 = { (byte) 0xFF, (byte) 0xFF, (byte) 0xFF, (byte) 0xFF,
             (byte) 0xFF, (byte) 0xFF, (byte) 0xFF, (byte) 0xFF, (byte) 0xC9,
@@ -90,7 +86,7 @@ public class DHParameters {
             (byte) 0x81, (byte) 0xFF, (byte) 0xFF, (byte) 0xFF, (byte) 0xFF,
             (byte) 0xFF, (byte) 0xFF, (byte) 0xFF, (byte) 0xFF
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.001 -0400", hash_original_field = "10F12151EF41361B91EE3FC1065E14D2", hash_generated_field = "E308A45DAEAECF2B8BCC430FCFA81CB6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.286 -0400", hash_original_field = "10F12151EF41361B91EE3FC1065E14D2", hash_generated_field = "E308A45DAEAECF2B8BCC430FCFA81CB6")
 
     private static byte[] prime;
     static {

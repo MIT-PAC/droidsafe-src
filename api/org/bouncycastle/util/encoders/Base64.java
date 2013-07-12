@@ -1,27 +1,23 @@
 package org.bouncycastle.util.encoders;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
 public class Base64 {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.233 -0400", hash_original_method = "2DB9D16143059D09A54A3BB31C55E28D", hash_generated_method = "2DB9D16143059D09A54A3BB31C55E28D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.440 -0400", hash_original_method = "2DB9D16143059D09A54A3BB31C55E28D", hash_generated_method = "2DB9D16143059D09A54A3BB31C55E28D")
     public Base64 ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
-    public static byte[] encode(
+        public static byte[] encode(
         byte[]    data) {
         int len = (data.length + 2) / 3 * 4;
         ByteArrayOutputStream bOut = new ByteArrayOutputStream(len);
@@ -37,16 +33,14 @@ public class Base64 {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static int encode(
+        public static int encode(
         byte[]                data,
         OutputStream    out) throws IOException {
         return encoder.encode(data, 0, data.length, out);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static int encode(
+        public static int encode(
         byte[]                data,
         int                    off,
         int                    length,
@@ -55,8 +49,7 @@ public class Base64 {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static byte[] decode(
+        public static byte[] decode(
         byte[]    data) {
         int len = data.length / 4 * 3;
         ByteArrayOutputStream bOut = new ByteArrayOutputStream(len);
@@ -72,8 +65,7 @@ public class Base64 {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static byte[] decode(
+        public static byte[] decode(
         String    data) {
         int len = data.length() / 4 * 3;
         ByteArrayOutputStream bOut = new ByteArrayOutputStream(len);
@@ -89,15 +81,14 @@ public class Base64 {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static int decode(
+        public static int decode(
         String                data,
         OutputStream    out) throws IOException {
         return encoder.decode(data, out);
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.234 -0400", hash_original_field = "A3380BA0564E5EBC4C03422982B036A8", hash_generated_field = "82B3D023B3737398DBE3759E13F6CAAE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.443 -0400", hash_original_field = "A3380BA0564E5EBC4C03422982B036A8", hash_generated_field = "82B3D023B3737398DBE3759E13F6CAAE")
 
     private static final Encoder encoder = new Base64Encoder();
 }

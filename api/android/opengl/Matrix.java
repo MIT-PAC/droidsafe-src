@@ -1,19 +1,16 @@
 package android.opengl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-
-import java.util.Iterator;
-
 public class Matrix {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.806 -0400", hash_original_method = "80154EE353DD9055CB6181108953825F", hash_generated_method = "80154EE353DD9055CB6181108953825F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.773 -0400", hash_original_method = "80154EE353DD9055CB6181108953825F", hash_generated_method = "80154EE353DD9055CB6181108953825F")
     public Matrix ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -30,8 +27,7 @@ public class Matrix {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void transposeM(float[] mTrans, int mTransOffset, float[] m,
+        public static void transposeM(float[] mTrans, int mTransOffset, float[] m,
             int mOffset) {
         for (int i = 0; i < 4; i++) {
             int mBase = i * 4 + mOffset;
@@ -43,8 +39,7 @@ public class Matrix {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static boolean invertM(float[] mInv, int mInvOffset, float[] m,
+        public static boolean invertM(float[] mInv, int mInvOffset, float[] m,
             int mOffset) {
         final float src0  = m[mOffset +  0];
         final float src4  = m[mOffset +  1];
@@ -144,8 +139,7 @@ public class Matrix {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void orthoM(float[] m, int mOffset,
+        public static void orthoM(float[] m, int mOffset,
         float left, float right, float bottom, float top,
         float near, float far) {
         if (left == right) {
@@ -185,8 +179,7 @@ public class Matrix {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void frustumM(float[] m, int offset,
+        public static void frustumM(float[] m, int offset,
             float left, float right, float bottom, float top,
             float near, float far) {
         if (left == right) {
@@ -232,8 +225,7 @@ public class Matrix {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void perspectiveM(float[] m, int offset,
+        public static void perspectiveM(float[] m, int offset,
           float fovy, float aspect, float zNear, float zFar) {
         float f = 1.0f / (float) Math.tan(fovy * (Math.PI / 360.0));
         float rangeReciprocal = 1.0f / (zNear - zFar);
@@ -256,14 +248,12 @@ public class Matrix {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static float length(float x, float y, float z) {
+        public static float length(float x, float y, float z) {
         return (float) Math.sqrt(x * x + y * y + z * z);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void setIdentityM(float[] sm, int smOffset) {
+        public static void setIdentityM(float[] sm, int smOffset) {
         for (int i=0 ; i<16 ; i++) {
             sm[smOffset + i] = 0;
         }
@@ -273,8 +263,7 @@ public class Matrix {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void scaleM(float[] sm, int smOffset,
+        public static void scaleM(float[] sm, int smOffset,
             float[] m, int mOffset,
             float x, float y, float z) {
         for (int i=0 ; i<4 ; i++) {
@@ -288,8 +277,7 @@ public class Matrix {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void scaleM(float[] m, int mOffset,
+        public static void scaleM(float[] m, int mOffset,
             float x, float y, float z) {
         for (int i=0 ; i<4 ; i++) {
             int mi = mOffset + i;
@@ -300,8 +288,7 @@ public class Matrix {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void translateM(float[] tm, int tmOffset,
+        public static void translateM(float[] tm, int tmOffset,
             float[] m, int mOffset,
             float x, float y, float z) {
         for (int i=0 ; i<12 ; i++) {
@@ -316,8 +303,7 @@ public class Matrix {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void translateM(
+        public static void translateM(
             float[] m, int mOffset,
             float x, float y, float z) {
         for (int i=0 ; i<4 ; i++) {
@@ -327,8 +313,7 @@ public class Matrix {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void rotateM(float[] rm, int rmOffset,
+        public static void rotateM(float[] rm, int rmOffset,
             float[] m, int mOffset,
             float a, float x, float y, float z) {
         synchronized(sTemp) {
@@ -338,8 +323,7 @@ public class Matrix {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void rotateM(float[] m, int mOffset,
+        public static void rotateM(float[] m, int mOffset,
             float a, float x, float y, float z) {
         synchronized(sTemp) {
             setRotateM(sTemp, 0, a, x, y, z);
@@ -349,8 +333,7 @@ public class Matrix {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void setRotateM(float[] rm, int rmOffset,
+        public static void setRotateM(float[] rm, int rmOffset,
             float a, float x, float y, float z) {
         rm[rmOffset + 3] = 0;
         rm[rmOffset + 7] = 0;
@@ -408,8 +391,7 @@ public class Matrix {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void setRotateEulerM(float[] rm, int rmOffset,
+        public static void setRotateEulerM(float[] rm, int rmOffset,
             float x, float y, float z) {
         x *= (float) (Math.PI / 180.0f);
         y *= (float) (Math.PI / 180.0f);
@@ -441,8 +423,7 @@ public class Matrix {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void setLookAtM(float[] rm, int rmOffset,
+        public static void setLookAtM(float[] rm, int rmOffset,
             float eyeX, float eyeY, float eyeZ,
             float centerX, float centerY, float centerZ, float upX, float upY,
             float upZ) {
@@ -483,7 +464,7 @@ public class Matrix {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.815 -0400", hash_original_field = "01FC29FDECEE450BD310A7C8C01A19CA", hash_generated_field = "F1D85FF4C7CB26B2D7C4969F6AF71DCC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.776 -0400", hash_original_field = "01FC29FDECEE450BD310A7C8C01A19CA", hash_generated_field = "F1D85FF4C7CB26B2D7C4969F6AF71DCC")
 
     private final static float[] sTemp = new float[32];
 }

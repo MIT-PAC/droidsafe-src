@@ -1,12 +1,9 @@
 package org.apache.http.impl.cookie;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -23,19 +20,21 @@ import org.apache.http.message.ParserCursor;
 import org.apache.http.util.CharArrayBuffer;
 
 public class BrowserCompatSpec extends CookieSpecBase {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.072 -0400", hash_original_field = "60E59FA1D4034653FC981EEB8C0CE3F3", hash_generated_field = "41DF6CEE83D74A6FDB1FAB0DD1A4D526")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.447 -0400", hash_original_field = "60E59FA1D4034653FC981EEB8C0CE3F3", hash_generated_field = "41DF6CEE83D74A6FDB1FAB0DD1A4D526")
 
     private String[] datepatterns;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.073 -0400", hash_original_method = "6F0554959345610814E9AA8C15D0E733", hash_generated_method = "FB01414D4358F515FB9F201F8E643B3E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.449 -0400", hash_original_method = "6F0554959345610814E9AA8C15D0E733", hash_generated_method = "7B00CB1E8E6C6203AECEE4862522224D")
     public  BrowserCompatSpec(final String[] datepatterns) {
         super();
+    if(datepatterns != null)        
         {
             this.datepatterns = datepatterns.clone();
-        } 
+        } //End block
+        else
         {
             this.datepatterns = DATE_PATTERNS;
-        } 
+        } //End block
         registerAttribHandler(ClientCookie.PATH_ATTR, new BasicPathHandler());
         registerAttribHandler(ClientCookie.DOMAIN_ATTR, new BasicDomainHandler());
         registerAttribHandler(ClientCookie.MAX_AGE_ATTR, new BasicMaxAgeHandler());
@@ -43,155 +42,169 @@ public class BrowserCompatSpec extends CookieSpecBase {
         registerAttribHandler(ClientCookie.COMMENT_ATTR, new BasicCommentHandler());
         registerAttribHandler(ClientCookie.EXPIRES_ATTR, new BasicExpiresHandler(
                 this.datepatterns));
-        
-        
-            
-        
-            
-        
-        
-        
-        
-        
-        
-        
-                
+        // ---------- Original Method ----------
+        //if (datepatterns != null) {
+            //this.datepatterns = datepatterns.clone();
+        //} else {
+            //this.datepatterns = DATE_PATTERNS;
+        //}
+        //registerAttribHandler(ClientCookie.PATH_ATTR, new BasicPathHandler());
+        //registerAttribHandler(ClientCookie.DOMAIN_ATTR, new BasicDomainHandler());
+        //registerAttribHandler(ClientCookie.MAX_AGE_ATTR, new BasicMaxAgeHandler());
+        //registerAttribHandler(ClientCookie.SECURE_ATTR, new BasicSecureHandler());
+        //registerAttribHandler(ClientCookie.COMMENT_ATTR, new BasicCommentHandler());
+        //registerAttribHandler(ClientCookie.EXPIRES_ATTR, new BasicExpiresHandler(
+                //this.datepatterns));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.073 -0400", hash_original_method = "C508CCBAE435AF6EA5073D1CDD101081", hash_generated_method = "E42222EFF27A1027FCCB81D80EC19544")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.449 -0400", hash_original_method = "C508CCBAE435AF6EA5073D1CDD101081", hash_generated_method = "E42222EFF27A1027FCCB81D80EC19544")
     public  BrowserCompatSpec() {
         this(null);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.074 -0400", hash_original_method = "D6912D1F98189529AD0F723836603277", hash_generated_method = "2CD84D49E4127C95DEAEE1EC981BAB49")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.451 -0400", hash_original_method = "D6912D1F98189529AD0F723836603277", hash_generated_method = "6B0912EB697CBC626F056685A1A43254")
     public List<Cookie> parse(final Header header, final CookieOrigin origin) throws MalformedCookieException {
-        List<Cookie> varB4EAC82CA7396A68D541C85D26508E83_379623612 = null; 
+        addTaint(origin.getTaint());
+        addTaint(header.getTaint());
+    if(header == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Header may not be null");
-        } 
+            IllegalArgumentException var655E57DE77F969F763516260E292795B_1306771928 = new IllegalArgumentException("Header may not be null");
+            var655E57DE77F969F763516260E292795B_1306771928.addTaint(taint);
+            throw var655E57DE77F969F763516260E292795B_1306771928;
+        } //End block
+    if(origin == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie origin may not be null");
-        } 
+            IllegalArgumentException var4264914F0057BA70A0B3E6621821A095_361697645 = new IllegalArgumentException("Cookie origin may not be null");
+            var4264914F0057BA70A0B3E6621821A095_361697645.addTaint(taint);
+            throw var4264914F0057BA70A0B3E6621821A095_361697645;
+        } //End block
         String headervalue = header.getValue();
         boolean isNetscapeCookie = false;
         int i1 = headervalue.toLowerCase(Locale.ENGLISH).indexOf("expires=");
+    if(i1 != -1)        
         {
             i1 += "expires=".length();
             int i2 = headervalue.indexOf(';', i1);
+    if(i2 == -1)            
             {
                 i2 = headervalue.length();
-            } 
+            } //End block
             try 
             {
                 DateUtils.parseDate(headervalue.substring(i1, i2), this.datepatterns);
                 isNetscapeCookie = true;
-            } 
+            } //End block
             catch (DateParseException e)
-            { }
-        } 
+            {
+            } //End block
+        } //End block
         HeaderElement[] elems = null;
+    if(isNetscapeCookie)        
         {
             NetscapeDraftHeaderParser parser = NetscapeDraftHeaderParser.DEFAULT;
             CharArrayBuffer buffer;
             ParserCursor cursor;
+    if(header instanceof FormattedHeader)            
             {
                 buffer = ((FormattedHeader) header).getBuffer();
                 cursor = new ParserCursor(
                         ((FormattedHeader) header).getValuePos(), 
                         buffer.length());
-            } 
+            } //End block
+            else
             {
                 String s = header.getValue();
+    if(s == null)                
                 {
-                    if (DroidSafeAndroidRuntime.control) throw new MalformedCookieException("Header value is null");
-                } 
+                    MalformedCookieException var559921376C3ECF399D4F4743EF8ED9B9_512348195 = new MalformedCookieException("Header value is null");
+                    var559921376C3ECF399D4F4743EF8ED9B9_512348195.addTaint(taint);
+                    throw var559921376C3ECF399D4F4743EF8ED9B9_512348195;
+                } //End block
                 buffer = new CharArrayBuffer(s.length());
                 buffer.append(s);
                 cursor = new ParserCursor(0, buffer.length());
-            } 
+            } //End block
             elems = new HeaderElement[] { parser.parseHeader(buffer, cursor) };
-        } 
+        } //End block
+        else
         {
             elems = header.getElements();
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_379623612 = parse(elems, origin);
-        addTaint(header.getTaint());
-        addTaint(origin.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_379623612.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_379623612;
-        
-        
+        } //End block
+List<Cookie> var244203BCE4724537DC84FE61D4419CE6_706581900 =         parse(elems, origin);
+        var244203BCE4724537DC84FE61D4419CE6_706581900.addTaint(taint);
+        return var244203BCE4724537DC84FE61D4419CE6_706581900;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.076 -0400", hash_original_method = "A80B57E4EF4EED165A6AA62FBF374996", hash_generated_method = "B1D2AC2C5EA6E31CCA2B51A92C49B5BF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.452 -0400", hash_original_method = "A80B57E4EF4EED165A6AA62FBF374996", hash_generated_method = "0A7D76DEE53A41AA1316E879F43AD4B0")
     public List<Header> formatCookies(final List<Cookie> cookies) {
-        List<Header> varB4EAC82CA7396A68D541C85D26508E83_892214284 = null; 
+        addTaint(cookies.getTaint());
+    if(cookies == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("List of cookies may not be null");
-        } 
+            IllegalArgumentException varF8FD3AA86899D4A0D763F37D49D2DC0B_1519759418 = new IllegalArgumentException("List of cookies may not be null");
+            varF8FD3AA86899D4A0D763F37D49D2DC0B_1519759418.addTaint(taint);
+            throw varF8FD3AA86899D4A0D763F37D49D2DC0B_1519759418;
+        } //End block
+    if(cookies.isEmpty())        
         {
-            boolean var054F663771300FA8A13A91F733F5D6CB_1763685567 = (cookies.isEmpty());
-            {
-                if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("List of cookies may not be empty");
-            } 
-        } 
+            IllegalArgumentException varA9E78185ACB38B15D24741774F0DBD8F_1665852491 = new IllegalArgumentException("List of cookies may not be empty");
+            varA9E78185ACB38B15D24741774F0DBD8F_1665852491.addTaint(taint);
+            throw varA9E78185ACB38B15D24741774F0DBD8F_1665852491;
+        } //End block
         CharArrayBuffer buffer = new CharArrayBuffer(20 * cookies.size());
         buffer.append(SM.COOKIE);
         buffer.append(": ");
+for(int i = 0;i < cookies.size();i++)
         {
-            int i = 0;
-            boolean varE9AF3BEAEA8CF5406F5AC5D6F9EE8F57_461993995 = (i < cookies.size());
+            Cookie cookie = cookies.get(i);
+    if(i > 0)            
             {
-                Cookie cookie = cookies.get(i);
-                {
-                    buffer.append("; ");
-                } 
-                buffer.append(cookie.getName());
-                buffer.append("=");
-                String s = cookie.getValue();
-                {
-                    buffer.append(s);
-                } 
-            } 
-        } 
+                buffer.append("; ");
+            } //End block
+            buffer.append(cookie.getName());
+            buffer.append("=");
+            String s = cookie.getValue();
+    if(s != null)            
+            {
+                buffer.append(s);
+            } //End block
+        } //End block
         List<Header> headers = new ArrayList<Header>(1);
         headers.add(new BufferedHeader(buffer));
-        varB4EAC82CA7396A68D541C85D26508E83_892214284 = headers;
-        addTaint(cookies.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_892214284.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_892214284;
-        
-        
+List<Header> var6937E37BAD8D53F9D49A0E32C69A3A2C_2040271547 =         headers;
+        var6937E37BAD8D53F9D49A0E32C69A3A2C_2040271547.addTaint(taint);
+        return var6937E37BAD8D53F9D49A0E32C69A3A2C_2040271547;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.077 -0400", hash_original_method = "F5A7F7B6DBF07E93DFA757749FB9F06B", hash_generated_method = "DA80455CF5CA2276EC5C6FF658450FD6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.452 -0400", hash_original_method = "F5A7F7B6DBF07E93DFA757749FB9F06B", hash_generated_method = "6A28AED12F5118B23C4CA4F888677A19")
     public int getVersion() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_969872118 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_969872118;
-        
-        
+        int varCFCD208495D565EF66E7DFF9F98764DA_257106923 = (0);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1197085863 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1197085863;
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.078 -0400", hash_original_method = "C1FA79C2C3115B4C8F8CB20B10CB9417", hash_generated_method = "0A9918342E3260ACF263EEE80A56DFA8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.453 -0400", hash_original_method = "C1FA79C2C3115B4C8F8CB20B10CB9417", hash_generated_method = "E5324F18919765A96E43A7F614F46759")
     public Header getVersionHeader() {
-        Header varB4EAC82CA7396A68D541C85D26508E83_969276270 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_969276270 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_969276270.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_969276270;
-        
-        
+Header var540C13E9E156B687226421B24F2DF178_1235930025 =         null;
+        var540C13E9E156B687226421B24F2DF178_1235930025.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_1235930025;
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.078 -0400", hash_original_field = "6EB8F596E5B4290D58EA6D0E959CFB4C", hash_generated_field = "0A51A84F6A48C700CC30A9F8BE2AB7A0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.453 -0400", hash_original_field = "6EB8F596E5B4290D58EA6D0E959CFB4C", hash_generated_field = "0A51A84F6A48C700CC30A9F8BE2AB7A0")
 
     protected static final String[] DATE_PATTERNS = new String[] {
             DateUtils.PATTERN_RFC1123,

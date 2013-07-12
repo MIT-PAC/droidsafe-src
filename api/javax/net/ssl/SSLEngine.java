@@ -1,61 +1,56 @@
 package javax.net.ssl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.nio.ByteBuffer;
 
 public abstract class SSLEngine {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.607 -0400", hash_original_field = "4EC98FB9133927791198E49B2FD46358", hash_generated_field = "871B4093DF845204CC93E22B63A3EB07")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.675 -0400", hash_original_field = "4EC98FB9133927791198E49B2FD46358", hash_generated_field = "871B4093DF845204CC93E22B63A3EB07")
 
     private String peerHost;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.607 -0400", hash_original_field = "BBD5741C4F9994864582D25DD194C4DE", hash_generated_field = "FE74A5BA5CFBB5B6DC2B68FEFA76ECFC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.675 -0400", hash_original_field = "BBD5741C4F9994864582D25DD194C4DE", hash_generated_field = "FE74A5BA5CFBB5B6DC2B68FEFA76ECFC")
 
     private int peerPort;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.607 -0400", hash_original_method = "4DB69FC0D6B2C4EA5754BFEC7A5A4921", hash_generated_method = "6C354AD4901187F011888EBB5BDEB711")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.676 -0400", hash_original_method = "4DB69FC0D6B2C4EA5754BFEC7A5A4921", hash_generated_method = "6C354AD4901187F011888EBB5BDEB711")
     protected  SSLEngine() {
         peerHost = null;
         peerPort = -1;
-        
-        
-        
+        // ---------- Original Method ----------
+        //peerHost = null;
+        //peerPort = -1;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.608 -0400", hash_original_method = "EEA000A850DD4012FB53C4A935EA52C0", hash_generated_method = "A5F53C24279159BD08B9BD851D5512FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.676 -0400", hash_original_method = "EEA000A850DD4012FB53C4A935EA52C0", hash_generated_method = "A5F53C24279159BD08B9BD851D5512FB")
     protected  SSLEngine(String host, int port) {
         this.peerHost = host;
         this.peerPort = port;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.peerHost = host;
+        //this.peerPort = port;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.608 -0400", hash_original_method = "686621F471AF14AF505B60419214318E", hash_generated_method = "F567F285401AED842638FC9CF19B8BDD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.676 -0400", hash_original_method = "686621F471AF14AF505B60419214318E", hash_generated_method = "884EE51D0491A08921E7C06365218CB8")
     public String getPeerHost() {
-        String varB4EAC82CA7396A68D541C85D26508E83_242937134 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_242937134 = peerHost;
-        varB4EAC82CA7396A68D541C85D26508E83_242937134.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_242937134;
-        
-        
+String varFEF815055C97D4B621404BF729E85DA2_1000186825 =         peerHost;
+        varFEF815055C97D4B621404BF729E85DA2_1000186825.addTaint(taint);
+        return varFEF815055C97D4B621404BF729E85DA2_1000186825;
+        // ---------- Original Method ----------
+        //return peerHost;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.609 -0400", hash_original_method = "356711D154A2D021F9E9DF4BCD609AF2", hash_generated_method = "B3D3495544228AD7D09DB962E7C78DBC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.677 -0400", hash_original_method = "356711D154A2D021F9E9DF4BCD609AF2", hash_generated_method = "DE0D05E64654CEEC33718C25AC6BE8A1")
     public int getPeerPort() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2082663831 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2082663831;
-        
-        
+        int varBBD5741C4F9994864582D25DD194C4DE_1813309264 = (peerPort);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_927822323 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_927822323;
+        // ---------- Original Method ----------
+        //return peerPort;
     }
 
     
@@ -135,139 +130,134 @@ public abstract class SSLEngine {
             throws SSLException;
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.616 -0400", hash_original_method = "7AC56F3E97B3BF2A8A3FC335E647B318", hash_generated_method = "AA48EF4AADCE97261630DBCD63183CFB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.680 -0400", hash_original_method = "7AC56F3E97B3BF2A8A3FC335E647B318", hash_generated_method = "E870B4DF4F6AC8699B6E1E5CBE0DA01C")
     public SSLEngineResult unwrap(ByteBuffer src, ByteBuffer dst) throws SSLException {
-        SSLEngineResult varB4EAC82CA7396A68D541C85D26508E83_1749328395 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1749328395 = unwrap(src, new ByteBuffer[] { dst }, 0, 1);
-        addTaint(src.getTaint());
         addTaint(dst.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1749328395.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1749328395;
-        
-        
+        addTaint(src.getTaint());
+SSLEngineResult varDD78561FBD283269B6DD42AF139A709B_600761060 =         unwrap(src, new ByteBuffer[] { dst }, 0, 1);
+        varDD78561FBD283269B6DD42AF139A709B_600761060.addTaint(taint);
+        return varDD78561FBD283269B6DD42AF139A709B_600761060;
+        // ---------- Original Method ----------
+        //return unwrap(src, new ByteBuffer[] { dst }, 0, 1);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.616 -0400", hash_original_method = "9736EBF4FA9EEB1C5129AD63480700AA", hash_generated_method = "C95DDDC9CA9C1270AF123B653F460E87")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.680 -0400", hash_original_method = "9736EBF4FA9EEB1C5129AD63480700AA", hash_generated_method = "D023B83A75B8209EC572B061C36DAF50")
     public SSLEngineResult unwrap(ByteBuffer src, ByteBuffer[] dsts) throws SSLException {
-        SSLEngineResult varB4EAC82CA7396A68D541C85D26508E83_1486771056 = null; 
-        {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Byte buffer array dsts is null");
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1486771056 = unwrap(src, dsts, 0, dsts.length);
-        addTaint(src.getTaint());
         addTaint(dsts[0].getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1486771056.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1486771056;
-        
-        
-            
-        
-        
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.617 -0400", hash_original_method = "2CCA444D00129DF62214EE036E36E4DD", hash_generated_method = "2C0C9130B6330E278F51910B39B921C9")
-    public SSLEngineResult wrap(ByteBuffer[] srcs, ByteBuffer dst) throws SSLException {
-        SSLEngineResult varB4EAC82CA7396A68D541C85D26508E83_1288882497 = null; 
-        {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Byte buffer array srcs is null");
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1288882497 = wrap(srcs, 0, srcs.length, dst);
-        addTaint(srcs[0].getTaint());
-        addTaint(dst.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1288882497.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1288882497;
-        
-        
-            
-        
-        
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.617 -0400", hash_original_method = "15A7413E97A8CAC06D2DFD60F87EA34E", hash_generated_method = "321DE37AA13E15FB4EDB3A9D15DD3D9A")
-    public SSLEngineResult wrap(ByteBuffer src, ByteBuffer dst) throws SSLException {
-        SSLEngineResult varB4EAC82CA7396A68D541C85D26508E83_2134492209 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_2134492209 = wrap(new ByteBuffer[] { src }, 0, 1, dst);
         addTaint(src.getTaint());
-        addTaint(dst.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2134492209.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_2134492209;
-        
-        
+    if(dsts == null)        
+        {
+            IllegalArgumentException var9A48F68B6ACA4F10390F24793213AE1A_1747482611 = new IllegalArgumentException("Byte buffer array dsts is null");
+            var9A48F68B6ACA4F10390F24793213AE1A_1747482611.addTaint(taint);
+            throw var9A48F68B6ACA4F10390F24793213AE1A_1747482611;
+        } //End block
+SSLEngineResult varF59CCEEF71B0ADC2DE10A862EA422DCB_504315236 =         unwrap(src, dsts, 0, dsts.length);
+        varF59CCEEF71B0ADC2DE10A862EA422DCB_504315236.addTaint(taint);
+        return varF59CCEEF71B0ADC2DE10A862EA422DCB_504315236;
+        // ---------- Original Method ----------
+        //if (dsts == null) {
+            //throw new IllegalArgumentException("Byte buffer array dsts is null");
+        //}
+        //return unwrap(src, dsts, 0, dsts.length);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.618 -0400", hash_original_method = "B1069FA99460064F4DAFA14459B677AD", hash_generated_method = "1AFA32F2EB4619E6A99901383939145C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.681 -0400", hash_original_method = "2CCA444D00129DF62214EE036E36E4DD", hash_generated_method = "1A5E5D31F222863750B90A5186E5F6A0")
+    public SSLEngineResult wrap(ByteBuffer[] srcs, ByteBuffer dst) throws SSLException {
+        addTaint(dst.getTaint());
+        addTaint(srcs[0].getTaint());
+    if(srcs == null)        
+        {
+            IllegalArgumentException var433488ACC9F76CFE26370F760861C10E_1121361782 = new IllegalArgumentException("Byte buffer array srcs is null");
+            var433488ACC9F76CFE26370F760861C10E_1121361782.addTaint(taint);
+            throw var433488ACC9F76CFE26370F760861C10E_1121361782;
+        } //End block
+SSLEngineResult varF785702831660251D276B1204D3A4B36_1104319821 =         wrap(srcs, 0, srcs.length, dst);
+        varF785702831660251D276B1204D3A4B36_1104319821.addTaint(taint);
+        return varF785702831660251D276B1204D3A4B36_1104319821;
+        // ---------- Original Method ----------
+        //if (srcs == null) {
+            //throw new IllegalArgumentException("Byte buffer array srcs is null");
+        //}
+        //return wrap(srcs, 0, srcs.length, dst);
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.681 -0400", hash_original_method = "15A7413E97A8CAC06D2DFD60F87EA34E", hash_generated_method = "55CA8C4C2A5A476375FCA5D3B74D6A60")
+    public SSLEngineResult wrap(ByteBuffer src, ByteBuffer dst) throws SSLException {
+        addTaint(dst.getTaint());
+        addTaint(src.getTaint());
+SSLEngineResult var8990D21D724771169EEA983129118039_1664139085 =         wrap(new ByteBuffer[] { src }, 0, 1, dst);
+        var8990D21D724771169EEA983129118039_1664139085.addTaint(taint);
+        return var8990D21D724771169EEA983129118039_1664139085;
+        // ---------- Original Method ----------
+        //return wrap(new ByteBuffer[] { src }, 0, 1, dst);
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.682 -0400", hash_original_method = "B1069FA99460064F4DAFA14459B677AD", hash_generated_method = "E40BD137806BEA38723154F3781AEC0D")
     public SSLParameters getSSLParameters() {
-        SSLParameters varB4EAC82CA7396A68D541C85D26508E83_1588070493 = null; 
         SSLParameters p = new SSLParameters();
         p.setCipherSuites(getEnabledCipherSuites());
         p.setProtocols(getEnabledProtocols());
         p.setNeedClientAuth(getNeedClientAuth());
         p.setWantClientAuth(getWantClientAuth());
-        varB4EAC82CA7396A68D541C85D26508E83_1588070493 = p;
-        varB4EAC82CA7396A68D541C85D26508E83_1588070493.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1588070493;
-        
-        
-        
-        
-        
-        
-        
+SSLParameters var74E4690D9F2A026504928C017944E149_619189555 =         p;
+        var74E4690D9F2A026504928C017944E149_619189555.addTaint(taint);
+        return var74E4690D9F2A026504928C017944E149_619189555;
+        // ---------- Original Method ----------
+        //SSLParameters p = new SSLParameters();
+        //p.setCipherSuites(getEnabledCipherSuites());
+        //p.setProtocols(getEnabledProtocols());
+        //p.setNeedClientAuth(getNeedClientAuth());
+        //p.setWantClientAuth(getWantClientAuth());
+        //return p;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.618 -0400", hash_original_method = "886AE080148D5E5D7C66238C628CC678", hash_generated_method = "653D61AE3717AD9CADC6625FB3DA20C6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.682 -0400", hash_original_method = "886AE080148D5E5D7C66238C628CC678", hash_generated_method = "27EFFE024357E2EEA5E53D9F242DF898")
     public void setSSLParameters(SSLParameters p) {
+        addTaint(p.getTaint());
         String[] cipherSuites = p.getCipherSuites();
+    if(cipherSuites != null)        
         {
             setEnabledCipherSuites(cipherSuites);
-        } 
+        } //End block
         String[] protocols = p.getProtocols();
+    if(protocols != null)        
         {
             setEnabledProtocols(protocols);
-        } 
+        } //End block
+    if(p.getNeedClientAuth())        
         {
-            boolean var6D45BED7515FD6C0BD1ED2BAAE0F632B_1892788506 = (p.getNeedClientAuth());
-            {
-                setNeedClientAuth(true);
-            } 
-            {
-                boolean var2FBA481A340F527F533722A37691A0E1_2017371176 = (p.getWantClientAuth());
-                {
-                    setWantClientAuth(true);
-                } 
-                {
-                    setWantClientAuth(false);
-                } 
-            } 
-        } 
-        addTaint(p.getTaint());
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-            
-        
-            
-        
-            
-        
+            setNeedClientAuth(true);
+        } //End block
+        else
+    if(p.getWantClientAuth())        
+        {
+            setWantClientAuth(true);
+        } //End block
+        else
+        {
+            setWantClientAuth(false);
+        } //End block
+        // ---------- Original Method ----------
+        //String[] cipherSuites = p.getCipherSuites();
+        //if (cipherSuites != null) {
+            //setEnabledCipherSuites(cipherSuites);
+        //}
+        //String[] protocols = p.getProtocols();
+        //if (protocols != null) {
+            //setEnabledProtocols(protocols);
+        //}
+        //if (p.getNeedClientAuth()) {
+            //setNeedClientAuth(true);
+        //} else if (p.getWantClientAuth()) {
+            //setWantClientAuth(true);
+        //} else {
+            //setWantClientAuth(false);
+        //}
     }
 
     

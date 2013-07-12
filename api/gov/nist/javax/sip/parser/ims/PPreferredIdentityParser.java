@@ -1,12 +1,9 @@
 package gov.nist.javax.sip.parser.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.text.ParseException;
 import gov.nist.javax.sip.parser.Lexer;
 import gov.nist.javax.sip.parser.TokenTypes;
@@ -16,26 +13,25 @@ import gov.nist.javax.sip.parser.AddressParametersParser;
 
 public class PPreferredIdentityParser extends AddressParametersParser implements TokenTypes {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.159 -0400", hash_original_method = "8ED0FE4D0D4A9A77E1D41482CCFB6634", hash_generated_method = "DBF0A9D95EDCEC6B14DFAC227F725239")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.127 -0400", hash_original_method = "8ED0FE4D0D4A9A77E1D41482CCFB6634", hash_generated_method = "DBF0A9D95EDCEC6B14DFAC227F725239")
     public  PPreferredIdentityParser(String preferredIdentity) {
         super(preferredIdentity);
         addTaint(preferredIdentity.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.159 -0400", hash_original_method = "2C53019D290466621D2FD15449F6C503", hash_generated_method = "339C412A68840273039D5CCE3419F4E9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.128 -0400", hash_original_method = "2C53019D290466621D2FD15449F6C503", hash_generated_method = "339C412A68840273039D5CCE3419F4E9")
     protected  PPreferredIdentityParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.160 -0400", hash_original_method = "CA1397CFDA33B56E4743CDCAB79EF328", hash_generated_method = "35375DCA3F9048333B80682E3291D242")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.128 -0400", hash_original_method = "CA1397CFDA33B56E4743CDCAB79EF328", hash_generated_method = "D1F32A82C68DE861FAFF7D2B8763D7A9")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_368224890 = null; 
+    if(debug)        
         dbg_enter("PreferredIdentityParser.parse");
         try 
         {
@@ -45,29 +41,30 @@ public class PPreferredIdentityParser extends AddressParametersParser implements
             this.lexer.SPorHT();
             PPreferredIdentity p = new PPreferredIdentity();
             super.parse( p );
-            varB4EAC82CA7396A68D541C85D26508E83_368224890 = p;
-        } 
+SIPHeader var74E4690D9F2A026504928C017944E149_135608270 =             p;
+            var74E4690D9F2A026504928C017944E149_135608270.addTaint(taint);
+            return var74E4690D9F2A026504928C017944E149_135608270;
+        } //End block
         finally 
         {
+    if(debug)            
             dbg_leave("PreferredIdentityParser.parse");
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_368224890.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_368224890;
-        
-        
-            
-        
-            
-            
-            
-            
-            
-            
-            
-        
-            
-                
-            
+        } //End block
+        // ---------- Original Method ----------
+        //if (debug)
+            //dbg_enter("PreferredIdentityParser.parse");
+        //try {
+            //this.lexer.match(TokenTypes.P_PREFERRED_IDENTITY);
+            //this.lexer.SPorHT();
+            //this.lexer.match(':');
+            //this.lexer.SPorHT();
+            //PPreferredIdentity p = new PPreferredIdentity();
+            //super.parse( p );
+            //return p;
+        //} finally {
+            //if (debug)
+                //dbg_leave("PreferredIdentityParser.parse");
+            //}
     }
 
     

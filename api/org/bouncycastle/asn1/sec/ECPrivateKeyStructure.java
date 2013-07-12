@@ -1,12 +1,9 @@
 package org.bouncycastle.asn1.sec;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.math.BigInteger;
 import java.util.Enumeration;
 import org.bouncycastle.asn1.ASN1Encodable;
@@ -25,183 +22,165 @@ import org.bouncycastle.asn1.DERTaggedObject;
 import org.bouncycastle.util.BigIntegers;
 
 public class ECPrivateKeyStructure extends ASN1Encodable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.202 -0400", hash_original_field = "E068C2DE26D760F20CF10AFC4B87EF0F", hash_generated_field = "37E06257AFCE21CC4EDFE67F34DC271C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.539 -0400", hash_original_field = "E068C2DE26D760F20CF10AFC4B87EF0F", hash_generated_field = "37E06257AFCE21CC4EDFE67F34DC271C")
 
     private ASN1Sequence seq;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.203 -0400", hash_original_method = "D12821E856A648EC440CD525D918157C", hash_generated_method = "045B9F4D1DB3350862A92FABEBA11593")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.540 -0400", hash_original_method = "D12821E856A648EC440CD525D918157C", hash_generated_method = "045B9F4D1DB3350862A92FABEBA11593")
     public  ECPrivateKeyStructure(
         ASN1Sequence  seq) {
         this.seq = seq;
-        
-        
+        // ---------- Original Method ----------
+        //this.seq = seq;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.203 -0400", hash_original_method = "722B9EB1887267D3DC7C06AD31EE54C1", hash_generated_method = "770B6D228127F6B6DCF9AC1706BC7B67")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.540 -0400", hash_original_method = "722B9EB1887267D3DC7C06AD31EE54C1", hash_generated_method = "A0B081E475FC622EA16DAC1E11181514")
     public  ECPrivateKeyStructure(
         BigInteger  key) {
+        addTaint(key.getTaint());
         byte[] bytes = BigIntegers.asUnsignedByteArray(key);
         ASN1EncodableVector v = new ASN1EncodableVector();
         v.add(new DERInteger(1));
         v.add(new DEROctetString(bytes));
         seq = new DERSequence(v);
-        addTaint(key.getTaint());
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //byte[] bytes = BigIntegers.asUnsignedByteArray(key);
+        //ASN1EncodableVector v = new ASN1EncodableVector();
+        //v.add(new DERInteger(1));
+        //v.add(new DEROctetString(bytes));
+        //seq = new DERSequence(v);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.203 -0400", hash_original_method = "407D07F6896B0C0E44D96F389E9D6F27", hash_generated_method = "D4E9A760240B8E5C8CE0E4F4FF963196")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.541 -0400", hash_original_method = "407D07F6896B0C0E44D96F389E9D6F27", hash_generated_method = "08D4F82FCED89BC125FD88AFB2E58A75")
     public  ECPrivateKeyStructure(
         BigInteger    key,
         ASN1Encodable parameters) {
         this(key, null, parameters);
-        addTaint(key.getTaint());
         addTaint(parameters.getTaint());
-        
+        addTaint(key.getTaint());
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.204 -0400", hash_original_method = "C18ECEEFE6A75682B0803E3F34C5782F", hash_generated_method = "143AAB36FCEEA926AFE6A6504489B779")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.541 -0400", hash_original_method = "C18ECEEFE6A75682B0803E3F34C5782F", hash_generated_method = "4DA7CDFAD747334E28197A165FE9466D")
     public  ECPrivateKeyStructure(
         BigInteger    key,
         DERBitString  publicKey,
         ASN1Encodable parameters) {
+        addTaint(parameters.getTaint());
+        addTaint(publicKey.getTaint());
+        addTaint(key.getTaint());
         byte[] bytes = BigIntegers.asUnsignedByteArray(key);
         ASN1EncodableVector v = new ASN1EncodableVector();
         v.add(new DERInteger(1));
         v.add(new DEROctetString(bytes));
+    if(parameters != null)        
         {
             v.add(new DERTaggedObject(true, 0, parameters));
-        } 
+        } //End block
+    if(publicKey != null)        
         {
             v.add(new DERTaggedObject(true, 1, publicKey));
-        } 
+        } //End block
         seq = new DERSequence(v);
-        addTaint(key.getTaint());
-        addTaint(publicKey.getTaint());
-        addTaint(parameters.getTaint());
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //byte[] bytes = BigIntegers.asUnsignedByteArray(key);
+        //ASN1EncodableVector v = new ASN1EncodableVector();
+        //v.add(new DERInteger(1));
+        //v.add(new DEROctetString(bytes));
+        //if (parameters != null)
+        //{
+            //v.add(new DERTaggedObject(true, 0, parameters));
+        //}
+        //if (publicKey != null)
+        //{
+            //v.add(new DERTaggedObject(true, 1, publicKey));
+        //}
+        //seq = new DERSequence(v);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.204 -0400", hash_original_method = "3364DFDFDAE0C599569065625E34DFA6", hash_generated_method = "EBC87F61A4E0B62E8C37308F715CB95B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.542 -0400", hash_original_method = "3364DFDFDAE0C599569065625E34DFA6", hash_generated_method = "A174E5CC1DC5745BD0592DE2B0AEB3EA")
     public BigInteger getKey() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1471966077 = null; 
         ASN1OctetString octs = (ASN1OctetString)seq.getObjectAt(1);
-        varB4EAC82CA7396A68D541C85D26508E83_1471966077 = new BigInteger(1, octs.getOctets());
-        varB4EAC82CA7396A68D541C85D26508E83_1471966077.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1471966077;
-        
-        
-        
+BigInteger var80DF0B153BA9995164F4B5B25057318A_1810975329 =         new BigInteger(1, octs.getOctets());
+        var80DF0B153BA9995164F4B5B25057318A_1810975329.addTaint(taint);
+        return var80DF0B153BA9995164F4B5B25057318A_1810975329;
+        // ---------- Original Method ----------
+        //ASN1OctetString  octs = (ASN1OctetString)seq.getObjectAt(1);
+        //return new BigInteger(1, octs.getOctets());
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.205 -0400", hash_original_method = "DEBAFCE224E8193448683CCA3427311E", hash_generated_method = "B701CDB2F7AFE3011F3FFBEB4D01FEDA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.542 -0400", hash_original_method = "DEBAFCE224E8193448683CCA3427311E", hash_generated_method = "33C2F90A931158E434CF105412732F5F")
     public DERBitString getPublicKey() {
-        DERBitString varB4EAC82CA7396A68D541C85D26508E83_592267222 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_592267222 = (DERBitString)getObjectInTag(1);
-        varB4EAC82CA7396A68D541C85D26508E83_592267222.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_592267222;
-        
-        
+DERBitString var04EB087ECDC943C1CF143F46DC90A070_1284563892 =         (DERBitString)getObjectInTag(1);
+        var04EB087ECDC943C1CF143F46DC90A070_1284563892.addTaint(taint);
+        return var04EB087ECDC943C1CF143F46DC90A070_1284563892;
+        // ---------- Original Method ----------
+        //return (DERBitString)getObjectInTag(1);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.206 -0400", hash_original_method = "6CC550729D926E5F97154297F8F1FBC7", hash_generated_method = "4027523A773E5CEEAF431CBF24AEF588")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.543 -0400", hash_original_method = "6CC550729D926E5F97154297F8F1FBC7", hash_generated_method = "40874D6DB4F680523005E869311E4A77")
     public ASN1Object getParameters() {
-        ASN1Object varB4EAC82CA7396A68D541C85D26508E83_381596266 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_381596266 = getObjectInTag(0);
-        varB4EAC82CA7396A68D541C85D26508E83_381596266.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_381596266;
-        
-        
+ASN1Object var3FB644C7C242382FECABE32076F66AE1_1109655335 =         getObjectInTag(0);
+        var3FB644C7C242382FECABE32076F66AE1_1109655335.addTaint(taint);
+        return var3FB644C7C242382FECABE32076F66AE1_1109655335;
+        // ---------- Original Method ----------
+        //return getObjectInTag(0);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.206 -0400", hash_original_method = "F319A866ECD7F1BB5BF305B540FF9ADA", hash_generated_method = "B1E8409DD63E3440B7C904EBA58D0E9B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.543 -0400", hash_original_method = "F319A866ECD7F1BB5BF305B540FF9ADA", hash_generated_method = "E7D0DDCFB2A0574EB78FB107D77EEC2C")
     private ASN1Object getObjectInTag(int tagNo) {
-        ASN1Object varB4EAC82CA7396A68D541C85D26508E83_136258265 = null; 
-        ASN1Object varB4EAC82CA7396A68D541C85D26508E83_841617466 = null; 
-        Enumeration e = seq.getObjects();
-        {
-            boolean var3EB0A96682EDBE15308427BAC1EC4A4E_1194277877 = (e.hasMoreElements());
-            {
-                DEREncodable obj = (DEREncodable)e.nextElement();
-                {
-                    ASN1TaggedObject tag = (ASN1TaggedObject)obj;
-                    {
-                        boolean varF75F79C9765056EBB1C119BE9C2CBA7C_610014599 = (tag.getTagNo() == tagNo);
-                        {
-                            varB4EAC82CA7396A68D541C85D26508E83_136258265 = (ASN1Object)((DEREncodable)tag.getObject()).getDERObject();
-                        } 
-                    } 
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_841617466 = null;
         addTaint(tagNo);
-        ASN1Object varA7E53CE21691AB073D9660D615818899_2072233296; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_2072233296 = varB4EAC82CA7396A68D541C85D26508E83_136258265;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_2072233296 = varB4EAC82CA7396A68D541C85D26508E83_841617466;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_2072233296.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_2072233296;
-        
-        
-        
-        
-            
-            
-            
-                
-                
-                
-                    
-                
-            
-        
-        
+        Enumeration e = seq.getObjects();
+        while
+(e.hasMoreElements())        
+        {
+            DEREncodable obj = (DEREncodable)e.nextElement();
+    if(obj instanceof ASN1TaggedObject)            
+            {
+                ASN1TaggedObject tag = (ASN1TaggedObject)obj;
+    if(tag.getTagNo() == tagNo)                
+                {
+ASN1Object var47FA15ACC5922DECF9C16982C8B623FE_2049270937 =                     (ASN1Object)((DEREncodable)tag.getObject()).getDERObject();
+                    var47FA15ACC5922DECF9C16982C8B623FE_2049270937.addTaint(taint);
+                    return var47FA15ACC5922DECF9C16982C8B623FE_2049270937;
+                } //End block
+            } //End block
+        } //End block
+ASN1Object var540C13E9E156B687226421B24F2DF178_598791465 =         null;
+        var540C13E9E156B687226421B24F2DF178_598791465.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_598791465;
+        // ---------- Original Method ----------
+        //Enumeration e = seq.getObjects();
+        //while (e.hasMoreElements())
+        //{
+            //DEREncodable obj = (DEREncodable)e.nextElement();
+            //if (obj instanceof ASN1TaggedObject)
+            //{
+                //ASN1TaggedObject tag = (ASN1TaggedObject)obj;
+                //if (tag.getTagNo() == tagNo)
+                //{
+                    //return (ASN1Object)((DEREncodable)tag.getObject()).getDERObject();
+                //}
+            //}
+        //}
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.208 -0400", hash_original_method = "0BE753B103EB5E27F0AD9CE4B67E8D14", hash_generated_method = "B1E5F2A0276F30AC759652A524940BA1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.543 -0400", hash_original_method = "0BE753B103EB5E27F0AD9CE4B67E8D14", hash_generated_method = "4CE1F54696B114186B69DB419AB6DAC0")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1508724292 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1508724292 = seq;
-        varB4EAC82CA7396A68D541C85D26508E83_1508724292.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1508724292;
-        
-        
+DERObject var42A78C062640017A329FA085150BC1B8_1479877918 =         seq;
+        var42A78C062640017A329FA085150BC1B8_1479877918.addTaint(taint);
+        return var42A78C062640017A329FA085150BC1B8_1479877918;
+        // ---------- Original Method ----------
+        //return seq;
     }
 
     

@@ -1,12 +1,9 @@
 package java.lang;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
@@ -26,14 +23,14 @@ import libcore.util.MutableInt;
 import static libcore.io.OsConstants.*;
 
 final class ProcessManager {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.485 -0400", hash_original_field = "A33680F3D3BD7A96D5E7F85E9A0A202E", hash_generated_field = "1168B76BA43EB3A1C9C20A1EE6AADC71")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.149 -0400", hash_original_field = "A33680F3D3BD7A96D5E7F85E9A0A202E", hash_generated_field = "1168B76BA43EB3A1C9C20A1EE6AADC71")
 
     private final Map<Integer, ProcessReference> processReferences = new HashMap<Integer, ProcessReference>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.485 -0400", hash_original_field = "5F9584FAD9C1B9FD872B31BD182D587F", hash_generated_field = "8E4D793B6871C6F122FC4F99A1156878")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.149 -0400", hash_original_field = "5F9584FAD9C1B9FD872B31BD182D587F", hash_generated_field = "8E4D793B6871C6F122FC4F99A1156878")
 
     private final ProcessReferenceQueue referenceQueue = new ProcessReferenceQueue();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.486 -0400", hash_original_method = "65B627E41D9F392064B029711B809D6A", hash_generated_method = "8F2C2A3FD38ED80D61DE63C94471BF94")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.150 -0400", hash_original_method = "65B627E41D9F392064B029711B809D6A", hash_generated_method = "8F2C2A3FD38ED80D61DE63C94471BF94")
     private  ProcessManager() {
         Thread reaperThread = new Thread(ProcessManager.class.getName()) {
             @Override public void run() {
@@ -42,146 +39,155 @@ final class ProcessManager {
         };
         reaperThread.setDaemon(true);
         reaperThread.start();
-        
-        
-            
-                
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //Thread reaperThread = new Thread(ProcessManager.class.getName()) {
+            //@Override public void run() {
+                //watchChildren();
+            //}
+        //};
+        //reaperThread.setDaemon(true);
+        //reaperThread.start();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.486 -0400", hash_original_method = "BF6AA9440795270C2D5A5C002031838F", hash_generated_method = "50FF5AF09DAF3AEF6C70F4782F9548BB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.150 -0400", hash_original_method = "BF6AA9440795270C2D5A5C002031838F", hash_generated_method = "54B0E2956D775063FBCA380BEE721098")
     private void cleanUp() {
         ProcessReference reference;
+        while
+((reference = referenceQueue.poll()) != null)        
         {
-            boolean varF9AB159DB354DF4427D1D47AD9D91882_168442723 = ((reference = referenceQueue.poll()) != null);
-            {
-                {
-                    processReferences.remove(reference.processId);
-                } 
-            } 
-        } 
-        
-        
-        
-            
-                
-            
-        
+            synchronized
+(processReferences)            {
+                processReferences.remove(reference.processId);
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //ProcessReference reference;
+        //while ((reference = referenceQueue.poll()) != null) {
+            //synchronized (processReferences) {
+                //processReferences.remove(reference.processId);
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.486 -0400", hash_original_method = "534F9793819E6D7D8427F97C64CDA54E", hash_generated_method = "689323DB49A90AFC6C05C5AFDCD5D58C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.151 -0400", hash_original_method = "534F9793819E6D7D8427F97C64CDA54E", hash_generated_method = "2123021B1F5D618555B37AA362473E87")
     private void watchChildren() {
         MutableInt status = new MutableInt(-1);
+        while
+(true)        
         {
             try 
             {
                 int pid = Libcore.os.waitpid(0, status, 0);
                 int exitValue;
+    if(WIFEXITED(status.value))                
                 {
-                    boolean var93AE0B081D588A5BC31376B1BFCD953E_52800363 = (WIFEXITED(status.value));
-                    {
-                        exitValue = WEXITSTATUS(status.value);
-                    } 
-                    {
-                        boolean var2DE5039BEA3B8AEE66D3C9261077C598_906927964 = (WIFSIGNALED(status.value));
-                        {
-                            exitValue = WTERMSIG(status.value);
-                        } 
-                        {
-                            boolean varE198B01561721EE7B3C3A4CF4D65B162_1592483343 = (WIFSTOPPED(status.value));
-                            {
-                                exitValue = WSTOPSIG(status.value);
-                            } 
-                            {
-                                if (DroidSafeAndroidRuntime.control) throw new AssertionError("unexpected status from waitpid: " + status.value);
-                            } 
-                        } 
-                    } 
-                } 
+                    exitValue = WEXITSTATUS(status.value);
+                } //End block
+                else
+    if(WIFSIGNALED(status.value))                
+                {
+                    exitValue = WTERMSIG(status.value);
+                } //End block
+                else
+    if(WIFSTOPPED(status.value))                
+                {
+                    exitValue = WSTOPSIG(status.value);
+                } //End block
+                else
+                {
+                    AssertionError varF8F88ED512E91040281B4876FE7446E1_1313623804 = new AssertionError("unexpected status from waitpid: " + status.value);
+                    varF8F88ED512E91040281B4876FE7446E1_1313623804.addTaint(taint);
+                    throw varF8F88ED512E91040281B4876FE7446E1_1313623804;
+                } //End block
                 onExit(pid, exitValue);
-            } 
+            } //End block
             catch (ErrnoException errnoException)
             {
+    if(errnoException.errno == ECHILD)                
                 {
                     waitForMoreChildren();
-                } 
+                    continue;
+                } //End block
+                else
                 {
-                    if (DroidSafeAndroidRuntime.control) throw new AssertionError(errnoException);
-                } 
-            } 
-        } 
-        
-        
+                    AssertionError var8D75DBC63153835F7D08A31E99200A1F_1957361804 = new AssertionError(errnoException);
+                    var8D75DBC63153835F7D08A31E99200A1F_1957361804.addTaint(taint);
+                    throw var8D75DBC63153835F7D08A31E99200A1F_1957361804;
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.487 -0400", hash_original_method = "4025BDFB051861E82299213D97AFEE05", hash_generated_method = "1B7DCDF3DC6E451577F263170F637A05")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.152 -0400", hash_original_method = "4025BDFB051861E82299213D97AFEE05", hash_generated_method = "CC590DE6C79383A31A027AF8E4B18ED1")
     private void onExit(int pid, int exitValue) {
+        addTaint(exitValue);
+        addTaint(pid);
         ProcessReference processReference = null;
-        {
+        synchronized
+(processReferences)        {
             cleanUp();
             processReference = processReferences.remove(pid);
-        } 
+        } //End block
+    if(processReference != null)        
         {
             ProcessImpl process = processReference.get();
+    if(process != null)            
             {
                 process.setExitValue(exitValue);
-            } 
-        } 
-        addTaint(pid);
-        addTaint(exitValue);
-        
-        
-        
-            
-            
-        
-        
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //ProcessReference processReference = null;
+        //synchronized (processReferences) {
+            //cleanUp();
+            //processReference = processReferences.remove(pid);
+        //}
+        //if (processReference != null) {
+            //ProcessImpl process = processReference.get();
+            //if (process != null) {
+                //process.setExitValue(exitValue);
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.487 -0400", hash_original_method = "E4B4D1EC14DE436D47A63B575F4759A6", hash_generated_method = "30E0F5292A564D509D0FBFBFEED63BDF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.153 -0400", hash_original_method = "E4B4D1EC14DE436D47A63B575F4759A6", hash_generated_method = "99F0EEC0CCF7F1A4AD91B829364BA4B4")
     private void waitForMoreChildren() {
-        {
+        synchronized
+(processReferences)        {
+    if(processReferences.isEmpty())            
             {
-                boolean var52708DC4F574858B6E03A45DCF7142C6_1333943170 = (processReferences.isEmpty());
+                try 
                 {
-                    try 
-                    {
-                        processReferences.wait();
-                    } 
-                    catch (InterruptedException ex)
-                    {
-                        if (DroidSafeAndroidRuntime.control) throw new AssertionError("unexpected interrupt");
-                    } 
-                } 
-            } 
-        } 
-        
-        
-            
-                
-                    
-                
-                    
-                
-            
-            
-        
+                    processReferences.wait();
+                } //End block
+                catch (InterruptedException ex)
+                {
+                    AssertionError var678BDEFCD94D0450C0B290A7DCB9D6BB_190782314 = new AssertionError("unexpected interrupt");
+                    var678BDEFCD94D0450C0B290A7DCB9D6BB_190782314.addTaint(taint);
+                    throw var678BDEFCD94D0450C0B290A7DCB9D6BB_190782314;
+                } //End block
+            } //End block
+            else
+            {
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (processReferences) {
+            //if (processReferences.isEmpty()) {
+                //try {
+                    //processReferences.wait();
+                //} catch (InterruptedException ex) {
+                    //throw new AssertionError("unexpected interrupt");
+                //}
+            //} else {
+            //}
+        //}
     }
 
     
@@ -194,51 +200,61 @@ final class ProcessManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.501 -0400", hash_original_method = "3D8923075A9F95B30754D64C899AFA66", hash_generated_method = "443512EF919FE61C346B91B6052FB876")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.154 -0400", hash_original_method = "3D8923075A9F95B30754D64C899AFA66", hash_generated_method = "0A556E8E584BEA2A27AA6BB6FBCDB843")
     public Process exec(String[] taintedCommand, String[] taintedEnvironment, File workingDirectory,
             boolean redirectErrorStream) throws IOException {
-        Process varB4EAC82CA7396A68D541C85D26508E83_326522367 = null; 
+        addTaint(redirectErrorStream);
+        addTaint(workingDirectory.getTaint());
+        addTaint(taintedEnvironment[0].getTaint());
+        addTaint(taintedCommand[0].getTaint());
+    if(taintedCommand == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } 
+            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_623171565 = new NullPointerException();
+            var7338BC9F48D81FE0BBD6183F4014DCC4_623171565.addTaint(taint);
+            throw var7338BC9F48D81FE0BBD6183F4014DCC4_623171565;
+        } //End block
+    if(taintedCommand.length == 0)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-        } 
+            IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_1498929262 = new IndexOutOfBoundsException();
+            varE4A00D3DB3B35ED0F12562B8AA17377A_1498929262.addTaint(taint);
+            throw varE4A00D3DB3B35ED0F12562B8AA17377A_1498929262;
+        } //End block
         String[] command = taintedCommand.clone();
-        String[] environment;
-        environment = taintedEnvironment.clone();
-        environment = null;
+        String[] environment = taintedEnvironment != null ? taintedEnvironment.clone() : null;
+for(String arg : command)
         {
-            String arg = command[0];
+    if(arg == null)            
             {
-                {
-                    if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-                } 
-            } 
-        } 
+                NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_826078130 = new NullPointerException();
+                var7338BC9F48D81FE0BBD6183F4014DCC4_826078130.addTaint(taint);
+                throw var7338BC9F48D81FE0BBD6183F4014DCC4_826078130;
+            } //End block
+        } //End block
+    if(environment != null)        
         {
+for(String env : environment)
             {
-                String env = environment[0];
+    if(env == null)                
                 {
-                    {
-                        if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-                    } 
-                } 
-            } 
-        } 
+                    NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1458262494 = new NullPointerException();
+                    var7338BC9F48D81FE0BBD6183F4014DCC4_1458262494.addTaint(taint);
+                    throw var7338BC9F48D81FE0BBD6183F4014DCC4_1458262494;
+                } //End block
+            } //End block
+        } //End block
         FileDescriptor in = new FileDescriptor();
         FileDescriptor out = new FileDescriptor();
         FileDescriptor err = new FileDescriptor();
-        String workingPath;
-        workingPath = null;
-        workingPath = workingDirectory.getPath();
-        {
-            int pid = 0;
+        String workingPath = (workingDirectory == null)
+                ? null
+                : workingDirectory.getPath();
+        synchronized
+(processReferences)        {
+            int pid;
             try 
             {
                 pid = exec(command, environment, workingPath, in, out, err, redirectErrorStream);
-            } 
+            } //End block
             catch (IOException e)
             {
                 IOException wrapper = new IOException("Error running exec()."
@@ -246,194 +262,188 @@ final class ProcessManager {
                         + " Working Directory: " + workingDirectory
                         + " Environment: " + Arrays.toString(environment));
                 wrapper.initCause(e);
-                if (DroidSafeAndroidRuntime.control) throw wrapper;
-            } 
-
+                wrapper.addTaint(taint);
+                throw wrapper;
+            } //End block
             ProcessImpl process = new ProcessImpl(pid, in, out, err);
             ProcessReference processReference = new ProcessReference(process, referenceQueue);
             processReferences.put(pid, processReference);
             processReferences.notifyAll();
-            varB4EAC82CA7396A68D541C85D26508E83_326522367 = process;
-        } 
-        addTaint(taintedCommand[0].getTaint());
-        addTaint(taintedEnvironment[0].getTaint());
-        addTaint(workingDirectory.getTaint());
-        addTaint(redirectErrorStream);
-        varB4EAC82CA7396A68D541C85D26508E83_326522367.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_326522367;
-        
-        
+Process var95FD552219433D6B22709796B000B842_497972066 =             process;
+            var95FD552219433D6B22709796B000B842_497972066.addTaint(taint);
+            return var95FD552219433D6B22709796B000B842_497972066;
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static ProcessManager getInstance() {
+        public static ProcessManager getInstance() {
         return instance;
     }
 
     
     static class ProcessImpl extends Process {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.502 -0400", hash_original_field = "0DB3209E1ADC6D67BE435A81BAF9A66E", hash_generated_field = "DBFF83134AA84403D6020EBC0053D7A1")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.154 -0400", hash_original_field = "0DB3209E1ADC6D67BE435A81BAF9A66E", hash_generated_field = "DBFF83134AA84403D6020EBC0053D7A1")
 
         private int pid;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.502 -0400", hash_original_field = "62DC47682DD3356C8F8599B4D965B2B3", hash_generated_field = "F3EEB1922B674B66C2C9C0F3C3CBC81D")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.155 -0400", hash_original_field = "62DC47682DD3356C8F8599B4D965B2B3", hash_generated_field = "F3EEB1922B674B66C2C9C0F3C3CBC81D")
 
         private InputStream errorStream;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.502 -0400", hash_original_field = "267171E6BFB2A04E5670F3CE06C59060", hash_generated_field = "92444C781A1F5D159CDAA9528EFB69D8")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.155 -0400", hash_original_field = "267171E6BFB2A04E5670F3CE06C59060", hash_generated_field = "92444C781A1F5D159CDAA9528EFB69D8")
 
         private InputStream inputStream;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.502 -0400", hash_original_field = "BE2DEEC210B01069983CFC5912275FFC", hash_generated_field = "765C7DA707EC84D85188E77508C6D245")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.155 -0400", hash_original_field = "BE2DEEC210B01069983CFC5912275FFC", hash_generated_field = "765C7DA707EC84D85188E77508C6D245")
 
         private OutputStream outputStream;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.502 -0400", hash_original_field = "BC1586C1BE70AF67885806428648A59D", hash_generated_field = "7070B274081DDEF5DFB2528C2234586D")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.155 -0400", hash_original_field = "BC1586C1BE70AF67885806428648A59D", hash_generated_field = "7070B274081DDEF5DFB2528C2234586D")
 
         private Integer exitValue = null;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.502 -0400", hash_original_field = "8C13A7DDEEF9C70E67D6BF68FBDFCBDA", hash_generated_field = "F72FE980C8215718C0EAB3CAED2ED8DD")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.155 -0400", hash_original_field = "8C13A7DDEEF9C70E67D6BF68FBDFCBDA", hash_generated_field = "F72FE980C8215718C0EAB3CAED2ED8DD")
 
         private final Object exitValueMutex = new Object();
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.503 -0400", hash_original_method = "C79C41A0F8183C5EC729A58D348A92CE", hash_generated_method = "8C51E83DF546839A9E24D7B3C5B03362")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.156 -0400", hash_original_method = "C79C41A0F8183C5EC729A58D348A92CE", hash_generated_method = "8C51E83DF546839A9E24D7B3C5B03362")
           ProcessImpl(int pid, FileDescriptor in, FileDescriptor out, FileDescriptor err) {
             this.pid = pid;
             this.errorStream = new ProcessInputStream(err);
             this.inputStream = new ProcessInputStream(in);
             this.outputStream = new ProcessOutputStream(out);
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.pid = pid;
+            //this.errorStream = new ProcessInputStream(err);
+            //this.inputStream = new ProcessInputStream(in);
+            //this.outputStream = new ProcessOutputStream(out);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.504 -0400", hash_original_method = "C1B009BFBA55AC97BB6BF3192F492760", hash_generated_method = "AC4DB112A19F1F3178EB0F2CC08E2806")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.157 -0400", hash_original_method = "C1B009BFBA55AC97BB6BF3192F492760", hash_generated_method = "AC4DB112A19F1F3178EB0F2CC08E2806")
         public void destroy() {
             try 
             {
                 Libcore.os.kill(pid, SIGKILL);
-            } 
+            } //End block
             catch (ErrnoException e)
             {
                 System.logI("Failed to destroy process " + pid, e);
-            } 
+            } //End block
             IoUtils.closeQuietly(inputStream);
             IoUtils.closeQuietly(errorStream);
             IoUtils.closeQuietly(outputStream);
-            
-            
-                
-            
-                
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //try {
+                //Libcore.os.kill(pid, SIGKILL);
+            //} catch (ErrnoException e) {
+                //System.logI("Failed to destroy process " + pid, e);
+            //}
+            //IoUtils.closeQuietly(inputStream);
+            //IoUtils.closeQuietly(errorStream);
+            //IoUtils.closeQuietly(outputStream);
         }
 
         
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.505 -0400", hash_original_method = "72D26C729273916A38DD81F020E1EC4C", hash_generated_method = "B4EBD0C0AEF689A2CCE2CFC2B27A2A3F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.158 -0400", hash_original_method = "72D26C729273916A38DD81F020E1EC4C", hash_generated_method = "914CDF754E3AA7F1D2B7707BBB9CB7F6")
         public int exitValue() {
-            {
+            synchronized
+(exitValueMutex)            {
+    if(exitValue == null)                
                 {
-                    if (DroidSafeAndroidRuntime.control) throw new IllegalThreadStateException(
+                    IllegalThreadStateException varCC1DF42533230565D98A5648D23AFD0F_135671760 = new IllegalThreadStateException(
                             "Process has not yet terminated.");
-                } 
-            } 
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_428753107 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_428753107;
-            
-            
-                
-                    
-                            
-                
-                
-            
+                    varCC1DF42533230565D98A5648D23AFD0F_135671760.addTaint(taint);
+                    throw varCC1DF42533230565D98A5648D23AFD0F_135671760;
+                } //End block
+                int varE81D8D8B20784FD6FAA308CE4E476F25_1742852999 = (exitValue);
+                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1324778054 = getTaintInt();
+                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1324778054;
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (exitValueMutex) {
+                //if (exitValue == null) {
+                    //throw new IllegalThreadStateException(
+                            //"Process has not yet terminated.");
+                //}
+                //return exitValue;
+            //}
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.506 -0400", hash_original_method = "DCE7BF5109CA162BD54D93588001BD51", hash_generated_method = "680B0C60D858E5A3EF4C668D310C0313")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.158 -0400", hash_original_method = "DCE7BF5109CA162BD54D93588001BD51", hash_generated_method = "DC4229DAF1BA1AC4AE41498832914C11")
         public InputStream getErrorStream() {
-            InputStream varB4EAC82CA7396A68D541C85D26508E83_1634253641 = null; 
-            varB4EAC82CA7396A68D541C85D26508E83_1634253641 = this.errorStream;
-            varB4EAC82CA7396A68D541C85D26508E83_1634253641.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_1634253641;
-            
-            
+InputStream varDB29EBF3A5CF9520B6DB980D65A9FD74_720131084 =             this.errorStream;
+            varDB29EBF3A5CF9520B6DB980D65A9FD74_720131084.addTaint(taint);
+            return varDB29EBF3A5CF9520B6DB980D65A9FD74_720131084;
+            // ---------- Original Method ----------
+            //return this.errorStream;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.507 -0400", hash_original_method = "DC1F0F5A793D1EF64AF6C7DB099DCE34", hash_generated_method = "286CAF29D60CAC729C6C299B9C21EC94")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.159 -0400", hash_original_method = "DC1F0F5A793D1EF64AF6C7DB099DCE34", hash_generated_method = "32F475F8FAC2B689A0BCE672AC8254F2")
         public InputStream getInputStream() {
-            InputStream varB4EAC82CA7396A68D541C85D26508E83_1586882243 = null; 
-            varB4EAC82CA7396A68D541C85D26508E83_1586882243 = this.inputStream;
-            varB4EAC82CA7396A68D541C85D26508E83_1586882243.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_1586882243;
-            
-            
+InputStream varE57B54F82EC7D518A03C88F3C045BF46_1627563577 =             this.inputStream;
+            varE57B54F82EC7D518A03C88F3C045BF46_1627563577.addTaint(taint);
+            return varE57B54F82EC7D518A03C88F3C045BF46_1627563577;
+            // ---------- Original Method ----------
+            //return this.inputStream;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.508 -0400", hash_original_method = "94C3B255D73CD61583B0AC248BC392B9", hash_generated_method = "5A15A151E7ECDBEFD75546A508C4B9A8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.159 -0400", hash_original_method = "94C3B255D73CD61583B0AC248BC392B9", hash_generated_method = "64E8D0428FEC803958B2551331636C59")
         public OutputStream getOutputStream() {
-            OutputStream varB4EAC82CA7396A68D541C85D26508E83_778031264 = null; 
-            varB4EAC82CA7396A68D541C85D26508E83_778031264 = this.outputStream;
-            varB4EAC82CA7396A68D541C85D26508E83_778031264.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_778031264;
-            
-            
+OutputStream varD1FAACFBEB53C1408150BAABD3C85558_801006663 =             this.outputStream;
+            varD1FAACFBEB53C1408150BAABD3C85558_801006663.addTaint(taint);
+            return varD1FAACFBEB53C1408150BAABD3C85558_801006663;
+            // ---------- Original Method ----------
+            //return this.outputStream;
         }
 
         
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.509 -0400", hash_original_method = "BE1794A2A2D4EC2F61628D9639894105", hash_generated_method = "4ABF83D3A0C77C82E7B93ADA34D12D03")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.160 -0400", hash_original_method = "BE1794A2A2D4EC2F61628D9639894105", hash_generated_method = "35F54CB500AC3A3A81322851EC3FF204")
         public int waitFor() throws InterruptedException {
-            {
+            synchronized
+(exitValueMutex)            {
+                while
+(exitValue == null)                
                 {
                     exitValueMutex.wait();
-                } 
-            } 
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_132795958 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_132795958;
-            
-            
-                
-                    
-                
-                
-            
+                } //End block
+                int varE81D8D8B20784FD6FAA308CE4E476F25_134270522 = (exitValue);
+                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1887449100 = getTaintInt();
+                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1887449100;
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (exitValueMutex) {
+                //while (exitValue == null) {
+                    //exitValueMutex.wait();
+                //}
+                //return exitValue;
+            //}
         }
 
         
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.509 -0400", hash_original_method = "B7D46CBA2679C4E3B0149113D5DCFB48", hash_generated_method = "C75ECC9B762CE8F42D4CFF9DA7A3C4A4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.161 -0400", hash_original_method = "B7D46CBA2679C4E3B0149113D5DCFB48", hash_generated_method = "48BDFD8466D48ABFC4C9C7823F423F61")
          void setExitValue(int exitValue) {
-            {
+            synchronized
+(exitValueMutex)            {
                 this.exitValue = exitValue;
                 exitValueMutex.notifyAll();
-            } 
-            
-            
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (exitValueMutex) {
+                //this.exitValue = exitValue;
+                //exitValueMutex.notifyAll();
+            //}
         }
 
         
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.510 -0400", hash_original_method = "945EE59E08960A318B9D424632962227", hash_generated_method = "58D8207420EBEDF45851A70B18B6B7F4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.161 -0400", hash_original_method = "945EE59E08960A318B9D424632962227", hash_generated_method = "BD576A764BD2198D1F3F177F2DF1B894")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_500218614 = null; 
-            varB4EAC82CA7396A68D541C85D26508E83_500218614 = "Process[pid=" + pid + "]";
-            varB4EAC82CA7396A68D541C85D26508E83_500218614.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_500218614;
-            
-            
+String var7F08C3EC7CEBE6D57C12B6ED1F6F42CA_1696433651 =             "Process[pid=" + pid + "]";
+            var7F08C3EC7CEBE6D57C12B6ED1F6F42CA_1696433651.addTaint(taint);
+            return var7F08C3EC7CEBE6D57C12B6ED1F6F42CA_1696433651;
+            // ---------- Original Method ----------
+            //return "Process[pid=" + pid + "]";
         }
 
         
@@ -442,17 +452,17 @@ final class ProcessManager {
 
     
     static class ProcessReference extends WeakReference<ProcessImpl> {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.510 -0400", hash_original_field = "D903442AB4EBEE4C1AA7CF992C2086B9", hash_generated_field = "E004204917AF1E5C42C1A06073D92523")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.162 -0400", hash_original_field = "D903442AB4EBEE4C1AA7CF992C2086B9", hash_generated_field = "E004204917AF1E5C42C1A06073D92523")
 
         int processId;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.510 -0400", hash_original_method = "107F02CD09CE46F853F68815CD6B50B6", hash_generated_method = "9E61E0410799465CFBE0EED5A0B93BDE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.162 -0400", hash_original_method = "107F02CD09CE46F853F68815CD6B50B6", hash_generated_method = "FB2D780FE47AF1E384BA7671B51B3474")
         public  ProcessReference(ProcessImpl referent, ProcessReferenceQueue referenceQueue) {
             super(referent, referenceQueue);
-            this.processId = referent.pid;
             addTaint(referenceQueue.getTaint());
-            
-            
+            this.processId = referent.pid;
+            // ---------- Original Method ----------
+            //this.processId = referent.pid;
         }
 
         
@@ -462,25 +472,23 @@ final class ProcessManager {
     
     static class ProcessReferenceQueue extends ReferenceQueue<ProcessImpl> {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.511 -0400", hash_original_method = "862B9F300CC2459FB61E8AEDFA0DE051", hash_generated_method = "862B9F300CC2459FB61E8AEDFA0DE051")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.163 -0400", hash_original_method = "862B9F300CC2459FB61E8AEDFA0DE051", hash_generated_method = "862B9F300CC2459FB61E8AEDFA0DE051")
         public ProcessReferenceQueue ()
         {
-            
+            //Synthesized constructor
         }
 
 
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.511 -0400", hash_original_method = "A8419736BED4DA94F6EABC777190260F", hash_generated_method = "9BDBFE86D200A52CE6F2385EC4027052")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.163 -0400", hash_original_method = "A8419736BED4DA94F6EABC777190260F", hash_generated_method = "38D5F61652F8EA8BCD2618CD1704AB8A")
         @Override
         public ProcessReference poll() {
-            ProcessReference varB4EAC82CA7396A68D541C85D26508E83_507243329 = null; 
             Object reference = super.poll();
-            varB4EAC82CA7396A68D541C85D26508E83_507243329 = (ProcessReference) reference;
-            varB4EAC82CA7396A68D541C85D26508E83_507243329.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_507243329;
-            
-            
-            
+ProcessReference varD01FA5E21A742C1114FBE0E758C3D263_1844305177 =             (ProcessReference) reference;
+            varD01FA5E21A742C1114FBE0E758C3D263_1844305177.addTaint(taint);
+            return varD01FA5E21A742C1114FBE0E758C3D263_1844305177;
+            // ---------- Original Method ----------
+            //Object reference = super.poll();
+            //return (ProcessReference) reference;
         }
 
         
@@ -489,51 +497,52 @@ final class ProcessManager {
 
     
     private static class ProcessInputStream extends FileInputStream {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.511 -0400", hash_original_field = "36EBA1E1E343279857EA7F69A597324E", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.163 -0400", hash_original_field = "36EBA1E1E343279857EA7F69A597324E", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
 
         private FileDescriptor fd;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.512 -0400", hash_original_method = "BA3785E1A3DB1BABE64D1C4B047B2648", hash_generated_method = "13DCE028ACF64B329B01FFD270781DCF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.164 -0400", hash_original_method = "BA3785E1A3DB1BABE64D1C4B047B2648", hash_generated_method = "13DCE028ACF64B329B01FFD270781DCF")
         private  ProcessInputStream(FileDescriptor fd) {
             super(fd);
             this.fd = fd;
-            
-            
+            // ---------- Original Method ----------
+            //this.fd = fd;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.512 -0400", hash_original_method = "4096AFD26B789321960D656289AA88CA", hash_generated_method = "B0C874CED371BF6F166A77FBAD969BB2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.164 -0400", hash_original_method = "4096AFD26B789321960D656289AA88CA", hash_generated_method = "97B7C0F2A0CC657929A480ACE6AB7757")
         @Override
         public void close() throws IOException {
             try 
             {
                 super.close();
-            } 
+            } //End block
             finally 
             {
-                {
+                synchronized
+(this)                {
                     try 
                     {
                         IoUtils.close(fd);
-                    } 
+                    } //End block
                     finally 
                     {
                         fd = null;
-                    } 
-                } 
-            } 
-            
-            
-                
-            
-                
-                    
-                        
-                    
-                        
-                    
-                
-            
+                    } //End block
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //try {
+                //super.close();
+            //} finally {
+                //synchronized (this) {
+                    //try {
+                        //IoUtils.close(fd);
+                    //} finally {
+                        //fd = null;
+                    //}
+                //}
+            //}
         }
 
         
@@ -542,51 +551,52 @@ final class ProcessManager {
 
     
     private static class ProcessOutputStream extends FileOutputStream {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.512 -0400", hash_original_field = "36EBA1E1E343279857EA7F69A597324E", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.165 -0400", hash_original_field = "36EBA1E1E343279857EA7F69A597324E", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
 
         private FileDescriptor fd;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.512 -0400", hash_original_method = "B3C6B215267D4A75B46BBDC1F5BB9CDB", hash_generated_method = "7303B1A97A9117BEB783BF40DA54A18E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.165 -0400", hash_original_method = "B3C6B215267D4A75B46BBDC1F5BB9CDB", hash_generated_method = "7303B1A97A9117BEB783BF40DA54A18E")
         private  ProcessOutputStream(FileDescriptor fd) {
             super(fd);
             this.fd = fd;
-            
-            
+            // ---------- Original Method ----------
+            //this.fd = fd;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.513 -0400", hash_original_method = "4096AFD26B789321960D656289AA88CA", hash_generated_method = "B0C874CED371BF6F166A77FBAD969BB2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.166 -0400", hash_original_method = "4096AFD26B789321960D656289AA88CA", hash_generated_method = "97B7C0F2A0CC657929A480ACE6AB7757")
         @Override
         public void close() throws IOException {
             try 
             {
                 super.close();
-            } 
+            } //End block
             finally 
             {
-                {
+                synchronized
+(this)                {
                     try 
                     {
                         IoUtils.close(fd);
-                    } 
+                    } //End block
                     finally 
                     {
                         fd = null;
-                    } 
-                } 
-            } 
-            
-            
-                
-            
-                
-                    
-                        
-                    
-                        
-                    
-                
-            
+                    } //End block
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //try {
+                //super.close();
+            //} finally {
+                //synchronized (this) {
+                    //try {
+                        //IoUtils.close(fd);
+                    //} finally {
+                        //fd = null;
+                    //}
+                //}
+            //}
         }
 
         
@@ -594,9 +604,8 @@ final class ProcessManager {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.513 -0400", hash_original_field = "0F376D985AD312053503F275800742B8", hash_generated_field = "8D658FE2E05A9E4B2403457EE1E50872")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.166 -0400", hash_original_field = "0F376D985AD312053503F275800742B8", hash_generated_field = "8D658FE2E05A9E4B2403457EE1E50872")
 
     private static final ProcessManager instance = new ProcessManager();
-   
 }
 

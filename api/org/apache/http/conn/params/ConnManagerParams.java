@@ -1,25 +1,22 @@
 package org.apache.http.conn.params;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import org.apache.http.conn.routing.HttpRoute;
 import org.apache.http.params.HttpParams;
 
 public final class ConnManagerParams implements ConnManagerPNames {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.066 -0400", hash_original_method = "8D73F0F63C95FBB6C86DB2075286A73B", hash_generated_method = "8D73F0F63C95FBB6C86DB2075286A73B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.418 -0400", hash_original_method = "8D73F0F63C95FBB6C86DB2075286A73B", hash_generated_method = "8D73F0F63C95FBB6C86DB2075286A73B")
     public ConnManagerParams ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    public static long getTimeout(final HttpParams params) {
+        public static long getTimeout(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
@@ -27,7 +24,7 @@ public final class ConnManagerParams implements ConnManagerPNames {
     }
 
     
-    public static void setTimeout(final HttpParams params, long timeout) {
+        public static void setTimeout(final HttpParams params, long timeout) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
@@ -35,7 +32,7 @@ public final class ConnManagerParams implements ConnManagerPNames {
     }
 
     
-    public static void setMaxConnectionsPerRoute(final HttpParams params,
+        public static void setMaxConnectionsPerRoute(final HttpParams params,
                                                 final ConnPerRoute connPerRoute) {
         if (params == null) {
             throw new IllegalArgumentException
@@ -45,7 +42,7 @@ public final class ConnManagerParams implements ConnManagerPNames {
     }
 
     
-    public static ConnPerRoute getMaxConnectionsPerRoute(final HttpParams params) {
+        public static ConnPerRoute getMaxConnectionsPerRoute(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException
                 ("HTTP parameters must not be null.");
@@ -58,7 +55,7 @@ public final class ConnManagerParams implements ConnManagerPNames {
     }
 
     
-    public static void setMaxTotalConnections(
+        public static void setMaxTotalConnections(
             final HttpParams params,
             int maxTotalConnections) {
         if (params == null) {
@@ -69,7 +66,7 @@ public final class ConnManagerParams implements ConnManagerPNames {
     }
 
     
-    public static int getMaxTotalConnections(
+        public static int getMaxTotalConnections(
             final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException
@@ -79,7 +76,7 @@ public final class ConnManagerParams implements ConnManagerPNames {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.068 -0400", hash_original_field = "8083486B9C020E19D5C7068AFB38AE78", hash_generated_field = "FBFB3324EA0A0B325C6C3EFFF24349B5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.420 -0400", hash_original_field = "8083486B9C020E19D5C7068AFB38AE78", hash_generated_field = "FBFB3324EA0A0B325C6C3EFFF24349B5")
 
     public static final int DEFAULT_MAX_TOTAL_CONNECTIONS = 20;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.069 -0400", hash_original_field = "DD59E98DD00850A7DCC1DD983A709C49", hash_generated_field = "31C4DE057B93401DBCAF299288501B61")

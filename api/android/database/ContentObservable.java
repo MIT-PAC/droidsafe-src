@@ -1,84 +1,70 @@
 package android.database;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-
-import java.util.Iterator;
-
 public class ContentObservable extends Observable<ContentObserver> {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.654 -0400", hash_original_method = "0D8C230D46EFDA6222B6D152F7216617", hash_generated_method = "0D8C230D46EFDA6222B6D152F7216617")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.025 -0400", hash_original_method = "0D8C230D46EFDA6222B6D152F7216617", hash_generated_method = "0D8C230D46EFDA6222B6D152F7216617")
     public ContentObservable ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.655 -0400", hash_original_method = "4478BB946B12E492F4CEF86404F7FDB4", hash_generated_method = "5B7E131AEF66111CFDD758AEF440BA96")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.025 -0400", hash_original_method = "4478BB946B12E492F4CEF86404F7FDB4", hash_generated_method = "899EFC8C24972B9B2FB8AB25C86A4586")
     @Override
     public void registerObserver(ContentObserver observer) {
-        
-        super.registerObserver(observer);
+        //DSFIXME: CODE0010: Possible callback registration function detected
         addTaint(observer.getTaint());
-        
-        
+        super.registerObserver(observer);
+        // ---------- Original Method ----------
+        //super.registerObserver(observer);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.660 -0400", hash_original_method = "2404EE3C179A56E4FBB403E872AACE69", hash_generated_method = "ED8684DCD95A0E776F6664EC0E9DA476")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.026 -0400", hash_original_method = "2404EE3C179A56E4FBB403E872AACE69", hash_generated_method = "3AA5A40DDC3B68118FE7597661DD9009")
     public void dispatchChange(boolean selfChange) {
-        {
-            {
-                Iterator<ContentObserver> var26C534EC1982BC99FB26C7B41E9438B1_1934249201 = (mObservers).iterator();
-                var26C534EC1982BC99FB26C7B41E9438B1_1934249201.hasNext();
-                ContentObserver observer = var26C534EC1982BC99FB26C7B41E9438B1_1934249201.next();
-                {
-                    {
-                        boolean var634E230D7A01ED031A0EEA41DB104AE4_994277596 = (!selfChange || observer.deliverSelfNotifications());
-                        {
-                            observer.dispatchChange(selfChange);
-                        } 
-                    } 
-                } 
-            } 
-        } 
         addTaint(selfChange);
-        
-        
-            
-                
-                    
-                
-            
-        
+        synchronized
+(mObservers)        {
+for(ContentObserver observer : mObservers)
+            {
+    if(!selfChange || observer.deliverSelfNotifications())                
+                {
+                    observer.dispatchChange(selfChange);
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized(mObservers) {
+            //for (ContentObserver observer : mObservers) {
+                //if (!selfChange || observer.deliverSelfNotifications()) {
+                    //observer.dispatchChange(selfChange);
+                //}
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.667 -0400", hash_original_method = "6E785AECA168F3220756C0C7D730B7FB", hash_generated_method = "2EA3AE139FD8BAF58F9F89A72C5F6981")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.026 -0400", hash_original_method = "6E785AECA168F3220756C0C7D730B7FB", hash_generated_method = "6BB68C9F5CDD96272D5EAFF9AA4B6EC0")
     public void notifyChange(boolean selfChange) {
-        {
-            {
-                Iterator<ContentObserver> var26C534EC1982BC99FB26C7B41E9438B1_542274034 = (mObservers).iterator();
-                var26C534EC1982BC99FB26C7B41E9438B1_542274034.hasNext();
-                ContentObserver observer = var26C534EC1982BC99FB26C7B41E9438B1_542274034.next();
-                {
-                    observer.onChange(selfChange);
-                } 
-            } 
-        } 
         addTaint(selfChange);
-        
-        
-            
-                
-            
-        
+        synchronized
+(mObservers)        {
+for(ContentObserver observer : mObservers)
+            {
+                observer.onChange(selfChange);
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized(mObservers) {
+            //for (ContentObserver observer : mObservers) {
+                //observer.onChange(selfChange);
+            //}
+        //}
     }
 
     

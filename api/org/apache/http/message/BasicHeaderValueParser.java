@@ -1,12 +1,9 @@
 package org.apache.http.message;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
 import org.apache.http.HeaderElement;
@@ -17,14 +14,14 @@ import org.apache.http.util.CharArrayBuffer;
 
 public class BasicHeaderValueParser implements HeaderValueParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.033 -0400", hash_original_method = "E5D5EDFEB9DFD5F75BF9F31254D7292C", hash_generated_method = "E5D5EDFEB9DFD5F75BF9F31254D7292C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.438 -0400", hash_original_method = "E5D5EDFEB9DFD5F75BF9F31254D7292C", hash_generated_method = "E5D5EDFEB9DFD5F75BF9F31254D7292C")
     public BasicHeaderValueParser ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    public final static HeaderElement[] parseElements(final String value,
+        public final static HeaderElement[] parseElements(final String value,
                                       HeaderValueParser parser) throws ParseException {
         if (value == null) {
             throw new IllegalArgumentException
@@ -39,55 +36,57 @@ public class BasicHeaderValueParser implements HeaderValueParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.034 -0400", hash_original_method = "5016300DF78E74A02C94B3D9AD513F2B", hash_generated_method = "F178D11842C24D5F738E7123301E5262")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.439 -0400", hash_original_method = "5016300DF78E74A02C94B3D9AD513F2B", hash_generated_method = "A01848BC5E0CF398F05E7CCE4ACEB06D")
     public HeaderElement[] parseElements(final CharArrayBuffer buffer,
                                          final ParserCursor cursor) {
-        HeaderElement[] varB4EAC82CA7396A68D541C85D26508E83_199218485 = null; 
-        {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Char array buffer may not be null");
-        } 
-        {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Parser cursor may not be null");
-        } 
-        List elements = new ArrayList();
-        {
-            boolean var4BEAEB17B63C1388A85B9C098E9AD4AA_533413594 = (!cursor.atEnd());
-            {
-                HeaderElement element = parseHeaderElement(buffer, cursor);
-                {
-                    boolean var0B925591F2A208D08B75F2A56CD45C4C_1453928356 = (!(element.getName().length() == 0 && element.getValue() == null));
-                    {
-                        elements.add(element);
-                    } 
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_199218485 = (HeaderElement[])
-            elements.toArray(new HeaderElement[elements.size()]);
-        addTaint(buffer.getTaint());
         addTaint(cursor.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_199218485.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_199218485;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-            
-            
-                
-            
-        
-        
-            
+        addTaint(buffer.getTaint());
+    if(buffer == null)        
+        {
+            IllegalArgumentException var11B13FD12A76A3F0F811AB9F5E5EE296_1056691174 = new IllegalArgumentException("Char array buffer may not be null");
+            var11B13FD12A76A3F0F811AB9F5E5EE296_1056691174.addTaint(taint);
+            throw var11B13FD12A76A3F0F811AB9F5E5EE296_1056691174;
+        } //End block
+    if(cursor == null)        
+        {
+            IllegalArgumentException var1CF5CFA2B773BDACC8F8C4F50D3A40A5_1732714165 = new IllegalArgumentException("Parser cursor may not be null");
+            var1CF5CFA2B773BDACC8F8C4F50D3A40A5_1732714165.addTaint(taint);
+            throw var1CF5CFA2B773BDACC8F8C4F50D3A40A5_1732714165;
+        } //End block
+        List elements = new ArrayList();
+        while
+(!cursor.atEnd())        
+        {
+            HeaderElement element = parseHeaderElement(buffer, cursor);
+    if(!(element.getName().length() == 0 && element.getValue() == null))            
+            {
+                elements.add(element);
+            } //End block
+        } //End block
+HeaderElement[] var554A6F34E30C47381133FE125CCC4AC2_1123467989 =         (HeaderElement[])
+            elements.toArray(new HeaderElement[elements.size()]);
+        var554A6F34E30C47381133FE125CCC4AC2_1123467989.addTaint(taint);
+        return var554A6F34E30C47381133FE125CCC4AC2_1123467989;
+        // ---------- Original Method ----------
+        //if (buffer == null) {
+            //throw new IllegalArgumentException("Char array buffer may not be null");
+        //}
+        //if (cursor == null) {
+            //throw new IllegalArgumentException("Parser cursor may not be null");
+        //}
+        //List elements = new ArrayList();
+        //while (!cursor.atEnd()) {
+            //HeaderElement element = parseHeaderElement(buffer, cursor);
+            //if (!(element.getName().length() == 0 && element.getValue() == null)) {
+                //elements.add(element);
+            //}
+        //}
+        //return (HeaderElement[])
+            //elements.toArray(new HeaderElement[elements.size()]);
     }
 
     
-    public final static HeaderElement parseHeaderElement(final String value,
+        public final static HeaderElement parseHeaderElement(final String value,
                                          HeaderValueParser parser) throws ParseException {
         if (value == null) {
             throw new IllegalArgumentException
@@ -102,69 +101,72 @@ public class BasicHeaderValueParser implements HeaderValueParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.035 -0400", hash_original_method = "9DB78E4EDC9AB24886813ADD5ECD3AEC", hash_generated_method = "15A9EADB47E98D02DF9167B147BF2D73")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.440 -0400", hash_original_method = "9DB78E4EDC9AB24886813ADD5ECD3AEC", hash_generated_method = "F5C6348B7ACB9BD07D610DB2FB8AB485")
     public HeaderElement parseHeaderElement(final CharArrayBuffer buffer,
                                             final ParserCursor cursor) {
-        HeaderElement varB4EAC82CA7396A68D541C85D26508E83_1733699211 = null; 
+        addTaint(cursor.getTaint());
+        addTaint(buffer.getTaint());
+    if(buffer == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Char array buffer may not be null");
-        } 
+            IllegalArgumentException var11B13FD12A76A3F0F811AB9F5E5EE296_1528107494 = new IllegalArgumentException("Char array buffer may not be null");
+            var11B13FD12A76A3F0F811AB9F5E5EE296_1528107494.addTaint(taint);
+            throw var11B13FD12A76A3F0F811AB9F5E5EE296_1528107494;
+        } //End block
+    if(cursor == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Parser cursor may not be null");
-        } 
+            IllegalArgumentException var1CF5CFA2B773BDACC8F8C4F50D3A40A5_2054828878 = new IllegalArgumentException("Parser cursor may not be null");
+            var1CF5CFA2B773BDACC8F8C4F50D3A40A5_2054828878.addTaint(taint);
+            throw var1CF5CFA2B773BDACC8F8C4F50D3A40A5_2054828878;
+        } //End block
         NameValuePair nvp = parseNameValuePair(buffer, cursor);
         NameValuePair[] params = null;
+    if(!cursor.atEnd())        
         {
-            boolean var4BEAEB17B63C1388A85B9C098E9AD4AA_350303380 = (!cursor.atEnd());
+            char ch = buffer.charAt(cursor.getPos() - 1);
+    if(ch != ELEM_DELIMITER)            
             {
-                char ch = buffer.charAt(cursor.getPos() - 1);
-                {
-                    params = parseParameters(buffer, cursor);
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1733699211 = createHeaderElement(nvp.getName(), nvp.getValue(), params);
-        addTaint(buffer.getTaint());
-        addTaint(cursor.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1733699211.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1733699211;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
-            
-            
-                
-            
-        
-        
+                params = parseParameters(buffer, cursor);
+            } //End block
+        } //End block
+HeaderElement varB465087E72E60C51FEF16EFDDEB3D72D_902617318 =         createHeaderElement(nvp.getName(), nvp.getValue(), params);
+        varB465087E72E60C51FEF16EFDDEB3D72D_902617318.addTaint(taint);
+        return varB465087E72E60C51FEF16EFDDEB3D72D_902617318;
+        // ---------- Original Method ----------
+        //if (buffer == null) {
+            //throw new IllegalArgumentException("Char array buffer may not be null");
+        //}
+        //if (cursor == null) {
+            //throw new IllegalArgumentException("Parser cursor may not be null");
+        //}
+        //NameValuePair nvp = parseNameValuePair(buffer, cursor);
+        //NameValuePair[] params = null;
+        //if (!cursor.atEnd()) {
+            //char ch = buffer.charAt(cursor.getPos() - 1); 
+            //if (ch != ELEM_DELIMITER) {
+                //params = parseParameters(buffer, cursor);
+            //}
+        //}
+        //return createHeaderElement(nvp.getName(), nvp.getValue(), params);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.036 -0400", hash_original_method = "1E408228B87D655655D78320EF19A97F", hash_generated_method = "041785CB1A764654755C29EAB1C829FE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.441 -0400", hash_original_method = "1E408228B87D655655D78320EF19A97F", hash_generated_method = "6F9DDC432071F6320F6FCB433A7B1D5D")
     protected HeaderElement createHeaderElement(
             final String name, 
             final String value, 
             final NameValuePair[] params) {
-        HeaderElement varB4EAC82CA7396A68D541C85D26508E83_425855923 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_425855923 = new BasicHeaderElement(name, value, params);
-        addTaint(name.getTaint());
-        addTaint(value.getTaint());
         addTaint(params[0].getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_425855923.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_425855923;
-        
-        
+        addTaint(value.getTaint());
+        addTaint(name.getTaint());
+HeaderElement var7F31DAC00D84C92DB3DA09B50D518202_1785161156 =         new BasicHeaderElement(name, value, params);
+        var7F31DAC00D84C92DB3DA09B50D518202_1785161156.addTaint(taint);
+        return var7F31DAC00D84C92DB3DA09B50D518202_1785161156;
+        // ---------- Original Method ----------
+        //return new BasicHeaderElement(name, value, params);
     }
 
     
-    public final static NameValuePair[] parseParameters(final String value,
+        public final static NameValuePair[] parseParameters(final String value,
                                         HeaderValueParser parser) throws ParseException {
         if (value == null) {
             throw new IllegalArgumentException
@@ -179,62 +181,67 @@ public class BasicHeaderValueParser implements HeaderValueParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.037 -0400", hash_original_method = "AD12DE8E127E3F34D456FD84EFD432E9", hash_generated_method = "4E70BEDC9EC88D465CDD4FD8C3BCC64B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.442 -0400", hash_original_method = "AD12DE8E127E3F34D456FD84EFD432E9", hash_generated_method = "5CBC7F70E6B7643105F988006E2E1C67")
     public NameValuePair[] parseParameters(final CharArrayBuffer buffer,
                                            final ParserCursor cursor) {
-        NameValuePair[] varB4EAC82CA7396A68D541C85D26508E83_1012010729 = null; 
-        NameValuePair[] varB4EAC82CA7396A68D541C85D26508E83_1197214067 = null; 
+        addTaint(cursor.getTaint());
+        addTaint(buffer.getTaint());
+    if(buffer == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Char array buffer may not be null");
-        } 
+            IllegalArgumentException var11B13FD12A76A3F0F811AB9F5E5EE296_1143511747 = new IllegalArgumentException("Char array buffer may not be null");
+            var11B13FD12A76A3F0F811AB9F5E5EE296_1143511747.addTaint(taint);
+            throw var11B13FD12A76A3F0F811AB9F5E5EE296_1143511747;
+        } //End block
+    if(cursor == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Parser cursor may not be null");
-        } 
+            IllegalArgumentException var1CF5CFA2B773BDACC8F8C4F50D3A40A5_1541530221 = new IllegalArgumentException("Parser cursor may not be null");
+            var1CF5CFA2B773BDACC8F8C4F50D3A40A5_1541530221.addTaint(taint);
+            throw var1CF5CFA2B773BDACC8F8C4F50D3A40A5_1541530221;
+        } //End block
         int pos = cursor.getPos();
         int indexTo = cursor.getUpperBound();
+        while
+(pos < indexTo)        
         {
             char ch = buffer.charAt(pos);
+    if(HTTP.isWhitespace(ch))            
             {
-                boolean var562A80DD7B29195447785372901FBACC_1462546026 = (HTTP.isWhitespace(ch));
-            } 
-        } 
+                pos++;
+            } //End block
+            else
+            {
+                break;
+            } //End block
+        } //End block
         cursor.updatePos(pos);
+    if(cursor.atEnd())        
         {
-            boolean var960C622592A5439AD1E01565F88F38C7_713988678 = (cursor.atEnd());
-            {
-                varB4EAC82CA7396A68D541C85D26508E83_1012010729 = new NameValuePair[] {};
-            } 
-        } 
+NameValuePair[] varF868564B236F065D2537C0B779B34247_1314670501 =             new NameValuePair[] {};
+            varF868564B236F065D2537C0B779B34247_1314670501.addTaint(taint);
+            return varF868564B236F065D2537C0B779B34247_1314670501;
+        } //End block
         List params = new ArrayList();
+        while
+(!cursor.atEnd())        
         {
-            boolean var4BEAEB17B63C1388A85B9C098E9AD4AA_684813918 = (!cursor.atEnd());
+            NameValuePair param = parseNameValuePair(buffer, cursor);
+            params.add(param);
+            char ch = buffer.charAt(cursor.getPos() - 1);
+    if(ch == ELEM_DELIMITER)            
             {
-                NameValuePair param = parseNameValuePair(buffer, cursor);
-                params.add(param);
-                char ch = buffer.charAt(cursor.getPos() - 1);
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1197214067 = (NameValuePair[])
+                break;
+            } //End block
+        } //End block
+NameValuePair[] var775797A1DB981CCD7D6A3DE99C60A910_62724930 =         (NameValuePair[])
             params.toArray(new NameValuePair[params.size()]);
-        addTaint(buffer.getTaint());
-        addTaint(cursor.getTaint());
-        NameValuePair[] varA7E53CE21691AB073D9660D615818899_702417456; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_702417456 = varB4EAC82CA7396A68D541C85D26508E83_1012010729;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_702417456 = varB4EAC82CA7396A68D541C85D26508E83_1197214067;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_702417456.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_702417456;
-        
-        
+        var775797A1DB981CCD7D6A3DE99C60A910_62724930.addTaint(taint);
+        return var775797A1DB981CCD7D6A3DE99C60A910_62724930;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    public final static NameValuePair parseNameValuePair(final String value,
+        public final static NameValuePair parseNameValuePair(final String value,
                                         HeaderValueParser parser) throws ParseException {
         if (value == null) {
             throw new IllegalArgumentException
@@ -249,21 +256,20 @@ public class BasicHeaderValueParser implements HeaderValueParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.038 -0400", hash_original_method = "CDDF563B77C55AAFFCDB4B7B75BDCA50", hash_generated_method = "8A20DF6BF4523FA4ABD0F091699CBFAB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.443 -0400", hash_original_method = "CDDF563B77C55AAFFCDB4B7B75BDCA50", hash_generated_method = "BC0892A2A646E59096C8539D3720EA77")
     public NameValuePair parseNameValuePair(final CharArrayBuffer buffer,
                                             final ParserCursor cursor) {
-        NameValuePair varB4EAC82CA7396A68D541C85D26508E83_1008010755 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1008010755 = parseNameValuePair(buffer, cursor, ALL_DELIMITERS);
-        addTaint(buffer.getTaint());
         addTaint(cursor.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1008010755.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1008010755;
-        
-        
+        addTaint(buffer.getTaint());
+NameValuePair var318CCD15B7AA3EEEC3B989AEA01F0945_1126920693 =         parseNameValuePair(buffer, cursor, ALL_DELIMITERS);
+        var318CCD15B7AA3EEEC3B989AEA01F0945_1126920693.addTaint(taint);
+        return var318CCD15B7AA3EEEC3B989AEA01F0945_1126920693;
+        // ---------- Original Method ----------
+        //return parseNameValuePair(buffer, cursor, ALL_DELIMITERS);
     }
 
     
-    private static boolean isOneOf(final char ch, final char[] chs) {
+        private static boolean isOneOf(final char ch, final char[] chs) {
         if (chs != null) {
             for (int i = 0; i < chs.length; i++) {
                 if (ch == chs[i]) {
@@ -275,123 +281,144 @@ public class BasicHeaderValueParser implements HeaderValueParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.040 -0400", hash_original_method = "406DCF62228C794C94DA9032C1E82314", hash_generated_method = "6171072EFBE3EAA62E5B4AD3965E40BC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.445 -0400", hash_original_method = "406DCF62228C794C94DA9032C1E82314", hash_generated_method = "35D960E22482F917063B817E717E26CF")
     public NameValuePair parseNameValuePair(final CharArrayBuffer buffer,
                                             final ParserCursor cursor,
                                             final char[] delimiters) {
-        NameValuePair varB4EAC82CA7396A68D541C85D26508E83_807204150 = null; 
-        NameValuePair varB4EAC82CA7396A68D541C85D26508E83_680712064 = null; 
+        addTaint(delimiters[0]);
+        addTaint(cursor.getTaint());
+        addTaint(buffer.getTaint());
+    if(buffer == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Char array buffer may not be null");
-        } 
+            IllegalArgumentException var11B13FD12A76A3F0F811AB9F5E5EE296_1285142262 = new IllegalArgumentException("Char array buffer may not be null");
+            var11B13FD12A76A3F0F811AB9F5E5EE296_1285142262.addTaint(taint);
+            throw var11B13FD12A76A3F0F811AB9F5E5EE296_1285142262;
+        } //End block
+    if(cursor == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Parser cursor may not be null");
-        } 
+            IllegalArgumentException var1CF5CFA2B773BDACC8F8C4F50D3A40A5_230225145 = new IllegalArgumentException("Parser cursor may not be null");
+            var1CF5CFA2B773BDACC8F8C4F50D3A40A5_230225145.addTaint(taint);
+            throw var1CF5CFA2B773BDACC8F8C4F50D3A40A5_230225145;
+        } //End block
         boolean terminated = false;
         int pos = cursor.getPos();
         int indexFrom = cursor.getPos();
         int indexTo = cursor.getUpperBound();
         String name = null;
+        while
+(pos < indexTo)        
         {
             char ch = buffer.charAt(pos);
+    if(ch == '=')            
             {
-                boolean var05C281860646EB7E65999A58787C5F8C_1822875044 = (isOneOf(ch, delimiters));
-                {
-                    terminated = true;
-                } 
-            } 
-        } 
+                break;
+            } //End block
+    if(isOneOf(ch, delimiters))            
+            {
+                terminated = true;
+                break;
+            } //End block
+            pos++;
+        } //End block
+    if(pos == indexTo)        
         {
             terminated = true;
             name = buffer.substringTrimmed(indexFrom, indexTo);
-        } 
+        } //End block
+        else
         {
             name = buffer.substringTrimmed(indexFrom, pos);
-        } 
+            pos++;
+        } //End block
+    if(terminated)        
         {
             cursor.updatePos(pos);
-            varB4EAC82CA7396A68D541C85D26508E83_807204150 = createNameValuePair(name, null);
-        } 
+NameValuePair var936EB01DC49F9DC5803D5D6826C1E111_1550293743 =             createNameValuePair(name, null);
+            var936EB01DC49F9DC5803D5D6826C1E111_1550293743.addTaint(taint);
+            return var936EB01DC49F9DC5803D5D6826C1E111_1550293743;
+        } //End block
         String value = null;
         int i1 = pos;
         boolean qouted = false;
         boolean escaped = false;
+        while
+(pos < indexTo)        
         {
             char ch = buffer.charAt(pos);
+    if(ch == '"' && !escaped)            
             {
                 qouted = !qouted;
-            } 
+            } //End block
+    if(!qouted && !escaped && isOneOf(ch, delimiters))            
             {
-                boolean var294D36F6ABAFA3CDB73404E3D2B52643_1380865055 = (!qouted && !escaped && isOneOf(ch, delimiters));
-                {
-                    terminated = true;
-                } 
-            } 
+                terminated = true;
+                break;
+            } //End block
+    if(escaped)            
             {
                 escaped = false;
-            } 
+            } //End block
+            else
             {
                 escaped = qouted && ch == '\\';
-            } 
-        } 
+            } //End block
+            pos++;
+        } //End block
         int i2 = pos;
+        while
+(i1 < i2 && (HTTP.isWhitespace(buffer.charAt(i1))))        
         {
-            boolean varDA6FE9C966E1BCC4E2ED682B1F059A30_1975890400 = (i1 < i2 && (HTTP.isWhitespace(buffer.charAt(i1))));
-        } 
+            i1++;
+        } //End block
+        while
+((i2 > i1) && (HTTP.isWhitespace(buffer.charAt(i2 - 1))))        
         {
-            boolean var28912CFE96C719B649399375B584A90F_874864029 = ((i2 > i1) && (HTTP.isWhitespace(buffer.charAt(i2 - 1))));
-        } 
-        {
-            boolean varD6CC0D2201F6AF7D011292F53C3A9E2C_1757811507 = (((i2 - i1) >= 2) 
+            i2--;
+        } //End block
+    if(((i2 - i1) >= 2) 
             && (buffer.charAt(i1) == '"') 
-            && (buffer.charAt(i2 - 1) == '"'));
-        } 
+            && (buffer.charAt(i2 - 1) == '"'))        
+        {
+            i1++;
+            i2--;
+        } //End block
         value = buffer.substring(i1, i2);
+    if(terminated)        
+        {
+            pos++;
+        } //End block
         cursor.updatePos(pos);
-        varB4EAC82CA7396A68D541C85D26508E83_680712064 = createNameValuePair(name, value);
-        addTaint(buffer.getTaint());
-        addTaint(cursor.getTaint());
-        addTaint(delimiters[0]);
-        NameValuePair varA7E53CE21691AB073D9660D615818899_1680714469; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1680714469 = varB4EAC82CA7396A68D541C85D26508E83_807204150;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1680714469 = varB4EAC82CA7396A68D541C85D26508E83_680712064;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1680714469.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1680714469;
-        
-        
+NameValuePair varC334BCF85B9429A14AC7E9CE58B8CEBB_1607842466 =         createNameValuePair(name, value);
+        varC334BCF85B9429A14AC7E9CE58B8CEBB_1607842466.addTaint(taint);
+        return varC334BCF85B9429A14AC7E9CE58B8CEBB_1607842466;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.041 -0400", hash_original_method = "8A2AA75D4FAD157F6ECAF6793118129D", hash_generated_method = "E8593448163D2EC0B1F72D536D33A7DD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.446 -0400", hash_original_method = "8A2AA75D4FAD157F6ECAF6793118129D", hash_generated_method = "02C4D3A6301593701553756004CC39EA")
     protected NameValuePair createNameValuePair(final String name, final String value) {
-        NameValuePair varB4EAC82CA7396A68D541C85D26508E83_650538982 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_650538982 = new BasicNameValuePair(name, value);
-        addTaint(name.getTaint());
         addTaint(value.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_650538982.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_650538982;
-        
-        
+        addTaint(name.getTaint());
+NameValuePair varF2851DDA9B912670ED8070D224835E50_861601639 =         new BasicNameValuePair(name, value);
+        varF2851DDA9B912670ED8070D224835E50_861601639.addTaint(taint);
+        return varF2851DDA9B912670ED8070D224835E50_861601639;
+        // ---------- Original Method ----------
+        //return new BasicNameValuePair(name, value);
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.041 -0400", hash_original_field = "5F1FDB9705AE9CC060B8F3D421F03F13", hash_generated_field = "ECC028BAEF8182C6FB58A65CF09C5A31")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.446 -0400", hash_original_field = "5F1FDB9705AE9CC060B8F3D421F03F13", hash_generated_field = "ECC028BAEF8182C6FB58A65CF09C5A31")
 
     public final static
         BasicHeaderValueParser DEFAULT = new BasicHeaderValueParser();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.041 -0400", hash_original_field = "BED2682364722421205ED8EC47E82686", hash_generated_field = "D4A4655610E5AD33BAD13A5088D74510")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.446 -0400", hash_original_field = "BED2682364722421205ED8EC47E82686", hash_generated_field = "D4A4655610E5AD33BAD13A5088D74510")
 
     private final static char PARAM_DELIMITER = ';';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.041 -0400", hash_original_field = "03F3466BEBFD2754305BDC70DBE8C173", hash_generated_field = "9F3335048E6514264D4F2903B65E5B12")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.446 -0400", hash_original_field = "03F3466BEBFD2754305BDC70DBE8C173", hash_generated_field = "9F3335048E6514264D4F2903B65E5B12")
 
     private final static char ELEM_DELIMITER = ',';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.041 -0400", hash_original_field = "030E466F6924A750F09610A6BEB10D63", hash_generated_field = "BD0D07C2953F078E3657679087F8ABF7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.446 -0400", hash_original_field = "030E466F6924A750F09610A6BEB10D63", hash_generated_field = "BD0D07C2953F078E3657679087F8ABF7")
 
     private final static char[] ALL_DELIMITERS = new char[] {
                                                                 PARAM_DELIMITER, 

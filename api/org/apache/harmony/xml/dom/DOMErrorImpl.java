@@ -1,101 +1,88 @@
 package org.apache.harmony.xml.dom;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import org.w3c.dom.DOMError;
 import org.w3c.dom.DOMLocator;
 import org.w3c.dom.Node;
 
 public final class DOMErrorImpl implements DOMError {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.877 -0400", hash_original_field = "F6CDD8562435F8DC36B4C5A221A11D7C", hash_generated_field = "F6245D3BBEE7E5AD850161E037644184")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.580 -0400", hash_original_field = "F6CDD8562435F8DC36B4C5A221A11D7C", hash_generated_field = "F6245D3BBEE7E5AD850161E037644184")
 
     private short severity;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.877 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "AB2C9E2EF2C4EBDBF6BF18A679B45B62")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.580 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "AB2C9E2EF2C4EBDBF6BF18A679B45B62")
 
     private String type;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.877 -0400", hash_original_method = "D93952774FCD9E5EB0D2AAFF03FA31D6", hash_generated_method = "8AF09089EC69917AFCD10E7D197821EB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.580 -0400", hash_original_method = "D93952774FCD9E5EB0D2AAFF03FA31D6", hash_generated_method = "8AF09089EC69917AFCD10E7D197821EB")
     public  DOMErrorImpl(short severity, String type) {
         this.severity = severity;
         this.type = type;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.severity = severity;
+        //this.type = type;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.878 -0400", hash_original_method = "486D9FD618449ECBCAAA947A01B6396E", hash_generated_method = "2E2FA91A6CCD9357FDD3E8AF45E8DCBD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.581 -0400", hash_original_method = "486D9FD618449ECBCAAA947A01B6396E", hash_generated_method = "C3CF86D18EC14C2706C74F9B09D49C85")
     public short getSeverity() {
-        short var4F09DAA9D95BCB166A302407A0E0BABE_905718940 = getTaintShort();
-        return var4F09DAA9D95BCB166A302407A0E0BABE_905718940;
-        
-        
+        short varF6CDD8562435F8DC36B4C5A221A11D7C_345817214 = (severity);
+                short var4F09DAA9D95BCB166A302407A0E0BABE_1056259825 = getTaintShort();
+        return var4F09DAA9D95BCB166A302407A0E0BABE_1056259825;
+        // ---------- Original Method ----------
+        //return severity;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.879 -0400", hash_original_method = "736EB773CAD78737D003DEF14371364B", hash_generated_method = "7C51036A55D9079DA3FD6404A349A090")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.581 -0400", hash_original_method = "736EB773CAD78737D003DEF14371364B", hash_generated_method = "6E4F7F54F48A6439882FB3B42FC56A62")
     public String getMessage() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1469760418 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1469760418 = type;
-        varB4EAC82CA7396A68D541C85D26508E83_1469760418.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1469760418;
-        
-        
+String varC5B9F25B4EEAD3E8E2C33F9429204397_824864219 =         type;
+        varC5B9F25B4EEAD3E8E2C33F9429204397_824864219.addTaint(taint);
+        return varC5B9F25B4EEAD3E8E2C33F9429204397_824864219;
+        // ---------- Original Method ----------
+        //return type;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.879 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "469F0720F67FC140EFE140CF1E2A4C2E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.581 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "70E1005ABDD735DBE54B2765A7342EA6")
     public String getType() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1470449931 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1470449931 = type;
-        varB4EAC82CA7396A68D541C85D26508E83_1470449931.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1470449931;
-        
-        
+String varC5B9F25B4EEAD3E8E2C33F9429204397_1373784448 =         type;
+        varC5B9F25B4EEAD3E8E2C33F9429204397_1373784448.addTaint(taint);
+        return varC5B9F25B4EEAD3E8E2C33F9429204397_1373784448;
+        // ---------- Original Method ----------
+        //return type;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.880 -0400", hash_original_method = "69DC7C3C45CF145B81BFA491DBEA3D67", hash_generated_method = "71FEF7FDC7FFB6C6D642199AFD9AC691")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.581 -0400", hash_original_method = "69DC7C3C45CF145B81BFA491DBEA3D67", hash_generated_method = "06ACC1AAE184B349FD3DACA79062E853")
     public Object getRelatedException() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_612102527 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_612102527 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_612102527.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_612102527;
-        
-        
+Object var540C13E9E156B687226421B24F2DF178_1990908078 =         null;
+        var540C13E9E156B687226421B24F2DF178_1990908078.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_1990908078;
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.880 -0400", hash_original_method = "2E051F1CC67E124CEB94F15E64801D89", hash_generated_method = "D8A7540938A42CE4047883F9829BC106")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.581 -0400", hash_original_method = "2E051F1CC67E124CEB94F15E64801D89", hash_generated_method = "860EA47A416C88C58CA9018EC9020B40")
     public Object getRelatedData() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1402651769 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1402651769 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1402651769.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1402651769;
-        
-        
+Object var540C13E9E156B687226421B24F2DF178_829572861 =         null;
+        var540C13E9E156B687226421B24F2DF178_829572861.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_829572861;
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.880 -0400", hash_original_method = "5FDC1F3E63CCD7CD3042D9A19CD94FF4", hash_generated_method = "7C212B1DADE41DD6E034CBC57517CDE4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.581 -0400", hash_original_method = "5FDC1F3E63CCD7CD3042D9A19CD94FF4", hash_generated_method = "3057E43224F6F0F3529AE1FEB7EF498A")
     public DOMLocator getLocation() {
-        DOMLocator varB4EAC82CA7396A68D541C85D26508E83_396124574 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_396124574 = NULL_DOM_LOCATOR;
-        varB4EAC82CA7396A68D541C85D26508E83_396124574.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_396124574;
-        
-        
+DOMLocator varBCEE7747FFD5EB1F93193F1E8D2EBF97_1364555230 =         NULL_DOM_LOCATOR;
+        varBCEE7747FFD5EB1F93193F1E8D2EBF97_1364555230.addTaint(taint);
+        return varBCEE7747FFD5EB1F93193F1E8D2EBF97_1364555230;
+        // ---------- Original Method ----------
+        //return NULL_DOM_LOCATOR;
     }
 
     

@@ -1,12 +1,9 @@
 package org.apache.harmony.xml.parsers;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.util.HashMap;
 import java.util.Map;
 import javax.xml.parsers.ParserConfigurationException;
@@ -15,210 +12,220 @@ import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.SAXNotRecognizedException;
 
 public class SAXParserFactoryImpl extends SAXParserFactory {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.518 -0400", hash_original_field = "987495AE8EA75D7FFAE9F17C211F4863", hash_generated_field = "BBF36E0D89D30BFFC00EE4B538D5AA0E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.687 -0400", hash_original_field = "987495AE8EA75D7FFAE9F17C211F4863", hash_generated_field = "BBF36E0D89D30BFFC00EE4B538D5AA0E")
 
     private Map<String, Boolean> features = new HashMap<String, Boolean>();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.518 -0400", hash_original_method = "BB7DD052856C5F48FEF96C6EA9CF9D9A", hash_generated_method = "BB7DD052856C5F48FEF96C6EA9CF9D9A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.687 -0400", hash_original_method = "BB7DD052856C5F48FEF96C6EA9CF9D9A", hash_generated_method = "BB7DD052856C5F48FEF96C6EA9CF9D9A")
     public SAXParserFactoryImpl ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.518 -0400", hash_original_method = "7A2715D86ACB75E2F46F70864B886736", hash_generated_method = "9B9BE6FC29DEBE3475765F30228C9330")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.688 -0400", hash_original_method = "7A2715D86ACB75E2F46F70864B886736", hash_generated_method = "9724D22F81B21260A529AE4B2A918799")
     @Override
     public boolean getFeature(String name) throws SAXNotRecognizedException {
-        {
-            if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } 
-        {
-            boolean var0DD90ED7C4F94A2541AADCD92B315247_711339234 = (!name.startsWith("http://xml.org/sax/features/"));
-            {
-                if (DroidSafeAndroidRuntime.control) throw new SAXNotRecognizedException(name);
-            } 
-        } 
-        boolean varD7EF5C05A876DA5F362CC7F45E3B2539_2075957124 = (Boolean.TRUE.equals(features.get(name)));
         addTaint(name.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_413733489 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_413733489;
-        
-        
-            
-        
-        
-            
-        
-        
+    if(name == null)        
+        {
+            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1024040227 = new NullPointerException();
+            var7338BC9F48D81FE0BBD6183F4014DCC4_1024040227.addTaint(taint);
+            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1024040227;
+        } //End block
+    if(!name.startsWith("http://xml.org/sax/features/"))        
+        {
+            SAXNotRecognizedException var5FC954F6CCADD58BC8498AD6F3DB9EC4_450926000 = new SAXNotRecognizedException(name);
+            var5FC954F6CCADD58BC8498AD6F3DB9EC4_450926000.addTaint(taint);
+            throw var5FC954F6CCADD58BC8498AD6F3DB9EC4_450926000;
+        } //End block
+        boolean var88BA011B209A52DCABE538CA75B2D11A_203097058 = (Boolean.TRUE.equals(features.get(name)));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1057682338 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1057682338;
+        // ---------- Original Method ----------
+        //if (name == null) {
+            //throw new NullPointerException();
+        //}
+        //if (!name.startsWith("http://xml.org/sax/features/")) {
+            //throw new SAXNotRecognizedException(name);
+        //}
+        //return Boolean.TRUE.equals(features.get(name));
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.519 -0400", hash_original_method = "D0236E56EB7DBB7A9FD9FE0F0B030A07", hash_generated_method = "F1F5C512E8A86CC5D75B789293B2F7A0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.688 -0400", hash_original_method = "D0236E56EB7DBB7A9FD9FE0F0B030A07", hash_generated_method = "61833E4AF9894843C4A03D59D87800C5")
     @Override
     public boolean isNamespaceAware() {
         try 
         {
-            boolean var25A733CB16E2C08AEAA35CEBC6C1F171_1758953239 = (getFeature(NAMESPACES));
-        } 
+            boolean varA85D5027A8BF86F9880028EE82799B8C_668635403 = (getFeature(NAMESPACES));
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_875986083 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_875986083;
+        } //End block
         catch (SAXNotRecognizedException ex)
         {
-            if (DroidSafeAndroidRuntime.control) throw new AssertionError(ex);
-        } 
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1325108417 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1325108417;
-        
-        
-            
-        
-            
-        
+            AssertionError var856F93FDE0E323DC56DBDD84445E8491_209011503 = new AssertionError(ex);
+            var856F93FDE0E323DC56DBDD84445E8491_209011503.addTaint(taint);
+            throw var856F93FDE0E323DC56DBDD84445E8491_209011503;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getFeature(NAMESPACES);
+        //} catch (SAXNotRecognizedException ex) {
+            //throw new AssertionError(ex);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.519 -0400", hash_original_method = "8429289DC0C07EE6D0C2B7B5BD1C7C0B", hash_generated_method = "25991BA47CC9086D3871E6812E0986E3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.688 -0400", hash_original_method = "8429289DC0C07EE6D0C2B7B5BD1C7C0B", hash_generated_method = "E0F0A66BF7A38A135D771146BABBBC29")
     @Override
     public boolean isValidating() {
         try 
         {
-            boolean var546AC4507E23F527F77ACB41D0E0B2EA_936457081 = (getFeature(VALIDATION));
-        } 
+            boolean var8C62165CDF43988EF5B0DB9142FB8CE1_2124854732 = (getFeature(VALIDATION));
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_136155682 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_136155682;
+        } //End block
         catch (SAXNotRecognizedException ex)
         {
-            if (DroidSafeAndroidRuntime.control) throw new AssertionError(ex);
-        } 
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_380844276 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_380844276;
-        
-        
-            
-        
-            
-        
+            AssertionError var856F93FDE0E323DC56DBDD84445E8491_471994217 = new AssertionError(ex);
+            var856F93FDE0E323DC56DBDD84445E8491_471994217.addTaint(taint);
+            throw var856F93FDE0E323DC56DBDD84445E8491_471994217;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getFeature(VALIDATION);
+        //} catch (SAXNotRecognizedException ex) {
+            //throw new AssertionError(ex);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.520 -0400", hash_original_method = "296E37D815DC1709C2AEF832AA03671B", hash_generated_method = "096AD64FD61498C47B1B814D5DE4CAE2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.689 -0400", hash_original_method = "296E37D815DC1709C2AEF832AA03671B", hash_generated_method = "8FBD9B7D1F288AFBCEAA705BCCDBCCBE")
     @Override
     public SAXParser newSAXParser() throws ParserConfigurationException {
-        SAXParser varB4EAC82CA7396A68D541C85D26508E83_1575585519 = null; 
+    if(isValidating())        
         {
-            boolean var4E297FF2ACA5FE750738C034402DA121_895895140 = (isValidating());
-            {
-                if (DroidSafeAndroidRuntime.control) throw new ParserConfigurationException(
+            ParserConfigurationException var3EE88861DE2349AF63FE4F2DF1665BA3_391879814 = new ParserConfigurationException(
                     "No validating SAXParser implementation available");
-            } 
-        } 
+            var3EE88861DE2349AF63FE4F2DF1665BA3_391879814.addTaint(taint);
+            throw var3EE88861DE2349AF63FE4F2DF1665BA3_391879814;
+        } //End block
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1575585519 = new SAXParserImpl(features);
-        } 
+SAXParser var97136CDAC6E5068137219CC84BCFD745_1724644726 =             new SAXParserImpl(features);
+            var97136CDAC6E5068137219CC84BCFD745_1724644726.addTaint(taint);
+            return var97136CDAC6E5068137219CC84BCFD745_1724644726;
+        } //End block
         catch (Exception ex)
         {
-            if (DroidSafeAndroidRuntime.control) throw new ParserConfigurationException(ex.toString());
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1575585519.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1575585519;
-        
-        
-            
-                    
-        
-        
-            
-        
-            
-        
+            ParserConfigurationException var80352B97CDB95532FB2C18BFAB046C8B_1838149224 = new ParserConfigurationException(ex.toString());
+            var80352B97CDB95532FB2C18BFAB046C8B_1838149224.addTaint(taint);
+            throw var80352B97CDB95532FB2C18BFAB046C8B_1838149224;
+        } //End block
+        // ---------- Original Method ----------
+        //if (isValidating()) {
+            //throw new ParserConfigurationException(
+                    //"No validating SAXParser implementation available");
+        //}
+        //try {
+            //return new SAXParserImpl(features);
+        //} catch (Exception ex) {
+            //throw new ParserConfigurationException(ex.toString());
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.521 -0400", hash_original_method = "F8C86ADBC38F5FA5C922066DFA926032", hash_generated_method = "BEA66B658F68CA7E5C79829916DB81FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.690 -0400", hash_original_method = "F8C86ADBC38F5FA5C922066DFA926032", hash_generated_method = "6805EEC7699495B3A0B9D0EDD44B448D")
     @Override
     public void setFeature(String name, boolean value) throws SAXNotRecognizedException {
+        addTaint(value);
+        addTaint(name.getTaint());
+    if(name == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } 
+            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_167065894 = new NullPointerException();
+            var7338BC9F48D81FE0BBD6183F4014DCC4_167065894.addTaint(taint);
+            throw var7338BC9F48D81FE0BBD6183F4014DCC4_167065894;
+        } //End block
+    if(!name.startsWith("http://xml.org/sax/features/"))        
         {
-            boolean var0DD90ED7C4F94A2541AADCD92B315247_1968561225 = (!name.startsWith("http://xml.org/sax/features/"));
-            {
-                if (DroidSafeAndroidRuntime.control) throw new SAXNotRecognizedException(name);
-            } 
-        } 
+            SAXNotRecognizedException var5FC954F6CCADD58BC8498AD6F3DB9EC4_602437636 = new SAXNotRecognizedException(name);
+            var5FC954F6CCADD58BC8498AD6F3DB9EC4_602437636.addTaint(taint);
+            throw var5FC954F6CCADD58BC8498AD6F3DB9EC4_602437636;
+        } //End block
+    if(value)        
         {
             features.put(name, Boolean.TRUE);
-        } 
+        } //End block
+        else
         {
             features.put(name, Boolean.FALSE);
-        } 
-        addTaint(name.getTaint());
-        addTaint(value);
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (name == null) {
+            //throw new NullPointerException();
+        //}
+        //if (!name.startsWith("http://xml.org/sax/features/")) {
+            //throw new SAXNotRecognizedException(name);
+        //}
+        //if (value) {
+            //features.put(name, Boolean.TRUE);
+        //} else {
+            //features.put(name, Boolean.FALSE);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.521 -0400", hash_original_method = "2AAB52F0B6288669A1F1A42BDA5388FA", hash_generated_method = "933E0F2800F06846B852563B7B015D0E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.691 -0400", hash_original_method = "2AAB52F0B6288669A1F1A42BDA5388FA", hash_generated_method = "F943FE6DDFD77CF4C102D282420F21E3")
     @Override
     public void setNamespaceAware(boolean value) {
+        addTaint(value);
         try 
         {
             setFeature(NAMESPACES, value);
-        } 
+        } //End block
         catch (SAXNotRecognizedException ex)
         {
-            if (DroidSafeAndroidRuntime.control) throw new AssertionError(ex);
-        } 
-        addTaint(value);
-        
-        
-            
-        
-            
-        
+            AssertionError var856F93FDE0E323DC56DBDD84445E8491_1954221752 = new AssertionError(ex);
+            var856F93FDE0E323DC56DBDD84445E8491_1954221752.addTaint(taint);
+            throw var856F93FDE0E323DC56DBDD84445E8491_1954221752;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //setFeature(NAMESPACES, value);
+        //} catch (SAXNotRecognizedException ex) {
+            //throw new AssertionError(ex);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.522 -0400", hash_original_method = "FD755E093F221B14C5D40C6AB8BA5348", hash_generated_method = "564D70865B9E88C5AB718774D3F0F001")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.691 -0400", hash_original_method = "FD755E093F221B14C5D40C6AB8BA5348", hash_generated_method = "C9D3C99DDE646D5FEA3B3FFFA7F0F271")
     @Override
     public void setValidating(boolean value) {
+        addTaint(value);
         try 
         {
             setFeature(VALIDATION, value);
-        } 
+        } //End block
         catch (SAXNotRecognizedException ex)
         {
-            if (DroidSafeAndroidRuntime.control) throw new AssertionError(ex);
-        } 
-        addTaint(value);
-        
-        
-            
-        
-            
-        
+            AssertionError var856F93FDE0E323DC56DBDD84445E8491_1837602682 = new AssertionError(ex);
+            var856F93FDE0E323DC56DBDD84445E8491_1837602682.addTaint(taint);
+            throw var856F93FDE0E323DC56DBDD84445E8491_1837602682;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //setFeature(VALIDATION, value);
+        //} catch (SAXNotRecognizedException ex) {
+            //throw new AssertionError(ex);
+        //}
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.522 -0400", hash_original_field = "57DAABD72ED77A96967246F7788B1447", hash_generated_field = "BE5F1192FB3C2F3EED9964DA7D958C23")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.692 -0400", hash_original_field = "57DAABD72ED77A96967246F7788B1447", hash_generated_field = "BE5F1192FB3C2F3EED9964DA7D958C23")
 
     private static final String NAMESPACES = "http://xml.org/sax/features/namespaces";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.522 -0400", hash_original_field = "1A6983F26F9A43F675933304E11A084C", hash_generated_field = "70ED57CE87CAB83D17A94161FFE3B368")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.692 -0400", hash_original_field = "1A6983F26F9A43F675933304E11A084C", hash_generated_field = "70ED57CE87CAB83D17A94161FFE3B368")
 
     private static final String VALIDATION = "http://xml.org/sax/features/validation";
 }

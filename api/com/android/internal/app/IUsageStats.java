@@ -1,12 +1,9 @@
 package com.android.internal.app;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 
 public interface IUsageStats extends android.os.IInterface
 {

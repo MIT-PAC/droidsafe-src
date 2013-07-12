@@ -1,12 +1,9 @@
 package java.text;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -14,35 +11,35 @@ import java.util.Locale;
 import libcore.util.EmptyArray;
 
 public class ChoiceFormat extends NumberFormat {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.565 -0400", hash_original_field = "DACC316D060F4EC4A159A2F45A706659", hash_generated_field = "ED2D30C35903F5702DFA6B6B053F7D87")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.484 -0400", hash_original_field = "DACC316D060F4EC4A159A2F45A706659", hash_generated_field = "ED2D30C35903F5702DFA6B6B053F7D87")
 
     private double[] choiceLimits;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.565 -0400", hash_original_field = "D7BA0E5ACC5078784279CE94B525E7CC", hash_generated_field = "05C2A4AC24967E0A070ABD8FDE0D9A95")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.484 -0400", hash_original_field = "D7BA0E5ACC5078784279CE94B525E7CC", hash_generated_field = "05C2A4AC24967E0A070ABD8FDE0D9A95")
 
     private String[] choiceFormats;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.566 -0400", hash_original_method = "6AA98ECEF055DFD6530181EFB704802A", hash_generated_method = "E6CC56A755DB5212579A56293B11E738")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.484 -0400", hash_original_method = "6AA98ECEF055DFD6530181EFB704802A", hash_generated_method = "ACD028F8EA6BC8E69CA309C91F48773D")
     public  ChoiceFormat(double[] limits, String[] formats) {
-        setChoices(limits, formats);
-        addTaint(limits[0]);
         addTaint(formats[0].getTaint());
-        
-        
+        addTaint(limits[0]);
+        setChoices(limits, formats);
+        // ---------- Original Method ----------
+        //setChoices(limits, formats);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.566 -0400", hash_original_method = "7A22DFD5F0C8BF76D2134AD604327DD6", hash_generated_method = "F997FE64B273F18ECE9990522E138A0D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.485 -0400", hash_original_method = "7A22DFD5F0C8BF76D2134AD604327DD6", hash_generated_method = "93C351C34DF6315C36BF2170EFF4591B")
     public  ChoiceFormat(String template) {
-        applyPattern(template);
         addTaint(template.getTaint());
-        
-        
+        applyPattern(template);
+        // ---------- Original Method ----------
+        //applyPattern(template);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.567 -0400", hash_original_method = "61054E3E36618E298A5F058604E71A93", hash_generated_method = "12A81D7EA43668046BEE42BA8019676D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.487 -0400", hash_original_method = "61054E3E36618E298A5F058604E71A93", hash_generated_method = "5E5CC576179BDD11A5072FC090211519")
     public void applyPattern(String template) {
+        addTaint(template.getTaint());
         double[] limits = new double[5];
         List<String> formats = new ArrayList<String>();
         int length = template.length();
@@ -51,215 +48,215 @@ public class ChoiceFormat extends NumberFormat {
         StringBuffer buffer = new StringBuffer();
         NumberFormat format = NumberFormat.getInstance(Locale.US);
         ParsePosition position = new ParsePosition(0);
+        while
+(true)        
         {
             index = skipWhitespace(template, index);
+    if(index >= length)            
             {
+    if(limitCount == limits.length)                
                 {
                     choiceLimits = limits;
-                } 
+                } //End block
+                else
                 {
                     choiceLimits = new double[limitCount];
                     System.arraycopy(limits, 0, choiceLimits, 0, limitCount);
-                } 
+                } //End block
                 choiceFormats = new String[formats.size()];
+for(int i = 0;i < formats.size();i++)
                 {
-                    int i = 0;
-                    boolean var12C1132047B83F5C7F42C3880F3580DA_649600721 = (i < formats.size());
-                    {
-                        choiceFormats[i] = formats.get(i);
-                    } 
-                } 
-            } 
+                    choiceFormats[i] = formats.get(i);
+                } //End block
+                return;
+            } //End block
             position.setIndex(index);
             Number value = format.parse(template, position);
             index = skipWhitespace(template, position.getIndex());
+    if(position.getErrorIndex() != -1 || index >= length)            
             {
-                boolean var803A7BE3FF440C6FB2756CCD8D3C4347_314653577 = (position.getErrorIndex() != -1 || index >= length);
-                {
-                    choiceLimits = EmptyArray.DOUBLE;
-                    choiceFormats = EmptyArray.STRING;
-                } 
-            } 
+                choiceLimits = EmptyArray.DOUBLE;
+                choiceFormats = EmptyArray.STRING;
+                return;
+            } //End block
             char ch = template.charAt(index++);
+    if(limitCount == limits.length)            
             {
                 double[] newLimits = new double[limitCount * 2];
                 System.arraycopy(limits, 0, newLimits, 0, limitCount);
                 limits = newLimits;
-            } 
+            } //End block
             double next;
-            
+switch(ch){
+            case '#':
+            case '\u2264':
             next = value.doubleValue();
-            
-            
+            break;
+            case '<':
             next = nextDouble(value.doubleValue());
-            
-            
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-            
+            break;
+            default:
+            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1558968244 = new IllegalArgumentException();
+            var5783EF97022AA508B74A1E3EA38534AF_1558968244.addTaint(taint);
+            throw var5783EF97022AA508B74A1E3EA38534AF_1558968244;
+}    if(limitCount > 0 && next <= limits[limitCount - 1])            
             {
-                if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-            } 
+                IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_295993073 = new IllegalArgumentException();
+                var5783EF97022AA508B74A1E3EA38534AF_295993073.addTaint(taint);
+                throw var5783EF97022AA508B74A1E3EA38534AF_295993073;
+            } //End block
             buffer.setLength(0);
             position.setIndex(index);
             upTo(template, position, buffer, '|');
             index = position.getIndex();
             limits[limitCount++] = next;
             formats.add(buffer.toString());
-        } 
-        addTaint(template.getTaint());
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.569 -0400", hash_original_method = "0E78DE057CBD16D1EEA99DBEA20DA3A1", hash_generated_method = "CB4808CAA29D362DD7519CE3108C4868")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.488 -0400", hash_original_method = "0E78DE057CBD16D1EEA99DBEA20DA3A1", hash_generated_method = "DC5C6A00F20B4637A78CC7060A34BD9F")
     @Override
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_145817936 = null; 
         ChoiceFormat clone = (ChoiceFormat) super.clone();
         clone.choiceLimits = choiceLimits.clone();
         clone.choiceFormats = choiceFormats.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_145817936 = clone;
-        varB4EAC82CA7396A68D541C85D26508E83_145817936.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_145817936;
-        
-        
-        
-        
-        
+Object var3DE52045BFD3C1BF3742F994ED6139AD_1060535345 =         clone;
+        var3DE52045BFD3C1BF3742F994ED6139AD_1060535345.addTaint(taint);
+        return var3DE52045BFD3C1BF3742F994ED6139AD_1060535345;
+        // ---------- Original Method ----------
+        //ChoiceFormat clone = (ChoiceFormat) super.clone();
+        //clone.choiceLimits = choiceLimits.clone();
+        //clone.choiceFormats = choiceFormats.clone();
+        //return clone;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.570 -0400", hash_original_method = "F2D7C03023A3AAC9DFCE95AB2EC2A780", hash_generated_method = "838A1C38D6B334664294897EA9B822C0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.489 -0400", hash_original_method = "F2D7C03023A3AAC9DFCE95AB2EC2A780", hash_generated_method = "3E193EC63040FAB116FA8618BE0BF1C3")
     @Override
     public boolean equals(Object object) {
-        ChoiceFormat choice = (ChoiceFormat) object;
-        boolean varA782AEC7A8869A4A0890C9A206DC5B39_36528078 = (Arrays.equals(choiceLimits, choice.choiceLimits)
-                && Arrays.equals(choiceFormats, choice.choiceFormats));
         addTaint(object.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1813616719 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1813616719;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-                
+    if(this == object)        
+        {
+            boolean varB326B5062B2F0E69046810717534CB09_1494676602 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1350009709 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1350009709;
+        } //End block
+    if(!(object instanceof ChoiceFormat))        
+        {
+            boolean var68934A3E9455FA72420237EB05902327_154767361 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_128411019 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_128411019;
+        } //End block
+        ChoiceFormat choice = (ChoiceFormat) object;
+        boolean var005FB9FA5E826A7CF1459954E52AFD49_904883650 = (Arrays.equals(choiceLimits, choice.choiceLimits)
+                && Arrays.equals(choiceFormats, choice.choiceFormats));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_681654948 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_681654948;
+        // ---------- Original Method ----------
+        //if (this == object) {
+            //return true;
+        //}
+        //if (!(object instanceof ChoiceFormat)) {
+            //return false;
+        //}
+        //ChoiceFormat choice = (ChoiceFormat) object;
+        //return Arrays.equals(choiceLimits, choice.choiceLimits)
+                //&& Arrays.equals(choiceFormats, choice.choiceFormats);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.571 -0400", hash_original_method = "BC91D466505972771C623F66D301FB6D", hash_generated_method = "4D1A374E33E70909058951B1F9C4B565")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.489 -0400", hash_original_method = "BC91D466505972771C623F66D301FB6D", hash_generated_method = "43E47CA2DE420B0DD6EACBEACFDA20F2")
     @Override
     public StringBuffer format(double value, StringBuffer buffer,
             FieldPosition field) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1043093000 = null; 
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_534127155 = null; 
-        {
-            int i = choiceLimits.length - 1;
-            {
-                {
-                    varB4EAC82CA7396A68D541C85D26508E83_1043093000 = buffer.append(choiceFormats[i]);
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_534127155 = choiceFormats.length == 0 ? buffer : buffer
-                .append(choiceFormats[0]);
-        addTaint(value);
-        addTaint(buffer.getTaint());
         addTaint(field.getTaint());
-        StringBuffer varA7E53CE21691AB073D9660D615818899_1611065970; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1611065970 = varB4EAC82CA7396A68D541C85D26508E83_1043093000;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1611065970 = varB4EAC82CA7396A68D541C85D26508E83_534127155;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1611065970.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1611065970;
-        
-        
-            
-                
-            
-        
-        
-                
+        addTaint(buffer.getTaint());
+        addTaint(value);
+for(int i = choiceLimits.length - 1;i >= 0;i--)
+        {
+    if(choiceLimits[i] <= value)            
+            {
+StringBuffer var823D14912D47E8CD0140C8216D616435_942790989 =                 buffer.append(choiceFormats[i]);
+                var823D14912D47E8CD0140C8216D616435_942790989.addTaint(taint);
+                return var823D14912D47E8CD0140C8216D616435_942790989;
+            } //End block
+        } //End block
+StringBuffer varFE1AF0FC425B0517A12FB0D99DC93E0B_64160906 =         choiceFormats.length == 0 ? buffer : buffer
+                .append(choiceFormats[0]);
+        varFE1AF0FC425B0517A12FB0D99DC93E0B_64160906.addTaint(taint);
+        return varFE1AF0FC425B0517A12FB0D99DC93E0B_64160906;
+        // ---------- Original Method ----------
+        //for (int i = choiceLimits.length - 1; i >= 0; i--) {
+            //if (choiceLimits[i] <= value) {
+                //return buffer.append(choiceFormats[i]);
+            //}
+        //}
+        //return choiceFormats.length == 0 ? buffer : buffer
+                //.append(choiceFormats[0]);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.572 -0400", hash_original_method = "F9B960B049B919C822FEECA2E3BD7537", hash_generated_method = "5F517B9EA12AFAD35D4F0205AC5D9C5D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.490 -0400", hash_original_method = "F9B960B049B919C822FEECA2E3BD7537", hash_generated_method = "33B6B00C86C3CD6550E61FEA4C922550")
     @Override
     public StringBuffer format(long value, StringBuffer buffer,
             FieldPosition field) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_631856753 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_631856753 = format((double) value, buffer, field);
-        addTaint(value);
-        addTaint(buffer.getTaint());
         addTaint(field.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_631856753.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_631856753;
-        
-        
+        addTaint(buffer.getTaint());
+        addTaint(value);
+StringBuffer var4279DFD88F47264B789C0548FD6DCA8B_1690290145 =         format((double) value, buffer, field);
+        var4279DFD88F47264B789C0548FD6DCA8B_1690290145.addTaint(taint);
+        return var4279DFD88F47264B789C0548FD6DCA8B_1690290145;
+        // ---------- Original Method ----------
+        //return format((double) value, buffer, field);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.573 -0400", hash_original_method = "989D9CABCA800EE4DFA0CFCD3DE77FA9", hash_generated_method = "C3B37C7EAD5EF0D8FB2FECDF1F2EFD57")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.490 -0400", hash_original_method = "989D9CABCA800EE4DFA0CFCD3DE77FA9", hash_generated_method = "22F08E8B06568AB38688B00B94299A46")
     public Object[] getFormats() {
-        Object[] varB4EAC82CA7396A68D541C85D26508E83_148008514 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_148008514 = choiceFormats;
-        varB4EAC82CA7396A68D541C85D26508E83_148008514.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_148008514;
-        
-        
+Object[] var90D971D276260C19EE1F729DAA26FA65_1303755815 =         choiceFormats;
+        var90D971D276260C19EE1F729DAA26FA65_1303755815.addTaint(taint);
+        return var90D971D276260C19EE1F729DAA26FA65_1303755815;
+        // ---------- Original Method ----------
+        //return choiceFormats;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.574 -0400", hash_original_method = "290809530CC76A10C33738C53A5176B9", hash_generated_method = "A7DE174286B56DDA9F067B9ADDC3EDA9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.491 -0400", hash_original_method = "290809530CC76A10C33738C53A5176B9", hash_generated_method = "70AB6D339E61076A876F78535EC3D737")
     public double[] getLimits() {
-        double[] var74D44D7D9EE6FE6C3433D694F869E521_906407038 = {getTaintDouble()};
-        return var74D44D7D9EE6FE6C3433D694F869E521_906407038;
-        
-        
+        double[] varDACC316D060F4EC4A159A2F45A706659_893396536 = (choiceLimits);
+                double[] var74D44D7D9EE6FE6C3433D694F869E521_1672430050 = {getTaintDouble()};
+        return var74D44D7D9EE6FE6C3433D694F869E521_1672430050;
+        // ---------- Original Method ----------
+        //return choiceLimits;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.574 -0400", hash_original_method = "9AF9F658465E6920280B1655C8022A86", hash_generated_method = "2600DFE630B13B1048B5F0B56D742178")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.492 -0400", hash_original_method = "9AF9F658465E6920280B1655C8022A86", hash_generated_method = "9A89529794BC014670625A4B07DFBCEA")
     @Override
     public int hashCode() {
         int hashCode = 0;
+for(int i = 0;i < choiceLimits.length;i++)
         {
-            int i = 0;
-            {
-                long v = Double.doubleToLongBits(choiceLimits[i]);
-                hashCode += (int) (v ^ (v >>> 32)) + choiceFormats[i].hashCode();
-            } 
-        } 
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_122393826 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_122393826;
-        
-        
-        
-            
-            
-        
-        
+            long v = Double.doubleToLongBits(choiceLimits[i]);
+            hashCode += (int) (v ^ (v >>> 32)) + choiceFormats[i].hashCode();
+        } //End block
+        int var550D1CC054A1B23A411DDDA46FD64811_375608775 = (hashCode);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2025721952 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2025721952;
+        // ---------- Original Method ----------
+        //int hashCode = 0;
+        //for (int i = 0; i < choiceLimits.length; i++) {
+            //long v = Double.doubleToLongBits(choiceLimits[i]);
+            //hashCode += (int) (v ^ (v >>> 32)) + choiceFormats[i].hashCode();
+        //}
+        //return hashCode;
     }
 
     
-    public static final double nextDouble(double value) {
+        public static final double nextDouble(double value) {
         if (value == Double.POSITIVE_INFINITY) {
             return value;
         }
@@ -273,60 +270,45 @@ public class ChoiceFormat extends NumberFormat {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static double nextDouble(double value, boolean increment) {
+        public static double nextDouble(double value, boolean increment) {
         return increment ? nextDouble(value) : previousDouble(value);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.575 -0400", hash_original_method = "609F300632C6A9AB79113AF961C366BC", hash_generated_method = "16E2FFE9CE2E836D41A8CD6EA7B35EA1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.493 -0400", hash_original_method = "609F300632C6A9AB79113AF961C366BC", hash_generated_method = "939EC569AD39D4DD5F0B164573DE4975")
     @Override
     public Number parse(String string, ParsePosition position) {
-        Number varB4EAC82CA7396A68D541C85D26508E83_558849356 = null; 
-        Number varB4EAC82CA7396A68D541C85D26508E83_2067657250 = null; 
-        int offset = position.getIndex();
-        {
-            int i = 0;
-            {
-                {
-                    boolean var3E491709BF0A55E3EF4BCF49107179CA_720794532 = (string.startsWith(choiceFormats[i], offset));
-                    {
-                        position.setIndex(offset + choiceFormats[i].length());
-                        varB4EAC82CA7396A68D541C85D26508E83_558849356 = new Double(choiceLimits[i]);
-                    } 
-                } 
-            } 
-        } 
-        position.setErrorIndex(offset);
-        varB4EAC82CA7396A68D541C85D26508E83_2067657250 = new Double(Double.NaN);
-        addTaint(string.getTaint());
         addTaint(position.getTaint());
-        Number varA7E53CE21691AB073D9660D615818899_394120045; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_394120045 = varB4EAC82CA7396A68D541C85D26508E83_558849356;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_394120045 = varB4EAC82CA7396A68D541C85D26508E83_2067657250;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_394120045.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_394120045;
-        
-        
-        
-            
-                
-                
-            
-        
-        
-        
+        addTaint(string.getTaint());
+        int offset = position.getIndex();
+for(int i = 0;i < choiceFormats.length;i++)
+        {
+    if(string.startsWith(choiceFormats[i], offset))            
+            {
+                position.setIndex(offset + choiceFormats[i].length());
+Number varE40049941127811A3AE44408CE935228_343958511 =                 new Double(choiceLimits[i]);
+                varE40049941127811A3AE44408CE935228_343958511.addTaint(taint);
+                return varE40049941127811A3AE44408CE935228_343958511;
+            } //End block
+        } //End block
+        position.setErrorIndex(offset);
+Number var96FCA40988E63EBA31357867B6B325E4_1901631751 =         new Double(Double.NaN);
+        var96FCA40988E63EBA31357867B6B325E4_1901631751.addTaint(taint);
+        return var96FCA40988E63EBA31357867B6B325E4_1901631751;
+        // ---------- Original Method ----------
+        //int offset = position.getIndex();
+        //for (int i = 0; i < choiceFormats.length; i++) {
+            //if (string.startsWith(choiceFormats[i], offset)) {
+                //position.setIndex(offset + choiceFormats[i].length());
+                //return new Double(choiceLimits[i]);
+            //}
+        //}
+        //position.setErrorIndex(offset);
+        //return new Double(Double.NaN);
     }
 
     
-    public static final double previousDouble(double value) {
+        public static final double previousDouble(double value) {
         if (value == Double.NEGATIVE_INFINITY) {
             return value;
         }
@@ -340,86 +322,88 @@ public class ChoiceFormat extends NumberFormat {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.576 -0400", hash_original_method = "A68DB2E05654867D5DABBF703FA90F00", hash_generated_method = "657A8E35C6EF53B9664F05C7D9F70329")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.494 -0400", hash_original_method = "A68DB2E05654867D5DABBF703FA90F00", hash_generated_method = "B3EC702E4C4F0F80A44FF1B1CA9FFC7A")
     public void setChoices(double[] limits, String[] formats) {
+    if(limits.length != formats.length)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } 
+            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1398585918 = new IllegalArgumentException();
+            var5783EF97022AA508B74A1E3EA38534AF_1398585918.addTaint(taint);
+            throw var5783EF97022AA508B74A1E3EA38534AF_1398585918;
+        } //End block
         choiceLimits = limits;
         choiceFormats = formats;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (limits.length != formats.length) {
+            //throw new IllegalArgumentException();
+        //}
+        //choiceLimits = limits;
+        //choiceFormats = formats;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.576 -0400", hash_original_method = "55E8B28E1CF4E8D52478B124E3FA683B", hash_generated_method = "67F86EC1A9881346B24E8E8497B5315E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.495 -0400", hash_original_method = "55E8B28E1CF4E8D52478B124E3FA683B", hash_generated_method = "78F287CD151E72BBA19A982A56EC7AE7")
     private int skipWhitespace(String string, int index) {
-        int length = string.length();
-        {
-            boolean var54E926F7898256E16580AE3AB0DD1494_2027587724 = (index < length && Character.isWhitespace(string.charAt(index)));
-        } 
-        addTaint(string.getTaint());
         addTaint(index);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1391538837 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1391538837;
-        
-        
-        
-            
-        
-        
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.577 -0400", hash_original_method = "C892C3517E889BA7A99732103703F353", hash_generated_method = "8FECDFDE2735D07F77D1A3FA42972668")
-    public String toPattern() {
-        String varB4EAC82CA7396A68D541C85D26508E83_388741495 = null; 
-        StringBuilder buffer = new StringBuilder();
+        addTaint(string.getTaint());
+        int length = string.length();
+        while
+(index < length && Character.isWhitespace(string.charAt(index)))        
         {
-            int i = 0;
-            {
-                {
-                    buffer.append('|');
-                } 
-                String previous = String.valueOf(previousDouble(choiceLimits[i]));
-                String limit = String.valueOf(choiceLimits[i]);
-                {
-                    boolean var66D3910CEF4502B2D205777FD11B560A_1319437489 = (previous.length() < limit.length());
-                    {
-                        buffer.append(previous);
-                        buffer.append('<');
-                    } 
-                    {
-                        buffer.append(limit);
-                        buffer.append('#');
-                    } 
-                } 
-                boolean quote = (choiceFormats[i].indexOf('|') != -1);
-                {
-                    buffer.append('\'');
-                } 
-                buffer.append(choiceFormats[i]);
-                {
-                    buffer.append('\'');
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_388741495 = buffer.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_388741495.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_388741495;
-        
-        
+            index++;
+        } //End block
+        int var6A992D5529F459A44FEE58C733255E86_685670151 = (index);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_776357754 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_776357754;
+        // ---------- Original Method ----------
+        //int length = string.length();
+        //while (index < length && Character.isWhitespace(string.charAt(index))) {
+            //index++;
+        //}
+        //return index;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.577 -0400", hash_original_field = "F0E5953C1F171C3A96BC62E66787D9C2", hash_generated_field = "74F3624CBC64496D38F62E5EDD514F89")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.495 -0400", hash_original_method = "C892C3517E889BA7A99732103703F353", hash_generated_method = "9CBAA547562301706CCC9F87FDC0F224")
+    public String toPattern() {
+        StringBuilder buffer = new StringBuilder();
+for(int i = 0;i < choiceLimits.length;i++)
+        {
+    if(i != 0)            
+            {
+                buffer.append('|');
+            } //End block
+            String previous = String.valueOf(previousDouble(choiceLimits[i]));
+            String limit = String.valueOf(choiceLimits[i]);
+    if(previous.length() < limit.length())            
+            {
+                buffer.append(previous);
+                buffer.append('<');
+            } //End block
+            else
+            {
+                buffer.append(limit);
+                buffer.append('#');
+            } //End block
+            boolean quote = (choiceFormats[i].indexOf('|') != -1);
+    if(quote)            
+            {
+                buffer.append('\'');
+            } //End block
+            buffer.append(choiceFormats[i]);
+    if(quote)            
+            {
+                buffer.append('\'');
+            } //End block
+        } //End block
+String varD03843288D33B9E1D3062E25339ECF6D_561770123 =         buffer.toString();
+        varD03843288D33B9E1D3062E25339ECF6D_561770123.addTaint(taint);
+        return varD03843288D33B9E1D3062E25339ECF6D_561770123;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
+    }
+
+    
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.496 -0400", hash_original_field = "F0E5953C1F171C3A96BC62E66787D9C2", hash_generated_field = "74F3624CBC64496D38F62E5EDD514F89")
 
     private static final long serialVersionUID = 1795184449645032964L;
 }

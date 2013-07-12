@@ -1,12 +1,9 @@
 package android.content;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,201 +14,180 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class ContentProviderClient {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.394 -0400", hash_original_field = "4AB176078152082D060487A305BE9F63", hash_generated_field = "B614D226FB5223D135A9D332098A34A4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.515 -0400", hash_original_field = "4AB176078152082D060487A305BE9F63", hash_generated_field = "B614D226FB5223D135A9D332098A34A4")
 
     private IContentProvider mContentProvider;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.394 -0400", hash_original_field = "AA30776C328196000CD028A324C818FD", hash_generated_field = "14C84D443235CBD3C5067A704A7ECFF5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.515 -0400", hash_original_field = "AA30776C328196000CD028A324C818FD", hash_generated_field = "14C84D443235CBD3C5067A704A7ECFF5")
 
     private ContentResolver mContentResolver;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.394 -0400", hash_original_method = "32816B4E573FF44675D42EE607DD365B", hash_generated_method = "D8DC233695476928F6285214EE8BBA5F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.516 -0400", hash_original_method = "32816B4E573FF44675D42EE607DD365B", hash_generated_method = "D8DC233695476928F6285214EE8BBA5F")
       ContentProviderClient(ContentResolver contentResolver, IContentProvider contentProvider) {
         mContentProvider = contentProvider;
         mContentResolver = contentResolver;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mContentProvider = contentProvider;
+        //mContentResolver = contentResolver;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.395 -0400", hash_original_method = "4948470E164D98D1C187E8F0772E2690", hash_generated_method = "DC7D51971B0EE4257828397EB3BA7643")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.516 -0400", hash_original_method = "4948470E164D98D1C187E8F0772E2690", hash_generated_method = "E7D9F48DABE18518AC4ECC0D079A970E")
     public Cursor query(Uri url, String[] projection, String selection,
             String[] selectionArgs, String sortOrder) throws RemoteException {
-        Cursor varB4EAC82CA7396A68D541C85D26508E83_2015774367 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_2015774367 = mContentProvider.query(url, projection, selection,  selectionArgs, sortOrder);
-        addTaint(url.getTaint());
-        addTaint(projection[0].getTaint());
-        addTaint(selection.getTaint());
-        addTaint(selectionArgs[0].getTaint());
         addTaint(sortOrder.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2015774367.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_2015774367;
-        
-        
-    }
-
-    
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.396 -0400", hash_original_method = "4D009E8B711C29FD69591B2F9B4F00E0", hash_generated_method = "A34E196A18253A9B9BAD35DDD65A036D")
-    public String getType(Uri url) throws RemoteException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1167962414 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1167962414 = mContentProvider.getType(url);
-        addTaint(url.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1167962414.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1167962414;
-        
-        
-    }
-
-    
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.398 -0400", hash_original_method = "FB59FC7223A39B6B6F90441FA7E5A170", hash_generated_method = "A1F87D633A5357BA2D75637EC4AB133D")
-    public String[] getStreamTypes(Uri url, String mimeTypeFilter) throws RemoteException {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_2127401500 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_2127401500 = mContentProvider.getStreamTypes(url, mimeTypeFilter);
-        addTaint(url.getTaint());
-        addTaint(mimeTypeFilter.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2127401500.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_2127401500;
-        
-        
-    }
-
-    
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.399 -0400", hash_original_method = "DCF792BA3D706C57D023C460ED11C34C", hash_generated_method = "2756FFBC17B9A1534D9E84D77B53600A")
-    public Uri insert(Uri url, ContentValues initialValues) throws RemoteException {
-        Uri varB4EAC82CA7396A68D541C85D26508E83_254156930 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_254156930 = mContentProvider.insert(url, initialValues);
-        addTaint(url.getTaint());
-        addTaint(initialValues.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_254156930.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_254156930;
-        
-        
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.399 -0400", hash_original_method = "610F9CD05A6F00083AB860F680EDE10F", hash_generated_method = "42281ED6492C5473059612141CDA10E8")
-    public int bulkInsert(Uri url, ContentValues[] initialValues) throws RemoteException {
-        int varB9AA1288A8ADB06CF2F2BD082A565998_371483839 = (mContentProvider.bulkInsert(url, initialValues));
-        addTaint(url.getTaint());
-        addTaint(initialValues[0].getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_399467827 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_399467827;
-        
-        
-    }
-
-    
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.400 -0400", hash_original_method = "55FA237DF4BFD41E9E08436F090DA85B", hash_generated_method = "990B122ED29C57BA8109D62AF69FBA34")
-    public int delete(Uri url, String selection, String[] selectionArgs) throws RemoteException {
-        int var3994FDF7C8F3B39D467FB71FB5AAEFD8_1387047672 = (mContentProvider.delete(url, selection, selectionArgs));
-        addTaint(url.getTaint());
-        addTaint(selection.getTaint());
         addTaint(selectionArgs[0].getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1227732178 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1227732178;
-        
-        
+        addTaint(selection.getTaint());
+        addTaint(projection[0].getTaint());
+        addTaint(url.getTaint());
+Cursor var18540D6B41070F14F5FE0EB78359FBB4_841101773 =         mContentProvider.query(url, projection, selection,  selectionArgs, sortOrder);
+        var18540D6B41070F14F5FE0EB78359FBB4_841101773.addTaint(taint);
+        return var18540D6B41070F14F5FE0EB78359FBB4_841101773;
+        // ---------- Original Method ----------
+        //return mContentProvider.query(url, projection, selection,  selectionArgs, sortOrder);
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.400 -0400", hash_original_method = "BCCAE42CFD50D64D397E399DC9FED070", hash_generated_method = "5BF6B92FC62CB07B633FCA4ECA0DA0CB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.517 -0400", hash_original_method = "4D009E8B711C29FD69591B2F9B4F00E0", hash_generated_method = "C78B25FE87BE47193B49A3229BC43D5C")
+    public String getType(Uri url) throws RemoteException {
+        addTaint(url.getTaint());
+String var82195E878B3E82B3A02094B1850982F7_1528076568 =         mContentProvider.getType(url);
+        var82195E878B3E82B3A02094B1850982F7_1528076568.addTaint(taint);
+        return var82195E878B3E82B3A02094B1850982F7_1528076568;
+        // ---------- Original Method ----------
+        //return mContentProvider.getType(url);
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.517 -0400", hash_original_method = "FB59FC7223A39B6B6F90441FA7E5A170", hash_generated_method = "55DBC5EA97630201C5C69653E56ED614")
+    public String[] getStreamTypes(Uri url, String mimeTypeFilter) throws RemoteException {
+        addTaint(mimeTypeFilter.getTaint());
+        addTaint(url.getTaint());
+String[] varD261B285689E343EB631D71BFEB7913C_548996935 =         mContentProvider.getStreamTypes(url, mimeTypeFilter);
+        varD261B285689E343EB631D71BFEB7913C_548996935.addTaint(taint);
+        return varD261B285689E343EB631D71BFEB7913C_548996935;
+        // ---------- Original Method ----------
+        //return mContentProvider.getStreamTypes(url, mimeTypeFilter);
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.518 -0400", hash_original_method = "DCF792BA3D706C57D023C460ED11C34C", hash_generated_method = "FB2C12FA1D813532271A2EE9D05FED9E")
+    public Uri insert(Uri url, ContentValues initialValues) throws RemoteException {
+        addTaint(initialValues.getTaint());
+        addTaint(url.getTaint());
+Uri varA3DC35E25A52C8D59F81F238CA85622E_1443705380 =         mContentProvider.insert(url, initialValues);
+        varA3DC35E25A52C8D59F81F238CA85622E_1443705380.addTaint(taint);
+        return varA3DC35E25A52C8D59F81F238CA85622E_1443705380;
+        // ---------- Original Method ----------
+        //return mContentProvider.insert(url, initialValues);
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.518 -0400", hash_original_method = "610F9CD05A6F00083AB860F680EDE10F", hash_generated_method = "A755E66F3A64C23FB85526BD09C9A262")
+    public int bulkInsert(Uri url, ContentValues[] initialValues) throws RemoteException {
+        addTaint(initialValues[0].getTaint());
+        addTaint(url.getTaint());
+        int varA1FFB1730511F96417DDBE4F3A115195_846861100 = (mContentProvider.bulkInsert(url, initialValues));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_24195771 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_24195771;
+        // ---------- Original Method ----------
+        //return mContentProvider.bulkInsert(url, initialValues);
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.519 -0400", hash_original_method = "55FA237DF4BFD41E9E08436F090DA85B", hash_generated_method = "432EF29B0F8AF13C80CC42825E73EB07")
+    public int delete(Uri url, String selection, String[] selectionArgs) throws RemoteException {
+        addTaint(selectionArgs[0].getTaint());
+        addTaint(selection.getTaint());
+        addTaint(url.getTaint());
+        int var4CA324A8309DA8F5B423808EA003B536_922808150 = (mContentProvider.delete(url, selection, selectionArgs));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1991098274 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1991098274;
+        // ---------- Original Method ----------
+        //return mContentProvider.delete(url, selection, selectionArgs);
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.520 -0400", hash_original_method = "BCCAE42CFD50D64D397E399DC9FED070", hash_generated_method = "221BC950A2E02A80C53E64E1DA68FE12")
     public int update(Uri url, ContentValues values, String selection,
             String[] selectionArgs) throws RemoteException {
-        int var8F66677E12A515313284C88C85D764A5_721777244 = (mContentProvider.update(url, values, selection, selectionArgs));
-        addTaint(url.getTaint());
-        addTaint(values.getTaint());
-        addTaint(selection.getTaint());
         addTaint(selectionArgs[0].getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1618857833 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1618857833;
-        
-        
+        addTaint(selection.getTaint());
+        addTaint(values.getTaint());
+        addTaint(url.getTaint());
+        int var5095CBB790E3F609A465B84D1666B18C_945730169 = (mContentProvider.update(url, values, selection, selectionArgs));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2010687489 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2010687489;
+        // ---------- Original Method ----------
+        //return mContentProvider.update(url, values, selection, selectionArgs);
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.401 -0400", hash_original_method = "D4D68B8D1E5B48A554790DFA92374EAF", hash_generated_method = "5D322FC283D956DB73334393969724D4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.520 -0400", hash_original_method = "D4D68B8D1E5B48A554790DFA92374EAF", hash_generated_method = "2F9B02214D0A7EDCC92A935120EA30C9")
     public ParcelFileDescriptor openFile(Uri url, String mode) throws RemoteException, FileNotFoundException {
-        ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_548298244 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_548298244 = mContentProvider.openFile(url, mode);
-        addTaint(url.getTaint());
         addTaint(mode.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_548298244.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_548298244;
-        
-        
+        addTaint(url.getTaint());
+ParcelFileDescriptor varBB4FE6E865172683939A18CA8BB37357_1150793433 =         mContentProvider.openFile(url, mode);
+        varBB4FE6E865172683939A18CA8BB37357_1150793433.addTaint(taint);
+        return varBB4FE6E865172683939A18CA8BB37357_1150793433;
+        // ---------- Original Method ----------
+        //return mContentProvider.openFile(url, mode);
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.401 -0400", hash_original_method = "0F83F3227BB34A0F16879E1472F99C94", hash_generated_method = "8F511BFA62205E0BABCD293DF0C82020")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.521 -0400", hash_original_method = "0F83F3227BB34A0F16879E1472F99C94", hash_generated_method = "558F51BB20ACDB4EAD99D01D6B5FD3DB")
     public AssetFileDescriptor openAssetFile(Uri url, String mode) throws RemoteException, FileNotFoundException {
-        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1009016946 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1009016946 = mContentProvider.openAssetFile(url, mode);
-        addTaint(url.getTaint());
         addTaint(mode.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1009016946.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1009016946;
-        
-        
+        addTaint(url.getTaint());
+AssetFileDescriptor var3E8AB6117448C893939DA92355B04E2A_1404274833 =         mContentProvider.openAssetFile(url, mode);
+        var3E8AB6117448C893939DA92355B04E2A_1404274833.addTaint(taint);
+        return var3E8AB6117448C893939DA92355B04E2A_1404274833;
+        // ---------- Original Method ----------
+        //return mContentProvider.openAssetFile(url, mode);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.402 -0400", hash_original_method = "BE665D47389B6568CACD4F1C34360A55", hash_generated_method = "EEED0D592F770D797BC01744A9465F88")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.522 -0400", hash_original_method = "BE665D47389B6568CACD4F1C34360A55", hash_generated_method = "D8D94CFB02F01A162AABEE556A656ED4")
     public final AssetFileDescriptor openTypedAssetFileDescriptor(Uri uri,
             String mimeType, Bundle opts) throws RemoteException, FileNotFoundException {
-        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_2120480638 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_2120480638 = mContentProvider.openTypedAssetFile(uri, mimeType, opts);
-        addTaint(uri.getTaint());
-        addTaint(mimeType.getTaint());
         addTaint(opts.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2120480638.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_2120480638;
-        
-        
+        addTaint(mimeType.getTaint());
+        addTaint(uri.getTaint());
+AssetFileDescriptor varB6754F03B30642F022141EA5AEAF37E0_1959971900 =         mContentProvider.openTypedAssetFile(uri, mimeType, opts);
+        varB6754F03B30642F022141EA5AEAF37E0_1959971900.addTaint(taint);
+        return varB6754F03B30642F022141EA5AEAF37E0_1959971900;
+        // ---------- Original Method ----------
+        //return mContentProvider.openTypedAssetFile(uri, mimeType, opts);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.403 -0400", hash_original_method = "4E4137D928F990D7ECC67380DB9AD1AA", hash_generated_method = "7F2927CD712ED9587DFAD7217FDC0914")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.522 -0400", hash_original_method = "4E4137D928F990D7ECC67380DB9AD1AA", hash_generated_method = "9FEA59D035BEEB0A06ECC096FFAC5648")
     public ContentProviderResult[] applyBatch(ArrayList<ContentProviderOperation> operations) throws RemoteException, OperationApplicationException {
-        ContentProviderResult[] varB4EAC82CA7396A68D541C85D26508E83_135957832 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_135957832 = mContentProvider.applyBatch(operations);
         addTaint(operations.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_135957832.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_135957832;
-        
-        
+ContentProviderResult[] varA5792D8F2DF3492C001E17A78FA6D47B_260042163 =         mContentProvider.applyBatch(operations);
+        varA5792D8F2DF3492C001E17A78FA6D47B_260042163.addTaint(taint);
+        return varA5792D8F2DF3492C001E17A78FA6D47B_260042163;
+        // ---------- Original Method ----------
+        //return mContentProvider.applyBatch(operations);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.403 -0400", hash_original_method = "6D0FD87E467E88469A71D9D6FF407FC5", hash_generated_method = "38B10927F3D19F4E7D8701C1A2766AE2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.523 -0400", hash_original_method = "6D0FD87E467E88469A71D9D6FF407FC5", hash_generated_method = "AE6A7F72DD553C9C3DD3834D6FB6C00B")
     public boolean release() {
-        boolean var5EDBA573BE7F2FB9A39AE889B481742E_1519162752 = (mContentResolver.releaseProvider(mContentProvider));
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_704065687 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_704065687;
-        
-        
+        boolean var0E13907596B373C827F95A0D4B9A5F8F_18114100 = (mContentResolver.releaseProvider(mContentProvider));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1795716199 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1795716199;
+        // ---------- Original Method ----------
+        //return mContentResolver.releaseProvider(mContentProvider);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.404 -0400", hash_original_method = "50EB5374A057DC07A98B18D14BEE701F", hash_generated_method = "046ACDBC6FF0F470054A33C1FBF01821")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.523 -0400", hash_original_method = "50EB5374A057DC07A98B18D14BEE701F", hash_generated_method = "127C3A3692CAF63B700009534FDA34D8")
     public ContentProvider getLocalContentProvider() {
-        ContentProvider varB4EAC82CA7396A68D541C85D26508E83_1141093977 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1141093977 = ContentProvider.coerceToLocalContentProvider(mContentProvider);
-        varB4EAC82CA7396A68D541C85D26508E83_1141093977.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1141093977;
-        
-        
+ContentProvider var240B8D085C8DCA342CD42B9D339190A2_657429572 =         ContentProvider.coerceToLocalContentProvider(mContentProvider);
+        var240B8D085C8DCA342CD42B9D339190A2_657429572.addTaint(taint);
+        return var240B8D085C8DCA342CD42B9D339190A2_657429572;
+        // ---------- Original Method ----------
+        //return ContentProvider.coerceToLocalContentProvider(mContentProvider);
     }
 
     

@@ -1,12 +1,9 @@
 package org.apache.http.cookie;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 
 public interface SetCookie2 extends SetCookie {
 

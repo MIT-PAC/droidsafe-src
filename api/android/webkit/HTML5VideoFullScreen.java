@@ -1,12 +1,9 @@
 package android.webkit;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.media.Metadata;
@@ -21,34 +18,34 @@ import android.widget.MediaController;
 import android.widget.MediaController.MediaPlayerControl;
 
 public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerControl, MediaPlayer.OnPreparedListener, View.OnTouchListener {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.784 -0400", hash_original_field = "577C208742D945E462EAA34C09855363", hash_generated_field = "995FA5F24A4C3D9EC1E030DE94C34639")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.248 -0400", hash_original_field = "577C208742D945E462EAA34C09855363", hash_generated_field = "995FA5F24A4C3D9EC1E030DE94C34639")
 
     private VideoSurfaceView mVideoSurfaceView;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.784 -0400", hash_original_field = "8C9F6FC19D50AADA4959421485D997DD", hash_generated_field = "23A07B55D02F895AD551D2F26BB95165")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.248 -0400", hash_original_field = "8C9F6FC19D50AADA4959421485D997DD", hash_generated_field = "23A07B55D02F895AD551D2F26BB95165")
 
     private int mFullScreenMode;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.784 -0400", hash_original_field = "A57983EA22A29D716213C2400D6F1D7A", hash_generated_field = "FFE64F26EAFE41C0717BC03DFAEF93DE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.248 -0400", hash_original_field = "A57983EA22A29D716213C2400D6F1D7A", hash_generated_field = "FFE64F26EAFE41C0717BC03DFAEF93DE")
 
     private MediaController mMediaController;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.784 -0400", hash_original_field = "6072A5355110211D8AD992A1E8763595", hash_generated_field = "846D019DBE1F3FC208D26AE6B51E7E7A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.249 -0400", hash_original_field = "6072A5355110211D8AD992A1E8763595", hash_generated_field = "846D019DBE1F3FC208D26AE6B51E7E7A")
 
     private SurfaceHolder mSurfaceHolder = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.784 -0400", hash_original_field = "260CDABACB2B7A4C6F8B739A9531399D", hash_generated_field = "F0F23120A5CAF86AFF0F96CAE67D6030")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.249 -0400", hash_original_field = "260CDABACB2B7A4C6F8B739A9531399D", hash_generated_field = "F0F23120A5CAF86AFF0F96CAE67D6030")
 
     private boolean mCanSeekBack;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.784 -0400", hash_original_field = "1042AFD5E2128CC06471C1ED59799B06", hash_generated_field = "AD1D51CB83FA72C2D49574CD80EEB438")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.249 -0400", hash_original_field = "1042AFD5E2128CC06471C1ED59799B06", hash_generated_field = "AD1D51CB83FA72C2D49574CD80EEB438")
 
     private boolean mCanSeekForward;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.784 -0400", hash_original_field = "9A4623B61542BEC8D3E426C93DD77346", hash_generated_field = "F1E27FDEF752AF3B6AFE206F5E8D273F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.249 -0400", hash_original_field = "9A4623B61542BEC8D3E426C93DD77346", hash_generated_field = "F1E27FDEF752AF3B6AFE206F5E8D273F")
 
     private boolean mCanPause;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.784 -0400", hash_original_field = "1873B2B1AC18422B33460DFB5D5CB345", hash_generated_field = "DE5AC282D1679F4F6686171A7EFF5F7A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.249 -0400", hash_original_field = "1873B2B1AC18422B33460DFB5D5CB345", hash_generated_field = "DE5AC282D1679F4F6686171A7EFF5F7A")
 
     private int mCurrentBufferPercentage;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.784 -0400", hash_original_field = "ECDB7D63CE89453B0D96E6DC96178AAB", hash_generated_field = "1681CCE3F2816C80096F4BC1589307A6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.249 -0400", hash_original_field = "ECDB7D63CE89453B0D96E6DC96178AAB", hash_generated_field = "1681CCE3F2816C80096F4BC1589307A6")
 
     private int mVideoWidth;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.784 -0400", hash_original_field = "BF03935A9A0E39D0F45DBB78BE93B589", hash_generated_field = "4EA21094A26D2FB68A0C1EF72DA153C9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.249 -0400", hash_original_field = "BF03935A9A0E39D0F45DBB78BE93B589", hash_generated_field = "4EA21094A26D2FB68A0C1EF72DA153C9")
 
     private int mVideoHeight;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.785 -0400", hash_original_field = "1FB69BD30A94387173B150B37758527C", hash_generated_field = "C179BAE9DE0AFC3D1C34EC4DFE285114")
@@ -163,78 +160,73 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
         
 };
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.787 -0400", hash_original_method = "F60EEA4D15F598668F4A6E94C09A46EA", hash_generated_method = "403ACD858975FBE23875EE80D7424CAD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.250 -0400", hash_original_method = "F60EEA4D15F598668F4A6E94C09A46EA", hash_generated_method = "9E194C9A81931F4934CF59BEFC3A9D01")
       HTML5VideoFullScreen(Context context, int videoLayerId, int position,
             boolean autoStart) {
+        addTaint(autoStart);
+        addTaint(position);
+        addTaint(videoLayerId);
         mVideoSurfaceView = new VideoSurfaceView(context);
         mFullScreenMode = FULLSCREEN_OFF;
         mVideoWidth = 0;
         mVideoHeight = 0;
         init(videoLayerId, position, autoStart);
-        addTaint(videoLayerId);
-        addTaint(position);
-        addTaint(autoStart);
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mVideoSurfaceView = new VideoSurfaceView(context);
+        //mFullScreenMode = FULLSCREEN_OFF;
+        //mVideoWidth = 0;
+        //mVideoHeight = 0;
+        //init(videoLayerId, position, autoStart);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.788 -0400", hash_original_method = "AB3C62FD6F005880E77BC1927A87EEED", hash_generated_method = "ACD3383991C1CC3DA428CC1798C24418")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.250 -0400", hash_original_method = "AB3C62FD6F005880E77BC1927A87EEED", hash_generated_method = "E67625EFF9898BCA6DC6CCB96E92BD82")
     private SurfaceView getSurfaceView() {
-        SurfaceView varB4EAC82CA7396A68D541C85D26508E83_2114379764 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_2114379764 = mVideoSurfaceView;
-        varB4EAC82CA7396A68D541C85D26508E83_2114379764.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_2114379764;
-        
-        
+SurfaceView var864033359B783656342F447F5243D0ED_1661518275 =         mVideoSurfaceView;
+        var864033359B783656342F447F5243D0ED_1661518275.addTaint(taint);
+        return var864033359B783656342F447F5243D0ED_1661518275;
+        // ---------- Original Method ----------
+        //return mVideoSurfaceView;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.788 -0400", hash_original_method = "1F74C4E95F456B4EB4EE7ED74E748A1C", hash_generated_method = "801799CB0C592DFB6B2E64277EBF8B7F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.250 -0400", hash_original_method = "1F74C4E95F456B4EB4EE7ED74E748A1C", hash_generated_method = "801799CB0C592DFB6B2E64277EBF8B7F")
     private void setMediaController(MediaController m) {
         mMediaController  = m;
         attachMediaController();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mMediaController  = m;
+        //attachMediaController();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.788 -0400", hash_original_method = "BDA424FAC6D15253AC0E1C5DC76C6F7A", hash_generated_method = "6E6C0EBA280BC165B66AE2F3F4D04753")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.251 -0400", hash_original_method = "BDA424FAC6D15253AC0E1C5DC76C6F7A", hash_generated_method = "4BA845F75A9141E62683E2F586729A80")
     private void attachMediaController() {
+    if(mPlayer != null && mMediaController != null)        
         {
             mMediaController.setMediaPlayer(this);
             mMediaController.setAnchorView(mVideoSurfaceView);
             mMediaController.setEnabled(false);
-        } 
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mPlayer != null && mMediaController != null) {
+            //mMediaController.setMediaPlayer(this);
+            //mMediaController.setAnchorView(mVideoSurfaceView);
+            //mMediaController.setEnabled(false);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.789 -0400", hash_original_method = "010B148200478BACA2EC38A18BA9574D", hash_generated_method = "88980725431A155BEDF1061FBBB25E49")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.251 -0400", hash_original_method = "010B148200478BACA2EC38A18BA9574D", hash_generated_method = "88980725431A155BEDF1061FBBB25E49")
     @Override
     public void decideDisplayMode() {
         mPlayer.setDisplay(mSurfaceHolder);
-        
-        
+        // ---------- Original Method ----------
+        //mPlayer.setDisplay(mSurfaceHolder);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.789 -0400", hash_original_method = "55B4D124A95057AC3A279B37C798CFA8", hash_generated_method = "944F90C44367916A4DC4AB4D8CFB1BA7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.251 -0400", hash_original_method = "55B4D124A95057AC3A279B37C798CFA8", hash_generated_method = "944F90C44367916A4DC4AB4D8CFB1BA7")
     private void prepareForFullScreen() {
         mPlayer.reset();
         MediaController mc = new FullScreenMediaController(mProxy.getContext(), mLayout);
@@ -242,46 +234,44 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
         setMediaController(mc);
         mPlayer.setScreenOnWhilePlaying(true);
         prepareDataAndDisplayMode(mProxy);
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mPlayer.reset();
+        //MediaController mc = new FullScreenMediaController(mProxy.getContext(), mLayout);
+        //mc.setSystemUiVisibility(mLayout.getSystemUiVisibility());
+        //setMediaController(mc);
+        //mPlayer.setScreenOnWhilePlaying(true);
+        //prepareDataAndDisplayMode(mProxy);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.789 -0400", hash_original_method = "E102D2D0B33B8C0648E23B09161A5D91", hash_generated_method = "0B2D4B3B6AC61FC4A695321BC2E07DC8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.251 -0400", hash_original_method = "E102D2D0B33B8C0648E23B09161A5D91", hash_generated_method = "3FD9697155F837AC56FFFC09091C9312")
     private void toggleMediaControlsVisiblity() {
+    if(mMediaController.isShowing())        
         {
-            boolean varD4E8898DF2C2C1A6D73B41D6963FEA27_1381864400 = (mMediaController.isShowing());
-            {
-                mMediaController.hide();
-            } 
-            {
-                mMediaController.show();
-            } 
-        } 
-        
-        
-            
-        
-            
-        
+            mMediaController.hide();
+        } //End block
+        else
+        {
+            mMediaController.show();
+        } //End block
+        // ---------- Original Method ----------
+        //if (mMediaController.isShowing()) {
+            //mMediaController.hide();
+        //} else {
+            //mMediaController.show();
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.790 -0400", hash_original_method = "8210B7805670B2428155D9962ECCD498", hash_generated_method = "5AB27F8F7764F4E7E2F0596FB2B460A1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.253 -0400", hash_original_method = "8210B7805670B2428155D9962ECCD498", hash_generated_method = "0B5D0351AA80A3CF8BFC7AD969F4A539")
     @Override
     public void onPrepared(MediaPlayer mp) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onPrepared(mp);
         mVideoSurfaceView.setOnTouchListener(this);
         Metadata data = mp.getMetadata(MediaPlayer.METADATA_ALL,
                 MediaPlayer.BYPASS_METADATA_FILTER);
+    if(data != null)        
         {
             mCanPause = !data.has(Metadata.PAUSE_AVAILABLE)
                     || data.getBoolean(Metadata.PAUSE_AVAILABLE);
@@ -289,44 +279,48 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
                     || data.getBoolean(Metadata.SEEK_BACKWARD_AVAILABLE);
             mCanSeekForward = !data.has(Metadata.SEEK_FORWARD_AVAILABLE)
                     || data.getBoolean(Metadata.SEEK_FORWARD_AVAILABLE);
-        } 
+        } //End block
+        else
         {
             mCanPause = mCanSeekBack = mCanSeekForward = true;
-        } 
+        } //End block
+    if(mMediaController != null)        
         {
             mMediaController.setEnabled(true);
-            {
-                boolean var6CE32148AB2E3015385EB11B759776A2_464693273 = (getAutostart());
-                mMediaController.show();
-                mMediaController.show(0);
-            } 
-        } 
+    if(getAutostart())            
+            mMediaController.show();
+            else
+            mMediaController.show(0);
+        } //End block
+    if(mProgressView != null)        
         {
             mProgressView.setVisibility(View.GONE);
-        } 
+        } //End block
         mVideoWidth = mp.getVideoWidth();
         mVideoHeight = mp.getVideoHeight();
         mVideoSurfaceView.getHolder().setFixedSize(mVideoWidth, mVideoHeight);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.790 -0400", hash_original_method = "D38369E141B1495D009E7319C4B9F69F", hash_generated_method = "6A82EF148C5D7DF10405FF81B635B2B9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.253 -0400", hash_original_method = "D38369E141B1495D009E7319C4B9F69F", hash_generated_method = "447715A976D89DD9E65B14969C5F5784")
     public boolean fullScreenExited() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2147166453 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2147166453;
-        
-        
+        boolean varA93A45CC1C08EB972D4A6DEB1FE2CB96_208829479 = ((mLayout == null));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_18915225 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_18915225;
+        // ---------- Original Method ----------
+        //return (mLayout == null);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.791 -0400", hash_original_method = "A8AE00CC29C9049B47899131597AFF8D", hash_generated_method = "16990C1D5B2AD7449CB29EBB4BB831CB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.254 -0400", hash_original_method = "A8AE00CC29C9049B47899131597AFF8D", hash_generated_method = "A2BCE3B2D185CEC0CD0772FB06D84590")
     @Override
     public void enterFullScreenVideoState(int layerId,
             HTML5VideoViewProxy proxy, WebView webView) {
+        addTaint(webView.getTaint());
+        addTaint(proxy.getTaint());
+        addTaint(layerId);
         mFullScreenMode = FULLSCREEN_SURFACECREATING;
         mCurrentBufferPercentage = 0;
         mPlayer.setOnBufferingUpdateListener(mBufferingUpdateListener);
@@ -344,168 +338,179 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
         mLayout.addView(getSurfaceView(), layoutParams);
         mLayout.setVisibility(View.VISIBLE);
         WebChromeClient client = webView.getWebChromeClient();
+    if(client != null)        
         {
             client.onShowCustomView(mLayout, mCallback);
-            {
-                boolean var347010D71F6116A7007D9AE2C20C3127_1282607902 = (webView.getViewManager() != null);
-                webView.getViewManager().hideAll();
-            } 
+    if(webView.getViewManager() != null)            
+            webView.getViewManager().hideAll();
             mProgressView = client.getVideoLoadingProgressView();
+    if(mProgressView != null)            
             {
                 mLayout.addView(mProgressView, layoutParams);
                 mProgressView.setVisibility(View.VISIBLE);
-            } 
-        } 
-        addTaint(layerId);
-        addTaint(proxy.getTaint());
-        addTaint(webView.getTaint());
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.791 -0400", hash_original_method = "2F3070B25A278338AEEAB48124299E28", hash_generated_method = "A24496F33B20F779302E0DDE618B5C7A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.255 -0400", hash_original_method = "2F3070B25A278338AEEAB48124299E28", hash_generated_method = "EA5F4F321B5F43D7F983433A485F62C3")
     public boolean isFullScreenMode() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_369059238 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_369059238;
-        
-        
+        boolean varB326B5062B2F0E69046810717534CB09_1672123184 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1089222367 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1089222367;
+        // ---------- Original Method ----------
+        //return true;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.792 -0400", hash_original_method = "1DF27838EDEF437B2494B2DF149883EF", hash_generated_method = "062BA74297B458737A666676E9AA1951")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.255 -0400", hash_original_method = "1DF27838EDEF437B2494B2DF149883EF", hash_generated_method = "7D0BBB23CE8B890FB5A8421835FCBF40")
     @Override
     public boolean canPause() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1771604233 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1771604233;
-        
-        
+        boolean var9A4623B61542BEC8D3E426C93DD77346_902779172 = (mCanPause);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_379549892 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_379549892;
+        // ---------- Original Method ----------
+        //return mCanPause;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.792 -0400", hash_original_method = "B916F92CBCCEC1C42038C36AAFFAA2A8", hash_generated_method = "AC11E4694F36757C4A130FDB2833C831")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.255 -0400", hash_original_method = "B916F92CBCCEC1C42038C36AAFFAA2A8", hash_generated_method = "FC3D6B6C843EBC983EA89B0F02B8CDF1")
     @Override
     public boolean canSeekBackward() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1982294865 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1982294865;
-        
-        
+        boolean var260CDABACB2B7A4C6F8B739A9531399D_1830301327 = (mCanSeekBack);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1445363492 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1445363492;
+        // ---------- Original Method ----------
+        //return mCanSeekBack;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.792 -0400", hash_original_method = "7621B01EBEE0D0CEF34FD8A655C3B087", hash_generated_method = "89AE9DD666F958AD6E9F8021238876A3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.256 -0400", hash_original_method = "7621B01EBEE0D0CEF34FD8A655C3B087", hash_generated_method = "04C738AEFF348C6E9602072118B004F9")
     @Override
     public boolean canSeekForward() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1152033600 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1152033600;
-        
-        
+        boolean var1042AFD5E2128CC06471C1ED59799B06_1878454223 = (mCanSeekForward);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_823267159 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_823267159;
+        // ---------- Original Method ----------
+        //return mCanSeekForward;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.792 -0400", hash_original_method = "5712A5AFCA7A8FC23B7D8D35D8488604", hash_generated_method = "563616BCCE4F9A629DF25DCE8F7A6767")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.256 -0400", hash_original_method = "5712A5AFCA7A8FC23B7D8D35D8488604", hash_generated_method = "D14A9791CAF5A3C281A4BA76E51C5238")
     @Override
     public int getBufferPercentage() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1969700410 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1969700410;
-        
-        
-            
-        
-        
+    if(mPlayer != null)        
+        {
+            int var1873B2B1AC18422B33460DFB5D5CB345_2082881053 = (mCurrentBufferPercentage);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2040198709 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2040198709;
+        } //End block
+        int varCFCD208495D565EF66E7DFF9F98764DA_1157953959 = (0);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1684390400 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1684390400;
+        // ---------- Original Method ----------
+        //if (mPlayer != null) {
+            //return mCurrentBufferPercentage;
+        //}
+        //return 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.793 -0400", hash_original_method = "6CF96CE118939EE02746CF132717D00A", hash_generated_method = "B3F099270AB6D4EABC1D7211B53D0C7A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.256 -0400", hash_original_method = "6CF96CE118939EE02746CF132717D00A", hash_generated_method = "55CB337324939B3C15B871928E913F10")
     @Override
     public boolean onTouch(View v, MotionEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
+        addTaint(event.getTaint());
+        addTaint(v.getTaint());
+    if(mFullScreenMode >= FULLSCREEN_SURFACECREATED
+                && mMediaController != null)        
         {
             toggleMediaControlsVisiblity();
-        } 
-        addTaint(v.getTaint());
-        addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_863143328 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_863143328;
-        
-        
-                
-            
-        
-        
+        } //End block
+        boolean var68934A3E9455FA72420237EB05902327_1730184185 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1456640087 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1456640087;
+        // ---------- Original Method ----------
+        //if (mFullScreenMode >= FULLSCREEN_SURFACECREATED
+                //&& mMediaController != null) {
+            //toggleMediaControlsVisiblity();
+        //}
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.793 -0400", hash_original_method = "768EF74C7E083D9FE3529A6C9E69F9F8", hash_generated_method = "88B577C05942373895485FC8D1245DA9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.257 -0400", hash_original_method = "768EF74C7E083D9FE3529A6C9E69F9F8", hash_generated_method = "F331AAB42E954B97E4895E585A9B451C")
     @Override
     protected void switchProgressView(boolean playerBuffering) {
+        addTaint(playerBuffering);
+    if(mProgressView != null)        
         {
+    if(playerBuffering)            
             {
                 mProgressView.setVisibility(View.VISIBLE);
-            } 
+            } //End block
+            else
             {
                 mProgressView.setVisibility(View.GONE);
-            } 
-        } 
-        addTaint(playerBuffering);
-        
-        
-            
-                
-            
-                
-            
-        
-        
+            } //End block
+        } //End block
+        return;
+        // ---------- Original Method ----------
+        //if (mProgressView != null) {
+            //if (playerBuffering) {
+                //mProgressView.setVisibility(View.VISIBLE);
+            //} else {
+                //mProgressView.setVisibility(View.GONE);
+            //}
+        //}
+        //return;
     }
 
     
     private class VideoSurfaceView extends SurfaceView {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.793 -0400", hash_original_method = "71BEE01FF22BBAA4C8AB5EB5F8B1B282", hash_generated_method = "81EEFE9A468C5967FB9EA2E3CB7D3BBE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.257 -0400", hash_original_method = "71BEE01FF22BBAA4C8AB5EB5F8B1B282", hash_generated_method = "81EEFE9A468C5967FB9EA2E3CB7D3BBE")
         public  VideoSurfaceView(Context context) {
             super(context);
             addTaint(context.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.793 -0400", hash_original_method = "9B50960AB78A53ECD97D5FCFD81C02C7", hash_generated_method = "CAB27126C902E18E79DC0B2E43AFAD6B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.257 -0400", hash_original_method = "9B50960AB78A53ECD97D5FCFD81C02C7", hash_generated_method = "A9195C0AFBDD862B72B1DC4CDD53C35F")
         @Override
         protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
+            addTaint(heightMeasureSpec);
+            addTaint(widthMeasureSpec);
             int width = getDefaultSize(mVideoWidth, widthMeasureSpec);
             int height = getDefaultSize(mVideoHeight, heightMeasureSpec);
+    if(mVideoWidth > 0 && mVideoHeight > 0)            
             {
+    if(mVideoWidth * height  > width * mVideoHeight)                
                 {
                     height = width * mVideoHeight / mVideoWidth;
-                } 
+                } //End block
+                else
+    if(mVideoWidth * height  < width * mVideoHeight)                
                 {
                     width = height * mVideoWidth / mVideoHeight;
-                } 
-            } 
+                } //End block
+            } //End block
             setMeasuredDimension(width, height);
-            addTaint(widthMeasureSpec);
-            addTaint(heightMeasureSpec);
-            
-            
-            
-            
-                
-                    
-                
-                    
-                
-            
-            
+            // ---------- Original Method ----------
+            //int width = getDefaultSize(mVideoWidth, widthMeasureSpec);
+            //int height = getDefaultSize(mVideoHeight, heightMeasureSpec);
+            //if (mVideoWidth > 0 && mVideoHeight > 0) {
+                //if ( mVideoWidth * height  > width * mVideoHeight ) {
+                    //height = width * mVideoHeight / mVideoWidth;
+                //} else if ( mVideoWidth * height  < width * mVideoHeight ) {
+                    //width = height * mVideoWidth / mVideoHeight;
+                //}
+            //}
+            //setMeasuredDimension(width, height);
         }
 
         
@@ -514,51 +519,51 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
 
     
     static class FullScreenMediaController extends MediaController {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.794 -0400", hash_original_field = "DEC990904573CB9B0D065C89AD3A11D2", hash_generated_field = "E49B1FFE75183DE55D21F4CFB8705941")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.258 -0400", hash_original_field = "DEC990904573CB9B0D065C89AD3A11D2", hash_generated_field = "E49B1FFE75183DE55D21F4CFB8705941")
 
         View mVideoView;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.794 -0400", hash_original_method = "4242A1CB7F524CD2844041A7C182F29C", hash_generated_method = "ACCE13EE3BBE1B8843443A845098CB7A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.258 -0400", hash_original_method = "4242A1CB7F524CD2844041A7C182F29C", hash_generated_method = "8D8F0072C8CE6F2E3E1B804E5EFAAC19")
         public  FullScreenMediaController(Context context, View video) {
             super(context);
-            mVideoView = video;
             addTaint(context.getTaint());
-            
-            
+            mVideoView = video;
+            // ---------- Original Method ----------
+            //mVideoView = video;
         }
 
         
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.794 -0400", hash_original_method = "5C37CDC7ADB20FAB9875274C523AD18A", hash_generated_method = "4E68293E9704C553AB907504EE8C063E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.258 -0400", hash_original_method = "5C37CDC7ADB20FAB9875274C523AD18A", hash_generated_method = "E9BD2B88B09359647271228EDD79FC97")
         @Override
         public void show() {
             super.show();
+    if(mVideoView != null)            
             {
                 mVideoView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
-            } 
-            
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //super.show();
+            //if (mVideoView != null) {
+                //mVideoView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
+            //}
         }
 
         
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.795 -0400", hash_original_method = "82DCA636A8398ED2FB754EAF8FD1AC92", hash_generated_method = "284795290C307592280E0EB38F7AE6E6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.259 -0400", hash_original_method = "82DCA636A8398ED2FB754EAF8FD1AC92", hash_generated_method = "7836EC5B1B2083E36988EDFB4FF85DD7")
         @Override
         public void hide() {
+    if(mVideoView != null)            
             {
                 mVideoView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
-            } 
+            } //End block
             super.hide();
-            
-            
-                
-                        
-            
-            
+            // ---------- Original Method ----------
+            //if (mVideoView != null) {
+                //mVideoView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
+                        //| View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+            //}
+            //super.hide();
         }
 
         
@@ -566,19 +571,19 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.795 -0400", hash_original_field = "F04BD482698D6831C345633B6AF5E4A0", hash_generated_field = "4A2BED61F2CA029DAEB32D748D9E7C92")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.259 -0400", hash_original_field = "F04BD482698D6831C345633B6AF5E4A0", hash_generated_field = "4A2BED61F2CA029DAEB32D748D9E7C92")
 
     static final int FULLSCREEN_OFF = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.795 -0400", hash_original_field = "CF2357B11ABD2867E3D00713F50DA9CD", hash_generated_field = "95ACD9F978B91416E7DD88440CCF98E8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.259 -0400", hash_original_field = "CF2357B11ABD2867E3D00713F50DA9CD", hash_generated_field = "95ACD9F978B91416E7DD88440CCF98E8")
 
     static final int FULLSCREEN_SURFACECREATING = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.795 -0400", hash_original_field = "AF195748F54C2EDC23CB2A66348A54C6", hash_generated_field = "D0963B0C99500DEAD00BF4698232C2F7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.259 -0400", hash_original_field = "AF195748F54C2EDC23CB2A66348A54C6", hash_generated_field = "D0963B0C99500DEAD00BF4698232C2F7")
 
     static final int FULLSCREEN_SURFACECREATED = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.795 -0400", hash_original_field = "356BEA1A72BD3DB0203E9E44A65DA2AB", hash_generated_field = "2544D9B3BCB2C2DD4A48F6808AD9E918")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.259 -0400", hash_original_field = "356BEA1A72BD3DB0203E9E44A65DA2AB", hash_generated_field = "2544D9B3BCB2C2DD4A48F6808AD9E918")
 
     private static View mProgressView;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.795 -0400", hash_original_field = "AF58F50E47532278404C3D8470630FC4", hash_generated_field = "AA344AC873FB74428BAEEC0E5D10702B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.259 -0400", hash_original_field = "AF58F50E47532278404C3D8470630FC4", hash_generated_field = "AA344AC873FB74428BAEEC0E5D10702B")
 
     private static FrameLayout mLayout;
 }

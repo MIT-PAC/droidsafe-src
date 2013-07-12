@@ -1,12 +1,9 @@
 package java.math;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 
 public enum RoundingMode {
     UP(BigDecimal.ROUND_UP),
@@ -21,7 +18,6 @@ public enum RoundingMode {
     RoundingMode(int rm) {
         bigDecimalRM = rm;
     }
-    @DSModeled(DSC.SAFE)
     public static RoundingMode valueOf(int mode) {
         switch (mode) {
             case BigDecimal.ROUND_CEILING:

@@ -1,12 +1,9 @@
 package android.speech.tts;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 
 public interface ITextToSpeechCallback extends android.os.IInterface
 {

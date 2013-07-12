@@ -1,12 +1,9 @@
 package android.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 
 public interface Pool<T extends Poolable<T>> {
     public abstract T acquire();

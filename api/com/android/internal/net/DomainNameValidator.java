@@ -1,12 +1,9 @@
 package com.android.internal.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.net.NetworkUtils;
 import android.util.Log;
 import java.net.InetAddress;
@@ -21,15 +18,14 @@ import javax.security.auth.x500.X500Principal;
 
 public class DomainNameValidator {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.347 -0400", hash_original_method = "C5190347A8092226EE089C86AEE611D1", hash_generated_method = "C5190347A8092226EE089C86AEE611D1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.831 -0400", hash_original_method = "C5190347A8092226EE089C86AEE611D1", hash_generated_method = "C5190347A8092226EE089C86AEE611D1")
     public DomainNameValidator ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
-    public static boolean match(X509Certificate certificate, String thisDomain) {
+        public static boolean match(X509Certificate certificate, String thisDomain) {
         if (certificate == null || thisDomain == null || thisDomain.length() == 0) {
             return false;
         }
@@ -42,8 +38,7 @@ public class DomainNameValidator {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static boolean isIpAddress(String domain) {
+        private static boolean isIpAddress(String domain) {
         boolean rval = (domain != null && domain.length() != 0);
         if (rval) {
             try {
@@ -60,8 +55,7 @@ public class DomainNameValidator {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static boolean matchIpAddress(X509Certificate certificate, String thisDomain) {
+        private static boolean matchIpAddress(X509Certificate certificate, String thisDomain) {
         if (LOG_ENABLED) {
             Log.v(TAG, "DomainNameValidator.matchIpAddress(): this domain: " + thisDomain);
         }
@@ -94,8 +88,7 @@ public class DomainNameValidator {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static boolean matchDns(X509Certificate certificate, String thisDomain) {
+        private static boolean matchDns(X509Certificate certificate, String thisDomain) {
         boolean hasDns = false;
         try {
             Collection subjectAltNames = certificate.getSubjectAlternativeNames();
@@ -143,8 +136,7 @@ public class DomainNameValidator {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static boolean matchDns(String thisDomain, String thatDomain) {
+        public static boolean matchDns(String thisDomain, String thatDomain) {
         if (LOG_ENABLED) {
             Log.v(TAG, "DomainNameValidator.matchDns():" +
                       " this domain: " + thisDomain +
@@ -184,8 +176,7 @@ public class DomainNameValidator {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static boolean domainTokenMatch(String thisDomainToken, String thatDomainToken) {
+        private static boolean domainTokenMatch(String thisDomainToken, String thatDomainToken) {
         if (thisDomainToken != null && thatDomainToken != null) {
             int starIndex = thatDomainToken.indexOf('*');
             if (starIndex >= 0) {
@@ -200,19 +191,19 @@ public class DomainNameValidator {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.349 -0400", hash_original_field = "16845E8E4DE531A87BF4CC1D2DC4F08E", hash_generated_field = "D762B92100EC492C8E2F43AE3DE0E7E1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.833 -0400", hash_original_field = "16845E8E4DE531A87BF4CC1D2DC4F08E", hash_generated_field = "D762B92100EC492C8E2F43AE3DE0E7E1")
 
     private final static String TAG = "DomainNameValidator";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.349 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.833 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
 
     private static final boolean DEBUG = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.349 -0400", hash_original_field = "2600CAE892D7C6A21DB7F1CB3CE2784F", hash_generated_field = "C040F7E72494FCBA74A6440C651C9D2C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.833 -0400", hash_original_field = "2600CAE892D7C6A21DB7F1CB3CE2784F", hash_generated_field = "C040F7E72494FCBA74A6440C651C9D2C")
 
     private static final boolean LOG_ENABLED = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.349 -0400", hash_original_field = "F32255F4F06275F74CB61F3DA51A229B", hash_generated_field = "D60747C22CE448F6B43389DBEE293EA4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.833 -0400", hash_original_field = "F32255F4F06275F74CB61F3DA51A229B", hash_generated_field = "D60747C22CE448F6B43389DBEE293EA4")
 
     private static final int ALT_DNS_NAME = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.349 -0400", hash_original_field = "F2EC570492E32F916A66D41EEF6D0EE0", hash_generated_field = "8F4F08DC629818A48F022D07A771C3BD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.834 -0400", hash_original_field = "F2EC570492E32F916A66D41EEF6D0EE0", hash_generated_field = "8F4F08DC629818A48F022D07A771C3BD")
 
     private static final int ALT_IPA_NAME = 7;
 }

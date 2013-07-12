@@ -1,12 +1,9 @@
 package com.android.internal.statusbar;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 
 public interface IStatusBarService extends android.os.IInterface
 {

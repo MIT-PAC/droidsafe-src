@@ -1,23 +1,19 @@
 package org.apache.harmony.security.utils;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-
-import java.util.Iterator;
-
 public class Array {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.325 -0400", hash_original_method = "27C967B98A825ABE55DF7CE292BE2D15", hash_generated_method = "8F496C8B0F35FBBE27EB4065BD3777B5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.382 -0400", hash_original_method = "27C967B98A825ABE55DF7CE292BE2D15", hash_generated_method = "8F496C8B0F35FBBE27EB4065BD3777B5")
     private  Array() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String getBytesAsString(byte[] data) {
+        public static String getBytesAsString(byte[] data) {
         StringBuilder result = new StringBuilder(data.length * 3);
         for (int i = 0; i < data.length; ++i) {
             result.append(Byte.toHexString(data[i], false));
@@ -27,8 +23,7 @@ public class Array {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String toString(byte[] array, String prefix) {
+        public static String toString(byte[] array, String prefix) {
         final String[] offsetPrefix = {
                 "",
                 "000",

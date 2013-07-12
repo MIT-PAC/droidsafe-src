@@ -1,12 +1,9 @@
 package javax.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -14,87 +11,77 @@ import java.net.UnknownHostException;
 
 final class DefaultSocketFactory extends SocketFactory {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.419 -0400", hash_original_method = "EE45CFA4F563D30E821D60984F7D023D", hash_generated_method = "027CB46FE2CBA12105D59EC97E29AE07")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.690 -0400", hash_original_method = "EE45CFA4F563D30E821D60984F7D023D", hash_generated_method = "027CB46FE2CBA12105D59EC97E29AE07")
       DefaultSocketFactory() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.419 -0400", hash_original_method = "A33770AB5F1406458667F0E1F9F70219", hash_generated_method = "A4C7F8DE1462AC8F085013B6F99EBB37")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.691 -0400", hash_original_method = "A33770AB5F1406458667F0E1F9F70219", hash_generated_method = "B29BD32B918D6CA251B00AE469A4A0B1")
     @Override
     public Socket createSocket() throws IOException {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_2071764856 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_2071764856 = new Socket();
-        varB4EAC82CA7396A68D541C85D26508E83_2071764856.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_2071764856;
-        
-        
+Socket var5C6AFEF94E279F279E58F2088BCAD974_330733874 =         new Socket();
+        var5C6AFEF94E279F279E58F2088BCAD974_330733874.addTaint(taint);
+        return var5C6AFEF94E279F279E58F2088BCAD974_330733874;
+        // ---------- Original Method ----------
+        //return new Socket();
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.419 -0400", hash_original_method = "2C1906B27C1B85541A53DB0102673352", hash_generated_method = "394A0C7FD839C8DAB908C5755183E4ED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.692 -0400", hash_original_method = "2C1906B27C1B85541A53DB0102673352", hash_generated_method = "899C4EF2018984B0377C7D178ACA9141")
     @Override
     public Socket createSocket(String host, int port) throws IOException, UnknownHostException {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_1019868137 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1019868137 = new Socket(host, port);
-        addTaint(host.getTaint());
         addTaint(port);
-        varB4EAC82CA7396A68D541C85D26508E83_1019868137.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1019868137;
-        
-        
+        addTaint(host.getTaint());
+Socket var0D5D4203F6708052EDEEA1EAD4B4F929_748394160 =         new Socket(host, port);
+        var0D5D4203F6708052EDEEA1EAD4B4F929_748394160.addTaint(taint);
+        return var0D5D4203F6708052EDEEA1EAD4B4F929_748394160;
+        // ---------- Original Method ----------
+        //return new Socket(host, port);
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.420 -0400", hash_original_method = "5CFD53FB508EE6C97BB6819A744C12B9", hash_generated_method = "9AECB0630980D4E2815B6F796593D160")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.692 -0400", hash_original_method = "5CFD53FB508EE6C97BB6819A744C12B9", hash_generated_method = "E8AA5B085C6D36EE6B0F2B4337744D70")
     @Override
     public Socket createSocket(String host, int port, InetAddress localHost, int localPort) throws IOException, UnknownHostException {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_1932653993 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1932653993 = new Socket(host, port, localHost, localPort);
-        addTaint(host.getTaint());
-        addTaint(port);
-        addTaint(localHost.getTaint());
         addTaint(localPort);
-        varB4EAC82CA7396A68D541C85D26508E83_1932653993.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1932653993;
-        
-        
+        addTaint(localHost.getTaint());
+        addTaint(port);
+        addTaint(host.getTaint());
+Socket var543CF54B0B3F8CD0CFC68B229AB68346_1440588455 =         new Socket(host, port, localHost, localPort);
+        var543CF54B0B3F8CD0CFC68B229AB68346_1440588455.addTaint(taint);
+        return var543CF54B0B3F8CD0CFC68B229AB68346_1440588455;
+        // ---------- Original Method ----------
+        //return new Socket(host, port, localHost, localPort);
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.420 -0400", hash_original_method = "E8FBBD6B1D2EB76E2930CC22224BA560", hash_generated_method = "3006E2A141204401602C6906BA948C17")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.693 -0400", hash_original_method = "E8FBBD6B1D2EB76E2930CC22224BA560", hash_generated_method = "B4BF7B3408C5D35822426F7215F21E06")
     @Override
     public Socket createSocket(InetAddress host, int port) throws IOException {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_742096966 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_742096966 = new Socket(host, port);
-        addTaint(host.getTaint());
         addTaint(port);
-        varB4EAC82CA7396A68D541C85D26508E83_742096966.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_742096966;
-        
-        
+        addTaint(host.getTaint());
+Socket var0D5D4203F6708052EDEEA1EAD4B4F929_911371486 =         new Socket(host, port);
+        var0D5D4203F6708052EDEEA1EAD4B4F929_911371486.addTaint(taint);
+        return var0D5D4203F6708052EDEEA1EAD4B4F929_911371486;
+        // ---------- Original Method ----------
+        //return new Socket(host, port);
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.421 -0400", hash_original_method = "494C3A968988FACD5471E3F1752BD495", hash_generated_method = "BFB2D16FC866BF337724EDBE17587CA4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.694 -0400", hash_original_method = "494C3A968988FACD5471E3F1752BD495", hash_generated_method = "02046933828395CD10FAC385F8DC6707")
     @Override
     public Socket createSocket(InetAddress address, int port, InetAddress localAddress,
             int localPort) throws IOException {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_183159674 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_183159674 = new Socket(address, port, localAddress, localPort);
-        addTaint(address.getTaint());
-        addTaint(port);
-        addTaint(localAddress.getTaint());
         addTaint(localPort);
-        varB4EAC82CA7396A68D541C85D26508E83_183159674.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_183159674;
-        
-        
+        addTaint(localAddress.getTaint());
+        addTaint(port);
+        addTaint(address.getTaint());
+Socket varEC66FA71CA1372393D6D09FCD8B5B078_404655395 =         new Socket(address, port, localAddress, localPort);
+        varEC66FA71CA1372393D6D09FCD8B5B078_404655395.addTaint(taint);
+        return varEC66FA71CA1372393D6D09FCD8B5B078_404655395;
+        // ---------- Original Method ----------
+        //return new Socket(address, port, localAddress, localPort);
     }
 
     

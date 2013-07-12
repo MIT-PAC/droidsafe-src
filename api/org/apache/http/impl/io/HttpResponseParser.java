@@ -1,12 +1,9 @@
 package org.apache.http.impl.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.IOException;
 import org.apache.http.HttpException;
 import org.apache.http.HttpMessage;
@@ -21,61 +18,66 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.util.CharArrayBuffer;
 
 public class HttpResponseParser extends AbstractMessageParser {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.830 -0400", hash_original_field = "231DD88D1D24FBAC95F5FF27F7E132D5", hash_generated_field = "617CD99CE3703350A89163AF27F85CC2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.206 -0400", hash_original_field = "231DD88D1D24FBAC95F5FF27F7E132D5", hash_generated_field = "617CD99CE3703350A89163AF27F85CC2")
 
     private HttpResponseFactory responseFactory;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.830 -0400", hash_original_field = "DD77BBE950DCBAAE75A78BE6835B370C", hash_generated_field = "138A98BD7AF16A46911F2E280FBA40A5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.207 -0400", hash_original_field = "DD77BBE950DCBAAE75A78BE6835B370C", hash_generated_field = "138A98BD7AF16A46911F2E280FBA40A5")
 
     private CharArrayBuffer lineBuf;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.831 -0400", hash_original_method = "85B3567407021E0E58042A3E368512FA", hash_generated_method = "D2A105FDC660195C255E4A7B12593A56")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.207 -0400", hash_original_method = "85B3567407021E0E58042A3E368512FA", hash_generated_method = "DDE9714ADDFE525F2D7EBE8F5B10D4B1")
     public  HttpResponseParser(
             final SessionInputBuffer buffer,
             final LineParser parser,
             final HttpResponseFactory responseFactory,
             final HttpParams params) {
         super(buffer, parser, params);
+        addTaint(params.getTaint());
+        addTaint(parser.getTaint());
+        addTaint(buffer.getTaint());
+    if(responseFactory == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Response factory may not be null");
-        } 
+            IllegalArgumentException var4DE4C2B8B51C37D4C049343CDF1871A3_711428915 = new IllegalArgumentException("Response factory may not be null");
+            var4DE4C2B8B51C37D4C049343CDF1871A3_711428915.addTaint(taint);
+            throw var4DE4C2B8B51C37D4C049343CDF1871A3_711428915;
+        } //End block
         this.responseFactory = responseFactory;
         this.lineBuf = new CharArrayBuffer(128);
-        addTaint(buffer.getTaint());
-        addTaint(parser.getTaint());
-        addTaint(params.getTaint());
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (responseFactory == null) {
+            //throw new IllegalArgumentException("Response factory may not be null");
+        //}
+        //this.responseFactory = responseFactory;
+        //this.lineBuf = new CharArrayBuffer(128);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.832 -0400", hash_original_method = "3017F26D59D622B6AFE8D24C9E35B44D", hash_generated_method = "DA6D55C564ACF9732AB032A4CFD2C9D6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.208 -0400", hash_original_method = "3017F26D59D622B6AFE8D24C9E35B44D", hash_generated_method = "F6457FAA4D0958D241D17FAD30DE8EE4")
     protected HttpMessage parseHead(
             final SessionInputBuffer sessionBuffer) throws IOException, HttpException, ParseException {
-        HttpMessage varB4EAC82CA7396A68D541C85D26508E83_1973174598 = null; 
+        addTaint(sessionBuffer.getTaint());
         this.lineBuf.clear();
         int i = sessionBuffer.readLine(this.lineBuf);
+    if(i == -1)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new NoHttpResponseException("The target server failed to respond");
-        } 
+            NoHttpResponseException var8E6E6A11E770AF132B510E2C0E1EA88C_1890209473 = new NoHttpResponseException("The target server failed to respond");
+            var8E6E6A11E770AF132B510E2C0E1EA88C_1890209473.addTaint(taint);
+            throw var8E6E6A11E770AF132B510E2C0E1EA88C_1890209473;
+        } //End block
         ParserCursor cursor = new ParserCursor(0, this.lineBuf.length());
         StatusLine statusline = lineParser.parseStatusLine(this.lineBuf, cursor);
-        varB4EAC82CA7396A68D541C85D26508E83_1973174598 = this.responseFactory.newHttpResponse(statusline, null);
-        addTaint(sessionBuffer.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1973174598.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1973174598;
-        
-        
-        
-        
-            
-        
-        
-        
-        
+HttpMessage varFF4A03EE8787FE969C6D68F686A70D62_174530077 =         this.responseFactory.newHttpResponse(statusline, null);
+        varFF4A03EE8787FE969C6D68F686A70D62_174530077.addTaint(taint);
+        return varFF4A03EE8787FE969C6D68F686A70D62_174530077;
+        // ---------- Original Method ----------
+        //this.lineBuf.clear();
+        //int i = sessionBuffer.readLine(this.lineBuf);
+        //if (i == -1) {
+            //throw new NoHttpResponseException("The target server failed to respond");
+        //}
+        //ParserCursor cursor = new ParserCursor(0, this.lineBuf.length());
+        //StatusLine statusline = lineParser.parseStatusLine(this.lineBuf, cursor);
+        //return this.responseFactory.newHttpResponse(statusline, null);
     }
 
     

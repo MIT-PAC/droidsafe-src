@@ -1,168 +1,172 @@
 package android.os;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.util.Log;
 
 public class PowerManager {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.984 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "5A93C277105259AF4C607FFD616B68DC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.337 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "5A93C277105259AF4C607FFD616B68DC")
 
     IPowerManager mService;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.984 -0400", hash_original_field = "C78BEDFC523DB73DF63EFB071AF1C35B", hash_generated_field = "A163099B522120C606A3CA562F90E927")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.337 -0400", hash_original_field = "C78BEDFC523DB73DF63EFB071AF1C35B", hash_generated_field = "A163099B522120C606A3CA562F90E927")
 
     Handler mHandler;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.985 -0400", hash_original_method = "CC3F52E82947675044A40593774B54F6", hash_generated_method = "FBF57EA37BF41DE0AFD68D9E02F27504")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.338 -0400", hash_original_method = "CC3F52E82947675044A40593774B54F6", hash_generated_method = "FBF57EA37BF41DE0AFD68D9E02F27504")
     private  PowerManager() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.985 -0400", hash_original_method = "060274E80C670013EA8E2104C630EB40", hash_generated_method = "987BBA9C2442A389A6642FEC3C9D08F9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.339 -0400", hash_original_method = "060274E80C670013EA8E2104C630EB40", hash_generated_method = "987BBA9C2442A389A6642FEC3C9D08F9")
     public  PowerManager(IPowerManager service, Handler handler) {
         mService = service;
         mHandler = handler;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mService = service;
+        //mHandler = handler;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.985 -0400", hash_original_method = "93AAF5370B6BA4BEAC029A2F72D16576", hash_generated_method = "5BACD890BA3F619BF488B3AFFC5CC31E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.340 -0400", hash_original_method = "93AAF5370B6BA4BEAC029A2F72D16576", hash_generated_method = "1FAE7201A9BEBD9BDCE23641A5EFD4BA")
     public WakeLock newWakeLock(int flags, String tag) {
-        WakeLock varB4EAC82CA7396A68D541C85D26508E83_1000487949 = null; 
-        {
-            if (DroidSafeAndroidRuntime.control) throw new NullPointerException("tag is null in PowerManager.newWakeLock");
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1000487949 = new WakeLock(flags, tag);
-        addTaint(flags);
         addTaint(tag.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1000487949.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1000487949;
-        
-        
-            
-        
-        
+        addTaint(flags);
+    if(tag == null)        
+        {
+            NullPointerException var3013041DE9CCD17410AB8D25ADEA0167_1228854455 = new NullPointerException("tag is null in PowerManager.newWakeLock");
+            var3013041DE9CCD17410AB8D25ADEA0167_1228854455.addTaint(taint);
+            throw var3013041DE9CCD17410AB8D25ADEA0167_1228854455;
+        } //End block
+WakeLock var4089891081BA08D4F8E416D6853507C4_2097408929 =         new WakeLock(flags, tag);
+        var4089891081BA08D4F8E416D6853507C4_2097408929.addTaint(taint);
+        return var4089891081BA08D4F8E416D6853507C4_2097408929;
+        // ---------- Original Method ----------
+        //if (tag == null) {
+            //throw new NullPointerException("tag is null in PowerManager.newWakeLock");
+        //}
+        //return new WakeLock(flags, tag);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.986 -0400", hash_original_method = "C5F540EE3212366BBE1CC045B8933E13", hash_generated_method = "D7DF77ED9D1CC0A2173C5F43DB17A026")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.341 -0400", hash_original_method = "C5F540EE3212366BBE1CC045B8933E13", hash_generated_method = "0CFAC62A78FB515EA46DF10C555A5D7E")
     public void userActivity(long when, boolean noChangeLights) {
+        addTaint(noChangeLights);
+        addTaint(when);
         try 
         {
             mService.userActivity(when, noChangeLights);
-        } 
+        } //End block
         catch (RemoteException e)
-        { }
-        addTaint(when);
-        addTaint(noChangeLights);
-        
-        
-            
-        
-        
+        {
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.userActivity(when, noChangeLights);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.986 -0400", hash_original_method = "CD7C7C85680B5F62F444A1BDA84407A2", hash_generated_method = "C1DF087EB11438DDE293186B66FC94C0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.341 -0400", hash_original_method = "CD7C7C85680B5F62F444A1BDA84407A2", hash_generated_method = "CFA19571FC36B4B6DD58B9EF28646504")
     public void goToSleep(long time) {
+        addTaint(time);
         try 
         {
             mService.goToSleep(time);
-        } 
+        } //End block
         catch (RemoteException e)
-        { }
-        addTaint(time);
-        
-        
-            
-        
-        
+        {
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.goToSleep(time);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.986 -0400", hash_original_method = "1657059AF219261DAAA3A6D217AB2CFE", hash_generated_method = "223F98C4C3869D4A9AFC32062E45911D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.342 -0400", hash_original_method = "1657059AF219261DAAA3A6D217AB2CFE", hash_generated_method = "BD838FEB5C0F7DF0D6140291474EDA76")
     public void setBacklightBrightness(int brightness) {
+        addTaint(brightness);
         try 
         {
             mService.setBacklightBrightness(brightness);
-        } 
+        } //End block
         catch (RemoteException e)
-        { }
-        addTaint(brightness);
-        
-        
-            
-        
-        
+        {
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.setBacklightBrightness(brightness);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.987 -0400", hash_original_method = "3FEFDF5F90A1934664CD9ABDDAD0F802", hash_generated_method = "C6F4CFD4D0371D7DFCC524B28CC22390")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.343 -0400", hash_original_method = "3FEFDF5F90A1934664CD9ABDDAD0F802", hash_generated_method = "B4AC2D3B62F36CBE7F191F86D492C34B")
     public int getSupportedWakeLockFlags() {
         try 
         {
-            int var523D03F3D92596C5D29B4B3F266A1185_2065501065 = (mService.getSupportedWakeLockFlags());
-        } 
+            int var8E1F0C77F4A230485BA874DB229DEF8F_1952475016 = (mService.getSupportedWakeLockFlags());
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1586745226 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1586745226;
+        } //End block
         catch (RemoteException e)
-        { }
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1212238078 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1212238078;
-        
-        
-            
-        
-            
-        
+        {
+            int varCFCD208495D565EF66E7DFF9F98764DA_611509412 = (0);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_394893308 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_394893308;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getSupportedWakeLockFlags();
+        //} catch (RemoteException e) {
+            //return 0;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.987 -0400", hash_original_method = "50478742CDFBDF2C875183424E636D44", hash_generated_method = "1F88A06A19AC424641BA61F369D86FA3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.343 -0400", hash_original_method = "50478742CDFBDF2C875183424E636D44", hash_generated_method = "831F94F91B68538EBD192AAAD6172A36")
     public boolean isScreenOn() {
         try 
         {
-            boolean var3405A35E39FE7BA8C0D22FE35D82BDAA_414734033 = (mService.isScreenOn());
-        } 
+            boolean var93CFF79B5D2555DE3023FF73E15B99C9_1975760911 = (mService.isScreenOn());
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1394864732 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1394864732;
+        } //End block
         catch (RemoteException e)
-        { }
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_267978361 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_267978361;
-        
-        
-            
-        
-            
-        
+        {
+            boolean var68934A3E9455FA72420237EB05902327_2014095862 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1596150031 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1596150031;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.isScreenOn();
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.988 -0400", hash_original_method = "35D8C90A4186EC12B6AC746434DE3AC6", hash_generated_method = "70CB051F4D08FA477B139F6EA91DB16B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.344 -0400", hash_original_method = "35D8C90A4186EC12B6AC746434DE3AC6", hash_generated_method = "7566611F00AF46F47BC457983492FF0E")
     public void reboot(String reason) {
+        addTaint(reason.getTaint());
         try 
         {
             mService.reboot(reason);
-        } 
+        } //End block
         catch (RemoteException e)
-        { }
-        addTaint(reason.getTaint());
-        
-        
-            
-        
-        
+        {
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.reboot(reason);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -179,280 +183,309 @@ public class PowerManager {
 
             
 };
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.989 -0400", hash_original_field = "9C3CD7D37D3E1E66BE9B3B005FC98B3A", hash_generated_field = "4E5A87EA4636A8ACF68875B877F3A7B8")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.344 -0400", hash_original_field = "9C3CD7D37D3E1E66BE9B3B005FC98B3A", hash_generated_field = "4E5A87EA4636A8ACF68875B877F3A7B8")
 
         int mFlags;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.989 -0400", hash_original_field = "07496860B5C53FDD66588727158D5F73", hash_generated_field = "05B32B05746742D3A5261C827E7D8852")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.344 -0400", hash_original_field = "07496860B5C53FDD66588727158D5F73", hash_generated_field = "05B32B05746742D3A5261C827E7D8852")
 
         String mTag;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.989 -0400", hash_original_field = "98E8D2ECD335C543A384E2B940159AF2", hash_generated_field = "DD6EB7EC256F1225D4C6DC1A42FB765B")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.345 -0400", hash_original_field = "98E8D2ECD335C543A384E2B940159AF2", hash_generated_field = "DD6EB7EC256F1225D4C6DC1A42FB765B")
 
         IBinder mToken;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.989 -0400", hash_original_field = "DFBC16768366A2556A52E5DCDCD8E737", hash_generated_field = "D01C96038701D525501067476D6E20FD")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.345 -0400", hash_original_field = "DFBC16768366A2556A52E5DCDCD8E737", hash_generated_field = "D01C96038701D525501067476D6E20FD")
 
         int mCount = 0;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.989 -0400", hash_original_field = "047BD179D9D3B99F5CB555412FF5185D", hash_generated_field = "31018A422B139F36328AD43A1CE83154")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.345 -0400", hash_original_field = "047BD179D9D3B99F5CB555412FF5185D", hash_generated_field = "31018A422B139F36328AD43A1CE83154")
 
         boolean mRefCounted = true;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.989 -0400", hash_original_field = "C4F054EB5B2F148D82E2CFBF9BA32E3D", hash_generated_field = "1D98D769EB12EDC0237EF4FD267495CF")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.345 -0400", hash_original_field = "C4F054EB5B2F148D82E2CFBF9BA32E3D", hash_generated_field = "1D98D769EB12EDC0237EF4FD267495CF")
 
         boolean mHeld = false;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.989 -0400", hash_original_field = "33F0FDFE72CD4D291DF24A21567DB5C9", hash_generated_field = "842B61DB21B58291FC09444F5B6363D6")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.345 -0400", hash_original_field = "33F0FDFE72CD4D291DF24A21567DB5C9", hash_generated_field = "842B61DB21B58291FC09444F5B6363D6")
 
         WorkSource mWorkSource;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.989 -0400", hash_original_method = "F8EACFB6990EF5D4887B3D97C67B44DC", hash_generated_method = "D7928E79985E69EE89CB83FCA39BC9B6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.346 -0400", hash_original_method = "F8EACFB6990EF5D4887B3D97C67B44DC", hash_generated_method = "221D47CEA6B05C9664CE19D0E6DE3040")
           WakeLock(int flags, String tag) {
-            
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-            
-            mFlags = flags;
+switch(flags & LOCK_MASK){
+            case PARTIAL_WAKE_LOCK:
+            case SCREEN_DIM_WAKE_LOCK:
+            case SCREEN_BRIGHT_WAKE_LOCK:
+            case FULL_WAKE_LOCK:
+            case PROXIMITY_SCREEN_OFF_WAKE_LOCK:
+            break;
+            default:
+            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1178632904 = new IllegalArgumentException();
+            var5783EF97022AA508B74A1E3EA38534AF_1178632904.addTaint(taint);
+            throw var5783EF97022AA508B74A1E3EA38534AF_1178632904;
+}            mFlags = flags;
             mTag = tag;
             mToken = new Binder();
-            
-            
-            
-            
-            
-            
-            
-                
-            
-                
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //switch (flags & LOCK_MASK) {
+            //case PARTIAL_WAKE_LOCK:
+            //case SCREEN_DIM_WAKE_LOCK:
+            //case SCREEN_BRIGHT_WAKE_LOCK:
+            //case FULL_WAKE_LOCK:
+            //case PROXIMITY_SCREEN_OFF_WAKE_LOCK:
+                //break;
+            //default:
+                //throw new IllegalArgumentException();
+            //}
+            //mFlags = flags;
+            //mTag = tag;
+            //mToken = new Binder();
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.990 -0400", hash_original_method = "C9C09C089F97F5128A15BBE86111A3BF", hash_generated_method = "494115ABA2B3754EECDF64EBFE873031")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.346 -0400", hash_original_method = "C9C09C089F97F5128A15BBE86111A3BF", hash_generated_method = "494115ABA2B3754EECDF64EBFE873031")
         public void setReferenceCounted(boolean value) {
             mRefCounted = value;
-            
-            
+            // ---------- Original Method ----------
+            //mRefCounted = value;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.990 -0400", hash_original_method = "60F8C5E408EB104B9A6B83E1C96AB086", hash_generated_method = "F1BD6B79BF32AE89D304BF4F460F51E3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.346 -0400", hash_original_method = "60F8C5E408EB104B9A6B83E1C96AB086", hash_generated_method = "46122C6ECD562C97704C7C0BAB744350")
         public void acquire() {
-            {
+            synchronized
+(mToken)            {
                 acquireLocked();
-            } 
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (mToken) {
+                //acquireLocked();
+            //}
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.991 -0400", hash_original_method = "557ADDA01C2A32642A34A73D3A75D3D5", hash_generated_method = "1FA2E29C42FA3542C713563E00E58ABE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.347 -0400", hash_original_method = "557ADDA01C2A32642A34A73D3A75D3D5", hash_generated_method = "D8FC27C997A22C28EAD5ECF3A28CCE11")
         public void acquire(long timeout) {
-            {
+            addTaint(timeout);
+            synchronized
+(mToken)            {
                 acquireLocked();
                 mHandler.postDelayed(mReleaser, timeout);
-            } 
-            addTaint(timeout);
-            
-            
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (mToken) {
+                //acquireLocked();
+                //mHandler.postDelayed(mReleaser, timeout);
+            //}
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.991 -0400", hash_original_method = "E457E28DCC06A4C1478E4841AEE77235", hash_generated_method = "D816D9709B7EC26C97152400BA17AB13")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.347 -0400", hash_original_method = "E457E28DCC06A4C1478E4841AEE77235", hash_generated_method = "B78D792E53F771C0F817469AB3AD3914")
         private void acquireLocked() {
+    if(!mRefCounted || mCount++ == 0)            
             {
                 mHandler.removeCallbacks(mReleaser);
                 try 
                 {
                     mService.acquireWakeLock(mFlags, mToken, mTag, mWorkSource);
-                } 
+                } //End block
                 catch (RemoteException e)
-                { }
+                {
+                } //End block
                 mHeld = true;
-            } 
-            
-            
-                
-                
-                    
-                
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (!mRefCounted || mCount++ == 0) {
+                //mHandler.removeCallbacks(mReleaser);
+                //try {
+                    //mService.acquireWakeLock(mFlags, mToken, mTag, mWorkSource);
+                //} catch (RemoteException e) {
+                //}
+                //mHeld = true;
+            //}
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.992 -0400", hash_original_method = "4304724C92023C406072B166ABF56DE4", hash_generated_method = "06536F16FDC471761CBE2359AB1C490E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.348 -0400", hash_original_method = "4304724C92023C406072B166ABF56DE4", hash_generated_method = "06536F16FDC471761CBE2359AB1C490E")
         public void release() {
             release(0);
-            
-            
+            // ---------- Original Method ----------
+            //release(0);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.993 -0400", hash_original_method = "4CBF875B7FFD1CFD45FAA62AD6F1991F", hash_generated_method = "CD6D647C4648A37772A0CF245E188996")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.348 -0400", hash_original_method = "4CBF875B7FFD1CFD45FAA62AD6F1991F", hash_generated_method = "465F57BBF13B0097AEDA26C4DB9CBFE0")
         public void release(int flags) {
-            {
+            addTaint(flags);
+            synchronized
+(mToken)            {
+    if(!mRefCounted || --mCount == 0)                
                 {
                     mHandler.removeCallbacks(mReleaser);
                     try 
                     {
                         mService.releaseWakeLock(mToken, flags);
-                    } 
+                    } //End block
                     catch (RemoteException e)
-                    { }
-                    mHeld = false;
-                } 
-                {
-                    if (DroidSafeAndroidRuntime.control) throw new RuntimeException("WakeLock under-locked " + mTag);
-                } 
-            } 
-            addTaint(flags);
-            
-            
-                
-                    
-                    
-                        
-                    
-                    
-                    
-                
-                
-                    
-                
-            
-        }
-
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.993 -0400", hash_original_method = "B8CE240AF6103639736D7EE1F34595B3", hash_generated_method = "473B8B41B57C426F35D1B543BAF38D0B")
-        public boolean isHeld() {
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1212609960 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1212609960;
-            
-            
-                
-            
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.994 -0400", hash_original_method = "413F4C2C0B188BB0515F7A7D15C1E054", hash_generated_method = "5F88F00A9C2367560611056E18F90A97")
-        public void setWorkSource(WorkSource ws) {
-            {
-                {
-                    boolean varDCFAF0E9E34CB8562A3C2873888A5A3D_1244969423 = (ws != null && ws.size() == 0);
                     {
-                        ws = null;
-                    } 
-                } 
+                    } //End block
+                    mHeld = false;
+                } //End block
+    if(mCount < 0)                
+                {
+                    RuntimeException var6CD397036E3CD1212596AC723083AF88_471695881 = new RuntimeException("WakeLock under-locked " + mTag);
+                    var6CD397036E3CD1212596AC723083AF88_471695881.addTaint(taint);
+                    throw var6CD397036E3CD1212596AC723083AF88_471695881;
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (mToken) {
+                //if (!mRefCounted || --mCount == 0) {
+                    //mHandler.removeCallbacks(mReleaser);
+                    //try {
+                        //mService.releaseWakeLock(mToken, flags);
+                    //} catch (RemoteException e) {
+                    //}
+                    //mHeld = false;
+                //}
+                //if (mCount < 0) {
+                    //throw new RuntimeException("WakeLock under-locked " + mTag);
+                //}
+            //}
+        }
+
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.349 -0400", hash_original_method = "B8CE240AF6103639736D7EE1F34595B3", hash_generated_method = "A658EF33AA31FBD622DA3A9971D1F46C")
+        public boolean isHeld() {
+            synchronized
+(mToken)            {
+                boolean varAD25B113814807D236AFB0F5095B0005_1515215473 = (mHeld);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_374713280 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_374713280;
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (mToken) {
+                //return mHeld;
+            //}
+        }
+
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.352 -0400", hash_original_method = "413F4C2C0B188BB0515F7A7D15C1E054", hash_generated_method = "E9B7E3A183B86FD31FB4AA18D3029FE8")
+        public void setWorkSource(WorkSource ws) {
+            synchronized
+(mToken)            {
+    if(ws != null && ws.size() == 0)                
+                {
+                    ws = null;
+                } //End block
                 boolean changed = true;
+    if(ws == null)                
                 {
                     mWorkSource = null;
-                } 
+                } //End block
+                else
+    if(mWorkSource == null)                
                 {
                     changed = mWorkSource != null;
                     mWorkSource = new WorkSource(ws);
-                } 
+                } //End block
+                else
                 {
                     changed = mWorkSource.diff(ws);
+    if(changed)                    
                     {
                         mWorkSource.set(ws);
-                    } 
-                } 
+                    } //End block
+                } //End block
+    if(changed && mHeld)                
                 {
                     try 
                     {
                         mService.updateWakeLockWorkSource(mToken, mWorkSource);
-                    } 
+                    } //End block
                     catch (RemoteException e)
-                    { }
-                } 
-            } 
-            
-            
+                    {
+                    } //End block
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.994 -0400", hash_original_method = "8262D389F7698AE191F8346E629CED2D", hash_generated_method = "A75B629A58CBF027B876EE6BA6FE66C5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.354 -0400", hash_original_method = "8262D389F7698AE191F8346E629CED2D", hash_generated_method = "88AD0963932F0371645B001A11D7944F")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1123515263 = null; 
-            {
-                varB4EAC82CA7396A68D541C85D26508E83_1123515263 = "WakeLock{"
+            synchronized
+(mToken)            {
+String var46AB0C184AE74F49DBA6A39856AEEE67_492162133 =                 "WakeLock{"
                     + Integer.toHexString(System.identityHashCode(this))
                     + " held=" + mHeld + ", refCount=" + mCount + "}";
-            } 
-            varB4EAC82CA7396A68D541C85D26508E83_1123515263.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_1123515263;
-            
-            
-                
-                    
-                    
-            
+                var46AB0C184AE74F49DBA6A39856AEEE67_492162133.addTaint(taint);
+                return var46AB0C184AE74F49DBA6A39856AEEE67_492162133;
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (mToken) {
+                //return "WakeLock{"
+                    //+ Integer.toHexString(System.identityHashCode(this))
+                    //+ " held=" + mHeld + ", refCount=" + mCount + "}";
+            //}
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.995 -0400", hash_original_method = "E802AB356FE449EE74DB3F74C7A8C8D4", hash_generated_method = "F83B158B2F7AD8C68820BAF5E7DDFAC3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.355 -0400", hash_original_method = "E802AB356FE449EE74DB3F74C7A8C8D4", hash_generated_method = "A740AB224144704BFA90C74FE3585501")
         @Override
         protected void finalize() throws Throwable {
-            {
+            synchronized
+(mToken)            {
+    if(mHeld)                
                 {
                     Log.wtf(TAG, "WakeLock finalized while still held: " + mTag);
                     try 
                     {
                         mService.releaseWakeLock(mToken, 0);
-                    } 
+                    } //End block
                     catch (RemoteException e)
-                    { }
-                } 
-            } 
-            
-            
-                
-                    
-                    
-                        
-                    
-                    
-                
-            
+                    {
+                    } //End block
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (mToken) {
+                //if (mHeld) {
+                    //Log.wtf(TAG, "WakeLock finalized while still held: " + mTag);
+                    //try {
+                        //mService.releaseWakeLock(mToken, 0);
+                    //} catch (RemoteException e) {
+                    //}
+                //}
+            //}
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.995 -0400", hash_original_field = "DDF120CAF6ED4420CFA18099A29DDFF3", hash_generated_field = "E9017053B54EAB7FB5FC1DB7E6284D86")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.355 -0400", hash_original_field = "DDF120CAF6ED4420CFA18099A29DDFF3", hash_generated_field = "E9017053B54EAB7FB5FC1DB7E6284D86")
 
         static final int RELEASE_WAKE_LOCK = 1;
     }
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.995 -0400", hash_original_field = "E8C3AF11B2F6C50D851EEE3EA424AA6D", hash_generated_field = "C992E04E6F98294D18127FB43220B098")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.355 -0400", hash_original_field = "E8C3AF11B2F6C50D851EEE3EA424AA6D", hash_generated_field = "C992E04E6F98294D18127FB43220B098")
 
     private static final String TAG = "PowerManager";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.995 -0400", hash_original_field = "19211123338B420C591A207AFA329DF6", hash_generated_field = "DA1AF79F5AEB746223D5A080BA0D7B80")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.356 -0400", hash_original_field = "19211123338B420C591A207AFA329DF6", hash_generated_field = "DA1AF79F5AEB746223D5A080BA0D7B80")
 
     private static final int WAKE_BIT_CPU_STRONG = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.995 -0400", hash_original_field = "2DD8AA100D0F732E67E310CF891D7EC0", hash_generated_field = "3FFD0B58107F7172B7334E4832AAEDDA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.356 -0400", hash_original_field = "2DD8AA100D0F732E67E310CF891D7EC0", hash_generated_field = "3FFD0B58107F7172B7334E4832AAEDDA")
 
     private static final int WAKE_BIT_CPU_WEAK = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.995 -0400", hash_original_field = "64FA4D528368594F4BA7044E6BB5092D", hash_generated_field = "A8F004FD62F88DD5D68A7238392A7C3E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.356 -0400", hash_original_field = "64FA4D528368594F4BA7044E6BB5092D", hash_generated_field = "A8F004FD62F88DD5D68A7238392A7C3E")
 
     private static final int WAKE_BIT_SCREEN_DIM = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.995 -0400", hash_original_field = "4E1C9FEBB7C003327838D9CB37C65B4C", hash_generated_field = "C8310B7C352FD2CA790D67F8B6F6AD22")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.356 -0400", hash_original_field = "4E1C9FEBB7C003327838D9CB37C65B4C", hash_generated_field = "C8310B7C352FD2CA790D67F8B6F6AD22")
 
     private static final int WAKE_BIT_SCREEN_BRIGHT = 8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.995 -0400", hash_original_field = "AE803F38BC0FAA62295ED420EE291210", hash_generated_field = "32E86E15E42DBF8C4A4AAAB26B8E9179")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.356 -0400", hash_original_field = "AE803F38BC0FAA62295ED420EE291210", hash_generated_field = "32E86E15E42DBF8C4A4AAAB26B8E9179")
 
     private static final int WAKE_BIT_KEYBOARD_BRIGHT = 16;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.995 -0400", hash_original_field = "0740FACA4BEB2366D6EE9D1405136E9B", hash_generated_field = "07D11D2026C96F73E351464C060F0A3D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.356 -0400", hash_original_field = "0740FACA4BEB2366D6EE9D1405136E9B", hash_generated_field = "07D11D2026C96F73E351464C060F0A3D")
 
     private static final int WAKE_BIT_PROXIMITY_SCREEN_OFF = 32;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.995 -0400", hash_original_field = "AC58A11040F96D1D65A052554AB0D8F3", hash_generated_field = "508DC0C6CE30C8ED2A556800FDE5D29E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.357 -0400", hash_original_field = "AC58A11040F96D1D65A052554AB0D8F3", hash_generated_field = "508DC0C6CE30C8ED2A556800FDE5D29E")
 
     private static final int LOCK_MASK = WAKE_BIT_CPU_STRONG
                                         | WAKE_BIT_CPU_WEAK
@@ -460,30 +493,30 @@ public class PowerManager {
                                         | WAKE_BIT_SCREEN_BRIGHT
                                         | WAKE_BIT_KEYBOARD_BRIGHT
                                         | WAKE_BIT_PROXIMITY_SCREEN_OFF;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.995 -0400", hash_original_field = "F8152CF66C372203002D8F0B3AFAACFE", hash_generated_field = "AC9BD5A790B134008196B44EB5DB0805")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.357 -0400", hash_original_field = "F8152CF66C372203002D8F0B3AFAACFE", hash_generated_field = "AC9BD5A790B134008196B44EB5DB0805")
 
     public static final int PARTIAL_WAKE_LOCK = WAKE_BIT_CPU_STRONG;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.995 -0400", hash_original_field = "6684FBE1CBF83D70FB2C43811368FAA0", hash_generated_field = "2A57113D9BD852DA3FF027A568ECABBA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.357 -0400", hash_original_field = "6684FBE1CBF83D70FB2C43811368FAA0", hash_generated_field = "2A57113D9BD852DA3FF027A568ECABBA")
 
     public static final int FULL_WAKE_LOCK = WAKE_BIT_CPU_WEAK | WAKE_BIT_SCREEN_BRIGHT 
                                             | WAKE_BIT_KEYBOARD_BRIGHT;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.995 -0400", hash_original_field = "FA43A140C1D80C83BE8A2A1014915A27", hash_generated_field = "F717F611D328BBB864613E8871029C25")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.357 -0400", hash_original_field = "FA43A140C1D80C83BE8A2A1014915A27", hash_generated_field = "F717F611D328BBB864613E8871029C25")
 
     @Deprecated
     public static final int SCREEN_BRIGHT_WAKE_LOCK = WAKE_BIT_CPU_WEAK | WAKE_BIT_SCREEN_BRIGHT;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.995 -0400", hash_original_field = "8F05CF3EDC06D0C1F2B6D054FA71A107", hash_generated_field = "F623936918E89354B54D6D1D9B39860E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.357 -0400", hash_original_field = "8F05CF3EDC06D0C1F2B6D054FA71A107", hash_generated_field = "F623936918E89354B54D6D1D9B39860E")
 
     public static final int SCREEN_DIM_WAKE_LOCK = WAKE_BIT_CPU_WEAK | WAKE_BIT_SCREEN_DIM;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.995 -0400", hash_original_field = "1C6A2BE426D19CB6DAA7FCAA6F1D62E3", hash_generated_field = "0708AE34D53A282071D7648E3913507C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.357 -0400", hash_original_field = "1C6A2BE426D19CB6DAA7FCAA6F1D62E3", hash_generated_field = "0708AE34D53A282071D7648E3913507C")
 
     public static final int PROXIMITY_SCREEN_OFF_WAKE_LOCK = WAKE_BIT_PROXIMITY_SCREEN_OFF;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.995 -0400", hash_original_field = "F278FFC7DC7268E47F010CAE7DA15285", hash_generated_field = "1296A95FBE3E2E8B9781F7FA52FCB683")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.357 -0400", hash_original_field = "F278FFC7DC7268E47F010CAE7DA15285", hash_generated_field = "1296A95FBE3E2E8B9781F7FA52FCB683")
 
     public static final int WAIT_FOR_PROXIMITY_NEGATIVE = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.995 -0400", hash_original_field = "A0309D0D2B9C7C35DB8AEF5C0CF4EB63", hash_generated_field = "121F7BB5CBB7C0F7BA1F50E37F255D93")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.357 -0400", hash_original_field = "A0309D0D2B9C7C35DB8AEF5C0CF4EB63", hash_generated_field = "121F7BB5CBB7C0F7BA1F50E37F255D93")
 
     public static final int ACQUIRE_CAUSES_WAKEUP = 0x10000000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.995 -0400", hash_original_field = "46661894042BF5A628C41971C71A0419", hash_generated_field = "9E3A5D66F162F0360DDC8F4B1969F42B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.358 -0400", hash_original_field = "46661894042BF5A628C41971C71A0419", hash_generated_field = "9E3A5D66F162F0360DDC8F4B1969F42B")
 
     public static final int ON_AFTER_RELEASE = 0x20000000;
 }

@@ -1,12 +1,9 @@
 package java.util.logging;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.io.BufferedInputStream;
@@ -22,217 +19,204 @@ import java.util.StringTokenizer;
 import libcore.io.IoUtils;
 
 public class LogManager {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.367 -0400", hash_original_field = "E3744F330069AC8D2BE40C0CB5EFBDB6", hash_generated_field = "AD370BFFC6E9AB83396CFA02133C2A08")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.177 -0400", hash_original_field = "E3744F330069AC8D2BE40C0CB5EFBDB6", hash_generated_field = "AD370BFFC6E9AB83396CFA02133C2A08")
 
     private Hashtable<String, Logger> loggers;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.368 -0400", hash_original_field = "50FE03AB7BF37089A7E88DA9B31FFB3B", hash_generated_field = "C2D8C40A30BA03E4CF83D1B1429A651D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.177 -0400", hash_original_field = "50FE03AB7BF37089A7E88DA9B31FFB3B", hash_generated_field = "C2D8C40A30BA03E4CF83D1B1429A651D")
 
     private Properties props;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.368 -0400", hash_original_field = "9F99697C78E088CB04E67AFD7A9D1068", hash_generated_field = "3B43FF39F7B726230E736460CF0CFA39")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.177 -0400", hash_original_field = "9F99697C78E088CB04E67AFD7A9D1068", hash_generated_field = "3B43FF39F7B726230E736460CF0CFA39")
 
     private PropertyChangeSupport listeners;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.368 -0400", hash_original_method = "F83269E1889FF9DC50A0440D3CD9234B", hash_generated_method = "2A997565C82286E3C0A90723210DA303")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.178 -0400", hash_original_method = "F83269E1889FF9DC50A0440D3CD9234B", hash_generated_method = "2FCA8E9D58726F53DD9A1342774D88C0")
     protected  LogManager() {
         loggers = new Hashtable<String, Logger>();
         props = new Properties();
         listeners = new PropertyChangeSupport(this);
-        Runtime.getRuntime().addShutdownHook(new Thread() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.368 -0400", hash_original_method = "1836317CB8E0A5E5B172790642D1742E", hash_generated_method = "59D9E72089082C0A3CB03237A4A6EC42")
-            @Override
-            public void run() {
-                reset();
-                
-                
-            }
+        Runtime.getRuntime().addShutdownHook(new Thread() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.178 -0400", hash_original_method = "1836317CB8E0A5E5B172790642D1742E", hash_generated_method = "59D9E72089082C0A3CB03237A4A6EC42")
+        @Override
+        public void run() {
+            reset();
+            // ---------- Original Method ----------
+            //reset();
+        }
 });
-        
-        
-        
-        
-        
-            
-                
-            
-        
+        // ---------- Original Method ----------
+        //loggers = new Hashtable<String, Logger>();
+        //props = new Properties();
+        //listeners = new PropertyChangeSupport(this);
+        //Runtime.getRuntime().addShutdownHook(new Thread() {
+            //@Override public void run() {
+                //reset();
+            //}
+        //});
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static LoggingMXBean getLoggingMXBean() {
+        public static LoggingMXBean getLoggingMXBean() {
         throw new UnsupportedOperationException();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.369 -0400", hash_original_method = "9AC5D8EF15BD7837ACD785C0772615A1", hash_generated_method = "C308BE0846D76E01A367023713D9A840")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.178 -0400", hash_original_method = "9AC5D8EF15BD7837ACD785C0772615A1", hash_generated_method = "C308BE0846D76E01A367023713D9A840")
     public void checkAccess() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.369 -0400", hash_original_method = "9E275E191101B6346DE13876068F41E1", hash_generated_method = "25F16E9D0F6830BFC64D143AAACAAD12")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.179 -0400", hash_original_method = "9E275E191101B6346DE13876068F41E1", hash_generated_method = "01D59E4F11550A708349377BB777032A")
     public synchronized boolean addLogger(Logger logger) {
+        addTaint(logger.getTaint());
         String name = logger.getName();
+    if(loggers.get(name) != null)        
         {
-            boolean var8D9B5EDD22D5E90786B9DFCF2C7B2FED_2077165150 = (loggers.get(name) != null);
-        } 
+            boolean var68934A3E9455FA72420237EB05902327_1223451256 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1241483337 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1241483337;
+        } //End block
         addToFamilyTree(logger, name);
         loggers.put(name, logger);
         logger.setManager(this);
-        addTaint(logger.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_281648976 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_281648976;
-        
-        
-        
-            
-        
-        
-        
-        
-        
+        boolean varB326B5062B2F0E69046810717534CB09_743661928 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1034714592 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1034714592;
+        // ---------- Original Method ----------
+        //String name = logger.getName();
+        //if (loggers.get(name) != null) {
+            //return false;
+        //}
+        //addToFamilyTree(logger, name);
+        //loggers.put(name, logger);
+        //logger.setManager(this);
+        //return true;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.378 -0400", hash_original_method = "0070D539A38F64AFDE25421AB7DE8DFA", hash_generated_method = "7DD9B36071850A6DAA78142FF0FEB3A1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.182 -0400", hash_original_method = "0070D539A38F64AFDE25421AB7DE8DFA", hash_generated_method = "76C1DB2B184826FDB1C78E29D45926F7")
     private void addToFamilyTree(Logger logger, String name) {
+        addTaint(name.getTaint());
+        addTaint(logger.getTaint());
         Logger parent = null;
         int lastSeparator;
         String parentName = name;
+        while
+((lastSeparator = parentName.lastIndexOf('.')) != -1)        
         {
-            boolean var24311821043CD386ECA987B6ED2E2081_241363339 = ((lastSeparator = parentName.lastIndexOf('.')) != -1);
-            {
-                parentName = parentName.substring(0, lastSeparator);
-                parent = loggers.get(parentName);
-                {
-                    setParent(logger, parent);
-                } 
-                {
-                    boolean var436F2D49C8476C95F0FD5686A4212BC7_575240558 = (getProperty(parentName + ".level") != null ||
-                    getProperty(parentName + ".handlers") != null);
-                    {
-                        parent = Logger.getLogger(parentName);
-                        setParent(logger, parent);
-                    } 
-                } 
-            } 
-        } 
-        {
-            boolean varE7420F5B75328DBDF911BFB1BBFE9320_2131091867 = (parent == null && (parent = loggers.get("")) != null);
+            parentName = parentName.substring(0, lastSeparator);
+            parent = loggers.get(parentName);
+    if(parent != null)            
             {
                 setParent(logger, parent);
-            } 
-        } 
+                break;
+            } //End block
+            else
+    if(getProperty(parentName + ".level") != null ||
+                    getProperty(parentName + ".handlers") != null)            
+            {
+                parent = Logger.getLogger(parentName);
+                setParent(logger, parent);
+                break;
+            } //End block
+        } //End block
+    if(parent == null && (parent = loggers.get("")) != null)        
+        {
+            setParent(logger, parent);
+        } //End block
         String nameDot = name + '.';
         Collection<Logger> allLoggers = loggers.values();
+for(Logger child : allLoggers)
         {
-            Iterator<Logger> var4A013FF40FFB4353AFEDD6717288ACC8_1532832891 = (allLoggers).iterator();
-            var4A013FF40FFB4353AFEDD6717288ACC8_1532832891.hasNext();
-            final Logger child = var4A013FF40FFB4353AFEDD6717288ACC8_1532832891.next();
+            Logger oldParent = child.getParent();
+    if(parent == oldParent && (name.length() == 0 || child.getName().startsWith(nameDot)))            
             {
-                Logger oldParent = child.getParent();
+                final Logger thisLogger = logger;
+                child.setParent(thisLogger);
+    if(oldParent != null)                
                 {
-                    boolean varEE86372CE9D50F853F7F62A388B74232_67891352 = (parent == oldParent && (name.length() == 0 || child.getName().startsWith(nameDot)));
-                    {
-                        final Logger thisLogger = logger;
-                        child.setParent(thisLogger);
-                        {
-                            oldParent.children.remove(child);
-                        } 
-                    } 
-                } 
-            } 
-        } 
-        addTaint(logger.getTaint());
-        addTaint(name.getTaint());
-        
-        
+                    oldParent.children.remove(child);
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.379 -0400", hash_original_method = "7CC5CB7CA011BF34DBD2626C5B91D261", hash_generated_method = "4083BFA7443D23B42F8F033B1449BCDB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.184 -0400", hash_original_method = "7CC5CB7CA011BF34DBD2626C5B91D261", hash_generated_method = "77C51A8BF4663F435DD8C47BCE1C8EAC")
     public synchronized Logger getLogger(String name) {
-        Logger varB4EAC82CA7396A68D541C85D26508E83_721887279 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_721887279 = loggers.get(name);
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_721887279.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_721887279;
-        
-        
+Logger var221D8F3514DCB5DB275CC33A419F7FF7_1166412643 =         loggers.get(name);
+        var221D8F3514DCB5DB275CC33A419F7FF7_1166412643.addTaint(taint);
+        return var221D8F3514DCB5DB275CC33A419F7FF7_1166412643;
+        // ---------- Original Method ----------
+        //return loggers.get(name);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.379 -0400", hash_original_method = "A3ADDC952F848C9366B53F69C5A416F6", hash_generated_method = "59BD2C7B7FC1B578DB4E7AE93801B883")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.184 -0400", hash_original_method = "A3ADDC952F848C9366B53F69C5A416F6", hash_generated_method = "F1D509014509AE0654C51E7B45B445B0")
     public synchronized Enumeration<String> getLoggerNames() {
-        Enumeration<String> varB4EAC82CA7396A68D541C85D26508E83_1732811004 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1732811004 = loggers.keys();
-        varB4EAC82CA7396A68D541C85D26508E83_1732811004.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1732811004;
-        
-        
+Enumeration<String> var4E30A2D52E210CF3B5F426F6FA97D29F_1369852321 =         loggers.keys();
+        var4E30A2D52E210CF3B5F426F6FA97D29F_1369852321.addTaint(taint);
+        return var4E30A2D52E210CF3B5F426F6FA97D29F_1369852321;
+        // ---------- Original Method ----------
+        //return loggers.keys();
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static LogManager getLogManager() {
+        public static LogManager getLogManager() {
         return manager;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.380 -0400", hash_original_method = "308A02382C1792AE136BBB31488FF7DC", hash_generated_method = "75BC8267152278A9D174BD5625A85229")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.185 -0400", hash_original_method = "308A02382C1792AE136BBB31488FF7DC", hash_generated_method = "DF23AF692EA256BE54D834C4958B9ED6")
     public String getProperty(String name) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1702189657 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1702189657 = props.getProperty(name);
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1702189657.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1702189657;
-        
-        
+String varCAC2FB4F16F751F82616E09DB74CE99D_1319295210 =         props.getProperty(name);
+        varCAC2FB4F16F751F82616E09DB74CE99D_1319295210.addTaint(taint);
+        return varCAC2FB4F16F751F82616E09DB74CE99D_1319295210;
+        // ---------- Original Method ----------
+        //return props.getProperty(name);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.380 -0400", hash_original_method = "F9E79871CB75749F3B3C682DFBEA7367", hash_generated_method = "BD86A888733C9B94B5F149259D047854")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.186 -0400", hash_original_method = "F9E79871CB75749F3B3C682DFBEA7367", hash_generated_method = "CCC7FF4AE08B15AAB694366B4FC23BD0")
     public void readConfiguration() throws IOException {
         String configClassName = System.getProperty("java.util.logging.config.class");
+    if(configClassName == null || getInstanceByClass(configClassName) == null)        
         {
-            boolean varDD1F3D94E4BF22F8C21B8724834F5A99_488117754 = (configClassName == null || getInstanceByClass(configClassName) == null);
+            String configFile = System.getProperty("java.util.logging.config.file");
+    if(configFile == null)            
             {
-                String configFile = System.getProperty("java.util.logging.config.file");
-                {
-                    configFile = System.getProperty("java.home") + File.separator + "lib" +
+                configFile = System.getProperty("java.home") + File.separator + "lib" +
                         File.separator + "logging.properties";
-                } 
-                InputStream input = null;
+            } //End block
+            InputStream input = null;
+            try 
+            {
                 try 
                 {
-                    try 
-                    {
-                        input = new FileInputStream(configFile);
-                    } 
-                    catch (IOException exception)
-                    {
-                        input = LogManager.class.getResourceAsStream("logging.properties");
-                        {
-                            if (DroidSafeAndroidRuntime.control) throw exception;
-                        } 
-                    } 
-                    readConfiguration(new BufferedInputStream(input));
-                } 
-                finally 
+                    input = new FileInputStream(configFile);
+                } //End block
+                catch (IOException exception)
                 {
-                    IoUtils.closeQuietly(input);
-                } 
-            } 
-        } 
-        
-        
+                    input = LogManager.class.getResourceAsStream("logging.properties");
+    if(input == null)                    
+                    {
+                        exception.addTaint(taint);
+                        throw exception;
+                    } //End block
+                } //End block
+                readConfiguration(new BufferedInputStream(input));
+            } //End block
+            finally 
+            {
+                IoUtils.closeQuietly(input);
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -253,224 +237,219 @@ public class LogManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.388 -0400", hash_original_method = "5AA730DC7CE7051A789AED9B260AEA08", hash_generated_method = "2A883B86987B92F7B11EA3784F8F40FA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.186 -0400", hash_original_method = "5AA730DC7CE7051A789AED9B260AEA08", hash_generated_method = "91EE07B56353B3774C117594F5E2D583")
     private synchronized void readConfigurationImpl(InputStream ins) throws IOException {
+        addTaint(ins.getTaint());
         reset();
         props.load(ins);
         Logger root = loggers.get("");
+    if(root != null)        
         {
             root.setManager(this);
-        } 
+        } //End block
         String configs = props.getProperty("config");
+    if(configs != null)        
         {
             StringTokenizer st = new StringTokenizer(configs, " ");
+            while
+(st.hasMoreTokens())            
             {
-                boolean varA9BBA9119DD90070115272E6F9D4D419_1444349973 = (st.hasMoreTokens());
-                {
-                    String configerName = st.nextToken();
-                    getInstanceByClass(configerName);
-                } 
-            } 
-        } 
+                String configerName = st.nextToken();
+                getInstanceByClass(configerName);
+            } //End block
+        } //End block
         Collection<Logger> allLoggers = loggers.values();
+for(Logger logger : allLoggers)
         {
-            Iterator<Logger> var5DADD71C08A6A25BCD24EECB2286D82F_721800240 = (allLoggers).iterator();
-            var5DADD71C08A6A25BCD24EECB2286D82F_721800240.hasNext();
-            Logger logger = var5DADD71C08A6A25BCD24EECB2286D82F_721800240.next();
+            String property = props.getProperty(logger.getName() + ".level");
+    if(property != null)            
             {
-                String property = props.getProperty(logger.getName() + ".level");
-                {
-                    logger.setLevel(Level.parse(property));
-                } 
-            } 
-        } 
+                logger.setLevel(Level.parse(property));
+            } //End block
+        } //End block
         listeners.firePropertyChange(null, null, null);
-        addTaint(ins.getTaint());
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.389 -0400", hash_original_method = "0B5A5DFDBB36281B5E8835796DD30069", hash_generated_method = "2033D464A9B31A1EC9418D2986523A7D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.187 -0400", hash_original_method = "0B5A5DFDBB36281B5E8835796DD30069", hash_generated_method = "B873FDB9BFB45A593D31088D6CC8EB3E")
     public void readConfiguration(InputStream ins) throws IOException {
+        addTaint(ins.getTaint());
         checkAccess();
         readConfigurationImpl(ins);
-        addTaint(ins.getTaint());
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkAccess();
+        //readConfigurationImpl(ins);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.389 -0400", hash_original_method = "C7F5D5A126D3CC9BC9332DC327B04AA6", hash_generated_method = "E066EDDC4328BF1591C3F9F76C72FAEC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.187 -0400", hash_original_method = "C7F5D5A126D3CC9BC9332DC327B04AA6", hash_generated_method = "0BB5A647B728427053CFC8FEE2E63C26")
     public synchronized void reset() {
         checkAccess();
         props = new Properties();
         Enumeration<String> names = getLoggerNames();
+        while
+(names.hasMoreElements())        
         {
-            boolean var9F006A42B2CC9BF287474D33D9697C81_637339910 = (names.hasMoreElements());
+            String name = names.nextElement();
+            Logger logger = getLogger(name);
+    if(logger != null)            
             {
-                String name = names.nextElement();
-                Logger logger = getLogger(name);
-                {
-                    logger.reset();
-                } 
-            } 
-        } 
+                logger.reset();
+            } //End block
+        } //End block
         Logger root = loggers.get("");
+    if(root != null)        
         {
             root.setLevel(Level.INFO);
-        } 
-        
-        
-        
-        
-        
-            
-            
-            
-                
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //checkAccess();
+        //props = new Properties();
+        //Enumeration<String> names = getLoggerNames();
+        //while (names.hasMoreElements()) {
+            //String name = names.nextElement();
+            //Logger logger = getLogger(name);
+            //if (logger != null) {
+                //logger.reset();
+            //}
+        //}
+        //Logger root = loggers.get("");
+        //if (root != null) {
+            //root.setLevel(Level.INFO);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.389 -0400", hash_original_method = "89AE29101867526E131C7EEE62325170", hash_generated_method = "882C6EE0CC053CC361FF9D6856595007")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.188 -0400", hash_original_method = "89AE29101867526E131C7EEE62325170", hash_generated_method = "2EE36938C37C678437C2FBAEDD70E5D0")
     public void addPropertyChangeListener(PropertyChangeListener l) {
+        addTaint(l.getTaint());
+    if(l == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } 
+            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1626598201 = new NullPointerException();
+            var7338BC9F48D81FE0BBD6183F4014DCC4_1626598201.addTaint(taint);
+            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1626598201;
+        } //End block
         checkAccess();
         listeners.addPropertyChangeListener(l);
-        addTaint(l.getTaint());
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (l == null) {
+            //throw new NullPointerException();
+        //}
+        //checkAccess();
+        //listeners.addPropertyChangeListener(l);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.390 -0400", hash_original_method = "C0D7CB274D3F753AA28C566B595F1403", hash_generated_method = "21A4C2E825498CC874F03598DE096E16")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.188 -0400", hash_original_method = "C0D7CB274D3F753AA28C566B595F1403", hash_generated_method = "AA2028EE94561590C94782D57F1FB9E3")
     public void removePropertyChangeListener(PropertyChangeListener l) {
+        addTaint(l.getTaint());
         checkAccess();
         listeners.removePropertyChangeListener(l);
-        addTaint(l.getTaint());
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkAccess();
+        //listeners.removePropertyChangeListener(l);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.390 -0400", hash_original_method = "B934C7BD7B62C355AF995C71D51E6416", hash_generated_method = "5F7880A06ECFBF8DB3819592DAF7AD43")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.188 -0400", hash_original_method = "B934C7BD7B62C355AF995C71D51E6416", hash_generated_method = "9A310AD1DBE3F83A4C10B15CC6D1A9CA")
     synchronized Logger getOrCreate(String name, String resourceBundleName) {
-        Logger varB4EAC82CA7396A68D541C85D26508E83_1317350450 = null; 
+        addTaint(resourceBundleName.getTaint());
+        addTaint(name.getTaint());
         Logger result = getLogger(name);
+    if(result == null)        
         {
             result = new Logger(name, resourceBundleName);
             addLogger(result);
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1317350450 = result;
-        addTaint(name.getTaint());
-        addTaint(resourceBundleName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1317350450.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1317350450;
-        
-        
-        
-            
-            
-        
-        
+        } //End block
+Logger varDC838461EE2FA0CA4C9BBB70A15456B0_1595779908 =         result;
+        varDC838461EE2FA0CA4C9BBB70A15456B0_1595779908.addTaint(taint);
+        return varDC838461EE2FA0CA4C9BBB70A15456B0_1595779908;
+        // ---------- Original Method ----------
+        //Logger result = getLogger(name);
+        //if (result == null) {
+            //result = new Logger(name, resourceBundleName);
+            //addLogger(result);
+        //}
+        //return result;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.391 -0400", hash_original_method = "B8E057E50526DE42F5AE7CC32A8A2058", hash_generated_method = "9F282BA13F692C4E1617CE25BD6E52C3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.189 -0400", hash_original_method = "B8E057E50526DE42F5AE7CC32A8A2058", hash_generated_method = "8EE1D572A948BD1FF6EB146007A7AD4E")
     synchronized void setParent(Logger logger, Logger newParent) {
+        addTaint(newParent.getTaint());
+        addTaint(logger.getTaint());
         logger.parent = newParent;
+    if(logger.levelObjVal == null)        
         {
             setLevelRecursively(logger, null);
-        } 
+        } //End block
         newParent.children.add(logger);
         logger.updateDalvikLogHandler();
-        addTaint(logger.getTaint());
-        addTaint(newParent.getTaint());
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //logger.parent = newParent;
+        //if (logger.levelObjVal == null) {
+            //setLevelRecursively(logger, null);
+        //}
+        //newParent.children.add(logger);
+        //logger.updateDalvikLogHandler();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.397 -0400", hash_original_method = "46EC17C11FD929B8108F5C206F2B42C8", hash_generated_method = "A3BFC1B62EAB5E96432A1D9481C9BD48")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.190 -0400", hash_original_method = "46EC17C11FD929B8108F5C206F2B42C8", hash_generated_method = "F26DDD568D91741F4C59DDDA36E22BE1")
     synchronized void setLevelRecursively(Logger logger, Level newLevel) {
+        addTaint(newLevel.getTaint());
+        addTaint(logger.getTaint());
         int previous = logger.levelIntVal;
         logger.levelObjVal = newLevel;
+    if(newLevel == null)        
         {
             logger.levelIntVal = logger.parent != null
                     ? logger.parent.levelIntVal
                     : Level.INFO.intValue();
-        } 
+        } //End block
+        else
         {
             logger.levelIntVal = newLevel.intValue();
-        } 
+        } //End block
+    if(previous != logger.levelIntVal)        
         {
+for(Logger child : logger.children)
             {
-                Iterator<Logger> var269A6E3FAF8E58C011F2E1EF42BE0425_1694813759 = (logger.children).iterator();
-                var269A6E3FAF8E58C011F2E1EF42BE0425_1694813759.hasNext();
-                Logger child = var269A6E3FAF8E58C011F2E1EF42BE0425_1694813759.next();
+    if(child.levelObjVal == null)                
                 {
-                    {
-                        setLevelRecursively(child, null);
-                    } 
-                } 
-            } 
-        } 
-        addTaint(logger.getTaint());
-        addTaint(newLevel.getTaint());
-        
-        
-        
-        
-            
-                    
-                    
-        
-            
-        
-        
-            
-                
-                    
-                
-            
-        
+                    setLevelRecursively(child, null);
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //int previous = logger.levelIntVal;
+        //logger.levelObjVal = newLevel;
+        //if (newLevel == null) {
+            //logger.levelIntVal = logger.parent != null
+                    //? logger.parent.levelIntVal
+                    //: Level.INFO.intValue();
+        //} else {
+            //logger.levelIntVal = newLevel.intValue();
+        //}
+        //if (previous != logger.levelIntVal) {
+            //for (Logger child : logger.children) {
+                //if (child.levelObjVal == null) {
+                    //setLevelRecursively(child, null);
+                //}
+            //}
+        //}
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.397 -0400", hash_original_field = "236E63F5B17A2E84BD136AD72EB7D7B3", hash_generated_field = "6DBE4148F2B32574633325AE3FB2F9F9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.190 -0400", hash_original_field = "236E63F5B17A2E84BD136AD72EB7D7B3", hash_generated_field = "6DBE4148F2B32574633325AE3FB2F9F9")
 
     private static final LoggingPermission perm = new LoggingPermission("control", null);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.397 -0400", hash_original_field = "1D0258C2440A8D19E716292B231E3190", hash_generated_field = "60A931CC8E2121C9AF9FC8AFF4714295")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.190 -0400", hash_original_field = "1D0258C2440A8D19E716292B231E3190", hash_generated_field = "60A931CC8E2121C9AF9FC8AFF4714295")
 
     static LogManager manager;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.397 -0400", hash_original_field = "B8CB929319EE85E0FA97E8ABD40DEBBC", hash_generated_field = "A7D53AAA4BF83E2F2365813530C06BF1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.190 -0400", hash_original_field = "B8CB929319EE85E0FA97E8ABD40DEBBC", hash_generated_field = "A7D53AAA4BF83E2F2365813530C06BF1")
 
     public static final String LOGGING_MXBEAN_NAME = "java.util.logging:type=Logging";
     static {

@@ -1,12 +1,9 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -14,412 +11,381 @@ import java.net.SocketAddress;
 import java.net.SocketException;
 
 public class OpenSSLSocketImplWrapper extends OpenSSLSocketImpl {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.619 -0400", hash_original_field = "61F2529360AEC54F5DC9804B842CF3FA", hash_generated_field = "8626E3C3C4BFCB66E8863775B28E01CC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.828 -0400", hash_original_field = "61F2529360AEC54F5DC9804B842CF3FA", hash_generated_field = "8626E3C3C4BFCB66E8863775B28E01CC")
 
     private Socket socket;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.620 -0400", hash_original_method = "AE2ACFC3381FF02B6F42819ACFB99347", hash_generated_method = "2463EAFEC87B9BC41D74E902CD43312A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.830 -0400", hash_original_method = "AE2ACFC3381FF02B6F42819ACFB99347", hash_generated_method = "A5B558FEF1208ED6FA02558FADAD9F6F")
     protected  OpenSSLSocketImplWrapper(Socket socket, String host, int port,
             boolean autoClose, SSLParametersImpl sslParameters) throws IOException {
         super(socket, host, port, autoClose, sslParameters);
-        {
-            boolean varF865E9BFD2A89C8A8567DBB6F973C9E3_819738346 = (!socket.isConnected());
-            {
-                if (DroidSafeAndroidRuntime.control) throw new SocketException("Socket is not connected.");
-            } 
-        } 
-        this.socket = socket;
-        addTaint(host.getTaint());
-        addTaint(port);
-        addTaint(autoClose);
         addTaint(sslParameters.getTaint());
-        
-        
-            
-        
-        
+        addTaint(autoClose);
+        addTaint(port);
+        addTaint(host.getTaint());
+    if(!socket.isConnected())        
+        {
+            SocketException var3EEAB102670EF01EF4AB15A481BD6DE7_1263204349 = new SocketException("Socket is not connected.");
+            var3EEAB102670EF01EF4AB15A481BD6DE7_1263204349.addTaint(taint);
+            throw var3EEAB102670EF01EF4AB15A481BD6DE7_1263204349;
+        } //End block
+        this.socket = socket;
+        // ---------- Original Method ----------
+        //if (!socket.isConnected()) {
+            //throw new SocketException("Socket is not connected.");
+        //}
+        //this.socket = socket;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.620 -0400", hash_original_method = "00D15638ACD466799C761D85B34B76D1", hash_generated_method = "1A064EC557450C7EA2764FB4DB01E4C0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.831 -0400", hash_original_method = "00D15638ACD466799C761D85B34B76D1", hash_generated_method = "48EC8EFC879FEE039584521A50CA36B2")
     @Override
     public void connect(SocketAddress sockaddr, int timeout) throws IOException {
-        if (DroidSafeAndroidRuntime.control) throw new IOException("Underlying socket is already connected.");
-        addTaint(sockaddr.getTaint());
         addTaint(timeout);
-        
-        
+        addTaint(sockaddr.getTaint());
+        IOException var24F53EE647420CC7D8443F7A9913471F_457004404 = new IOException("Underlying socket is already connected.");
+        var24F53EE647420CC7D8443F7A9913471F_457004404.addTaint(taint);
+        throw var24F53EE647420CC7D8443F7A9913471F_457004404;
+        // ---------- Original Method ----------
+        //throw new IOException("Underlying socket is already connected.");
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.620 -0400", hash_original_method = "EAF5C6F0CD11B02972408C1904067F09", hash_generated_method = "B10D9E4BDDC1EC0BBBD388520B8D78B5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.831 -0400", hash_original_method = "EAF5C6F0CD11B02972408C1904067F09", hash_generated_method = "FE7523C73677260A51AFCAA116B071EB")
     @Override
     public void connect(SocketAddress sockaddr) throws IOException {
-        if (DroidSafeAndroidRuntime.control) throw new IOException("Underlying socket is already connected.");
         addTaint(sockaddr.getTaint());
-        
-        
+        IOException var24F53EE647420CC7D8443F7A9913471F_467417926 = new IOException("Underlying socket is already connected.");
+        var24F53EE647420CC7D8443F7A9913471F_467417926.addTaint(taint);
+        throw var24F53EE647420CC7D8443F7A9913471F_467417926;
+        // ---------- Original Method ----------
+        //throw new IOException("Underlying socket is already connected.");
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.621 -0400", hash_original_method = "7A09B0BAD685B79E09A501FC300262C5", hash_generated_method = "879B551EC89CF9FC73B28F75178FBD21")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.832 -0400", hash_original_method = "7A09B0BAD685B79E09A501FC300262C5", hash_generated_method = "5FF79CDEB5F8AC552574A41D4D84582B")
     @Override
     public void bind(SocketAddress sockaddr) throws IOException {
-        if (DroidSafeAndroidRuntime.control) throw new IOException("Underlying socket is already connected.");
         addTaint(sockaddr.getTaint());
-        
-        
+        IOException var24F53EE647420CC7D8443F7A9913471F_1010338723 = new IOException("Underlying socket is already connected.");
+        var24F53EE647420CC7D8443F7A9913471F_1010338723.addTaint(taint);
+        throw var24F53EE647420CC7D8443F7A9913471F_1010338723;
+        // ---------- Original Method ----------
+        //throw new IOException("Underlying socket is already connected.");
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.621 -0400", hash_original_method = "3943DC2A7B0758DBF52393C8C56EA577", hash_generated_method = "9D080AFCE7179FB78D19BD8D790EAC7B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.832 -0400", hash_original_method = "3943DC2A7B0758DBF52393C8C56EA577", hash_generated_method = "6D9DABB08315BD2B775697C7071C6233")
     @Override
     public SocketAddress getRemoteSocketAddress() {
-        SocketAddress varB4EAC82CA7396A68D541C85D26508E83_2060751142 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_2060751142 = socket.getRemoteSocketAddress();
-        varB4EAC82CA7396A68D541C85D26508E83_2060751142.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_2060751142;
-        
-        
+SocketAddress var4967962CF7D2DE2821745DC37AD1C991_813959940 =         socket.getRemoteSocketAddress();
+        var4967962CF7D2DE2821745DC37AD1C991_813959940.addTaint(taint);
+        return var4967962CF7D2DE2821745DC37AD1C991_813959940;
+        // ---------- Original Method ----------
+        //return socket.getRemoteSocketAddress();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.621 -0400", hash_original_method = "8FA3564BB5CFB45123B15A784733B246", hash_generated_method = "F03AC51C1C565817953D4691A8A778B1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.832 -0400", hash_original_method = "8FA3564BB5CFB45123B15A784733B246", hash_generated_method = "89E1252409D188D7633DDAE6A35C75BE")
     @Override
     public SocketAddress getLocalSocketAddress() {
-        SocketAddress varB4EAC82CA7396A68D541C85D26508E83_2001978687 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_2001978687 = socket.getLocalSocketAddress();
-        varB4EAC82CA7396A68D541C85D26508E83_2001978687.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_2001978687;
-        
-        
+SocketAddress var1C6F9B0AD89BA50278597144BF3BD232_2088881773 =         socket.getLocalSocketAddress();
+        var1C6F9B0AD89BA50278597144BF3BD232_2088881773.addTaint(taint);
+        return var1C6F9B0AD89BA50278597144BF3BD232_2088881773;
+        // ---------- Original Method ----------
+        //return socket.getLocalSocketAddress();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.622 -0400", hash_original_method = "FA66787E9EF6408AFBBAC830990D81DD", hash_generated_method = "F8107217F97F88EC118F3C64DD04EC3E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.832 -0400", hash_original_method = "FA66787E9EF6408AFBBAC830990D81DD", hash_generated_method = "57DEE5C22B6B0E7238FD61124844F89C")
     @Override
     public InetAddress getLocalAddress() {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1572252067 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1572252067 = socket.getLocalAddress();
-        varB4EAC82CA7396A68D541C85D26508E83_1572252067.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1572252067;
-        
-        
+InetAddress var0C541A2DEB3DFBAE24BA22015AE99BEB_9602230 =         socket.getLocalAddress();
+        var0C541A2DEB3DFBAE24BA22015AE99BEB_9602230.addTaint(taint);
+        return var0C541A2DEB3DFBAE24BA22015AE99BEB_9602230;
+        // ---------- Original Method ----------
+        //return socket.getLocalAddress();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.622 -0400", hash_original_method = "7C5B0DF8424BA5B1A7E73E96C6697260", hash_generated_method = "7093E8AFC53A6F34D35F1584B8A9FEA2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.833 -0400", hash_original_method = "7C5B0DF8424BA5B1A7E73E96C6697260", hash_generated_method = "E9F5ABC012FA2F03F8FD2B026F3D30F9")
     @Override
     public InetAddress getInetAddress() {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_16464525 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_16464525 = socket.getInetAddress();
-        varB4EAC82CA7396A68D541C85D26508E83_16464525.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_16464525;
-        
-        
+InetAddress varE20C5CD772B1ECBEFE0A81A1658EEE73_1061618743 =         socket.getInetAddress();
+        varE20C5CD772B1ECBEFE0A81A1658EEE73_1061618743.addTaint(taint);
+        return varE20C5CD772B1ECBEFE0A81A1658EEE73_1061618743;
+        // ---------- Original Method ----------
+        //return socket.getInetAddress();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.622 -0400", hash_original_method = "20064C2DA65D137C2E5BEE76E0D7F046", hash_generated_method = "2575406C903340DA64473ADA527A9E02")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.833 -0400", hash_original_method = "20064C2DA65D137C2E5BEE76E0D7F046", hash_generated_method = "93CA44C544BA6DE6C1498298C040EE6F")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1047733688 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1047733688 = "SSL socket over " + socket.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1047733688.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1047733688;
-        
-        
+String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over " + socket.toString();
+        var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524.addTaint(taint);
+        return var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524;
+        // ---------- Original Method ----------
+        //return "SSL socket over " + socket.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.623 -0400", hash_original_method = "BA6A863821CC6E272D69FAD304054330", hash_generated_method = "8BF63EB618A8A20BA3045AD7CE0301B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.833 -0400", hash_original_method = "BA6A863821CC6E272D69FAD304054330", hash_generated_method = "D9C2D5E2011588A2DB8A5A29406FBD55")
     @Override
     public void setSoLinger(boolean on, int linger) throws SocketException {
-        socket.setSoLinger(on, linger);
-        addTaint(on);
         addTaint(linger);
-        
-        
+        addTaint(on);
+        socket.setSoLinger(on, linger);
+        // ---------- Original Method ----------
+        //socket.setSoLinger(on, linger);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.623 -0400", hash_original_method = "6AD7B97F2FA9AF7B8D3F27597107B2BF", hash_generated_method = "ADDDBEBB6020BAC3000366C593A8E5FA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.834 -0400", hash_original_method = "6AD7B97F2FA9AF7B8D3F27597107B2BF", hash_generated_method = "6D19A99220A92890F100ACB9F0485C14")
     @Override
     public void setTcpNoDelay(boolean on) throws SocketException {
-        socket.setTcpNoDelay(on);
         addTaint(on);
-        
-        
+        socket.setTcpNoDelay(on);
+        // ---------- Original Method ----------
+        //socket.setTcpNoDelay(on);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.623 -0400", hash_original_method = "D83D710E6441AF70333DBDC9EA6830A9", hash_generated_method = "F51E15FEAA1AAF350A87A7B52B05C4BC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.834 -0400", hash_original_method = "D83D710E6441AF70333DBDC9EA6830A9", hash_generated_method = "381910E8A2F6BF913BBDC9C262360D18")
     @Override
     public void setReuseAddress(boolean on) throws SocketException {
-        socket.setReuseAddress(on);
         addTaint(on);
-        
-        
+        socket.setReuseAddress(on);
+        // ---------- Original Method ----------
+        //socket.setReuseAddress(on);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.623 -0400", hash_original_method = "42F0A197FBCF742A135D89D6FE12DB15", hash_generated_method = "2864058A22F7EA46FC805B79D732BACF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.834 -0400", hash_original_method = "42F0A197FBCF742A135D89D6FE12DB15", hash_generated_method = "21835C9586E06EF714A7BF25034B5F9D")
     @Override
     public void setKeepAlive(boolean on) throws SocketException {
-        socket.setKeepAlive(on);
         addTaint(on);
-        
-        
+        socket.setKeepAlive(on);
+        // ---------- Original Method ----------
+        //socket.setKeepAlive(on);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.623 -0400", hash_original_method = "F7B57673F6A99B49112F94E152729E53", hash_generated_method = "E88C8D8FCC1216E91574A36430F7AE3A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.835 -0400", hash_original_method = "F7B57673F6A99B49112F94E152729E53", hash_generated_method = "F0919E51ED1A379DDBED086BE5BE4460")
     @Override
     public void setTrafficClass(int tos) throws SocketException {
-        socket.setTrafficClass(tos);
         addTaint(tos);
-        
-        
+        socket.setTrafficClass(tos);
+        // ---------- Original Method ----------
+        //socket.setTrafficClass(tos);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.625 -0400", hash_original_method = "C6CB523E9BEBBF3CF2CBCDA94ED50C2A", hash_generated_method = "82C42B1A0DBBF3FEB090668865C9F27F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.835 -0400", hash_original_method = "C6CB523E9BEBBF3CF2CBCDA94ED50C2A", hash_generated_method = "C23066FF274F3C397AAB44BC26DD41F3")
     @Override
     public void setSoTimeout(int to) throws SocketException {
+        addTaint(to);
         socket.setSoTimeout(to);
         super.setSoTimeout(to);
-        addTaint(to);
-        
-        
-        
+        // ---------- Original Method ----------
+        //socket.setSoTimeout(to);
+        //super.setSoTimeout(to);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.626 -0400", hash_original_method = "A6ECFC0810DB8197115B82176EC6BB66", hash_generated_method = "AE25A2C62767B956A81F8B9CCF73EAEA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.835 -0400", hash_original_method = "A6ECFC0810DB8197115B82176EC6BB66", hash_generated_method = "C638432B8B989C1373E312623B4C2B0E")
     @Override
     public void setSendBufferSize(int size) throws SocketException {
-        socket.setSendBufferSize(size);
         addTaint(size);
-        
-        
+        socket.setSendBufferSize(size);
+        // ---------- Original Method ----------
+        //socket.setSendBufferSize(size);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.626 -0400", hash_original_method = "D35B240A928EE0976B61520D6F633EA5", hash_generated_method = "A88C32957F249CFF760FCD4B7090D09C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.836 -0400", hash_original_method = "D35B240A928EE0976B61520D6F633EA5", hash_generated_method = "01C5FB19F1C1FDC896F46CD6D5589930")
     @Override
     public void setReceiveBufferSize(int size) throws SocketException {
-        socket.setReceiveBufferSize(size);
         addTaint(size);
-        
-        
+        socket.setReceiveBufferSize(size);
+        // ---------- Original Method ----------
+        //socket.setReceiveBufferSize(size);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.626 -0400", hash_original_method = "39F09AC39D817ADEB5123B039A643360", hash_generated_method = "8C7365719CE7D738A7EAA37BB801AC0C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.836 -0400", hash_original_method = "39F09AC39D817ADEB5123B039A643360", hash_generated_method = "0CA2C7C83C9E7F01A2718D099091BBB7")
     @Override
     public boolean getTcpNoDelay() throws SocketException {
-        boolean varBA46635E6CCDF82185675B67E617E047_1369433092 = (socket.getTcpNoDelay());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1108271697 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1108271697;
-        
-        
+        boolean var4CCD8A7A38B4B8671074501B5E3633E5_1789239161 = (socket.getTcpNoDelay());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1643884586 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1643884586;
+        // ---------- Original Method ----------
+        //return socket.getTcpNoDelay();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.627 -0400", hash_original_method = "58E21075EC516F7123DEFDBD3078B712", hash_generated_method = "6E9478D07B2ECF9CF79DD9866504F0B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.836 -0400", hash_original_method = "58E21075EC516F7123DEFDBD3078B712", hash_generated_method = "C6134EA2C936E358EE6FEB9F0ECE3F87")
     @Override
     public boolean getReuseAddress() throws SocketException {
-        boolean var349DD5E576D9FD9FFD77BF9D9E1F841C_946783489 = (socket.getReuseAddress());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1798878179 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1798878179;
-        
-        
+        boolean var4628784E228E345E2813D697BFE9B746_993263603 = (socket.getReuseAddress());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1948517576 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1948517576;
+        // ---------- Original Method ----------
+        //return socket.getReuseAddress();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.627 -0400", hash_original_method = "9B8ADFEACD0A0CF83F6F88016C1BFEBF", hash_generated_method = "0EDBE19C1831F4F290A0B92ED048F094")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.836 -0400", hash_original_method = "9B8ADFEACD0A0CF83F6F88016C1BFEBF", hash_generated_method = "3F917973FDFFC29209F2619FF7917B8C")
     @Override
     public boolean getOOBInline() throws SocketException {
-        boolean varA60A548C5570D20F2C3A5F92AFA9B194_1415459537 = (socket.getOOBInline());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1922798522 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1922798522;
-        
-        
+        boolean varFAD80CD1DB86370B01FE9D97B3E4556E_623323325 = (socket.getOOBInline());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1012435635 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1012435635;
+        // ---------- Original Method ----------
+        //return socket.getOOBInline();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.627 -0400", hash_original_method = "DBBF1E3C1E2C35CEF53EE178C75A5FA3", hash_generated_method = "136E89A137336714F668129F941BBE9D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.837 -0400", hash_original_method = "DBBF1E3C1E2C35CEF53EE178C75A5FA3", hash_generated_method = "2921BF349B12C8EF07B51147544F6C8D")
     @Override
     public boolean getKeepAlive() throws SocketException {
-        boolean var80926F9D34A2BEE6A7C72C9BF525B86C_1277454075 = (socket.getKeepAlive());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2026036381 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2026036381;
-        
-        
+        boolean varCBF15E1118CC98EA3B97F686AC0AEDCD_1985522042 = (socket.getKeepAlive());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1533949615 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1533949615;
+        // ---------- Original Method ----------
+        //return socket.getKeepAlive();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.627 -0400", hash_original_method = "CA06E10BC8D1A46A5EC1742C20A8F3A9", hash_generated_method = "FF33478D526692083020247712825EF5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.837 -0400", hash_original_method = "CA06E10BC8D1A46A5EC1742C20A8F3A9", hash_generated_method = "8484988E5BDC442F2E96DAC6A54AD9F5")
     @Override
     public int getTrafficClass() throws SocketException {
-        int var9FD32AC8BBC5AB664DDE99BA031613CE_1988204224 = (socket.getTrafficClass());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_651390943 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_651390943;
-        
-        
+        int var06B3347FBAB106089124EBB7BAF9C06F_842980291 = (socket.getTrafficClass());
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1790999401 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1790999401;
+        // ---------- Original Method ----------
+        //return socket.getTrafficClass();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.628 -0400", hash_original_method = "010C724B642A1F7D7909AEF3BDB55CFF", hash_generated_method = "A0C3ACB9CF8EC2F320F8E173E56BD0F0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.837 -0400", hash_original_method = "010C724B642A1F7D7909AEF3BDB55CFF", hash_generated_method = "DAF47B4D7F73ABE33B7E9DAF6F2E9B99")
     @Override
     public int getSoTimeout() throws SocketException {
-        int var5AB257277B73427FABF8A8593CF909D0_1948388011 = (socket.getSoTimeout());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_130418128 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_130418128;
-        
-        
+        int var622378DB66A07CAD9A3E86701B2908C7_510430027 = (socket.getSoTimeout());
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1768662815 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1768662815;
+        // ---------- Original Method ----------
+        //return socket.getSoTimeout();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.628 -0400", hash_original_method = "8ECD41C257976189A03EEB5A2F2A2061", hash_generated_method = "E6567CE2710E356884083F0CA0CB8F5F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.837 -0400", hash_original_method = "8ECD41C257976189A03EEB5A2F2A2061", hash_generated_method = "0497F2186C6701423F3FE280D36D5F56")
     @Override
     public int getSoLinger() throws SocketException {
-        int varB52599268A19B3CD0A323449BE19BB2F_1852576485 = (socket.getSoLinger());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1956279316 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1956279316;
-        
-        
+        int var00FB217742FB71801328DCE9ECB4FC74_479765663 = (socket.getSoLinger());
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1076488662 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1076488662;
+        // ---------- Original Method ----------
+        //return socket.getSoLinger();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.629 -0400", hash_original_method = "6DB456EA6159E594EA1D8C2937517626", hash_generated_method = "DD337CA4B0B7BD4F651A8FBC768895E6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.837 -0400", hash_original_method = "6DB456EA6159E594EA1D8C2937517626", hash_generated_method = "8599C5271F71A707E81A3CDBDC2737E4")
     @Override
     public int getSendBufferSize() throws SocketException {
-        int var005264550D84EF96DC70DBD100CA620E_753730252 = (socket.getSendBufferSize());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_603746017 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_603746017;
-        
-        
+        int var90E7C21E941E280114A988C4C8C224B1_954564305 = (socket.getSendBufferSize());
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_491575113 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_491575113;
+        // ---------- Original Method ----------
+        //return socket.getSendBufferSize();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.629 -0400", hash_original_method = "093818CB55F5B0F2E1248EF2E19EB4D0", hash_generated_method = "1E176E384F9BD3EB1AF80D274743AECF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.838 -0400", hash_original_method = "093818CB55F5B0F2E1248EF2E19EB4D0", hash_generated_method = "6A2601216B2491B6521F4BA9F5209830")
     @Override
     public int getReceiveBufferSize() throws SocketException {
-        int var8C84778F56282D35925005D6DDC23C71_1791712830 = (socket.getReceiveBufferSize());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1586447146 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1586447146;
-        
-        
+        int var0FBD33505F1A0A9CC9CCE32A5178860B_605762222 = (socket.getReceiveBufferSize());
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1686261616 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1686261616;
+        // ---------- Original Method ----------
+        //return socket.getReceiveBufferSize();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.629 -0400", hash_original_method = "EC1EF38CAA1E7F260C803E9C132BF1AD", hash_generated_method = "E39E1DE56C3D1A5116BE39A54454F4EC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.838 -0400", hash_original_method = "EC1EF38CAA1E7F260C803E9C132BF1AD", hash_generated_method = "0DFDA382BE79D73B724C5B5A996D5EC8")
     @Override
     public boolean isConnected() {
-        boolean var85B42D5B11D271EF22C86B4825E7883A_1540172180 = (socket.isConnected());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1689347928 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1689347928;
-        
-        
+        boolean varBDC305DC6896529D4FC79DADA94ACA4B_1807054344 = (socket.isConnected());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1500362863 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1500362863;
+        // ---------- Original Method ----------
+        //return socket.isConnected();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.630 -0400", hash_original_method = "F9546A6C2D000DC4C97CDD10C3014895", hash_generated_method = "AD5BE4421DE70D3226C688AAE09896DA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.838 -0400", hash_original_method = "F9546A6C2D000DC4C97CDD10C3014895", hash_generated_method = "C2FEEBD0B3372F3752E87659530A7B7D")
     @Override
     public boolean isClosed() {
-        boolean var27F495A2B555629D84C6B569E8241F1C_393814668 = (socket.isClosed());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1002354216 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1002354216;
-        
-        
+        boolean var05DB3DDF0F9762784C2AF19041EA8306_448417471 = (socket.isClosed());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_176035560 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_176035560;
+        // ---------- Original Method ----------
+        //return socket.isClosed();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.630 -0400", hash_original_method = "8EA49BE4F5DCAEDF32C6C22D5F856F5E", hash_generated_method = "AB7C94CE97BA1653C079F63AEAB114F5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.838 -0400", hash_original_method = "8EA49BE4F5DCAEDF32C6C22D5F856F5E", hash_generated_method = "593EC412CDE8716998AF409582FD138F")
     @Override
     public boolean isBound() {
-        boolean var224EC1975F9239A11BE2C2D578055916_571144226 = (socket.isBound());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2026946683 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2026946683;
-        
-        
+        boolean var8D17B714197D609719CB8C755D53C4C5_1117417420 = (socket.isBound());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1638378432 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1638378432;
+        // ---------- Original Method ----------
+        //return socket.isBound();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.630 -0400", hash_original_method = "51808AB98F30ED89EC1017AD205567F5", hash_generated_method = "2593169AB78A57F2BF5F2CA4DB1582A8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.839 -0400", hash_original_method = "51808AB98F30ED89EC1017AD205567F5", hash_generated_method = "7320F77958D55586B415A294B559086E")
     @Override
     public boolean isOutputShutdown() {
-        boolean var8F2E931B36ED0DC8C68FE10E13A8849C_1522375891 = (socket.isOutputShutdown());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_936164294 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_936164294;
-        
-        
+        boolean var49B4B35B06522D374383DC955CD08600_1306583936 = (socket.isOutputShutdown());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_70657871 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_70657871;
+        // ---------- Original Method ----------
+        //return socket.isOutputShutdown();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.631 -0400", hash_original_method = "28A9E9140AE8CAAEAFACC4EC7AFA7A9E", hash_generated_method = "7BC479FBA18EBD14298557C748E9DE3B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.839 -0400", hash_original_method = "28A9E9140AE8CAAEAFACC4EC7AFA7A9E", hash_generated_method = "61995CD0B77BB6FDDF1B92A71425A39E")
     @Override
     public boolean isInputShutdown() {
-        boolean varB6322C59AE9A19A60FD86D45E23B4EAA_1630237618 = (socket.isInputShutdown());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1023182447 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1023182447;
-        
-        
+        boolean varCA8892D09142B36BCA5D1C2D7F92E8DE_708493685 = (socket.isInputShutdown());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1243418770 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1243418770;
+        // ---------- Original Method ----------
+        //return socket.isInputShutdown();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.631 -0400", hash_original_method = "9202DEAEF4A83D1AC2B8E9A1BC72C67F", hash_generated_method = "711C4CF03158C35F914C31E294ABB042")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.839 -0400", hash_original_method = "9202DEAEF4A83D1AC2B8E9A1BC72C67F", hash_generated_method = "64CDF2E54BD483C6E12206AEDD771A9C")
     @Override
     public int getPort() {
-        int var8B39E7DA67EA3CEB7249FD0C46C6B32C_1704782473 = (socket.getPort());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1073842711 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1073842711;
-        
-        
+        int varFDC7ECE1B4D3FEEF411FEEC959819873_1106993903 = (socket.getPort());
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_235702232 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_235702232;
+        // ---------- Original Method ----------
+        //return socket.getPort();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.632 -0400", hash_original_method = "8F87ED59A6F41F0CC7A13A5B3C7FF765", hash_generated_method = "EDE0D9646B7AD876F518F9472EBE61B3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.839 -0400", hash_original_method = "8F87ED59A6F41F0CC7A13A5B3C7FF765", hash_generated_method = "574FFEA0F7FA4E058334FEC764805CA9")
     @Override
     public int getLocalPort() {
-        int varC0E5665D93FF6E7BB2882BCAFC2C6E25_878557651 = (socket.getLocalPort());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_115359564 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_115359564;
-        
-        
+        int var7FA5C72484BCE6A4744A98294631163F_528148077 = (socket.getLocalPort());
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_843016087 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_843016087;
+        // ---------- Original Method ----------
+        //return socket.getLocalPort();
     }
 
     

@@ -1,12 +1,9 @@
 package android.location;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.content.Context;
 import android.location.Address;
 import android.os.RemoteException;
@@ -19,41 +16,43 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class Geocoder {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.227 -0400", hash_original_field = "18200E5D7C3839693F00E5A4D3DAD0B6", hash_generated_field = "CA3AB959F12DEEA21A35F58EC638730B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.735 -0400", hash_original_field = "18200E5D7C3839693F00E5A4D3DAD0B6", hash_generated_field = "CA3AB959F12DEEA21A35F58EC638730B")
 
     private GeocoderParams mParams;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.227 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "172E00EA90AE9807366F5CA34B42799B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.735 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "172E00EA90AE9807366F5CA34B42799B")
 
     private ILocationManager mService;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.227 -0400", hash_original_method = "14E84A4B1974BF851ED8726736E80E86", hash_generated_method = "F7D8C713FE7A48759C5FA35E4256A76D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.735 -0400", hash_original_method = "14E84A4B1974BF851ED8726736E80E86", hash_generated_method = "39F7FB854D3C4495473B55B227DA3E55")
     public  Geocoder(Context context, Locale locale) {
+    if(locale == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new NullPointerException("locale == null");
-        } 
+            NullPointerException var3F3F6EF29B25D30496E9F54071267749_1807976631 = new NullPointerException("locale == null");
+            var3F3F6EF29B25D30496E9F54071267749_1807976631.addTaint(taint);
+            throw var3F3F6EF29B25D30496E9F54071267749_1807976631;
+        } //End block
         mParams = new GeocoderParams(context, locale);
         IBinder b = ServiceManager.getService(Context.LOCATION_SERVICE);
         mService = ILocationManager.Stub.asInterface(b);
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (locale == null) {
+            //throw new NullPointerException("locale == null");
+        //}
+        //mParams = new GeocoderParams(context, locale);
+        //IBinder b = ServiceManager.getService(Context.LOCATION_SERVICE);
+        //mService = ILocationManager.Stub.asInterface(b);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.228 -0400", hash_original_method = "EADDD88BF54CFB72F79FF8220981CC0D", hash_generated_method = "759C4625FD3041193E6A238A72B8718E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.736 -0400", hash_original_method = "EADDD88BF54CFB72F79FF8220981CC0D", hash_generated_method = "759C4625FD3041193E6A238A72B8718E")
     public  Geocoder(Context context) {
         this(context, Locale.getDefault());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static boolean isPresent() {
+        public static boolean isPresent() {
         IBinder b = ServiceManager.getService(Context.LOCATION_SERVICE);
         ILocationManager lm = ILocationManager.Stub.asInterface(b);
         try {
@@ -65,193 +64,199 @@ public final class Geocoder {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.229 -0400", hash_original_method = "284E75C67527B2849F40BED710ED6A66", hash_generated_method = "39A844E826B4B4A39ABDD440618F846E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.737 -0400", hash_original_method = "284E75C67527B2849F40BED710ED6A66", hash_generated_method = "F2F587FA0FC22CC98941B55380269B9A")
     public List<Address> getFromLocation(double latitude, double longitude, int maxResults) throws IOException {
-        List<Address> varB4EAC82CA7396A68D541C85D26508E83_398081182 = null; 
-        List<Address> varB4EAC82CA7396A68D541C85D26508E83_249780628 = null; 
+        addTaint(maxResults);
+        addTaint(longitude);
+        addTaint(latitude);
+    if(latitude < -90.0 || latitude > 90.0)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("latitude == " + latitude);
-        } 
+            IllegalArgumentException var5CDB5E8BE2780A449DF91F3598B8F033_1523449452 = new IllegalArgumentException("latitude == " + latitude);
+            var5CDB5E8BE2780A449DF91F3598B8F033_1523449452.addTaint(taint);
+            throw var5CDB5E8BE2780A449DF91F3598B8F033_1523449452;
+        } //End block
+    if(longitude < -180.0 || longitude > 180.0)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("longitude == " + longitude);
-        } 
+            IllegalArgumentException var7C246BAC6A5717BCB23B4212A47C4761_1553668954 = new IllegalArgumentException("longitude == " + longitude);
+            var7C246BAC6A5717BCB23B4212A47C4761_1553668954.addTaint(taint);
+            throw var7C246BAC6A5717BCB23B4212A47C4761_1553668954;
+        } //End block
         try 
         {
             List<Address> results = new ArrayList<Address>();
             String ex = mService.getFromLocation(latitude, longitude, maxResults,
                 mParams, results);
+    if(ex != null)            
             {
-                if (DroidSafeAndroidRuntime.control) throw new IOException(ex);
-            } 
+                IOException var8B943AA6A4D3283BFEECC199C0F539AA_534911420 = new IOException(ex);
+                var8B943AA6A4D3283BFEECC199C0F539AA_534911420.addTaint(taint);
+                throw var8B943AA6A4D3283BFEECC199C0F539AA_534911420;
+            } //End block
+            else
             {
-                varB4EAC82CA7396A68D541C85D26508E83_398081182 = results;
-            } 
-        } 
+List<Address> var238ECCC9872FFCA0B3C3DB83598FF044_1339643945 =                 results;
+                var238ECCC9872FFCA0B3C3DB83598FF044_1339643945.addTaint(taint);
+                return var238ECCC9872FFCA0B3C3DB83598FF044_1339643945;
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_249780628 = null;
-        } 
-        addTaint(latitude);
-        addTaint(longitude);
-        addTaint(maxResults);
-        List<Address> varA7E53CE21691AB073D9660D615818899_194586334; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_194586334 = varB4EAC82CA7396A68D541C85D26508E83_398081182;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_194586334 = varB4EAC82CA7396A68D541C85D26508E83_249780628;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_194586334.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_194586334;
-        
-        
-            
-        
-        
-            
-        
-        
-            
-            
-                
-            
-                
-            
-                
-            
-        
-            
-            
-        
+List<Address> var540C13E9E156B687226421B24F2DF178_646930000 =             null;
+            var540C13E9E156B687226421B24F2DF178_646930000.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_646930000;
+        } //End block
+        // ---------- Original Method ----------
+        //if (latitude < -90.0 || latitude > 90.0) {
+            //throw new IllegalArgumentException("latitude == " + latitude);
+        //}
+        //if (longitude < -180.0 || longitude > 180.0) {
+            //throw new IllegalArgumentException("longitude == " + longitude);
+        //}
+        //try {
+            //List<Address> results = new ArrayList<Address>();
+            //String ex =  mService.getFromLocation(latitude, longitude, maxResults,
+                //mParams, results);
+            //if (ex != null) {
+                //throw new IOException(ex);
+            //} else {
+                //return results;
+            //}
+        //} catch (RemoteException e) {
+            //Log.e(TAG, "getFromLocation: got RemoteException", e);
+            //return null;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.230 -0400", hash_original_method = "29488D3CE065C208A897F66C86CADF17", hash_generated_method = "6B0AC3084792E2CDC45C51DB2C8015D2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.737 -0400", hash_original_method = "29488D3CE065C208A897F66C86CADF17", hash_generated_method = "9EEEF41EDA13695112734400CF6107D1")
     public List<Address> getFromLocationName(String locationName, int maxResults) throws IOException {
-        List<Address> varB4EAC82CA7396A68D541C85D26508E83_1771931585 = null; 
-        List<Address> varB4EAC82CA7396A68D541C85D26508E83_1180904654 = null; 
+        addTaint(maxResults);
+        addTaint(locationName.getTaint());
+    if(locationName == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("locationName == null");
-        } 
+            IllegalArgumentException var798B9480099C940248D3D5C9994F9EF0_1822470075 = new IllegalArgumentException("locationName == null");
+            var798B9480099C940248D3D5C9994F9EF0_1822470075.addTaint(taint);
+            throw var798B9480099C940248D3D5C9994F9EF0_1822470075;
+        } //End block
         try 
         {
             List<Address> results = new ArrayList<Address>();
             String ex = mService.getFromLocationName(locationName,
                 0, 0, 0, 0, maxResults, mParams, results);
+    if(ex != null)            
             {
-                if (DroidSafeAndroidRuntime.control) throw new IOException(ex);
-            } 
+                IOException var8B943AA6A4D3283BFEECC199C0F539AA_1874494245 = new IOException(ex);
+                var8B943AA6A4D3283BFEECC199C0F539AA_1874494245.addTaint(taint);
+                throw var8B943AA6A4D3283BFEECC199C0F539AA_1874494245;
+            } //End block
+            else
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1771931585 = results;
-            } 
-        } 
+List<Address> var238ECCC9872FFCA0B3C3DB83598FF044_6251130 =                 results;
+                var238ECCC9872FFCA0B3C3DB83598FF044_6251130.addTaint(taint);
+                return var238ECCC9872FFCA0B3C3DB83598FF044_6251130;
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1180904654 = null;
-        } 
-        addTaint(locationName.getTaint());
-        addTaint(maxResults);
-        List<Address> varA7E53CE21691AB073D9660D615818899_343399417; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_343399417 = varB4EAC82CA7396A68D541C85D26508E83_1771931585;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_343399417 = varB4EAC82CA7396A68D541C85D26508E83_1180904654;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_343399417.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_343399417;
-        
-        
-            
-        
-        
-            
-            
-                
-            
-                
-            
-                
-            
-        
-            
-            
-        
+List<Address> var540C13E9E156B687226421B24F2DF178_1064467752 =             null;
+            var540C13E9E156B687226421B24F2DF178_1064467752.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_1064467752;
+        } //End block
+        // ---------- Original Method ----------
+        //if (locationName == null) {
+            //throw new IllegalArgumentException("locationName == null");
+        //}
+        //try {
+            //List<Address> results = new ArrayList<Address>();
+            //String ex = mService.getFromLocationName(locationName,
+                //0, 0, 0, 0, maxResults, mParams, results);
+            //if (ex != null) {
+                //throw new IOException(ex);
+            //} else {
+                //return results;
+            //}
+        //} catch (RemoteException e) {
+            //Log.e(TAG, "getFromLocationName: got RemoteException", e);
+            //return null;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.231 -0400", hash_original_method = "13307F87291B7F7130BBF7F095A5BF05", hash_generated_method = "25734B641C62E8572482B0A0759D7060")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.739 -0400", hash_original_method = "13307F87291B7F7130BBF7F095A5BF05", hash_generated_method = "C53FE163CB2E51C2F13E9445F605C768")
     public List<Address> getFromLocationName(String locationName, int maxResults,
         double lowerLeftLatitude, double lowerLeftLongitude,
         double upperRightLatitude, double upperRightLongitude) throws IOException {
-        List<Address> varB4EAC82CA7396A68D541C85D26508E83_661933555 = null; 
-        List<Address> varB4EAC82CA7396A68D541C85D26508E83_970816127 = null; 
+        addTaint(upperRightLongitude);
+        addTaint(upperRightLatitude);
+        addTaint(lowerLeftLongitude);
+        addTaint(lowerLeftLatitude);
+        addTaint(maxResults);
+        addTaint(locationName.getTaint());
+    if(locationName == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("locationName == null");
-        } 
+            IllegalArgumentException var798B9480099C940248D3D5C9994F9EF0_1082302215 = new IllegalArgumentException("locationName == null");
+            var798B9480099C940248D3D5C9994F9EF0_1082302215.addTaint(taint);
+            throw var798B9480099C940248D3D5C9994F9EF0_1082302215;
+        } //End block
+    if(lowerLeftLatitude < -90.0 || lowerLeftLatitude > 90.0)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("lowerLeftLatitude == "
+            IllegalArgumentException varDC5BD51928E1A02BC95178BCDAB3A8A9_1941677360 = new IllegalArgumentException("lowerLeftLatitude == "
                 + lowerLeftLatitude);
-        } 
+            varDC5BD51928E1A02BC95178BCDAB3A8A9_1941677360.addTaint(taint);
+            throw varDC5BD51928E1A02BC95178BCDAB3A8A9_1941677360;
+        } //End block
+    if(lowerLeftLongitude < -180.0 || lowerLeftLongitude > 180.0)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("lowerLeftLongitude == "
+            IllegalArgumentException var53D4CADC41B8EE441D510B1810C29475_377335922 = new IllegalArgumentException("lowerLeftLongitude == "
                 + lowerLeftLongitude);
-        } 
+            var53D4CADC41B8EE441D510B1810C29475_377335922.addTaint(taint);
+            throw var53D4CADC41B8EE441D510B1810C29475_377335922;
+        } //End block
+    if(upperRightLatitude < -90.0 || upperRightLatitude > 90.0)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("upperRightLatitude == "
+            IllegalArgumentException varC4B8A31C00CEFDBFF48C811CEE2B644F_478270708 = new IllegalArgumentException("upperRightLatitude == "
                 + upperRightLatitude);
-        } 
+            varC4B8A31C00CEFDBFF48C811CEE2B644F_478270708.addTaint(taint);
+            throw varC4B8A31C00CEFDBFF48C811CEE2B644F_478270708;
+        } //End block
+    if(upperRightLongitude < -180.0 || upperRightLongitude > 180.0)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("upperRightLongitude == "
+            IllegalArgumentException var5FAB725CCE17B470073F2D50AE0545C8_599382342 = new IllegalArgumentException("upperRightLongitude == "
                 + upperRightLongitude);
-        } 
+            var5FAB725CCE17B470073F2D50AE0545C8_599382342.addTaint(taint);
+            throw var5FAB725CCE17B470073F2D50AE0545C8_599382342;
+        } //End block
         try 
         {
             ArrayList<Address> result = new ArrayList<Address>();
             String ex = mService.getFromLocationName(locationName,
                 lowerLeftLatitude, lowerLeftLongitude, upperRightLatitude, upperRightLongitude,
                 maxResults, mParams, result);
+    if(ex != null)            
             {
-                if (DroidSafeAndroidRuntime.control) throw new IOException(ex);
-            } 
+                IOException var8B943AA6A4D3283BFEECC199C0F539AA_523494421 = new IOException(ex);
+                var8B943AA6A4D3283BFEECC199C0F539AA_523494421.addTaint(taint);
+                throw var8B943AA6A4D3283BFEECC199C0F539AA_523494421;
+            } //End block
+            else
             {
-                varB4EAC82CA7396A68D541C85D26508E83_661933555 = result;
-            } 
-        } 
+List<Address> varDC838461EE2FA0CA4C9BBB70A15456B0_1881112598 =                 result;
+                varDC838461EE2FA0CA4C9BBB70A15456B0_1881112598.addTaint(taint);
+                return varDC838461EE2FA0CA4C9BBB70A15456B0_1881112598;
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_970816127 = null;
-        } 
-        addTaint(locationName.getTaint());
-        addTaint(maxResults);
-        addTaint(lowerLeftLatitude);
-        addTaint(lowerLeftLongitude);
-        addTaint(upperRightLatitude);
-        addTaint(upperRightLongitude);
-        List<Address> varA7E53CE21691AB073D9660D615818899_1627199311; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1627199311 = varB4EAC82CA7396A68D541C85D26508E83_661933555;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1627199311 = varB4EAC82CA7396A68D541C85D26508E83_970816127;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1627199311.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1627199311;
-        
-        
+List<Address> var540C13E9E156B687226421B24F2DF178_479824745 =             null;
+            var540C13E9E156B687226421B24F2DF178_479824745.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_479824745;
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.232 -0400", hash_original_field = "2F13D28EF33AD881D6EF6A469D590D1B", hash_generated_field = "B31A436DE52E80FF02F1461C2CF60861")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.739 -0400", hash_original_field = "2F13D28EF33AD881D6EF6A469D590D1B", hash_generated_field = "B31A436DE52E80FF02F1461C2CF60861")
 
     private static final String TAG = "Geocoder";
 }

@@ -1,12 +1,9 @@
 package org.apache.http.impl.client;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.net.URI;
@@ -70,62 +67,62 @@ import org.apache.http.protocol.HttpProcessor;
 import org.apache.http.protocol.HttpRequestExecutor;
 
 public class DefaultRequestDirector implements RequestDirector {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.227 -0400", hash_original_field = "0B7469F2850D918A96D1C36E99B23F5C", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.557 -0400", hash_original_field = "0B7469F2850D918A96D1C36E99B23F5C", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
 
     private final Log log = LogFactory.getLog(getClass());
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.227 -0400", hash_original_field = "7094FDC3C48BF4047F1C3E46D7A0B7D4", hash_generated_field = "02A8F7D7605C029767E3572CFEE2F34C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.557 -0400", hash_original_field = "7094FDC3C48BF4047F1C3E46D7A0B7D4", hash_generated_field = "02A8F7D7605C029767E3572CFEE2F34C")
 
     protected ClientConnectionManager connManager;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.227 -0400", hash_original_field = "16B9BCB9C810B5FB9F1218ABF5433F0A", hash_generated_field = "C85BE630FF179384873F74B45C3D1A5E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.557 -0400", hash_original_field = "16B9BCB9C810B5FB9F1218ABF5433F0A", hash_generated_field = "C85BE630FF179384873F74B45C3D1A5E")
 
     protected HttpRoutePlanner routePlanner;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.227 -0400", hash_original_field = "6841B3DB425CF924E2406CCC3EC7D0C4", hash_generated_field = "D092FC62D0768D92CCEB66662883652A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.558 -0400", hash_original_field = "6841B3DB425CF924E2406CCC3EC7D0C4", hash_generated_field = "D092FC62D0768D92CCEB66662883652A")
 
     protected ConnectionReuseStrategy reuseStrategy;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.227 -0400", hash_original_field = "06037BBEEBDAD4B9CCEA6123FF7CEF48", hash_generated_field = "CC83794776099E15447E3B95C8DA1298")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.558 -0400", hash_original_field = "06037BBEEBDAD4B9CCEA6123FF7CEF48", hash_generated_field = "CC83794776099E15447E3B95C8DA1298")
 
     protected ConnectionKeepAliveStrategy keepAliveStrategy;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.227 -0400", hash_original_field = "EBFB9A3D3F58438E791B5FA697F0E019", hash_generated_field = "AE8B5D85021B1C853E8228EC07BB45BD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.558 -0400", hash_original_field = "EBFB9A3D3F58438E791B5FA697F0E019", hash_generated_field = "AE8B5D85021B1C853E8228EC07BB45BD")
 
     protected HttpRequestExecutor requestExec;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.227 -0400", hash_original_field = "752D4EFA0487789E224C2A1BB7CC684E", hash_generated_field = "BE58AA1EBB61C1DA0052321621920348")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.558 -0400", hash_original_field = "752D4EFA0487789E224C2A1BB7CC684E", hash_generated_field = "BE58AA1EBB61C1DA0052321621920348")
 
     protected HttpProcessor httpProcessor;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.227 -0400", hash_original_field = "9276D9188CF6BA2DC6A4953C0672BC3D", hash_generated_field = "98BC4E4D2CA69028F19F530E761B7A50")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.558 -0400", hash_original_field = "9276D9188CF6BA2DC6A4953C0672BC3D", hash_generated_field = "98BC4E4D2CA69028F19F530E761B7A50")
 
     protected HttpRequestRetryHandler retryHandler;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.227 -0400", hash_original_field = "F350623671C50CD5233E0DC58B4BC69F", hash_generated_field = "1D6916AFC0FC11340932EC2AB84E4EEA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.558 -0400", hash_original_field = "F350623671C50CD5233E0DC58B4BC69F", hash_generated_field = "1D6916AFC0FC11340932EC2AB84E4EEA")
 
     protected RedirectHandler redirectHandler;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.227 -0400", hash_original_field = "6FA7D1184BC1FAC634576AE3416BC1FC", hash_generated_field = "6C80A901FF52F10B6A44B9702DD7CAAC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.558 -0400", hash_original_field = "6FA7D1184BC1FAC634576AE3416BC1FC", hash_generated_field = "6C80A901FF52F10B6A44B9702DD7CAAC")
 
     private AuthenticationHandler targetAuthHandler;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.227 -0400", hash_original_field = "0F58376CC8049DF18F70792E6CDE0CBB", hash_generated_field = "BEE8D0545E89B6E0C8B7E30053A9F7B8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.558 -0400", hash_original_field = "0F58376CC8049DF18F70792E6CDE0CBB", hash_generated_field = "BEE8D0545E89B6E0C8B7E30053A9F7B8")
 
     private AuthenticationHandler proxyAuthHandler;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.227 -0400", hash_original_field = "7CA4C2AD16B3CB439480B96FCAB580BC", hash_generated_field = "EB0695AD7F13D362DB9842F689B4BC95")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.558 -0400", hash_original_field = "7CA4C2AD16B3CB439480B96FCAB580BC", hash_generated_field = "EB0695AD7F13D362DB9842F689B4BC95")
 
     private UserTokenHandler userTokenHandler;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.227 -0400", hash_original_field = "21FFCE5B8A6CC8CC6A41448DD69623C9", hash_generated_field = "3B20DD38103AF5BA4B3F3187700011E0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.559 -0400", hash_original_field = "21FFCE5B8A6CC8CC6A41448DD69623C9", hash_generated_field = "3B20DD38103AF5BA4B3F3187700011E0")
 
     protected HttpParams params;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.227 -0400", hash_original_field = "58ED85B7F214AB5BB7A822D300274AA0", hash_generated_field = "A39C84F92F3A7EA4C05EE395EC188DAE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.559 -0400", hash_original_field = "58ED85B7F214AB5BB7A822D300274AA0", hash_generated_field = "A39C84F92F3A7EA4C05EE395EC188DAE")
 
     protected ManagedClientConnection managedConn;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.227 -0400", hash_original_field = "EC981A5CB5248DB431EB0C0A85CB6583", hash_generated_field = "D59A8F322AA61B2EDF1BDFFFEB284AB6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.559 -0400", hash_original_field = "EC981A5CB5248DB431EB0C0A85CB6583", hash_generated_field = "D59A8F322AA61B2EDF1BDFFFEB284AB6")
 
     private int redirectCount;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.227 -0400", hash_original_field = "192E8F7D1AC88DB04E4D404EEFE3BA12", hash_generated_field = "C858360B99BF75CE96620A237ADD6C16")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.559 -0400", hash_original_field = "192E8F7D1AC88DB04E4D404EEFE3BA12", hash_generated_field = "C858360B99BF75CE96620A237ADD6C16")
 
     private int maxRedirects;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.227 -0400", hash_original_field = "42FB65007B91DD7B4C2B4593948697DD", hash_generated_field = "09D81EEE3AA06EF4775316736BFDA2B2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.559 -0400", hash_original_field = "42FB65007B91DD7B4C2B4593948697DD", hash_generated_field = "09D81EEE3AA06EF4775316736BFDA2B2")
 
     private AuthState targetAuthState;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.227 -0400", hash_original_field = "BB590229B7E3F737CC2E4575475A1353", hash_generated_field = "04947E0C0D6A7F5789678D91EF5BFD42")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.559 -0400", hash_original_field = "BB590229B7E3F737CC2E4575475A1353", hash_generated_field = "04947E0C0D6A7F5789678D91EF5BFD42")
 
     private AuthState proxyAuthState;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.228 -0400", hash_original_method = "0B21A162BE3540982FD94EA0624DFDC2", hash_generated_method = "3B5AB4D8C35110684028394926D618E0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.563 -0400", hash_original_method = "0B21A162BE3540982FD94EA0624DFDC2", hash_generated_method = "096943810769ACB26542F920071C518F")
     public  DefaultRequestDirector(
             final HttpRequestExecutor requestExec,
             final ClientConnectionManager conman,
@@ -139,54 +136,90 @@ public class DefaultRequestDirector implements RequestDirector {
             final AuthenticationHandler proxyAuthHandler,
             final UserTokenHandler userTokenHandler,
             final HttpParams params) {
+    if(requestExec == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
+            IllegalArgumentException varBD20B6DE94BA160E38D6A19FE620972B_1029766485 = new IllegalArgumentException
                 ("Request executor may not be null.");
-        } 
+            varBD20B6DE94BA160E38D6A19FE620972B_1029766485.addTaint(taint);
+            throw varBD20B6DE94BA160E38D6A19FE620972B_1029766485;
+        } //End block
+    if(conman == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
+            IllegalArgumentException var2CAE72D222E2018F21A500BBB781366A_742317391 = new IllegalArgumentException
                 ("Client connection manager may not be null.");
-        } 
+            var2CAE72D222E2018F21A500BBB781366A_742317391.addTaint(taint);
+            throw var2CAE72D222E2018F21A500BBB781366A_742317391;
+        } //End block
+    if(reustrat == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
+            IllegalArgumentException varAC1BE54E06BD0BF73EC95A07797E6CC6_1150482775 = new IllegalArgumentException
                 ("Connection reuse strategy may not be null.");
-        } 
+            varAC1BE54E06BD0BF73EC95A07797E6CC6_1150482775.addTaint(taint);
+            throw varAC1BE54E06BD0BF73EC95A07797E6CC6_1150482775;
+        } //End block
+    if(kastrat == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
+            IllegalArgumentException var5D18D55E95DEDD7525CEB1D5D4EDA5AE_1892767636 = new IllegalArgumentException
                 ("Connection keep alive strategy may not be null.");
-        } 
+            var5D18D55E95DEDD7525CEB1D5D4EDA5AE_1892767636.addTaint(taint);
+            throw var5D18D55E95DEDD7525CEB1D5D4EDA5AE_1892767636;
+        } //End block
+    if(rouplan == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
+            IllegalArgumentException var61450AC721478F07064D5CA3DC87688F_1531502023 = new IllegalArgumentException
                 ("Route planner may not be null.");
-        } 
+            var61450AC721478F07064D5CA3DC87688F_1531502023.addTaint(taint);
+            throw var61450AC721478F07064D5CA3DC87688F_1531502023;
+        } //End block
+    if(httpProcessor == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
+            IllegalArgumentException var483355B68B755FD92D77FBBC0550B939_1004057664 = new IllegalArgumentException
                 ("HTTP protocol processor may not be null.");
-        } 
+            var483355B68B755FD92D77FBBC0550B939_1004057664.addTaint(taint);
+            throw var483355B68B755FD92D77FBBC0550B939_1004057664;
+        } //End block
+    if(retryHandler == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
+            IllegalArgumentException varC2CE5DC5C328BB16435F5ED993581E10_1565240985 = new IllegalArgumentException
                 ("HTTP request retry handler may not be null.");
-        } 
+            varC2CE5DC5C328BB16435F5ED993581E10_1565240985.addTaint(taint);
+            throw varC2CE5DC5C328BB16435F5ED993581E10_1565240985;
+        } //End block
+    if(redirectHandler == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
+            IllegalArgumentException varBF23C9695C0C4964C86566E857075907_1904598945 = new IllegalArgumentException
                 ("Redirect handler may not be null.");
-        } 
+            varBF23C9695C0C4964C86566E857075907_1904598945.addTaint(taint);
+            throw varBF23C9695C0C4964C86566E857075907_1904598945;
+        } //End block
+    if(targetAuthHandler == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
+            IllegalArgumentException varC21C33DC73C90A72F11A21040411F90C_1154680514 = new IllegalArgumentException
                 ("Target authentication handler may not be null.");
-        } 
+            varC21C33DC73C90A72F11A21040411F90C_1154680514.addTaint(taint);
+            throw varC21C33DC73C90A72F11A21040411F90C_1154680514;
+        } //End block
+    if(proxyAuthHandler == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
+            IllegalArgumentException var891BA88640E4B3379FCF2CCC866D25AF_1235854368 = new IllegalArgumentException
                 ("Proxy authentication handler may not be null.");
-        } 
+            var891BA88640E4B3379FCF2CCC866D25AF_1235854368.addTaint(taint);
+            throw var891BA88640E4B3379FCF2CCC866D25AF_1235854368;
+        } //End block
+    if(userTokenHandler == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
+            IllegalArgumentException var9380208749C6633F93F784E902C07784_1974417764 = new IllegalArgumentException
                 ("User token handler may not be null.");
-        } 
+            var9380208749C6633F93F784E902C07784_1974417764.addTaint(taint);
+            throw var9380208749C6633F93F784E902C07784_1974417764;
+        } //End block
+    if(params == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
+            IllegalArgumentException var497CCC27A43EDD6EE25BEEC5507E2BE2_1715034259 = new IllegalArgumentException
                 ("HTTP parameters may not be null");
-        } 
+            var497CCC27A43EDD6EE25BEEC5507E2BE2_1715034259.addTaint(taint);
+            throw var497CCC27A43EDD6EE25BEEC5507E2BE2_1715034259;
+        } //End block
         this.requestExec       = requestExec;
         this.connManager       = conman;
         this.reuseStrategy     = reustrat;
@@ -204,111 +237,102 @@ public class DefaultRequestDirector implements RequestDirector {
         this.maxRedirects = this.params.getIntParameter(ClientPNames.MAX_REDIRECTS, 100);
         this.targetAuthState = new AuthState();
         this.proxyAuthState = new AuthState();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.229 -0400", hash_original_method = "61E87BBE33E8E65E80E9F3F1C82F2660", hash_generated_method = "205F08F6535E9FFB28888D704705F021")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.564 -0400", hash_original_method = "61E87BBE33E8E65E80E9F3F1C82F2660", hash_generated_method = "28F5B910DBB19B6CFBACC86A149EF196")
     private RequestWrapper wrapRequest(
             final HttpRequest request) throws ProtocolException {
-        RequestWrapper varB4EAC82CA7396A68D541C85D26508E83_1323424882 = null; 
-        RequestWrapper varB4EAC82CA7396A68D541C85D26508E83_2137951602 = null; 
-        {
-            varB4EAC82CA7396A68D541C85D26508E83_1323424882 = new EntityEnclosingRequestWrapper(
-                    (HttpEntityEnclosingRequest) request);
-        } 
-        {
-            varB4EAC82CA7396A68D541C85D26508E83_2137951602 = new RequestWrapper(
-                    request);
-        } 
         addTaint(request.getTaint());
-        RequestWrapper varA7E53CE21691AB073D9660D615818899_519809428; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_519809428 = varB4EAC82CA7396A68D541C85D26508E83_1323424882;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_519809428 = varB4EAC82CA7396A68D541C85D26508E83_2137951602;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_519809428.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_519809428;
-        
-        
-            
-                    
-        
-            
-                    
-        
+    if(request instanceof HttpEntityEnclosingRequest)        
+        {
+RequestWrapper var0C4280835D14C11473AAA56C205C196E_984761044 =             new EntityEnclosingRequestWrapper(
+                    (HttpEntityEnclosingRequest) request);
+            var0C4280835D14C11473AAA56C205C196E_984761044.addTaint(taint);
+            return var0C4280835D14C11473AAA56C205C196E_984761044;
+        } //End block
+        else
+        {
+RequestWrapper varECE469D25B56B0BCEBCCBF137D95445B_672521706 =             new RequestWrapper(
+                    request);
+            varECE469D25B56B0BCEBCCBF137D95445B_672521706.addTaint(taint);
+            return varECE469D25B56B0BCEBCCBF137D95445B_672521706;
+        } //End block
+        // ---------- Original Method ----------
+        //if (request instanceof HttpEntityEnclosingRequest) {
+            //return new EntityEnclosingRequestWrapper(
+                    //(HttpEntityEnclosingRequest) request);
+        //} else {
+            //return new RequestWrapper(
+                    //request);
+        //}
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.230 -0400", hash_original_method = "6DDB48FED3712857B06BA2C85DA91575", hash_generated_method = "D802E659BDC483781FE83661C785B2E1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.565 -0400", hash_original_method = "6DDB48FED3712857B06BA2C85DA91575", hash_generated_method = "C97BAA4DC04433FCF71759B9B9DE90A9")
     protected void rewriteRequestURI(
             final RequestWrapper request,
             final HttpRoute route) throws ProtocolException {
+        addTaint(route.getTaint());
+        addTaint(request.getTaint());
         try 
         {
             URI uri = request.getURI();
+    if(route.getProxyHost() != null && !route.isTunnelled())            
             {
-                boolean var3AA4FF3B949161D68AAF7A4351A382C7_1637398894 = (route.getProxyHost() != null && !route.isTunnelled());
+    if(!uri.isAbsolute())                
                 {
-                    {
-                        boolean varD11459F3855AF1765B44BF6086B2A245_1908388317 = (!uri.isAbsolute());
-                        {
-                            HttpHost target = route.getTargetHost();
-                            uri = URIUtils.rewriteURI(uri, target);
-                            request.setURI(uri);
-                        } 
-                    } 
-                } 
+                    HttpHost target = route.getTargetHost();
+                    uri = URIUtils.rewriteURI(uri, target);
+                    request.setURI(uri);
+                } //End block
+            } //End block
+            else
+            {
+    if(uri.isAbsolute())                
                 {
-                    {
-                        boolean var1CCFF1BB4998DF61105F8536006544AB_853421237 = (uri.isAbsolute());
-                        {
-                            uri = URIUtils.rewriteURI(uri, null);
-                            request.setURI(uri);
-                        } 
-                    } 
-                } 
-            } 
-        } 
+                    uri = URIUtils.rewriteURI(uri, null);
+                    request.setURI(uri);
+                } //End block
+            } //End block
+        } //End block
         catch (URISyntaxException ex)
         {
-            if (DroidSafeAndroidRuntime.control) throw new ProtocolException("Invalid URI: " + 
+            ProtocolException var7A0C22AEC7611C0CB0FD9196AE88644C_420372476 = new ProtocolException("Invalid URI: " + 
                     request.getRequestLine().getUri(), ex);
-        } 
-        addTaint(request.getTaint());
-        addTaint(route.getTaint());
-        
-        
-            
-            
-                
-                    
-                    
-                    
-                
-            
-                
-                    
-                    
-                
-            
-        
-            
-                    
-        
+            var7A0C22AEC7611C0CB0FD9196AE88644C_420372476.addTaint(taint);
+            throw var7A0C22AEC7611C0CB0FD9196AE88644C_420372476;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //URI uri = request.getURI();
+            //if (route.getProxyHost() != null && !route.isTunnelled()) {
+                //if (!uri.isAbsolute()) {
+                    //HttpHost target = route.getTargetHost();
+                    //uri = URIUtils.rewriteURI(uri, target);
+                    //request.setURI(uri);
+                //}
+            //} else {
+                //if (uri.isAbsolute()) {
+                    //uri = URIUtils.rewriteURI(uri, null);
+                    //request.setURI(uri);
+                //}
+            //}
+        //} catch (URISyntaxException ex) {
+            //throw new ProtocolException("Invalid URI: " + 
+                    //request.getRequestLine().getUri(), ex);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.234 -0400", hash_original_method = "FF11182248C158BE9943CC5E99D59AB1", hash_generated_method = "966728E61CF3E8A50F0334F6DA974B86")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.571 -0400", hash_original_method = "FF11182248C158BE9943CC5E99D59AB1", hash_generated_method = "FE1BEF88AED28345536E7781E9E3BE0B")
     public HttpResponse execute(HttpHost target, HttpRequest request,
                                 HttpContext context) throws HttpException, IOException {
-        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_1314383345 = null; 
+        addTaint(context.getTaint());
+        addTaint(request.getTaint());
+        addTaint(target.getTaint());
         HttpRequest orig = request;
         RequestWrapper origWrapper = wrapRequest(orig);
         origWrapper.setParams(params);
@@ -321,78 +345,80 @@ public class DefaultRequestDirector implements RequestDirector {
         boolean done = false;
         try 
         {
+            while
+(!done)            
             {
                 RequestWrapper wrapper = roureq.getRequest();
                 HttpRoute route = roureq.getRoute();
                 Object userToken = context.getAttribute(ClientContext.USER_TOKEN);
+    if(managedConn == null)                
                 {
                     ClientConnectionRequest connRequest = connManager.requestConnection(
                             route, userToken);
+    if(orig instanceof AbortableHttpRequest)                    
                     {
                         ((AbortableHttpRequest) orig).setConnectionRequest(connRequest);
-                    } 
+                    } //End block
                     try 
                     {
                         managedConn = connRequest.getConnection(timeout, TimeUnit.MILLISECONDS);
-                    } 
+                    } //End block
                     catch (InterruptedException interrupted)
                     {
                         InterruptedIOException iox = new InterruptedIOException();
                         iox.initCause(interrupted);
-                        if (DroidSafeAndroidRuntime.control) throw iox;
-                    } 
+                        iox.addTaint(taint);
+                        throw iox;
+                    } //End block
+    if(HttpConnectionParams.isStaleCheckingEnabled(params))                    
                     {
-                        boolean var5923320BEBC54ED630F34B0E65757066_2007979011 = (HttpConnectionParams.isStaleCheckingEnabled(params));
+                        this.log.debug("Stale connection check");
+    if(managedConn.isStale())                        
                         {
-                            this.log.debug("Stale connection check");
+                            this.log.debug("Stale connection detected");
+                            try 
                             {
-                                boolean var2DD7793B43B667C3943BC5E0D5615B97_660554319 = (managedConn.isStale());
-                                {
-                                    this.log.debug("Stale connection detected");
-                                    try 
-                                    {
-                                        managedConn.close();
-                                    } 
-                                    catch (IOException ignored)
-                                    { }
-                                } 
-                            } 
-                        } 
-                    } 
-                } 
+                                managedConn.close();
+                            } //End block
+                            catch (IOException ignored)
+                            {
+                            } //End block
+                        } //End block
+                    } //End block
+                } //End block
+    if(orig instanceof AbortableHttpRequest)                
                 {
                     ((AbortableHttpRequest) orig).setReleaseTrigger(managedConn);
-                } 
+                } //End block
+    if(!managedConn.isOpen())                
                 {
-                    boolean var57A1BB929F724922F42032281AF99B55_396664830 = (!managedConn.isOpen());
-                    {
-                        managedConn.open(route, context, params);
-                    } 
-                    {
-                        managedConn.setSocketTimeout(HttpConnectionParams.getSoTimeout(params));
-                    } 
-                } 
+                    managedConn.open(route, context, params);
+                } //End block
+                else
+                {
+                    managedConn.setSocketTimeout(HttpConnectionParams.getSoTimeout(params));
+                } //End block
                 try 
                 {
                     establishRoute(route, context);
-                } 
+                } //End block
                 catch (TunnelRefusedException ex)
                 {
+    if(this.log.isDebugEnabled())                    
                     {
-                        boolean var1F07AE7CFC0030A6905273861F288C94_327008315 = (this.log.isDebugEnabled());
-                        {
-                            this.log.debug(ex.getMessage());
-                        } 
-                    } 
+                        this.log.debug(ex.getMessage());
+                    } //End block
                     response = ex.getResponse();
-                } 
+                    break;
+                } //End block
                 wrapper.resetHeaders();
                 rewriteRequestURI(wrapper, route);
                 target = (HttpHost) wrapper.getParams().getParameter(
                         ClientPNames.VIRTUAL_HOST);
+    if(target == null)                
                 {
                     target = route.getTargetHost();
-                } 
+                } //End block
                 HttpHost proxy = route.getProxyHost();
                 context.setAttribute(ExecutionContext.HTTP_TARGET_HOST,
                         target);
@@ -408,405 +434,413 @@ public class DefaultRequestDirector implements RequestDirector {
                 context.setAttribute(ExecutionContext.HTTP_REQUEST,
                         wrapper);
                 boolean retrying = true;
+                while
+(retrying)                
                 {
+                    execCount++;
                     wrapper.incrementExecCount();
+    if(wrapper.getExecCount() > 1 && !wrapper.isRepeatable())                    
                     {
-                        boolean varE2EB083771426CBE4A1AFC7B69AD71ED_2042289384 = (wrapper.getExecCount() > 1 && !wrapper.isRepeatable());
-                        {
-                            if (DroidSafeAndroidRuntime.control) throw new NonRepeatableRequestException("Cannot retry request " +
+                        NonRepeatableRequestException varBE8956FD29594D8614365E775C241D18_1874411820 = new NonRepeatableRequestException("Cannot retry request " +
                                 "with a non-repeatable request entity");
-                        } 
-                    } 
+                        varBE8956FD29594D8614365E775C241D18_1874411820.addTaint(taint);
+                        throw varBE8956FD29594D8614365E775C241D18_1874411820;
+                    } //End block
                     try 
                     {
+    if(this.log.isDebugEnabled())                        
                         {
-                            boolean var77FE74E3FD18153DC8BA47A287E94E9C_1289851959 = (this.log.isDebugEnabled());
-                            {
-                                this.log.debug("Attempt " + execCount + " to execute request");
-                            } 
-                        } 
+                            this.log.debug("Attempt " + execCount + " to execute request");
+                        } //End block
                         response = requestExec.execute(wrapper, managedConn, context);
                         retrying = false;
-                    } 
+                    } //End block
                     catch (IOException ex)
                     {
                         this.log.debug("Closing the connection.");
                         managedConn.close();
+    if(retryHandler.retryRequest(ex, execCount, context))                        
                         {
-                            boolean var64C3BCAC692FC83F7D401E770FBC72AE_73152641 = (retryHandler.retryRequest(ex, execCount, context));
+    if(this.log.isInfoEnabled())                            
                             {
-                                {
-                                    boolean var6C6142ED59A5F61883DA4639369F3712_1451399935 = (this.log.isInfoEnabled());
-                                    {
-                                        this.log.info("I/O exception ("+ ex.getClass().getName() + 
+                                this.log.info("I/O exception ("+ ex.getClass().getName() + 
                                         ") caught when processing request: "
                                         + ex.getMessage());
-                                    } 
-                                } 
-                                {
-                                    boolean var3DF9FAF67937974C7A395023CF7157D0_2005150917 = (this.log.isDebugEnabled());
-                                    {
-                                        this.log.debug(ex.getMessage(), ex);
-                                    } 
-                                } 
-                                this.log.info("Retrying request");
-                            } 
+                            } //End block
+    if(this.log.isDebugEnabled())                            
                             {
-                                if (DroidSafeAndroidRuntime.control) throw ex;
-                            } 
-                        } 
+                                this.log.debug(ex.getMessage(), ex);
+                            } //End block
+                            this.log.info("Retrying request");
+                        } //End block
+                        else
                         {
-                            boolean varB974659626623043E5194C43AFB0E343_276875624 = (route.getHopCount() == 1);
-                            {
-                                this.log.debug("Reopening the direct connection.");
-                                managedConn.open(route, context, params);
-                            } 
-                            {
-                                if (DroidSafeAndroidRuntime.control) throw ex;
-                            } 
-                        } 
-                    } 
-                } 
+                            ex.addTaint(taint);
+                            throw ex;
+                        } //End block
+    if(route.getHopCount() == 1)                        
+                        {
+                            this.log.debug("Reopening the direct connection.");
+                            managedConn.open(route, context, params);
+                        } //End block
+                        else
+                        {
+                            ex.addTaint(taint);
+                            throw ex;
+                        } //End block
+                    } //End block
+                } //End block
                 response.setParams(params);
                 requestExec.postProcess(response, httpProcessor, context);
                 reuse = reuseStrategy.keepAlive(response, context);
+    if(reuse)                
                 {
                     long duration = keepAliveStrategy.getKeepAliveDuration(response, context);
                     managedConn.setIdleDuration(duration, TimeUnit.MILLISECONDS);
-                } 
+                } //End block
                 RoutedRequest followup = handleResponse(roureq, response, context);
+    if(followup == null)                
                 {
                     done = true;
-                } 
+                } //End block
+                else
                 {
+    if(reuse)                    
                     {
                         this.log.debug("Connection kept alive");
                         HttpEntity entity = response.getEntity();
+    if(entity != null)                        
                         {
                             entity.consumeContent();
-                        } 
+                        } //End block
                         managedConn.markReusable();
-                    } 
+                    } //End block
+                    else
                     {
                         managedConn.close();
-                    } 
+                    } //End block
+    if(!followup.getRoute().equals(roureq.getRoute()))                    
                     {
-                        boolean varACB18F1E94F33836161DA99EE30F4796_1614894474 = (!followup.getRoute().equals(roureq.getRoute()));
-                        {
-                            releaseConnection();
-                        } 
-                    } 
+                        releaseConnection();
+                    } //End block
                     roureq = followup;
-                } 
+                } //End block
                 userToken = this.userTokenHandler.getUserToken(context);
                 context.setAttribute(ClientContext.USER_TOKEN, userToken);
+    if(managedConn != null)                
                 {
                     managedConn.setState(userToken);
-                } 
-            } 
+                } //End block
+            } //End block
+    if((response == null) || (response.getEntity() == null) ||
+                !response.getEntity().isStreaming())            
             {
-                boolean var4E1C49B8CE08FFA416DD620F8EF57B0D_1858719000 = ((response == null) || (response.getEntity() == null) ||
-                !response.getEntity().isStreaming());
-                {
-                    managedConn.markReusable();
-                    releaseConnection();
-                } 
-                {
-                    HttpEntity entity = response.getEntity();
-                    entity = new BasicManagedEntity(entity, managedConn, reuse);
-                    response.setEntity(entity);
-                } 
-            } 
-            varB4EAC82CA7396A68D541C85D26508E83_1314383345 = response;
-        } 
+    if(reuse)                
+                managedConn.markReusable();
+                releaseConnection();
+            } //End block
+            else
+            {
+                HttpEntity entity = response.getEntity();
+                entity = new BasicManagedEntity(entity, managedConn, reuse);
+                response.setEntity(entity);
+            } //End block
+HttpResponse var2A1114F4272D753FE23A36E3D68CD293_103948176 =             response;
+            var2A1114F4272D753FE23A36E3D68CD293_103948176.addTaint(taint);
+            return var2A1114F4272D753FE23A36E3D68CD293_103948176;
+        } //End block
         catch (HttpException ex)
         {
             abortConnection();
-            if (DroidSafeAndroidRuntime.control) throw ex;
-        } 
+            ex.addTaint(taint);
+            throw ex;
+        } //End block
         catch (IOException ex)
         {
             abortConnection();
-            if (DroidSafeAndroidRuntime.control) throw ex;
-        } 
+            ex.addTaint(taint);
+            throw ex;
+        } //End block
         catch (RuntimeException ex)
         {
             abortConnection();
-            if (DroidSafeAndroidRuntime.control) throw ex;
-        } 
-        addTaint(target.getTaint());
-        addTaint(request.getTaint());
-        addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1314383345.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1314383345;
-        
-        
+            ex.addTaint(taint);
+            throw ex;
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.234 -0400", hash_original_method = "72FBB2C6656BE4AE3AB40DA6CB70F970", hash_generated_method = "715CF4FA77516E276A6E0260E216C641")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.574 -0400", hash_original_method = "72FBB2C6656BE4AE3AB40DA6CB70F970", hash_generated_method = "715CF4FA77516E276A6E0260E216C641")
     protected void releaseConnection() {
         try 
         {
             managedConn.releaseConnection();
-        } 
+        } //End block
         catch (IOException ignored)
         {
             this.log.debug("IOException releasing connection", ignored);
-        } 
+        } //End block
         managedConn = null;
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //managedConn.releaseConnection();
+        //} catch(IOException ignored) {
+            //this.log.debug("IOException releasing connection", ignored);
+        //}
+        //managedConn = null;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.235 -0400", hash_original_method = "855E342C251EB2356D381DD4230A53C3", hash_generated_method = "C305A885C8E3A3D8CA852D7C7A0D0F24")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.575 -0400", hash_original_method = "855E342C251EB2356D381DD4230A53C3", hash_generated_method = "883B187E66FD896B25D0281114CC5944")
     protected HttpRoute determineRoute(HttpHost    target,
                                            HttpRequest request,
                                            HttpContext context) throws HttpException {
-        HttpRoute varB4EAC82CA7396A68D541C85D26508E83_2133957786 = null; 
+        addTaint(context.getTaint());
+        addTaint(request.getTaint());
+        addTaint(target.getTaint());
+    if(target == null)        
         {
             target = (HttpHost) request.getParams().getParameter(
                 ClientPNames.DEFAULT_HOST);
-        } 
+        } //End block
+    if(target == null)        
         {
             String scheme = null;
             String host = null;
             String path = null;
-            URI uri = null;
+            URI uri;
+    if(request instanceof HttpUriRequest
+                    && (uri = ((HttpUriRequest) request).getURI()) != null)            
             {
-                if(request instanceof HttpUriRequest
-                    && (uri = ((HttpUriRequest) request).getURI()) != null)
-                {
-                    scheme = uri.getScheme();
-                    host = uri.getHost();
-                    path = uri.getPath();
-                } 
-            } 
-            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException( "Target host must not be null, or set in parameters."
+                scheme = uri.getScheme();
+                host = uri.getHost();
+                path = uri.getPath();
+            } //End block
+            IllegalStateException var7A13D68460776BAB9F175883D2724744_892155137 = new IllegalStateException( "Target host must not be null, or set in parameters."
                     + " scheme=" + scheme + ", host=" + host + ", path=" + path);
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_2133957786 = this.routePlanner.determineRoute(target, request, context);
-        addTaint(target.getTaint());
-        addTaint(request.getTaint());
-        addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2133957786.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_2133957786;
-        
-        
+            var7A13D68460776BAB9F175883D2724744_892155137.addTaint(taint);
+            throw var7A13D68460776BAB9F175883D2724744_892155137;
+        } //End block
+HttpRoute var18D2C66D78254B27FEC5244CEBAE6575_851747941 =         this.routePlanner.determineRoute(target, request, context);
+        var18D2C66D78254B27FEC5244CEBAE6575_851747941.addTaint(taint);
+        return var18D2C66D78254B27FEC5244CEBAE6575_851747941;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.236 -0400", hash_original_method = "7601A49E11EC8C911923D57ABD663D23", hash_generated_method = "42A200EB0B5E9867F4DEC7BEB9C6E6C2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.576 -0400", hash_original_method = "7601A49E11EC8C911923D57ABD663D23", hash_generated_method = "7778BC571DE93B6055796428AF0F67A7")
     protected void establishRoute(HttpRoute route, HttpContext context) throws HttpException, IOException {
+        addTaint(context.getTaint());
+        addTaint(route.getTaint());
         HttpRouteDirector rowdy = new BasicRouteDirector();
         int step;
-        {
-            HttpRoute fact = managedConn.getRoute();
-            step = rowdy.nextStep(route, fact);
-            
-            managedConn.open(route, context, this.params);
-            
-            
+        do {
             {
-                boolean secure = createTunnelToTarget(route, context);
-                this.log.debug("Tunnel to target created.");
-                managedConn.tunnelTarget(secure, this.params);
-            } 
-            
-            
-            {
-                final int hop = fact.getHopCount()-1;
-                boolean secure = createTunnelToProxy(route, hop, context);
-                this.log.debug("Tunnel to proxy created.");
-                managedConn.tunnelProxy(route.getHopTarget(hop),
+                HttpRoute fact = managedConn.getRoute();
+                step = rowdy.nextStep(route, fact);
+switch(step){
+                case HttpRouteDirector.CONNECT_TARGET:
+                case HttpRouteDirector.CONNECT_PROXY:
+                managedConn.open(route, context, this.params);
+                break;
+                case HttpRouteDirector.TUNNEL_TARGET:
+                {
+                    boolean secure = createTunnelToTarget(route, context);
+                    this.log.debug("Tunnel to target created.");
+                    managedConn.tunnelTarget(secure, this.params);
+                } //End block
+                break;
+                case HttpRouteDirector.TUNNEL_PROXY:
+                {
+                    final int hop = fact.getHopCount()-1;
+                    boolean secure = createTunnelToProxy(route, hop, context);
+                    this.log.debug("Tunnel to proxy created.");
+                    managedConn.tunnelProxy(route.getHopTarget(hop),
                                         secure, this.params);
-            } 
-            
-            
-            managedConn.layerProtocol(context, this.params);
-            
-            
-            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException
+                } //End block
+                break;
+                case HttpRouteDirector.LAYER_PROTOCOL:
+                managedConn.layerProtocol(context, this.params);
+                break;
+                case HttpRouteDirector.UNREACHABLE:
+                IllegalStateException var41E4D464A14C97E1EC762FC59C493EE0_194936432 = new IllegalStateException
                     ("Unable to establish route." +
                      "\nplanned = " + route +
                      "\ncurrent = " + fact);
-            
-            
-            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException
+                var41E4D464A14C97E1EC762FC59C493EE0_194936432.addTaint(taint);
+                throw var41E4D464A14C97E1EC762FC59C493EE0_194936432;
+                case HttpRouteDirector.COMPLETE:
+                break;
+                default:
+                IllegalStateException var8F4BA28D8DE40A5BAB04A0DC81D7EB48_462704108 = new IllegalStateException
                     ("Unknown step indicator "+step+" from RouteDirector.");
-            
-        } 
-        addTaint(route.getTaint());
-        addTaint(context.getTaint());
-        
-        
+                var8F4BA28D8DE40A5BAB04A0DC81D7EB48_462704108.addTaint(taint);
+                throw var8F4BA28D8DE40A5BAB04A0DC81D7EB48_462704108;
+}
+            } //End block
+} while (step > HttpRouteDirector.COMPLETE);
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.237 -0400", hash_original_method = "135ABB51CD042C7BF2D35A5F6450399E", hash_generated_method = "0B68B0EDFD34142AAB5DFA471FAB41CC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.577 -0400", hash_original_method = "135ABB51CD042C7BF2D35A5F6450399E", hash_generated_method = "7040B1D126FDBA464A78346367383CE5")
     protected boolean createTunnelToTarget(HttpRoute route,
                                            HttpContext context) throws HttpException, IOException {
+        addTaint(context.getTaint());
+        addTaint(route.getTaint());
         HttpHost proxy = route.getProxyHost();
         HttpHost target = route.getTargetHost();
         HttpResponse response = null;
         boolean done = false;
+        while
+(!done)        
         {
             done = true;
+    if(!this.managedConn.isOpen())            
             {
-                boolean varE24C8D9987FCAD565418104E3ED22290_1161557525 = (!this.managedConn.isOpen());
-                {
-                    this.managedConn.open(route, context, this.params);
-                } 
-            } 
+                this.managedConn.open(route, context, this.params);
+            } //End block
             HttpRequest connect = createConnectRequest(route, context);
             String agent = HttpProtocolParams.getUserAgent(params);
+    if(agent != null)            
             {
                 connect.addHeader(HTTP.USER_AGENT, agent);
-            } 
+            } //End block
             connect.addHeader(HTTP.TARGET_HOST, target.toHostString());
             AuthScheme authScheme = this.proxyAuthState.getAuthScheme();
             AuthScope authScope = this.proxyAuthState.getAuthScope();
             Credentials creds = this.proxyAuthState.getCredentials();
+    if(creds != null)            
             {
+    if(authScope != null || !authScheme.isConnectionBased())                
                 {
-                    boolean var7162080E958C7F1D1FB98D3206150695_1596750433 = (authScope != null || !authScheme.isConnectionBased());
+                    try 
                     {
-                        try 
+                        connect.addHeader(authScheme.authenticate(creds, connect));
+                    } //End block
+                    catch (AuthenticationException ex)
+                    {
+    if(this.log.isErrorEnabled())                        
                         {
-                            connect.addHeader(authScheme.authenticate(creds, connect));
-                        } 
-                        catch (AuthenticationException ex)
-                        {
-                            {
-                                boolean var223C02AC5155576C5BF33EBDE2BF71D4_1303459177 = (this.log.isErrorEnabled());
-                                {
-                                    this.log.error("Proxy authentication error: " + ex.getMessage());
-                                } 
-                            } 
-                        } 
-                    } 
-                } 
-            } 
+                            this.log.error("Proxy authentication error: " + ex.getMessage());
+                        } //End block
+                    } //End block
+                } //End block
+            } //End block
             response = requestExec.execute(connect, this.managedConn, context);
             int status = response.getStatusLine().getStatusCode();
+    if(status < 200)            
             {
-                if (DroidSafeAndroidRuntime.control) throw new HttpException("Unexpected response to CONNECT request: " +
+                HttpException varD3EF24224D53CFEC9101DECAEC6951EE_1499102339 = new HttpException("Unexpected response to CONNECT request: " +
                         response.getStatusLine());
-            } 
+                varD3EF24224D53CFEC9101DECAEC6951EE_1499102339.addTaint(taint);
+                throw varD3EF24224D53CFEC9101DECAEC6951EE_1499102339;
+            } //End block
             CredentialsProvider credsProvider = (CredentialsProvider)
                 context.getAttribute(ClientContext.CREDS_PROVIDER);
+    if(credsProvider != null && HttpClientParams.isAuthenticating(params))            
             {
-                boolean var066E5A2944C8DE608E62F2952F125987_2007062208 = (credsProvider != null && HttpClientParams.isAuthenticating(params));
+    if(this.proxyAuthHandler.isAuthenticationRequested(response, context))                
                 {
-                    {
-                        boolean var820133A86C823DE0CF990CB769500CA4_1623465411 = (this.proxyAuthHandler.isAuthenticationRequested(response, context));
-                        {
-                            this.log.debug("Proxy requested authentication");
-                            Map<String, Header> challenges = this.proxyAuthHandler.getChallenges(
+                    this.log.debug("Proxy requested authentication");
+                    Map<String, Header> challenges = this.proxyAuthHandler.getChallenges(
                             response, context);
-                            try 
-                            {
-                                processChallenges(
+                    try 
+                    {
+                        processChallenges(
                                 challenges, this.proxyAuthState, this.proxyAuthHandler, 
                                 response, context);
-                            } 
-                            catch (AuthenticationException ex)
-                            {
-                                {
-                                    boolean var98AE6279036784B25F38A97DC5F00031_1290335362 = (this.log.isWarnEnabled());
-                                    {
-                                        this.log.warn("Authentication error: " +  ex.getMessage());
-                                    } 
-                                } 
-                            } 
-                            updateAuthState(this.proxyAuthState, proxy, credsProvider);
-                            {
-                                boolean varD9595AFA908A709C14DF611A51BAB79F_785177286 = (this.proxyAuthState.getCredentials() != null);
-                                {
-                                    done = false;
-                                    {
-                                        boolean varC5EBB71CB69B2B65AACDD488C9350D38_334031577 = (this.reuseStrategy.keepAlive(response, context));
-                                        {
-                                            this.log.debug("Connection kept alive");
-                                            HttpEntity entity = response.getEntity();
-                                            {
-                                                entity.consumeContent();
-                                            } 
-                                        } 
-                                        {
-                                            this.managedConn.close();
-                                        } 
-                                    } 
-                                } 
-                            } 
-                        } 
+                    } //End block
+                    catch (AuthenticationException ex)
+                    {
+    if(this.log.isWarnEnabled())                        
                         {
-                            this.proxyAuthState.setAuthScope(null);
-                        } 
-                    } 
-                } 
-            } 
-        } 
+                            this.log.warn("Authentication error: " +  ex.getMessage());
+                            break;
+                        } //End block
+                    } //End block
+                    updateAuthState(this.proxyAuthState, proxy, credsProvider);
+    if(this.proxyAuthState.getCredentials() != null)                    
+                    {
+                        done = false;
+    if(this.reuseStrategy.keepAlive(response, context))                        
+                        {
+                            this.log.debug("Connection kept alive");
+                            HttpEntity entity = response.getEntity();
+    if(entity != null)                            
+                            {
+                                entity.consumeContent();
+                            } //End block
+                        } //End block
+                        else
+                        {
+                            this.managedConn.close();
+                        } //End block
+                    } //End block
+                } //End block
+                else
+                {
+                    this.proxyAuthState.setAuthScope(null);
+                } //End block
+            } //End block
+        } //End block
         int status = response.getStatusLine().getStatusCode();
+    if(status > 299)        
         {
             HttpEntity entity = response.getEntity();
+    if(entity != null)            
             {
                 response.setEntity(new BufferedHttpEntity(entity));
-            } 
+            } //End block
             this.managedConn.close();
-            if (DroidSafeAndroidRuntime.control) throw new TunnelRefusedException("CONNECT refused by proxy: " +
+            TunnelRefusedException varB63C984E4D7FCF92F245BAD42F4DFE6F_2009781547 = new TunnelRefusedException("CONNECT refused by proxy: " +
                     response.getStatusLine(), response);
-        } 
+            varB63C984E4D7FCF92F245BAD42F4DFE6F_2009781547.addTaint(taint);
+            throw varB63C984E4D7FCF92F245BAD42F4DFE6F_2009781547;
+        } //End block
         this.managedConn.markReusable();
-        addTaint(route.getTaint());
-        addTaint(context.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_901742936 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_901742936;
-        
-        
+        boolean var68934A3E9455FA72420237EB05902327_478251624 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_662084211 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_662084211;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.238 -0400", hash_original_method = "F6C0B77A6F010BA1F972A9366C7E6CE6", hash_generated_method = "93705B5ABA12007D4DDCB0DB8FE6BE06")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.578 -0400", hash_original_method = "F6C0B77A6F010BA1F972A9366C7E6CE6", hash_generated_method = "AD66814FEBD5B0AEC5FA89E4EF7C870D")
     protected boolean createTunnelToProxy(HttpRoute route, int hop,
                                           HttpContext context) throws HttpException, IOException {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException
-            ("Proxy chains are not supported.");
-        addTaint(route.getTaint());
-        addTaint(hop);
         addTaint(context.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_573133852 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_573133852;
-        
-        
-            
+        addTaint(hop);
+        addTaint(route.getTaint());
+        UnsupportedOperationException varFE02595BC82A88C5229C259936D54501_1258151244 = new UnsupportedOperationException
+            ("Proxy chains are not supported.");
+        varFE02595BC82A88C5229C259936D54501_1258151244.addTaint(taint);
+        throw varFE02595BC82A88C5229C259936D54501_1258151244;
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException
+            //("Proxy chains are not supported.");
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.238 -0400", hash_original_method = "7799E26CF8933DA985404F8B4CB5983A", hash_generated_method = "009B6F083714C35D30671F2ED223594A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.579 -0400", hash_original_method = "7799E26CF8933DA985404F8B4CB5983A", hash_generated_method = "360C1AE122936D8DB12DA5A278295387")
     protected HttpRequest createConnectRequest(HttpRoute route,
                                                HttpContext context) {
-        HttpRequest varB4EAC82CA7396A68D541C85D26508E83_1512773839 = null; 
+        addTaint(context.getTaint());
+        addTaint(route.getTaint());
         HttpHost target = route.getTargetHost();
         String host = target.getHostName();
         int port = target.getPort();
+    if(port < 0)        
         {
             Scheme scheme = connManager.getSchemeRegistry().
                 getScheme(target.getSchemeName());
             port = scheme.getDefaultPort();
-        } 
+        } //End block
         StringBuilder buffer = new StringBuilder(host.length() + 6);
         buffer.append(host);
         buffer.append(':');
@@ -815,349 +849,318 @@ public class DefaultRequestDirector implements RequestDirector {
         ProtocolVersion ver = HttpProtocolParams.getVersion(params);
         HttpRequest req = new BasicHttpRequest
             ("CONNECT", authority, ver);
-        varB4EAC82CA7396A68D541C85D26508E83_1512773839 = req;
-        addTaint(route.getTaint());
-        addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1512773839.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1512773839;
-        
-        
-        
-        
-        
-            
-                
-            
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
+HttpRequest var71AC1B13807E2EDC246A42B3DB2D8EEA_995642604 =         req;
+        var71AC1B13807E2EDC246A42B3DB2D8EEA_995642604.addTaint(taint);
+        return var71AC1B13807E2EDC246A42B3DB2D8EEA_995642604;
+        // ---------- Original Method ----------
+        //HttpHost target = route.getTargetHost();
+        //String host = target.getHostName();
+        //int port = target.getPort();
+        //if (port < 0) {
+            //Scheme scheme = connManager.getSchemeRegistry().
+                //getScheme(target.getSchemeName());
+            //port = scheme.getDefaultPort();
+        //}
+        //StringBuilder buffer = new StringBuilder(host.length() + 6);
+        //buffer.append(host);
+        //buffer.append(':');
+        //buffer.append(Integer.toString(port));
+        //String authority = buffer.toString();
+        //ProtocolVersion ver = HttpProtocolParams.getVersion(params);
+        //HttpRequest req = new BasicHttpRequest
+            //("CONNECT", authority, ver);
+        //return req;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.241 -0400", hash_original_method = "E253F133593C4FA5CC62D333761B1C94", hash_generated_method = "D0CAAB061D55044B8DCD332D25DA07B4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.580 -0400", hash_original_method = "E253F133593C4FA5CC62D333761B1C94", hash_generated_method = "7FA0FCFC26E5C629064BE710D1C2E071")
     protected RoutedRequest handleResponse(RoutedRequest roureq,
                                            HttpResponse response,
                                            HttpContext context) throws HttpException, IOException {
-        RoutedRequest varB4EAC82CA7396A68D541C85D26508E83_1913365870 = null; 
-        RoutedRequest varB4EAC82CA7396A68D541C85D26508E83_1241533478 = null; 
-        RoutedRequest varB4EAC82CA7396A68D541C85D26508E83_1683021894 = null; 
-        RoutedRequest varB4EAC82CA7396A68D541C85D26508E83_127553016 = null; 
-        RoutedRequest varB4EAC82CA7396A68D541C85D26508E83_658981719 = null; 
-        RoutedRequest varB4EAC82CA7396A68D541C85D26508E83_124839749 = null; 
-        RoutedRequest varB4EAC82CA7396A68D541C85D26508E83_12412634 = null; 
-        RoutedRequest varB4EAC82CA7396A68D541C85D26508E83_369761948 = null; 
+        addTaint(context.getTaint());
+        addTaint(response.getTaint());
+        addTaint(roureq.getTaint());
         HttpRoute route = roureq.getRoute();
         HttpHost proxy = route.getProxyHost();
         RequestWrapper request = roureq.getRequest();
         HttpParams params = request.getParams();
+    if(HttpClientParams.isRedirecting(params) && 
+                this.redirectHandler.isRedirectRequested(response, context))        
         {
-            boolean var334174C1DFA3E9A13837B792C9A30C33_1514308648 = (HttpClientParams.isRedirecting(params) && 
-                this.redirectHandler.isRedirectRequested(response, context));
+    if(redirectCount >= maxRedirects)            
             {
-                {
-                    if (DroidSafeAndroidRuntime.control) throw new RedirectException("Maximum redirects ("
+                RedirectException var29BC0BAED8BB7987E47C0BA80AF93FBD_995361898 = new RedirectException("Maximum redirects ("
                         + maxRedirects + ") exceeded");
-                } 
-                URI uri = this.redirectHandler.getLocationURI(response, context);
-                HttpHost newTarget = new HttpHost(
+                var29BC0BAED8BB7987E47C0BA80AF93FBD_995361898.addTaint(taint);
+                throw var29BC0BAED8BB7987E47C0BA80AF93FBD_995361898;
+            } //End block
+            redirectCount++;
+            URI uri = this.redirectHandler.getLocationURI(response, context);
+            HttpHost newTarget = new HttpHost(
                     uri.getHost(), 
                     uri.getPort(),
                     uri.getScheme());
-                HttpGet redirect = new HttpGet(uri);
-                HttpRequest orig = request.getOriginal();
-                redirect.setHeaders(orig.getAllHeaders());
-                RequestWrapper wrapper = new RequestWrapper(redirect);
-                wrapper.setParams(params);
-                HttpRoute newRoute = determineRoute(newTarget, wrapper, context);
-                RoutedRequest newRequest = new RoutedRequest(wrapper, newRoute);
-                {
-                    boolean varF9D042902FC0F3D680F077033613BA0E_1316243717 = (this.log.isDebugEnabled());
-                    {
-                        this.log.debug("Redirecting to '" + uri + "' via " + newRoute);
-                    } 
-                } 
-                varB4EAC82CA7396A68D541C85D26508E83_1913365870 = newRequest;
-            } 
-        } 
+            HttpGet redirect = new HttpGet(uri);
+            HttpRequest orig = request.getOriginal();
+            redirect.setHeaders(orig.getAllHeaders());
+            RequestWrapper wrapper = new RequestWrapper(redirect);
+            wrapper.setParams(params);
+            HttpRoute newRoute = determineRoute(newTarget, wrapper, context);
+            RoutedRequest newRequest = new RoutedRequest(wrapper, newRoute);
+    if(this.log.isDebugEnabled())            
+            {
+                this.log.debug("Redirecting to '" + uri + "' via " + newRoute);
+            } //End block
+RoutedRequest var843B90BB67BB5454D25E3643EF8010AB_1097409195 =             newRequest;
+            var843B90BB67BB5454D25E3643EF8010AB_1097409195.addTaint(taint);
+            return var843B90BB67BB5454D25E3643EF8010AB_1097409195;
+        } //End block
         CredentialsProvider credsProvider = (CredentialsProvider)
             context.getAttribute(ClientContext.CREDS_PROVIDER);
+    if(credsProvider != null && HttpClientParams.isAuthenticating(params))        
         {
-            boolean var207C422FFCD9EECE1E08C64BE84723D4_1479902101 = (credsProvider != null && HttpClientParams.isAuthenticating(params));
+    if(this.targetAuthHandler.isAuthenticationRequested(response, context))            
             {
-                {
-                    boolean varE240CE312997E004AB6FC1B1453EC91C_1113477029 = (this.targetAuthHandler.isAuthenticationRequested(response, context));
-                    {
-                        HttpHost target = (HttpHost)
+                HttpHost target = (HttpHost)
                     context.getAttribute(ExecutionContext.HTTP_TARGET_HOST);
-                        {
-                            target = route.getTargetHost();
-                        } 
-                        this.log.debug("Target requested authentication");
-                        Map<String, Header> challenges = this.targetAuthHandler.getChallenges(
+    if(target == null)                
+                {
+                    target = route.getTargetHost();
+                } //End block
+                this.log.debug("Target requested authentication");
+                Map<String, Header> challenges = this.targetAuthHandler.getChallenges(
                         response, context);
-                        try 
-                        {
-                            processChallenges(challenges, 
+                try 
+                {
+                    processChallenges(challenges, 
                             this.targetAuthState, this.targetAuthHandler,
                             response, context);
-                        } 
-                        catch (AuthenticationException ex)
-                        {
-                            {
-                                boolean varBCC5345480BEBFF1302623213026F8F0_332149628 = (this.log.isWarnEnabled());
-                                {
-                                    this.log.warn("Authentication error: " +  ex.getMessage());
-                                    varB4EAC82CA7396A68D541C85D26508E83_1241533478 = null;
-                                } 
-                            } 
-                        } 
-                        updateAuthState(this.targetAuthState, target, credsProvider);
-                        {
-                            boolean varCEE5FFFE2D53D6DFBF73746E861AD022_1944906342 = (this.targetAuthState.getCredentials() != null);
-                            {
-                                varB4EAC82CA7396A68D541C85D26508E83_1683021894 = roureq;
-                            } 
-                            {
-                                varB4EAC82CA7396A68D541C85D26508E83_127553016 = null;
-                            } 
-                        } 
-                    } 
-                    {
-                        this.targetAuthState.setAuthScope(null);
-                    } 
-                } 
+                } //End block
+                catch (AuthenticationException ex)
                 {
-                    boolean varC782DE64FF63336D4149D154B1120F13_1609101207 = (this.proxyAuthHandler.isAuthenticationRequested(response, context));
+    if(this.log.isWarnEnabled())                    
                     {
-                        this.log.debug("Proxy requested authentication");
-                        Map<String, Header> challenges = this.proxyAuthHandler.getChallenges(
+                        this.log.warn("Authentication error: " +  ex.getMessage());
+RoutedRequest var540C13E9E156B687226421B24F2DF178_1818401167 =                         null;
+                        var540C13E9E156B687226421B24F2DF178_1818401167.addTaint(taint);
+                        return var540C13E9E156B687226421B24F2DF178_1818401167;
+                    } //End block
+                } //End block
+                updateAuthState(this.targetAuthState, target, credsProvider);
+    if(this.targetAuthState.getCredentials() != null)                
+                {
+RoutedRequest var6648910846287553B78C1318790BB204_1514966201 =                     roureq;
+                    var6648910846287553B78C1318790BB204_1514966201.addTaint(taint);
+                    return var6648910846287553B78C1318790BB204_1514966201;
+                } //End block
+                else
+                {
+RoutedRequest var540C13E9E156B687226421B24F2DF178_885521346 =                     null;
+                    var540C13E9E156B687226421B24F2DF178_885521346.addTaint(taint);
+                    return var540C13E9E156B687226421B24F2DF178_885521346;
+                } //End block
+            } //End block
+            else
+            {
+                this.targetAuthState.setAuthScope(null);
+            } //End block
+    if(this.proxyAuthHandler.isAuthenticationRequested(response, context))            
+            {
+                this.log.debug("Proxy requested authentication");
+                Map<String, Header> challenges = this.proxyAuthHandler.getChallenges(
                         response, context);
-                        try 
-                        {
-                            processChallenges(challenges, 
+                try 
+                {
+                    processChallenges(challenges, 
                             this.proxyAuthState, this.proxyAuthHandler, 
                             response, context);
-                        } 
-                        catch (AuthenticationException ex)
-                        {
-                            {
-                                boolean varBCC5345480BEBFF1302623213026F8F0_1128891006 = (this.log.isWarnEnabled());
-                                {
-                                    this.log.warn("Authentication error: " +  ex.getMessage());
-                                    varB4EAC82CA7396A68D541C85D26508E83_658981719 = null;
-                                } 
-                            } 
-                        } 
-                        updateAuthState(this.proxyAuthState, proxy, credsProvider);
-                        {
-                            boolean var6529B8BD0070542F140B39A735A7433F_327300038 = (this.proxyAuthState.getCredentials() != null);
-                            {
-                                varB4EAC82CA7396A68D541C85D26508E83_124839749 = roureq;
-                            } 
-                            {
-                                varB4EAC82CA7396A68D541C85D26508E83_12412634 = null;
-                            } 
-                        } 
-                    } 
+                } //End block
+                catch (AuthenticationException ex)
+                {
+    if(this.log.isWarnEnabled())                    
                     {
-                        this.proxyAuthState.setAuthScope(null);
-                    } 
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_369761948 = null;
-        addTaint(roureq.getTaint());
-        addTaint(response.getTaint());
-        addTaint(context.getTaint());
-        RoutedRequest varA7E53CE21691AB073D9660D615818899_148535817; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_148535817 = varB4EAC82CA7396A68D541C85D26508E83_1913365870;
-                break;
-            case 2: 
-                varA7E53CE21691AB073D9660D615818899_148535817 = varB4EAC82CA7396A68D541C85D26508E83_1241533478;
-                break;
-            case 3: 
-                varA7E53CE21691AB073D9660D615818899_148535817 = varB4EAC82CA7396A68D541C85D26508E83_1683021894;
-                break;
-            case 4: 
-                varA7E53CE21691AB073D9660D615818899_148535817 = varB4EAC82CA7396A68D541C85D26508E83_127553016;
-                break;
-            case 5: 
-                varA7E53CE21691AB073D9660D615818899_148535817 = varB4EAC82CA7396A68D541C85D26508E83_658981719;
-                break;
-            case 6: 
-                varA7E53CE21691AB073D9660D615818899_148535817 = varB4EAC82CA7396A68D541C85D26508E83_124839749;
-                break;
-            case 7: 
-                varA7E53CE21691AB073D9660D615818899_148535817 = varB4EAC82CA7396A68D541C85D26508E83_12412634;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_148535817 = varB4EAC82CA7396A68D541C85D26508E83_369761948;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_148535817.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_148535817;
-        
-        
+                        this.log.warn("Authentication error: " +  ex.getMessage());
+RoutedRequest var540C13E9E156B687226421B24F2DF178_499636949 =                         null;
+                        var540C13E9E156B687226421B24F2DF178_499636949.addTaint(taint);
+                        return var540C13E9E156B687226421B24F2DF178_499636949;
+                    } //End block
+                } //End block
+                updateAuthState(this.proxyAuthState, proxy, credsProvider);
+    if(this.proxyAuthState.getCredentials() != null)                
+                {
+RoutedRequest var6648910846287553B78C1318790BB204_1912328467 =                     roureq;
+                    var6648910846287553B78C1318790BB204_1912328467.addTaint(taint);
+                    return var6648910846287553B78C1318790BB204_1912328467;
+                } //End block
+                else
+                {
+RoutedRequest var540C13E9E156B687226421B24F2DF178_270893367 =                     null;
+                    var540C13E9E156B687226421B24F2DF178_270893367.addTaint(taint);
+                    return var540C13E9E156B687226421B24F2DF178_270893367;
+                } //End block
+            } //End block
+            else
+            {
+                this.proxyAuthState.setAuthScope(null);
+            } //End block
+        } //End block
+RoutedRequest var540C13E9E156B687226421B24F2DF178_1682691471 =         null;
+        var540C13E9E156B687226421B24F2DF178_1682691471.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_1682691471;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.242 -0400", hash_original_method = "1B42C243E9B570B37B5AA18DF368B31A", hash_generated_method = "0D9336F8D211B5A3FE8873C16343C5D6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.582 -0400", hash_original_method = "1B42C243E9B570B37B5AA18DF368B31A", hash_generated_method = "17198A02B2E5C37081B5A7BE5C174595")
     private void abortConnection() {
         ManagedClientConnection mcc = managedConn;
+    if(mcc != null)        
         {
             managedConn = null;
             try 
             {
                 mcc.abortConnection();
-            } 
+            } //End block
             catch (IOException ex)
             {
+    if(this.log.isDebugEnabled())                
                 {
-                    boolean varF9D042902FC0F3D680F077033613BA0E_88795009 = (this.log.isDebugEnabled());
-                    {
-                        this.log.debug(ex.getMessage(), ex);
-                    } 
-                } 
-            } 
+                    this.log.debug(ex.getMessage(), ex);
+                } //End block
+            } //End block
             try 
             {
                 mcc.releaseConnection();
-            } 
+            } //End block
             catch (IOException ignored)
             {
                 this.log.debug("Error releasing connection", ignored);
-            } 
-        } 
-        
-        
-        
-            
-            
-                
-            
-                
-                    
-                
-            
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //ManagedClientConnection mcc = managedConn;
+        //if (mcc != null) {
+            //managedConn = null;
+            //try {
+                //mcc.abortConnection();
+            //} catch (IOException ex) {
+                //if (this.log.isDebugEnabled()) {
+                    //this.log.debug(ex.getMessage(), ex);
+                //}
+            //}
+            //try {
+                //mcc.releaseConnection();
+            //} catch(IOException ignored) {
+                //this.log.debug("Error releasing connection", ignored);
+            //}
+        //}
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.243 -0400", hash_original_method = "582621DB4D93E0412F3CDB3DDE871FB7", hash_generated_method = "20E93DB6EB0CBE10DAE8187CB8DE7161")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.584 -0400", hash_original_method = "582621DB4D93E0412F3CDB3DDE871FB7", hash_generated_method = "7C7F2B7A08DCFF45A8FAD15FB47EAE09")
     private void processChallenges(
             final Map<String, Header> challenges, 
             final AuthState authState,
             final AuthenticationHandler authHandler,
             final HttpResponse response, 
             final HttpContext context) throws MalformedChallengeException, AuthenticationException {
+        addTaint(context.getTaint());
+        addTaint(response.getTaint());
+        addTaint(authHandler.getTaint());
+        addTaint(authState.getTaint());
+        addTaint(challenges.getTaint());
         AuthScheme authScheme = authState.getAuthScheme();
+    if(authScheme == null)        
         {
             authScheme = authHandler.selectScheme(challenges, response, context);
             authState.setAuthScheme(authScheme);
-        } 
+        } //End block
         String id = authScheme.getSchemeName();
         Header challenge = challenges.get(id.toLowerCase(Locale.ENGLISH));
+    if(challenge == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new AuthenticationException(id + 
+            AuthenticationException varADD197DE4731E0165FACB33B3B3666F1_877205235 = new AuthenticationException(id + 
                 " authorization challenge expected, but not found");
-        } 
+            varADD197DE4731E0165FACB33B3B3666F1_877205235.addTaint(taint);
+            throw varADD197DE4731E0165FACB33B3B3666F1_877205235;
+        } //End block
         authScheme.processChallenge(challenge);
         this.log.debug("Authorization challenge processed");
-        addTaint(challenges.getTaint());
-        addTaint(authState.getTaint());
-        addTaint(authHandler.getTaint());
-        addTaint(response.getTaint());
-        addTaint(context.getTaint());
-        
-        
-        
-            
-            
-        
-        
-        
-        
-            
-                
-        
-        
-        
+        // ---------- Original Method ----------
+        //AuthScheme authScheme = authState.getAuthScheme();
+        //if (authScheme == null) {
+            //authScheme = authHandler.selectScheme(challenges, response, context);
+            //authState.setAuthScheme(authScheme);
+        //}
+        //String id = authScheme.getSchemeName();
+        //Header challenge = challenges.get(id.toLowerCase(Locale.ENGLISH));
+        //if (challenge == null) {
+            //throw new AuthenticationException(id + 
+                //" authorization challenge expected, but not found");
+        //}
+        //authScheme.processChallenge(challenge);
+        //this.log.debug("Authorization challenge processed");
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.246 -0400", hash_original_method = "48429FCD8E54925B92F9CF361D5F9B0A", hash_generated_method = "38333ABA5F120848ADADB01C8FF514C0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.586 -0400", hash_original_method = "48429FCD8E54925B92F9CF361D5F9B0A", hash_generated_method = "9F4D9E0699D7444EDF75B415F2AA6026")
     private void updateAuthState(
             final AuthState authState, 
             final HttpHost host,
             final CredentialsProvider credsProvider) {
+        addTaint(credsProvider.getTaint());
+        addTaint(host.getTaint());
+        addTaint(authState.getTaint());
+    if(!authState.isValid())        
         {
-            boolean varE294CD19057AAD4F26C11D0C7F9699FD_1749758544 = (!authState.isValid());
-        } 
+            return;
+        } //End block
         String hostname = host.getHostName();
         int port = host.getPort();
+    if(port < 0)        
         {
             Scheme scheme = connManager.getSchemeRegistry().getScheme(host);
             port = scheme.getDefaultPort();
-        } 
+        } //End block
         AuthScheme authScheme = authState.getAuthScheme();
         AuthScope authScope = new AuthScope(
                 hostname,
                 port,
                 authScheme.getRealm(), 
                 authScheme.getSchemeName());
+    if(this.log.isDebugEnabled())        
         {
-            boolean var2083B5DFA3893791124BEF94A917A00D_1866681854 = (this.log.isDebugEnabled());
-            {
-                this.log.debug("Authentication scope: " + authScope);
-            } 
-        } 
+            this.log.debug("Authentication scope: " + authScope);
+        } //End block
         Credentials creds = authState.getCredentials();
+    if(creds == null)        
         {
             creds = credsProvider.getCredentials(authScope);
+    if(this.log.isDebugEnabled())            
             {
-                boolean var08CB4FDA680E50E69D97D6749FE568F5_1267736865 = (this.log.isDebugEnabled());
+    if(creds != null)                
                 {
-                    {
-                        this.log.debug("Found credentials");
-                    } 
-                    {
-                        this.log.debug("Credentials not found");
-                    } 
-                } 
-            } 
-        } 
+                    this.log.debug("Found credentials");
+                } //End block
+                else
+                {
+                    this.log.debug("Credentials not found");
+                } //End block
+            } //End block
+        } //End block
+        else
         {
+    if(authScheme.isComplete())            
             {
-                boolean varE472D8780DAACC1D5EBE21FE38AF2EDA_1407316420 = (authScheme.isComplete());
-                {
-                    this.log.debug("Authentication failed");
-                    creds = null;
-                } 
-            } 
-        } 
+                this.log.debug("Authentication failed");
+                creds = null;
+            } //End block
+        } //End block
         authState.setAuthScope(authScope);
         authState.setCredentials(creds);
-        addTaint(authState.getTaint());
-        addTaint(host.getTaint());
-        addTaint(credsProvider.getTaint());
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

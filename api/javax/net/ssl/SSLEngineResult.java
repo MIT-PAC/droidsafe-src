@@ -1,120 +1,127 @@
 package javax.net.ssl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-
-import java.util.Iterator;
-
 public class SSLEngineResult {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.628 -0400", hash_original_field = "9ACB44549B41563697BB490144EC6258", hash_generated_field = "3EDB9D951EE040B1BC6830CF666CCCCD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.689 -0400", hash_original_field = "9ACB44549B41563697BB490144EC6258", hash_generated_field = "3EDB9D951EE040B1BC6830CF666CCCCD")
 
     private SSLEngineResult.Status status;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.628 -0400", hash_original_field = "412C59B2DCF10DB9CB06BD36CD184EF1", hash_generated_field = "F2C463FCEB0A45B07208B161F9FF9757")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.690 -0400", hash_original_field = "412C59B2DCF10DB9CB06BD36CD184EF1", hash_generated_field = "F2C463FCEB0A45B07208B161F9FF9757")
 
     private SSLEngineResult.HandshakeStatus handshakeStatus;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.628 -0400", hash_original_field = "98DE14CF6ED8BA2A08621F8989CBB73D", hash_generated_field = "B7E40EAAA68ABDE5DDF60571929046AC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.690 -0400", hash_original_field = "98DE14CF6ED8BA2A08621F8989CBB73D", hash_generated_field = "B7E40EAAA68ABDE5DDF60571929046AC")
 
     private int bytesConsumed;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.628 -0400", hash_original_field = "E2C06B4E3C7D872CA40631F2B897CED4", hash_generated_field = "E53D2C5242B0192243BAF7EE50A5F6F7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.690 -0400", hash_original_field = "E2C06B4E3C7D872CA40631F2B897CED4", hash_generated_field = "E53D2C5242B0192243BAF7EE50A5F6F7")
 
     private int bytesProduced;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.629 -0400", hash_original_method = "7E2A70A53EA60FD8E9743686AFF107DB", hash_generated_method = "39D616708D512CB8CC6FC656F02F7022")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.693 -0400", hash_original_method = "7E2A70A53EA60FD8E9743686AFF107DB", hash_generated_method = "7171093140A64FB73C6C491B15E76619")
     public  SSLEngineResult(SSLEngineResult.Status status,
             SSLEngineResult.HandshakeStatus handshakeStatus, int bytesConsumed, int bytesProduced) {
+    if(status == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("status is null");
-        } 
+            IllegalArgumentException var0942C630AF72DE2BFAEF5B370BC34D38_1906141155 = new IllegalArgumentException("status is null");
+            var0942C630AF72DE2BFAEF5B370BC34D38_1906141155.addTaint(taint);
+            throw var0942C630AF72DE2BFAEF5B370BC34D38_1906141155;
+        } //End block
+    if(handshakeStatus == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("handshakeStatus is null");
-        } 
+            IllegalArgumentException varB99CC69C46C6DB9382D7F79A0AFCB228_559690479 = new IllegalArgumentException("handshakeStatus is null");
+            varB99CC69C46C6DB9382D7F79A0AFCB228_559690479.addTaint(taint);
+            throw varB99CC69C46C6DB9382D7F79A0AFCB228_559690479;
+        } //End block
+    if(bytesConsumed < 0)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("bytesConsumed is negative");
-        } 
+            IllegalArgumentException varA0F469183671466F2BB471E20BA09B05_2091979765 = new IllegalArgumentException("bytesConsumed is negative");
+            varA0F469183671466F2BB471E20BA09B05_2091979765.addTaint(taint);
+            throw varA0F469183671466F2BB471E20BA09B05_2091979765;
+        } //End block
+    if(bytesProduced < 0)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("bytesProduced is negative");
-        } 
+            IllegalArgumentException varB233E283F5476C881DBBB0A747935895_1496216175 = new IllegalArgumentException("bytesProduced is negative");
+            varB233E283F5476C881DBBB0A747935895_1496216175.addTaint(taint);
+            throw varB233E283F5476C881DBBB0A747935895_1496216175;
+        } //End block
         this.status = status;
         this.handshakeStatus = handshakeStatus;
         this.bytesConsumed = bytesConsumed;
         this.bytesProduced = bytesProduced;
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (status == null) {
+            //throw new IllegalArgumentException("status is null");
+        //}
+        //if (handshakeStatus == null) {
+            //throw new IllegalArgumentException("handshakeStatus is null");
+        //}
+        //if (bytesConsumed < 0) {
+            //throw new IllegalArgumentException("bytesConsumed is negative");
+        //}
+        //if (bytesProduced < 0) {
+            //throw new IllegalArgumentException("bytesProduced is negative");
+        //}
+        //this.status = status;
+        //this.handshakeStatus = handshakeStatus;
+        //this.bytesConsumed = bytesConsumed;
+        //this.bytesProduced = bytesProduced;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.629 -0400", hash_original_method = "50C43A89B1F71600509DCA8EECE4A168", hash_generated_method = "7C1E49D1107B04A8ED497D2650BD91C5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.693 -0400", hash_original_method = "50C43A89B1F71600509DCA8EECE4A168", hash_generated_method = "D2EE9AE1C2DBC763EC0B217FF363FFCE")
     public final Status getStatus() {
-        Status varB4EAC82CA7396A68D541C85D26508E83_1158174427 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1158174427 = status;
-        varB4EAC82CA7396A68D541C85D26508E83_1158174427.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1158174427;
-        
-        
+Status var62D3D5D442782C1992154E821A40FA75_158016852 =         status;
+        var62D3D5D442782C1992154E821A40FA75_158016852.addTaint(taint);
+        return var62D3D5D442782C1992154E821A40FA75_158016852;
+        // ---------- Original Method ----------
+        //return status;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.630 -0400", hash_original_method = "C7CAF6278BE86BD417FEC0CDFDF808C8", hash_generated_method = "89182FDEBFCB3D5BDD2D0D8F0A7AA1E9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.694 -0400", hash_original_method = "C7CAF6278BE86BD417FEC0CDFDF808C8", hash_generated_method = "26735830AF24ABC34DB2192CBBAA7C0D")
     public final HandshakeStatus getHandshakeStatus() {
-        HandshakeStatus varB4EAC82CA7396A68D541C85D26508E83_1604393035 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1604393035 = handshakeStatus;
-        varB4EAC82CA7396A68D541C85D26508E83_1604393035.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1604393035;
-        
-        
+HandshakeStatus varA438FF77BFC821A5A761FEC3F6183918_1532005227 =         handshakeStatus;
+        varA438FF77BFC821A5A761FEC3F6183918_1532005227.addTaint(taint);
+        return varA438FF77BFC821A5A761FEC3F6183918_1532005227;
+        // ---------- Original Method ----------
+        //return handshakeStatus;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.630 -0400", hash_original_method = "4F217738DCB333D737660126178B49E9", hash_generated_method = "BB2E66B1A8ED38A3C54476CBC60EEFEE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.694 -0400", hash_original_method = "4F217738DCB333D737660126178B49E9", hash_generated_method = "93F2632F0EA528905000D919508711C2")
     public final int bytesConsumed() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_495501764 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_495501764;
-        
-        
+        int var98DE14CF6ED8BA2A08621F8989CBB73D_984247078 = (bytesConsumed);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1663672878 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1663672878;
+        // ---------- Original Method ----------
+        //return bytesConsumed;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.630 -0400", hash_original_method = "881854C294C034F2A83844483FCF0823", hash_generated_method = "E6D13A5153D470CCFDD30E8AD979564E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.694 -0400", hash_original_method = "881854C294C034F2A83844483FCF0823", hash_generated_method = "94A15FE9444D69887C80084425F3B041")
     public final int bytesProduced() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1868726037 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1868726037;
-        
-        
+        int varE2C06B4E3C7D872CA40631F2B897CED4_1901228958 = (bytesProduced);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_724223734 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_724223734;
+        // ---------- Original Method ----------
+        //return bytesProduced;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.631 -0400", hash_original_method = "FF10D49A46BF312B9918894EBDEF7098", hash_generated_method = "AF0E1F6EBCFA628DB4EC34DCF0ECB41B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.695 -0400", hash_original_method = "FF10D49A46BF312B9918894EBDEF7098", hash_generated_method = "34641AB51CFCC59221F67DFFC6E4177A")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_396210034 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_396210034 = "SSLEngineReport: Status = " + status + "  HandshakeStatus = " + handshakeStatus
+String varDE9DD2D87E9E529ADDDDF77023101E71_1963059640 =         "SSLEngineReport: Status = " + status + "  HandshakeStatus = " + handshakeStatus
                 + "\n                 bytesConsumed = " + bytesConsumed + " bytesProduced = "
                 + bytesProduced;
-        varB4EAC82CA7396A68D541C85D26508E83_396210034.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_396210034;
-        
-        
-                
-                
+        varDE9DD2D87E9E529ADDDDF77023101E71_1963059640.addTaint(taint);
+        return varDE9DD2D87E9E529ADDDDF77023101E71_1963059640;
+        // ---------- Original Method ----------
+        //return "SSLEngineReport: Status = " + status + "  HandshakeStatus = " + handshakeStatus
+                //+ "\n                 bytesConsumed = " + bytesConsumed + " bytesProduced = "
+                //+ bytesProduced;
     }
 
     

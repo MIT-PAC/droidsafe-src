@@ -1,12 +1,9 @@
 package android.webkit;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -56,100 +53,102 @@ import java.net.URL;
 import java.util.ArrayList;
 
 class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClickListener {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.205 -0400", hash_original_field = "E629B0C9798771544E235B84F0C22269", hash_generated_field = "74A54BC69C155F1DB9DBB9FB9549E6B1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.123 -0400", hash_original_field = "E629B0C9798771544E235B84F0C22269", hash_generated_field = "74A54BC69C155F1DB9DBB9FB9549E6B1")
 
     private int mRingInset;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.205 -0400", hash_original_field = "72439B8F99EB438C3DA5D9CD798C6786", hash_generated_field = "99346B50377E115231263981E00655CA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.123 -0400", hash_original_field = "72439B8F99EB438C3DA5D9CD798C6786", hash_generated_field = "99346B50377E115231263981E00655CA")
 
     private WebView mWebView;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.205 -0400", hash_original_field = "F0FE499F79D022F7EE0AD5934915C0F5", hash_generated_field = "3A6B9A9CFCC4CFF9FD3CC2E257ADB30D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.123 -0400", hash_original_field = "F0FE499F79D022F7EE0AD5934915C0F5", hash_generated_field = "3A6B9A9CFCC4CFF9FD3CC2E257ADB30D")
 
     private boolean mSingle;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.205 -0400", hash_original_field = "784EBB049D389964BB33C898356CBEDC", hash_generated_field = "79B19EDDE87A329245208E091B047D6F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.124 -0400", hash_original_field = "784EBB049D389964BB33C898356CBEDC", hash_generated_field = "79B19EDDE87A329245208E091B047D6F")
 
     private int mWidthSpec;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.205 -0400", hash_original_field = "C9EF5DE00AF5ABEBE891F814360EB726", hash_generated_field = "29F1336AF2FB76BA06A9DD6873FBA798")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.124 -0400", hash_original_field = "C9EF5DE00AF5ABEBE891F814360EB726", hash_generated_field = "29F1336AF2FB76BA06A9DD6873FBA798")
 
     private int mHeightSpec;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.206 -0400", hash_original_field = "8EC2B8F7347514BC797C322C068958BF", hash_generated_field = "65A351B6E5CCAE66180826263CABE420")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.124 -0400", hash_original_field = "8EC2B8F7347514BC797C322C068958BF", hash_generated_field = "65A351B6E5CCAE66180826263CABE420")
 
     private int mNodePointer;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.206 -0400", hash_original_field = "FEBC8896022DC5B351158697E56AB1F3", hash_generated_field = "C3260837F48C92F4F567EBA0AF2C9376")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.124 -0400", hash_original_field = "FEBC8896022DC5B351158697E56AB1F3", hash_generated_field = "C3260837F48C92F4F567EBA0AF2C9376")
 
     private boolean mGotEnterDown;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.206 -0400", hash_original_field = "52011B5EA55DD2D5E5F405BACDC95435", hash_generated_field = "F4895F45485234DF9F7B0249CB2D611D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.124 -0400", hash_original_field = "52011B5EA55DD2D5E5F405BACDC95435", hash_generated_field = "F4895F45485234DF9F7B0249CB2D611D")
 
     private int mMaxLength;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.206 -0400", hash_original_field = "C91ACB9BF83EFE4A34DE978ACB49D2FE", hash_generated_field = "D21A7BBDB0D9AA0CB8CC9D00BD1A9E57")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.124 -0400", hash_original_field = "C91ACB9BF83EFE4A34DE978ACB49D2FE", hash_generated_field = "D21A7BBDB0D9AA0CB8CC9D00BD1A9E57")
 
     private String mPreChange;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.206 -0400", hash_original_field = "8E15E12FD32BAAD541B21159716F394A", hash_generated_field = "C949C69DB847CFA28D0EB672B5F3194B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.124 -0400", hash_original_field = "8E15E12FD32BAAD541B21159716F394A", hash_generated_field = "C949C69DB847CFA28D0EB672B5F3194B")
 
     private float mDragStartX;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.206 -0400", hash_original_field = "19E9B380614BC97E973AFAC735624545", hash_generated_field = "ABB85F1B3BA40F41725FEBBA2D68FCB7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.124 -0400", hash_original_field = "19E9B380614BC97E973AFAC735624545", hash_generated_field = "ABB85F1B3BA40F41725FEBBA2D68FCB7")
 
     private float mDragStartY;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.206 -0400", hash_original_field = "E5A38CF43278A378E674AF82517747CD", hash_generated_field = "6E3EDD350FD0D2F013013E766DE599D9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.124 -0400", hash_original_field = "E5A38CF43278A378E674AF82517747CD", hash_generated_field = "6E3EDD350FD0D2F013013E766DE599D9")
 
     private long mDragStartTime;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.206 -0400", hash_original_field = "7E8FD35E0E13D6D3F1DDF734E67581E6", hash_generated_field = "FA5A49E5536E1D23955E06CF88D26990")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.124 -0400", hash_original_field = "7E8FD35E0E13D6D3F1DDF734E67581E6", hash_generated_field = "FA5A49E5536E1D23955E06CF88D26990")
 
     private boolean mDragSent;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.206 -0400", hash_original_field = "796EDAAD366B1D04F5EB6FF6C0D1C5BC", hash_generated_field = "9CDF2EC7A068A2DE91761DE787E720C4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.125 -0400", hash_original_field = "796EDAAD366B1D04F5EB6FF6C0D1C5BC", hash_generated_field = "9CDF2EC7A068A2DE91761DE787E720C4")
 
     private boolean mScrolled;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.206 -0400", hash_original_field = "67817EA809EA9F1C23056F1BA7A85F4C", hash_generated_field = "083C7463D465B1DDC06E0B472C1A9573")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.125 -0400", hash_original_field = "67817EA809EA9F1C23056F1BA7A85F4C", hash_generated_field = "083C7463D465B1DDC06E0B472C1A9573")
 
     private boolean mFromWebKit;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.206 -0400", hash_original_field = "73AD53C3F83E1A8B4247B3BEF325BBA6", hash_generated_field = "CB6337D6B961D14342EAF2F83F7DF48D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.125 -0400", hash_original_field = "73AD53C3F83E1A8B4247B3BEF325BBA6", hash_generated_field = "CB6337D6B961D14342EAF2F83F7DF48D")
 
     private boolean mFromFocusChange;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.206 -0400", hash_original_field = "50D0156FAF8D8CD73E7E2DB4428DB14E", hash_generated_field = "B1F1F20A3974D3104E18AFBE0FDC68F5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.125 -0400", hash_original_field = "50D0156FAF8D8CD73E7E2DB4428DB14E", hash_generated_field = "B1F1F20A3974D3104E18AFBE0FDC68F5")
 
     private boolean mFromSetInputType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.206 -0400", hash_original_field = "3190920D715F610F81C5FD65C185C657", hash_generated_field = "B0F96C3D8606AC9C7948E05A7E4901F3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.125 -0400", hash_original_field = "3190920D715F610F81C5FD65C185C657", hash_generated_field = "B0F96C3D8606AC9C7948E05A7E4901F3")
 
     private boolean mGotTouchDown;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.206 -0400", hash_original_field = "B81C45043BA225BD35B5D476365853C6", hash_generated_field = "E96D278DCBB2486BABE91B0B1F485A2C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.125 -0400", hash_original_field = "B81C45043BA225BD35B5D476365853C6", hash_generated_field = "E96D278DCBB2486BABE91B0B1F485A2C")
 
     private boolean mHasPerformedLongClick;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.206 -0400", hash_original_field = "7FB500E5FDE560E73625CFD1DFEF752E", hash_generated_field = "DF5D9447105457646310FED90F470EAD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.125 -0400", hash_original_field = "7FB500E5FDE560E73625CFD1DFEF752E", hash_generated_field = "DF5D9447105457646310FED90F470EAD")
 
     private boolean mInSetTextAndKeepSelection;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.206 -0400", hash_original_field = "54CF12A90BD31D49BEEC7F1C057508F6", hash_generated_field = "6609AE5368A22032BC95D8A4F540825D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.125 -0400", hash_original_field = "54CF12A90BD31D49BEEC7F1C057508F6", hash_generated_field = "6609AE5368A22032BC95D8A4F540825D")
 
     private char[] mCharacter = new char[1];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.206 -0400", hash_original_field = "F1533E5D1FD44B78E1B0B14191128D39", hash_generated_field = "9AAA9180D5C6EA2B6F39383B0109CA19")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.125 -0400", hash_original_field = "F1533E5D1FD44B78E1B0B14191128D39", hash_generated_field = "9AAA9180D5C6EA2B6F39383B0109CA19")
 
     private boolean mGotDelete;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.206 -0400", hash_original_field = "22C881D2E0A56905D55ED6675B3549E0", hash_generated_field = "2CF38EE8C3AB172E07962BA75C82A9B5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.125 -0400", hash_original_field = "22C881D2E0A56905D55ED6675B3549E0", hash_generated_field = "2CF38EE8C3AB172E07962BA75C82A9B5")
 
     private int mDelSelStart;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.206 -0400", hash_original_field = "7C3A751C4FF039E4FAA7F5CAE39FD464", hash_generated_field = "D82137E88C0E3DBDD263016B18A71ED7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.125 -0400", hash_original_field = "7C3A751C4FF039E4FAA7F5CAE39FD464", hash_generated_field = "D82137E88C0E3DBDD263016B18A71ED7")
 
     private int mDelSelEnd;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.206 -0400", hash_original_field = "2A3109A682991470C8E7A9944372B1F8", hash_generated_field = "D46CADD5A6770F085C96392C484CE8BB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.125 -0400", hash_original_field = "2A3109A682991470C8E7A9944372B1F8", hash_generated_field = "D46CADD5A6770F085C96392C484CE8BB")
 
     private boolean mAutoFillable;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.206 -0400", hash_original_field = "427104C070D8C07CDE4241C4F45B4A38", hash_generated_field = "1A9B7D5E459A03CD29A94A18A042A141")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.125 -0400", hash_original_field = "427104C070D8C07CDE4241C4F45B4A38", hash_generated_field = "1A9B7D5E459A03CD29A94A18A042A141")
 
     private int mQueryId;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.206 -0400", hash_original_field = "82043C068B61F18A751B8FC8336B6170", hash_generated_field = "2BCE54AE988047B9C3EAA8097538934B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.125 -0400", hash_original_field = "82043C068B61F18A751B8FC8336B6170", hash_generated_field = "2BCE54AE988047B9C3EAA8097538934B")
 
     private boolean mAutoFillProfileIsSet;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.206 -0400", hash_original_field = "90B41CF9E5879026F7DA6EAAE140E666", hash_generated_field = "B10B7E3578A05C072780A4670FC3EEEE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.125 -0400", hash_original_field = "90B41CF9E5879026F7DA6EAAE140E666", hash_generated_field = "B10B7E3578A05C072780A4670FC3EEEE")
 
     private boolean mInsideRemove;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.206 -0400", hash_original_field = "572851143F58D86B2089A8B56ED682F4", hash_generated_field = "E09CD7B1F21A80E07EFF4D82C84FA850")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.125 -0400", hash_original_field = "572851143F58D86B2089A8B56ED682F4", hash_generated_field = "E09CD7B1F21A80E07EFF4D82C84FA850")
 
     private MyResultReceiver mReceiver;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.206 -0400", hash_original_field = "C78BEDFC523DB73DF63EFB071AF1C35B", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.126 -0400", hash_original_field = "C78BEDFC523DB73DF63EFB071AF1C35B", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
 
     private Handler mHandler;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.207 -0400", hash_original_method = "089095F3BAAFCF9E87F2A27B8FA6A0A2", hash_generated_method = "57FE7E1FFAC2F322C25AE44039588C7D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.127 -0400", hash_original_method = "089095F3BAAFCF9E87F2A27B8FA6A0A2", hash_generated_method = "FF42A409CAD9AC3A51307E974768D091")
       WebTextView(Context context, WebView webView, int autoFillQueryId) {
         super(context, null, com.android.internal.R.attr.webTextViewStyle);
+        addTaint(autoFillQueryId);
+        addTaint(context.getTaint());
         mWebView = webView;
         mMaxLength = -1;
         setAutoFillable(autoFillQueryId);
@@ -160,21 +159,23 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
         setTextColor(DebugFlags.DRAW_WEBTEXTVIEW ? Color.RED : Color.BLACK);
         setBackgroundDrawable(DebugFlags.DRAW_WEBTEXTVIEW ? null : new ColorDrawable(Color.WHITE));
         setIncludeFontPadding(false);
-        mHandler = new Handler() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.207 -0400", hash_original_method = "9CA3B5083DA9628F4399959A49D35A0D", hash_generated_method = "2DE82FA3FCBAE95C8EB28789ABC6EA02")
-            @Override
-            public void handleMessage(Message msg) {
-                
-                mWebView.autoFillForm(mQueryId);
-                
-                addTaint(msg.getTaint());
-                
-                
-                
-                    
-                    
-                
-            }
+        mHandler = new Handler() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.127 -0400", hash_original_method = "9CA3B5083DA9628F4399959A49D35A0D", hash_generated_method = "0BE838F1BCF3D920E62FBD0B75BEC74C")
+        @Override
+        public void handleMessage(Message msg) {
+            addTaint(msg.getTaint());
+switch(msg.what){
+            case AUTOFILL_FORM:
+            mWebView.autoFillForm(mQueryId);
+            break;
+}
+            // ---------- Original Method ----------
+            //switch (msg.what) {
+                //case AUTOFILL_FORM:
+                    //mWebView.autoFillForm(mQueryId);
+                    //break;
+                //}
+        }
 };
         mReceiver = new MyResultReceiver(mHandler);
         float ringWidth = 2f * context.getResources().getDisplayMetrics().density;
@@ -182,1069 +183,1108 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
         setBackgroundDrawable(new BackgroundDrawable(mRingInset));
         setPadding(getPaddingLeft(), getPaddingTop(), getPaddingRight(),
                 getPaddingBottom());
-        addTaint(context.getTaint());
-        addTaint(autoFillQueryId);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.207 -0400", hash_original_method = "AE45889DF7F2FB1AD82AA8B5F1FED7F7", hash_generated_method = "777A71D3EFDBD434D2FC45D0739EED0C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.128 -0400", hash_original_method = "AE45889DF7F2FB1AD82AA8B5F1FED7F7", hash_generated_method = "777A71D3EFDBD434D2FC45D0739EED0C")
     public void setAutoFillable(int queryId) {
         mAutoFillable = mWebView.getSettings().getAutoFillEnabled()
                 && (queryId != FORM_NOT_AUTOFILLABLE);
         mQueryId = queryId;
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //mAutoFillable = mWebView.getSettings().getAutoFillEnabled()
+                //&& (queryId != FORM_NOT_AUTOFILLABLE);
+        //mQueryId = queryId;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.208 -0400", hash_original_method = "2A0FFA3F53D08ACDC8DCA45FA27A8D22", hash_generated_method = "861FFC6380FF6795E54BB76F4063D536")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.128 -0400", hash_original_method = "2A0FFA3F53D08ACDC8DCA45FA27A8D22", hash_generated_method = "426F579092A52D99353D2B5998FAE9AD")
     @Override
     public void setPadding(int left, int top, int right, int bottom) {
+        addTaint(bottom);
+        addTaint(right);
+        addTaint(top);
+        addTaint(left);
         super.setPadding(left + mRingInset, top + mRingInset,
                 right + mRingInset, bottom + mRingInset);
-        addTaint(left);
-        addTaint(top);
-        addTaint(right);
-        addTaint(bottom);
-        
-        
-                
+        // ---------- Original Method ----------
+        //super.setPadding(left + mRingInset, top + mRingInset,
+                //right + mRingInset, bottom + mRingInset);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.210 -0400", hash_original_method = "6961E56AC59C570DF49F429D8D391CD8", hash_generated_method = "27EDD99C9B95743AD4A9BC9810745B67")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.130 -0400", hash_original_method = "6961E56AC59C570DF49F429D8D391CD8", hash_generated_method = "691E3276F83D7B13558C06928C067B5F")
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
+        addTaint(event.getTaint());
+    if(event.isSystem())        
         {
-            boolean var54D21F6CA47C3F13B3018213ED17168D_474190834 = (event.isSystem());
-            {
-                boolean varCEE2CC9A2E312DCEF21BEB8A1D3D2A74_1199622915 = (super.dispatchKeyEvent(event));
-            } 
-        } 
+            boolean var639DD27D10E8FF69097B1398D445D1B9_1964386742 = (super.dispatchKeyEvent(event));
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_653004177 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_653004177;
+        } //End block
         boolean down = event.getAction() != KeyEvent.ACTION_UP;
         int keyCode = event.getKeyCode();
         boolean isArrowKey = false;
-        
+switch(keyCode){
+        case KeyEvent.KEYCODE_DPAD_LEFT:
+        case KeyEvent.KEYCODE_DPAD_RIGHT:
+        case KeyEvent.KEYCODE_DPAD_UP:
+        case KeyEvent.KEYCODE_DPAD_DOWN:
         isArrowKey = true;
-        
+        break;
+}    if(KeyEvent.KEYCODE_TAB == keyCode)        
         {
+    if(down)            
             {
                 onEditorAction(EditorInfo.IME_ACTION_NEXT);
-            } 
-        } 
+            } //End block
+            boolean varB326B5062B2F0E69046810717534CB09_679971930 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1173359803 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1173359803;
+        } //End block
         Spannable text = (Spannable) getText();
         int oldStart = Selection.getSelectionStart(text);
         int oldEnd = Selection.getSelectionEnd(text);
+    if(KeyEvent.KEYCODE_DEL == keyCode)        
         {
+    if(oldStart == 0 && oldEnd == 0)            
             {
                 sendDomEvent(event);
-            } 
+                boolean varB326B5062B2F0E69046810717534CB09_1180265730 = (true);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_862563603 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_862563603;
+            } //End block
+    if(down)            
             {
                 mGotDelete = true;
                 mDelSelStart = oldStart;
                 mDelSelEnd = oldEnd;
-            } 
-        } 
+            } //End block
+        } //End block
+    if(mSingle && (KeyEvent.KEYCODE_ENTER == keyCode
+                    || KeyEvent.KEYCODE_NUMPAD_ENTER == keyCode))        
         {
+    if(isPopupShowing())            
             {
-                boolean var72F8103664F7AA5B2750DCAC9FD4B6CA_251701336 = (isPopupShowing());
-                {
-                    boolean var97BD0C91372FF8CDE07B475E38FE656A_369353992 = (super.dispatchKeyEvent(event));
-                } 
-            } 
+                boolean var639DD27D10E8FF69097B1398D445D1B9_852871950 = (super.dispatchKeyEvent(event));
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1765052388 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1765052388;
+            } //End block
+    if(!down)            
             {
                 InputMethodManager.getInstance(mContext)
                         .hideSoftInputFromWindow(getWindowToken(), 0);
                 sendDomEvent(new KeyEvent(KeyEvent.ACTION_DOWN, keyCode));
                 sendDomEvent(event);
-            } 
-            boolean varD6051F78D5E57D3CCCE2FBA8ECC49974_1311747786 = (super.dispatchKeyEvent(event));
-        } 
+            } //End block
+            boolean var639DD27D10E8FF69097B1398D445D1B9_1205926723 = (super.dispatchKeyEvent(event));
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1362403441 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1362403441;
+        } //End block
+        else
+    if(KeyEvent.KEYCODE_DPAD_CENTER == keyCode)        
         {
+    if(isPopupShowing())            
             {
-                boolean var72F8103664F7AA5B2750DCAC9FD4B6CA_1855826187 = (isPopupShowing());
-                {
-                    boolean var97BD0C91372FF8CDE07B475E38FE656A_1345163677 = (super.dispatchKeyEvent(event));
-                } 
-            } 
+                boolean var639DD27D10E8FF69097B1398D445D1B9_1778547761 = (super.dispatchKeyEvent(event));
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1747397835 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1747397835;
+            } //End block
+    if(!down)            
             {
                 mWebView.centerKeyPressOnTextField();
-            } 
-            boolean varD6051F78D5E57D3CCCE2FBA8ECC49974_1239497173 = (super.dispatchKeyEvent(event));
-        } 
+            } //End block
+            boolean var639DD27D10E8FF69097B1398D445D1B9_469246294 = (super.dispatchKeyEvent(event));
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_140844605 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_140844605;
+        } //End block
+    if(getLayout() == null)        
         {
-            boolean var778B744EBE60DF815BEE98852B413FC5_1671932374 = (getLayout() == null);
-            {
-                measure(mWidthSpec, mHeightSpec);
-            } 
-        } 
+            measure(mWidthSpec, mHeightSpec);
+        } //End block
         int oldLength = text.length();
         boolean maxedOut = mMaxLength != -1 && oldLength == mMaxLength;
         String oldText;
+    if(maxedOut && oldEnd != oldStart)        
         {
             oldText = text.toString();
-        } 
+        } //End block
+        else
         {
             oldText = "";
-        } 
+        } //End block
+    if(super.dispatchKeyEvent(event))        
         {
-            boolean varD6051F78D5E57D3CCCE2FBA8ECC49974_1811303373 = (super.dispatchKeyEvent(event));
+    if(KeyEvent.KEYCODE_ENTER == keyCode
+                        || KeyEvent.KEYCODE_NUMPAD_ENTER == keyCode)            
             {
+                mGotEnterDown = true;
+            } //End block
+    if(maxedOut && !isArrowKey && keyCode != KeyEvent.KEYCODE_DEL)            
+            {
+    if(oldEnd == oldStart)                
                 {
-                    mGotEnterDown = true;
-                } 
+                    boolean varB326B5062B2F0E69046810717534CB09_1460105387 = (true);
+                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2081089297 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_2081089297;
+                } //End block
+                else
+    if(!oldText.equals(getText().toString()))                
                 {
-                    {
-                        boolean var3BF1F25582652AF3CD5797A1157BFB20_479869116 = (!oldText.equals(getText().toString()));
-                        {
-                            Spannable span = (Spannable) getText();
-                            int newStart = Selection.getSelectionStart(span);
-                            int newEnd = Selection.getSelectionEnd(span);
-                            mWebView.replaceTextfieldText(0, oldLength, span.toString(),
+                    Spannable span = (Spannable) getText();
+                    int newStart = Selection.getSelectionStart(span);
+                    int newEnd = Selection.getSelectionEnd(span);
+                    mWebView.replaceTextfieldText(0, oldLength, span.toString(),
                             newStart, newEnd);
-                        } 
-                    } 
-                } 
-            } 
-        } 
+                    boolean varB326B5062B2F0E69046810717534CB09_293179988 = (true);
+                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_123755151 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_123755151;
+                } //End block
+            } //End block
+            boolean varB326B5062B2F0E69046810717534CB09_485668914 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1152866740 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1152866740;
+        } //End block
+    if(mGotEnterDown && !down)        
+        {
+            boolean varB326B5062B2F0E69046810717534CB09_1322443366 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1767243879 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1767243879;
+        } //End block
+    if(isArrowKey)        
         {
             mWebView.resetTrackballTime();
-            {
-                Object var908199CAFC193F17BD0A3FE9AC9B6CAE_1936032050 = (mWebView.onKeyDown(keyCode, event));
-                Object var38857E8F00A1A40A83F7362F0A95A91E_1458685848 = (mWebView
+            boolean varF90466788DB99DF92F458E45FD073CF5_2127207321 = (down ? mWebView.onKeyDown(keyCode, event) : mWebView
                     .onKeyUp(keyCode, event));
-            } 
-        } 
-        addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1629502212 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1629502212;
-        
-        
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_625631104 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_625631104;
+        } //End block
+        boolean var68934A3E9455FA72420237EB05902327_487245728 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_645130144 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_645130144;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.211 -0400", hash_original_method = "4890DDDCE957B3D3A5D6757132681BB5", hash_generated_method = "3FCC463CD6615A52755846F6DE1859BA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.131 -0400", hash_original_method = "4890DDDCE957B3D3A5D6757132681BB5", hash_generated_method = "ED4B7E9EBA405B5DA87F1DAB2AF0F4F3")
      void ensureLayout() {
+    if(getLayout() == null)        
         {
-            boolean var778B744EBE60DF815BEE98852B413FC5_183603923 = (getLayout() == null);
+            measure(mWidthSpec, mHeightSpec);
+            LayoutParams params = (LayoutParams) getLayoutParams();
+    if(params != null)            
             {
-                measure(mWidthSpec, mHeightSpec);
-                LayoutParams params = (LayoutParams) getLayoutParams();
-                {
-                    layout(params.x, params.y, params.x + params.width,
+                layout(params.x, params.y, params.x + params.width,
                         params.y + params.height);
-                } 
-            } 
-        } 
-        
-        
-            
-            
-            
-                
-                        
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (getLayout() == null) {
+            //measure(mWidthSpec, mHeightSpec);
+            //LayoutParams params = (LayoutParams) getLayoutParams();
+            //if (params != null) {
+                //layout(params.x, params.y, params.x + params.width,
+                        //params.y + params.height);
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.211 -0400", hash_original_method = "7D5E495C9B289687F8273FA9EA57C0F7", hash_generated_method = "58EC071B095B9519514357680DE7B90F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.132 -0400", hash_original_method = "7D5E495C9B289687F8273FA9EA57C0F7", hash_generated_method = "71A9668D278E13BFA32002A31F00CE22")
      ResultReceiver getResultReceiver() {
-        ResultReceiver varB4EAC82CA7396A68D541C85D26508E83_1934751651 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1934751651 = mReceiver;
-        varB4EAC82CA7396A68D541C85D26508E83_1934751651.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1934751651;
-        
-        
+ResultReceiver var92BB1EAD1A7B04A11F11D488BE72928A_1437568378 =         mReceiver;
+        var92BB1EAD1A7B04A11F11D488BE72928A_1437568378.addTaint(taint);
+        return var92BB1EAD1A7B04A11F11D488BE72928A_1437568378;
+        // ---------- Original Method ----------
+        //return mReceiver;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.211 -0400", hash_original_method = "0D2A49DF88825D4B2D39C3141FFC083A", hash_generated_method = "9F2DC5D24D4C7215906ACEDF9177E9B9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.132 -0400", hash_original_method = "0D2A49DF88825D4B2D39C3141FFC083A", hash_generated_method = "6E1F9F12A85A5A438978D5E5B13A3A1B")
      boolean isSameTextField(int ptr) {
         addTaint(ptr);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2059661852 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2059661852;
-        
-        
+        boolean varD762C1F7B903AB959D3C9EF57114B5DB_2138417008 = (ptr == mNodePointer);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_783296895 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_783296895;
+        // ---------- Original Method ----------
+        //return ptr == mNodePointer;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.212 -0400", hash_original_method = "480AEB5EE1C7676DB93788B189E32B71", hash_generated_method = "FB30501489A4CB96F12B0854BC7C97C9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.132 -0400", hash_original_method = "480AEB5EE1C7676DB93788B189E32B71", hash_generated_method = "CFD2B1EB16C70F7E0ABD10DA0A1C02E9")
     private void lineUpScroll() {
         Layout layout = getLayout();
+    if(mWebView != null && layout != null)        
         {
+    if(mSingle)            
             {
                 float maxScrollX = layout.getLineRight(0) - getWidth();
+    if(DebugFlags.WEB_TEXT_VIEW)                
+                {
+                } //End block
                 mWebView.scrollFocusedTextInputX(maxScrollX > 0 ?
                         mScrollX / maxScrollX : 0);
-            } 
+            } //End block
+            else
             {
                 mWebView.scrollFocusedTextInputY(mScrollY);
-            } 
-        } 
-        
-        
-        
-            
-                
-                
-                    
-                            
-                
-                
-                        
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //Layout layout = getLayout();
+        //if (mWebView != null && layout != null) {
+            //if (mSingle) {
+                //float maxScrollX = layout.getLineRight(0) - getWidth();
+                //if (DebugFlags.WEB_TEXT_VIEW) {
+                    //Log.v(LOGTAG, "onTouchEvent x=" + mScrollX + " y="
+                            //+ mScrollY + " maxX=" + maxScrollX);
+                //}
+                //mWebView.scrollFocusedTextInputX(maxScrollX > 0 ?
+                        //mScrollX / maxScrollX : 0);
+            //} else {
+                //mWebView.scrollFocusedTextInputY(mScrollY);
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.212 -0400", hash_original_method = "76914D313CC2AB81853EDD1E3C727FFE", hash_generated_method = "5821F9E64F6F0CE7BE049A6983D569A3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.133 -0400", hash_original_method = "76914D313CC2AB81853EDD1E3C727FFE", hash_generated_method = "B86F4C0B13345A3066076DAA8B4D5ECC")
     @Override
     protected void makeNewLayout(int w, int hintWidth, Metrics boring,
             Metrics hintBoring, int ellipsisWidth, boolean bringIntoView) {
+        addTaint(bringIntoView);
+        addTaint(ellipsisWidth);
+        addTaint(hintBoring.getTaint());
+        addTaint(boring.getTaint());
+        addTaint(hintWidth);
+        addTaint(w);
         super.makeNewLayout(w, hintWidth, boring, hintBoring, ellipsisWidth,
                 bringIntoView);
         lineUpScroll();
-        addTaint(w);
-        addTaint(hintWidth);
-        addTaint(boring.getTaint());
-        addTaint(hintBoring.getTaint());
-        addTaint(ellipsisWidth);
-        addTaint(bringIntoView);
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //super.makeNewLayout(w, hintWidth, boring, hintBoring, ellipsisWidth,
+                //bringIntoView);
+        //lineUpScroll();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.213 -0400", hash_original_method = "B64466D7D13E6636B7758E5E911C1FF7", hash_generated_method = "65F29F8999F12D075F8988164458AF9D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.133 -0400", hash_original_method = "B64466D7D13E6636B7758E5E911C1FF7", hash_generated_method = "E4B9C454A6DEF1D97066F4B0307B7306")
     @Override
     public InputConnection onCreateInputConnection(
             EditorInfo outAttrs) {
-        
-        InputConnection varB4EAC82CA7396A68D541C85D26508E83_1179781574 = null; 
+        //DSFIXME:  CODE0009: Possible callback target function detected
+        addTaint(outAttrs.getTaint());
         InputConnection connection = super.onCreateInputConnection(outAttrs);
+    if(mWebView != null)        
         {
             outAttrs.fieldName = mWebView.nativeFocusCandidateName() + "\\"
                     + mWebView.getUrl();
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1179781574 = connection;
-        addTaint(outAttrs.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1179781574.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1179781574;
-        
-        
-        
-            
-                    
-        
-        
+        } //End block
+InputConnection var9911BB1C5F1522C1630847C40E8BC67E_317531809 =         connection;
+        var9911BB1C5F1522C1630847C40E8BC67E_317531809.addTaint(taint);
+        return var9911BB1C5F1522C1630847C40E8BC67E_317531809;
+        // ---------- Original Method ----------
+        //InputConnection connection = super.onCreateInputConnection(outAttrs);
+        //if (mWebView != null) {
+            //outAttrs.fieldName = mWebView.nativeFocusCandidateName() + "\\"
+                    //+ mWebView.getUrl();
+        //}
+        //return connection;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.213 -0400", hash_original_method = "804428A0FF8505961E29DE067C3E7206", hash_generated_method = "B74E71F77507FCFCEF2487B53617DDEC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.134 -0400", hash_original_method = "804428A0FF8505961E29DE067C3E7206", hash_generated_method = "C3F111AD14178CE70473B85DA1229BFD")
     @Override
     public void onEditorAction(int actionCode) {
-        
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
+        addTaint(actionCode);
+switch(actionCode){
+        case EditorInfo.IME_ACTION_NEXT:
+    if(mWebView.nativeMoveCursorToNextTextInput())        
         {
-            boolean var61E9772AE146CF8460E5E9E7C7CB61AE_1404253700 = (mWebView.nativeMoveCursorToNextTextInput());
-            {
-                mWebView.rebuildWebTextView();
-                setDefaultSelection();
-                mWebView.invalidate();
-            } 
-        } 
-        
-        
+            mWebView.rebuildWebTextView();
+            setDefaultSelection();
+            mWebView.invalidate();
+        } //End block
+        break;
+        case EditorInfo.IME_ACTION_DONE:
         super.onEditorAction(actionCode);
-        
-        
+        break;
+        case EditorInfo.IME_ACTION_GO:
+        case EditorInfo.IME_ACTION_SEARCH:
         InputMethodManager.getInstance(mContext)
                     .hideSoftInputFromWindow(getWindowToken(), 0);
-        
-        
         sendDomEvent(new KeyEvent(KeyEvent.ACTION_DOWN,
                     KeyEvent.KEYCODE_ENTER));
-        
-        
         sendDomEvent(new KeyEvent(KeyEvent.ACTION_UP,
                     KeyEvent.KEYCODE_ENTER));
-        
-        addTaint(actionCode);
-        
-        
+        default:
+        break;
+}
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.214 -0400", hash_original_method = "199CA847E2A702BC0971D902FFD82329", hash_generated_method = "7CE2FCAB2D00F05F42E15869ECBD15B0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.135 -0400", hash_original_method = "199CA847E2A702BC0971D902FFD82329", hash_generated_method = "4CF551F1B06A56ECD6A9FA8676CDB5AD")
     @Override
     protected void onFocusChanged(boolean focused, int direction,
             Rect previouslyFocusedRect) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
+        addTaint(previouslyFocusedRect.getTaint());
+        addTaint(direction);
+        addTaint(focused);
         mFromFocusChange = true;
         super.onFocusChanged(focused, direction, previouslyFocusedRect);
+    if(focused)        
         {
             mWebView.setActive(true);
-        } 
+        } //End block
+        else
+    if(!mInsideRemove)        
         {
             mWebView.setActive(false);
-        } 
+        } //End block
         mFromFocusChange = false;
-        addTaint(focused);
-        addTaint(direction);
-        addTaint(previouslyFocusedRect.getTaint());
-        
-        
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //mFromFocusChange = true;
+        //super.onFocusChanged(focused, direction, previouslyFocusedRect);
+        //if (focused) {
+            //mWebView.setActive(true);
+        //} else if (!mInsideRemove) {
+            //mWebView.setActive(false);
+        //}
+        //mFromFocusChange = false;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.215 -0400", hash_original_method = "A29BC68952EA75E2FA60BFA3E7E77A14", hash_generated_method = "26C891DBDEC5E1879093117A504568A0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.135 -0400", hash_original_method = "A29BC68952EA75E2FA60BFA3E7E77A14", hash_generated_method = "5F66268F73CE77DC1DE348768C490FCE")
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
+        addTaint(id);
+        addTaint(position);
+        addTaint(view.getTaint());
+        addTaint(parent.getTaint());
+    if(id == 0 && position == 0)        
         {
             replaceText("");
             WebSettings settings = mWebView.getSettings();
+    if(mAutoFillProfileIsSet)            
             {
                 mWebView.autoFillForm(mQueryId);
-            } 
+            } //End block
+            else
             {
                 mWebView.getWebChromeClient().setupAutoFill(
                         mHandler.obtainMessage(AUTOFILL_FORM));
-            } 
-        } 
-        addTaint(parent.getTaint());
-        addTaint(view.getTaint());
-        addTaint(position);
-        addTaint(id);
-        
-        
-            
-            
-            
-                
-            
-                
-                        
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (id == 0 && position == 0) {
+            //replaceText("");
+            //WebSettings settings = mWebView.getSettings();
+            //if (mAutoFillProfileIsSet) {
+                //mWebView.autoFillForm(mQueryId);
+            //} else {
+                //mWebView.getWebChromeClient().setupAutoFill(
+                        //mHandler.obtainMessage(AUTOFILL_FORM));
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.215 -0400", hash_original_method = "D3CDB855BC1EDCE86869BE708EA015CC", hash_generated_method = "24F0587FCCA742AE4B60DC2FCB2DD653")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.136 -0400", hash_original_method = "D3CDB855BC1EDCE86869BE708EA015CC", hash_generated_method = "0FC5C74D509F77AB0352511318DAA8D2")
     @Override
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
+        addTaint(oldt);
+        addTaint(oldl);
+        addTaint(t);
+        addTaint(l);
         super.onScrollChanged(l, t, oldl, oldt);
         lineUpScroll();
-        addTaint(l);
-        addTaint(t);
-        addTaint(oldl);
-        addTaint(oldt);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onScrollChanged(l, t, oldl, oldt);
+        //lineUpScroll();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.215 -0400", hash_original_method = "8C1441039C2AFE6E28B135997E9DB205", hash_generated_method = "CDB3F6F8F58BD83D2E2273E21C6F4FF3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.137 -0400", hash_original_method = "8C1441039C2AFE6E28B135997E9DB205", hash_generated_method = "E4CB20CBA1B21B2292F0C68076E9C147")
     @Override
     protected void onSelectionChanged(int selStart, int selEnd) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
+        addTaint(selEnd);
+        addTaint(selStart);
+    if(!mFromWebKit && !mFromFocusChange && !mFromSetInputType
+                && mWebView != null && !mInSetTextAndKeepSelection)        
         {
+    if(DebugFlags.WEB_TEXT_VIEW)            
+            {
+            } //End block
             mWebView.setSelection(selStart, selEnd);
             lineUpScroll();
-        } 
-        addTaint(selStart);
-        addTaint(selEnd);
-        
-        
-                
-            
-                
-                        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!mFromWebKit && !mFromFocusChange && !mFromSetInputType
+                //&& mWebView != null && !mInSetTextAndKeepSelection) {
+            //if (DebugFlags.WEB_TEXT_VIEW) {
+                //Log.v(LOGTAG, "onSelectionChanged selStart=" + selStart
+                        //+ " selEnd=" + selEnd);
+            //}
+            //mWebView.setSelection(selStart, selEnd);
+            //lineUpScroll();
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.216 -0400", hash_original_method = "86E27647BFDE15D66BF8F4D142CAE4A5", hash_generated_method = "210E3B7DAA434A4D389D370C2D22DC9A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.139 -0400", hash_original_method = "86E27647BFDE15D66BF8F4D142CAE4A5", hash_generated_method = "C07B6E53123F7ACA7ED7EF3728630AE4")
     @Override
     protected void onTextChanged(CharSequence s,int start,int before,int count) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
+        addTaint(count);
+        addTaint(before);
+        addTaint(start);
+        addTaint(s.getTaint());
         super.onTextChanged(s, start, before, count);
         String postChange = s.toString();
-        {
-            boolean var69B0C10C334112C2C00F8FB5966E302E_2002951177 = (mPreChange == null || mPreChange.equals(postChange) ||
+    if(mPreChange == null || mPreChange.equals(postChange) ||
                 (mMaxLength > -1 && mPreChange.length() > mMaxLength &&
-                mPreChange.substring(0, mMaxLength).equals(postChange)));
-        } 
+                mPreChange.substring(0, mMaxLength).equals(postChange)))        
         {
+            return;
+        } //End block
+    if(0 == count)        
+        {
+    if(before > 0)            
             {
                 updateCachedTextfield();
+    if(mGotDelete)                
                 {
                     mGotDelete = false;
                     int oldEnd = start + before;
+    if(mDelSelEnd == oldEnd
+                            && (mDelSelStart == start
+                            || (mDelSelStart == oldEnd && before == 1)))                    
                     {
                         sendDomEvent(new KeyEvent(KeyEvent.ACTION_DOWN,
                                 KeyEvent.KEYCODE_DEL));
                         sendDomEvent(new KeyEvent(KeyEvent.ACTION_UP,
                                 KeyEvent.KEYCODE_DEL));
-                    } 
-                } 
+                        return;
+                    } //End block
+                } //End block
                 mWebView.deleteSelection(start, start + before);
-            } 
+            } //End block
             mGotDelete = false;
-        } 
+            return;
+        } //End block
         mGotDelete = false;
+    if(count > 1 && before == count - 1)        
         {
             String replaceButOne = mPreChange.subSequence(start,
                     start + before).toString();
             String replacedString = s.subSequence(start,
                     start + before).toString();
+    if(replaceButOne.equals(replacedString))            
             {
-                boolean var0D4AADC711594525F4030B31B07C7D56_1594489932 = (replaceButOne.equals(replacedString));
-                {
-                    start += before;
-                    before = 0;
-                    count = 1;
-                } 
-            } 
-        } 
+                start += before;
+                before = 0;
+                count = 1;
+            } //End block
+        } //End block
         mPreChange = postChange;
         KeyEvent[] events = null;
+    if(count == 1)        
         {
             TextUtils.getChars(s, start + count - 1, start + count, mCharacter, 0);
             KeyCharacterMap kmap = KeyCharacterMap.load(KeyCharacterMap.VIRTUAL_KEYBOARD);
             events = kmap.getEvents(mCharacter);
-        } 
+        } //End block
         boolean useKeyEvents = (events != null);
+    if(useKeyEvents)        
         {
+    if(DebugFlags.WEB_TEXT_VIEW)            
+            {
+            } //End block
+    if(!mInSetTextAndKeepSelection)            
             {
                 mWebView.setSelection(start, start + before);
-            } 
+            } //End block
             int length = events.length;
+for(int i = 0;i < length;i++)
             {
-                int i = 0;
+    if(!KeyEvent.isModifierKey(events[i].getKeyCode()))                
                 {
-                    {
-                        boolean varFC8D0E9132A6E0775D7E4533EF2FB773_991735340 = (!KeyEvent.isModifierKey(events[i].getKeyCode()));
-                        {
-                            sendDomEvent(events[i]);
-                        } 
-                    } 
-                } 
-            } 
-        } 
+                    sendDomEvent(events[i]);
+                } //End block
+            } //End block
+        } //End block
+        else
         {
             String replace = s.subSequence(start,
                     start + count).toString();
             mWebView.replaceTextfieldText(start, start + before, replace,
                     start + count,
                     start + count);
-        } 
+        } //End block
         updateCachedTextfield();
-        addTaint(s.getTaint());
-        addTaint(start);
-        addTaint(before);
-        addTaint(count);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.217 -0400", hash_original_method = "C8E8CDF4C81BBE6A97ACE8DDCE593DE3", hash_generated_method = "F3D228206E8FDABD1362785078C5BD04")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.142 -0400", hash_original_method = "C8E8CDF4C81BBE6A97ACE8DDCE593DE3", hash_generated_method = "5229AEB231EE8BEF3294FE7A1D99C2BC")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
+switch(event.getAction()){
+        case MotionEvent.ACTION_DOWN:
+        super.onTouchEvent(event);
+        mDragStartX = event.getX();
+        mDragStartY = event.getY();
+        mDragStartTime = event.getEventTime();
+        mDragSent = false;
+        mScrolled = false;
+        mGotTouchDown = true;
+        mHasPerformedLongClick = false;
+        break;
+        case MotionEvent.ACTION_MOVE:
+    if(mHasPerformedLongClick)        
         {
-            Object var9E1FBD251DF7E53AB77C3A31F15B2B38_329365723 = (event.getAction());
-            
-            super.onTouchEvent(event);
-            
-            
-            mDragStartX = event.getX();
-            
-            
-            mDragStartY = event.getY();
-            
-            
-            mDragStartTime = event.getEventTime();
-            
-            
-            mDragSent = false;
-            
-            
-            mScrolled = false;
-            
-            
-            mGotTouchDown = true;
-            
-            
-            mHasPerformedLongClick = false;
-            
-            
+            mGotTouchDown = false;
+            boolean var68934A3E9455FA72420237EB05902327_448189939 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_38011083 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_38011083;
+        } //End block
+        int slop = ViewConfiguration.get(mContext).getScaledTouchSlop();
+        Spannable buffer = getText();
+        int initialScrollX = Touch.getInitialScrollX(this, buffer);
+        int initialScrollY = Touch.getInitialScrollY(this, buffer);
+        super.onTouchEvent(event);
+        int dx = Math.abs(mScrollX - initialScrollX);
+        int dy = Math.abs(mScrollY - initialScrollY);
+        int smallerSlop = slop/2;
+    if(dx > smallerSlop || dy > smallerSlop)        
+        {
+            mScrolled = true;
+            cancelLongPress();
+            boolean varB326B5062B2F0E69046810717534CB09_1873971459 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_791867477 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_791867477;
+        } //End block
+    if(Math.abs((int) event.getX() - mDragStartX) < slop
+                    && Math.abs((int) event.getY() - mDragStartY) < slop)        
+        {
+            boolean varB326B5062B2F0E69046810717534CB09_347543043 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_697278799 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_697278799;
+        } //End block
+    if(mWebView != null)        
+        {
+    if(!mDragSent)            
             {
-                mGotTouchDown = false;
-            } 
-            
-            
-            int slop = ViewConfiguration.get(mContext).getScaledTouchSlop();
-            
-            
-            Spannable buffer = getText();
-            
-            
-            int initialScrollX = Touch.getInitialScrollX(this, buffer);
-            
-            
-            int initialScrollY = Touch.getInitialScrollY(this, buffer);
-            
-            
-            super.onTouchEvent(event);
-            
-            
-            int dx = Math.abs(mScrollX - initialScrollX);
-            
-            
-            int dy = Math.abs(mScrollY - initialScrollY);
-            
-            
-            int smallerSlop = slop/2;
-            
-            
+                mWebView.initiateTextFieldDrag(mDragStartX, mDragStartY,
+                            mDragStartTime);
+                mDragSent = true;
+            } //End block
+            boolean scrolled = mWebView.textFieldDrag(event);
+    if(scrolled)            
             {
                 mScrolled = true;
                 cancelLongPress();
-            } 
-            
-            
-            {
-                boolean var9093599EE2DF5C5F4C4285B452695469_712107835 = (Math.abs((int) event.getX() - mDragStartX) < slop
-                    && Math.abs((int) event.getY() - mDragStartY) < slop);
-            } 
-            
-            
-            {
-                {
-                    mWebView.initiateTextFieldDrag(mDragStartX, mDragStartY,
-                            mDragStartTime);
-                    mDragSent = true;
-                } 
-                boolean scrolled = mWebView.textFieldDrag(event);
-                {
-                    mScrolled = true;
-                    cancelLongPress();
-                } 
-            } 
-            
-            
-            super.onTouchEvent(event);
-            
-            
-            {
-                mGotTouchDown = false;
-            } 
-            
-            
-            {
-                cancelLongPress();
-                {
-                    mWebView.touchUpOnTextField(event);
-                } 
-            } 
-            
-            
-            {
-                mWebView.onTouchEvent(event);
-            } 
-            
-            
+                boolean varB326B5062B2F0E69046810717534CB09_712907394 = (true);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_960313475 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_960313475;
+            } //End block
+        } //End block
+        boolean var68934A3E9455FA72420237EB05902327_359947668 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_864228521 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_864228521;
+        case MotionEvent.ACTION_UP:
+        case MotionEvent.ACTION_CANCEL:
+        super.onTouchEvent(event);
+    if(mHasPerformedLongClick)        
+        {
             mGotTouchDown = false;
-            
-        } 
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1338714750 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1338714750;
-        
-        
+            boolean var68934A3E9455FA72420237EB05902327_1987541753 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1903518985 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1903518985;
+        } //End block
+    if(!mScrolled)        
+        {
+            cancelLongPress();
+    if(mGotTouchDown && mWebView != null)            
+            {
+                mWebView.touchUpOnTextField(event);
+            } //End block
+        } //End block
+    if(mWebView != null && mDragSent)        
+        {
+            mWebView.onTouchEvent(event);
+        } //End block
+        mGotTouchDown = false;
+        break;
+        default:
+        break;
+}        boolean varB326B5062B2F0E69046810717534CB09_1847906392 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_37915824 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_37915824;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.218 -0400", hash_original_method = "39A98F4B040DD226E88FA29A15911D83", hash_generated_method = "8FD8017501EBA24216E19848B72DA4A8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.143 -0400", hash_original_method = "39A98F4B040DD226E88FA29A15911D83", hash_generated_method = "E8098EDBF31110F724F658B613022657")
     @Override
     public boolean onTrackballEvent(MotionEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
+        addTaint(event.getTaint());
+    if(isPopupShowing())        
         {
-            boolean varBF0DD052E7F558A1BAF9DA85140649CD_2013490347 = (isPopupShowing());
-            {
-                boolean varA6E78A78BE965F341F5864424E55B8B1_1113447553 = (super.onTrackballEvent(event));
-            } 
-        } 
+            boolean varBF585A2510916F6245CF607EE867BAC0_1835956397 = (super.onTrackballEvent(event));
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_119140354 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_119140354;
+        } //End block
+    if(event.getAction() != MotionEvent.ACTION_MOVE)        
         {
-            boolean var4AC14C2DF0ECC4D7F899974BD11F2605_815238848 = (event.getAction() != MotionEvent.ACTION_MOVE);
-        } 
+            boolean var68934A3E9455FA72420237EB05902327_1466759844 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2143100685 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2143100685;
+        } //End block
         Spannable text = getText();
         MovementMethod move = getMovementMethod();
+    if(move != null && getLayout() != null &&
+            move.onTrackballEvent(this, text, event))        
         {
-            boolean var0040A18D22912D1038EED02F5F656E69_270940825 = (move != null && getLayout() != null &&
-            move.onTrackballEvent(this, text, event));
-        } 
-        addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1646169318 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1646169318;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
-            
-            
-        
-        
+            boolean varB326B5062B2F0E69046810717534CB09_1491107754 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1648435365 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1648435365;
+        } //End block
+        boolean var68934A3E9455FA72420237EB05902327_834402271 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1460432154 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1460432154;
+        // ---------- Original Method ----------
+        //if (isPopupShowing()) {
+            //return super.onTrackballEvent(event);
+        //}
+        //if (event.getAction() != MotionEvent.ACTION_MOVE) {
+            //return false;
+        //}
+        //Spannable text = getText();
+        //MovementMethod move = getMovementMethod();
+        //if (move != null && getLayout() != null &&
+            //move.onTrackballEvent(this, text, event)) {
+            //return true;
+        //}
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.218 -0400", hash_original_method = "3EEE407D8FB8A76E11AC99079A17DC34", hash_generated_method = "4AF069FBCA0166E205BCE0A8C6143774")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.143 -0400", hash_original_method = "3EEE407D8FB8A76E11AC99079A17DC34", hash_generated_method = "7CE878C7CBBFD79BFA65CF7B0BCE83BC")
     @Override
     public boolean performLongClick() {
         mHasPerformedLongClick = true;
-        boolean var98B6A4E762A67C23892FBA15AF127489_1759509414 = (super.performLongClick());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_610360383 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_610360383;
-        
-        
-        
+        boolean var55D6A0DF0F5A5E2B1EE1FA3768B96A22_1979603100 = (super.performLongClick());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_627665023 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_627665023;
+        // ---------- Original Method ----------
+        //mHasPerformedLongClick = true;
+        //return super.performLongClick();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.219 -0400", hash_original_method = "E890325AD4CF04CF90789A3947029902", hash_generated_method = "A4844A9F860834558F82189567407624")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.156 -0400", hash_original_method = "E890325AD4CF04CF90789A3947029902", hash_generated_method = "BC197A6168B60C3069D315DE4474B75B")
      void remove() {
         InputMethodManager imm = InputMethodManager.getInstance(mContext);
+    if(imm.isActive(this))        
         {
-            boolean var4D18B3E55AF70DF7121DEC3A80BC5F4E_987686980 = (imm.isActive(this));
-            {
-                imm.hideSoftInputFromWindow(getWindowToken(), 0);
-            } 
-        } 
+            imm.hideSoftInputFromWindow(getWindowToken(), 0);
+        } //End block
         mInsideRemove = true;
         boolean isFocused = hasFocus();
         mWebView.removeView(this);
+    if(isFocused)        
         {
             mWebView.requestFocus();
-        } 
+        } //End block
         mInsideRemove = false;
         mHandler.removeCallbacksAndMessages(null);
-        
-        
-        
-            
-        
-        
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //InputMethodManager imm = InputMethodManager.getInstance(mContext);
+        //if (imm.isActive(this)) {
+            //imm.hideSoftInputFromWindow(getWindowToken(), 0);
+        //}
+        //mInsideRemove = true;
+        //boolean isFocused = hasFocus();
+        //mWebView.removeView(this);
+        //if (isFocused) {
+            //mWebView.requestFocus();
+        //}
+        //mInsideRemove = false;
+        //mHandler.removeCallbacksAndMessages(null);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.219 -0400", hash_original_method = "2AA5BA571DA39EAF8290098D28F58BC6", hash_generated_method = "7C306E24F9DD1E5031560CC1BC438FDC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.156 -0400", hash_original_method = "2AA5BA571DA39EAF8290098D28F58BC6", hash_generated_method = "9F7A21E2A62CF641E1F6B7CD175B9B70")
     @Override
     public boolean requestRectangleOnScreen(Rect rectangle, boolean immediate) {
-        addTaint(rectangle.getTaint());
         addTaint(immediate);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_372279776 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_372279776;
-        
-        
+        addTaint(rectangle.getTaint());
+        boolean varB326B5062B2F0E69046810717534CB09_2037146129 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_723362522 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_723362522;
+        // ---------- Original Method ----------
+        //return true;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.219 -0400", hash_original_method = "950AB6742CC7236DE25064405668EBFC", hash_generated_method = "396D2A9A5FE83ACAC0DC89C9320D6361")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.156 -0400", hash_original_method = "950AB6742CC7236DE25064405668EBFC", hash_generated_method = "CE7A01C7486F7EFAAC98C7D6E699475F")
     private void sendDomEvent(KeyEvent event) {
-        mWebView.passToJavaScript(getText().toString(), event);
         addTaint(event.getTaint());
-        
-        
+        mWebView.passToJavaScript(getText().toString(), event);
+        // ---------- Original Method ----------
+        //mWebView.passToJavaScript(getText().toString(), event);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.220 -0400", hash_original_method = "95851FC5190E2011BB56B8769701FDF9", hash_generated_method = "E8219A698D2FBA36049F4B23E2CC0214")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.157 -0400", hash_original_method = "95851FC5190E2011BB56B8769701FDF9", hash_generated_method = "E20F45C9FCF58CDEF59D19C7E171D450")
     public void setAdapterCustom(AutoCompleteAdapter adapter) {
+        addTaint(adapter.getTaint());
+    if(adapter != null)        
         {
             setInputType(getInputType()
                     | InputType.TYPE_TEXT_FLAG_AUTO_COMPLETE);
             adapter.setTextView(this);
+    if(mAutoFillable)            
             {
                 setOnItemClickListener(this);
-            } 
+            } //End block
+            else
             {
                 setOnItemClickListener(null);
-            } 
+            } //End block
             showDropDown();
-        } 
+        } //End block
+        else
         {
             dismissDropDown();
-        } 
+        } //End block
         super.setAdapter(adapter);
-        addTaint(adapter.getTaint());
-        
-        
-            
-                    
-            
-            
-                
-            
-                
-            
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (adapter != null) {
+            //setInputType(getInputType()
+                    //| InputType.TYPE_TEXT_FLAG_AUTO_COMPLETE);
+            //adapter.setTextView(this);
+            //if (mAutoFillable) {
+                //setOnItemClickListener(this);
+            //} else {
+                //setOnItemClickListener(null);
+            //}
+            //showDropDown();
+        //} else {
+            //dismissDropDown();
+        //}
+        //super.setAdapter(adapter);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.220 -0400", hash_original_method = "10D826035FBCEEF5092B615EC9DFDE75", hash_generated_method = "637A9AA1D06AF78EB50974081AAAA80B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.157 -0400", hash_original_method = "10D826035FBCEEF5092B615EC9DFDE75", hash_generated_method = "B072FB2BE3A6E94DE006DBDBDE47F869")
      void setDefaultSelection() {
         Spannable text = (Spannable) getText();
-        int selection;
-        selection = text.length();
-        selection = 0;
+        int selection = mSingle ? text.length() : 0;
+    if(Selection.getSelectionStart(text) == selection
+                && Selection.getSelectionEnd(text) == selection)        
         {
-            boolean varF4278F67DD911DA82DDA2D9690C72EDB_1278984797 = (Selection.getSelectionStart(text) == selection
-                && Selection.getSelectionEnd(text) == selection);
+    if(mWebView != null)            
             {
-                {
-                    mWebView.setSelection(selection, selection);
-                } 
-            } 
-            {
-                Selection.setSelection(text, selection, selection);
-            } 
-        } 
+                mWebView.setSelection(selection, selection);
+            } //End block
+        } //End block
+        else
+        {
+            Selection.setSelection(text, selection, selection);
+        } //End block
+    if(mWebView != null)        
         mWebView.incrementTextGeneration();
-        
-        
-        
-        
-                
-            
-                
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Spannable text = (Spannable) getText();
+        //int selection = mSingle ? text.length() : 0;
+        //if (Selection.getSelectionStart(text) == selection
+                //&& Selection.getSelectionEnd(text) == selection) {
+            //if (mWebView != null) {
+                //mWebView.setSelection(selection, selection);
+            //}
+        //} else {
+            //Selection.setSelection(text, selection, selection);
+        //}
+        //if (mWebView != null) mWebView.incrementTextGeneration();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.221 -0400", hash_original_method = "5F3F3B089AD7E0D8B5861A9F4DCE5D55", hash_generated_method = "53B0753D53166C12354A2B62A3B07A9E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.157 -0400", hash_original_method = "5F3F3B089AD7E0D8B5861A9F4DCE5D55", hash_generated_method = "EB4C58D1E72B47E8A37D47F29CF6B122")
     @Override
     public void setInputType(int type) {
+        addTaint(type);
         mFromSetInputType = true;
         super.setInputType(type);
         mFromSetInputType = false;
-        addTaint(type);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mFromSetInputType = true;
+        //super.setInputType(type);
+        //mFromSetInputType = false;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.222 -0400", hash_original_method = "6C4324E77F1CB780AA79022DD606C31E", hash_generated_method = "65A7D4B6B0972AC9343C484B2DC39669")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.157 -0400", hash_original_method = "6C4324E77F1CB780AA79022DD606C31E", hash_generated_method = "00AFB86BB31B20C4F47A23EA72B0CEE6")
     private void setMaxLength(int maxLength) {
         mMaxLength = maxLength;
+    if(-1 == maxLength)        
         {
             setFilters(NO_FILTERS);
-        } 
+        } //End block
+        else
         {
             setFilters(new InputFilter[] {
                 new InputFilter.LengthFilter(maxLength) });
-        } 
-        
-        
-        
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mMaxLength = maxLength;
+        //if (-1 == maxLength) {
+            //setFilters(NO_FILTERS);
+        //} else {
+            //setFilters(new InputFilter[] {
+                //new InputFilter.LengthFilter(maxLength) });
+        //}
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.223 -0400", hash_original_method = "C341AA0EB003F8D508947196584836B7", hash_generated_method = "4D73E5A03DBEA5507C167C2D432CDEBA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.157 -0400", hash_original_method = "C341AA0EB003F8D508947196584836B7", hash_generated_method = "4D7B0BEC9834A42C8E4654682B07BA85")
      void setNodePointer(int ptr) {
+    if(ptr != mNodePointer)        
         {
             mNodePointer = ptr;
             setAdapterCustom(null);
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (ptr != mNodePointer) {
+            //mNodePointer = ptr;
+            //setAdapterCustom(null);
+        //}
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.224 -0400", hash_original_method = "1A385B6FBFB65985BDFEFA75CA11C93C", hash_generated_method = "DC567ADDA9540AAFBEEDD0F1B5355FBB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.158 -0400", hash_original_method = "1A385B6FBFB65985BDFEFA75CA11C93C", hash_generated_method = "ED04B00F0C15CAD59749CFC4706A66B7")
      void setRect(int x, int y, int width, int height) {
+        addTaint(y);
+        addTaint(x);
         LayoutParams lp = (LayoutParams) getLayoutParams();
         x -= mRingInset;
         y -= mRingInset;
         width += 2 * mRingInset;
         height += 2 * mRingInset;
         boolean needsUpdate = false;
+    if(null == lp)        
         {
             lp = new LayoutParams(width, height, x, y);
-        } 
+        } //End block
+        else
         {
+    if((lp.x != x) || (lp.y != y) || (lp.width != width)
+                    || (lp.height != height))            
             {
                 needsUpdate = true;
                 lp.x = x;
                 lp.y = y;
                 lp.width = width;
                 lp.height = height;
-            } 
-        } 
+            } //End block
+        } //End block
+    if(getParent() == null)        
         {
-            boolean var88AD79EA276C28AD3B3469360BCE1788_1320576602 = (getParent() == null);
-            {
-                mWebView.addView(this, 0, lp);
-            } 
-            {
-                setLayoutParams(lp);
-            } 
-        } 
+            mWebView.addView(this, 0, lp);
+        } //End block
+        else
+    if(needsUpdate)        
+        {
+            setLayoutParams(lp);
+        } //End block
         mWidthSpec = MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY);
         mHeightSpec = MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY);
-        addTaint(x);
-        addTaint(y);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.224 -0400", hash_original_method = "CE3949E5C336F8D95926C2F0BAE76623", hash_generated_method = "DC736AD80C30543CE48312DDA2DE5111")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.158 -0400", hash_original_method = "CE3949E5C336F8D95926C2F0BAE76623", hash_generated_method = "6366711B8EFD75954168952FB2746FC4")
      void setSelectionFromWebKit(int start, int end) {
+        addTaint(end);
+        addTaint(start);
+    if(start < 0 || end < 0)        
+        return;
         Spannable text = (Spannable) getText();
         int length = text.length();
+    if(start > length || end > length)        
+        return;
         mFromWebKit = true;
         Selection.setSelection(text, start, end);
         mFromWebKit = false;
-        addTaint(start);
-        addTaint(end);
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (start < 0 || end < 0) return;
+        //Spannable text = (Spannable) getText();
+        //int length = text.length();
+        //if (start > length || end > length) return;
+        //mFromWebKit = true;
+        //Selection.setSelection(text, start, end);
+        //mFromWebKit = false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.224 -0400", hash_original_method = "0E0FB59047FF987C205DC97754DD32D6", hash_generated_method = "E11D55D9F9950208F0B8C264A3D805A9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.158 -0400", hash_original_method = "0E0FB59047FF987C205DC97754DD32D6", hash_generated_method = "E11D55D9F9950208F0B8C264A3D805A9")
      void updateTextSize() {
         Assert.assertNotNull("updateTextSize should only be called from "
                 + "mWebView, so mWebView should never be null!", mWebView);
         float size = mWebView.nativeFocusCandidateTextSize()
                 * mWebView.getScale();
         setTextSize(TypedValue.COMPLEX_UNIT_PX, size);
-        
-        
-                
-        
-                
-        
+        // ---------- Original Method ----------
+        //Assert.assertNotNull("updateTextSize should only be called from "
+                //+ "mWebView, so mWebView should never be null!", mWebView);
+        //float size = mWebView.nativeFocusCandidateTextSize()
+                //* mWebView.getScale();
+        //setTextSize(TypedValue.COMPLEX_UNIT_PX, size);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.225 -0400", hash_original_method = "FCE77DF28E9B30518950525927BBC7BA", hash_generated_method = "E45E23456F23995C0F1A956886AD5676")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.158 -0400", hash_original_method = "FCE77DF28E9B30518950525927BBC7BA", hash_generated_method = "6516707DF939BD164481990C08A14A02")
      void setTextAndKeepSelection(String text) {
         Editable edit = getText();
         mPreChange = text;
+    if(edit.toString().equals(text))        
         {
-            boolean var5432E2777F3E47E5271ACDBBC7473721_1516264440 = (edit.toString().equals(text));
-        } 
+            return;
+        } //End block
         int selStart = Selection.getSelectionStart(edit);
         int selEnd = Selection.getSelectionEnd(edit);
         mInSetTextAndKeepSelection = true;
         edit.replace(0, edit.length(), text);
         int newLength = edit.length();
+    if(selStart > newLength)        
         selStart = newLength;
+    if(selEnd > newLength)        
         selEnd = newLength;
         Selection.setSelection(edit, selStart, selEnd);
         mInSetTextAndKeepSelection = false;
         InputMethodManager imm = InputMethodManager.peekInstance();
+    if(imm != null && imm.isActive(this))        
         {
-            boolean varA8F5F3E7D2555623A6FFCFE24BB87152_1812349341 = (imm != null && imm.isActive(this));
-            {
-                imm.restartInput(this);
-            } 
-        } 
+            imm.restartInput(this);
+        } //End block
         updateCachedTextfield();
-        
-        
-        
-        
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Editable edit = getText();
+        //mPreChange = text;
+        //if (edit.toString().equals(text)) {
+            //return;
+        //}
+        //int selStart = Selection.getSelectionStart(edit);
+        //int selEnd = Selection.getSelectionEnd(edit);
+        //mInSetTextAndKeepSelection = true;
+        //edit.replace(0, edit.length(), text);
+        //int newLength = edit.length();
+        //if (selStart > newLength) selStart = newLength;
+        //if (selEnd > newLength) selEnd = newLength;
+        //Selection.setSelection(edit, selStart, selEnd);
+        //mInSetTextAndKeepSelection = false;
+        //InputMethodManager imm = InputMethodManager.peekInstance();
+        //if (imm != null && imm.isActive(this)) {
+            //imm.restartInput(this);
+        //}
+        //updateCachedTextfield();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.226 -0400", hash_original_method = "9C43235B4CCED4C8A2DC53AB1F7D42B9", hash_generated_method = "6497130AC867E14B31F074C4830E6F95")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.160 -0400", hash_original_method = "9C43235B4CCED4C8A2DC53AB1F7D42B9", hash_generated_method = "CF5550D93223C2191EC65D361AD01F3E")
      void setType(int type) {
+        addTaint(type);
+    if(mWebView == null)        
+        return;
         boolean single = true;
         int maxLength = -1;
         int inputType = InputType.TYPE_CLASS_TEXT
                 | InputType.TYPE_TEXT_VARIATION_WEB_EDIT_TEXT;
         int imeOptions = EditorInfo.IME_FLAG_NO_EXTRACT_UI
                 | EditorInfo.IME_FLAG_NO_FULLSCREEN;
+    if(!mWebView.nativeFocusCandidateIsSpellcheck())        
         {
-            boolean var3E3815771BE6F168CB2B354EC011EE17_2122612920 = (!mWebView.nativeFocusCandidateIsSpellcheck());
-            {
-                inputType |= InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS;
-            } 
-        } 
+            inputType |= InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS;
+        } //End block
+    if(TEXT_AREA != type
+                && mWebView.nativeFocusCandidateHasNextTextfield())        
         {
-            boolean var44F922C57DB3172B2082134B01A29DB9_21947257 = (TEXT_AREA != type
-                && mWebView.nativeFocusCandidateHasNextTextfield());
-            {
-                imeOptions |= EditorInfo.IME_FLAG_NAVIGATE_NEXT;
-            } 
-        } 
-        
+            imeOptions |= EditorInfo.IME_FLAG_NAVIGATE_NEXT;
+        } //End block
+switch(type){
+        case NORMAL_TEXT_FIELD:
         imeOptions |= EditorInfo.IME_ACTION_GO;
-        
-        
+        break;
+        case TEXT_AREA:
         single = false;
-        
-        
         inputType |= InputType.TYPE_TEXT_FLAG_MULTI_LINE
                         | InputType.TYPE_TEXT_FLAG_CAP_SENTENCES
                         | InputType.TYPE_TEXT_FLAG_AUTO_CORRECT;
-        
-        
         imeOptions |= EditorInfo.IME_ACTION_NONE;
-        
-        
+        break;
+        case PASSWORD:
         inputType |= EditorInfo.TYPE_TEXT_VARIATION_WEB_PASSWORD;
-        
-        
         imeOptions |= EditorInfo.IME_ACTION_GO;
-        
-        
+        break;
+        case SEARCH:
         imeOptions |= EditorInfo.IME_ACTION_SEARCH;
-        
-        
+        break;
+        case EMAIL:
         inputType = InputType.TYPE_CLASS_TEXT
                         | InputType.TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS;
-        
-        
         imeOptions |= EditorInfo.IME_ACTION_GO;
-        
-        
+        break;
+        case NUMBER:
         inputType = InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_NORMAL
                         | InputType.TYPE_NUMBER_FLAG_SIGNED | InputType.TYPE_NUMBER_FLAG_DECIMAL;
-        
-        
         imeOptions |= EditorInfo.IME_ACTION_NEXT;
-        
-        
+        break;
+        case TELEPHONE:
         inputType = InputType.TYPE_CLASS_PHONE;
-        
-        
         imeOptions |= EditorInfo.IME_ACTION_NEXT;
-        
-        
+        break;
+        case URL:
         imeOptions |= EditorInfo.IME_ACTION_GO;
-        
-        
+        break;
+        default:
         imeOptions |= EditorInfo.IME_ACTION_GO;
-        
-        setHint(null);
+        break;
+}        setHint(null);
         setThreshold(1);
         boolean autoComplete = false;
+    if(single)        
         {
             mWebView.requestLabel(mWebView.nativeFocusCandidateFramePointer(),
                     mNodePointer);
             maxLength = mWebView.nativeFocusCandidateMaxLength();
             autoComplete = mWebView.nativeFocusCandidateIsAutoComplete();
+    if(type != PASSWORD && (mAutoFillable || autoComplete))            
             {
                 String name = mWebView.nativeFocusCandidateName();
+    if(name != null && name.length() > 0)                
                 {
-                    boolean varD67362095BA70133EC9349BE62DFEB10_1814568423 = (name != null && name.length() > 0);
-                    {
-                        mWebView.requestFormData(name, mNodePointer, mAutoFillable,
+                    mWebView.requestFormData(name, mNodePointer, mAutoFillable,
                             autoComplete);
-                    } 
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         mSingle = single;
         setMaxLength(maxLength);
         setHorizontallyScrolling(single);
@@ -1252,34 +1292,32 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
         clearComposingText();
         setImeOptions(imeOptions);
         setVisibility(VISIBLE);
+    if(!autoComplete)        
         {
             setAdapterCustom(null);
-        } 
-        addTaint(type);
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.226 -0400", hash_original_method = "DC0208EAD79A0BCADD603C831599A0E0", hash_generated_method = "353A0AED74824F2EAB6775FEEFC50847")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.160 -0400", hash_original_method = "DC0208EAD79A0BCADD603C831599A0E0", hash_generated_method = "353A0AED74824F2EAB6775FEEFC50847")
      void updateCachedTextfield() {
         mWebView.updateCachedTextfield(getText().toString());
-        
-        
+        // ---------- Original Method ----------
+        //mWebView.updateCachedTextfield(getText().toString());
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.227 -0400", hash_original_method = "E906B54723AD6F9ED79F8F4825A6BCDE", hash_generated_method = "00DFCCEAEBCA5AF7E29ED7EACECB08F0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.160 -0400", hash_original_method = "E906B54723AD6F9ED79F8F4825A6BCDE", hash_generated_method = "00DFCCEAEBCA5AF7E29ED7EACECB08F0")
      void setAutoFillProfileIsSet(boolean autoFillProfileIsSet) {
         mAutoFillProfileIsSet = autoFillProfileIsSet;
-        
-        
+        // ---------- Original Method ----------
+        //mAutoFillProfileIsSet = autoFillProfileIsSet;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static String urlForAutoCompleteData(String urlString) {
+        static String urlForAutoCompleteData(String urlString) {
         URL url = null;
         try {
             url = new URL(urlString);
@@ -1290,46 +1328,45 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.227 -0400", hash_original_method = "4A2837BA61927EB8FB72E630E60D5F6F", hash_generated_method = "F69E1B7B32D599014467719A0F2018E4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.160 -0400", hash_original_method = "4A2837BA61927EB8FB72E630E60D5F6F", hash_generated_method = "4EAE14A0863CDC9DCC68B8BAA0892114")
     public void setGravityForRtl(boolean rtl) {
-        int gravity;
-        gravity = Gravity.RIGHT;
-        gravity = Gravity.LEFT;
+        addTaint(rtl);
+        int gravity = rtl ? Gravity.RIGHT : Gravity.LEFT;
         gravity |= mSingle ? Gravity.CENTER_VERTICAL : Gravity.TOP;
         setGravity(gravity);
-        addTaint(rtl);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int gravity = rtl ? Gravity.RIGHT : Gravity.LEFT;
+        //gravity |= mSingle ? Gravity.CENTER_VERTICAL : Gravity.TOP;
+        //setGravity(gravity);
     }
 
     
     private class MyResultReceiver extends ResultReceiver {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.227 -0400", hash_original_method = "B2A067584316D6A9483E42E372CB0982", hash_generated_method = "68249943C085278FACB82801440E2E68")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.160 -0400", hash_original_method = "B2A067584316D6A9483E42E372CB0982", hash_generated_method = "68249943C085278FACB82801440E2E68")
         public  MyResultReceiver(Handler handler) {
             super(handler);
             addTaint(handler.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.228 -0400", hash_original_method = "8968B16CB33DBBA966B5E497FFEF8D80", hash_generated_method = "EFC129D13CAE4BD8DF24A8EBEF95758D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.160 -0400", hash_original_method = "8968B16CB33DBBA966B5E497FFEF8D80", hash_generated_method = "DD922F53C155BE28083B412536DAB0AC")
         @Override
         protected void onReceiveResult(int resultCode, Bundle resultData) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
+            addTaint(resultData.getTaint());
+            addTaint(resultCode);
+    if(resultCode == InputMethodManager.RESULT_SHOWN
+                    && mWebView != null)            
             {
                 mWebView.revealSelection();
-            } 
-            addTaint(resultCode);
-            addTaint(resultData.getTaint());
-            
-            
-                    
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (resultCode == InputMethodManager.RESULT_SHOWN
+                    //&& mWebView != null) {
+                //mWebView.revealSelection();
+            //}
         }
 
         
@@ -1338,31 +1375,32 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
 
     
     private static class BackgroundDrawable extends Drawable {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.228 -0400", hash_original_field = "1F593C5E1FA9C53F92379484654564D2", hash_generated_field = "04B4E10AE3E38C24827628B090CB2FA5")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.160 -0400", hash_original_field = "1F593C5E1FA9C53F92379484654564D2", hash_generated_field = "04B4E10AE3E38C24827628B090CB2FA5")
 
         private Paint mPaint = new Paint();
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.228 -0400", hash_original_field = "03374CE06B404E7E86A0B34197FB2079", hash_generated_field = "42F6FF6ED2F2BB89D0174DF2E15B171E")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.160 -0400", hash_original_field = "03374CE06B404E7E86A0B34197FB2079", hash_generated_field = "42F6FF6ED2F2BB89D0174DF2E15B171E")
 
         private int mBorderWidth;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.228 -0400", hash_original_field = "639B0CA9A647A32015C0F0585C02AEF4", hash_generated_field = "A3E5C64B3DE033797510B24E6CF68D4E")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.160 -0400", hash_original_field = "639B0CA9A647A32015C0F0585C02AEF4", hash_generated_field = "A3E5C64B3DE033797510B24E6CF68D4E")
 
         private Rect mInsetRect = new Rect();
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.228 -0400", hash_original_method = "A19D023ADE41459A26F3E78681345993", hash_generated_method = "B7182D490DEE1E3239DF8910CDE3BDE3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.161 -0400", hash_original_method = "A19D023ADE41459A26F3E78681345993", hash_generated_method = "B7182D490DEE1E3239DF8910CDE3BDE3")
         public  BackgroundDrawable(int width) {
             mPaint = new Paint();
             mPaint.setStrokeWidth(width);
             mBorderWidth = width;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mPaint = new Paint();
+            //mPaint.setStrokeWidth(width);
+            //mBorderWidth = width;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.229 -0400", hash_original_method = "B7807C75F15BA2C587A7A3AFE401787F", hash_generated_method = "F3E4C0CCC46D1CB344FC07FC56A40726")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.161 -0400", hash_original_method = "B7807C75F15BA2C587A7A3AFE401787F", hash_generated_method = "ED1A24047C556D01C3B5A6638E2BD4E2")
         @Override
         public void draw(Canvas canvas) {
+            addTaint(canvas.getTaint());
             mPaint.setColor(0x6633b5e5);
             canvas.drawRect(getBounds(), mPaint);
             mInsetRect.left = getBounds().left + mBorderWidth;
@@ -1371,45 +1409,42 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
             mInsetRect.bottom = getBounds().bottom - mBorderWidth;
             mPaint.setColor(Color.WHITE);
             canvas.drawRect(mInsetRect, mPaint);
-            addTaint(canvas.getTaint());
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mPaint.setColor(0x6633b5e5);
+            //canvas.drawRect(getBounds(), mPaint);
+            //mInsetRect.left = getBounds().left + mBorderWidth;
+            //mInsetRect.top = getBounds().top + mBorderWidth;
+            //mInsetRect.right = getBounds().right - mBorderWidth;
+            //mInsetRect.bottom = getBounds().bottom - mBorderWidth;
+            //mPaint.setColor(Color.WHITE);
+            //canvas.drawRect(mInsetRect, mPaint);
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.229 -0400", hash_original_method = "5784D116F3F796E4D5324F7E68A41209", hash_generated_method = "DCDCC287CA9BC5217D3FA2BC94984F3E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.161 -0400", hash_original_method = "5784D116F3F796E4D5324F7E68A41209", hash_generated_method = "DCDCC287CA9BC5217D3FA2BC94984F3E")
         @Override
         public void setAlpha(int alpha) {
             addTaint(alpha);
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.229 -0400", hash_original_method = "77240A7357C6E5E7293BFF14ACDD79D8", hash_generated_method = "18D8B35FAE562ED5B4F19A1CD78B9AEE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.161 -0400", hash_original_method = "77240A7357C6E5E7293BFF14ACDD79D8", hash_generated_method = "18D8B35FAE562ED5B4F19A1CD78B9AEE")
         @Override
         public void setColorFilter(ColorFilter cf) {
             addTaint(cf.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.230 -0400", hash_original_method = "AB3D570DA2A917C408AB4F7D8FCD7103", hash_generated_method = "7F9C14EA5103F0715E924005B7576B18")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.161 -0400", hash_original_method = "AB3D570DA2A917C408AB4F7D8FCD7103", hash_generated_method = "75B5E7D017875A02959B632C64D863F1")
         @Override
         public int getOpacity() {
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1961315095 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1961315095;
-            
-            
+            int var26C79996E92FCFBDC98A49C80BC91AD0_1333787444 = (PixelFormat.TRANSLUCENT);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_855931342 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_855931342;
+            // ---------- Original Method ----------
+            //return PixelFormat.TRANSLUCENT;
         }
 
         
@@ -1418,14 +1453,14 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
 
     
     private static class WebTextViewLayout extends DynamicLayout {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.230 -0400", hash_original_field = "1870F0C40BC256036B03019DC84F1A7C", hash_generated_field = "01BDC3B4754FD272E9D33AE0E0EEA1AE")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.161 -0400", hash_original_field = "1870F0C40BC256036B03019DC84F1A7C", hash_generated_field = "01BDC3B4754FD272E9D33AE0E0EEA1AE")
 
         private float mLineHeight;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.230 -0400", hash_original_field = "9D6DE39C350B06606B906F81E8424D93", hash_generated_field = "22BC403FE7CFAEB14C6EE927FBD48C96")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.161 -0400", hash_original_field = "9D6DE39C350B06606B906F81E8424D93", hash_generated_field = "22BC403FE7CFAEB14C6EE927FBD48C96")
 
         private float mDifference;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.230 -0400", hash_original_method = "84A347E9C0B83549B9D13ECC225F88CE", hash_generated_method = "950F7CC8B30B1A08A87BFBD533A856A8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.162 -0400", hash_original_method = "84A347E9C0B83549B9D13ECC225F88CE", hash_generated_method = "9AEFAEB7A9FFE1DB6F538907373B6DCA")
         public  WebTextViewLayout(CharSequence base, CharSequence display,
                 TextPaint paint,
                 int width, Alignment align,
@@ -1435,46 +1470,48 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
                 float lineHeight) {
             super(base, display, paint, width, align, spacingMult, spacingAdd,
                     includepad, ellipsize, ellipsizedWidth);
+            addTaint(ellipsizedWidth);
+            addTaint(ellipsize.getTaint());
+            addTaint(includepad);
+            addTaint(spacingAdd);
+            addTaint(spacingMult);
+            addTaint(align.getTaint());
+            addTaint(width);
+            addTaint(paint.getTaint());
+            addTaint(display.getTaint());
+            addTaint(base.getTaint());
             float paintLineHeight = paint.descent() - paint.ascent();
+    if(lineHeight == -1f)            
             {
                 mLineHeight = paintLineHeight;
                 mDifference = 0f;
-            } 
+            } //End block
+            else
             {
                 mLineHeight = lineHeight;
                 mDifference = (lineHeight - paintLineHeight) / 2;
-            } 
-            addTaint(base.getTaint());
-            addTaint(display.getTaint());
-            addTaint(paint.getTaint());
-            addTaint(width);
-            addTaint(align.getTaint());
-            addTaint(spacingMult);
-            addTaint(spacingAdd);
-            addTaint(includepad);
-            addTaint(ellipsize.getTaint());
-            addTaint(ellipsizedWidth);
-            
-            
-            
-                
-                
-            
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //float paintLineHeight = paint.descent() - paint.ascent();
+            //if (lineHeight == -1f) {
+                //mLineHeight = paintLineHeight;
+                //mDifference = 0f;
+            //} else {
+                //mLineHeight = lineHeight;
+                //mDifference = (lineHeight - paintLineHeight) / 2;
+            //}
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.231 -0400", hash_original_method = "BD0D404B64FBDA001253C5382CB9CD95", hash_generated_method = "4F49F75587107B0C74570B79CCAB8C28")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.162 -0400", hash_original_method = "BD0D404B64FBDA001253C5382CB9CD95", hash_generated_method = "975C82E35C55B85486DAD8BC56464996")
         @Override
         public int getLineTop(int line) {
-            int varF06BE5757632572D26BC32E78DF81A38_615707542 = (Math.round(mLineHeight * line - mDifference));
             addTaint(line);
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1195637778 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1195637778;
-            
-            
+            int var56728EC2CA63827C80DE6FD3123A1ECF_1643188921 = (Math.round(mLineHeight * line - mDifference));
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_547330572 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_547330572;
+            // ---------- Original Method ----------
+            //return Math.round(mLineHeight * line - mDifference);
         }
 
         
@@ -1483,50 +1520,49 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
 
     
     public static class AutoCompleteAdapter extends ArrayAdapter<String> {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.231 -0400", hash_original_field = "59FFF1360E9B57BB348C2BF9F881659F", hash_generated_field = "B044D5C32398EDC8D922234EFA4F1DF3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.162 -0400", hash_original_field = "59FFF1360E9B57BB348C2BF9F881659F", hash_generated_field = "B044D5C32398EDC8D922234EFA4F1DF3")
 
         private TextView mTextView;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.232 -0400", hash_original_method = "8B198F037E06F3C258FC2837A183399D", hash_generated_method = "F0CD92B8012075D68AFABE568C13D2D3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.162 -0400", hash_original_method = "8B198F037E06F3C258FC2837A183399D", hash_generated_method = "5B3A494C60FB70D96FA4FA2C1A2FD82B")
         public  AutoCompleteAdapter(Context context, ArrayList<String> entries) {
             super(context, com.android.internal.R.layout
                     .web_text_view_dropdown, entries);
-            addTaint(context.getTaint());
             addTaint(entries.getTaint());
-            
+            addTaint(context.getTaint());
+            // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.233 -0400", hash_original_method = "C6FC0517987C8200BB760FE857B81ECC", hash_generated_method = "B889999E03F2AFA3A45A3C41D832FB4E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.162 -0400", hash_original_method = "C6FC0517987C8200BB760FE857B81ECC", hash_generated_method = "2590A295E71D5925D0CCCFB117CD6D6D")
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            View varB4EAC82CA7396A68D541C85D26508E83_1664771621 = null; 
+            addTaint(parent.getTaint());
+            addTaint(convertView.getTaint());
+            addTaint(position);
             TextView tv = (TextView) super.getView(position, convertView, parent);
+    if(tv != null && mTextView != null)            
             {
                 tv.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextView.getTextSize());
-            } 
-            varB4EAC82CA7396A68D541C85D26508E83_1664771621 = tv;
-            addTaint(position);
-            addTaint(convertView.getTaint());
-            addTaint(parent.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1664771621.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_1664771621;
-            
-            
-                    
-            
-                
-            
-            
+            } //End block
+View var8BB2C09B3FFE775E9F9FBFEC00A28511_1971200969 =             tv;
+            var8BB2C09B3FFE775E9F9FBFEC00A28511_1971200969.addTaint(taint);
+            return var8BB2C09B3FFE775E9F9FBFEC00A28511_1971200969;
+            // ---------- Original Method ----------
+            //TextView tv =
+                    //(TextView) super.getView(position, convertView, parent);
+            //if (tv != null && mTextView != null) {
+                //tv.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextView.getTextSize());
+            //}
+            //return tv;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.233 -0400", hash_original_method = "C453A8A8AADC44244B92E3146B6F4B07", hash_generated_method = "E29443429247A5B5E60DF42163779843")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.162 -0400", hash_original_method = "C453A8A8AADC44244B92E3146B6F4B07", hash_generated_method = "E29443429247A5B5E60DF42163779843")
         private void setTextView(TextView tv) {
             mTextView = tv;
-            
-            
+            // ---------- Original Method ----------
+            //mTextView = tv;
         }
 
         
@@ -1534,40 +1570,40 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.234 -0400", hash_original_field = "04C9575A87A9055B7CAF07BF7E360965", hash_generated_field = "0254F437D32CEDBF3502981A041254AF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.162 -0400", hash_original_field = "04C9575A87A9055B7CAF07BF7E360965", hash_generated_field = "0254F437D32CEDBF3502981A041254AF")
 
     static final String LOGTAG = "webtextview";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.234 -0400", hash_original_field = "A0DA38A5AAD1658278F1D161AF84C1BC", hash_generated_field = "EDD7FE0B7D12EE9C3486272F367681B2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.162 -0400", hash_original_field = "A0DA38A5AAD1658278F1D161AF84C1BC", hash_generated_field = "EDD7FE0B7D12EE9C3486272F367681B2")
 
     private static final InputFilter[] NO_FILTERS = new InputFilter[0];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.234 -0400", hash_original_field = "15FD60C697B363DBE4679F91A997C35D", hash_generated_field = "9B5049942EDE85325728F92E651A3B9C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.163 -0400", hash_original_field = "15FD60C697B363DBE4679F91A997C35D", hash_generated_field = "9B5049942EDE85325728F92E651A3B9C")
 
     static final int FORM_NOT_AUTOFILLABLE = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.234 -0400", hash_original_field = "C38438E09D0F9CE92D1B34BAB4BF4666", hash_generated_field = "07BDA709C40ACAB2A72814731F3205B5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.163 -0400", hash_original_field = "C38438E09D0F9CE92D1B34BAB4BF4666", hash_generated_field = "07BDA709C40ACAB2A72814731F3205B5")
 
     private static final int NORMAL_TEXT_FIELD = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.234 -0400", hash_original_field = "D189112F8ADACAF512C50AF3CB22BC4F", hash_generated_field = "E85CA99FFDB1FCA0BBA2ADE14130DF18")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.163 -0400", hash_original_field = "D189112F8ADACAF512C50AF3CB22BC4F", hash_generated_field = "E85CA99FFDB1FCA0BBA2ADE14130DF18")
 
     private static final int TEXT_AREA = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.234 -0400", hash_original_field = "F16F418DD0339574597733B844BE3741", hash_generated_field = "88669A7ECF8EEF75669B4670AD788953")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.163 -0400", hash_original_field = "F16F418DD0339574597733B844BE3741", hash_generated_field = "88669A7ECF8EEF75669B4670AD788953")
 
     private static final int PASSWORD = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.234 -0400", hash_original_field = "CF4F7700F5D247F409D439E023DABD7D", hash_generated_field = "931884675335103952BCDA72B3A33B39")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.163 -0400", hash_original_field = "CF4F7700F5D247F409D439E023DABD7D", hash_generated_field = "931884675335103952BCDA72B3A33B39")
 
     private static final int SEARCH = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.234 -0400", hash_original_field = "0BF00C6641A84E5A88493EED05C8ACAE", hash_generated_field = "C1E65F020F8845ABDDEEA059710FDB93")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.163 -0400", hash_original_field = "0BF00C6641A84E5A88493EED05C8ACAE", hash_generated_field = "C1E65F020F8845ABDDEEA059710FDB93")
 
     private static final int EMAIL = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.234 -0400", hash_original_field = "3CBBD51483016DACC5E4950C131ACF41", hash_generated_field = "BDF0B48D549D318EC8823826AC4E082C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.163 -0400", hash_original_field = "3CBBD51483016DACC5E4950C131ACF41", hash_generated_field = "BDF0B48D549D318EC8823826AC4E082C")
 
     private static final int NUMBER = 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.234 -0400", hash_original_field = "D60D529056D6B8D97DD44C28A7C4CD83", hash_generated_field = "0F94A2DFCC07B06A8BCB81F5C7D2FF37")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.163 -0400", hash_original_field = "D60D529056D6B8D97DD44C28A7C4CD83", hash_generated_field = "0F94A2DFCC07B06A8BCB81F5C7D2FF37")
 
     private static final int TELEPHONE = 6;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.234 -0400", hash_original_field = "DC13EA1236A891796ED81728D536C82A", hash_generated_field = "55324EE26E196D00401F672B7D51F357")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.163 -0400", hash_original_field = "DC13EA1236A891796ED81728D536C82A", hash_generated_field = "55324EE26E196D00401F672B7D51F357")
 
     private static final int URL = 7;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.234 -0400", hash_original_field = "040BFA0BBC00732D439F4CFC8F1A8319", hash_generated_field = "3F36447E6A0F20CD137DED5CE2B96C90")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.163 -0400", hash_original_field = "040BFA0BBC00732D439F4CFC8F1A8319", hash_generated_field = "3F36447E6A0F20CD137DED5CE2B96C90")
 
     private static final int AUTOFILL_FORM = 100;
 }

@@ -1,12 +1,9 @@
 package org.apache.http.impl.cookie;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import org.apache.http.cookie.Cookie;
 import org.apache.http.cookie.CookieAttributeHandler;
 import org.apache.http.cookie.CookieOrigin;
@@ -14,29 +11,30 @@ import org.apache.http.cookie.MalformedCookieException;
 
 public abstract class AbstractCookieAttributeHandler implements CookieAttributeHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.850 -0400", hash_original_method = "ACDC61E94AD035B91D0DD3AC627F0897", hash_generated_method = "ACDC61E94AD035B91D0DD3AC627F0897")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.196 -0400", hash_original_method = "ACDC61E94AD035B91D0DD3AC627F0897", hash_generated_method = "ACDC61E94AD035B91D0DD3AC627F0897")
     public AbstractCookieAttributeHandler ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.851 -0400", hash_original_method = "991845E9A77B56F0C05EBC8CED80518E", hash_generated_method = "896AC0A8A922EA5D73734B2C4AE621C8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.196 -0400", hash_original_method = "991845E9A77B56F0C05EBC8CED80518E", hash_generated_method = "8B6987ACBD2487D5D2EE39BB6FEC15C9")
     public void validate(final Cookie cookie, final CookieOrigin origin) throws MalformedCookieException {
-        addTaint(cookie.getTaint());
         addTaint(origin.getTaint());
-        
+        addTaint(cookie.getTaint());
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.851 -0400", hash_original_method = "768BC0018D608E66268B8C5C0AE76B3A", hash_generated_method = "3756D417A28999E004F03CE32FB9BDA4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.197 -0400", hash_original_method = "768BC0018D608E66268B8C5C0AE76B3A", hash_generated_method = "6CF32D7BE9E4821CE8D1C73C93BA1A06")
     public boolean match(final Cookie cookie, final CookieOrigin origin) {
-        addTaint(cookie.getTaint());
         addTaint(origin.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_702729829 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_702729829;
-        
-        
+        addTaint(cookie.getTaint());
+        boolean varB326B5062B2F0E69046810717534CB09_2145534966 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1999392541 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1999392541;
+        // ---------- Original Method ----------
+        //return true;
     }
 
     

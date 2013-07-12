@@ -1,145 +1,139 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.IOException;
 import java.io.InputStream;
 
 public abstract class SSLInputStream extends InputStream {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.802 -0400", hash_original_method = "B3907DD288EBA16F858ADC5177372075", hash_generated_method = "B3907DD288EBA16F858ADC5177372075")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.090 -0400", hash_original_method = "B3907DD288EBA16F858ADC5177372075", hash_generated_method = "B3907DD288EBA16F858ADC5177372075")
     public SSLInputStream ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @Override
+        @Override
 public abstract int available() throws IOException;
 
     
-    @Override
+        @Override
 public abstract int read() throws IOException;
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.803 -0400", hash_original_method = "4E61964AC41EB7FF0B969F3A0D2A867E", hash_generated_method = "B997CC10E611DD2E66ED8EE498D87984")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.092 -0400", hash_original_method = "4E61964AC41EB7FF0B969F3A0D2A867E", hash_generated_method = "0779BAB882DF353F4B26F8C2772E760B")
     public int readUint8() throws IOException {
-        int var0A245C5D7D7AF87D5AC85935D6857130_1875373417 = (read() & 0x00FF);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1691309240 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1691309240;
-        
-        
+        int varDE564EBA10F50982773C535F5DD0C71C_1971840102 = (read() & 0x00FF);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_66934454 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_66934454;
+        // ---------- Original Method ----------
+        //return read() & 0x00FF;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.804 -0400", hash_original_method = "0E243896410AF2472245902D7F89ED82", hash_generated_method = "BE11489949258B258F7AD1E65920494A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.092 -0400", hash_original_method = "0E243896410AF2472245902D7F89ED82", hash_generated_method = "2CBA028558177910D6D7E71487633175")
     public int readUint16() throws IOException {
-        int varB6A221FBB44243AE4B9959A8F6F94EF0_702881051 = ((read() << 8) | (read() & 0x00FF));
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_144956162 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_144956162;
-        
-        
+        int varE92D816B59C876C1E075FB7408EC5632_101509558 = ((read() << 8) | (read() & 0x00FF));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_795762699 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_795762699;
+        // ---------- Original Method ----------
+        //return (read() << 8) | (read() & 0x00FF);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.804 -0400", hash_original_method = "B71B56A9E36B8A8CD4C9FE0969EFEC79", hash_generated_method = "419B05B6CB6F23E84A01FB22FA852F9A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.093 -0400", hash_original_method = "B71B56A9E36B8A8CD4C9FE0969EFEC79", hash_generated_method = "70A234A6AF22777D35B837A497EC0E07")
     public int readUint24() throws IOException {
-        int var4644244AAE0134751CFA3303634B453B_52128222 = ((read() << 16) | (read() << 8) | (read() & 0x00FF));
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1398951569 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1398951569;
-        
-        
+        int var3B1BC9CE46E8D9ABE7F7ADDE655F6975_2080938317 = ((read() << 16) | (read() << 8) | (read() & 0x00FF));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_344881594 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_344881594;
+        // ---------- Original Method ----------
+        //return (read() << 16) | (read() << 8) | (read() & 0x00FF);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.805 -0400", hash_original_method = "18D59391AE7948DA8080AA965DB6CE79", hash_generated_method = "8F07BB89DCF7AD1FD15C1B23DB7F6141")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.093 -0400", hash_original_method = "18D59391AE7948DA8080AA965DB6CE79", hash_generated_method = "9635D16983D96DCF7115BBCB8327BC73")
     public long readUint32() throws IOException {
-        long varA4D3DD0DD1277968F4256A67EF96B630_132116240 = ((read() << 24) | (read() << 16)
+        long var52385B0F5BA643C7B7E882733711900E_1257986465 = ((read() << 24) | (read() << 16)
               | (read() << 8) | (read() & 0x00FF));
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_1445398855 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1445398855;
-        
-        
-              
+                long var0F5264038205EDFB1AC05FBB0E8C5E94_527708637 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_527708637;
+        // ---------- Original Method ----------
+        //return (read() << 24) | (read() << 16)
+              //| (read() << 8) | (read() & 0x00FF);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.805 -0400", hash_original_method = "85B7C4B5BFF5E58A56D479C7E3A9AABB", hash_generated_method = "2EB095BC4438C5CA1751ECBE136B5324")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.093 -0400", hash_original_method = "85B7C4B5BFF5E58A56D479C7E3A9AABB", hash_generated_method = "4FADA51DF87AE3CB448E231336257D86")
     public long readUint64() throws IOException {
         long hi = readUint32();
         long lo = readUint32();
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_2117865435 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_2117865435;
-        
-        
-        
-        
+        long varD915340A788ED0901BEE0629617EE84E_1028250719 = ((hi << 32) | lo);
+                long var0F5264038205EDFB1AC05FBB0E8C5E94_314532608 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_314532608;
+        // ---------- Original Method ----------
+        //long hi = readUint32();
+        //long lo = readUint32();
+        //return (hi << 32) | lo;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.806 -0400", hash_original_method = "22A07573F54A4BDDEECBBE8A8D080BB9", hash_generated_method = "63494D3E6833139EE1E78B71A969E5B6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.094 -0400", hash_original_method = "22A07573F54A4BDDEECBBE8A8D080BB9", hash_generated_method = "5E7F5D532C293F576230385FDF9F78AC")
     public byte[] read(int length) throws IOException {
-        byte[] res = new byte[length];
-        {
-            int i = 0;
-            {
-                res[i] = (byte) read();
-            } 
-        } 
         addTaint(length);
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1904007254 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1904007254;
-        
-        
-        
-            
-        
-        
+        byte[] res = new byte[length];
+for(int i=0;i<length;i++)
+        {
+            res[i] = (byte) read();
+        } //End block
+        byte[] var9B207167E5381C47682C6B4F58A623FB_1095016521 = (res);
+                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1722510719 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1722510719;
+        // ---------- Original Method ----------
+        //byte[] res = new byte[length];
+        //for (int i=0; i<length; i++) {
+            //res[i] = (byte) read();
+        //}
+        //return res;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.807 -0400", hash_original_method = "50426CF7D6642F19D28119E1D947BED8", hash_generated_method = "454D02489EB52B697ABD3BA167DADB32")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.095 -0400", hash_original_method = "50426CF7D6642F19D28119E1D947BED8", hash_generated_method = "152770D15F9E9DAA16E7F58E45E1782B")
     @Override
     public int read(byte[] b, int off, int len) throws IOException {
+        addTaint(len);
+        addTaint(off);
+        addTaint(b[0]);
         int read_b;
         int i = 0;
-        {
+        do {
             {
-                boolean var58A5278A655D93F97DA0180416078C33_1089581406 = ((read_b = read()) == -1);
-            } 
-            b[off+i] = (byte) read_b;
-        } 
-        {
-            boolean var455A44C366F5A1443EF5626F0B5953C6_1065485900 = ((available() != 0) && (i<len));
-        } 
-        addTaint(b[0]);
-        addTaint(off);
-        addTaint(len);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_116611843 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_116611843;
-        
-        
-        
-        
-            
-                
-            
-            
-            
-        
-        
+    if((read_b = read()) == -1)                
+                {
+                    int var9094914C036467CD32E9F7E210E518F4_2135413821 = ((i == 0) ? -1 : i);
+                                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1390696642 = getTaintInt();
+                    return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1390696642;
+                } //End block
+                b[off+i] = (byte) read_b;
+                i++;
+            } //End block
+} while ((available() != 0) && (i<len));
+        int var865C0C0B4AB0E063E5CAA3387C1A8741_1022558488 = (i);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1452680499 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1452680499;
+        // ---------- Original Method ----------
+        //int read_b;
+        //int i = 0;
+        //do {
+            //if ((read_b = read()) == -1) {
+                //return (i == 0) ? -1 : i;
+            //}
+            //b[off+i] = (byte) read_b;
+            //i++;
+        //} while ((available() != 0) && (i<len));
+        //return i;
     }
 
     

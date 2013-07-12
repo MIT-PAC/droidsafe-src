@@ -1,12 +1,9 @@
 package android.content.pm;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.content.Context;
 import android.content.BroadcastReceiver;
 import android.content.Intent;
@@ -42,47 +39,47 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlSerializer;
 
 public abstract class RegisteredServicesCache<V> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.987 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "DE8577C1C990964647332D172A1FAC00")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.298 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "DE8577C1C990964647332D172A1FAC00")
 
     public Context mContext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.987 -0400", hash_original_field = "234538FD1AA7874AA9BF9A74C915B767", hash_generated_field = "B91D2FDD736D033C029D0603CE28FBCE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.298 -0400", hash_original_field = "234538FD1AA7874AA9BF9A74C915B767", hash_generated_field = "B91D2FDD736D033C029D0603CE28FBCE")
 
     private String mInterfaceName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.987 -0400", hash_original_field = "8BC81D2880C6CD7E31E637F74B0BA064", hash_generated_field = "C88ABD8EA4625ED773565A151DB8DE4F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.298 -0400", hash_original_field = "8BC81D2880C6CD7E31E637F74B0BA064", hash_generated_field = "C88ABD8EA4625ED773565A151DB8DE4F")
 
     private String mMetaDataName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.987 -0400", hash_original_field = "C76B08DE0209353DDF7319EC6A7EB3FA", hash_generated_field = "374C38096FB7BF7D602CD01609A2DAA2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.298 -0400", hash_original_field = "C76B08DE0209353DDF7319EC6A7EB3FA", hash_generated_field = "374C38096FB7BF7D602CD01609A2DAA2")
 
     private String mAttributesName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.988 -0400", hash_original_field = "847F2739E3E711FFCA1141D641686ACB", hash_generated_field = "AA271C9427511B8D13F10BA447FF9707")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.299 -0400", hash_original_field = "847F2739E3E711FFCA1141D641686ACB", hash_generated_field = "AA271C9427511B8D13F10BA447FF9707")
 
     private XmlSerializerAndParser<V> mSerializerAndParser;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.988 -0400", hash_original_field = "572851143F58D86B2089A8B56ED682F4", hash_generated_field = "08412B605BBED453196A027B12C1C901")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.299 -0400", hash_original_field = "572851143F58D86B2089A8B56ED682F4", hash_generated_field = "08412B605BBED453196A027B12C1C901")
 
     private AtomicReference<BroadcastReceiver> mReceiver;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.988 -0400", hash_original_field = "4C7B88166487ADA33722EB33BE7F1BA3", hash_generated_field = "7B88287937D2F8332B319EA97FDE5E9F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.299 -0400", hash_original_field = "4C7B88166487ADA33722EB33BE7F1BA3", hash_generated_field = "7B88287937D2F8332B319EA97FDE5E9F")
 
     private final Object mServicesLock = new Object();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.988 -0400", hash_original_field = "1C789CA3285862B792BE459D4A7BFFB7", hash_generated_field = "7C9830B84CCB22FE7159A16CB3E4930F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.299 -0400", hash_original_field = "1C789CA3285862B792BE459D4A7BFFB7", hash_generated_field = "7C9830B84CCB22FE7159A16CB3E4930F")
 
     private HashMap<V, Integer> mPersistentServices;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.988 -0400", hash_original_field = "C0CCF58937AD4C0942DADD568B3D8426", hash_generated_field = "DCB3C355B6846AF6DF6115B3AE075C00")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.299 -0400", hash_original_field = "C0CCF58937AD4C0942DADD568B3D8426", hash_generated_field = "DCB3C355B6846AF6DF6115B3AE075C00")
 
     private Map<V, ServiceInfo<V>> mServices;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.988 -0400", hash_original_field = "FF3387FD79B8747652A6B4DDB199BB60", hash_generated_field = "D5A26748B2EA05973DF9D609AA73C24C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.299 -0400", hash_original_field = "FF3387FD79B8747652A6B4DDB199BB60", hash_generated_field = "D5A26748B2EA05973DF9D609AA73C24C")
 
     private boolean mPersistentServicesFileDidNotExist;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.988 -0400", hash_original_field = "5D71BE5CE04F6705CCE043C0E843BC9E", hash_generated_field = "7849E3F4879F6E3972ADF7CA59BBDAD5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.299 -0400", hash_original_field = "5D71BE5CE04F6705CCE043C0E843BC9E", hash_generated_field = "7849E3F4879F6E3972ADF7CA59BBDAD5")
 
     private AtomicFile mPersistentServicesFile;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.988 -0400", hash_original_field = "9B3DD33B99719CE65C53FA6749E2AD69", hash_generated_field = "7901EBDD1689EB7A4EBB997D88C95CD2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.299 -0400", hash_original_field = "9B3DD33B99719CE65C53FA6749E2AD69", hash_generated_field = "7901EBDD1689EB7A4EBB997D88C95CD2")
 
     private RegisteredServicesCacheListener<V> mListener;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.988 -0400", hash_original_field = "C78BEDFC523DB73DF63EFB071AF1C35B", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.299 -0400", hash_original_field = "C78BEDFC523DB73DF63EFB071AF1C35B", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
 
     private Handler mHandler;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.989 -0400", hash_original_method = "1931A7A6B7925D0DE2D2487C8FB155F2", hash_generated_method = "EDD12DA8E664BF69E295FD53796EDD52")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.302 -0400", hash_original_method = "1931A7A6B7925D0DE2D2487C8FB155F2", hash_generated_method = "EDD12DA8E664BF69E295FD53796EDD52")
     public  RegisteredServicesCache(Context context, String interfaceName, String metaDataName,
             String attributeName, XmlSerializerAndParser<V> serializerAndParser) {
         mContext = context;
@@ -112,410 +109,399 @@ public abstract class RegisteredServicesCache<V> {
         sdFilter.addAction(Intent.ACTION_EXTERNAL_APPLICATIONS_AVAILABLE);
         sdFilter.addAction(Intent.ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE);
         mContext.registerReceiver(receiver, sdFilter);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:06.368 -0400", hash_original_method = "EB7158F459E2A057373DBB2E8C73133E", hash_generated_method = "054E57837B8D73AE1189BC75274DCCE4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.303 -0400", hash_original_method = "EB7158F459E2A057373DBB2E8C73133E", hash_generated_method = "D63E23565C71278CBC2105E7E4B25692")
     public void dump(FileDescriptor fd, PrintWriter fout, String[] args) {
-        Map<V, ServiceInfo<V>> services;
-        {
-            services = mServices;
-        } 
-        fout.println("RegisteredServicesCache: " + services.size() + " services");
-        {
-            Iterator<ServiceInfo<V>> var7025787026F785F48DDDCE829924C4A1_752909425 = (services.values()).iterator();
-            var7025787026F785F48DDDCE829924C4A1_752909425.hasNext();
-            ServiceInfo info = var7025787026F785F48DDDCE829924C4A1_752909425.next();
-            {
-                fout.println("  " + info);
-            } 
-        } 
-        addTaint(fd.getTaint());
-        addTaint(fout.getTaint());
         addTaint(args[0].getTaint());
-        
-        
-        
-            
-        
-        
-        
-            
-        
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.991 -0400", hash_original_method = "D8F0001D796B123F3D4D73C4471FA428", hash_generated_method = "2254E3CDC62396603AFDB2B2D58380D7")
-    public RegisteredServicesCacheListener<V> getListener() {
-        RegisteredServicesCacheListener<V> varB4EAC82CA7396A68D541C85D26508E83_1388598669 = null; 
+        addTaint(fout.getTaint());
+        addTaint(fd.getTaint());
+        Map<V, ServiceInfo<V>> services;
+        synchronized
+(mServicesLock)        {
+            services = mServices;
+        } //End block
+        fout.println("RegisteredServicesCache: " + services.size() + " services");
+for(ServiceInfo info : services.values())
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1388598669 = mListener;
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1388598669.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1388598669;
-        
-        
-            
-        
+            fout.println("  " + info);
+        } //End block
+        // ---------- Original Method ----------
+        //Map<V, ServiceInfo<V>> services;
+        //synchronized (mServicesLock) {
+            //services = mServices;
+        //}
+        //fout.println("RegisteredServicesCache: " + services.size() + " services");
+        //for (ServiceInfo info : services.values()) {
+            //fout.println("  " + info);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.992 -0400", hash_original_method = "C8A12F3C71D9DEAC88B94A90B0132AEE", hash_generated_method = "7D74B051DA0DB06708B58C38535007B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.303 -0400", hash_original_method = "D8F0001D796B123F3D4D73C4471FA428", hash_generated_method = "89D3F4D6562D6A7723D6E301DDE02602")
+    public RegisteredServicesCacheListener<V> getListener() {
+        synchronized
+(this)        {
+RegisteredServicesCacheListener<V> varB7C366B3FCCD3E2168CA30DDDB430A4F_1127172539 =             mListener;
+            varB7C366B3FCCD3E2168CA30DDDB430A4F_1127172539.addTaint(taint);
+            return varB7C366B3FCCD3E2168CA30DDDB430A4F_1127172539;
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (this) {
+            //return mListener;
+        //}
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.304 -0400", hash_original_method = "C8A12F3C71D9DEAC88B94A90B0132AEE", hash_generated_method = "5E1D5051212EBB7B17A2E01D3087DA7D")
     public void setListener(RegisteredServicesCacheListener<V> listener, Handler handler) {
+    if(handler == null)        
         {
             handler = new Handler(mContext.getMainLooper());
-        } 
-        {
+        } //End block
+        synchronized
+(this)        {
             mHandler = handler;
             mListener = listener;
-        } 
-        
-        
-            
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (handler == null) {
+            //handler = new Handler(mContext.getMainLooper());
+        //}
+        //synchronized (this) {
+            //mHandler = handler;
+            //mListener = listener;
+        //}
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:06.394 -0400", hash_original_method = "06355F437BD90B9C1EBE1920422258C6", hash_generated_method = "61196F41E63EAD00889E36A31C231DBA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.305 -0400", hash_original_method = "06355F437BD90B9C1EBE1920422258C6", hash_generated_method = "06ED244919B68CADB0FCF2BECEAAE642")
     private void notifyListener(final V type, final boolean removed) {
+        addTaint(removed);
+        addTaint(type.getTaint());
+    if(Log.isLoggable(TAG, Log.VERBOSE))        
         {
-            boolean varF4C79785E609264B93BBE9F12FEBD33F_675747917 = (Log.isLoggable(TAG, Log.VERBOSE));
-            {
-                Log.d(TAG, "notifyListener: " + type + " is " + (removed ? "removed" : "added"));
-            } 
-        } 
+            Log.d(TAG, "notifyListener: " + type + " is " + (removed ? "removed" : "added"));
+        } //End block
         RegisteredServicesCacheListener<V> listener;
         Handler handler;
-        {
+        synchronized
+(this)        {
             listener = mListener;
             handler = mHandler;
-        } 
-        final RegisteredServicesCacheListener<V> listener2;
-        listener2 = listener;
-        handler.post(new Runnable() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:06.393 -0400", hash_original_method = "895F39B4216C41C2813EBDFABEA40262", hash_generated_method = "2A8550E57F5B9632D66DC046840BC57C")
-            public void run() {
-                listener2.onServiceChanged(type, removed);
-                
-                
-            }
+        } //End block
+    if(listener == null)        
+        {
+            return;
+        } //End block
+        final RegisteredServicesCacheListener<V> listener2 = listener;
+        handler.post(new Runnable() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.305 -0400", hash_original_method = "895F39B4216C41C2813EBDFABEA40262", hash_generated_method = "2A8550E57F5B9632D66DC046840BC57C")
+        public void run() {
+            listener2.onServiceChanged(type, removed);
+            // ---------- Original Method ----------
+            //listener2.onServiceChanged(type, removed);
+        }
 });
-        addTaint(type.getTaint());
-        addTaint(removed);
-        
-        
-            
-        
-        
-        
-        
-            
-            
-        
-        
-            
-        
-        
-        
-            
-                
-            
-        
+        // ---------- Original Method ----------
+        //if (Log.isLoggable(TAG, Log.VERBOSE)) {
+            //Log.d(TAG, "notifyListener: " + type + " is " + (removed ? "removed" : "added"));
+        //}
+        //RegisteredServicesCacheListener<V> listener;
+        //Handler handler;
+        //synchronized (this) {
+            //listener = mListener;
+            //handler = mHandler;
+        //}
+        //if (listener == null) {
+            //return;
+        //}
+        //final RegisteredServicesCacheListener<V> listener2 = listener;
+        //handler.post(new Runnable() {
+            //public void run() {
+                //listener2.onServiceChanged(type, removed);
+            //}
+        //});
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.994 -0400", hash_original_method = "E22FC6668AC77A4961A8F001D76B9B4E", hash_generated_method = "C3F4B0B4A7A231A722C120160FBE9792")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.306 -0400", hash_original_method = "E22FC6668AC77A4961A8F001D76B9B4E", hash_generated_method = "9B642575404DE76A1EBF6263C639389D")
     public ServiceInfo<V> getServiceInfo(V type) {
-        ServiceInfo<V> varB4EAC82CA7396A68D541C85D26508E83_1578494415 = null; 
-        {
-            varB4EAC82CA7396A68D541C85D26508E83_1578494415 = mServices.get(type);
-        } 
         addTaint(type.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1578494415.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1578494415;
-        
-        
-            
-        
+        synchronized
+(mServicesLock)        {
+ServiceInfo<V> var17D506CF4FAD98387DEE85476DC28B5A_912680204 =             mServices.get(type);
+            var17D506CF4FAD98387DEE85476DC28B5A_912680204.addTaint(taint);
+            return var17D506CF4FAD98387DEE85476DC28B5A_912680204;
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mServicesLock) {
+            //return mServices.get(type);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.995 -0400", hash_original_method = "314682D3D2B2D41D6F4464EB59320735", hash_generated_method = "89986EFC040BD9FFD11C7CAFB1ED1C65")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.306 -0400", hash_original_method = "314682D3D2B2D41D6F4464EB59320735", hash_generated_method = "9C7098D9018A278558D7422990720E70")
     public Collection<ServiceInfo<V>> getAllServices() {
-        Collection<ServiceInfo<V>> varB4EAC82CA7396A68D541C85D26508E83_1887232905 = null; 
-        {
-            varB4EAC82CA7396A68D541C85D26508E83_1887232905 = Collections.unmodifiableCollection(mServices.values());
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1887232905.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1887232905;
-        
-        
-            
-        
+        synchronized
+(mServicesLock)        {
+Collection<ServiceInfo<V>> var01EADE7461BB4905E6FEDFBECC0D286A_1055063893 =             Collections.unmodifiableCollection(mServices.values());
+            var01EADE7461BB4905E6FEDFBECC0D286A_1055063893.addTaint(taint);
+            return var01EADE7461BB4905E6FEDFBECC0D286A_1055063893;
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mServicesLock) {
+            //return Collections.unmodifiableCollection(mServices.values());
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.995 -0400", hash_original_method = "1776E8B4D21775792D782A371FDFF29B", hash_generated_method = "2104EE0FBDA059145AA206BC93E8D94D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.307 -0400", hash_original_method = "1776E8B4D21775792D782A371FDFF29B", hash_generated_method = "2140358EBF9B6CF521EC1F6B949CBD73")
     public void close() {
         final BroadcastReceiver receiver = mReceiver.getAndSet(null);
+    if(receiver != null)        
         {
             mContext.unregisterReceiver(receiver);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final BroadcastReceiver receiver = mReceiver.getAndSet(null);
+        //if (receiver != null) {
+            //mContext.unregisterReceiver(receiver);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.996 -0400", hash_original_method = "675DD0BF255C7F4136F548B1BE5CB74C", hash_generated_method = "710309C54F62D88190DF4D67D48AFA6A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.307 -0400", hash_original_method = "675DD0BF255C7F4136F548B1BE5CB74C", hash_generated_method = "25A9A4B58434BD863E2C490BA5DB8F1B")
     @Override
     protected void finalize() throws Throwable {
+    if(mReceiver.get() != null)        
         {
-            boolean var75AC7ECB75B8274DEA99433CCB7DBB46_1888578964 = (mReceiver.get() != null);
-        } 
+        } //End block
         close();
         super.finalize();
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mReceiver.get() != null) {
+            //Log.e(TAG, "RegisteredServicesCache finalized without being closed");
+        //}
+        //close();
+        //super.finalize();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:06.560 -0400", hash_original_method = "30EEE88D5EBEE3E7BF1A3FE6896BBA6C", hash_generated_method = "372AEEC1D15B4FCE4B7522119616C3A8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.308 -0400", hash_original_method = "30EEE88D5EBEE3E7BF1A3FE6896BBA6C", hash_generated_method = "440CC14BFCA00208D4860418D436EF4F")
     private boolean inSystemImage(int callerUid) {
-        String[] packages;
-        packages = mContext.getPackageManager().getPackagesForUid(callerUid);
-        {
-            String name = packages[0];
-            {
-                try 
-                {
-                    PackageInfo packageInfo;
-                    packageInfo = mContext.getPackageManager().getPackageInfo(name, 0 );
-                } 
-                catch (PackageManager.NameNotFoundException e)
-                { }
-            } 
-        } 
         addTaint(callerUid);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_705745829 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_705745829;
-        
-        
-        
-            
-                
-                        
-                
-                    
-                
-            
-                
-            
-        
-        
+        String[] packages = mContext.getPackageManager().getPackagesForUid(callerUid);
+for(String name : packages)
+        {
+            try 
+            {
+                PackageInfo packageInfo = mContext.getPackageManager().getPackageInfo(name, 0 );
+    if((packageInfo.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0)                
+                {
+                    boolean varB326B5062B2F0E69046810717534CB09_241611383 = (true);
+                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_351253747 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_351253747;
+                } //End block
+            } //End block
+            catch (PackageManager.NameNotFoundException e)
+            {
+                boolean var68934A3E9455FA72420237EB05902327_1143900197 = (false);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1959158653 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1959158653;
+            } //End block
+        } //End block
+        boolean var68934A3E9455FA72420237EB05902327_770747462 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_809983860 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_809983860;
+        // ---------- Original Method ----------
+        //String[] packages = mContext.getPackageManager().getPackagesForUid(callerUid);
+        //for (String name : packages) {
+            //try {
+                //PackageInfo packageInfo =
+                        //mContext.getPackageManager().getPackageInfo(name, 0 );
+                //if ((packageInfo.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0) {
+                    //return true;
+                //}
+            //} catch (PackageManager.NameNotFoundException e) {
+                //return false;
+            //}
+        //}
+        //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.070 -0400", hash_original_method = "7FD7D9F6A29EBA7075A2BE7C2AD27E68", hash_generated_method = "0B2EA63949517333C216185715287A66")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.309 -0400", hash_original_method = "7FD7D9F6A29EBA7075A2BE7C2AD27E68", hash_generated_method = "44DB6FEB9E3A22E5F8DCB6563D037A9D")
      void generateServicesMap() {
         PackageManager pm = mContext.getPackageManager();
         ArrayList<ServiceInfo<V>> serviceInfos = new ArrayList<ServiceInfo<V>>();
         List<ResolveInfo> resolveInfos = pm.queryIntentServices(new Intent(mInterfaceName),
                 PackageManager.GET_META_DATA);
+for(ResolveInfo resolveInfo : resolveInfos)
         {
-            Iterator<ResolveInfo> varA26DD4CAE8F7472DF523963F56C59876_1448612014 = (resolveInfos).iterator();
-            varA26DD4CAE8F7472DF523963F56C59876_1448612014.hasNext();
-            ResolveInfo resolveInfo = varA26DD4CAE8F7472DF523963F56C59876_1448612014.next();
+            try 
             {
-                try 
+                ServiceInfo<V> info = parseServiceInfo(resolveInfo);
+    if(info == null)                
                 {
-                    ServiceInfo<V> info = parseServiceInfo(resolveInfo);
-                    serviceInfos.add(info);
-                } 
-                catch (XmlPullParserException e)
-                { }
-                catch (IOException e)
-                { }
-            } 
-        } 
-        {
+                    continue;
+                } //End block
+                serviceInfos.add(info);
+            } //End block
+            catch (XmlPullParserException e)
+            {
+            } //End block
+            catch (IOException e)
+            {
+            } //End block
+        } //End block
+        synchronized
+(mServicesLock)        {
+    if(mPersistentServices == null)            
             {
                 readPersistentServicesLocked();
-            } 
+            } //End block
             mServices = Maps.newHashMap();
             StringBuilder changes = new StringBuilder();
+for(ServiceInfo<V> info : serviceInfos)
             {
-                Iterator<ServiceInfo<V>> varCFA2B5D1E414C218AEDC68D715B2E73A_1076283719 = (serviceInfos).iterator();
-                varCFA2B5D1E414C218AEDC68D715B2E73A_1076283719.hasNext();
-                ServiceInfo<V> info = varCFA2B5D1E414C218AEDC68D715B2E73A_1076283719.next();
+                Integer previousUid = mPersistentServices.get(info.type);
+    if(previousUid == null)                
                 {
-                    Integer previousUid = mPersistentServices.get(info.type);
+                    changes.append("  New service added: ").append(info).append("\n");
+                    mServices.put(info.type, info);
+                    mPersistentServices.put(info.type, info.uid);
+    if(!mPersistentServicesFileDidNotExist)                    
                     {
-                        changes.append("  New service added: ").append(info).append("\n");
-                        mServices.put(info.type, info);
-                        mPersistentServices.put(info.type, info.uid);
-                        {
-                            notifyListener(info.type, false );
-                        } 
-                    } 
+                        notifyListener(info.type, false );
+                    } //End block
+                } //End block
+                else
+    if(previousUid == info.uid)                
+                {
+    if(Log.isLoggable(TAG, Log.VERBOSE))                    
                     {
-                        {
-                            boolean var0C9C1F857EF1208EE3C75B6103EF6F6E_1735096921 = (Log.isLoggable(TAG, Log.VERBOSE));
-                            {
-                                changes.append("  Existing service (nop): ").append(info).append("\n");
-                            } 
-                        } 
-                        mServices.put(info.type, info);
-                    } 
+                        changes.append("  Existing service (nop): ").append(info).append("\n");
+                    } //End block
+                    mServices.put(info.type, info);
+                } //End block
+                else
+    if(inSystemImage(info.uid)
+                        || !containsTypeAndUid(serviceInfos, info.type, previousUid))                
+                {
+    if(inSystemImage(info.uid))                    
                     {
-                        boolean varFFAC02DEE0E1E3674D809CA7792CA55B_2071900412 = (inSystemImage(info.uid)
-                        || !containsTypeAndUid(serviceInfos, info.type, previousUid));
-                        {
-                            {
-                                boolean var9C1BBD037092FAA8D8EF40AEC0D204EC_850370798 = (inSystemImage(info.uid));
-                                {
-                                    changes.append("  System service replacing existing: ").append(info)
+                        changes.append("  System service replacing existing: ").append(info)
                                 .append("\n");
-                                } 
-                                {
-                                    changes.append("  Existing service replacing a removed service: ")
-                                .append(info).append("\n");
-                                } 
-                            } 
-                            mServices.put(info.type, info);
-                            mPersistentServices.put(info.type, info.uid);
-                            notifyListener(info.type, false );
-                        } 
-                        {
-                            changes.append("  Existing service with new uid ignored: ").append(info)
-                            .append("\n");
-                        } 
-                    } 
-                } 
-            } 
-            ArrayList<V> toBeRemoved = Lists.newArrayList();
-            {
-                Iterator<V> var0964F743B99F50D551F8712F91E0FAE4_637566036 = (mPersistentServices.keySet()).iterator();
-                var0964F743B99F50D551F8712F91E0FAE4_637566036.hasNext();
-                V v1 = var0964F743B99F50D551F8712F91E0FAE4_637566036.next();
-                {
+                    } //End block
+                    else
                     {
-                        boolean var782F6FA2593CD8E4A57F47314DF440ED_907763547 = (!containsType(serviceInfos, v1));
-                        {
-                            toBeRemoved.add(v1);
-                        } 
-                    } 
-                } 
-            } 
-            {
-                Iterator<V> var4ED29A64238BA26508EAA0639F6AE81B_1744419549 = (toBeRemoved).iterator();
-                var4ED29A64238BA26508EAA0639F6AE81B_1744419549.hasNext();
-                V v1 = var4ED29A64238BA26508EAA0639F6AE81B_1744419549.next();
+                        changes.append("  Existing service replacing a removed service: ")
+                                .append(info).append("\n");
+                    } //End block
+                    mServices.put(info.type, info);
+                    mPersistentServices.put(info.type, info.uid);
+                    notifyListener(info.type, false );
+                } //End block
+                else
                 {
-                    mPersistentServices.remove(v1);
-                    changes.append("  Service removed: ").append(v1).append("\n");
-                    notifyListener(v1, true );
-                } 
-            } 
+                    changes.append("  Existing service with new uid ignored: ").append(info)
+                            .append("\n");
+                } //End block
+            } //End block
+            ArrayList<V> toBeRemoved = Lists.newArrayList();
+for(V v1 : mPersistentServices.keySet())
             {
-                boolean var88EF2C068462606A6455AC462FD87C3D_18898500 = (changes.length() > 0);
+    if(!containsType(serviceInfos, v1))                
                 {
-                    Log.d(TAG, "generateServicesMap(" + mInterfaceName + "): " +
+                    toBeRemoved.add(v1);
+                } //End block
+            } //End block
+for(V v1 : toBeRemoved)
+            {
+                mPersistentServices.remove(v1);
+                changes.append("  Service removed: ").append(v1).append("\n");
+                notifyListener(v1, true );
+            } //End block
+    if(changes.length() > 0)            
+            {
+                Log.d(TAG, "generateServicesMap(" + mInterfaceName + "): " +
                         serviceInfos.size() + " services:\n" + changes);
-                    writePersistentServicesLocked();
-                } 
-                {
-                    Log.d(TAG, "generateServicesMap(" + mInterfaceName + "): " +
+                writePersistentServicesLocked();
+            } //End block
+            else
+            {
+                Log.d(TAG, "generateServicesMap(" + mInterfaceName + "): " +
                         serviceInfos.size() + " services unchanged");
-                } 
-            } 
+            } //End block
             mPersistentServicesFileDidNotExist = false;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.070 -0400", hash_original_method = "45DA6CE662A637B1B0A1C5B390B75450", hash_generated_method = "2D7DD132B4F8628ED63FFF4E5898B466")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.311 -0400", hash_original_method = "45DA6CE662A637B1B0A1C5B390B75450", hash_generated_method = "98E9C271EB735F96D7EB093A8AFE81BC")
     private boolean containsType(ArrayList<ServiceInfo<V>> serviceInfos, V type) {
-        {
-            int i = 0;
-            int N = serviceInfos.size();
-            {
-                {
-                    boolean var19D4157B53D1E602542AEC1E5D8AFE4E_1104828602 = (serviceInfos.get(i).type.equals(type));
-                } 
-            } 
-        } 
-        addTaint(serviceInfos.getTaint());
         addTaint(type.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1380654537 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1380654537;
-        
-        
-            
-                
-            
-        
-        
+        addTaint(serviceInfos.getTaint());
+for(int i = 0, N = serviceInfos.size();i < N;i++)
+        {
+    if(serviceInfos.get(i).type.equals(type))            
+            {
+                boolean varB326B5062B2F0E69046810717534CB09_1112860063 = (true);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_778082936 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_778082936;
+            } //End block
+        } //End block
+        boolean var68934A3E9455FA72420237EB05902327_1234799973 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_387789143 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_387789143;
+        // ---------- Original Method ----------
+        //for (int i = 0, N = serviceInfos.size(); i < N; i++) {
+            //if (serviceInfos.get(i).type.equals(type)) {
+                //return true;
+            //}
+        //}
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.071 -0400", hash_original_method = "39F2D99D837C3B52D94DD556DC01CC72", hash_generated_method = "2AB7CBE55D995473EDF75F7B9DAD8ADC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.312 -0400", hash_original_method = "39F2D99D837C3B52D94DD556DC01CC72", hash_generated_method = "968A4278EE0F570D4D3E45F3DB4F6DFA")
     private boolean containsTypeAndUid(ArrayList<ServiceInfo<V>> serviceInfos, V type, int uid) {
-        {
-            int i = 0;
-            int N = serviceInfos.size();
-            {
-                final ServiceInfo<V> serviceInfo = serviceInfos.get(i);
-                {
-                    boolean varEECDA5A56FBEAF4B1891AEDA0C05785A_1554264232 = (serviceInfo.type.equals(type) && serviceInfo.uid == uid);
-                } 
-            } 
-        } 
-        addTaint(serviceInfos.getTaint());
-        addTaint(type.getTaint());
         addTaint(uid);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1637359149 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1637359149;
-        
-        
-            
-            
-                
-            
-        
-        
+        addTaint(type.getTaint());
+        addTaint(serviceInfos.getTaint());
+for(int i = 0, N = serviceInfos.size();i < N;i++)
+        {
+            final ServiceInfo<V> serviceInfo = serviceInfos.get(i);
+    if(serviceInfo.type.equals(type) && serviceInfo.uid == uid)            
+            {
+                boolean varB326B5062B2F0E69046810717534CB09_1736112450 = (true);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_495731628 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_495731628;
+            } //End block
+        } //End block
+        boolean var68934A3E9455FA72420237EB05902327_1850856783 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1398235120 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1398235120;
+        // ---------- Original Method ----------
+        //for (int i = 0, N = serviceInfos.size(); i < N; i++) {
+            //final ServiceInfo<V> serviceInfo = serviceInfos.get(i);
+            //if (serviceInfo.type.equals(type) && serviceInfo.uid == uid) {
+                //return true;
+            //}
+        //}
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.072 -0400", hash_original_method = "05773225026B5770A572BEDCCA950685", hash_generated_method = "E854679E523497ACE215AE4566595D64")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.314 -0400", hash_original_method = "05773225026B5770A572BEDCCA950685", hash_generated_method = "F7D1548799A3A2E67BC95649E6D6FE7C")
     private ServiceInfo<V> parseServiceInfo(ResolveInfo service) throws XmlPullParserException, IOException {
-        ServiceInfo<V> varB4EAC82CA7396A68D541C85D26508E83_1790397890 = null; 
-        ServiceInfo<V> varB4EAC82CA7396A68D541C85D26508E83_493890650 = null; 
+        addTaint(service.getTaint());
         android.content.pm.ServiceInfo si = service.serviceInfo;
         ComponentName componentName = new ComponentName(si.packageName, si.name);
         PackageManager pm = mContext.getPackageManager();
@@ -523,121 +509,136 @@ public abstract class RegisteredServicesCache<V> {
         try 
         {
             parser = si.loadXmlMetaData(pm, mMetaDataName);
+    if(parser == null)            
             {
-                if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("No " + mMetaDataName + " meta-data");
-            } 
+                XmlPullParserException var95BB56C5DE56B4BDF53EBEFA6B676EBE_324550711 = new XmlPullParserException("No " + mMetaDataName + " meta-data");
+                var95BB56C5DE56B4BDF53EBEFA6B676EBE_324550711.addTaint(taint);
+                throw var95BB56C5DE56B4BDF53EBEFA6B676EBE_324550711;
+            } //End block
             AttributeSet attrs = Xml.asAttributeSet(parser);
             int type;
+            while
+((type=parser.next()) != XmlPullParser.END_DOCUMENT
+                    && type != XmlPullParser.START_TAG)            
             {
-                boolean var995057C222283DCE9E465AE35974357A_1757194776 = ((type=parser.next()) != XmlPullParser.END_DOCUMENT
-                    && type != XmlPullParser.START_TAG);
-            } 
+            } //End block
             String nodeName = parser.getName();
+    if(!mAttributesName.equals(nodeName))            
             {
-                boolean var4614475AA84F3A612636E9B8BB763FC4_1821228542 = (!mAttributesName.equals(nodeName));
-                {
-                    if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(
+                XmlPullParserException var8E5C999F953BBE8E0285A3211C1F9189_576581430 = new XmlPullParserException(
                         "Meta-data does not start with " + mAttributesName +  " tag");
-                } 
-            } 
+                var8E5C999F953BBE8E0285A3211C1F9189_576581430.addTaint(taint);
+                throw var8E5C999F953BBE8E0285A3211C1F9189_576581430;
+            } //End block
             V v = parseServiceAttributes(pm.getResourcesForApplication(si.applicationInfo),
                     si.packageName, attrs);
+    if(v == null)            
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1790397890 = null;
-            } 
+ServiceInfo<V> var540C13E9E156B687226421B24F2DF178_1520700474 =                 null;
+                var540C13E9E156B687226421B24F2DF178_1520700474.addTaint(taint);
+                return var540C13E9E156B687226421B24F2DF178_1520700474;
+            } //End block
             final android.content.pm.ServiceInfo serviceInfo = service.serviceInfo;
             final ApplicationInfo applicationInfo = serviceInfo.applicationInfo;
             final int uid = applicationInfo.uid;
-            varB4EAC82CA7396A68D541C85D26508E83_493890650 = new ServiceInfo<V>(v, componentName, uid);
-        } 
+ServiceInfo<V> var34F12F499D790BEB43A634C29A234DB8_834937039 =             new ServiceInfo<V>(v, componentName, uid);
+            var34F12F499D790BEB43A634C29A234DB8_834937039.addTaint(taint);
+            return var34F12F499D790BEB43A634C29A234DB8_834937039;
+        } //End block
         catch (NameNotFoundException e)
         {
-            if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(
+            XmlPullParserException var4053B6FE06E8EE292A126000654E7DC8_2081263244 = new XmlPullParserException(
                     "Unable to load resources for pacakge " + si.packageName);
-        } 
+            var4053B6FE06E8EE292A126000654E7DC8_2081263244.addTaint(taint);
+            throw var4053B6FE06E8EE292A126000654E7DC8_2081263244;
+        } //End block
         finally 
         {
+    if(parser != null)            
             parser.close();
-        } 
-        addTaint(service.getTaint());
-        ServiceInfo<V> varA7E53CE21691AB073D9660D615818899_1989046591; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1989046591 = varB4EAC82CA7396A68D541C85D26508E83_1790397890;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1989046591 = varB4EAC82CA7396A68D541C85D26508E83_493890650;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1989046591.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1989046591;
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.075 -0400", hash_original_method = "AEFFF388F6549F52CCF36E0502C98B34", hash_generated_method = "BE8677B969FBC702909865666FEB985C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.315 -0400", hash_original_method = "AEFFF388F6549F52CCF36E0502C98B34", hash_generated_method = "3C7200E89B1FEDE25C0D2102CF801A1F")
     private void readPersistentServicesLocked() {
         mPersistentServices = Maps.newHashMap();
+    if(mSerializerAndParser == null)        
+        {
+            return;
+        } //End block
         FileInputStream fis = null;
         try 
         {
             mPersistentServicesFileDidNotExist = !mPersistentServicesFile.getBaseFile().exists();
+    if(mPersistentServicesFileDidNotExist)            
+            {
+                return;
+            } //End block
             fis = mPersistentServicesFile.openRead();
             XmlPullParser parser = Xml.newPullParser();
             parser.setInput(fis, null);
             int eventType = parser.getEventType();
+            while
+(eventType != XmlPullParser.START_TAG)            
             {
                 eventType = parser.next();
-            } 
+            } //End block
             String tagName = parser.getName();
+    if("services".equals(tagName))            
             {
-                boolean var106A6D458E946398C30D87C7C805F5DF_680096520 = ("services".equals(tagName));
-                {
-                    eventType = parser.next();
+                eventType = parser.next();
+                do {
                     {
+    if(eventType == XmlPullParser.START_TAG && parser.getDepth() == 2)                        
                         {
-                            boolean varBCBD3D3BAD308BC777A538581FB9DF5A_1749026774 = (eventType == XmlPullParser.START_TAG && parser.getDepth() == 2);
+                            tagName = parser.getName();
+    if("service".equals(tagName))                            
                             {
-                                tagName = parser.getName();
+                                V service = mSerializerAndParser.createFromXml(parser);
+    if(service == null)                                
                                 {
-                                    boolean varD2612B40A5B8CF52C3C3ECA00544992E_1005244300 = ("service".equals(tagName));
-                                    {
-                                        V service = mSerializerAndParser.createFromXml(parser);
-                                        String uidString = parser.getAttributeValue(null, "uid");
-                                        int uid = Integer.parseInt(uidString);
-                                        mPersistentServices.put(service, uid);
-                                    } 
-                                } 
-                            } 
-                        } 
+                                    break;
+                                } //End block
+                                String uidString = parser.getAttributeValue(null, "uid");
+                                int uid = Integer.parseInt(uidString);
+                                mPersistentServices.put(service, uid);
+                            } //End block
+                        } //End block
                         eventType = parser.next();
-                    } 
-                } 
-            } 
-        } 
+                    } //End block
+} while (eventType != XmlPullParser.END_DOCUMENT);
+            } //End block
+        } //End block
         catch (Exception e)
-        { }
+        {
+        } //End block
         finally 
         {
+    if(fis != null)            
             {
                 try 
                 {
                     fis.close();
-                } 
+                } //End block
                 catch (java.io.IOException e1)
-                { }
-            } 
-        } 
-        
-        
+                {
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.089 -0400", hash_original_method = "EE98DCC48BA776AAD27AD82ED0CDBCAD", hash_generated_method = "6C33FBDED303B05C7DDDD68B3830BDF6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.317 -0400", hash_original_method = "EE98DCC48BA776AAD27AD82ED0CDBCAD", hash_generated_method = "B48FD1310EFCBD075BD6C7C79A42333B")
     private void writePersistentServicesLocked() {
+    if(mSerializerAndParser == null)        
+        {
+            return;
+        } //End block
         FileOutputStream fos = null;
         try 
         {
@@ -647,29 +648,26 @@ public abstract class RegisteredServicesCache<V> {
             out.startDocument(null, true);
             out.setFeature("http://xmlpull.org/v1/doc/features.html#indent-output", true);
             out.startTag(null, "services");
+for(Map.Entry<V, Integer> service : mPersistentServices.entrySet())
             {
-                Iterator<Map.Entry<V, Integer>> var4DDAADA76137DCE9017BA19DADD5174B_196224874 = (mPersistentServices.entrySet()).iterator();
-                var4DDAADA76137DCE9017BA19DADD5174B_196224874.hasNext();
-                Map.Entry<V, Integer> service = var4DDAADA76137DCE9017BA19DADD5174B_196224874.next();
-                {
-                    out.startTag(null, "service");
-                    out.attribute(null, "uid", Integer.toString(service.getValue()));
-                    mSerializerAndParser.writeAsXml(service.getKey(), out);
-                    out.endTag(null, "service");
-                } 
-            } 
+                out.startTag(null, "service");
+                out.attribute(null, "uid", Integer.toString(service.getValue()));
+                mSerializerAndParser.writeAsXml(service.getKey(), out);
+                out.endTag(null, "service");
+            } //End block
             out.endTag(null, "services");
             out.endDocument();
             mPersistentServicesFile.finishWrite(fos);
-        } 
+        } //End block
         catch (java.io.IOException e1)
         {
+    if(fos != null)            
             {
                 mPersistentServicesFile.failWrite(fos);
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -678,37 +676,36 @@ public abstract class RegisteredServicesCache<V> {
 
     
     public static class ServiceInfo<V> {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.089 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "1C0901F7CD197CB5951F2E539CF1A8AE")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.317 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "1C0901F7CD197CB5951F2E539CF1A8AE")
 
         public V type;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.089 -0400", hash_original_field = "FE439837C9D0340925B5F19E11F6264D", hash_generated_field = "98D1E72DA94B9A47D9FBC8AE55A2CAA0")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.317 -0400", hash_original_field = "FE439837C9D0340925B5F19E11F6264D", hash_generated_field = "98D1E72DA94B9A47D9FBC8AE55A2CAA0")
 
         public ComponentName componentName;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.090 -0400", hash_original_field = "9871D3A2C554B27151CACF1422EEC048", hash_generated_field = "73E9256EB1FAC46D74FF7A0ED583FFBD")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.317 -0400", hash_original_field = "9871D3A2C554B27151CACF1422EEC048", hash_generated_field = "73E9256EB1FAC46D74FF7A0ED583FFBD")
 
         public int uid;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.090 -0400", hash_original_method = "472602FD5FE378647A180CDF60A7A18E", hash_generated_method = "66D8FFD3C91D0CDC48CEBF75A2EFFF69")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.318 -0400", hash_original_method = "472602FD5FE378647A180CDF60A7A18E", hash_generated_method = "66D8FFD3C91D0CDC48CEBF75A2EFFF69")
         public  ServiceInfo(V type, ComponentName componentName, int uid) {
             this.type = type;
             this.componentName = componentName;
             this.uid = uid;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.type = type;
+            //this.componentName = componentName;
+            //this.uid = uid;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.092 -0400", hash_original_method = "72B8806B88D8BA2A16DDBB10DB9489CE", hash_generated_method = "11709B7A95FDB080B6B9CE172D276DAD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.318 -0400", hash_original_method = "72B8806B88D8BA2A16DDBB10DB9489CE", hash_generated_method = "C2BDEB9FD77A1DAF9A297F438DB51824")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1418450295 = null; 
-            varB4EAC82CA7396A68D541C85D26508E83_1418450295 = "ServiceInfo: " + type + ", " + componentName + ", uid " + uid;
-            varB4EAC82CA7396A68D541C85D26508E83_1418450295.addTaint(getTaint()); 
-            return varB4EAC82CA7396A68D541C85D26508E83_1418450295;
-            
-            
+String varC4E2D8367AC7DBE709E4A97317782E38_1785173697 =             "ServiceInfo: " + type + ", " + componentName + ", uid " + uid;
+            varC4E2D8367AC7DBE709E4A97317782E38_1785173697.addTaint(taint);
+            return varC4E2D8367AC7DBE709E4A97317782E38_1785173697;
+            // ---------- Original Method ----------
+            //return "ServiceInfo: " + type + ", " + componentName + ", uid " + uid;
         }
 
         
@@ -716,10 +713,8 @@ public abstract class RegisteredServicesCache<V> {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.092 -0400", hash_original_field = "799B1C7045AB9A1990EA02A1923DD877", hash_generated_field = "E87B09140D2B39BDC1A082AB48B400E2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.319 -0400", hash_original_field = "799B1C7045AB9A1990EA02A1923DD877", hash_generated_field = "E87B09140D2B39BDC1A082AB48B400E2")
 
     private static final String TAG = "PackageManager";
-   
-    
 }
 

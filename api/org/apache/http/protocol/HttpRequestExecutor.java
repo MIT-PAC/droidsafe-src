@@ -1,12 +1,9 @@
 package org.apache.http.protocol;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.IOException;
 import java.net.ProtocolException;
 import org.apache.http.HttpClientConnection;
@@ -21,271 +18,325 @@ import org.apache.http.params.CoreProtocolPNames;
 
 public class HttpRequestExecutor {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.599 -0400", hash_original_method = "1B3D6EB0D2C9672C0490DD487A44B10E", hash_generated_method = "5C823C110E4C37030580A4ECF9EB10B9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.959 -0400", hash_original_method = "1B3D6EB0D2C9672C0490DD487A44B10E", hash_generated_method = "5C823C110E4C37030580A4ECF9EB10B9")
     public  HttpRequestExecutor() {
         super();
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.600 -0400", hash_original_method = "0630A8D079D2F2EA09859A2EAC923D24", hash_generated_method = "1C7E83E58F05C3EA359D99ECC9AE916C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.960 -0400", hash_original_method = "0630A8D079D2F2EA09859A2EAC923D24", hash_generated_method = "FDCD0C655CD9A917990B677B67B42261")
     protected boolean canResponseHaveBody(final HttpRequest request,
                                           final HttpResponse response) {
-        {
-            boolean varD156E42C6563538534C094BC9F8B30CC_466256785 = ("HEAD".equalsIgnoreCase(request.getRequestLine().getMethod()));
-        } 
-        int status = response.getStatusLine().getStatusCode();
-        addTaint(request.getTaint());
         addTaint(response.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_20098127 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_20098127;
-        
-        
-            
-        
-        
-        
-            
-            
-            
+        addTaint(request.getTaint());
+    if("HEAD".equalsIgnoreCase(request.getRequestLine().getMethod()))        
+        {
+            boolean var68934A3E9455FA72420237EB05902327_213916256 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_479941320 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_479941320;
+        } //End block
+        int status = response.getStatusLine().getStatusCode();
+        boolean varC715FE0F3FDA5C1A4EE77A8D9493A126_476092283 = (status >= HttpStatus.SC_OK 
+            && status != HttpStatus.SC_NO_CONTENT 
+            && status != HttpStatus.SC_NOT_MODIFIED
+            && status != HttpStatus.SC_RESET_CONTENT);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1528773101 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1528773101;
+        // ---------- Original Method ----------
+        //if ("HEAD".equalsIgnoreCase(request.getRequestLine().getMethod())) {
+            //return false;
+        //}
+        //int status = response.getStatusLine().getStatusCode();
+        //return status >= HttpStatus.SC_OK 
+            //&& status != HttpStatus.SC_NO_CONTENT 
+            //&& status != HttpStatus.SC_NOT_MODIFIED
+            //&& status != HttpStatus.SC_RESET_CONTENT;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.601 -0400", hash_original_method = "119B944BAA4C5EE6E8AB8C1C74A61B19", hash_generated_method = "3ACBFA6EC38F58484C41F79D2E9ECC0E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.961 -0400", hash_original_method = "119B944BAA4C5EE6E8AB8C1C74A61B19", hash_generated_method = "3DA72F165775A1B17FFCAC8430919578")
     public HttpResponse execute(
             final HttpRequest request,
             final HttpClientConnection conn,
             final HttpContext context) throws IOException, HttpException {
-        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_827909919 = null; 
+        addTaint(context.getTaint());
+        addTaint(conn.getTaint());
+        addTaint(request.getTaint());
+    if(request == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
-        } 
+            IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_1331948594 = new IllegalArgumentException("HTTP request may not be null");
+            varF07DEF4BA25028D1DB51C0BA629AF0B4_1331948594.addTaint(taint);
+            throw varF07DEF4BA25028D1DB51C0BA629AF0B4_1331948594;
+        } //End block
+    if(conn == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Client connection may not be null");
-        } 
+            IllegalArgumentException var407669F9BB5BC8C81DD11AA5A9676948_2099854952 = new IllegalArgumentException("Client connection may not be null");
+            var407669F9BB5BC8C81DD11AA5A9676948_2099854952.addTaint(taint);
+            throw var407669F9BB5BC8C81DD11AA5A9676948_2099854952;
+        } //End block
+    if(context == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP context may not be null");
-        } 
+            IllegalArgumentException var313A469DAA78732DF88285478241413C_1018513390 = new IllegalArgumentException("HTTP context may not be null");
+            var313A469DAA78732DF88285478241413C_1018513390.addTaint(taint);
+            throw var313A469DAA78732DF88285478241413C_1018513390;
+        } //End block
         try 
         {
             HttpResponse response = doSendRequest(request, conn, context);
+    if(response == null)            
             {
                 response = doReceiveResponse(request, conn, context);
-            } 
-            varB4EAC82CA7396A68D541C85D26508E83_827909919 = response;
-        } 
+            } //End block
+HttpResponse var2A1114F4272D753FE23A36E3D68CD293_324423264 =             response;
+            var2A1114F4272D753FE23A36E3D68CD293_324423264.addTaint(taint);
+            return var2A1114F4272D753FE23A36E3D68CD293_324423264;
+        } //End block
         catch (IOException ex)
         {
             conn.close();
-            if (DroidSafeAndroidRuntime.control) throw ex;
-        } 
+            ex.addTaint(taint);
+            throw ex;
+        } //End block
         catch (HttpException ex)
         {
             conn.close();
-            if (DroidSafeAndroidRuntime.control) throw ex;
-        } 
+            ex.addTaint(taint);
+            throw ex;
+        } //End block
         catch (RuntimeException ex)
         {
             conn.close();
-            if (DroidSafeAndroidRuntime.control) throw ex;
-        } 
-        addTaint(request.getTaint());
-        addTaint(conn.getTaint());
-        addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_827909919.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_827909919;
-        
-        
+            ex.addTaint(taint);
+            throw ex;
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.602 -0400", hash_original_method = "83559981E73A0A11E2E39D8FF1D4E53C", hash_generated_method = "5D77BBC4B3586E99238F5EFD1D9471B1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.961 -0400", hash_original_method = "83559981E73A0A11E2E39D8FF1D4E53C", hash_generated_method = "81CC78D37F11B77EAC8DE108BFEA81C9")
     public void preProcess(
             final HttpRequest request,
             final HttpProcessor processor,
             final HttpContext context) throws HttpException, IOException {
-        {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
-        } 
-        {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP processor may not be null");
-        } 
-        {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP context may not be null");
-        } 
-        processor.process(request, context);
-        addTaint(request.getTaint());
-        addTaint(processor.getTaint());
         addTaint(context.getTaint());
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
+        addTaint(processor.getTaint());
+        addTaint(request.getTaint());
+    if(request == null)        
+        {
+            IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_793090670 = new IllegalArgumentException("HTTP request may not be null");
+            varF07DEF4BA25028D1DB51C0BA629AF0B4_793090670.addTaint(taint);
+            throw varF07DEF4BA25028D1DB51C0BA629AF0B4_793090670;
+        } //End block
+    if(processor == null)        
+        {
+            IllegalArgumentException varBE6F981A621D2588DCBAFD6F186E1351_210955307 = new IllegalArgumentException("HTTP processor may not be null");
+            varBE6F981A621D2588DCBAFD6F186E1351_210955307.addTaint(taint);
+            throw varBE6F981A621D2588DCBAFD6F186E1351_210955307;
+        } //End block
+    if(context == null)        
+        {
+            IllegalArgumentException var313A469DAA78732DF88285478241413C_1323225480 = new IllegalArgumentException("HTTP context may not be null");
+            var313A469DAA78732DF88285478241413C_1323225480.addTaint(taint);
+            throw var313A469DAA78732DF88285478241413C_1323225480;
+        } //End block
+        processor.process(request, context);
+        // ---------- Original Method ----------
+        //if (request == null) {
+            //throw new IllegalArgumentException("HTTP request may not be null");
+        //}
+        //if (processor == null) {
+            //throw new IllegalArgumentException("HTTP processor may not be null");
+        //}
+        //if (context == null) {
+            //throw new IllegalArgumentException("HTTP context may not be null");
+        //}
+        //processor.process(request, context);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.603 -0400", hash_original_method = "3A0BDE86F44AAAE489AB1403F9B488D7", hash_generated_method = "CA5E287B88C4F1B718121F35A53A2178")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.963 -0400", hash_original_method = "3A0BDE86F44AAAE489AB1403F9B488D7", hash_generated_method = "2B429DD196B0848DE294DD24550F47B6")
     protected HttpResponse doSendRequest(
             final HttpRequest request,
             final HttpClientConnection conn,
             final HttpContext context) throws IOException, HttpException {
-        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_1485334047 = null; 
+        addTaint(context.getTaint());
+        addTaint(conn.getTaint());
+        addTaint(request.getTaint());
+    if(request == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
-        } 
+            IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_1110389084 = new IllegalArgumentException("HTTP request may not be null");
+            varF07DEF4BA25028D1DB51C0BA629AF0B4_1110389084.addTaint(taint);
+            throw varF07DEF4BA25028D1DB51C0BA629AF0B4_1110389084;
+        } //End block
+    if(conn == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP connection may not be null");
-        } 
+            IllegalArgumentException var6CFBC789236DE9A132EF716CA5496FB9_18076173 = new IllegalArgumentException("HTTP connection may not be null");
+            var6CFBC789236DE9A132EF716CA5496FB9_18076173.addTaint(taint);
+            throw var6CFBC789236DE9A132EF716CA5496FB9_18076173;
+        } //End block
+    if(context == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP context may not be null");
-        } 
+            IllegalArgumentException var313A469DAA78732DF88285478241413C_1200873933 = new IllegalArgumentException("HTTP context may not be null");
+            var313A469DAA78732DF88285478241413C_1200873933.addTaint(taint);
+            throw var313A469DAA78732DF88285478241413C_1200873933;
+        } //End block
         HttpResponse response = null;
         context.setAttribute(ExecutionContext.HTTP_REQ_SENT, Boolean.FALSE);
         conn.sendRequestHeader(request);
+    if(request instanceof HttpEntityEnclosingRequest)        
         {
             boolean sendentity = true;
             final ProtocolVersion ver = request.getRequestLine().getProtocolVersion();
+    if(((HttpEntityEnclosingRequest) request).expectContinue() &&
+                !ver.lessEquals(HttpVersion.HTTP_1_0))            
             {
-                boolean var43491DB99A4160B9C640073F657E942C_1260905407 = (((HttpEntityEnclosingRequest) request).expectContinue() &&
-                !ver.lessEquals(HttpVersion.HTTP_1_0));
-                {
-                    conn.flush();
-                    int tms = request.getParams().getIntParameter(
+                conn.flush();
+                int tms = request.getParams().getIntParameter(
                         CoreProtocolPNames.WAIT_FOR_CONTINUE, 2000);
+    if(conn.isResponseAvailable(tms))                
+                {
+                    response = conn.receiveResponseHeader();
+    if(canResponseHaveBody(request, response))                    
                     {
-                        boolean var37F76CBB3128C83B9D1F17320CBEB427_543963125 = (conn.isResponseAvailable(tms));
+                        conn.receiveResponseEntity(response);
+                    } //End block
+                    int status = response.getStatusLine().getStatusCode();
+    if(status < 200)                    
+                    {
+    if(status != HttpStatus.SC_CONTINUE)                        
                         {
-                            response = conn.receiveResponseHeader();
-                            {
-                                boolean var1658CC8B4194AE69AA37E3D73F449498_893317195 = (canResponseHaveBody(request, response));
-                                {
-                                    conn.receiveResponseEntity(response);
-                                } 
-                            } 
-                            int status = response.getStatusLine().getStatusCode();
-                            {
-                                {
-                                    if (DroidSafeAndroidRuntime.control) throw new ProtocolException(
+                            ProtocolException var9A30284AC6B7E9D346B26DB16996B6F5_154422095 = new ProtocolException(
                                     "Unexpected response: " + response.getStatusLine());
-                                } 
-                                response = null;
-                            } 
-                            {
-                                sendentity = false;
-                            } 
-                        } 
-                    } 
-                } 
-            } 
+                            var9A30284AC6B7E9D346B26DB16996B6F5_154422095.addTaint(taint);
+                            throw var9A30284AC6B7E9D346B26DB16996B6F5_154422095;
+                        } //End block
+                        response = null;
+                    } //End block
+                    else
+                    {
+                        sendentity = false;
+                    } //End block
+                } //End block
+            } //End block
+    if(sendentity)            
             {
                 conn.sendRequestEntity((HttpEntityEnclosingRequest) request);
-            } 
-        } 
+            } //End block
+        } //End block
         conn.flush();
         context.setAttribute(ExecutionContext.HTTP_REQ_SENT, Boolean.TRUE);
-        varB4EAC82CA7396A68D541C85D26508E83_1485334047 = response;
-        addTaint(request.getTaint());
-        addTaint(conn.getTaint());
-        addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1485334047.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1485334047;
-        
-        
+HttpResponse var2A1114F4272D753FE23A36E3D68CD293_291393182 =         response;
+        var2A1114F4272D753FE23A36E3D68CD293_291393182.addTaint(taint);
+        return var2A1114F4272D753FE23A36E3D68CD293_291393182;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.606 -0400", hash_original_method = "ACD44B1A55AB2BB7AB7058E66F36FB4A", hash_generated_method = "B13CA334F5ADDC9FC224885D282994B4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.964 -0400", hash_original_method = "ACD44B1A55AB2BB7AB7058E66F36FB4A", hash_generated_method = "8A1A15221750C4A70426C07D69876838")
     protected HttpResponse doReceiveResponse(
             final HttpRequest          request,
             final HttpClientConnection conn,
             final HttpContext          context) throws HttpException, IOException {
-        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_573680710 = null; 
+        addTaint(context.getTaint());
+        addTaint(conn.getTaint());
+        addTaint(request.getTaint());
+    if(request == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
-        } 
+            IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_1403011042 = new IllegalArgumentException("HTTP request may not be null");
+            varF07DEF4BA25028D1DB51C0BA629AF0B4_1403011042.addTaint(taint);
+            throw varF07DEF4BA25028D1DB51C0BA629AF0B4_1403011042;
+        } //End block
+    if(conn == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP connection may not be null");
-        } 
+            IllegalArgumentException var6CFBC789236DE9A132EF716CA5496FB9_958292838 = new IllegalArgumentException("HTTP connection may not be null");
+            var6CFBC789236DE9A132EF716CA5496FB9_958292838.addTaint(taint);
+            throw var6CFBC789236DE9A132EF716CA5496FB9_958292838;
+        } //End block
+    if(context == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP context may not be null");
-        } 
+            IllegalArgumentException var313A469DAA78732DF88285478241413C_1810110659 = new IllegalArgumentException("HTTP context may not be null");
+            var313A469DAA78732DF88285478241413C_1810110659.addTaint(taint);
+            throw var313A469DAA78732DF88285478241413C_1810110659;
+        } //End block
         HttpResponse response = null;
         int statuscode = 0;
+        while
+(response == null || statuscode < HttpStatus.SC_OK)        
         {
             response = conn.receiveResponseHeader();
+    if(canResponseHaveBody(request, response))            
             {
-                boolean var6B88B4CB1811D7DE18E3DA4B1231F057_272763002 = (canResponseHaveBody(request, response));
-                {
-                    conn.receiveResponseEntity(response);
-                } 
-            } 
+                conn.receiveResponseEntity(response);
+            } //End block
             statuscode = response.getStatusLine().getStatusCode();
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_573680710 = response;
-        addTaint(request.getTaint());
-        addTaint(conn.getTaint());
-        addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_573680710.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_573680710;
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
-            
-            
-                
-            
-            
-        
-        
+        } //End block
+HttpResponse var2A1114F4272D753FE23A36E3D68CD293_557675637 =         response;
+        var2A1114F4272D753FE23A36E3D68CD293_557675637.addTaint(taint);
+        return var2A1114F4272D753FE23A36E3D68CD293_557675637;
+        // ---------- Original Method ----------
+        //if (request == null) {
+            //throw new IllegalArgumentException("HTTP request may not be null");
+        //}
+        //if (conn == null) {
+            //throw new IllegalArgumentException("HTTP connection may not be null");
+        //}
+        //if (context == null) {
+            //throw new IllegalArgumentException("HTTP context may not be null");
+        //}
+        //HttpResponse response = null;
+        //int statuscode = 0;
+        //while (response == null || statuscode < HttpStatus.SC_OK) {
+            //response = conn.receiveResponseHeader();
+            //if (canResponseHaveBody(request, response)) {
+                //conn.receiveResponseEntity(response);
+            //}
+            //statuscode = response.getStatusLine().getStatusCode();
+        //}
+        //return response;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.608 -0400", hash_original_method = "64184DC5B382438058CC5473730574C6", hash_generated_method = "AC92B84600BA81C31D407C3EFAD4A58E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.965 -0400", hash_original_method = "64184DC5B382438058CC5473730574C6", hash_generated_method = "B1BBC8B61DAE1C49E69DFBA499C9340C")
     public void postProcess(
             final HttpResponse response,
             final HttpProcessor processor,
             final HttpContext context) throws HttpException, IOException {
-        {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP response may not be null");
-        } 
-        {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP processor may not be null");
-        } 
-        {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP context may not be null");
-        } 
-        processor.process(response, context);
-        addTaint(response.getTaint());
-        addTaint(processor.getTaint());
         addTaint(context.getTaint());
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
+        addTaint(processor.getTaint());
+        addTaint(response.getTaint());
+    if(response == null)        
+        {
+            IllegalArgumentException var81F7C558D1B895656E1A076743F59C7C_905787015 = new IllegalArgumentException("HTTP response may not be null");
+            var81F7C558D1B895656E1A076743F59C7C_905787015.addTaint(taint);
+            throw var81F7C558D1B895656E1A076743F59C7C_905787015;
+        } //End block
+    if(processor == null)        
+        {
+            IllegalArgumentException varBE6F981A621D2588DCBAFD6F186E1351_1071349283 = new IllegalArgumentException("HTTP processor may not be null");
+            varBE6F981A621D2588DCBAFD6F186E1351_1071349283.addTaint(taint);
+            throw varBE6F981A621D2588DCBAFD6F186E1351_1071349283;
+        } //End block
+    if(context == null)        
+        {
+            IllegalArgumentException var313A469DAA78732DF88285478241413C_1005973702 = new IllegalArgumentException("HTTP context may not be null");
+            var313A469DAA78732DF88285478241413C_1005973702.addTaint(taint);
+            throw var313A469DAA78732DF88285478241413C_1005973702;
+        } //End block
+        processor.process(response, context);
+        // ---------- Original Method ----------
+        //if (response == null) {
+            //throw new IllegalArgumentException("HTTP response may not be null");
+        //}
+        //if (processor == null) {
+            //throw new IllegalArgumentException("HTTP processor may not be null");
+        //}
+        //if (context == null) {
+            //throw new IllegalArgumentException("HTTP context may not be null");
+        //}
+        //processor.process(response, context);
     }
 
     

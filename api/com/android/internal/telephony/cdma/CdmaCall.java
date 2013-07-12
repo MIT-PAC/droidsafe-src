@@ -1,12 +1,9 @@
 package com.android.internal.telephony.cdma;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
 import com.android.internal.telephony.Call;
@@ -17,25 +14,25 @@ import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.Call.State;
 
 public final class CdmaCall extends Call {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.098 -0400", hash_original_field = "EC0FEA7E6F8E16E3471486B698ED3A9D", hash_generated_field = "2814A276BAC6C190BAEC9128FA3036E9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.831 -0400", hash_original_field = "EC0FEA7E6F8E16E3471486B698ED3A9D", hash_generated_field = "2814A276BAC6C190BAEC9128FA3036E9")
 
     ArrayList<Connection> connections = new ArrayList<Connection>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.098 -0400", hash_original_field = "1A5BE9871FF7E0AB5805D64E8617FA11", hash_generated_field = "B9A7F7508B0B5FA0BFE8695446A61CF7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.831 -0400", hash_original_field = "1A5BE9871FF7E0AB5805D64E8617FA11", hash_generated_field = "B9A7F7508B0B5FA0BFE8695446A61CF7")
 
     State state = State.IDLE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.098 -0400", hash_original_field = "72122CE96BFEC66E2396D2E25225D70A", hash_generated_field = "3927F28CE0F1F17A9255E7EFC415C1BF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.831 -0400", hash_original_field = "72122CE96BFEC66E2396D2E25225D70A", hash_generated_field = "3927F28CE0F1F17A9255E7EFC415C1BF")
 
     CdmaCallTracker owner;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.098 -0400", hash_original_method = "D729656758C665C5D95A9ED02FF27E98", hash_generated_method = "9420100303E5D0809E6EDE6F78536020")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.831 -0400", hash_original_method = "D729656758C665C5D95A9ED02FF27E98", hash_generated_method = "9420100303E5D0809E6EDE6F78536020")
       CdmaCall(CdmaCallTracker owner) {
         this.owner = owner;
-        
-        
+        // ---------- Original Method ----------
+        //this.owner = owner;
     }
 
     
-    static State stateFromDCState(DriverCall.State dcState) {
+        static State stateFromDCState(DriverCall.State dcState) {
         switch (dcState) {
             case ACTIVE:        return State.ACTIVE;
             case HOLDING:       return State.HOLDING;
@@ -48,252 +45,225 @@ public final class CdmaCall extends Call {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.099 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.832 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     public void dispose() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.099 -0400", hash_original_method = "DA46D72C53A8C0722B0E4038E55B8A9F", hash_generated_method = "DE53ACEEEDC5E10F4BFCDFDBF30C4420")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.832 -0400", hash_original_method = "DA46D72C53A8C0722B0E4038E55B8A9F", hash_generated_method = "E379CA6201CEC2974815BDDA2CE0BE7E")
     public List<Connection> getConnections() {
-        List<Connection> varB4EAC82CA7396A68D541C85D26508E83_400297322 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_400297322 = connections;
-        varB4EAC82CA7396A68D541C85D26508E83_400297322.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_400297322;
-        
-        
+List<Connection> varD8B91E18CFFE05D77A84C03EDA812BE2_1082908797 =         connections;
+        varD8B91E18CFFE05D77A84C03EDA812BE2_1082908797.addTaint(taint);
+        return varD8B91E18CFFE05D77A84C03EDA812BE2_1082908797;
+        // ---------- Original Method ----------
+        //return connections;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.100 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "359BE96B13E2AF54C70329954DC7DE7E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.832 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "DF5143EAF34FF78CA967FCB394D41E85")
     public State getState() {
-        State varB4EAC82CA7396A68D541C85D26508E83_1252590909 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1252590909 = state;
-        varB4EAC82CA7396A68D541C85D26508E83_1252590909.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1252590909;
-        
-        
+State var37C56C9D63C623261861C16DCFB73F6D_1010576815 =         state;
+        var37C56C9D63C623261861C16DCFB73F6D_1010576815.addTaint(taint);
+        return var37C56C9D63C623261861C16DCFB73F6D_1010576815;
+        // ---------- Original Method ----------
+        //return state;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.100 -0400", hash_original_method = "3D84383237FBED33FD2CE3B737BA6B20", hash_generated_method = "51BE27924AC59A892E6FA66361AF5DFD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.833 -0400", hash_original_method = "3D84383237FBED33FD2CE3B737BA6B20", hash_generated_method = "98697A28E3AD2946FA418C17AF4D095D")
     public Phone getPhone() {
-        Phone varB4EAC82CA7396A68D541C85D26508E83_1295562254 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1295562254 = owner.phone;
-        varB4EAC82CA7396A68D541C85D26508E83_1295562254.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1295562254;
-        
-        
+Phone var184C3BF9D73535588B22D3939CD1F578_1407726038 =         owner.phone;
+        var184C3BF9D73535588B22D3939CD1F578_1407726038.addTaint(taint);
+        return var184C3BF9D73535588B22D3939CD1F578_1407726038;
+        // ---------- Original Method ----------
+        //return owner.phone;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.100 -0400", hash_original_method = "E944BDEAA6C46A001782606E74F9EFB0", hash_generated_method = "5AA655CD7C74700400817C7D665C650B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.833 -0400", hash_original_method = "E944BDEAA6C46A001782606E74F9EFB0", hash_generated_method = "5FC04860FDE0596F4D93DD601E83C7F6")
     public boolean isMultiparty() {
-        boolean var52647A12D2BB0BA84480F9E34372A169_1383186805 = (connections.size() > 1);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1300662466 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1300662466;
-        
-        
+        boolean var29D4E14E3A46A0A5CCEDD95593D030FA_1641437721 = (connections.size() > 1);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1510697573 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1510697573;
+        // ---------- Original Method ----------
+        //return connections.size() > 1;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.101 -0400", hash_original_method = "BD4623110C086A165B3AF83FA1BCBA34", hash_generated_method = "5E905B16961B21B9CFA064E867BE77FF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.833 -0400", hash_original_method = "BD4623110C086A165B3AF83FA1BCBA34", hash_generated_method = "5E905B16961B21B9CFA064E867BE77FF")
     public void hangup() throws CallStateException {
         owner.hangup(this);
-        
-        
+        // ---------- Original Method ----------
+        //owner.hangup(this);
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.102 -0400", hash_original_method = "A7B99D81B12619E0B5BB79286D622078", hash_generated_method = "CFAE9BC43845592D2F20B19455AE3463")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.833 -0400", hash_original_method = "A7B99D81B12619E0B5BB79286D622078", hash_generated_method = "A73E71AE6A8F6012FE791833B605EAA7")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1208874117 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1208874117 = state.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1208874117.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1208874117;
-        
-        
+String var03910CD76C0E5BA32DFF47134AABAD32_873388329 =         state.toString();
+        var03910CD76C0E5BA32DFF47134AABAD32_873388329.addTaint(taint);
+        return var03910CD76C0E5BA32DFF47134AABAD32_873388329;
+        // ---------- Original Method ----------
+        //return state.toString();
     }
 
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.102 -0400", hash_original_method = "ADEE6A90086841672D212D83F619D5B4", hash_generated_method = "CA3BFFAFC1C36E78B0478C3FF716B23A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.834 -0400", hash_original_method = "ADEE6A90086841672D212D83F619D5B4", hash_generated_method = "22AAC99E45C90029960E2F69AB5EA92D")
      void attach(Connection conn, DriverCall dc) {
+        addTaint(conn.getTaint());
         connections.add(conn);
         state = stateFromDCState (dc.state);
-        addTaint(conn.getTaint());
-        
-        
-        
+        // ---------- Original Method ----------
+        //connections.add(conn);
+        //state = stateFromDCState (dc.state);
     }
 
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.102 -0400", hash_original_method = "1D150B86FE35D9DF33C56E5123257F96", hash_generated_method = "060448F3048ABDD756C3C83A86C7C637")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.835 -0400", hash_original_method = "1D150B86FE35D9DF33C56E5123257F96", hash_generated_method = "F17A54287702BEEEEE53D672240B962B")
      void attachFake(Connection conn, State state) {
+        addTaint(conn.getTaint());
         connections.add(conn);
         this.state = state;
-        addTaint(conn.getTaint());
-        
-        
-        
+        // ---------- Original Method ----------
+        //connections.add(conn);
+        //this.state = state;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.103 -0400", hash_original_method = "A46A7B47E3DFA1A951D01F8316BDCB63", hash_generated_method = "F3196313006C584A8A84449793438942")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.835 -0400", hash_original_method = "A46A7B47E3DFA1A951D01F8316BDCB63", hash_generated_method = "F67D8A925EEEA797937A43631E35B78D")
      void connectionDisconnected(CdmaConnection conn) {
+        addTaint(conn.getTaint());
+    if(state != State.DISCONNECTED)        
         {
             boolean hasOnlyDisconnectedConnections = true;
+for(int i = 0, s = connections.size();i < s;i ++)
             {
-                int i = 0;
-                int s = connections.size();
+    if(connections.get(i).getState()
+                    != State.DISCONNECTED)                
                 {
-                    {
-                        boolean var04AFE2A5134EA8ACC0F9B0C19F48FDDB_683530226 = (connections.get(i).getState()
-                    != State.DISCONNECTED);
-                        {
-                            hasOnlyDisconnectedConnections = false;
-                        } 
-                    } 
-                } 
-            } 
+                    hasOnlyDisconnectedConnections = false;
+                    break;
+                } //End block
+            } //End block
+    if(hasOnlyDisconnectedConnections)            
             {
                 state = State.DISCONNECTED;
-            } 
-        } 
-        addTaint(conn.getTaint());
-        
-        
-            
-            
-                
-                    
-                
-                    
-                    
-                
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (state != State.DISCONNECTED) {
+            //boolean hasOnlyDisconnectedConnections = true;
+            //for (int i = 0, s = connections.size()  ; i < s; i ++) {
+                //if (connections.get(i).getState()
+                    //!= State.DISCONNECTED
+                //) {
+                    //hasOnlyDisconnectedConnections = false;
+                    //break;
+                //}
+            //}
+            //if (hasOnlyDisconnectedConnections) {
+                //state = State.DISCONNECTED;
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.103 -0400", hash_original_method = "1EA8F68D5A466EEC41832970B917D4DC", hash_generated_method = "37A1788C267AED1820241FCE2D09F48E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.836 -0400", hash_original_method = "1EA8F68D5A466EEC41832970B917D4DC", hash_generated_method = "B2350A40156F2BD9101E3397A3AFED70")
      void detach(CdmaConnection conn) {
-        connections.remove(conn);
-        {
-            boolean var92053B84273B30E40984664E5B7D0B68_120900314 = (connections.size() == 0);
-            {
-                state = State.IDLE;
-            } 
-        } 
         addTaint(conn.getTaint());
-        
-        
-        
-            
-        
+        connections.remove(conn);
+    if(connections.size() == 0)        
+        {
+            state = State.IDLE;
+        } //End block
+        // ---------- Original Method ----------
+        //connections.remove(conn);
+        //if (connections.size() == 0) {
+            //state = State.IDLE;
+        //}
     }
 
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.104 -0400", hash_original_method = "653CAD94409C4BC1F3DC33028F34238B", hash_generated_method = "19270C2BE2E318FD0DE3DC9C4E4BD9C7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.837 -0400", hash_original_method = "653CAD94409C4BC1F3DC33028F34238B", hash_generated_method = "52BD140B2DF4D96FBA55F2CE85BE1F00")
      boolean update(CdmaConnection conn, DriverCall dc) {
+        addTaint(dc.getTaint());
+        addTaint(conn.getTaint());
         State newState;
         boolean changed = false;
         newState = stateFromDCState(dc.state);
+    if(newState != state)        
         {
             state = newState;
             changed = true;
-        } 
-        addTaint(conn.getTaint());
-        addTaint(dc.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1741460375 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1741460375;
-        
-        
-        
-        
-        
-            
-            
-        
-        
+        } //End block
+        boolean var8977DFAC2F8E04CB96E66882235F5ABA_1847131176 = (changed);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_234389619 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_234389619;
+        // ---------- Original Method ----------
+        //State newState;
+        //boolean changed = false;
+        //newState = stateFromDCState(dc.state);
+        //if (newState != state) {
+            //state = newState;
+            //changed = true;
+        //}
+        //return changed;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.104 -0400", hash_original_method = "1C46465CDA75E6DA5CCE62BB3DA600A6", hash_generated_method = "9012E3EA6832F3C328F12440EDFAE5CC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.837 -0400", hash_original_method = "1C46465CDA75E6DA5CCE62BB3DA600A6", hash_generated_method = "B58C6241EF27920C94083FDE06C69555")
      boolean isFull() {
-        boolean varC5489A296DC91591FD5D45FE337F3741_1487748145 = (connections.size() == CdmaCallTracker.MAX_CONNECTIONS_PER_CALL);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1661685255 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1661685255;
-        
-        
+        boolean var0C9294BE7F8A42493544D3634F51C6C1_225390363 = (connections.size() == CdmaCallTracker.MAX_CONNECTIONS_PER_CALL);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1969207582 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1969207582;
+        // ---------- Original Method ----------
+        //return connections.size() == CdmaCallTracker.MAX_CONNECTIONS_PER_CALL;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.104 -0400", hash_original_method = "A6EB616B9F71A14D95ECE60CFCB290DD", hash_generated_method = "8EC14E3027B2DF53B77BDFF0A926AD53")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.837 -0400", hash_original_method = "A6EB616B9F71A14D95ECE60CFCB290DD", hash_generated_method = "BCE23747EA4487F06E6D73081A19303C")
      void onHangupLocal() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
+for(int i = 0, s = connections.size();i < s;i++)
         {
-            int i = 0;
-            int s = connections.size();
-            {
-                CdmaConnection cn = (CdmaConnection)connections.get(i);
-                cn.onHangupLocal();
-            } 
-        } 
+            CdmaConnection cn = (CdmaConnection)connections.get(i);
+            cn.onHangupLocal();
+        } //End block
         state = State.DISCONNECTING;
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //for (int i = 0, s = connections.size(); i < s; i++) {
+            //CdmaConnection cn = (CdmaConnection)connections.get(i);
+            //cn.onHangupLocal();
+        //}
+        //state = State.DISCONNECTING;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.105 -0400", hash_original_method = "C72D64DE5C06A555CE5E29E3236A56AC", hash_generated_method = "62B460D0B199B833A1AEB318EC103483")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.838 -0400", hash_original_method = "C72D64DE5C06A555CE5E29E3236A56AC", hash_generated_method = "521F7300810B1FFBDD639FC4813AC6F5")
      void clearDisconnected() {
+for(int i = connections.size() - 1;i >= 0;i--)
         {
-            int i = connections.size() - 1;
+            CdmaConnection cn = (CdmaConnection)connections.get(i);
+    if(cn.getState() == State.DISCONNECTED)            
             {
-                CdmaConnection cn = (CdmaConnection)connections.get(i);
-                {
-                    boolean var21929D219ECCE9FD7C6256E3BD60435E_1257024809 = (cn.getState() == State.DISCONNECTED);
-                    {
-                        connections.remove(i);
-                    } 
-                } 
-            } 
-        } 
+                connections.remove(i);
+            } //End block
+        } //End block
+    if(connections.size() == 0)        
         {
-            boolean var92053B84273B30E40984664E5B7D0B68_368637815 = (connections.size() == 0);
-            {
-                state = State.IDLE;
-            } 
-        } 
-        
-        
-        
-            
-                
-            
-        
-        
-            
-        
+            state = State.IDLE;
+        } //End block
+        // ---------- Original Method ----------
+        //for (int i = connections.size() - 1 ; i >= 0 ; i--) {
+        //CdmaConnection cn = (CdmaConnection)connections.get(i);
+            //if (cn.getState() == State.DISCONNECTED) {
+                //connections.remove(i);
+            //}
+        //}
+        //if (connections.size() == 0) {
+            //state = State.IDLE;
+        //}
     }
 
     

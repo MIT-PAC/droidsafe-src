@@ -1,12 +1,9 @@
 package java.lang.reflect;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.lang.annotation.Annotation;
 
 public interface AnnotatedElement {

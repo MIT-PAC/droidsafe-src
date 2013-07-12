@@ -1,24 +1,21 @@
 package org.apache.http.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.UnsupportedEncodingException;
 import org.apache.http.protocol.HTTP;
 
 public final class EncodingUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.724 -0400", hash_original_method = "9056910A11B8F7E2130B8014667A5810", hash_generated_method = "82860B6827C330C84D8DCE75D0CA6840")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:38.088 -0400", hash_original_method = "9056910A11B8F7E2130B8014667A5810", hash_generated_method = "82860B6827C330C84D8DCE75D0CA6840")
     private  EncodingUtils() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    public static String getString(
+        public static String getString(
         final byte[] data, 
         int offset, 
         int length, 
@@ -38,7 +35,7 @@ public final class EncodingUtils {
     }
 
     
-    public static String getString(final byte[] data, final String charset) {
+        public static String getString(final byte[] data, final String charset) {
         if (data == null) {
             throw new IllegalArgumentException("Parameter may not be null");
         }
@@ -46,7 +43,7 @@ public final class EncodingUtils {
     }
 
     
-    public static byte[] getBytes(final String data, final String charset) {
+        public static byte[] getBytes(final String data, final String charset) {
         if (data == null) {
             throw new IllegalArgumentException("data may not be null");
         }
@@ -61,7 +58,7 @@ public final class EncodingUtils {
     }
 
     
-    public static byte[] getAsciiBytes(final String data) {
+        public static byte[] getAsciiBytes(final String data) {
         if (data == null) {
             throw new IllegalArgumentException("Parameter may not be null");
         }
@@ -73,7 +70,7 @@ public final class EncodingUtils {
     }
 
     
-    public static String getAsciiString(final byte[] data, int offset, int length) {
+        public static String getAsciiString(final byte[] data, int offset, int length) {
         if (data == null) {
             throw new IllegalArgumentException("Parameter may not be null");
         }
@@ -85,7 +82,7 @@ public final class EncodingUtils {
     }
 
     
-    public static String getAsciiString(final byte[] data) {
+        public static String getAsciiString(final byte[] data) {
         if (data == null) {
             throw new IllegalArgumentException("Parameter may not be null");
         }

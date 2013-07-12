@@ -1,12 +1,9 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import gov.nist.core.HostNameParser;
 import gov.nist.core.HostPort;
 import gov.nist.core.NameValue;
@@ -20,28 +17,27 @@ import java.text.ParseException;
 
 public class URLParser extends Parser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.869 -0400", hash_original_method = "02D762C7659C29C6C28E615D4F3B4986", hash_generated_method = "4050C74595F73B4864EDAB05EDDAE34E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.245 -0400", hash_original_method = "02D762C7659C29C6C28E615D4F3B4986", hash_generated_method = "A180A25B080D63F54CAEAC34D9A2E288")
     public  URLParser(String url) {
-        this.lexer = new Lexer("sip_urlLexer", url);
         addTaint(url.getTaint());
-        
-        
+        this.lexer = new Lexer("sip_urlLexer", url);
+        // ---------- Original Method ----------
+        //this.lexer = new Lexer("sip_urlLexer", url);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.869 -0400", hash_original_method = "FF384429583BB1654143EB8FA592B141", hash_generated_method = "F0DA21DB293A6090D56A070DB3F88AF5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.246 -0400", hash_original_method = "FF384429583BB1654143EB8FA592B141", hash_generated_method = "7313880486DB469022F6906AFC13E663")
     public  URLParser(Lexer lexer) {
+        addTaint(lexer.getTaint());
         this.lexer = lexer;
         this.lexer.selectLexer("sip_urlLexer");
-        addTaint(lexer.getTaint());
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.lexer = lexer;
+        //this.lexer.selectLexer("sip_urlLexer");
     }
 
     
-    @DSModeled(DSC.SAFE)
-    protected static boolean isMark(char next) {
+        protected static boolean isMark(char next) {
         switch (next) {
             case '-':
             case '_':
@@ -59,14 +55,12 @@ public class URLParser extends Parser {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    protected static boolean isUnreserved(char next) {
+        protected static boolean isUnreserved(char next) {
         return Lexer.isAlphaDigit(next) || isMark(next);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    protected static boolean isReservedNoSlash(char next) {
+        protected static boolean isReservedNoSlash(char next) {
         switch (next) {
             case ';':
             case '?':
@@ -83,8 +77,7 @@ public class URLParser extends Parser {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    protected static boolean isUserUnreserved(char la) {
+        protected static boolean isUserUnreserved(char la) {
         switch (la) {
             case '&':
             case '?':
@@ -102,92 +95,93 @@ public class URLParser extends Parser {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.870 -0400", hash_original_method = "8FE92D5DF4A5AF3ADE92B1ED26FEEDBE", hash_generated_method = "A45A4C9587E9434E9EAB698A5F267372")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.262 -0400", hash_original_method = "8FE92D5DF4A5AF3ADE92B1ED26FEEDBE", hash_generated_method = "02952C9F6C0D44FF8154BCABE90C445F")
     protected String unreserved() throws ParseException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1419716217 = null; 
         char next = lexer.lookAhead(0);
+    if(isUnreserved(next))        
         {
-            boolean var1389A34E9A875BE3049166D07D13716A_1520927687 = (isUnreserved(next));
+            lexer.consume(1);
+String varF074B22DABE8C34FEB920DF798AAA748_1287541371 =             String.valueOf(next);
+            varF074B22DABE8C34FEB920DF798AAA748_1287541371.addTaint(taint);
+            return varF074B22DABE8C34FEB920DF798AAA748_1287541371;
+        } //End block
+        else
+        {
+        java.text.ParseException var570A0D3DF59C26893D723CAA8D05F97B_1083425825 = createParseException("unreserved");
+        var570A0D3DF59C26893D723CAA8D05F97B_1083425825.addTaint(taint);
+        throw var570A0D3DF59C26893D723CAA8D05F97B_1083425825;
+        }
+        // ---------- Original Method ----------
+        //char next = lexer.lookAhead(0);
+        //if (isUnreserved(next)) {
+            //lexer.consume(1);
+            //return String.valueOf(next);
+        //} else
+            //throw createParseException("unreserved");
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.263 -0400", hash_original_method = "1041AA48D060026BCCD13967429C5BF3", hash_generated_method = "1D0C1C87CEE034938E43057360929CBB")
+    protected String paramNameOrValue() throws ParseException {
+        int startIdx = lexer.getPtr();
+        while
+(lexer.hasMoreChars())        
+        {
+            char next = lexer.lookAhead(0);
+            boolean isValidChar = false;
+switch(next){
+            case '[':
+            case ']':
+            case '/':
+            case ':':
+            case '&':
+            case '+':
+            case '$':
+            isValidChar = true;
+}    if(isValidChar || isUnreserved(next))            
             {
                 lexer.consume(1);
-                varB4EAC82CA7396A68D541C85D26508E83_1419716217 = String.valueOf(next);
-            } 
-            if (DroidSafeAndroidRuntime.control) throw createParseException("unreserved");
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1419716217.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1419716217;
-        
-        
-        
-            
-            
-        
-            
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.871 -0400", hash_original_method = "1041AA48D060026BCCD13967429C5BF3", hash_generated_method = "A3EF27C112FA113EAB0D74C1BCB41619")
-    protected String paramNameOrValue() throws ParseException {
-        String varB4EAC82CA7396A68D541C85D26508E83_294772441 = null; 
-        int startIdx = lexer.getPtr();
-        {
-            boolean varB3E35DF23794987B0693F5DD7A2B9357_1766084107 = (lexer.hasMoreChars());
+            } //End block
+            else
+    if(isEscaped())            
             {
-                char next = lexer.lookAhead(0);
-                boolean isValidChar = false;
-                
-                isValidChar = true;
-                
-                {
-                    boolean varEBB6542C58D63C944BB22BBBEBD45AAF_705924429 = (isValidChar || isUnreserved(next));
-                    {
-                        lexer.consume(1);
-                    } 
-                    {
-                        boolean varF7C5BA76C493C7F02FA07B27C1AF3316_1251540691 = (isEscaped());
-                        {
-                            lexer.consume(3);
-                        } 
-                    } 
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_294772441 = lexer.getBuffer().substring(startIdx, lexer.getPtr());
-        varB4EAC82CA7396A68D541C85D26508E83_294772441.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_294772441;
-        
-        
-        
-            
-            
-            
-                
-                
-                
-                
-                
-                
-                
-                    
-            
-            
-                
-            
-                
-            
-                
-        
-        
+                lexer.consume(3);
+            } //End block
+            else
+            break;
+        } //End block
+String var9A78A74044906F8BA6AB50FB9A7D58A3_330711942 =         lexer.getBuffer().substring(startIdx, lexer.getPtr());
+        var9A78A74044906F8BA6AB50FB9A7D58A3_330711942.addTaint(taint);
+        return var9A78A74044906F8BA6AB50FB9A7D58A3_330711942;
+        // ---------- Original Method ----------
+        //int startIdx = lexer.getPtr();
+        //while (lexer.hasMoreChars()) {
+            //char next = lexer.lookAhead(0);
+            //boolean isValidChar = false;
+            //switch (next) {
+                //case '[':
+                //case ']':
+                //case '/':
+                //case ':':
+                //case '&':
+                //case '+':
+                //case '$':
+                    //isValidChar = true;
+            //}
+            //if (isValidChar || isUnreserved(next)) {
+                //lexer.consume(1);
+            //} else if (isEscaped()) {
+                //lexer.consume(3);
+            //} else
+                //break;
+        //}
+        //return lexer.getBuffer().substring(startIdx, lexer.getPtr());
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.873 -0400", hash_original_method = "28DEAB6489C56D85C58F2548442629A5", hash_generated_method = "A98DA96D392069A126C86B4366175AF4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.264 -0400", hash_original_method = "28DEAB6489C56D85C58F2548442629A5", hash_generated_method = "9457526478232538CC61C5B1A818C828")
     private NameValue uriParam() throws ParseException {
-        NameValue varB4EAC82CA7396A68D541C85D26508E83_866331269 = null; 
-        NameValue varB4EAC82CA7396A68D541C85D26508E83_1950796285 = null; 
+    if(debug)        
         dbg_enter("uriParam");
         try 
         {
@@ -195,61 +189,58 @@ public class URLParser extends Parser {
             String pname = paramNameOrValue();
             char next = lexer.lookAhead(0);
             boolean isFlagParam = true;
+    if(next == '=')            
             {
                 lexer.consume(1);
                 pvalue = paramNameOrValue();
                 isFlagParam = false;
-            } 
-            {
-                boolean varA946C0818D54984040C780DFCE924753_1383480572 = (pname.length() == 0 &&
+            } //End block
+    if(pname.length() == 0 &&
                 ( pvalue == null ||
-                pvalue.length() == 0));
-                varB4EAC82CA7396A68D541C85D26508E83_866331269 = null;
-                varB4EAC82CA7396A68D541C85D26508E83_1950796285 = new NameValue(pname, pvalue, isFlagParam);
-            } 
-        } 
+                pvalue.length() == 0))            
+            {
+NameValue var540C13E9E156B687226421B24F2DF178_483553725 =             null;
+            var540C13E9E156B687226421B24F2DF178_483553725.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_483553725;
+            }
+            else
+            {
+NameValue var706F044EA9006DAC45C94A328BE7F814_2095495415 =             new NameValue(pname, pvalue, isFlagParam);
+            var706F044EA9006DAC45C94A328BE7F814_2095495415.addTaint(taint);
+            return var706F044EA9006DAC45C94A328BE7F814_2095495415;
+            }
+        } //End block
         finally 
         {
+    if(debug)            
             dbg_leave("uriParam");
-        } 
-        NameValue varA7E53CE21691AB073D9660D615818899_1370363463; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1370363463 = varB4EAC82CA7396A68D541C85D26508E83_866331269;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1370363463 = varB4EAC82CA7396A68D541C85D26508E83_1950796285;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1370363463.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1370363463;
-        
-        
-            
-        
-            
-            
-            
-            
-            
-                
-                
-                
-            
-            
-                
-                
-                
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (debug)
+            //dbg_enter("uriParam");
+        //try {
+            //String pvalue = "";
+            //String pname = paramNameOrValue();
+            //char next = lexer.lookAhead(0);
+            //boolean isFlagParam = true;
+            //if (next == '=') {
+                //lexer.consume(1);
+                //pvalue = paramNameOrValue();
+                //isFlagParam = false;
+            //}
+            //if (pname.length() == 0 &&
+                //( pvalue == null ||
+                //pvalue.length() == 0))
+                //return null;
+            //else return new NameValue(pname, pvalue, isFlagParam);
+        //} finally {
+            //if (debug)
+                //dbg_leave("uriParam");
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    protected static boolean isReserved(char next) {
+        protected static boolean isReserved(char next) {
         switch (next) {
             case ';':
             case '/':
@@ -268,59 +259,62 @@ public class URLParser extends Parser {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.874 -0400", hash_original_method = "FFA1DEBB1A42288CA22D82A97ACC067B", hash_generated_method = "E2F87B172D6D447B7336F7A30FD91633")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.273 -0400", hash_original_method = "FFA1DEBB1A42288CA22D82A97ACC067B", hash_generated_method = "24643284EBAD731F8E9C4522DE0FDBF4")
     protected String reserved() throws ParseException {
-        String varB4EAC82CA7396A68D541C85D26508E83_525311873 = null; 
         char next = lexer.lookAhead(0);
+    if(isReserved(next))        
         {
-            boolean varAE7675CD56F874911E26881E5AAACF61_1635571882 = (isReserved(next));
-            {
-                lexer.consume(1);
-                varB4EAC82CA7396A68D541C85D26508E83_525311873 = new StringBuffer().append(next).toString();
-            } 
-            if (DroidSafeAndroidRuntime.control) throw createParseException("reserved");
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_525311873.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_525311873;
-        
-        
-        
-            
-            
-        
-            
+            lexer.consume(1);
+String var15B8CCCC42482049DA2C2F49F34A1C30_341627523 =             new StringBuffer().append(next).toString();
+            var15B8CCCC42482049DA2C2F49F34A1C30_341627523.addTaint(taint);
+            return var15B8CCCC42482049DA2C2F49F34A1C30_341627523;
+        } //End block
+        else
+        {
+        java.text.ParseException var6F66CA4F7CAB0729A04069D5CD107DC9_1834338874 = createParseException("reserved");
+        var6F66CA4F7CAB0729A04069D5CD107DC9_1834338874.addTaint(taint);
+        throw var6F66CA4F7CAB0729A04069D5CD107DC9_1834338874;
+        }
+        // ---------- Original Method ----------
+        //char next = lexer.lookAhead(0);
+        //if (isReserved(next)) {
+            //lexer.consume(1);
+            //return new StringBuffer().append(next).toString();
+        //} else
+            //throw createParseException("reserved");
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.874 -0400", hash_original_method = "B69B97990375B5870393017EB399692B", hash_generated_method = "AC8E78CB1DFCE1106A4BEB8B06F2EA59")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.273 -0400", hash_original_method = "B69B97990375B5870393017EB399692B", hash_generated_method = "15E061FA2EA645CB2D528767870EB25C")
     protected boolean isEscaped() {
         try 
         {
-            boolean var3F9254A4E7823F8753251F2B55C56EF1_2089360006 = (lexer.lookAhead(0) == '%' &&
+            boolean varEEA6DD48A3DA0E4ADE1B19F51E0C371B_2062811890 = (lexer.lookAhead(0) == '%' &&
                 Lexer.isHexDigit(lexer.lookAhead(1)) &&
                 Lexer.isHexDigit(lexer.lookAhead(2)));
-        } 
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_636678948 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_636678948;
+        } //End block
         catch (Exception ex)
-        { }
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1611686365 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1611686365;
-        
-        
-            
-                
-                
-        
-            
-        
+        {
+            boolean var68934A3E9455FA72420237EB05902327_1118854152 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1160467913 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1160467913;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return lexer.lookAhead(0) == '%' &&
+                //Lexer.isHexDigit(lexer.lookAhead(1)) &&
+                //Lexer.isHexDigit(lexer.lookAhead(2));
+        //} catch (Exception ex) {
+            //return false;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.875 -0400", hash_original_method = "08A77A9FB0F42402334D6E5EC1EEFB98", hash_generated_method = "9D0C94ADD983C575142837DB3230DED7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.289 -0400", hash_original_method = "08A77A9FB0F42402334D6E5EC1EEFB98", hash_generated_method = "58398A195860C3EEDFA250E0B273396F")
     protected String escaped() throws ParseException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1357336054 = null; 
+    if(debug)        
         dbg_enter("escaped");
         try 
         {
@@ -328,302 +322,283 @@ public class URLParser extends Parser {
             char next = lexer.lookAhead(0);
             char next1 = lexer.lookAhead(1);
             char next2 = lexer.lookAhead(2);
-            {
-                boolean var60B80A984C77CCEA3BBF72B827F48A07_885095848 = (next == '%'
+    if(next == '%'
                 && Lexer.isHexDigit(next1)
-                && Lexer.isHexDigit(next2));
-                {
-                    lexer.consume(3);
-                    retval.append(next);
-                    retval.append(next1);
-                    retval.append(next2);
-                } 
-                if (DroidSafeAndroidRuntime.control) throw createParseException("escaped");
-            } 
-            varB4EAC82CA7396A68D541C85D26508E83_1357336054 = retval.toString();
-        } 
+                && Lexer.isHexDigit(next2))            
+            {
+                lexer.consume(3);
+                retval.append(next);
+                retval.append(next1);
+                retval.append(next2);
+            } //End block
+            else
+            {
+            java.text.ParseException varCF004BCF4311DF9FA131E2EA9EA48A43_590965754 = createParseException("escaped");
+            varCF004BCF4311DF9FA131E2EA9EA48A43_590965754.addTaint(taint);
+            throw varCF004BCF4311DF9FA131E2EA9EA48A43_590965754;
+            }
+String var1B324365A764C077A55854483509F4AB_1632180592 =             retval.toString();
+            var1B324365A764C077A55854483509F4AB_1632180592.addTaint(taint);
+            return var1B324365A764C077A55854483509F4AB_1632180592;
+        } //End block
         finally 
         {
+    if(debug)            
             dbg_leave("escaped");
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1357336054.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1357336054;
-        
-        
-            
-        
-            
-            
-            
-            
-            
-                
-                
-                
-                
-                
-                
-            
-                
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (debug)
+            //dbg_enter("escaped");
+        //try {
+            //StringBuffer retval = new StringBuffer();
+            //char next = lexer.lookAhead(0);
+            //char next1 = lexer.lookAhead(1);
+            //char next2 = lexer.lookAhead(2);
+            //if (next == '%'
+                //&& Lexer.isHexDigit(next1)
+                //&& Lexer.isHexDigit(next2)) {
+                //lexer.consume(3);
+                //retval.append(next);
+                //retval.append(next1);
+                //retval.append(next2);
+            //} else
+                //throw createParseException("escaped");
+            //return retval.toString();
+        //} finally {
+            //if (debug)
+                //dbg_leave("escaped");
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.876 -0400", hash_original_method = "743AFD3B213C469742C3C78020E0DBC1", hash_generated_method = "CD4B534C39E2054F8DA46832BD679179")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.303 -0400", hash_original_method = "743AFD3B213C469742C3C78020E0DBC1", hash_generated_method = "5E4BE7D7F05FFBBAFDBFC8686E8C0577")
     protected String mark() throws ParseException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1727919091 = null; 
+    if(debug)        
         dbg_enter("mark");
         try 
         {
             char next = lexer.lookAhead(0);
+    if(isMark(next))            
             {
-                boolean varE0C748D002BB162804157081E5A97AF7_1617001440 = (isMark(next));
-                {
-                    lexer.consume(1);
-                    varB4EAC82CA7396A68D541C85D26508E83_1727919091 = new String( new char[]{next} );
-                } 
-                if (DroidSafeAndroidRuntime.control) throw createParseException("mark");
-            } 
-        } 
+                lexer.consume(1);
+String varFAB99D17BFBD92AB851EE2696C7A7BCB_291641565 =                 new String( new char[]{next} );
+                varFAB99D17BFBD92AB851EE2696C7A7BCB_291641565.addTaint(taint);
+                return varFAB99D17BFBD92AB851EE2696C7A7BCB_291641565;
+            } //End block
+            else
+            {
+            java.text.ParseException var13C1B0A751EC6CB8402885739980C8B0_286194243 = createParseException("mark");
+            var13C1B0A751EC6CB8402885739980C8B0_286194243.addTaint(taint);
+            throw var13C1B0A751EC6CB8402885739980C8B0_286194243;
+            }
+        } //End block
         finally 
         {
+    if(debug)            
             dbg_leave("mark");
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1727919091.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1727919091;
-        
-        
-            
-        
-            
-            
-                
-                
-            
-                
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (debug)
+            //dbg_enter("mark");
+        //try {
+            //char next = lexer.lookAhead(0);
+            //if (isMark(next)) {
+                //lexer.consume(1);
+                //return new String( new char[]{next} );
+            //} else
+                //throw createParseException("mark");
+        //} finally {
+            //if (debug)
+                //dbg_leave("mark");
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.877 -0400", hash_original_method = "589C84A9F2E2E16C04FA96C5BE216A43", hash_generated_method = "936CD67D5904454A5D2A4532173140D6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.305 -0400", hash_original_method = "589C84A9F2E2E16C04FA96C5BE216A43", hash_generated_method = "7FB84759FD1DF8D7261C6122FB7CD886")
     protected String uric() {
-        String varB4EAC82CA7396A68D541C85D26508E83_884364539 = null; 
-        String varB4EAC82CA7396A68D541C85D26508E83_630094479 = null; 
-        String varB4EAC82CA7396A68D541C85D26508E83_840565527 = null; 
-        String varB4EAC82CA7396A68D541C85D26508E83_755437085 = null; 
-        String varB4EAC82CA7396A68D541C85D26508E83_214688952 = null; 
+    if(debug)        
         dbg_enter("uric");
         try 
         {
             try 
             {
                 char la = lexer.lookAhead(0);
+    if(isUnreserved(la))                
                 {
-                    boolean var4DEDA407E3BC616B4A5AC7CEF8C961B8_1525217601 = (isUnreserved(la));
-                    {
-                        lexer.consume(1);
-                        varB4EAC82CA7396A68D541C85D26508E83_884364539 = Lexer.charAsString(la);
-                    } 
-                    {
-                        boolean var967F4E910D4BCCE057AC7DAD96CB80FB_70299505 = (isReserved(la));
-                        {
-                            lexer.consume(1);
-                            varB4EAC82CA7396A68D541C85D26508E83_630094479 = Lexer.charAsString(la);
-                        } 
-                        {
-                            boolean var7DDEF0E08361E9C02AADC7953802FC99_1704906215 = (isEscaped());
-                            {
-                                String retval = lexer.charAsString(3);
-                                lexer.consume(3);
-                                varB4EAC82CA7396A68D541C85D26508E83_840565527 = retval;
-                            } 
-                            varB4EAC82CA7396A68D541C85D26508E83_755437085 = null;
-                        } 
-                    } 
-                } 
-            } 
+                    lexer.consume(1);
+String var421459CFA13E4AD4A1F3737B76442AD2_1567154728 =                     Lexer.charAsString(la);
+                    var421459CFA13E4AD4A1F3737B76442AD2_1567154728.addTaint(taint);
+                    return var421459CFA13E4AD4A1F3737B76442AD2_1567154728;
+                } //End block
+                else
+    if(isReserved(la))                
+                {
+                    lexer.consume(1);
+String var421459CFA13E4AD4A1F3737B76442AD2_1427985769 =                     Lexer.charAsString(la);
+                    var421459CFA13E4AD4A1F3737B76442AD2_1427985769.addTaint(taint);
+                    return var421459CFA13E4AD4A1F3737B76442AD2_1427985769;
+                } //End block
+                else
+    if(isEscaped())                
+                {
+                    String retval = lexer.charAsString(3);
+                    lexer.consume(3);
+String varF9E19AD6135C970F387F77C6F3DE4477_1375388339 =                     retval;
+                    varF9E19AD6135C970F387F77C6F3DE4477_1375388339.addTaint(taint);
+                    return varF9E19AD6135C970F387F77C6F3DE4477_1375388339;
+                } //End block
+                else
+                {
+String var540C13E9E156B687226421B24F2DF178_92761320 =                 null;
+                var540C13E9E156B687226421B24F2DF178_92761320.addTaint(taint);
+                return var540C13E9E156B687226421B24F2DF178_92761320;
+                }
+            } //End block
             catch (Exception ex)
             {
-                varB4EAC82CA7396A68D541C85D26508E83_214688952 = null;
-            } 
-        } 
+String var540C13E9E156B687226421B24F2DF178_42238856 =                 null;
+                var540C13E9E156B687226421B24F2DF178_42238856.addTaint(taint);
+                return var540C13E9E156B687226421B24F2DF178_42238856;
+            } //End block
+        } //End block
         finally 
         {
+    if(debug)            
             dbg_leave("uric");
-        } 
-        String varA7E53CE21691AB073D9660D615818899_738481779; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_738481779 = varB4EAC82CA7396A68D541C85D26508E83_884364539;
-                break;
-            case 2: 
-                varA7E53CE21691AB073D9660D615818899_738481779 = varB4EAC82CA7396A68D541C85D26508E83_630094479;
-                break;
-            case 3: 
-                varA7E53CE21691AB073D9660D615818899_738481779 = varB4EAC82CA7396A68D541C85D26508E83_840565527;
-                break;
-            case 4: 
-                varA7E53CE21691AB073D9660D615818899_738481779 = varB4EAC82CA7396A68D541C85D26508E83_755437085;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_738481779 = varB4EAC82CA7396A68D541C85D26508E83_214688952;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_738481779.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_738481779;
-        
-        
-            
-        
-            
-                
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                    
-                
-                    
-            
-                
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (debug)
+            //dbg_enter("uric");
+        //try {
+            //try {
+                //char la = lexer.lookAhead(0);
+                //if (isUnreserved(la)) {
+                    //lexer.consume(1);
+                    //return Lexer.charAsString(la);
+                //} else if (isReserved(la)) {
+                    //lexer.consume(1);
+                    //return Lexer.charAsString(la);
+                //} else if (isEscaped()) {
+                    //String retval = lexer.charAsString(3);
+                    //lexer.consume(3);
+                    //return retval;
+                //} else
+                    //return null;
+            //} catch (Exception ex) {
+                //return null;
+            //}
+        //} finally {
+            //if (debug)
+                //dbg_leave("uric");
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.878 -0400", hash_original_method = "C9EA734307D4CD12B7093594DF2E8530", hash_generated_method = "77C21701BCE71557B0194325A3221790")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.307 -0400", hash_original_method = "C9EA734307D4CD12B7093594DF2E8530", hash_generated_method = "8E7FC0B6BFC77DF23855AAE70780B8D6")
     protected String uricNoSlash() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1375018648 = null; 
-        String varB4EAC82CA7396A68D541C85D26508E83_1096286121 = null; 
-        String varB4EAC82CA7396A68D541C85D26508E83_1066591979 = null; 
-        String varB4EAC82CA7396A68D541C85D26508E83_1031940164 = null; 
-        String varB4EAC82CA7396A68D541C85D26508E83_1154867675 = null; 
+    if(debug)        
         dbg_enter("uricNoSlash");
         try 
         {
             try 
             {
                 char la = lexer.lookAhead(0);
+    if(isEscaped())                
                 {
-                    boolean varD0BEBBDFA3B284B77894A2ED39B07738_976628169 = (isEscaped());
-                    {
-                        String retval = lexer.charAsString(3);
-                        lexer.consume(3);
-                        varB4EAC82CA7396A68D541C85D26508E83_1375018648 = retval;
-                    } 
-                    {
-                        boolean var7C808D9F6303ECB25ED4BAECB34B9B56_1043904450 = (isUnreserved(la));
-                        {
-                            lexer.consume(1);
-                            varB4EAC82CA7396A68D541C85D26508E83_1096286121 = Lexer.charAsString(la);
-                        } 
-                        {
-                            boolean varCAF58582C5F6188CEA5D8F016BCE21F5_1525253192 = (isReservedNoSlash(la));
-                            {
-                                lexer.consume(1);
-                                varB4EAC82CA7396A68D541C85D26508E83_1066591979 = Lexer.charAsString(la);
-                            } 
-                            varB4EAC82CA7396A68D541C85D26508E83_1031940164 = null;
-                        } 
-                    } 
-                } 
-            } 
+                    String retval = lexer.charAsString(3);
+                    lexer.consume(3);
+String varF9E19AD6135C970F387F77C6F3DE4477_254237621 =                     retval;
+                    varF9E19AD6135C970F387F77C6F3DE4477_254237621.addTaint(taint);
+                    return varF9E19AD6135C970F387F77C6F3DE4477_254237621;
+                } //End block
+                else
+    if(isUnreserved(la))                
+                {
+                    lexer.consume(1);
+String var421459CFA13E4AD4A1F3737B76442AD2_469635621 =                     Lexer.charAsString(la);
+                    var421459CFA13E4AD4A1F3737B76442AD2_469635621.addTaint(taint);
+                    return var421459CFA13E4AD4A1F3737B76442AD2_469635621;
+                } //End block
+                else
+    if(isReservedNoSlash(la))                
+                {
+                    lexer.consume(1);
+String var421459CFA13E4AD4A1F3737B76442AD2_128978944 =                     Lexer.charAsString(la);
+                    var421459CFA13E4AD4A1F3737B76442AD2_128978944.addTaint(taint);
+                    return var421459CFA13E4AD4A1F3737B76442AD2_128978944;
+                } //End block
+                else
+                {
+String var540C13E9E156B687226421B24F2DF178_531169348 =                 null;
+                var540C13E9E156B687226421B24F2DF178_531169348.addTaint(taint);
+                return var540C13E9E156B687226421B24F2DF178_531169348;
+                }
+            } //End block
             catch (ParseException ex)
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1154867675 = null;
-            } 
-        } 
+String var540C13E9E156B687226421B24F2DF178_1379643910 =                 null;
+                var540C13E9E156B687226421B24F2DF178_1379643910.addTaint(taint);
+                return var540C13E9E156B687226421B24F2DF178_1379643910;
+            } //End block
+        } //End block
         finally 
         {
+    if(debug)            
             dbg_leave("uricNoSlash");
-        } 
-        String varA7E53CE21691AB073D9660D615818899_1309069453; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1309069453 = varB4EAC82CA7396A68D541C85D26508E83_1375018648;
-                break;
-            case 2: 
-                varA7E53CE21691AB073D9660D615818899_1309069453 = varB4EAC82CA7396A68D541C85D26508E83_1096286121;
-                break;
-            case 3: 
-                varA7E53CE21691AB073D9660D615818899_1309069453 = varB4EAC82CA7396A68D541C85D26508E83_1066591979;
-                break;
-            case 4: 
-                varA7E53CE21691AB073D9660D615818899_1309069453 = varB4EAC82CA7396A68D541C85D26508E83_1031940164;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1309069453 = varB4EAC82CA7396A68D541C85D26508E83_1154867675;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1309069453.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1309069453;
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.878 -0400", hash_original_method = "F8BFDE8FCAA82A1A34C46F55D7711C6B", hash_generated_method = "773DFFC7B02325E6FBD8BBBCFC11F09F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.310 -0400", hash_original_method = "F8BFDE8FCAA82A1A34C46F55D7711C6B", hash_generated_method = "EA51A338A0FC5A07DA5B76C6ACAB5261")
     protected String uricString() throws ParseException {
-        String varB4EAC82CA7396A68D541C85D26508E83_645634710 = null; 
         StringBuffer retval = new StringBuffer();
+        while
+(true)        
         {
             String next = uric();
+    if(next == null)            
             {
                 char la = lexer.lookAhead(0);
+    if(la == '[')                
                 {
                     HostNameParser hnp = new HostNameParser(this.getLexer());
                     HostPort hp = hnp.hostPort( false );
                     retval.append(hp.toString());
-                } 
-            } 
+                    continue;
+                } //End block
+                break;
+            } //End block
             retval.append(next);
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_645634710 = retval.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_645634710.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_645634710;
-        
-        
-        
-            
-            
-                
-                
-                    
-                    
-                    
-                    
-                
-                
-            
-            
-        
-        
+        } //End block
+String var1B324365A764C077A55854483509F4AB_1521286240 =         retval.toString();
+        var1B324365A764C077A55854483509F4AB_1521286240.addTaint(taint);
+        return var1B324365A764C077A55854483509F4AB_1521286240;
+        // ---------- Original Method ----------
+        //StringBuffer retval = new StringBuffer();
+        //while (true) {
+            //String next = uric();
+            //if (next == null) {
+                //char la = lexer.lookAhead(0);
+                //if ( la == '[' ) {
+                    //HostNameParser hnp = new HostNameParser(this.getLexer());
+                    //HostPort hp = hnp.hostPort( false );
+                    //retval.append(hp.toString());
+                    //continue;
+                //}
+                //break;
+            //}
+            //retval.append(next);
+        //}
+        //return retval.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.879 -0400", hash_original_method = "877793596C03075095766EB10627CE12", hash_generated_method = "CFC951B1D25204E9AF3C6FB6936436CE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.343 -0400", hash_original_method = "877793596C03075095766EB10627CE12", hash_generated_method = "2110464F20E41A32B777BD1F6EBC0C97")
     public GenericURI uriReference( boolean inBrackets ) throws ParseException {
-        GenericURI varB4EAC82CA7396A68D541C85D26508E83_1986268732 = null; 
+        addTaint(inBrackets);
+    if(debug)        
         dbg_enter("uriReference");
         GenericURI retval = null;
         Token[] tokens = lexer.peekNextToken(2);
@@ -631,223 +606,248 @@ public class URLParser extends Parser {
         Token t2 = (Token) tokens[1];
         try 
         {
+    if(t1.getTokenType() == TokenTypes.SIP ||
+                    t1.getTokenType() == TokenTypes.SIPS)            
             {
-                boolean var3E3C08E681A70CFCD29256F591BA9F85_301930809 = (t1.getTokenType() == TokenTypes.SIP ||
-                    t1.getTokenType() == TokenTypes.SIPS);
+    if(t2.getTokenType() == ':')                
+                retval = sipURL( inBrackets );
+                else
                 {
-                    {
-                        boolean var19C34D70DBF4E04E87D5E554663CED0B_350589874 = (t2.getTokenType() == ':');
-                        retval = sipURL( inBrackets );
-                        if (DroidSafeAndroidRuntime.control) throw createParseException("Expecting \':\'");
-                    } 
-                } 
+                java.text.ParseException var9E4F08C133AB477EE15B30CD0B38A389_1306786050 = createParseException("Expecting \':\'");
+                var9E4F08C133AB477EE15B30CD0B38A389_1306786050.addTaint(taint);
+                throw var9E4F08C133AB477EE15B30CD0B38A389_1306786050;
+                }
+            } //End block
+            else
+    if(t1.getTokenType() == TokenTypes.TEL)            
+            {
+    if(t2.getTokenType() == ':')                
                 {
-                    boolean var9DCC9A019F767A37C0CD3E2554D567B2_1839669741 = (t1.getTokenType() == TokenTypes.TEL);
-                    {
-                        {
-                            boolean var6E0AC27A3BCD64EF8F081ACBDDD022E3_251101416 = (t2.getTokenType() == ':');
-                            {
-                                retval = telURL( inBrackets );
-                            } 
-                            if (DroidSafeAndroidRuntime.control) throw createParseException("Expecting \':\'");
-                        } 
-                    } 
-                    {
-                        String urlString = uricString();
-                        try 
-                        {
-                            retval = new GenericURI(urlString);
-                        } 
-                        catch (ParseException ex)
-                        {
-                            if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-                        } 
-                    } 
-                } 
-            } 
-        } 
+                    retval = telURL( inBrackets );
+                } //End block
+                else
+                {
+                java.text.ParseException var9E4F08C133AB477EE15B30CD0B38A389_14874185 = createParseException("Expecting \':\'");
+                var9E4F08C133AB477EE15B30CD0B38A389_14874185.addTaint(taint);
+                throw var9E4F08C133AB477EE15B30CD0B38A389_14874185;
+                }
+            } //End block
+            else
+            {
+                String urlString = uricString();
+                try 
+                {
+                    retval = new GenericURI(urlString);
+                } //End block
+                catch (ParseException ex)
+                {
+                    java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_1132551056 = createParseException(ex.getMessage());
+                    varB8C80F72F95BF6A850D07F4EC5726C09_1132551056.addTaint(taint);
+                    throw varB8C80F72F95BF6A850D07F4EC5726C09_1132551056;
+                } //End block
+            } //End block
+        } //End block
         finally 
         {
+    if(debug)            
             dbg_leave("uriReference");
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1986268732 = retval;
-        addTaint(inBrackets);
-        varB4EAC82CA7396A68D541C85D26508E83_1986268732.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1986268732;
-        
-        
+        } //End block
+GenericURI varF9E19AD6135C970F387F77C6F3DE4477_1632864379 =         retval;
+        varF9E19AD6135C970F387F77C6F3DE4477_1632864379.addTaint(taint);
+        return varF9E19AD6135C970F387F77C6F3DE4477_1632864379;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.880 -0400", hash_original_method = "FA28BF7ACB321CCE37D931F114A366BD", hash_generated_method = "9EB59861587822ED941BA3B4FE3AF8ED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.384 -0400", hash_original_method = "FA28BF7ACB321CCE37D931F114A366BD", hash_generated_method = "5E858483E5A1AC9566C4CCBB63846324")
     private String base_phone_number() throws ParseException {
-        String varB4EAC82CA7396A68D541C85D26508E83_704006671 = null; 
         StringBuffer s = new StringBuffer();
+    if(debug)        
         dbg_enter("base_phone_number");
         try 
         {
             int lc = 0;
+            while
+(lexer.hasMoreChars())            
             {
-                boolean var9783FB04504A12AC5E4CB1806E828D43_52841130 = (lexer.hasMoreChars());
-                {
-                    char w = lexer.lookAhead(0);
-                    {
-                        boolean var558B9976D373EA13678F300ACFC57D1F_1018766092 = (Lexer.isDigit(w)
+                char w = lexer.lookAhead(0);
+    if(Lexer.isDigit(w)
                     || w == '-'
                     || w == '.'
                     || w == '('
-                    || w == ')');
-                        {
-                            lexer.consume(1);
-                            s.append(w);
-                        } 
-                        if (DroidSafeAndroidRuntime.control) throw createParseException("unexpected " + w);
-                    } 
-                } 
-            } 
-            varB4EAC82CA7396A68D541C85D26508E83_704006671 = s.toString();
-        } 
+                    || w == ')')                
+                {
+                    lexer.consume(1);
+                    s.append(w);
+                    lc++;
+                } //End block
+                else
+    if(lc > 0)                
+                break;
+                else
+                {
+                java.text.ParseException varA3EC2660281D70F01A048754213B9CB1_704375310 = createParseException("unexpected " + w);
+                varA3EC2660281D70F01A048754213B9CB1_704375310.addTaint(taint);
+                throw varA3EC2660281D70F01A048754213B9CB1_704375310;
+                }
+            } //End block
+String varDE99EC39359AC6BE0E416433FFBB9F13_311157545 =             s.toString();
+            varDE99EC39359AC6BE0E416433FFBB9F13_311157545.addTaint(taint);
+            return varDE99EC39359AC6BE0E416433FFBB9F13_311157545;
+        } //End block
         finally 
         {
+    if(debug)            
             dbg_leave("base_phone_number");
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_704006671.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_704006671;
-        
-        
-        
-            
-        
-            
-            
-                
-                
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                
-                    
-                
-                    
-            
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //StringBuffer s = new StringBuffer();
+        //if (debug)
+            //dbg_enter("base_phone_number");
+        //try {
+            //int lc = 0;
+            //while (lexer.hasMoreChars()) {
+                //char w = lexer.lookAhead(0);
+                //if (Lexer.isDigit(w)
+                    //|| w == '-'
+                    //|| w == '.'
+                    //|| w == '('
+                    //|| w == ')') {
+                    //lexer.consume(1);
+                    //s.append(w);
+                    //lc++;
+                //} else if (lc > 0)
+                    //break;
+                //else
+                    //throw createParseException("unexpected " + w);
+            //}
+            //return s.toString();
+        //} finally {
+            //if (debug)
+                //dbg_leave("base_phone_number");
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.881 -0400", hash_original_method = "0C6D1452631B0ABABC52FCC37CE65FF7", hash_generated_method = "064200ABEB2258A36DCE9EA2162191C4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.406 -0400", hash_original_method = "0C6D1452631B0ABABC52FCC37CE65FF7", hash_generated_method = "2F72B72C6C35E3113958DCFC44FE0603")
     private String local_number() throws ParseException {
-        String varB4EAC82CA7396A68D541C85D26508E83_956197851 = null; 
         StringBuffer s = new StringBuffer();
+    if(debug)        
         dbg_enter("local_number");
         try 
         {
             int lc = 0;
+            while
+(lexer.hasMoreChars())            
             {
-                boolean var9783FB04504A12AC5E4CB1806E828D43_773013738 = (lexer.hasMoreChars());
-                {
-                    char la = lexer.lookAhead(0);
-                    {
-                        boolean var20C700F69E25677794711EF4694FACAC_1253963166 = (la == '*'
+                char la = lexer.lookAhead(0);
+    if(la == '*'
                     || la == '#'
                     || la == '-'
                     || la == '.'
                     || la == '('
                     || la == ')'
-                    || Lexer.isHexDigit(la));
-                        {
-                            lexer.consume(1);
-                            s.append(la);
-                        } 
-                        if (DroidSafeAndroidRuntime.control) throw createParseException("unexepcted " + la);
-                    } 
-                } 
-            } 
-            varB4EAC82CA7396A68D541C85D26508E83_956197851 = s.toString();
-        } 
+                    || Lexer.isHexDigit(la))                
+                {
+                    lexer.consume(1);
+                    s.append(la);
+                    lc++;
+                } //End block
+                else
+    if(lc > 0)                
+                break;
+                else
+                {
+                java.text.ParseException var18DBC56885CA74BF8863593259F53DBA_736203408 = createParseException("unexepcted " + la);
+                var18DBC56885CA74BF8863593259F53DBA_736203408.addTaint(taint);
+                throw var18DBC56885CA74BF8863593259F53DBA_736203408;
+                }
+            } //End block
+String varDE99EC39359AC6BE0E416433FFBB9F13_419087727 =             s.toString();
+            varDE99EC39359AC6BE0E416433FFBB9F13_419087727.addTaint(taint);
+            return varDE99EC39359AC6BE0E416433FFBB9F13_419087727;
+        } //End block
         finally 
         {
+    if(debug)            
             dbg_leave("local_number");
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_956197851.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_956197851;
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.883 -0400", hash_original_method = "DEDDF1126FB4D34419E3541D3DE0EAF4", hash_generated_method = "D8E350BF15C5FF8585843B2E234BC1DC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.434 -0400", hash_original_method = "DEDDF1126FB4D34419E3541D3DE0EAF4", hash_generated_method = "419F63A1541CE8E1818BEDE6131B00D2")
     public final TelephoneNumber parseTelephoneNumber( boolean inBrackets ) throws ParseException {
-        TelephoneNumber varB4EAC82CA7396A68D541C85D26508E83_776355097 = null; 
+        addTaint(inBrackets);
         TelephoneNumber tn;
+    if(debug)        
         dbg_enter("telephone_subscriber");
         lexer.selectLexer("charLexer");
         try 
         {
             char c = lexer.lookAhead(0);
+    if(c == '+')            
             tn = global_phone_number( inBrackets );
-            {
-                boolean var507D5F8498D0167D369439A5884A0378_1884560811 = (Lexer.isHexDigit(c)
+            else
+    if(Lexer.isHexDigit(c)
                     || c == '#'
                     || c == '*'
                     || c == '-'
                     || c == '.'
                     || c == '('
-                    || c == ')');
-                {
-                    tn = local_phone_number( inBrackets );
-                } 
-                if (DroidSafeAndroidRuntime.control) throw createParseException("unexpected char " + c);
-            } 
-            varB4EAC82CA7396A68D541C85D26508E83_776355097 = tn;
-        } 
+                    || c == ')')            
+            {
+                tn = local_phone_number( inBrackets );
+            } //End block
+            else
+            {
+            java.text.ParseException var068409E4232E3F54EE46F9EEEFA4C17A_1032012870 = createParseException("unexpected char " + c);
+            var068409E4232E3F54EE46F9EEEFA4C17A_1032012870.addTaint(taint);
+            throw var068409E4232E3F54EE46F9EEEFA4C17A_1032012870;
+            }
+TelephoneNumber varC1D4D5C1C91533F312FAF0BF887574CF_446050238 =             tn;
+            varC1D4D5C1C91533F312FAF0BF887574CF_446050238.addTaint(taint);
+            return varC1D4D5C1C91533F312FAF0BF887574CF_446050238;
+        } //End block
         finally 
         {
+    if(debug)            
             dbg_leave("telephone_subscriber");
-        } 
-        addTaint(inBrackets);
-        varB4EAC82CA7396A68D541C85D26508E83_776355097.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_776355097;
-        
-        
-        
-            
-        
-        
-            
-            
-                
-            
-                
-                    
-                    
-                    
-                    
-                    
-                    
-                
-            
-                
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //TelephoneNumber tn;
+        //if (debug)
+            //dbg_enter("telephone_subscriber");
+        //lexer.selectLexer("charLexer");
+        //try {
+            //char c = lexer.lookAhead(0);
+            //if (c == '+')
+                //tn = global_phone_number( inBrackets );
+            //else if (
+                //Lexer.isHexDigit(c)
+                    //|| c == '#'
+                    //|| c == '*'
+                    //|| c == '-'
+                    //|| c == '.'
+                    //|| c == '('
+                    //|| c == ')' ) {
+                //tn = local_phone_number( inBrackets );
+            //} else
+                //throw createParseException("unexpected char " + c);
+            //return tn;
+        //} finally {
+            //if (debug)
+                //dbg_leave("telephone_subscriber");
+        //}
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.885 -0400", hash_original_method = "0F1ADEC60659CEA5C84BABEF7D06F081", hash_generated_method = "D3EC337B20E3FC13A9448BCDB9945841")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.436 -0400", hash_original_method = "0F1ADEC60659CEA5C84BABEF7D06F081", hash_generated_method = "996B57E0F9B0EF2BDDBED5B7539DCDE9")
     private final TelephoneNumber global_phone_number( boolean inBrackets ) throws ParseException {
-        TelephoneNumber varB4EAC82CA7396A68D541C85D26508E83_1374596785 = null; 
+        addTaint(inBrackets);
+    if(debug)        
         dbg_enter("global_phone_number");
         try 
         {
@@ -857,56 +857,55 @@ public class URLParser extends Parser {
             this.lexer.match(PLUS);
             String b = base_phone_number();
             tn.setPhoneNumber(b);
+    if(lexer.hasMoreChars())            
             {
-                boolean var9783FB04504A12AC5E4CB1806E828D43_1217237992 = (lexer.hasMoreChars());
+                char tok = lexer.lookAhead(0);
+    if(tok == ';' && inBrackets)                
                 {
-                    char tok = lexer.lookAhead(0);
-                    {
-                        this.lexer.consume(1);
-                        nv = tel_parameters();
-                        tn.setParameters(nv);
-                    } 
-                } 
-            } 
-            varB4EAC82CA7396A68D541C85D26508E83_1374596785 = tn;
-        } 
+                    this.lexer.consume(1);
+                    nv = tel_parameters();
+                    tn.setParameters(nv);
+                } //End block
+            } //End block
+TelephoneNumber varC1D4D5C1C91533F312FAF0BF887574CF_191651483 =             tn;
+            varC1D4D5C1C91533F312FAF0BF887574CF_191651483.addTaint(taint);
+            return varC1D4D5C1C91533F312FAF0BF887574CF_191651483;
+        } //End block
         finally 
         {
+    if(debug)            
             dbg_leave("global_phone_number");
-        } 
-        addTaint(inBrackets);
-        varB4EAC82CA7396A68D541C85D26508E83_1374596785.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1374596785;
-        
-        
-            
-        
-            
-            
-            
-            
-            
-            
-            
-                
-                
-                    
-                    
-                    
-                
-            
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (debug)
+            //dbg_enter("global_phone_number");
+        //try {
+            //TelephoneNumber tn = new TelephoneNumber();
+            //tn.setGlobal(true);
+            //NameValueList nv = null;
+            //this.lexer.match(PLUS);
+            //String b = base_phone_number();
+            //tn.setPhoneNumber(b);
+            //if (lexer.hasMoreChars()) {
+                //char tok = lexer.lookAhead(0);
+                //if (tok == ';' && inBrackets) {
+                    //this.lexer.consume(1);
+                    //nv = tel_parameters();
+                    //tn.setParameters(nv);
+                //}
+            //}
+            //return tn;
+        //} finally {
+            //if (debug)
+                //dbg_leave("global_phone_number");
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.886 -0400", hash_original_method = "883FF19CD75AFF340396001C616EFCAA", hash_generated_method = "C80FF05195950B4B4B49B12F71012AA9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.437 -0400", hash_original_method = "883FF19CD75AFF340396001C616EFCAA", hash_generated_method = "1B7E174987FB804C48B7576DF8539BE6")
     private TelephoneNumber local_phone_number( boolean inBrackets ) throws ParseException {
-        TelephoneNumber varB4EAC82CA7396A68D541C85D26508E83_1038345167 = null; 
+        addTaint(inBrackets);
+    if(debug)        
         dbg_enter("local_phone_number");
         TelephoneNumber tn = new TelephoneNumber();
         tn.setGlobal(false);
@@ -916,184 +915,180 @@ public class URLParser extends Parser {
         {
             b = local_number();
             tn.setPhoneNumber(b);
+    if(lexer.hasMoreChars())            
             {
-                boolean var9783FB04504A12AC5E4CB1806E828D43_279882928 = (lexer.hasMoreChars());
+                Token tok = this.lexer.peekNextToken();
+switch(tok.getTokenType()){
+                case SEMICOLON:
                 {
-                    Token tok = this.lexer.peekNextToken();
+    if(inBrackets)                    
                     {
-                        Object varD3D97B347F6C533E598B0CFBC725AF99_1332239870 = (tok.getTokenType());
-                        
-                        {
-                            {
-                                this.lexer.consume(1);
-                                nv = tel_parameters();
-                                tn.setParameters(nv);
-                            } 
-                        } 
-                        
-                    } 
-                } 
-            } 
-        } 
+                        this.lexer.consume(1);
+                        nv = tel_parameters();
+                        tn.setParameters(nv);
+                    } //End block
+                    break;
+                } //End block
+                default :
+                {
+                    break;
+                } //End block
+}
+            } //End block
+        } //End block
         finally 
         {
+    if(debug)            
             dbg_leave("local_phone_number");
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1038345167 = tn;
-        addTaint(inBrackets);
-        varB4EAC82CA7396A68D541C85D26508E83_1038345167.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1038345167;
-        
-        
+        } //End block
+TelephoneNumber varC1D4D5C1C91533F312FAF0BF887574CF_734194560 =         tn;
+        varC1D4D5C1C91533F312FAF0BF887574CF_734194560.addTaint(taint);
+        return varC1D4D5C1C91533F312FAF0BF887574CF_734194560;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.887 -0400", hash_original_method = "F5BCCE1D5E357F2A71ACB92ADA6046C2", hash_generated_method = "31B74F72D8F0D775F701303F7D60F777")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.440 -0400", hash_original_method = "F5BCCE1D5E357F2A71ACB92ADA6046C2", hash_generated_method = "44F87AB743112EAFBDD859D63CE668CB")
     private NameValueList tel_parameters() throws ParseException {
-        NameValueList varB4EAC82CA7396A68D541C85D26508E83_1632131556 = null; 
         NameValueList nvList = new NameValueList();
         NameValue nv;
+        while
+(true)        
         {
             String pname = paramNameOrValue();
+    if(pname.equalsIgnoreCase("phone-context"))            
             {
-                boolean varC10FDE306D9280D8B230EFFEBE7BBCAD_1271281727 = (pname.equalsIgnoreCase("phone-context"));
-                {
-                    nv = phone_context();
-                } 
-                {
-                    {
-                        boolean var58840CF471CB22F21A5C8437922569C5_1879053044 = (lexer.lookAhead(0) == '=');
-                        {
-                            lexer.consume(1);
-                            String value = paramNameOrValue();
-                            nv = new NameValue( pname, value, false );
-                        } 
-                        {
-                            nv = new NameValue( pname, "", true );
-                        } 
-                    } 
-                } 
-            } 
-            nvList.set( nv );
+                nv = phone_context();
+            } //End block
+            else
             {
-                boolean var23D2B54EEDE70417D1C6C30933AF4A72_1685223094 = (lexer.lookAhead(0) == ';');
+    if(lexer.lookAhead(0) == '=')                
                 {
                     lexer.consume(1);
-                } 
+                    String value = paramNameOrValue();
+                    nv = new NameValue( pname, value, false );
+                } //End block
+                else
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_1632131556 = nvList;
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1632131556.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1632131556;
-        
-        
-        
-        
-            
-            
-                
-            
-                
-                    
-                    
-                    
-                
-                    
-                
-            
-            
-            
-                
-            
-                
-            
-        
+                    nv = new NameValue( pname, "", true );
+                } //End block
+            } //End block
+            nvList.set( nv );
+    if(lexer.lookAhead(0) == ';')            
+            {
+                lexer.consume(1);
+            } //End block
+            else
+            {
+NameValueList var6DFD9DB88C9F14F93E00B2BFA73F7706_1694558310 =                 nvList;
+                var6DFD9DB88C9F14F93E00B2BFA73F7706_1694558310.addTaint(taint);
+                return var6DFD9DB88C9F14F93E00B2BFA73F7706_1694558310;
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //NameValueList nvList = new NameValueList();
+        //NameValue nv;
+        //while ( true ) {
+            //String pname = paramNameOrValue();
+            //if ( pname.equalsIgnoreCase("phone-context")) {
+                //nv = phone_context();
+            //} else {
+                //if (lexer.lookAhead(0) == '=') {
+                    //lexer.consume(1);
+                    //String value = paramNameOrValue();
+                    //nv = new NameValue( pname, value, false );
+                //} else {
+                    //nv = new NameValue( pname, "", true );
+                //}
+            //}
+            //nvList.set( nv );
+            //if ( lexer.lookAhead(0) == ';' ) {
+                //lexer.consume(1);
+            //} else {
+                //return nvList;
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.888 -0400", hash_original_method = "4B2DA37312785E9B10734C6846FECD1E", hash_generated_method = "2D274681C4A13E6218EDBC0CBAAFE305")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.441 -0400", hash_original_method = "4B2DA37312785E9B10734C6846FECD1E", hash_generated_method = "57386D544FC0B019DD13C3545769203A")
     private NameValue phone_context() throws ParseException {
-        NameValue varB4EAC82CA7396A68D541C85D26508E83_512762003 = null; 
         lexer.match('=');
         char la = lexer.lookAhead(0);
         Object value;
+    if(la=='+')        
         {
             lexer.consume(1);
             value = "+" + base_phone_number();
-        } 
+        } //End block
+        else
+    if(Lexer.isAlphaDigit(la))        
         {
-            boolean varCB62C5C9B3FAF6D4CFE708D2749449C5_1791885845 = (Lexer.isAlphaDigit(la));
-            {
-                Token t = lexer.match( Lexer.ID );
-                value = t.getTokenValue();
-            } 
-            {
-                if (DroidSafeAndroidRuntime.control) throw new ParseException( "Invalid phone-context:" + la , -1 );
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_512762003 = new NameValue( "phone-context", value, false );
-        varB4EAC82CA7396A68D541C85D26508E83_512762003.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_512762003;
-        
-        
-        
-        
-        
-            
-            
-        
-            
-            
-        
-            
-        
-        
+            Token t = lexer.match( Lexer.ID );
+            value = t.getTokenValue();
+        } //End block
+        else
+        {
+            ParseException var56A9EB0A9826019A67827CD993695C48_2015683296 = new ParseException( "Invalid phone-context:" + la , -1 );
+            var56A9EB0A9826019A67827CD993695C48_2015683296.addTaint(taint);
+            throw var56A9EB0A9826019A67827CD993695C48_2015683296;
+        } //End block
+NameValue var4ADDE443C97C638732822930C3F06B26_1163310782 =         new NameValue( "phone-context", value, false );
+        var4ADDE443C97C638732822930C3F06B26_1163310782.addTaint(taint);
+        return var4ADDE443C97C638732822930C3F06B26_1163310782;
+        // ---------- Original Method ----------
+        //lexer.match('=');
+        //char la = lexer.lookAhead(0);
+        //Object value;
+        //if (la=='+') {
+            //lexer.consume(1);
+            //value = "+" + base_phone_number();
+        //} else if ( Lexer.isAlphaDigit(la) ) {
+            //Token t = lexer.match( Lexer.ID );
+            //value = t.getTokenValue();
+        //} else {
+            //throw new ParseException( "Invalid phone-context:" + la , -1 );
+        //}
+        //return new NameValue( "phone-context", value, false );
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.889 -0400", hash_original_method = "73C5F5A1DB2F1724F7BD39D759918D7C", hash_generated_method = "FEDC6A5BDDA7EA42CD053699C7C86680")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.442 -0400", hash_original_method = "73C5F5A1DB2F1724F7BD39D759918D7C", hash_generated_method = "1AFDADED254103D0CD308C04F4D37328")
     public TelURLImpl telURL( boolean inBrackets ) throws ParseException {
-        TelURLImpl varB4EAC82CA7396A68D541C85D26508E83_506833878 = null; 
+        addTaint(inBrackets);
         lexer.match(TokenTypes.TEL);
         lexer.match(':');
         TelephoneNumber tn = this.parseTelephoneNumber(inBrackets);
         TelURLImpl telUrl = new TelURLImpl();
         telUrl.setTelephoneNumber(tn);
-        varB4EAC82CA7396A68D541C85D26508E83_506833878 = telUrl;
-        addTaint(inBrackets);
-        varB4EAC82CA7396A68D541C85D26508E83_506833878.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_506833878;
-        
-        
-        
-        
-        
-        
-        
+TelURLImpl varAED221150EF42577B2F716DF972053BA_335624282 =         telUrl;
+        varAED221150EF42577B2F716DF972053BA_335624282.addTaint(taint);
+        return varAED221150EF42577B2F716DF972053BA_335624282;
+        // ---------- Original Method ----------
+        //lexer.match(TokenTypes.TEL);
+        //lexer.match(':');
+        //TelephoneNumber tn = this.parseTelephoneNumber(inBrackets);
+        //TelURLImpl telUrl = new TelURLImpl();
+        //telUrl.setTelephoneNumber(tn);
+        //return telUrl;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.890 -0400", hash_original_method = "7278F7A930851B1FF266754B78180AE2", hash_generated_method = "9B841774313ED45F9F5D174720E54239")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.443 -0400", hash_original_method = "7278F7A930851B1FF266754B78180AE2", hash_generated_method = "B1AC40A08D9F3B3302C59F054F5C525E")
     public SipUri sipURL( boolean inBrackets ) throws ParseException {
-        SipUri varB4EAC82CA7396A68D541C85D26508E83_669671367 = null; 
+        addTaint(inBrackets);
+    if(debug)        
         dbg_enter("sipURL");
         SipUri retval = new SipUri();
         Token nextToken = lexer.peekNextToken();
         int sipOrSips = TokenTypes.SIP;
         String scheme = TokenNames.SIP;
+    if(nextToken.getTokenType() == TokenTypes.SIPS)        
         {
-            boolean var428A8649D9DE71F3027322B0FB5BC374_483002703 = (nextToken.getTokenType() == TokenTypes.SIPS);
-            {
-                sipOrSips = TokenTypes.SIPS;
-                scheme = TokenNames.SIPS;
-            } 
-        } 
+            sipOrSips = TokenTypes.SIPS;
+            scheme = TokenNames.SIPS;
+        } //End block
         try 
         {
             lexer.match(sipOrSips);
@@ -1102,306 +1097,306 @@ public class URLParser extends Parser {
             int startOfUser = lexer.markInputPosition();
             String userOrHost = user();
             String passOrPort = null;
+    if(lexer.lookAhead() == ':')            
             {
-                boolean varA481248E93D84F444CD01FB31AAFDF62_486306514 = (lexer.lookAhead() == ':');
-                {
-                    lexer.consume(1);
-                    passOrPort = password();
-                } 
-            } 
+                lexer.consume(1);
+                passOrPort = password();
+            } //End block
+    if(lexer.lookAhead() == '@')            
             {
-                boolean var8F99848E84C59D67D6EAE42041875FCD_230278705 = (lexer.lookAhead() == '@');
-                {
-                    lexer.consume(1);
-                    retval.setUser( userOrHost );
-                    retval.setUserPassword( passOrPort );
-                } 
-                {
-                    lexer.rewindInputPosition( startOfUser );
-                } 
-            } 
+                lexer.consume(1);
+                retval.setUser( userOrHost );
+    if(passOrPort!=null)                
+                retval.setUserPassword( passOrPort );
+            } //End block
+            else
+            {
+                lexer.rewindInputPosition( startOfUser );
+            } //End block
             HostNameParser hnp = new HostNameParser(this.getLexer());
             HostPort hp = hnp.hostPort( false );
             retval.setHostPort(hp);
             lexer.selectLexer("charLexer");
+            while
+(lexer.hasMoreChars())            
             {
-                boolean var9783FB04504A12AC5E4CB1806E828D43_6030972 = (lexer.hasMoreChars());
-                {
-                    {
-                        boolean var586A81C98915AF015E02FB22E05826EF_635372195 = (lexer.lookAhead(0) != ';' || !inBrackets);
-                    } 
-                    lexer.consume(1);
-                    NameValue parms = uriParam();
-                    retval.setUriParameter(parms);
-                } 
-            } 
+    if(lexer.lookAhead(0) != ';' || !inBrackets)                
+                break;
+                lexer.consume(1);
+                NameValue parms = uriParam();
+    if(parms != null)                
+                retval.setUriParameter(parms);
+            } //End block
+    if(lexer.hasMoreChars() && lexer.lookAhead(0) == '?')            
             {
-                boolean var7C875628E08B715321EFB433C7824D95_1735628585 = (lexer.hasMoreChars() && lexer.lookAhead(0) == '?');
+                lexer.consume(1);
+                while
+(lexer.hasMoreChars())                
                 {
+                    NameValue parms = qheader();
+                    retval.setQHeader(parms);
+    if(lexer.hasMoreChars() && lexer.lookAhead(0) != '&')                    
+                    break;
+                    else
                     lexer.consume(1);
-                    {
-                        boolean var4CB791BD05839AFD9F3514E9302D9DE3_654887304 = (lexer.hasMoreChars());
-                        {
-                            NameValue parms = qheader();
-                            retval.setQHeader(parms);
-                            {
-                                boolean var052F98E1E244F24861DEF6838918EED5_186242684 = (lexer.hasMoreChars() && lexer.lookAhead(0) != '&');
-                                lexer.consume(1);
-                            } 
-                        } 
-                    } 
-                } 
-            } 
-            varB4EAC82CA7396A68D541C85D26508E83_669671367 = retval;
-        } 
+                } //End block
+            } //End block
+SipUri varF9E19AD6135C970F387F77C6F3DE4477_1163710353 =             retval;
+            varF9E19AD6135C970F387F77C6F3DE4477_1163710353.addTaint(taint);
+            return varF9E19AD6135C970F387F77C6F3DE4477_1163710353;
+        } //End block
         finally 
         {
+    if(debug)            
             dbg_leave("sipURL");
-        } 
-        addTaint(inBrackets);
-        varB4EAC82CA7396A68D541C85D26508E83_669671367.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_669671367;
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.892 -0400", hash_original_method = "A1AFDB81F6A99AEF965D53D1558A830F", hash_generated_method = "2C5D2EBB0AB510B1FFD0F868943B2E44")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.444 -0400", hash_original_method = "A1AFDB81F6A99AEF965D53D1558A830F", hash_generated_method = "515B513651E7D12057567205D7345075")
     public String peekScheme() throws ParseException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1579624067 = null; 
-        String varB4EAC82CA7396A68D541C85D26508E83_1990566406 = null; 
         Token[] tokens = lexer.peekNextToken(1);
-        varB4EAC82CA7396A68D541C85D26508E83_1579624067 = null;
-        String scheme = ((Token) tokens[0]).getTokenValue();
-        varB4EAC82CA7396A68D541C85D26508E83_1990566406 = scheme;
-        String varA7E53CE21691AB073D9660D615818899_251962524; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_251962524 = varB4EAC82CA7396A68D541C85D26508E83_1579624067;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_251962524 = varB4EAC82CA7396A68D541C85D26508E83_1990566406;
-                break;
+    if(tokens.length == 0)        
+        {
+String var540C13E9E156B687226421B24F2DF178_150336481 =         null;
+        var540C13E9E156B687226421B24F2DF178_150336481.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_150336481;
         }
-        varA7E53CE21691AB073D9660D615818899_251962524.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_251962524;
-        
-        
-        
-            
-        
-        
+        String scheme = ((Token) tokens[0]).getTokenValue();
+String varFD3305CF8340E40F0AC0AB554909AEBC_989773979 =         scheme;
+        varFD3305CF8340E40F0AC0AB554909AEBC_989773979.addTaint(taint);
+        return varFD3305CF8340E40F0AC0AB554909AEBC_989773979;
+        // ---------- Original Method ----------
+        //Token[] tokens = lexer.peekNextToken(1);
+        //if (tokens.length == 0)
+            //return null;
+        //String scheme = ((Token) tokens[0]).getTokenValue();
+        //return scheme;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.893 -0400", hash_original_method = "8CC59A12163BED34BD1BF794F4FF4839", hash_generated_method = "4F7203B06BCD480F268C5A442A7DEB82")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.444 -0400", hash_original_method = "8CC59A12163BED34BD1BF794F4FF4839", hash_generated_method = "2A26BCCF96E160FA6D4A581576CF36CD")
     protected NameValue qheader() throws ParseException {
-        NameValue varB4EAC82CA7396A68D541C85D26508E83_341297754 = null; 
         String name = lexer.getNextToken('=');
         lexer.consume(1);
         String value = hvalue();
-        varB4EAC82CA7396A68D541C85D26508E83_341297754 = new NameValue(name, value, false);
-        varB4EAC82CA7396A68D541C85D26508E83_341297754.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_341297754;
-        
-        
-        
-        
-        
+NameValue var490BC75DB78FF72329C5E669FB8E80F5_1571555057 =         new NameValue(name, value, false);
+        var490BC75DB78FF72329C5E669FB8E80F5_1571555057.addTaint(taint);
+        return var490BC75DB78FF72329C5E669FB8E80F5_1571555057;
+        // ---------- Original Method ----------
+        //String name = lexer.getNextToken('=');
+        //lexer.consume(1);
+        //String value = hvalue();
+        //return new NameValue(name, value, false);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.895 -0400", hash_original_method = "44D1D496E84DF1E5395D6148A081CABE", hash_generated_method = "CC50E9A3D4D42AA4CF21A76B2144CB48")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.445 -0400", hash_original_method = "44D1D496E84DF1E5395D6148A081CABE", hash_generated_method = "6141AE2EB645265F231658B735B2A738")
     protected String hvalue() throws ParseException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1556992578 = null; 
         StringBuffer retval = new StringBuffer();
+        while
+(lexer.hasMoreChars())        
         {
-            boolean varB3E35DF23794987B0693F5DD7A2B9357_284923089 = (lexer.hasMoreChars());
+            char la = lexer.lookAhead(0);
+            boolean isValidChar = false;
+switch(la){
+            case '+':
+            case '?':
+            case ':':
+            case '[':
+            case ']':
+            case '/':
+            case '$':
+            case '_':
+            case '-':
+            case '"':
+            case '!':
+            case '~':
+            case '*':
+            case '.':
+            case '(':
+            case ')':
+            isValidChar = true;
+}    if(isValidChar || Lexer.isAlphaDigit(la))            
             {
-                char la = lexer.lookAhead(0);
-                boolean isValidChar = false;
-                
-                isValidChar = true;
-                
-                {
-                    boolean var8510A3B3F6999B2E9C748C1C619B9E8B_1270548305 = (isValidChar || Lexer.isAlphaDigit(la));
-                    {
-                        lexer.consume(1);
-                        retval.append(la);
-                    } 
-                    {
-                        retval.append(escaped());
-                    } 
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1556992578 = retval.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1556992578.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1556992578;
-        
-        
+                lexer.consume(1);
+                retval.append(la);
+            } //End block
+            else
+    if(la == '%')            
+            {
+                retval.append(escaped());
+            } //End block
+            else
+            break;
+        } //End block
+String var1B324365A764C077A55854483509F4AB_1311301082 =         retval.toString();
+        var1B324365A764C077A55854483509F4AB_1311301082.addTaint(taint);
+        return var1B324365A764C077A55854483509F4AB_1311301082;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.900 -0400", hash_original_method = "ECAD9C42756FF84B730590BF5F3636AE", hash_generated_method = "1BD32879AFAF445DA23E8A2F4B8A929E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.446 -0400", hash_original_method = "ECAD9C42756FF84B730590BF5F3636AE", hash_generated_method = "FE766ACB20ACBEE0B3DCC89F88FB4C41")
     protected String urlString() throws ParseException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1768042789 = null; 
         StringBuffer retval = new StringBuffer();
         lexer.selectLexer("charLexer");
+        while
+(lexer.hasMoreChars())        
         {
-            boolean varB3E35DF23794987B0693F5DD7A2B9357_1846327407 = (lexer.hasMoreChars());
-            {
-                char la = lexer.lookAhead(0);
-                lexer.consume(0);
-                retval.append(la);
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1768042789 = retval.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1768042789.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1768042789;
-        
-        
-        
-        
-            
-            
-                
-                
-                
-                
-                
-            
-            
-        
-        
+            char la = lexer.lookAhead(0);
+    if(la == ' '
+                || la == '\t'
+                || la == '\n'
+                || la == '>'
+                || la == '<')            
+            break;
+            lexer.consume(0);
+            retval.append(la);
+        } //End block
+String var1B324365A764C077A55854483509F4AB_750384469 =         retval.toString();
+        var1B324365A764C077A55854483509F4AB_750384469.addTaint(taint);
+        return var1B324365A764C077A55854483509F4AB_750384469;
+        // ---------- Original Method ----------
+        //StringBuffer retval = new StringBuffer();
+        //lexer.selectLexer("charLexer");
+        //while (lexer.hasMoreChars()) {
+            //char la = lexer.lookAhead(0);
+            //if (la == ' '
+                //|| la == '\t'
+                //|| la == '\n'
+                //|| la == '>'
+                //|| la == '<')
+                //break;
+            //lexer.consume(0);
+            //retval.append(la);
+        //}
+        //return retval.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.902 -0400", hash_original_method = "9AA60F60D9528CA4DF3AB8B29A4A0237", hash_generated_method = "E3971387552F7AADD15AADB484F25429")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.447 -0400", hash_original_method = "9AA60F60D9528CA4DF3AB8B29A4A0237", hash_generated_method = "244F559F21A496E3DE0CA31DF6233C0D")
     protected String user() throws ParseException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1489115499 = null; 
+    if(debug)        
         dbg_enter("user");
         try 
         {
             int startIdx = lexer.getPtr();
+            while
+(lexer.hasMoreChars())            
             {
-                boolean var9783FB04504A12AC5E4CB1806E828D43_1305147433 = (lexer.hasMoreChars());
+                char la = lexer.lookAhead(0);
+    if(isUnreserved(la) || isUserUnreserved(la))                
                 {
-                    char la = lexer.lookAhead(0);
-                    {
-                        boolean var8FDE9D716FC62805FC36EA151FDB086E_92869907 = (isUnreserved(la) || isUserUnreserved(la));
-                        {
-                            lexer.consume(1);
-                        } 
-                        {
-                            boolean var7DDEF0E08361E9C02AADC7953802FC99_1321009030 = (isEscaped());
-                            {
-                                lexer.consume(3);
-                            } 
-                        } 
-                    } 
-                } 
-            } 
-            varB4EAC82CA7396A68D541C85D26508E83_1489115499 = lexer.getBuffer().substring(startIdx, lexer.getPtr());
-        } 
+                    lexer.consume(1);
+                } //End block
+                else
+    if(isEscaped())                
+                {
+                    lexer.consume(3);
+                } //End block
+                else
+                break;
+            } //End block
+String var9A78A74044906F8BA6AB50FB9A7D58A3_1271485431 =             lexer.getBuffer().substring(startIdx, lexer.getPtr());
+            var9A78A74044906F8BA6AB50FB9A7D58A3_1271485431.addTaint(taint);
+            return var9A78A74044906F8BA6AB50FB9A7D58A3_1271485431;
+        } //End block
         finally 
         {
+    if(debug)            
             dbg_leave("user");
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1489115499.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1489115499;
-        
-        
-            
-        
-            
-            
-                
-                
-                    
-                
-                    
-                
-                    
-            
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (debug)
+            //dbg_enter("user");
+        //try {
+            //int startIdx = lexer.getPtr();
+            //while (lexer.hasMoreChars()) {
+                //char la = lexer.lookAhead(0);
+                //if (isUnreserved(la) || isUserUnreserved(la)) {
+                    //lexer.consume(1);
+                //} else if (isEscaped()) {
+                    //lexer.consume(3);
+                //} else
+                    //break;
+            //}
+            //return lexer.getBuffer().substring(startIdx, lexer.getPtr());
+        //} finally {
+            //if (debug)
+                //dbg_leave("user");
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.904 -0400", hash_original_method = "763B089E3F9716D78CD9674F5B515450", hash_generated_method = "A36064AA6CB7359B61D3C02A6B1D108F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.449 -0400", hash_original_method = "763B089E3F9716D78CD9674F5B515450", hash_generated_method = "392049B8D3B2B6161E0DDD5CD6DE2669")
     protected String password() throws ParseException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1245878043 = null; 
         int startIdx = lexer.getPtr();
+        while
+(true)        
         {
             char la = lexer.lookAhead(0);
             boolean isValidChar = false;
-            
+switch(la){
+            case '&':
+            case '=':
+            case '+':
+            case '$':
+            case ',':
             isValidChar = true;
-            
+}    if(isValidChar || isUnreserved(la))            
             {
-                boolean var042E4D2F12E6FAE99880DE236F6282DE_1788332722 = (isValidChar || isUnreserved(la));
-                {
-                    lexer.consume(1);
-                } 
-                {
-                    boolean varD0BEBBDFA3B284B77894A2ED39B07738_450261720 = (isEscaped());
-                    {
-                        lexer.consume(3);
-                    } 
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1245878043 = lexer.getBuffer().substring(startIdx, lexer.getPtr());
-        varB4EAC82CA7396A68D541C85D26508E83_1245878043.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1245878043;
-        
-        
-        
-            
-            
-            
-                
-                
-                
-                
-                
-                    
-            
-            
-                
-            
-                
-            
-                
-        
-        
+                lexer.consume(1);
+            } //End block
+            else
+    if(isEscaped())            
+            {
+                lexer.consume(3);
+            } //End block
+            else
+            break;
+        } //End block
+String var9A78A74044906F8BA6AB50FB9A7D58A3_1200809812 =         lexer.getBuffer().substring(startIdx, lexer.getPtr());
+        var9A78A74044906F8BA6AB50FB9A7D58A3_1200809812.addTaint(taint);
+        return var9A78A74044906F8BA6AB50FB9A7D58A3_1200809812;
+        // ---------- Original Method ----------
+        //int startIdx = lexer.getPtr();
+        //while (true) {
+            //char la = lexer.lookAhead(0);
+            //boolean isValidChar = false;
+            //switch (la) {
+                //case '&':
+                //case '=':
+                //case '+':
+                //case '$':
+                //case ',':
+                    //isValidChar = true;
+            //}
+            //if (isValidChar || isUnreserved(la)) {
+                //lexer.consume(1);
+            //} else if (isEscaped()) {
+                //lexer.consume(3); 
+            //} else
+                //break;
+        //}
+        //return lexer.getBuffer().substring(startIdx, lexer.getPtr());
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.905 -0400", hash_original_method = "A2F63CC3A1AD0DF2925153B5F3ECB644", hash_generated_method = "E8E80DF758D483A8634D455FE221F63A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.449 -0400", hash_original_method = "A2F63CC3A1AD0DF2925153B5F3ECB644", hash_generated_method = "FFF78CBED25A5DF059D48E623D51E5C6")
     public GenericURI parse() throws ParseException {
-        GenericURI varB4EAC82CA7396A68D541C85D26508E83_1104761960 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1104761960 = uriReference( true );
-        varB4EAC82CA7396A68D541C85D26508E83_1104761960.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1104761960;
-        
-        
+GenericURI varAA7B0A69EFD6E6C1F0AECD215B234D62_247192021 =         uriReference( true );
+        varAA7B0A69EFD6E6C1F0AECD215B234D62_247192021.addTaint(taint);
+        return varAA7B0A69EFD6E6C1F0AECD215B234D62_247192021;
+        // ---------- Original Method ----------
+        //return uriReference( true );
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static void main(String[] args) throws ParseException {
+        public static void main(String[] args) throws ParseException {
         String[] test = { "sip:alice@example.com",
                     "sips:alice@examples.com" ,
                     "sip:3Zqkv5dajqaaas0tCjCxT0xH2ZEuEMsFl0xoasip%3A%2B3519116786244%40siplab.domain.com@213.0.115.163:7070"};

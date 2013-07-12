@@ -1,12 +1,9 @@
 package android.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import static com.android.internal.util.Preconditions.checkNotNull;
 import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
@@ -17,26 +14,24 @@ import android.provider.Settings;
 import java.net.InetAddress;
 
 public class ConnectivityManager {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.570 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "91FD67C0243C9CAC51474C01D9540196")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.878 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "91FD67C0243C9CAC51474C01D9540196")
 
     private IConnectivityManager mService;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.571 -0400", hash_original_method = "6A60C197741333EAEC6E0EA679C6387D", hash_generated_method = "9748824EC9A278AAE7881447974F69D5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.878 -0400", hash_original_method = "6A60C197741333EAEC6E0EA679C6387D", hash_generated_method = "9748824EC9A278AAE7881447974F69D5")
     public  ConnectivityManager(IConnectivityManager service) {
         mService = checkNotNull(service, "missing IConnectivityManager");
-        
-        
+        // ---------- Original Method ----------
+        //mService = checkNotNull(service, "missing IConnectivityManager");
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static boolean isNetworkTypeValid(int networkType) {
+        public static boolean isNetworkTypeValid(int networkType) {
         return networkType >= 0 && networkType <= MAX_NETWORK_TYPE;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String getNetworkTypeName(int type) {
+        public static String getNetworkTypeName(int type) {
         switch (type) {
             case TYPE_MOBILE:
                 return "MOBILE";
@@ -72,8 +67,7 @@ public class ConnectivityManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static boolean isNetworkTypeMobile(int networkType) {
+        public static boolean isNetworkTypeMobile(int networkType) {
         switch (networkType) {
             case TYPE_MOBILE:
             case TYPE_MOBILE_MMS:
@@ -90,1072 +84,969 @@ public class ConnectivityManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.572 -0400", hash_original_method = "20C5B9DE2E49D07D506F0D5479D46C57", hash_generated_method = "65CD6590F85C9337A8EAA19D2342435B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.880 -0400", hash_original_method = "20C5B9DE2E49D07D506F0D5479D46C57", hash_generated_method = "548A77776A813E5CF616D63EA1C17827")
     public void setNetworkPreference(int preference) {
+        addTaint(preference);
         try 
         {
             mService.setNetworkPreference(preference);
-        } 
+        } //End block
         catch (RemoteException e)
-        { }
-        addTaint(preference);
-        
-        
-            
-        
-        
+        {
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.setNetworkPreference(preference);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.572 -0400", hash_original_method = "900E5DCCFD12B740A82ADA5294C949B0", hash_generated_method = "69771CF75913B9B37C31630A2FFC40A8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.881 -0400", hash_original_method = "900E5DCCFD12B740A82ADA5294C949B0", hash_generated_method = "2B5EEA6EE8136DEA5A944DCAE31FCB63")
     public int getNetworkPreference() {
         try 
         {
-            int varDA1D38E7DB125563E94987FCB57D1292_1351348023 = (mService.getNetworkPreference());
-        } 
+            int var19A3790390823FE4079A20780D0EE00C_1568977901 = (mService.getNetworkPreference());
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1973777536 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1973777536;
+        } //End block
         catch (RemoteException e)
-        { }
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1166930136 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1166930136;
-        
-        
-            
-        
-            
-        
+        {
+            int var6BB61E3B7BCE0931DA574D19D1D82C88_165178221 = (-1);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1207190412 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1207190412;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getNetworkPreference();
+        //} catch (RemoteException e) {
+            //return -1;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.573 -0400", hash_original_method = "5E96294DED8896A900AADA5BAA807536", hash_generated_method = "0E9AE23E650A924BDD5C497114FECBA4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.881 -0400", hash_original_method = "5E96294DED8896A900AADA5BAA807536", hash_generated_method = "2F5954282E516D4C2E1DE17EC55AFA63")
     public NetworkInfo getActiveNetworkInfo() {
-        NetworkInfo varB4EAC82CA7396A68D541C85D26508E83_1840177089 = null; 
-        NetworkInfo varB4EAC82CA7396A68D541C85D26508E83_655288118 = null; 
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1840177089 = mService.getActiveNetworkInfo();
-        } 
+NetworkInfo var71037231270A581C4BC2348D12DBB752_941288640 =             mService.getActiveNetworkInfo();
+            var71037231270A581C4BC2348D12DBB752_941288640.addTaint(taint);
+            return var71037231270A581C4BC2348D12DBB752_941288640;
+        } //End block
         catch (RemoteException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_655288118 = null;
-        } 
-        NetworkInfo varA7E53CE21691AB073D9660D615818899_173569914; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_173569914 = varB4EAC82CA7396A68D541C85D26508E83_1840177089;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_173569914 = varB4EAC82CA7396A68D541C85D26508E83_655288118;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_173569914.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_173569914;
-        
-        
-            
-        
-            
-        
+NetworkInfo var540C13E9E156B687226421B24F2DF178_729401278 =             null;
+            var540C13E9E156B687226421B24F2DF178_729401278.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_729401278;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getActiveNetworkInfo();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.574 -0400", hash_original_method = "EA020BF9EC9A5FD5A107F43E91D20C3E", hash_generated_method = "B32B76B5701C654CB617CBD2C1CDB0E0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.882 -0400", hash_original_method = "EA020BF9EC9A5FD5A107F43E91D20C3E", hash_generated_method = "56A3C2B20E44F875171A65A61F98EC6B")
     public NetworkInfo getActiveNetworkInfoForUid(int uid) {
-        NetworkInfo varB4EAC82CA7396A68D541C85D26508E83_1307835129 = null; 
-        NetworkInfo varB4EAC82CA7396A68D541C85D26508E83_1867436444 = null; 
-        try 
-        {
-            varB4EAC82CA7396A68D541C85D26508E83_1307835129 = mService.getActiveNetworkInfoForUid(uid);
-        } 
-        catch (RemoteException e)
-        {
-            varB4EAC82CA7396A68D541C85D26508E83_1867436444 = null;
-        } 
         addTaint(uid);
-        NetworkInfo varA7E53CE21691AB073D9660D615818899_253005522; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_253005522 = varB4EAC82CA7396A68D541C85D26508E83_1307835129;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_253005522 = varB4EAC82CA7396A68D541C85D26508E83_1867436444;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_253005522.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_253005522;
-        
-        
-            
-        
-            
-        
+        try 
+        {
+NetworkInfo var716369D49A4FE5B98EE868B69EA92A1E_1035764706 =             mService.getActiveNetworkInfoForUid(uid);
+            var716369D49A4FE5B98EE868B69EA92A1E_1035764706.addTaint(taint);
+            return var716369D49A4FE5B98EE868B69EA92A1E_1035764706;
+        } //End block
+        catch (RemoteException e)
+        {
+NetworkInfo var540C13E9E156B687226421B24F2DF178_846321807 =             null;
+            var540C13E9E156B687226421B24F2DF178_846321807.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_846321807;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getActiveNetworkInfoForUid(uid);
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.575 -0400", hash_original_method = "96564B6A49DFD6F7048AD1538B907A96", hash_generated_method = "09C2A5FEBCE4FF4D3CE16AAE88F5CA72")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.883 -0400", hash_original_method = "96564B6A49DFD6F7048AD1538B907A96", hash_generated_method = "B6C687E0DDCCE3CF7F7FA207FC8DF751")
     public NetworkInfo getNetworkInfo(int networkType) {
-        NetworkInfo varB4EAC82CA7396A68D541C85D26508E83_1392706699 = null; 
-        NetworkInfo varB4EAC82CA7396A68D541C85D26508E83_1710163573 = null; 
+        addTaint(networkType);
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1392706699 = mService.getNetworkInfo(networkType);
-        } 
+NetworkInfo var3FB1D95655254021728BF247DB3F0249_1759328042 =             mService.getNetworkInfo(networkType);
+            var3FB1D95655254021728BF247DB3F0249_1759328042.addTaint(taint);
+            return var3FB1D95655254021728BF247DB3F0249_1759328042;
+        } //End block
         catch (RemoteException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1710163573 = null;
-        } 
-        addTaint(networkType);
-        NetworkInfo varA7E53CE21691AB073D9660D615818899_78986422; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_78986422 = varB4EAC82CA7396A68D541C85D26508E83_1392706699;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_78986422 = varB4EAC82CA7396A68D541C85D26508E83_1710163573;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_78986422.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_78986422;
-        
-        
-            
-        
-            
-        
+NetworkInfo var540C13E9E156B687226421B24F2DF178_2067442848 =             null;
+            var540C13E9E156B687226421B24F2DF178_2067442848.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_2067442848;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getNetworkInfo(networkType);
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.576 -0400", hash_original_method = "394CF6797F6D312CB8F1ED596C180D8F", hash_generated_method = "B225FCF550F5B4866C853C6988021A1A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.884 -0400", hash_original_method = "394CF6797F6D312CB8F1ED596C180D8F", hash_generated_method = "73849219F593D6E54804C31CC4A17D8C")
     public NetworkInfo[] getAllNetworkInfo() {
-        NetworkInfo[] varB4EAC82CA7396A68D541C85D26508E83_335927930 = null; 
-        NetworkInfo[] varB4EAC82CA7396A68D541C85D26508E83_781770670 = null; 
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_335927930 = mService.getAllNetworkInfo();
-        } 
+NetworkInfo[] var70CFDC0136921D96C056C2A1EB42D810_1476364664 =             mService.getAllNetworkInfo();
+            var70CFDC0136921D96C056C2A1EB42D810_1476364664.addTaint(taint);
+            return var70CFDC0136921D96C056C2A1EB42D810_1476364664;
+        } //End block
         catch (RemoteException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_781770670 = null;
-        } 
-        NetworkInfo[] varA7E53CE21691AB073D9660D615818899_201789757; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_201789757 = varB4EAC82CA7396A68D541C85D26508E83_335927930;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_201789757 = varB4EAC82CA7396A68D541C85D26508E83_781770670;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_201789757.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_201789757;
-        
-        
-            
-        
-            
-        
+NetworkInfo[] var540C13E9E156B687226421B24F2DF178_988028398 =             null;
+            var540C13E9E156B687226421B24F2DF178_988028398.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_988028398;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getAllNetworkInfo();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.576 -0400", hash_original_method = "D6D4DA92D9064C06A48DA2C5EB8FF9D2", hash_generated_method = "CA2A8A6B7C3A6C16BFD6CB276DD42D6F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.885 -0400", hash_original_method = "D6D4DA92D9064C06A48DA2C5EB8FF9D2", hash_generated_method = "30BFFBFBCB741A1077E7CEF73B4989C4")
     public LinkProperties getActiveLinkProperties() {
-        LinkProperties varB4EAC82CA7396A68D541C85D26508E83_1639310744 = null; 
-        LinkProperties varB4EAC82CA7396A68D541C85D26508E83_2073491131 = null; 
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1639310744 = mService.getActiveLinkProperties();
-        } 
+LinkProperties varBA28DAB2FB296D0CC5A82CF84CEA5F30_1238914621 =             mService.getActiveLinkProperties();
+            varBA28DAB2FB296D0CC5A82CF84CEA5F30_1238914621.addTaint(taint);
+            return varBA28DAB2FB296D0CC5A82CF84CEA5F30_1238914621;
+        } //End block
         catch (RemoteException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_2073491131 = null;
-        } 
-        LinkProperties varA7E53CE21691AB073D9660D615818899_1124357647; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1124357647 = varB4EAC82CA7396A68D541C85D26508E83_1639310744;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1124357647 = varB4EAC82CA7396A68D541C85D26508E83_2073491131;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1124357647.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1124357647;
-        
-        
-            
-        
-            
-        
+LinkProperties var540C13E9E156B687226421B24F2DF178_984019170 =             null;
+            var540C13E9E156B687226421B24F2DF178_984019170.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_984019170;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getActiveLinkProperties();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.577 -0400", hash_original_method = "C7AAA0ED9F7BD2D04E30B8A62557C00D", hash_generated_method = "BD346072D03B3902533BE8C5D9D11D21")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.886 -0400", hash_original_method = "C7AAA0ED9F7BD2D04E30B8A62557C00D", hash_generated_method = "C0D658987DC9A40DE8127EEBE199BDB1")
     public LinkProperties getLinkProperties(int networkType) {
-        LinkProperties varB4EAC82CA7396A68D541C85D26508E83_940246405 = null; 
-        LinkProperties varB4EAC82CA7396A68D541C85D26508E83_784651200 = null; 
+        addTaint(networkType);
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_940246405 = mService.getLinkProperties(networkType);
-        } 
+LinkProperties varCB694E0F083E3A04EA3638584A69852B_686633924 =             mService.getLinkProperties(networkType);
+            varCB694E0F083E3A04EA3638584A69852B_686633924.addTaint(taint);
+            return varCB694E0F083E3A04EA3638584A69852B_686633924;
+        } //End block
         catch (RemoteException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_784651200 = null;
-        } 
-        addTaint(networkType);
-        LinkProperties varA7E53CE21691AB073D9660D615818899_1299271905; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1299271905 = varB4EAC82CA7396A68D541C85D26508E83_940246405;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1299271905 = varB4EAC82CA7396A68D541C85D26508E83_784651200;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1299271905.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1299271905;
-        
-        
-            
-        
-            
-        
+LinkProperties var540C13E9E156B687226421B24F2DF178_1006263053 =             null;
+            var540C13E9E156B687226421B24F2DF178_1006263053.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_1006263053;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getLinkProperties(networkType);
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.577 -0400", hash_original_method = "8773F3976862F74C7E8795673CF57A3F", hash_generated_method = "61D37A698E16611D75C8EA0867979C9F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.886 -0400", hash_original_method = "8773F3976862F74C7E8795673CF57A3F", hash_generated_method = "0AACCD33C6167CF1342FDC3FD912A2A4")
     public boolean setRadios(boolean turnOn) {
+        addTaint(turnOn);
         try 
         {
-            boolean varEC5731E70BA489403D1161FA321CE762_2077411795 = (mService.setRadios(turnOn));
-        } 
+            boolean varD09A4D6511E647D79E7FB3BE2F8B26E6_1403816826 = (mService.setRadios(turnOn));
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_920872152 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_920872152;
+        } //End block
         catch (RemoteException e)
-        { }
-        addTaint(turnOn);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1636059272 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1636059272;
-        
-        
-            
-        
-            
-        
+        {
+            boolean var68934A3E9455FA72420237EB05902327_1789017394 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_568678398 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_568678398;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.setRadios(turnOn);
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.578 -0400", hash_original_method = "F4DEFED01E737220B0A84C9B3C165EA1", hash_generated_method = "4738117DA1081EBEE9CA39A50E360AD6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.887 -0400", hash_original_method = "F4DEFED01E737220B0A84C9B3C165EA1", hash_generated_method = "2F8961CED576F9EB91CD3F4EB4C3837F")
     public boolean setRadio(int networkType, boolean turnOn) {
-        try 
-        {
-            boolean var93B5FB08593ED9DC45F0421EB7F2C6BE_949028570 = (mService.setRadio(networkType, turnOn));
-        } 
-        catch (RemoteException e)
-        { }
-        addTaint(networkType);
         addTaint(turnOn);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2007979112 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2007979112;
-        
-        
-            
-        
-            
-        
+        addTaint(networkType);
+        try 
+        {
+            boolean var32495EF67E52304E6220286C24BA7911_404490731 = (mService.setRadio(networkType, turnOn));
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1296961521 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1296961521;
+        } //End block
+        catch (RemoteException e)
+        {
+            boolean var68934A3E9455FA72420237EB05902327_1425788197 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1238355572 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1238355572;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.setRadio(networkType, turnOn);
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.578 -0400", hash_original_method = "709E7052A14C2A0D29C9219C00073F31", hash_generated_method = "DA276B08C8640B3E05CEAB12C204C3EE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.887 -0400", hash_original_method = "709E7052A14C2A0D29C9219C00073F31", hash_generated_method = "17D4EC001945897A212C13D3DF5725EE")
     public int startUsingNetworkFeature(int networkType, String feature) {
+        addTaint(feature.getTaint());
+        addTaint(networkType);
         try 
         {
-            int var39E3E968BB82C84038568CECB8F010F0_1426546403 = (mService.startUsingNetworkFeature(networkType, feature,
+            int varBC6446D5F9F3C6B3BA6886925D6C1D19_218449205 = (mService.startUsingNetworkFeature(networkType, feature,
                     new Binder()));
-        } 
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_668006883 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_668006883;
+        } //End block
         catch (RemoteException e)
-        { }
-        addTaint(networkType);
-        addTaint(feature.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1644616317 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1644616317;
-        
-        
-            
-                    
-        
-            
-        
+        {
+            int var6BB61E3B7BCE0931DA574D19D1D82C88_1579838511 = (-1);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_560348509 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_560348509;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.startUsingNetworkFeature(networkType, feature,
+                    //new Binder());
+        //} catch (RemoteException e) {
+            //return -1;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.578 -0400", hash_original_method = "60EB71F5D3B7B41111FE02ED36065292", hash_generated_method = "885398508E896B951D24130133B2DE97")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.888 -0400", hash_original_method = "60EB71F5D3B7B41111FE02ED36065292", hash_generated_method = "9E482C6AE22B8206C127EB9015BAE443")
     public int stopUsingNetworkFeature(int networkType, String feature) {
+        addTaint(feature.getTaint());
+        addTaint(networkType);
         try 
         {
-            int var1F50AAD17CF9029F9ABD191CD5412163_723809134 = (mService.stopUsingNetworkFeature(networkType, feature));
-        } 
+            int var908FAFA2FE48FDE6EA53EBB333658A21_590536184 = (mService.stopUsingNetworkFeature(networkType, feature));
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1404373918 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1404373918;
+        } //End block
         catch (RemoteException e)
-        { }
-        addTaint(networkType);
-        addTaint(feature.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_638717108 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_638717108;
-        
-        
-            
-        
-            
-        
+        {
+            int var6BB61E3B7BCE0931DA574D19D1D82C88_39455224 = (-1);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_282116079 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_282116079;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.stopUsingNetworkFeature(networkType, feature);
+        //} catch (RemoteException e) {
+            //return -1;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.579 -0400", hash_original_method = "C11FA4279C0A187DA118461D9F53788F", hash_generated_method = "D0B811F5A053D4CBC560D5DFF8FCF368")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.889 -0400", hash_original_method = "C11FA4279C0A187DA118461D9F53788F", hash_generated_method = "B9D3999B9838710A93DD1F578C1C0101")
     public boolean requestRouteToHost(int networkType, int hostAddress) {
-        InetAddress inetAddress = NetworkUtils.intToInetAddress(hostAddress);
-        boolean varDAE0526518EE420ACEF3DD7CDC55B247_1514420629 = (requestRouteToHostAddress(networkType, inetAddress));
-        addTaint(networkType);
         addTaint(hostAddress);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1712052369 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1712052369;
-        
-        
-        
-            
-        
-        
+        addTaint(networkType);
+        InetAddress inetAddress = NetworkUtils.intToInetAddress(hostAddress);
+    if(inetAddress == null)        
+        {
+            boolean var68934A3E9455FA72420237EB05902327_310958398 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_68929344 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_68929344;
+        } //End block
+        boolean varC1317118DA63ED4EE5A4EA03701A9C38_1489114894 = (requestRouteToHostAddress(networkType, inetAddress));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_865900094 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_865900094;
+        // ---------- Original Method ----------
+        //InetAddress inetAddress = NetworkUtils.intToInetAddress(hostAddress);
+        //if (inetAddress == null) {
+            //return false;
+        //}
+        //return requestRouteToHostAddress(networkType, inetAddress);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.579 -0400", hash_original_method = "EFA83347B3FFE38EB6FE081BBE35835E", hash_generated_method = "73C75F31D6184CF2D7A531F0F5BB2FEE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.889 -0400", hash_original_method = "EFA83347B3FFE38EB6FE081BBE35835E", hash_generated_method = "AB42DEEB2BF0BEF8B7D7E7C0702716CD")
     public boolean requestRouteToHostAddress(int networkType, InetAddress hostAddress) {
+        addTaint(hostAddress.getTaint());
+        addTaint(networkType);
         byte[] address = hostAddress.getAddress();
         try 
         {
-            boolean var658A0FCBDE4C320CB783AD20768859A4_1078463206 = (mService.requestRouteToHostAddress(networkType, address));
-        } 
+            boolean var0AFF5DF071EDC728B4E87E4CC9407A65_1840674554 = (mService.requestRouteToHostAddress(networkType, address));
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_572660248 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_572660248;
+        } //End block
         catch (RemoteException e)
-        { }
-        addTaint(networkType);
-        addTaint(hostAddress.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1322741472 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1322741472;
-        
-        
-        
-            
-        
-            
-        
+        {
+            boolean var68934A3E9455FA72420237EB05902327_1092285976 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_903739450 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_903739450;
+        } //End block
+        // ---------- Original Method ----------
+        //byte[] address = hostAddress.getAddress();
+        //try {
+            //return mService.requestRouteToHostAddress(networkType, address);
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.580 -0400", hash_original_method = "6498894EA2E4C7DBE6A13B3BD05F6504", hash_generated_method = "3E3514DE7DBD857D959DEC2BBEF0B087")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.889 -0400", hash_original_method = "6498894EA2E4C7DBE6A13B3BD05F6504", hash_generated_method = "FE813DBC143B3FE92D50CDECE2106F3D")
     @Deprecated
     public boolean getBackgroundDataSetting() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_639828904 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_639828904;
-        
-        
+        boolean varB326B5062B2F0E69046810717534CB09_747191804 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_769023181 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_769023181;
+        // ---------- Original Method ----------
+        //return true;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.580 -0400", hash_original_method = "C7D66D7319A6F772837F5FAC4582BCF2", hash_generated_method = "DD5713BFAEAD7937DCF087E006B8A5CE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.890 -0400", hash_original_method = "C7D66D7319A6F772837F5FAC4582BCF2", hash_generated_method = "DD5713BFAEAD7937DCF087E006B8A5CE")
     @Deprecated
     public void setBackgroundDataSetting(boolean allowBackgroundData) {
         addTaint(allowBackgroundData);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.581 -0400", hash_original_method = "2A17F1CC768C6D56971308D1A367AB75", hash_generated_method = "34EBE790632EA376E41010E76E0158BF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.890 -0400", hash_original_method = "2A17F1CC768C6D56971308D1A367AB75", hash_generated_method = "05FF1086A76098039A8A645385A41BC4")
     public NetworkQuotaInfo getActiveNetworkQuotaInfo() {
-        NetworkQuotaInfo varB4EAC82CA7396A68D541C85D26508E83_2114928231 = null; 
-        NetworkQuotaInfo varB4EAC82CA7396A68D541C85D26508E83_757312610 = null; 
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_2114928231 = mService.getActiveNetworkQuotaInfo();
-        } 
+NetworkQuotaInfo var2C6D2C827838090203CD1E15C5DF8B8F_1876897530 =             mService.getActiveNetworkQuotaInfo();
+            var2C6D2C827838090203CD1E15C5DF8B8F_1876897530.addTaint(taint);
+            return var2C6D2C827838090203CD1E15C5DF8B8F_1876897530;
+        } //End block
         catch (RemoteException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_757312610 = null;
-        } 
-        NetworkQuotaInfo varA7E53CE21691AB073D9660D615818899_270737407; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_270737407 = varB4EAC82CA7396A68D541C85D26508E83_2114928231;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_270737407 = varB4EAC82CA7396A68D541C85D26508E83_757312610;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_270737407.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_270737407;
-        
-        
-            
-        
-            
-        
+NetworkQuotaInfo var540C13E9E156B687226421B24F2DF178_2172322 =             null;
+            var540C13E9E156B687226421B24F2DF178_2172322.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_2172322;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getActiveNetworkQuotaInfo();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.581 -0400", hash_original_method = "4787FEDAB977985506F4394396606391", hash_generated_method = "9EB442D5496D115E4930854499A6BB35")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.891 -0400", hash_original_method = "4787FEDAB977985506F4394396606391", hash_generated_method = "9E1EA5DBB8051E1FE58FAC7734B6FC6F")
     public boolean getMobileDataEnabled() {
         try 
         {
-            boolean var714A244F14429DE5B56D768589A3543B_2099398169 = (mService.getMobileDataEnabled());
-        } 
+            boolean varB458843D81D2B3075744C73F266D7A2C_1917348918 = (mService.getMobileDataEnabled());
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1557154678 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1557154678;
+        } //End block
         catch (RemoteException e)
-        { }
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1916226770 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1916226770;
-        
-        
-            
-        
-            
-        
+        {
+            boolean varB326B5062B2F0E69046810717534CB09_230910424 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1303149336 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1303149336;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getMobileDataEnabled();
+        //} catch (RemoteException e) {
+            //return true;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.581 -0400", hash_original_method = "03BF638942F758314C38E6E89D590F06", hash_generated_method = "5524DB0CC5B22E8BEC31DE087911A4F0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.891 -0400", hash_original_method = "03BF638942F758314C38E6E89D590F06", hash_generated_method = "8C7040F05C00E42F43910B521E4E4743")
     public void setMobileDataEnabled(boolean enabled) {
+        addTaint(enabled);
         try 
         {
             mService.setMobileDataEnabled(enabled);
-        } 
+        } //End block
         catch (RemoteException e)
-        { }
-        addTaint(enabled);
-        
-        
-            
-        
-        
+        {
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.setMobileDataEnabled(enabled);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.582 -0400", hash_original_method = "65586E40689502E42674D85C93789ED5", hash_generated_method = "A5F8DACD5CE09A03F7242E705918ED36")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.891 -0400", hash_original_method = "65586E40689502E42674D85C93789ED5", hash_generated_method = "A23E748A80B2D2E49405E39C2FCF8079")
     public String[] getTetherableIfaces() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1625476474 = null; 
-        String[] varB4EAC82CA7396A68D541C85D26508E83_758623251 = null; 
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1625476474 = mService.getTetherableIfaces();
-        } 
+String[] var74024E2BFB98559A6111021EA7992D3F_738380640 =             mService.getTetherableIfaces();
+            var74024E2BFB98559A6111021EA7992D3F_738380640.addTaint(taint);
+            return var74024E2BFB98559A6111021EA7992D3F_738380640;
+        } //End block
         catch (RemoteException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_758623251 = new String[0];
-        } 
-        String[] varA7E53CE21691AB073D9660D615818899_666524449; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_666524449 = varB4EAC82CA7396A68D541C85D26508E83_1625476474;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_666524449 = varB4EAC82CA7396A68D541C85D26508E83_758623251;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_666524449.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_666524449;
-        
-        
-            
-        
-            
-        
+String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_1642710082 =             new String[0];
+            var93992EED3A5738F23A3CAF5AB8E5B9F1_1642710082.addTaint(taint);
+            return var93992EED3A5738F23A3CAF5AB8E5B9F1_1642710082;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getTetherableIfaces();
+        //} catch (RemoteException e) {
+            //return new String[0];
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.583 -0400", hash_original_method = "1A1AB0AA8E53EB2A72A3BB78A36F79E1", hash_generated_method = "3ABA5500DD74069F2A6DE1757BF2960A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.892 -0400", hash_original_method = "1A1AB0AA8E53EB2A72A3BB78A36F79E1", hash_generated_method = "B355AA56F97A26E61D612254AD52217C")
     public String[] getTetheredIfaces() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1716444194 = null; 
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1527900040 = null; 
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1716444194 = mService.getTetheredIfaces();
-        } 
+String[] var9B4335AB68A75F3AE5F7A851BC933C3D_1952750379 =             mService.getTetheredIfaces();
+            var9B4335AB68A75F3AE5F7A851BC933C3D_1952750379.addTaint(taint);
+            return var9B4335AB68A75F3AE5F7A851BC933C3D_1952750379;
+        } //End block
         catch (RemoteException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1527900040 = new String[0];
-        } 
-        String[] varA7E53CE21691AB073D9660D615818899_2096539490; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_2096539490 = varB4EAC82CA7396A68D541C85D26508E83_1716444194;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_2096539490 = varB4EAC82CA7396A68D541C85D26508E83_1527900040;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_2096539490.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_2096539490;
-        
-        
-            
-        
-            
-        
+String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_1590803600 =             new String[0];
+            var93992EED3A5738F23A3CAF5AB8E5B9F1_1590803600.addTaint(taint);
+            return var93992EED3A5738F23A3CAF5AB8E5B9F1_1590803600;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getTetheredIfaces();
+        //} catch (RemoteException e) {
+            //return new String[0];
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.584 -0400", hash_original_method = "B4F0365B2F0B873A76FA3BA63C88578F", hash_generated_method = "FB4A60B88E614B452F886EB9436124F3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.892 -0400", hash_original_method = "B4F0365B2F0B873A76FA3BA63C88578F", hash_generated_method = "F415089AF1FBA7F8E13CB6F578B2869B")
     public String[] getTetheringErroredIfaces() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1736137583 = null; 
-        String[] varB4EAC82CA7396A68D541C85D26508E83_249644788 = null; 
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1736137583 = mService.getTetheringErroredIfaces();
-        } 
+String[] varCB858A8AEA35BBB091CA19C8F620CC00_1138359736 =             mService.getTetheringErroredIfaces();
+            varCB858A8AEA35BBB091CA19C8F620CC00_1138359736.addTaint(taint);
+            return varCB858A8AEA35BBB091CA19C8F620CC00_1138359736;
+        } //End block
         catch (RemoteException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_249644788 = new String[0];
-        } 
-        String[] varA7E53CE21691AB073D9660D615818899_1548722626; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1548722626 = varB4EAC82CA7396A68D541C85D26508E83_1736137583;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1548722626 = varB4EAC82CA7396A68D541C85D26508E83_249644788;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1548722626.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1548722626;
-        
-        
-            
-        
-            
-        
+String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_710638234 =             new String[0];
+            var93992EED3A5738F23A3CAF5AB8E5B9F1_710638234.addTaint(taint);
+            return var93992EED3A5738F23A3CAF5AB8E5B9F1_710638234;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getTetheringErroredIfaces();
+        //} catch (RemoteException e) {
+            //return new String[0];
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.584 -0400", hash_original_method = "88DA982A0D8C00E6CF08BAB9F849E24F", hash_generated_method = "2FDF2B2FDAA615A498ED34C8C001B572")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.893 -0400", hash_original_method = "88DA982A0D8C00E6CF08BAB9F849E24F", hash_generated_method = "0DB09DD15FDB39C5CE5EBF4F5989E1E1")
     public int tether(String iface) {
+        addTaint(iface.getTaint());
         try 
         {
-            int var03FB9F4C7AD544143B1AE8487E7B7E6A_1538290410 = (mService.tether(iface));
-        } 
+            int var1D4AF5D11C4A903069F1C114E73F4A9F_295876757 = (mService.tether(iface));
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_43693992 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_43693992;
+        } //End block
         catch (RemoteException e)
-        { }
-        addTaint(iface.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1467802393 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1467802393;
-        
-        
-            
-        
-            
-        
+        {
+            int varF5619E86E20DFE886240F33BFE9271F1_1660049580 = (TETHER_ERROR_SERVICE_UNAVAIL);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_557869896 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_557869896;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.tether(iface);
+        //} catch (RemoteException e) {
+            //return TETHER_ERROR_SERVICE_UNAVAIL;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.585 -0400", hash_original_method = "A16CE7410015543313DA1C15EBE8B863", hash_generated_method = "2D7F7A9A6FF5C2A599DE90D09BDC0284")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.893 -0400", hash_original_method = "A16CE7410015543313DA1C15EBE8B863", hash_generated_method = "61B47574FE2517880ADA1BE76DBBA9EB")
     public int untether(String iface) {
+        addTaint(iface.getTaint());
         try 
         {
-            int varBFA9A01DFAF51932FADB2E68671C2BC1_1374600668 = (mService.untether(iface));
-        } 
+            int var5B82BA8E8DD0B942DDAE4754B7562770_281964132 = (mService.untether(iface));
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_108969404 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_108969404;
+        } //End block
         catch (RemoteException e)
-        { }
-        addTaint(iface.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1251502733 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1251502733;
-        
-        
-            
-        
-            
-        
+        {
+            int varF5619E86E20DFE886240F33BFE9271F1_485221707 = (TETHER_ERROR_SERVICE_UNAVAIL);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_960366060 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_960366060;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.untether(iface);
+        //} catch (RemoteException e) {
+            //return TETHER_ERROR_SERVICE_UNAVAIL;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.586 -0400", hash_original_method = "457F62D672DCD1BF7CAF2342EBCF7BE3", hash_generated_method = "DE5ADF4612239CB36CCE1CFCF407F345")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.894 -0400", hash_original_method = "457F62D672DCD1BF7CAF2342EBCF7BE3", hash_generated_method = "949835D5080F9179F81C29CD18543C5B")
     public boolean isTetheringSupported() {
         try 
         {
-            boolean var6C5950EB3A2190DB9BFABB3C83C14388_583424604 = (mService.isTetheringSupported());
-        } 
+            boolean var1814E5587EF425295177A903081E6EE1_719248920 = (mService.isTetheringSupported());
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_81592171 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_81592171;
+        } //End block
         catch (RemoteException e)
-        { }
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_63350959 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_63350959;
-        
-        
-            
-        
-            
-        
+        {
+            boolean var68934A3E9455FA72420237EB05902327_589731449 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1315368869 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1315368869;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.isTetheringSupported();
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.587 -0400", hash_original_method = "DC0367A904D99268D94A314F1CB55B9B", hash_generated_method = "A152D9A41986363386490F0FCB2ABCD0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.894 -0400", hash_original_method = "DC0367A904D99268D94A314F1CB55B9B", hash_generated_method = "CD9BDADC044366AEBF2F52721EB9B0FE")
     public String[] getTetherableUsbRegexs() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_882900417 = null; 
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1329684183 = null; 
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_882900417 = mService.getTetherableUsbRegexs();
-        } 
+String[] var18382B048E6AE48852E65DB6AAA5EAD0_1570720885 =             mService.getTetherableUsbRegexs();
+            var18382B048E6AE48852E65DB6AAA5EAD0_1570720885.addTaint(taint);
+            return var18382B048E6AE48852E65DB6AAA5EAD0_1570720885;
+        } //End block
         catch (RemoteException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1329684183 = new String[0];
-        } 
-        String[] varA7E53CE21691AB073D9660D615818899_1193121487; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1193121487 = varB4EAC82CA7396A68D541C85D26508E83_882900417;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1193121487 = varB4EAC82CA7396A68D541C85D26508E83_1329684183;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1193121487.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1193121487;
-        
-        
-            
-        
-            
-        
+String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_1462106886 =             new String[0];
+            var93992EED3A5738F23A3CAF5AB8E5B9F1_1462106886.addTaint(taint);
+            return var93992EED3A5738F23A3CAF5AB8E5B9F1_1462106886;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getTetherableUsbRegexs();
+        //} catch (RemoteException e) {
+            //return new String[0];
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.588 -0400", hash_original_method = "8DD288EE3D6933895D6454F488DECB73", hash_generated_method = "43DE6F7BF1BFE3EB6186F7630441956E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.895 -0400", hash_original_method = "8DD288EE3D6933895D6454F488DECB73", hash_generated_method = "1B762A5F0C793B1C2A2EBDCCE2C9F5F7")
     public String[] getTetherableWifiRegexs() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1392109508 = null; 
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1528799528 = null; 
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1392109508 = mService.getTetherableWifiRegexs();
-        } 
+String[] varE6D299C14A46E7068C0D9D2AE29FFBB7_794479475 =             mService.getTetherableWifiRegexs();
+            varE6D299C14A46E7068C0D9D2AE29FFBB7_794479475.addTaint(taint);
+            return varE6D299C14A46E7068C0D9D2AE29FFBB7_794479475;
+        } //End block
         catch (RemoteException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1528799528 = new String[0];
-        } 
-        String[] varA7E53CE21691AB073D9660D615818899_1493314738; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1493314738 = varB4EAC82CA7396A68D541C85D26508E83_1392109508;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1493314738 = varB4EAC82CA7396A68D541C85D26508E83_1528799528;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1493314738.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1493314738;
-        
-        
-            
-        
-            
-        
+String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_1449546339 =             new String[0];
+            var93992EED3A5738F23A3CAF5AB8E5B9F1_1449546339.addTaint(taint);
+            return var93992EED3A5738F23A3CAF5AB8E5B9F1_1449546339;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getTetherableWifiRegexs();
+        //} catch (RemoteException e) {
+            //return new String[0];
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.588 -0400", hash_original_method = "83E2E43D24B9648666006A701F93D599", hash_generated_method = "B4F46763B70DDBA14A4BA76013768849")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.895 -0400", hash_original_method = "83E2E43D24B9648666006A701F93D599", hash_generated_method = "A9A357B313F049E98F0B13D6012F3F85")
     public String[] getTetherableBluetoothRegexs() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1602935760 = null; 
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1241013968 = null; 
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1602935760 = mService.getTetherableBluetoothRegexs();
-        } 
+String[] var8C1BF787D9A26A56A43A1294212A5EA6_553253686 =             mService.getTetherableBluetoothRegexs();
+            var8C1BF787D9A26A56A43A1294212A5EA6_553253686.addTaint(taint);
+            return var8C1BF787D9A26A56A43A1294212A5EA6_553253686;
+        } //End block
         catch (RemoteException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1241013968 = new String[0];
-        } 
-        String[] varA7E53CE21691AB073D9660D615818899_2090474681; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_2090474681 = varB4EAC82CA7396A68D541C85D26508E83_1602935760;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_2090474681 = varB4EAC82CA7396A68D541C85D26508E83_1241013968;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_2090474681.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_2090474681;
-        
-        
-            
-        
-            
-        
+String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_451063784 =             new String[0];
+            var93992EED3A5738F23A3CAF5AB8E5B9F1_451063784.addTaint(taint);
+            return var93992EED3A5738F23A3CAF5AB8E5B9F1_451063784;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getTetherableBluetoothRegexs();
+        //} catch (RemoteException e) {
+            //return new String[0];
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.589 -0400", hash_original_method = "952ADB6A2A3AEF46E275F5FA17E284ED", hash_generated_method = "026CBB9FC5899EAD0B32220B4224505A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.896 -0400", hash_original_method = "952ADB6A2A3AEF46E275F5FA17E284ED", hash_generated_method = "8374AA019484392C1F59EDD7E23F8974")
     public int setUsbTethering(boolean enable) {
-        try 
-        {
-            int var743BE6F957ADCD1D6C1FB098A46C5C90_548297945 = (mService.setUsbTethering(enable));
-        } 
-        catch (RemoteException e)
-        { }
         addTaint(enable);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_10863183 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_10863183;
-        
-        
-            
-        
-            
-        
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.589 -0400", hash_original_method = "A91E88C74DCBFDB505B1B5012FAE30D1", hash_generated_method = "A2779A1C0702CD0D1D1FED4518AD4946")
-    public int getLastTetherError(String iface) {
         try 
         {
-            int var262D51C3C390381089B6EEB0B45A0991_749651310 = (mService.getLastTetherError(iface));
-        } 
+            int varB4C6BADBC3FE30C5AE139BE353835FAF_552202674 = (mService.setUsbTethering(enable));
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_691345115 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_691345115;
+        } //End block
         catch (RemoteException e)
-        { }
-        addTaint(iface.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_220901156 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_220901156;
-        
-        
-            
-        
-            
-        
+        {
+            int varF5619E86E20DFE886240F33BFE9271F1_553975736 = (TETHER_ERROR_SERVICE_UNAVAIL);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1500928003 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1500928003;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.setUsbTethering(enable);
+        //} catch (RemoteException e) {
+            //return TETHER_ERROR_SERVICE_UNAVAIL;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.590 -0400", hash_original_method = "400BD091D4CACB3FCA76B3A275DD11D5", hash_generated_method = "B3088D49C87F808996C842D3CCBB3ABA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.896 -0400", hash_original_method = "A91E88C74DCBFDB505B1B5012FAE30D1", hash_generated_method = "D5513EE797736F5AE827DD5D889BF02E")
+    public int getLastTetherError(String iface) {
+        addTaint(iface.getTaint());
+        try 
+        {
+            int var191E4B382B7503278B8565A1DC8456AB_1090575485 = (mService.getLastTetherError(iface));
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_103692746 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_103692746;
+        } //End block
+        catch (RemoteException e)
+        {
+            int varF5619E86E20DFE886240F33BFE9271F1_2107907378 = (TETHER_ERROR_SERVICE_UNAVAIL);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_379045367 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_379045367;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getLastTetherError(iface);
+        //} catch (RemoteException e) {
+            //return TETHER_ERROR_SERVICE_UNAVAIL;
+        //}
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.897 -0400", hash_original_method = "400BD091D4CACB3FCA76B3A275DD11D5", hash_generated_method = "67B2FA9768A81AA35A70413A17315E34")
     public boolean requestNetworkTransitionWakelock(String forWhom) {
+        addTaint(forWhom.getTaint());
         try 
         {
             mService.requestNetworkTransitionWakelock(forWhom);
-        } 
+            boolean varB326B5062B2F0E69046810717534CB09_989684777 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1972549773 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1972549773;
+        } //End block
         catch (RemoteException e)
-        { }
-        addTaint(forWhom.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1107946905 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1107946905;
-        
-        
-            
-            
-        
-            
-        
+        {
+            boolean var68934A3E9455FA72420237EB05902327_1466580629 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_309767313 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_309767313;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.requestNetworkTransitionWakelock(forWhom);
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.590 -0400", hash_original_method = "37DB5DE823B5870FA290320C99B5BB07", hash_generated_method = "23692885BCAF934FB96A69641817EE84")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.897 -0400", hash_original_method = "37DB5DE823B5870FA290320C99B5BB07", hash_generated_method = "89B0E2A036C6A7716FACFA7DA36F0C1F")
     public void reportInetCondition(int networkType, int percentage) {
+        addTaint(percentage);
+        addTaint(networkType);
         try 
         {
             mService.reportInetCondition(networkType, percentage);
-        } 
+        } //End block
         catch (RemoteException e)
-        { }
-        addTaint(networkType);
-        addTaint(percentage);
-        
-        
-            
-        
-        
+        {
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.reportInetCondition(networkType, percentage);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.590 -0400", hash_original_method = "0F41E571577973AB5A169120A0CDA859", hash_generated_method = "BCACB903F0EEABCA1CA1F29A912FDE6D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.897 -0400", hash_original_method = "0F41E571577973AB5A169120A0CDA859", hash_generated_method = "726511FC235987EF6B59F3FD23FF463D")
     public void setGlobalProxy(ProxyProperties p) {
+        addTaint(p.getTaint());
         try 
         {
             mService.setGlobalProxy(p);
-        } 
+        } //End block
         catch (RemoteException e)
-        { }
-        addTaint(p.getTaint());
-        
-        
-            
-        
-        
+        {
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.setGlobalProxy(p);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.591 -0400", hash_original_method = "7F5BD964F39855F539616DAFB8170A5C", hash_generated_method = "DFB65C5637F928A687E53D3ACDEA8554")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.898 -0400", hash_original_method = "7F5BD964F39855F539616DAFB8170A5C", hash_generated_method = "2DE5EFADF152053F25BF87CCA2D5E950")
     public ProxyProperties getGlobalProxy() {
-        ProxyProperties varB4EAC82CA7396A68D541C85D26508E83_1973230701 = null; 
-        ProxyProperties varB4EAC82CA7396A68D541C85D26508E83_1260632920 = null; 
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1973230701 = mService.getGlobalProxy();
-        } 
+ProxyProperties varC8A152E0F06A06977A2C52FB090F4830_45093719 =             mService.getGlobalProxy();
+            varC8A152E0F06A06977A2C52FB090F4830_45093719.addTaint(taint);
+            return varC8A152E0F06A06977A2C52FB090F4830_45093719;
+        } //End block
         catch (RemoteException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1260632920 = null;
-        } 
-        ProxyProperties varA7E53CE21691AB073D9660D615818899_1972280702; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1972280702 = varB4EAC82CA7396A68D541C85D26508E83_1973230701;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1972280702 = varB4EAC82CA7396A68D541C85D26508E83_1260632920;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1972280702.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1972280702;
-        
-        
-            
-        
-            
-        
+ProxyProperties var540C13E9E156B687226421B24F2DF178_335575286 =             null;
+            var540C13E9E156B687226421B24F2DF178_335575286.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_335575286;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getGlobalProxy();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.592 -0400", hash_original_method = "C61C105C2967FBAB6E5B43A96F13A0DE", hash_generated_method = "E343099430F911E5F72375E11C6BCB29")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.898 -0400", hash_original_method = "C61C105C2967FBAB6E5B43A96F13A0DE", hash_generated_method = "001261905B7C3813F48333E0252BB47D")
     public ProxyProperties getProxy() {
-        ProxyProperties varB4EAC82CA7396A68D541C85D26508E83_619089217 = null; 
-        ProxyProperties varB4EAC82CA7396A68D541C85D26508E83_223240255 = null; 
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_619089217 = mService.getProxy();
-        } 
+ProxyProperties varF9A83677CD54FBE1BA647420C68E1B7F_817200808 =             mService.getProxy();
+            varF9A83677CD54FBE1BA647420C68E1B7F_817200808.addTaint(taint);
+            return varF9A83677CD54FBE1BA647420C68E1B7F_817200808;
+        } //End block
         catch (RemoteException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_223240255 = null;
-        } 
-        ProxyProperties varA7E53CE21691AB073D9660D615818899_272047112; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_272047112 = varB4EAC82CA7396A68D541C85D26508E83_619089217;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_272047112 = varB4EAC82CA7396A68D541C85D26508E83_223240255;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_272047112.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_272047112;
-        
-        
-            
-        
-            
-        
+ProxyProperties var540C13E9E156B687226421B24F2DF178_354828075 =             null;
+            var540C13E9E156B687226421B24F2DF178_354828075.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_354828075;
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getProxy();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.592 -0400", hash_original_method = "9D2F7B8AE7DD2651562BD08E17F617DF", hash_generated_method = "EA4558048AF716E6C9B9302F537783EF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.899 -0400", hash_original_method = "9D2F7B8AE7DD2651562BD08E17F617DF", hash_generated_method = "938BBEE696104355AB187E6B5D6E040A")
     public void setDataDependency(int networkType, boolean met) {
+        addTaint(met);
+        addTaint(networkType);
         try 
         {
             mService.setDataDependency(networkType, met);
-        } 
+        } //End block
         catch (RemoteException e)
-        { }
-        addTaint(networkType);
-        addTaint(met);
-        
-        
-            
-        
-        
+        {
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.setDataDependency(networkType, met);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.592 -0400", hash_original_method = "A6B9FE53FCB83D066C3DAD2A2CD2AA6D", hash_generated_method = "EF49D4A058986685579429F629FEA590")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.899 -0400", hash_original_method = "A6B9FE53FCB83D066C3DAD2A2CD2AA6D", hash_generated_method = "4D8CC7D13291A4A7C56AD63C9B3F722F")
     public boolean isNetworkSupported(int networkType) {
+        addTaint(networkType);
         try 
         {
-            boolean var1A30801D3631F278BFFEEDA18658A3F5_155193836 = (mService.isNetworkSupported(networkType));
-        } 
+            boolean var88D9C5576C1212BE5027394109B0F368_361585339 = (mService.isNetworkSupported(networkType));
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_370975161 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_370975161;
+        } //End block
         catch (RemoteException e)
-        { }
-        addTaint(networkType);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2083790892 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2083790892;
-        
-        
-            
-        
-        
+        {
+        } //End block
+        boolean var68934A3E9455FA72420237EB05902327_1667997952 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_621619142 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_621619142;
+        // ---------- Original Method ----------
+        //try {
+            //return mService.isNetworkSupported(networkType);
+        //} catch (RemoteException e) {}
+        //return false;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.592 -0400", hash_original_field = "E3416443F8154D4F28ABC689636932D3", hash_generated_field = "F201A0F81F13052259E82D44CCBC8735")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.899 -0400", hash_original_field = "E3416443F8154D4F28ABC689636932D3", hash_generated_field = "F201A0F81F13052259E82D44CCBC8735")
 
     private static final String TAG = "ConnectivityManager";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.592 -0400", hash_original_field = "E18783678EA8907F4F740E9C103235E1", hash_generated_field = "D74478E2CAA048320F4ED7DCDC0267DE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.900 -0400", hash_original_field = "E18783678EA8907F4F740E9C103235E1", hash_generated_field = "D74478E2CAA048320F4ED7DCDC0267DE")
 
     public static final String CONNECTIVITY_ACTION = "android.net.conn.CONNECTIVITY_CHANGE";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.592 -0400", hash_original_field = "58684C387F7472905903FDF03C02746A", hash_generated_field = "0C9BA7409106298885F98D4DB9A7BA61")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.900 -0400", hash_original_field = "58684C387F7472905903FDF03C02746A", hash_generated_field = "0C9BA7409106298885F98D4DB9A7BA61")
 
     public static final String CONNECTIVITY_ACTION_IMMEDIATE =
             "android.net.conn.CONNECTIVITY_CHANGE_IMMEDIATE";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.592 -0400", hash_original_field = "ACAA90A79946019658CF4D2C0E90FC45", hash_generated_field = "5C154E9E8533DCDF3E6DC4E5322ABCE1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.900 -0400", hash_original_field = "ACAA90A79946019658CF4D2C0E90FC45", hash_generated_field = "5C154E9E8533DCDF3E6DC4E5322ABCE1")
 
     @Deprecated
     public static final String EXTRA_NETWORK_INFO = "networkInfo";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.592 -0400", hash_original_field = "802EF07B65F2884495D6E969E0C88D66", hash_generated_field = "B68430B9EDED794774E47F6FA9FA85E8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.900 -0400", hash_original_field = "802EF07B65F2884495D6E969E0C88D66", hash_generated_field = "B68430B9EDED794774E47F6FA9FA85E8")
 
     public static final String EXTRA_IS_FAILOVER = "isFailover";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.592 -0400", hash_original_field = "09C2C7F358EEA8EE156BEE6102C6CB70", hash_generated_field = "38491437E03D8F52518B778972D56CD8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.900 -0400", hash_original_field = "09C2C7F358EEA8EE156BEE6102C6CB70", hash_generated_field = "38491437E03D8F52518B778972D56CD8")
 
     public static final String EXTRA_OTHER_NETWORK_INFO = "otherNetwork";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.592 -0400", hash_original_field = "C03F14926EB919E467AF7936AE818188", hash_generated_field = "BF4C8084C31E77ECEC6D5E1A7C4B100F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.900 -0400", hash_original_field = "C03F14926EB919E467AF7936AE818188", hash_generated_field = "BF4C8084C31E77ECEC6D5E1A7C4B100F")
 
     public static final String EXTRA_NO_CONNECTIVITY = "noConnectivity";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "3BA15662B0A0123D9208EFD88ABE81BD", hash_generated_field = "F4AF3469CA1920E05896824A0F13F189")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.900 -0400", hash_original_field = "3BA15662B0A0123D9208EFD88ABE81BD", hash_generated_field = "F4AF3469CA1920E05896824A0F13F189")
 
     public static final String EXTRA_REASON = "reason";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "F55DD0E4BCD20A1D747CDC4B055D22CE", hash_generated_field = "C2A1F543AB7E1673850281E0F6B73AA4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.900 -0400", hash_original_field = "F55DD0E4BCD20A1D747CDC4B055D22CE", hash_generated_field = "C2A1F543AB7E1673850281E0F6B73AA4")
 
     public static final String EXTRA_EXTRA_INFO = "extraInfo";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "0E0F8AE6EE9BB45C3785EAE3A50351D4", hash_generated_field = "84A4E2B243A3B918B60966208E2EF600")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.900 -0400", hash_original_field = "0E0F8AE6EE9BB45C3785EAE3A50351D4", hash_generated_field = "84A4E2B243A3B918B60966208E2EF600")
 
     public static final String EXTRA_INET_CONDITION = "inetCondition";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "C7FF2C85F01D02DC43889B78A3046DC0", hash_generated_field = "7CC0C8005490856A2BC847B1E0AA4532")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.900 -0400", hash_original_field = "C7FF2C85F01D02DC43889B78A3046DC0", hash_generated_field = "7CC0C8005490856A2BC847B1E0AA4532")
 
     @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
     public static final String ACTION_BACKGROUND_DATA_SETTING_CHANGED =
             "android.net.conn.BACKGROUND_DATA_SETTING_CHANGED";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "4D03FACF839E85AAE81E416BFF0B2F03", hash_generated_field = "929E54EDEA98710E57039E6175F5F1AB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.900 -0400", hash_original_field = "4D03FACF839E85AAE81E416BFF0B2F03", hash_generated_field = "929E54EDEA98710E57039E6175F5F1AB")
 
     public static final String INET_CONDITION_ACTION =
             "android.net.conn.INET_CONDITION_ACTION";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "CF9664535E91B15C6BC45651EDE4FD7C", hash_generated_field = "15608AF081DDD375FA2123C2469F75CE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.900 -0400", hash_original_field = "CF9664535E91B15C6BC45651EDE4FD7C", hash_generated_field = "15608AF081DDD375FA2123C2469F75CE")
 
     public static final String ACTION_TETHER_STATE_CHANGED =
             "android.net.conn.TETHER_STATE_CHANGED";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "654793663B4638ED02186244D06103D5", hash_generated_field = "5FD0830638BAEF1B21B12EF8569D3DFD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.900 -0400", hash_original_field = "654793663B4638ED02186244D06103D5", hash_generated_field = "5FD0830638BAEF1B21B12EF8569D3DFD")
 
     public static final String EXTRA_AVAILABLE_TETHER = "availableArray";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "A7A0C89549BF96C667EA6B857AECE418", hash_generated_field = "F15A2DC595B40FF3DA55E3CB05B0C76E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.900 -0400", hash_original_field = "A7A0C89549BF96C667EA6B857AECE418", hash_generated_field = "F15A2DC595B40FF3DA55E3CB05B0C76E")
 
     public static final String EXTRA_ACTIVE_TETHER = "activeArray";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "41B36775ABA15157AF080E707349CD53", hash_generated_field = "C4FB23C86207DA0754B9BB6EA60CB4E1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.900 -0400", hash_original_field = "41B36775ABA15157AF080E707349CD53", hash_generated_field = "C4FB23C86207DA0754B9BB6EA60CB4E1")
 
     public static final String EXTRA_ERRORED_TETHER = "erroredArray";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "BA32C5D767FE9C9B50CE422A729C6F55", hash_generated_field = "93641F6D636E423068CBD0F7A429454B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.900 -0400", hash_original_field = "BA32C5D767FE9C9B50CE422A729C6F55", hash_generated_field = "93641F6D636E423068CBD0F7A429454B")
 
     public static final int TYPE_NONE        = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "562DD92D67E2C376ECAC9C7FE33E774D", hash_generated_field = "C9C37D3486815251D1CD39C5BE1F3D12")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.901 -0400", hash_original_field = "562DD92D67E2C376ECAC9C7FE33E774D", hash_generated_field = "C9C37D3486815251D1CD39C5BE1F3D12")
 
     public static final int TYPE_MOBILE      = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "FAF7153C206F8A855D3926191101974F", hash_generated_field = "AC65BD7D5FC33F670E90ACDF591214B3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.901 -0400", hash_original_field = "FAF7153C206F8A855D3926191101974F", hash_generated_field = "AC65BD7D5FC33F670E90ACDF591214B3")
 
     public static final int TYPE_WIFI        = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "A777107098EAD4C966407C3D16CAC458", hash_generated_field = "CFFD550B064A8A8F08DFF2A1CA39B65C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.901 -0400", hash_original_field = "A777107098EAD4C966407C3D16CAC458", hash_generated_field = "CFFD550B064A8A8F08DFF2A1CA39B65C")
 
     public static final int TYPE_MOBILE_MMS  = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "F52011C1686E4F3CD9759D6CC94E24DD", hash_generated_field = "9F57AC6327FA6A9B5FA8D268FA065E2F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.901 -0400", hash_original_field = "F52011C1686E4F3CD9759D6CC94E24DD", hash_generated_field = "9F57AC6327FA6A9B5FA8D268FA065E2F")
 
     public static final int TYPE_MOBILE_SUPL = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "8E9B1BBAD76A87F265EEE3509913DA05", hash_generated_field = "E58E8F46709C4195B87AD88D79419D50")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.901 -0400", hash_original_field = "8E9B1BBAD76A87F265EEE3509913DA05", hash_generated_field = "E58E8F46709C4195B87AD88D79419D50")
 
     public static final int TYPE_MOBILE_DUN  = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "1C0EDB729ABB9A93A438D5ACA75108C2", hash_generated_field = "0621333417ED999CFE5293A09D2BECCB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.901 -0400", hash_original_field = "1C0EDB729ABB9A93A438D5ACA75108C2", hash_generated_field = "0621333417ED999CFE5293A09D2BECCB")
 
     public static final int TYPE_MOBILE_HIPRI = 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "AC4DA46AF4A33194000B377B5FBBCBD5", hash_generated_field = "BAA1818BB1192483D8B52B8F786077C0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.901 -0400", hash_original_field = "AC4DA46AF4A33194000B377B5FBBCBD5", hash_generated_field = "BAA1818BB1192483D8B52B8F786077C0")
 
     public static final int TYPE_WIMAX       = 6;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "53D91812C028FF9CD8DDF841FC6A910E", hash_generated_field = "CD355E6AC2221CCE2CCDAE49A283C8ED")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.901 -0400", hash_original_field = "53D91812C028FF9CD8DDF841FC6A910E", hash_generated_field = "CD355E6AC2221CCE2CCDAE49A283C8ED")
 
     public static final int TYPE_BLUETOOTH   = 7;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "AF2901506BAE70BD83B4050A46E2BD52", hash_generated_field = "ABE0A738884F28B1356F01138B1EB213")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.901 -0400", hash_original_field = "AF2901506BAE70BD83B4050A46E2BD52", hash_generated_field = "ABE0A738884F28B1356F01138B1EB213")
 
     public static final int TYPE_DUMMY       = 8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "1765D5FB922544A865701915DD1D3747", hash_generated_field = "ACFC541BB1EF72643D27FBCAC2F80E92")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.901 -0400", hash_original_field = "1765D5FB922544A865701915DD1D3747", hash_generated_field = "ACFC541BB1EF72643D27FBCAC2F80E92")
 
     public static final int TYPE_ETHERNET    = 9;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "C1FFA41D0FCE77257B41D4941D7E28C7", hash_generated_field = "C217790CC7405EE35B93FDCCBB7C8140")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.901 -0400", hash_original_field = "C1FFA41D0FCE77257B41D4941D7E28C7", hash_generated_field = "C217790CC7405EE35B93FDCCBB7C8140")
 
     public static final int TYPE_MOBILE_FOTA = 10;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "7DC8FCC532633F1CC616125CE7A9ED71", hash_generated_field = "6D9B79B5DD49C3171F158817B3061CDF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.901 -0400", hash_original_field = "7DC8FCC532633F1CC616125CE7A9ED71", hash_generated_field = "6D9B79B5DD49C3171F158817B3061CDF")
 
     public static final int TYPE_MOBILE_IMS  = 11;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "94B34D197D8C9575A21DA4E6ED0973D6", hash_generated_field = "70BC4329B6D7C6986B2212F6DB3B92A0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.901 -0400", hash_original_field = "94B34D197D8C9575A21DA4E6ED0973D6", hash_generated_field = "70BC4329B6D7C6986B2212F6DB3B92A0")
 
     public static final int TYPE_MOBILE_CBS  = 12;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "4A26070CDA8366EDBF53AF48F9F8C66E", hash_generated_field = "92581ADB158A1116848D6CC3361396A8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.901 -0400", hash_original_field = "4A26070CDA8366EDBF53AF48F9F8C66E", hash_generated_field = "92581ADB158A1116848D6CC3361396A8")
 
     public static final int TYPE_WIFI_P2P    = 13;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "BBB4907FF99ED01DB65C34C97B36DBAA", hash_generated_field = "EFA11F2732F8BA0E99360E32BB64687E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.902 -0400", hash_original_field = "BBB4907FF99ED01DB65C34C97B36DBAA", hash_generated_field = "EFA11F2732F8BA0E99360E32BB64687E")
 
     public static final int MAX_RADIO_TYPE   = TYPE_WIFI_P2P;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "A4710F917416CD1A4DDBF2CBF9B78242", hash_generated_field = "1E3DEA2E494B778E3E4DC09D24507EBC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.902 -0400", hash_original_field = "A4710F917416CD1A4DDBF2CBF9B78242", hash_generated_field = "1E3DEA2E494B778E3E4DC09D24507EBC")
 
     public static final int MAX_NETWORK_TYPE = TYPE_WIFI_P2P;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "09668E6C6D8A3966598A16113343EDE8", hash_generated_field = "693728286830CEC17980B2770B246B92")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.902 -0400", hash_original_field = "09668E6C6D8A3966598A16113343EDE8", hash_generated_field = "693728286830CEC17980B2770B246B92")
 
     public static final int DEFAULT_NETWORK_PREFERENCE = TYPE_WIFI;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "594EE2342EC63E82194DA3F121F16201", hash_generated_field = "27C649E4F5C0896362843DA1D4CCC9B3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.902 -0400", hash_original_field = "594EE2342EC63E82194DA3F121F16201", hash_generated_field = "27C649E4F5C0896362843DA1D4CCC9B3")
 
     public static final int TETHER_ERROR_NO_ERROR           = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "1E235120E5BB78D91FD44C27F6AC18FF", hash_generated_field = "07524C9E5C0A6E14423C5AA3A0BCF933")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.902 -0400", hash_original_field = "1E235120E5BB78D91FD44C27F6AC18FF", hash_generated_field = "07524C9E5C0A6E14423C5AA3A0BCF933")
 
     public static final int TETHER_ERROR_UNKNOWN_IFACE      = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "475D56B8E540E5A35CE3894648DE5FA9", hash_generated_field = "6A20D3B74D9781CEFE362C2F0E6C1ACB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.902 -0400", hash_original_field = "475D56B8E540E5A35CE3894648DE5FA9", hash_generated_field = "6A20D3B74D9781CEFE362C2F0E6C1ACB")
 
     public static final int TETHER_ERROR_SERVICE_UNAVAIL    = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "461FD932F3282955F1EB893D9309096B", hash_generated_field = "6DBA0A44F83AE28B03C80500322E7C88")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.902 -0400", hash_original_field = "461FD932F3282955F1EB893D9309096B", hash_generated_field = "6DBA0A44F83AE28B03C80500322E7C88")
 
     public static final int TETHER_ERROR_UNSUPPORTED        = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "763F5DEE712955BE78209F2BF7BBF491", hash_generated_field = "39FD0B36B98E04AAD8EEAF19046A06B2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.902 -0400", hash_original_field = "763F5DEE712955BE78209F2BF7BBF491", hash_generated_field = "39FD0B36B98E04AAD8EEAF19046A06B2")
 
     public static final int TETHER_ERROR_UNAVAIL_IFACE      = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "BF0FC9BD69BB1852E21E9E7CD41679F8", hash_generated_field = "5A077B24861F547F9496BEBC8EFA8136")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.902 -0400", hash_original_field = "BF0FC9BD69BB1852E21E9E7CD41679F8", hash_generated_field = "5A077B24861F547F9496BEBC8EFA8136")
 
     public static final int TETHER_ERROR_MASTER_ERROR       = 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "FA48AEE6B0189CFD993EC1DB6FBDF8BD", hash_generated_field = "FFAEC6C250B0EF0B5C941FCD72B78F03")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.902 -0400", hash_original_field = "FA48AEE6B0189CFD993EC1DB6FBDF8BD", hash_generated_field = "FFAEC6C250B0EF0B5C941FCD72B78F03")
 
     public static final int TETHER_ERROR_TETHER_IFACE_ERROR = 6;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "4CA9F39A76FFAE657179FC8A52521263", hash_generated_field = "E28AFC063D621B0867BDDEB59FAF30D1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.902 -0400", hash_original_field = "4CA9F39A76FFAE657179FC8A52521263", hash_generated_field = "E28AFC063D621B0867BDDEB59FAF30D1")
 
     public static final int TETHER_ERROR_UNTETHER_IFACE_ERROR = 7;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "AC906D4C683762A78E92D36758198069", hash_generated_field = "F6682A4AE0D5B2CE3CDD81FB1BE1FF0F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.902 -0400", hash_original_field = "AC906D4C683762A78E92D36758198069", hash_generated_field = "F6682A4AE0D5B2CE3CDD81FB1BE1FF0F")
 
     public static final int TETHER_ERROR_ENABLE_NAT_ERROR     = 8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "5BA53DF68BF9F14D6726E5CB2025E104", hash_generated_field = "8F0E5817C52CE45A45E797BAE8358F6C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.902 -0400", hash_original_field = "5BA53DF68BF9F14D6726E5CB2025E104", hash_generated_field = "8F0E5817C52CE45A45E797BAE8358F6C")
 
     public static final int TETHER_ERROR_DISABLE_NAT_ERROR    = 9;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.593 -0400", hash_original_field = "6E6315DC94CB292B1090EA7B848E3804", hash_generated_field = "6F017CF59453C65348D1F7CD3994589B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.902 -0400", hash_original_field = "6E6315DC94CB292B1090EA7B848E3804", hash_generated_field = "6F017CF59453C65348D1F7CD3994589B")
 
     public static final int TETHER_ERROR_IFACE_CFG_ERROR      = 10;
 }

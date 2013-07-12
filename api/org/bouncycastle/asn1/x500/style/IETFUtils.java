@@ -1,12 +1,9 @@
 package org.bouncycastle.asn1.x500.style;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.IOException;
 import java.util.Hashtable;
 import java.util.Vector;
@@ -25,14 +22,14 @@ import org.bouncycastle.util.encoders.Hex;
 
 public class IETFUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.583 -0400", hash_original_method = "A1DC5483E864AC4E5F00EC3185D86BA1", hash_generated_method = "A1DC5483E864AC4E5F00EC3185D86BA1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.854 -0400", hash_original_method = "A1DC5483E864AC4E5F00EC3185D86BA1", hash_generated_method = "A1DC5483E864AC4E5F00EC3185D86BA1")
     public IETFUtils ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    public static RDN[] rDNsFromString(String name, X500NameStyle x500Style) {
+        public static RDN[] rDNsFromString(String name, X500NameStyle x500Style) {
         X500NameTokenizer nTok = new X500NameTokenizer(name);
         X500NameBuilder builder = new X500NameBuilder(x500Style);
         while (nTok.hasMoreTokens())
@@ -74,7 +71,7 @@ public class IETFUtils {
     }
 
     
-    private static String[] toValueArray(Vector values) {
+        private static String[] toValueArray(Vector values) {
         String[] tmp = new String[values.size()];
         for (int i = 0; i != tmp.length; i++)
         {
@@ -84,7 +81,7 @@ public class IETFUtils {
     }
 
     
-    private static ASN1ObjectIdentifier[] toOIDArray(Vector oids) {
+        private static ASN1ObjectIdentifier[] toOIDArray(Vector oids) {
         ASN1ObjectIdentifier[] tmp = new ASN1ObjectIdentifier[oids.size()];
         for (int i = 0; i != tmp.length; i++)
         {
@@ -94,7 +91,7 @@ public class IETFUtils {
     }
 
     
-    public static ASN1ObjectIdentifier decodeAttrName(
+        public static ASN1ObjectIdentifier decodeAttrName(
         String      name,
         Hashtable   lookUp) {
         if (Strings.toUpperCase(name).startsWith("OID."))
@@ -114,7 +111,7 @@ public class IETFUtils {
     }
 
     
-    public static ASN1Encodable valueFromHexString(
+        public static ASN1Encodable valueFromHexString(
         String  str,
         int     off) throws IOException {
         str = Strings.toLowerCase(str);
@@ -144,7 +141,7 @@ public class IETFUtils {
     }
 
     
-    public static void appendTypeAndValue(
+        public static void appendTypeAndValue(
         StringBuffer          buf,
         AttributeTypeAndValue typeAndValue,
         Hashtable             oidSymbols) {
@@ -162,7 +159,7 @@ public class IETFUtils {
     }
 
     
-    public static String valueToString(ASN1Encodable value) {
+        public static String valueToString(ASN1Encodable value) {
         StringBuffer vBuf = new StringBuffer();
         if (value instanceof ASN1String && !(value instanceof DERUniversalString))
         {
@@ -207,7 +204,7 @@ public class IETFUtils {
     }
 
     
-    private static String bytesToString(
+        private static String bytesToString(
         byte[] data) {
         char[]  cs = new char[data.length];
         for (int i = 0; i != cs.length; i++)
@@ -218,7 +215,7 @@ public class IETFUtils {
     }
 
     
-    public static String canonicalize(String s) {
+        public static String canonicalize(String s) {
         String value = Strings.toLowerCase(s.trim());
         if (value.length() > 0 && value.charAt(0) == '#')
         {
@@ -233,7 +230,7 @@ public class IETFUtils {
     }
 
     
-    private static ASN1Object decodeObject(String oValue) {
+        private static ASN1Object decodeObject(String oValue) {
         try
         {
             return ASN1Object.fromByteArray(Hex.decode(oValue.substring(1)));
@@ -245,7 +242,7 @@ public class IETFUtils {
     }
 
     
-    public static String stripInternalSpaces(
+        public static String stripInternalSpaces(
         String str) {
         StringBuffer res = new StringBuffer();
         if (str.length() != 0)

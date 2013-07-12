@@ -1,84 +1,81 @@
 package android.content;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-
-import java.util.Iterator;
-
 public class OperationApplicationException extends Exception {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.437 -0400", hash_original_field = "11FC6C9D498EE8CC3E52A83CA9847515", hash_generated_field = "394223B065D0D359C43F3F4B72BA8F23")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.212 -0400", hash_original_field = "11FC6C9D498EE8CC3E52A83CA9847515", hash_generated_field = "394223B065D0D359C43F3F4B72BA8F23")
 
     private int mNumSuccessfulYieldPoints;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.438 -0400", hash_original_method = "825A0D209F83C788198717CC73F99489", hash_generated_method = "85FE8CBA0DFF6372570E3B97FB915BDB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.213 -0400", hash_original_method = "825A0D209F83C788198717CC73F99489", hash_generated_method = "85FE8CBA0DFF6372570E3B97FB915BDB")
     public  OperationApplicationException() {
         super();
         mNumSuccessfulYieldPoints = 0;
-        
-        
+        // ---------- Original Method ----------
+        //mNumSuccessfulYieldPoints = 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.439 -0400", hash_original_method = "77E2AE76D845D6FB97485837BDB7758B", hash_generated_method = "34F2A1304EAE31B84D2B2836635531C9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.213 -0400", hash_original_method = "77E2AE76D845D6FB97485837BDB7758B", hash_generated_method = "1CDECDA01604F48671BC09023CB5F2B6")
     public  OperationApplicationException(String message) {
         super(message);
-        mNumSuccessfulYieldPoints = 0;
         addTaint(message.getTaint());
-        
-        
+        mNumSuccessfulYieldPoints = 0;
+        // ---------- Original Method ----------
+        //mNumSuccessfulYieldPoints = 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.440 -0400", hash_original_method = "F0F6059D3EFC4E5FE3F6EC4FF0F2FDFB", hash_generated_method = "5CFEE486E1CDB552099E0C73F6F09A44")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.214 -0400", hash_original_method = "F0F6059D3EFC4E5FE3F6EC4FF0F2FDFB", hash_generated_method = "2074D5E35EDC56DE297841C175B5CEC1")
     public  OperationApplicationException(String message, Throwable cause) {
         super(message, cause);
-        mNumSuccessfulYieldPoints = 0;
-        addTaint(message.getTaint());
         addTaint(cause.getTaint());
-        
-        
+        addTaint(message.getTaint());
+        mNumSuccessfulYieldPoints = 0;
+        // ---------- Original Method ----------
+        //mNumSuccessfulYieldPoints = 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.441 -0400", hash_original_method = "64BB28A032D4059B850837C1A5699554", hash_generated_method = "0720F65D702775E76BFEA9DA1E6F2727")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.214 -0400", hash_original_method = "64BB28A032D4059B850837C1A5699554", hash_generated_method = "250C4BD044EBA8F40145B235295E7FB1")
     public  OperationApplicationException(Throwable cause) {
         super(cause);
-        mNumSuccessfulYieldPoints = 0;
         addTaint(cause.getTaint());
-        
-        
+        mNumSuccessfulYieldPoints = 0;
+        // ---------- Original Method ----------
+        //mNumSuccessfulYieldPoints = 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.442 -0400", hash_original_method = "E4F3CE45A3791740F0C42342B2E05EC8", hash_generated_method = "522BBB0FF5C08BFA31C8EA8FBA543C01")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.215 -0400", hash_original_method = "E4F3CE45A3791740F0C42342B2E05EC8", hash_generated_method = "522BBB0FF5C08BFA31C8EA8FBA543C01")
     public  OperationApplicationException(int numSuccessfulYieldPoints) {
         super();
         mNumSuccessfulYieldPoints = numSuccessfulYieldPoints;
-        
-        
+        // ---------- Original Method ----------
+        //mNumSuccessfulYieldPoints = numSuccessfulYieldPoints;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.442 -0400", hash_original_method = "8F9006EEA79EF42E9E468007193B747B", hash_generated_method = "4C34C05D1BA3DA6BF733176688BB7336")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.216 -0400", hash_original_method = "8F9006EEA79EF42E9E468007193B747B", hash_generated_method = "1A923BDAF5AD4126AD6991EFEEDC1625")
     public  OperationApplicationException(String message, int numSuccessfulYieldPoints) {
         super(message);
-        mNumSuccessfulYieldPoints = numSuccessfulYieldPoints;
         addTaint(message.getTaint());
-        
-        
+        mNumSuccessfulYieldPoints = numSuccessfulYieldPoints;
+        // ---------- Original Method ----------
+        //mNumSuccessfulYieldPoints = numSuccessfulYieldPoints;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.443 -0400", hash_original_method = "0D03973B4F1A76863E3DF446BDE01596", hash_generated_method = "F1B5C37E1371B792376829FF67DAF7D3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.216 -0400", hash_original_method = "0D03973B4F1A76863E3DF446BDE01596", hash_generated_method = "3133049EFC196CBF1EAEA3562AA75E92")
     public int getNumSuccessfulYieldPoints() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_660434232 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_660434232;
-        
-        
+        int var11FC6C9D498EE8CC3E52A83CA9847515_905803450 = (mNumSuccessfulYieldPoints);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_744210428 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_744210428;
+        // ---------- Original Method ----------
+        //return mNumSuccessfulYieldPoints;
     }
 
     

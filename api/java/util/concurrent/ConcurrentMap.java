@@ -1,12 +1,9 @@
 package java.util.concurrent;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.util.Map;
 
 public interface ConcurrentMap<K, V> extends Map<K, V> {

@@ -1,23 +1,20 @@
 package com.android.internal.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-
-import java.util.Iterator;
-
 public class CharSequences {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.644 -0400", hash_original_method = "1F7BA79C239DAD6228A2DB1150F5EF80", hash_generated_method = "1F7BA79C239DAD6228A2DB1150F5EF80")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.660 -0400", hash_original_method = "1F7BA79C239DAD6228A2DB1150F5EF80", hash_generated_method = "1F7BA79C239DAD6228A2DB1150F5EF80")
     public CharSequences ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    public static CharSequence forAsciiBytes(final byte[] bytes) {
+        public static CharSequence forAsciiBytes(final byte[] bytes) {
         return new CharSequence() {
             public char charAt(int index) {
                 return (char) bytes[index];
@@ -35,7 +32,7 @@ public class CharSequences {
     }
 
     
-    public static CharSequence forAsciiBytes(final byte[] bytes,
+        public static CharSequence forAsciiBytes(final byte[] bytes,
             final int start, final int end) {
         validate(start, end, bytes.length);
         return new CharSequence() {
@@ -58,8 +55,7 @@ public class CharSequences {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    static void validate(int start, int end, int length) {
+        static void validate(int start, int end, int length) {
         if (start < 0) throw new IndexOutOfBoundsException();
         if (end < 0) throw new IndexOutOfBoundsException();
         if (end > length) throw new IndexOutOfBoundsException();
@@ -67,8 +63,7 @@ public class CharSequences {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static boolean equals(CharSequence a, CharSequence b) {
+        public static boolean equals(CharSequence a, CharSequence b) {
         if (a.length() != b.length()) {
             return false;
         }
@@ -82,8 +77,7 @@ public class CharSequences {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static int compareToIgnoreCase(CharSequence me, CharSequence another) {
+        public static int compareToIgnoreCase(CharSequence me, CharSequence another) {
         int myLen = me.length(), anotherLen = another.length();
         int myPos = 0, anotherPos = 0, result;
         int end = (myLen < anotherLen) ? myLen : anotherLen;
@@ -95,5 +89,7 @@ public class CharSequences {
         }
         return myLen - anotherLen;
     }
+
+    
 }
 

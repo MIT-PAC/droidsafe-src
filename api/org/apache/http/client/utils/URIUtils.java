@@ -1,25 +1,22 @@
 package org.apache.http.client.utils;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.net.URI;
 import java.net.URISyntaxException;
 import org.apache.http.HttpHost;
 
 public class URIUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.980 -0400", hash_original_method = "76E8736EFBBC9BF69FA0C2D7E3BBC6EF", hash_generated_method = "77A26DB302405FD332BF0150E844EF5E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.331 -0400", hash_original_method = "76E8736EFBBC9BF69FA0C2D7E3BBC6EF", hash_generated_method = "77A26DB302405FD332BF0150E844EF5E")
     private  URIUtils() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    public static URI createURI(
+        public static URI createURI(
             final String scheme,
             final String host,
             int port,
@@ -56,7 +53,7 @@ public class URIUtils {
     }
 
     
-    public static URI rewriteURI(
+        public static URI rewriteURI(
             final URI uri, 
             final HttpHost target,
             boolean dropFragment) throws URISyntaxException {
@@ -83,19 +80,19 @@ public class URIUtils {
     }
 
     
-    public static URI rewriteURI(
+        public static URI rewriteURI(
             final URI uri, 
             final HttpHost target) throws URISyntaxException {
         return rewriteURI(uri, target, false);
     }
 
     
-    public static URI resolve(final URI baseURI, final String reference) {
+        public static URI resolve(final URI baseURI, final String reference) {
         return URIUtils.resolve(baseURI, URI.create(reference));
     }
 
     
-    public static URI resolve(final URI baseURI, URI reference) {
+        public static URI resolve(final URI baseURI, URI reference) {
         if (baseURI == null) {
             throw new IllegalArgumentException("Base URI may nor be null");
         }

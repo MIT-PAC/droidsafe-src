@@ -1,12 +1,9 @@
 package org.bouncycastle.asn1.x509;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import org.bouncycastle.asn1.ASN1Choice;
 import org.bouncycastle.asn1.ASN1Encodable;
 import org.bouncycastle.asn1.ASN1TaggedObject;
@@ -19,69 +16,73 @@ import java.util.Date;
 import java.util.SimpleTimeZone;
 
 public class Time extends ASN1Encodable implements ASN1Choice {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.040 -0400", hash_original_field = "07CC694B9B3FC636710FA08B6922C42B", hash_generated_field = "9454FEFE155A6399796F93141389DE58")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.324 -0400", hash_original_field = "07CC694B9B3FC636710FA08B6922C42B", hash_generated_field = "9454FEFE155A6399796F93141389DE58")
 
     DERObject time;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.040 -0400", hash_original_method = "01C20E280B683C170EEEF3EFC0766C68", hash_generated_method = "B8DF5CE0D9E5F0B53F6FE8C13AB222B6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.324 -0400", hash_original_method = "01C20E280B683C170EEEF3EFC0766C68", hash_generated_method = "50FE084CB78EFB62C1AEE55F99ED7D1C")
     public  Time(
         DERObject   time) {
+    if(!(time instanceof DERUTCTime)
+            && !(time instanceof DERGeneralizedTime))        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("unknown object passed to Time");
-        } 
+            IllegalArgumentException varEB3AD89893BE62E8E2C248F9BE2332CE_29654718 = new IllegalArgumentException("unknown object passed to Time");
+            varEB3AD89893BE62E8E2C248F9BE2332CE_29654718.addTaint(taint);
+            throw varEB3AD89893BE62E8E2C248F9BE2332CE_29654718;
+        } //End block
         this.time = time;
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!(time instanceof DERUTCTime)
+            //&& !(time instanceof DERGeneralizedTime))
+        //{
+            //throw new IllegalArgumentException("unknown object passed to Time");
+        //}
+        //this.time = time;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.041 -0400", hash_original_method = "8BBEA010362F5295A61D1C019D01CC8B", hash_generated_method = "0CFD78EC33B84499DB6A83AE8104DDCC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.325 -0400", hash_original_method = "8BBEA010362F5295A61D1C019D01CC8B", hash_generated_method = "9D1EB4E2FF0778DE3B851DE145D48D43")
     public  Time(
         Date    date) {
+        addTaint(date.getTaint());
         SimpleTimeZone tz = new SimpleTimeZone(0, "Z");
         SimpleDateFormat dateF = new SimpleDateFormat("yyyyMMddHHmmss");
         dateF.setTimeZone(tz);
         String d = dateF.format(date) + "Z";
         int year = Integer.parseInt(d.substring(0, 4));
+    if(year < 1950 || year > 2049)        
         {
             time = new DERGeneralizedTime(d);
-        } 
+        } //End block
+        else
         {
             time = new DERUTCTime(d.substring(2));
-        } 
-        addTaint(date.getTaint());
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //SimpleTimeZone      tz = new SimpleTimeZone(0, "Z");
+        //SimpleDateFormat    dateF = new SimpleDateFormat("yyyyMMddHHmmss");
+        //dateF.setTimeZone(tz);
+        //String  d = dateF.format(date) + "Z";
+        //int     year = Integer.parseInt(d.substring(0, 4));
+        //if (year < 1950 || year > 2049)
+        //{
+            //time = new DERGeneralizedTime(d);
+        //}
+        //else
+        //{
+            //time = new DERUTCTime(d.substring(2));
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static Time getInstance(
+        public static Time getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
         return getInstance(obj.getObject());
     }
 
     
-    @DSModeled(DSC.SPEC)
-    public static Time getInstance(
+        public static Time getInstance(
         Object  obj) {
         if (obj == null || obj instanceof Time)
         {
@@ -99,109 +100,91 @@ public class Time extends ASN1Encodable implements ASN1Choice {
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.046 -0400", hash_original_method = "BF57E645E9DF37568C2EEE61DCF61153", hash_generated_method = "643C599DCA54BB3DD544C9830EB37DCC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.326 -0400", hash_original_method = "BF57E645E9DF37568C2EEE61DCF61153", hash_generated_method = "D9E99674D1497710ACF29F10CEE0E7E1")
     public String getTime() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2098564799 = null; 
-        String varB4EAC82CA7396A68D541C85D26508E83_1964537186 = null; 
+    if(time instanceof DERUTCTime)        
         {
-            varB4EAC82CA7396A68D541C85D26508E83_2098564799 = ((DERUTCTime)time).getAdjustedTime();
-        } 
+String var6737BDEA5D416D8B776FC3237CFB7AEE_345866125 =             ((DERUTCTime)time).getAdjustedTime();
+            var6737BDEA5D416D8B776FC3237CFB7AEE_345866125.addTaint(taint);
+            return var6737BDEA5D416D8B776FC3237CFB7AEE_345866125;
+        } //End block
+        else
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1964537186 = ((DERGeneralizedTime)time).getTime();
-        } 
-        String varA7E53CE21691AB073D9660D615818899_1836661623; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_1836661623 = varB4EAC82CA7396A68D541C85D26508E83_2098564799;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_1836661623 = varB4EAC82CA7396A68D541C85D26508E83_1964537186;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_1836661623.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_1836661623;
-        
-        
-        
-            
-        
-        
-        
-            
-        
+String varF54206F6C86C22C29E8157882DDD686C_493728726 =             ((DERGeneralizedTime)time).getTime();
+            varF54206F6C86C22C29E8157882DDD686C_493728726.addTaint(taint);
+            return varF54206F6C86C22C29E8157882DDD686C_493728726;
+        } //End block
+        // ---------- Original Method ----------
+        //if (time instanceof DERUTCTime)
+        //{
+            //return ((DERUTCTime)time).getAdjustedTime();
+        //}
+        //else
+        //{
+            //return ((DERGeneralizedTime)time).getTime();
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.049 -0400", hash_original_method = "FDC0BE61EAA40B266A36758B51B3F270", hash_generated_method = "A4754E4979D84FCE74C515567AF1C1C1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.326 -0400", hash_original_method = "FDC0BE61EAA40B266A36758B51B3F270", hash_generated_method = "022E1243C417282B9A2555B5B0E460A7")
     public Date getDate() {
-        Date varB4EAC82CA7396A68D541C85D26508E83_1399825945 = null; 
-        Date varB4EAC82CA7396A68D541C85D26508E83_1615011113 = null; 
         try 
         {
+    if(time instanceof DERUTCTime)            
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1399825945 = ((DERUTCTime)time).getAdjustedDate();
-            } 
+Date var5C4DF896594C919BFBC3B94B005A0623_457786699 =                 ((DERUTCTime)time).getAdjustedDate();
+                var5C4DF896594C919BFBC3B94B005A0623_457786699.addTaint(taint);
+                return var5C4DF896594C919BFBC3B94B005A0623_457786699;
+            } //End block
+            else
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1615011113 = ((DERGeneralizedTime)time).getDate();
-            } 
-        } 
+Date var8D783C4AB38B34C5480A243364749A59_75162190 =                 ((DERGeneralizedTime)time).getDate();
+                var8D783C4AB38B34C5480A243364749A59_75162190.addTaint(taint);
+                return var8D783C4AB38B34C5480A243364749A59_75162190;
+            } //End block
+        } //End block
         catch (ParseException e)
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("invalid date string: " + e.getMessage());
-        } 
-        Date varA7E53CE21691AB073D9660D615818899_766168414; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_766168414 = varB4EAC82CA7396A68D541C85D26508E83_1399825945;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_766168414 = varB4EAC82CA7396A68D541C85D26508E83_1615011113;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_766168414.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_766168414;
-        
-        
-        
-            
-            
-                
-            
-            
-            
-                
-            
-        
-        
-        
-            
-        
+            IllegalStateException var28109244B68609BB4DDBD618A711B019_248142880 = new IllegalStateException("invalid date string: " + e.getMessage());
+            var28109244B68609BB4DDBD618A711B019_248142880.addTaint(taint);
+            throw var28109244B68609BB4DDBD618A711B019_248142880;
+        } //End block
+        // ---------- Original Method ----------
+        //try
+        //{
+            //if (time instanceof DERUTCTime)
+            //{
+                //return ((DERUTCTime)time).getAdjustedDate();
+            //}
+            //else
+            //{
+                //return ((DERGeneralizedTime)time).getDate();
+            //}
+        //}
+        //catch (ParseException e)
+        //{         
+            //throw new IllegalStateException("invalid date string: " + e.getMessage());
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.050 -0400", hash_original_method = "4A8C4B62F84A5603FDAAD94F25A110A4", hash_generated_method = "BD0AD406E5A6466284837A738B0FAF4E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.326 -0400", hash_original_method = "4A8C4B62F84A5603FDAAD94F25A110A4", hash_generated_method = "BF17D9376BC07B0AE09AF0FEFAB1CF8E")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1694385997 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1694385997 = time;
-        varB4EAC82CA7396A68D541C85D26508E83_1694385997.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1694385997;
-        
-        
+DERObject varA66D020F4BCAB26A12562312D8A04DED_978425339 =         time;
+        varA66D020F4BCAB26A12562312D8A04DED_978425339.addTaint(taint);
+        return varA66D020F4BCAB26A12562312D8A04DED_978425339;
+        // ---------- Original Method ----------
+        //return time;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.051 -0400", hash_original_method = "B1D8E302C2A2168C967B1C035989FAE4", hash_generated_method = "3D844A6CB4784C553747899319B9BBA2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.327 -0400", hash_original_method = "B1D8E302C2A2168C967B1C035989FAE4", hash_generated_method = "805BFA01B9A68AE9208BFFFBDCAE2EB5")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1108874777 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1108874777 = getTime();
-        varB4EAC82CA7396A68D541C85D26508E83_1108874777.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1108874777;
-        
-        
+String varA2437939C7847B22878509056EAFE1EF_547260502 =         getTime();
+        varA2437939C7847B22878509056EAFE1EF_547260502.addTaint(taint);
+        return varA2437939C7847B22878509056EAFE1EF_547260502;
+        // ---------- Original Method ----------
+        //return getTime();
     }
 
     

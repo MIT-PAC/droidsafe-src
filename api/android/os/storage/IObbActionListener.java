@@ -1,12 +1,9 @@
 package android.os.storage;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.os.Binder;
 import android.os.IBinder;
 import android.os.IInterface;

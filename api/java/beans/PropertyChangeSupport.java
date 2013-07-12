@@ -1,12 +1,9 @@
 package java.beans;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -21,455 +18,428 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import libcore.util.Objects;
 
 public class PropertyChangeSupport implements Serializable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.338 -0400", hash_original_field = "9403382C8BE8BF444B950899205C2500", hash_generated_field = "C4FC1B92735A56C9579E71916FC2FFF8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.704 -0400", hash_original_field = "9403382C8BE8BF444B950899205C2500", hash_generated_field = "C4FC1B92735A56C9579E71916FC2FFF8")
 
     private transient Object sourceBean;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.338 -0400", hash_original_field = "C8AFA772AB39DB9A6080A66F42ACFC51", hash_generated_field = "13B011C46465CF2D1279D361F5E6B98B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.704 -0400", hash_original_field = "C8AFA772AB39DB9A6080A66F42ACFC51", hash_generated_field = "13B011C46465CF2D1279D361F5E6B98B")
 
     private transient List<PropertyChangeListener> listeners = new CopyOnWriteArrayList<PropertyChangeListener>();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.339 -0400", hash_original_method = "09D4558045FC0782254B0D972DDA4620", hash_generated_method = "39B1CDC484434CC2B0EED5F31CEF7956")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.705 -0400", hash_original_method = "09D4558045FC0782254B0D972DDA4620", hash_generated_method = "334D53E707AD4F85C221E9250901B8EE")
     public  PropertyChangeSupport(Object sourceBean) {
+    if(sourceBean == null)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } 
+            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1139733601 = new NullPointerException();
+            var7338BC9F48D81FE0BBD6183F4014DCC4_1139733601.addTaint(taint);
+            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1139733601;
+        } //End block
         this.sourceBean = sourceBean;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (sourceBean == null) {
+            //throw new NullPointerException();
+        //}
+        //this.sourceBean = sourceBean;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.340 -0400", hash_original_method = "D1E4CD5A5886FF38C6EBB02BBA228540", hash_generated_method = "843D9BCAABAF7A5E080EA06427EE2F50")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.706 -0400", hash_original_method = "D1E4CD5A5886FF38C6EBB02BBA228540", hash_generated_method = "6D9D5F96AB343F4C70381CC74E1BC1DF")
     public void firePropertyChange(String propertyName, Object oldValue, Object newValue) {
-        firePropertyChange(new PropertyChangeEvent(sourceBean, propertyName, oldValue, newValue));
-        addTaint(propertyName.getTaint());
-        addTaint(oldValue.getTaint());
         addTaint(newValue.getTaint());
-        
-        
+        addTaint(oldValue.getTaint());
+        addTaint(propertyName.getTaint());
+        firePropertyChange(new PropertyChangeEvent(sourceBean, propertyName, oldValue, newValue));
+        // ---------- Original Method ----------
+        //firePropertyChange(new PropertyChangeEvent(sourceBean, propertyName, oldValue, newValue));
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.340 -0400", hash_original_method = "A0BCBFEE8B29A622C3E205B05C4F1C89", hash_generated_method = "173F6B6472614DDEF16A9FD9FCF4B71C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.706 -0400", hash_original_method = "A0BCBFEE8B29A622C3E205B05C4F1C89", hash_generated_method = "89491ECC60ECE6D9DEC053DE46F832EC")
     public void fireIndexedPropertyChange(String propertyName, int index,
             Object oldValue, Object newValue) {
+        addTaint(newValue.getTaint());
+        addTaint(oldValue.getTaint());
+        addTaint(index);
+        addTaint(propertyName.getTaint());
         firePropertyChange(new IndexedPropertyChangeEvent(sourceBean,
                 propertyName, oldValue, newValue, index));
-        addTaint(propertyName.getTaint());
-        addTaint(index);
-        addTaint(oldValue.getTaint());
-        addTaint(newValue.getTaint());
-        
-        
-                
+        // ---------- Original Method ----------
+        //firePropertyChange(new IndexedPropertyChangeEvent(sourceBean,
+                //propertyName, oldValue, newValue, index));
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.344 -0400", hash_original_method = "0EBF9025D0E458F5C219DE65A639C89B", hash_generated_method = "0F44104D604C7E74A3FAEF283C063ADA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.707 -0400", hash_original_method = "0EBF9025D0E458F5C219DE65A639C89B", hash_generated_method = "9C1100870BD815C46324C478361CD17A")
     public void removePropertyChangeListener(String propertyName, PropertyChangeListener listener) {
-        {
-            Iterator<PropertyChangeListener> var2EF0AB58C6C68BCCEAD203841EAE48D2_1759715235 = (listeners).iterator();
-            var2EF0AB58C6C68BCCEAD203841EAE48D2_1759715235.hasNext();
-            PropertyChangeListener p = var2EF0AB58C6C68BCCEAD203841EAE48D2_1759715235.next();
-            {
-                {
-                    boolean var897B663CD4C4CB6BA8F6D1044DCEC033_689763180 = (equals(propertyName, listener, p));
-                    {
-                        listeners.remove(p);
-                    } 
-                } 
-            } 
-        } 
-        addTaint(propertyName.getTaint());
         addTaint(listener.getTaint());
-        
-        
-            
-                
-                
-            
-        
+        addTaint(propertyName.getTaint());
+for(PropertyChangeListener p : listeners)
+        {
+    if(equals(propertyName, listener, p))            
+            {
+                listeners.remove(p);
+                return;
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //for (PropertyChangeListener p : listeners) {
+            //if (equals(propertyName, listener, p)) {
+                //listeners.remove(p);
+                //return;
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.345 -0400", hash_original_method = "A38B8477985ECBF9EAC6EDFBD5290064", hash_generated_method = "6BF814561571091C049542C2E7684A61")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.709 -0400", hash_original_method = "A38B8477985ECBF9EAC6EDFBD5290064", hash_generated_method = "97E788B51651ADA9ACE4AF9904638782")
     private boolean equals(String aName, EventListener a, EventListener b) {
+        addTaint(b.getTaint());
+        addTaint(a.getTaint());
+        addTaint(aName.getTaint());
+        while
+(b instanceof PropertyChangeListenerProxy)        
         {
             PropertyChangeListenerProxy bProxy = (PropertyChangeListenerProxy) b;
             String bName = bProxy.getPropertyName();
             b = bProxy.getListener();
+    if(aName == null)            
             {
+    if(!(a instanceof PropertyChangeListenerProxy))                
+                {
+                    boolean var68934A3E9455FA72420237EB05902327_839382480 = (false);
+                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1489378756 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1489378756;
+                } //End block
                 PropertyChangeListenerProxy aProxy = (PropertyChangeListenerProxy) a;
                 aName = aProxy.getPropertyName();
                 a = aProxy.getListener();
-            } 
+            } //End block
+    if(!Objects.equal(aName, bName))            
             {
-                boolean var3A6BDFDC1FE549AF952A757BBA045BB6_178733920 = (!Objects.equal(aName, bName));
-            } 
+                boolean var68934A3E9455FA72420237EB05902327_2102669906 = (false);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_569993370 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_569993370;
+            } //End block
             aName = null;
-        } 
-        boolean var41C279D4F3CBC6C06EF0AAC866E76EA0_1279067716 = (aName == null && Objects.equal(a, b));
-        addTaint(aName.getTaint());
-        addTaint(a.getTaint());
-        addTaint(b.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1588366135 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1588366135;
-        
-        
-            
-            
-            
-            
-                
-                    
-                
-                
-                
-                
-            
-            
-                
-            
-            
-        
-        
+        } //End block
+        boolean var881BE61EA94846CE7E8F42516504422F_13690456 = (aName == null && Objects.equal(a, b));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_376681081 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_376681081;
+        // ---------- Original Method ----------
+        //while (b instanceof PropertyChangeListenerProxy) {
+            //PropertyChangeListenerProxy bProxy = (PropertyChangeListenerProxy) b; 
+            //String bName = bProxy.getPropertyName();
+            //b = bProxy.getListener();
+            //if (aName == null) {
+                //if (!(a instanceof PropertyChangeListenerProxy)) {
+                    //return false;
+                //}
+                //PropertyChangeListenerProxy aProxy = (PropertyChangeListenerProxy) a; 
+                //aName = aProxy.getPropertyName();
+                //a = aProxy.getListener();
+            //}
+            //if (!Objects.equal(aName, bName)) {
+                //return false; 
+            //}
+            //aName = null;
+        //}
+        //return aName == null && Objects.equal(a, b);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.345 -0400", hash_original_method = "930FBD19A78990F5C4E139AC4C6BB362", hash_generated_method = "4DFD8864531EBC6CE256C082F56E5929")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.710 -0400", hash_original_method = "930FBD19A78990F5C4E139AC4C6BB362", hash_generated_method = "2E18155DA94EEAFA64498D8BACADF7DF")
     public void addPropertyChangeListener(String propertyName, PropertyChangeListener listener) {
+        addTaint(listener.getTaint());
+        addTaint(propertyName.getTaint());
+    if(listener != null && propertyName != null)        
         {
             listeners.add(new PropertyChangeListenerProxy(propertyName, listener));
-        } 
-        addTaint(propertyName.getTaint());
-        addTaint(listener.getTaint());
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (listener != null && propertyName != null) {
+            //listeners.add(new PropertyChangeListenerProxy(propertyName, listener));
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.350 -0400", hash_original_method = "00BBD2172CC9916DE5C9C28A0EEFE748", hash_generated_method = "4840744705CF6B3D258E9D1B1EE5FE1E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.710 -0400", hash_original_method = "00BBD2172CC9916DE5C9C28A0EEFE748", hash_generated_method = "7FCAA67A90289853D73F95FA9EBED427")
     public PropertyChangeListener[] getPropertyChangeListeners(String propertyName) {
-        PropertyChangeListener[] varB4EAC82CA7396A68D541C85D26508E83_2013052674 = null; 
+        addTaint(propertyName.getTaint());
         List<PropertyChangeListener> result = new ArrayList<PropertyChangeListener>();
+for(PropertyChangeListener p : listeners)
         {
-            Iterator<PropertyChangeListener> var2EF0AB58C6C68BCCEAD203841EAE48D2_1614688543 = (listeners).iterator();
-            var2EF0AB58C6C68BCCEAD203841EAE48D2_1614688543.hasNext();
-            PropertyChangeListener p = var2EF0AB58C6C68BCCEAD203841EAE48D2_1614688543.next();
+    if(p instanceof PropertyChangeListenerProxy && Objects.equal(
+                    propertyName, ((PropertyChangeListenerProxy) p).getPropertyName()))            
             {
-                {
-                    boolean varAE522C398F4F52E8D2E17642AC1E3980_973958899 = (p instanceof PropertyChangeListenerProxy && Objects.equal(
-                    propertyName, ((PropertyChangeListenerProxy) p).getPropertyName()));
-                    {
-                        result.add(p);
-                    } 
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_2013052674 = result.toArray(new PropertyChangeListener[result.size()]);
-        addTaint(propertyName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2013052674.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_2013052674;
-        
-        
-        
-            
-                    
-                
-            
-        
-        
+                result.add(p);
+            } //End block
+        } //End block
+PropertyChangeListener[] varF0EACBCF567A9F951330FD2EA45DDC95_772086375 =         result.toArray(new PropertyChangeListener[result.size()]);
+        varF0EACBCF567A9F951330FD2EA45DDC95_772086375.addTaint(taint);
+        return varF0EACBCF567A9F951330FD2EA45DDC95_772086375;
+        // ---------- Original Method ----------
+        //List<PropertyChangeListener> result = new ArrayList<PropertyChangeListener>();
+        //for (PropertyChangeListener p : listeners) {
+            //if (p instanceof PropertyChangeListenerProxy && Objects.equal(
+                    //propertyName, ((PropertyChangeListenerProxy) p).getPropertyName())) {
+                //result.add(p);
+            //}
+        //}
+        //return result.toArray(new PropertyChangeListener[result.size()]);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.350 -0400", hash_original_method = "94226D71E0146D875204CC2A0C5CDB43", hash_generated_method = "0CD9F2061F93F73FC815BDE760A43283")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.711 -0400", hash_original_method = "94226D71E0146D875204CC2A0C5CDB43", hash_generated_method = "40DDF6D8D350A3B3156E59F89172B298")
     public void firePropertyChange(String propertyName, boolean oldValue, boolean newValue) {
-        firePropertyChange(propertyName, Boolean.valueOf(oldValue), Boolean.valueOf(newValue));
-        addTaint(propertyName.getTaint());
-        addTaint(oldValue);
         addTaint(newValue);
-        
-        
+        addTaint(oldValue);
+        addTaint(propertyName.getTaint());
+        firePropertyChange(propertyName, Boolean.valueOf(oldValue), Boolean.valueOf(newValue));
+        // ---------- Original Method ----------
+        //firePropertyChange(propertyName, Boolean.valueOf(oldValue), Boolean.valueOf(newValue));
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.351 -0400", hash_original_method = "FA6574139DFC76BE59E80FCDD5F143D2", hash_generated_method = "FEEADF74314959CC26A86A67CC2C5503")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.711 -0400", hash_original_method = "FA6574139DFC76BE59E80FCDD5F143D2", hash_generated_method = "10F9132FED8DCACCC1A074030947780D")
     public void fireIndexedPropertyChange(String propertyName, int index,
             boolean oldValue, boolean newValue) {
+        addTaint(newValue);
+        addTaint(oldValue);
+        addTaint(index);
+        addTaint(propertyName.getTaint());
+    if(oldValue != newValue)        
         {
             fireIndexedPropertyChange(propertyName, index,
                     Boolean.valueOf(oldValue), Boolean.valueOf(newValue));
-        } 
-        addTaint(propertyName.getTaint());
-        addTaint(index);
-        addTaint(oldValue);
-        addTaint(newValue);
-        
-        
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (oldValue != newValue) {
+            //fireIndexedPropertyChange(propertyName, index,
+                    //Boolean.valueOf(oldValue), Boolean.valueOf(newValue));
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.351 -0400", hash_original_method = "4552BA18F0B2B2784BB1DA1C74165B61", hash_generated_method = "3D5982FB43F085F080CFDE1E81FDBB24")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.711 -0400", hash_original_method = "4552BA18F0B2B2784BB1DA1C74165B61", hash_generated_method = "A372750564831C34C268A3F8269A25CD")
     public void firePropertyChange(String propertyName, int oldValue, int newValue) {
-        firePropertyChange(propertyName, Integer.valueOf(oldValue), Integer.valueOf(newValue));
-        addTaint(propertyName.getTaint());
-        addTaint(oldValue);
         addTaint(newValue);
-        
-        
+        addTaint(oldValue);
+        addTaint(propertyName.getTaint());
+        firePropertyChange(propertyName, Integer.valueOf(oldValue), Integer.valueOf(newValue));
+        // ---------- Original Method ----------
+        //firePropertyChange(propertyName, Integer.valueOf(oldValue), Integer.valueOf(newValue));
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.351 -0400", hash_original_method = "9EC839909A8D5EF002D63B05CCF8C26F", hash_generated_method = "FB8BC9BCDBBB4E9F98315DFD2CD60A68")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.712 -0400", hash_original_method = "9EC839909A8D5EF002D63B05CCF8C26F", hash_generated_method = "7649C52BA939BE15865F9CD35A0E91A4")
     public void fireIndexedPropertyChange(String propertyName, int index,
             int oldValue, int newValue) {
+        addTaint(newValue);
+        addTaint(oldValue);
+        addTaint(index);
+        addTaint(propertyName.getTaint());
+    if(oldValue != newValue)        
         {
             fireIndexedPropertyChange(propertyName, index,
                     Integer.valueOf(oldValue), Integer.valueOf(newValue));
-        } 
-        addTaint(propertyName.getTaint());
-        addTaint(index);
-        addTaint(oldValue);
-        addTaint(newValue);
-        
-        
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (oldValue != newValue) {
+            //fireIndexedPropertyChange(propertyName, index,
+                    //Integer.valueOf(oldValue), Integer.valueOf(newValue));
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.357 -0400", hash_original_method = "610737304108759554633F933F40913E", hash_generated_method = "F24009F3A5E38CD27B5A04154C529710")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.712 -0400", hash_original_method = "610737304108759554633F933F40913E", hash_generated_method = "0036DEEDE5CAA021DC30DA47497961B4")
     public boolean hasListeners(String propertyName) {
-        {
-            Iterator<PropertyChangeListener> var2EF0AB58C6C68BCCEAD203841EAE48D2_1779575931 = (listeners).iterator();
-            var2EF0AB58C6C68BCCEAD203841EAE48D2_1779575931.hasNext();
-            PropertyChangeListener p = var2EF0AB58C6C68BCCEAD203841EAE48D2_1779575931.next();
-            {
-                {
-                    boolean varC6683AE05AE205EEBE7DE3E77BC1203D_538331277 = (!(p instanceof PropertyChangeListenerProxy) || Objects.equal(
-                    propertyName, ((PropertyChangeListenerProxy) p).getPropertyName()));
-                } 
-            } 
-        } 
         addTaint(propertyName.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_597156060 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_597156060;
-        
-        
-            
-                    
-                
-            
-        
-        
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.360 -0400", hash_original_method = "4F7D9482670A9321D94398F71FD2BB67", hash_generated_method = "DF27F8D88D6F4E36C1E614431BBC7D35")
-    public void removePropertyChangeListener(PropertyChangeListener listener) {
+for(PropertyChangeListener p : listeners)
         {
-            Iterator<PropertyChangeListener> var2EF0AB58C6C68BCCEAD203841EAE48D2_1848699247 = (listeners).iterator();
-            var2EF0AB58C6C68BCCEAD203841EAE48D2_1848699247.hasNext();
-            PropertyChangeListener p = var2EF0AB58C6C68BCCEAD203841EAE48D2_1848699247.next();
+    if(!(p instanceof PropertyChangeListenerProxy) || Objects.equal(
+                    propertyName, ((PropertyChangeListenerProxy) p).getPropertyName()))            
             {
-                {
-                    boolean var3BC5A6B93A29BCE34F0CAE9616E5C283_1181242542 = (equals(null, listener, p));
-                    {
-                        listeners.remove(p);
-                    } 
-                } 
-            } 
-        } 
-        addTaint(listener.getTaint());
-        
-        
-            
-                
-                
-            
-        
+                boolean varB326B5062B2F0E69046810717534CB09_1592740462 = (true);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_32139067 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_32139067;
+            } //End block
+        } //End block
+        boolean var68934A3E9455FA72420237EB05902327_2055877805 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1766399637 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1766399637;
+        // ---------- Original Method ----------
+        //for (PropertyChangeListener p : listeners) {
+            //if (!(p instanceof PropertyChangeListenerProxy) || Objects.equal(
+                    //propertyName, ((PropertyChangeListenerProxy) p).getPropertyName())) {
+                //return true;
+            //}
+        //}
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.360 -0400", hash_original_method = "A89A578774CE20B40D54565B383BCFA8", hash_generated_method = "0F8527006327BA3F52BAC57816C45971")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.713 -0400", hash_original_method = "4F7D9482670A9321D94398F71FD2BB67", hash_generated_method = "BC6E7C4D8BA01B8D08E4CB4989BBEC6B")
+    public void removePropertyChangeListener(PropertyChangeListener listener) {
+        addTaint(listener.getTaint());
+for(PropertyChangeListener p : listeners)
+        {
+    if(equals(null, listener, p))            
+            {
+                listeners.remove(p);
+                return;
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //for (PropertyChangeListener p : listeners) {
+            //if (equals(null, listener, p)) {
+                //listeners.remove(p);
+                //return;
+            //}
+        //}
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.713 -0400", hash_original_method = "A89A578774CE20B40D54565B383BCFA8", hash_generated_method = "053A4FEBF983A83CDE3127A17D07F16B")
     public void addPropertyChangeListener(PropertyChangeListener listener) {
+        addTaint(listener.getTaint());
+    if(listener != null)        
         {
             listeners.add(listener);
-        } 
-        addTaint(listener.getTaint());
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (listener != null) {
+            //listeners.add(listener);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.361 -0400", hash_original_method = "20AEE88E0780907A1527FDFF7FD94398", hash_generated_method = "1726845E7FCCF12C8DAD5EFCECC3C3C8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.713 -0400", hash_original_method = "20AEE88E0780907A1527FDFF7FD94398", hash_generated_method = "AD9B8E856218D2E7CD2B3A7C31A71446")
     public PropertyChangeListener[] getPropertyChangeListeners() {
-        PropertyChangeListener[] varB4EAC82CA7396A68D541C85D26508E83_1280575097 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1280575097 = listeners.toArray(new PropertyChangeListener[0]);
-        varB4EAC82CA7396A68D541C85D26508E83_1280575097.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1280575097;
-        
-        
+PropertyChangeListener[] var8E8BCC75E96F024B72E78A7CD5C9975D_2125380484 =         listeners.toArray(new PropertyChangeListener[0]);
+        var8E8BCC75E96F024B72E78A7CD5C9975D_2125380484.addTaint(taint);
+        return var8E8BCC75E96F024B72E78A7CD5C9975D_2125380484;
+        // ---------- Original Method ----------
+        //return listeners.toArray(new PropertyChangeListener[0]);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.368 -0400", hash_original_method = "2B46BB9E8064A4DB5FBAF8D8B87BA3A9", hash_generated_method = "B436980687685E1B4BB902CAF09D7274")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.714 -0400", hash_original_method = "2B46BB9E8064A4DB5FBAF8D8B87BA3A9", hash_generated_method = "7642612CFDC1008E79030C52170B316C")
     private void writeObject(ObjectOutputStream out) throws IOException {
+        addTaint(out.getTaint());
         Map<String, PropertyChangeSupport> map = new Hashtable<String, PropertyChangeSupport>();
+for(PropertyChangeListener p : listeners)
         {
-            Iterator<PropertyChangeListener> var2EF0AB58C6C68BCCEAD203841EAE48D2_2109794335 = (listeners).iterator();
-            var2EF0AB58C6C68BCCEAD203841EAE48D2_2109794335.hasNext();
-            PropertyChangeListener p = var2EF0AB58C6C68BCCEAD203841EAE48D2_2109794335.next();
+    if(p instanceof PropertyChangeListenerProxy && !(p instanceof Serializable))            
             {
+                PropertyChangeListenerProxy proxy = (PropertyChangeListenerProxy) p;
+                PropertyChangeListener listener = (PropertyChangeListener) proxy.getListener();
+    if(listener instanceof Serializable)                
                 {
-                    PropertyChangeListenerProxy proxy = (PropertyChangeListenerProxy) p;
-                    PropertyChangeListener listener = (PropertyChangeListener) proxy.getListener();
+                    PropertyChangeSupport list = map.get(proxy.getPropertyName());
+    if(list == null)                    
                     {
-                        PropertyChangeSupport list = map.get(proxy.getPropertyName());
-                        {
-                            list = new PropertyChangeSupport(sourceBean);
-                            map.put(proxy.getPropertyName(), list);
-                        } 
-                        list.listeners.add(listener);
-                    } 
-                } 
-            } 
-        } 
+                        list = new PropertyChangeSupport(sourceBean);
+                        map.put(proxy.getPropertyName(), list);
+                    } //End block
+                    list.listeners.add(listener);
+                } //End block
+            } //End block
+        } //End block
         ObjectOutputStream.PutField putFields = out.putFields();
         putFields.put("source", sourceBean);
         putFields.put("children", map);
         out.writeFields();
+for(PropertyChangeListener p : listeners)
         {
-            Iterator<PropertyChangeListener> var2EF0AB58C6C68BCCEAD203841EAE48D2_1934595927 = (listeners).iterator();
-            var2EF0AB58C6C68BCCEAD203841EAE48D2_1934595927.hasNext();
-            PropertyChangeListener p = var2EF0AB58C6C68BCCEAD203841EAE48D2_1934595927.next();
+    if(p instanceof Serializable)            
             {
-                {
-                    out.writeObject(p);
-                } 
-            } 
-        } 
+                out.writeObject(p);
+            } //End block
+        } //End block
         out.writeObject(null);
-        addTaint(out.getTaint());
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.373 -0400", hash_original_method = "CF711F06198DA67AA575F0B0D8CAC00C", hash_generated_method = "EC44B60D2FCD1C5D20AE98DB3E732423")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.714 -0400", hash_original_method = "CF711F06198DA67AA575F0B0D8CAC00C", hash_generated_method = "FC956BF2F2FC6D617370C9B5BA962084")
     @SuppressWarnings("unchecked")
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+        addTaint(in.getTaint());
         ObjectInputStream.GetField readFields = in.readFields();
         sourceBean = readFields.get("source", null);
         listeners = new CopyOnWriteArrayList<PropertyChangeListener>();
         Map<String, PropertyChangeSupport> children = (Map<String, PropertyChangeSupport>) readFields.get("children", null);
+    if(children != null)        
         {
+for(Map.Entry<String, PropertyChangeSupport> entry : children.entrySet())
             {
-                Iterator<Map.Entry<String, PropertyChangeSupport>> var2252B949334EC1D3A32F8AF79DB6E578_1607278158 = (children.entrySet()).iterator();
-                var2252B949334EC1D3A32F8AF79DB6E578_1607278158.hasNext();
-                Map.Entry<String, PropertyChangeSupport> entry = var2252B949334EC1D3A32F8AF79DB6E578_1607278158.next();
+for(PropertyChangeListener p : entry.getValue().listeners)
                 {
-                    {
-                        Iterator<PropertyChangeListener> varCEC0968346B069DFE30CD20B98B4E2C0_897871530 = (entry.getValue().listeners).iterator();
-                        varCEC0968346B069DFE30CD20B98B4E2C0_897871530.hasNext();
-                        PropertyChangeListener p = varCEC0968346B069DFE30CD20B98B4E2C0_897871530.next();
-                        {
-                            listeners.add(new PropertyChangeListenerProxy(entry.getKey(), p));
-                        } 
-                    } 
-                } 
-            } 
-        } 
+                    listeners.add(new PropertyChangeListenerProxy(entry.getKey(), p));
+                } //End block
+            } //End block
+        } //End block
         PropertyChangeListener listener;
+        while
+((listener = (PropertyChangeListener) in.readObject()) != null)        
         {
-            boolean var66B95270497A7267E90227CA86A4BDCB_1085269541 = ((listener = (PropertyChangeListener) in.readObject()) != null);
-            {
-                listeners.add(listener);
-            } 
-        } 
-        addTaint(in.getTaint());
-        
-        
+            listeners.add(listener);
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.380 -0400", hash_original_method = "DE96EEBF0F3556789E0EE7EC3C8C89E3", hash_generated_method = "8481DF949020FFBFCF68015B865A2657")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.715 -0400", hash_original_method = "DE96EEBF0F3556789E0EE7EC3C8C89E3", hash_generated_method = "FF40E0C70B70131388F2D6A0BB7132CE")
     public void firePropertyChange(PropertyChangeEvent event) {
+        addTaint(event.getTaint());
         String propertyName = event.getPropertyName();
         Object oldValue = event.getOldValue();
         Object newValue = event.getNewValue();
+    if(newValue != null && oldValue != null && newValue.equals(oldValue))        
         {
-            boolean var528E4634B4B1D2E9EA48F357A05A1813_947515829 = (newValue != null && oldValue != null && newValue.equals(oldValue));
-        } 
+            return;
+        } //End block
+    notifyEachListener        :
+for(PropertyChangeListener p : listeners)
         {
-            Iterator<PropertyChangeListener> var2EF0AB58C6C68BCCEAD203841EAE48D2_1518985858 = (listeners).iterator();
-            var2EF0AB58C6C68BCCEAD203841EAE48D2_1518985858.hasNext();
-            PropertyChangeListener p = var2EF0AB58C6C68BCCEAD203841EAE48D2_1518985858.next();
+            while
+(p instanceof PropertyChangeListenerProxy)            
             {
+                PropertyChangeListenerProxy proxy = (PropertyChangeListenerProxy) p;
+    if(!Objects.equal(proxy.getPropertyName(), propertyName))                
                 {
-                    PropertyChangeListenerProxy proxy = (PropertyChangeListenerProxy) p;
-                    {
-                        boolean varB68E3ECE4D43BF3B63B0B4947E649B49_742023886 = (!Objects.equal(proxy.getPropertyName(), propertyName));
-                    } 
-                    p = (PropertyChangeListener) proxy.getListener();
-                } 
-                p.propertyChange(event);
-            } 
-        } 
-        addTaint(event.getTaint());
-        
-        
-        
-        
-        
-            
-        
-        
-        
-            
-                
-                
-                    
-                
-                
-            
-            
-        
+                    continue notifyEachListener;
+                } //End block
+                p = (PropertyChangeListener) proxy.getListener();
+            } //End block
+            p.propertyChange(event);
+        } //End block
+        // ---------- Original Method ----------
+        //String propertyName = event.getPropertyName();
+        //Object oldValue = event.getOldValue();
+        //Object newValue = event.getNewValue();
+        //if (newValue != null && oldValue != null && newValue.equals(oldValue)) {
+            //return;
+        //}
+        //notifyEachListener:
+        //for (PropertyChangeListener p : listeners) {
+            //while (p instanceof PropertyChangeListenerProxy) {
+                //PropertyChangeListenerProxy proxy = (PropertyChangeListenerProxy) p;
+                //if (!Objects.equal(proxy.getPropertyName(), propertyName)) {
+                    //continue notifyEachListener;
+                //}
+                //p = (PropertyChangeListener) proxy.getListener();
+            //}
+            //p.propertyChange(event);
+        //}
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.380 -0400", hash_original_field = "2C6C732DF3D1290F7C668084A8539FB1", hash_generated_field = "A48B1648CDA8E4C2690D9A8D916781AA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.715 -0400", hash_original_field = "2C6C732DF3D1290F7C668084A8539FB1", hash_generated_field = "A48B1648CDA8E4C2690D9A8D916781AA")
 
     private static final long serialVersionUID = 6401253773779951803l;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.380 -0400", hash_original_field = "8DCC5B1B2AAC1C0FEA60100A42EA9662", hash_generated_field = "1971F9E630460B6A7EA7F81588D7F7D1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.716 -0400", hash_original_field = "8DCC5B1B2AAC1C0FEA60100A42EA9662", hash_generated_field = "1971F9E630460B6A7EA7F81588D7F7D1")
 
     private static final ObjectStreamField[] serialPersistentFields = {
         new ObjectStreamField("source", Object.class),

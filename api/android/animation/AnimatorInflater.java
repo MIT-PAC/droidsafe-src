@@ -1,12 +1,9 @@
 package android.animation;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -23,15 +20,14 @@ import java.util.ArrayList;
 
 public class AnimatorInflater {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.954 -0400", hash_original_method = "755519606CB6AC3A2C6456CA27261C19", hash_generated_method = "755519606CB6AC3A2C6456CA27261C19")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:32.703 -0400", hash_original_method = "755519606CB6AC3A2C6456CA27261C19", hash_generated_method = "755519606CB6AC3A2C6456CA27261C19")
     public AnimatorInflater ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
-    public static Animator loadAnimator(Context context, int id) throws NotFoundException {
+        public static Animator loadAnimator(Context context, int id) throws NotFoundException {
         XmlResourceParser parser = null;
         try {
             parser = context.getResources().getAnimation(id);
@@ -54,14 +50,12 @@ public class AnimatorInflater {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static Animator createAnimatorFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
+        private static Animator createAnimatorFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
         return createAnimatorFromXml(c, parser, Xml.asAttributeSet(parser), null, 0);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static Animator createAnimatorFromXml(Context c, XmlPullParser parser,
+        private static Animator createAnimatorFromXml(Context c, XmlPullParser parser,
             AttributeSet attrs, AnimatorSet parent, int sequenceOrdering) throws XmlPullParserException, IOException {
         Animator anim = null;
         ArrayList<Animator> childAnims = null;
@@ -111,8 +105,7 @@ public class AnimatorInflater {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static ObjectAnimator loadObjectAnimator(Context context, AttributeSet attrs) throws NotFoundException {
+        private static ObjectAnimator loadObjectAnimator(Context context, AttributeSet attrs) throws NotFoundException {
         ObjectAnimator anim = new ObjectAnimator();
         loadAnimator(context, attrs, anim);
         TypedArray a =
@@ -124,8 +117,7 @@ public class AnimatorInflater {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    private static ValueAnimator loadAnimator(Context context, AttributeSet attrs, ValueAnimator anim) throws NotFoundException {
+        private static ValueAnimator loadAnimator(Context context, AttributeSet attrs, ValueAnimator anim) throws NotFoundException {
         TypedArray a =
                 context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.Animator);
         long duration = a.getInt(com.android.internal.R.styleable.Animator_duration, 0);
@@ -242,22 +234,22 @@ public class AnimatorInflater {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.958 -0400", hash_original_field = "C1FCEF32161A7BF89FDA53D614301098", hash_generated_field = "490BA40ECAC7401230E37F6CEBA3BA68")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:32.722 -0400", hash_original_field = "C1FCEF32161A7BF89FDA53D614301098", hash_generated_field = "490BA40ECAC7401230E37F6CEBA3BA68")
 
     private static final int TOGETHER = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.958 -0400", hash_original_field = "B568DA5D545ECA4D1ECFB6CD119EC659", hash_generated_field = "44AD87916965B5BF828EB108EEBE456E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:32.722 -0400", hash_original_field = "B568DA5D545ECA4D1ECFB6CD119EC659", hash_generated_field = "44AD87916965B5BF828EB108EEBE456E")
 
     private static final int SEQUENTIALLY = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.959 -0400", hash_original_field = "10812D1AA64AC84BBC01F77ADD149F5F", hash_generated_field = "A27617DD31601E2EB156A76530E8379C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:32.723 -0400", hash_original_field = "10812D1AA64AC84BBC01F77ADD149F5F", hash_generated_field = "A27617DD31601E2EB156A76530E8379C")
 
     private static final int VALUE_TYPE_FLOAT = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.959 -0400", hash_original_field = "011B104C1718919D9F0DE0394AE94E7A", hash_generated_field = "6D21C1ED6B4C00EAB281850A3EBEE6B8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:32.725 -0400", hash_original_field = "011B104C1718919D9F0DE0394AE94E7A", hash_generated_field = "6D21C1ED6B4C00EAB281850A3EBEE6B8")
 
     private static final int VALUE_TYPE_INT = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.959 -0400", hash_original_field = "F5C489E68DFCBFC6812B2F1E6603C7E4", hash_generated_field = "238B1727D7604A09A087EB88A85EC858")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:32.726 -0400", hash_original_field = "F5C489E68DFCBFC6812B2F1E6603C7E4", hash_generated_field = "238B1727D7604A09A087EB88A85EC858")
 
     private static final int VALUE_TYPE_COLOR = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.960 -0400", hash_original_field = "03B5A78BF4EF38ED0FA277295CCE4F73", hash_generated_field = "1D53AE501AADB1CB9CB4D59D5FF93934")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:32.726 -0400", hash_original_field = "03B5A78BF4EF38ED0FA277295CCE4F73", hash_generated_field = "1D53AE501AADB1CB9CB4D59D5FF93934")
 
     private static final int VALUE_TYPE_CUSTOM = 5;
 }

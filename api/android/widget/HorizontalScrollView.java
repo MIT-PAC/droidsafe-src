@@ -1,12 +1,9 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -28,158 +25,175 @@ import android.view.animation.AnimationUtils;
 import java.util.List;
 
 public class HorizontalScrollView extends FrameLayout {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.635 -0400", hash_original_field = "380EFAD062415C5D611446C1B15B307D", hash_generated_field = "507FF60BF6AED501221786F4F9B1C4CE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.790 -0400", hash_original_field = "380EFAD062415C5D611446C1B15B307D", hash_generated_field = "507FF60BF6AED501221786F4F9B1C4CE")
 
     private long mLastScroll;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.635 -0400", hash_original_field = "DF43B278CEE8933271AB3D9F9E312F86", hash_generated_field = "A498F2A4744F31D22F9C4ABEBB254F2F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.790 -0400", hash_original_field = "DF43B278CEE8933271AB3D9F9E312F86", hash_generated_field = "A498F2A4744F31D22F9C4ABEBB254F2F")
 
     private final Rect mTempRect = new Rect();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.635 -0400", hash_original_field = "360DD66618E954525BEA0D65B05DC7EC", hash_generated_field = "7106C69F4E49AB9D7F59F38965DF6036")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.791 -0400", hash_original_field = "360DD66618E954525BEA0D65B05DC7EC", hash_generated_field = "7106C69F4E49AB9D7F59F38965DF6036")
 
     private OverScroller mScroller;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.635 -0400", hash_original_field = "ACEBD86C89C68033BA00F1E22D2FC23B", hash_generated_field = "CF32CFBB2A976E850EE8DDE803F384D7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.791 -0400", hash_original_field = "ACEBD86C89C68033BA00F1E22D2FC23B", hash_generated_field = "CF32CFBB2A976E850EE8DDE803F384D7")
 
     private EdgeEffect mEdgeGlowLeft;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.635 -0400", hash_original_field = "876C7C33DE6802509886BB6ADFFE041C", hash_generated_field = "304A2CBEA7C331CEDE170973F40765C0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.791 -0400", hash_original_field = "876C7C33DE6802509886BB6ADFFE041C", hash_generated_field = "304A2CBEA7C331CEDE170973F40765C0")
 
     private EdgeEffect mEdgeGlowRight;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.635 -0400", hash_original_field = "4F6DEDF0BA2D99325BDAE4A27C301E0B", hash_generated_field = "90F53F7625CC0EEE4DC6EBCFF5E518A6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.791 -0400", hash_original_field = "4F6DEDF0BA2D99325BDAE4A27C301E0B", hash_generated_field = "90F53F7625CC0EEE4DC6EBCFF5E518A6")
 
     private float mLastMotionX;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.635 -0400", hash_original_field = "A43EC71B2E74CACC223B47379717A080", hash_generated_field = "9C16E67A6EDB3E799E01AFB02BCF7815")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.791 -0400", hash_original_field = "A43EC71B2E74CACC223B47379717A080", hash_generated_field = "9C16E67A6EDB3E799E01AFB02BCF7815")
 
     private boolean mIsLayoutDirty = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.635 -0400", hash_original_field = "8949A253727FAE7FB577F98D2A9463C2", hash_generated_field = "7E1EAB0DC4AB4B81BAB22B01D588949E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.791 -0400", hash_original_field = "8949A253727FAE7FB577F98D2A9463C2", hash_generated_field = "7E1EAB0DC4AB4B81BAB22B01D588949E")
 
     private View mChildToScrollTo = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.635 -0400", hash_original_field = "A8AB6008485C6E787B3DBB97D2050FF4", hash_generated_field = "40AA109CDE3739730D8C499D23D26FF1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.791 -0400", hash_original_field = "A8AB6008485C6E787B3DBB97D2050FF4", hash_generated_field = "40AA109CDE3739730D8C499D23D26FF1")
 
     private boolean mIsBeingDragged = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.635 -0400", hash_original_field = "217FE873D59646EE0AC51688724FF274", hash_generated_field = "5BEE30D4541C1ECA385873E799FC4104")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.791 -0400", hash_original_field = "217FE873D59646EE0AC51688724FF274", hash_generated_field = "5BEE30D4541C1ECA385873E799FC4104")
 
     private VelocityTracker mVelocityTracker;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.635 -0400", hash_original_field = "B3E3E62AA85A925921DCB2869A4E7017", hash_generated_field = "16DDF79C39D64DD0F8B72040D2242A75")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.791 -0400", hash_original_field = "B3E3E62AA85A925921DCB2869A4E7017", hash_generated_field = "16DDF79C39D64DD0F8B72040D2242A75")
 
     @ViewDebug.ExportedProperty(category = "layout") private boolean mFillViewport;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.635 -0400", hash_original_field = "581BD96ACB5FC0F4F529183E58EA63B2", hash_generated_field = "EA3AE5CC17F6060C1DBAA2AAAFFFC35C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.791 -0400", hash_original_field = "581BD96ACB5FC0F4F529183E58EA63B2", hash_generated_field = "EA3AE5CC17F6060C1DBAA2AAAFFFC35C")
 
     private boolean mSmoothScrollingEnabled = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.635 -0400", hash_original_field = "3DFFFAD10926598D18EEC50D61DE79CA", hash_generated_field = "3B323323DD6A6BF972666D993592C670")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.791 -0400", hash_original_field = "3DFFFAD10926598D18EEC50D61DE79CA", hash_generated_field = "3B323323DD6A6BF972666D993592C670")
 
     private int mTouchSlop;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.635 -0400", hash_original_field = "30B0DF23DBDF2426D66E4D98494C369B", hash_generated_field = "7DBE1A18599B8760DC9B67AAFE3499E3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.791 -0400", hash_original_field = "30B0DF23DBDF2426D66E4D98494C369B", hash_generated_field = "7DBE1A18599B8760DC9B67AAFE3499E3")
 
     private int mMinimumVelocity;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.635 -0400", hash_original_field = "1C66D9179508D091F8E90C9FEBAD15CA", hash_generated_field = "6F997413D0B227487940C402EB78A8FD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.791 -0400", hash_original_field = "1C66D9179508D091F8E90C9FEBAD15CA", hash_generated_field = "6F997413D0B227487940C402EB78A8FD")
 
     private int mMaximumVelocity;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.635 -0400", hash_original_field = "7A5B6F76BA72A8D6AFCFCEA14B8C2556", hash_generated_field = "7B0107E1CAE9FFC281D766335539D7C4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.791 -0400", hash_original_field = "7A5B6F76BA72A8D6AFCFCEA14B8C2556", hash_generated_field = "7B0107E1CAE9FFC281D766335539D7C4")
 
     private int mOverscrollDistance;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.635 -0400", hash_original_field = "755491871A4FCE3E01181030F8FEB178", hash_generated_field = "06022A8A798B4C892D35D0FFB16D2FDF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.791 -0400", hash_original_field = "755491871A4FCE3E01181030F8FEB178", hash_generated_field = "06022A8A798B4C892D35D0FFB16D2FDF")
 
     private int mOverflingDistance;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.635 -0400", hash_original_field = "D0F34CC6DB83FC46AEC38F19CA5CE138", hash_generated_field = "1B464B20D80463EC30779F63AB0559BD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.792 -0400", hash_original_field = "D0F34CC6DB83FC46AEC38F19CA5CE138", hash_generated_field = "1B464B20D80463EC30779F63AB0559BD")
 
     private int mActivePointerId = INVALID_POINTER;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.636 -0400", hash_original_method = "D579CCE5E39252987369F5EF7BC67FC0", hash_generated_method = "14051F04924CFB33DDABF2912876D78F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.792 -0400", hash_original_method = "D579CCE5E39252987369F5EF7BC67FC0", hash_generated_method = "14051F04924CFB33DDABF2912876D78F")
     public  HorizontalScrollView(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.636 -0400", hash_original_method = "7F7EA51B0CF52F1D171B225CFAE9439C", hash_generated_method = "73CCB570B3749D561A036B836DA6B022")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.792 -0400", hash_original_method = "7F7EA51B0CF52F1D171B225CFAE9439C", hash_generated_method = "5DD8D3112CC9437FFA1029FAC50BB5E5")
     public  HorizontalScrollView(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.horizontalScrollViewStyle);
-        addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        
+        addTaint(context.getTaint());
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.636 -0400", hash_original_method = "ABF3CE2040AE9A0702C38DF91EEF10E7", hash_generated_method = "8478F362DCE60C1AC24636DDAA95E40A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.793 -0400", hash_original_method = "ABF3CE2040AE9A0702C38DF91EEF10E7", hash_generated_method = "120D1237A739744E6399B506AE3126CF")
     public  HorizontalScrollView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+        addTaint(defStyle);
+        addTaint(attrs.getTaint());
+        addTaint(context.getTaint());
         initScrollView();
         TypedArray a = context.obtainStyledAttributes(attrs,
                 android.R.styleable.HorizontalScrollView, defStyle, 0);
         setFillViewport(a.getBoolean(android.R.styleable.HorizontalScrollView_fillViewport, false));
         a.recycle();
-        addTaint(context.getTaint());
-        addTaint(attrs.getTaint());
-        addTaint(defStyle);
-        
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //initScrollView();
+        //TypedArray a = context.obtainStyledAttributes(attrs,
+                //android.R.styleable.HorizontalScrollView, defStyle, 0);
+        //setFillViewport(a.getBoolean(android.R.styleable.HorizontalScrollView_fillViewport, false));
+        //a.recycle();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.637 -0400", hash_original_method = "041555434146A9B8485461655BD1A318", hash_generated_method = "B687590291E41D2EABF4B286E5FB6110")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.793 -0400", hash_original_method = "041555434146A9B8485461655BD1A318", hash_generated_method = "8D4EF2195566ED8E45A2F4B9790887EC")
     @Override
     protected float getLeftFadingEdgeStrength() {
+    if(getChildCount() == 0)        
         {
-            boolean varF370735710C80808B6618BA2D491D045_1629121480 = (getChildCount() == 0);
-        } 
+            float var2C64466C1DFC5FC617E8E7707C276CC3_730278497 = (0.0f);
+                        float var546ADE640B6EDFBC8A086EF31347E768_1878228016 = getTaintFloat();
+            return var546ADE640B6EDFBC8A086EF31347E768_1878228016;
+        } //End block
         final int length = getHorizontalFadingEdgeLength();
-        float var546ADE640B6EDFBC8A086EF31347E768_1300753877 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1300753877;
-        
-        
-            
-        
-        
-        
-            
-        
-        
+    if(mScrollX < length)        
+        {
+            float varE6986454617065CD04CBD0B907EE353C_1601802510 = (mScrollX / (float) length);
+                        float var546ADE640B6EDFBC8A086EF31347E768_983989114 = getTaintFloat();
+            return var546ADE640B6EDFBC8A086EF31347E768_983989114;
+        } //End block
+        float varCFE70293CC98B68AC513E2798BAD793D_422714657 = (1.0f);
+                float var546ADE640B6EDFBC8A086EF31347E768_74093627 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_74093627;
+        // ---------- Original Method ----------
+        //if (getChildCount() == 0) {
+            //return 0.0f;
+        //}
+        //final int length = getHorizontalFadingEdgeLength();
+        //if (mScrollX < length) {
+            //return mScrollX / (float) length;
+        //}
+        //return 1.0f;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.637 -0400", hash_original_method = "AC1CCEB780F155A105BA88465002385B", hash_generated_method = "E392B4F53AD0D7BA3A8A52EEA833976B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.794 -0400", hash_original_method = "AC1CCEB780F155A105BA88465002385B", hash_generated_method = "7D0FF2F585B775A216255D80047D8B07")
     @Override
     protected float getRightFadingEdgeStrength() {
+    if(getChildCount() == 0)        
         {
-            boolean varF370735710C80808B6618BA2D491D045_241025944 = (getChildCount() == 0);
-        } 
+            float var2C64466C1DFC5FC617E8E7707C276CC3_542220016 = (0.0f);
+                        float var546ADE640B6EDFBC8A086EF31347E768_1578492499 = getTaintFloat();
+            return var546ADE640B6EDFBC8A086EF31347E768_1578492499;
+        } //End block
         final int length = getHorizontalFadingEdgeLength();
         final int rightEdge = getWidth() - mPaddingRight;
         final int span = getChildAt(0).getRight() - mScrollX - rightEdge;
-        float var546ADE640B6EDFBC8A086EF31347E768_1872373227 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1872373227;
-        
-        
-            
-        
-        
-        
-        
-        
-            
-        
-        
+    if(span < length)        
+        {
+            float var941A690C6CFF230827FF210C6B3392A9_439286053 = (span / (float) length);
+                        float var546ADE640B6EDFBC8A086EF31347E768_368901207 = getTaintFloat();
+            return var546ADE640B6EDFBC8A086EF31347E768_368901207;
+        } //End block
+        float varCFE70293CC98B68AC513E2798BAD793D_1464496042 = (1.0f);
+                float var546ADE640B6EDFBC8A086EF31347E768_1194387628 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_1194387628;
+        // ---------- Original Method ----------
+        //if (getChildCount() == 0) {
+            //return 0.0f;
+        //}
+        //final int length = getHorizontalFadingEdgeLength();
+        //final int rightEdge = getWidth() - mPaddingRight;
+        //final int span = getChildAt(0).getRight() - mScrollX - rightEdge;
+        //if (span < length) {
+            //return span / (float) length;
+        //}
+        //return 1.0f;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.637 -0400", hash_original_method = "F72D9B4700B8FCB550AB26E9792E603C", hash_generated_method = "AE5C10BB16A9BE731BC69DCE43DF4AFB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.794 -0400", hash_original_method = "F72D9B4700B8FCB550AB26E9792E603C", hash_generated_method = "1766023EFFB14AAFB26D1B2D36FF3713")
     public int getMaxScrollAmount() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1085696579 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1085696579;
-        
-        
+        int var3811E0A0C3B22AE8514C2309C41B7802_1089027136 = ((int) (MAX_SCROLL_FACTOR * (mRight - mLeft)));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1417503358 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1417503358;
+        // ---------- Original Method ----------
+        //return (int) (MAX_SCROLL_FACTOR * (mRight - mLeft));
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.638 -0400", hash_original_method = "02BBAF53D85E267FB240E2D4309C877F", hash_generated_method = "02BFF61AA3D9E1FA9C55929FA1EDF318")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.795 -0400", hash_original_method = "02BBAF53D85E267FB240E2D4309C877F", hash_generated_method = "02BFF61AA3D9E1FA9C55929FA1EDF318")
     private void initScrollView() {
         mScroller = new OverScroller(getContext());
         setFocusable(true);
@@ -191,465 +205,472 @@ public class HorizontalScrollView extends FrameLayout {
         mMaximumVelocity = configuration.getScaledMaximumFlingVelocity();
         mOverscrollDistance = configuration.getScaledOverscrollDistance();
         mOverflingDistance = configuration.getScaledOverflingDistance();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mScroller = new OverScroller(getContext());
+        //setFocusable(true);
+        //setDescendantFocusability(FOCUS_AFTER_DESCENDANTS);
+        //setWillNotDraw(false);
+        //final ViewConfiguration configuration = ViewConfiguration.get(mContext);
+        //mTouchSlop = configuration.getScaledTouchSlop();
+        //mMinimumVelocity = configuration.getScaledMinimumFlingVelocity();
+        //mMaximumVelocity = configuration.getScaledMaximumFlingVelocity();
+        //mOverscrollDistance = configuration.getScaledOverscrollDistance();
+        //mOverflingDistance = configuration.getScaledOverflingDistance();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.638 -0400", hash_original_method = "28BB619967A3B168E514D899D7C1C204", hash_generated_method = "2A3A3972BE1AED1B7F048B7BF6C5A6EE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.795 -0400", hash_original_method = "28BB619967A3B168E514D899D7C1C204", hash_generated_method = "29B5EF968B0177BB121AE0513339FE12")
     @Override
     public void addView(View child) {
-        {
-            boolean varBF62E6C23FE36C17A3594E034FF46D2E_1445893338 = (getChildCount() > 0);
-            {
-                if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("HorizontalScrollView can host only one direct child");
-            } 
-        } 
-        super.addView(child);
         addTaint(child.getTaint());
-        
-        
-            
-        
-        
+    if(getChildCount() > 0)        
+        {
+            IllegalStateException var05A10724DF5EE1DED9BB2CB05480822D_1251658596 = new IllegalStateException("HorizontalScrollView can host only one direct child");
+            var05A10724DF5EE1DED9BB2CB05480822D_1251658596.addTaint(taint);
+            throw var05A10724DF5EE1DED9BB2CB05480822D_1251658596;
+        } //End block
+        super.addView(child);
+        // ---------- Original Method ----------
+        //if (getChildCount() > 0) {
+            //throw new IllegalStateException("HorizontalScrollView can host only one direct child");
+        //}
+        //super.addView(child);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.639 -0400", hash_original_method = "D082E00953E9B886F1BBE563E072EA76", hash_generated_method = "F4F68301093E5361896E85611784E9A3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.796 -0400", hash_original_method = "D082E00953E9B886F1BBE563E072EA76", hash_generated_method = "58F560746018A3B9FF00BAB985D58C32")
     @Override
     public void addView(View child, int index) {
-        {
-            boolean varBF62E6C23FE36C17A3594E034FF46D2E_361622730 = (getChildCount() > 0);
-            {
-                if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("HorizontalScrollView can host only one direct child");
-            } 
-        } 
-        super.addView(child, index);
-        addTaint(child.getTaint());
         addTaint(index);
-        
-        
-            
-        
-        
+        addTaint(child.getTaint());
+    if(getChildCount() > 0)        
+        {
+            IllegalStateException var05A10724DF5EE1DED9BB2CB05480822D_2114466473 = new IllegalStateException("HorizontalScrollView can host only one direct child");
+            var05A10724DF5EE1DED9BB2CB05480822D_2114466473.addTaint(taint);
+            throw var05A10724DF5EE1DED9BB2CB05480822D_2114466473;
+        } //End block
+        super.addView(child, index);
+        // ---------- Original Method ----------
+        //if (getChildCount() > 0) {
+            //throw new IllegalStateException("HorizontalScrollView can host only one direct child");
+        //}
+        //super.addView(child, index);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.640 -0400", hash_original_method = "35F41E1C04BFB475A60C431B3898F857", hash_generated_method = "1AA5D7CE076BD89022EE3FB1B2E6193C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.796 -0400", hash_original_method = "35F41E1C04BFB475A60C431B3898F857", hash_generated_method = "24E313613C1E19BC4044BDD6DEA71121")
     @Override
     public void addView(View child, ViewGroup.LayoutParams params) {
-        {
-            boolean varBF62E6C23FE36C17A3594E034FF46D2E_986123523 = (getChildCount() > 0);
-            {
-                if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("HorizontalScrollView can host only one direct child");
-            } 
-        } 
-        super.addView(child, params);
-        addTaint(child.getTaint());
         addTaint(params.getTaint());
-        
-        
-            
-        
-        
+        addTaint(child.getTaint());
+    if(getChildCount() > 0)        
+        {
+            IllegalStateException var05A10724DF5EE1DED9BB2CB05480822D_435292394 = new IllegalStateException("HorizontalScrollView can host only one direct child");
+            var05A10724DF5EE1DED9BB2CB05480822D_435292394.addTaint(taint);
+            throw var05A10724DF5EE1DED9BB2CB05480822D_435292394;
+        } //End block
+        super.addView(child, params);
+        // ---------- Original Method ----------
+        //if (getChildCount() > 0) {
+            //throw new IllegalStateException("HorizontalScrollView can host only one direct child");
+        //}
+        //super.addView(child, params);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.640 -0400", hash_original_method = "D331A2B6162E307FE1F025F2ABEA7C28", hash_generated_method = "752BD03C2C88B5DB580A71798C199293")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.796 -0400", hash_original_method = "D331A2B6162E307FE1F025F2ABEA7C28", hash_generated_method = "110075D0CBD9A1560AEA91207DAB24B2")
     @Override
     public void addView(View child, int index, ViewGroup.LayoutParams params) {
-        {
-            boolean varBF62E6C23FE36C17A3594E034FF46D2E_1318239546 = (getChildCount() > 0);
-            {
-                if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("HorizontalScrollView can host only one direct child");
-            } 
-        } 
-        super.addView(child, index, params);
-        addTaint(child.getTaint());
-        addTaint(index);
         addTaint(params.getTaint());
-        
-        
-            
-        
-        
+        addTaint(index);
+        addTaint(child.getTaint());
+    if(getChildCount() > 0)        
+        {
+            IllegalStateException var05A10724DF5EE1DED9BB2CB05480822D_2135129551 = new IllegalStateException("HorizontalScrollView can host only one direct child");
+            var05A10724DF5EE1DED9BB2CB05480822D_2135129551.addTaint(taint);
+            throw var05A10724DF5EE1DED9BB2CB05480822D_2135129551;
+        } //End block
+        super.addView(child, index, params);
+        // ---------- Original Method ----------
+        //if (getChildCount() > 0) {
+            //throw new IllegalStateException("HorizontalScrollView can host only one direct child");
+        //}
+        //super.addView(child, index, params);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.641 -0400", hash_original_method = "3DE53F922B0BEA48963A7A11A88BC712", hash_generated_method = "54E977B61A9E80C233D5F39665FA8603")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.797 -0400", hash_original_method = "3DE53F922B0BEA48963A7A11A88BC712", hash_generated_method = "3D73E763DC05B9C5447504A901CED01E")
     private boolean canScroll() {
         View child = getChildAt(0);
+    if(child != null)        
         {
             int childWidth = child.getWidth();
-            boolean varA6C40242804D94D2C9C8F4BFEFCFD006_968011451 = (getWidth() < childWidth + mPaddingLeft + mPaddingRight);
-        } 
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1611806319 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1611806319;
-        
-        
-        
-            
-            
-        
-        
+            boolean varADCB9BFDAE39B6778BB46AAB32CB64ED_969941633 = (getWidth() < childWidth + mPaddingLeft + mPaddingRight);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1577354168 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1577354168;
+        } //End block
+        boolean var68934A3E9455FA72420237EB05902327_1632043059 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1799177790 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1799177790;
+        // ---------- Original Method ----------
+        //View child = getChildAt(0);
+        //if (child != null) {
+            //int childWidth = child.getWidth();
+            //return getWidth() < childWidth + mPaddingLeft + mPaddingRight ;
+        //}
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.641 -0400", hash_original_method = "801E6F065AC6A60CFB0DADB1E074F98E", hash_generated_method = "726E30375762DCC42D3526056CA7699C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.797 -0400", hash_original_method = "801E6F065AC6A60CFB0DADB1E074F98E", hash_generated_method = "373D1AB22F88FD1530A85A999FEEC6C5")
     public boolean isFillViewport() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_199603871 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_199603871;
-        
-        
+        boolean varB3E3E62AA85A925921DCB2869A4E7017_366729571 = (mFillViewport);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_771728862 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_771728862;
+        // ---------- Original Method ----------
+        //return mFillViewport;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.641 -0400", hash_original_method = "D2588C7F74D0E18DF5DFA629FE7BF270", hash_generated_method = "2659D9B4D00861C682890CC931AD720B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.797 -0400", hash_original_method = "D2588C7F74D0E18DF5DFA629FE7BF270", hash_generated_method = "F2E2A5C18232B8609B837CA278719D40")
     public void setFillViewport(boolean fillViewport) {
+    if(fillViewport != mFillViewport)        
         {
             mFillViewport = fillViewport;
             requestLayout();
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (fillViewport != mFillViewport) {
+            //mFillViewport = fillViewport;
+            //requestLayout();
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.642 -0400", hash_original_method = "D26C58327C0CB18AC1F62B7629FD16B1", hash_generated_method = "2346A65BA82F9D3EEFEEDDD702F8600A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.797 -0400", hash_original_method = "D26C58327C0CB18AC1F62B7629FD16B1", hash_generated_method = "0912AF3F169A81A25F32C6B17796C067")
     public boolean isSmoothScrollingEnabled() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_103136818 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_103136818;
-        
-        
+        boolean var15B603515FEC15F2893A41D962B8656B_1784574402 = (mSmoothScrollingEnabled);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1572345847 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1572345847;
+        // ---------- Original Method ----------
+        //return mSmoothScrollingEnabled;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.642 -0400", hash_original_method = "63C96CE84D9CD60CA1FF4EF87D7FF4F5", hash_generated_method = "5C7F23BB3E765786BEE5D256B048D32A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.798 -0400", hash_original_method = "63C96CE84D9CD60CA1FF4EF87D7FF4F5", hash_generated_method = "5C7F23BB3E765786BEE5D256B048D32A")
     public void setSmoothScrollingEnabled(boolean smoothScrollingEnabled) {
         mSmoothScrollingEnabled = smoothScrollingEnabled;
-        
-        
+        // ---------- Original Method ----------
+        //mSmoothScrollingEnabled = smoothScrollingEnabled;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.642 -0400", hash_original_method = "1306D2831DF4DA9A5EDAD3DA6127274D", hash_generated_method = "40403629B54BD7AD340EBEEC801D49B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.798 -0400", hash_original_method = "1306D2831DF4DA9A5EDAD3DA6127274D", hash_generated_method = "EE512012F00EA80710F870D8C0240B91")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        final int widthMode = MeasureSpec.getMode(widthMeasureSpec);
-        {
-            boolean varBF62E6C23FE36C17A3594E034FF46D2E_801225294 = (getChildCount() > 0);
-            {
-                final View child = getChildAt(0);
-                int width = getMeasuredWidth();
-                {
-                    boolean varBA5E95C6C7C7E6CFE039E1AE81F2A9F7_953219005 = (child.getMeasuredWidth() < width);
-                    {
-                        final FrameLayout.LayoutParams lp = (LayoutParams) child.getLayoutParams();
-                        int childHeightMeasureSpec = getChildMeasureSpec(heightMeasureSpec, mPaddingTop
-                        + mPaddingBottom, lp.height);
-                        width -= mPaddingLeft;
-                        width -= mPaddingRight;
-                        int childWidthMeasureSpec = MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY);
-                        child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
-                    } 
-                } 
-            } 
-        } 
-        addTaint(widthMeasureSpec);
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(heightMeasureSpec);
-        
-        
+        addTaint(widthMeasureSpec);
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    if(!mFillViewport)        
+        {
+            return;
+        } //End block
+        final int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+    if(widthMode == MeasureSpec.UNSPECIFIED)        
+        {
+            return;
+        } //End block
+    if(getChildCount() > 0)        
+        {
+            final View child = getChildAt(0);
+            int width = getMeasuredWidth();
+    if(child.getMeasuredWidth() < width)            
+            {
+                final FrameLayout.LayoutParams lp = (LayoutParams) child.getLayoutParams();
+                int childHeightMeasureSpec = getChildMeasureSpec(heightMeasureSpec, mPaddingTop
+                        + mPaddingBottom, lp.height);
+                width -= mPaddingLeft;
+                width -= mPaddingRight;
+                int childWidthMeasureSpec = MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY);
+                child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.643 -0400", hash_original_method = "40D3C8E04EF2AEB04EFDF302E05EC516", hash_generated_method = "EEEC6531010035E53DC2704E4461747F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.799 -0400", hash_original_method = "40D3C8E04EF2AEB04EFDF302E05EC516", hash_generated_method = "6C28C1F03079755BDA4C19EA5AC92548")
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
-        boolean var160A6DCE359009EE36E492A233BEB313_603084653 = (super.dispatchKeyEvent(event) || executeKeyEvent(event));
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1515069921 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1515069921;
-        
-        
+        boolean var4D7C358C8BD535F7098378506DB34C5F_286262525 = (super.dispatchKeyEvent(event) || executeKeyEvent(event));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2083665787 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2083665787;
+        // ---------- Original Method ----------
+        //return super.dispatchKeyEvent(event) || executeKeyEvent(event);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.643 -0400", hash_original_method = "59EE8B926A303894927E6FAD605B1FF1", hash_generated_method = "C307E7F1FEC0F230CFEE6739CBDCEC19")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.800 -0400", hash_original_method = "59EE8B926A303894927E6FAD605B1FF1", hash_generated_method = "5CD0A1FD73101142D65B71B164C1FD3A")
     public boolean executeKeyEvent(KeyEvent event) {
-        mTempRect.setEmpty();
-        {
-            boolean varF142AAB9B9E2812C95D81D43568D13C8_856767803 = (!canScroll());
-            {
-                {
-                    boolean var807A689000786E69147E7D957AAAFB6F_94843108 = (isFocused());
-                    {
-                        View currentFocused = findFocus();
-                        {
-                            boolean varCCA9B61B8A448B09DE583C4C7BFDEFBB_1102245464 = (currentFocused == this);
-                            currentFocused = null;
-                        } 
-                        View nextFocused = FocusFinder.getInstance().findNextFocus(this,
-                        currentFocused, View.FOCUS_RIGHT);
-                        boolean varE3066A006DC54F43B369F4B21A267608_1052339659 = (nextFocused != null && nextFocused != this &&
-                        nextFocused.requestFocus(View.FOCUS_RIGHT));
-                    } 
-                } 
-            } 
-        } 
-        boolean handled = false;
-        {
-            boolean varE78E9647F4429F5955AD42D05C6FEF7A_2126905724 = (event.getAction() == KeyEvent.ACTION_DOWN);
-            {
-                {
-                    Object varA0761DC6508339A4AD5D875712ADE561_563274078 = (event.getKeyCode());
-                    
-                    {
-                        boolean var6263B7F37C2CF1348DCC37C937DB4EA5_1047481442 = (!event.isAltPressed());
-                        {
-                            handled = arrowScroll(View.FOCUS_LEFT);
-                        } 
-                        {
-                            handled = fullScroll(View.FOCUS_LEFT);
-                        } 
-                    } 
-                    
-                    
-                    {
-                        boolean var6263B7F37C2CF1348DCC37C937DB4EA5_1660977666 = (!event.isAltPressed());
-                        {
-                            handled = arrowScroll(View.FOCUS_RIGHT);
-                        } 
-                        {
-                            handled = fullScroll(View.FOCUS_RIGHT);
-                        } 
-                    } 
-                    
-                    
-                    pageScroll(event.isShiftPressed() ? View.FOCUS_LEFT : View.FOCUS_RIGHT);
-                    
-                } 
-            } 
-        } 
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1390276626 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1390276626;
-        
-        
+        mTempRect.setEmpty();
+    if(!canScroll())        
+        {
+    if(isFocused())            
+            {
+                View currentFocused = findFocus();
+    if(currentFocused == this)                
+                currentFocused = null;
+                View nextFocused = FocusFinder.getInstance().findNextFocus(this,
+                        currentFocused, View.FOCUS_RIGHT);
+                boolean var2D16C80B5336D8EEAE1F48547DDA8A1E_1237311221 = (nextFocused != null && nextFocused != this &&
+                        nextFocused.requestFocus(View.FOCUS_RIGHT));
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_17703396 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_17703396;
+            } //End block
+            boolean var68934A3E9455FA72420237EB05902327_1491981020 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_229415676 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_229415676;
+        } //End block
+        boolean handled = false;
+    if(event.getAction() == KeyEvent.ACTION_DOWN)        
+        {
+switch(event.getKeyCode()){
+            case KeyEvent.KEYCODE_DPAD_LEFT:
+    if(!event.isAltPressed())            
+            {
+                handled = arrowScroll(View.FOCUS_LEFT);
+            } //End block
+            else
+            {
+                handled = fullScroll(View.FOCUS_LEFT);
+            } //End block
+            break;
+            case KeyEvent.KEYCODE_DPAD_RIGHT:
+    if(!event.isAltPressed())            
+            {
+                handled = arrowScroll(View.FOCUS_RIGHT);
+            } //End block
+            else
+            {
+                handled = fullScroll(View.FOCUS_RIGHT);
+            } //End block
+            break;
+            case KeyEvent.KEYCODE_SPACE:
+            pageScroll(event.isShiftPressed() ? View.FOCUS_LEFT : View.FOCUS_RIGHT);
+            break;
+}
+        } //End block
+        boolean var98F0599AF776A1FE4101C199A40EEB8F_1661911178 = (handled);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_674089694 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_674089694;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.644 -0400", hash_original_method = "9319BD4BC402BC56524E94C60EDF0AE3", hash_generated_method = "06E5643FD3F571C1E2E4EC270A69E5F1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.800 -0400", hash_original_method = "9319BD4BC402BC56524E94C60EDF0AE3", hash_generated_method = "70A1218F814968ACF91639EFC84E54BB")
     private boolean inChild(int x, int y) {
+        addTaint(y);
+        addTaint(x);
+    if(getChildCount() > 0)        
         {
-            boolean varBF62E6C23FE36C17A3594E034FF46D2E_1146270413 = (getChildCount() > 0);
-            {
-                final int scrollX = mScrollX;
-                final View child = getChildAt(0);
-                boolean var39E4E21670022FBDEFC34F7F342484F1_869404427 = (!(y < child.getTop()
+            final int scrollX = mScrollX;
+            final View child = getChildAt(0);
+            boolean var315B4686B994B17FFBC4F4304C1A43F9_1924451511 = (!(y < child.getTop()
                     || y >= child.getBottom()
                     || x < child.getLeft() - scrollX
                     || x >= child.getRight() - scrollX));
-            } 
-        } 
-        addTaint(x);
-        addTaint(y);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_247923896 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_247923896;
-        
-        
-            
-            
-            
-                    
-                    
-                    
-        
-        
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1646857668 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1646857668;
+        } //End block
+        boolean var68934A3E9455FA72420237EB05902327_1952918911 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1144915245 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1144915245;
+        // ---------- Original Method ----------
+        //if (getChildCount() > 0) {
+            //final int scrollX = mScrollX;
+            //final View child = getChildAt(0);
+            //return !(y < child.getTop()
+                    //|| y >= child.getBottom()
+                    //|| x < child.getLeft() - scrollX
+                    //|| x >= child.getRight() - scrollX);
+        //}
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.644 -0400", hash_original_method = "2F2E3E2ED97C397B1954EFE1C35FD1EF", hash_generated_method = "D2F7B701FF4A7C7D5D9BBE60A4204A34")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.801 -0400", hash_original_method = "2F2E3E2ED97C397B1954EFE1C35FD1EF", hash_generated_method = "E6A2459F70C94EEE4F8E0DC05B01F193")
     private void initOrResetVelocityTracker() {
+    if(mVelocityTracker == null)        
         {
             mVelocityTracker = VelocityTracker.obtain();
-        } 
+        } //End block
+        else
         {
             mVelocityTracker.clear();
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mVelocityTracker == null) {
+            //mVelocityTracker = VelocityTracker.obtain();
+        //} else {
+            //mVelocityTracker.clear();
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.644 -0400", hash_original_method = "2C2F1E0A6C232182F8110D9EE75ED47E", hash_generated_method = "A47C5AEFF80C521B346EFD43CCEC463A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.801 -0400", hash_original_method = "2C2F1E0A6C232182F8110D9EE75ED47E", hash_generated_method = "2B8D7737D5D71D4902AEB864DE542716")
     private void initVelocityTrackerIfNotExists() {
+    if(mVelocityTracker == null)        
         {
             mVelocityTracker = VelocityTracker.obtain();
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mVelocityTracker == null) {
+            //mVelocityTracker = VelocityTracker.obtain();
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.645 -0400", hash_original_method = "FC3B581D4963BCED4340031BA20C5421", hash_generated_method = "4A5B29B306AF5EDD25C8547D1436EB51")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.801 -0400", hash_original_method = "FC3B581D4963BCED4340031BA20C5421", hash_generated_method = "701A7C43D055D340A0D18EE9D957EDFF")
     private void recycleVelocityTracker() {
+    if(mVelocityTracker != null)        
         {
             mVelocityTracker.recycle();
             mVelocityTracker = null;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mVelocityTracker != null) {
+            //mVelocityTracker.recycle();
+            //mVelocityTracker = null;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.645 -0400", hash_original_method = "C74400E8950C106883E854683AF24673", hash_generated_method = "9EE44C43E2819EE39A2C95C618F793B6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.802 -0400", hash_original_method = "C74400E8950C106883E854683AF24673", hash_generated_method = "0484ACC96D68F9484E340AA90FA16493")
     @Override
     public void requestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+        addTaint(disallowIntercept);
+    if(disallowIntercept)        
         {
             recycleVelocityTracker();
-        } 
+        } //End block
         super.requestDisallowInterceptTouchEvent(disallowIntercept);
-        addTaint(disallowIntercept);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (disallowIntercept) {
+            //recycleVelocityTracker();
+        //}
+        //super.requestDisallowInterceptTouchEvent(disallowIntercept);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.646 -0400", hash_original_method = "B8EBEABAF4D085F1DC9FA2F6547DBF28", hash_generated_method = "AC38567C6393CD7D10864ADD20ED799B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.804 -0400", hash_original_method = "B8EBEABAF4D085F1DC9FA2F6547DBF28", hash_generated_method = "32D120AB3293B94683A51AE622BE7FAE")
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         final int action = ev.getAction();
-        
+    if((action == MotionEvent.ACTION_MOVE) && (mIsBeingDragged))        
+        {
+            boolean varB326B5062B2F0E69046810717534CB09_1415169531 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1811063801 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1811063801;
+        } //End block
+switch(action & MotionEvent.ACTION_MASK){
+        case MotionEvent.ACTION_MOVE:
         {
             final int activePointerId = mActivePointerId;
+    if(activePointerId == INVALID_POINTER)            
+            {
+                break;
+            } //End block
             final int pointerIndex = ev.findPointerIndex(activePointerId);
             final float x = ev.getX(pointerIndex);
             final int xDiff = (int) Math.abs(x - mLastMotionX);
+    if(xDiff > mTouchSlop)            
             {
                 mIsBeingDragged = true;
                 mLastMotionX = x;
                 initVelocityTrackerIfNotExists();
                 mVelocityTracker.addMovement(ev);
+    if(mParent != null)                
                 mParent.requestDisallowInterceptTouchEvent(true);
-            } 
-        } 
-        
-        
+            } //End block
+            break;
+        } //End block
+        case MotionEvent.ACTION_DOWN:
         {
             final float x = ev.getX();
+    if(!inChild((int) x, (int) ev.getY()))            
             {
-                boolean var3405975BC361ED70AE7E5B2027F4D35B_260344872 = (!inChild((int) x, (int) ev.getY()));
-                {
-                    mIsBeingDragged = false;
-                    recycleVelocityTracker();
-                } 
-            } 
+                mIsBeingDragged = false;
+                recycleVelocityTracker();
+                break;
+            } //End block
             mLastMotionX = x;
             mActivePointerId = ev.getPointerId(0);
             initOrResetVelocityTracker();
             mVelocityTracker.addMovement(ev);
             mIsBeingDragged = !mScroller.isFinished();
-        } 
-        
-        
+            break;
+        } //End block
+        case MotionEvent.ACTION_CANCEL:
+        case MotionEvent.ACTION_UP:
         mIsBeingDragged = false;
-        
-        
         mActivePointerId = INVALID_POINTER;
-        
-        
+    if(mScroller.springBack(mScrollX, mScrollY, 0, getScrollRange(), 0, 0))        
         {
-            boolean varEE5121167538D55FE2ED747573ECA340_1333169443 = (mScroller.springBack(mScrollX, mScrollY, 0, getScrollRange(), 0, 0));
-            {
-                invalidate();
-            } 
-        } 
-        
-        
+            invalidate();
+        } //End block
+        break;
+        case MotionEvent.ACTION_POINTER_DOWN:
         {
             final int index = ev.getActionIndex();
             mLastMotionX = ev.getX(index);
             mActivePointerId = ev.getPointerId(index);
-        } 
-        
-        
+            break;
+        } //End block
+        case MotionEvent.ACTION_POINTER_UP:
         onSecondaryPointerUp(ev);
-        
-        
         mLastMotionX = ev.getX(ev.findPointerIndex(mActivePointerId));
-        
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1438727529 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1438727529;
-        
-        
+        break;
+}        boolean varCD7F83DE880FD2A584529B26609B9552_225975404 = (mIsBeingDragged);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_612389662 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_612389662;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.647 -0400", hash_original_method = "DC232709D0DE420641FAAFB6B744429B", hash_generated_method = "294C4D4D3EE1A450CFDC5615CD6C4BEF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.806 -0400", hash_original_method = "DC232709D0DE420641FAAFB6B744429B", hash_generated_method = "2FD55D40F7BA535D46C7AA5A0A30D95C")
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         initVelocityTrackerIfNotExists();
         mVelocityTracker.addMovement(ev);
         final int action = ev.getAction();
-        
+switch(action & MotionEvent.ACTION_MASK){
+        case MotionEvent.ACTION_DOWN:
         {
             mIsBeingDragged = getChildCount() != 0;
+    if(!mIsBeingDragged)            
             {
-                boolean var11F6C92CC339B9B3B7C0C85A8DBD1165_1098598299 = (!mScroller.isFinished());
-                {
-                    mScroller.abortAnimation();
-                } 
-            } 
+                boolean var68934A3E9455FA72420237EB05902327_324737201 = (false);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1948863368 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1948863368;
+            } //End block
+    if(!mScroller.isFinished())            
+            {
+                mScroller.abortAnimation();
+            } //End block
             mLastMotionX = ev.getX();
             mActivePointerId = ev.getPointerId(0);
-        } 
-        
-        
+            break;
+        } //End block
+        case MotionEvent.ACTION_MOVE:
+    if(mIsBeingDragged)        
         {
             final int activePointerIndex = ev.findPointerIndex(mActivePointerId);
             final float x = ev.getX(activePointerIndex);
@@ -661,660 +682,646 @@ public class HorizontalScrollView extends FrameLayout {
             final int overscrollMode = getOverScrollMode();
             final boolean canOverscroll = overscrollMode == OVER_SCROLL_ALWAYS ||
                             (overscrollMode == OVER_SCROLL_IF_CONTENT_SCROLLS && range > 0);
+    if(overScrollBy(deltaX, 0, mScrollX, 0, range, 0,
+                            mOverscrollDistance, 0, true))            
             {
-                boolean var4673405DB318F577EB775B557DA805F2_2056552916 = (overScrollBy(deltaX, 0, mScrollX, 0, range, 0,
-                            mOverscrollDistance, 0, true));
-                {
-                    mVelocityTracker.clear();
-                } 
-            } 
+                mVelocityTracker.clear();
+            } //End block
             onScrollChanged(mScrollX, mScrollY, oldX, oldY);
+    if(canOverscroll)            
             {
                 final int pulledToX = oldX + deltaX;
+    if(pulledToX < 0)                
                 {
                     mEdgeGlowLeft.onPull((float) deltaX / getWidth());
+    if(!mEdgeGlowRight.isFinished())                    
                     {
-                        boolean varD2DEBDA1B3BE7D590185C2C37852D200_1673254481 = (!mEdgeGlowRight.isFinished());
-                        {
-                            mEdgeGlowRight.onRelease();
-                        } 
-                    } 
-                } 
+                        mEdgeGlowRight.onRelease();
+                    } //End block
+                } //End block
+                else
+    if(pulledToX > range)                
                 {
                     mEdgeGlowRight.onPull((float) deltaX / getWidth());
+    if(!mEdgeGlowLeft.isFinished())                    
                     {
-                        boolean varD07D7885146F53648F473CE045927D93_1351833910 = (!mEdgeGlowLeft.isFinished());
-                        {
-                            mEdgeGlowLeft.onRelease();
-                        } 
-                    } 
-                } 
+                        mEdgeGlowLeft.onRelease();
+                    } //End block
+                } //End block
+    if(mEdgeGlowLeft != null
+                                && (!mEdgeGlowLeft.isFinished() || !mEdgeGlowRight.isFinished()))                
                 {
-                    boolean var5D2E730F9B7FB13C61A16574D0E5ADB7_543440831 = (mEdgeGlowLeft != null
-                                && (!mEdgeGlowLeft.isFinished() || !mEdgeGlowRight.isFinished()));
-                    {
-                        invalidate();
-                    } 
-                } 
-            } 
-        } 
-        
-        
+                    invalidate();
+                } //End block
+            } //End block
+        } //End block
+        break;
+        case MotionEvent.ACTION_UP:
+    if(mIsBeingDragged)        
         {
             final VelocityTracker velocityTracker = mVelocityTracker;
             velocityTracker.computeCurrentVelocity(1000, mMaximumVelocity);
             int initialVelocity = (int) velocityTracker.getXVelocity(mActivePointerId);
+    if(getChildCount() > 0)            
             {
-                boolean var9C190A50DA656473F4A85C2EF380F022_384925817 = (getChildCount() > 0);
+    if((Math.abs(initialVelocity) > mMinimumVelocity))                
                 {
+                    fling(-initialVelocity);
+                } //End block
+                else
+                {
+    if(mScroller.springBack(mScrollX, mScrollY, 0,
+                                    getScrollRange(), 0, 0))                    
                     {
-                        boolean varCB55D3BE2E93A2FD55EF78A581740AFC_1457879104 = ((Math.abs(initialVelocity) > mMinimumVelocity));
-                        {
-                            fling(-initialVelocity);
-                        } 
-                        {
-                            {
-                                boolean var620455B046FC74D8EB536096D28363E6_840254825 = (mScroller.springBack(mScrollX, mScrollY, 0,
-                                    getScrollRange(), 0, 0));
-                                {
-                                    invalidate();
-                                } 
-                            } 
-                        } 
-                    } 
-                } 
-            } 
+                        invalidate();
+                    } //End block
+                } //End block
+            } //End block
             mActivePointerId = INVALID_POINTER;
             mIsBeingDragged = false;
             recycleVelocityTracker();
+    if(mEdgeGlowLeft != null)            
             {
                 mEdgeGlowLeft.onRelease();
                 mEdgeGlowRight.onRelease();
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        break;
+        case MotionEvent.ACTION_CANCEL:
+    if(mIsBeingDragged && getChildCount() > 0)        
         {
-            boolean var9286919EB531712C93F03BFB604683F8_1727674559 = (mIsBeingDragged && getChildCount() > 0);
+    if(mScroller.springBack(mScrollX, mScrollY, 0, getScrollRange(), 0, 0))            
             {
-                {
-                    boolean var22BD84039EB304B13BC2A1C6684C6C6D_973441142 = (mScroller.springBack(mScrollX, mScrollY, 0, getScrollRange(), 0, 0));
-                    {
-                        invalidate();
-                    } 
-                } 
-                mActivePointerId = INVALID_POINTER;
-                mIsBeingDragged = false;
-                recycleVelocityTracker();
-                {
-                    mEdgeGlowLeft.onRelease();
-                    mEdgeGlowRight.onRelease();
-                } 
-            } 
-        } 
-        
-        
+                invalidate();
+            } //End block
+            mActivePointerId = INVALID_POINTER;
+            mIsBeingDragged = false;
+            recycleVelocityTracker();
+    if(mEdgeGlowLeft != null)            
+            {
+                mEdgeGlowLeft.onRelease();
+                mEdgeGlowRight.onRelease();
+            } //End block
+        } //End block
+        break;
+        case MotionEvent.ACTION_POINTER_UP:
         onSecondaryPointerUp(ev);
-        
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1591770522 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1591770522;
-        
-        
+        break;
+}        boolean varB326B5062B2F0E69046810717534CB09_636298364 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_14701147 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_14701147;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.648 -0400", hash_original_method = "15678E7D87FCB5B2E2A6D15F2CBAE390", hash_generated_method = "E30C1CA42ECFFCBA76EF86B8D87D63B8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.808 -0400", hash_original_method = "15678E7D87FCB5B2E2A6D15F2CBAE390", hash_generated_method = "6E8CEB267E5C94F79FF4514B7A7BA1AE")
     private void onSecondaryPointerUp(MotionEvent ev) {
         final int pointerIndex = (ev.getAction() & MotionEvent.ACTION_POINTER_INDEX_MASK) >>
                 MotionEvent.ACTION_POINTER_INDEX_SHIFT;
         final int pointerId = ev.getPointerId(pointerIndex);
+    if(pointerId == mActivePointerId)        
         {
-            int newPointerIndex;
-            newPointerIndex = 1;
-            newPointerIndex = 0;
+            final int newPointerIndex = pointerIndex == 0 ? 1 : 0;
             mLastMotionX = ev.getX(newPointerIndex);
             mActivePointerId = ev.getPointerId(newPointerIndex);
+    if(mVelocityTracker != null)            
             {
                 mVelocityTracker.clear();
-            } 
-        } 
-        
-        
-                
-        
-        
-            
-            
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //final int pointerIndex = (ev.getAction() & MotionEvent.ACTION_POINTER_INDEX_MASK) >>
+                //MotionEvent.ACTION_POINTER_INDEX_SHIFT;
+        //final int pointerId = ev.getPointerId(pointerIndex);
+        //if (pointerId == mActivePointerId) {
+            //final int newPointerIndex = pointerIndex == 0 ? 1 : 0;
+            //mLastMotionX = ev.getX(newPointerIndex);
+            //mActivePointerId = ev.getPointerId(newPointerIndex);
+            //if (mVelocityTracker != null) {
+                //mVelocityTracker.clear();
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.648 -0400", hash_original_method = "EA19C55D5CBC44B40040771841401365", hash_generated_method = "3010DF0F8E7AFA10EE00D831DB1CC748")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.809 -0400", hash_original_method = "EA19C55D5CBC44B40040771841401365", hash_generated_method = "1B3271172421022907EF22199A20DBFE")
     @Override
     public boolean onGenericMotionEvent(MotionEvent event) {
-        
-        {
-            boolean varB5CEEFE1A0B0FE6CF2A2378211A03C4D_1609899379 = ((event.getSource() & InputDevice.SOURCE_CLASS_POINTER) != 0);
-            {
-                {
-                    Object varC2BF00F96F1D1B1ABEF4B0E3FC4FE9EC_883874099 = (event.getAction());
-                    
-                    {
-                        {
-                            float hscroll;
-                            {
-                                boolean varB081D4C178A0E24C7934472C47298D77_919730966 = ((event.getMetaState() & KeyEvent.META_SHIFT_ON) != 0);
-                                {
-                                    hscroll = -event.getAxisValue(MotionEvent.AXIS_VSCROLL);
-                                } 
-                                {
-                                    hscroll = event.getAxisValue(MotionEvent.AXIS_HSCROLL);
-                                } 
-                            } 
-                            {
-                                final int delta = (int) (hscroll * getHorizontalScrollFactor());
-                                final int range = getScrollRange();
-                                int oldScrollX = mScrollX;
-                                int newScrollX = oldScrollX + delta;
-                                {
-                                    newScrollX = 0;
-                                } 
-                                {
-                                    newScrollX = range;
-                                } 
-                                {
-                                    super.scrollTo(newScrollX, mScrollY);
-                                } 
-                            } 
-                        } 
-                    } 
-                    
-                } 
-            } 
-        } 
-        boolean var32C1E3DF40BCC120C79428C7AEB27DD1_460240045 = (super.onGenericMotionEvent(event));
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_897358491 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_897358491;
-        
-        
+    if((event.getSource() & InputDevice.SOURCE_CLASS_POINTER) != 0)        
+        {
+switch(event.getAction()){
+            case MotionEvent.ACTION_SCROLL:
+            {
+    if(!mIsBeingDragged)                
+                {
+                    float hscroll;
+    if((event.getMetaState() & KeyEvent.META_SHIFT_ON) != 0)                    
+                    {
+                        hscroll = -event.getAxisValue(MotionEvent.AXIS_VSCROLL);
+                    } //End block
+                    else
+                    {
+                        hscroll = event.getAxisValue(MotionEvent.AXIS_HSCROLL);
+                    } //End block
+    if(hscroll != 0)                    
+                    {
+                        final int delta = (int) (hscroll * getHorizontalScrollFactor());
+                        final int range = getScrollRange();
+                        int oldScrollX = mScrollX;
+                        int newScrollX = oldScrollX + delta;
+    if(newScrollX < 0)                        
+                        {
+                            newScrollX = 0;
+                        } //End block
+                        else
+    if(newScrollX > range)                        
+                        {
+                            newScrollX = range;
+                        } //End block
+    if(newScrollX != oldScrollX)                        
+                        {
+                            super.scrollTo(newScrollX, mScrollY);
+                            boolean varB326B5062B2F0E69046810717534CB09_1708980776 = (true);
+                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_368347336 = getTaintBoolean();
+                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_368347336;
+                        } //End block
+                    } //End block
+                } //End block
+            } //End block
+}
+        } //End block
+        boolean var3B54C423A43BA14BBEA440506237FA4B_366385917 = (super.onGenericMotionEvent(event));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_905058309 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_905058309;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.649 -0400", hash_original_method = "C2F251AFC67F9C484131CB8CA191D5D9", hash_generated_method = "2A890713EF0FB94CFE15DEE89BF63F00")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.811 -0400", hash_original_method = "C2F251AFC67F9C484131CB8CA191D5D9", hash_generated_method = "17614565EC2FBE056A8C7371187097D7")
     @Override
     public boolean shouldDelayChildPressedState() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_433024547 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_433024547;
-        
-        
+        boolean varB326B5062B2F0E69046810717534CB09_1256804311 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1379230087 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1379230087;
+        // ---------- Original Method ----------
+        //return true;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.650 -0400", hash_original_method = "06CAD3F9DAB24C265A0AAEC7445D85D7", hash_generated_method = "8740A4A8270816D51D07AA6F98E3FA3E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.812 -0400", hash_original_method = "06CAD3F9DAB24C265A0AAEC7445D85D7", hash_generated_method = "9FCAC737D0B0C30894E5FEDAB13B5BF9")
     @Override
     protected void onOverScrolled(int scrollX, int scrollY,
             boolean clampedX, boolean clampedY) {
-        
-        {
-            boolean var2844BA5E42FD344CC642021B350DFDAC_780835597 = (!mScroller.isFinished());
-            {
-                mScrollX = scrollX;
-                mScrollY = scrollY;
-                invalidateParentIfNeeded();
-                {
-                    mScroller.springBack(mScrollX, mScrollY, 0, getScrollRange(), 0, 0);
-                } 
-            } 
-            {
-                super.scrollTo(scrollX, scrollY);
-            } 
-        } 
-        awakenScrollBars();
-        addTaint(scrollX);
-        addTaint(scrollY);
-        addTaint(clampedX);
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(clampedY);
-        
-        
-            
-            
-            
-            
-                
-            
-        
-            
-        
-        
+        addTaint(clampedX);
+        addTaint(scrollY);
+        addTaint(scrollX);
+    if(!mScroller.isFinished())        
+        {
+            mScrollX = scrollX;
+            mScrollY = scrollY;
+            invalidateParentIfNeeded();
+    if(clampedX)            
+            {
+                mScroller.springBack(mScrollX, mScrollY, 0, getScrollRange(), 0, 0);
+            } //End block
+        } //End block
+        else
+        {
+            super.scrollTo(scrollX, scrollY);
+        } //End block
+        awakenScrollBars();
+        // ---------- Original Method ----------
+        //if (!mScroller.isFinished()) {
+            //mScrollX = scrollX;
+            //mScrollY = scrollY;
+            //invalidateParentIfNeeded();
+            //if (clampedX) {
+                //mScroller.springBack(mScrollX, mScrollY, 0, getScrollRange(), 0, 0);
+            //}
+        //} else {
+            //super.scrollTo(scrollX, scrollY);
+        //}
+        //awakenScrollBars();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.650 -0400", hash_original_method = "AF8EC74B0AD4D69DC5ACACFC8749064F", hash_generated_method = "61EE9670444DDDD9440F00D0D1F34A0C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.814 -0400", hash_original_method = "AF8EC74B0AD4D69DC5ACACFC8749064F", hash_generated_method = "2035CC755BD505267DFD2C0A965F4DCF")
     @Override
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
+        addTaint(info.getTaint());
         super.onInitializeAccessibilityNodeInfo(info);
         info.setScrollable(getScrollRange() > 0);
-        addTaint(info.getTaint());
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onInitializeAccessibilityNodeInfo(info);
+        //info.setScrollable(getScrollRange() > 0);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.651 -0400", hash_original_method = "7DA515169DBC462D06A7F08F561D2E84", hash_generated_method = "70863D26B40E871DF53D836A7A42F80F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.814 -0400", hash_original_method = "7DA515169DBC462D06A7F08F561D2E84", hash_generated_method = "CEF007BE694C3C607FD2AB3C05372CC0")
     @Override
     public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
+        addTaint(event.getTaint());
         super.onInitializeAccessibilityEvent(event);
         event.setScrollable(getScrollRange() > 0);
         event.setScrollX(mScrollX);
         event.setScrollY(mScrollY);
         event.setMaxScrollX(getScrollRange());
         event.setMaxScrollY(mScrollY);
-        addTaint(event.getTaint());
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onInitializeAccessibilityEvent(event);
+        //event.setScrollable(getScrollRange() > 0);
+        //event.setScrollX(mScrollX);
+        //event.setScrollY(mScrollY);
+        //event.setMaxScrollX(getScrollRange());
+        //event.setMaxScrollY(mScrollY);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.652 -0400", hash_original_method = "6035917F8C30F3A1C02AFED333ACB352", hash_generated_method = "8BA38212EA661A47ADF79E2092E10E99")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.815 -0400", hash_original_method = "6035917F8C30F3A1C02AFED333ACB352", hash_generated_method = "BE40CC84A5064645477762407261E562")
     private int getScrollRange() {
         int scrollRange = 0;
+    if(getChildCount() > 0)        
         {
-            boolean varBF62E6C23FE36C17A3594E034FF46D2E_1379460504 = (getChildCount() > 0);
-            {
-                View child = getChildAt(0);
-                scrollRange = Math.max(0,
+            View child = getChildAt(0);
+            scrollRange = Math.max(0,
                     child.getWidth() - (getWidth() - mPaddingLeft - mPaddingRight));
-            } 
-        } 
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1166374795 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1166374795;
-        
-        
-        
-            
-            
-                    
-        
-        
+        } //End block
+        int var94D4A3ECD79FF3E17EB5BD0659AF9AAE_1786545784 = (scrollRange);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_81062115 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_81062115;
+        // ---------- Original Method ----------
+        //int scrollRange = 0;
+        //if (getChildCount() > 0) {
+            //View child = getChildAt(0);
+            //scrollRange = Math.max(0,
+                    //child.getWidth() - (getWidth() - mPaddingLeft - mPaddingRight));
+        //}
+        //return scrollRange;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.653 -0400", hash_original_method = "B34C300D12B589B0218EA4927548AE87", hash_generated_method = "E13B5CF4BA6BDFB3B752D14D918AE4E2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.816 -0400", hash_original_method = "B34C300D12B589B0218EA4927548AE87", hash_generated_method = "73905363E16F205D6ECAF6C4C071DD66")
     private View findFocusableViewInMyBounds(final boolean leftFocus,
             final int left, View preferredFocusable) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1213286401 = null; 
-        View varB4EAC82CA7396A68D541C85D26508E83_1003934340 = null; 
+        addTaint(preferredFocusable.getTaint());
+        addTaint(left);
+        addTaint(leftFocus);
         final int fadingEdgeLength = getHorizontalFadingEdgeLength() / 2;
         final int leftWithoutFadingEdge = left + fadingEdgeLength;
         final int rightWithoutFadingEdge = left + getWidth() - fadingEdgeLength;
-        {
-            boolean var7D87B4F60FE19E28B97792EEA30CCEF8_675067868 = ((preferredFocusable != null)
+    if((preferredFocusable != null)
                 && (preferredFocusable.getLeft() < rightWithoutFadingEdge)
-                && (preferredFocusable.getRight() > leftWithoutFadingEdge));
-            {
-                varB4EAC82CA7396A68D541C85D26508E83_1213286401 = preferredFocusable;
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1003934340 = findFocusableViewInBounds(leftFocus, leftWithoutFadingEdge,
+                && (preferredFocusable.getRight() > leftWithoutFadingEdge))        
+        {
+View varEDCC47E7BD000496BBF92CD9272FBD7B_1938417863 =             preferredFocusable;
+            varEDCC47E7BD000496BBF92CD9272FBD7B_1938417863.addTaint(taint);
+            return varEDCC47E7BD000496BBF92CD9272FBD7B_1938417863;
+        } //End block
+View var3C5DAB17BC904AC109467AE0B923004B_1635348216 =         findFocusableViewInBounds(leftFocus, leftWithoutFadingEdge,
                 rightWithoutFadingEdge);
-        addTaint(leftFocus);
-        addTaint(left);
-        addTaint(preferredFocusable.getTaint());
-        View varA7E53CE21691AB073D9660D615818899_2065139460; 
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: 
-                varA7E53CE21691AB073D9660D615818899_2065139460 = varB4EAC82CA7396A68D541C85D26508E83_1213286401;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_2065139460 = varB4EAC82CA7396A68D541C85D26508E83_1003934340;
-                break;
-        }
-        varA7E53CE21691AB073D9660D615818899_2065139460.addTaint(getTaint()); 
-        return varA7E53CE21691AB073D9660D615818899_2065139460;
-        
-        
-        
-        
-        
-                
-                
-            
-        
-        
-                
+        var3C5DAB17BC904AC109467AE0B923004B_1635348216.addTaint(taint);
+        return var3C5DAB17BC904AC109467AE0B923004B_1635348216;
+        // ---------- Original Method ----------
+        //final int fadingEdgeLength = getHorizontalFadingEdgeLength() / 2;
+        //final int leftWithoutFadingEdge = left + fadingEdgeLength;
+        //final int rightWithoutFadingEdge = left + getWidth() - fadingEdgeLength;
+        //if ((preferredFocusable != null)
+                //&& (preferredFocusable.getLeft() < rightWithoutFadingEdge)
+                //&& (preferredFocusable.getRight() > leftWithoutFadingEdge)) {
+            //return preferredFocusable;
+        //}
+        //return findFocusableViewInBounds(leftFocus, leftWithoutFadingEdge,
+                //rightWithoutFadingEdge);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.655 -0400", hash_original_method = "CFAC89DA51B9853AC14992D421225DFD", hash_generated_method = "585247D6327DE90A253DC8601DA97BC8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.819 -0400", hash_original_method = "CFAC89DA51B9853AC14992D421225DFD", hash_generated_method = "AC243E9B06919EEDDADC3861A6771667")
     private View findFocusableViewInBounds(boolean leftFocus, int left, int right) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1290929792 = null; 
+        addTaint(right);
+        addTaint(left);
+        addTaint(leftFocus);
         List<View> focusables = getFocusables(View.FOCUS_FORWARD);
         View focusCandidate = null;
         boolean foundFullyContainedFocusable = false;
         int count = focusables.size();
+for(int i = 0;i < count;i++)
         {
-            int i = 0;
+            View view = focusables.get(i);
+            int viewLeft = view.getLeft();
+            int viewRight = view.getRight();
+    if(left < viewRight && viewLeft < right)            
             {
-                View view = focusables.get(i);
-                int viewLeft = view.getLeft();
-                int viewRight = view.getRight();
-                {
-                    final boolean viewIsFullyContained = (left < viewLeft) &&
+                final boolean viewIsFullyContained = (left < viewLeft) &&
                         (viewRight < right);
-                    {
-                        focusCandidate = view;
-                        foundFullyContainedFocusable = viewIsFullyContained;
-                    } 
-                    {
-                        final boolean viewIsCloserToBoundary = (leftFocus && viewLeft < focusCandidate.getLeft()) ||
+    if(focusCandidate == null)                
+                {
+                    focusCandidate = view;
+                    foundFullyContainedFocusable = viewIsFullyContained;
+                } //End block
+                else
+                {
+                    final boolean viewIsCloserToBoundary = (leftFocus && viewLeft < focusCandidate.getLeft()) ||
                                     (!leftFocus && viewRight > focusCandidate.getRight());
+    if(foundFullyContainedFocusable)                    
+                    {
+    if(viewIsFullyContained && viewIsCloserToBoundary)                        
                         {
-                            {
-                                focusCandidate = view;
-                            } 
-                        } 
+                            focusCandidate = view;
+                        } //End block
+                    } //End block
+                    else
+                    {
+    if(viewIsFullyContained)                        
                         {
-                            {
-                                focusCandidate = view;
-                                foundFullyContainedFocusable = true;
-                            } 
-                            {
-                                focusCandidate = view;
-                            } 
-                        } 
-                    } 
-                } 
-            } 
-        } 
-        varB4EAC82CA7396A68D541C85D26508E83_1290929792 = focusCandidate;
-        addTaint(leftFocus);
-        addTaint(left);
-        addTaint(right);
-        varB4EAC82CA7396A68D541C85D26508E83_1290929792.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1290929792;
-        
-        
+                            focusCandidate = view;
+                            foundFullyContainedFocusable = true;
+                        } //End block
+                        else
+    if(viewIsCloserToBoundary)                        
+                        {
+                            focusCandidate = view;
+                        } //End block
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
+View var9E337B9582937B68BAD70C44709A03C7_1043995767 =         focusCandidate;
+        var9E337B9582937B68BAD70C44709A03C7_1043995767.addTaint(taint);
+        return var9E337B9582937B68BAD70C44709A03C7_1043995767;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.655 -0400", hash_original_method = "DA183CDCD6EA3DA10063DE059735FFD7", hash_generated_method = "2255FAE9260BFE107649E958CEA1ECDD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.821 -0400", hash_original_method = "DA183CDCD6EA3DA10063DE059735FFD7", hash_generated_method = "41153C33A76FD5335B47C8E584769750")
     public boolean pageScroll(int direction) {
+        addTaint(direction);
         boolean right = direction == View.FOCUS_RIGHT;
         int width = getWidth();
+    if(right)        
         {
             mTempRect.left = getScrollX() + width;
             int count = getChildCount();
+    if(count > 0)            
             {
                 View view = getChildAt(0);
+    if(mTempRect.left + width > view.getRight())                
                 {
-                    boolean var8C78AEBAFA30CD197C035E0F448FF2FC_553254276 = (mTempRect.left + width > view.getRight());
-                    {
-                        mTempRect.left = view.getRight() - width;
-                    } 
-                } 
-            } 
-        } 
+                    mTempRect.left = view.getRight() - width;
+                } //End block
+            } //End block
+        } //End block
+        else
         {
             mTempRect.left = getScrollX() - width;
+    if(mTempRect.left < 0)            
             {
                 mTempRect.left = 0;
-            } 
-        } 
+            } //End block
+        } //End block
         mTempRect.right = mTempRect.left + width;
-        boolean var4D73DD7FC50DAF2C1DFAEF953A983AC8_414115487 = (scrollAndFocus(direction, mTempRect.left, mTempRect.right));
-        addTaint(direction);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_434654583 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_434654583;
-        
-        
-        
-        
-            
-            
-            
-                
-                
-                    
-                
-            
-        
-            
-            
-                
-            
-        
-        
-        
+        boolean var7C1EF92AB564BC909CCE560A1120AF30_1597993029 = (scrollAndFocus(direction, mTempRect.left, mTempRect.right));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_336636729 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_336636729;
+        // ---------- Original Method ----------
+        //boolean right = direction == View.FOCUS_RIGHT;
+        //int width = getWidth();
+        //if (right) {
+            //mTempRect.left = getScrollX() + width;
+            //int count = getChildCount();
+            //if (count > 0) {
+                //View view = getChildAt(0);
+                //if (mTempRect.left + width > view.getRight()) {
+                    //mTempRect.left = view.getRight() - width;
+                //}
+            //}
+        //} else {
+            //mTempRect.left = getScrollX() - width;
+            //if (mTempRect.left < 0) {
+                //mTempRect.left = 0;
+            //}
+        //}
+        //mTempRect.right = mTempRect.left + width;
+        //return scrollAndFocus(direction, mTempRect.left, mTempRect.right);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.656 -0400", hash_original_method = "13724385C240165AD29E108B78F9E99D", hash_generated_method = "55885A213F4E20A020DB8CCD401F67FA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.822 -0400", hash_original_method = "13724385C240165AD29E108B78F9E99D", hash_generated_method = "54971A68141588E04E68B04647DC903F")
     public boolean fullScroll(int direction) {
+        addTaint(direction);
         boolean right = direction == View.FOCUS_RIGHT;
         int width = getWidth();
         mTempRect.left = 0;
         mTempRect.right = width;
+    if(right)        
         {
             int count = getChildCount();
+    if(count > 0)            
             {
                 View view = getChildAt(0);
                 mTempRect.right = view.getRight();
                 mTempRect.left = mTempRect.right - width;
-            } 
-        } 
-        boolean var4D73DD7FC50DAF2C1DFAEF953A983AC8_1281321664 = (scrollAndFocus(direction, mTempRect.left, mTempRect.right));
-        addTaint(direction);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_480546317 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_480546317;
-        
-        
-        
-        
-        
-        
-            
-            
-                
-                
-                
-            
-        
-        
+            } //End block
+        } //End block
+        boolean var7C1EF92AB564BC909CCE560A1120AF30_490992881 = (scrollAndFocus(direction, mTempRect.left, mTempRect.right));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_835384581 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_835384581;
+        // ---------- Original Method ----------
+        //boolean right = direction == View.FOCUS_RIGHT;
+        //int width = getWidth();
+        //mTempRect.left = 0;
+        //mTempRect.right = width;
+        //if (right) {
+            //int count = getChildCount();
+            //if (count > 0) {
+                //View view = getChildAt(0);
+                //mTempRect.right = view.getRight();
+                //mTempRect.left = mTempRect.right - width;
+            //}
+        //}
+        //return scrollAndFocus(direction, mTempRect.left, mTempRect.right);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.656 -0400", hash_original_method = "DF3968C57E4B66E8EEB56F2D4C42BFD9", hash_generated_method = "CE7044C0D53F1A27A369754BF3D33B39")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.823 -0400", hash_original_method = "DF3968C57E4B66E8EEB56F2D4C42BFD9", hash_generated_method = "80581016B0F45381498A8CE5D27F125B")
     private boolean scrollAndFocus(int direction, int left, int right) {
+        addTaint(right);
+        addTaint(left);
+        addTaint(direction);
         boolean handled = true;
         int width = getWidth();
         int containerLeft = getScrollX();
         int containerRight = containerLeft + width;
         boolean goLeft = direction == View.FOCUS_LEFT;
         View newFocused = findFocusableViewInBounds(goLeft, left, right);
+    if(newFocused == null)        
         {
             newFocused = this;
-        } 
+        } //End block
+    if(left >= containerLeft && right <= containerRight)        
         {
             handled = false;
-        } 
+        } //End block
+        else
         {
-            int delta;
-            delta = (left - containerLeft);
-            delta = (right - containerRight);
+            int delta = goLeft ? (left - containerLeft) : (right - containerRight);
             doScrollX(delta);
-        } 
-        {
-            boolean var2DF5574E3AD9AB6AAA9DDD6415AB9F2D_340110969 = (newFocused != findFocus());
-            newFocused.requestFocus(direction);
-        } 
-        addTaint(direction);
-        addTaint(left);
-        addTaint(right);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_375856616 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_375856616;
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
-            
-        
-            
-            
-        
-        
-        
+        } //End block
+    if(newFocused != findFocus())        
+        newFocused.requestFocus(direction);
+        boolean var98F0599AF776A1FE4101C199A40EEB8F_1099044200 = (handled);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1854712944 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1854712944;
+        // ---------- Original Method ----------
+        //boolean handled = true;
+        //int width = getWidth();
+        //int containerLeft = getScrollX();
+        //int containerRight = containerLeft + width;
+        //boolean goLeft = direction == View.FOCUS_LEFT;
+        //View newFocused = findFocusableViewInBounds(goLeft, left, right);
+        //if (newFocused == null) {
+            //newFocused = this;
+        //}
+        //if (left >= containerLeft && right <= containerRight) {
+            //handled = false;
+        //} else {
+            //int delta = goLeft ? (left - containerLeft) : (right - containerRight);
+            //doScrollX(delta);
+        //}
+        //if (newFocused != findFocus()) newFocused.requestFocus(direction);
+        //return handled;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.657 -0400", hash_original_method = "ED0B7D3300F52C8B0FEFDD6EE298A1FB", hash_generated_method = "F9D67E64F440DA92B33EE91217D7F8F5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.824 -0400", hash_original_method = "ED0B7D3300F52C8B0FEFDD6EE298A1FB", hash_generated_method = "A86547895186A55C0E0BE88A6A00B9B3")
     public boolean arrowScroll(int direction) {
+        addTaint(direction);
         View currentFocused = findFocus();
-        {
-            boolean varF85CA3EE0100E1E3C5B0606F6BE9D9A9_171911122 = (currentFocused == this);
-            currentFocused = null;
-        } 
+    if(currentFocused == this)        
+        currentFocused = null;
         View nextFocused = FocusFinder.getInstance().findNextFocus(this, currentFocused, direction);
         final int maxJump = getMaxScrollAmount();
+    if(nextFocused != null && isWithinDeltaOfScreen(nextFocused, maxJump))        
         {
-            boolean var2292435FA822AB146936012380ED5BBB_1497979690 = (nextFocused != null && isWithinDeltaOfScreen(nextFocused, maxJump));
+            nextFocused.getDrawingRect(mTempRect);
+            offsetDescendantRectToMyCoords(nextFocused, mTempRect);
+            int scrollDelta = computeScrollDeltaToGetChildRectOnScreen(mTempRect);
+            doScrollX(scrollDelta);
+            nextFocused.requestFocus(direction);
+        } //End block
+        else
+        {
+            int scrollDelta = maxJump;
+    if(direction == View.FOCUS_LEFT && getScrollX() < scrollDelta)            
             {
-                nextFocused.getDrawingRect(mTempRect);
-                offsetDescendantRectToMyCoords(nextFocused, mTempRect);
-                int scrollDelta = computeScrollDeltaToGetChildRectOnScreen(mTempRect);
-                doScrollX(scrollDelta);
-                nextFocused.requestFocus(direction);
-            } 
+                scrollDelta = getScrollX();
+            } //End block
+            else
+    if(direction == View.FOCUS_RIGHT && getChildCount() > 0)            
             {
-                int scrollDelta = maxJump;
+                int daRight = getChildAt(0).getRight();
+                int screenRight = getScrollX() + getWidth();
+    if(daRight - screenRight < maxJump)                
                 {
-                    boolean var3623D08ACBADBF97DF4231DD021A3251_451228894 = (direction == View.FOCUS_LEFT && getScrollX() < scrollDelta);
-                    {
-                        scrollDelta = getScrollX();
-                    } 
-                    {
-                        boolean var31DDA0576A919784AA2E33F0C157B20A_1574364441 = (direction == View.FOCUS_RIGHT && getChildCount() > 0);
-                        {
-                            int daRight = getChildAt(0).getRight();
-                            int screenRight = getScrollX() + getWidth();
-                            {
-                                scrollDelta = daRight - screenRight;
-                            } 
-                        } 
-                    } 
-                } 
-                doScrollX(direction == View.FOCUS_RIGHT ? scrollDelta : -scrollDelta);
-            } 
-        } 
-        {
-            boolean var42D708BBCBC43DF6E5AC106D419B282D_2032977365 = (currentFocused != null && currentFocused.isFocused()
-                && isOffScreen(currentFocused));
+                    scrollDelta = daRight - screenRight;
+                } //End block
+            } //End block
+    if(scrollDelta == 0)            
             {
-                final int descendantFocusability = getDescendantFocusability();
-                setDescendantFocusability(ViewGroup.FOCUS_BEFORE_DESCENDANTS);
-                requestFocus();
-                setDescendantFocusability(descendantFocusability);
-            } 
-        } 
-        addTaint(direction);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1630353845 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1630353845;
-        
-        
+                boolean var68934A3E9455FA72420237EB05902327_889947425 = (false);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1121837707 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1121837707;
+            } //End block
+            doScrollX(direction == View.FOCUS_RIGHT ? scrollDelta : -scrollDelta);
+        } //End block
+    if(currentFocused != null && currentFocused.isFocused()
+                && isOffScreen(currentFocused))        
+        {
+            final int descendantFocusability = getDescendantFocusability();
+            setDescendantFocusability(ViewGroup.FOCUS_BEFORE_DESCENDANTS);
+            requestFocus();
+            setDescendantFocusability(descendantFocusability);
+        } //End block
+        boolean varB326B5062B2F0E69046810717534CB09_909076109 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1356389819 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1356389819;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.658 -0400", hash_original_method = "E39461866A28C70AD36F56E791C6BE3B", hash_generated_method = "2E55B0FD2E5BCBE8C20B64C9A74722DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.825 -0400", hash_original_method = "E39461866A28C70AD36F56E791C6BE3B", hash_generated_method = "81091C6F1A229CC58FDDAD46D55C0527")
     private boolean isOffScreen(View descendant) {
-        boolean var3CCD939A38ACEEE7749282D1DF99CC78_1003906450 = (!isWithinDeltaOfScreen(descendant, 0));
         addTaint(descendant.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_415175366 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_415175366;
-        
-        
+        boolean var3D726CE330560D3EFA6DFB1FF35B4C67_497499873 = (!isWithinDeltaOfScreen(descendant, 0));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_327187818 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_327187818;
+        // ---------- Original Method ----------
+        //return !isWithinDeltaOfScreen(descendant, 0);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.658 -0400", hash_original_method = "47CB02AABD47C9E7AF2DCBC38CD370E2", hash_generated_method = "45DC6216D5E7DB63F53A64EE61DC346B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.825 -0400", hash_original_method = "47CB02AABD47C9E7AF2DCBC38CD370E2", hash_generated_method = "95DA860F6943FAA974E2FC65601BC0C9")
     private boolean isWithinDeltaOfScreen(View descendant, int delta) {
+        addTaint(delta);
+        addTaint(descendant.getTaint());
         descendant.getDrawingRect(mTempRect);
         offsetDescendantRectToMyCoords(descendant, mTempRect);
-        boolean var05C136A6ECA4FF0F2BC7726A4BFA46FE_1716256277 = ((mTempRect.right + delta) >= getScrollX()
+        boolean varFACA1C4E77F32851DF23DA96FB43CD96_951461861 = ((mTempRect.right + delta) >= getScrollX()
                 && (mTempRect.left - delta) <= (getScrollX() + getWidth()));
-        addTaint(descendant.getTaint());
-        addTaint(delta);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_24569563 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_24569563;
-        
-        
-        
-        
-                
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_291510378 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_291510378;
+        // ---------- Original Method ----------
+        //descendant.getDrawingRect(mTempRect);
+        //offsetDescendantRectToMyCoords(descendant, mTempRect);
+        //return (mTempRect.right + delta) >= getScrollX()
+                //&& (mTempRect.left - delta) <= (getScrollX() + getWidth());
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.658 -0400", hash_original_method = "3F16B27E18A709EC962C39AF363F3965", hash_generated_method = "FCCBC3CEEE3CAEE5D716C5585B9172A0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.826 -0400", hash_original_method = "3F16B27E18A709EC962C39AF363F3965", hash_generated_method = "C93A97A668F634FF7B4DA6D35A07845F")
     private void doScrollX(int delta) {
+        addTaint(delta);
+    if(delta != 0)        
         {
+    if(mSmoothScrollingEnabled)            
             {
                 smoothScrollBy(delta, 0);
-            } 
+            } //End block
+            else
             {
                 scrollBy(delta, 0);
-            } 
-        } 
-        addTaint(delta);
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (delta != 0) {
+            //if (mSmoothScrollingEnabled) {
+                //smoothScrollBy(delta, 0);
+            //} else {
+                //scrollBy(delta, 0);
+            //}
+        //}
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.659 -0400", hash_original_method = "DAE9EEC093475C9AC0229EA6C3F406DC", hash_generated_method = "569FF8A4B5AF2594EF7FE535CA5D71A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.827 -0400", hash_original_method = "DAE9EEC093475C9AC0229EA6C3F406DC", hash_generated_method = "D107125CA7489BD9FD31DD40266B0EF6")
     public final void smoothScrollBy(int dx, int dy) {
+        addTaint(dy);
+        addTaint(dx);
+    if(getChildCount() == 0)        
         {
-            boolean varF370735710C80808B6618BA2D491D045_1334754395 = (getChildCount() == 0);
-        } 
+            return;
+        } //End block
         long duration = AnimationUtils.currentAnimationTimeMillis() - mLastScroll;
+    if(duration > ANIMATED_SCROLL_GAP)        
         {
             final int width = getWidth() - mPaddingRight - mPaddingLeft;
             final int right = getChildAt(0).getWidth();
@@ -1323,85 +1330,92 @@ public class HorizontalScrollView extends FrameLayout {
             dx = Math.max(0, Math.min(scrollX + dx, maxX)) - scrollX;
             mScroller.startScroll(scrollX, mScrollY, dx, 0);
             invalidate();
-        } 
+        } //End block
+        else
         {
+    if(!mScroller.isFinished())            
             {
-                boolean var11F6C92CC339B9B3B7C0C85A8DBD1165_1910037594 = (!mScroller.isFinished());
-                {
-                    mScroller.abortAnimation();
-                } 
-            } 
+                mScroller.abortAnimation();
+            } //End block
             scrollBy(dx, dy);
-        } 
+        } //End block
         mLastScroll = AnimationUtils.currentAnimationTimeMillis();
-        addTaint(dx);
-        addTaint(dy);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.660 -0400", hash_original_method = "EED648F6788EFF0F67B65ABAA0DE4CF2", hash_generated_method = "DA73281470CE7C276C318CD6CA129252")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.827 -0400", hash_original_method = "EED648F6788EFF0F67B65ABAA0DE4CF2", hash_generated_method = "1619451DF2B1DD4BECD96649A5683C61")
     public final void smoothScrollTo(int x, int y) {
-        smoothScrollBy(x - mScrollX, y - mScrollY);
-        addTaint(x);
         addTaint(y);
-        
-        
+        addTaint(x);
+        smoothScrollBy(x - mScrollX, y - mScrollY);
+        // ---------- Original Method ----------
+        //smoothScrollBy(x - mScrollX, y - mScrollY);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.660 -0400", hash_original_method = "344907C67A02819CC7A230367AD45761", hash_generated_method = "2ECCE8FACADD9AE8AAF2467F4B03E0A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.828 -0400", hash_original_method = "344907C67A02819CC7A230367AD45761", hash_generated_method = "979BDF0F1B1E5D69629FAC1B77886758")
     @Override
     protected int computeHorizontalScrollRange() {
         final int count = getChildCount();
         final int contentWidth = getWidth() - mPaddingLeft - mPaddingRight;
+    if(count == 0)        
+        {
+            int var1BF07926F6538F21E562505C076C042A_24838100 = (contentWidth);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1816251308 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1816251308;
+        } //End block
         int scrollRange = getChildAt(0).getRight();
         final int scrollX = mScrollX;
         final int overscrollRight = Math.max(0, scrollRange - contentWidth);
+    if(scrollX < 0)        
         {
             scrollRange -= scrollX;
-        } 
+        } //End block
+        else
+    if(scrollX > overscrollRight)        
         {
             scrollRange += scrollX - overscrollRight;
-        } 
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1300271391 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1300271391;
-        
-        
-        
-        
-            
-        
-        
-        
-        
-        
-            
-        
-            
-        
-        
+        } //End block
+        int var94D4A3ECD79FF3E17EB5BD0659AF9AAE_972716760 = (scrollRange);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1992104576 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1992104576;
+        // ---------- Original Method ----------
+        //final int count = getChildCount();
+        //final int contentWidth = getWidth() - mPaddingLeft - mPaddingRight;
+        //if (count == 0) {
+            //return contentWidth;
+        //}
+        //int scrollRange = getChildAt(0).getRight();
+        //final int scrollX = mScrollX;
+        //final int overscrollRight = Math.max(0, scrollRange - contentWidth);
+        //if (scrollX < 0) {
+            //scrollRange -= scrollX;
+        //} else if (scrollX > overscrollRight) {
+            //scrollRange += scrollX - overscrollRight;
+        //}
+        //return scrollRange;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.661 -0400", hash_original_method = "9CF354C1D07DBC59A9E2E44E57F7657B", hash_generated_method = "277F9C7CA63B8F3B657F74F22D784540")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.829 -0400", hash_original_method = "9CF354C1D07DBC59A9E2E44E57F7657B", hash_generated_method = "31DD04ACB0C42180040CAA87171CBEB5")
     @Override
     protected int computeHorizontalScrollOffset() {
-        int var7A9951C5866872080505940D11B99587_1368148833 = (Math.max(0, super.computeHorizontalScrollOffset()));
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_75448866 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_75448866;
-        
-        
+        int varF6857976BB9B7C6ED56FF74099CDBEBC_370460573 = (Math.max(0, super.computeHorizontalScrollOffset()));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1739228466 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1739228466;
+        // ---------- Original Method ----------
+        //return Math.max(0, super.computeHorizontalScrollOffset());
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.662 -0400", hash_original_method = "1A4819189D92B65ABF3F692114902ED1", hash_generated_method = "ADAFBEB9B9EC260E7F9DA179D26DB521")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.830 -0400", hash_original_method = "1A4819189D92B65ABF3F692114902ED1", hash_generated_method = "D1D35D018153C7C1449F7EA0245290A7")
     @Override
     protected void measureChild(View child, int parentWidthMeasureSpec, int parentHeightMeasureSpec) {
+        addTaint(parentHeightMeasureSpec);
+        addTaint(parentWidthMeasureSpec);
+        addTaint(child.getTaint());
         ViewGroup.LayoutParams lp = child.getLayoutParams();
         int childWidthMeasureSpec;
         int childHeightMeasureSpec;
@@ -1409,25 +1423,26 @@ public class HorizontalScrollView extends FrameLayout {
                 + mPaddingBottom, lp.height);
         childWidthMeasureSpec = MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED);
         child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
-        addTaint(child.getTaint());
-        addTaint(parentWidthMeasureSpec);
-        addTaint(parentHeightMeasureSpec);
-        
-        
-        
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //ViewGroup.LayoutParams lp = child.getLayoutParams();
+        //int childWidthMeasureSpec;
+        //int childHeightMeasureSpec;
+        //childHeightMeasureSpec = getChildMeasureSpec(parentHeightMeasureSpec, mPaddingTop
+                //+ mPaddingBottom, lp.height);
+        //childWidthMeasureSpec = MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED);
+        //child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.662 -0400", hash_original_method = "0EA8DFEAF2643806863B304E52EE38A5", hash_generated_method = "95DDAB9CE26EAD3804842262A235E15E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.830 -0400", hash_original_method = "0EA8DFEAF2643806863B304E52EE38A5", hash_generated_method = "50971521E32DF7E3193DEA122D9D2652")
     @Override
     protected void measureChildWithMargins(View child, int parentWidthMeasureSpec, int widthUsed,
             int parentHeightMeasureSpec, int heightUsed) {
+        addTaint(heightUsed);
+        addTaint(parentHeightMeasureSpec);
+        addTaint(widthUsed);
+        addTaint(parentWidthMeasureSpec);
+        addTaint(child.getTaint());
         final MarginLayoutParams lp = (MarginLayoutParams) child.getLayoutParams();
         final int childHeightMeasureSpec = getChildMeasureSpec(parentHeightMeasureSpec,
                 mPaddingTop + mPaddingBottom + lp.topMargin + lp.bottomMargin
@@ -1435,530 +1450,547 @@ public class HorizontalScrollView extends FrameLayout {
         final int childWidthMeasureSpec = MeasureSpec.makeMeasureSpec(
                 lp.leftMargin + lp.rightMargin, MeasureSpec.UNSPECIFIED);
         child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
-        addTaint(child.getTaint());
-        addTaint(parentWidthMeasureSpec);
-        addTaint(widthUsed);
-        addTaint(parentHeightMeasureSpec);
-        addTaint(heightUsed);
-        
-        
-        
-                
-                        
-        
-                
-        
+        // ---------- Original Method ----------
+        //final MarginLayoutParams lp = (MarginLayoutParams) child.getLayoutParams();
+        //final int childHeightMeasureSpec = getChildMeasureSpec(parentHeightMeasureSpec,
+                //mPaddingTop + mPaddingBottom + lp.topMargin + lp.bottomMargin
+                        //+ heightUsed, lp.height);
+        //final int childWidthMeasureSpec = MeasureSpec.makeMeasureSpec(
+                //lp.leftMargin + lp.rightMargin, MeasureSpec.UNSPECIFIED);
+        //child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.663 -0400", hash_original_method = "D30258BCA66C5E19407EB248DA88CE03", hash_generated_method = "37777E77A2003F6B55CDF984AA712A94")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.831 -0400", hash_original_method = "D30258BCA66C5E19407EB248DA88CE03", hash_generated_method = "3F16AA7BE934B5D63EE12A0D7542579E")
     @Override
     public void computeScroll() {
+    if(mScroller.computeScrollOffset())        
         {
-            boolean varE7DE5EF6873640B86AA94D9EE969CCF1_210754934 = (mScroller.computeScrollOffset());
+            int oldX = mScrollX;
+            int oldY = mScrollY;
+            int x = mScroller.getCurrX();
+            int y = mScroller.getCurrY();
+    if(oldX != x || oldY != y)            
             {
-                int oldX = mScrollX;
-                int oldY = mScrollY;
-                int x = mScroller.getCurrX();
-                int y = mScroller.getCurrY();
-                {
-                    final int range = getScrollRange();
-                    final int overscrollMode = getOverScrollMode();
-                    final boolean canOverscroll = overscrollMode == OVER_SCROLL_ALWAYS ||
+                final int range = getScrollRange();
+                final int overscrollMode = getOverScrollMode();
+                final boolean canOverscroll = overscrollMode == OVER_SCROLL_ALWAYS ||
                         (overscrollMode == OVER_SCROLL_IF_CONTENT_SCROLLS && range > 0);
-                    overScrollBy(x - oldX, y - oldY, oldX, oldY, range, 0,
+                overScrollBy(x - oldX, y - oldY, oldX, oldY, range, 0,
                         mOverflingDistance, 0, false);
-                    onScrollChanged(mScrollX, mScrollY, oldX, oldY);
+                onScrollChanged(mScrollX, mScrollY, oldX, oldY);
+    if(canOverscroll)                
+                {
+    if(x < 0 && oldX >= 0)                    
                     {
-                        {
-                            mEdgeGlowLeft.onAbsorb((int) mScroller.getCurrVelocity());
-                        } 
-                        {
-                            mEdgeGlowRight.onAbsorb((int) mScroller.getCurrVelocity());
-                        } 
-                    } 
-                } 
-                awakenScrollBars();
-                postInvalidate();
-            } 
-        } 
-        
-        
+                        mEdgeGlowLeft.onAbsorb((int) mScroller.getCurrVelocity());
+                    } //End block
+                    else
+    if(x > range && oldX <= range)                    
+                    {
+                        mEdgeGlowRight.onAbsorb((int) mScroller.getCurrVelocity());
+                    } //End block
+                } //End block
+            } //End block
+            awakenScrollBars();
+            postInvalidate();
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.664 -0400", hash_original_method = "988A7EC33B56EE551974E7C841966101", hash_generated_method = "CC461F082829174F3006FFC15289D153")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.832 -0400", hash_original_method = "988A7EC33B56EE551974E7C841966101", hash_generated_method = "DAB03F10A57CC9C2AB456DEEDA3A40B2")
     private void scrollToChild(View child) {
+        addTaint(child.getTaint());
         child.getDrawingRect(mTempRect);
         offsetDescendantRectToMyCoords(child, mTempRect);
         int scrollDelta = computeScrollDeltaToGetChildRectOnScreen(mTempRect);
+    if(scrollDelta != 0)        
         {
             scrollBy(scrollDelta, 0);
-        } 
-        addTaint(child.getTaint());
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //child.getDrawingRect(mTempRect);
+        //offsetDescendantRectToMyCoords(child, mTempRect);
+        //int scrollDelta = computeScrollDeltaToGetChildRectOnScreen(mTempRect);
+        //if (scrollDelta != 0) {
+            //scrollBy(scrollDelta, 0);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.664 -0400", hash_original_method = "07633DDCD66F05F9C6104D95040C4376", hash_generated_method = "D3B154237FC93D88F4E61E73CD370672")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.832 -0400", hash_original_method = "07633DDCD66F05F9C6104D95040C4376", hash_generated_method = "A8FBD5CC0ECD7C3683A147753744BC32")
     private boolean scrollToChildRect(Rect rect, boolean immediate) {
+        addTaint(immediate);
+        addTaint(rect.getTaint());
         final int delta = computeScrollDeltaToGetChildRectOnScreen(rect);
         final boolean scroll = delta != 0;
+    if(scroll)        
         {
+    if(immediate)            
             {
                 scrollBy(delta, 0);
-            } 
+            } //End block
+            else
             {
                 smoothScrollBy(delta, 0);
-            } 
-        } 
-        addTaint(rect.getTaint());
-        addTaint(immediate);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1366225366 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1366225366;
-        
-        
-        
-        
-            
-                
-            
-                
-            
-        
-        
+            } //End block
+        } //End block
+        boolean var089B0CDD8835D09CB1CABF38B3CE9C09_81787024 = (scroll);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1579282022 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1579282022;
+        // ---------- Original Method ----------
+        //final int delta = computeScrollDeltaToGetChildRectOnScreen(rect);
+        //final boolean scroll = delta != 0;
+        //if (scroll) {
+            //if (immediate) {
+                //scrollBy(delta, 0);
+            //} else {
+                //smoothScrollBy(delta, 0);
+            //}
+        //}
+        //return scroll;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.665 -0400", hash_original_method = "8C5AA93676CE0EF7515972F93F61C0B6", hash_generated_method = "D2A782A4971910C078254F9F9494BD42")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.834 -0400", hash_original_method = "8C5AA93676CE0EF7515972F93F61C0B6", hash_generated_method = "A7E1AF12630D1128B9D8254A23A07C61")
     protected int computeScrollDeltaToGetChildRectOnScreen(Rect rect) {
+        addTaint(rect.getTaint());
+    if(getChildCount() == 0)        
         {
-            boolean varF370735710C80808B6618BA2D491D045_1126893817 = (getChildCount() == 0);
-        } 
+        int varCFCD208495D565EF66E7DFF9F98764DA_1947892026 = (0);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_808204570 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_808204570;
+        }
         int width = getWidth();
         int screenLeft = getScrollX();
         int screenRight = screenLeft + width;
         int fadingEdge = getHorizontalFadingEdgeLength();
+    if(rect.left > 0)        
         {
             screenLeft += fadingEdge;
-        } 
+        } //End block
+    if(rect.right < getChildAt(0).getWidth())        
         {
-            boolean var111E177520853BA7F7EEE5AEE5221F06_1209260361 = (rect.right < getChildAt(0).getWidth());
-            {
-                screenRight -= fadingEdge;
-            } 
-        } 
+            screenRight -= fadingEdge;
+        } //End block
         int scrollXDelta = 0;
+    if(rect.right > screenRight && rect.left > screenLeft)        
         {
+    if(rect.width() > width)            
             {
-                boolean varAE73F3F4DF09B867223301D92BC7E6F0_130491240 = (rect.width() > width);
-                {
-                    scrollXDelta += (rect.left - screenLeft);
-                } 
-                {
-                    scrollXDelta += (rect.right - screenRight);
-                } 
-            } 
+                scrollXDelta += (rect.left - screenLeft);
+            } //End block
+            else
+            {
+                scrollXDelta += (rect.right - screenRight);
+            } //End block
             int right = getChildAt(0).getRight();
             int distanceToRight = right - screenRight;
             scrollXDelta = Math.min(scrollXDelta, distanceToRight);
-        } 
+        } //End block
+        else
+    if(rect.left < screenLeft && rect.right < screenRight)        
         {
+    if(rect.width() > width)            
             {
-                boolean varAE73F3F4DF09B867223301D92BC7E6F0_1933158880 = (rect.width() > width);
-                {
-                    scrollXDelta -= (screenRight - rect.right);
-                } 
-                {
-                    scrollXDelta -= (screenLeft - rect.left);
-                } 
-            } 
+                scrollXDelta -= (screenRight - rect.right);
+            } //End block
+            else
+            {
+                scrollXDelta -= (screenLeft - rect.left);
+            } //End block
             scrollXDelta = Math.max(scrollXDelta, -getScrollX());
-        } 
-        addTaint(rect.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_109619113 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_109619113;
-        
-        
+        } //End block
+        int varB9383B9729AD21AB9895DA2CB9F10123_1671029030 = (scrollXDelta);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1654234363 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1654234363;
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.665 -0400", hash_original_method = "C2C4A47D49BA76A3A98712461E581564", hash_generated_method = "A6F96566FD9F1BE3771DA2878DF4DC46")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.835 -0400", hash_original_method = "C2C4A47D49BA76A3A98712461E581564", hash_generated_method = "13A992C0A02A86749A86E776DD1237E5")
     @Override
     public void requestChildFocus(View child, View focused) {
+        addTaint(child.getTaint());
+    if(!mIsLayoutDirty)        
         {
             scrollToChild(focused);
-        } 
+        } //End block
+        else
         {
             mChildToScrollTo = focused;
-        } 
+        } //End block
         super.requestChildFocus(child, focused);
-        addTaint(child.getTaint());
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!mIsLayoutDirty) {
+            //scrollToChild(focused);
+        //} else {
+            //mChildToScrollTo = focused;
+        //}
+        //super.requestChildFocus(child, focused);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.665 -0400", hash_original_method = "4857D3DE9468292A125F69FE9ECFC007", hash_generated_method = "BECEEC125559EF0457A5F69B8379AE72")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.836 -0400", hash_original_method = "4857D3DE9468292A125F69FE9ECFC007", hash_generated_method = "EBCE34BCBB3ABAD35A550FAA2D5BDBE8")
     @Override
     protected boolean onRequestFocusInDescendants(int direction,
             Rect previouslyFocusedRect) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
+        addTaint(previouslyFocusedRect.getTaint());
+        addTaint(direction);
+    if(direction == View.FOCUS_FORWARD)        
         {
             direction = View.FOCUS_RIGHT;
-        } 
+        } //End block
+        else
+    if(direction == View.FOCUS_BACKWARD)        
         {
             direction = View.FOCUS_LEFT;
-        } 
-        View nextFocus;
-        nextFocus = FocusFinder.getInstance().findNextFocus(this, null, direction);
-        nextFocus = FocusFinder.getInstance().findNextFocusFromRect(this,
+        } //End block
+        final View nextFocus = previouslyFocusedRect == null ?
+                FocusFinder.getInstance().findNextFocus(this, null, direction) :
+                FocusFinder.getInstance().findNextFocusFromRect(this,
                         previouslyFocusedRect, direction);
+    if(nextFocus == null)        
         {
-            boolean var2421F6D33436D75DDCB765DA8D416CB8_126556501 = (isOffScreen(nextFocus));
-        } 
-        boolean varBB06A889CCA25ED822B35181716FFE90_624066766 = (nextFocus.requestFocus(direction, previouslyFocusedRect));
-        addTaint(direction);
-        addTaint(previouslyFocusedRect.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1444057612 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1444057612;
-        
-        
-            
-        
-            
-        
-        
-                
-                
-                        
-        
-            
-        
-        
-            
-        
-        
+            boolean var68934A3E9455FA72420237EB05902327_871716172 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1805556464 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1805556464;
+        } //End block
+    if(isOffScreen(nextFocus))        
+        {
+            boolean var68934A3E9455FA72420237EB05902327_101592858 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_919632376 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_919632376;
+        } //End block
+        boolean var19AC7E01A4DA8FE4B22BFDF34DB33D51_1444844362 = (nextFocus.requestFocus(direction, previouslyFocusedRect));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_763426096 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_763426096;
+        // ---------- Original Method ----------
+        //if (direction == View.FOCUS_FORWARD) {
+            //direction = View.FOCUS_RIGHT;
+        //} else if (direction == View.FOCUS_BACKWARD) {
+            //direction = View.FOCUS_LEFT;
+        //}
+        //final View nextFocus = previouslyFocusedRect == null ?
+                //FocusFinder.getInstance().findNextFocus(this, null, direction) :
+                //FocusFinder.getInstance().findNextFocusFromRect(this,
+                        //previouslyFocusedRect, direction);
+        //if (nextFocus == null) {
+            //return false;
+        //}
+        //if (isOffScreen(nextFocus)) {
+            //return false;
+        //}
+        //return nextFocus.requestFocus(direction, previouslyFocusedRect);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.666 -0400", hash_original_method = "50E2DA7CF8E403536932E3B77491E964", hash_generated_method = "7081A31C9BBC2195792B4F0888BFFF7C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.838 -0400", hash_original_method = "50E2DA7CF8E403536932E3B77491E964", hash_generated_method = "B64BB1C6BADCFCB3A9F34029A01D7F71")
     @Override
     public boolean requestChildRectangleOnScreen(View child, Rect rectangle,
             boolean immediate) {
+        addTaint(immediate);
+        addTaint(rectangle.getTaint());
+        addTaint(child.getTaint());
         rectangle.offset(child.getLeft() - child.getScrollX(),
                 child.getTop() - child.getScrollY());
-        boolean var9EED5F05118BACEED05952D173A9E219_1719373745 = (scrollToChildRect(rectangle, immediate));
-        addTaint(child.getTaint());
-        addTaint(rectangle.getTaint());
-        addTaint(immediate);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_281056472 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_281056472;
-        
-        
-                
-        
+        boolean var10C2B91B22AF1483455A09D794128372_1179355264 = (scrollToChildRect(rectangle, immediate));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_786200227 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_786200227;
+        // ---------- Original Method ----------
+        //rectangle.offset(child.getLeft() - child.getScrollX(),
+                //child.getTop() - child.getScrollY());
+        //return scrollToChildRect(rectangle, immediate);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.666 -0400", hash_original_method = "31751D7E496E2D7BD9B4D4E94AD28515", hash_generated_method = "11A20A1DA3E3F0E4689DA3F629925C7D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.839 -0400", hash_original_method = "31751D7E496E2D7BD9B4D4E94AD28515", hash_generated_method = "11A20A1DA3E3F0E4689DA3F629925C7D")
     @Override
     public void requestLayout() {
         mIsLayoutDirty = true;
         super.requestLayout();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mIsLayoutDirty = true;
+        //super.requestLayout();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.666 -0400", hash_original_method = "51521A672083F0AD2F639BD854AB8D0F", hash_generated_method = "BD7DCB46332967947C49F216FF10522B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.841 -0400", hash_original_method = "51521A672083F0AD2F639BD854AB8D0F", hash_generated_method = "0FF04B3425BEE3DDBF54B80FEC67BB3C")
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
+        addTaint(b);
+        addTaint(r);
+        addTaint(t);
+        addTaint(l);
+        addTaint(changed);
         super.onLayout(changed, l, t, r, b);
         mIsLayoutDirty = false;
+    if(mChildToScrollTo != null && isViewDescendantOf(mChildToScrollTo, this))        
         {
-            boolean varFEFF39315B1161E387E3A3BC8A5B6333_69094856 = (mChildToScrollTo != null && isViewDescendantOf(mChildToScrollTo, this));
-            {
-                scrollToChild(mChildToScrollTo);
-            } 
-        } 
+            scrollToChild(mChildToScrollTo);
+        } //End block
         mChildToScrollTo = null;
         scrollTo(mScrollX, mScrollY);
-        addTaint(changed);
-        addTaint(l);
-        addTaint(t);
-        addTaint(r);
-        addTaint(b);
-        
-        
-        
-        
-                
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onLayout(changed, l, t, r, b);
+        //mIsLayoutDirty = false;
+        //if (mChildToScrollTo != null && isViewDescendantOf(mChildToScrollTo, this)) {
+                //scrollToChild(mChildToScrollTo);
+        //}
+        //mChildToScrollTo = null;
+        //scrollTo(mScrollX, mScrollY);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.667 -0400", hash_original_method = "BFC9FDBBB166F0ED568B66B969E998B2", hash_generated_method = "3A2BDE5F8C486D370181EDA894BB8A0A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.842 -0400", hash_original_method = "BFC9FDBBB166F0ED568B66B969E998B2", hash_generated_method = "3093074D38714A9B789A0142846514D0")
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
+        addTaint(oldh);
+        addTaint(oldw);
+        addTaint(h);
+        addTaint(w);
         super.onSizeChanged(w, h, oldw, oldh);
         View currentFocused = findFocus();
+    if(null == currentFocused || this == currentFocused)        
+        return;
         final int maxJump = mRight - mLeft;
+    if(isWithinDeltaOfScreen(currentFocused, maxJump))        
         {
-            boolean var23B5651428E53758F7813143E4B31F1D_1668134739 = (isWithinDeltaOfScreen(currentFocused, maxJump));
-            {
-                currentFocused.getDrawingRect(mTempRect);
-                offsetDescendantRectToMyCoords(currentFocused, mTempRect);
-                int scrollDelta = computeScrollDeltaToGetChildRectOnScreen(mTempRect);
-                doScrollX(scrollDelta);
-            } 
-        } 
-        addTaint(w);
-        addTaint(h);
-        addTaint(oldw);
-        addTaint(oldh);
-        
-        
-        
-        
-            
-        
-        
-            
-            
-            
-            
-        
+            currentFocused.getDrawingRect(mTempRect);
+            offsetDescendantRectToMyCoords(currentFocused, mTempRect);
+            int scrollDelta = computeScrollDeltaToGetChildRectOnScreen(mTempRect);
+            doScrollX(scrollDelta);
+        } //End block
+        // ---------- Original Method ----------
+        //super.onSizeChanged(w, h, oldw, oldh);
+        //View currentFocused = findFocus();
+        //if (null == currentFocused || this == currentFocused)
+            //return;
+        //final int maxJump = mRight - mLeft;
+        //if (isWithinDeltaOfScreen(currentFocused, maxJump)) {
+            //currentFocused.getDrawingRect(mTempRect);
+            //offsetDescendantRectToMyCoords(currentFocused, mTempRect);
+            //int scrollDelta = computeScrollDeltaToGetChildRectOnScreen(mTempRect);
+            //doScrollX(scrollDelta);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.667 -0400", hash_original_method = "25276A1ACE97D138BB17C9052B223D37", hash_generated_method = "FB6FE4E4D33E5AA7B2146EAE9EDF980A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.843 -0400", hash_original_method = "25276A1ACE97D138BB17C9052B223D37", hash_generated_method = "4F0EBFE8011CE31C8459C1B2B93F8854")
     private boolean isViewDescendantOf(View child, View parent) {
-        final ViewParent theParent = child.getParent();
-        boolean var948A486C9D980B3FCF5DD6DC234D8E28_1480362970 = ((theParent instanceof ViewGroup) && isViewDescendantOf((View) theParent, parent));
-        addTaint(child.getTaint());
         addTaint(parent.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_568895986 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_568895986;
-        
-        
-            
-        
-        
-        
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.668 -0400", hash_original_method = "C5A2747735A9CF7D4575D6EE52958D1F", hash_generated_method = "8FE03257C08D847811BCC0A4FFBE90F0")
-    public void fling(int velocityX) {
+        addTaint(child.getTaint());
+    if(child == parent)        
         {
-            boolean varBF62E6C23FE36C17A3594E034FF46D2E_270997323 = (getChildCount() > 0);
-            {
-                int width = getWidth() - mPaddingRight - mPaddingLeft;
-                int right = getChildAt(0).getWidth();
-                mScroller.fling(mScrollX, mScrollY, velocityX, 0, 0,
-                    Math.max(0, right - width), 0, 0, width/2, 0);
-                final boolean movingRight = velocityX > 0;
-                View currentFocused = findFocus();
-                View newFocused = findFocusableViewInMyBounds(movingRight,
-                    mScroller.getFinalX(), currentFocused);
-                {
-                    newFocused = this;
-                } 
-                {
-                    newFocused.requestFocus(movingRight ? View.FOCUS_RIGHT : View.FOCUS_LEFT);
-                } 
-                invalidate();
-            } 
-        } 
-        addTaint(velocityX);
-        
-        
-            
-            
-            
-                    
-            
-            
-            
-                    
-            
-                
-            
-            
-                
-            
-            
-        
+            boolean varB326B5062B2F0E69046810717534CB09_1527304343 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1635893257 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1635893257;
+        } //End block
+        final ViewParent theParent = child.getParent();
+        boolean var6F793E02A243A0ADE05122683367FBA6_2107444871 = ((theParent instanceof ViewGroup) && isViewDescendantOf((View) theParent, parent));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_493899833 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_493899833;
+        // ---------- Original Method ----------
+        //if (child == parent) {
+            //return true;
+        //}
+        //final ViewParent theParent = child.getParent();
+        //return (theParent instanceof ViewGroup) && isViewDescendantOf((View) theParent, parent);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.668 -0400", hash_original_method = "748C5914370A5F8CDD8109B6F4611B5B", hash_generated_method = "A4A016A6A40486BE075FA894CFC71D43")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.846 -0400", hash_original_method = "C5A2747735A9CF7D4575D6EE52958D1F", hash_generated_method = "6EA483B0C83FAE1542BDD434B2C6823D")
+    public void fling(int velocityX) {
+        addTaint(velocityX);
+    if(getChildCount() > 0)        
+        {
+            int width = getWidth() - mPaddingRight - mPaddingLeft;
+            int right = getChildAt(0).getWidth();
+            mScroller.fling(mScrollX, mScrollY, velocityX, 0, 0,
+                    Math.max(0, right - width), 0, 0, width/2, 0);
+            final boolean movingRight = velocityX > 0;
+            View currentFocused = findFocus();
+            View newFocused = findFocusableViewInMyBounds(movingRight,
+                    mScroller.getFinalX(), currentFocused);
+    if(newFocused == null)            
+            {
+                newFocused = this;
+            } //End block
+    if(newFocused != currentFocused)            
+            {
+                newFocused.requestFocus(movingRight ? View.FOCUS_RIGHT : View.FOCUS_LEFT);
+            } //End block
+            invalidate();
+        } //End block
+        // ---------- Original Method ----------
+        //if (getChildCount() > 0) {
+            //int width = getWidth() - mPaddingRight - mPaddingLeft;
+            //int right = getChildAt(0).getWidth();
+            //mScroller.fling(mScrollX, mScrollY, velocityX, 0, 0,
+                    //Math.max(0, right - width), 0, 0, width/2, 0);
+            //final boolean movingRight = velocityX > 0;
+            //View currentFocused = findFocus();
+            //View newFocused = findFocusableViewInMyBounds(movingRight,
+                    //mScroller.getFinalX(), currentFocused);
+            //if (newFocused == null) {
+                //newFocused = this;
+            //}
+            //if (newFocused != currentFocused) {
+                //newFocused.requestFocus(movingRight ? View.FOCUS_RIGHT : View.FOCUS_LEFT);
+            //}
+            //invalidate();
+        //}
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.847 -0400", hash_original_method = "748C5914370A5F8CDD8109B6F4611B5B", hash_generated_method = "0D6230820B8CF3ACD12B82804532AC3B")
     @Override
     public void scrollTo(int x, int y) {
-        {
-            boolean varBF62E6C23FE36C17A3594E034FF46D2E_1578708140 = (getChildCount() > 0);
-            {
-                View child = getChildAt(0);
-                x = clamp(x, getWidth() - mPaddingRight - mPaddingLeft, child.getWidth());
-                y = clamp(y, getHeight() - mPaddingBottom - mPaddingTop, child.getHeight());
-                {
-                    super.scrollTo(x, y);
-                } 
-            } 
-        } 
-        addTaint(x);
         addTaint(y);
-        
-        
-            
-            
-            
-            
-                
-            
-        
+        addTaint(x);
+    if(getChildCount() > 0)        
+        {
+            View child = getChildAt(0);
+            x = clamp(x, getWidth() - mPaddingRight - mPaddingLeft, child.getWidth());
+            y = clamp(y, getHeight() - mPaddingBottom - mPaddingTop, child.getHeight());
+    if(x != mScrollX || y != mScrollY)            
+            {
+                super.scrollTo(x, y);
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (getChildCount() > 0) {
+            //View child = getChildAt(0);
+            //x = clamp(x, getWidth() - mPaddingRight - mPaddingLeft, child.getWidth());
+            //y = clamp(y, getHeight() - mPaddingBottom - mPaddingTop, child.getHeight());
+            //if (x != mScrollX || y != mScrollY) {
+                //super.scrollTo(x, y);
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.668 -0400", hash_original_method = "7D7EAD2993C7155FA8CA9421487AA499", hash_generated_method = "ED5D3BF5F354A711AA3A1D612B62D7E1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.849 -0400", hash_original_method = "7D7EAD2993C7155FA8CA9421487AA499", hash_generated_method = "A84AB4D0361241C075B5DB472743EA77")
     @Override
     public void setOverScrollMode(int mode) {
+        addTaint(mode);
+    if(mode != OVER_SCROLL_NEVER)        
         {
+    if(mEdgeGlowLeft == null)            
             {
                 Context context = getContext();
                 mEdgeGlowLeft = new EdgeEffect(context);
                 mEdgeGlowRight = new EdgeEffect(context);
-            } 
-        } 
+            } //End block
+        } //End block
+        else
         {
             mEdgeGlowLeft = null;
             mEdgeGlowRight = null;
-        } 
+        } //End block
         super.setOverScrollMode(mode);
-        addTaint(mode);
-        
-        
-            
-                
-                
-                
-            
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mode != OVER_SCROLL_NEVER) {
+            //if (mEdgeGlowLeft == null) {
+                //Context context = getContext();
+                //mEdgeGlowLeft = new EdgeEffect(context);
+                //mEdgeGlowRight = new EdgeEffect(context);
+            //}
+        //} else {
+            //mEdgeGlowLeft = null;
+            //mEdgeGlowRight = null;
+        //}
+        //super.setOverScrollMode(mode);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.669 -0400", hash_original_method = "63AFEEC895B9671DC479FE83536227D7", hash_generated_method = "FA5A3E13752EFD7EA195053F063D61CB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.850 -0400", hash_original_method = "63AFEEC895B9671DC479FE83536227D7", hash_generated_method = "A253D366287C363C3A0AC14050D804D8")
     @SuppressWarnings({"SuspiciousNameCombination"})
     @Override
     public void draw(Canvas canvas) {
+        addTaint(canvas.getTaint());
         super.draw(canvas);
+    if(mEdgeGlowLeft != null)        
         {
             final int scrollX = mScrollX;
+    if(!mEdgeGlowLeft.isFinished())            
             {
-                boolean var1ECF01FA9E017D6BE3235AB8A34635E8_243937817 = (!mEdgeGlowLeft.isFinished());
+                final int restoreCount = canvas.save();
+                final int height = getHeight() - mPaddingTop - mPaddingBottom;
+                canvas.rotate(270);
+                canvas.translate(-height + mPaddingTop, Math.min(0, scrollX));
+                mEdgeGlowLeft.setSize(height, getWidth());
+    if(mEdgeGlowLeft.draw(canvas))                
                 {
-                    final int restoreCount = canvas.save();
-                    final int height = getHeight() - mPaddingTop - mPaddingBottom;
-                    canvas.rotate(270);
-                    canvas.translate(-height + mPaddingTop, Math.min(0, scrollX));
-                    mEdgeGlowLeft.setSize(height, getWidth());
-                    {
-                        boolean var610D4E0E7DF4A306CD193957D2FE9A09_1578134433 = (mEdgeGlowLeft.draw(canvas));
-                        {
-                            invalidate();
-                        } 
-                    } 
-                    canvas.restoreToCount(restoreCount);
-                } 
-            } 
+                    invalidate();
+                } //End block
+                canvas.restoreToCount(restoreCount);
+            } //End block
+    if(!mEdgeGlowRight.isFinished())            
             {
-                boolean varFB5CAACA6057E33D653CCB246DF230DF_1715236122 = (!mEdgeGlowRight.isFinished());
-                {
-                    final int restoreCount = canvas.save();
-                    final int width = getWidth();
-                    final int height = getHeight() - mPaddingTop - mPaddingBottom;
-                    canvas.rotate(90);
-                    canvas.translate(-mPaddingTop,
+                final int restoreCount = canvas.save();
+                final int width = getWidth();
+                final int height = getHeight() - mPaddingTop - mPaddingBottom;
+                canvas.rotate(90);
+                canvas.translate(-mPaddingTop,
                         -(Math.max(getScrollRange(), scrollX) + width));
-                    mEdgeGlowRight.setSize(height, width);
-                    {
-                        boolean var0CDA4D4B63F069A0ADED01E10A235FEC_376567170 = (mEdgeGlowRight.draw(canvas));
-                        {
-                            invalidate();
-                        } 
-                    } 
-                    canvas.restoreToCount(restoreCount);
-                } 
-            } 
-        } 
-        addTaint(canvas.getTaint());
-        
-        
+                mEdgeGlowRight.setSize(height, width);
+    if(mEdgeGlowRight.draw(canvas))                
+                {
+                    invalidate();
+                } //End block
+                canvas.restoreToCount(restoreCount);
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.670 -0400", hash_original_method = "10E81B579101690AB90AC933866D5438", hash_generated_method = "FC36480D74B9C21CD10EC394FC544D7F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.851 -0400", hash_original_method = "10E81B579101690AB90AC933866D5438", hash_generated_method = "779CDDA0FB663C5F8959C95C9BC64016")
     private int clamp(int n, int my, int child) {
-        addTaint(n);
-        addTaint(my);
         addTaint(child);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2012676616 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2012676616;
-        
-        
-            
-        
-        
-            
-        
-        
+        addTaint(my);
+        addTaint(n);
+    if(my >= child || n < 0)        
+        {
+            int varCFCD208495D565EF66E7DFF9F98764DA_1322790598 = (0);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_891445347 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_891445347;
+        } //End block
+    if((my + n) > child)        
+        {
+            int var302FB6F2915B3D0C2F6551AE59DAFA4C_1469021081 = (child - my);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_538259986 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_538259986;
+        } //End block
+        int var7B8B965AD4BCA0E41AB51DE7B31363A1_1472891579 = (n);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1876339933 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1876339933;
+        // ---------- Original Method ----------
+        //if (my >= child || n < 0) {
+            //return 0;
+        //}
+        //if ((my + n) > child) {
+            //return child - my;
+        //}
+        //return n;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.670 -0400", hash_original_field = "592B4C751C2D22CD7D43317BD897714A", hash_generated_field = "4083FF51B3491C57DFF4E035C0066C80")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.851 -0400", hash_original_field = "592B4C751C2D22CD7D43317BD897714A", hash_generated_field = "4083FF51B3491C57DFF4E035C0066C80")
 
     private static final int ANIMATED_SCROLL_GAP = ScrollView.ANIMATED_SCROLL_GAP;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.670 -0400", hash_original_field = "CA227357940761AB7254479B7BD99962", hash_generated_field = "49356EE5727E8BD04682A1AF4FB39A2B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.851 -0400", hash_original_field = "CA227357940761AB7254479B7BD99962", hash_generated_field = "49356EE5727E8BD04682A1AF4FB39A2B")
 
     private static final float MAX_SCROLL_FACTOR = ScrollView.MAX_SCROLL_FACTOR;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.670 -0400", hash_original_field = "7EF8B2C57AC3A1D5EC1190F4098C6121", hash_generated_field = "E2DAEB44FC73F85759FCDB42BA10BD3A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.851 -0400", hash_original_field = "7EF8B2C57AC3A1D5EC1190F4098C6121", hash_generated_field = "E2DAEB44FC73F85759FCDB42BA10BD3A")
 
     private static final int INVALID_POINTER = -1;
 }

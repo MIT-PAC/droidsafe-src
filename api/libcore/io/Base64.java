@@ -1,31 +1,26 @@
 package libcore.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.nio.charset.Charsets;
 import libcore.util.EmptyArray;
 
 public final class Base64 {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.807 -0400", hash_original_method = "B12DC6BE1A1E2EB3A4F484EDEACB8E03", hash_generated_method = "96F9E0BDD170E9FC5C3951236F2EB54E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.348 -0400", hash_original_method = "B12DC6BE1A1E2EB3A4F484EDEACB8E03", hash_generated_method = "96F9E0BDD170E9FC5C3951236F2EB54E")
     private  Base64() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static byte[] decode(byte[] in) {
+        public static byte[] decode(byte[] in) {
         return decode(in, in.length);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static byte[] decode(byte[] in, int len) {
+        public static byte[] decode(byte[] in, int len) {
         int length = len / 4 * 3;
         if (length == 0) {
             return EmptyArray.BYTE;
@@ -89,8 +84,7 @@ public final class Base64 {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static String encode(byte[] in) {
+        public static String encode(byte[] in) {
         int length = (in.length + 2) * 4 / 3;
         byte[] out = new byte[length];
         int index = 0, end = in.length - in.length % 3;
@@ -118,7 +112,7 @@ public final class Base64 {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.808 -0400", hash_original_field = "A5BA4FA48DF3D1EE63BD76EA10F554A0", hash_generated_field = "82F1210628F15E92912F89A88C162707")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.350 -0400", hash_original_field = "A5BA4FA48DF3D1EE63BD76EA10F554A0", hash_generated_field = "82F1210628F15E92912F89A88C162707")
 
     private static final byte[] map = new byte[]
         {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',

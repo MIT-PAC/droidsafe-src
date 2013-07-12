@@ -1,48 +1,45 @@
 package android.database.sqlite;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import android.database.CursorWindow;
 import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.Log;
 
 public class SQLiteQuery extends SQLiteProgram {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.807 -0400", hash_original_field = "4A4AFE184AA8D6209A0E3DD0DCD593B5", hash_generated_field = "834FF8F7040C5E40B4484771C7969574")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.116 -0400", hash_original_field = "4A4AFE184AA8D6209A0E3DD0DCD593B5", hash_generated_field = "834FF8F7040C5E40B4484771C7969574")
 
     private int mOffsetIndex = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.807 -0400", hash_original_field = "D72871D5CE2EB17105099280224B0CCD", hash_generated_field = "0FB4858B613824FE6FDA94A379EBC4D0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.116 -0400", hash_original_field = "D72871D5CE2EB17105099280224B0CCD", hash_generated_field = "0FB4858B613824FE6FDA94A379EBC4D0")
 
     private boolean mClosed = false;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.808 -0400", hash_original_method = "B04E51F22DB6FA67074D367FD62C2A3B", hash_generated_method = "8914B1AB11B0D4C21E3DA2EFBAD7968B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.117 -0400", hash_original_method = "B04E51F22DB6FA67074D367FD62C2A3B", hash_generated_method = "18D8D2891ECFC4704610AF4707BD2E8D")
       SQLiteQuery(SQLiteDatabase db, String query, int offsetIndex, String[] bindArgs) {
         super(db, query);
+        addTaint(bindArgs[0].getTaint());
+        addTaint(query.getTaint());
+        addTaint(db.getTaint());
         mOffsetIndex = offsetIndex;
         bindAllArgsAsStrings(bindArgs);
-        addTaint(db.getTaint());
-        addTaint(query.getTaint());
-        addTaint(bindArgs[0].getTaint());
-        
-        
-        
+        // ---------- Original Method ----------
+        //mOffsetIndex = offsetIndex;
+        //bindAllArgsAsStrings(bindArgs);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.809 -0400", hash_original_method = "ACE77F48482E9278318C8F93FF273D4F", hash_generated_method = "7B621664D0D3B1034B549C18CA917F36")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.118 -0400", hash_original_method = "ACE77F48482E9278318C8F93FF273D4F", hash_generated_method = "E346673D1C67FDBA52707DE4236A8647")
       SQLiteQuery(SQLiteDatabase db, SQLiteQuery query) {
         super(db, query.mSql);
+        addTaint(db.getTaint());
         this.mBindArgs = query.mBindArgs;
         this.mOffsetIndex = query.mOffsetIndex;
-        addTaint(db.getTaint());
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.mBindArgs = query.mBindArgs;
+        //this.mOffsetIndex = query.mOffsetIndex;
     }
 
     
@@ -65,8 +62,9 @@ public class SQLiteQuery extends SQLiteProgram {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.812 -0400", hash_original_method = "D55C6AB533D249202FC7A2AC29FF93BB", hash_generated_method = "97435A91B2624AC19E509155F44CA7A2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.121 -0400", hash_original_method = "D55C6AB533D249202FC7A2AC29FF93BB", hash_generated_method = "3B578FBA0A780407E47672B078D54F53")
      int fillWindow(CursorWindow window) {
+        addTaint(window.getTaint());
         mDatabase.lock(mSql);
         long timeStart = SystemClock.uptimeMillis();
         try 
@@ -78,12 +76,12 @@ public class SQLiteQuery extends SQLiteProgram {
                 int startPos = window.getStartPosition();
                 int numRows = nativeFillWindow(nHandle, nStatement, window.mWindowPtr,
                         startPos, mOffsetIndex);
+    if(SQLiteDebug.DEBUG_LOG_SLOW_QUERIES)                
                 {
                     long elapsed = SystemClock.uptimeMillis() - timeStart;
+    if(SQLiteDebug.shouldLogSlowQuery(elapsed))                    
                     {
-                        boolean var988A9DFF582FC3584A942C7F256FAFD2_1188680730 = (SQLiteDebug.shouldLogSlowQuery(elapsed));
-                        {
-                            Log.d(TAG, "fillWindow took " + elapsed
+                        Log.d(TAG, "fillWindow took " + elapsed
                                 + " ms: window=\"" + window
                                 + "\", startPos=" + startPos
                                 + ", offset=" + mOffsetIndex
@@ -93,128 +91,132 @@ public class SQLiteQuery extends SQLiteProgram {
                                 + ", args=[" + (mBindArgs != null ?
                                         TextUtils.join(", ", mBindArgs.values()) : "")
                                 + "]");
-                        } 
-                    } 
-                } 
+                    } //End block
+                } //End block
                 mDatabase.logTimeStat(mSql, timeStart);
-            } 
+                int var998EA97634C71C025EB15D1618C2A376_1949907513 = (numRows);
+                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_450804565 = getTaintInt();
+                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_450804565;
+            } //End block
             catch (IllegalStateException e)
-            { }
+            {
+                int varCFCD208495D565EF66E7DFF9F98764DA_1633642402 = (0);
+                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_21307016 = getTaintInt();
+                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_21307016;
+            } //End block
             catch (SQLiteDatabaseCorruptException e)
             {
                 mDatabase.onCorruption();
-                if (DroidSafeAndroidRuntime.control) throw e;
-            } 
+                e.addTaint(taint);
+                throw e;
+            } //End block
             catch (SQLiteException e)
             {
-                if (DroidSafeAndroidRuntime.control) throw e;
-            } 
+                e.addTaint(taint);
+                throw e;
+            } //End block
             finally 
             {
                 window.releaseReference();
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
             releaseReference();
             mDatabase.unlock();
-        } 
-        addTaint(window.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_794893076 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_794893076;
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.813 -0400", hash_original_method = "54618FF47D2C419F49442C51D0DA0774", hash_generated_method = "C2D13CBDBF037B68622C21A898D24E35")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.124 -0400", hash_original_method = "54618FF47D2C419F49442C51D0DA0774", hash_generated_method = "8AE09C5FDD49D947E0EE05A65951A6D5")
      int columnCountLocked() {
         acquireReference();
         try 
         {
-            int var4CE791ADD9DE7633E946332B2B15C816_1843245498 = (nativeColumnCount(nStatement));
-        } 
+            int var38E37CE3C8D0439303E00926E6741308_273887339 = (nativeColumnCount(nStatement));
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2041550991 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2041550991;
+        } //End block
         finally 
         {
             releaseReference();
-        } 
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2067284946 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2067284946;
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //acquireReference();
+        //try {
+            //return nativeColumnCount(nStatement);
+        //} finally {
+            //releaseReference();
+        //}
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.814 -0400", hash_original_method = "B5AB077B4013E218660670FE95A73F4B", hash_generated_method = "C2227A014F70DCB932C3004573DB9567")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.125 -0400", hash_original_method = "B5AB077B4013E218660670FE95A73F4B", hash_generated_method = "8DB16C25668489823865D87B3881FA1D")
      String columnNameLocked(int columnIndex) {
-        String varB4EAC82CA7396A68D541C85D26508E83_485933085 = null; 
+        addTaint(columnIndex);
         acquireReference();
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_485933085 = nativeColumnName(nStatement, columnIndex);
-        } 
+String var96AFF3FBA6F9E943FBE0AF3FA990EC97_1567942472 =             nativeColumnName(nStatement, columnIndex);
+            var96AFF3FBA6F9E943FBE0AF3FA990EC97_1567942472.addTaint(taint);
+            return var96AFF3FBA6F9E943FBE0AF3FA990EC97_1567942472;
+        } //End block
         finally 
         {
             releaseReference();
-        } 
-        addTaint(columnIndex);
-        varB4EAC82CA7396A68D541C85D26508E83_485933085.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_485933085;
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //acquireReference();
+        //try {
+            //return nativeColumnName(nStatement, columnIndex);
+        //} finally {
+            //releaseReference();
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.815 -0400", hash_original_method = "818F0EC4250B389213C92FDEA7A7A5CE", hash_generated_method = "C6E0A84D09B490BB663985B158C21716")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.126 -0400", hash_original_method = "818F0EC4250B389213C92FDEA7A7A5CE", hash_generated_method = "29B05E8CF44394BA87D0B6AA904D16B2")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_669638678 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_669638678 = "SQLiteQuery: " + mSql;
-        varB4EAC82CA7396A68D541C85D26508E83_669638678.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_669638678;
-        
-        
+String var3EFB8F4E9BBF4DC978F8DF4F177CC507_1873868056 =         "SQLiteQuery: " + mSql;
+        var3EFB8F4E9BBF4DC978F8DF4F177CC507_1873868056.addTaint(taint);
+        return var3EFB8F4E9BBF4DC978F8DF4F177CC507_1873868056;
+        // ---------- Original Method ----------
+        //return "SQLiteQuery: " + mSql;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.815 -0400", hash_original_method = "C1F8301470323E9B4CE9B1F32DF8E225", hash_generated_method = "6C73A8E1493172E7E20CAF1DBE3B5224")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.127 -0400", hash_original_method = "C1F8301470323E9B4CE9B1F32DF8E225", hash_generated_method = "6C73A8E1493172E7E20CAF1DBE3B5224")
     @Override
     public void close() {
         super.close();
         mClosed = true;
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.close();
+        //mClosed = true;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.816 -0400", hash_original_method = "10930ECAA546E890A142B67C44E349E2", hash_generated_method = "54FBEE154273A70AA944D1037CC0878E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.127 -0400", hash_original_method = "10930ECAA546E890A142B67C44E349E2", hash_generated_method = "5F1D65D635204A219A4D8C4B7D67D4FE")
      void requery() {
+    if(mClosed)        
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("requerying a closed cursor");
-        } 
+            IllegalStateException var6CAE77F670F1174A16CD140BED6B8FCA_1298339125 = new IllegalStateException("requerying a closed cursor");
+            var6CAE77F670F1174A16CD140BED6B8FCA_1298339125.addTaint(taint);
+            throw var6CAE77F670F1174A16CD140BED6B8FCA_1298339125;
+        } //End block
         compileAndbindAllArgs();
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mClosed) {
+            //throw new IllegalStateException("requerying a closed cursor");
+        //}
+        //compileAndbindAllArgs();
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.816 -0400", hash_original_field = "B4D62BC7E132324EDD96845B1B8BA5B6", hash_generated_field = "33B4EC31717AE04F4951ABB455378F67")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.128 -0400", hash_original_field = "B4D62BC7E132324EDD96845B1B8BA5B6", hash_generated_field = "33B4EC31717AE04F4951ABB455378F67")
 
     private static final String TAG = "SQLiteQuery";
 }

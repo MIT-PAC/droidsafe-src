@@ -1,12 +1,9 @@
 package javax.net.ssl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
@@ -15,9 +12,9 @@ import java.security.UnrecoverableKeyException;
 
 public abstract class KeyManagerFactorySpi {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.563 -0400", hash_original_method = "6A7E81CC9CE1799ACFD008A7DC048460", hash_generated_method = "93A65C456CF3A0D713ED787ED5389AFC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.805 -0400", hash_original_method = "6A7E81CC9CE1799ACFD008A7DC048460", hash_generated_method = "93A65C456CF3A0D713ED787ED5389AFC")
     public  KeyManagerFactorySpi() {
-        
+        // ---------- Original Method ----------
     }
 
     

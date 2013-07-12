@@ -1,41 +1,36 @@
 package org.bouncycastle.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-
-import java.util.Iterator;
-
 public class ASN1ObjectIdentifier extends DERObjectIdentifier {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.915 -0400", hash_original_method = "5D809321835D0BA25C10E4492B1A0DC6", hash_generated_method = "DAACAE5FD40E4B46E7C6A20CFC027519")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.605 -0400", hash_original_method = "5D809321835D0BA25C10E4492B1A0DC6", hash_generated_method = "DAACAE5FD40E4B46E7C6A20CFC027519")
     public  ASN1ObjectIdentifier(String identifier) {
         super(identifier);
         addTaint(identifier.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.915 -0400", hash_original_method = "EF822DF50E24A8FAE333A23CFFE3D191", hash_generated_method = "800270272E59DBE5A948B225A5E9BCB1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.606 -0400", hash_original_method = "EF822DF50E24A8FAE333A23CFFE3D191", hash_generated_method = "800270272E59DBE5A948B225A5E9BCB1")
       ASN1ObjectIdentifier(byte[] bytes) {
         super(bytes);
         addTaint(bytes[0]);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.916 -0400", hash_original_method = "DFE7160E8E684D8D4AB128F02145CDAB", hash_generated_method = "8C27DC84FE006D461C3AF5E7706C0753")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.606 -0400", hash_original_method = "DFE7160E8E684D8D4AB128F02145CDAB", hash_generated_method = "C9B3A98C1DB1F6AF941CB708F20195DF")
     public ASN1ObjectIdentifier branch(String branchID) {
-        ASN1ObjectIdentifier varB4EAC82CA7396A68D541C85D26508E83_1070038761 = null; 
-        varB4EAC82CA7396A68D541C85D26508E83_1070038761 = new ASN1ObjectIdentifier(getId() + "." + branchID);
         addTaint(branchID.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1070038761.addTaint(getTaint()); 
-        return varB4EAC82CA7396A68D541C85D26508E83_1070038761;
-        
-        
+ASN1ObjectIdentifier varC7F61766DA32F36DBFEE874FD403E015_1395532900 =         new ASN1ObjectIdentifier(getId() + "." + branchID);
+        varC7F61766DA32F36DBFEE874FD403E015_1395532900.addTaint(taint);
+        return varC7F61766DA32F36DBFEE874FD403E015_1395532900;
+        // ---------- Original Method ----------
+        //return new ASN1ObjectIdentifier(getId() + "." + branchID);
     }
 
     

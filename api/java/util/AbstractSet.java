@@ -1,135 +1,143 @@
 package java.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-
-import java.util.Iterator;
-
 public abstract class AbstractSet<E> extends AbstractCollection<E> implements Set<E> {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.600 -0400", hash_original_method = "422EAA7182FF45B88C4EE6C211DE4EBB", hash_generated_method = "370CF36F1557D7355E48B1CB7D8F5E8D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.289 -0400", hash_original_method = "422EAA7182FF45B88C4EE6C211DE4EBB", hash_generated_method = "370CF36F1557D7355E48B1CB7D8F5E8D")
     protected  AbstractSet() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.600 -0400", hash_original_method = "8965F512606A1DFD0C1662786439C503", hash_generated_method = "034B7973FA87D9C80674A91DFA4C09FD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.290 -0400", hash_original_method = "8965F512606A1DFD0C1662786439C503", hash_generated_method = "24BB3F415C56C73FEEF98BA9C84212B6")
     @Override
     public boolean equals(Object object) {
+        addTaint(object.getTaint());
+    if(this == object)        
+        {
+            boolean varB326B5062B2F0E69046810717534CB09_533869892 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_102534499 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_102534499;
+        } //End block
+    if(object instanceof Set)        
         {
             Set<?> s = (Set<?>) object;
             try 
             {
-                boolean var3CB8A00E2BE8AA7C9FFA8BA1183D5A88_1562582777 = (size() == s.size() && containsAll(s));
-            } 
+                boolean varF7695CAF5A9CB346DC0805A64AAE8DF9_668780601 = (size() == s.size() && containsAll(s));
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_808062794 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_808062794;
+            } //End block
             catch (NullPointerException ignored)
-            { }
+            {
+                boolean var68934A3E9455FA72420237EB05902327_2100470006 = (false);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1859625984 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1859625984;
+            } //End block
             catch (ClassCastException ignored)
-            { }
-        } 
-        addTaint(object.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1845888880 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1845888880;
-        
-        
-            
-        
-        
-            
-            
-                
-            
-                
-            
-                
-            
-        
-        
+            {
+                boolean var68934A3E9455FA72420237EB05902327_1282571864 = (false);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_65609883 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_65609883;
+            } //End block
+        } //End block
+        boolean var68934A3E9455FA72420237EB05902327_231600849 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2112277057 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2112277057;
+        // ---------- Original Method ----------
+        //if (this == object) {
+            //return true;
+        //}
+        //if (object instanceof Set) {
+            //Set<?> s = (Set<?>) object;
+            //try {
+                //return size() == s.size() && containsAll(s);
+            //} catch (NullPointerException ignored) {
+                //return false;
+            //} catch (ClassCastException ignored) {
+                //return false;
+            //}
+        //}
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.601 -0400", hash_original_method = "CFEA0B963C36C0E6CA161741555B0EDA", hash_generated_method = "8F7873DD5C48E834906FB87AD96C7C6A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.291 -0400", hash_original_method = "CFEA0B963C36C0E6CA161741555B0EDA", hash_generated_method = "A932B71A4D0C0B01614858C5FB3CC3CB")
     @Override
     public int hashCode() {
         int result = 0;
         Iterator<?> it = iterator();
+        while
+(it.hasNext())        
         {
-            boolean var03729FD53960D8DCA3A41A13A0229637_1285324476 = (it.hasNext());
-            {
-                Object next = it.next();
-                result += next == null ? 0 : next.hashCode();
-            } 
-        } 
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_644821748 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_644821748;
-        
-        
-        
-        
-            
-            
-        
-        
+            Object next = it.next();
+            result += next == null ? 0 : next.hashCode();
+        } //End block
+        int varB4A88417B3D0170D754C647C30B7216A_1999902209 = (result);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1416542900 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1416542900;
+        // ---------- Original Method ----------
+        //int result = 0;
+        //Iterator<?> it = iterator();
+        //while (it.hasNext()) {
+            //Object next = it.next();
+            //result += next == null ? 0 : next.hashCode();
+        //}
+        //return result;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.601 -0400", hash_original_method = "6793D4CBA252A26447B19640912FAD83", hash_generated_method = "C9128D311664763BB6EF17E6B45FE647")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.292 -0400", hash_original_method = "6793D4CBA252A26447B19640912FAD83", hash_generated_method = "E45562D93476DB3DBE95CDC9E49D1AE1")
     @Override
     public boolean removeAll(Collection<?> collection) {
-        boolean result = false;
-        {
-            boolean var61BE98A221B974C561DFA1C3C81630B9_864205639 = (size() <= collection.size());
-            {
-                Iterator<?> it = iterator();
-                {
-                    boolean var3DEC40B862508A9A2151C7EC9CE55CF3_633520455 = (it.hasNext());
-                    {
-                        {
-                            boolean varD4980F0B0F9E3ED72ED3F79203D70B7F_1211292950 = (collection.contains(it.next()));
-                            {
-                                it.remove();
-                                result = true;
-                            } 
-                        } 
-                    } 
-                } 
-            } 
-            {
-                Iterator<?> it = collection.iterator();
-                {
-                    boolean var3DEC40B862508A9A2151C7EC9CE55CF3_615107386 = (it.hasNext());
-                    {
-                        result = remove(it.next()) || result;
-                    } 
-                } 
-            } 
-        } 
         addTaint(collection.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_73461212 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_73461212;
-        
-        
-        
-            
-            
-                
-                    
-                    
-                
-            
-        
-            
-            
-                
-            
-        
-        
+        boolean result = false;
+    if(size() <= collection.size())        
+        {
+            Iterator<?> it = iterator();
+            while
+(it.hasNext())            
+            {
+    if(collection.contains(it.next()))                
+                {
+                    it.remove();
+                    result = true;
+                } //End block
+            } //End block
+        } //End block
+        else
+        {
+            Iterator<?> it = collection.iterator();
+            while
+(it.hasNext())            
+            {
+                result = remove(it.next()) || result;
+            } //End block
+        } //End block
+        boolean varB4A88417B3D0170D754C647C30B7216A_2046825607 = (result);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1227396963 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1227396963;
+        // ---------- Original Method ----------
+        //boolean result = false;
+        //if (size() <= collection.size()) {
+            //Iterator<?> it = iterator();
+            //while (it.hasNext()) {
+                //if (collection.contains(it.next())) {
+                    //it.remove();
+                    //result = true;
+                //}
+            //}
+        //} else {
+            //Iterator<?> it = collection.iterator();
+            //while (it.hasNext()) {
+                //result = remove(it.next()) || result;
+            //}
+        //}
+        //return result;
     }
 
     

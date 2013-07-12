@@ -1,12 +1,9 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
-
-
-import java.util.Iterator;
 import gov.nist.javax.sip.parser.ims.*;
 import gov.nist.javax.sip.header.ims.*;
 import java.util.Hashtable;
@@ -20,15 +17,14 @@ import gov.nist.javax.sip.parser.extensions.*;
 
 public class ParserFactory {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.361 -0400", hash_original_method = "402FA7B6FCFC84B93C7F2F3C6D2A34EC", hash_generated_method = "402FA7B6FCFC84B93C7F2F3C6D2A34EC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.371 -0400", hash_original_method = "402FA7B6FCFC84B93C7F2F3C6D2A34EC", hash_generated_method = "402FA7B6FCFC84B93C7F2F3C6D2A34EC")
     public ParserFactory ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
-    public static HeaderParser createParser(String line) throws ParseException {
+        public static HeaderParser createParser(String line) throws ParseException {
         String headerName = Lexer.getHeaderName(line);
         String headerValue = Lexer.getHeaderValue(line);
         if (headerName == null || headerValue == null)
@@ -55,13 +51,13 @@ public class ParserFactory {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.362 -0400", hash_original_field = "A204131F65AC451FEF76680B6546BBD2", hash_generated_field = "0A3C66CA4CD5AF69A34601C4EB5A6186")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.372 -0400", hash_original_field = "A204131F65AC451FEF76680B6546BBD2", hash_generated_field = "0A3C66CA4CD5AF69A34601C4EB5A6186")
 
     private static Hashtable<String,Class<? extends HeaderParser>> parserTable;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.362 -0400", hash_original_field = "C8F73AA9D5B2B8D2288DBE7416221D5D", hash_generated_field = "AA78F4096AC7D2050F7D84F484AF823F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.372 -0400", hash_original_field = "C8F73AA9D5B2B8D2288DBE7416221D5D", hash_generated_field = "AA78F4096AC7D2050F7D84F484AF823F")
 
     private static Class[] constructorArgs;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.362 -0400", hash_original_field = "BDC958E88250938150F7CF03A26186B5", hash_generated_field = "DDE7A2912B25508540047823ADE279C8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.372 -0400", hash_original_field = "BDC958E88250938150F7CF03A26186B5", hash_generated_field = "DDE7A2912B25508540047823ADE279C8")
 
     private static Hashtable parserConstructorCache;
     static {
