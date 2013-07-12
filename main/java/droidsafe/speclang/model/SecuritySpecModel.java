@@ -1,7 +1,7 @@
 /**
  * 
  */
-package droidsafe.eclipse.plugin.core.specmodel;
+package droidsafe.speclang.model;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;

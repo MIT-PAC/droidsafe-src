@@ -1,4 +1,4 @@
-package droidsafe.eclipse.plugin.core.specmodel;
+package droidsafe.speclang.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -12,11 +12,11 @@ import org.slf4j.LoggerFactory;
 import soot.SootMethod;
 import soot.Type;
 import droidsafe.android.system.Permissions;
-import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.speclang.ArgumentValue;
 import droidsafe.speclang.ConcreteListArgumentValue;
 import droidsafe.speclang.Method;
 import droidsafe.utils.SourceLocationTag;
+import droidsafe.utils.Utils;
 
 /**
  * Class to model the droidsafe.speclang.Method class. It simplifies the method representation by
@@ -248,13 +248,13 @@ public class MethodModel extends ModelChangeSupport
    */
   private String computeShortSignature(Method m) {
     StringBuffer out = new StringBuffer();
-    out.append(DroidsafePluginUtilities.extractClassname(getClassName()) + " " + getMethodName()
+    out.append(Utils.extractClassname(getClassName()) + " " + getMethodName()
         + " (");
     String delim = "";
     for (ArgumentValue arg : m.getArgs()) {
       out.append(delim);
       if (arg.isType()) {
-        out.append(DroidsafePluginUtilities.extractClassname(arg.toString()));
+        out.append(Utils.extractClassname(arg.toString()));
       } else { // constant of some sort
         out.append(arg.toString());
       }

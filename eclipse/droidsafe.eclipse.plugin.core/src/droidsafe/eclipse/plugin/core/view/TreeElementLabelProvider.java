@@ -21,10 +21,10 @@ import org.osgi.framework.FrameworkUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import droidsafe.eclipse.plugin.core.specmodel.CodeLocationModel;
-import droidsafe.eclipse.plugin.core.specmodel.HotspotModel;
-import droidsafe.eclipse.plugin.core.specmodel.MethodModel;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
+import droidsafe.speclang.model.CodeLocationModel;
+import droidsafe.speclang.model.HotspotModel;
+import droidsafe.speclang.model.MethodModel;
 
 /**
  * Label provider for the nodes of the Droidsafe outline view.

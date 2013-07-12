@@ -1,4 +1,4 @@
-package droidsafe.eclipse.plugin.core.specmodel;
+package droidsafe.speclang.model;
 
 /*
  * Auxiliary enum type to keep track of the status of the issue.
